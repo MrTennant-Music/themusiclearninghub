@@ -124,7 +124,7 @@ function EscapeToolbar(){
  const customise=e('div',{className:'hub-menu-anchor relative'},
   e(MLH.CustomiseButton,{icon:icon('ui-icons/customise.svg'),dataMenuTrigger:true,expanded:menu==='customise',onClick:()=>setMenu(menu==='customise'?null:'customise')}),
   menu==='customise'&&e(MLH.MenuPanel,{title:'Customise',variant:'customise',dataMenuPanel:true},
-   !sharedCollection&&e(MLH.MenuToggleRow,{label:'Selected Level Only',showGlyph:false,profileKey:false,checked:prefs.selectedLevelOnly===true,onChange:()=>{
+   !sharedCollection&&e(MLH.SelectedLevelOnlyToggle,{level:state?.options.level||prefs.level,checked:prefs.selectedLevelOnly===true,onChange:()=>{
     setMenu(null);
     if(state&&(state.attempts||state.discovered.length)&&!state.finished){
      confirmAction('Change Question Scope','Changing the question scope will start a new adventure.','change-question-scope');

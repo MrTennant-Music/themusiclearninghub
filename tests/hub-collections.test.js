@@ -87,9 +87,12 @@ test('collection links preserve their scope, including legacy All Concepts links
  assert.equal(launch.searchParams.get('level'),'AH');
  assert.equal(Hub.selected(launch.search,db).concepts.length,allGroup.conceptIds.length);
  assert.deepEqual(Hub.menuSelection('charades',launch.search,'AH',db),{scope:'ALL',id:'all-concepts',builtIn:true});
- const articulation=Hub.menuRows('recall','N3',catalogue,dictionary,()=>true,[]).hub.find(row=>row.id==='articulation');
- const recall=new URL(Hub.launch('recall',articulation,articulation.launchLevel),origin);
- assert.deepEqual(Hub.menuSelection('recall',recall.search,'N5',db),{scope:'N3',id:'articulation',builtIn:true});
+ const articulation=Hub.menuRows('charades','N3',catalogue,dictionary,()=>true,[]).hub.find(row=>row.id==='articulation');
+ const builtIn=new URL(Hub.launch('charades',articulation,articulation.launchLevel),origin);
+ assert.deepEqual(Hub.menuSelection('charades',builtIn.search,'N5',db),{scope:'N3',id:'articulation',builtIn:true});
+ assert.equal(Object.hasOwn(Hub.applications,'recall'),false);
+ assert.throws(()=>Hub.launch('recall',articulation,articulation.launchLevel),/Choose an activity/);
+ assert.equal(Games.sharedAvailability(articulation,'recall'),'This activity does not support collections');
  const quiz=new URL(Hub.launch('quizzes',all,'AH'),origin);
  assert.equal(quiz.searchParams.get('level'),'ALL');
  assert.deepEqual(Hub.menuSelection('quizzes',quiz.search,'ALL',db),{scope:'ALL',id:'all-concepts',builtIn:true});
@@ -115,7 +118,7 @@ test('shared links carry a portable snapshot while launch links stay tied to the
  const owner = storage(), recipient = storage();
  const concepts = require('../music-dictionary/music-concepts-data').concepts.map(concept=>concept.id);
  const row = Hub.save({name:'Course review',concepts},owner);
- const launch = new URL(Hub.launch('recall',row,'AH'),'https://hub.test');
+ const launch = new URL(Hub.launch('charades',row,'AH'),'https://hub.test');
  const share = new URL(Hub.shareUrl(launch.href,owner));
  assert(share.href.length<1500);
  assert.equal(share.searchParams.has('myCollection'),false);
@@ -182,7 +185,7 @@ test('game availability and generation agree across the entire Hub catalogue', (
   }
  }
  const excluded={concepts:['MC-0278','MC-0279']};
- for(const app of ['sort','wordsearch','charades','recall','escape'])assert(Games.sharedAvailability(excluded,app));
+ for(const app of ['sort','wordsearch','charades','escape'])assert(Games.sharedAvailability(excluded,app));
  const twice={id:'subject',name:'Subject',concepts:['MC-0255','MC-0296']};
  assert(Games.sharedAvailability(twice,'sort'));
  assert.throws(()=>Games.sharedConceptActivity(twice,'AH','group-sort'),/two distinct/);

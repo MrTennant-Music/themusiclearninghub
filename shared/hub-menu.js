@@ -45,7 +45,7 @@
     }, [refs, handlers]);
   }
 
-  function MenuPanel({ id, title, children, position = "left-0", variant = "level", dataMenuPanel = false, floating = false, className: extraClass = "" }) {
+  function MenuPanel({ id, title, children, footer, position = "left-0", variant = "level", dataMenuPanel = false, floating = false, className: extraClass = "" }) {
     const anchorRef = useRef(null);
     const panelRef = useRef(null);
     const generatedIdRef = useRef(null);
@@ -121,6 +121,7 @@
         e("div", { className: "hub-menu-title-text" }, title),
       ),
       e("div", { className: "hub-menu-scroll" }, children),
+      footer,
     );
     if (!isFloating) return panel;
     return e(React.Fragment, null, e("span", { ref: anchorRef, className: "hub-menu-portal-anchor", "aria-hidden": true }), ReactDOM.createPortal(panel, portalHost));
@@ -288,7 +289,7 @@
     };
   }
 
-  function MenuToggleRow({ glyph, showGlyph = true, label, checked, disabled = false, onChange, labelWidthClass = "min-w-[145px]", profileKey = null }) {
+  function MenuToggleRow({ glyph, showGlyph = true, label, checked, disabled = false, onChange, labelWidthClass = "min-w-[145px]", profileKey = null, describedBy }) {
     const toggleKey = profileKey ?? (typeof label === "string" ? label : null);
     useEffect(() => {
       if (!toggleKey) return undefined;
@@ -309,6 +310,7 @@
           onChange?.();
         },
         "aria-pressed": checked,
+        "aria-describedby": describedBy,
         ...(toggleKey ? { "data-profile-toggle": toggleKey } : {}),
         className: "hub-toggle-row",
       },
@@ -323,6 +325,24 @@
         { className: `hub-toggle-track ${checked ? "is-on" : ""}` },
         e("span", { className: "hub-toggle-thumb" }),
       ),
+    );
+  }
+
+  function SelectedLevelOnlyToggle({ level, checked, disabled, onChange }) {
+    const descriptionId = React.useId();
+    if (level === "N3") return null;
+    return e("div", { className: "hub-level-scope-setting" },
+      e(MenuToggleRow, {
+        label: "Selected Level Only",
+        showGlyph: false,
+        profileKey: false,
+        checked,
+        disabled,
+        onChange,
+        describedBy: descriptionId,
+      }),
+      e("p", { id: descriptionId, className: "hub-level-scope-description" },
+        "Practise only the concepts introduced at this level."),
     );
   }
 
@@ -412,6 +432,7 @@
   MLH.runSkipQuestion = runSkipQuestion;
   MLH.resetLevelSessionProgress = resetLevelSessionProgress;
   MLH.MenuToggleRow = MenuToggleRow;
+  MLH.SelectedLevelOnlyToggle = SelectedLevelOnlyToggle;
   MLH.MenuSubheading = MenuSubheading;
   MLH.LevelMenu = LevelMenu;
   MLH.ConfirmButton = ConfirmButton;

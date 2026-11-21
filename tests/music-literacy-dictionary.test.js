@@ -6,11 +6,27 @@ const vm = require('node:vm');
 const React = require('react');
 const { renderToStaticMarkup } = require('react-dom/server');
 const bank = require('../music-dictionary/music-literacy-dictionary');
+const progress = require('../music-dictionary/music-concepts-progress');
 const curriculum = require('../shared/music-literacy-curriculum');
 
 const levels = ['N3', 'N4', 'N5', 'H', 'AH'];
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+
+test('Music Literacy confidence persists per entry alongside Music Concepts', () => {
+  const values = new Map();
+  const storage = { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value) };
+  const entries = bank.entries.map(entry => progress.literacyKey(entry.id));
+  assert.equal(new Set(entries).size, bank.entries.length);
+  progress.update(storage, 'MC-0001', 'known');
+  for (const id of entries) progress.update(storage, id, 'known');
+  assert.equal(progress.read(storage)['MC-0001'], 'known');
+  assert.ok(entries.every(id => progress.statusFor(progress.read(storage), id) === 'known'));
+  progress.update(storage, entries[0], 'learning');
+  const reopened = progress.read(storage);
+  assert.equal(progress.statusFor(reopened, entries[0]), 'learning');
+  assert.equal(progress.statusFor(reopened, entries[1]), 'known');
+});
 
 test('every curriculum list item has exactly one entry and keeps its original practice link', () => {
   const indexed = curriculum.rows.flatMap(([, columns], i) => columns.flatMap((column, category) =>

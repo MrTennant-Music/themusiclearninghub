@@ -12,7 +12,6 @@
   const key = 'mlh:my-collections:v1';
   const applications = {
     charades: ['Concept Charades', 'conceptcharades.html', 'app-icons/concept-charades-icon.svg'],
-    recall: ['Concept Recall', 'conceptrecall.html', 'app-icons/concept-recall-icon.svg'],
     escape: ['Escape Room', 'musicescape.html', 'app-icons/music-escape.svg'],
     crossword: ['Crosswords', 'crosswords.html', 'app-icons/crosswords-grid-icon.svg'],
     wordsearch: ['Word Search', 'wordsearch.html', 'app-icons/wordsearch-icon.svg'],
@@ -200,8 +199,8 @@
         ['CONCEPT_RECALL_DATA', 'concept-recall-data.js'],
         ['CONCEPT_RECALL_CORE', 'concept-recall-core.js'],
         ['MusicConceptRevisionGroups', 'music-dictionary/music-concepts-revision-groups.js?v=0ddb26cbd12b'],
-        ['MusicDictionaryQuizCollections', 'music-dictionary/quiz-collections.js?v=da915f9554d8'],
-        ['MusicDictionaryQuizzes', 'music-dictionary/music-concepts-quizzes.js?v=88252ff39243'],
+        ['MusicDictionaryQuizCollections', 'music-dictionary/quiz-collections.js?v=594ffa371c10'],
+        ['MusicDictionaryQuizzes', 'music-dictionary/music-concepts-quizzes.js?v=82f9c49bea72'],
       ];
       catalogueRequest = (async () => {
         for (const [global, source] of dependencies) {

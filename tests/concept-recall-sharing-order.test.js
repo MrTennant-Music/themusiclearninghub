@@ -35,9 +35,10 @@ test("QR settings round-trip both hints states and categories, overriding recipi
   for (const showHints of [true, false]) {
     for (const origin of ["http://127.0.0.1:8765", "https://themusicliteracyhub.netlify.app", "https://themusiclearninghub.netlify.app"]) {
       const categories = ["Dynamics", "National 5 Styles"];
-      const url = new URL(context.conceptRecallShareUrl("N5", showHints, categories, origin + "/conceptrecall.html?level=AH"));
+      const url = new URL(context.conceptRecallShareUrl("N5", showHints, categories, origin + "/conceptrecall.html?level=AH&myCollection=old"));
       assert.equal(url.origin, origin);
       assert.equal(url.searchParams.get("level"), "N5");
+      assert.equal(url.searchParams.has("myCollection"), false);
       const preferences = { showHints: !showHints, categoriesByLevel: { N5: ["Instruments"], H: ["Harmony"] } };
       const restored = context.sharedCustomisePreferences(preferences, "N5", url.search);
       assert.equal(restored.showHints, showHints);
@@ -123,16 +124,15 @@ test("adding optional categories retains medals and records, while removing defa
     const standardCategories = context.standardCategoriesAtLevel(level);
     for (const extras of [...defaultOff[level].map(category => [category]), defaultOff[level]]) {
       const selectedCategories = [...standardCategories, ...extras];
-      const standardGame = vm.runInNewContext(standardCategoryEligibility, { sharedCollection: null, standardCategories, selectedCategories });
+      const standardGame = vm.runInNewContext(standardCategoryEligibility, { standardCategories, selectedCategories });
       assert.equal(standardGame, true);
-      assert.equal(vm.runInNewContext(standardCategoryEligibility, {sharedCollection: {id:'custom'}, standardCategories, selectedCategories}), false);
       const questions = context.questionsForSelectedCategories(level, selectedCategories);
       assert(questions.length > context.questionsForSelectedCategories(level, standardCategories).length);
       const medalEligible = vm.runInNewContext(eligibility, { standardGame });
       const result = core.createResult({ level, questions, answeredIds: new Set(questions.map(q => q.id)), elapsedMs: 1000, standardGame, medalEligible });
       assert.equal(result.medal, "diamond");
       assert.equal(core.updatePersistence(core.emptyPersistence(), result).records[level].bestMedal, "diamond");
-      assert.equal(vm.runInNewContext(standardCategoryEligibility, { sharedCollection: null, standardCategories, selectedCategories: selectedCategories.filter(category => category !== standardCategories[0]) }), false);
+      assert.equal(vm.runInNewContext(standardCategoryEligibility, { standardCategories, selectedCategories: selectedCategories.filter(category => category !== standardCategories[0]) }), false);
     }
   }
 });
@@ -143,9 +143,12 @@ test('real category switches and hints survive QR sharing at all Concept Recall 
   const context=load(['allCategoriesAtLevel','standardCategoriesAtLevel','customisableCategoriesAtLevel','questionsForSelectedCategories','isStylesCategory','conceptRecallShareUrl','sharedCustomisePreferences','savedCategoriesAtLevel'], {CORE:core,DATA:data,DEFAULT_OFF_CATEGORIES:defaults,STYLE_CATEGORY_BY_LEVEL:styles,STYLE_CATEGORIES:new Set(Object.values(styles)),URL,URLSearchParams});
   for(const level of ['N5','H','AH']) {
     const standard=Array.from(context.standardCategoriesAtLevel(level));
+    const allCategories=Array.from(context.customisableCategoriesAtLevel(level));
+    assert.deepEqual(Array.from(context.questionsForSelectedCategories(level,allCategories),q=>q.id),core.questionsForLevel(data.QUESTIONS,level).map(q=>q.id));
     for(const categories of [[...standard,...defaults[level]],standard.slice(1)]) {
       for(const showHints of [false,true]) {
-        const url=new URL(context.conceptRecallShareUrl(level,showHints,categories,'https://example.test/conceptrecall.html?level=N5&hints=1&categories=old'));
+        const url=new URL(context.conceptRecallShareUrl(level,showHints,categories,'https://example.test/conceptrecall.html?level=N5&hints=1&categories=old&selectedLevelOnly=1'));
+        assert.equal(url.searchParams.has('selectedLevelOnly'),false);
         const recipient=context.sharedCustomisePreferences({showHints:!showHints,categoriesByLevel:{[level]:[standard[0]]}},level,url.search);
         assert.equal(recipient.showHints,showHints);
         const restored=Array.from(context.savedCategoriesAtLevel(recipient,level));

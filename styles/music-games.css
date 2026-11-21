@@ -358,7 +358,10 @@ body[data-game-app="connections"] #root .ig-session>.ig-player-top .ig-connectio
 .ig-fullscreen-stats-slot{display:none}
 body[data-game-app="connections"] #root .ig-resource-game:fullscreen .ig-fullscreen-stats-slot{display:block;position:absolute;top:16px;left:16px;z-index:12}
 body[data-game-app] #music-game-customise-menu > .hub-menu-scroll{max-height:420px}
+body[data-game-app="conceptsort"] #music-game-customise-menu > .hub-menu-scroll{max-height:none}
 .ig-crossword-collections-menu{display:flex;flex-direction:column;gap:8px}
+.ig-sort-create-footer{display:grid;flex-shrink:0;gap:8px;margin-top:8px}
+.ig-sort-create-divider{margin:0;border:0;border-top:1px solid #e7e5e4}
 .ig-crossword-menu-row{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:8px 16px;border:1px solid #e7e5e4;border-radius:12px;background:#fafaf9;color:#1c1917;text-align:left;cursor:pointer;transition:background-color .15s,border-color .15s}
 .ig-crossword-menu-row:hover{background:#f5f5f4}
 .ig-crossword-menu-row.ig-crossword-menu-create{min-height:44px;background:#111;border-color:#111;color:#fff}

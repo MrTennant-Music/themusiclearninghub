@@ -3,6 +3,9 @@
   const store = HubCollections, data = MLHGameConcepts;
   const get = id => document.getElementById(id);
   const dictionary = window.MUSIC_CONCEPTS;
+  const progressStore = window.MusicConceptProgress;
+  let progress = progressStore.read(window.localStorage);
+  let showProgress = progressStore.readViews(window.localStorage).progress === true;
   const byId = new Map(dictionary.concepts.map(concept => [concept.id, concept]));
   const selectionColumns = data.categories.map((_, index) =>
     [...new Set(data.levels.flatMap(level => dictionary.tables[level][index]))].filter(id => byId.has(id)));
@@ -50,6 +53,7 @@
   const catalog = ReactDOM.createRoot(get('catalog-collections'));
   const catalogSearch = get('catalog-search');
   const levelPicker = ReactDOM.createRoot(get('catalog-level'));
+  const customise = ReactDOM.createRoot(get('collections-customise'));
   const h = React.createElement;
   const levelIcon = (file, className) => h('img', { src: './ui-icons/' + file + '.svg', alt: '', className });
   const catalogLevels = {
@@ -184,7 +188,7 @@
           const item = node('li');
           const definition = literacyDictionary.forCurriculum(code, literacyCurriculum.entryMarkup(entry));
           const href = definition && literacyDictionary.href(definition.id, code, { collectionsReturn });
-          if (renderEntry(item, literacyText(entry, true, href, newTab), level)) list.append(item);
+          if (renderEntry(item, literacyText(entry, true, href, newTab), level, definition)) list.append(item);
         }
       }
       if (list.childElementCount) cell.append(list);
@@ -312,6 +316,52 @@
         } })),
     );
   }
+  function EditorCustomise({ enabled }) {
+    const { CustomiseButton, MenuPanel, MenuSubheading, MenuToggleRow, useClickOutside } = window.MLH;
+    const [open, setOpen] = React.useState(false);
+    const anchor = React.useRef(null);
+    useClickOutside([anchor], [() => setOpen(false)]);
+    React.useEffect(() => {
+      if (!open) return;
+      const closeOnEscape = event => {
+        if (event.key !== 'Escape') return;
+        setOpen(false);
+        anchor.current?.querySelector('button')?.focus();
+      };
+      document.addEventListener('keydown', closeOnEscape);
+      return () => document.removeEventListener('keydown', closeOnEscape);
+    }, [open]);
+    return h('div', { className: 'hub-menu-anchor', ref: anchor },
+      h(CustomiseButton, {
+        icon: levelIcon('customise', 'h-[21px] w-[21px] object-contain'),
+        dataMenuTrigger: true,
+        expanded: open,
+        onClick: () => setOpen(value => !value),
+      }),
+      open && h(MenuPanel, { title: 'Customise', variant: 'customise', className: 'mc-main-customise' },
+        h(MenuSubheading, null, 'Views'),
+        h('div', { className: 'mc-view-setting' },
+          h(MenuToggleRow, {
+            label: 'My Progress',
+            glyph: levelIcon('concept-progress', 'mc-view-glyph'),
+            profileKey: false,
+            checked: enabled,
+            onChange() {
+              showProgress = !showProgress;
+              progressStore.saveViews(window.localStorage, { progress: showProgress });
+              refreshProgressMarkers();
+              renderEditorCustomise();
+            },
+          }),
+          h('p', { className: 'mc-view-setting-description' }, 'Track which concepts you feel confident with.'),
+        ),
+      ),
+    );
+  }
+  function renderEditorCustomise() {
+    get('collections-customise').hidden = !editing;
+    customise.render(editing ? h(EditorCustomise, { enabled: showProgress }) : null);
+  }
   function renderCatalog() {
     const level = catalogLevel;
     const query = catalogSearch.value.trim().toLowerCase();
@@ -340,6 +390,7 @@
     get('collections-toolbar-title').hidden = !showDetail;
     get('collection-detail-actions').hidden = !showDetail || Boolean(builtIn);
     get('collections-toolbar-actions').hidden = !editing;
+    renderEditorCustomise();
     if (!showWorkspace) renderList(rows);
     get('collection-detail').hidden = !showDetail;
     get('collection-editor').hidden = !editing;
@@ -398,7 +449,6 @@
     const labels = ['rhythm-metre', 'scottish-music'].includes(current.id) ? compoundTimeLabels : {};
     renderConceptTable('preview-concepts', concept => savedIds.has(concept.id), undefined, labels);
     const apps = Object.keys(store.applications)
-      .filter(app => app !== 'recall')
       .sort((a, b) => store.applications[a][0].localeCompare(store.applications[b][0], 'en-GB'));
     get('collection-apps').replaceChildren(...apps.map(app => {
       if (app === 'millionaire') {
@@ -453,6 +503,24 @@
     }
     persistDraft();
   }
+  function updateProgressMarker(marker) {
+    const progressStatus = progressStore.statusFor(progress, marker.dataset.progressConcept);
+    const label = progressStore.options.find(option => option.key === progressStatus).label;
+    marker.className = 'mc-progress-dot mc-progress-dot-' + progressStatus;
+    marker.hidden = !showProgress;
+    marker.setAttribute('aria-label', label);
+    marker.title = label;
+  }
+  function refreshProgressMarkers() {
+    get('collection-editor').querySelectorAll('[data-progress-concept]').forEach(updateProgressMarker);
+  }
+  function appendProgressMarker(name, id) {
+    const marker = node('span');
+    marker.dataset.progressConcept = id;
+    marker.setAttribute('role', 'img');
+    updateProgressMarker(marker);
+    name.append(marker);
+  }
   function renderConceptTable(target, includes, renderControl, labels = {}) {
     const seen = new Set();
     const previewUrl = renderControl ? null : collectionUrl();
@@ -480,6 +548,7 @@
           row.className = 'mc-quiz-select-row';
           link.target = '_blank';
           link.rel = 'noopener';
+          appendProgressMarker(name, id);
           row.append(renderControl(concept, item), link);
           item.append(row);
         } else {
@@ -492,11 +561,12 @@
     }));
   }
   function renderLiteracyEditor(selectedOnly) {
-    const row = literacyRow(literacyCurriculum.rows, (item, text, level) => {
+    const row = literacyRow(literacyCurriculum.rows, (item, text, level, definition) => {
       const name = text.textContent;
       const terms = literacyChoices.get(level).get(name);
       const ids = terms.map(term => term.id);
       if (selectedOnly && !ids.some(id => editing.concepts.has(id))) return false;
+      if (definition) appendProgressMarker(text.querySelector('.mc-concept-name'), progressStore.literacyKey(definition.id));
       addLiteracyLevelBadge(text, data.codes[data.levels.indexOf(level)]);
       if (ids.length) {
         const choice = node('div');
@@ -634,6 +704,15 @@
     } catch (error) { status(error.message); }
   });
   window.addEventListener('storage', event => {
+    if (event.key === progressStore.key || event.key === null) {
+      progress = progressStore.read(window.localStorage);
+      refreshProgressMarkers();
+    }
+    if (event.key === progressStore.viewsKey || event.key === null) {
+      showProgress = progressStore.readViews(window.localStorage).progress === true;
+      refreshProgressMarkers();
+      renderEditorCustomise();
+    }
     if ((event.key === store.key || event.key === null) && !editing) restoreCollectionFromUrl();
   });
 

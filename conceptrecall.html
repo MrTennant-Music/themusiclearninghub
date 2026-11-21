@@ -11,14 +11,14 @@
   <link rel="apple-touch-icon" href="./app-icons/concept-recall-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
   <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
   <script src="./concept-recall-data.js?v=20260717-styles"></script>
   <script src="./concept-recall-core.js?v=56a0648c50d2"></script>
   <style>
@@ -156,9 +156,6 @@
   <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
-<link rel="stylesheet" href="./styles/hub-collections.css?v=3901e5218d10" />
-<script src="./shared/hub-collections.js?v=1bdde7b4f410"></script>
-<script src="./shared/music-games-concepts.js"></script>
 </head>
 <body>
 <div id="root"></div>
@@ -234,7 +231,7 @@ function playCompletionChime() {
 }
 
 function allCategoriesAtLevel(level) {
-  return CORE.categoriesForQuestions(CORE.cumulativeQuestions(DATA.QUESTIONS, level));
+  return CORE.categoriesForQuestions(CORE.questionsForLevel(DATA.QUESTIONS, level));
 }
 
 function standardCategoriesAtLevel(level) {
@@ -246,11 +243,8 @@ function standardQuestionsAtLevel(level) {
   return questionsForSelectedCategories(level, standardCategoriesAtLevel(level));
 }
 
-function customisableCategoriesAtLevel(level, selectedLevelOnly = false) {
-  const categories = selectedLevelOnly
-    ? CORE.categoriesForQuestions(questionsForSelectedCategories(level, allCategoriesAtLevel(level), true))
-    : allCategoriesAtLevel(level);
-  return categories
+function customisableCategoriesAtLevel(level) {
+  return allCategoriesAtLevel(level)
     .sort((a, b) => {
       const aStyles = isStylesCategory(a);
       const bStyles = isStylesCategory(b);
@@ -259,10 +253,8 @@ function customisableCategoriesAtLevel(level, selectedLevelOnly = false) {
     });
 }
 
-function questionsForSelectedCategories(level, selectedCategories, selectedLevelOnly = false) {
-  const selected = new Set(selectedCategories);
-  return CORE.cumulativeQuestions(DATA.QUESTIONS, level).filter(question =>
-    selected.has(question.category) && (!selectedLevelOnly || question.introducedAt === level));
+function questionsForSelectedCategories(level, selectedCategories) {
+  return CORE.questionsForSetup(DATA.QUESTIONS, level, selectedCategories);
 }
 
 function loadCustomisePreferences(storage) {
@@ -270,7 +262,6 @@ function loadCustomisePreferences(storage) {
     const saved = JSON.parse(storage?.getItem(CUSTOMISE_STORAGE_KEY) || "null");
     return {
       showHints: Boolean(saved?.showHints),
-      selectedLevelOnly: saved?.selectedLevelOnly === true,
       categoriesByLevel: saved?.categoriesByLevel && typeof saved.categoriesByLevel === "object" ? saved.categoriesByLevel : {},
     };
   } catch {
@@ -292,7 +283,6 @@ function sharedCustomisePreferences(preferences, level, search = window.location
   const params = new URLSearchParams(search);
   const next = { ...preferences };
   if (params.get("hints") === "1" || params.get("hints") === "0") next.showHints = params.get("hints") === "1";
-  if (params.has("selectedLevelOnly")) next.selectedLevelOnly = params.get("selectedLevelOnly") === "1";
   if (params.has("categories")) {
     try {
       const categories = JSON.parse(params.get("categories"));
@@ -304,12 +294,12 @@ function sharedCustomisePreferences(preferences, level, search = window.location
   return next;
 }
 
-function conceptRecallShareUrl(level, showHints, categories, href = window.location.href, selectedLevelOnly = false) {
+function conceptRecallShareUrl(level, showHints, categories, href = window.location.href) {
   const url = new URL(href);
+  url.search = "";
   url.searchParams.set("level", level);
   url.searchParams.set("hints", showHints ? "1" : "0");
   url.searchParams.set("categories", JSON.stringify(categories));
-  url.searchParams.set("selectedLevelOnly", selectedLevelOnly ? "1" : "0");
   return url.toString();
 }
 
@@ -448,7 +438,7 @@ function AnswerInput({ input, setInput, inputRef, playing, onKeyDown, shake }) {
   </div>;
 }
 
-function CustomiseMenu({ level, categories, selectedCategories, toggleCategory, showHints, toggleHints, selectedLevelOnly, toggleSelectedLevelOnly, resetCustomise, disabled }) {
+function CustomiseMenu({ level, categories, selectedCategories, toggleCategory, showHints, toggleHints, resetCustomise, disabled }) {
   return <>
     <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
     <div className="grid grid-cols-1 sm:grid-cols-2">
@@ -461,7 +451,6 @@ function CustomiseMenu({ level, categories, selectedCategories, toggleCategory, 
         onChange={toggleHints}
       />
     </div>
-    <window.MLH.MenuToggleRow label="Selected Level Only" showGlyph={false} profileKey={false} checked={selectedLevelOnly} disabled={disabled} onChange={toggleSelectedLevelOnly} />
     <window.MLH.MenuSubheading>Categories</window.MLH.MenuSubheading>
     <div className="concept-category-options grid grid-cols-1 sm:grid-cols-2">
       {categories.map((category) => <window.MLH.MenuToggleRow
@@ -812,33 +801,19 @@ function SettingsChangeDialog({ onCancel, onConfirm }) {
 }
 
 function App() {
-  const sharedCollection = useMemo(() => window.HubCollections.selected(), []);
-  const collectionQuestions = useMemo(() => {
-    if (!sharedCollection) return null;
-    const byAnswer = new Map(DATA.QUESTIONS.map(question => [question.answer.toLowerCase(), question]));
-    const dictionary = window.MLHGameConcepts;
-    return dictionary.concepts.filter(concept => sharedCollection.concepts.includes(concept.id)).map(concept => {
-      const existing = byAnswer.get(concept.name.toLowerCase());
-      const category = dictionary.categories.find((_, index) => dictionary.tables[concept.level][index].includes(concept.id));
-      return { id: concept.id, answer: concept.name, category: category || 'Concepts', hint: existing?.hint || concept.definition, aliases: existing?.aliases || [] };
-    });
-  }, [sharedCollection]);
   const initialLevel = requestedLevel();
   const saved = useMemo(() => CORE.loadPersistence(window.localStorage), []);
   const savedCustomise = useMemo(() => sharedCustomisePreferences(loadCustomisePreferences(window.localStorage), initialLevel), []);
   const priorDefaults = new URLSearchParams(location.search).has("categories") ? [] :
     CORE.categoriesForQuestions(CORE.questionsForLevel(DATA.QUESTIONS, initialLevel))
       .filter(category => !(DEFAULT_OFF_CATEGORIES[initialLevel] || []).includes(category));
-  const savedCategories = savedCategoriesAtLevel(savedCustomise, initialLevel, priorDefaults);
-  const initialCategories = savedCustomise.selectedLevelOnly && !questionsForSelectedCategories(initialLevel, savedCategories, true).length
-    ? standardCategoriesAtLevel(initialLevel) : savedCategories;
+  const initialCategories = savedCategoriesAtLevel(savedCustomise, initialLevel, priorDefaults);
   const [activeLevel, setActiveLevel] = useState(initialLevel);
   const [selectedCategories, setSelectedCategories] = useState(() => initialCategories);
-  const [selectedLevelOnly, setSelectedLevelOnly] = useState(() => savedCustomise.selectedLevelOnly === true);
   const [showHints, setShowHints] = useState(() => savedCustomise.showHints);
   const [persistence, setPersistence] = useState(saved);
   const [gameState, setGameState] = useState("ready");
-  const [activeQuestions, setActiveQuestions] = useState(() => collectionQuestions || questionsForSelectedCategories(initialLevel, initialCategories, selectedLevelOnly));
+  const [activeQuestions, setActiveQuestions] = useState(() => questionsForSelectedCategories(initialLevel, initialCategories));
   const [rows, setRows] = useState(activeQuestions);
   const [answeredIds, setAnsweredIds] = useState(new Set());
   const [recentAnswerCategories, setRecentAnswerCategories] = useState([]);
@@ -866,10 +841,8 @@ function App() {
   window.MLH.useClickOutside([levelRef, customiseRef], [() => setLevelOpen(false), () => setCustomiseOpen(false)]);
 
   useEffect(() => {
-    if (sharedCollection) return;
     const nextPreferences = {
       showHints,
-      selectedLevelOnly,
       categoriesByLevel: {
         ...customisePreferencesRef.current.categoriesByLevel,
         [activeLevel]: selectedCategories,
@@ -877,13 +850,13 @@ function App() {
     };
     customisePreferencesRef.current = nextPreferences;
     saveCustomisePreferences(window.localStorage, nextPreferences);
-  }, [activeLevel, selectedCategories, selectedLevelOnly, showHints, sharedCollection]);
+  }, [activeLevel, selectedCategories, showHints]);
 
   const standardCategories = useMemo(() => standardCategoriesAtLevel(activeLevel), [activeLevel]);
-  const availableCategories = useMemo(() => customisableCategoriesAtLevel(activeLevel, selectedLevelOnly), [activeLevel, selectedLevelOnly]);
-  const configuredQuestions = useMemo(() => collectionQuestions || questionsForSelectedCategories(activeLevel, selectedCategories, selectedLevelOnly), [collectionQuestions, activeLevel, selectedCategories, selectedLevelOnly]);
+  const availableCategories = useMemo(() => customisableCategoriesAtLevel(activeLevel), [activeLevel]);
+  const configuredQuestions = useMemo(() => questionsForSelectedCategories(activeLevel, selectedCategories), [activeLevel, selectedCategories]);
   // Additional categories increase the challenge; only removing a default category disables medals.
-  const standardGame = !sharedCollection && standardCategories.every((category) => selectedCategories.includes(category));
+  const standardGame = standardCategories.every((category) => selectedCategories.includes(category));
   const medalEligible = standardGame;
   const standardQuestions = standardQuestionsAtLevel(activeLevel);
   const storedLevelRecord = persistence.records[activeLevel];
@@ -926,12 +899,8 @@ function App() {
   }
 
   function applyLevel(level) {
-    if (sharedCollection) {
-      window.location.href = window.HubCollections.standardLevelUrl(level);
-      return;
-    }
     const categories = standardCategoriesAtLevel(level);
-    const questions = questionsForSelectedCategories(level, categories, selectedLevelOnly);
+    const questions = questionsForSelectedCategories(level, categories);
     setActiveLevel(level);
     setSelectedCategories(categories);
     setShowHints(false);
@@ -948,7 +917,7 @@ function App() {
     const nextCategories = selectedCategories.includes(category)
       ? selectedCategories.filter((name) => name !== category)
       : [...selectedCategories, category];
-    const questions = questionsForSelectedCategories(activeLevel, nextCategories, selectedLevelOnly);
+    const questions = questionsForSelectedCategories(activeLevel, nextCategories);
     setSelectedCategories(nextCategories);
     resetAttempt(questions, activeLevel);
   }
@@ -956,20 +925,9 @@ function App() {
   function applySettingChange(change, resetCurrentAttempt = false) {
     if (change.type === "level") applyLevel(change.value);
     if (change.type === "category") toggleCategory(change.value);
-    if (change.type === "scope") {
-      const exact = !selectedLevelOnly;
-      const questions = questionsForSelectedCategories(activeLevel, selectedCategories, exact);
-      const categories = questions.length ? selectedCategories : standardCategoriesAtLevel(activeLevel);
-      setSelectedLevelOnly(exact);
-      setSelectedCategories(categories);
-      const url = new URL(location.href);
-      url.searchParams.set("selectedLevelOnly", exact ? "1" : "0");
-      history.replaceState(history.state, "", url);
-      resetAttempt(questionsForSelectedCategories(activeLevel, categories, exact), activeLevel);
-    }
     if (change.type === "reset") {
       const categories = standardCategoriesAtLevel(activeLevel);
-      const questions = questionsForSelectedCategories(activeLevel, categories, selectedLevelOnly);
+      const questions = questionsForSelectedCategories(activeLevel, categories);
       setSelectedCategories(categories);
       setShowHints(false);
       resetAttempt(questions, activeLevel);
@@ -1160,7 +1118,7 @@ function App() {
       subtitle="Name as many musical concepts as you can under each category."
       profileLabel={standardGame ? CORE.LEVELS[activeLevel].label : "Custom"}
       profileUsesSharedSettings={false}
-      profileShareUrl={conceptRecallShareUrl(activeLevel, showHints, selectedCategories, window.location.href, !sharedCollection && selectedLevelOnly)}
+      profileShareUrl={conceptRecallShareUrl(activeLevel, showHints, selectedCategories)}
       worksheetConfig={() => ({
         version: 1,
         activityId: "concept-recall",
@@ -1180,17 +1138,16 @@ function App() {
           className="!mb-[10px] md:!mb-[14px]"
           left={<div className="flex items-center gap-2">
             <div className="hub-menu-anchor relative" ref={levelRef}>
-              <window.MLH.LevelButton icon={<img src={ASSET.levels} alt="" className="h-[26px] w-[26px]" />} activeLevel={activeLevel} activeLabel={sharedCollection || standardGame ? CORE.LEVELS[activeLevel].label : "Custom"} isCustom={!sharedCollection && !standardGame} onClick={() => { setCustomiseOpen(false); setLevelOpen((open) => !open); }} dataMenuTrigger={true} />
-              {levelOpen && <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} updateUrl={!sharedCollection} onSelect={(level) => {
+              <window.MLH.LevelButton icon={<img src={ASSET.levels} alt="" className="h-[26px] w-[26px]" />} activeLevel={activeLevel} activeLabel={standardGame ? CORE.LEVELS[activeLevel].label : "Custom"} isCustom={!standardGame} onClick={() => { setCustomiseOpen(false); setLevelOpen((open) => !open); }} dataMenuTrigger={true} />
+              {levelOpen && <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={(level) => {
                 if (level === activeLevel && standardGame && !showHints) { setLevelOpen(false); return; }
                 requestSettingChange({ type: "level", value: level });
               }} levels={levelOptions} /></window.MLH.MenuPanel>}
             </div>
             <div className="hub-menu-anchor relative" ref={customiseRef}>
               <window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]" />} onClick={() => { setLevelOpen(false); setCustomiseOpen((open) => !open); }} dataMenuTrigger={true} />
-              {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>{sharedCollection ? <window.MLH.MenuToggleRow label="Show Hints" showGlyph={false} checked={showHints} onChange={() => setShowHints(value => !value)} /> : <CustomiseMenu level={activeLevel} categories={availableCategories} selectedCategories={selectedCategories} toggleCategory={(category) => requestSettingChange({ type: "category", value: category })} showHints={showHints} toggleHints={() => requestSettingChange({ type: "hints" })} selectedLevelOnly={selectedLevelOnly} toggleSelectedLevelOnly={() => requestSettingChange({ type: "scope" })} resetCustomise={() => requestSettingChange({ type: "reset" })} disabled={false} />}</window.MLH.MenuPanel>}
+              {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><CustomiseMenu level={activeLevel} categories={availableCategories} selectedCategories={selectedCategories} toggleCategory={(category) => requestSettingChange({ type: "category", value: category })} showHints={showHints} toggleHints={() => requestSettingChange({ type: "hints" })} resetCustomise={() => requestSettingChange({ type: "reset" })} disabled={false} /></window.MLH.MenuPanel>}
             </div>
-            {sharedCollection && window.HubCollections.clearCollectionLink(sharedCollection.name, activeLevel)}
             {controlsActive && gameControl}
             {showRemainingPrompt && <div role="status" aria-live="polite" aria-atomic="true" className="flex min-h-11 items-center justify-center rounded-xl border border-green-600 bg-green-600 px-3 text-sm font-bold text-white shadow-sm">
               {remainingConcepts} remaining
@@ -1212,7 +1169,7 @@ function App() {
         <div aria-live="polite" aria-atomic="true" className="sr-only">Score {answeredIds.size} out of {displayedTotal}.</div>
         <div aria-live="assertive" aria-atomic="true" className="sr-only">{timerAnnouncement}</div>
 
-        <ConceptCategoryTables rows={rows} answeredIds={answeredIds} complete={resultComplete} showHints={hintsVisible} recentAnswerCategories={recentAnswerCategories} priorityLevel={sharedCollection ? null : activeLevel} />
+        <ConceptCategoryTables rows={rows} answeredIds={answeredIds} complete={resultComplete} showHints={hintsVisible} recentAnswerCategories={recentAnswerCategories} priorityLevel={activeLevel} />
       </main>
     </div>
 
@@ -1224,7 +1181,7 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 window.dispatchEvent(new Event("concept-recall-ready"));
-</script><script src="generated-runtimes/conceptrecall-1.js?v=f4fe938ea9af"></script>
+</script><script src="generated-runtimes/conceptrecall-1.js?v=1cfff6b514f0"></script>
 <script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

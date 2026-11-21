@@ -75,10 +75,11 @@
  }
  function sharedAvailability(collection, app){
   const words=isWordPuzzle(app);
+  if(!words&&!['sort','charades','escape','quizzes','millionaire'].includes(app))return 'This activity does not support collections';
   const concepts=sharedConcepts(collection,words||app==='charades');
   if(words&&sharedWordConcepts(concepts).length<5)return 'Needs at least five suitable words';
   if(app==='sort'&&uniqueConcepts(concepts,concept=>C.canonical(concept.name)).length<2)return 'Needs at least two distinct, supported concepts';
-  if(['charades','recall','escape','quizzes'].includes(app)&&!concepts.length)return 'Needs at least one supported concept';
+  if(['charades','escape','quizzes'].includes(app)&&!concepts.length)return 'Needs at least one supported concept';
   return '';
  }
  function sharedConceptActivity(collection, level, template, shuffle=C.shuffle){

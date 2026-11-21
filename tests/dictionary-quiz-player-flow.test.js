@@ -12,6 +12,7 @@ function harness({config={level:'N3',name:'Flow test',concepts:['MC-0004']},lite
  const MLH={SkipButton:'skip',FeedbackBadge:'pill',usePersistentScoreState:(initial)=>React.useState(initial),fadeOutAudio:()=>Promise.resolve(),playFeedbackSound:()=>Promise.resolve()};
  const window={MLH,MLHMusicLiteracyQuiz:literacy,MusicDictionaryQuizPractice:P,matchMedia:()=>({matches:false}),
   addEventListener:(name,listener)=>events.set(name,listener),removeEventListener:name=>events.delete(name)};
+ vm.runInNewContext(fs.readFileSync('music-dictionary/music-concepts-quizzes.js','utf8'),{window,React,MUSIC_CONCEPTS:require('../music-dictionary/music-concepts-data.js')});
  vm.runInNewContext(fs.readFileSync('music-dictionary/quiz-player.js','utf8'),{window,React,ReactDOM:{createPortal:node=>node,flushSync:fn=>fn()},MusicDictionaryQuizCore:C,MusicDictionaryQuizCollections:collections,MUSIC_DICTIONARY_QUIZ_BANK:{questions:[question]},localStorage:{getItem:()=>null},document:{getElementById:()=>({})},setTimeout:(fn,ms)=>{timers.push({fn,ms,active:true});return timers.length-1;},clearTimeout:id=>{if(timers[id])timers[id].active=false;}});
  function render(){index=0;effects=[];const tree=window.MusicDictionaryQuizPlayer({config,onSummary:value=>summary=value});effects.forEach(fn=>fn());return tree;}
  function find(tree,predicate){if(!tree||typeof tree!=='object')return null;if(Array.isArray(tree)){for(const n of tree){const found=find(n,predicate);if(found)return found;}return null;}if(predicate(tree))return tree;return find(tree.children,predicate);}
@@ -28,6 +29,26 @@ test('correct and incorrect feedback both wait for an explicit Next action',()=>
 test('using the header navigation after a marked correct answer retains its streak',()=>{
  const f=harness();let tree=f.render();f.answer(tree,question.answer.canonical);tree=f.render();f.button(tree,'Submit').props.onClick();tree=f.render();assert.equal(f.summary.streak,1);
  const skip=f.find(tree,n=>n.tag==='skip');skip.props.resetStreak();skip.props.onClick();f.flush();f.render();assert.equal(f.summary.streak,1);
+});
+test('whole-level quizzes award trophies only with all question types and both audio settings enabled',()=>{
+ const collectionId='level-n3';
+ const concepts=collections.groupsForLevel('N3').find(group=>group.id===collectionId).conceptIds;
+ const config={level:'N3',collectionId,concepts,defaultLevelQuiz:true};
+ const formats=['multiple-choice','audio-select-2','audio-select-3','audio-select-4','short-answer','musical-features','multi-select','order'];
+ for(const [changes,eligible] of [[{},true],[{formats},true],[{formats:formats.filter(format=>format!=='order')},false],[{audioQuestions:false},false]]){
+  const f=harness({config:{...config,...changes}});
+  let tree=f.render();
+  for(let i=0;i<10;i++){
+   f.answer(tree,question.answer.canonical);tree=f.render();f.button(tree,'Submit').props.onClick();tree=f.render();
+   if(i<9){f.button(tree,'Next').props.onClick();f.flush();f.flush();tree=f.render();}
+  }
+  assert.equal(f.summary.streak,10);
+  assert.equal(f.summary.medalEligible,eligible);
+  assert.equal(f.summary.confetti,eligible?1:0);
+ }
+ const nonAudioDisabled=harness({config:{...config,nonAudioQuestions:false}});
+ nonAudioDisabled.render();
+ assert.equal(nonAudioDisabled.summary.medalEligible,false);
 });
 test('whole-level quizzes mix illustrated Music Literacy into the non-audio multiple-choice pool',async()=>{
  const dictionary=require('../music-dictionary/music-literacy-dictionary');

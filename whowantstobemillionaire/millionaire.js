@@ -85,7 +85,7 @@ function QuestionTypeOptions({ settings, setSettings }) {
     }
   }, [settings.musicLiteracyEnabled, settings.musicConceptsEnabled, settings.conceptAudioEnabled, settings.conceptNonAudioEnabled]);
   return <>
-    <window.MLH.MenuToggleRow label="Selected Level Only" showGlyph={false} profileKey={false} checked={settings.selectedLevelOnly === true} onChange={() => setSettings(current => ({ ...current, selectedLevelOnly: !current.selectedLevelOnly }))} />
+    <window.MLH.SelectedLevelOnlyToggle level={settings.level} checked={settings.selectedLevelOnly === true} onChange={() => setSettings(current => ({ ...current, selectedLevelOnly: !current.selectedLevelOnly }))} />
     <window.MLH.MenuSubheading>Questions</window.MLH.MenuSubheading>
     <window.MLH.MenuToggleRow glyph={<img src="ui-icons/trebleclef.svg" alt="" aria-hidden="true" className="object-contain" style={{ width: 28, height: 28, maxWidth: "none", flexShrink: 0 }} />} label="Music Literacy" checked={enabled("musicLiteracyEnabled")} onChange={() => toggle("musicLiteracyEnabled")} />
     <div className="millionaire-concept-question-group" role="group" aria-label="Music Concepts and question types">

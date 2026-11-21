@@ -89,7 +89,7 @@ function groupsForLevel(level){
     id:column===0?stylesIds[code]+'-styles':code.toLowerCase()+'-'+category,
     label:qualificationLabel+' – '+label,
     level,curriculumLevel:code,curriculumColumn:column,conceptIds,
-    glyph:column===0?undefined:'./app-icons/charades-collection-'+category+'.svg'
+    glyph:'./app-icons/charades-collection-'+category+'.svg'
    });
   });
  }
@@ -98,7 +98,7 @@ function groupsForLevel(level){
   groups.push({
    id:category+'-all-levels',label,level,fullWidth:true,curriculumColumn:column,
    conceptIds:[...new Set(D.levels.flatMap(qualification=>D.tables[qualification][column]))],
-   glyph:column===0?'./music-dictionary/quiz-icons/styles-speaker.png':'./app-icons/charades-collection-'+category+'.svg'
+   glyph:'./app-icons/charades-collection-'+category+'.svg'
   });
  });
  for(const [rank,code] of codes.entries()){if(level!=='ALL'&&level!==code)continue;groups.push({id:'level-'+code.toLowerCase(),label:D.levels[rank]+' — All Concepts',qualification:code,level,conceptIds:D.concepts.filter(c=>c.level===D.levels[rank]).map(c=>c.id)});}

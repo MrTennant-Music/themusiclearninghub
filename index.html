@@ -460,6 +460,19 @@ button.card-main:not([aria-disabled="true"]):active {
   position: relative;
   top: calc(.12em - 3px);
 }
+.activity-tag-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 32px;
+  margin: 24px 0 20px;
+  padding: 0;
+  color: var(--muted);
+  font-size: .85rem;
+  list-style: none;
+}
+.activity-tag-legend li { display: flex; align-items: center; gap: 8px; }
+.activity-tag-legend .activity-tag { top: auto; margin-left: 0; flex-shrink: 0; }
 .arrow {
   position: absolute;
   right: 18px;
@@ -917,9 +930,7 @@ button.card-main:not([aria-disabled="true"]):active {
         <div class="nav-dropdown-menu">
           <a href="#" data-open="installOverlay"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor"><path d="M18.438,20.938H5.563a2.5,2.5,0,0,1-2.5-2.5V5.564a2.5,2.5,0,0,1,2.5-2.5H18.438a2.5,2.5,0,0,1,2.5,2.5V18.438A2.5,2.5,0,0,1,18.438,20.938ZM5.563,4.064a1.5,1.5,0,0,0-1.5,1.5V18.438a1.5,1.5,0,0,0,1.5,1.5H18.438a1.5,1.5,0,0,0,1.5-1.5V5.564a1.5,1.5,0,0,0-1.5-1.5Z"/><path d="M15,12.5H12.5V15a.5.5,0,0,1-1,0V12.5H9a.5.5,0,0,1,0-1h2.5V9a.5.5,0,0,1,1,0v2.5H15A.5.5,0,0,1,15,12.5Z"/></svg>Add to Home Screen</a>
           <a href="#" data-open="qrOverlay"><img src="ui-icons/qr-code-svgrepo-com.svg?v=20261106-roundest" alt="" aria-hidden="true" />Share QR Code</a>
-          <a href="#" data-open="conceptGridOverlay"><svg class="music-concepts-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10"/><path d="M4 12h16"/><path d="M4 18h10"/></svg>Concept List</a>
           <a href="#" data-open="examDatesOverlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2m-8 3h2"/></svg>Exam Dates</a>
-          <a href="#" data-open="questionPaperAnalysisOverlay"><img src="ui-icons/analysis.svg" alt="" aria-hidden="true" />Question Paper Analysis</a>
         </div>
       </div>
     </nav>
@@ -955,6 +966,7 @@ button.card-main:not([aria-disabled="true"]):active {
   <span id="sectionStatus" role="status" class="home-filter-status"></span>
   <div id="appCategories"></div>
   <p id="searchEmpty" class="hidden" role="status" style="text-align:center;color:var(--muted);padding:64px 24px;margin:0;">No activities found. Try another search.</p>
+  <ul id="activityTagLegend" class="activity-tag-legend" role="list" aria-label="Activity labels"></ul>
 </main>
 
 <footer class="footer" id="resources">
@@ -1070,7 +1082,7 @@ button.card-main:not([aria-disabled="true"]):active {
 <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
 <script src="./shared/music-literacy-curriculum.js?v=e253dc05119d"></script>
 <script src="./music-dictionary/music-literacy-dictionary.js?v=5fb8d4a20a4a"></script>
-<script src="./shared/hub-collections.js?v=1bdde7b4f410"></script>
+<script src="./shared/hub-collections.js?v=4686dab63b40"></script>
 <script>
 const levels = [
   ["N3", "National 3"],
@@ -1163,7 +1175,7 @@ const appData = [
     { href: "digital-question-papers/digitalquestionpapers.html", title: "Digital Question Papers", desc: "Complete interactive past papers with audio and feedback.", keywords: "interactive exam papers past paper national 5 higher advanced higher assessment audio feedback", audio: true, disabled: ["N3", "N4"] },
     { href: "music-dictionary/musicdictionary.html", title: "Music Dictionary", desc: "Explore musical concepts, definitions and examples.", keywords: "music concepts dictionary definitions reference styles melody harmony rhythm tempo texture structure form timbre", audio: true, disabled: [] },
     { href: "conceptquiz.html", title: "Concept Quizzes", desc: "Quick questions to strengthen your musical knowledge.", keywords: "concept quizzes collections custom quiz question bank definitions musical knowledge", audio: true, disabled: [] },
-    { href: "mycollections.html", title: "Concept Collections", desc: "Browse curated collections or create your own to use across activities.", keywords: "shared saved custom collections concept sort charades recall word search escape room millionaire quiz", audio: false, teacherOnly: true, disabled: [], direct: true },
+    { href: "mycollections.html", title: "Concept Collections", desc: "Browse curated collections or create your own to use across activities.", keywords: "shared saved custom collections concept sort charades word search escape room millionaire quiz", audio: false, teacherOnly: true, disabled: [], direct: true },
     { href: "audioconceptlibrary.html", title: "Concept Audio Library", desc: "Browse audio examples of music concepts.", keywords: "audio concept library examples listening teacher resources Glow OneDrive recordings", audio: true, teacherOnly: true, disabled: [] }
   ]},
   { category: "Games", apps: [
@@ -1285,16 +1297,32 @@ function selectHomeSection(section) {
   window.history.replaceState(null, "", url);
 }
 const collectionAppPaths = new Set(Object.values(window.HubCollections?.applications ?? {}).map(([, href]) => href));
+const activityTags = {
+  audio: {
+    label: "Contains Audio",
+    icon: '<img class="activity-tag-icon" src="./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15" alt="">',
+  },
+  collections: {
+    label: "Supports Concept Collections",
+    icon: '<img class="activity-tag-icon" src="./ui-icons/concept-collections.svg" alt="">',
+  },
+  staff: {
+    label: "Built for Staff",
+    icon: '<svg class="activity-tag-icon" viewBox="-3 -3 30 30" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-2a7 7 0 0 1 14 0v2z"/></svg>',
+  },
+};
+
+function renderActivityTag({ label, icon }, decorative = false) {
+  const attributes = decorative ? 'aria-hidden="true"' : `role="img" aria-label="${label}" title="${label}"`;
+  return `<span class="activity-tag" ${attributes}>${icon}</span>`;
+}
 
 function renderActivityTags(app) {
-  const audio = app.audio ? '<span class="activity-tag" title="Contains audio"><img class="activity-tag-icon" src="./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15" alt="Contains audio"></span>' : "";
-  const collections = collectionAppPaths.has(app.href)
-    ? '<span class="activity-tag" title="Supports Concept Collections"><img class="activity-tag-icon" src="./ui-icons/concept-collections.svg" alt="Supports Concept Collections"></span>'
-    : "";
-  const teacher = app.teacherOnly
-    ? '<span class="activity-tag" title="Built for teachers" role="img" aria-label="Built for teachers"><svg class="activity-tag-icon" viewBox="-3 -3 30 30" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-2a7 7 0 0 1 14 0v2z"/></svg></span>'
-    : "";
-  const tags = [audio, collections, teacher].filter(Boolean).join(" ");
+  const tags = [
+    app.audio && activityTags.audio,
+    collectionAppPaths.has(app.href) && activityTags.collections,
+    app.teacherOnly && activityTags.staff,
+  ].filter(Boolean).map(tag => renderActivityTag(tag)).join(" ");
   return tags ? ` <span class="activity-tags">${tags}</span>` : "";
 }
 
@@ -1461,6 +1489,8 @@ async function copyText(button, text, successText, failText, resetHtml, resetDel
 }
 
 renderApps();
+document.getElementById("activityTagLegend").innerHTML = Object.values(activityTags)
+  .map(tag => `<li>${renderActivityTag(tag, true)}${tag.label}</li>`).join("");
 updateAchievementButtons();
 renderConceptGrid();
 document.getElementById("activitySearch").value = new URLSearchParams(window.location.search).get("q") || "";

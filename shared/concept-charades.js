@@ -208,7 +208,7 @@
     const showPreview = phase === 'ready';
     const collectionTitle = sharedCollection
       ? window.HubCollections.clearCollectionLink(sharedCollection.name, options.level)
-      : 'All Concepts';
+      : null;
     const skipGlyph = e('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2.5, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true },
       e('path', { d: 'M6 12h12m-6-6 6 6-6 6' }));
     const mediaControls = e('div', { className: 'charades-tools' },
@@ -228,7 +228,6 @@
       e('main', { className: 'charades-main ' + H.shell.mainShellClass + (locked ? ' is-active' : ''), ref: mainRef },
         e('div', { className: 'charades-toolbar' }, e(H.AppToolbar, {
           className: sharedCollection ? 'charades-toolbar-with-collection' : '',
-          feedback: !sharedCollection && phase === 'ready' && e('h2', { className: 'charades-collection-heading hub-collection-toolbar-title' }, collectionTitle),
           left: e('div', { className: 'charades-tools' },
             e('div', { className: 'charades-anchor' },
               e(H.LevelButton, { icon: icon('levels', 'h-[26px] w-[28px] object-contain scale-[1.06]'), activeLevel: options.level, activeLabel: levels[options.level].label, disabled: locked, dataMenuTrigger: true, expanded: menu === 'level', onClick: () => setMenu(menu === 'level' ? null : 'level') }),
@@ -243,7 +242,7 @@
                   e('div', { className: 'hub-toggle-row charades-timer-row' },
                     e('label', { className: 'hub-toggle-label', htmlFor: 'charades-timer' }, icon('timer'), 'Timer'),
                     e('select', { id: 'charades-timer', value: options.seconds, onChange: event => updateOptions({ seconds: Number(event.target.value) }) }, C.durations.map(seconds => e('option', { key: seconds, value: seconds }, seconds + ' seconds')))),
-                  !sharedCollection && e(H.MenuToggleRow, { label: 'Selected Level Only', showGlyph: false, profileKey: false, checked: options.selectedLevelOnly, onChange: () => updateOptions({ selectedLevelOnly: !options.selectedLevelOnly }) }),
+                  !sharedCollection && e(H.SelectedLevelOnlyToggle, { level: options.level, checked: options.selectedLevelOnly, onChange: () => updateOptions({ selectedLevelOnly: !options.selectedLevelOnly }) }),
                   window.HubCollections.menu('charades', null, options.level)))),
             sharedCollection && collectionTitle),
           right: e('div', { className: 'charades-tools' },

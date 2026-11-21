@@ -190,6 +190,7 @@
 .mc-detail-toolbar .mc-concept-nav a{max-width:225px}
 
 .mc-table :is(a.mc-levelled-link,.mc-levelled-text){flex-wrap:wrap}
+#mc-literacy-list .mc-levelled-text{font-weight:400}
 .mc-table .mc-concept-name{flex:1 1 100px;min-width:min-content;overflow-wrap:normal}
 
 
@@ -304,7 +305,7 @@
 
 .mc-quizzes-button.is-active,.mc-quizzes-button.is-active:hover{background:#111;color:#fff;border-color:#111}.mc-quizzes-button.is-active>img{filter:brightness(0) invert(1)}
 
-.mc-main-customise .mc-view-setting .hub-toggle-row{min-height:54px}.mc-view-setting-description{margin:6px 8px 12px;font-size:12px;font-weight:400;line-height:1.5;color:#57534e}
+.mc-main-customise :is(.mc-view-setting,.hub-level-scope-setting) .hub-toggle-row{min-height:54px}.mc-view-setting-description{margin:6px 8px 12px;font-size:12px;font-weight:400;line-height:1.5;color:#57534e}
 
 .mc-quiz-collection-glyph{mix-blend-mode:multiply}
 

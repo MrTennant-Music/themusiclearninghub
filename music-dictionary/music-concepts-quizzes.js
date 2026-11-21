@@ -23,6 +23,11 @@ function selectedQuestionTypes(formats){
  return selected.length?selected:questionTypes;
 }
 const formatsForTypes=types=>types.flatMap(([, , ,formats])=>formats);
+function allQuestionTypesEnabled(settings){
+ if(settings.audioQuestions===false||settings.nonAudioQuestions===false)return false;
+ if(!Array.isArray(settings.formats))return true;
+ return questionTypes.every(([, , ,formats])=>formats.every(format=>settings.formats.includes(format)));
+}
 function normaliseSettings(settings){
  const audioQuestions=settings?.audioQuestions!==false,nonAudioQuestions=settings?.nonAudioQuestions!==false;
  const formats=Array.isArray(settings?.formats)?formatsForTypes(selectedQuestionTypes(settings.formats)):null;
@@ -33,7 +38,7 @@ function read(key,fallback){try{return JSON.parse(localStorage.getItem(key))||fa
 function save(key,value){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
 function CollectionGlyph({group:g}){const qualification=g.qualification||(g.id?.startsWith('level-')?g.id.slice(6).toUpperCase():null);return qualification?h('span',{'aria-hidden':true,className:'mc-quiz-collection-glyph-frame mc-quiz-level-glyph-frame'},h('span',{className:'absolute left-[4px] top-[4px] flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-2xl border border-stone-200 bg-white text-[1.22rem] font-black leading-none tracking-tight text-stone-800 shadow-sm scale-[1.08]'},qualification==='ALL'?'All':qualification)):h('span',{className:'mc-quiz-collection-glyph-frame','aria-hidden':true},h('img',{src:collectionGlyph(g),className:'mc-quiz-collection-glyph',style:collectionGlyphStyle(g),alt:''}));}
 const api=window.MusicDictionaryQuizzes={
- CollectionGlyph,collectionGlyph,collectionGlyphStyle,normaliseSettings,
+ CollectionGlyph,collectionGlyph,collectionGlyphStyle,normaliseSettings,allQuestionTypesEnabled,
  savedSettings(){const {testing,count,...saved}=read(settingsKey,{});return normaliseSettings(saved);},
  useSettings(){const [settings,set]=window.MLH.useProfileState("dictionaryQuizSettings",api.savedSettings);const update=patch=>set(old=>{const next=normaliseSettings({...old,...patch});delete next.testing;save(settingsKey,next);return next;});return [settings,update];},
  useGroups(){

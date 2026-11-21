@@ -123,6 +123,7 @@ function practiceQuestion(q,index,{response='',locked=false,onAnswer=()=>{},touc
 window.MusicDictionaryQuizPlayer=function({config,onExit,onSummary,embedded=false,exiting=false}){
  const groups=React.useMemo(()=>MusicDictionaryQuizCollections.groupsForLevel(config.level),[]);
  const identity=React.useMemo(()=>P.collectionIdentity(config,groups),[]);
+ const medalEligible=identity.medalEligible&&window.MusicDictionaryQuizzes.allQuestionTypesEnabled(config);
  const Q=MusicDictionaryQuizCollections;
  const configuredIds=new Set(Q.scopeIds(config.concepts,config.level));
  const wholeLevel=!config.savedCollectionId&&groups.some(group=>group.id===config.collectionId&&!group.cumulative&&
@@ -199,14 +200,14 @@ window.MusicDictionaryQuizPlayer=function({config,onExit,onSummary,embedded=fals
   stopAudio();
   const mark=C.markQuestion(q,response),ok=mark.earned===mark.available,partial=mark.earned>0&&!ok;
   const next=P.markPractice({correct,attempted,streak,best},ok,C.continuesPracticeStreak(q,mark));
-  const medal=P.earnedMedal(next.streak,identity.medalEligible);
+  const medal=P.earnedMedal(next.streak,medalEligible);
   setCorrect(next.correct);setAttempted(next.attempted);setStreak(next.streak);setBest(next.best);
   setFeedback({correct:ok,partial});setFeedbackFading(false);
   try{window.MLH.playFeedbackSound(ok||partial,!!medal,medal==='diamond'?'platinum':medal)?.catch?.(()=>{});}catch{}
   if(medal)setConfetti(v=>v+1);
  }
  function resetScore(){setCorrect(0);setAttempted(0);setStreak(0);setBest(0);setConfetti(0);nextQuestion();}
- React.useLayoutEffect(()=>{onSummary?.({key:JSON.stringify(config),correct,attempted,streak,best,confetti,level:config.level,activity:identity.activity,medalEligible:identity.medalEligible,questionCount:pool.length,hasAudio,openWorksheet,resetScore});},[correct,attempted,streak,best,confetti,pool]);
+ React.useLayoutEffect(()=>{onSummary?.({key:JSON.stringify(config),correct,attempted,streak,best,confetti,level:config.level,activity:identity.activity,medalEligible,questionCount:pool.length,hasAudio,openWorksheet,resetScore});},[correct,attempted,streak,best,confetti,pool]);
 
  const toolbarHost=document.getElementById('cq-question-navigation-host');
  const skip=q&&h(window.MLH.SkipButton,{disabled:phase!=='idle',resetStreak:()=>{if(!feedback)setStreak(0);},onClick:nextQuestion,icon:h('img',{src:'./ui-icons/next.svg',alt:'','aria-hidden':true,className:'h-[27.8px] w-[27.8px] object-contain'})});

@@ -234,14 +234,14 @@
         }} dataMenuTrigger={true} expanded={open} ariaControls="library-level-menu" />}{open && <window.MLH.MenuPanel id="library-level-menu" title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={level} levels={levels} updateUrl={!isWordPuzzle} onSelect={id => {
             setOpen(false);
             onLevel(id);
-          }} /></window.MLH.MenuPanel>}</div>{showCollectionsMenu && fixedGame && wordPuzzleCollections && <div className="hub-menu-anchor relative">
+          }} /></window.MLH.MenuPanel>}</div>{showCollectionsMenu && fixedGame && wordPuzzleCollections?.menu && <div className="hub-menu-anchor relative">
       <window.MLH.CustomiseButton icon={<img src="./ui-icons/customise.svg" alt="" aria-hidden="true" className="h-[21px] w-[21px] object-contain" />} onClick={() => {
         setOpen(false);
         if (!customiseOpen) onCustomise?.();
         setCustomiseOpen(value => !value);
       }} dataMenuTrigger={true} expanded={customiseOpen} ariaControls="music-game-customise-menu" />
-      {customiseOpen && <window.MLH.MenuPanel id="music-game-customise-menu" title="Customise" position="left-0" variant="customise" dataMenuPanel={true}>
-        <div onClick={() => setCustomiseOpen(false)}>{wordPuzzleCollections}</div>
+      {customiseOpen && <window.MLH.MenuPanel id="music-game-customise-menu" title="Customise" position="left-0" variant="customise" dataMenuPanel={true} footer={wordPuzzleCollections.footer && <div className="ig-sort-create-footer" onClick={() => setCustomiseOpen(false)}>{wordPuzzleCollections.footer}</div>}>
+        <div onClick={() => setCustomiseOpen(false)}>{wordPuzzleCollections.menu}</div>
       </window.MLH.MenuPanel>}
     </div>}{collectionLink}</div>;
   }
@@ -1307,7 +1307,7 @@
       !selected.tags.includes('literacy-connections') && !window.MLHGameMedals.isUserCollection(selected);
     const showScopeToggle = isConceptSort ? sortElementsSelected && selected?.tags?.includes('generated-sort') && !window.MLHGameMedals.isUserCollection(selected)
       : isWordPuzzle ? selected?.tags?.includes('random-' + fixedGame) : standardConnections;
-    const scopeToggle = showScopeToggle && <window.MLH.MenuToggleRow label="Selected Level Only" showGlyph={false} profileKey={false} checked={selectedLevelOnly} onChange={() => {
+    const scopeToggle = levelFilter !== 'N3' && showScopeToggle && <window.MLH.SelectedLevelOnlyToggle level={levelFilter} checked={selectedLevelOnly} onChange={() => {
       if (isConceptSort) nextSort(levelFilter, 'elements', !selectedLevelOnly);
       else if (isWordPuzzle) nextWordPuzzle(levelFilter, null, selectedLevelOnly);
       else nextConnection(levelFilter, !selectedLevelOnly);
@@ -1327,12 +1327,15 @@
           <img src="./ui-icons/bin.svg" alt="" />
         </button>
       </div>)}
-      {wordPuzzleMenuRow({id:'create',title:'Create',onClick:()=>openSortEditor()})}
     </div> : isWordPuzzle ? <div className="ig-crossword-collections-menu">
       {scopeToggle}
       {window.HubCollections.menu(fixedGame, null, levelFilter)}
     </div> : scopeToggle;
-    return <WordPuzzleCollectionsContext.Provider value={wordPuzzleMenu}><div className={`${window.MLH.shell.pageShellClass} ig-workspace`}><window.MLH.AppHeader icon={appConfig?.icon || './app-icons/concept-quiz-icon.svg'} title={publicTitle} subtitle={appConfig?.subtitle || 'Practise music concepts with quizzes, matching and sorting games.'} worksheetConfig={['crossword','wordsearch'].includes(fixedGame) && selected && view === 'activity' ? async () => {
+    const sortMenuFooter = isConceptSort && <>
+      <hr className="ig-sort-create-divider" />
+      {wordPuzzleMenuRow({id:'create',title:'Create',onClick:()=>openSortEditor()})}
+    </>;
+    return <WordPuzzleCollectionsContext.Provider value={{ menu: wordPuzzleMenu, footer: sortMenuFooter }}><div className={`${window.MLH.shell.pageShellClass} ig-workspace`}><window.MLH.AppHeader icon={appConfig?.icon || './app-icons/concept-quiz-icon.svg'} title={publicTitle} subtitle={appConfig?.subtitle || 'Practise music concepts with quizzes, matching and sorting games.'} worksheetConfig={['crossword','wordsearch'].includes(fixedGame) && selected && view === 'activity' ? async () => {
           await window.IGRuntime.load('player', fixedGame);
           return window.MLHWordPuzzleWorksheet.createConfig(selected, fixedGame, window.IGLearningPuzzles, C.shuffle);
         } : undefined} profileUsesSharedSettings={false} profileShowLabel={false} profileShareUrl={share.url || undefined} profileShareDisabled={share.key !== shareKey || !share.url}>{fixedGame && view === 'activity' && (selected || appConfig?.id === 'connections') && <div id="ig-header-game-stats" className="ig-header-game-stats" />}</window.MLH.AppHeader><div className={`${window.MLH.shell.pageContentClass} ig-page-content`}><main className={`${window.MLH.shell.mainShellClass} ig-app ig-wordwall ig-view-${view}${fixedGame ? ' ig-dedicated-game' : ''}`}>{playerPage && !selected && (appConfig?.id === 'connections' && loading ? <section className="ig-resource-card ig-panel ig-connection-loading" aria-label="Loading Connections" aria-busy="true" style={{
