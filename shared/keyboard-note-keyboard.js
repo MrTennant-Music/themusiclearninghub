@@ -10,10 +10,11 @@
     onSelect,
     selected,
     enabled,
+    showPendingSelection = false,
     unlabelled = false
   }) {
     const find = question.type === "find";
-    const fill = (key, normal) => !find ? key.pitch === question.pitch ? feedback ? feedback.correct ? "#16a34a" : "#dc2626" : "#2563eb" : normal : feedback && key.pitch === question.pitch ? "#16a34a" : feedback && selected === key.pitch ? "#dc2626" : normal;
+    const fill = (key, normal) => !find ? key.pitch === question.pitch ? feedback ? feedback.correct ? "#16a34a" : "#dc2626" : "#2563eb" : normal : feedback && key.pitch === question.pitch ? "#16a34a" : feedback && selected === key.pitch ? "#dc2626" : showPendingSelection && selected === key.pitch ? "#2563eb" : normal;
     const props = key => find ? {
       role: "button",
       tabIndex: enabled ? 0 : -1,

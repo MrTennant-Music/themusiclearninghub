@@ -106,3 +106,28 @@ test('race creates private question pool and validates teacher streak targets',a
   assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',gameType:'unknown'})})).statusCode,400);
  }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
 });
+
+test('Higher and Advanced Higher host Find the Key in Quiz and Race',async()=>{
+ env();const original=global.fetch;let payload;
+ const K=require('../../keyboard-notes.js');
+ global.fetch=async(url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({phase:'lobby'})};};
+ const post=body=>handler({httpMethod:'POST',body:JSON.stringify(body)});
+ try{
+  for(const level of ['H','AH']){
+   for(const gameType of ['quiz','race']){
+    const options={...K.defaults[level],treble:false,sharps:false};
+    const result=await post({action:'create',level,gameType,options,count:50});
+    assert.equal(result.statusCode,200);
+    assert.deepEqual(payload.p_data.options,options);
+    assert.equal(payload.p_data.allowedAnswers.length,25);
+    assert.ok(payload.p_data.questions.every(q=>q.type==='find'&&q.note.clef==='bass'&&q.note.accidental!=='sharp'&&payload.p_data.allowedAnswers.includes(K.classroomKeyId(q.pitch))));
+    const range=level==='H'?[-2,10]:[-4,12];
+    assert.ok(payload.p_data.questions.every(q=>q.note.step>=range[0]&&q.note.step<=range[1]));
+   }
+  }
+  const request={action:'answer',pin:'123456',token:'a'.repeat(64),index:0};
+  assert.equal((await post({...request,answer:'key:24'})).statusCode,200);
+  assert.deepEqual(payload.p_data,{answer:'key:24',pitch:24,index:0});
+  assert.equal((await post({...request,answer:'key:25'})).statusCode,400);
+ }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
+});

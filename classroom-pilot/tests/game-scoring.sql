@@ -44,10 +44,11 @@ begin
  if score not between 74 and 75 then raise exception 'Server-based response score regression: %',score; end if;
  result:=public.keyboard_pilot('next','000001','host');
  if (result->>'deadline')::bigint-(result->>'startedAt')::bigint<>120000 then raise exception 'Next question timer regression'; end if;
+ if result->>'phase'<>'countdown' or (result->>'startedAt')::bigint-(result->>'serverTime')::bigint<>3000 then raise exception 'Next-question countdown regression'; end if;
  if (result->'players'->0->>'answered')::boolean then raise exception 'Answer state not reset'; end if;
  result:=public.keyboard_pilot('read','000001','pupil');
  if result->'myAnswer'<>'null'::jsonb then raise exception 'Previous Quiz answer survived next question'; end if;
- if result->>'phase'<>'countdown' or (result->>'startedAt')::bigint-(result->>'serverTime')::bigint<>3000 then raise exception 'Next-question countdown regression'; end if;
+ if result->>'phase'<>'countdown' then raise exception 'Countdown did not persist across reads'; end if;
  begin
   perform public.keyboard_pilot('answer','000001','pupil','{"answer":"C","pitch":0,"index":1}');
   raise exception 'Answer accepted during countdown';
@@ -238,6 +239,33 @@ begin
  update keyboard_pilot_rooms set state=state||'{"phase":"question"}'::jsonb,players=(select jsonb_agg(value||'{"highestStreak":2}'::jsonb) from jsonb_array_elements(players)) where pin='000009';
  result:=public.keyboard_pilot('read','000009','timedtwo');
  if jsonb_array_length(result->'winners')<>2 then raise exception 'Timed Race tie regression'; end if;
+ -- Find the Key must distinguish keys of the same pitch class in different octaves.
+ perform public.keyboard_pilot('create','000010','quizhost','{"phase":"lobby","level":"H","index":0,"scoringVersion":2,"questionTime":20,"allowedAnswers":["key:0","key:12","key:24"],"questions":[{"type":"find","pitch":12},{"type":"find","pitch":12},{"type":"find","pitch":12},{"type":"find","pitch":12},{"type":"find","pitch":12}]}');
+ perform public.keyboard_pilot('join','000010','quizright','{"name":"Right octave"}');
+ perform public.keyboard_pilot('join','000010','quizwrong','{"name":"Wrong octave"}');
+ perform public.keyboard_pilot('start','000010','quizhost');
+ perform public.keyboard_pilot('answer','000010','quizright','{"answer":"key:12","pitch":12,"index":0}');
+ result:=public.keyboard_pilot('answer','000010','quizwrong','{"answer":"key:0","pitch":0,"index":0}');
+ if result->>'correct' is distinct from 'false' or
+    (result->'players'->0->>'score')::integer not between 50 and 100 or
+    (result->'players'->1->>'score')::integer is distinct from 0 then
+   raise exception 'Find the Key Quiz octave grading failed: %',result;
+ end if;
+ perform public.keyboard_pilot('create','000011','racehost','{"phase":"lobby","level":"AH","gameType":"race","targetStreak":2,"index":0,"allowedAnswers":["key:0","key:12"],"questions":[{"type":"find","pitch":12},{"type":"find","pitch":0},{"type":"find","pitch":12},{"type":"find","pitch":0},{"type":"find","pitch":12}]}');
+ perform public.keyboard_pilot('join','000011','racer','{"name":"Racer"}');
+ update public.keyboard_pilot_rooms set players=jsonb_set(players,'{0,questionIndex}','0') where pin='000011';
+ perform public.keyboard_pilot('start','000011','racehost');
+ result:=public.keyboard_pilot('read','000011','racer');
+ if result->'question'->>'pitch' is distinct from '12' then raise exception 'Race did not send written note'; end if;
+ result:=public.keyboard_pilot('answer','000011','racer','{"answer":"key:12","pitch":12,"index":0}');
+ if result->>'myStreak' is distinct from '1' then raise exception 'Correct key did not advance Race'; end if;
+ result:=public.keyboard_pilot('answer','000011','racer','{"answer":"key:12","pitch":12,"index":1}');
+ if result->>'myStreak' is distinct from '0' or result->>'lastCorrect' is distinct from 'false' then
+   raise exception 'Wrong octave did not reset Race';
+ end if;
+ result:=public.keyboard_pilot('answer','000011','racer','{"answer":"key:12","pitch":12,"index":2}');
+ result:=public.keyboard_pilot('answer','000011','racer','{"answer":"key:0","pitch":0,"index":3}');
+ if result->>'winner' is distinct from 'Racer' then raise exception 'Exact keys did not finish Race'; end if;
 end $$;
 
 rollback;

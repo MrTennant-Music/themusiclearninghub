@@ -28,8 +28,10 @@ apply any unapplied migrations in this order:
 
 1. `migrations/20261007-game-timer-and-speed-scoring.sql` adds the speed-scoring
    helper and replaces the room-control function.
-2. `migrations/20261014-next-question-countdown.sql` replaces that function with
-   the current countdown, Race, timer, best-streak and Quiz-answer recovery rules.
+2. `migrations/20261014-next-question-countdown.sql` refreshes the speed-scoring
+   helper and the room-control function permissions.
+3. `migrations/20261121-find-the-key.sql` installs the current room-control
+   function with exact-key grading for Find the Key.
 
 These migrations do not recreate tables or remove rooms. `schema.sql` is for a
 new, empty database only. An older installation that still enforces the former
@@ -47,9 +49,12 @@ A local preview does not apply migrations to live Supabase or verify production.
 ## Shared game behaviour
 
 - Questions follow the selected level, note groups, octave range and C labels.
+- Higher and Advanced Higher use Find the Key in Quiz and Race. Pupils read
+  a written note in the selected clefs and choose its exact key and octave.
+  National 3 to National 5 use Name the Key.
 - The lobby shows a join QR code, participant count and random names. Teachers
   can remove pupils before starting. Existing pupils can rejoin a full lobby.
-- Teachers control Start and game audio. Theme music starts muted and stops
+- Teachers control Start and game audio. Theme music starts unmuted and stops
   when winners are announced. Medal sounds respect the audio setting.
 - Tokens are hashed in the database. Teacher and pupil tokens remain in tab
   storage so refreshes restore the same room or pupil. Host URLs contain the
@@ -79,7 +84,7 @@ Equal scores are ordered alphabetically by name. Next Question starts a shared
 3–2–1 countdown; the next question’s timer and scoring start after it.
 
 The final podium reveals third, second and first place in that order, using fixed
-podium heights, bronze/silver/gold medals, confetti and the corresponding sounds.
+podium heights, place labels, confetti and a celebration sound.
 Quiz rooms expire from creation after the greater of 45 minutes or the total
 configured question time plus 30 minutes.
 
@@ -97,7 +102,7 @@ turns red, drains and counts down over 1.8 seconds, then moves the row down over
 
 Reaching the target wins immediately and fills the whole bar green. If time expires
 first, the highest streak achieved wins; equal best streaks share the win. The winner
-announcement has confetti and the diamond fanfare when teacher audio is enabled.
+announcement has confetti and a celebration sound when teacher audio is enabled.
 There are no Quiz points or podium places in Race.
 
 ## Connection recovery and troubleshooting

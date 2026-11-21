@@ -106,7 +106,7 @@ begin
      if (p_data->>'index')::integer<>coalesce((player->>'attempt')::integer,0) then raise exception 'Question has changed.'; end if;
      if not (r.state->'allowedAnswers' ? (p_data->>'answer')) then raise exception 'Choose a note from this level.'; end if;
      question:=r.state->'questions'->((player->>'questionIndex')::integer);
-     correct_answer:=(p_data->>'pitch')::integer=(question->>'pitch')::integer%12;
+     correct_answer:=(p_data->>'pitch')::int=case when question->>'type'='find' then (question->>'pitch')::int else (question->>'pitch')::int%12 end;
      -- Choose the next private question, avoiding the previous pitch where possible.
      select ordinal::integer-1 into next_question from jsonb_array_elements(r.state->'questions') with ordinality q(value,ordinal) where value->>'pitch'<>question->>'pitch' order by random() limit 1;
      next_question:=coalesce(next_question,((player->>'questionIndex')::integer+1)%jsonb_array_length(r.state->'questions'));
@@ -148,9 +148,10 @@ begin
    if not (r.state->'allowedAnswers' ? (p_data->>'answer')) then raise exception 'Choose a note from this level.'; end if;
    if (player->>'answered')::boolean then raise exception 'Answer already submitted.'; end if;
    question:=r.state->'questions'->((r.state->>'index')::int);
-   player:=player||jsonb_build_object('answer',p_data->>'answer','answered',true,'correct',(p_data->>'pitch')::int=(question->>'pitch')::int%12,
-     'streak',case when (p_data->>'pitch')::int=(question->>'pitch')::int%12 then coalesce((player->>'streak')::int,0)+1 else 0 end,
-     'score',(player->>'score')::int+case when (p_data->>'pitch')::int=(question->>'pitch')::int%12 then case when r.state->>'scoringVersion'='2'
+   correct_answer:=(p_data->>'pitch')::int=case when question->>'type'='find' then (question->>'pitch')::int else (question->>'pitch')::int%12 end;
+   player:=player||jsonb_build_object('answer',p_data->>'answer','answered',true,'correct',correct_answer,
+     'streak',case when correct_answer then coalesce((player->>'streak')::int,0)+1 else 0 end,
+     'score',(player->>'score')::int+case when correct_answer then case when r.state->>'scoringVersion'='2'
        then public.keyboard_pilot_points(now_ms-coalesce((r.state->>'startedAt')::bigint,(r.state->>'deadline')::bigint-question_time*1000),question_time*1000)
        else 1000 end else 0 end);
    select jsonb_agg(case when value->>'token'=p_token then player else value end) into r.players from jsonb_array_elements(r.players);

@@ -18,12 +18,19 @@
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
   <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-shell.js?v=62053b124fd7"></script>
   <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
-  <script src="./keyboard-notes.js?v=d394fb2b445a"></script>
+  <script src="./keyboard-notes.js?v=32f88e7d18ff"></script>
+  <script src="./shared/classroom-test-game.js?v=c706804ccbd8"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
+  <script src="./shared/keyboard-note-keyboard.js?v=9e2bd82073d9"></script>
   <style>
 .keyboard-area { width: max-content; margin: 32px auto; }
+.keyboard-stave { display:block; width: 460px; height: 212px; margin: 0 auto -12px; }
+.keyboard-key[role="button"] { cursor: pointer; }
+.keyboard-key[role="button"]:focus-visible { outline: 3px solid #2563eb; outline-offset: -3px; }
+.keyboard-key[role="button"][aria-disabled="true"] { outline: none; }
 .keyboard-score { display: block; height: 250px; }
 @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
 .music-symbol { font-family: "Bravura", serif; font-weight: 400; }
@@ -39,13 +46,12 @@
 .keyboard-answer.awaiting-reveal { background:black; border-color:black; color:white; opacity:1; }
 .classroom-podium { display:flex; align-items:flex-end; justify-content:center; gap:16px; height:360px; margin:32px auto 24px; }
 .podium-place { position:relative; flex:0 0 300px; width:300px; text-align:center; border:1px solid #d6d3d1; border-radius:12px 12px 0 0; padding:16px; background:#fafaf9; display:flex; flex-direction:column; align-items:center; justify-content:center; }
-.podium-place.first { height:360px; background:#fef3c7; border-color:#f59e0b; }
-.podium-place.second { height:300px; background:#f5f5f4; }
-.podium-place.third { height:240px; background:#fff7ed; border-color:#c49a6c; }
+.podium-place.first { height:360px; background:#dcfce7; border-color:#4ade80; }
+.podium-place.second { height:300px; }
+.podium-place.third { height:240px; }
 .podium-place.revealed { animation:podium-reveal 700ms cubic-bezier(.22,1,.36,1); }
 .podium-identity { display:flex; align-items:center; justify-content:center; width:100%; margin-top:16px; font-size:17px; font-weight:700; white-space:nowrap; }
 .podium-identity .participant-symbol { width:28px; height:32px; margin-right:6px; }
-.podium-medal { width:54px; height:76px; object-fit:contain; margin:0 0 12px; }
 .podium-confetti { position:absolute; inset:0; pointer-events:none; overflow:visible; }
 .podium-confetti span { position:absolute; display:block; width:6px; height:10px; border-radius:2px; top:-12px; }
 @keyframes podium-reveal { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
@@ -61,9 +67,9 @@
 .breakdown-item.correct { color:#15803d; }
 .breakdown-label { margin-top:8px; font-weight:700; font-size:18px; }
 .classroom-review-panels { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:20px; margin-top:24px; align-items:stretch; }
-.classroom-results, .classroom-leaderboard { min-width:0; padding:16px; border:1px solid #e7e5e4; border-radius:12px; background:white; }
+.classroom-results, .classroom-leaderboard { min-width:0; padding:16px; border:1px solid #e7e5e4; border-radius:12px; background:#fafaf9; }
 .classroom-review-panels .breakdown-grid { gap:12px; }
-.classroom-standing { position:absolute; top:0; left:0; right:0; height:46px; animation:standing-enter 650ms cubic-bezier(.22,1,.36,1); transition:transform 650ms cubic-bezier(.22,1,.36,1),color 400ms ease; display:grid; grid-template-columns:20px minmax(0,1fr) 36px 38px 26px; gap:8px; align-items:center; padding:7px 0; border-bottom:1px solid #f5f5f4; font-size:14px; }
+.classroom-standing { position:absolute; top:0; left:0; right:0; height:46px; animation:standing-enter 650ms cubic-bezier(.22,1,.36,1); transition:transform 650ms cubic-bezier(.22,1,.36,1),color 400ms ease; display:grid; grid-template-columns:20px minmax(0,1fr) 36px 38px; gap:8px; align-items:center; padding:7px 0; border-bottom:1px solid #f5f5f4; font-size:14px; }
 .classroom-standing:last-child { border-bottom:0; }
 .classroom-standings { position:relative; height:230px; }
 .classroom-standing-score { font-variant-numeric:tabular-nums; }
@@ -74,11 +80,10 @@
 .keyboard-answer.classroom-show-all { min-height:32px; font-size:13px; padding:0 10px; }
 .classroom-all-leaderboard { position:fixed; width:680px; max-width:none; max-height:650px; margin:auto; padding:24px; border:1px solid #e7e5e4; border-radius:16px; background:white; color:#0c0a09; box-shadow:0 20px 60px #0003; overflow:auto; }
 .classroom-all-leaderboard::backdrop { background:#0006; }
-.classroom-all-leaderboard .classroom-standing { position:relative; height:46px; animation:none; transition:none; grid-template-columns:28px minmax(0,1fr) 52px 56px 32px; }
+.classroom-all-leaderboard .classroom-standing { position:relative; height:46px; animation:none; transition:none; grid-template-columns:28px minmax(0,1fr) 52px 56px; }
 .classroom-all-leaderboard .classroom-standing-name { font-size:16px; }
 
 .classroom-standing-rank { display:flex; align-items:center; gap:5px; }
-.classroom-standing-medal { width:26px; height:30px; object-fit:contain; }
 .classroom-standing-name .participant-symbol { width:24px; height:28px; margin-right:4px; }
 .classroom-standing-name { display:flex; align-items:center; }
 .classroom-standing-score { text-align:right; white-space:nowrap; }
@@ -91,23 +96,23 @@
 .race-lane { position:absolute; top:0; left:0; right:0; height:56px; display:grid; grid-template-columns:250px minmax(0,1fr); align-items:center; gap:16px; transition:transform 1400ms cubic-bezier(.22,1,.36,1); }
 .race-name { display:flex; align-items:center; gap:4px; white-space:nowrap; font-size:14px; font-weight:600; }
 .race-name .participant-symbol { width:26px; height:32px; margin-right:2px; }
-.race-course { position:relative; height:48px; border:1px solid #a8a29e; border-radius:10px; background:#fafaf9; overflow:hidden; }
+.race-course { --race-finish-inset:10px; --race-finish-width:16px; position:relative; height:48px; border:1px solid #a8a29e; border-radius:10px; background:white; overflow:hidden; }
 .race-course.complete { background:rgba(22,163,74,.38); transition:background-color 650ms ease; }
 .race-course.complete .race-fill { background:transparent; }
 .race-winner { position:relative; width:600px; margin:0 auto 20px; text-align:center; }
+.race-winner-announcement { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0 .28em; }
+.race-winner-name { display:inline-flex; align-items:center; gap:4px; }
+.race-winner-name .participant-symbol { width:18px; height:22px; }
 .race-winner .podium-confetti { inset:0 0 auto; height:48px; }
 .race-lane.resetting .race-fill { background:rgba(220,38,38,.38); transition:none; }
-.race-lane.resetting .race-horse { transition:none; }
 .race-lane.resetting .race-course { border-color:#dc2626; }
 .race-count, .race-highest { position:absolute; width:32px; text-align:center; margin:0; pointer-events:none; }
 .race-count { top:50%; transform:translateY(-50%); font-size:16px; font-weight:700; transition:left 650ms cubic-bezier(.22,1,.36,1); }
 .race-highest { position:static; width:auto; margin-left:auto; flex-shrink:0; font-size:12px; font-weight:400; color:#a8a29e; white-space:nowrap; }
 .race-lane.resetting .race-count { color:#dc2626; transition:none; }
-.race-fill-track { position:absolute; inset:0 70px 0 0; }
+.race-fill-track { position:absolute; inset:0 calc(var(--race-finish-inset) + var(--race-finish-width)) 0 0; }
 .race-fill { height:100%; background:rgba(22,163,74,.38); transition:width 650ms cubic-bezier(.22,1,.36,1); }
-.race-finish { position:absolute; right:10px; top:0; bottom:0; width:16px; background:repeating-conic-gradient(#292524 0% 25%,white 0% 50%) 0 0/8px 8px; }
-.race-horse-run { position:absolute; left:0; right:70px; top:4px; height:38px; }
-.race-horse { position:absolute; font-size:30px; width:40px; height:38px; line-height:38px; transition:left 650ms cubic-bezier(.22,1,.36,1); transform:scaleX(-1); filter:brightness(0); }
+.race-finish { position:absolute; right:var(--race-finish-inset); top:0; bottom:0; width:var(--race-finish-width); background:repeating-conic-gradient(#292524 0% 25%,white 0% 50%) 0 0/8px 8px; }
 
 .game-type-options { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
 .game-type-card { border:1px solid #d6d3d1; border-radius:12px; background:white; padding:16px; text-align:left; }
@@ -125,10 +130,13 @@
 .classroom-race-subtitle { margin-top:4px; font-size:14px; line-height:20px; font-weight:400; }
 .classroom-toolbar-time.classroom-race-time { grid-column:1; grid-row:1; text-align:left; align-self:start; }
 .classroom-toolbar-time { grid-column:2; grid-row:1; text-align:center; font-variant-numeric:tabular-nums; }
+.classroom-quiz-timing { display:flex; flex-direction:column; align-items:center; justify-content:center; white-space:nowrap; }
+.classroom-answered-count { color:#57534e; font-size:14px; font-weight:600; line-height:16px; }
 .classroom-toolbar-controls { grid-column:3; grid-row:1; display:flex; justify-content:flex-end; align-items:center; gap:12px; }
 .classroom-lobby-toolbar .lobby-count { grid-column:1; grid-row:1; justify-self:start; }
 .classroom-lobby-toolbar .lobby-heading { grid-column:2; grid-row:1; margin:0; font-size:28px; line-height:36px; }
 .lobby-count { align-self:center; margin:0; font-weight:700; font-size:24px; }
+.lobby-count img { filter:invert(1); }
 .lobby-capacity { margin:0 0 8px; line-height:20px; color:#78716c; font-size:14px; font-weight:400; text-align:center; }
 .lobby-toolbar .classroom-audio-toggle { background:rgba(255,255,255,.45); border:1px solid #d6d3d1; color:black; }
 .lobby-toolbar .classroom-audio-toggle:hover { background:#e7e5e4; }
@@ -145,21 +153,26 @@
 main:fullscreen, main:-webkit-full-screen { width:100%; height:100%; max-width:none; margin:0; border:0; border-radius:0; overflow:auto; }
 main.classroom-lobby-main:fullscreen, main.classroom-lobby-main:-webkit-full-screen { display:flex; flex-direction:column; }
 main:fullscreen .lobby-stage, main:-webkit-full-screen .lobby-stage { flex:1; }
-main.classroom-game-main { background:#fafaf9; overflow:hidden; }
-main.classroom-setup-main { min-height:748px; display:flex; flex-direction:column; justify-content:center; }
-.classroom-setup-main > .classroom-setup-content { width:100%; max-width:720px; }
-.classroom-setup-main .classroom-setup-content > section { background:white; padding:32px; }
+main.classroom-game-main:not(.classroom-setup-main) { overflow:hidden; }
+main.classroom-setup-main { min-height:748px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; }
+main.classroom-setup-main > .classroom-setup-preview { position:absolute; inset:0; display:flex; flex-direction:column; padding:14px 24px; background:inherit; pointer-events:none; }
+.classroom-setup-preview > * { opacity:.38; }
+.classroom-setup-main > .classroom-setup-content { z-index:1; width:100%; max-width:720px; }
+.classroom-setup-main > [role="alert"] { z-index:1; }
+.classroom-setup-main .classroom-setup-content > section { background:white; border-color:#a8a29e; padding:32px; box-shadow:0 8px 24px rgb(15 23 42 / 9%); font-family:Arial, Helvetica, sans-serif; }
 .classroom-setup-content h2 { font-size:26px; line-height:34px; }
-.classroom-setup-content .game-type-card .text-lg { font-size:22px; line-height:30px; }
-.classroom-setup-content .game-type-card .text-sm { font-size:17px; line-height:25px; }
+.classroom-setup-main .classroom-setup-content h2 { font-size:24px; line-height:1.2; }
+.classroom-setup-content .game-type-card .text-lg { font-size:18px; line-height:1.4; }
+.classroom-setup-content .game-type-card .text-sm { font-size:15px; line-height:1.5; }
 .classroom-setup-content .game-type-glyph { width:29px; height:29px; }
 .classroom-setup-content label, .classroom-setup-content .pilot-field { font-size:20px; line-height:28px; }
+.classroom-setup-main .classroom-setup-content :is(label,.pilot-field) { font-size:15px; line-height:1.5; }
 .classroom-setup-content .pilot-field { box-sizing:border-box; height:50px; }
 .classroom-setup-content .keyboard-answer { font-size:20px; min-height:52px; }
-.classroom-game-main::before { content:""; position:absolute; width:1000px; height:1000px; border-radius:50%; background:#f5f5f4; top:-760px; left:-160px; pointer-events:none; }
+.classroom-setup-main .classroom-setup-content > section > .keyboard-answer.primary { width:240px; margin-inline:auto; font-size:16px; }
 .classroom-game-main > * { position:relative; }
 .classroom-game-main > .lobby-toolbar { z-index:30; }
-.classroom-game-main > .classroom-countdown { position:absolute; inset:0; z-index:20; display:grid; place-items:center; background:#fafaf9; border-radius:inherit; pointer-events:none; font-size:144px; line-height:1; font-weight:800; }
+.classroom-game-main > .classroom-countdown { position:absolute; inset:0; z-index:20; display:grid; place-items:center; background:white; border-radius:inherit; pointer-events:none; font-size:144px; line-height:1; font-weight:800; }
 .classroom-countdown span { animation:countdown-pulse 850ms ease-out; }
 @keyframes countdown-pulse { from { opacity:0; transform:scale(.8); } 20% { opacity:1; transform:scale(1); } to { opacity:1; transform:scale(1); } }
 
@@ -173,20 +186,22 @@ main.classroom-game-main:fullscreen, main.classroom-game-main:-webkit-full-scree
 
 .lobby-names { display:grid; grid-template-columns:repeat(var(--name-columns),minmax(0,1fr)); grid-template-rows:repeat(var(--name-rows),var(--name-height)); grid-auto-flow:column; gap:var(--name-gap); width:100%; max-width:var(--names-width); margin:0 auto; }
 .lobby-name { padding:6px; border:1px solid #d6d3d1; border-radius:12px; background:white; font-size:var(--name-font); font-weight:700; white-space:nowrap; min-width:0; width:100%; }
-.lobby-name { cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; }
+.lobby-name { display:grid; grid-template-columns:minmax(0,1fr) 32px; align-items:center; gap:5px; }
+.lobby-name-label { display:flex; align-items:center; justify-content:center; gap:5px; min-width:0; }
+.lobby-name-label .participant-name-text { overflow:hidden; text-overflow:ellipsis; }
+.lobby-remove { display:grid; place-items:center; width:32px; height:32px; border:1px solid #d6d3d1; border-radius:8px; font-size:20px; line-height:1; }
+.lobby-remove:hover:not(:disabled) { color:#b91c1c; border-color:#b91c1c; background:#fef2f2; }
+.lobby-remove:focus-visible { outline:3px solid #2563eb; outline-offset:2px; }
+.lobby-remove:disabled { cursor:not-allowed; opacity:.5; }
 .lobby-name .participant-symbol { width:var(--symbol-width); height:var(--symbol-height); margin:0; }
 .lobby-name { transition:font-size 200ms ease; }
 
 .participant-name-text { white-space:nowrap; }
 .participant-symbol { display:inline-flex; flex-shrink:0; align-items:center; justify-content:center; width:30px; height:32px; vertical-align:middle; margin-right:6px; text-decoration:none; }
 .participant-symbol svg { display:block; width:100%; height:100%; overflow:visible; }
-.lobby-name:hover:not(:disabled), .lobby-name:focus-visible { text-decoration:line-through; text-decoration-thickness:2px; }
-.lobby-name:focus-visible { outline:3px solid #2563eb; outline-offset:2px; }
 .participant-waiting-stage { min-height:540px; padding:48px 32px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 .participant-identity { display:flex; align-items:center; gap:20px; margin:56px 0 0; padding:16px 28px; border:1px solid #e7e5e4; border-radius:16px; background:white; font-size:36px; font-weight:800; }
 .participant-identity .participant-symbol { width:64px; height:88px; font-size:64px; }
-.participant-waiting-name { cursor:default; }
-.lobby-name.participant-waiting-name:hover { text-decoration:none; }
 .keyboard-empty { min-height: 46px; }
 .keyboard-question-transition { transition: opacity 260ms ease; }
 
@@ -199,6 +214,8 @@ button:disabled { opacity:.5; cursor:default; }
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
 <body><div id="root"></div>
+<script type="text/x-mlh-jsx-source" data-src="./shared/keyboard-note-notation.jsx" data-runtime="keyboard-note-notation.js"></script>
+<script src="./generated-runtimes/keyboard-note-notation.js?v=423ccde97545"></script>
 <script type="text/x-mlh-jsx-source" data-runtime="keyboardnoteidentificationclassroom-1.js">
 const {useState,useRef,useEffect,useLayoutEffect}=React;
 const K=window.KeyboardNotes;
@@ -220,13 +237,16 @@ function ParticipantName({name,symbol}){
  },[glyph]);
  return <><span className="participant-symbol" aria-hidden="true"><svg viewBox={box} preserveAspectRatio="xMidYMid meet"><text ref={glyphRef} className="music-symbol" x="0" y="0" fontSize="1000" fill="currentColor">{glyph}</text></svg></span><span className="participant-name-text">{name}</span></>;
 }
-function Keyboard({question,feedback,options,showC}){
-  const width=options.octaves===1?336:672;
-  return <svg className="keyboard-score" width={width} viewBox={`-1 -1 ${width+2} 252`} role="img" aria-label="Piano keyboard with one key highlighted. Identify the highlighted note.">
-    {K.visibleKeys(options).filter(key=>!key.black).map(key=><rect key={key.pitch} x={key.x} y="0" width="48" height="248" rx="5" fill={key.pitch===question.pitch?(feedback?(feedback.correct?'#16a34a':'#dc2626'):'#2563eb'):'#fff'} stroke="#78716c"/>)}
-    {K.visibleKeys(options).filter(key=>key.black).map(key=><rect key={key.pitch} x={key.x} y="0" width="30" height="155" rx="5" fill={key.pitch===question.pitch?(feedback?(feedback.correct?'#16a34a':'#dc2626'):'#2563eb'):'#292524'} stroke="#0c0a09"/>)}
-    {showC&&K.visibleKeys(options).filter(key=>!key.black&&key.pitch%12===0).map(key=><text key={`label-${key.pitch}`} x={key.x+24} y="225" textAnchor="middle" fontSize="17" fontWeight="700" fill={key.pitch===question.pitch?'white':'#57534e'} pointerEvents="none">C</text>)}
-  </svg>;
+function ClassroomKeyboard({game,feedback,selection,enabled,onAnswer}){
+ const {question,options,showC}=game;
+ const Keyboard=window.MLH.KeyboardNoteKeyboard;
+ const WrittenNote=window.MLH.KeyboardWrittenNote;
+ return <>
+  {question.type==='find'&&<WrittenNote note={question.note}/>}
+  <Keyboard question={question} options={options} showC={showC===true} feedback={feedback}
+    selected={selection?.pitch} showPendingSelection enabled={enabled}
+    onSelect={key=>onAnswer(K.classroomKeyId(key.pitch))}/>
+ </>;
 }
 
 function AnswerChoices({answers,question,review,selected,disabled,onAnswer}){
@@ -247,11 +267,15 @@ function RaceLane({player,index,target,fault}){
   frame=requestAnimationFrame(drain);return()=>cancelAnimationFrame(frame);
  },[liveStreak,fault?.version,fault?.phase]);
  const streak=Math.max(0,Math.round(displayStreak)),progress=Math.min(100,100*Math.max(0,displayStreak)/target),highest=Math.max(player.highestStreak||0,player.streak||0,fault?.from||0);
- return <div className={`race-lane${fault?' resetting':''}`} style={{transform:`translateY(${index*64}px)`}}><p className="race-name"><ParticipantName name={player.name} symbol={player.symbol}/><span className="race-highest" aria-label={`Highest streak: ${highest}`}>Best: {highest}</span></p><div className={`race-course${player.streak>=target?' complete':''}`} role="progressbar" aria-label={`${player.name}'s streak`} aria-valuemin={0} aria-valuemax={target} aria-valuenow={streak}><div className="race-fill-track" aria-hidden="true"><div className="race-fill" style={{width:`${progress}%`}}/><p className="race-count" style={{left:`max(0px, calc(${progress}% - 32px))`}}>{streak}</p></div><div className="race-finish" aria-hidden="true"/><div className="race-horse-run"><span className="race-horse" aria-hidden="true" style={{left:`max(32px, ${progress}%)`}}><img src="./ui-icons/horse.svg" alt="" style={{width:40,height:38,objectFit:'contain'}}/></span></div></div></div>;
+ return <div className={`race-lane${fault?' resetting':''}`} style={{transform:`translateY(${index*64}px)`}}><p className="race-name"><ParticipantName name={player.name} symbol={player.symbol}/><span className="race-highest" aria-label={`Highest streak: ${highest}`}>Best: {highest}</span></p><div className={`race-course${player.streak>=target?' complete':''}`} role="progressbar" aria-label={`${player.name}'s streak`} aria-valuemin={0} aria-valuemax={target} aria-valuenow={streak}><div className="race-fill-track" aria-hidden="true"><div className="race-fill" style={{width:`${progress}%`}}/><p className="race-count" style={{left:`max(0px, calc(${progress}% - 32px))`}}>{streak}</p></div><div className="race-finish" aria-hidden="true"/></div></div>;
 }
 function RaceWinner({game,soundEnabled}){
- useEffect(()=>{if(soundEnabled)window.MLH?.playFeedbackSound?.(true,true,'platinum');},[]);
- return <div className="race-winner"><p role="status" className="text-2xl font-bold">{game.winner} {game.winners?.length>1?'tie for the win!':'wins!'}</p>{game.finishReason==='time'&&<p className="text-sm text-stone-500 mt-1">Time’s up — highest streak achieved wins.</p>}<div className="podium-confetti" aria-hidden="true">{Array.from({length:32},(_,i)=><span key={i} style={{left:`${5+((i*19)%90)}%`,backgroundColor:['#38bdf8','#a5f3fc','#facc15','#fb7185','#4ade80'][i%5],animation:`podium-confetti-drop ${1.8+(i%5)*.18}s ease-out forwards`,animationDelay:`${(i%8)*.08}s`}}/>)}</div></div>;
+ useEffect(()=>{if(soundEnabled)window.MLH?.playFeedbackSound?.(true);},[]);
+ const winners=game.winners?.length?game.winners:[game.winner];
+ return <div className="race-winner"><p role="status" className="race-winner-announcement text-2xl font-bold">{winners.map((name,index)=>{
+  const winner=game.players.find(player=>player.name===name);
+  return <React.Fragment key={name}>{index>0&&<span> and </span>}{winner?.symbol?<span className="race-winner-name"><ParticipantName name={name} symbol={winner.symbol}/></span>:<span>{name}</span>}</React.Fragment>;
+ })}<span>{winners.length>1?' tie for the win!':' wins!'}</span></p>{game.finishReason==='time'&&<p className="text-sm text-stone-500 mt-1">Time’s up — highest streak achieved wins.</p>}<div className="podium-confetti" aria-hidden="true">{Array.from({length:32},(_,i)=><span key={i} style={{left:`${5+((i*19)%90)}%`,backgroundColor:['#38bdf8','#a5f3fc','#facc15','#fb7185','#4ade80'][i%5],animation:`podium-confetti-drop ${1.8+(i%5)*.18}s ease-out forwards`,animationDelay:`${(i%8)*.08}s`}}/>)}</div></div>;
 }
 function RaceTrack({game,soundEnabled}){
  const target=game.targetStreak||30,[faults,setFaults]=useState(new Map());
@@ -277,7 +301,38 @@ function RaceTrack({game,soundEnabled}){
  useLayoutEffect(()=>{order.current=ranked.map(racePlayerKey);});
  useEffect(()=>()=>{for(const pending of timers.current.values())pending.forEach(clearTimeout);},[]);
  const visiblePlayers=game.host?ranked:ranked.filter(player=>player.name===game.myName);
- return <section className="mt-6 rounded-xl border border-stone-200 bg-white p-5" aria-label="Race track">{game.phase==='finished'&&<RaceWinner game={game} soundEnabled={soundEnabled}/>}<div className="race-lanes" style={{height:`${visiblePlayers.length*64}px`}}>{visiblePlayers.map((player,index)=><RaceLane key={racePlayerKey(player)} player={player} index={index} target={target} fault={faults.get(racePlayerKey(player))}/>)}</div></section>;
+ return <section className="mt-6 rounded-xl bg-white p-5" aria-label="Race track">{game.phase==='finished'&&<RaceWinner game={game} soundEnabled={soundEnabled}/>}<div className="race-lanes" style={{height:`${visiblePlayers.length*64}px`}}>{visiblePlayers.map((player,index)=><RaceLane key={racePlayerKey(player)} player={player} index={index} target={target} fault={faults.get(racePlayerKey(player))}/>)}</div></section>;
+}
+
+const testParticipants=[
+ {name:'Tempo Fox',symbol:'quarterNoteStemUp'},
+ {name:'Piano Otter',symbol:'gClef'},
+ {name:'Jazz Penguin',symbol:'eighthNoteStemUp'},
+ {name:'Cadence Gecko',symbol:'fermataAbove'},
+];
+function ClassroomAudioButton({enabled,onClick}){
+ return <button type="button" className="classroom-audio-toggle" aria-label={!enabled?'Turn on game audio':'Turn off game audio'} aria-pressed={enabled} title={!enabled?'Unmute theme music':'Mute theme music'} onClick={onClick}><img src="./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15" alt="" aria-hidden="true"/></button>;
+}
+
+function ClassroomFullscreenButton({fullscreen=false,supported=true,onClick}){
+ return <button type="button" className="keyboard-answer classroom-fullscreen" aria-label={fullscreen?'Exit Full Screen':'Full Screen'} aria-pressed={fullscreen} disabled={!supported} title={supported?'Toggle full screen':'Full screen is unavailable in this browser'} onClick={onClick}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d={fullscreen?'M9 3v6H3m18 0h-6V3M3 15h6v6m6 0v-6h6':'M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6'}/></svg></button>;
+}
+
+function ClassroomSetupPreview(){
+ return <div className="classroom-setup-preview" aria-hidden="true" inert="">
+  <div className="lobby-toolbar classroom-lobby-toolbar">
+   <span className="lobby-count inline-flex items-center gap-2"><img src="./ui-icons/group-button.svg?v=20261106-even-lines" alt="" className="h-6 w-6"/>0</span>
+   <h2 className="lobby-heading">Scan to Join</h2>
+   <div className="classroom-toolbar-controls">
+    <ClassroomAudioButton enabled/>
+    <ClassroomFullscreenButton/>
+   </div>
+  </div>
+  <div className="lobby-stage">
+   <div className="lobby-join-row"><img className="lobby-qr" src="./ui-icons/classroom-qr-placeholder.svg" alt=""/></div>
+   <div className="lobby-participants"><h2 className="text-2xl font-bold">Waiting for participants…</h2></div>
+  </div>
+ </div>;
 }
 
 function launchSettings(){
@@ -309,7 +364,7 @@ function ClassroomLeaderboard({players,visible,questionIndex}){
    setStandings(players.map(p=>({...p,gained:gains.current.get(p.id||p.name)||0})));
   });});return()=>cancelAnimationFrame(frame);
  },[players,visible,questionIndex]);
- return <section className="classroom-leaderboard" aria-labelledby="leaderboard-title"><div className="classroom-leaderboard-heading"><h2 id="leaderboard-title" className="text-lg font-bold">Leaderboard</h2><button type="button" className="keyboard-answer primary classroom-show-all" onClick={()=>allLeaderboard.current.showModal()}>Show All</button></div><div className="classroom-standings">{standings.slice(0,5).map((p,i)=><div key={p.id||p.name} className="classroom-standing" style={{transform:`translateY(${i*46}px)`,'--standing-y':`${i*46}px`,color:'#0c0a09'}}><span className="classroom-standing-rank">{i+1}.</span><span className="classroom-standing-name"><ParticipantName name={p.name} symbol={p.symbol}/></span><span className="classroom-standing-gain" aria-label={`${p.gained} points gained this question`}>{p.gained>0?`+${p.gained}`:''}</span><AnimatedStandingScore score={p.score} initialScore={p.score-p.gained}/>{i<3&&<img className="classroom-standing-medal" src={`./ui-icons/${['gold','silver','bronze'][i]}.svg`} alt={`${['Gold','Silver','Bronze'][i]} medal`}/>}</div>)}</div><dialog ref={allLeaderboard} className="classroom-all-leaderboard" aria-labelledby="all-leaderboard-title" onClick={event=>{if(event.target===event.currentTarget){const box=event.currentTarget.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)event.currentTarget.close();}}}><div className="classroom-leaderboard-heading"><h2 id="all-leaderboard-title" className="text-xl font-bold">Leaderboard</h2><button type="button" className="keyboard-answer" aria-label="Close leaderboard" onClick={()=>allLeaderboard.current.close()}>×</button></div>{standings.map((p,i)=><div key={p.id||p.name} className="classroom-standing"><span className="classroom-standing-rank">{i+1}.</span><span className="classroom-standing-name"><ParticipantName name={p.name} symbol={p.symbol}/></span><span className="classroom-standing-gain">{p.gained>0?`+${p.gained}`:''}</span><span className="classroom-standing-score">{p.score}</span>{i<3&&<img className="classroom-standing-medal" src={`./ui-icons/${['gold','silver','bronze'][i]}.svg`} alt={`${['Gold','Silver','Bronze'][i]} medal`}/>}</div>)}</dialog></section>;
+ return <section className="classroom-leaderboard" aria-labelledby="leaderboard-title"><div className="classroom-leaderboard-heading"><h2 id="leaderboard-title" className="text-lg font-bold">Leaderboard</h2><button type="button" className="keyboard-answer primary classroom-show-all" onClick={()=>allLeaderboard.current.showModal()}>Show All</button></div><div className="classroom-standings">{standings.slice(0,5).map((p,i)=><div key={p.id||p.name} className="classroom-standing" style={{transform:`translateY(${i*46}px)`,'--standing-y':`${i*46}px`,color:'#0c0a09'}}><span className="classroom-standing-rank">{i+1}.</span><span className="classroom-standing-name"><ParticipantName name={p.name} symbol={p.symbol}/></span><span className="classroom-standing-gain" aria-label={`${p.gained} points gained this question`}>{p.gained>0?`+${p.gained}`:''}</span><AnimatedStandingScore score={p.score} initialScore={p.score-p.gained}/></div>)}</div><dialog ref={allLeaderboard} className="classroom-all-leaderboard" aria-labelledby="all-leaderboard-title" onClick={event=>{if(event.target===event.currentTarget){const box=event.currentTarget.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)event.currentTarget.close();}}}><div className="classroom-leaderboard-heading"><h2 id="all-leaderboard-title" className="text-xl font-bold">Leaderboard</h2><button type="button" className="keyboard-answer" aria-label="Close leaderboard" onClick={()=>allLeaderboard.current.close()}>×</button></div>{standings.map((p,i)=><div key={p.id||p.name} className="classroom-standing"><span className="classroom-standing-rank">{i+1}.</span><span className="classroom-standing-name"><ParticipantName name={p.name} symbol={p.symbol}/></span><span className="classroom-standing-gain">{p.gained>0?`+${p.gained}`:''}</span><span className="classroom-standing-score">{p.score}</span></div>)}</dialog></section>;
 }
 function QuizFinalPodium({players,soundEnabled}){
  const winners=useRef(players.slice(0,3)),sound=useRef(soundEnabled),[revealed,setRevealed]=useState([]);
@@ -317,12 +372,11 @@ function QuizFinalPodium({players,soundEnabled}){
  useEffect(()=>{
   const timers=[2,1,0].filter(rank=>winners.current[rank]).map((rank,order)=>setTimeout(()=>{
    setRevealed(previous=>[...previous,rank]);
-   if(sound.current)window.MLH?.playFeedbackSound?.(true,true,['gold','silver','bronze'][rank]);
+   if(sound.current)window.MLH?.playFeedbackSound?.(true);
   },1500+order*4000));
   return()=>timers.forEach(clearTimeout);
  },[]);
  return <section className="mt-6" aria-label="Final podium"><div className="classroom-podium">{[1,0,2].filter(rank=>winners.current[rank]).map(rank=>{const player=winners.current[rank],shown=revealed.includes(rank);return <div key={rank} className={`podium-place ${['first','second','third'][rank]}${shown?' revealed':''}`} style={{visibility:shown?'visible':'hidden'}} aria-hidden={!shown}>
-  <img className="podium-medal" src={`./ui-icons/${['gold','silver','bronze'][rank]}.svg`} alt={`${['Gold','Silver','Bronze'][rank]} medal`}/>
   <p className="text-3xl font-bold">{['1st','2nd','3rd'][rank]}</p>
   <div className="podium-identity"><ParticipantName name={player.name} symbol={player.symbol}/></div>
   <p className="mt-2">{player.score} points</p>
@@ -337,15 +391,27 @@ function saveHostSession(identity){
  const url=new URL(location.href);url.searchParams.set('room',identity.pin);history.replaceState(null,'',url);
 }
 function Classroom(){
- const hosting=new URLSearchParams(location.search).get('mode')==='host';
+ const pageParams=new URLSearchParams(location.search);
+ const hosting=pageParams.get('mode')==='host';
+ const canTestOffline=hosting&&['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+ const [offline,setOffline]=useState(()=>canTestOffline&&pageParams.get('offline')==='1');
+ const offlineGame=useRef(null);
+ function changeOffline(checked){
+  const url=new URL(location.href);
+  if(checked)url.searchParams.set('offline','1');
+  else url.searchParams.delete('offline');
+  history.replaceState(null,'',url);
+  setOffline(checked);
+ }
  const [configuration]=useState(launchSettings);
+ const gameSettings=configuration||(offline?{level:'N3',options:K.defaults.N3,showC:false}:null);
  const returnUrl=new URL('./keyboardnoteidentification.html',location.href);
  if(configuration){returnUrl.searchParams.set('level',configuration.level);returnUrl.searchParams.set('classroomSetup',JSON.stringify(configuration));}
 
- const [restoredHost]=useState(()=>hosting?loadHostSession():null),[restoringHost,setRestoringHost]=useState(!!restoredHost);
+ const [restoredHost]=useState(()=>hosting&&!offline?loadHostSession():null),[restoringHost,setRestoringHost]=useState(!!restoredHost);
  const [game,setGame]=useState(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[connected,setConnected]=useState(true),[fullscreen,setFullscreen]=useState(false);
- const themeAudio=useRef(null),themeMuted=useRef(true),gameContainer=useRef(null),latestGame=useRef(null),questionKeyboard=useRef(null),questionCard=useRef(null),reviewPanels=useRef(null);
- const [musicMuted,setMusicMuted]=useState(true),[musicBlocked,setMusicBlocked]=useState(false);
+ const themeAudio=useRef(null),themeMuted=useRef(false),gameContainer=useRef(null),latestGame=useRef(null),questionKeyboard=useRef(null),questionCard=useRef(null),reviewPanels=useRef(null);
+ const [musicMuted,setMusicMuted]=useState(false),[musicBlocked,setMusicBlocked]=useState(false);
  useEffect(()=>{
   if(!hosting)return;
   const audio=themeAudio.current;if(!audio)return;audio.volume=0.35;
@@ -353,15 +419,21 @@ function Classroom(){
  },[hosting]);
  useEffect(()=>{
   const audio=themeAudio.current;if(!audio)return;
-  if(game?.host&&game.phase!=='finished'){audio.muted=themeMuted.current;audio.play().then(()=>setMusicBlocked(false)).catch(()=>setMusicBlocked(true));}
+  if(game?.host&&game.phase!=='finished')void playThemeMusic();
   else {void globalThis.MLH.fadeOutAudio(audio, {reset:true});setMusicBlocked(false);}
  },[!!game?.host,game?.phase==='finished']);
  useLayoutEffect(()=>{if(game?.phase==='finished'){const audio=themeAudio.current;if(audio){void globalThis.MLH.fadeOutAudio(audio, {reset:true});}}},[game?.phase]);
- async function toggleThemeMusic(){
+ async function playThemeMusic(){
+  const audio=themeAudio.current;if(!audio)return;
+  audio.muted=themeMuted.current;
+  try{await audio.play();setMusicBlocked(false);}
+  catch(error){if(error.name!=='AbortError')setMusicBlocked(true);}
+ }
+ function toggleThemeMusic(){
   const audio=themeAudio.current;if(!audio)return;
   themeMuted.current=musicBlocked?false:!themeMuted.current;audio.muted=themeMuted.current;setMusicMuted(themeMuted.current);
   if(latestGame.current?.phase==='finished'){(globalThis.MLH?.fadeOutAudio?.(audio) || audio.pause());setMusicBlocked(false);return;}
-  if(!themeMuted.current&&audio.paused)try{await audio.play();setMusicBlocked(false);}catch{setMusicBlocked(true);}
+  if(!themeMuted.current)void playThemeMusic();
  }
  const fullscreenSupported=!!(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen);
  async function toggleFullscreen(){
@@ -380,6 +452,7 @@ function Classroom(){
  const [pin,setPin]=useState(new URLSearchParams(location.search).get('pin')||''),[gameType,setGameType]=useState('quiz'),[targetStreak,setTargetStreak]=useState('30'),[raceMinutes,setRaceMinutes]=useState('0'),[count,setCount]=useState('20'),[questionTime,setQuestionTime]=useState('10'),[selected,setSelected]=useState(null),[now,setNow]=useState(Date.now());
  const autoJoinStarted=useRef(false),joinIdentity=useRef(null),session=useRef(restoredHost),inFlight=useRef(false),actionPending=useRef(false),pendingRead=useRef(null),failures=useRef(0),mounted=useRef(true),clockOffset=useRef(0);
  async function request(action,extra={},identity=session.current){
+  if(offlineGame.current)return offlineGame.current.request(action,extra);
   const response=await fetch('./.netlify/functions/classroom',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,...identity,...extra}),signal:AbortSignal.timeout(12000)});
   let result;try{result=await response.json();}catch{throw Error('Classroom service is not available on this site. Individual practice is still available.');}if(!response.ok){const error=Error(result.error||'Classroom service unavailable.');error.terminal=response.status===400&&['Game not found or expired.','Join this game first.','Please rejoin this game.'].includes(result.error);throw error;}return result;
  }
@@ -402,6 +475,8 @@ function Classroom(){
 
  async function act(action,extra){
   if(actionPending.current)return;actionPending.current=true;setBusy(true);setError('');
+  // Request playback during the host's click, before the network request.
+  if((action==='create'||action==='start')&&!themeMuted.current&&themeAudio.current?.paused)void playThemeMusic();
   if(pendingRead.current)await pendingRead.current.catch(()=>{});
   inFlight.current=true;
   try{
@@ -415,11 +490,19 @@ function Classroom(){
     }
     identity=joinIdentity.current;
    }
+   if(action==='create'&&offline)offlineGame.current=window.MLHClassroomTestGame.create(extra,testParticipants);
    const result=await request(action,extra,identity);
-   if(action==='create'){session.current={pin:result.pin,token:result.token};saveHostSession(session.current);}
+   if(result.closed&&offlineGame.current){offlineGame.current=null;forgetSession();return;}
+   if(action==='create'){
+    session.current={pin:result.pin,token:result.token};
+    if(!offlineGame.current)saveHostSession(session.current);
+   }
    if(action==='join')session.current=identity;
    update(result);
-  }catch(e){if(action==='read')readFailure(e);else setError(e.message);}finally{inFlight.current=false;actionPending.current=false;if(mounted.current)setBusy(false);}
+  }catch(e){
+   if(action==='create'&&themeAudio.current){void globalThis.MLH.fadeOutAudio(themeAudio.current,{reset:true});setMusicBlocked(false);}
+   if(action==='read')readFailure(e);else setError(e.message);
+  }finally{inFlight.current=false;actionPending.current=false;if(mounted.current)setBusy(false);}
  }
  useEffect(()=>{let timeout;mounted.current=true;
   async function poll(){
@@ -450,47 +533,66 @@ function Classroom(){
   return()=>animations.forEach(animation=>animation.cancel());
  },[game?.index,game?.phase]);
  const joinUrl=new URL(`?mode=join${game?`&pin=${game.pin}`:''}`,location.href).toString();
- const joinQrUrl=`https://api.qrserver.com/v1/create-qr-code/?size=560x560&data=${encodeURIComponent(joinUrl)}`;
+ const joinQrUrl=offline?null:`https://api.qrserver.com/v1/create-qr-code/?size=560x560&data=${encodeURIComponent(joinUrl)}`;
  const hostLobby=game?.host&&game.phase==='lobby';
  const participantLobby=game&&!game.host&&game.phase==='lobby';
  const waitingLobby=hostLobby||participantLobby;
  const racing=game?.gameType==='race';
  const live=game?.phase==='question',review=game?.phase==='review'||game?.phase==='finished';
  const participantCount=game?.players.length||0;
+ const answeredCount=game?.players.filter(player=>player.answered).length||0;
  const nameColumns=participantCount<=10?1:2;
  const nameRows=Math.max(1,Math.min(10,participantCount));
  const nameDensity=Math.min(1,Math.max(0,(participantCount-5)/15));
  const nameStyle={'--name-columns':nameColumns,'--name-rows':nameRows,'--name-height':'44px','--name-gap':'8px','--names-width':nameColumns===2?'422px':'320px','--name-font':`${Math.min(16-4*nameDensity,nameColumns===2?14:16)}px`,'--long-name-font':`${Math.min(15-4*nameDensity,nameColumns===2?12:15)}px`,'--symbol-width':`${26-8*nameDensity}px`,'--symbol-height':`${34-10*nameDensity}px`};
- const answers=game?K.answers(game.options):[];
- const participantFeedback=!game?.host&&review&&selected?{correct:K.correct(answers.find(answer=>answer.id===selected),game.question)}:null;
+ const question=game?.question;
+ const findKey=question?.type==='find';
+ const answers=game?K.classroomAnswers(game.options,findKey):[];
+ const selection=answers.find(answer=>answer.id===selected);
+ const participantFeedback=review&&selection?{correct:K.classroomCorrect(selection,question)}:null;
+ const keyboardFeedback=findKey&&review?{correct:true}:participantFeedback;
+ const breakdown=new Map((game?.breakdown||[]).map(row=>[row.answer,row.count]));
+ const resultAnswers=findKey?answers.filter(answer=>breakdown.get(answer.id)>0||K.classroomCorrect(answer,question))
+   .sort((a,b)=>a.pitch-b.pitch).map(answer=>{
+    const octave=question.baseOctave+Math.floor(answer.pitch/12);
+    const noteNames=game.options.sharps?['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B']:['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
+    const label=K.classroomCorrect(answer,question)?question.note.label:noteNames[answer.pitch%12];
+    return {...answer,label:label+octave};
+   }):answers;
+ const prompt=findKey?'Select the written note on the keyboard.':<>Identify the highlighted <strong>note</strong>.</>;
+ const submitAnswer=id=>act('answer',{answer:id,index:game.index});
  const countdown=game?.phase==='countdown';
  const countdownNumber=countdown?Math.max(1,Math.min(3,Math.ceil((game.startedAt-now)/1000))):0;
  const seconds=game?.deadline?Math.max(0,Math.ceil((game.deadline-now)/1000)):0;
 
  return <div className={window.MLH.shell.pageShellClass}>
   {hosting&&<audio ref={themeAudio} src="./audio/hostgame.mp3" loop preload="none" aria-hidden="true"/>}
-  <window.MLH.AppHeader icon="./app-icons/keyboard-icon.svg" title="Keyboard Note Identification" subtitle="Identify notes on the keyboard and match written notes to keys." profileUsesSharedSettings={false} profileTitle="Join a Game" profileShowLabel={false} profileShareDisabled={hosting||!!participantLobby} profileShareUrl={joinUrl} classroomPilotMode={hosting} classroomPilotUrl={returnUrl.toString()} classroomPilotDisabled={!hosting}/>
+  <window.MLH.AppHeader icon="./app-icons/keyboard-icon.svg" title="Keyboard Note Identification" subtitle="Identify notes on the keyboard and match written notes to keys." profileUsesSharedSettings={false} profileTitle="Join a Game" profileShowLabel={false} profileShareDisabled={hosting||!!participantLobby} worksheetDisabled={hosting} profileShareUrl={joinUrl} classroomPilotMode={hosting} classroomPilotUrl={returnUrl.toString()} classroomPilotDisabled={!hosting}/>
   <div className={window.MLH.shell.pageContentClass}><main ref={gameContainer} className={`${window.MLH.shell.mainShellClass}${game||hosting?' classroom-game-main':''}${!game&&hosting?' classroom-setup-main':''}${waitingLobby?' classroom-lobby-main':''}`}>
-   {game&&!participantLobby&&<div className={`lobby-toolbar${hostLobby?' classroom-lobby-toolbar':waitingLobby?'':' classroom-game-toolbar'}`}>{hostLobby&&<><span className="lobby-count inline-flex items-center gap-2"><img src="./ui-icons/group-button.svg?v=20261106-even-lines" alt="Players" className="h-6 w-6" style={{filter:'brightness(0)'}}/><span aria-live="polite">{game.players.length}</span></span><h2 className="lobby-heading">Scan to Join</h2></>}{!waitingLobby&&<>{racing&&game.deadline&&game.phase!=='finished'&&<p className="classroom-toolbar-time classroom-race-time" role="timer">{Math.floor(seconds/60)}:{String(seconds%60).padStart(2,'0')}</p>}{racing?<div className="classroom-race-heading"><h2 className="classroom-race-title">Streak of {game.targetStreak}</h2><p className="classroom-race-subtitle">Be the first participant to correctly answer {game.targetStreak} {game.targetStreak===1?'question':'questions'} in a row.</p></div>:<h2>Question {game.index+1} of {game.total}</h2>}{!racing&&!countdown&&game.phase!=='finished'&&<p className="classroom-toolbar-time" aria-live="off">{live?seconds:0} seconds</p>}{!racing&&game.phase==='finished'&&<h2 className="classroom-final-title">Final Results</h2>}</>}<div className="classroom-toolbar-controls">{hostLobby&&<button type="button" className="keyboard-answer primary" disabled={busy||!game.players.length||!connected} onClick={()=>act('start')}>Start</button>}{game.host&&!racing&&(live||game.phase==='review')&&<button type="button" className="keyboard-answer primary" disabled={busy||!connected} onClick={()=>act(live?'reveal':'next')}>{live?'Reveal Answers':game.index+1===game.total?'Finish Game':'Next Question'}</button>}{hosting&&game?.host&&<button type="button" className="classroom-audio-toggle" aria-label={musicMuted||musicBlocked?'Turn on game audio':'Turn off game audio'} aria-pressed={!musicMuted&&!musicBlocked} title={musicMuted||musicBlocked?'Unmute theme music':'Mute theme music'} onClick={toggleThemeMusic}><img src="./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15" alt="" aria-hidden="true"/></button>}<button type="button" className="keyboard-answer classroom-fullscreen" aria-label={fullscreen?'Exit Full Screen':'Full Screen'} aria-pressed={fullscreen} disabled={!fullscreenSupported} title={fullscreenSupported?'Toggle full screen':'Full screen is unavailable in this browser'} onClick={toggleFullscreen}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d={fullscreen?'M9 3v6H3m18 0h-6V3M3 15h6v6m6 0v-6h6':'M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6'}/></svg></button></div></div>}
+   {hosting&&!game&&!restoringHost&&<ClassroomSetupPreview/>}
+   {game&&!participantLobby&&<div className={`lobby-toolbar${hostLobby?' classroom-lobby-toolbar':waitingLobby?'':' classroom-game-toolbar'}`}>{hostLobby&&<><span className="lobby-count inline-flex items-center gap-2"><img src="./ui-icons/group-button.svg?v=20261106-even-lines" alt="Players" className="h-6 w-6"/><span aria-live="polite">{game.players.length}</span></span><h2 className="lobby-heading">{offline?'Offline Test Lobby':'Scan to Join'}</h2></>}{!waitingLobby&&<>{racing&&game.deadline&&game.phase!=='finished'&&<p className="classroom-toolbar-time classroom-race-time" role="timer">{Math.floor(seconds/60)}:{String(seconds%60).padStart(2,'0')}</p>}{racing?<div className="classroom-race-heading"><h2 className="classroom-race-title">Streak of {game.targetStreak}</h2><p className="classroom-race-subtitle">Be the first participant to correctly answer {game.targetStreak} {game.targetStreak===1?'question':'questions'} in a row.</p></div>:<h2>Question {game.index+1} of {game.total}</h2>}{!racing&&!countdown&&game.phase!=='finished'&&<div className="classroom-toolbar-time classroom-quiz-timing"><span aria-live="off">{live?seconds:0} seconds</span>{game.host&&<span className="classroom-answered-count" role="status">{answeredCount} of {participantCount} answered</span>}</div>}{!racing&&game.phase==='finished'&&<h2 className="classroom-final-title">Final Results</h2>}</>}<div className="classroom-toolbar-controls">{offline&&<button type="button" className="keyboard-answer" disabled={busy} onClick={()=>act('end')}>End Test</button>}{hostLobby&&<button type="button" className="keyboard-answer primary" disabled={busy||!game.players.length||!connected} onClick={()=>act('start')}>Start</button>}{game.host&&!racing&&(live||game.phase==='review')&&<button type="button" className="keyboard-answer primary" disabled={busy||!connected} onClick={()=>act(live?'reveal':'next')}>{live?'Reveal Answers':game.index+1===game.total?'Finish Game':'Next Question'}</button>}{hosting&&game?.host&&<ClassroomAudioButton enabled={!musicMuted&&!musicBlocked} onClick={toggleThemeMusic}/>}<ClassroomFullscreenButton fullscreen={fullscreen} supported={fullscreenSupported} onClick={toggleFullscreen}/></div></div>}
    {!connected&&session.current&&<div role="status" className="text-center mb-4"><p>Connection lost. Reconnecting automatically…</p><button type="button" className="keyboard-answer mt-2" disabled={busy} onClick={()=>act('read')}>Reconnect</button></div>}
    {error&&<div role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 mb-4">{error}</div>}
    {countdown&&<div className="classroom-countdown" role="status" aria-label={`Next question in ${countdownNumber}`}><span key={countdownNumber}>{countdownNumber}</span></div>}
    {!game&&restoringHost?<p role="status" className="text-center py-12">Restoring your game…</p>:!game?<div className="classroom-setup-content mx-auto max-w-xl">
-    {hosting?<section className="rounded-xl border border-stone-200 p-5"><h2 className="text-xl font-bold text-center mb-4">Host a Game</h2><div className="game-type-options" role="group" aria-label="Game type">{[{id:'quiz',title:'Quiz',subtitle:'Compete for points. Faster correct answers score more.'},{id:'race',title:'Race',subtitle:'Race to the finish. Be first to reach the correct-answer streak.'}].map(type=><button key={type.id} type="button" className="game-type-card" aria-pressed={gameType===type.id} onClick={()=>setGameType(type.id)}><span className="game-type-heading text-lg font-bold"><img className="game-type-glyph" src={`./ui-icons/${type.id}.svg`} alt="" aria-hidden="true"/>{type.title}</span><span className="block text-sm text-stone-600 mt-1">{type.subtitle}</span></button>)}</div>{gameType==='race'?<div className="grid grid-cols-2 gap-3"><label className="block mb-4">Streak<input type="number" min="1" max="100" step="1" className="pilot-field" value={targetStreak} onChange={e=>setTargetStreak(e.target.value)}/></label><label className="block mb-4">Time Limit<select className="pilot-field" value={raceMinutes} onChange={e=>setRaceMinutes(e.target.value)}><option value="0">Unlimited</option>{Array.from({length:10},(_,i)=>i+1).map(n=><option key={n} value={n}>{n} {n===1?'minute':'minutes'}</option>)}</select></label></div>:<div className="grid grid-cols-2 gap-3"><label className="block mb-4">Questions<select className="pilot-field" value={count} onChange={e=>setCount(e.target.value)}>{[5,10,15,20,25,30,35,40,45,50].map(n=><option key={n}>{n}</option>)}</select></label><label className="block mb-4">Time Per Question<select className="pilot-field" value={questionTime} onChange={e=>setQuestionTime(e.target.value)}>{[5,10,15,20,30,45,60,90,120].map(n=><option key={n} value={n}>{n} seconds</option>)}</select></label></div>}<button className="keyboard-answer primary w-full" disabled={busy||!configuration||(gameType==='race'&&(!Number.isInteger(Number(targetStreak))||Number(targetStreak)<1||Number(targetStreak)>100))} onClick={()=>act('create',{...configuration,count:Number(count),questionTime:Number(questionTime),gameType,targetStreak:Number(targetStreak),raceMinutes:Number(raceMinutes)})}>Create Game</button>{!configuration&&<p className="mt-3">Return to Individual Practice, customise your settings and click Host a Game.</p>}</section>:<section className="rounded-xl border border-stone-200 p-5"><h2 className="text-xl font-bold mb-4">Join a Game</h2>{pin.length!==6?<p>Scan the QR code on your teacher’s screen to join.</p>:<><p role="status" className="mb-4 text-stone-600">{busy?'Joining game…':error?'Unable to join this game.':'You’ll get a random musical name and symbol.'}</p>{error&&<button className="keyboard-answer w-full" disabled={busy} onClick={()=>act('join')}>Retry</button>}</>}</section>}
+    {hosting?<section className="rounded-xl border border-stone-200 p-5"><h2 className="text-xl font-bold text-center mb-4">Host a Game</h2><div className="game-type-options" role="group" aria-label="Game type">{[{id:'quiz',title:'Quiz',subtitle:'Compete for points. Faster correct answers score more.'},{id:'race',title:'Race',subtitle:'Race to the finish. Be first to reach the correct-answer streak.'}].map(type=><button key={type.id} type="button" className="game-type-card" aria-pressed={gameType===type.id} onClick={()=>setGameType(type.id)}><span className="game-type-heading text-lg font-bold"><img className="game-type-glyph" src={`./ui-icons/classroom-${type.id}.png`} alt="" aria-hidden="true"/>{type.title}</span><span className="block text-sm text-stone-600 mt-1">{type.subtitle}</span></button>)}</div>{gameType==='race'?<div className="grid grid-cols-2 gap-3"><label className="block mb-4">Streak<input type="number" min="1" max="100" step="1" className="pilot-field" value={targetStreak} onChange={e=>setTargetStreak(e.target.value)}/></label><label className="block mb-4">Time Limit<select className="pilot-field" value={raceMinutes} onChange={e=>setRaceMinutes(e.target.value)}><option value="0">Unlimited</option>{Array.from({length:10},(_,i)=>i+1).map(n=><option key={n} value={n}>{n} {n===1?'minute':'minutes'}</option>)}</select></label></div>:<div className="grid grid-cols-2 gap-3"><label className="block mb-4">Questions<select className="pilot-field" value={count} onChange={e=>setCount(e.target.value)}>{[5,10,15,20,25,30,35,40,45,50].map(n=><option key={n}>{n}</option>)}</select></label><label className="block mb-4">Time Per Question<select className="pilot-field" value={questionTime} onChange={e=>setQuestionTime(e.target.value)}>{[5,10,15,20,30,45,60,90,120].map(n=><option key={n} value={n}>{n} seconds</option>)}</select></label></div>}<button className="keyboard-answer primary w-full" disabled={busy||!gameSettings||(gameType==='race'&&(!Number.isInteger(Number(targetStreak))||Number(targetStreak)<1||Number(targetStreak)>100))} onClick={()=>act('create',{...gameSettings,count:Number(count),questionTime:Number(questionTime),gameType,targetStreak:Number(targetStreak),raceMinutes:Number(raceMinutes)})}>Start</button>{canTestOffline&&<div className="text-center mt-3"><label className="inline-flex items-center gap-2" style={{fontSize:14,lineHeight:1.5}}><input type="checkbox" checked={offline} onChange={event=>changeOffline(event.target.checked)}/>Offline test mode</label></div>}{!gameSettings&&<p className="mt-3">Return to Individual Practice, customise your settings and click Host a Game.</p>}</section>:<section className="rounded-xl border border-stone-200 p-5"><h2 className="text-xl font-bold mb-4">Join a Game</h2>{pin.length!==6?<p>Scan the QR code on your teacher’s screen to join.</p>:<><p role="status" className="mb-4 text-stone-600">{busy?'Joining game…':error?'Unable to join this game.':'You’ll get a random musical name and symbol.'}</p>{error&&<button className="keyboard-answer w-full" disabled={busy} onClick={()=>act('join')}>Retry</button>}</>}</section>}
    </div>:<>
-    {game.phase==='lobby'?hostLobby?<section className={`lobby-stage${game.players.length?' lobby-with-participants':''}`} aria-label="Joining lobby"><div className="lobby-join-row"><div className="lobby-qr-card"><img className="lobby-qr" src={joinQrUrl} alt="QR code to join this game"/></div></div><div className="lobby-participants" aria-live="polite">{game.players.length>=20&&<p className="lobby-capacity">Maximum players reached</p>}{game.players.length===0&&<h2 className="text-2xl font-bold">Waiting for participants…</h2>}{game.players.length>0&&<div className="lobby-names" style={nameStyle}>{game.players.map((p,i)=><button type="button" className="lobby-name" style={{fontSize:p.name.length>18?'var(--long-name-font)':undefined}} key={p.id||i} disabled={busy||!connected} aria-label={`Remove ${p.name}`} title={`Remove ${p.name}`} onClick={()=>act('remove',{playerId:p.id})}><ParticipantName name={p.name} symbol={p.symbol}/></button>)}</div>}</div></section>:<section className="participant-waiting-stage" aria-label="Participant waiting lobby"><h2 className="text-4xl font-extrabold text-center">Waiting to start...</h2><div className="participant-identity"><ParticipantName name={game.myName} symbol={game.mySymbol}/></div></section>:racing?<><RaceTrack game={game} soundEnabled={game.host&&!musicMuted&&!musicBlocked}/>{!game.host&&live&&<>{game.lastCorrect!==null&&game.lastCorrect!==undefined&&<p role="status" className={`text-center mt-2 ${game.lastCorrect?'text-green-700':'text-red-700'}`}>{game.lastCorrect?'Correct — keep going!':'Incorrect — your streak starts again.'}</p>}<div className="keyboard-area"><Keyboard question={game.question} options={game.options} showC={game.showC===true} feedback={null}/></div><div className="chords-question-card relative z-10 mx-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md"><p className="text-base font-semibold leading-tight">Identify the highlighted <strong>note</strong>.</p><AnswerChoices answers={answers} question={game.question} disabled={busy||!connected} onAnswer={answer=>act('answer',{answer:answer.id,index:game.index})}/></div></>}</>:game.phase==='finished'?<QuizFinalPodium players={game.players} soundEnabled={game.host&&!musicMuted&&!musicBlocked}/>:<>
-     <div ref={questionKeyboard} className="keyboard-area"><Keyboard question={game.question} options={game.options} showC={game.showC===true} feedback={participantFeedback}/></div>
+    {game.phase==='lobby'?hostLobby?<section className={`lobby-stage${game.players.length?' lobby-with-participants':''}`} aria-label="Joining lobby"><div className="lobby-join-row">{offline?<p className="text-lg">Simulated pupils answer automatically.</p>:<div className="lobby-qr-card"><img className="lobby-qr" src={joinQrUrl} alt="QR code to join this game"/></div>}</div><div className="lobby-participants" aria-live="polite">{game.players.length>=20&&<p className="lobby-capacity">Maximum players reached</p>}{game.players.length===0&&<h2 className="text-2xl font-bold">Waiting for participants…</h2>}{game.players.length>0&&<div className="lobby-names" style={nameStyle}>{game.players.map((p,i)=><div className="lobby-name" style={{fontSize:p.name.length>18?'var(--long-name-font)':undefined}} key={p.id||i}>
+     <span className="lobby-name-label" title={p.name}><ParticipantName name={p.name} symbol={p.symbol}/></span>
+     <button type="button" className="lobby-remove" disabled={busy||!connected} aria-label={`Remove ${p.name}`} title={`Remove ${p.name}`} onClick={()=>act('remove',{playerId:p.id})}>×</button>
+    </div>)}</div>}</div></section>:<section className="participant-waiting-stage" aria-label="Participant waiting lobby"><h2 className="text-4xl font-extrabold text-center">Waiting to start...</h2><div className="participant-identity"><ParticipantName name={game.myName} symbol={game.mySymbol}/></div></section>:racing?<><RaceTrack game={game} soundEnabled={game.host&&!musicMuted&&!musicBlocked}/>{!game.host&&live&&<>{game.lastCorrect!==null&&game.lastCorrect!==undefined&&<p role="status" className={`text-center mt-2 ${game.lastCorrect?'text-green-700':'text-red-700'}`}>{game.lastCorrect?'Correct — keep going!':'Incorrect — your streak starts again.'}</p>}<div className="keyboard-area"><ClassroomKeyboard game={game} enabled={!busy&&connected} onAnswer={submitAnswer}/></div><div className="chords-question-card relative z-10 mx-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md"><p className="text-base font-semibold leading-tight">{prompt}</p>{!findKey&&<AnswerChoices answers={answers} question={question} disabled={busy||!connected} onAnswer={answer=>submitAnswer(answer.id)}/>}</div></>}</>:game.phase==='finished'?<QuizFinalPodium players={game.players} soundEnabled={game.host&&!musicMuted&&!musicBlocked}/>:<>
+     <div ref={questionKeyboard} className="keyboard-area"><ClassroomKeyboard game={game} feedback={keyboardFeedback} selection={selection} enabled={!game.host&&!busy&&live&&!game.submitted&&connected&&seconds>0} onAnswer={submitAnswer}/></div>
      <div ref={questionCard} className="chords-question-card relative z-10 mx-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md">
-      <div className="flex items-center justify-between gap-4 text-base font-semibold leading-tight"><p>Identify the highlighted <strong>note</strong>.</p></div>
-      {!game.host&&<AnswerChoices answers={answers} question={game.question} review={review} selected={selected} disabled={busy||!live||game.submitted||!connected||seconds===0} onAnswer={answer=>act('answer',{answer:answer.id,index:game.index})}/>}
+      <div className="flex items-center justify-between gap-4 text-base font-semibold leading-tight"><p>{prompt}</p></div>
+      {!game.host&&!findKey&&<AnswerChoices answers={answers} question={game.question} review={review} selected={selected} disabled={busy||!live||game.submitted||!connected||seconds===0} onAnswer={answer=>submitAnswer(answer.id)}/>}
       {live&&game.submitted&&<p role="status" className="text-center mt-4">Answer submitted.</p>}
      </div>
     </>}
-    {game.host&&!racing&&!waitingLobby&&game.phase!=='finished'&&<div ref={reviewPanels} className="classroom-review-panels" style={{display:review?undefined:'none'}}><section className="classroom-results"><h2 className="text-lg font-bold">Results</h2><div className="breakdown-grid" role="group" aria-label="Answers bar graph">{answers.map(answer=>{const count=(game.breakdown||[]).find(item=>item.answer===answer.id)?.count||0;const correct=K.correct(answer,game.question);const maximum=Math.max(1,...(game.breakdown||[]).map(item=>item.count));return <div key={answer.id} className={`breakdown-item ${correct?'correct':''}`} aria-label={`${answer.label}: ${count}${correct?', correct answer':''}`}><div className="breakdown-track"><p className="breakdown-count">{count}</p><div className="breakdown-bar" style={{height:`${150*count/maximum}px`}} aria-hidden="true"/></div><p className="breakdown-label">{answer.label}</p></div>;})}</div></section><ClassroomLeaderboard players={game.players} visible={review} questionIndex={game.index}/></div>}
+    {game.host&&!racing&&!waitingLobby&&game.phase!=='finished'&&<div ref={reviewPanels} className="classroom-review-panels" style={{display:review?undefined:'none'}}><section className="classroom-results"><h2 className="text-lg font-bold">Results</h2><div className="breakdown-grid" role="group" aria-label="Answers bar graph">{resultAnswers.map(answer=>{const count=breakdown.get(answer.id)||0;const correct=K.classroomCorrect(answer,question);const maximum=Math.max(1,...breakdown.values());return <div key={answer.id} className={`breakdown-item ${correct?'correct':''}`} aria-label={`${answer.label}: ${count}${correct?', correct answer':''}`}><div className="breakdown-track"><p className="breakdown-count">{count}</p><div className="breakdown-bar" style={{height:`${150*count/maximum}px`}} aria-hidden="true"/></div><p className="breakdown-label">{answer.label}</p></div>;})}</div></section><ClassroomLeaderboard players={game.players} visible={review} questionIndex={game.index}/></div>}
    </>}
   </main></div>
  </div>;
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<Classroom/>);
 
-</script><script src="./generated-runtimes/keyboardnoteidentificationclassroom-1.js?v=f8119a56bab2"></script><script src="./footer.js?v=120454beac89"></script></body></html>
+</script><script src="./generated-runtimes/keyboardnoteidentificationclassroom-1.js?v=6ad19ff94932"></script><script src="./footer.js?v=120454beac89"></script></body></html>

@@ -230,7 +230,7 @@
     return ({ N3: "National 3", N4: "National 4", N5: "National 5", H: "Higher", AH: "Advanced Higher" })[level] || "Custom";
   }
 
-  function AppHeader({ icon, title, subtitle, children, profileTitle, profileLabel, profileShareUrl, profileState, profileUsesSharedSettings = true, profileShowLabel = true, profileShowQr = true, profileShareDisabled = false, profileQrIcon, worksheetConfig, worksheetMode = false, classroomPilotUrl, classroomPilotMode = false, classroomPilotDisabled = false, classroomPilotConfig }) {
+  function AppHeader({ icon, title, subtitle, children, profileTitle, profileLabel, profileShareUrl, profileState, profileUsesSharedSettings = true, profileShowLabel = true, profileShowQr = true, profileShareDisabled = false, profileQrIcon, worksheetConfig, worksheetDisabled = false, worksheetMode = false, classroomPilotUrl, classroomPilotMode = false, classroomPilotDisabled = false, classroomPilotConfig }) {
     const [qrOpen, setQrOpen] = React.useState(false);
     const [worksheetOpening, setWorksheetOpening] = React.useState(false);
     const [, setProfileRevision] = React.useState(0);
@@ -251,7 +251,7 @@
     const displayedChildren = activeWorksheetMode ? null : children;
     const displayedClassroomUrl = classroomPilotUrl || worksheetHeader?.classroomPilotUrl;
     async function createWorksheet() {
-      if (!worksheetEnabled || worksheetOpening) return;
+      if (!worksheetEnabled || worksheetDisabled || worksheetOpening) return;
       setWorksheetOpening(true);
       try {
         const config = await worksheetConfig();
@@ -340,7 +340,7 @@
                 React.createElement("h1", { className: "relative top-[1px] inline-flex items-center gap-2 text-[2.2rem] font-semibold leading-none tracking-tight md:text-3xl" },
                   displayedTitle,
                   profileShowQr && React.createElement(ProfileQrButton, { icon: profileQrIcon, disabled: activeWorksheetMode || profileShareDisabled, onClick: () => setQrOpen(true) }),
-                  worksheetEnabled && React.createElement(WorksheetButton, { enabled: !worksheetOpening, selected: activeWorksheetMode, returnLabel: typeof displayedTitle === "string" ? displayedTitle : "activity", onClick: activeWorksheetMode ? worksheetHeader?.onExit : createWorksheet }),
+                  (worksheetEnabled || worksheetDisabled) && React.createElement(WorksheetButton, { enabled: !worksheetDisabled && !worksheetOpening, selected: activeWorksheetMode, returnLabel: typeof displayedTitle === "string" ? displayedTitle : "activity", onClick: activeWorksheetMode ? worksheetHeader?.onExit : createWorksheet }),
                   displayedClassroomUrl && React.createElement("button", {
                     disabled: activeWorksheetMode || classroomPilotDisabled,
                     type: "button", onClick: () => {
