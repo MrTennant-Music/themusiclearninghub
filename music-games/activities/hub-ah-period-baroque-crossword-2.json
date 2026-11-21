@@ -1,0 +1,157 @@
+{
+  "id": "hub-ah-period-baroque-crossword-2",
+  "level": "AH",
+  "title": "Baroque 2",
+  "instructions": "",
+  "description": "Revise concepts associated with Baroque up to Advanced Higher. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Baroque",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-ah-period-baroque-crossword-2-1",
+      "prompt": "In Baroque music, a bass instrument plays the bass line while a chordal instrument fills in the harmony, often from figured bass.",
+      "answer": "Basso continuo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-2",
+      "prompt": "A Baroque concerto that contrasts a small group of soloists, the concertino, with the larger ensemble, the ripieno.",
+      "answer": "Concerto grosso",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-3",
+      "prompt": "Name the specific Baroque aria form with an A section, contrasting B section and a written instruction to return to the beginning.",
+      "answer": "Da capo aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-4",
+      "prompt": "A variation form built over a recurring bass line and usually a repeating harmonic pattern.",
+      "answer": "Passacaglia",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-5",
+      "prompt": "A Baroque form in which a recurring orchestral passage alternates with contrasting solo episodes.",
+      "answer": "Ritornello",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-6",
+      "prompt": "Highly agile, ornamented vocal writing with rapid scales, arpeggios, leaps, trills and other decorations.",
+      "answer": "Coloratura",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-7",
+      "prompt": "The small group of featured soloists in a concerto grosso.",
+      "answer": "Concertino",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-8",
+      "prompt": "The larger body of players in a concerto grosso, contrasted with the smaller concertino.",
+      "answer": "Ripieno",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-9",
+      "prompt": "A contrapuntal work in which each independent voice introduces the subject in turn.",
+      "answer": "Fugue",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-10",
+      "prompt": "Name the original main theme first introduced in a fugue, rather than its later transposed entry.",
+      "answer": "Subject",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-11",
+      "prompt": "A German Lutheran hymn tune, usually in a clear regular rhythm.",
+      "answer": "Chorale",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-baroque-crossword-2-12",
+      "prompt": "A melodic phrase is immediately repeated starting on a higher or lower pitch.",
+      "answer": "Sequence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

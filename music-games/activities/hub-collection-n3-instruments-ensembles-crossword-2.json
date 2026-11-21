@@ -1,0 +1,132 @@
+{
+  "id": "hub-collection-n3-instruments-ensembles-crossword-2",
+  "level": "N3",
+  "title": "Instruments and Ensembles 2",
+  "instructions": "",
+  "description": "Instruments and Ensembles: current Music Dictionary definitions — set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Instruments and Ensembles",
+    "National 3"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0043",
+      "prompt": "A guitar whose hollow wooden body makes the sound louder.",
+      "answer": "Acoustic guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0043"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0047",
+      "prompt": "Instruments such as trumpets and trombones, played by buzzing your lips.",
+      "answer": "Brass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0047"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0050",
+      "prompt": "A guitar connected to an amplifier to make its sound louder.",
+      "answer": "Electric guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0050"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0052",
+      "prompt": "A small group playing traditional music, often with acoustic instruments.",
+      "answer": "Folk group",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0052"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0055",
+      "prompt": "A keyboard instrument that can make long, held sounds, often heard in churches.",
+      "answer": "Organ",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0055"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0057",
+      "prompt": "A keyboard instrument where pressing a key makes a small hammer hit strings inside.",
+      "answer": "Piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0057"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0061",
+      "prompt": "A group playing steel pans: metal drums that can play tunes.",
+      "answer": "Steel band",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0061"
+    },
+    {
+      "id": "hub-collection-n3-instruments-ensembles-crossword-2-MC-0068",
+      "prompt": "Wind instruments such as flutes, clarinets and oboes, played by blowing.",
+      "answer": "Woodwind",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0068"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "instruments-ensembles",
+  "sourceConceptIds": [
+    "MC-0043",
+    "MC-0047",
+    "MC-0050",
+    "MC-0052",
+    "MC-0055",
+    "MC-0057",
+    "MC-0061",
+    "MC-0068"
+  ]
+}

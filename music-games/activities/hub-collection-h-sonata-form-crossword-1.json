@@ -1,0 +1,80 @@
+{
+  "id": "hub-collection-h-sonata-form-crossword-1",
+  "level": "H",
+  "title": "Sonata and Sonata Form",
+  "instructions": "",
+  "description": "Sonata and Sonata Form: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Sonata and Sonata Form",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-h-sonata-form-crossword-1-MC-0223",
+      "prompt": "A piece for a solo instrument, sometimes with piano, usually in several main parts.",
+      "answer": "Sonata",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0223"
+    },
+    {
+      "id": "hub-collection-h-sonata-form-crossword-1-MC-0251",
+      "prompt": "The opening section where the main musical ideas are first introduced.",
+      "answer": "Exposition",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0251"
+    },
+    {
+      "id": "hub-collection-h-sonata-form-crossword-1-MC-0254",
+      "prompt": "Main ideas are introduced, explored and changed, then brought back home.",
+      "answer": "Sonata form",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0254"
+    },
+    {
+      "id": "hub-collection-h-sonata-form-crossword-1-MC-0255",
+      "prompt": "The main tune or idea that a piece is built around.",
+      "answer": "Subject",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0255"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "sonata-form",
+  "sourceConceptIds": [
+    "MC-0223",
+    "MC-0251",
+    "MC-0254",
+    "MC-0255"
+  ]
+}

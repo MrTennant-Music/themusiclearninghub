@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://app.cdn.wordwall.net/static/scripts/global/cdnlinks.2tbfmcljz21r94x281br-2w2.js",
+    "bytes": 664605,
+    "sha256": "98d4f5a89f1ae233b2e1a68a6a78c1cb1198a959ff263bf8cc4a1b6154cdec58"
+  },
+  {
+    "url": "https://app.cdn.wordwall.net/static/scripts/saltarelle/vel-wordwall-gameengine-core.2cpvhlesm6jrwka2dt4zobw2.js",
+    "bytes": 583559,
+    "sha256": "a1329a5a4c56f19275d264c88558d432830021082f0a6ebdf27f2dceea1bd9ad"
+  },
+  {
+    "url": "https://app.cdn.wordwall.net/static/scripts/saltarelle/vel-wordwall-gameengine-games.24oekooztyy7myneplrgj9a2.js",
+    "bytes": 1111655,
+    "sha256": "6d850bb7a58e4d188419785bd0c1c7d8cd9204d00ab5f0e05a7193b346336849"
+  },
+  {
+    "url": "https://app.cdn.wordwall.net/static/scripts/saltarelle/vel-wordwall-client-engine.2pzcvyrwryhwfy-jmtiwnbw2.js",
+    "bytes": 56783,
+    "sha256": "d7b301d2bad37943062f705b7f3802e453722140093eb5152b122977c5c3472f"
+  },
+  {
+    "url": "https://app.cdn.wordwall.net/static/scripts/saltarelle/vel-wordwall-gameengine-view.2hu-dm3hdaiqmwigy_7jnoa2.js",
+    "bytes": 474778,
+    "sha256": "4d2363a0ce56bbd85e8d4e0d3be758ad79f6c1f7a8bdeba935284bd5b43699f7"
+  },
+  {
+    "url": "https://app.cdn.wordwall.net/static/scripts/saltarelle/vel-wordwall-gameengine-application.24ysrjhaxpprqjnrmrbi5ia2.js",
+    "bytes": 62417,
+    "sha256": "25853363a9b8bd7313da9f045be701de0f47915e47f36e886501799295f6bee0"
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "reviewed_on": "2026-10-18",
+  "scope": "All 300 saved concept records, including the legacy Tonality record; 299 listed Dictionary concepts.",
+  "policy": "Add only essential audible identification clues supported by saved notes; no new dates, composers or historical context.",
+  "reference_document": "output/docx/music-concept-definitions-all-levels.docx",
+  "concepts": {
+    "MC-0001": {
+      "addition": "Blue notes are flattened or lowered notes that give the melody its characteristic blues colour.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "on a scale where some notes are flattened"
+    },
+    "MC-0106": {
+      "addition": "In a concerto, listen for the soloist playing alone or with little accompaniment, often finishing with a trill before the orchestra returns.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "usually featuring a trill"
+    },
+    "MC-0119": {
+      "addition": "It can also be plucked (pizzicato), producing short, detached bass notes instead of a sustained bowed line.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "bow (arco) or plucked (pizzicato)"
+    },
+    "MC-0144": {
+      "addition": "Listen for a solo voice using operatic singing, usually supported by orchestral accompaniment.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "sung in an operatic style"
+    },
+    "MC-0163": {
+      "addition": "On voice, violin or trombone the slide can be smooth; on piano or harp, the individual pitches pass rapidly in succession.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "Some instruments can play a very smooth glissando"
+    },
+    "MC-0191": {
+      "addition": "It is often heard played on a plucked double bass, with a new bass note on each beat.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "often played on a double bass"
+    },
+    "MC-0213": {
+      "addition": "It can also be plucked (pizzicato), giving short, detached notes rather than a sustained bowed sound.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "bow (arco) or plucked (pizzicato)"
+    },
+    "MC-0217": {
+      "addition": "The words are normally sung in German.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "The text is in German"
+    },
+    "MC-0243": {
+      "addition": "A common example doubles the note values, so quavers become crotchets while the beat keeps the same speed.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "the length of the notes used are doubled"
+    },
+    "MC-0244": {
+      "addition": "A common example halves the note values, so crotchets become quavers while the beat keeps the same speed.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "the length of the notes used are halved"
+    },
+    "MC-0257": {
+      "addition": "Many of the rapid notes are sung on a single syllable, creating an extended melismatic run.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "a number of notes sung to the one syllable"
+    },
+    "MC-0261": {
+      "addition": "When two pitches alternate, they are normally at least a third apart, unlike the neighbouring notes of a trill.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "two different notes at least a 3rd apart"
+    },
+    "MC-0262": {
+      "addition": "The words are sung in English.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "sung in English"
+    },
+    "MC-0264": {
+      "addition": "Listen for the fa-la-la refrain returning at the end of each verse.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "at the end of each verse"
+    },
+    "MC-0265": {
+      "addition": "When sung, the hymn text is normally in German.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "A German hymn tune"
+    },
+    "MC-0269": {
+      "addition": "Imitation is common: one voice begins a melodic idea and another copies it shortly afterwards.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "polyphonic in style, using imitation"
+    },
+    "MC-0272": {
+      "addition": "Listen for clear, balanced phrases and lighter textures combined with unexpectedly dissonant or atonal harmony.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "combined with dissonant, tonal and even atonal harmonies"
+    },
+    "MC-0284": {
+      "addition": "A usual turn sounds upper neighbour–main note–lower neighbour–main note; an inverted turn reverses this to lower neighbour–main note–upper neighbour–main note.",
+      "source": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
+      "source_field": "source_audit.source_extracts",
+      "supporting_excerpt": "the note above, the main note, the note below, and the main note again"
+    }
+  }
+}

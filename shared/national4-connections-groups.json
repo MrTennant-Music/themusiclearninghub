@@ -1,0 +1,442 @@
+[
+  {
+    "id": "n4-classical-links",
+    "family": "classical-style",
+    "label": "Classical music",
+    "conceptIds": [
+      "MC-0070",
+      "MC-0077",
+      "MC-0073",
+      "MC-0071"
+    ]
+  },
+  {
+    "id": "n4-rhythmic-styles",
+    "family": "styles",
+    "label": "Rhythmic styles",
+    "conceptIds": [
+      "MC-0074",
+      "MC-0076",
+      "MC-0079",
+      "MC-0075"
+    ]
+  },
+  {
+    "id": "n4-scottish-singing",
+    "family": "scottish-context",
+    "label": "Scottish singing",
+    "conceptIds": [
+      "MC-0072",
+      "MC-0078",
+      "MC-0067",
+      "MC-0008"
+    ]
+  },
+  {
+    "id": "n4-scottish-dances",
+    "family": "dance",
+    "label": "Scottish dances",
+    "conceptIds": [
+      "MC-0100",
+      "MC-0104",
+      "MC-0031",
+      "MC-0033"
+    ]
+  },
+  {
+    "id": "n4-scottish-dance-features",
+    "family": "dance",
+    "label": "Scottish dance rhythms",
+    "conceptIds": [
+      "MC-0100",
+      "MC-0098",
+      "MC-0104",
+      "MC-0102"
+    ]
+  },
+  {
+    "id": "n4-voice-types",
+    "family": "voices",
+    "label": "Voice types",
+    "conceptIds": [
+      "MC-0134",
+      "MC-0113",
+      "MC-0136",
+      "MC-0115"
+    ]
+  },
+  {
+    "id": "n4-string-instruments",
+    "family": "strings",
+    "label": "String instruments",
+    "conceptIds": [
+      "MC-0141",
+      "MC-0119",
+      "MC-0123",
+      "MC-0127"
+    ]
+  },
+  {
+    "id": "n4-woodwind-instruments",
+    "family": "woodwind",
+    "label": "Woodwind instruments",
+    "conceptIds": [
+      "MC-0124",
+      "MC-0120",
+      "MC-0131",
+      "MC-0132"
+    ]
+  },
+  {
+    "id": "n4-brass-links",
+    "family": "brass",
+    "label": "Brass music",
+    "conceptIds": [
+      "MC-0140",
+      "MC-0139",
+      "MC-0047",
+      "MC-0118"
+    ]
+  },
+  {
+    "id": "n4-untuned-percussion",
+    "family": "percussion",
+    "label": "Untuned percussion",
+    "conceptIds": [
+      "MC-0116",
+      "MC-0133",
+      "MC-0121",
+      "MC-0135"
+    ]
+  },
+  {
+    "id": "n4-percussion-sounds",
+    "family": "percussion",
+    "label": "Percussion sounds",
+    "conceptIds": [
+      "MC-0125",
+      "MC-0143",
+      "MC-0137",
+      "MC-0138"
+    ]
+  },
+  {
+    "id": "n4-blown-across",
+    "family": "wind-context",
+    "label": "Flutes and pan pipes",
+    "conceptIds": [
+      "MC-0124",
+      "MC-0130",
+      "MC-0045",
+      "MC-0068"
+    ]
+  },
+  {
+    "id": "n4-plucked-strings",
+    "family": "plucking",
+    "label": "Plucked strings",
+    "conceptIds": [
+      "MC-0127",
+      "MC-0128",
+      "MC-0058",
+      "MC-0043"
+    ]
+  },
+  {
+    "id": "n4-keyboards",
+    "family": "keyboards",
+    "label": "Keyboard instruments",
+    "conceptIds": [
+      "MC-0057",
+      "MC-0055",
+      "MC-0042",
+      "MC-0128"
+    ]
+  },
+  {
+    "id": "n4-low-instruments",
+    "family": "low-instruments",
+    "label": "Low-pitched instruments",
+    "conceptIds": [
+      "MC-0117",
+      "MC-0119",
+      "MC-0123",
+      "MC-0116"
+    ]
+  },
+  {
+    "id": "n4-rock-band",
+    "family": "rock-context",
+    "label": "Rock band sounds",
+    "conceptIds": [
+      "MC-0050",
+      "MC-0117",
+      "MC-0049",
+      "MC-0122"
+    ]
+  },
+  {
+    "id": "n4-brass-playing",
+    "family": "brass",
+    "label": "Brass performance",
+    "conceptIds": [
+      "MC-0047",
+      "MC-0140",
+      "MC-0139",
+      "MC-0129"
+    ]
+  },
+  {
+    "id": "n4-orchestral-strings",
+    "family": "strings",
+    "label": "Orchestral strings",
+    "conceptIds": [
+      "MC-0141",
+      "MC-0119",
+      "MC-0123",
+      "MC-0063"
+    ]
+  },
+  {
+    "id": "n4-wind-band",
+    "family": "band",
+    "label": "Wind band",
+    "conceptIds": [
+      "MC-0142",
+      "MC-0124",
+      "MC-0120",
+      "MC-0140"
+    ]
+  },
+  {
+    "id": "n4-brass-band",
+    "family": "band",
+    "label": "Brass band",
+    "conceptIds": [
+      "MC-0118",
+      "MC-0140",
+      "MC-0139",
+      "MC-0116"
+    ]
+  },
+  {
+    "id": "n4-jazz-sounds",
+    "family": "jazz",
+    "label": "Jazz music",
+    "conceptIds": [
+      "MC-0002",
+      "MC-0079",
+      "MC-0091",
+      "MC-0132"
+    ]
+  },
+  {
+    "id": "n4-latin-percussion",
+    "family": "latin",
+    "label": "Latin American percussion",
+    "conceptIds": [
+      "MC-0003",
+      "MC-0126",
+      "MC-0121",
+      "MC-0135"
+    ]
+  },
+  {
+    "id": "n4-ragtime-sounds",
+    "family": "ragtime",
+    "label": "Ragtime",
+    "conceptIds": [
+      "MC-0074",
+      "MC-0057",
+      "MC-0105",
+      "MC-0093"
+    ]
+  },
+  {
+    "id": "n4-african-links",
+    "family": "african",
+    "label": "African music",
+    "conceptIds": [
+      "MC-0069",
+      "MC-0016",
+      "MC-0037",
+      "MC-0056"
+    ]
+  },
+  {
+    "id": "n4-reggae-sounds",
+    "family": "reggae",
+    "label": "Reggae",
+    "conceptIds": [
+      "MC-0076",
+      "MC-0028",
+      "MC-0117",
+      "MC-0049"
+    ]
+  },
+  {
+    "id": "n4-concerto-links",
+    "family": "concerto",
+    "label": "Concerto",
+    "conceptIds": [
+      "MC-0071",
+      "MC-0039",
+      "MC-0054",
+      "MC-0106"
+    ]
+  },
+  {
+    "id": "n4-opera-links",
+    "family": "opera",
+    "label": "Opera",
+    "conceptIds": [
+      "MC-0073",
+      "MC-0134",
+      "MC-0136",
+      "MC-0054"
+    ]
+  },
+  {
+    "id": "n4-vocal-backing",
+    "family": "vocal-context",
+    "label": "Vocal accompaniment",
+    "conceptIds": [
+      "MC-0114",
+      "MC-0067",
+      "MC-0048",
+      "MC-0034"
+    ]
+  },
+  {
+    "id": "n4-scales-tonality",
+    "family": "scales",
+    "label": "Scales and tonality",
+    "conceptIds": [
+      "MC-0084",
+      "MC-0085",
+      "MC-0089",
+      "MC-0090"
+    ]
+  },
+  {
+    "id": "n4-pitch-melody",
+    "family": "pitch",
+    "label": "Pitch and melody",
+    "conceptIds": [
+      "MC-0087",
+      "MC-0080",
+      "MC-0086",
+      "MC-0081"
+    ]
+  },
+  {
+    "id": "n4-backing-patterns",
+    "family": "accompaniment",
+    "label": "Accompaniment patterns",
+    "conceptIds": [
+      "MC-0083",
+      "MC-0088",
+      "MC-0093",
+      "MC-0037"
+    ]
+  },
+  {
+    "id": "n4-tempo-words",
+    "family": "tempo",
+    "label": "Tempo",
+    "conceptIds": [
+      "MC-0094",
+      "MC-0095",
+      "MC-0097",
+      "MC-0101"
+    ]
+  },
+  {
+    "id": "n4-rhythm-features",
+    "family": "rhythm",
+    "label": "Rhythm features",
+    "conceptIds": [
+      "MC-0096",
+      "MC-0099",
+      "MC-0105",
+      "MC-0102"
+    ]
+  },
+  {
+    "id": "n4-time-dance",
+    "family": "metre",
+    "label": "Time and beat",
+    "conceptIds": [
+      "MC-0103",
+      "MC-0098",
+      "MC-0100",
+      "MC-0027"
+    ]
+  },
+  {
+    "id": "n4-related-parts",
+    "family": "texture",
+    "label": "Related melodic parts",
+    "conceptIds": [
+      "MC-0107",
+      "MC-0108",
+      "MC-0038",
+      "MC-0041"
+    ]
+  },
+  {
+    "id": "n4-musical-forms",
+    "family": "form",
+    "label": "Musical forms",
+    "conceptIds": [
+      "MC-0109",
+      "MC-0110",
+      "MC-0111",
+      "MC-0112"
+    ]
+  },
+  {
+    "id": "n4-song-structure",
+    "family": "song",
+    "label": "Pop songs",
+    "conceptIds": [
+      "MC-0005",
+      "MC-0112",
+      "MC-0109",
+      "MC-0114"
+    ]
+  },
+  {
+    "id": "n4-romantic-links",
+    "family": "romantic",
+    "label": "Romantic music",
+    "conceptIds": [
+      "MC-0077",
+      "MC-0054",
+      "MC-0119",
+      "MC-0053"
+    ]
+  },
+  {
+    "id": "n4-baroque-links",
+    "family": "baroque",
+    "label": "Baroque music",
+    "conceptIds": [
+      "MC-0070",
+      "MC-0128",
+      "MC-0087",
+      "MC-0088"
+    ]
+  },
+  {
+    "id": "n4-rapping-links",
+    "family": "rap",
+    "label": "Rapping",
+    "conceptIds": [
+      "MC-0075",
+      "MC-0067",
+      "MC-0024",
+      "MC-0105"
+    ]
+  }
+]

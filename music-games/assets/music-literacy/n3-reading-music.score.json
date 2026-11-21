@@ -1,0 +1,18 @@
+{
+  "title": "Reading Music",
+  "source": "Original N3 teaching example, approved in chat",
+  "width": 800,
+  "height": 800,
+  "stave": {"left": 100, "right": 740, "top": 320, "scale": 3},
+  "clef": "treble",
+  "clefX": 155,
+  "timeSignature": [3, 4],
+  "timeSignatureX": 267,
+  "bars": [{
+    "notes": [
+      {"pitch": "E4", "diatonicStepsAboveE4": 0, "rhythm": "crotchet", "beats": 1, "x": 420},
+      {"pitch": "G4", "diatonicStepsAboveE4": 2, "rhythm": "minim", "beats": 2, "x": 590}
+    ],
+    "barline": "single"
+  }]
+}

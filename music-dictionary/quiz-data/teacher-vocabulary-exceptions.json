@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "exceptions": [
+    {
+      "questionId": "CQ-N3-MC0002-01",
+      "field": "prompt",
+      "text": "Name the concept: A style developed in African American communities. It often uses improvised solos and notes between the main beats. A saxophone is a commonly associated instrument in this style.",
+      "terms": [
+        "saxophone"
+      ],
+      "approvedDate": "2026-11-12",
+      "reason": "Teacher explicitly requested keeping this exact saved wording after the level vocabulary differences were identified."
+    },
+    {
+      "questionId": "CQ-N3-MC0002-01",
+      "field": "feedback",
+      "text": "Jazz: This style developed in African American communities and often uses improvised solos and notes between the main beats. A saxophone is a commonly associated instrument in this style.",
+      "terms": [
+        "saxophone"
+      ],
+      "approvedDate": "2026-11-12",
+      "reason": "Teacher explicitly requested keeping this exact saved wording after the level vocabulary differences were identified."
+    },
+    {
+      "questionId": "CQ-N3-MC0005-L02",
+      "field": "option b",
+      "text": "Verse and chorus structure",
+      "terms": [
+        "verse and chorus"
+      ],
+      "approvedDate": "2026-11-12",
+      "reason": "Teacher explicitly requested keeping this exact saved wording after the level vocabulary differences were identified."
+    },
+    {
+      "questionId": "CQ-N3-MC0068-Q02",
+      "field": "prompt",
+      "text": "Name the concept: This orchestral family includes flute, clarinet, oboe and bassoon.",
+      "terms": [
+        "clarinet",
+        "bassoon",
+        "flute",
+        "oboe"
+      ],
+      "approvedDate": "2026-11-12",
+      "reason": "Teacher explicitly requested keeping this exact saved wording after the level vocabulary differences were identified."
+    },
+    {
+      "questionId": "AQ-N3-MC0040-02",
+      "field": "prompt",
+      "text": "Listen to this excerpt of a cello performance playing without instrumental accompaniment. What is this called?",
+      "terms": [
+        "cello"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored saved wording as explicitly requested; exact-text exception only."
+    },
+    {
+      "questionId": "CQ-N3-MC0049-Q03",
+      "field": "option d",
+      "text": "It is made of different type of drums and cymbals",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "AQ-N3-MC0049-01",
+      "field": "feedback",
+      "text": "Drum kit: A set of drums and cymbals played by one person.",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "AQ-N3-MC0049-02",
+      "field": "feedback",
+      "text": "Drum kit: A set of drums and cymbals played by one person.",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "AQ-N3-MC0049-03",
+      "field": "feedback",
+      "text": "Drum kit: A set of drums and cymbals played by one person.",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "AQ-N3-MC0053-02",
+      "field": "prompt",
+      "text": "Listen to this excerpt and name the type of articulation played by the cello.",
+      "terms": [
+        "cello"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "CQ-N3-MC0056-Q03",
+      "field": "option a",
+      "text": "Glockenspiel",
+      "terms": [
+        "glockenspiel"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "CQ-N3-MC0056-Q03",
+      "field": "option c",
+      "text": "Xylophone",
+      "terms": [
+        "xylophone"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "CQ-N3-MC0063-Q02",
+      "field": "prompt",
+      "text": "Name the concept: This orchestral family has violin, viola, cello, double bass and harp.",
+      "terms": [
+        "double bass",
+        "violin",
+        "cello",
+        "viola",
+        "harp"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "CQ-N3-MC0062-Q03",
+      "field": "option f",
+      "text": "Cymbals",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Preserve the teacher-authored final N3 review exactly as requested; wording is being audited without changes."
+    },
+    {
+      "questionId": "CQ-N3-MC0049-Q03",
+      "field": "option d",
+      "text": "It is made of different types of drums and cymbals",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Grammar correction authorised by teacher; retains the previously approved cymbals wording."
+    },
+    {
+      "questionId": "CQ-N3-MC0062-Q03",
+      "field": "feedback",
+      "text": "Drum kit and cymbals are played by striking or hitting them.",
+      "terms": [
+        "cymbals"
+      ],
+      "approvedDate": "2026-11-13",
+      "reason": "Feedback for the authorised question correction retains the instrument name already approved in its answer choices."
+    },
+    {
+      "questionId": "AQ-N4-MC0129-03",
+      "field": "prompt",
+      "text": "Listen to this excerpt and tick one box to identify what you hear. This is the English meaning of con sordino and describes the sound made when a performer uses a device to soften or alter the sound of their instrument.",
+      "terms": [
+        "con sordino"
+      ],
+      "approvedDate": "2026-11-14",
+      "reason": "Teacher-authored National 4 wording retained when saving the completed review; proofreading changes only spelling and grammar."
+    },
+    {
+      "questionId": "AQ-N4-MC0141-03",
+      "field": "feedback",
+      "text": "Violin: A violin is often used to play classical music. The fiddle is the Scottish equivalent using the same instrument but playing Scottish or traditional music.",
+      "terms": [
+        "classical"
+      ],
+      "approvedDate": "2026-11-14",
+      "reason": "Teacher-authored National 4 wording retained when saving the completed review; proofreading changes only spelling and grammar."
+    }
+  ]
+}

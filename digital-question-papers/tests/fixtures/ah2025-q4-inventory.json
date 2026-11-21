@@ -1,0 +1,1231 @@
+{
+  "key": "F major",
+  "timeSignature": "4/4",
+  "intro": {
+    "source": [
+      "F3",
+      "E3",
+      "D3",
+      "C3"
+    ],
+    "answer": [
+      "F4",
+      "E4",
+      "D4",
+      "C4"
+    ],
+    "rhythm": "quaver"
+  },
+  "bars": [
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75,
+          "stemDown": true
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true,
+          "stemDown": true
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true,
+          "stemDown": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "stemDown": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "lyrics": [
+        "",
+        "You",
+        "can",
+        "build",
+        "me___",
+        "",
+        "up,"
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "lyrics": [
+        "",
+        "You",
+        "can",
+        "tear",
+        "me___",
+        "",
+        "down,"
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tieToNextBar": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "lyrics": [
+        "",
+        "You",
+        "can",
+        "try,",
+        "but___",
+        "",
+        "I’m___"
+      ],
+      "lyricXOffsets": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "tiedFromPreviousBar": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "missing": true
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "missing": true
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "missing": true
+        },
+        {
+          "pitch": "D4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "missing": true
+        }
+      ],
+      "missingIndices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "lyrics": [
+        "",
+        "un-",
+        "break-",
+        "a-",
+        "ble."
+      ],
+      "lyricXOffsets": [
+        0,
+        -5,
+        -5,
+        8,
+        0
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75,
+          "stemDown": true
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true,
+          "stemDown": true
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true,
+          "stemDown": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "stemDown": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "lyrics": [
+        "",
+        "You",
+        "can",
+        "do",
+        "your___",
+        "",
+        "best,"
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "lyrics": [
+        "",
+        "but",
+        "I’ll",
+        "stand",
+        "the___",
+        "",
+        "test,"
+      ],
+      "lyricXOffsets": [
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "ties": [
+        [
+          3,
+          4
+        ]
+      ],
+      "lyrics": [
+        "",
+        "You'll",
+        "find",
+        "that___",
+        "",
+        "I'm___"
+      ],
+      "lyricXOffsets": [
+        0,
+        0,
+        0,
+        8,
+        0,
+        0
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "tiedFromPreviousBar": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "D4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        }
+      ],
+      "lyrics": [
+        "",
+        "un-",
+        "shake-",
+        "a-",
+        "ble."
+      ],
+      "lyricXOffsets": [
+        0,
+        -5,
+        -5,
+        8,
+        0
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "D4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "D4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "C4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "missingBarlineAfter": true,
+      "lyrics": [
+        "",
+        "When",
+        "the",
+        "fi -",
+        "re’s",
+        "",
+        "burned,"
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "missingBarlineAfter": true,
+      "lyrics": [
+        "",
+        "when",
+        "the",
+        "wind",
+        "has___",
+        "",
+        "blown,"
+      ],
+      "lyricXOffsets": [
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        0
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "tieToNext": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tiedFromPrevious": true
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tieToNextBar": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "ties": [
+        [
+          4,
+          5
+        ]
+      ],
+      "lyrics": [
+        "",
+        "when",
+        "the",
+        "wa-",
+        "ter's___",
+        "",
+        "dried,"
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "tiedFromPreviousBar": true
+        },
+        {
+          "pitch": "Bb4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "circleAnswer": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tieToNextBar": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 3,
+          "end": 4
+        }
+      ],
+      "slurs": [
+        [
+          3,
+          4
+        ]
+      ],
+      "lyrics": [
+        "___",
+        "you’ll",
+        "still",
+        "find___",
+        ""
+      ],
+      "lyricXOffsets": [
+        0,
+        0,
+        5,
+        10,
+        0
+      ],
+      "slurStyle": {
+        "below": true,
+        "followPitch": true
+      }
+    },
+    {
+      "notes": [
+        {
+          "pitch": "F4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "tiedFromPreviousBar": true
+        },
+        {
+          "pitch": "D4",
+          "rhythm": "dottedMinim",
+          "beats": 3
+        }
+      ],
+      "lyrics": [
+        "",
+        "stone"
+      ]
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "semibreveRest",
+          "beats": 4
+        }
+      ],
+      "lyrics": []
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "semibreveRest",
+          "beats": 4
+        }
+      ],
+      "lyrics": []
+    },
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        }
+      ],
+      "slurs": [
+        [
+          2,
+          3
+        ]
+      ],
+      "lyrics": [
+        "",
+        "My",
+        "heart",
+        "of",
+        "stone."
+      ],
+      "lyricXOffsets": [
+        0,
+        -6,
+        4,
+        16,
+        48
+      ],
+      "slurStyle": {
+        "below": true,
+        "followPitch": true
+      }
+    },
+    {
+      "notes": [
+        {
+          "pitch": "F4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "rest": true,
+          "rhythm": "minimRest",
+          "beats": 2
+        }
+      ],
+      "finalBarline": "double",
+      "lyrics": []
+    }
+  ],
+  "missing": {
+    "bar": 4,
+    "indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "answer": [
+      "A4",
+      "G4",
+      "F4",
+      "D4"
+    ],
+    "rhythms": [
+      "crotchet",
+      "quaver",
+      "quaver",
+      "crotchet"
+    ]
+  },
+  "circle": {
+    "bar": 12,
+    "note": 1,
+    "pitch": "Bb4",
+    "answer": "bar-12-bb"
+  },
+  "barlines": {
+    "afterBars": [
+      9,
+      10
+    ],
+    "answer": "after-bar-9,after-bar-10"
+  },
+  "finalBarline": "double",
+  "layout": {
+    "height": 1040,
+    "groups": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7
+      ],
+      [
+        8,
+        9,
+        10
+      ],
+      [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    ],
+    "systemTops": [
+      110,
+      365,
+      540,
+      720,
+      900
+    ],
+    "bounds": [
+      [
+        283.3,
+        578.2,
+        870
+      ],
+      [
+        110.7,
+        374.4,
+        593.6,
+        870
+      ],
+      [
+        110.7,
+        383.2,
+        634.5,
+        870
+      ],
+      [
+        110.7,
+        358.1,
+        622.2,
+        870
+      ],
+      [
+        110.7,
+        274.9,
+        385.4,
+        470.8,
+        557.9,
+        723.4,
+        870
+      ]
+    ],
+    "noteXs": [
+      [
+        303.1,
+        358.1,
+        395.5,
+        438.2,
+        483.5,
+        510,
+        545.2
+      ],
+      [
+        598,
+        650.8,
+        688.2,
+        730.9,
+        774.9,
+        800.9,
+        837.9
+      ],
+      [
+        120.4,
+        171,
+        208.5,
+        253.3,
+        293,
+        322.9,
+        358.1
+      ],
+      [
+        395.5,
+        446.1,
+        494.6,
+        525.4,
+        569.4
+      ],
+      [
+        613.4,
+        666.2,
+        703.6,
+        736.6,
+        780.6,
+        807.1,
+        844.5
+      ],
+      [
+        120.4,
+        174.1,
+        208.5,
+        254.2,
+        294.3,
+        325.1,
+        358.1
+      ],
+      [
+        402.1,
+        454.9,
+        512.2,
+        547.4,
+        572.9,
+        609
+      ],
+      [
+        653,
+        705.8,
+        758.6,
+        796.1,
+        842.3
+      ],
+      [
+        118.2,
+        164.4,
+        208.5,
+        242.3,
+        275.4,
+        303.1,
+        338.3
+      ],
+      [
+        371.3,
+        413.1,
+        459.3,
+        497.2,
+        532,
+        569.4,
+        600.2
+      ],
+      [
+        635.4,
+        670.6,
+        712.4,
+        749.8,
+        785.1,
+        820.3,
+        855.5
+      ],
+      [
+        123.9,
+        157.8,
+        197.9,
+        233.5,
+        256
+      ],
+      [
+        291.2,
+        322.9
+      ],
+      [
+        428.5
+      ],
+      [
+        516.6
+      ],
+      [
+        573.8,
+        613.4,
+        649.5,
+        679.4,
+        705.8
+      ],
+      [
+        738.8,
+        771.8,
+        807.1
+      ]
+    ],
+    "keySignatureXOffset": -22,
+    "lyricOffset": 94,
+    "introBox": {
+      "x": 124,
+      "y": 15,
+      "width": 159,
+      "height": 280,
+      "bassTop": 213,
+      "noteXs": [
+        142,
+        178,
+        215,
+        252
+      ]
+    },
+    "missingBox": {
+      "topOffset": 85,
+      "bottomOffset": 68
+    },
+    "barlineBox": {
+      "x": 111,
+      "topOffset": 55,
+      "right": 863,
+      "height": 125
+    }
+  }
+}

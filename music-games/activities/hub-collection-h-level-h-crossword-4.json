@@ -1,0 +1,171 @@
+{
+  "id": "hub-collection-h-level-h-crossword-4",
+  "level": "H",
+  "title": "Higher — All Concepts 4",
+  "instructions": "",
+  "description": "Higher — All Concepts: current Music Dictionary definitions — set 4 of 4.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Higher — All Concepts",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0217",
+      "prompt": "A German song for a solo singer, usually with piano.",
+      "answer": "Lied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0217"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0221",
+      "prompt": "A single, unaccompanied religious tune, usually sung in Latin with a free-flowing rhythm.",
+      "answer": "Plainchant",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0221"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0225",
+      "prompt": "Two violins, a viola and a cello playing together.",
+      "answer": "String quartet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0225"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0229",
+      "prompt": "A three-note chord that sounds tense and unsettled.",
+      "answer": "Diminished triad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0229"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0234",
+      "prompt": "A minor scale with notes 6 and 7 raised going up, then lowered again coming down.",
+      "answer": "Melodic minor scale",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0234"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0238",
+      "prompt": "A gentle, finished chord ending, often heard on “Amen” in hymns.",
+      "answer": "Plagal cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0238"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0242",
+      "prompt": "One part plays three evenly spaced notes while another fits two into the same time.",
+      "answer": "Three against two",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0242"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0246",
+      "prompt": "The number or grouping of beats in a bar changes during the music.",
+      "answer": "Time changes",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0246"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0250",
+      "prompt": "A solo song with three sections: A, B, then A again, often with extra decoration.",
+      "answer": "Da capo aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0250"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0254",
+      "prompt": "Main ideas are introduced, explored and changed, then brought back home.",
+      "answer": "Sonata form",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0254"
+    },
+    {
+      "id": "hub-collection-h-level-h-crossword-4-MC-0258",
+      "prompt": "The small group of solo players in a concerto grosso.",
+      "answer": "Concertino",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0258"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "level-h",
+  "sourceConceptIds": [
+    "MC-0217",
+    "MC-0221",
+    "MC-0225",
+    "MC-0229",
+    "MC-0234",
+    "MC-0238",
+    "MC-0242",
+    "MC-0246",
+    "MC-0250",
+    "MC-0254",
+    "MC-0258"
+  ]
+}

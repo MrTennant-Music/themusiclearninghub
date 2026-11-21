@@ -1,0 +1,427 @@
+{
+  "sourceReading": "QP page 6: four independently calibrated 300 dpi systems read twice, including C-sharp4 ledger lines, rests, all middle-line stems and final tie/barline; MI page 3 confirms B4 C5 B4 crotchets.",
+  "key": "G major",
+  "keySignature": [
+    "F sharp"
+  ],
+  "clef": "treble",
+  "timeSignature": "3/4",
+  "pitchMap": "Treble lines E4 G4 B4 D5 F5; spaces F4 A4 C5 E5; C4 on lower ledger line, D4 below bottom line; F notes inherit F sharp, C-sharp4 explicit in bars 3 and 6",
+  "pickup": [
+    [
+      "D4",
+      "crotchet"
+    ]
+  ],
+  "editableBar": 11,
+  "editableNoteIndices": [
+    0,
+    1,
+    2
+  ],
+  "sourceDownStems": {
+    "9": [
+      0,
+      2
+    ],
+    "13": [
+      0,
+      2
+    ],
+    "14": [
+      2
+    ]
+  },
+  "finalBarline": "final",
+  "rhythmExceptions": {
+    "16": "Final two-beat minim complements the one-beat pickup."
+  },
+  "sources": [
+    {
+      "path": "exampapers/n5/2026/N5_Music_QP_2026.pdf",
+      "sha256": "7fa4ea6b8ab4359b046fa20ffdce7218f9642cd6fd441015dc8a52985e5b01ee"
+    },
+    {
+      "path": "exampapers/n5/2026/mi_N5_Music_mi_2026.pdf",
+      "sha256": "086a8935ada30cd6f1a8216dcc09a84a6552d2970d9ab77d73cd0990a686be35"
+    }
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "notes": [
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ],
+        [
+          "E4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 2,
+      "notes": [
+        [
+          "D4",
+          "minim"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 3,
+      "notes": [
+        [
+          "C4",
+          "crotchet"
+        ],
+        [
+          "D4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [
+        [
+          0,
+          "sharp"
+        ]
+      ],
+      "beats": 3
+    },
+    {
+      "bar": 4,
+      "notes": [
+        [
+          "rest",
+          "crotchetRest"
+        ],
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "F4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 5,
+      "notes": [
+        [
+          "G4",
+          "crotchet"
+        ],
+        [
+          "A4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 6,
+      "notes": [
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "C4",
+          "dottedCrotchet"
+        ],
+        [
+          "D4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [
+        [
+          1,
+          "sharp"
+        ]
+      ],
+      "beats": 3
+    },
+    {
+      "bar": 7,
+      "notes": [
+        [
+          "D4",
+          "dottedMinim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 8,
+      "notes": [
+        [
+          "rest",
+          "crotchetRest"
+        ],
+        [
+          "rest",
+          "crotchetRest"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 9,
+      "notes": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 10,
+      "notes": [
+        [
+          "A4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ],
+        [
+          "A4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 11,
+      "notes": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 12,
+      "notes": [
+        [
+          "A4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "dottedCrotchet"
+        ],
+        [
+          "A4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 13,
+      "notes": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 14,
+      "notes": [
+        [
+          "A4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 15,
+      "notes": [
+        [
+          "A4",
+          "dottedMinim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": true,
+      "accidentals": [],
+      "beats": 3
+    },
+    {
+      "bar": 16,
+      "notes": [
+        [
+          "A4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 2
+    }
+  ],
+  "staffSystems": [
+    [
+      261.2,
+      266.9,
+      272.5,
+      278.2,
+      283.9
+    ],
+    [
+      356.0,
+      361.7,
+      367.3,
+      373.0,
+      378.7
+    ],
+    [
+      451.3,
+      457.0,
+      462.6,
+      468.3,
+      474.0
+    ],
+    [
+      539.5,
+      545.2,
+      550.9,
+      556.5,
+      562.2
+    ]
+  ],
+  "sourceLyricExtender": {
+    "bar": 15,
+    "toBar": 16,
+    "sourceLinePt": {
+      "x1": 363.8815,
+      "x2": 423.584499115,
+      "y": 587.889801636
+    },
+    "sourceWordBoxPt": [
+      335.00937379244687,
+      579.164867125658,
+      363.4398209876868,
+      591.211666784658
+    ],
+    "scope": "Fresh 300 dpi last-system crop actually viewed; the printed line ends beneath the final tied notehead. Keep this separate from the unchanged pitch/rhythm inventory."
+  }
+}

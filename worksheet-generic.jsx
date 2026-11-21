@@ -5,28 +5,41 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   if (!CONFIG || CONFIG.version !== 1 || CONFIG.activityId === "intervals") return;
 
   const DEFINITIONS = {
-    "keyboard-notes": { title: "Keyboard Note Identification", subtitle: "Identify note names on the piano keyboard.", icon: "keyboard-icon.svg", instructions: "Name each marked note on the piano keyboard.", response: "text" },
-    enharmonics: { title: "Enharmonic Equivalents", subtitle: "Identify and rewrite enharmonic equivalent notes.", icon: "enharmonic-icon.svg", instructions: "Write the enharmonic equivalent of each note.", response: "stave" },
-    keysig: { title: "Key Signatures", subtitle: "Identify key signatures.", icon: "key-signatures-icon.svg", instructions: "Identify the key signatures shown below.", response: "mixed" },
-    notenaming: { title: "Note Identification", subtitle: "Identify note names in the treble and bass clef.", icon: "notenaming-icon.svg", instructions: "Name each note shown below.", response: "text" },
-    tonic: { title: "Scale Degrees", subtitle: "Identify tonic, subdominant and dominant notes.", icon: "scale-degrees-icon.svg", instructions: "Circle the requested scale degree in each melody.", response: "mark" },
-    transposing: { title: "Transposing", subtitle: "Transpose between the treble and bass clefs.", icon: "transposing-icon.svg", instructions: "Transpose the following notes one octave lower into the bass clef.", response: "stave" },
-    barlines: { title: "Barlines", subtitle: "Insert barlines at the correct place in the music.", icon: "barlines-icon.svg", instructions: "Insert the missing barlines in each example and finish with a double barline.", response: "mark", large: true },
-    rests: { title: "Rests", subtitle: "Identify and apply rests.", icon: "rests-icon.svg", instructions: "Write the missing rest in each outlined space. Be sure to check the time signature.", response: "stave", large: true },
-    rhythmsums: { title: "Rhythm Sums", subtitle: "Calculate rhythm values.", icon: "rhythm-sums-icon.svg", instructions: "Calculate the total number of beats in each sum.", response: "text" },
-    timesig: { title: "Time Signatures", subtitle: "Identify time signatures.", icon: "time-signatures-icon.svg", instructions: "Insert the correct time signature at the start of each example.", response: "mark", large: true },
-    triplets: { title: "Triplets", subtitle: "Identify quaver triplets and crotchet triplets.", icon: "triplets-icon.svg", instructions: "Place a 3 over each example of a quaver triplet or crotchet triplet.", response: "mark", large: true },
-    accidentals: { title: "Accidentals", subtitle: "Identify and apply flats, sharps and naturals.", icon: "accidentals-icon.svg", instructions: "Identify tones and semitones or write the requested note.", response: "mixed" },
-    chords: { title: "Chords", subtitle: "Identify, create and apply chords in music.", icon: "chords-icon.svg", instructions: "Name or complete the chords shown below.", response: "mixed" },
-    articulation: { title: "Articulation Markings", subtitle: "Identify and apply staccatos, slurs, accents and phrase markings.", icon: "articulation-markings-icon.svg", instructions: "Identify or apply the articulation markings shown below.", response: "mixed" },
-    dynamics: { title: "Dynamics", subtitle: "Interpret and apply dynamics in the music.", icon: "dynamics-icon.svg", instructions: "Give the meaning or add the correct dynamic.", response: "mixed" },
-    missingnotes: { title: "Melodic Dictation", subtitle: "Identify and complete melodic patterns.", icon: "insert-missing-notes-icon.svg", instructions: "Complete each musical pattern in the blank bar.", response: "stave", large: true },
-    practicequestions: { title: "Practice Questions", subtitle: "Complete exam-style questions combining multiple music literacy concepts.", icon: "practice-app-icon.svg", instructions: "Complete the mixed music literacy questions below.", response: "mixed" },
-    "concept-recall": { title: "Concept Recall", subtitle: "Name as many musical concepts as you can under each category before time runs out.", icon: "concept-recall-icon.svg", instructions: "Write as many musical concepts as you can under each category.", response: "text" },
+    "keyboard-notes": { title: "Keyboard Note Identification", subtitle: "Identify notes on the keyboard and match written notes to keys.", icon: "app-icons/keyboard-icon.svg?v=20261113-intrinsic", instructions: "Identify notes and mark the requested keys on the keyboard.", response: "text" },
+    enharmonics: { title: "Accidentals", subtitle: "Identify and use accidentals and enharmonic equivalents.", icon: "app-icons/accidentals-icon.svg", instructions: "Write the enharmonic equivalent of each note.", response: "stave" },
+    keysig: { title: "Key Signatures", subtitle: "Identify key signatures and scale degrees.", icon: "app-icons/key-signatures-icon.svg", instructions: "Identify the key signatures shown below.", response: "mixed" },
+    notenaming: { title: "Note Identification", subtitle: "Identify note names in the treble and bass clef.", icon: "app-icons/notenaming-icon.svg", instructions: "Name each note shown below.", response: "text" },
+    tonic: { title: "Key Signatures", subtitle: "Identify key signatures and scale degrees.", icon: "app-icons/key-signatures-icon.svg", instructions: "Circle the requested scale degree in each melody.", response: "mark" },
+    transposing: { title: "Transposing", subtitle: "Transpose between the treble and bass clefs.", icon: "app-icons/transposing-icon.svg", instructions: "Transpose the following notes one octave lower into the bass clef.", response: "stave" },
+    barlines: { title: "Barlines", subtitle: "Insert barlines at the correct place in the music.", icon: "app-icons/barlines-icon.svg", instructions: "Insert the missing barlines in each example and finish with a double barline.", response: "mark", large: true },
+    rests: { title: "Rests", subtitle: "Identify and apply rests.", icon: "app-icons/rests-icon.svg", instructions: "Write the missing rest in each outlined space. Be sure to check the time signature.", response: "stave", large: true },
+    rhythmsums: { title: "Rhythm Sums", subtitle: "Calculate rhythm values.", icon: "app-icons/rhythm-sums-icon.svg", instructions: "Calculate the total number of beats in each sum.", response: "text" },
+    timesig: { title: "Time Signatures", subtitle: "Identify time signatures.", icon: "app-icons/time-signatures-icon.svg", instructions: "Insert the missing time signature in each example.", response: "mark", large: true },
+    triplets: { title: "Triplets", subtitle: "Identify quaver and crotchet triplets.", icon: "app-icons/triplets-icon.svg", instructions: "Place a 3 over each example of a quaver triplet or crotchet triplet.", response: "mark", large: true },
+    accidentals: { title: "Accidentals", subtitle: "Identify and use accidentals and enharmonic equivalents.", icon: "app-icons/accidentals-icon.svg", instructions: "Identify tones and semitones or write the requested note.", response: "mixed" },
+    chords: { title: "Chords", subtitle: "Identify, create and apply chords in music.", icon: "app-icons/chords-icon.svg", instructions: "Name or complete the chords shown below.", response: "mixed" },
+    articulation: { title: "Articulation Markings", subtitle: "Identify and apply staccatos, slurs, accents and phrase markings.", icon: "app-icons/articulation-markings-icon.svg", instructions: "Identify or apply the articulation markings shown below.", response: "mixed" },
+    dynamics: { title: "Dynamics", subtitle: "Interpret and apply dynamics in the music.", icon: "app-icons/dynamics-icon.svg", instructions: "Give the meaning or add the correct dynamic.", response: "mixed" },
+    missingnotes: { title: "Melodic Dictation", subtitle: "Identify and complete melodic patterns.", icon: "app-icons/insert-missing-notes-icon.svg", instructions: "Complete each musical pattern in the blank bar.", response: "stave", large: true },
+    practicequestions: { title: "Practice Questions", subtitle: "Complete exam-style questions combining multiple music literacy concepts.", icon: "app-icons/practice-app-icon.svg", instructions: "Complete the mixed music literacy questions below.", response: "mixed" },
+    "concept-recall": { title: "Concept Recall", subtitle: "Name as many musical concepts as you can under each category.", icon: "app-icons/concept-recall-icon.svg", instructions: "Write as many musical concepts as you can under each category.", response: "text" },
   };
+  DEFINITIONS.crossword = { title: "Crosswords", subtitle: "Solve musical clues to complete the crossword.", icon: "app-icons/crosswords-grid-icon.svg", instructions: "Use the Across and Down clues to complete the crossword. Ignore spaces and punctuation." };
+  DEFINITIONS.wordsearch = { title: "Word Search", subtitle: "Find the hidden musical concepts.", icon: "app-icons/wordsearch-icon.svg", instructions: "Find the musical concepts in the grid. Words may run in any direction. Ignore spaces and punctuation." };
   const DEF = DEFINITIONS[CONFIG.activityId];
   if (!DEF) return;
+  document.title = CONFIG.pageTitle || DEF.title;
+  document.querySelector('link[rel="icon"]').href = new URL(DEF.icon, window.location.href).toString();
   const EXERCISE_URL = window.MLH.worksheetExerciseUrl(CONFIG);
+  function returnToWorksheetActivity() {
+    const saved = sessionStorage.getItem("worksheetReturnUrl");
+    const target = saved || CONFIG.sourceUrl || "index.html";
+    if(["chords","accidentals","enharmonics"].includes(CONFIG.activityId))sessionStorage.setItem("worksheetReturnConfig",JSON.stringify(CONFIG));
+    if (["crossword", "wordsearch", "rhythmsums", "rests", "barlines", "transposing", "notenaming", "missingnotes", "keyboard-notes", "keysig", "tonic", "chords", "accidentals", "enharmonics"].includes(CONFIG.activityId)) window.location.href = target;
+    else if (saved && window.history.length > 1) window.history.back();
+    else window.location.href = target;
+  }
+
   document.body.classList.toggle("worksheet-activity-tonic", CONFIG.activityId === "tonic");
   const LEVEL_NAMES = { N3: "National 3", N4: "National 4", N5: "National 5", H: "Higher", AH: "Advanced Higher", Custom: "Custom" };
   const level = CONFIG.settings?.level || "Custom";
@@ -100,22 +113,33 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return barlinesExpandToken(token).every(rhythm=>barlinesRhythmAllowed(rhythm,enabled,restsEnabled));
   }
   const barlinesPatternAllowed=(pattern,enabled,restsEnabled)=>pattern.reduce((count,token)=>count+barlinesExpandToken(token).filter(rhythm=>rhythm==="semiquaver").length,0)<=8&&pattern.every(token=>barlinesTokenAllowed(token,enabled,restsEnabled));
+  const barlinesCore = window.BARLINES_CORE.create(Math.random);
+  function makeSharedBarlinesQuestion(base) {
+    const settings=barlinesCore.normaliseSettings(level,CONFIG.settings?.enabledRhythms,CONFIG.settings?.restsEnabled);
+    const q=barlinesCore.buildQuestion(level,barlinesCore.levelTimeTypes(level,settings.enabledRhythms),settings.enabledRhythms,settings.restsEnabled,{compact:true});
+    const items=q.items.map(item=>({...item,step:item.pitch?.step??4,writtenAccidental:item.pitch?.writtenAccidental===1?"sharp":null}));
+    const bars=Array.from({length:q.totalBars},(_,barIndex)=>items.filter(item=>item.barIndex===barIndex));
+    return {...base,prompt:"",timeSignature:q.timeSignature.id,bars,barlineItems:items,barlineQuestion:q,answer:"Correct barlines shown",response:"mark"};
+  }
   function makeBarlinesQuestion(base,index){
-    const rules=BARLINES_LEVEL_RULES[level]||BARLINES_LEVEL_RULES.N3, enabled=barlinesEnabledRhythms(), restsEnabled=CONFIG.settings?.restsEnabled!==false;
+    if(CONFIG.activityId==="barlines")return makeSharedBarlinesQuestion(base);
+    const rules=BARLINES_LEVEL_RULES[level]||BARLINES_LEVEL_RULES.N3, restsEnabled=CONFIG.settings?.restsEnabled!==false;
+    let enabled=barlinesEnabledRhythms();
     const supported=(configuredTimeSignatures().filter(signature=>rules.times.includes(signature))).filter(signature=>signature.includes("/8")?BARLINES_COMPOUND_BEATS.some(pattern=>barlinesPatternAllowed(pattern,enabled,restsEnabled)):(BARLINES_SIMPLE_PATTERNS[signature]||[]).some(pattern=>barlinesPatternAllowed(pattern,enabled,restsEnabled)));
-    const timeSignature=(supported.length?supported:rules.times)[Math.abs(index)%Math.max(1,(supported.length?supported:rules.times).length)];
+    if(!supported.length&&CONFIG.activityId==="timesig")enabled=Object.fromEntries(rules.rhythms.map(rhythm=>[rhythm,true]));
+    const timeSignature=CONFIG.activityId==="timesig"?nextWorksheetVariantChoice("timesig-metre",supported.length?supported:rules.times,index):(supported.length?supported:rules.times)[Math.abs(index)%Math.max(1,(supported.length?supported:rules.times).length)];
     const preferredByLevel={N4:["semiquaver","quaver",null],N5:["dotted-quaver","dotted-crotchet","semiquaver","quaver",null],H:["rest","dotted-quaver","semiquaver",null],AH:["semiquaver","dotted-quaver","rest","syncopated",null]};
-    const preferred=(preferredByLevel[level]||[])[Math.abs(index)%(preferredByLevel[level]||[null]).length];
+    const preferred=CONFIG.activityId==="timesig"?nextWorksheetVariantChoice("timesig-rhythm",(preferredByLevel[level]||[null]).map(value=>value||""),index):(preferredByLevel[level]||[])[Math.abs(index)%(preferredByLevel[level]||[null]).length];
     const containsPreferred=(pattern)=>!preferred||(preferred==="rest"?pattern.some(token=>token.includes("rest")):preferred==="syncopated"?pattern.includes("syncopated-crotchets"):pattern.some(token=>barlinesExpandToken(token).includes(preferred)));
     const barCount=timeSignature==="12/8"?2:["4/4","5/4","9/8"].includes(timeSignature)?3:4, tokenBars=[];
     for(let barIndex=0;barIndex<barCount;barIndex+=1){
       if(timeSignature.includes("/8")){
         const groupCount=Number(timeSignature.split("/")[0])/3, allowed=BARLINES_COMPOUND_BEATS.filter(pattern=>barlinesPatternAllowed(pattern,enabled,restsEnabled));
-        tokenBars.push(Array.from({length:groupCount},(_,groupIndex)=>{const preferredGroups=allowed.filter(containsPreferred), pool=barIndex===0&&groupIndex===0&&preferredGroups.length?preferredGroups:allowed;return pool[(Math.abs(index)+barIndex+groupIndex)%pool.length];}).flat());
+        tokenBars.push(Array.from({length:groupCount},(_,groupIndex)=>{const preferredGroups=allowed.filter(containsPreferred), pool=barIndex===0&&groupIndex===0&&preferredGroups.length?preferredGroups:allowed;return CONFIG.activityId==="timesig"?random(pool):pool[(Math.abs(index)+barIndex+groupIndex)%pool.length];}).flat());
       }else{
         const allowed=(BARLINES_SIMPLE_PATTERNS[timeSignature]||BARLINES_SIMPLE_PATTERNS["4/4"]).filter(pattern=>barlinesPatternAllowed(pattern,enabled,restsEnabled));
         const preferredPatterns=allowed.filter(containsPreferred), pool=barIndex===0&&preferredPatterns.length?preferredPatterns:allowed;
-        tokenBars.push(pool[(Math.abs(index)+barIndex)%pool.length]);
+        tokenBars.push(CONFIG.activityId==="timesig"?random(pool):pool[(Math.abs(index)+barIndex)%pool.length]);
       }
     }
     const items=[], bars=[], [minStep,maxStep]=rules.range;let previous=Math.max(minStep,Math.min(maxStep,random([1,2,3,4,5,6]))), pendingTie=false;
@@ -124,31 +148,51 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     items.forEach((item,itemIndex)=>{const tiedNote=items[itemIndex+1];if(item.tieToNext&&tiedNote&&!item.isRest&&!tiedNote.isRest)tiedNote.step=item.step;});
     return {...base,prompt:"",timeSignature,bars,barlineItems:items,answer:"Correct barlines shown",response:"mark"};
   }
+  const recentTimeSignatureQuestions=[];
   function makeTimeSignatureQuestion(base,index){
-    const question=makeBarlinesQuestion(base,index), enabled=barlinesEnabledRhythms(), configuredKeys=enabledKeys(enabled,"key-"), availableKeys=configuredKeys.length?configuredKeys:(TIME_SIGNATURE_LEVEL_KEYS[level]||TIME_SIGNATURE_LEVEL_KEYS.N3), keyName=availableKeys[Math.abs(index)%availableKeys.length], key=KEYSIG_WORKSHEET_KEYS[TIME_SIGNATURE_KEY_IDS[keyName]]||KEYSIG_WORKSHEET_KEYS["c-major"];
-    question.barlineItems.forEach(item=>{item.tieToNext=false;});
-    return {...question,key,prompt:"",answer:question.timeSignature,response:"mark"};
+    let question,fingerprint;
+    for(let attempt=0;attempt<20;attempt++){
+      question=makeTimeSignatureCandidate(base,index);
+      fingerprint=JSON.stringify([question.key.id,question.timeSignature,question.givenTimeSignature,question.bars]);
+      if(!recentTimeSignatureQuestions.includes(fingerprint))break;
+    }
+    if(index>=0){recentTimeSignatureQuestions.push(fingerprint);if(recentTimeSignatureQuestions.length>20)recentTimeSignatureQuestions.shift();}
+    return question;
+  }
+  function makeTimeSignatureCandidate(base,index){
+    const question=makeBarlinesQuestion(base,index), enabled=barlinesEnabledRhythms(), configuredKeys=enabledKeys(enabled,"key-"), availableKeys=configuredKeys.length?configuredKeys:(TIME_SIGNATURE_LEVEL_KEYS[level]||TIME_SIGNATURE_LEVEL_KEYS.N3), keyName=nextWorksheetVariantChoice("timesig-key",availableKeys,index), key=KEYSIG_WORKSHEET_KEYS[TIME_SIGNATURE_KEY_IDS[keyName]]||KEYSIG_WORKSHEET_KEYS["c-major"];
+    let givenTimeSignature=null;
+    if(level==="AH"&&enabled["time-changes"]&&Math.random()<.3){
+      let given=makeBarlinesQuestion(base,-1);
+      for(let attempt=0;attempt<20&&given.timeSignature===question.timeSignature;attempt++)given=makeBarlinesQuestion(base,-1);
+      if(given.timeSignature!==question.timeSignature){givenTimeSignature=given.timeSignature;question.bars=[given.bars[0],question.bars[0]];question.barlineItems=question.bars.flat();}
+    }
+    question.bars.forEach((bar,barIndex)=>{const shown=new Set();bar.forEach(item=>{item.barIndex=barIndex;item.tieToNext=false;const sharp=!item.isRest&&keyName==="Am"&&NOTE_NAMES[((item.step%7)+7)%7]==="G";item.writtenAccidental=sharp&&!shown.has(item.step)?"sharp":null;if(sharp)shown.add(item.step);});});
+    return {...question,key,givenTimeSignature,prompt:"",answer:question.timeSignature,response:"mark"};
   }
   function makeTripletsQuestion(base,index){
-    const timeSignature=TRIPLET_TIME_SIGNATURES[Math.abs(index)%TRIPLET_TIME_SIGNATURES.length], key=KEYSIG_WORKSHEET_KEYS[TRIPLET_KEYS[Math.abs(index)%TRIPLET_KEYS.length]], barCount=timeSignature.id==="4/4"?3:4, targetCount=1+Math.abs(index)%3;
-    const targetBars=new Set(Array.from({length:targetCount},(_,targetIndex)=>(Math.abs(index)+targetIndex)%barCount)), bars=[], barlineItems=[], tripletGroups=[];
-    let previousStep=2+Math.abs(index)%4;
+    const timeSignature=nextWorksheetVariantChoice("triplet-metre",TRIPLET_TIME_SIGNATURES,index),key=KEYSIG_WORKSHEET_KEYS[nextWorksheetVariantChoice("triplet-key",TRIPLET_KEYS,index)],barCount=timeSignature.id==="4/4"?3:4,targetCount=nextWorksheetVariantChoice("triplet-count",[1,2,3],index);
+    const candidates=Array.from({length:barCount},(_,i)=>i);
+    for(let i=candidates.length-1;i>0;i--){const other=Math.floor(Math.random()*(i+1));[candidates[i],candidates[other]]=[candidates[other],candidates[i]];}
+    const targetBars=new Set(candidates.slice(0,targetCount)),bars=[],barlineItems=[],tripletGroups=[];
+    let previousStep=random([2,3,4,5]);
     for(let barIndex=0;barIndex<barCount;barIndex+=1){
-      const isTarget=targetBars.has(barIndex), targetOrder=[...targetBars].indexOf(barIndex), tripletType=(Math.abs(index)+Math.max(0,targetOrder))%2===0?"quaver":"crotchet", tripletRhythm=tripletType==="quaver"?"triplet-quaver":"triplet-crotchet", tripletBeats=tripletType==="quaver"?1:2, texture=tripletType, fillBeats=timeSignature.beats-(isTarget?tripletBeats:0), fillPool=TRIPLET_FILL_PATTERNS[texture][fillBeats]||TRIPLET_FILL_PATTERNS.crotchet[fillBeats], fill=[...random(fillPool)], groupId=isTarget?`triplet-${barIndex}`:null;
-      const tripletTokens=isTarget?Array.from({length:3},()=>({rhythm:tripletRhythm,tripletGroupId:groupId})):[], fillTokens=fill.map(rhythm=>({rhythm,tripletGroupId:null})), tokens=isTarget&&((Math.abs(index)+barIndex)%2===0)?[...tripletTokens,...fillTokens]:[...fillTokens,...tripletTokens], bar=[];
-      let ordinaryBeamIndex=0, ordinaryBeamId=null;const shownAccidentals=new Set();
+      const isTarget=targetBars.has(barIndex),tripletType=isTarget?nextWorksheetVariantChoice("triplet-kind",["quaver","crotchet"],index):random(["quaver","crotchet"]),tripletRhythm=tripletType==="quaver"?"triplet-quaver":"triplet-crotchet",tripletBeats=tripletType==="quaver"?1:2,fillBeats=timeSignature.beats-(isTarget?tripletBeats:0),groupId=isTarget?`triplet-${barIndex}`:null;
+      const beforeBeats=isTarget?Math.floor(Math.random()*(fillBeats+1)):fillBeats,fill=(beats)=>random(TRIPLET_FILL_PATTERNS[tripletType][beats]||TRIPLET_FILL_PATTERNS.crotchet[beats]).map(rhythm=>({rhythm,tripletGroupId:null}));
+      const tokens=[...fill(beforeBeats),...(isTarget?Array.from({length:3},()=>({rhythm:tripletRhythm,tripletGroupId:groupId})):[]),...fill(fillBeats-beforeBeats)],bar=[];
+      let ordinaryBeamIndex=0,ordinaryBeamId=null;const shownAccidentals=new Set();
       tokens.forEach((token,tokenIndex)=>{
-        const displayRhythm=token.rhythm==="triplet-quaver"?"quaver":token.rhythm==="triplet-crotchet"?"crotchet":token.rhythm, choices=[previousStep-2,previousStep-1,previousStep,previousStep+1,previousStep+2].filter(step=>step>=-2&&step<=10), step=random(choices);previousStep=step;
-        if(displayRhythm==="quaver"&&!token.tripletGroupId){if(tokenIndex===0||tokens[tokenIndex-1]?.tripletGroupId||!["quaver"].includes(tokens[tokenIndex-1]?.rhythm)){ordinaryBeamIndex+=1;ordinaryBeamId=`ordinary-${barIndex}-${ordinaryBeamIndex}`;}}else if(displayRhythm!=="quaver")ordinaryBeamId=null;
-        const needsSharp=key.id==="a-minor"&&NOTE_NAMES[((step%7)+7)%7]==="G", writtenAccidental=needsSharp&&!shownAccidentals.has("G-sharp")?"sharp":null;if(needsSharp)shownAccidentals.add("G-sharp");
-        const item={rhythm:displayRhythm,tripletRhythm:token.rhythm,tripletGroupId:token.tripletGroupId,step,isRest:false,beamGroupId:token.tripletGroupId||ordinaryBeamId,tieToNext:false,barIndex,writtenAccidental};
-        bar.push(item);barlineItems.push(item);
+        const displayRhythm=token.rhythm==="triplet-quaver"?"quaver":token.rhythm==="triplet-crotchet"?"crotchet":token.rhythm,choices=[previousStep-2,previousStep-1,previousStep,previousStep+1,previousStep+2].filter(step=>step>=-2&&step<=10),step=random(choices);previousStep=step;
+        if(displayRhythm==="quaver"&&!token.tripletGroupId){if(tokenIndex===0||tokens[tokenIndex-1]?.tripletGroupId||tokens[tokenIndex-1]?.rhythm!=="quaver"){ordinaryBeamIndex+=1;ordinaryBeamId=`ordinary-${barIndex}-${ordinaryBeamIndex}`;}}else if(displayRhythm!=="quaver")ordinaryBeamId=null;
+        const needsSharp=key.id==="a-minor"&&NOTE_NAMES[((step%7)+7)%7]==="G",accidentalKey=`${step}-sharp`,writtenAccidental=needsSharp&&!shownAccidentals.has(accidentalKey)?"sharp":null;if(needsSharp)shownAccidentals.add(accidentalKey);
+        const item={rhythm:displayRhythm,tripletRhythm:token.rhythm,tripletGroupId:token.tripletGroupId,step,isRest:false,beamGroupId:token.tripletGroupId?(tripletType==="quaver"?token.tripletGroupId:null):ordinaryBeamId,tieToNext:false,barIndex,writtenAccidental};bar.push(item);barlineItems.push(item);
       });
       if(groupId)tripletGroups.push({id:groupId,type:tripletType});
       bars.push(bar);
     }
     return {...base,prompt:"",timeSignature:timeSignature.id,key,bars,barlineItems,tripletGroups,answer:"All triplets marked",response:"mark"};
   }
+
   const RESTS_TIME_SIGNATURES={
     "2/4":{type:"simple",units:8},"3/4":{type:"simple",units:12},"4/4":{type:"simple",units:16},
     "6/8":{type:"compound",units:12,groups:2},"9/8":{type:"compound",units:18,groups:3},"12/8":{type:"compound",units:24,groups:4},
@@ -156,37 +200,8 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   const RESTS_OPTIONS=["semibreve-rest","minim-rest","dotted-crotchet-rest","crotchet-rest","quaver-rest"];
   const RESTS_UNITS={"semibreve-rest":999,"minim-rest":8,"dotted-crotchet-rest":6,"crotchet-rest":4,"quaver-rest":2};
   const RESTS_LABELS={"semibreve-rest":"Semibreve rest","minim-rest":"Minim rest","dotted-crotchet-rest":"Dotted crotchet rest","crotchet-rest":"Crotchet rest","quaver-rest":"Quaver rest"};
-  function restsEnabledOptions(){
-    const options=CONFIG.settings?.enabledOptions||{};
-    const times=Object.keys(RESTS_TIME_SIGNATURES).filter(signature=>options[`time-${signature}`]!==false&&(!Object.keys(options).some(key=>key.startsWith("time-"))||options[`time-${signature}`]));
-    const rests=RESTS_OPTIONS.filter(rest=>options[`rest-${rest}`]!==false&&(!Object.keys(options).some(key=>key.startsWith("rest-"))||options[`rest-${rest}`]));
-    return {times:times.length?times:Object.keys(RESTS_TIME_SIGNATURES),rests:rests.length?rests:RESTS_OPTIONS};
-  }
-  function restsCompatibleTimes(rest,times){
-    const compatible=times.filter(signature=>rest==="dotted-crotchet-rest"?RESTS_TIME_SIGNATURES[signature].type==="compound":rest==="minim-rest"?signature==="4/4":true);
-    if(compatible.length)return compatible;
-    return Object.keys(RESTS_TIME_SIGNATURES).filter(signature=>rest==="dotted-crotchet-rest"?RESTS_TIME_SIGNATURES[signature].type==="compound":rest==="minim-rest"?signature==="4/4":true);
-  }
-  function restsTemplate(timeSignature,answer,index){
-    const info=RESTS_TIME_SIGNATURES[timeSignature], fullBar=answer==="semibreve-rest";
-    if(fullBar)return {answers:[answer],before:[],after:[],isFullBar:true};
-    if(info.type==="compound"){
-      const targetGroup=Math.abs(index)%info.groups, before=Array.from({length:targetGroup},()=>["dotted-crotchet"]).flat(), after=Array.from({length:info.groups-targetGroup-1},()=>["dotted-crotchet"]).flat();
-      if(answer==="dotted-crotchet-rest")return {answers:[answer],before,after};
-      if(answer==="crotchet-rest")return Math.abs(index)%2?{answers:[answer],before:[...before,"quaver"],after}:{answers:[answer],before,after:["quaver",...after]};
-      return Math.abs(index)%2?{answers:[answer],before:[...before,"quaver-group-2"],after}:{answers:[answer],before,after:["quaver-group-2",...after]};
-    }
-    const beats=Number(timeSignature.split("/")[0]);
-    if(answer==="minim-rest")return Math.abs(index)%2?{answers:[answer],before:["minim"],after:[]}:{answers:[answer],before:[],after:["minim"]};
-    if(answer==="crotchet-rest"){
-      const beforeCount=Math.abs(index)%beats;
-      return {answers:[answer],before:Array.from({length:beforeCount},()=>"crotchet"),after:Array.from({length:beats-beforeCount-1},()=>"crotchet")};
-    }
-    const beforeCount=Math.abs(index)%beats;
-    return Math.abs(index)%2
-      ? {answers:[answer],before:[...Array.from({length:beforeCount},()=>"crotchet"),"quaver"],after:Array.from({length:beats-beforeCount-1},()=>"crotchet")}
-      : {answers:[answer],before:Array.from({length:beforeCount},()=>"crotchet"),after:["quaver",...Array.from({length:beats-beforeCount-1},()=>"crotchet")]};
-  }
+  const restsGenerator=CONFIG.activityId==="rests"?window.MLH.RestsQuestionCore.create():null;
+  const restsExampleGenerator=CONFIG.activityId==="rests"?window.MLH.RestsQuestionCore.create():null;
   function restsNotesFromTokens(tokens,startStep,prefix){
     let step=startStep;
     const items=[];
@@ -197,7 +212,8 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return {items,nextStep:step};
   }
   function makeRestsQuestion(base,index){
-    const enabled=restsEnabledOptions(), regularRests=enabled.rests.filter(rest=>rest!=="semibreve-rest"), useWholeBar=enabled.rests.includes("semibreve-rest")&&(regularRests.length===0||(index>=0&&index%15===14)), answer=useWholeBar?"semibreve-rest":regularRests[Math.abs(index)%regularRests.length], compatibleTimes=restsCompatibleTimes(answer,enabled.times), timeSignature=compatibleTimes[Math.abs(index)%compatibleTimes.length], template=restsTemplate(timeSignature,answer,index);
+    const configured=CONFIG.settings?.enabledOptions||{}, options=window.MLH.RestsQuestionCore.valid(configured)?configured:{};
+    const template=(index<0?restsExampleGenerator:restsGenerator).next(options),timeSignature=template.timeSignature;
     const before=restsNotesFromTokens(template.before,random([1,2,3,4,5,6]),`rests-before-${base.id}`), after=restsNotesFromTokens(template.after,before.nextStep,`rests-after-${base.id}`);
     const missingBoxes=template.answers.map((rest,boxIndex)=>({id:`${base.id}-missing-${boxIndex}`,answer:rest,units:template.isFullBar?RESTS_TIME_SIGNATURES[timeSignature].units:RESTS_UNITS[rest],isFullBar:Boolean(template.isFullBar)}));
     const missingItems=missingBoxes.map(box=>({rhythm:"missing",missingBoxId:box.id,units:box.units,isFullBar:box.isFullBar}));
@@ -226,23 +242,6 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     "triplet-quavers":{id:"triplet-quavers",kind:"triplet",rhythms:["quaver","quaver","quaver"],beats:1}, "triplet-crotchets":{id:"triplet-crotchets",kind:"triplet",rhythms:["crotchet","crotchet","crotchet"],beats:2},
   };
   const RHYTHM_SUM_RESTS={semibreve:"semibreve-rest","dotted-minim":"dotted-minim-rest",minim:"minim-rest","dotted-crotchet":"dotted-crotchet-rest",crotchet:"crotchet-rest","dotted-quaver":"dotted-quaver-rest",quaver:"quaver-rest"};
-  const TRANSPOSING_BAR_PATTERNS = [
-    {rhythms:["minim","crotchet","crotchet"]},
-    {rhythms:["dotted-crotchet","quaver","crotchet","crotchet"]},
-    {rhythms:["crotchet","crotchet","dotted-crotchet","quaver"]},
-    {rhythms:["crotchet","crotchet","crotchet","crotchet"]},
-    {rhythms:["dotted-crotchet","quaver","dotted-crotchet","quaver"]},
-    {rhythms:["crotchet","crotchet","minim"]},
-    {rhythms:["minim","minim"]},
-    {rhythms:["dotted-crotchet","quaver","minim"]},
-    {rhythms:["crotchet","quaver","quaver","crotchet","crotchet"],stepwise:true},
-    {rhythms:["quaver","quaver","quaver","quaver","minim"],stepwise:true},
-    {rhythms:["crotchet","quaver","quaver","quaver","quaver","crotchet"],stepwise:true},
-    {rhythms:["minim","quaver","quaver","quaver","quaver"],stepwise:true},
-    {rhythms:["crotchet","quaver","quaver","minim"],tieStart:2},
-    {rhythms:["crotchet","quaver","quaver","crotchet","crotchet"],tieStart:2},
-    {rhythms:["dotted-crotchet","quaver","quaver","quaver","crotchet"],tieStart:1},
-  ];
   const TRANSPOSING_RHYTHM_SPACING={minim:3.4,"dotted-crotchet":2.45,crotchet:1.65,quaver:.95};
   const N5_WORKSHEET_CHORDS = [
     { answer:"C major", notes:[{step:-2,letter:"C"},{step:0,letter:"E"},{step:2,letter:"G"}] },
@@ -296,7 +295,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
           ? "Copy each bar to create an exact repetition."
         : CONFIG.activityId === "missingnotes" && level === "N4"
           ? "Create musical sequences by writing notes onto the stave."
-        : DEF.instructions;
+        : CONFIG.activityId==="barlines"&&level!=="N3" ? "Insert the missing barlines. Where a time signature changes, the first line is complete; add the missing barlines on the second line." : DEF.instructions;
   const defaultTitle=CONFIG.activityId==="missingnotes"&&level==="N3"?"Repetition • National 3":CONFIG.activityId==="missingnotes"&&level==="N4"?"Sequences • National 4":`${DEF.title} · ${LEVEL_NAMES[level]||level}`;
   const id = () => Math.random().toString(36).slice(2);
 
@@ -326,20 +325,16 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     const names=clef==="bass"?["G","A","B","C","D","E","F"]:["E","F","G","A","B","C","D"];
     return names[((step%7)+7)%7];
   };
+  const noteNamingGenerator = window.NOTE_IDENTIFICATION_CORE.create(Math.random);
   function makeNoteNamingQuestion(base){
-    const settings=CONFIG.settings||{};
-    const clefs=[settings.treble!==false?"treble":null,settings.bass?"bass":null].filter(Boolean);
-    const range=settings.advancedRange?[-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12]:settings.ledger===false?[0,1,2,3,4,5,6,7,8]:[-2,-1,0,1,2,3,4,5,6,7,8,9,10];
-    const clef=random(clefs.length?clefs:["treble"]), noteStep=random(range), letter=noteNameForStep(noteStep,clef);
-    const accidentalChoices=[null];
-    if(settings.accidentals&&!["B","E"].includes(letter))accidentalChoices.push("sharp");
-    if(settings.accidentals&&!["C","F"].includes(letter))accidentalChoices.push("flat");
-    const noteAccidental=random(accidentalChoices);
-    return {...base,step:noteStep,clef,noteAccidental,prompt:"",answer:`${letter}${accidentalText(noteAccidental)}`,response:"text"};
+    const settings=window.NOTE_IDENTIFICATION_CORE.normaliseSettings(CONFIG.settings,level),q=noteNamingGenerator.next(settings);
+    return {...base,step:q.step,clef:q.clef,noteAccidental:q.accidental,noteNamingQuestion:q,prompt:"",answer:q.answer.replace("#","♯").replace("b","♭"),response:"text"};
   }
+  const degreeWorksheetSelection=window.KEY_SIGNATURES_SELECTION.create(Math.random);
+  const keyWorksheetSelection=window.KEY_SIGNATURES_SELECTION.create(Math.random);
   function makeTonicQuestion(base,index){
     const enabled=Object.entries(CONFIG.settings?.questionTypes||{}).filter(([,on])=>on).map(([name])=>name);
-    const degreeChoices=enabled.length?enabled:["tonic","subdominant","dominant"], degree=degreeChoices[Math.abs(index)%degreeChoices.length], key=TONIC_WORKSHEET_KEYS[Math.abs(index)%TONIC_WORKSHEET_KEYS.length];
+    const degreeChoices=enabled.length?enabled:["tonic","subdominant","dominant"], degree=degreeWorksheetSelection.pick("degree",degreeChoices), key=degreeWorksheetSelection.pick("key/"+degree,TONIC_WORKSHEET_KEYS);
     const patterns=[random(TONIC_BAR_PATTERNS),random(TONIC_BAR_PATTERNS)], noteCount=patterns[0].length+patterns[1].length, targetLetter=key.targets[degree];
     let melody=[];
     for(let attempt=0;attempt<60;attempt+=1){
@@ -356,14 +351,15 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return {...base,prompt:`Circle an example of the ${degree} note.`,degree,key,tonicBars:bars.map(bar=>({...bar,accidentals:bar.notes.map(writtenAccidental)})),targetLetter,answer:degree,response:"mark"};
   }
   function configuredEnharmonicPairs(){
-    const options=CONFIG.settings?.options||{};
+    const options=window.ACCIDENTALS_SELECTION.cleanOptions(CONFIG.settings?.options);
     const pairs=[["F♯","G♭"],["C♯","D♭"],["A♯","B♭"],["D♯","E♭"],["G♯","A♭"]];
     if(options.eSharpFflat!==false)pairs.push(["E♯","F"],["F♭","E"]);
     if(options.bSharpCflat!==false)pairs.push(["B♯","C"],["C♭","B"]);
     return pairs;
   }
+  const accidentalWorksheetSelection=window.ACCIDENTALS_SELECTION.create(Math.random);
   function makeEnharmonicQuestion(index,base){
-    const options=CONFIG.settings?.options||{};
+    const options=window.ACCIDENTALS_SELECTION.cleanOptions(CONFIG.settings?.options);
     const clefs=[options.treble!==false?"treble":null,options.bass!==false?"bass":null].filter(Boolean);
     const unusual=[...(options.eSharpFflat!==false?ENHARMONIC_UNUSUAL_PAIRS.eSharpFflat:[]),...(options.bSharpCflat!==false?ENHARMONIC_UNUSUAL_PAIRS.bSharpCflat:[])];
     const useUnusual=index>=0&&index%10===9&&unusual.length>0;
@@ -374,15 +370,23 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       const sourceStep=enharmonicStep(source,clef), targetStep=enharmonicStep(target,clef);
       if(sourceStep>=-4&&sourceStep<=12&&targetStep>=-4&&targetStep<=12)candidates.push({clef,source:{...source,step:sourceStep},target:{...target,step:targetStep}});
     }
-    const chosen=random(candidates);
+    const chosen=accidentalWorksheetSelection.enharmonic(candidates,"worksheet/"+useUnusual);
     return {...base,...chosen,prompt:"Write the enharmonic equivalent of the note shown.",answer:enharmonicName(chosen.target),unusualSpelling:useUnusual,response:"stave"};
   }
   function configuredRhythmPool(){
     const settings=CONFIG.settings||{},profile=RHYTHM_SUMS_LEVELS[level]||RHYTHM_SUMS_LEVELS.N3;
-    const baseIds=Array.isArray(settings.enabledItems)&&settings.enabledItems.length?settings.enabledItems:profile.rhythmIds;
-    const beamedIds=settings.includeBeamedGroups===false?[]:Array.isArray(settings.enabledBeamedItems)&&settings.enabledBeamedItems.length?settings.enabledBeamedItems:profile.beamedIds;
-    const pool=[...baseIds,...beamedIds].map(rhythmId=>WORKSHEET_RHYTHMS[rhythmId]).filter(Boolean);
-    return pool.length?pool:profile.rhythmIds.map(rhythmId=>WORKSHEET_RHYTHMS[rhythmId]);
+    const requested=Array.isArray(settings.enabledItems)?settings.enabledItems:profile.rhythmIds;
+    const valid=requested.filter(id=>WORKSHEET_RHYTHMS[id]?.kind==="single"),baseIds=valid.length?valid:profile.rhythmIds;
+    const groupIds=Array.isArray(settings.enabledBeamedItems)?settings.enabledBeamedItems:profile.beamedIds;
+    const beamedIds=(settings.includeBeamedGroups??profile.beamedIds.length>0)?groupIds.filter(id=>WORKSHEET_RHYTHMS[id]?.rhythms?.every(rhythm=>baseIds.includes(rhythm))):[];
+    return [...new Set([...baseIds,...beamedIds])].map(id=>WORKSHEET_RHYTHMS[id]).filter(Boolean);
+  }
+  const rhythmSumGenerator=CONFIG.activityId==="rhythmsums"?window.MLH.RhythmSumsGenerator.create():null;
+  function makeRhythmSumQuestion(base){
+    const pool=configuredRhythmPool(),requested=CONFIG.settings?.enabledOperators||["+","−"],operators=requested.filter(operator=>["+","−","×","÷"].includes(operator));
+    const choices=window.MLH.RhythmSumsGenerator.buildChoices(pool,operators);
+    const equation=rhythmSumGenerator.next(pool,choices.size?operators:["+","−"]);
+    return {...base,...equation,prompt:"",left:rhythmSumDisplayItem(equation.left),right:rhythmSumDisplayItem(equation.right)};
   }
   function rhythmSumDisplayItem(item){
     const profile=RHYTHM_SUMS_LEVELS[level]||RHYTHM_SUMS_LEVELS.N3,includeRests=(CONFIG.settings?.includeRests??profile.includeRests)&&item.kind==="single";
@@ -397,7 +401,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   }
   function makeKeySignatureQuestion(index,base){
     const keys=(KEYSIG_LEVEL_KEYS[level]||KEYSIG_LEVEL_KEYS.N5).map(keyId=>KEYSIG_WORKSHEET_KEYS[keyId]);
-    const key=random(keys);
+    const key=keyWorksheetSelection.pick("key-signature-answer",keys);
     const rhythmPatterns=[["half","quarter","quarter"],["quarter","quarter","half"]];
     const notes=[];
     for(let barIndex=0;barIndex<4;barIndex+=1){
@@ -413,7 +417,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   const configuredWorksheetAccidentals = CONFIG.settings?.enabledAccidentals;
   const enabledWorksheetAccidentals = (configuredWorksheetAccidentals?.length ? configuredWorksheetAccidentals : ["sharp", "flat", "natural"])
     .map((name) => ACCIDENTAL_VALUES[name])
-    .filter((value) => value === -1 || value === 1);
+    .filter((value) => value === -1 || value === 0 || value === 1);
   function validWrittenAccidental(step, accidental) {
     if (accidental === null) return true;
     const letter = NOTE_NAMES[step];
@@ -423,11 +427,12 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return `${NOTE_NAMES[step]}${accidental === 1 ? "♯" : accidental === -1 ? "♭" : accidental === 0 ? "♮" : ""}`;
   }
   function accidentalIdentificationQuestion(base) {
-    const choices = [null, ...enabledWorksheetAccidentals];
+    const choices = [null, ...enabledWorksheetAccidentals.filter(value => value === -1 || value === 1)];
     const candidates = [];
     for (let step = 0; step < NOTE_NAMES.length - 1; step += 1) {
       for (const firstAccidental of choices) for (const secondAccidental of choices) {
         if (firstAccidental === null && secondAccidental === null) continue;
+        if(secondAccidental!==null&&!enabledWorksheetAccidentals.includes(secondAccidental))continue;
         if (!validWrittenAccidental(step, firstAccidental) || !validWrittenAccidental(step + 1, secondAccidental)) continue;
         const firstPitch = NOTE_PITCHES[step] + (firstAccidental ?? 0);
         const secondPitch = NOTE_PITCHES[step + 1] + (secondAccidental ?? 0);
@@ -435,18 +440,19 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
         if (semitones === 1 || semitones === 2) candidates.push({ step, step2: step + 1, firstAccidental, secondAccidental, distance: semitones === 1 ? "semitone" : "tone" });
       }
     }
-    const question = random(candidates);
-    if (!question) return null;
+    if(enabledWorksheetAccidentals.includes(0))for(let step=0;step<NOTE_NAMES.length;step++)for(const firstAccidental of [-1,1])if(validWrittenAccidental(step,firstAccidental))candidates.push({step,step2:step,firstAccidental,secondAccidental:0,distance:"semitone"});
+    if(!candidates.length)return null;
+    const distance=accidentalWorksheetSelection.pick("identify-distance",[...new Set(candidates.map(item=>item.distance))]),question=accidentalWorksheetSelection.pick("identify-variant/"+distance,candidates.filter(item=>item.distance===distance));
     return { ...base, ...question, prompt:"Are the two notes a tone or a semitone apart?", answer:question.distance[0].toUpperCase()+question.distance.slice(1), response:"text" };
   }
   function accidentalCreationQuestion(base) {
-    const startChoices = [null, ...enabledWorksheetAccidentals];
+    const startChoices = [null, ...enabledWorksheetAccidentals.filter(value=>value!==0)];
     const candidates = [];
     for (let step = 0; step < NOTE_NAMES.length; step += 1) {
       for (const direction of ["higher", "lower"]) for (const distance of ["tone", "semitone"]) {
         const answerStep = step + (direction === "higher" ? 1 : -1);
         if (answerStep < 0 || answerStep >= NOTE_NAMES.length) continue;
-        for (const firstAccidental of startChoices) for (const answerAccidental of enabledWorksheetAccidentals) {
+        for (const firstAccidental of startChoices) for (const answerAccidental of enabledWorksheetAccidentals.filter(value=>value!==0)) {
           if (!validWrittenAccidental(step, firstAccidental) || !validWrittenAccidental(answerStep, answerAccidental)) continue;
           const firstPitch = NOTE_PITCHES[step] + (firstAccidental ?? 0);
           const answerPitch = NOTE_PITCHES[answerStep] + answerAccidental;
@@ -456,8 +462,9 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
         }
       }
     }
-    const question = random(candidates);
-    if (!question) return null;
+    if(enabledWorksheetAccidentals.includes(0))for(let step=0;step<NOTE_NAMES.length;step++)for(const firstAccidental of [-1,1])if(validWrittenAccidental(step,firstAccidental))candidates.push({step,answerStep:step,firstAccidental,answerAccidental:0,distance:"semitone",direction:firstAccidental===1?"lower":"higher"});
+    if(!candidates.length)return null;
+    const accidental=accidentalWorksheetSelection.pick("create-accidental",[...new Set(candidates.map(item=>item.answerAccidental))]),eligible=candidates.filter(item=>item.answerAccidental===accidental),direction=accidentalWorksheetSelection.pick("create-direction/"+accidental,[...new Set(eligible.map(item=>item.direction))]),question=accidentalWorksheetSelection.pick("create-variant/"+accidental+direction,eligible.filter(item=>item.direction===direction));
     return { ...base, ...question, prompt:`Write a note a ${question.distance} ${question.direction} than the note shown.`, answer:writtenNoteName(question.answerStep, question.answerAccidental), response:"stave" };
   }
 
@@ -477,10 +484,24 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return {notes,nextStep:step};
   }
   function makeArticulationQuestion(base,index){
-    const all=[{id:"staccato",name:"Staccato"},{id:"slur",name:"Slur"},{id:"accent",name:"Accent"},{id:"phrase",name:"Phrase markings"}],selected=CONFIG.settings?.enabledMarkings||[],markings=all.filter(mark=>!selected.length||selected.includes(mark.id)),types=CONFIG.settings?.enabledTypes||[],applyEnabled=!types.length||types.includes("apply"),identifyEnabled=!types.length||types.some(type=>type.startsWith("identify")),apply=applyEnabled&&(!identifyEnabled||index%2===1),marking=random(markings.length?markings:all),timeSignature=Math.abs(index)%2===0?{id:"3/4",top:"3",bottom:"4",beats:3}:{id:"4/4",top:"4",bottom:"4",beats:4},barCount=marking.id==="phrase"?2:1,bars=[];
-    let previousStep=2+Math.abs(index)%4;
+    const all=[{id:"staccato",name:"Staccato"},{id:"slur",name:"Slur"},{id:"accent",name:"Accent"},{id:"phrase",name:"Phrase markings"}],selected=CONFIG.settings?.enabledMarkings||[],markings=all.filter(mark=>!selected.length||selected.includes(mark.id)),types=CONFIG.settings?.enabledTypes||[],applyEnabled=!types.length||types.includes("apply"),identifyEnabled=!types.length||types.some(type=>type.startsWith("identify")),apply=applyEnabled&&(!identifyEnabled||nextWorksheetVariantChoice("articulation-mode",[false,true],index)),marking=nextWorksheetVariantChoice("articulation-marking",markings.length?markings:all,index),timeSignature=nextWorksheetVariantChoice("articulation-metre",[{id:"3/4",top:"3",bottom:"4",beats:3},{id:"4/4",top:"4",bottom:"4",beats:4}],index),barCount=marking.id==="phrase"?2:1,bars=[];
+    let previousStep=random([2,3,4,5]);
     for(let barIndex=0;barIndex<barCount;barIndex+=1){const made=makeArticulationBar(timeSignature.beats,previousStep,barIndex);bars.push({notes:made.notes});previousStep=made.nextStep;}
-    const notes=bars.flatMap(bar=>bar.notes),firstBar=bars[0].notes,targetStart=marking.id==="accent"?Math.min(notes.length-1,Math.max(0,Math.floor(notes.length/2))):0,targetEnd=marking.id==="phrase"?notes.length-1:marking.id==="slur"?Math.min(firstBar.length-1,2):marking.id==="staccato"?Math.min(firstBar.length-1,1):targetStart,targetNoteIds=notes.slice(targetStart,targetEnd+1).map(note=>note.id),prompt=apply?(marking.id==="phrase"?"Apply a phrase mark across both bars.":marking.id==="accent"?`Apply an accent to note ${targetStart+1}.`:`Apply ${marking.id==="slur"?"a slur":"staccato markings"} to notes ${targetStart+1}–${targetEnd+1}.`):"Explain the meaning of the articulation marking shown.";
+    const notes=bars.flatMap(bar=>bar.notes),firstBar=bars[0].notes;
+    let targetStart=0,targetEnd=notes.length-1;
+    if(marking.id==="slur"){
+      // Keep a slur visually distinct from a tie, including two-note examples.
+      if(new Set(firstBar.map(note=>note.step)).size===1)firstBar[1].step+=firstBar[1].step<10?1:-1;
+      const spans=[];
+      for(let start=0;start<firstBar.length-1;start+=1)for(let end=start+1;end<firstBar.length;end+=1){
+        if(new Set(firstBar.slice(start,end+1).map(note=>note.step)).size>1)spans.push({start,end});
+      }
+      const chosen=random(spans);targetStart=chosen.start;targetEnd=chosen.end;
+    }else if(marking.id!=="phrase"){
+      targetStart=Math.floor(Math.random()*firstBar.length);
+      targetEnd=marking.id==="accent"?targetStart:Math.min(firstBar.length-1,targetStart+Math.floor(Math.random()*3));
+    }
+    const targetNoteIds=notes.slice(targetStart,targetEnd+1).map(note=>note.id),prompt=apply?(marking.id==="phrase"?"Apply a phrase mark across both bars.":marking.id==="accent"?`Apply an accent to note ${targetStart+1}.`:`Apply ${marking.id==="slur"?"a slur":"staccato markings"} to ${targetStart===targetEnd?`note ${targetStart+1}`:`notes ${targetStart+1}–${targetEnd+1}`}.`):"Explain the meaning of the articulation marking shown.";
     return {...base,prompt:apply?prompt:"Identify the articulation marking shown.",articulationBars:bars,timeSignature,markingId:marking.id,targetNoteIds,apply,answer:marking.name,response:apply?"stave":"text"};
   }
 
@@ -495,25 +516,45 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     "4/4":[["semibreve"],["crotchet","crotchet","crotchet","crotchet"],["minim","crotchet","crotchet"],["crotchet","crotchet","minim"],["dottedMinim","crotchet"],["quaver","quaver","crotchet","crotchet","crotchet"]],
     "6/8":[["dottedCrotchet","dottedCrotchet"],["quaver","quaver","quaver","quaver","quaver","quaver"],["dottedCrotchet","quaver","quaver","quaver"],["quaver","quaver","quaver","dottedCrotchet"],["crotchet","quaver","crotchet","quaver"]],
   };
+  const WORKSHEET_VARIANT_BAGS = new Map();
+  function nextWorksheetVariantChoice(key, values, index) {
+    if (index < 0) return random(values);
+    const bagKey = `${key}:${values.map(value => typeof value === "object" ? value.id : String(value)).join(",")}`;
+    let bag = WORKSHEET_VARIANT_BAGS.get(bagKey);
+    if (!bag?.length) {
+      bag = [...values];
+      for (let i = bag.length - 1; i > 0; i -= 1) {
+        const other = Math.floor(Math.random() * (i + 1));
+        [bag[i], bag[other]] = [bag[other], bag[i]];
+      }
+      WORKSHEET_VARIANT_BAGS.set(bagKey, bag);
+    }
+    return bag.pop();
+  }
   function makeDynamicsBar(timeSignature,index){
-    const rhythms=DYNAMICS_WORKSHEET_PATTERNS[timeSignature.id][Math.abs(index)%DYNAMICS_WORKSHEET_PATTERNS[timeSignature.id].length],notes=[];let step=2+Math.abs(index)%4,beat=0,beamIndex=0,activeBeam=null,previousCompoundGroup=null;
+    const rhythms=random(DYNAMICS_WORKSHEET_PATTERNS[timeSignature.id]),notes=[];let step=random([2,3,4,5]),beat=0,beamIndex=0,activeBeam=null,previousCompoundGroup=null;
     rhythms.forEach((rhythm,noteIndex)=>{const choices=[step-2,step-1,step,step+1,step+2].filter(value=>value>=-2&&value<=10);step=random(choices);const compoundGroup=timeSignature.id==="6/8"?Math.floor((beat+.001)/1.5):0;if(rhythm==="quaver"){if(noteIndex===0||rhythms[noteIndex-1]!=="quaver"||compoundGroup!==previousCompoundGroup){beamIndex+=1;activeBeam=`dynamics-0-${beamIndex}`;}}else activeBeam=null;notes.push({id:`dynamics-0-${noteIndex}`,rhythm,step,beamGroupId:activeBeam});beat+=DYNAMICS_WORKSHEET_RHYTHMS[rhythm].beats;previousCompoundGroup=compoundGroup;});
     return {notes};
   }
   function makeDynamicsQuestion(base,index){
-    const configured=CONFIG.settings?.enabledDynamics||[],allowed=DYNAMICS_WORKSHEET_LEVELS[level]||DYNAMICS_WORKSHEET_LEVELS.N3,ids=(configured.length?configured:allowed).filter(id=>allowed.includes(id)&&DYNAMICS_WORKSHEET_MARKINGS[id]),enabledTypes=(CONFIG.settings?.enabledTypes||[]).filter(type=>type!=="audio"),identifyEnabled=!enabledTypes.length||enabledTypes.includes("multiple-choice")||enabledTypes.includes("definition"),applyEnabled=!enabledTypes.length||enabledTypes.includes("apply-score"),apply=applyEnabled&&(!identifyEnabled||index%2===1),dynamicId=ids[Math.abs(index)%Math.max(1,ids.length)]||allowed[0],dynamic=DYNAMICS_WORKSHEET_MARKINGS[dynamicId],timeSignatures=[{id:"2/4",top:"2",bottom:"4",beats:2},{id:"3/4",top:"3",bottom:"4",beats:3},{id:"4/4",top:"4",bottom:"4",beats:4},{id:"6/8",top:"6",bottom:"8",beats:6}],timeSignature=timeSignatures[Math.abs(index)%timeSignatures.length],made=makeDynamicsBar(timeSignature,index),prompt=apply?`Add the dynamic for ${dynamic.meaning.toLowerCase()}.`:"What does this dynamic mean?";
+    const configured=CONFIG.settings?.enabledDynamics||[],allowed=DYNAMICS_WORKSHEET_LEVELS[level]||DYNAMICS_WORKSHEET_LEVELS.N3,ids=(configured.length?configured:allowed).filter(id=>allowed.includes(id)&&DYNAMICS_WORKSHEET_MARKINGS[id]),enabledTypes=(CONFIG.settings?.enabledTypes||[]).filter(type=>type!=="audio"),identifyEnabled=!enabledTypes.length||enabledTypes.includes("multiple-choice")||enabledTypes.includes("definition"),applyEnabled=!enabledTypes.length||enabledTypes.includes("apply-score"),apply=applyEnabled&&(!identifyEnabled||nextWorksheetVariantChoice("mode",[false,true],index)),dynamicId=nextWorksheetVariantChoice("dynamic",ids.length?ids:allowed,index),dynamic=DYNAMICS_WORKSHEET_MARKINGS[dynamicId],timeSignatures=[{id:"2/4",top:"2",bottom:"4",beats:2},{id:"3/4",top:"3",bottom:"4",beats:3},{id:"4/4",top:"4",bottom:"4",beats:4},{id:"6/8",top:"6",bottom:"8",beats:3}],timeSignature=nextWorksheetVariantChoice("metre",timeSignatures,index),made=makeDynamicsBar(timeSignature,index),prompt=apply?`Add the dynamic for ${dynamic.meaning.toLowerCase()}.`:"What does this dynamic mean?";
     return {...base,prompt,dynamicsBar:{notes:made.notes},timeSignature,dynamicId,apply,answer:apply?dynamic.name:dynamic.meaning,response:apply?"stave":"text"};
   }
 
+  const transposingWorksheetGenerator=window.TRANSPOSING_CORE.create(Math.random);
+  const melodicWorksheetGenerator=window.MELODIC_DICTATION_SELECTION.createWorksheetGenerator(Math.random);
+  const keyboardWorksheetGenerator=window.KeyboardNotes?.create(Math.random);
+  const chordWorksheetSelection=window.CHORDS_SELECTION.create(Math.random);
   function makeQuestion(index, forcedAHType=null) {
     const step = random(NOTES), step2 = Math.max(0, Math.min(8, step + random([-3,-2,-1,1,2,3])));
     const base = { id: id(), step, step2, prompt: "", answer: "", response: DEF.response };
     switch (CONFIG.activityId) {
       case "keyboard-notes": {
-        const options = CONFIG.settings?.options || window.KeyboardNotes.defaults[level] || window.KeyboardNotes.defaults.N3;
-        const keyboardKey = window.KeyboardNotes.question(options);
+        const options = window.KeyboardNotes.normaliseOptions(CONFIG.settings?.options,level);
+        const types = window.KeyboardNotes.normaliseTypes(CONFIG.settings?.questionTypes,level);
+        const keyboardKey = keyboardWorksheetGenerator.next(options,types,level);
         const names = window.KeyboardNotes.answers(options).filter(answer => window.KeyboardNotes.correct(answer, keyboardKey));
-        return {...base, keyboardKey, prompt: "Name the marked note.", answer: names.map(answer => answer.label).join(" or "), response: "text"};
+        return {...base, keyboardKey, step:keyboardKey.note.step, clef:keyboardKey.note.clef, noteAccidental:keyboardKey.note.accidental, prompt:keyboardKey.type === "find" ? "Mark the written note on the keyboard." : "Name the marked note.", answer:names.map(answer => answer.label).join(" or "), response:keyboardKey.type === "find" ? "mark" : "text"};
       }
       case "enharmonics": {
         return makeEnharmonicQuestion(index,base);
@@ -522,45 +563,25 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       case "notenaming": return makeNoteNamingQuestion(base);
       case "tonic": return makeTonicQuestion(base,index);
       case "transposing": {
-        const questionOptions=CONFIG.settings?.questionOptions||{};
-        const transforms=level==="AH"?[
-          questionOptions.octaveLower!==false?{id:"octave-lower",sourceClef:"treble",answerClef:"bass",range:[-2,5],delta:5,prompt:"Transpose the notes one octave lower into the bass clef."}:null,
-          questionOptions.octaveHigher!==false?{id:"octave-higher",sourceClef:"bass",answerClef:"treble",range:[3,10],delta:-5,prompt:"Transpose the notes one octave higher into the treble clef."}:null,
-          questionOptions.samePitch!==false?{id:"same-pitch",samePitch:true,prompt:"Rewrite the notes at the same pitch in the other clef."}:null,
-          questionOptions.ottava?{id:"8va",sourceClef:"treble",answerClef:"treble",range:[-2,3],delta:7,marking:"8va",prompt:"Rewrite the notes as they would sound."}:null,
-          questionOptions.ottava?{id:"8vb",sourceClef:"bass",answerClef:"bass",range:[3,10],delta:-7,marking:"8vb",prompt:"Rewrite the notes as they would sound."}:null,
-        ].filter(Boolean):[{id:"octave-lower",sourceClef:"treble",answerClef:"bass",range:[-2,5],delta:5,prompt:""}];
-        const transform={...(transforms.length?transforms[Math.abs(index)%transforms.length]:{id:"octave-lower",sourceClef:"treble",answerClef:"bass",range:[-2,5],delta:5,prompt:"Transpose the notes one octave lower into the bass clef."})};
-        if(transform.samePitch){transform.sourceClef=Math.random()<.5?"treble":"bass";transform.answerClef=transform.sourceClef==="treble"?"bass":"treble";transform.range=transform.sourceClef==="treble"?[-4,0]:[8,12];transform.delta=transform.sourceClef==="treble"?12:-12;}
-        const pattern=random(TRANSPOSING_BAR_PATTERNS), rhythms=pattern.rhythms, sourceMelody=[];
-        const sourceRange=Array.from({length:transform.range[1]-transform.range[0]+1},(_,rangeIndex)=>transform.range[0]+rangeIndex);
-        if(pattern.stepwise){sourceMelody.push(random(sourceRange));while(sourceMelody.length<rhythms.length){const previous=sourceMelody[sourceMelody.length-1],choices=[previous-1,previous+1].filter(value=>value>=transform.range[0]&&value<=transform.range[1]);sourceMelody.push(random(choices));}}else{rhythms.forEach(()=>sourceMelody.push(random(sourceRange)));}
-        if(Number.isInteger(pattern.tieStart)&&sourceMelody[pattern.tieStart+1]!==undefined)sourceMelody[pattern.tieStart+1]=sourceMelody[pattern.tieStart];
-        const ties=rhythms.map((_,rhythmIndex)=>rhythmIndex===pattern.tieStart);
-        return {...base,transposingType:transform.id,step:sourceMelody[0],answerStep:sourceMelody[0]+transform.delta,sourceMelody,answerMelody:sourceMelody.map(value=>value+transform.delta),rhythms,ties,clef:transform.sourceClef,sourceClef:transform.sourceClef,answerClef:transform.answerClef,marking:transform.marking||null,prompt:level==="AH"?transform.prompt:"",answer:"Transposed passage",response:"stave"};
+        const q=transposingWorksheetGenerator.next(CONFIG.settings?.mode||"exam",level,CONFIG.settings?.questionOptions);
+        const passage=q.mode==="practice"&&q.type!=="meaning"?[{source:q.singleSource,answer:q.singleAnswer,rhythm:"crotchet",tieToNext:false}]:q.passage;
+        const sourceMelody=passage.map(item=>item.source.step),answerMelody=passage.map(item=>item.answer.step),rhythms=passage.map(item=>item.rhythm),ties=passage.map(item=>item.tieToNext);
+        const typeIds={higher:"octave-lower",bassOctaveUp:"octave-higher",samePitch:"same-pitch",ottavaAlta:"8va",ottavaBassa:"8vb"};
+        const noun=q.mode==="practice"?"note":"notes",prompt=q.type==="meaning"?`Give the meaning of ${q.marking}.`:q.marking?`Rewrite the ${noun} as ${noun==="note"?"it":"they"} would sound.`:q.transformId==="samePitch"?`Rewrite the ${noun} at the same pitch in the other clef.`:q.transformId==="bassOctaveUp"?`Transpose the ${noun} one octave higher into the treble clef.`:`Transpose the ${noun} one octave lower into the bass clef.`;
+        return {...base,transposingType:typeIds[q.transformId]||q.transformId,transposingQuestion:q,meaning:q.type==="meaning",step:sourceMelody[0],answerStep:answerMelody[0],sourceMelody,answerMelody,rhythms,ties,clef:q.sourceClef,sourceClef:q.sourceClef,answerClef:q.answerClef,marking:q.marking,prompt:level==="AH"?prompt:"",answer:q.type==="meaning"?`One octave ${q.correctMeaning}`:"Transposed passage",response:q.type==="meaning"?"text":"stave"};
       }
       case "barlines": return makeBarlinesQuestion(base,index);
       case "rests": return makeRestsQuestion(base,index);
-      case "rhythmsums": { const pool=configuredRhythmPool(), operators=(CONFIG.settings?.enabledOperators||["+","−"]).filter(operator=>["+","−","×","÷"].includes(operator)), left=rhythmSumDisplayItem(random(pool)), right=rhythmSumDisplayItem(random(pool)), operator=random(operators.length?operators:["+"]), raw=operator==="+"?left.beats+right.beats:operator==="−"?Math.abs(left.beats-right.beats):operator==="×"?left.beats*right.beats:left.beats/right.beats; return {...base,prompt:"",left,right,operator,answer:Math.round(raw*100)/100}; }
+      case "rhythmsums": return makeRhythmSumQuestion(base);
       case "timesig": return makeTimeSignatureQuestion(base,index);
       case "triplets": return makeTripletsQuestion(base,index);
-      case "accidentals": { const create=index%2===1; const useAccidental=index<0||index%3!==0; if(useAccidental){const accidentalQuestion=create?accidentalCreationQuestion(base):accidentalIdentificationQuestion(base);if(accidentalQuestion)return accidentalQuestion;} const distance=random(["tone","semitone"]), direction=random(["higher","lower"]); const pairs=distance==="tone"?[[1,2],[2,3],[3,4],[5,6],[6,7]]:[[0,1],[4,5],[7,8]]; const [low,high]=random(pairs); if(create){const startStep=direction==="higher"?low:high, answerStep=direction==="higher"?high:low; return { ...base, step:startStep, answerStep, firstAccidental:null, answerAccidental:null, prompt:`Write a note a ${distance} ${direction} than the note shown.`, answer:NOTE_NAMES[answerStep], response:"stave" };} return { ...base, step:low, step2:high, firstAccidental:null, secondAccidental:null, prompt:"Are the two notes a tone or a semitone apart?", answer:distance[0].toUpperCase()+distance.slice(1), response:"text" }; }
-      case "chords": { if(level==="N5"){const chord=random(N5_WORKSHEET_CHORDS), rhythmPattern=random(N5_CHORD_RHYTHMS);return {...base,prompt:"",chordNotes:shuffled(chord.notes).map((chordNote,noteIndex)=>({...chordNote,rhythm:rhythmPattern[noteIndex]})),answer:chord.answer,response:"text"};} if(level==="AH"){const ahType=forcedAHType||AH_WORKSHEET_TYPES[Math.abs(index)%AH_WORKSHEET_TYPES.length], key=random(AH_WORKSHEET_KEYS), symbols=key.major?["I","II","IV","V","VI"]:["I","IV","V","VI"], choices=[];symbols.forEach(symbol=>{const chord=key.chords[symbol];(chord.inversions||[0,1,2]).forEach(inversion=>{const voicing=ahWorksheetVoicing(key,chord,inversion);if(ahType!=="bass"||voicing.bass.writtenAccidental===null)choices.push({symbol,chord,inversion,voicing});});});const first=random(choices), second=random(choices.filter(choice=>choice.symbol!==first.symbol));const ahItems=[first,second].map(item=>({symbol:item.symbol,chordName:item.chord.name,inversion:item.inversion,trebleTones:item.voicing.treble,bassTone:item.voicing.bass}));return {...base,prompt:ahType==="position"?"Identify the chord and its position. The first has been done for you.":"Insert the correct note in the bass line using the chord information provided.",ahType,key,ahItems,answer:ahType==="position"?`${second.symbol} – ${ahPositionName(second.inversion)}`:second.voicing.bass.letter,response:"mark"};} const bass=index%2===0; return bass ? {...base,clef:"bass",prompt:"Write the missing bass note using the chord information shown.",answer:random(NOTE_NAMES),response:"stave"} : {...base,clef:"bass",prompt:"Name the chord and its position.",stack:[step,Math.min(8,step+2),Math.min(8,step+4)],answer:random(["C major, root position","G major, first inversion","D minor, second inversion","Diminished 7th"]),response:"text"}; }
+      case "accidentals": { const create=index%2===1; const useAccidental=index<0||index%3!==0; if(useAccidental){const accidentalQuestion=create?accidentalCreationQuestion(base):accidentalIdentificationQuestion(base);if(accidentalQuestion)return accidentalQuestion;} const distance=accidentalWorksheetSelection.pick("plain-distance/"+create,["tone","semitone"]), direction=accidentalWorksheetSelection.pick("plain-direction/"+create,["higher","lower"]); const pairs=distance==="tone"?[[1,2],[2,3],[3,4],[5,6],[6,7]]:[[0,1],[4,5],[7,8]]; const [low,high]=random(pairs); if(create){const startStep=direction==="higher"?low:high, answerStep=direction==="higher"?high:low; return { ...base, step:startStep, answerStep, firstAccidental:null, answerAccidental:null, prompt:`Write a note a ${distance} ${direction} than the note shown.`, answer:NOTE_NAMES[answerStep], response:"stave" };} return { ...base, step:low, step2:high, firstAccidental:null, secondAccidental:null, prompt:"Are the two notes a tone or a semitone apart?", answer:distance[0].toUpperCase()+distance.slice(1), response:"text" }; }
+      case "chords": { if(level==="N5"){const chord=chordWorksheetSelection.pick("N5-chord",N5_WORKSHEET_CHORDS), rhythmPattern=chordWorksheetSelection.pick("N5-rhythm",N5_CHORD_RHYTHMS);return {...base,prompt:"",chordNotes:shuffled(chord.notes).map((chordNote,noteIndex)=>({...chordNote,rhythm:rhythmPattern[noteIndex]})),answer:chord.answer,response:"text"};} if(level==="AH"){const ahType=forcedAHType||chordWorksheetSelection.pick("AH-type",AH_WORKSHEET_TYPES), key=chordWorksheetSelection.pick("AH-key/"+ahType,AH_WORKSHEET_KEYS), symbols=key.major?["I","II","IV","V","VI"]:["I","IV","V","VI"], choices=[];symbols.forEach(symbol=>{const chord=key.chords[symbol];(chord.inversions||[0,1,2]).forEach(inversion=>{const voicing=ahWorksheetVoicing(key,chord,inversion);if(ahType!=="bass"||voicing.bass.writtenAccidental===null)choices.push({symbol,chord,inversion,voicing});});});const first=chordWorksheetSelection.ahItem(choices,"AH-worksheet/"+ahType,null,"given"), second=chordWorksheetSelection.ahItem(choices,"AH-worksheet/"+ahType,first.symbol,"answer");const ahItems=[first,second].map(item=>({symbol:item.symbol,chordName:item.chord.name,inversion:item.inversion,trebleTones:item.voicing.treble,bassTone:item.voicing.bass}));return {...base,prompt:ahType==="position"?"Identify the chord and its position. The first has been done for you.":"Insert the correct note in the bass line using the chord information provided.",ahType,key,ahItems,answer:ahType==="position"?`${second.symbol} – ${ahPositionName(second.inversion)}`:second.voicing.bass.letter,response:"mark"};} const bass=index%2===0; return bass ? {...base,clef:"bass",prompt:"Write the missing bass note using the chord information shown.",answer:random(NOTE_NAMES),response:"stave"} : {...base,clef:"bass",prompt:"Name the chord and its position.",stack:[step,Math.min(8,step+2),Math.min(8,step+4)],answer:random(["C major, root position","G major, first inversion","D minor, second inversion","Diminished 7th"]),response:"text"}; }
       case "articulation": return makeArticulationQuestion(base,index);
       case "dynamics": return makeDynamicsQuestion(base,index);
       case "missingnotes": {
-        const direction=level==="N4"?random(["higher","lower"]):null;
-        const delta=direction==="higher"?1:direction==="lower"?-1:0;
-        const timeSignature=random(Object.keys(MISSING_NOTES_PATTERNS));
-        const rhythms=random(MISSING_NOTES_PATTERNS[timeSignature]);
-        const first=random(direction==="higher"?[1,2,3,4,5]:direction==="lower"?[2,3,4,5,6]:[1,2,3,4,5,6]);
-        const sourceMelody=[first];
-        while(sourceMelody.length<rhythms.length){
-          const previous=sourceMelody[sourceMelody.length-1];
-          const possible=[previous-1,previous,previous+1].filter(note=>note>=1&&note<=6&&note+delta>=0&&note+delta<=8);
-          sourceMelody.push(random(possible));
-        }
-        return {...base,key:KEYSIG_WORKSHEET_KEYS["c-major"],timeSignature,rhythms,prompt:direction?`Write the sequence one step ${direction} in the blank bar.`:"",sourceMelody,answerMelody:sourceMelody.map(note=>note+delta),answer:direction?`One step ${direction}`:"Exact repeat",response:"stave"};
+        const q=melodicWorksheetGenerator.next(level),{direction,sourceMelody,answerMelody,rhythms,timeSignature}=q;
+        return {...base,key:KEYSIG_WORKSHEET_KEYS["c-major"],timeSignature,rhythms,prompt:direction?`Write the sequence one step ${direction} in the blank bar.`:"",sourceMelody,answerMelody,answer:direction?`One step ${direction}`:"Exact repeat",response:"stave"};
       }
       case "practicequestions": return makePracticeQuestion(index, base);
       default: return base;
@@ -747,7 +768,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       {[0,1,2,3,4].map(line=><line key={line} x1={left} x2={right} y1={top+line*gap} y2={top+line*gap} stroke={`url(#${fadeId})`} strokeWidth="1.5"/>)}
       <WorksheetGlyph symbolKey={question.clef==="bass"?"fClef":"gClef"} x={left+52/18.9*gap} y={y(question.clef==="bass"?6:2)} gap={gap} colour={ink}/>
       {ledgerSteps.map(step=><line key={step} x1={noteX-ledgerHalfWidth+ledgerXOffset} x2={noteX+ledgerHalfWidth+ledgerXOffset} y1={y(step)+ledgerYOffset} y2={y(step)+ledgerYOffset} stroke={ink} strokeWidth={ledgerThickness}/>)}
-      {question.noteAccidental?<WorksheetGlyph symbolKey={question.noteAccidental==="sharp"?"sharpInScore":"flatInScore"} x={accidentalX} y={y(question.step)} gap={gap} colour={ink}/>:null}
+      {question.noteAccidental?<WorksheetGlyph symbolKey={question.noteAccidental==="sharp"?"sharpInScore":question.noteAccidental==="natural"?"naturalInScore":"flatInScore"} x={accidentalX} y={y(question.step)} gap={gap} colour={ink}/>:null}
       <WorksheetGlyph symbolKey={question.step>4?"quarterNoteStemDown":"quarterNoteStemUp"} x={noteX} y={y(question.step)} gap={gap} colour={ink}/>
     </svg>;
   }
@@ -865,32 +886,19 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   }
 
   function BarlinesStaff({ question, completed=false, muted=false }) {
-    const ink=muted?"#78716c":"#000", left=12, right=668, top=32, gap=12, clefX=40, timeX=82, musicStart=108;
-    const noteXs=[], boundaryXs=[], items=question.barlineItems;
-    const totalSpacing=items.reduce((sum,item)=>sum+(BARLINES_RHYTHM_SPACING[item.rhythm]||2.2),0);
-    const spacingUnit=Math.max(1,right-10-musicStart)/Math.max(1,totalSpacing);
-    let cursor=musicStart+spacingUnit*.4;
-    question.bars.forEach((bar,barIndex)=>{
-      bar.forEach((item,barNoteIndex)=>{
-        const spacing=BARLINES_RHYTHM_SPACING[item.rhythm]||2.2;
-        const x=cursor;
-        noteXs.push(x);
-        cursor+=spacing*spacingUnit;
-        if(barNoteIndex===bar.length-1&&barIndex<question.bars.length-1)boundaryXs.push(x+spacing*spacingUnit*.55);
-      });
-    });
-    const [topNumber,bottomNumber]=question.timeSignature.split("/");
-    const timeNumber=(number,y,key)=>{const digits=number.split("");return <g key={key}>{digits.map((digit,digitIndex)=><WorksheetOutlineGlyph key={`${key}-${digitIndex}`} symbolKey={`timeSig${digit}`} x={timeX+(digitIndex-(digits.length-1)/2)*gap*1.45} y={y} fontSize={gap*3.5} colour={ink}/>)}</g>;};
-    return <svg viewBox="0 0 680 125" className="h-full max-h-32 w-full overflow-visible" aria-label={`${question.bars.length} bars in ${question.timeSignature}`}>
-      {[0,1,2,3,4].map(line=><line key={line} x1={left} x2={right} y1={top+line*gap} y2={top+line*gap} stroke={ink} strokeWidth="1.2"/>)}
-      <WorksheetGlyph symbolKey="gClef" x={clefX} y={top+gap*3} gap={gap} colour={ink}/>
-      {timeNumber(topNumber,top+gap*1.12-1,"time-top")}
-      {timeNumber(bottomNumber,top+gap*3.12-1,"time-bottom")}
-      <BarlinesMelodyItems items={items} xs={noteXs} top={top} gap={gap} ink={ink} stemUpShift={1}/>
-      {completed?boundaryXs.map((x,boundaryIndex)=><line key={boundaryIndex} x1={x} x2={x} y1={top} y2={top+gap*4} stroke={ink} strokeWidth="1.6"/>):null}
-      {completed&&muted?boundaryXs.map((x,boundaryIndex)=><g key={`arrow-${boundaryIndex}`} fill={ink} stroke={ink} strokeLinecap="round" strokeLinejoin="round"><line x1={x} x2={x} y1="-2" y2="19" strokeWidth="2"/><path d={`M ${x-5} 14 L ${x} 21 L ${x+5} 14`} fill="none" strokeWidth="2"/></g>):null}
-      {level==="N3"&&completed?<WorksheetOutlineGlyph symbolKey="barlineFinal" x={right} y={top+gap*4} fontSize={gap*4} colour={ink} anchor="end"/>:<line x1={right} x2={right} y1={top} y2={top+gap*4} stroke={ink} strokeWidth="1.6"/>}
-    </svg>;
+    const q=question.barlineQuestion, ink=muted?"#78716c":"#000", left=12,right=668,gap=12,systems=q?.systemCount||1,height=systems===2?245:125;
+    return <div className="flex h-full flex-col justify-center">{q?.changeBarIndex!==null&&q?.nextTimeSignature?<p className="mb-1 text-xs">Bars 1–{q.changeBarIndex} are complete. Insert the missing barlines on line 2.</p>:null}<svg viewBox={`0 0 680 ${height}`} className="h-auto w-full overflow-visible" aria-label={`${question.bars.length} bars in ${question.timeSignature}${q?.nextTimeSignature?` changing to ${q.nextTimeSignature.id}`:""}`}>
+      {Array.from({length:systems},(_,systemIndex)=>{
+        const top=32+systemIndex*120,firstBar=systemIndex*(q?.barsPerSystem||question.bars.length),bars=question.bars.slice(firstBar,firstBar+(q?.barsPerSystem||question.bars.length)),items=bars.flat(),key=q?.key,signature=systemIndex===0?q?.timeSignature:q?.nextTimeSignature||q?.timeSignature;
+        const keyX=62,timeX=keyX+(key?.signature.length||0)*14+20,musicStart=timeX+34;
+        const noteXs=[],boundaries=[],slots=barlinesCore.spacingSlots(items,right-10-musicStart,14);
+        let cursor=musicStart+5,barStart=musicStart,itemIndex=0;
+        bars.forEach((bar,barOffset)=>bar.forEach((item,i)=>{const spacing=BARLINES_RHYTHM_SPACING[item.rhythm]||2.2,end=i===bar.length-1,boundaryX=end&&barOffset===bars.length-1?right:cursor+slots[itemIndex]*.55;noteXs.push(item.rhythm==="semibreve-rest"?(barStart+boundaryX)/2:cursor);cursor+=slots[itemIndex++];if(end){if(barOffset<bars.length-1)boundaries.push({x:boundaryX,given:q?.changeBarIndex!==null&&systemIndex===0});barStart=boundaryX;}}));
+        const y=step=>top+gap*4-step*gap/2;
+        const number=(text,cy)=>String(text).split("").map((digit,i,array)=><WorksheetOutlineGlyph key={`${cy}-${i}`} symbolKey={`timeSig${digit}`} x={timeX+(i-(array.length-1)/2)*gap*1.45} y={cy} fontSize={gap*3.5} colour={ink}/>);
+        return <g key={systemIndex}>{[0,1,2,3,4].map(line=><line key={line} x1={left} x2={right} y1={top+line*gap} y2={top+line*gap} stroke={ink} strokeWidth="1.2"/>)}<WorksheetGlyph symbolKey="gClef" x={40} y={y(2)} gap={gap} colour={ink}/>{key?.signature.map((item,i)=><WorksheetGlyph key={i} symbolKey={item.type==="sharp"?"sharpKeySignature":"flatKeySignature"} x={keyX+i*14} y={y(item.step)} gap={gap} colour={ink}/>)}{(systemIndex===0||q?.nextTimeSignature)?<>{number(signature?.top||question.timeSignature.split("/")[0],top+gap*1.12-1)}{number(signature?.bottom||question.timeSignature.split("/")[1],top+gap*3.12-1)}</>:null}<BarlinesMelodyItems items={items} xs={noteXs} top={top} gap={gap} ink={ink} stemUpShift={1}/>{boundaries.map((boundary,i)=>completed||boundary.given?<line key={i} x1={boundary.x} x2={boundary.x} y1={top} y2={top+gap*4} stroke={ink} strokeWidth="1.6"/>:null)}{completed&&muted?boundaries.filter(boundary=>!boundary.given).map((boundary,i)=><g key={`arrow-${i}`} stroke={ink} fill="none"><path d={`M ${boundary.x} ${top-27} V ${top-11} m -5 -5 l 5 5 l 5 -5`} strokeWidth="2"/></g>):null}{systemIndex===systems-1?(level!=="N3"||completed?<WorksheetOutlineGlyph symbolKey="barlineFinal" x={right} y={top+gap*4} fontSize={gap*4} colour={ink} anchor="end"/>:null):<line x1={right} x2={right} y1={top} y2={top+gap*4} stroke={ink} strokeWidth="1.6"/>}</g>;
+      })}
+    </svg></div>;
   }
 
   function TimeSignatureStaff({ question, completed=false, muted=false }) {
@@ -898,17 +906,18 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     const noteXs=[], items=question.barlineItems, barWidth=(right-musicStart)/Math.max(1,question.bars.length);
     const boundaryXs=question.bars.slice(0,-1).map((_,barIndex)=>musicStart+(barIndex+1)*barWidth);
     question.bars.forEach((bar,barIndex)=>{
-      const barStart=musicStart+barIndex*barWidth+(barIndex===0?7:12), barEnd=musicStart+(barIndex+1)*barWidth-6;
+      const barStart=musicStart+barIndex*barWidth+(barIndex===0?7:question.givenTimeSignature?50:12), barEnd=musicStart+(barIndex+1)*barWidth-6;
       const totalUnits=bar.reduce((sum,item)=>sum+(BARLINES_RHYTHM_SPACING[item.rhythm]||2.2),0), unitWidth=Math.max(1,barEnd-barStart)/Math.max(1,totalUnits);
       let cursor=barStart+unitWidth*.35;
       bar.forEach(item=>{noteXs.push(cursor);cursor+=(BARLINES_RHYTHM_SPACING[item.rhythm]||2.2)*unitWidth;});
     });
-    const [topNumber,bottomNumber]=question.timeSignature.split("/"), timeNumber=(number,yPosition,key)=>number.split("").map((digit,digitIndex)=><WorksheetOutlineGlyph key={`${key}-${digitIndex}`} symbolKey={`timeSig${digit}`} x={timeX+(digitIndex-(number.length-1)/2)*gap*1.45} y={yPosition} fontSize={gap*3.5} colour={ink}/>);
-    return <svg viewBox="0 0 680 125" className="h-full max-h-32 w-full overflow-visible" aria-label={`${question.bars.length} bars with a missing opening time signature`}>
+    const [topNumber,bottomNumber]=(question.givenTimeSignature||question.timeSignature).split("/"), answerX=musicStart+barWidth+22, timeNumber=(number,yPosition,key,x=timeX)=>number.split("").map((digit,digitIndex)=><WorksheetOutlineGlyph key={`${key}-${digitIndex}`} symbolKey={`timeSig${digit}`} x={x+(digitIndex-(number.length-1)/2)*gap*1.45} y={yPosition} fontSize={gap*3.5} colour={ink}/>);
+    return <svg viewBox="0 0 680 125" className="h-full max-h-32 w-full overflow-visible" aria-label={`${question.bars.length} bars with a missing ${question.givenTimeSignature?"time change":"opening time signature"}`}>
       {[0,1,2,3,4].map(line=><line key={line} x1={left} x2={right} y1={top+line*gap} y2={top+line*gap} stroke={ink} strokeWidth="1.2"/>)}
       <WorksheetGlyph symbolKey="gClef" x={clefX} y={y(2)} gap={gap} colour={ink}/>
       {signature.map((item,index)=><WorksheetGlyph key={`${item.type}-${index}`} symbolKey={item.type==="sharp"?"sharpKeySignature":"flatKeySignature"} x={keyX+index*gap*1.15} y={y(item.step)} gap={gap} colour={ink}/>) }
-      {completed?<>{timeNumber(topNumber,top+gap*1.12-1,"timesig-answer-top")}{timeNumber(bottomNumber,top+gap*3.12-1,"timesig-answer-bottom")}</>:null}
+      {completed||question.givenTimeSignature?<>{timeNumber(topNumber,top+gap*1.12-1,"timesig-answer-top")}{timeNumber(bottomNumber,top+gap*3.12-1,"timesig-answer-bottom")}</>:null}
+      {completed&&question.givenTimeSignature?<>{timeNumber(question.timeSignature.split("/")[0],top+gap*1.12-1,"timesig-change-top",answerX)}{timeNumber(question.timeSignature.split("/")[1],top+gap*3.12-1,"timesig-change-bottom",answerX)}</>:null}
       <BarlinesMelodyItems items={items} xs={noteXs} top={top} gap={gap} ink={ink}/>
       {boundaryXs.map((x,boundaryIndex)=><line key={boundaryIndex} x1={x} x2={x} y1={top} y2={top+gap*4} stroke={ink} strokeWidth="1.6"/>)}
       <WorksheetOutlineGlyph symbolKey="barlineFinal" x={right} y={top+gap*4} fontSize={gap*4} colour={ink} anchor="end"/>
@@ -921,8 +930,8 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     const spacingFor=(item)=>item.tripletRhythm==="triplet-quaver"?.95:item.tripletRhythm==="triplet-crotchet"?1.5:(BARLINES_RHYTHM_SPACING[item.rhythm]||2.2);
     question.bars.forEach((bar,barIndex)=>{const barStart=musicStart+barIndex*barWidth+8,barEnd=musicStart+(barIndex+1)*barWidth-8,totalUnits=bar.reduce((sum,item)=>sum+spacingFor(item),0),unitWidth=Math.max(1,barEnd-barStart)/Math.max(1,totalUnits);let cursor=barStart+unitWidth*.35;bar.forEach(item=>{noteXs.push(cursor);cursor+=spacingFor(item)*unitWidth;});});
     const stemX=(x,down)=>x+(down?-gap*.6+1:gap*.6-2), renderedX=(item,index)=>noteXs[index]+(item.writtenAccidental?3:0), beamY=(beam,x)=>beam.start.y+(x-beam.start.x)/((beam.end.x-beam.start.x)||1)*(beam.end.y-beam.start.y);
-    const [topNumber,bottomNumber]=question.timeSignature.split("/"), timeNumber=(number,yPosition,key)=>number.split("").map((digit,digitIndex)=><WorksheetOutlineGlyph key={`${key}-${digitIndex}`} symbolKey={`timeSig${digit}`} x={timeX+(digitIndex-(number.length-1)/2)*gap*1.45} y={yPosition} fontSize={gap*3.5} colour={ink}/>), tripletMarks=question.tripletGroups.map(group=>{const indices=items.map((item,itemIndex)=>item.tripletGroupId===group.id?itemIndex:-1).filter(itemIndex=>itemIndex>=0),positions=indices.map(itemIndex=>renderedX(items[itemIndex],itemIndex)),centre=positions.reduce((sum,x)=>sum+x,0)/Math.max(1,positions.length),markCentre=positions[1]??centre,average=indices.reduce((sum,index)=>sum+items[index].step,0)/Math.max(1,indices.length),down=average>4,first=indices[0],last=indices[indices.length-1],length=gap*3.1,beam={start:{x:stemX(renderedX(items[first],first),down),y:y(items[first].step)+(down?length:-length)},end:{x:stemX(renderedX(items[last],last),down),y:y(items[last].step)+(down?length:-length)}},yOnBeam=beamY(beam,markCentre);return <text key={group.id} x={down?markCentre-5:markCentre+4} y={down?yOnBeam+24:yOnBeam-6} fill={ink} fontFamily="serif" fontWeight="900" fontSize="20" textAnchor="middle">3</text>;});
-    return <svg viewBox="0 0 680 128" className="h-full max-h-32 w-full overflow-visible" aria-label={`${question.bars.length} bars containing ${question.tripletGroups.length} triplet groups`}>
+    const [topNumber,bottomNumber]=question.timeSignature.split("/"), timeNumber=(number,yPosition,key)=>number.split("").map((digit,digitIndex)=><WorksheetOutlineGlyph key={`${key}-${digitIndex}`} symbolKey={`timeSig${digit}`} x={timeX+(digitIndex-(number.length-1)/2)*gap*1.45} y={yPosition} fontSize={gap*3.5} colour={ink}/>), tripletMarks=question.tripletGroups.map(group=>{const indices=items.map((item,itemIndex)=>item.tripletGroupId===group.id?itemIndex:-1).filter(itemIndex=>itemIndex>=0),positions=indices.map(itemIndex=>renderedX(items[itemIndex],itemIndex)),centre=positions.reduce((sum,x)=>sum+x,0)/Math.max(1,positions.length),markCentre=positions[1]??centre,average=indices.reduce((sum,index)=>sum+items[index].step,0)/Math.max(1,indices.length),down=average>4,first=indices[0],last=indices[indices.length-1],length=gap*3.1,beam={start:{x:stemX(renderedX(items[first],first),down),y:y(items[first].step)+(down?length:-length)},end:{x:stemX(renderedX(items[last],last),down),y:y(items[last].step)+(down?length:-length)}},yOnBeam=beamY(beam,markCentre);if(group.type==="crotchet"){const x1=positions[0]-10,x2=positions[2]+10,centre=(x1+x2)/2,bracketY=top-24;return <g key={group.id} data-triplet-bracket={group.id} fill={ink} stroke={ink}><g fill="none" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d={`M ${x1} ${bracketY+8} L ${x1} ${bracketY} L ${centre-12} ${bracketY}`}/><path d={`M ${centre+12} ${bracketY} L ${x2} ${bracketY} L ${x2} ${bracketY+8}`}/></g><text x={centre} y={bracketY+6} stroke="none" fontFamily="serif" fontWeight="900" fontSize="20" textAnchor="middle">3</text></g>;}return <text key={group.id} data-triplet-number={group.id} x={down?markCentre-5:markCentre+4} y={down?yOnBeam+24:yOnBeam-6} fill={ink} fontFamily="serif" fontWeight="900" fontSize="20" textAnchor="middle">3</text>;});
+    return <svg viewBox="0 0 680 128" className="h-full max-h-32 w-full overflow-visible" aria-label={`${question.bars.length} bars containing ${question.tripletGroups.length} triplet group${question.tripletGroups.length===1?"":"s"}`}>
       {[0,1,2,3,4].map(line=><line key={line} x1={left} x2={right} y1={top+line*gap} y2={top+line*gap} stroke={ink} strokeWidth="1.2"/>)}
       <WorksheetGlyph symbolKey="gClef" x={clefX} y={y(2)} gap={gap} colour={ink}/>
       {signature.map((item,index)=><WorksheetGlyph key={`${item.type}-${index}`} symbolKey={item.type==="sharp"?"sharpKeySignature":"flatKeySignature"} x={keyX+index*gap*1.15} y={y(item.step)} gap={gap} colour={ink}/>) }
@@ -934,12 +943,23 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     </svg>;
   }
 
+  function articulationWorksheetNotePositions(notes,start,end){
+    const inner=start+10,units=notes.reduce((sum,note)=>sum+(ARTICULATION_RHYTHMS[note.rhythm]?.spacing||2.2),0),unit=Math.max(1,end-inner)/Math.max(1,units);
+    let cursor=inner+unit*.35;
+    const original=notes.map(note=>{const x=cursor;cursor+=(ARTICULATION_RHYTHMS[note.rhythm]?.spacing||2.2)*unit;return x;});
+    const minimumGap=14;
+    if(original.every((x,index)=>index===0||x-original[index-1]>=minimumGap))return original;
+    const weights=notes.slice(0,-1).map(note=>ARTICULATION_RHYTHMS[note.rhythm]?.spacing||2.2),weightTotal=weights.reduce((sum,value)=>sum+value,0);
+    const extra=Math.max(0,end-7-inner-minimumGap*(notes.length-1)),positions=[inner];
+    weights.forEach(weight=>positions.push(positions.at(-1)+minimumGap+extra*weight/weightTotal));
+    return positions;
+  }
   function ArticulationStaff({ question, completed=false, muted=false }) {
     const ink=muted?"#78716c":"#000",left=12,right=308,top=43,gap=10,noteRadius=6.3,stemLength=32,musicStart=113,bars=question.articulationBars||[],barWidth=(right-musicStart)/Math.max(1,bars.length),y=(step)=>top+gap*4-step*(gap/2),bound=(value,min,max)=>Math.max(min,Math.min(max,value));
     const stemDown=(step)=>step>4,stemX=(x,down)=>down?x-noteRadius:x+noteRadius,beamY=(beam,x)=>beam.start.y+(x-beam.start.x)/((beam.end.x-beam.start.x)||1)*(beam.end.y-beam.start.y),beamPoints=(beam,thickness)=>`${beam.start.x-.5},${beam.start.y-thickness/2} ${beam.end.x+.5},${beam.end.y-thickness/2} ${beam.end.x+.5},${beam.end.y+thickness/2} ${beam.start.x-.5},${beam.start.y+thickness/2}`;
     const groupsFor=(notes)=>{const groups=[];let index=0;while(index<notes.length){if(notes[index].rhythm!=="quaver"||!notes[index].beamGroupId){index+=1;continue;}const start=index,id=notes[index].beamGroupId;while(index<notes.length&&notes[index].rhythm==="quaver"&&notes[index].beamGroupId===id)index+=1;if(index-1>start)groups.push({start,end:index-1});}return groups;};
     const groupFor=(groups,index)=>groups.find(group=>index>=group.start&&index<=group.end)||null;
-    const positionsFor=(notes,start,end)=>{const inner=start+10,units=notes.reduce((sum,note)=>sum+(ARTICULATION_RHYTHMS[note.rhythm]?.spacing||2.2),0),unit=Math.max(1,end-inner)/Math.max(1,units);let cursor=inner+unit*.35;return notes.map(note=>{const x=cursor;cursor+=(ARTICULATION_RHYTHMS[note.rhythm]?.spacing||2.2)*unit;return x;});};
+    const positionsFor=articulationWorksheetNotePositions;
     const beamFor=(notes,xs)=>{const average=notes.reduce((sum,note)=>sum+note.step,0)/notes.length,down=average>4,settings=worksheetSymbolSettings("quaverBeam"),xOffset=gap*Number(settings.xOffsetScale||0),yOffset=gap*Number(settings.yOffsetScale||0),length=stemLength*Number(settings.heightScale||1),widthAdjust=gap*.6*(Number(settings.widthScale||1)-1),firstX=stemX(xs[0]+xOffset,down),lastX=stemX(xs[xs.length-1]+xOffset,down);return {down,start:{x:firstX-widthAdjust,y:y(notes[0].step)+yOffset+(down?length:-length)},end:{x:lastX+widthAdjust,y:y(notes[notes.length-1].step)+yOffset+(down?length:-length)}};};
     const layouts=bars.map((bar,barIndex)=>{const start=musicStart+barIndex*barWidth,end=musicStart+(barIndex+1)*barWidth;return {bar,barIndex,start,end,positions:positionsFor(bar.notes,start+7,end-8)};});
     const notePositions=new Map();
@@ -980,11 +1000,9 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
 
   function RestsStaff({ question, completed=false, muted=false }) {
     const ink=muted?"#78716c":"#000", left=92, right=588, top=24, gap=12, clefX=120, timeX=163, musicStart=196;
-    const y=(step)=>top+gap*4-step*(gap/2), items=question.restItems||[], positions=[];
+    const y=(step)=>top+gap*4-step*(gap/2), items=question.restItems||[];
     const spacingFor=(item)=>item.rhythm==="missing"?Math.max(1.15,item.units/2):(BARLINES_RHYTHM_SPACING[item.rhythm]||2.2);
-    const totalSpacing=items.reduce((sum,item)=>sum+spacingFor(item),0),spacingUnit=Math.max(1,right-musicStart-12)/Math.max(1,totalSpacing);
-    let cursor=musicStart+spacingUnit*.35;
-    items.forEach(item=>{positions.push(item.isFullBar?(musicStart+right)/2:cursor);cursor+=spacingFor(item)*spacingUnit;});
+    const positions=window.MLH.RestsQuestionCore.notationPositions(items,musicStart,right-8,spacingFor);
     const visibleItems=[],visibleXs=[];
     items.forEach((item,itemIndex)=>{if(item.rhythm!=="missing"){visibleItems.push(item);visibleXs.push(positions[itemIndex]);}});
     const [topNumber,bottomNumber]=question.timeSignature.split("/");
@@ -995,7 +1013,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       <WorksheetGlyph symbolKey="gClef" x={clefX} y={y(2)} gap={gap} colour={ink}/>
       {timeNumber(topNumber,top+gap*1.12-1,"rests-time-top")}{timeNumber(bottomNumber,top+gap*3.12-1,"rests-time-bottom")}
       <BarlinesMelodyItems items={visibleItems} xs={visibleXs} top={top} gap={gap} ink={ink}/>
-      {items.map((item,itemIndex)=>{if(item.rhythm!=="missing")return null;const box=question.missingBoxes.find(entry=>entry.id===item.missingBoxId),x=positions[itemIndex],width=box?.isFullBar?78:Math.max(42,Math.min(58,spacingFor(item)*spacingUnit*.78));return <g key={item.missingBoxId}><rect x={x-width/2} y={top-9} width={width} height={gap*4+17} rx="7" fill="none" stroke={ink} strokeWidth="1.6"/>{completed&&box?answerGlyph(box,x,`rests-answer-${itemIndex}`):null}</g>;})}
+      {items.map((item,itemIndex)=>{if(item.rhythm!=="missing")return null;const box=question.missingBoxes.find(entry=>entry.id===item.missingBoxId),x=positions[itemIndex],width=box?.isFullBar?78:48;return <g key={item.missingBoxId}><rect x={x-width/2} y={top-9} width={width} height={gap*4+17} rx="7" fill="none" stroke={ink} strokeWidth="1.6"/>{completed&&box?answerGlyph(box,x,`rests-answer-${itemIndex}`):null}</g>;})}
       <WorksheetOutlineGlyph symbolKey="barlineFinal" x={right} y={top+gap*4} fontSize={gap*4} colour={ink} anchor="end"/>
     </svg>;
   }
@@ -1052,7 +1070,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
 
   function TransposingStaff({ question, completed=false, muted=false }) {
     const ink=muted?"#78716c":"#000";
-    const left=18, right=318, gap=10, ahOffset=level==="AH"?10:0, exampleOffset=completed&&muted?10:0, upperTop=13+ahOffset+exampleOffset, lowerTop=92+ahOffset+exampleOffset, musicStart=82, systemsSwapped=question.sourceClef==="bass"&&question.answerClef==="treble", sourceTop=(systemsSwapped?lowerTop:upperTop)+(level==="AH"&&question.sourceClef==="bass"?5:0), answerTop=(systemsSwapped?upperTop:lowerTop)+(level==="AH"&&question.answerClef==="bass"?5:0), svgHeight=completed&&muted?174:154;
+    const left=18, right=318, gap=10, ahOffset=level==="AH"?10:0, exampleOffset=completed&&muted?10:0, upperTop=13+ahOffset+exampleOffset, lowerTop=92+ahOffset+exampleOffset, musicStart=82, systemsSwapped=question.sourceClef==="bass"&&question.answerClef==="treble", sourceTop=(systemsSwapped?lowerTop:upperTop)+(level==="AH"&&question.sourceClef==="bass"?5:0), answerTop=(systemsSwapped?upperTop:lowerTop)+(level==="AH"&&question.answerClef==="bass"?5:0), svgHeight=question.meaning?105:level==="AH"?190+exampleOffset:completed&&muted?174:154;
     const sourceY=(step)=>sourceTop+gap*4-step*(gap/2);
     const answerY=(step)=>answerTop+gap*4-step*(gap/2);
     const fadeId=`transposing-staff-fade-${question.id}-${completed?"answer":"question"}`;
@@ -1065,15 +1083,15 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       <WorksheetGlyph symbolKey={clef==="bass"?"fClef":"gClef"} x={left+gap*3.2} y={yForStep(clef==="bass"?6:2)} gap={gap} colour={ink}/>
     </g>;
     const ottavaMark=question.marking?(()=>{const above=question.marking==="8va",labelY=above?sourceTop-14:sourceTop+gap*4+17,lineY=above?sourceTop-20:sourceTop+gap*4+14;return <g fill={ink} stroke={ink}><text x={musicStart-15} y={labelY} fontSize="13" fontFamily="Georgia, serif" fontStyle="italic" fontWeight="400" stroke="none" textAnchor="start">{question.marking}</text><line x1={musicStart+18} x2={right-28} y1={lineY} y2={lineY} strokeWidth="1" strokeDasharray="3 3"/><line x1={right-28} x2={right-28} y1={lineY} y2={lineY+(above?7:-7)} strokeWidth="1"/></g>;})():null;
-    return <svg viewBox={`0 0 320 ${svgHeight}`} className="h-full max-h-36 w-full overflow-visible" aria-label="Treble-clef bar above an empty bass-clef answer stave">
+    return <svg viewBox={`0 0 320 ${svgHeight}`} className={`h-full w-full overflow-visible ${question.meaning?"max-h-24":level==="AH"?"max-h-44":"max-h-36"}`} aria-label={`${question.sourceClef} clef source${question.meaning?"":` and ${question.answerClef} clef answer stave`}`}>
       <defs><linearGradient id={fadeId} gradientUnits="userSpaceOnUse" x1={left} x2={right} y1="0" y2="0"><stop offset="0%" stopColor={ink} stopOpacity="1"/><stop offset="84%" stopColor={ink} stopOpacity="1"/><stop offset="100%" stopColor={ink} stopOpacity="0"/></linearGradient></defs>
       {stave(sourceTop,question.sourceClef,"source-stave",sourceY)}
-      {stave(answerTop,question.answerClef,"answer-stave",answerY)}
+      {!question.meaning&&stave(answerTop,question.answerClef,"answer-stave",answerY)}
       {ottavaMark}
       {tieLayer(question.sourceMelody,sourceTop,"source")}
       <WorksheetMelodyNotes steps={question.sourceMelody} rhythms={question.rhythms} xs={noteXs} top={sourceTop} gap={gap} ink={ink} prefix="transposing-source" ties={question.ties}/>
-      {completed?<>{tieLayer(question.answerMelody,answerTop,"answer")}<WorksheetMelodyNotes steps={question.answerMelody} rhythms={question.rhythms} xs={noteXs} top={answerTop} gap={gap} ink={ink} prefix="transposing-answer" ties={question.ties}/></>:null}
-      {completed&&muted?<rect className="transposing-example-answer-box" x={left-4} y={answerTop-13} width={right-left+8} height={gap*4+26} fill="none" stroke={ink} strokeWidth="1.5"/>:null}
+      {completed&&!question.meaning?<>{tieLayer(question.answerMelody,answerTop,"answer")}<WorksheetMelodyNotes steps={question.answerMelody} rhythms={question.rhythms} xs={noteXs} top={answerTop} gap={gap} ink={ink} prefix="transposing-answer" ties={question.ties}/></>:null}
+      {completed&&muted&&!question.meaning?<rect className="transposing-example-answer-box" x={left-4} y={answerTop-13} width={right-left+8} height={gap*4+26} fill="none" stroke={ink} strokeWidth="1.5"/>:null}
     </svg>;
   }
 
@@ -1087,12 +1105,22 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     if (CONFIG.activityId === "accidentals") return <AccidentalsStaff question={question} completed={completed} muted={muted} />;
     if (CONFIG.activityId === "enharmonics") return <EnharmonicsStaff question={question} completed={completed} muted={muted} />;
     if (CONFIG.activityId === "keysig") return <KeySignatureStaff question={question} completed={completed} muted={muted} />;
-    if (CONFIG.activityId === "keyboard-notes") return <svg viewBox={`-1 -1 ${(CONFIG.settings?.options?.octaves===1?384:720)+2} 252`} className="w-full" aria-label="Piano keyboard with a marked note">
-      {window.KeyboardNotes.visibleKeys(CONFIG.settings?.options || window.KeyboardNotes.defaults[level] || window.KeyboardNotes.defaults.N3).filter(key=>!key.black).map(key=><rect key={key.pitch} x={key.x} width="48" height="248" rx="5" fill="white" stroke="black"/>)}
-      {window.KeyboardNotes.visibleKeys(CONFIG.settings?.options || window.KeyboardNotes.defaults[level] || window.KeyboardNotes.defaults.N3).filter(key=>key.black).map(key=><rect key={key.pitch} x={key.x} width="30" height="155" rx="5" fill="#292524" stroke="black"/>)}
-      {CONFIG.settings?.showC&&window.KeyboardNotes.visibleKeys(CONFIG.settings?.options || window.KeyboardNotes.defaults[level] || window.KeyboardNotes.defaults.N3).filter(key=>!key.black&&key.pitch%12===0).map(key=><text key={`label-${key.pitch}`} x={key.x+24} y="190" textAnchor="middle" fontSize="17" fontWeight="700">C</text>)}
-      <circle cx={question.keyboardKey.x+(question.keyboardKey.black?15:24)} cy={question.keyboardKey.black?130:220} r="11" fill={question.keyboardKey.black?"white":"black"}/>
-    </svg>;
+    if (CONFIG.activityId === "keyboard-notes") {
+      const isFind = question.keyboardKey.type === "find";
+      const options = window.KeyboardNotes.normaliseOptions(CONFIG.settings?.options,level);
+      const keys = window.KeyboardNotes.visibleKeys(options);
+      const width = options.octaves===1?336:options.includeEndC?720:672;
+      const marked = keys.find(key => key.pitch === question.keyboardKey.pitch);
+      return <div className="flex min-h-0 flex-1 flex-col items-center justify-center">
+        {isFind && <div style={{height:60, width:"100%", flex:"0 0 60px"}}><NoteNamingStaff question={question} muted={muted}/></div>}
+        <svg viewBox={`-1 -1 ${width+2} 252`} className="keyboard-worksheet-score w-full" width={width+2} height={252} style={{width:"100%",height:"auto",flexShrink:0,marginTop:isFind?8:0}} aria-label={isFind && !completed ? "Piano keyboard" : "Piano keyboard with a marked note"}>
+          {keys.filter(key=>!key.black).map(key=><rect key={key.pitch} x={key.x} width="48" height="248" rx="5" fill="white" stroke="black"/>)}
+          {keys.filter(key=>key.black).map(key=><rect key={key.pitch} x={key.x} width="30" height="155" rx="5" fill="#292524" stroke="black"/>)}
+          {keys.filter(key=>!key.black&&key.pitch%12===0&&(CONFIG.settings?.showC||question.keyboardKey.baseOctave!=null&&question.keyboardKey.baseOctave+key.pitch/12===4)).map(key=><text key={`label-${key.pitch}`} x={key.x+24} y="190" textAnchor="middle" fontSize="17" fontWeight="700">{question.keyboardKey.baseOctave!=null&&question.keyboardKey.baseOctave+key.pitch/12===4?"C4":"C"}</text>)}
+          {(!isFind || completed) && marked && <circle cx={marked.x+(marked.black?15:24)} cy={marked.black?130:220} r="11" fill={marked.black?"white":"black"}/>}
+        </svg>
+      </div>;
+    }
     if (CONFIG.activityId === "notenaming") return <NoteNamingStaff question={question} muted={muted} />;
     if (CONFIG.activityId === "tonic") return <div className="tonic-staff-wrap flex min-h-0 flex-1 flex-col"><TonicStaff question={question} completed={completed} muted={muted}/><p className="text-center text-sm">The key is <strong>{question.key.name}</strong>.</p></div>;
     if (CONFIG.activityId === "transposing") return <TransposingStaff question={question} completed={completed} muted={muted} />;
@@ -1111,7 +1139,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       {question.label && <text x="112" y="75" fill={ink} fontSize="20" fontWeight="700">{question.label}</text>}
       {question.stack
         ? question.stack.map((s,i)=><WorksheetOutlineGlyph key={i} symbolKey="quarterNoteStemUp" x={145} y={y(s)+7} fontSize={34} colour={ink} anchor="start" />)
-        : notes.map((s,i)=><g key={i}>{ledgerLines(s,positions[i],`ledger-${i}`)}{CONFIG.activityId==="notenaming"&&question.noteAccidental?<WorksheetGlyph symbolKey={question.noteAccidental==="sharp"?"sharpInScore":"flatInScore"} x={positions[i]-20} y={y(s)} gap={10} colour={ink}/>:null}<WorksheetOutlineGlyph symbolKey="quarterNoteStemUp" x={positions[i]} y={y(s)+7} fontSize={34} colour={ink} anchor="start" /></g>)}
+        : notes.map((s,i)=><g key={i}>{ledgerLines(s,positions[i],`ledger-${i}`)}{CONFIG.activityId==="notenaming"&&question.noteAccidental?<WorksheetGlyph symbolKey={question.noteAccidental==="sharp"?"sharpInScore":question.noteAccidental==="natural"?"naturalInScore":"flatInScore"} x={positions[i]-20} y={y(s)} gap={10} colour={ink}/>:null}<WorksheetOutlineGlyph symbolKey="quarterNoteStemUp" x={positions[i]} y={y(s)+7} fontSize={34} colour={ink} anchor="start" /></g>)}
       {completed&&Number.isInteger(question.answerStep)?<WorksheetOutlineGlyph symbolKey="quarterNoteStemUp" x={230} y={y(question.answerStep)+7} fontSize={34} colour={ink} anchor="start" />:null}
       {completed&&question.sourceMelody&&question.answerMelody?.map((s,i)=><WorksheetOutlineGlyph key={`a${i}`} symbolKey="quarterNoteStemUp" x={226+i*18} y={y(s)+7} fontSize={30} colour={ink} anchor="start" />)}
       {question.marking&&!completed?<text x="175" y="43" fill={ink} fontWeight="700">{question.marking}</text>:null}
@@ -1131,7 +1159,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   }
 
   function WorksheetQr({ bordered=false, compact=false }) {
-    return <section className={`worksheet-qr generic-question flex min-h-0 flex-col items-center justify-center gap-2 text-center ${bordered?"border border-black":""} ${compact?"h-32 w-32 shrink-0 p-1":"p-4"}`}><img src="the-music-literacy-hub-logo.svg" className="h-auto w-24 max-w-full" alt="The Music Literacy Hub"/><div className="flex flex-col items-center gap-1"><img src={window.MLH.worksheetQrImageUrl(EXERCISE_URL)} crossOrigin="anonymous" className="h-16 w-16" alt="QR code linking to more questions"/><span className="flex w-16 justify-center whitespace-nowrap text-[7px] font-bold uppercase text-black"><span className="tracking-[0.08em]">More questions</span></span></div></section>;
+    return <section className={`worksheet-qr generic-question flex min-h-0 flex-col items-center justify-center gap-2 text-center ${bordered?"border border-black":""} ${compact?"h-32 w-32 shrink-0 p-1":"p-4"}`}><img src="app-icons/the-music-learning-hub-logo.svg" className="h-auto w-24 max-w-full" alt="The Music Learning Hub"/><div className="flex flex-col items-center gap-1"><img src={window.MLH.worksheetQrImageUrl(EXERCISE_URL)} crossOrigin="anonymous" className="h-16 w-16" alt="QR code linking to more questions"/><span className="flex w-16 justify-center whitespace-nowrap text-[7px] font-bold uppercase text-black"><span className="tracking-[0.08em]">More questions</span></span></div></section>;
   }
 
   function Question({ question, number, example=false, answers=false, numbers=true, marks=true, firstPage=false, continuationPage=false }) {
@@ -1147,20 +1175,22 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     const smallAHTransposingPrompt = CONFIG.activityId === "transposing" && level === "AH";
     const smallAHChordPromptClass=smallAHChordPrompt?"text-xs":"";
     const fixedFullRowMark = compactTimeSignatures || compactTriplets;
-    const answerIsInNotation = CONFIG.activityId === "barlines" || CONFIG.activityId === "timesig" || CONFIG.activityId === "triplets" || CONFIG.activityId === "rests" || CONFIG.activityId === "articulation" || CONFIG.activityId === "dynamics" || CONFIG.activityId === "enharmonics" || CONFIG.activityId === "missingnotes" || CONFIG.activityId === "tonic" || CONFIG.activityId === "transposing" || (CONFIG.activityId === "keysig" && question.build) || (CONFIG.activityId === "chords" && level === "AH");
-    return <section className={`generic-question ${fixedFullRowMark?"relative":""} ${example ? "worksheet-example-answer text-stone-500" : ""} ${example&&CONFIG.activityId==="rhythmsums"?"rhythm-sums-example col-span-2":""}`}>{compactChord||compactRepetition||compactBarlines||compactTimeSignatures||compactTriplets||compactRests||compactRhythmSums?<div className="min-h-6 text-sm"><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong></div>:<div className="flex min-h-9 items-start gap-1 text-sm"><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong><span className={`${smallAHChordPromptClass} ${smallAHTransposingPrompt?"text-xs leading-tight":""}`}><EmphasisedPrompt>{question.prompt}</EmphasisedPrompt></span></div>}{CONFIG.activityId==="rhythmsums" ? <div className="relative -top-[10px] flex flex-1 items-center justify-center gap-1 text-[1.625rem]"><WorksheetRhythmSumItem item={question.left}/><strong>{question.operator}</strong><WorksheetRhythmSumItem item={question.right}/></div> : <Staff question={question} completed={completed} muted={example} showNoteNames={example}/>}<div className={`${fixedFullRowMark?"static":"relative"} flex min-h-8 items-end justify-center ${CONFIG.activityId==="rhythmsums"?(continuationPage?"-top-[25px]":"-top-[35px]"):""}`}>{question.response!=="mark" && question.response!=="stave" ? <div className="w-4/5 border-b border-black pb-1 text-center font-semibold">{completed ? question.answer : ""}</div> : completed && !answerIsInNotation ? <strong className="text-sm">{question.answer}</strong> : null}{marks && !example ? <strong className={`absolute ${fixedFullRowMark?"right-[13px] bottom-[13px]":"right-1"} text-sm ${fixedFullRowMark?"":CONFIG.activityId==="transposing"?(level==="AH"?"bottom-2":"bottom-4"):CONFIG.activityId==="barlines"?(firstPage?"bottom-[30px]":"bottom-[22px]"):CONFIG.activityId==="rests"?"bottom-[29px]":"bottom-1"}`}>1</strong> : null}</div></section>;
+    const answerIsInNotation = CONFIG.activityId === "barlines" || CONFIG.activityId === "timesig" || CONFIG.activityId === "triplets" || CONFIG.activityId === "rests" || CONFIG.activityId === "articulation" || CONFIG.activityId === "dynamics" || CONFIG.activityId === "enharmonics" || CONFIG.activityId === "missingnotes" || CONFIG.activityId === "keyboard-notes" || CONFIG.activityId === "tonic" || CONFIG.activityId === "transposing" || (CONFIG.activityId === "keysig" && question.build) || (CONFIG.activityId === "chords" && level === "AH");
+    return <section className={`generic-question ${fixedFullRowMark?"relative":""} ${example ? "worksheet-example-answer text-stone-500" : ""} ${example&&CONFIG.activityId==="rhythmsums"?"rhythm-sums-example col-span-2":""}`}>{compactChord||compactRepetition||compactBarlines||compactTimeSignatures||compactTriplets||compactRests||compactRhythmSums?<div className="min-h-6 text-sm"><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong></div>:<div className="flex min-h-9 items-start gap-1 text-sm" style={keyboardFindWorksheet || CONFIG.activityId==="transposing" ? {flexShrink:0} : undefined}><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong><span className={`${smallAHChordPromptClass} ${smallAHTransposingPrompt?"text-xs leading-tight":""}`}><EmphasisedPrompt>{question.prompt}</EmphasisedPrompt></span></div>}{CONFIG.activityId==="rhythmsums" ? <div className="relative -top-[10px] flex flex-1 items-center justify-center gap-1 text-[1.625rem]"><WorksheetRhythmSumItem item={question.left}/><strong>{question.operator}</strong><WorksheetRhythmSumItem item={question.right}/></div> : <Staff question={question} completed={completed} muted={example} showNoteNames={example}/>}<div className={`${fixedFullRowMark?"static":"relative"} flex min-h-8 items-end justify-center ${CONFIG.activityId==="rhythmsums"?(continuationPage?"-top-[25px]":"-top-[35px]"):""}`}>{question.response!=="mark" && question.response!=="stave" ? <div className="w-4/5 border-b border-black pb-1 text-center font-semibold">{completed ? question.answer : ""}</div> : completed && !answerIsInNotation ? <strong className="text-sm">{question.answer}</strong> : null}{marks && !example ? <strong className={`absolute ${fixedFullRowMark?"right-[13px] bottom-[13px]":"right-1"} text-sm ${fixedFullRowMark?"":CONFIG.activityId==="transposing"?(level==="AH"?"bottom-2":"bottom-4"):CONFIG.activityId==="barlines"?(firstPage?"bottom-[30px]":"bottom-[22px]"):CONFIG.activityId==="rests"?"bottom-[29px]":"bottom-1"}`}>1</strong> : null}</div></section>;
   }
+
+  const keyboardFindWorksheet = CONFIG.activityId === "keyboard-notes" && (Boolean(CONFIG.settings?.questionTypes?.find) || level === "H" || level === "AH");
 
   function Pages({ data, answers=false, offset=0, total=1 }) {
     const rhythmSums=CONFIG.activityId==="rhythmsums";
-    const perPage = rhythmSums ? 8 : DEF.large || (CONFIG.activityId === "chords" && level === "AH") ? 4 : 6;
+    const perPage = rhythmSums ? 8 : CONFIG.activityId==="barlines"&&["H","AH"].includes(level) ? 2 : DEF.large || keyboardFindWorksheet || (CONFIG.activityId === "transposing" && level === "AH") || (CONFIG.activityId === "chords" && level === "AH") ? 4 : 6;
     const examples = answers ? [] : data.examples?.length ? data.examples : data.example ? [data.example] : [];
     const questionItems = [...examples, ...data.questions, ...(data.qr?[{id:"worksheet-qr",worksheetQr:true}]:[])];
     const items = answers ? data.questions : questionItems;
     const pages=[];
     if(rhythmSums&&!answers){pages.push([...examples,...data.questions.slice(0,perPage)]);for(let questionIndex=perPage;questionIndex<data.questions.length;questionIndex+=perPage)pages.push(data.questions.slice(questionIndex,questionIndex+perPage));if(data.qr){if(pages.at(-1).length>=perPage)pages.push([]);pages.at(-1).push({id:"worksheet-qr",worksheetQr:true});}}
     else for(let itemIndex=0;itemIndex<items.length;itemIndex+=perPage)pages.push(items.slice(itemIndex,itemIndex+perPage));
-    return pages.map((items,pageIndex)=><article className="worksheet-page generic-page" key={`${answers}-${pageIndex}`}>{data.header?<div className="worksheet-header-card mb-4 rounded-xl border border-black p-4"><div className="flex items-center gap-3"><img src={DEF.icon} className="h-12 w-12 object-contain" alt=""/><div className="min-w-0"><h1 className="worksheet-header-title text-xl font-bold leading-tight">{answers ? `${data.title} - Answers` : data.title}</h1>{!answers&&<p className="worksheet-header-instructions text-sm text-stone-700">{data.instructions}</p>}</div></div>{!answers&&pageIndex===0?<div className="mt-4 flex gap-5 text-sm">{data.name&&<span className="flex min-w-0 flex-[2] items-end gap-2"><span className="shrink-0">Name:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}{data.classField&&<span className="flex min-w-0 flex-1 items-end gap-2"><span className="shrink-0">Class:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}{data.date&&<span className="flex min-w-0 flex-1 items-end gap-2"><span className="shrink-0">Date:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}</div>:null}</div>:null}<div className={`generic-grid grid flex-1 ${CONFIG.activityId==="barlines"||CONFIG.activityId==="timesig"||CONFIG.activityId==="triplets"||CONFIG.activityId==="rests"?"grid-cols-1":"grid-cols-2"} ${data.gridlines?"with-gridlines":""}`}>{items.map((q,i)=>{if(q.worksheetQr)return <WorksheetQr key={q.id} bordered={!data.gridlines}/>;const example=!answers&&pageIndex===0&&i<examples.length; const n=answers?pageIndex*perPage+i+1:rhythmSums?(pageIndex===0?i-examples.length+1:perPage+(pageIndex-1)*perPage+i+1):pageIndex*perPage+i-examples.length+1; return <Question key={q.id} question={q} number={n} example={example} answers={answers} numbers={data.numbers} marks={data.marks} firstPage={!answers&&pageIndex===0} continuationPage={pageIndex>0}/>})}</div>{!answers&&pageIndex===pages.length-1&&data.marks?<div className="mt-3 flex items-end justify-end gap-3"><div className="flex justify-end gap-3 text-sm font-bold"><span className="h-8 leading-8">Total marks</span><span className="total-marks-box relative h-8 w-24 border border-black"><span className="total-marks-value absolute left-2 right-2 text-right leading-none">/ {data.questions.length}</span></span></div></div>:null}<footer className="mt-2 flex justify-between text-[10px] text-stone-400"><span>The Music Literacy Hub</span><span>Page {offset+pageIndex+1} of {total}</span></footer></article>);
+    return pages.map((items,pageIndex)=><article className="worksheet-page generic-page" key={`${answers}-${pageIndex}`}>{data.header?<div className="worksheet-header-card mb-4 rounded-xl border border-black p-4"><div className="flex items-center gap-3"><img src={DEF.icon} className="h-12 w-12 object-contain" alt=""/><div className="min-w-0"><h1 className="worksheet-header-title text-xl font-bold leading-tight">{answers ? `${data.title} - Answers` : data.title}</h1>{!answers&&<p className="worksheet-header-instructions text-sm text-stone-700">{data.instructions}</p>}</div></div>{!answers&&pageIndex===0?<div className="mt-4 flex gap-5 text-sm">{data.name&&<span className="flex min-w-0 flex-[2] items-end gap-2"><span className="shrink-0">Name:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}{data.classField&&<span className="flex min-w-0 flex-1 items-end gap-2"><span className="shrink-0">Class:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}{data.date&&<span className="flex min-w-0 flex-1 items-end gap-2"><span className="shrink-0">Date:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}</div>:null}</div>:null}<div className={`generic-grid grid flex-1 ${CONFIG.activityId==="barlines"||CONFIG.activityId==="timesig"||CONFIG.activityId==="triplets"||CONFIG.activityId==="rests"?"grid-cols-1":"grid-cols-2"} ${data.gridlines?"with-gridlines":""}`}>{items.map((q,i)=>{if(q.worksheetQr)return <WorksheetQr key={q.id} bordered={!data.gridlines}/>;const example=!answers&&pageIndex===0&&i<examples.length; const n=answers?pageIndex*perPage+i+1:rhythmSums?(pageIndex===0?i-examples.length+1:perPage+(pageIndex-1)*perPage+i+1):pageIndex*perPage+i-examples.length+1; return <Question key={q.id} question={q} number={n} example={example} answers={answers} numbers={data.numbers} marks={data.marks} firstPage={!answers&&pageIndex===0} continuationPage={pageIndex>0}/>})}</div>{!answers&&pageIndex===pages.length-1&&data.marks?<div className="mt-3 flex items-end justify-end gap-3"><div className="flex justify-end gap-3 text-sm font-bold"><span className="h-8 leading-8">Total marks</span><span className="total-marks-box relative h-8 w-24 border border-black"><span className="total-marks-value absolute left-2 right-2 text-right leading-none">/ {data.questions.length}</span></span></div></div>:null}<footer className="mt-2 flex justify-between text-[10px] text-stone-400"><span>The Music Learning Hub</span><span>Page {offset+pageIndex+1} of {total}</span></footer></article>);
   }
 
   const PRACTICE_PAPER_OUTLINE_CACHE = new Map();
@@ -1177,7 +1207,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       const svgNamespace="http://www.w3.org/2000/svg";
       wrapper.querySelectorAll("text.music-symbol").forEach(textElement=>{
         const symbolKey=glyphToKey.get(textElement.textContent?.trim()), outline=outlineSet.symbols[symbolKey], x=Number(textElement.getAttribute("x")), y=Number(textElement.getAttribute("y")), fontSize=Number(textElement.getAttribute("font-size"));
-        if(symbolKey==="tie"||!outline||!Number.isFinite(x)||!Number.isFinite(y)||!Number.isFinite(fontSize))return;
+        if(!outline||!Number.isFinite(x)||!Number.isFinite(y)||!Number.isFinite(fontSize))return;
         const anchor=textElement.getAttribute("text-anchor")||"start", anchorOffset=anchor==="middle"?outline.advance/2:anchor==="end"?outline.advance:0, scale=fontSize/outlineSet.unitsPerEm;
         const outerGroup=document.createElementNS(svgNamespace,"g"), outlineGroup=document.createElementNS(svgNamespace,"g"), path=document.createElementNS(svgNamespace,"path");
         ["transform","opacity","fill","stroke","stroke-width","stroke-linejoin","stroke-linecap","pointer-events"].forEach(attribute=>{if(textElement.hasAttribute(attribute))outerGroup.setAttribute(attribute,textElement.getAttribute(attribute));});
@@ -1220,7 +1250,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       </div>:null}
       {showQuestions&&!answers&&data.marks?<div className="practice-paper-total-marks mt-1 flex shrink-0 justify-end gap-2 text-xs font-bold"><span className="practice-paper-total-marks-label h-6 leading-6">Total marks</span><span className="total-marks-box practice-paper-total-marks-box relative h-6 min-w-16 border border-black"><span className="total-marks-value practice-paper-total-marks-value absolute left-2 right-2 text-right leading-none">/ {markTotal}</span></span></div>:null}
       {showQr?<div className={`mt-1 flex shrink-0 justify-center ${level==="AH"?"translate-y-[25px]":""}`}><WorksheetQr compact/></div>:null}
-      <footer className="mt-auto flex shrink-0 justify-between pt-1 text-[9px] text-stone-400"><span>The Music Literacy Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>
+      {!(level==="AH"&&showScore)&&<footer className="mt-auto flex shrink-0 justify-between pt-1 text-[9px] text-stone-400"><span>The Music Learning Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>}
     </article>;
   }
 
@@ -1229,6 +1259,14 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     await document.fonts?.ready;
     const worksheetImages=pages.flatMap(page=>[...page.querySelectorAll("img")]);
     await Promise.all(worksheetImages.map(image=>Promise.race([image.complete?(image.decode?image.decode().catch(()=>{}):Promise.resolve()):new Promise(resolve=>{image.addEventListener("load",resolve,{once:true});image.addEventListener("error",resolve,{once:true});}),new Promise(resolve=>setTimeout(resolve,8000))])));
+    // Rasterise keyboards as complete images so the capture library cannot crop their SVG viewport.
+    const keyboardScores=await Promise.all(pages.flatMap(page=>[...page.querySelectorAll("svg.keyboard-worksheet-score, svg.word-puzzle-worksheet-grid")]).map(async svg=>{
+      const clone=svg.cloneNode(true),viewBox=svg.viewBox.baseVal;
+      clone.setAttribute("xmlns","http://www.w3.org/2000/svg");clone.setAttribute("width",viewBox.width);clone.setAttribute("height",viewBox.height);clone.removeAttribute("style");clone.removeAttribute("class");
+      const image=new Image();image.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(new XMLSerializer().serializeToString(clone));
+      image.style.cssText=svg.style.cssText;if(svg.classList.contains("word-puzzle-worksheet-grid")){image.width=svg.width.baseVal.value;image.height=svg.height.baseVal.value;}image.className=svg.getAttribute("class");await image.decode();return {svg,image};
+    }));
+    keyboardScores.forEach(({svg,image})=>svg.replaceWith(image));
     pages.forEach((page) => page.classList.add("pdf-capture"));
     try {
       const {jsPDF}=window.jspdf;
@@ -1240,6 +1278,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       }
       return pdf;
     } finally {
+      for(const {svg,image}of keyboardScores)image.replaceWith(svg);
       pages.forEach((page) => page.classList.remove("pdf-capture"));
     }
   }
@@ -1257,19 +1296,27 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     }
   }
 
+  function nextPracticeWorksheetOffset(current, count, bankLength) {
+    if (bankLength < 2) return 0;
+    // A full bank still needs to move when Refresh is pressed.
+    const step = Math.max(1, count % bankLength);
+    return (current + step) % bankLength;
+  }
+
   function PracticeWorksheetApp() {
     const paperBank = Array.isArray(CONFIG.settings?.practicePapers) ? CONFIG.settings.practicePapers : [];
     const editorState=window.MLH.readWorksheetEditorState?.(CONFIG.activityId), configFingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||"";
     const initialCount = Math.max(1,Math.min(Number(editorState?.count)||1,paperBank.length||1));
     const [count,setCount]=useGenericState(initialCount), [bankOffset,setBankOffset]=useGenericState(0);
-    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?editorState.title||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(editorState?.instructions||"Answer each question using the music shown.");
+    const savedTitle = CONFIG.activityId === "enharmonics" && editorState?.title === "Enharmonic Equivalents · Advanced Higher" ? defaultTitle : editorState?.title;
+    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?savedTitle||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(editorState?.instructions||"Answer each question using the music shown.");
     const [header,setHeader]=useGenericState(editorState?.header??true), [name,setName]=useGenericState(editorState?.name??true), [classField,setClassField]=useGenericState(editorState?.classField??false), [date,setDate]=useGenericState(editorState?.date??false), [gridlines,setGridlines]=useGenericState(false), [answersOn,setAnswersOn]=useGenericState(editorState?.answers??false), [qr,setQr]=useGenericState(false), [preparingMode,setPreparingMode]=useGenericState(null);
     const [previewVisible,setPreviewVisible]=useGenericState(true), refreshTimer=useGenericRef(null);
     const papers=Array.from({length:Math.min(count,paperBank.length)},(_,index)=>paperBank[(bankOffset+index)%paperBank.length]);
     const splitAdvancedHigherPages=level==="AH", pagesPerPaper=splitAdvancedHigherPages?2:1;
     const totalPages=papers.length*pagesPerPaper*(answersOn?2:1);
     const data={title,instructions,header,name,classField,date,gridlines,numbers:true,marks:true,paperCount:count,qr};
-    const refresh=()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);setPreviewVisible(false);refreshTimer.current=setTimeout(()=>{setBankOffset(current=>(current+Math.max(1,count))%Math.max(1,paperBank.length));setPreviewVisible(true);refreshTimer.current=null;},260);};
+    const refresh=()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);setPreviewVisible(false);refreshTimer.current=setTimeout(()=>{setBankOffset(current=>nextPracticeWorksheetOffset(current,count,paperBank.length));setPreviewVisible(true);refreshTimer.current=null;},260);};
     useGenericEffect(()=>()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);},[]);
     useGenericEffect(()=>{sessionStorage.setItem("worksheetEditorState",JSON.stringify({activityId:CONFIG.activityId,fingerprint:configFingerprint,title,instructions,header,name,classField,date,count,gridlines,answers:answersOn,qr}));},[configFingerprint,title,instructions,header,name,classField,date,count,gridlines,answersOn,qr]);
     const check=(label,value,setter,disabled=false)=>{const option=<label className={`flex items-center gap-2 whitespace-nowrap text-sm ${disabled?"text-stone-400 opacity-60":""}`}><input className="worksheet-checkbox" type="checkbox" checked={value} onChange={event=>setter(event.target.checked)} disabled={disabled}/>{label}</label>;if(label==="Include Answers")return null;if(label==="Gridlines")return <div className="grid grid-cols-2 items-center gap-x-6 gap-y-3"><label className="flex items-center gap-2 whitespace-nowrap text-sm"><input className="worksheet-checkbox" type="checkbox" checked={answersOn} onChange={event=>setAnswersOn(event.target.checked)}/>Include Answers</label><label className="flex items-center gap-2 whitespace-nowrap text-sm"><input className="worksheet-checkbox" type="checkbox" checked={qr} onChange={event=>setQr(event.target.checked)}/>QR Code</label></div>;return option;};
@@ -1281,13 +1328,13 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       catch(error){window.alert(error?.message||"The worksheet PDF could not be created. Please try again.");}
       finally{setPreparingMode(null);}
     }
-    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,assets:{},onExit:()=>{const saved=sessionStorage.getItem("worksheetReturnUrl");if(saved&&history.length>1)history.back();else location.href=saved||CONFIG.sourceUrl||"index.html";}};
+    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,assets:{},classroomPilotUrl:CONFIG.activityId==="keyboard-notes"?"./keyboardnoteidentificationclassroom.html":undefined,onExit:returnToWorksheetActivity};
     if(!paperBank.length)return <div className="p-8 text-center"><p className="font-semibold">Return to Practice Questions and select the worksheet button again to prepare the music.</p></div>;
     const renderPaperPages=(paper,index,answers=false)=>splitAdvancedHigherPages?[
       <PracticePaperPage key={`${answers?"answer-":""}${paper.id}-score`} paper={paper} data={data} paperIndex={index} answers={answers} content="score" pageNumber={(answers?papers.length*2:0)+index*2+1} totalPages={totalPages}/>,
       <PracticePaperPage key={`${answers?"answer-":""}${paper.id}-questions`} paper={paper} data={data} paperIndex={index} answers={answers} content="questions" pageNumber={(answers?papers.length*2:0)+index*2+2} totalPages={totalPages} showQr={qr&&!answers&&index===papers.length-1}/>,
     ]:[<PracticePaperPage key={`${answers?"answer-":""}${paper.id}`} paper={paper} data={data} paperIndex={index} answers={answers} pageNumber={(answers?papers.length:0)+index+1} totalPages={totalPages} showQr={qr&&!answers&&index===papers.length-1}/>];
-    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate complete practice papers using the current activity settings.</p></div><div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={event=>setTitle(event.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={event=>{window.MLH.resizeWorksheetTextarea(event.currentTarget);setInstructions(event.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Questions<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={event=>setCount(Number(event.target.value))}>{Array.from({length:20},(_,index)=>index+1).map(value=><option key={value}>{value}</option>)}</select></label><div className="flex items-center gap-7">{check("Gridlines",gridlines,setGridlines)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center rounded-xl border border-stone-300 font-semibold">Refresh</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white">{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white">{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="worksheet.svg" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}>{papers.flatMap((paper,index)=>renderPaperPages(paper,index))}{answersOn?<div className="answer-sheet-start-new">{papers.flatMap((paper,index)=>renderPaperPages(paper,index,true))}</div>:null}</div></section></main></div></div>;
+    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate complete practice papers using the current activity settings.</p></div><div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={event=>setTitle(event.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={event=>{window.MLH.resizeWorksheetTextarea(event.currentTarget);setInstructions(event.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Papers<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={event=>setCount(Number(event.target.value))}>{Array.from({length:20},(_,index)=>index+1).map(value=><option key={value}>{value}</option>)}</select></label><div className="flex items-center gap-7">{check("Gridlines",gridlines,setGridlines)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 font-semibold"><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Refresh</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}>{papers.flatMap((paper,index)=>renderPaperPages(paper,index))}{answersOn?<div className="answer-sheet-start-new">{papers.flatMap((paper,index)=>renderPaperPages(paper,index,true))}</div>:null}</div></section></main></div></div>;
   }
 
   function conceptRecallGroups(concepts) {
@@ -1393,7 +1440,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
           </section>)}
         </div>)}
       </div>
-      <footer className="mt-2 flex justify-between text-[10px] text-stone-400"><span>The Music Literacy Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>
+      <footer className="mt-2 flex justify-between text-[10px] text-stone-400"><span>The Music Learning Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>
     </article>;
   }
 
@@ -1447,7 +1494,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
           </div>
         </section>
       </div>,
-      onExit: () => { const saved = sessionStorage.getItem("worksheetReturnUrl"); if (saved && history.length > 1) history.back(); else location.href = saved || CONFIG.sourceUrl || "index.html"; }
+      onExit: returnToWorksheetActivity
     };
     if (!concepts.length) return <div className="p-8 text-center"><p className="font-semibold">No concepts were available for this worksheet. Return to Concept Recall and choose at least one category.</p></div>;
     return <div className={window.MLH.shell.pageShellClass}>
@@ -1457,7 +1504,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
           <div className="no-print">
             <div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt="" />{DEF.title} · {LEVEL_NAMES[level] || level}</h2><p className="mt-1 text-sm text-stone-600">{categoryCount} categories · {concepts.length} concepts</p></div>
             <div className="rounded-xl border border-stone-200 bg-white p-4">
-              <h2 className="flex items-center gap-2 text-xl font-bold"><img src="customise.svg" className="h-6 w-6" alt="" />Customise</h2>
+              <h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt="" />Customise</h2>
               <p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p>
               <div className="mt-4 space-y-4">
                 <label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={(event) => setTitle(event.target.value)} /></label>
@@ -1465,14 +1512,14 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
                 <div className="flex flex-wrap gap-7">{check("Header", header, changeHeader)}{check("Name", name, setName, !header)}{check("Class", classField, setClassField, !header)}{check("Date", date, setDate, !header)}</div>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3 border-t border-stone-200 pt-4">{check("Gridlines", gridlines, setGridlines)}{check("Include Tips", includeTips, setIncludeTips)}{check("Include Answers", answersOn, setAnswersOn)}</div>
                 <div className="grid grid-cols-2 gap-2 border-t border-stone-200 pt-4">
-                  <button onClick={() => outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white">{preparingMode === "download" ? "Preparing…" : "Download"}</button>
-                  <button onClick={() => outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white">{preparingMode === "print" ? "Preparing…" : "Print"}</button>
+                  <button onClick={() => outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt="" />{preparingMode === "download" ? "Preparing…" : "Download"}</button>
+                  <button onClick={() => outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt="" />{preparingMode === "print" ? "Preparing…" : "Print"}</button>
                 </div>
               </div>
             </div>
           </div>
           <section className="print-area worksheet-preview-panel">
-            <div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="worksheet.svg" className="h-6 w-6" alt="" />Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div>
+            <div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt="" />Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div>
             {pages.map((columns, pageIndex) => <ConceptRecallPage key={`questions-${pageIndex}`} columns={columns} data={data} pageNumber={pageIndex + 1} totalPages={totalPages} />)}
             {answersOn ? <div className="answer-sheet-start-new">{pages.map((columns, pageIndex) => <ConceptRecallPage key={`answers-${pageIndex}`} columns={columns} data={data} answers pageNumber={pages.length + pageIndex + 1} totalPages={totalPages} />)}</div> : null}
           </section>
@@ -1481,19 +1528,92 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     </div>;
   }
 
+  function WordPuzzleGrid({ puzzle, answers }) {
+    const cell = 24, width = puzzle.cols * cell, height = puzzle.rows * cell;
+    const scale = Math.min(1, 640 / width, 500 / height);
+    const starts = new Map(), found = new Set();
+    puzzle.entries.forEach(entry => {
+      const first = entry.cells[0];
+      if (puzzle.kind === 'crossword') starts.set(`${first.row},${first.col}`, entry.number);
+      if (answers) entry.cells.forEach(position => found.add(`${position.row},${position.col}`));
+    });
+    return <svg className="word-puzzle-worksheet-grid" fontFamily="Arial, sans-serif" role="img" aria-label={answers ? 'Completed puzzle' : 'Puzzle grid'} viewBox={`0 0 ${width+1} ${height+1}`} width={width*scale} height={height*scale} style={{display:'block',maxWidth:'100%',margin:'0 auto',flexShrink:0}}>
+      {puzzle.grid.flatMap((row,r) => row.map((letter,c) => {
+        if (!letter && puzzle.kind === 'crossword') return <rect key={`${r},${c}`} x={c*cell+.5} y={r*cell+.5} width={cell} height={cell} fill="#000" stroke="#000" strokeWidth=".8"/>;
+        const number=starts.get(`${r},${c}`), highlighted=found.has(`${r},${c}`);
+        return <g key={`${r},${c}`}><rect x={c*cell+.5} y={r*cell+.5} width={cell} height={cell} fill={highlighted&&puzzle.kind==='wordsearch'?'#d1d5db':'#fff'} stroke="#000" strokeWidth=".8"/>{number?<text x={c*cell+2} y={r*cell+9} fontSize="8" fill="#000">{number}</text>:null}{puzzle.kind==='wordsearch'||answers?<text x={c*cell+12} y={r*cell+17} textAnchor="middle" fontSize="14" fontWeight={highlighted?'700':'400'} fill="#000">{letter}</text>:null}</g>;
+      }))}
+    </svg>;
+  }
+
+  function WordPuzzlePage({ puzzle, groups, data, answers, pageNumber, totalPages, showGrid }) {
+    const wordsOnly=puzzle.kind==='wordsearch'&&data.wordsOnly;
+    return <article className="worksheet-page generic-page word-puzzle-worksheet-page" style={{gap:12}}>
+      {data.header?<div className="worksheet-header-card rounded-xl border border-black p-4">
+        <div className="flex items-center gap-3"><img src={DEF.icon} className="h-10 w-10 object-contain" alt=""/><div><h1 className="worksheet-header-title text-xl font-bold">{data.title}{answers?' - Answers':''}</h1>{!answers?<p className="worksheet-header-instructions text-xs">{data.instructions}</p>:null}</div></div>
+        {!answers&&pageNumber===1?<div className="mt-3 flex gap-5 text-xs">{[['name','Name'],['classField','Class'],['date','Date']].map(([key,label])=>data[key]?<span key={key} className="flex flex-1 items-end gap-2">{label}:<span className="pupil-detail-line h-px flex-1 bg-black"/></span>:null)}</div>:null}
+      </div>:null}
+      {showGrid?<WordPuzzleGrid puzzle={puzzle} answers={answers}/>:null}
+      <div style={{display:'grid',gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:'12px 24px',fontSize:11,lineHeight:1.35}}>
+        {groups.map((group,index)=><section key={index}><h2 style={{fontSize:13,fontWeight:700,margin:'0 0 6px'}}>{group.title}</h2><ol style={{listStyle:'none',padding:0,margin:0}}>{group.entries.map((entry,i)=><li key={entry.word} style={{display:'flex',gap:6,marginBottom:5,breakInside:'avoid'}}><strong>{puzzle.kind==='crossword'?entry.number:puzzle.entries.indexOf(entry)+1}.</strong><span>{answers?entry.answer:wordsOnly?entry.answer:entry.clue}{!answers&&puzzle.kind==='crossword'?` (${entry.word.length})`:''}</span></li>)}</ol></section>)}
+      </div>
+      <footer className="mt-auto flex justify-between text-[10px] text-stone-400"><span>The Music Learning Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>
+    </article>;
+  }
+
+  function WordPuzzleWorksheetApp() {
+    const bank=CONFIG.settings?.puzzles||[], fingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||'';
+    const saved=window.MLH.readWorksheetEditorState?.(CONFIG.activityId);
+    const [title,setTitle]=useGenericState(saved?.fingerprint===fingerprint?saved.title||defaultTitle:defaultTitle);
+    const [instructions,setInstructions]=useGenericState(saved?.instructions||DEF.instructions);
+    const [count,setCount]=useGenericState(Math.max(1,Math.min(bank.length,Number(saved?.count)||1)));
+    const [offset,setOffset]=useGenericState(0), [answersOn,setAnswersOn]=useGenericState(saved?.answers??false);
+    const [header,setHeader]=useGenericState(saved?.header??true), [name,setName]=useGenericState(saved?.name??true), [classField,setClassField]=useGenericState(saved?.classField??false), [date,setDate]=useGenericState(saved?.date??false);
+    const [wordsOnly,setWordsOnly]=useGenericState(saved?.fingerprint===fingerprint&&typeof saved.wordsOnly==='boolean'?saved.wordsOnly:CONFIG.settings.editorMode==='without-clues'), [preparing,setPreparing]=useGenericState(null);
+    const data={title,instructions,header,name,classField,date,wordsOnly};
+    const puzzles=bank.length?Array.from({length:count},(_,i)=>bank[(offset+i)%bank.length]):[];
+    const sheets=puzzles.flatMap(puzzle=>window.MLHWordPuzzleWorksheet.cluePages(puzzle,wordsOnly).map((groups,index)=>({puzzle,groups,showGrid:index===0})));
+    const total=sheets.length*(answersOn?2:1);
+    useGenericEffect(()=>{sessionStorage.setItem('worksheetEditorState',JSON.stringify({activityId:CONFIG.activityId,fingerprint,title,instructions,count,answers:answersOn,header,name,classField,date,wordsOnly}));},[fingerprint,title,instructions,count,answersOn,header,name,classField,date,wordsOnly]);
+    async function output(mode) {
+      if(preparing)return; setPreparing(mode);
+      try { await outputCapturedWorksheetPdf({pages:[...document.querySelectorAll('.word-puzzle-worksheet-page')],title,fallbackTitle:DEF.title,mode}); }
+      catch(error){window.alert(error?.message||'The worksheet PDF could not be created. Please try again.');}
+      finally{setPreparing(null);}
+    }
+    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,onExit:returnToWorksheetActivity};
+    const check=(label,checked,setter,disabled=false)=><label className="flex items-center gap-2 text-sm"><input className="worksheet-checkbox" type="checkbox" checked={checked} disabled={disabled} onChange={event=>setter(event.target.checked)}/>{label}</label>;
+    if(!bank.length)return <p>No puzzle was available. Return to the game and choose a collection.</p>;
+    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-6`}>
+      <div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="text-xl font-bold">{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">{CONFIG.settings.collectionTitle}</p></div>
+        <div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><div className="mt-4 space-y-4">
+          <label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={event=>setTitle(event.target.value)}/></label>
+          <label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 w-full resize-none rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={event=>{window.MLH.resizeWorksheetTextarea(event.target);setInstructions(event.target.value);}}/></label>
+          <div className="flex flex-wrap gap-7">{check('Header',header,value=>{setHeader(value);if(!value){setName(false);setClassField(false);setDate(false);}})}{check('Name',name,setName,!header)}{check('Class',classField,setClassField,!header)}{check('Date',date,setDate,!header)}</div>
+          <label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Puzzles<select className="w-24 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={event=>setCount(Number(event.target.value))}>{bank.map((_,i)=><option key={i} value={i+1}>{i+1}</option>)}</select></label>
+          {check('Include Answers',answersOn,setAnswersOn)}{CONFIG.activityId==='wordsearch'?check('Show Words Instead of Clues',wordsOnly,setWordsOnly):null}
+          <div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button className="flex h-11 items-center justify-center rounded-xl border border-stone-300 font-semibold" onClick={()=>setOffset(value=>(value+1)%bank.length)}>Refresh</button><button className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white" disabled={Boolean(preparing)} onClick={()=>output('download')}>{preparing==='download'?'Preparing…':'Download'}</button><button className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white" disabled={Boolean(preparing)} onClick={()=>output('print')}>{preparing==='print'?'Preparing…':'Print'}</button></div>
+        </div></div>
+      </div>
+      <section className="print-area worksheet-preview-panel"><h2 className="no-print mb-4 text-xl font-bold">Preview</h2>{sheets.map((sheet,i)=><WordPuzzlePage key={`q-${offset}-${i}`} {...sheet} data={data} pageNumber={i+1} totalPages={total}/>)}{answersOn?<div className="answer-sheet-start-new">{sheets.map((sheet,i)=><WordPuzzlePage key={`a-${offset}-${i}`} {...sheet} data={data} answers pageNumber={sheets.length+i+1} totalPages={total}/>)}</div>:null}</section>
+    </main></div></div>;
+  }
+
   function GenericApp() {
+    if (["crossword","wordsearch"].includes(CONFIG.activityId)) return <WordPuzzleWorksheetApp />;
     if (CONFIG.activityId === "concept-recall") return <ConceptRecallWorksheetApp />;
     if (CONFIG.activityId === "practicequestions") return <PracticeWorksheetApp />;
     const editorState=window.MLH.readWorksheetEditorState?.(CONFIG.activityId), configFingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||"";
     const initialCount=Number(editorState?.count)||(CONFIG.activityId==="rhythmsums"?15:10);
     const [count,setCount]=useGenericState(initialCount), [questions,setQuestions]=useGenericState(()=>Array.from({length:initialCount},(_,i)=>makeQuestion(i)));
-    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?editorState.title||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(editorState?.instructions||defaultInstructions);
+    const savedGenericTitle = CONFIG.activityId === "tonic" && editorState?.title === "Scale Degrees · Higher" ? defaultTitle : editorState?.title;
+    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?savedGenericTitle||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(editorState?.instructions||defaultInstructions);
     const [header,setHeader]=useGenericState(editorState?.header??true), [name,setName]=useGenericState(editorState?.name??true), [classField,setClassField]=useGenericState(editorState?.classField??false), [date,setDate]=useGenericState(editorState?.date??false), [numbers,setNumbers]=useGenericState(editorState?.numbers??true), [marks,setMarks]=useGenericState(editorState?.marks??true), [gridlines,setGridlines]=useGenericState(editorState?.gridlines??true), [exampleOn,setExampleOn]=useGenericState(editorState?.example??true), [answersOn,setAnswersOn]=useGenericState(editorState?.answers??false), [qr,setQr]=useGenericState(editorState?.qr??true), [preparingMode,setPreparingMode]=useGenericState(null);
     const [previewVisible,setPreviewVisible]=useGenericState(true), refreshTimer=useGenericRef(null);
     const examples=useGenericMemo(()=>CONFIG.activityId==="chords"&&level==="AH"?AH_WORKSHEET_TYPES.map((type,typeIndex)=>makeQuestion(-1-typeIndex,type)):[makeQuestion(-1)],[]);
     const activeExamples=exampleOn?examples:[];
     const data={questions,title,instructions,header,name,classField,date,numbers,marks,gridlines,qr,examples:activeExamples,example:activeExamples[0]||null};
-    const rhythmSums=CONFIG.activityId==="rhythmsums",perPage=rhythmSums?8:DEF.large||(CONFIG.activityId==="chords"&&level==="AH")?4:6, qPages=rhythmSums?Math.ceil((questions.length+(qr?1:0))/perPage):Math.ceil((questions.length+activeExamples.length+(qr?1:0))/perPage), aPages=answersOn?Math.ceil(questions.length/perPage):0, total=qPages+aPages;
+    const rhythmSums=CONFIG.activityId==="rhythmsums",perPage=rhythmSums?8:CONFIG.activityId==="barlines"&&["H","AH"].includes(level)?2:DEF.large||keyboardFindWorksheet||(CONFIG.activityId==="transposing"&&level==="AH")||(CONFIG.activityId==="chords"&&level==="AH")?4:6, qPages=rhythmSums?Math.ceil((questions.length+(qr?1:0))/perPage):Math.ceil((questions.length+activeExamples.length+(qr?1:0))/perPage), aPages=answersOn?Math.ceil(questions.length/perPage):0, total=qPages+aPages;
     const changeCount=(value)=>{const n=Number(value);setCount(n);setQuestions(current=>current.length>=n?current.slice(0,n):[...current,...Array.from({length:n-current.length},(_,i)=>makeQuestion(current.length+i))]);};
     const refresh=()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);setPreviewVisible(false);refreshTimer.current=setTimeout(()=>{setQuestions(Array.from({length:count},(_,i)=>makeQuestion(i)));setPreviewVisible(true);refreshTimer.current=null;},260);};
     useGenericEffect(()=>()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);},[]);
@@ -1507,8 +1627,8 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       catch(error){window.alert(error?.message||"The worksheet PDF could not be created. Please try again.");}
       finally{setPreparingMode(null);}
     }
-    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,assets:{},onExit:()=>{const saved=sessionStorage.getItem("worksheetReturnUrl");if(saved&&history.length>1)history.back();else location.href=saved||CONFIG.sourceUrl||"index.html";}};
-    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate a printable worksheet using the current activity and settings.</p></div><div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={e=>setTitle(e.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={e=>{window.MLH.resizeWorksheetTextarea(e.currentTarget);setInstructions(e.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Questions<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={e=>changeCount(e.target.value)}>{[10,15,20,25].map(n=><option key={n}>{n}</option>)}</select></label><div className="grid grid-cols-[minmax(0,1fr)_max-content_max-content] gap-x-3 gap-y-3">{check("Question Numbers",numbers,setNumbers)}{check("Marks",marks,setMarks)}{check("Gridlines",gridlines,setGridlines)}{check("Example Answer",exampleOn,setExampleOn)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 font-semibold"><img src="restart.svg" className="h-5 w-5" alt=""/>Refresh</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="worksheet.svg" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="worksheet.svg" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}><Pages data={data} total={total}/>{answersOn?<div className="answer-sheet-start-new"><Pages data={{...data,example:null}} answers offset={qPages} total={total}/></div>:null}</div></section></main></div></div>;
+    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,assets:{},classroomPilotUrl:CONFIG.activityId==="keyboard-notes"?"./keyboardnoteidentificationclassroom.html":undefined,onExit:returnToWorksheetActivity};
+    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate a printable worksheet using the current activity and settings.</p></div><div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={e=>setTitle(e.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={e=>{window.MLH.resizeWorksheetTextarea(e.currentTarget);setInstructions(e.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Questions<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={e=>changeCount(e.target.value)}>{[10,15,20,25].map(n=><option key={n}>{n}</option>)}</select></label><div className="grid grid-cols-[minmax(0,1fr)_max-content_max-content] gap-x-3 gap-y-3">{check("Question Numbers",numbers,setNumbers)}{check("Marks",marks,setMarks)}{check("Gridlines",gridlines,setGridlines)}{check("Example Answer",exampleOn,setExampleOn)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 font-semibold"><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Refresh</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}><Pages data={data} total={total}/>{answersOn?<div className="answer-sheet-start-new"><Pages data={{...data,example:null}} answers offset={qPages} total={total}/></div>:null}</div></section></main></div></div>;
   }
   window.MLHGenericWorksheetApp=GenericApp;
   ReactDOM.createRoot(document.getElementById("root")).render(<GenericApp />);

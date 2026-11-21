@@ -1,0 +1,257 @@
+.ig-learning{padding:24px;color:#292524;max-width:1040px;margin:0 auto}.ig-learning button,.ig-learning input{font:inherit}.ig-learning button{cursor:pointer;border:1px solid #d6d3d1;border-radius:12px;background:white;color:#292524;padding:13px 18px;transition:background .12s,border-color .12s,transform .12s}.ig-learning button:hover:not(:disabled){background:#f5f5f4;border-color:#78716c}.ig-learning button:focus-visible,.ig-learning input:focus-visible{outline:3px solid #000000;outline-offset:3px}.ig-learning button:disabled{cursor:default;opacity:.5}.ig-learning button[aria-pressed=true]{background:#f5f5f4;border-color:#000000;box-shadow:0 0 0 1px #000000}.ig-learning-intro{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:24px;color:#78716c;font-size:15px}.ig-learning-intro p{margin:0}.ig-learning-intro>span{white-space:nowrap;background:#f5f5f4;padding:8px 14px;border-radius:30px}.ig-learning-prompt{text-align:center;margin:22px auto 28px;max-width:760px}.ig-learning-prompt h2{font-size:30px;line-height:1.35;margin:14px 0;font-weight:700}.ig-learning img,.ig-learning video{max-width:100%;max-height:210px;object-fit:contain;margin:auto;display:block}.ig-learning audio{max-width:100%;margin:10px auto;display:block}.ig-answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:800px;margin:20px auto}.ig-answer-grid>:is(button,.ig-quiz-answer-with-media){min-height:76px;font-size:21px;font-weight:600}.ig-learning-feedback{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:26px auto 0;padding:16px 20px;border-radius:14px;max-width:800px}.ig-learning-feedback>span{font-size:18px}.ig-learning .ig-correct{color:#166534;background:#dcfce7;border-color:#22c55e;opacity:1}.ig-learning .ig-incorrect{color:#991b1b;background:#fee2e2;border-color:#f87171;opacity:1}.ig-learning .ig-learning-primary{display:block;margin:24px auto 0;background:#000000;color:white;border-color:#000000;min-width:140px;font-weight:600}.ig-learning .ig-learning-primary:hover:not(:disabled){background:#000000}.ig-learning-secondary{display:block;margin:12px auto}.ig-learning-status,.ig-learning>p[role=status]{text-align:center;min-height:25px;color:#57534e;margin:18px 0}.ig-statement{text-align:center;font-size:28px;border:1px solid #d6d3d1;border-radius:16px;padding:24px;max-width:600px;margin:0 auto}.ig-game-bank{display:flex;justify-content:center;align-items:center;gap:28px;color:#000000;font-size:22px}.ig-game-bank>span{letter-spacing:7px;color:#dc2626}.ig-game-bank fieldset{display:flex;gap:8px;font-size:15px;border:0;padding:0}.ig-game-bank legend{font-size:13px;color:#78716c;text-align:center;margin-bottom:6px}.ig-match-labels{display:grid;grid-template-columns:1fr 1fr;text-align:center;gap:60px;font-weight:600;margin-bottom:12px}.ig-match-columns{display:grid;grid-template-columns:1fr 1fr;gap:60px}.ig-match-columns>div{display:flex;flex-direction:column;gap:12px}.ig-match-columns button{min-height:66px;font-size:19px}.ig-match-columns img{height:90px}.ig-find-match>div{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.ig-find-match button{min-height:85px;font-size:20px}.ig-memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:880px;margin:auto}.ig-memory-grid>button{min-height:120px;font-size:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}.ig-memory-grid small{text-transform:uppercase;letter-spacing:.08em;font-size:10px;color:#78716c}.ig-memory-grid img{height:70px}.ig-card-back{font-size:38px;color:#000000;font-weight:700}.ig-memory-count{text-align:right;color:#78716c}.ig-pair-display{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin:35px auto;max-width:750px}.ig-pair-display>div{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:200px;border:2px solid #f5f5f4;background:#f5f5f4;border-radius:18px;font-size:27px;padding:25px;text-align:center}.ig-sort-pool{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;min-height:100px;margin-bottom:22px}.ig-sort-pool button{min-width:140px;font-size:20px}.ig-sort-pool img{max-height:90px}.ig-sort-groups{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}.ig-sort-groups section{border:2px dashed #d6d3d1;border-radius:15px;padding:14px;min-height:200px;flex:1;min-width:200px}.ig-sort-groups section>button{width:100%;background:#f5f5f4;border-color:#f5f5f4;font-weight:700}.ig-sort-groups p{background:#dcfce7;color:#166534;border-radius:8px;padding:10px;margin:10px 0;font-size:16px}.ig-rank-list{list-style:none;max-width:800px;margin:auto;padding:0;display:flex;flex-direction:column;gap:12px}.ig-rank-list li{display:flex;align-items:center;gap:14px;border:1px solid #d6d3d1;border-radius:12px;padding:12px;background:white}.ig-rank-list li>div{flex:1;font-size:20px}.ig-rank-list img{height:80px}.ig-rank-number{border-radius:50%;background:#f5f5f4;width:34px;height:34px;display:grid;place-items:center;font-weight:700}.ig-rank-list button{padding:8px 14px}.ig-answer-label{display:block;box-sizing:border-box;width:100%;max-width:580px;margin:15px auto;border:2px solid #a8a29e;border-radius:12px;padding:16px;font-size:25px;text-align:center;color:#1c1917;background:white}.ig-learning form>p{text-align:center;color:#78716c}.ig-token-answer,.ig-token-pool{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:9px;margin:20px auto;max-width:880px}.ig-token-answer{border:2px dashed #f5f5f4;border-radius:16px;min-height:96px;padding:14px;background:#f5f5f4}.ig-token-answer>span{color:#a8a29e}.ig-token-answer button,.ig-token-pool button{font-size:22px;min-width:48px;box-shadow:0 3px 0 #e7e5e4}.ig-token-pool button:disabled{visibility:hidden}.ig-hangman-lives{display:flex;justify-content:center;gap:14px;font-size:32px;color:#22c55e}.ig-hangman-lives .ig-life-lost{color:#e7e5e4}.ig-hangman-word{display:flex;justify-content:center;gap:8px;margin:22px auto;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:32px;flex-wrap:wrap}.ig-hangman-word span{min-width:25px;text-align:center}.ig-alphabet{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;max-width:700px;margin:auto}.ig-alphabet button{width:48px;padding:12px 0;font-weight:600}.ig-word-puzzle{display:flex;justify-content:center;align-items:flex-start;gap:32px}.ig-wordsearch-grid{display:grid;gap:1px;flex-shrink:0;border:1px solid #d6d3d1;padding:5px;border-radius:10px;background:#fafaf9}.ig-wordsearch-grid button{width:30px;height:30px;padding:0;font-size:16px;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";border:0;border-radius:4px}.ig-word-clues{list-style:none;padding:0;margin:0;max-width:220px;min-width:150px}.ig-word-clues li{padding:9px 0;border-bottom:1px solid #e7e5e4}.ig-word-found{text-decoration:line-through;color:#16a34a}.ig-crossword-puzzle{overflow:auto;max-height:720px;padding:6px}.ig-crossword-grid{display:grid;gap:1px;flex-shrink:0;background:#e7e5e4;padding:1px}.ig-crossword-grid label{position:relative;width:30px;height:30px;background:white;border:1px solid #a8a29e}.ig-crossword-grid label small{position:absolute;left:1px;top:0;font-size:8px;line-height:1;color:#44403c;z-index:1}.ig-crossword-grid input{width:100%;height:100%;padding:4px 0 0;text-align:center;font-size:19px;background:transparent;border:0;color:inherit;font-weight:600;border-radius:0}.ig-crossword-grid .ig-crossword-active{background:#f5f5f4}.ig-crossword-blank{background:#e7e5e4}.ig-crossword-clues{min-width:210px;max-width:290px}.ig-crossword-clues h3{margin:0 0 8px;font-size:18px}.ig-crossword-clues section{margin-bottom:20px}.ig-crossword-clues button{display:block;width:100%;margin:6px 0;text-align:left;padding:10px;font-size:14px}.ig-diagram-board{position:relative;max-width:760px;margin:auto;border:1px solid #e7e5e4;border-radius:14px;overflow:hidden;background:#fafaf9}.ig-diagram-board>img{width:100%;max-height:450px;object-fit:contain}.ig-diagram-board>button{position:absolute;transform:translate(-50%,-50%);padding:8px 12px;border:2px solid #000000;background:#f5f5f4;font-weight:700;min-width:38px}.ig-learning-empty{text-align:center;padding:50px;color:#78716c}
+
+/* Long user-created content remains inside the fixed desktop play area. */
+.ig-learning{box-sizing:border-box;min-width:0;width:100%}.ig-learning button{max-width:100%;overflow-wrap:anywhere}.ig-word-puzzle{max-width:100%;overflow:auto;justify-content:flex-start;padding:6px;box-sizing:border-box}.ig-word-clues{flex-shrink:0}.ig-crossword-clues{flex-shrink:0}.ig-match-columns>div{min-width:0}.ig-sort-groups section{box-sizing:border-box;max-width:100%;overflow-wrap:anywhere}
+
+.ig-word-puzzle{max-height:720px}
+
+/* Classic game canvas: bold, coloured playing pieces inside the shared player. */
+.ig-theme-classic .ig-learning{padding:20px 18px 26px;color:#000000;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}
+.ig-theme-classic .ig-learning button{border-radius:5px;border-width:2px;font-weight:700}
+.ig-theme-classic .ig-learning button:focus-visible{outline:3px solid #000000;outline-offset:4px;box-shadow:0 0 0 7px #fff}
+.ig-theme-classic .ig-learning-intro{font-size:14px;color:#59636d;margin-bottom:18px;gap:18px}
+.ig-theme-classic .ig-learning-intro>span{background:#fff;border:1px solid #f5f5f4;border-radius:4px;color:#000000;font-weight:700;padding:7px 11px}
+.ig-theme-classic .ig-learning-prompt{max-width:740px;margin:20px auto 30px}
+.ig-theme-classic .ig-learning-prompt h2{font-size:38px;font-weight:700;line-height:1.22;letter-spacing:-.5px;margin:16px 0;color:#000000;overflow-wrap:anywhere}
+.ig-theme-classic .ig-learning-prompt img,.ig-theme-classic .ig-learning-prompt video{max-height:220px;border-radius:4px}
+.ig-theme-classic .ig-answer-grid{counter-reset:ig-answer;gap:14px;margin:24px auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){counter-increment:ig-answer;position:relative;min-height:108px;padding:24px 18px 24px 59px;text-align:left;line-height:1.2;font-size:25px;color:#fff;border:0;border-radius:5px;box-shadow:0 5px 0 #00000022;overflow-wrap:anywhere;transition:filter .12s,transform .12s,box-shadow .12s}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(4n+1){background:#cf2b43}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(4n+2){background:#000000}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(4n+3){background:#187941}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(4n+4){background:#b85c0b}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media)::before{content:counter(ig-answer,upper-alpha);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:30px;height:30px;border:2px solid #ffffffbf;border-radius:50%;display:grid;place-items:center;font-size:16px;line-height:1;font-weight:700}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):hover:not(:disabled){filter:brightness(1.12);transform:translateY(-2px);border:0;box-shadow:0 7px 0 #00000022}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):active:not(:disabled){transform:translateY(3px);box-shadow:0 2px 0 #00000022}
+.ig-theme-classic .ig-answer-grid>:is(button,.ig-quiz-answer-with-media)[aria-pressed=true]{outline:4px solid #000000;outline-offset:3px;box-shadow:0 5px 0 #00000022}
+.ig-theme-classic .ig-true-or-false .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){padding-left:24px;text-align:center;font-size:32px}
+.ig-theme-classic .ig-true-or-false .ig-answer-grid>:is(button,.ig-quiz-answer-with-media)::before{content:none}
+.ig-theme-classic .ig-true-or-false .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):first-child{background:#187941}
+.ig-theme-classic .ig-true-or-false .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):last-child{background:#cf2b43}
+.ig-theme-classic .ig-statement{border:2px solid #f5f5f4;background:white;border-radius:5px;padding:25px;font-size:32px;font-weight:700;box-shadow:0 4px 0 #f5f5f4;overflow-wrap:anywhere}
+.ig-theme-classic .ig-game-bank{background:#000000;color:#fff;padding:14px 18px;border-radius:5px;gap:24px;box-shadow:0 4px 0 #000000;margin-bottom:22px;font-size:25px}
+.ig-theme-classic .ig-game-bank>span{color:#ff7890}
+.ig-theme-classic .ig-game-bank legend{color:#fff}
+.ig-theme-classic .ig-game-bank button{background:#fff;border:2px solid #fff;color:#000000;border-radius:3px;padding:8px 13px}
+.ig-theme-classic .ig-game-bank button[aria-pressed=true]{background:#f8cf46;color:#222;border-color:#f8cf46;box-shadow:0 0 0 2px #fff}
+.ig-theme-classic .ig-learning .ig-learning-primary{background:#000000;color:#fff;border:0;border-radius:4px;box-shadow:0 4px 0 #000000;font-size:21px;letter-spacing:.2px;padding:13px 28px;margin-top:25px}
+.ig-theme-classic .ig-learning .ig-learning-primary:hover:not(:disabled){background:#000000;box-shadow:0 4px 0 #000000}
+.ig-theme-classic .ig-learning-feedback{border-radius:5px;padding:17px 19px;border:2px solid;box-shadow:0 3px 0 #00000012;margin-top:25px}
+.ig-theme-classic .ig-learning-feedback>span{font-size:20px;font-weight:700;overflow-wrap:anywhere}
+.ig-theme-classic .ig-learning-feedback>button{background:#fff;color:#000000;border:0;padding:12px 24px;font-size:18px;flex-shrink:0;box-shadow:0 3px 0 #00000018}
+.ig-theme-classic .ig-match-labels{gap:30px;font-size:20px;color:#000000;margin:12px 0}
+.ig-theme-classic .ig-match-columns{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px}
+.ig-theme-classic .ig-match-columns>div{gap:14px}
+.ig-theme-classic .ig-match-columns button{background:#000000;border:0;color:#fff;border-radius:5px;font-size:22px;min-height:82px;padding:19px 15px;box-shadow:0 4px 0 #000000}
+.ig-feedback-icon{display:inline-block;width:18px;height:18px;margin-left:6px;vertical-align:middle;flex:none;opacity:1;filter:drop-shadow(0 2px 2px #0006)}
+.ig-feedback-icon::before{content:"";display:block;width:100%;height:100%;background:currentColor;-webkit-mask:var(--ig-feedback-symbol) center/contain no-repeat;mask:var(--ig-feedback-symbol) center/contain no-repeat}
+.ig-feedback-tick{--ig-feedback-symbol:url("../ui-icons/prtick.svg")}
+.ig-feedback-cross{width:21px;height:21px;--ig-feedback-symbol:url("../ui-icons/prcross.svg")}
+.ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){position:relative}
+.ig-quiz-feedback-icon{position:absolute;right:18px;top:50%;display:block;width:28px;height:28px;margin:0;transform:translateY(-50%);pointer-events:none;filter:drop-shadow(0 2px 2px #0003)}
+.ig-quiz-feedback-icon::before{content:"";display:block;width:100%;height:100%;background:currentColor;-webkit-mask:var(--ig-feedback-symbol) center/contain no-repeat;mask:var(--ig-feedback-symbol) center/contain no-repeat}
+.ig-quiz-feedback-icon.is-correct{color:#15803d;--ig-feedback-symbol:url("../ui-icons/prtick.svg")}
+.ig-quiz-feedback-icon.is-incorrect{color:#b91c1c;--ig-feedback-symbol:url("../ui-icons/prcross.svg")}
+.ig-theme-classic .ig-match-columns>div:last-child button{background:#7a3894;box-shadow:0 4px 0 #57256b}
+.ig-theme-classic .ig-match-columns button:hover:not(:disabled){background:#000000;color:#fff}
+.ig-theme-classic .ig-match-columns>div:last-child button:hover:not(:disabled){background:#914aaa}
+.ig-theme-classic .ig-match-columns button[aria-pressed=true]{outline:4px solid #f4bd27;outline-offset:3px;background:#000000;color:#fff}
+.ig-theme-classic .ig-find-match>div{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ig-theme-classic .ig-find-match button{background:#000000;color:#fff;border:0;border-radius:5px;font-size:22px;min-height:110px;box-shadow:0 4px 0 #000000}
+.ig-theme-classic .ig-find-match button:nth-child(3n+2){background:#7a3894;box-shadow:0 4px 0 #57256b}
+.ig-theme-classic .ig-find-match button:nth-child(3n){background:#b85c0b;box-shadow:0 4px 0 #8d4406}
+.ig-theme-classic .ig-find-match button:hover:not(:disabled){filter:brightness(1.12);color:#fff}
+.ig-theme-classic .ig-memory-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ig-theme-classic .ig-memory-grid>button{background:#000000;border:3px solid #fff;border-radius:7px;min-height:136px;font-size:21px;color:#fff;box-shadow:0 4px 0 #000000,0 0 0 1px #f5f5f4;padding:15px 12px}
+.ig-theme-classic .ig-memory-grid>button:nth-child(3n+2){background:#713c9c;box-shadow:0 4px 0 #51276f,0 0 0 1px #f5f5f4}
+.ig-theme-classic .ig-memory-grid>button:nth-child(3n){background:#b85c0b;box-shadow:0 4px 0 #8d4406,0 0 0 1px #f5f5f4}
+.ig-theme-classic .ig-memory-grid>button:hover:not(:disabled){filter:brightness(1.12);color:#fff}
+.ig-theme-classic .ig-memory-grid small{color:#fff;opacity:.85;letter-spacing:.12em}
+.ig-theme-classic .ig-card-back{font-size:55px;line-height:1;color:white;font-weight:700;text-shadow:0 3px 0 #00000025}
+.ig-theme-classic .ig-pair-display{gap:25px}
+.ig-theme-classic .ig-pair-display>div{background:#000000;color:#fff;border:4px solid #fff;border-radius:6px;box-shadow:0 5px 0 #000000,0 0 0 1px #f5f5f4;font-size:32px;font-weight:700;min-width:0;overflow-wrap:anywhere}
+.ig-theme-classic .ig-pair-display>div:last-child{background:#7a3894;box-shadow:0 5px 0 #57256b,0 0 0 1px #f5f5f4}
+.ig-theme-classic .ig-sort-pool{gap:13px;min-height:115px}
+.ig-theme-classic .ig-sort-pool button{background:#000000;color:#fff;border:0;border-radius:5px;box-shadow:0 4px 0 #000000;font-size:23px;padding:20px;min-height:70px}
+.ig-theme-classic .ig-sort-pool button:hover:not(:disabled){background:#000000}
+.ig-theme-classic .ig-sort-pool button[aria-pressed=true]{outline:4px solid #f4bd27;outline-offset:3px;background:#000000}
+.ig-theme-classic .ig-sort-groups{gap:16px}
+.ig-theme-classic .ig-sort-groups section{border:3px solid #000000;background:#f5f5f4;border-radius:5px;padding:12px;min-width:185px}
+.ig-theme-classic .ig-sort-groups section:nth-child(3n+2){border-color:#7a3894;background:#f6effa}
+.ig-theme-classic .ig-sort-groups section:nth-child(3n){border-color:#b85c0b;background:#fff4e8}
+.ig-theme-classic .ig-sort-groups section>button{background:#000000;color:#fff;border:0;border-radius:3px;font-size:21px;box-shadow:0 3px 0 #000000;padding:14px 10px}
+.ig-theme-classic .ig-sort-groups section:nth-child(3n+2)>button{background:#7a3894;box-shadow:0 3px 0 #57256b}
+.ig-theme-classic .ig-sort-groups section:nth-child(3n)>button{background:#b85c0b;box-shadow:0 3px 0 #8d4406}
+.ig-theme-classic .ig-sort-groups section>button:hover:not(:disabled){filter:brightness(1.1);color:#fff}
+.ig-theme-classic .ig-sort-groups p{background:#fff;border:1px solid #87bb9e;color:#166534;border-radius:3px;font-size:19px;padding:12px}
+.ig-theme-classic .ig-rank-list li{border:0;border-radius:5px;background:#000000;color:#fff;box-shadow:0 4px 0 #000000;padding:13px}
+.ig-theme-classic .ig-rank-list li>div{font-size:23px;line-height:1.2;min-width:0;overflow-wrap:anywhere}
+.ig-theme-classic .ig-rank-number{background:#fff;color:#000000;border-radius:4px;flex-shrink:0;font-size:20px;width:36px;height:36px}
+.ig-theme-classic .ig-rank-list button{border:0;background:#fff;color:#000000;font-size:22px;padding:7px 13px}
+.ig-theme-classic .ig-token-answer{border:3px dashed #000000;border-radius:5px;background:#fff;min-height:105px;gap:10px}
+.ig-theme-classic .ig-token-answer>span{color:#000000;font-size:18px}
+.ig-theme-classic .ig-token-answer button,.ig-theme-classic .ig-token-pool button{background:#000000;border:0;color:#fff;border-radius:4px;box-shadow:0 4px 0 #000000;font-size:27px;min-width:50px;padding:13px 16px}
+.ig-theme-classic .ig-token-answer button:hover:not(:disabled),.ig-theme-classic .ig-token-pool button:hover:not(:disabled){background:#000000}
+.ig-theme-classic .ig-answer-label{font-size:16px;color:#000000}
+.ig-theme-classic .ig-answer-label{border:3px solid #000000;border-radius:4px;font-size:30px;padding:16px;color:#000000}
+.ig-theme-classic .ig-hangman-word{font-size:40px;font-weight:700;gap:10px;color:#000000}
+.ig-theme-classic .ig-alphabet button{background:#000000;color:#fff;border:0;border-radius:4px;box-shadow:0 3px 0 #000000;font-size:20px;width:48px;padding:11px 0}
+.ig-theme-classic .ig-alphabet button:hover:not(:disabled){background:#000000}
+.ig-theme-classic .ig-wordsearch-grid{border:2px solid #000000;border-radius:4px;background:white;padding:5px}
+.ig-theme-classic .ig-wordsearch-grid button{color:#000000;background:#fff;border:0;border-radius:2px;font-weight:700;font-size:18px}
+.ig-theme-classic .ig-wordsearch-grid button:hover:not(:disabled){background:#f5f5f4}
+.ig-theme-classic .ig-wordsearch-grid button[aria-pressed=true]{background:#f8cf46;color:#000000;box-shadow:0 0 0 2px #a77c04}
+.ig-theme-classic .ig-word-clues li{font-size:17px;border-color:#f5f5f4;padding:11px 0;overflow-wrap:anywhere}
+.ig-theme-classic .ig-crossword-grid{background:#000000;gap:1px}
+.ig-theme-classic .ig-crossword-grid label{border:0;background:#fff;border-radius:0}
+.ig-theme-classic .ig-crossword-grid .ig-crossword-active{background:#f5f5f4}
+.ig-theme-classic .ig-crossword-blank{background:#000000}
+.ig-theme-classic .ig-crossword-clues h3{color:#000000;font-size:21px}
+.ig-theme-classic .ig-crossword-clues button{border:1px solid #f5f5f4;border-radius:3px;color:#000000;background:#fff;font-size:15px}
+.ig-theme-classic .ig-crossword-clues button[aria-pressed=true]{background:#f5f5f4;box-shadow:0 0 0 1px #000000;border-color:#000000}
+.ig-theme-classic .ig-diagram-board{border:2px solid #f5f5f4;border-radius:4px;background:#fff}
+.ig-theme-classic .ig-diagram-board>button{background:#000000;color:#fff;border:2px solid #fff;border-radius:5px;box-shadow:0 2px 0 #000000;font-size:19px}
+/* Correctness colours and visible feedback take priority over the playing-piece palette. */
+.ig-theme-classic .ig-learning button.ig-correct,.ig-theme-classic .ig-learning .ig-learning-feedback.ig-correct,.ig-theme-classic .ig-learning .ig-rank-list li.ig-correct{background:#16813e;color:#fff;border-color:#0b6630;opacity:1;box-shadow:0 4px 0 #0b6630}
+.ig-theme-classic .ig-learning button.ig-incorrect,.ig-theme-classic .ig-learning .ig-learning-feedback.ig-incorrect,.ig-theme-classic .ig-learning .ig-rank-list li.ig-incorrect{background:#c5263d;color:#fff;border-color:#95182b;opacity:1;box-shadow:0 4px 0 #95182b}
+.ig-theme-classic .ig-learning .ig-crossword-grid label.ig-correct{background:#d3f5de;color:#14532d}
+.ig-theme-classic .ig-learning .ig-crossword-grid label.ig-incorrect{background:#ffe0e5;color:#8f1528}
+.ig-theme-classic .ig-learning .ig-learning-feedback>button{background:#fff;color:#000000}
+.ig-theme-classic .ig-learning-status,.ig-theme-classic .ig-learning>p[role=status]{font-size:17px;color:#000000}
+.ig-theme-classic .ig-find-match button:hover:not(:disabled),.ig-theme-classic .ig-memory-grid>button:hover:not(:disabled),.ig-theme-classic .ig-sort-groups section>button:hover:not(:disabled){background:#000000}
+.ig-theme-classic .ig-find-match button:nth-child(3n+2):hover:not(:disabled),.ig-theme-classic .ig-sort-groups section:nth-child(3n+2)>button:hover:not(:disabled){background:#7a3894}
+.ig-theme-classic .ig-memory-grid>button:nth-child(3n+2):hover:not(:disabled){background:#713c9c}
+.ig-theme-classic .ig-find-match button:nth-child(3n):hover:not(:disabled),.ig-theme-classic .ig-memory-grid>button:nth-child(3n):hover:not(:disabled),.ig-theme-classic .ig-sort-groups section:nth-child(3n)>button:hover:not(:disabled){background:#b85c0b}
+.ig-theme-classic .ig-learning .ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-correct{background:#16813e;color:#fff;box-shadow:0 4px 0 #0b6630}
+.ig-theme-classic .ig-learning .ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-incorrect{background:#c5263d;color:#fff;box-shadow:0 4px 0 #95182b}
+
+/* Quiz theme/layout values reconstructed from the captured Classic and
+   High Readability quiz, Label, Landscape, Letterbox and palette resources.
+   Layout choice follows content shape and answer count, never viewport width. */
+.ig-theme-classic .ig-quiz-player,.ig-theme-high-readability .ig-quiz-player{font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";padding:30px 24px 26px;background:#fff;color:#000;min-height:460px}
+.ig-theme-high-readability .ig-learning{font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";background:#000;color:#fff}
+.ig-theme-high-readability .ig-quiz-player{background:#000;color:#fff}
+.ig-theme-classic .ig-quiz-player>.ig-learning-intro,.ig-theme-high-readability .ig-quiz-player>.ig-learning-intro{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0;border:0}
+.ig-theme-classic .ig-quiz-content,.ig-theme-high-readability .ig-quiz-content{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-content:center;min-height:390px}
+.ig-theme-classic .ig-layout-side .ig-quiz-content,.ig-theme-high-readability .ig-layout-side .ig-quiz-content{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;gap:30px}
+.ig-theme-classic .ig-quiz-question,.ig-theme-high-readability .ig-quiz-question{min-width:0}
+.ig-theme-classic .ig-quiz-player .ig-learning-prompt,.ig-theme-high-readability .ig-quiz-player .ig-learning-prompt{margin:0 auto;max-width:100%;text-align:center}
+.ig-theme-classic .ig-quiz-player .ig-learning-prompt h2,.ig-theme-high-readability .ig-quiz-player .ig-learning-prompt h2{font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:var(--ig-quiz-prompt-size,42px);font-weight:400;line-height:1.25;letter-spacing:0;margin:0 0 20px;color:#000;overflow-wrap:anywhere}
+.ig-theme-high-readability .ig-quiz-player .ig-learning-prompt h2{color:#fff;font-weight:500}
+.ig-theme-classic .ig-quiz-player .ig-learning-prompt h2:last-child,.ig-theme-high-readability .ig-quiz-player .ig-learning-prompt h2:last-child{margin-bottom:0}
+.ig-theme-classic .ig-quiz-player .ig-learning-prompt img,.ig-theme-classic .ig-quiz-player .ig-learning-prompt video,.ig-theme-high-readability .ig-quiz-player .ig-learning-prompt img,.ig-theme-high-readability .ig-quiz-player .ig-learning-prompt video{display:block;max-width:100%;max-height:220px;border-radius:0;object-fit:contain;margin:0 auto}
+.ig-theme-classic .ig-layout-side .ig-learning-prompt img,.ig-theme-classic .ig-layout-side .ig-learning-prompt video,.ig-theme-high-readability .ig-layout-side .ig-learning-prompt img,.ig-theme-high-readability .ig-layout-side .ig-learning-prompt video{max-height:310px}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid{display:grid;grid-template-columns:repeat(var(--ig-quiz-columns,2),minmax(0,1fr));gap:14px;margin:0;max-width:none;width:100%;counter-reset:none;align-content:center}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media),.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;position:relative;width:100%;min-height:122px;padding:18px 20px;border:1px solid #00000026;border-radius:0;box-shadow:none;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:var(--ig-quiz-answer-size,34px);line-height:1.17;font-weight:500;text-align:center;color:#fff;text-shadow:none;transform:none;filter:none;overflow-wrap:anywhere;transition:background .12s,opacity .12s}
+.ig-theme-classic .ig-layout-side .ig-answer-grid>:is(button,.ig-quiz-answer-with-media),.ig-theme-high-readability .ig-layout-side .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){min-height:112px}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media)::before,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media)::before{content:none;counter-increment:none}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+1){background:#000000}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+2){background:#d11f31}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+3){background:#fe7606}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+4){background:#218748}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+5){background:#cc5dda}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+6){background:#000000}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+7){background:#3dbd85}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+8){background:#e73c04}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+9){background:#8333e6}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):hover:not(:disabled),.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):hover:not(:disabled){border:1px solid #00000026;box-shadow:none;transform:none;filter:none}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+1):hover:not(:disabled){background:#000000}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+2):hover:not(:disabled){background:#ee3f50}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+3):hover:not(:disabled){background:#ffb67a}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+4):hover:not(:disabled){background:#3dbd6e}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+5):hover:not(:disabled){background:#f29afe}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+6):hover:not(:disabled){background:#000000}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+7):hover:not(:disabled){background:#73e8b5}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+8):hover:not(:disabled){background:#ff7142}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+9):hover:not(:disabled){background:#b375ff}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){color:#000;font-weight:500;border:0}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+1){background:#f8ae72}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+2){background:#a5d09a}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+3){background:#000000}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+4){background:#cac881}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+5){background:#ffa3b6}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+6){background:#d2adff}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):hover:not(:disabled){border:0}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+1):hover:not(:disabled){background:#ffd2b1}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+2):hover:not(:disabled){background:#caf3bd}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+3):hover:not(:disabled){background:#f5f5f4}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+4):hover:not(:disabled){background:#f5f0ab}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+5):hover:not(:disabled){background:#ffcfda}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(6n+6):hover:not(:disabled){background:#e7d4ff}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media) img,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media) img{width:auto;max-width:100%;max-height:130px;border-radius:0;object-fit:contain}
+.ig-theme-classic .ig-quiz-answer-text,.ig-theme-high-readability .ig-quiz-answer-text{display:block;width:100%;min-width:0}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):disabled,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):disabled{opacity:.3}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-correct,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-correct{opacity:1;background:#218748;color:#fff;box-shadow:none;border:1px solid #126b32}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-incorrect,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-incorrect{opacity:1;background:#d11f31;color:#fff;box-shadow:none;border:1px solid #a61726}
+.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):focus-visible,.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):focus-visible{outline:3px solid #000;outline-offset:3px;box-shadow:0 0 0 6px white}
+.ig-theme-high-readability .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):focus-visible{outline-color:#fff;box-shadow:0 0 0 6px #000}
+.ig-theme-classic .ig-quiz-player .ig-statement,.ig-theme-high-readability .ig-quiz-player .ig-statement{border:0;box-shadow:none;border-radius:0;background:transparent;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:var(--ig-quiz-answer-size,34px);font-weight:500;padding:18px 0 0;margin:0 auto;color:inherit}
+.ig-theme-classic .ig-quiz-player .ig-learning-feedback,.ig-theme-high-readability .ig-quiz-player .ig-learning-feedback{border-radius:0;box-shadow:none;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:500;margin-top:24px}
+.ig-theme-classic .ig-quiz-player .ig-learning-feedback>span,.ig-theme-high-readability .ig-quiz-player .ig-learning-feedback>span{font-size:21px;font-weight:500}
+.ig-theme-high-readability .ig-learning-intro,.ig-theme-high-readability .ig-learning-status,.ig-theme-high-readability .ig-learning>p[role=status],.ig-theme-high-readability .ig-memory-count,.ig-theme-high-readability .ig-match-labels,.ig-theme-high-readability .ig-answer-label,.ig-theme-high-readability .ig-learning form>p{color:#fff}
+.ig-theme-high-readability .ig-learning-prompt h2,.ig-theme-high-readability .ig-hangman-word,.ig-theme-high-readability .ig-crossword-clues h3{color:#fff}
+.ig-theme-high-readability .ig-learning button{border-radius:0}
+.ig-theme-high-readability .ig-learning .ig-learning-primary{background:#000000;color:#000;border-color:#000000;border-radius:0}
+.ig-theme-high-readability .ig-learning .ig-learning-primary:hover:not(:disabled){background:#f5f5f4}
+.ig-theme-high-readability .ig-learning button:focus-visible,.ig-theme-high-readability .ig-learning input:focus-visible{outline:3px solid #fff;outline-offset:3px}
+/* Captured Letterbox layout uses plain letter headers, without badge shapes. */
+.ig-theme-classic .ig-layout-side .ig-quiz-content,.ig-theme-high-readability .ig-layout-side .ig-quiz-content{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.ig-theme-classic .ig-layout-side .ig-learning-prompt,.ig-theme-high-readability .ig-layout-side .ig-learning-prompt{display:flex;flex-direction:row;align-items:center;gap:20px}
+.ig-theme-classic .ig-layout-side .ig-learning-prompt h2,.ig-theme-high-readability .ig-layout-side .ig-learning-prompt h2{order:2;flex:1;font-size:var(--ig-quiz-prompt-size,56px);margin:0}
+.ig-theme-classic .ig-layout-side .ig-learning-prompt img,.ig-theme-high-readability .ig-layout-side .ig-learning-prompt img,.ig-theme-classic .ig-layout-side .ig-learning-prompt video,.ig-theme-high-readability .ig-layout-side .ig-learning-prompt video{order:1;max-width:40%;width:156px;max-height:250px;margin:0}
+.ig-theme-classic .ig-layout-side .ig-answer-grid>:is(button,.ig-quiz-answer-with-media),.ig-theme-high-readability .ig-layout-side .ig-answer-grid>:is(button,.ig-quiz-answer-with-media){flex-direction:row;min-height:126px;padding:10px;gap:20px;font-size:48px}
+.ig-quiz-answer-letter{font-size:30px;font-weight:700;flex:0 0 17%;text-align:center}
+.ig-quiz-check{display:flex;justify-content:center;align-items:center;gap:20px;margin:15px 0;font-size:16px}
+.ig-quiz-check button{background:#000000!important;color:white;border-color:#000000!important;border-radius:3px}
+.ig-answer-grid>:is(button,.ig-quiz-answer-with-media).ig-answer-selected{outline:4px solid currentColor;outline-offset:-8px}
+.ig-cloze-player{font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}
+.ig-cloze-sentence{font-size:32px;line-height:1.9!important;text-align:left;padding:20px 10px;margin:0!important;white-space:pre-wrap}
+.ig-learning .ig-cloze-blank{display:inline-block;vertical-align:baseline;min-width:100px;min-height:45px;padding:2px 12px;margin:0 6px;border:2px dashed #000000;border-radius:2px;background:#f5f5f4;font:inherit;line-height:1.25}
+.ig-learning .ig-cloze-blank.is-active{border-color:#000000;background:#f5f5f4}
+#root .ig-session .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-cloze-blank,.ig-token-answer,.ig-token-pool,.ig-rank-list li).is-drop-target{outline:3px solid #2563eb;outline-offset:3px}
+#root .ig-session .ig-game-stage .ig-learning :is(.ig-cloze-bank button,.ig-cloze-blank,.ig-token-answer button,.ig-token-pool button,.ig-rank-list li){touch-action:none;cursor:grab}
+.ig-cloze-bank{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:20px 0}
+.ig-learning .ig-cloze-bank button{font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:24px;background:#000000;color:white;border:1px solid #000000;border-radius:2px;padding:10px 18px}
+.ig-cloze-bank button:disabled{opacity:.18}
+.ig-theme-high-readability .ig-cloze-sentence{color:white}
+.ig-theme-high-readability .ig-cloze-blank{background:#222;color:white}
+
+/* The classic playable templates use Wordwall's bright tile palette. Keep this
+   scoped to the live game so the Hub toolbar and template picker stay neutral. */
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet) button:not(.ig-correct):not(.ig-incorrect),
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-match-columns,.ig-find-match,.ig-memory-grid) button:not(.ig-correct):not(.ig-incorrect){background:#2455bc;border-color:#2455bc;color:#fff;box-shadow:0 4px 0 #183e8e}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet,.ig-match-columns,.ig-find-match,.ig-memory-grid) button:nth-child(6n+2):not(.ig-correct):not(.ig-incorrect){background:#d11f31;border-color:#d11f31;box-shadow:0 4px 0 #a61726}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet,.ig-match-columns,.ig-find-match,.ig-memory-grid) button:nth-child(6n+3):not(.ig-correct):not(.ig-incorrect){background:#fe7606;border-color:#fe7606;box-shadow:0 4px 0 #c75300}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet,.ig-match-columns,.ig-find-match,.ig-memory-grid) button:nth-child(6n+4):not(.ig-correct):not(.ig-incorrect){background:#218748;border-color:#218748;box-shadow:0 4px 0 #126b32}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet,.ig-match-columns,.ig-find-match,.ig-memory-grid) button:nth-child(6n+5):not(.ig-correct):not(.ig-incorrect){background:#a43dc3;border-color:#a43dc3;box-shadow:0 4px 0 #792894}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet,.ig-match-columns,.ig-find-match,.ig-memory-grid) button:nth-child(6n+6):not(.ig-correct):not(.ig-incorrect){background:#148c96;border-color:#148c96;box-shadow:0 4px 0 #0e6670}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning :is(.ig-cloze-bank,.ig-token-pool,.ig-sort-pool,.ig-alphabet,.ig-match-columns,.ig-find-match,.ig-memory-grid) button:hover:not(:disabled):not(.ig-correct):not(.ig-incorrect){filter:brightness(1.12)}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning .ig-learning-primary:not(:disabled){background:#2455bc;box-shadow:0 4px 0 #183e8e}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning .ig-learning-primary:hover:not(:disabled){background:#346bd3;box-shadow:0 4px 0 #183e8e}
+.ig-session.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+1):not(.ig-correct):not(.ig-incorrect),
+.ig-session.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+1):hover:not(:disabled):not(.ig-correct):not(.ig-incorrect){background:#2455bc}
+.ig-session.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+6):not(.ig-correct):not(.ig-incorrect),
+.ig-session.ig-theme-classic .ig-quiz-player .ig-answer-grid>:is(button,.ig-quiz-answer-with-media):nth-child(9n+6):hover:not(:disabled):not(.ig-correct):not(.ig-incorrect){background:#148c96}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning.ig-group-sort-layout .ig-sort-pool button,
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning.ig-group-sort-layout .ig-sort-slots p.ig-sort-card {touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.ig-session.ig-theme-classic .ig-game-stage .ig-learning.ig-group-sort-layout [data-pointer-dragging="true"] {cursor:grabbing;will-change:transform}
+
+.ig-learning input.ig-answer-label.ig-correct{color:#166534;background:#dcfce7;border-color:#22c55e}
+.ig-learning input.ig-answer-label.ig-incorrect{color:#991b1b;background:#fee2e2;border-color:#f87171}
+
+.ig-typed-answer-form{margin-top:80px}
+.ig-rank-reorder{display:flex;flex-direction:row;gap:8px;flex:0 0 auto}
+.ig-learning .ig-rank-list .ig-rank-reorder>button{display:grid;place-items:center;box-sizing:border-box;width:48px;height:48px;padding:8px;border:1px solid #d6d3d1;border-radius:8px;background:#fff;color:#1c1917;box-shadow:none}
+.ig-learning .ig-rank-list .ig-rank-reorder>button:hover:not(:disabled){background:#eff6ff;border-color:#2563eb}
+.ig-learning .ig-rank-list .ig-rank-reorder>button:disabled{opacity:.38}
+.ig-rank-reorder svg{display:block;width:24px;height:24px}
+
+/* Keep rhythm notation compact beside its name, including portable activity copies. */
+#root .ig-session .ig-rhythm-order .ig-rank-list li>div{display:flex;align-items:center;gap:16px}
+#root .ig-session .ig-rhythm-order .ig-rank-list .ig-media-image{display:block;flex:0 0 80px;width:80px;height:60px;max-height:60px;margin:0;object-fit:contain;background:#fff;border-radius:6px}
+
+/* Definition choices use four large answer boxes. */
+#root .ig-session .ig-game-stage .ig-definition-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:20px}
+#root .ig-session .ig-game-stage .ig-definition-choices button{width:100%;min-width:0;min-height:88px;padding:18px 24px;white-space:normal}
+
+.ig-feedback-icon.ig-feedback-svg::before{content:none!important;display:none!important}

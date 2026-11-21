@@ -1,0 +1,150 @@
+{
+  "scope": "Necessary digital adaptations: every printed page-number/next/previous/opposite-page reference points to an actual score or answer section in the continuous digital question. Original musical wording and marking keys are unchanged.",
+  "changes": [
+    {
+      "paper": "advanced-higher-2018",
+      "original": "on the guide to the music on the next page.",
+      "digital": "on the guide to the music above."
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "original": "on the guide to the music on the previous page.",
+      "digital": "on the guide to the music above."
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "original": "guide to the music which is printed on the next page.",
+      "digital": "guide to the music which is printed below."
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "original": "on the guide to the music on the next page.",
+      "digital": "on the guide to the music below."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "original": "You may use the table on page 18 for rough working, but your final answer must be written on page 19.",
+      "digital": "You may use the table below for rough working, but your final answer must be written in the final answer section."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "original": "Write your final answers on pages 22 and 23.",
+      "digital": "Write your final answers in the final answer section."
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "original": "guide to the music which is printed on the next page.",
+      "digital": "guide to the music which is printed below."
+    },
+    {
+      "paper": "national5-2014",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2014",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2015",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2015",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2016",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2016",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2017",
+      "original": "on the next page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2017",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2018",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2018",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2019",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2019",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2022",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2022",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2023",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2023",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2024",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2024",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2025",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2025",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    },
+    {
+      "paper": "national5-2026",
+      "original": "on the following page. You will see",
+      "digital": "below. You will see"
+    },
+    {
+      "paper": "national5-2026",
+      "original": "on the opposite page",
+      "digital": "in the final answer section"
+    }
+  ]
+}

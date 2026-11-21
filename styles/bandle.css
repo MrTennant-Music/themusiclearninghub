@@ -1,0 +1,20 @@
+.bandle-toolbar{position:relative;z-index:2;display:flex;justify-content:flex-end;height:0}
+.bandle-toolbar>.bandle-fullscreen{position:absolute;top:0;right:0}
+.bandle-game-window{position:relative;box-sizing:border-box;width:100%;min-height:600px;overflow:visible;background:#fff}
+.bandle-fullscreen{display:grid;place-items:center;box-sizing:border-box;width:44px;height:44px;padding:4px;border:1px solid #d6d3d1;border-radius:50%;background:#fff;color:#292524;cursor:pointer}
+.bandle-fullscreen:hover{background:#e7e5e4}
+.bandle-fullscreen:disabled{opacity:.4;cursor:default}
+.bandle-fullscreen-exit{display:none}
+.bandle-game-window:fullscreen{position:fixed;inset:0;width:100%;height:100%;margin:0;border:0;border-radius:0;overflow-y:auto;background:#fff}
+.bandle-game-window:fullscreen>.bandle-native-game{min-height:100%;display:grid;align-items:center;background:#fff}
+.bandle-game-window:fullscreen>.bandle-fullscreen-exit{position:fixed;top:16px;right:16px;z-index:2;display:grid}
+.bandle-fullscreen-error{margin:48px 0 12px;color:#b91c1c;font-size:14px;line-height:20px}
+
+
+
+.bandle-fullscreen-stats{position:absolute;top:16px;right:76px;z-index:3;width:256px}
+.bandle-game-window:fullscreen>.bandle-native-game{padding-top:88px;box-sizing:border-box}
+
+.bandle-game-type{position:absolute;top:0;left:0;z-index:4}
+.bandle-game-window:fullscreen>.bandle-game-type{top:16px;left:16px}
+

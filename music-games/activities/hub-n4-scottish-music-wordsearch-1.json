@@ -1,0 +1,125 @@
+{
+  "id": "hub-n4-scottish-music-wordsearch-1",
+  "level": "N4",
+  "title": "Scottish Music 1",
+  "instructions": "",
+  "description": "Revise Scottish Music concepts introduced up to National 4, including instruments and features used in related Celtic music.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Scottish Music",
+    "National 4"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-1",
+      "prompt": "Name the broad national musical tradition encompassing the folk songs, dances and instrumental music of Scotland.",
+      "answer": "Scottish",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-2",
+      "prompt": "An opening musical phrase is followed by a responding phrase.",
+      "answer": "Question and answer",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-3",
+      "prompt": "A processional or military-style piece with a strong, regular walking pulse, usually organised in two or four beats per bar. Name this type of music.",
+      "answer": "March",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-4",
+      "prompt": "A fast Scottish dance in simple duple or quadruple time, characterised by flowing, even running quavers. Name the dance.",
+      "answer": "Reel",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-5",
+      "prompt": "A dance in simple triple time with three beats in each bar.",
+      "answer": "Waltz",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-6",
+      "prompt": "A soloist or group performs without any supporting accompaniment. What term describes the absence of accompaniment?",
+      "answer": "Unaccompanied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-7",
+      "prompt": "A free-reed instrument sounded by opening and closing bellows.",
+      "answer": "Accordion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-8",
+      "prompt": "A six-string guitar with a hollow body that resonates and amplifies the vibrating strings without electricity.",
+      "answer": "Acoustic guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-scottish-music-wordsearch-1-9",
+      "prompt": "A wind instrument with an air-filled bag, a chanter for the melody and one or more drone pipes that sustain continuous notes.",
+      "answer": "Bagpipes",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T22:00:00.000Z",
+  "editorMode": "with-clues"
+}

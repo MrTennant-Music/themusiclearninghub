@@ -1,0 +1,127 @@
+[
+  {
+    "number": 1,
+    "time": 4,
+    "dynamic": "pianissimo",
+    "meaning": [
+      "",
+      "Very quiet"
+    ],
+    "notes": [
+      [
+        "G4",
+        "dotted-crotchet",
+        390
+      ],
+      [
+        "A4",
+        "quaver",
+        500
+      ],
+      [
+        "B4",
+        "minim",
+        640
+      ]
+    ],
+    "end": "double"
+  },
+  {
+    "number": 2,
+    "time": 2,
+    "dynamic": "fortissimo",
+    "meaning": [
+      "",
+      "Very loud"
+    ],
+    "notes": [
+      [
+        "G4",
+        "dotted-quaver",
+        400,
+        "a"
+      ],
+      [
+        "A4",
+        "semiquaver",
+        500,
+        "a"
+      ],
+      [
+        "B4",
+        "crotchet",
+        650
+      ]
+    ],
+    "end": "double"
+  },
+  {
+    "number": 3,
+    "time": 3,
+    "key": "G major",
+    "dynamic": "sforzato",
+    "meaning": [
+      "",
+      "Sudden strong accent"
+    ],
+    "notes": [
+      [
+        "F5",
+        "minim",
+        450
+      ],
+      [
+        "D5",
+        "crotchet",
+        630
+      ]
+    ],
+    "end": "repeat"
+  },
+  {
+    "number": 4,
+    "time": 4,
+    "key": "F major",
+    "notes": [
+      [
+        "A4",
+        "dotted-minim",
+        450
+      ],
+      [
+        "B4",
+        "crotchet",
+        630
+      ]
+    ],
+    "end": "double"
+  },
+  {
+    "number": 5,
+    "time": 3,
+    "scotchSnap": [
+      0,
+      1
+    ],
+    "notes": [
+      [
+        "G4",
+        "semiquaver",
+        400,
+        "a"
+      ],
+      [
+        "A4",
+        "dotted-quaver",
+        500,
+        "a"
+      ],
+      [
+        "B4",
+        "minim",
+        650
+      ]
+    ],
+    "end": "double"
+  }
+]

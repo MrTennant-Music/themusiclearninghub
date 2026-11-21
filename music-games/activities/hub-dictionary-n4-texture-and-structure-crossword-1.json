@@ -1,0 +1,116 @@
+{
+  "id": "hub-dictionary-n4-texture-and-structure-crossword-1",
+  "level": "N4",
+  "title": "Texture and Structure",
+  "instructions": "",
+  "description": "Revise texture and structure with 6 Music Dictionary concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Texture and Structure",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-texture-and-structure-crossword-1-mc-0106",
+      "prompt": "A solo section in a concerto that lets the performer show musical and technical skill.",
+      "answer": "Cadenza",
+      "distractors": [
+        "Ternary / ABA",
+        "Theme and variation",
+        "Verse and chorus"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-texture-and-structure-crossword-1-mc-0107",
+      "prompt": "A strict type of imitation in which one part begins a melody and another enters later with the same melody.",
+      "answer": "Canon",
+      "distractors": [
+        "Imitation",
+        "Cadenza",
+        "Middle 8"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-texture-and-structure-crossword-1-mc-0108",
+      "prompt": "A musical idea in one part is copied shortly afterwards by another part.",
+      "answer": "Imitation",
+      "distractors": [
+        "Canon",
+        "Theme and variation",
+        "Verse and chorus"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-texture-and-structure-crossword-1-mc-0110",
+      "prompt": "A three-part form consisting of an opening A section, a contrasting B section and a return of the A section.",
+      "answer": "Ternary",
+      "distractors": [
+        "Theme and variation",
+        "Canon",
+        "Imitation"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-texture-and-structure-crossword-1-mc-0111",
+      "prompt": "A main melody or musical idea is stated and then returns several times in altered forms.",
+      "answer": "Theme and variation",
+      "distractors": [
+        "Ternary / ABA",
+        "Canon",
+        "Imitation"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-texture-and-structure-crossword-1-mc-0112",
+      "prompt": "Verses repeat the same music with new words. A contrasting chorus returns with the same or similar words and music.",
+      "answer": "Verse and chorus",
+      "distractors": [
+        "Middle 8",
+        "Canon",
+        "Imitation"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

@@ -1,0 +1,863 @@
+{
+  "checkedOn": "2026-11-01",
+  "note": "Classical works use composer portraits instead of recording artwork. Portraits are selected from identity-matched biographies and Wikimedia files. Book covers, score pages and anonymous unrelated musicians are excluded. Entries without a verified likeness use an explicitly labelled neutral composer placeholder. Source credits are retained with every portrait.",
+  "composers": {
+    "Alban Berg": {
+      "src": "./music-dictionary/composer-portraits/alban-berg.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alban_Berg_(1885%E2%80%931935)_~1930_%C2%A9_Max_Fenichel_(1885%E2%80%931942).jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Alban_Berg_%281885%E2%80%931935%29_~1930_%C2%A9_Max_Fenichel_%281885%E2%80%931942%29.jpg/330px-Alban_Berg_%281885%E2%80%931935%29_~1930_%C2%A9_Max_Fenichel_%281885%E2%80%931942%29.jpg",
+      "credit": "Max Fenichel",
+      "license": "Public domain"
+    },
+    "Anton Webern": {
+      "src": "./music-dictionary/composer-portraits/anton-webern.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anton_Webern_in_Stettin,_October_1912.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Anton_Webern_in_Stettin%2C_October_1912.jpg/330px-Anton_Webern_in_Stettin%2C_October_1912.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Anton_Webern",
+      "license": "Public domain"
+    },
+    "Antonio Vivaldi": {
+      "src": "./music-dictionary/composer-portraits/antonio-vivaldi.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vivaldi.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Vivaldi.jpg/330px-Vivaldi.jpg",
+      "credit": "Unidentified painter",
+      "license": "Public domain"
+    },
+    "Antonín Dvořák": {
+      "src": "./music-dictionary/composer-portraits/antonin-dvorak.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dvorak.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Dvorak.jpg/330px-Dvorak.jpg",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Arcangelo Corelli": {
+      "src": "./music-dictionary/composer-portraits/arcangelo-corelli.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arcangelo_Corelli,_portrait_by_Hugh_Howard_(1697).jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Arcangelo_Corelli%2C_portrait_by_Hugh_Howard_%281697%29.jpg",
+      "credit": "Hugh Howard",
+      "license": "Public domain"
+    },
+    "Arnold Schoenberg": {
+      "src": "./music-dictionary/composer-portraits/arnold-schoenberg.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%98%BF%E8%AF%BA%E5%BE%B7%C2%B7%E5%8B%8B%E4%BC%AF%E6%A0%BC%E8%82%96%E5%83%8F.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/%E9%98%BF%E8%AF%BA%E5%BE%B7%C2%B7%E5%8B%8B%E4%BC%AF%E6%A0%BC%E8%82%96%E5%83%8F.jpg",
+      "credit": "Man Ray",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "Camille Saint-Saëns": {
+      "src": "./music-dictionary/composer-portraits/camille-saint-saens.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint-Sa%C3%ABns-circa-1880.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Saint-Sa%C3%ABns-circa-1880.jpg",
+      "credit": "Charles Reutlinger (1816–81)",
+      "license": "Public domain"
+    },
+    "Carlos Salzedo": {
+      "src": "./music-dictionary/composer-portraits/carlos-salzedo.png",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carlos_Salzedo_(1885%E2%80%931961).png",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Carlos_Salzedo_%281885%E2%80%931961%29.png",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Carmel Curiel": {
+      "src": "./music-dictionary/composer-portraits/carmel-curiel.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://www.fhnw.ch/de/musik/aktuelles/news-storys/alle/darmstaedter-ferienkurse",
+      "imageUrl": "https://www.fhnw.ch/de/musik/aktuelles/news-storys/alle/darmstaedter-ferienkurse/carmel-photo-by-haim-kimhi-1.jpg/@@images/image-800-fb2b653a771524197b30c693c998260b.jpeg",
+      "credit": "Photo: Haim Kimhi",
+      "license": "See source for image credit and terms"
+    },
+    "Charles Gounod": {
+      "src": "./music-dictionary/composer-portraits/charles-gounod.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Gounod_-_photogr._Bayard_%26_Bertall_-_btv1b84542916.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Charles_Gounod_-_photogr._Bayard_%26_Bertall_-_btv1b84542916.jpg",
+      "credit": "Bayard & Bertall, restored by  Adam Cuerden",
+      "license": "Public domain"
+    },
+    "Christian Petzold": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Christoph Willibald Gluck": {
+      "src": "./music-dictionary/composer-portraits/christoph-willibald-gluck.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Christoph_Willibald_Gluck",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Joseph_Siffred_Duplessis_-_Christoph_Willibald_Gluck_-_Google_Art_Project.jpg/3840px-Joseph_Siffred_Duplessis_-_Christoph_Willibald_Gluck_-_Google_Art_Project.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Christoph_Willibald_Gluck",
+      "license": "See source for image credit and terms"
+    },
+    "Claude Debussy": {
+      "src": "./music-dictionary/composer-portraits/claude-debussy.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Debussy_by_Atelier_Nadar.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Claude_Debussy_by_Atelier_Nadar.jpg/330px-Claude_Debussy_by_Atelier_Nadar.jpg",
+      "credit": "Adam Cuerden",
+      "license": "Public domain"
+    },
+    "César Franck": {
+      "src": "./music-dictionary/composer-portraits/cesar-franck.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:C%C3%A9sar_Franck_by_Pierre_Petit.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/C%C3%A9sar_Franck_by_Pierre_Petit.jpg",
+      "credit": "Pierre Petit",
+      "license": "Public domain"
+    },
+    "Daniel Alomía Robles": {
+      "src": "./music-dictionary/composer-portraits/daniel-alomia-robles.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daniel_Alom%C3%ADa_Robles,_portrait.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Daniel_Alom%C3%ADa_Robles%2C_portrait.jpg",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Daniel McDonald": {
+      "src": "./music-dictionary/composer-portraits/daniel-mcdonald.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://soundcloud.com/daniel-gonko",
+      "imageUrl": "https://i1.sndcdn.com/avatars-000081513636-my9loo-t500x500.jpg",
+      "credit": "Portrait source: https://soundcloud.com/daniel-gonko",
+      "license": "See source for image credit and terms"
+    },
+    "Darius Milhaud": {
+      "src": "./music-dictionary/composer-portraits/darius-milhaud.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Darius_Milhaud",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Darius_Milhaud_1923_%28cropped_and_restored%29.jpg/3840px-Darius_Milhaud_1923_%28cropped_and_restored%29.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Darius_Milhaud",
+      "license": "See source for image credit and terms"
+    },
+    "David Barton": {
+      "src": "./music-dictionary/composer-portraits/david-barton.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://www.davidbartonmusic.co.uk/",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6819357a960b3242d188eaa9/d2f11363-1e8b-4a53-bf71-f7baa5c2aacf/David+Barton+music+teacher",
+      "credit": "Portrait source: https://www.davidbartonmusic.co.uk/",
+      "license": "See source for image credit and terms"
+    },
+    "Dmitri Shostakovich": {
+      "src": "./music-dictionary/composer-portraits/dmitri-shostakovich.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%D0%A8%D0%BE%D1%81%D1%82%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8%D1%87.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%D0%A8%D0%BE%D1%81%D1%82%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8%D1%87.jpg/250px-%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%D0%A8%D0%BE%D1%81%D1%82%D0%B0%D0%BA%D0%BE%D0%B2%D0%B8%D1%87.jpg",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Edvard Grieg": {
+      "src": "./music-dictionary/composer-portraits/edvard-grieg.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edvard_Grieg_portrait_(cropped).jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Edvard_Grieg_portrait_%28cropped%29.jpg/250px-Edvard_Grieg_portrait_%28cropped%29.jpg",
+      "credit": "Bergen Public Library Norway  from Bergen, Norway",
+      "license": "No restrictions",
+      "licenseUrl": "https://www.flickr.com/commons/usage/"
+    },
+    "Elizabeth Raum": {
+      "src": "./music-dictionary/composer-portraits/elizabeth-raum.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Raum,_2021.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Elizabeth_Raum%2C_2021.jpg",
+      "credit": "Marc LaFoy",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "Elliott Carter": {
+      "src": "./music-dictionary/composer-portraits/elliott-carter.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Elliott_Carter",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f6/Elliott_Carter.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Elliott_Carter",
+      "license": "See source for image credit and terms"
+    },
+    "Felix Mendelssohn": {
+      "src": "./music-dictionary/composer-portraits/felix-mendelssohn.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Felix_Mendelssohn_Bartholdy_by_Eduard_Magnus_(1833).jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Felix_Mendelssohn_Bartholdy_by_Eduard_Magnus_%281833%29.jpg/250px-Felix_Mendelssohn_Bartholdy_by_Eduard_Magnus_%281833%29.jpg",
+      "credit": "Eduard Magnus",
+      "license": "Public domain"
+    },
+    "Franz Schubert": {
+      "src": "./music-dictionary/composer-portraits/franz-schubert.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg/250px-Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg",
+      "credit": "Wilhelm August Rieder",
+      "license": "Public domain"
+    },
+    "Franz Wilhelm Ferling": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Frédéric Chopin": {
+      "src": "./music-dictionary/composer-portraits/frederic-chopin.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederic_Chopin_photo.jpeg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Frederic_Chopin_photo.jpeg/330px-Frederic_Chopin_photo.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Louis-Auguste Bisson",
+      "license": "Public domain"
+    },
+    "Gabriel-Pierre Berlioz": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Georg Philipp Telemann": {
+      "src": "./music-dictionary/composer-portraits/georg-philipp-telemann.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Telemann.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Telemann.jpg/500px-Telemann.jpg",
+      "credit": "Valentin Daniel Preisler",
+      "license": "Public domain"
+    },
+    "George Frideric Handel": {
+      "src": "./music-dictionary/composer-portraits/george-frideric-handel.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Frideric_Handel_by_Balthasar_Denner.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/George_Frideric_Handel_by_Balthasar_Denner.jpg/330px-George_Frideric_Handel_by_Balthasar_Denner.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Attributed to   Balthasar Denner",
+      "license": "Public domain"
+    },
+    "Georges Bizet": {
+      "src": "./music-dictionary/composer-portraits/georges-bizet.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_bizet.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Georges_bizet.jpg/500px-Georges_bizet.jpg",
+      "credit": "Étienne Carjat",
+      "license": "Public domain"
+    },
+    "Giacomo Puccini": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Giacomo_Puccini_LCCN2005685154_%281%29_cropped.jpg/250px-Giacomo_Puccini_LCCN2005685154_%281%29_cropped.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giacomo_Puccini_LCCN2005685154_(1)_cropped.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Giacomo_Puccini_LCCN2005685154_%281%29_cropped.jpg/330px-Giacomo_Puccini_LCCN2005685154_%281%29_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+      "license": "Public domain"
+    },
+    "Giovanni Battista Pergolesi": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Giovanni_Battista_Pergolesi.jpg/250px-Giovanni_Battista_Pergolesi.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Pergolesi.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Giovanni_Battista_Pergolesi.jpg/330px-Giovanni_Battista_Pergolesi.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Domenico Antonio Vaccaro",
+      "license": "Public domain"
+    },
+    "Giovanni Gabrieli": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Giovanni Giacomo Gastoldi": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Giovanni_Giacomo_Gastoldi%2C_by_Northern_Italian_School_of_the_early_17th_century.jpg/250px-Giovanni_Giacomo_Gastoldi%2C_by_Northern_Italian_School_of_the_early_17th_century.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Giacomo_Gastoldi,_by_Northern_Italian_School_of_the_early_17th_century.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Giovanni_Giacomo_Gastoldi%2C_by_Northern_Italian_School_of_the_early_17th_century.jpg/330px-Giovanni_Giacomo_Gastoldi%2C_by_Northern_Italian_School_of_the_early_17th_century.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Northern Italian School of first half of the 17th century",
+      "license": "Public domain"
+    },
+    "Giovanni Pierluigi da Palestrina": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Giovanni_Pierluigi_da_Palestrina.jpg/250px-Giovanni_Pierluigi_da_Palestrina.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Pierluigi_da_Palestrina.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Giovanni_Pierluigi_da_Palestrina.jpg/330px-Giovanni_Pierluigi_da_Palestrina.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Giovanni_Pierluigi_da_Palestrina",
+      "license": "Public domain"
+    },
+    "Giuseppe Verdi": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Giuseppe_Verdi_by_Ferdinand_Mulnier_BW.jpg/250px-Giuseppe_Verdi_by_Ferdinand_Mulnier_BW.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giuseppe_Verdi_by_Ferdinand_Mulnier_BW.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Giuseppe_Verdi_by_Ferdinand_Mulnier_BW.jpg/330px-Giuseppe_Verdi_by_Ferdinand_Mulnier_BW.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Ferdinand Mulnier",
+      "license": "Public domain"
+    },
+    "Greg Danner": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Gregorio Allegri": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Gregorio_Allegri_Romano01.jpg/250px-Gregorio_Allegri_Romano01.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gregorio_Allegri_Romano01.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Gregorio_Allegri_Romano01.jpg/330px-Gregorio_Allegri_Romano01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "James Caldwall",
+      "license": "Public domain"
+    },
+    "Gustav Holst": {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Gustav-Holst-1921.jpg/250px-Gustav-Holst-1921.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gustav_Holst",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/f/f6/Gustav-Holst-1921.jpg/330px-Gustav-Holst-1921.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Gustav_Holst",
+      "license": "See source for image credit and terms"
+    },
+    "Henry Cowell": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Henry_Cowell_portrait_NYPL_4002097_%28cropped%29.jpg/250px-Henry_Cowell_portrait_NYPL_4002097_%28cropped%29.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henry_Cowell_portrait_NYPL_4002097_(cropped).jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Henry_Cowell_portrait_NYPL_4002097_%28cropped%29.jpg/330px-Henry_Cowell_portrait_NYPL_4002097_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Unknown photographer",
+      "license": "Public domain"
+    },
+    "Henry Purcell": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Portrait_of_Henry_Purcell_%28cropped%29.png/250px-Portrait_of_Henry_Purcell_%28cropped%29.png",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Henry_Purcell_(cropped).png",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Portrait_of_Henry_Purcell_%28cropped%29.png/330px-Portrait_of_Henry_Purcell_%28cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "John Closterman",
+      "license": "Public domain"
+    },
+    "Hugo Wolf": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Hugo_Wolf.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hugo_Wolf.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Hugo_Wolf.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "credit": "The original uploader was  Dr. Meierhofer  at  German Wikipedia .",
+      "license": "Public domain"
+    },
+    "Igor Stravinsky": {
+      "src": "./music-dictionary/composer-portraits/igor-stravinsky.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Igor_Stravinsky",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Igor_Stravinsky_LOC_32392u.jpg/3840px-Igor_Stravinsky_LOC_32392u.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Igor_Stravinsky",
+      "license": "See source for image credit and terms"
+    },
+    "James Scott": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/James_Scott_%28composer%29_c._1904.jpg/250px-James_Scott_%28composer%29_c._1904.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Scott_(composer)_c._1904.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/James_Scott_%28composer%29_c._1904.jpg/330px-James_Scott_%28composer%29_c._1904.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Jean Sibelius": {
+      "src": "./music-dictionary/composer-portraits/jean-sibelius.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Sibelius_circa_1898-1900_(3x4_cropped).jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Jean_Sibelius_circa_1898-1900_%283x4_cropped%29.jpg",
+      "credit": "Photographerː Daniel Nyblin",
+      "license": "Public domain"
+    },
+    "Johann Jakob Froberger": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Johann Pachelbel": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Johann Sebastian Bach": {
+      "src": "./music-dictionary/composer-portraits/johann-sebastian-bach.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Johann_Sebastian_Bach.jpg/330px-Johann_Sebastian_Bach.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Elias Gottlob Haussmann",
+      "license": "Public domain"
+    },
+    "Johann Strauss I": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Strau%C3%9FVaterLitho.jpg/250px-Strau%C3%9FVaterLitho.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Strau%C3%9FVaterLitho.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Strau%C3%9FVaterLitho.jpg/330px-Strau%C3%9FVaterLitho.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Josef Kriehuber",
+      "license": "Public domain"
+    },
+    "Johannes Brahms": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/JohannesBrahms_%28cropped%29.jpg/250px-JohannesBrahms_%28cropped%29.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:JohannesBrahms_(cropped).jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/JohannesBrahms_%28cropped%29.jpg/330px-JohannesBrahms_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "C. Brasch , Berlin ( biography )",
+      "license": "Public domain"
+    },
+    "John Dowland": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "Article illustration is a book cover or anonymous musician, not a verified composer portrait."
+    },
+    "John Farmer": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "Article illustration is a book cover or anonymous musician, not a verified composer portrait."
+    },
+    "John Goss": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/John-Goss-portrait.jpg/250px-John-Goss-portrait.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:John-Goss-portrait.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/John-Goss-portrait.jpg/330px-John-Goss-portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Unknown artist Unknown artist",
+      "license": "Public domain"
+    },
+    "John Philip Sousa": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/John_Philip_Sousa_in_1922.jpg/250px-John_Philip_Sousa_in_1922.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Philip_Sousa_in_1922.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/John_Philip_Sousa_in_1922.jpg/330px-John_Philip_Sousa_in_1922.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Collection: The March King: John Philip Sousa (Original author unknown)",
+      "license": "Public domain"
+    },
+    "John Stainer": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/SirJohnStainer.JPG/250px-SirJohnStainer.JPG",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:SirJohnStainer.JPG",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/SirJohnStainer.JPG/330px-SirJohnStainer.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Contemporary photograph",
+      "license": "Public domain"
+    },
+    "Joseph Haydn": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Joseph_Haydn.jpg/250px-Joseph_Haydn.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Haydn.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Joseph_Haydn.jpg/330px-Joseph_Haydn.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Thomas Hardy",
+      "license": "Public domain"
+    },
+    "Julius Fučík": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Fucik_portait3.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fucik_portait3.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Fucik_portait3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Leoš Janáček": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Leo%C5%A1_Jan%C3%A1%C4%8Dek_el_1914.png/250px-Leo%C5%A1_Jan%C3%A1%C4%8Dek_el_1914.png",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leo%C5%A1_Jan%C3%A1%C4%8Dek_el_1914.png",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Leo%C5%A1_Jan%C3%A1%C4%8Dek_el_1914.png/330px-Leo%C5%A1_Jan%C3%A1%C4%8Dek_el_1914.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Unkonwn",
+      "license": "Public domain"
+    },
+    "Ludwig van Beethoven": {
+      "src": "./music-dictionary/composer-portraits/ludwig-van-beethoven.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg/3840px-Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
+      "license": "See source for image credit and terms"
+    },
+    "Muzio Clementi": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Muzio_Clementi.jpeg/250px-Muzio_Clementi.jpeg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muzio_Clementi.jpeg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Muzio_Clementi.jpeg/330px-Muzio_Clementi.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Thomas Hardy",
+      "license": "Public domain"
+    },
+    "Nate Chivers": {
+      "src": "./music-dictionary/composer-portraits/nate-chivers.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://nchiverscomposer.com/about/",
+      "imageUrl": "https://nchiverscomposer.com/wp-content/uploads/2023/12/image.png",
+      "credit": "Portrait source: https://nchiverscomposer.com/about/",
+      "license": "See source for image credit and terms"
+    },
+    "Orlando Gibbons": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Orlando_Gibbons.jpg/250px-Orlando_Gibbons.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orlando_Gibbons.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Orlando_Gibbons.jpg/330px-Orlando_Gibbons.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Paolo Vivaldi": {
+      "src": "./music-dictionary/composer-portraits/paolo-vivaldi.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://saintlouis.eu/docenti/paolo-vivaldi/",
+      "imageUrl": "https://saintlouis.eu/wp-content/uploads/2019/10/Paolo-Vivaldi.webp",
+      "credit": "Portrait source: https://saintlouis.eu/docenti/paolo-vivaldi/",
+      "license": "See source for image credit and terms"
+    },
+    "Paul Paccione": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "Image inspected: printed music/book cover rather than a composer portrait."
+    },
+    "Paul Stanhope": {
+      "src": "./music-dictionary/composer-portraits/paul-stanhope.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://www.paulstanhope.com/",
+      "imageUrl": "https://www.paulstanhope.com/images/pic06.jpg",
+      "credit": "Portrait source: https://www.paulstanhope.com/",
+      "license": "See source for image credit and terms"
+    },
+    "Philip Glass": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Philip_Glass_in_Florence%2C_Italy_-_1993_%28cropped%29.jpg/250px-Philip_Glass_in_Florence%2C_Italy_-_1993_%28cropped%29.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philip_Glass_in_Florence,_Italy_-_1993_(cropped).jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Philip_Glass_in_Florence%2C_Italy_-_1993_%28cropped%29.jpg/330px-Philip_Glass_in_Florence%2C_Italy_-_1993_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Pasquale Salerno",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "Pierre Schaeffer": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pierre_Schaeffer_%281960%29_%28cropped%29.jpg/250px-Pierre_Schaeffer_%281960%29_%28cropped%29.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pierre_Schaeffer_(1960)_(cropped).jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Pierre_Schaeffer_%281960%29_%28cropped%29.jpg/330px-Pierre_Schaeffer_%281960%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Marquis",
+      "license": "Public domain"
+    },
+    "Pyotr Ilyich Tchaikovsky": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tchaikovsky_by_Reutlinger_%28cropped%29.jpg/250px-Tchaikovsky_by_Reutlinger_%28cropped%29.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tchaikovsky_by_Reutlinger_(cropped).jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Tchaikovsky_by_Reutlinger_%28cropped%29.jpg/330px-Tchaikovsky_by_Reutlinger_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Émile Reutlinger",
+      "license": "Public domain"
+    },
+    "Ralph Vaughan Williams": {
+      "src": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Ralph-Vaughan-Williams-by-Hopp%C3%A9-1921.jpg/250px-Ralph-Vaughan-Williams-by-Hopp%C3%A9-1921.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ralph_Vaughan_Williams",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c0/Ralph-Vaughan-Williams-by-Hopp%C3%A9-1921.jpg/330px-Ralph-Vaughan-Williams-by-Hopp%C3%A9-1921.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/Ralph_Vaughan_Williams",
+      "license": "See source for image credit and terms"
+    },
+    "Richard Wagner": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/RichardWagner.jpg/250px-RichardWagner.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:RichardWagner.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/RichardWagner.jpg/330px-RichardWagner.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Franz Hanfstaengl",
+      "license": "Public domain"
+    },
+    "Robert Schumann": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Robert_Schumann_1839.jpg/250px-Robert_Schumann_1839.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Schumann_1839.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Robert_Schumann_1839.jpg/330px-Robert_Schumann_1839.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Josef Kriehuber",
+      "license": "Public domain"
+    },
+    "Samantha Hogan": {
+      "src": "./music-dictionary/composer-portraits/samantha-hogan.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://samanthahogan.com/bio/",
+      "imageUrl": "https://samanthahogan.com/wp-content/uploads/2024/09/Headshot-YES.jpg",
+      "credit": "Portrait source: https://samanthahogan.com/bio/",
+      "license": "See source for image credit and terms"
+    },
+    "Samuel A. Ward": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/3/31/Samuel_Augustus_Ward.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samuel_Augustus_Ward.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Samuel_Augustus_Ward.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "credit": "Unknown author Unknown author",
+      "license": "Public domain"
+    },
+    "Samuel Barber": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Samuel_Barber.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Samuel_Barber.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Samuel_Barber.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "credit": "Carl Van Vechten",
+      "license": "Public domain"
+    },
+    "Samuel Gossner": {
+      "src": "./music-dictionary/composer-portraits/samuel-gossner.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://sgossner.versilian-studios.com/",
+      "imageUrl": "https://sgossner.versilian-studios.com/wp-content/uploads/2023/08/sgossner_photo.jpg",
+      "credit": "Portrait source: https://sgossner.versilian-studios.com/",
+      "license": "See source for image credit and terms"
+    },
+    "Sebastian Havner": {
+      "src": "./music-dictionary/composer-portraits/sebastian-havner.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://www.vigilantesindoorpercussion.org/staff",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/56425ed6e4b02d0ff71f88ab/7d373ecb-b98e-4733-80d7-b1b78754414f/sebastian.jpg",
+      "credit": "Portrait source: https://www.vigilantesindoorpercussion.org/staff",
+      "license": "See source for image credit and terms"
+    },
+    "Sergei Prokofiev": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Sergei_Prokofiev_circa_1918_over_Chair_Bain.jpg/250px-Sergei_Prokofiev_circa_1918_over_Chair_Bain.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sergei_Prokofiev_circa_1918_over_Chair_Bain.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Sergei_Prokofiev_circa_1918_over_Chair_Bain.jpg/330px-Sergei_Prokofiev_circa_1918_over_Chair_Bain.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Bain News Service, publisher",
+      "license": "Public domain"
+    },
+    "Shipley Douglas": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Sofia Gubaidulina": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Sofia_Gubaidulina_%282016-11-03%29.jpg/250px-Sofia_Gubaidulina_%282016-11-03%29.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sofia_Gubaidulina_(2016-11-03).jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Sofia_Gubaidulina_%282016-11-03%29.jpg/330px-Sofia_Gubaidulina_%282016-11-03%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Mikhail Kozlovsky",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "Steve Reich": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Holland_Festival_componist_Steve_Reich_kop%2C_Bestanddeelnr_928-6490.jpg/250px-Holland_Festival_componist_Steve_Reich_kop%2C_Bestanddeelnr_928-6490.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Holland_Festival_componist_Steve_Reich_kop,_Bestanddeelnr_928-6490.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Holland_Festival_componist_Steve_Reich_kop%2C_Bestanddeelnr_928-6490.jpg/330px-Holland_Festival_componist_Steve_Reich_kop%2C_Bestanddeelnr_928-6490.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Hans Peters  for  Anefo",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "Thomas Campion": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "Article illustration is a book cover or anonymous musician, not a verified composer portrait."
+    },
+    "Thomas Morley": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "Image inspected: printed music/book cover rather than a composer portrait."
+    },
+    "Thomas Tallis": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tallis_crop.png/250px-Tallis_crop.png",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tallis_crop.png",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Tallis_crop.png/330px-Tallis_crop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Engraving by Niccolò Haym after a portrait by Gerard van der Gucht",
+      "license": "Public domain"
+    },
+    "Thomas Weelkes": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "position": "50% 50%",
+      "note": "No verified portrait located; neutral composer placeholder used."
+    },
+    "Tielman Susato": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/20/Tielman_Susato_Gravure.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tielman_Susato_Gravure.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Tielman_Susato_Gravure.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "credit": "Printer: Tielman Susato",
+      "license": "Public domain"
+    },
+    "Tommy Goddard": {
+      "src": "./music-dictionary/composer-portraits/tommy-goddard.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://www.tommygoddardmusic.com/?page_id=3279",
+      "imageUrl": "https://www.TommyGoddardMusic.com/wp-content/uploads/2023/04/cropped-TRBC-2-1-scaled-1.jpeg",
+      "credit": "Portrait source: https://www.tommygoddardmusic.com/?page_id=3279",
+      "license": "See source for image credit and terms"
+    },
+    "Vincenzo Bellini": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lucchini-Bellini.jpg/250px-Lucchini-Bellini.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucchini-Bellini.jpg",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Lucchini-Bellini.jpg/330px-Lucchini-Bellini.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "credit": "Pietro Luchini",
+      "license": "Public domain"
+    },
+    "William Byrd": {
+      "src": "./music-dictionary/composer-portraits/william-byrd.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://en.wikipedia.org/wiki/William_Byrd",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/William_Byrd_%281543-1623%29.jpg/3840px-William_Byrd_%281543-1623%29.jpg",
+      "credit": "Portrait source: https://en.wikipedia.org/wiki/William_Byrd",
+      "license": "See source for image credit and terms"
+    },
+    "Wolfgang Amadeus Mozart": {
+      "src": "./music-dictionary/composer-portraits/wolfgang-amadeus-mozart.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Mozart_Family_-_Wolfgang_Amadeus_Mozart_headshot.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/The_Mozart_Family_-_Wolfgang_Amadeus_Mozart_headshot.jpg/250px-The_Mozart_Family_-_Wolfgang_Amadeus_Mozart_headshot.jpg",
+      "credit": "Johann Nepomuk della Croce",
+      "license": "Public domain"
+    },
+    "Gioachino Rossini": {
+      "src": "./music-dictionary/composer-portraits/gioachino-rossini.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rossini_young-circa-1815.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Rossini_young-circa-1815.jpg",
+      "credit": "Portrait, circa 1815 (Wikimedia Commons)",
+      "license": "Public domain"
+    },
+    "Jacques Offenbach": {
+      "src": "./music-dictionary/composer-portraits/jacques-offenbach.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacques_Offenbach_by_Nadar.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Jacques_Offenbach_by_Nadar.jpg",
+      "credit": "Nadar",
+      "license": "Public domain"
+    },
+    "Richard Strauss": {
+      "src": "./music-dictionary/composer-portraits/richard-strauss.jpg",
+      "status": "portrait",
+      "position": "50% 15%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Strauss_richard.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Strauss_richard.jpg",
+      "credit": "Wilhelm Willinger",
+      "license": "Public domain"
+    },
+    "Nikolai Rimsky-Korsakov": {
+      "src": "./music-dictionary/composer-portraits/nikolai-rimsky-korsakov.jpg",
+      "status": "portrait",
+      "position": "50% 15%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikolai_A._Rimsky-Korsakov.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Nikolai_A._Rimsky-Korsakov.jpg",
+      "credit": "Karl Fischer",
+      "license": "Public domain"
+    },
+    "Ed Lemley": {
+      "src": "./ui-icons/assessment-cover-quavers.svg",
+      "status": "no-verified-portrait",
+      "sourceUrl": "https://drummingmad.com/scores/",
+      "note": "Rudimental composer credited by publisher; no verified portrait selected."
+    },
+    "Victor Ewald": {
+      "src": "./music-dictionary/composer-portraits/victor-ewald.webp",
+      "status": "portrait",
+      "sourceUrl": "https://sofiaphilharmonic.com/en/artists/victor-ewald-en",
+      "imageUrl": "https://pub-758bf99221914000bd3321fa305e14a0.r2.dev/evald-9c94a5853ed9.webp",
+      "credit": "Historical portrait supplied by Sofia Philharmonic biography",
+      "license": "Not specified by source"
+    },
+    "John H. Beck": {
+      "src": "./music-dictionary/composer-portraits/john-h-beck.jpg",
+      "status": "portrait",
+      "sourceUrl": "https://www.esm.rochester.edu/directory/beck-john/",
+      "imageUrl": "https://www.esm.rochester.edu/uploads/John-Beck-300x300.jpg",
+      "credit": "Composer portrait from institutional or publisher biography",
+      "license": "Not specified by source"
+    },
+    "David R. Gillingham": {
+      "src": "./music-dictionary/composer-portraits/david-r-gillingham.jpg",
+      "status": "portrait",
+      "sourceUrl": "https://banddirector.com/interviews/interview-with-david-gillingham/",
+      "imageUrl": "https://i.ytimg.com/vi/VKecsX6TDZk/hqdefault.jpg",
+      "credit": "David Gillingham interview still, Band Director Media Group",
+      "license": "Not specified by source",
+      "position": "45% 20%"
+    },
+    "Paul Dukas": {
+      "src": "./music-dictionary/composer-portraits/paul-dukas.jpg",
+      "status": "portrait",
+      "position": "50% 0%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Dukas_01.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Paul_Dukas_01.jpg",
+      "credit": "Photographer uncredited",
+      "license": "Public domain"
+    },
+    "Fernando Sor": {
+      "src": "./music-dictionary/composer-portraits/fernando-sor.jpg",
+      "status": "portrait",
+      "position": "50% 38%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fernando_Sor.jpg",
+      "credit": "Joseph Bordes, after Innocent-Louis Goubaud; printed by Godefroy Engelmann, c. 1825",
+      "license": "Public domain"
+    },
+    "Scott Joplin": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/18/Scott_Joplin_1907.jpg",
+      "status": "portrait",
+      "position": "50% 20%",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scott_Joplin_1907.jpg",
+      "credit": "Unknown photographer, The American Musician and Art Journal, 1907; Library of Congress",
+      "license": "Public domain"
+    }
+  }
+}

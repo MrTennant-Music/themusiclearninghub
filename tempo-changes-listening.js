@@ -1,4 +1,5 @@
-// Tempo Changes reuses the project's eight-bar Melodic Dictation generator.
+// N3/N4/N5 use a clear eight-bar pulse study. Later levels join two independently
+// generated eight-bar phrases; the second half must never copy the first.
 (function attachTempoChangesListening(MLH) {
   "use strict";
 
@@ -45,16 +46,58 @@
 
   function subtitleConceptIdsForLevel(level) {
     if (level === "N3") return ["faster", "slower"];
-    const ids = ["accelerando", "rallentando", "aTempo"];
-    if (level === "N4") return ids;
-    return [...ids, "ritardando", ...(level === "N5" ? ["rubato"] : [])];
+    const ids = ["accelerando", "rallentando"];
+    return level === "N4" ? ids : [...ids, "ritardando"];
   }
 
-  function buildMelody() {
-    return MLH.MelodicDictation.makeEightBarRepetitionQuestion("N5");
+  function buildMelody(level = "N5") {
+    if(["N3","N4","N5"].includes(level)) return MLH.EarTrainingExercises.withGenerationContext({level,topic:"tempoChanges"},()=>MLH.EarTrainingExercises.makeTempoListeningPassage());
+    const keyIds=MLH.EarTrainingExercises?.keysForLevel?.(level) || ["C","G","D","Bb","Am","Em","Dm","F"];
+    const keys=MLH.MelodicDictation.KEYS.filter(key=>keyIds.includes(key.id));
+    const first=MLH.MelodicDictation.makeEightBarRepetitionQuestion(level,0,keys[Math.floor(Math.random()*keys.length)]);
+    let second;
+    for(let attempt=0;attempt<32;attempt++) {
+      const candidate=MLH.MelodicDictation.makeEightBarRepetitionQuestion(level,0,first.key);
+      if(candidate.timeSignature.id===first.timeSignature.id) { second=candidate; break; }
+    }
+    if(!second) throw new Error("Unable to generate a matching fresh second tempo phrase.");
+    const bars=[...first.bars,...second.bars].map((bar,barIndex)=>({
+      ...bar,barIndex,
+      notes:bar.notes.map((note,noteIndex)=>({...note,bar:barIndex,barIndex,noteIndex,id:`tempo-${barIndex}-${noteIndex}`})),
+    }));
+    return {...first,bars,barCount:bars.length,totalBeats:bars.length*first.timeSignature.beats,phraseSources:[first.id,second.id]};
   }
 
-  function createRubatoProfile() {
+  function createRubatoProfile(melody) {
+    if(melody?.bars?.length===8) {
+      const shape=["forward-and-breathe","linger-at-climax","sigh-and-recover"][Math.floor(Math.random()*3)];
+      const beatsPerBar=melody.timeSignature.beats,totalBeats=8*beatsPerBar;
+      const points=new Map();
+      const add=(beat,ratio,anchor)=>points.set(beat,{position:beat/totalBeats,ratio,anchor,shape});
+      for(let first=0;first<8;first+=4) {
+        const events=melody.bars.slice(first,first+4).flatMap(bar=>bar.notes.filter(note=>!note.rest).map(note=>({...note,at:bar.barIndex*beatsPerBar+note.beat})));
+        const interior=events.filter(note=>note.at>=(first+1)*beatsPerBar&&note.at<(first+3)*beatsPerBar);
+        const peak=[...interior].sort((a,b)=>(b.soundingMidi??b.midi)-(a.soundingMidi??a.midi)||b.beats-a.beats)[0];
+        const closing=events.filter(note=>note.at>=(first+3)*beatsPerBar);
+        const cadence=closing.filter(note=>note.beats>=(melody.tempoPulseBeats||1)).at(-1)||closing.at(-1);
+        const before=events.filter(note=>note.at<peak.at).at(-1);
+        const forward=1.1+Math.random()*.1,linger=.78+Math.random()*.08,breath=.72+Math.random()*.08;
+        add(first*beatsPerBar,1,"phrase-start");
+        if(shape==="forward-and-breathe") add(peak.at,forward,"climax");
+        else if(shape==="linger-at-climax") {
+          if(before.at>first*beatsPerBar) add(before.at,forward,"approach");
+          add(peak.at,linger,"climax");
+          if(peak.at+peak.beats<cadence.at) add(peak.at+peak.beats,forward,"release");
+        } else {
+          add(interior[0].at,linger,"phrase-breath");
+          if(peak.at+peak.beats<cadence.at) add(peak.at+peak.beats,forward,"release");
+          else if(peak.at>interior[0].at) add(peak.at,forward,"climax");
+        }
+        add(cadence.at,breath,"cadence");
+        add((first+4)*beatsPerBar,1,"phrase-end");
+      }
+      return [...points.entries()].sort((a,b)=>a[0]-b[0]).map(([,point])=>point);
+    }
     // Two four-bar phrases: lean forwards, linger at the cadence, then recover.
     // Capture the profile once per question so replay uses the same expression.
     const amount = 0.85 + Math.random() * 0.3;
@@ -98,16 +141,22 @@
 
   // BPM changes continuously with musical beat position. Integrating 60/BPM
   // gives one clock for melody, accompaniment, clicks and playback highlighting.
-  function createTempoClock({ startBpm, direction, totalBeats, profile }) {
+  function createTempoClock({ startBpm, direction, totalBeats, profile, steadyEnds = false }) {
     if (!(startBpm > 0) || !(totalBeats > 0) || !["faster", "slower", "rubato"].includes(direction)) {
       throw new Error("A tempo-change clock needs a positive tempo, length and direction.");
     }
     if (direction === "rubato") return createRubatoClock({ startBpm, totalBeats, profile });
     const endBpm = startBpm * (direction === "faster" ? 1.8 : 0.5);
-    const slope = (endBpm - startBpm) / totalBeats;
+    const lead = steadyEnds ? totalBeats/4 : 0;
+    const changeBeats = totalBeats-2*lead;
+    const slope = (endBpm - startBpm) / changeBeats;
     const position = beat => Math.max(0, Math.min(totalBeats, beat));
-    const bpmAtBeat = beat => startBpm + slope * position(beat);
-    const timeAtBeat = beat => 60 / slope * Math.log1p(slope * position(beat) / startBpm);
+    const bpmAtBeat = beat => startBpm + slope * Math.max(0,Math.min(changeBeats,position(beat)-lead));
+    const timeAtBeat = beat => {
+      const at=position(beat);
+      const changing=Math.max(0,Math.min(changeBeats,at-lead));
+      return Math.min(at,lead)*60/startBpm + 60/slope*Math.log1p(slope*changing/startBpm) + Math.max(0,at-lead-changeBeats)*60/endBpm;
+    };
     const durationAtBeat = (beat, beats) => timeAtBeat(beat + beats) - timeAtBeat(beat);
     return { startBpm, endBpm, totalBeats, bpmAtBeat, timeAtBeat, durationAtBeat, duration: timeAtBeat(totalBeats) };
   }

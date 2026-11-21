@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Songs and Stage Music</title>
+  <g fill="#000">
+    <rect x="4" y="6" width="56" height="6" rx="2"/>
+    <path d="M6 14h21C24 26 18 33 10 36v16H6V14Zm52 0H37c3 12 9 19 17 22v16h4V14Z"/>
+    <path d="M10 39c4-1 7-3 10-6l-4 19h-6V39Zm44 0c-4-1-7-3-10-6l4 19h6V39Z"/>
+    <rect x="4" y="55" width="56" height="4" rx="1.5"/>
+    <path d="m29 23 15-3v6l-12 2.4v15.1h-3V23Z"/>
+    <path d="M41 23h3v16h-3z"/>
+    <ellipse cx="26.5" cy="43" rx="5.5" ry="4" transform="rotate(-20 26.5 43)"/>
+    <ellipse cx="38.5" cy="38.5" rx="5.5" ry="4" transform="rotate(-20 38.5 38.5)"/>
+  </g>
+</svg>

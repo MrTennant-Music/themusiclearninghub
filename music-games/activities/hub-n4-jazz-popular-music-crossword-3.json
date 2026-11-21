@@ -1,0 +1,124 @@
+{
+  "id": "hub-n4-jazz-popular-music-crossword-3",
+  "level": "N4",
+  "title": "Jazz and Popular Music 3",
+  "instructions": "",
+  "description": "Revise Jazz and Popular Music concepts introduced up to National 4, including styles, instruments, effects and musical devices.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Jazz and Popular Music",
+    "National 4"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-1",
+      "prompt": "Name the general rhythmic device that shifts emphasis away from expected strong beats, including off-beat accents and notes held across a strong beat.",
+      "answer": "Syncopation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-2",
+      "prompt": "Give the British song-section name for a contrasting passage, traditionally eight bars. Write the number in words.",
+      "answer": "Middle eight",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-3",
+      "prompt": "A song alternates changing-word verses with a separate recurring chorus. Name this form.",
+      "answer": "Verse and chorus",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-4",
+      "prompt": "One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background.",
+      "answer": "Backing vocals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-5",
+      "prompt": "A low-pitched electric string instrument, usually with four strings, played by plucking or with a plectrum.",
+      "answer": "Bass guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-6",
+      "prompt": "Name the general electronic effect that clips an amplified signal, making its tone rough or fuzzy.",
+      "answer": "Distortion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-7",
+      "prompt": "The largest and lowest-pitched member of the orchestral string family.",
+      "answer": "Double bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-8",
+      "prompt": "This single-reed instrument has a metal body, unlike the clarinet's wooden or plastic body.",
+      "answer": "Saxophone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-3-9",
+      "prompt": "The highest common orchestral brass instrument.",
+      "answer": "Trumpet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

@@ -1,0 +1,145 @@
+[
+  {
+    "number": 1,
+    "clef": "bass",
+    "time": [
+      4,
+      4
+    ],
+    "notes": [
+      {
+        "pitch": "G2",
+        "rhythm": "dotted-minim",
+        "x": 430
+      },
+      {
+        "pitch": "D3",
+        "rhythm": "crotchet",
+        "x": 640,
+        "targetNotehead": true
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 2,
+    "clef": "treble",
+    "time": [
+      9,
+      8
+    ],
+    "key": "G major",
+    "notes": [
+      {
+        "pitch": "G4",
+        "rhythm": "dotted-minim",
+        "x": 430
+      },
+      {
+        "pitch": "B4",
+        "rhythm": "dotted-crotchet",
+        "x": 640
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 3,
+    "clef": "treble",
+    "time": [
+      3,
+      4
+    ],
+    "notes": [
+      {
+        "pitch": "E4",
+        "rhythm": "quaver",
+        "x": 370,
+        "beam": "a",
+        "triplet": true
+      },
+      {
+        "pitch": "G4",
+        "rhythm": "quaver",
+        "x": 445,
+        "beam": "a",
+        "triplet": true
+      },
+      {
+        "pitch": "A4",
+        "rhythm": "quaver",
+        "x": 520,
+        "beam": "a",
+        "triplet": true
+      },
+      {
+        "pitch": "B4",
+        "rhythm": "minim",
+        "x": 660
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 4,
+    "clef": "treble",
+    "time": [
+      4,
+      4
+    ],
+    "slur": [
+      0,
+      1
+    ],
+    "notes": [
+      {
+        "pitch": "E4",
+        "rhythm": "crotchet",
+        "x": 360
+      },
+      {
+        "pitch": "G4",
+        "rhythm": "crotchet",
+        "x": 480
+      },
+      {
+        "pitch": "C5",
+        "rhythm": "minim",
+        "x": 650,
+        "targetNotehead": true
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 5,
+    "clef": "treble",
+    "time": [
+      4,
+      4
+    ],
+    "notes": [
+      {
+        "rest": true,
+        "rhythm": "crotchet-rest",
+        "x": 355
+      },
+      {
+        "pitch": "G4",
+        "rhythm": "minim",
+        "x": 490
+      },
+      {
+        "rest": true,
+        "rhythm": "quaver-rest",
+        "x": 605
+      },
+      {
+        "pitch": "A4",
+        "rhythm": "quaver",
+        "x": 660
+      }
+    ],
+    "end": "double"
+  }
+]

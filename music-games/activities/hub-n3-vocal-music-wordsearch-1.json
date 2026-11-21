@@ -1,0 +1,158 @@
+{
+  "id": "hub-n3-vocal-music-wordsearch-1",
+  "level": "N3",
+  "title": "Vocal Music",
+  "instructions": "",
+  "description": "Revise voice types, vocal performance, ensembles and vocal works introduced up to National 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Vocal Music",
+    "National 3"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-1",
+      "prompt": "A Broadway or West End musical-theatre work combines songs, spoken dialogue, acting and usually dance. Name this type of stage show.",
+      "answer": "Musical",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-2",
+      "prompt": "Give the three-word term beginning question for an opening phrase followed by a replying phrase.",
+      "answer": "Question and answer",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-3",
+      "prompt": "A singer or vocal group performs with instrumental support. Give the performance description meaning with accompaniment.",
+      "answer": "Accompanied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-4",
+      "prompt": "In part-singing, different pitches are combined simultaneously. Name this general musical element.",
+      "answer": "Harmony - chord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-5",
+      "prompt": "Singers enter at different times with the same short tune and can continue cycling through it. Name this type of vocal piece.",
+      "answer": "Round",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-6",
+      "prompt": "One featured singer takes the main part, with or without accompaniment. Name this performance role.",
+      "answer": "Solo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-7",
+      "prompt": "Give the single English word for singing without accompaniment.",
+      "answer": "Unaccompanied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-8",
+      "prompt": "Two or more singers perform the same melody at the same pitch together. Name this way of singing.",
+      "answer": "Unison - octave",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-9",
+      "prompt": "Name the organised ensemble of singers, rather than a particular vocal range or way of combining their parts.",
+      "answer": "Choir",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-10",
+      "prompt": "Give the Italian articulation term for smoothly connected singing, with no obvious gaps between successive notes.",
+      "answer": "Legato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-11",
+      "prompt": "Give the Italian articulation term for short, detached sung notes with clear gaps between them.",
+      "answer": "Staccato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-vocal-music-wordsearch-1-12",
+      "prompt": "Name the general human sound source used for singing, rather than a particular register or ensemble.",
+      "answer": "Voice",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T23:00:00.000Z",
+  "editorMode": "with-clues"
+}

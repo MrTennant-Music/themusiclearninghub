@@ -1,0 +1,201 @@
+{
+  "id": "hub-ah-texture-structure-form-connections-1",
+  "level": "AH",
+  "title": "Texture/structure/form",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting Advanced Higher Texture/structure/form concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Texture/structure/form",
+    "Advanced Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-1",
+      "prompt": "Work of imitative theme entries",
+      "answer": "Work of imitative theme entries",
+      "distractors": [],
+      "group": "Fugue",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-2",
+      "prompt": "Work with subject and answer",
+      "answer": "Work with subject and answer",
+      "distractors": [],
+      "group": "Fugue",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-3",
+      "prompt": "Work: theme in imitative voices",
+      "answer": "Work: theme in imitative voices",
+      "distractors": [],
+      "group": "Fugue",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-4",
+      "prompt": "Work built on fugal entries",
+      "answer": "Work built on fugal entries",
+      "distractors": [],
+      "group": "Fugue",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-5",
+      "prompt": "Linked songs form one work",
+      "answer": "Linked songs form one work",
+      "distractors": [],
+      "group": "Song cycle",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-6",
+      "prompt": "Connected set of complete songs",
+      "answer": "Connected set of complete songs",
+      "distractors": [],
+      "group": "Song cycle",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-7",
+      "prompt": "Songs joined by a common theme",
+      "answer": "Songs joined by a common theme",
+      "distractors": [],
+      "group": "Song cycle",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-8",
+      "prompt": "Unified collection of art songs",
+      "answer": "Unified collection of art songs",
+      "distractors": [],
+      "group": "Song cycle",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-9",
+      "prompt": "Melody played in reverse order",
+      "answer": "Melody played in reverse order",
+      "distractors": [],
+      "group": "Retrograde",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-10",
+      "prompt": "Last note becomes the first note",
+      "answer": "Last note becomes the first note",
+      "distractors": [],
+      "group": "Retrograde",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-11",
+      "prompt": "Tone row read backwards",
+      "answer": "Tone row read backwards",
+      "distractors": [],
+      "group": "Retrograde",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-12",
+      "prompt": "Pitch sequence from end to start",
+      "answer": "Pitch sequence from end to start",
+      "distractors": [],
+      "group": "Retrograde",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-13",
+      "prompt": "Distant groups call and respond",
+      "answer": "Distant groups call and respond",
+      "distractors": [],
+      "group": "Antiphonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-14",
+      "prompt": "Choirs answer across a space",
+      "answer": "Choirs answer across a space",
+      "distractors": [],
+      "group": "Antiphonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-15",
+      "prompt": "Two groups exchange replies",
+      "answer": "Two groups exchange replies",
+      "distractors": [],
+      "group": "Antiphonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-texture-structure-form-connections-1-16",
+      "prompt": "Spatially separated replies",
+      "answer": "Spatially separated replies",
+      "distractors": [],
+      "group": "Antiphonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

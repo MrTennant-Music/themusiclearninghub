@@ -1,0 +1,251 @@
+.escape-literacy-activity {
+  --mlh-page-background: #fff;
+}
+
+.escape-literacy-activity #resources {
+  display: none !important;
+}
+
+.escape-literacy-content {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 8px 24px 16px;
+  color: #000;
+}
+
+:is(.escape-literacy-fixed .escape-literacy-content, .escape-practice-main) {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: calc(100vh / var(--mlh-desktop-layout-scale, 1));
+}
+
+:is(.escape-literacy-fixed .escape-literacy-content, .escape-practice-main) > * {
+  flex: none;
+}
+
+:is(.escape-literacy-fixed .escape-literacy-content, .escape-practice-main) > :is(
+  .escape-literacy-digit-options, .escape-time-signature-options, .escape-literacy-clue
+) {
+  margin-top: auto;
+}
+
+:is(.escape-literacy-fixed .escape-literacy-content, .escape-practice-main) >
+:is(div, svg):not(.escape-literacy-audio-header):has(+ :is(
+  .escape-literacy-digit-options, .escape-time-signature-options, .escape-literacy-clue
+)) {
+  margin-block: auto;
+}
+
+.escape-literacy-fixed .escape-literacy-digit-options {
+  width: 100%;
+}
+
+.escape-literacy-fixed .escape-literacy-digit-options:has(> button > span > svg) {
+  max-width: 1060px;
+}
+
+.escape-literacy-content-title {
+  margin: 4px 0 12px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.escape-literacy-digit-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.escape-literacy-digit-options.is-two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.escape-literacy-numbered-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 96px;
+  padding: 16px 20px;
+  border: 1px solid #d6d3d1;
+  border-radius: 12px;
+  background: #fff;
+  text-align: left;
+  font-size: 28px;
+}
+
+.escape-literacy-numbered-option strong {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #f5f5f4;
+  font-size: 28px;
+}
+
+.escape-literacy-numbered-option[aria-pressed="true"] {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+.escape-literacy-numbered-option[aria-pressed="true"] strong {
+  background: #fff;
+  color: #111;
+}
+/* Invert notation once, including glyphs that use currentColor. */
+.escape-literacy-numbered-option[aria-pressed="true"] svg {
+  color: #000;
+  filter: invert(1);
+}
+
+:is(.escape-literacy-activity, .escape-practice-embed) button:hover:where(:not(:active)) {
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+
+.escape-literacy-numbered-option:hover:not([aria-pressed="true"]) {
+  background-color: #f5f5f4;
+}
+
+.escape-rhythm-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 24px 0;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.escape-rhythm-sum .escape-literacy-numbered-option {
+  min-height: 96px;
+  font-size: 28px;
+}
+
+.escape-rhythm-sum .escape-literacy-numbered-option strong {
+  flex-basis: 48px;
+  height: 48px;
+  font-size: 28px;
+}
+
+.escape-literacy-audio-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.escape-literacy-content .escape-transposition-score {
+  width: 780px;
+  margin-inline: auto;
+}
+
+.escape-literacy-symbol {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 12px;
+}
+
+.escape-literacy-symbol > svg {
+  width: 220px;
+  height: 120px;
+}
+
+.escape-literacy-score,
+.escape-literacy-short-score {
+  display: block;
+  margin: 0 auto;
+}
+
+.escape-literacy-score {
+  width: 1000px;
+}
+
+.escape-literacy-short-score {
+  width: 650px;
+}
+
+.escape-transposition-example {
+  display: block;
+  width: 100%;
+  max-height: 135px;
+}
+
+.escape-literacy-content svg {
+  pointer-events: none;
+}
+
+.escape-literacy-content button:has(> .hub-playback-glyph) {
+  min-width: 144px;
+  min-height: 54px;
+  font-size: 20px;
+}
+
+/* Fit the complete Follow the Score notation into the space above its answers. */
+.escape-literacy-fixed .escape-literacy-content:has(> .escape-follow-score) {
+  height: calc(100vh / var(--mlh-desktop-layout-scale, 1));
+  min-height: 0;
+}
+.escape-literacy-fixed .escape-literacy-content > .escape-follow-score {
+  flex: 1 1 0;
+  min-height: 0;
+  margin-block: 12px;
+}
+.escape-literacy-fixed .escape-follow-score > div,
+.escape-literacy-fixed .escape-follow-score svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Every fixed literacy clue reserves room for all answers, not just Follow the Score. */
+.escape-literacy-fixed .escape-literacy-content {
+  height: calc(100vh / var(--mlh-desktop-layout-scale, 1));
+  min-height: 0;
+}
+.escape-literacy-fixed .escape-literacy-content > :is(div, svg):not(.escape-literacy-audio-header):has(+ .escape-literacy-digit-options) {
+  flex: 1 1 0;
+  min-height: 0;
+  margin-block: 12px;
+}
+.escape-literacy-fixed .escape-literacy-content > svg:has(+ .escape-literacy-digit-options) {
+  height: 0;
+}
+.escape-literacy-fixed :is(.escape-literacy-short-score, .escape-literacy-score, .escape-transposition-score) > div,
+.escape-literacy-fixed :is(.escape-literacy-short-score, .escape-literacy-score, .escape-transposition-score) > div > svg {
+  height: 100%;
+  max-height: 100%;
+}
+
+/* The keyboard must fit its allocated panel instead of retaining its 250px height. */
+.escape-literacy-fixed .escape-literacy-content > div:has(> .keyboard-score) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.escape-literacy-fixed .escape-literacy-content .keyboard-score {
+  flex: none;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.escape-time-signature .escape-literacy-numbered-option .escape-time-signature-glyph{width:72px;height:80px;flex:none}
+
+.escape-literacy-fixed .escape-dynamic-symbol{align-items:center}
+.escape-literacy-fixed .escape-dynamic-symbol > svg{width:340px;height:184px;max-height:100%;flex:none}

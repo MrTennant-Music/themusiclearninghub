@@ -1,0 +1,442 @@
+[
+  {
+    "id": "ah-renaissance-vocal",
+    "family": "renaissance-vocal",
+    "label": "Renaissance vocal music",
+    "conceptIds": [
+      "MC-0274",
+      "MC-0269",
+      "MC-0270",
+      "MC-0264"
+    ]
+  },
+  {
+    "id": "ah-renaissance-dances",
+    "family": "renaissance-dance",
+    "label": "Renaissance dances",
+    "conceptIds": [
+      "MC-0268",
+      "MC-0273",
+      "MC-0274",
+      "MC-0297"
+    ]
+  },
+  {
+    "id": "ah-madrigal",
+    "family": "renaissance-vocal",
+    "label": "Madrigal",
+    "conceptIds": [
+      "MC-0269",
+      "MC-0192",
+      "MC-0188",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "ah-motet",
+    "family": "sacred",
+    "label": "Unaccompanied sacred singing",
+    "conceptIds": [
+      "MC-0270",
+      "MC-0221",
+      "MC-0192",
+      "MC-0048"
+    ]
+  },
+  {
+    "id": "ah-anthem",
+    "family": "sacred",
+    "label": "Anthem",
+    "conceptIds": [
+      "MC-0262",
+      "MC-0048",
+      "MC-0147",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "ah-chorale",
+    "family": "sacred",
+    "label": "Chorale",
+    "conceptIds": [
+      "MC-0265",
+      "MC-0187",
+      "MC-0238",
+      "MC-0048"
+    ]
+  },
+  {
+    "id": "ah-ayre",
+    "family": "solo-song",
+    "label": "Ayre or air",
+    "conceptIds": [
+      "MC-0263",
+      "MC-0067",
+      "MC-0034",
+      "MC-0039"
+    ]
+  },
+  {
+    "id": "ah-renaissance-songs",
+    "family": "renaissance-vocal",
+    "label": "Renaissance songs",
+    "conceptIds": [
+      "MC-0264",
+      "MC-0269",
+      "MC-0067",
+      "MC-0274"
+    ]
+  },
+  {
+    "id": "ah-nationalist",
+    "family": "nationalist",
+    "label": "Nationalist music",
+    "conceptIds": [
+      "MC-0271",
+      "MC-0008",
+      "MC-0052",
+      "MC-0104"
+    ]
+  },
+  {
+    "id": "ah-neoclassical",
+    "family": "neoclassical",
+    "label": "Neoclassical music",
+    "conceptIds": [
+      "MC-0272",
+      "MC-0148",
+      "MC-0254",
+      "MC-0154"
+    ]
+  },
+  {
+    "id": "ah-contemporary-jazz",
+    "family": "jazz",
+    "label": "Contemporary jazz",
+    "conceptIds": [
+      "MC-0266",
+      "MC-0014",
+      "MC-0132",
+      "MC-0079"
+    ]
+  },
+  {
+    "id": "ah-edm-sounds",
+    "family": "edm",
+    "label": "Electronic dance music",
+    "conceptIds": [
+      "MC-0267",
+      "MC-0037",
+      "MC-0024",
+      "MC-0208"
+    ]
+  },
+  {
+    "id": "ah-serial",
+    "family": "tonality",
+    "label": "Serial music",
+    "conceptIds": [
+      "MC-0275",
+      "MC-0282",
+      "MC-0156",
+      "MC-0158"
+    ]
+  },
+  {
+    "id": "ah-dissonance",
+    "family": "harmony",
+    "label": "Dissonance",
+    "conceptIds": [
+      "MC-0276",
+      "MC-0281",
+      "MC-0013",
+      "MC-0159"
+    ]
+  },
+  {
+    "id": "ah-ornaments",
+    "family": "ornaments",
+    "label": "Ornaments",
+    "conceptIds": [
+      "MC-0284",
+      "MC-0236",
+      "MC-0174",
+      "MC-0226"
+    ]
+  },
+  {
+    "id": "ah-chord-types",
+    "family": "chords",
+    "label": "Chord types",
+    "conceptIds": [
+      "MC-0277",
+      "MC-0229",
+      "MC-0227",
+      "MC-0230"
+    ]
+  },
+  {
+    "id": "ah-tonality",
+    "family": "tonality",
+    "label": "Keys and tonality",
+    "conceptIds": [
+      "MC-0280",
+      "MC-0084",
+      "MC-0085",
+      "MC-0168"
+    ]
+  },
+  {
+    "id": "ah-intervals",
+    "family": "intervals",
+    "label": "Intervals",
+    "conceptIds": [
+      "MC-0283",
+      "MC-0171",
+      "MC-0173",
+      "MC-0086"
+    ]
+  },
+  {
+    "id": "ah-two-three",
+    "family": "rhythm",
+    "label": "Groups of two and three",
+    "conceptIds": [
+      "MC-0285",
+      "MC-0242",
+      "MC-0247",
+      "MC-0176"
+    ]
+  },
+  {
+    "id": "ah-fugue",
+    "family": "fugue",
+    "label": "Fugue",
+    "conceptIds": [
+      "MC-0290",
+      "MC-0296",
+      "MC-0286",
+      "MC-0289"
+    ]
+  },
+  {
+    "id": "ah-fugue-entries",
+    "family": "fugue",
+    "label": "Overlapping fugue entries",
+    "conceptIds": [
+      "MC-0295",
+      "MC-0290",
+      "MC-0296",
+      "MC-0108"
+    ]
+  },
+  {
+    "id": "ah-transformations",
+    "family": "development",
+    "label": "Melodic transformations",
+    "conceptIds": [
+      "MC-0291",
+      "MC-0293",
+      "MC-0243",
+      "MC-0244"
+    ]
+  },
+  {
+    "id": "ah-independent-lines",
+    "family": "counterpoint",
+    "label": "Independent melodic lines",
+    "conceptIds": [
+      "MC-0289",
+      "MC-0237",
+      "MC-0161",
+      "MC-0184"
+    ]
+  },
+  {
+    "id": "ah-antiphonal",
+    "family": "antiphonal",
+    "label": "Antiphonal music",
+    "conceptIds": [
+      "MC-0287",
+      "MC-0016",
+      "MC-0048",
+      "MC-0047"
+    ]
+  },
+  {
+    "id": "ah-sonata-form",
+    "family": "sonata",
+    "label": "Sonata form",
+    "conceptIds": [
+      "MC-0288",
+      "MC-0251",
+      "MC-0254",
+      "MC-0255"
+    ]
+  },
+  {
+    "id": "ah-operatic-story",
+    "family": "opera",
+    "label": "Operatic storytelling",
+    "conceptIds": [
+      "MC-0292",
+      "MC-0073",
+      "MC-0054",
+      "MC-0077"
+    ]
+  },
+  {
+    "id": "ah-song-cycle",
+    "family": "song",
+    "label": "Song cycle",
+    "conceptIds": [
+      "MC-0294",
+      "MC-0217",
+      "MC-0256",
+      "MC-0190"
+    ]
+  },
+  {
+    "id": "ah-consort",
+    "family": "renaissance-instrumental",
+    "label": "Consort",
+    "conceptIds": [
+      "MC-0297",
+      "MC-0274",
+      "MC-0131",
+      "MC-0214"
+    ]
+  },
+  {
+    "id": "ah-voice-types",
+    "family": "voices",
+    "label": "Voice types",
+    "conceptIds": [
+      "MC-0298",
+      "MC-0113",
+      "MC-0136",
+      "MC-0194"
+    ]
+  },
+  {
+    "id": "ah-piano-trio",
+    "family": "chamber",
+    "label": "Piano trio",
+    "conceptIds": [
+      "MC-0299",
+      "MC-0057",
+      "MC-0141",
+      "MC-0119"
+    ]
+  },
+  {
+    "id": "ah-speech-song",
+    "family": "vocal",
+    "label": "Speech and song",
+    "conceptIds": [
+      "MC-0300",
+      "MC-0222",
+      "MC-0075",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "ah-rhythmic-contrast",
+    "family": "rhythm",
+    "label": "Rhythmic contrast",
+    "conceptIds": [
+      "MC-0285",
+      "MC-0177",
+      "MC-0245",
+      "MC-0246"
+    ]
+  },
+  {
+    "id": "ah-sacred-vocal",
+    "family": "sacred",
+    "label": "Sacred vocal music",
+    "conceptIds": [
+      "MC-0270",
+      "MC-0274",
+      "MC-0221",
+      "MC-0218"
+    ]
+  },
+  {
+    "id": "ah-renaissance-playing",
+    "family": "renaissance-dance",
+    "label": "Renaissance instrumental music",
+    "conceptIds": [
+      "MC-0297",
+      "MC-0273",
+      "MC-0268",
+      "MC-0131"
+    ]
+  },
+  {
+    "id": "ah-unsettled-chords",
+    "family": "chords",
+    "label": "Unsettled chords",
+    "conceptIds": [
+      "MC-0277",
+      "MC-0228",
+      "MC-0229",
+      "MC-0013"
+    ]
+  },
+  {
+    "id": "ah-tonal-languages",
+    "family": "tonality",
+    "label": "Modern tonal languages",
+    "conceptIds": [
+      "MC-0280",
+      "MC-0275",
+      "MC-0156",
+      "MC-0215"
+    ]
+  },
+  {
+    "id": "ah-imitative-entries",
+    "family": "counterpoint",
+    "label": "Imitative entries",
+    "conceptIds": [
+      "MC-0286",
+      "MC-0296",
+      "MC-0107",
+      "MC-0108"
+    ]
+  },
+  {
+    "id": "ah-recurring-ideas",
+    "family": "development",
+    "label": "Recurring musical ideas",
+    "conceptIds": [
+      "MC-0292",
+      "MC-0255",
+      "MC-0017",
+      "MC-0037"
+    ]
+  },
+  {
+    "id": "ah-vocal-delivery",
+    "family": "vocal",
+    "label": "Vocal delivery",
+    "conceptIds": [
+      "MC-0300",
+      "MC-0257",
+      "MC-0167",
+      "MC-0172"
+    ]
+  },
+  {
+    "id": "ah-edm-rhythm",
+    "family": "edm",
+    "label": "Electronic dance rhythms",
+    "conceptIds": [
+      "MC-0267",
+      "MC-0024",
+      "MC-0105",
+      "MC-0037"
+    ]
+  }
+]

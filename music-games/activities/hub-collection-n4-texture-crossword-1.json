@@ -1,0 +1,54 @@
+{
+  "id": "hub-collection-n4-texture-crossword-1",
+  "level": "N4",
+  "title": "Texture",
+  "instructions": "",
+  "description": "Texture: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Texture",
+    "National 4"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n4-texture-crossword-1-MC-0035",
+      "prompt": "Different notes sounding together.",
+      "answer": "Harmony",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0035"
+    },
+    {
+      "id": "hub-collection-n4-texture-crossword-1-MC-0041",
+      "prompt": "Everyone sings or plays the same notes together.",
+      "answer": "Unison",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0041"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "texture",
+  "sourceConceptIds": [
+    "MC-0035",
+    "MC-0041"
+  ]
+}

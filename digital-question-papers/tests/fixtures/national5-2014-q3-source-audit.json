@@ -1,0 +1,251 @@
+{
+  "sourceReading": "Official QP page 6 at 300 dpi; four staff systems independently calibrated; second separate bar-by-bar reading; missing notes confirmed against MI page 4 crop",
+  "key": "G major",
+  "clef": "treble",
+  "timeSignature": "4/4",
+  "sources": [
+    {
+      "path": "exampapers/n5/2014/N5_Music_QP_2014.pdf",
+      "sha256": "6e187d6ba95c76bfca293f5f577cacdb18620dcc376769d1f91a54550ac95e51"
+    },
+    {
+      "path": "exampapers/n5/2014/mi_N5_Music_QP_2014.pdf",
+      "sha256": "44ede9a0abb84a7e315caf0ff88dab2003cb2ae584b267a0aa668ae32c015184"
+    }
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "notes": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ],
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "B4",
+          "semiquaver"
+        ],
+        [
+          "C5",
+          "semiquaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "tiesFrom": []
+    },
+    {
+      "bar": 2,
+      "notes": [
+        [
+          "B4",
+          "minim"
+        ],
+        [
+          "A4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": []
+    },
+    {
+      "bar": 3,
+      "notes": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ],
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "B4",
+          "semiquaver"
+        ],
+        [
+          "C5",
+          "semiquaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "tiesFrom": []
+    },
+    {
+      "bar": 4,
+      "notes": [
+        [
+          "B4",
+          "minim"
+        ],
+        [
+          "A4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": []
+    },
+    {
+      "bar": 5,
+      "notes": [
+        [
+          "rest",
+          "crotchetRest"
+        ],
+        [
+          "B4",
+          "dottedQuaver"
+        ],
+        [
+          "C5",
+          "semiquaver"
+        ],
+        [
+          "B4",
+          "dottedCrotchet"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "tiesFrom": []
+    },
+    {
+      "bar": 6,
+      "notes": [
+        [
+          "E5",
+          "crotchet"
+        ],
+        [
+          "F#5",
+          "crotchet"
+        ],
+        [
+          "G5",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": []
+    },
+    {
+      "bar": 7,
+      "notes": [
+        [
+          "D4",
+          "semiquaver"
+        ],
+        [
+          "B4",
+          "dottedQuaver"
+        ],
+        [
+          "B4",
+          "dottedMinim"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        }
+      ],
+      "tiesFrom": [
+        1
+      ],
+      "tiePosition": "below"
+    },
+    {
+      "bar": 8,
+      "notes": [
+        [
+          "D4",
+          "semiquaver"
+        ],
+        [
+          "A4",
+          "dottedQuaver"
+        ],
+        [
+          "A4",
+          "dottedMinim"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        }
+      ],
+      "tiesFrom": [
+        1
+      ]
+    }
+  ],
+  "editableBar": 3,
+  "editableNoteIndices": [
+    0,
+    1,
+    2
+  ],
+  "finalBarline": "single",
+  "sourceDownStems": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "4": [
+      0
+    ],
+    "5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "7": [
+      2
+    ]
+  }
+}

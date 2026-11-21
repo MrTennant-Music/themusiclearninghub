@@ -1,0 +1,946 @@
+{
+  "key": "D major",
+  "timeSignature": "3/4",
+  "pickup": {
+    "upper": {
+      "notes": [
+        {
+          "pitch": "B4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "chord": [
+            "D#4",
+            "B4"
+          ],
+          "stemDown": false,
+          "accidentalXOffset": -5
+        }
+      ],
+      "lyrics": [
+        "that"
+      ]
+    },
+    "lower": {
+      "notes": [
+        {
+          "pitch": "B3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "chord": [
+            "A3",
+            "B3"
+          ],
+          "stemDown": false
+        }
+      ]
+    }
+  },
+  "bars": [
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E4",
+              "E5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E4",
+              "E5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#4",
+              "D5"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "who -",
+          "so",
+          "be -"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G3",
+              "B3"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G3",
+              "B3"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#3",
+              "B3"
+            ],
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "C#5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G4",
+              "C#5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G4",
+              "D5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#4",
+              "B4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "liev -",
+          "eth,",
+          "be -"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "A#3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E3",
+              "A#3"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "B3"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "D4"
+            ],
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E4",
+              "B4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E4",
+              "A4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D4",
+              "F#4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "liev -",
+          "eth",
+          "in"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "C4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "C4"
+            ],
+            "accidental": "natural",
+            "stemDown": false
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "C4"
+            ],
+            "suppressAccidental": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "C4"
+            ],
+            "suppressAccidental": true,
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "D5",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "G4",
+              "D5"
+            ],
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1,
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "Him",
+          ""
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "B3",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "D3",
+              "B3"
+            ],
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1,
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "D4",
+            "rhythm": "minim",
+            "beats": 2,
+            "stemDown": false
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D4",
+              "G4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "should",
+          "not"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "D4",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "D3",
+              "D4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "B3",
+              "D4"
+            ],
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E4",
+              "G4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "E4",
+              "F#4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "pe -",
+          "rish,"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "C#4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A#3",
+              "C#4"
+            ],
+            "stemDown": false,
+            "accidentalXOffset": -5
+          },
+          {
+            "pitch": "C#4",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "A3",
+              "C#4"
+            ],
+            "stemDown": false
+          }
+        ]
+      },
+      "chord": {
+        "answer": "Diminished 7th"
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "F#4",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "C#4",
+              "F#4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "F#5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#4",
+              "F#5"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "should",
+          "not"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "A#3",
+            "rhythm": "minim",
+            "beats": 2,
+            "stemDown": true
+          },
+          {
+            "pitch": "C#4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A3",
+              "C#4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "overlays": [
+          {
+            "beat": 0,
+            "pitch": "E4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "beat": 1,
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#4",
+              "D5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "C#5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E4",
+              "C#5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D4",
+              "B4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "pe -",
+          "rish,",
+          "but"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false,
+            "dualStem": true
+          },
+          {
+            "pitch": "A#3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#3",
+              "A#3"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G3",
+              "B3"
+            ],
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F#4",
+              "A4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A4",
+              "D5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "F#5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A4",
+              "F#5"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "have",
+          "ev -",
+          "er -"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A3",
+              "D4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A3",
+              "F#4"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A3",
+              "D4"
+            ],
+            "stemDown": false
+          }
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "F#5",
+            "rhythm": "minim",
+            "beats": 2,
+            "chord": [
+              "A4",
+              "F#5"
+            ],
+            "stemDown": false
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G4",
+              "E5"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "last -",
+          "ing"
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "A3",
+            "rhythm": "minim",
+            "beats": 2,
+            "stemDown": true
+          },
+          {
+            "pitch": "C#4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "A3",
+              "C#4"
+            ],
+            "stemDown": false
+          }
+        ],
+        "overlays": [
+          {
+            "beat": 0,
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "beat": 1,
+            "pitch": "B3",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ]
+      },
+      "interval": {
+        "lower": "A4",
+        "upper": "F#5",
+        "answer": "Major 6th"
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "D5",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "chord": [
+              "F#4",
+              "D5"
+            ],
+            "stemDown": false
+          }
+        ],
+        "lyrics": [
+          "life."
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "D4",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "stemDown": false,
+            "dualStem": true
+          }
+        ]
+      },
+      "finalBarline": "double"
+    }
+  ],
+  "chord": {
+    "bar": 6,
+    "answer": "Diminished 7th"
+  },
+  "interval": {
+    "bar": 10,
+    "lower": "A4",
+    "upper": "F#5",
+    "answer": "Major 6th"
+  },
+  "finalBarline": "double",
+  "layout": {
+    "height": 900,
+    "groups": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10
+      ]
+    ],
+    "systemTops": [
+      100,
+      375,
+      655
+    ],
+    "keySignatureXOffset": -20,
+    "timeSignatureXOffset": 26,
+    "bounds": [
+      [
+        211.7,
+        409.1,
+        584.5,
+        759.9,
+        870
+      ],
+      [
+        122.6,
+        305.4,
+        573.1,
+        870
+      ],
+      [
+        122.6,
+        314.5,
+        515.5,
+        716.5,
+        870
+      ]
+    ],
+    "pickupBounds": [
+      155,
+      211.7
+    ],
+    "pickupXs": [
+      170.1
+    ],
+    "noteXs": [
+      {
+        "upper": [
+          259.7,
+          308.6,
+          362.5
+        ],
+        "lower": [
+          259.7,
+          308.6,
+          362.5
+        ]
+      },
+      {
+        "upper": [
+          431.9,
+          484.4,
+          537.4
+        ],
+        "lower": [
+          431.9,
+          484.4,
+          537.4
+        ]
+      },
+      {
+        "upper": [
+          606,
+          664.9,
+          711
+        ],
+        "lower": [
+          606,
+          664.9,
+          711
+        ]
+      },
+      {
+        "upper": [
+          780,
+          836.7
+        ],
+        "lower": [
+          780,
+          836.7
+        ]
+      },
+      {
+        "upper": [
+          131.8,
+          221.3
+        ],
+        "lower": [
+          131.8,
+          221.3
+        ]
+      },
+      {
+        "upper": [
+          340.1,
+          425.5
+        ],
+        "lower": [
+          340.1,
+          425.5
+        ]
+      },
+      {
+        "upper": [
+          594.1,
+          785
+        ],
+        "lower": [
+          594.1,
+          785
+        ]
+      },
+      {
+        "upper": [
+          131.8,
+          201.2,
+          263.3
+        ],
+        "lower": [
+          131.8,
+          201.2,
+          263.3
+        ]
+      },
+      {
+        "upper": [
+          328.2,
+          396.7,
+          465.3
+        ],
+        "lower": [
+          328.2,
+          396.7,
+          465.3
+        ]
+      },
+      {
+        "upper": [
+          542,
+          659.4
+        ],
+        "lower": [
+          542,
+          659.4
+        ]
+      },
+      {
+        "upper": [
+          733.9
+        ],
+        "lower": [
+          733.9
+        ]
+      }
+    ],
+    "overlayXs": {
+      "6": [
+        594.1,
+        691.4,
+        785
+      ],
+      "9": [
+        542,
+        604.6,
+        659.4
+      ]
+    },
+    "chordBox": {
+      "left": 314.5,
+      "right": 398.1,
+      "topOffset": 58,
+      "bottomOffset": 67
+    },
+    "intervalBox": {
+      "left": 528.8,
+      "right": 643,
+      "topOffset": 65,
+      "height": 130
+    }
+  }
+}

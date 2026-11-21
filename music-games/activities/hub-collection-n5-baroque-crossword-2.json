@@ -1,0 +1,119 @@
+{
+  "id": "hub-collection-n5-baroque-crossword-2",
+  "level": "N5",
+  "title": "Baroque Period 2",
+  "instructions": "",
+  "description": "Baroque Period: current Music Dictionary definitions — set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Baroque Period",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0087",
+      "prompt": "Extra notes that decorate a tune.",
+      "answer": "Ornament",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0087"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0131",
+      "prompt": "A wind instrument blown at one end, with finger holes to change the notes.",
+      "answer": "Recorder",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0131"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0174",
+      "prompt": "Quickly going back and forth between a note and the next note above it.",
+      "answer": "Trill",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0174"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0186",
+      "prompt": "A low pattern that repeats while the music above it changes.",
+      "answer": "Ground bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0186"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0188",
+      "prompt": "Two or more different tunes happening together.",
+      "answer": "Polyphonic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0188"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0055",
+      "prompt": "A keyboard instrument that can make long, held sounds, often heard in churches.",
+      "answer": "Organ",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0055"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-2-MC-0073",
+      "prompt": "A stage story told mainly through singing, with an orchestra playing along.",
+      "answer": "Opera",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0073"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "baroque",
+  "sourceConceptIds": [
+    "MC-0087",
+    "MC-0131",
+    "MC-0174",
+    "MC-0186",
+    "MC-0188",
+    "MC-0055",
+    "MC-0073"
+  ]
+}

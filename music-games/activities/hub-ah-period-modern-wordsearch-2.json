@@ -1,0 +1,147 @@
+{
+  "id": "hub-ah-period-modern-wordsearch-2",
+  "level": "AH",
+  "title": "20th Century / Modern 2",
+  "instructions": "",
+  "description": "Revise concepts associated with 20th Century / Modern up to Advanced Higher. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "20th Century / Modern",
+    "Advanced Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-1",
+      "prompt": "Name the compositional approach using a predetermined ordered series, especially a row of twelve chromatic pitch classes and its transformations.",
+      "answer": "Serial",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-2",
+      "prompt": "The simultaneous use of more than one key or tonal centre.",
+      "answer": "Polytonality",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-3",
+      "prompt": "Name the ordered source collection of all twelve chromatic pitch classes used in twelve-tone composition, rather than the compositional method itself.",
+      "answer": "Tone row",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-4",
+      "prompt": "As a melodic or tone-row transformation, upward intervals become downward by the same size, and downward intervals become upward. Name the transformation.",
+      "answer": "Inversion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-5",
+      "prompt": "A melody or tone row is presented in reverse order, beginning with its final note and ending with its first.",
+      "answer": "Retrograde",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-6",
+      "prompt": "Give the German term literally meaning speech-song for a vocal delivery between speaking and singing.",
+      "answer": "Sprechgesang",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-7",
+      "prompt": "The time signature changes during the music, altering the number or grouping of beats and sometimes unsettling the pulse.",
+      "answer": "Time changes",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-8",
+      "prompt": "Two independent parts divide the same span evenly into three notes and two notes respectively. Name the cross-rhythm ratio, rather than a single-line tuplet.",
+      "answer": "Three against two",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-9",
+      "prompt": "Give the Italian term for a short repeating musical pattern, also called a riff.",
+      "answer": "Ostinato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-10",
+      "prompt": "Name the general musical device of restating a phrase or section unchanged.",
+      "answer": "Repetition",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-modern-wordsearch-2-11",
+      "prompt": "Rhythmic emphasis is placed on weak beats, off-beats or notes held across strong beats.",
+      "answer": "Syncopation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z",
+  "editorMode": "with-clues"
+}

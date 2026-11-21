@@ -1,0 +1,201 @@
+{
+  "id": "hub-n3-jazz-popular-music-connections-1",
+  "level": "N3",
+  "title": "Jazz and Popular Music",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise Jazz and Popular Music concepts introduced up to National 3, including styles, instruments, effects and musical devices.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Jazz and Popular Music",
+    "National 3"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-1",
+      "prompt": "Hollow-body unplugged guitar",
+      "answer": "Hollow-body unplugged guitar",
+      "distractors": [],
+      "group": "Acoustic guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-2",
+      "prompt": "Guitar soundbox projects notes",
+      "answer": "Guitar soundbox projects notes",
+      "distractors": [],
+      "group": "Acoustic guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-3",
+      "prompt": "Guitar sound without electronics",
+      "answer": "Guitar sound without electronics",
+      "distractors": [],
+      "group": "Acoustic guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-4",
+      "prompt": "Natural body resonance in guitar",
+      "answer": "Natural body resonance in guitar",
+      "distractors": [],
+      "group": "Acoustic guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-5",
+      "prompt": "Guitar pickups feed an amplifier",
+      "answer": "Guitar pickups feed an amplifier",
+      "distractors": [],
+      "group": "Electric guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-6",
+      "prompt": "Amplified guitar with pickups",
+      "answer": "Amplified guitar with pickups",
+      "distractors": [],
+      "group": "Electric guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-7",
+      "prompt": "Guitar sends an electric signal",
+      "answer": "Guitar sends an electric signal",
+      "distractors": [],
+      "group": "Electric guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-8",
+      "prompt": "Guitar heard through amplifier",
+      "answer": "Guitar heard through amplifier",
+      "distractors": [],
+      "group": "Electric guitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-9",
+      "prompt": "Snare, bass drum and cymbals set",
+      "answer": "Snare, bass drum and cymbals set",
+      "distractors": [],
+      "group": "Drum kit",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-10",
+      "prompt": "One player: drums and cymbals",
+      "answer": "One player: drums and cymbals",
+      "distractors": [],
+      "group": "Drum kit",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-11",
+      "prompt": "Sticks, brushes and foot pedals",
+      "answer": "Sticks, brushes and foot pedals",
+      "distractors": [],
+      "group": "Drum kit",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-12",
+      "prompt": "Drummer uses hands and feet",
+      "answer": "Drummer uses hands and feet",
+      "distractors": [],
+      "group": "Drum kit",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-13",
+      "prompt": "Keys make hammers strike strings",
+      "answer": "Keys make hammers strike strings",
+      "distractors": [],
+      "group": "Piano",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-14",
+      "prompt": "Hammer-struck strings and keys",
+      "answer": "Hammer-struck strings and keys",
+      "distractors": [],
+      "group": "Piano",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-15",
+      "prompt": "Piano keys trigger felt hammers",
+      "answer": "Piano keys trigger felt hammers",
+      "distractors": [],
+      "group": "Piano",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-jazz-popular-music-connections-1-16",
+      "prompt": "Keyboard with hammer-hit strings",
+      "answer": "Keyboard with hammer-hit strings",
+      "distractors": [],
+      "group": "Piano",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

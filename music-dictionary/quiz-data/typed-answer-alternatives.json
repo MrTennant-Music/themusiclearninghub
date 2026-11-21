@@ -1,0 +1,4245 @@
+{
+  "reviewDate": "2026-11-07",
+  "reviewedAnswers": 297,
+  "matching": "Explicit accepted variants only; no fuzzy musical-term matching.",
+  "questions": [
+    {
+      "questionId": "CQ-N3-MC0001-01",
+      "conceptId": "MC-0001",
+      "canonical": "Blues",
+      "previousAcceptedVariants": [
+        "Blues"
+      ],
+      "addedVariants": [
+        "Blues music",
+        "The blues",
+        "Blues style",
+        "Bluse"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c8568b772b1e9a8b6e260eb24989f8495e658442a302768057e67e3c5c3fe5b4"
+    },
+    {
+      "questionId": "CQ-N3-MC0002-01",
+      "conceptId": "MC-0002",
+      "canonical": "Jazz",
+      "previousAcceptedVariants": [
+        "Jazz"
+      ],
+      "addedVariants": [
+        "Jazz music",
+        "Jaz"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1220fa8568218ee4e65218699921ac4a9bb0fda57f55b3d37db47070e5f40f8b"
+    },
+    {
+      "questionId": "CQ-N3-MC0003-L01",
+      "conceptId": "MC-0003",
+      "canonical": "Latin American",
+      "previousAcceptedVariants": [
+        "Latin American"
+      ],
+      "addedVariants": [
+        "Latin-American",
+        "Latin American music",
+        "Latin Amercian",
+        "LatinAmerican"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "fcef08b4eb5158434da11e5af0d9f73c725219abab617652acdb8a735fb20721"
+    },
+    {
+      "questionId": "CQ-N3-MC0004-01",
+      "conceptId": "MC-0004",
+      "canonical": "Musical",
+      "previousAcceptedVariants": [
+        "Musical"
+      ],
+      "addedVariants": [
+        "Musicals",
+        "Musical theatre",
+        "Musical theater",
+        "Music theatre",
+        "Musical theartre"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9c46875fdc8824d0bec74abb8013ee109e4570d20ebaa7ed1bf72b115e4664e2"
+    },
+    {
+      "questionId": "CQ-N3-MC0005-01",
+      "conceptId": "MC-0005",
+      "canonical": "Pop",
+      "previousAcceptedVariants": [
+        "Pop"
+      ],
+      "addedVariants": [
+        "Pop music",
+        "Popular music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b53716f44fd3ad437f654827102003aa5abb0c400ecc320c76e6a255b1e7d437"
+    },
+    {
+      "questionId": "CQ-N3-MC0006-01",
+      "conceptId": "MC-0006",
+      "canonical": "Rock",
+      "previousAcceptedVariants": [
+        "Rock"
+      ],
+      "addedVariants": [
+        "Rock music",
+        "Rock style"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "57f9dea6712facd394bc772a694a23fe991144bd5bccdfa4d45d5125c582998b"
+    },
+    {
+      "questionId": "CQ-N3-MC0007-01",
+      "conceptId": "MC-0007",
+      "canonical": "Rock 'n' roll",
+      "previousAcceptedVariants": [
+        "Rock 'n' roll"
+      ],
+      "addedVariants": [
+        "Rock and roll",
+        "Rock n roll",
+        "Rock'n'roll",
+        "Rock & roll",
+        "Rock 'n roll",
+        "Rock and roll music",
+        "Rocknroll"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "181f1483a9114c2e1631a16d96fd5b644704868d901714abfe5401d320583c02"
+    },
+    {
+      "questionId": "CQ-N3-MC0009-Q02",
+      "conceptId": "MC-0009",
+      "canonical": "Ascending",
+      "previousAcceptedVariants": [
+        "Ascending"
+      ],
+      "addedVariants": [
+        "Ascending melody",
+        "Ascend",
+        "Ascends",
+        "Rising",
+        "Rising melody",
+        "Asending",
+        "Ascendng"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a51c796d770f11ce7381ad9876d05b08b1e27e4cb5bd64b57f11a9805a48795d"
+    },
+    {
+      "questionId": "CQ-N3-MC0010-Q02",
+      "conceptId": "MC-0010",
+      "canonical": "Chord",
+      "previousAcceptedVariants": [
+        "Chord"
+      ],
+      "addedVariants": [
+        "Chords",
+        "Cord",
+        "Cords"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c12e702bd25e4000c8f4785f1f7501a6f91e7f5bb31115ac8e1ceaa45c1e979d"
+    },
+    {
+      "questionId": "CQ-N3-MC0012-Q02",
+      "conceptId": "MC-0012",
+      "canonical": "Descending",
+      "previousAcceptedVariants": [
+        "Descending"
+      ],
+      "addedVariants": [
+        "Descending melody",
+        "Descend",
+        "Descends",
+        "Falling",
+        "Falling melody",
+        "Desending",
+        "Decending"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6ab9f2f437f45108a4a634c3b232b8b0426b8b2385d4123d59a6647b6d72d97d"
+    },
+    {
+      "questionId": "CQ-N3-MC0013-01",
+      "conceptId": "MC-0013",
+      "canonical": "Discord",
+      "previousAcceptedVariants": [
+        "Discord"
+      ],
+      "addedVariants": [
+        "Discords",
+        "Dissonance",
+        "Dissonant",
+        "Dissonant chord",
+        "Dischord",
+        "Dischords"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "019ffe33f7419d375e49302b1f54c0e8ed5614bcedee3e07f7afe87a800fa95c"
+    },
+    {
+      "questionId": "CQ-N3-MC0014-01",
+      "conceptId": "MC-0014",
+      "canonical": "Improvisation",
+      "previousAcceptedVariants": [
+        "Improvisation"
+      ],
+      "addedVariants": [
+        "Improvise",
+        "Improvising",
+        "Improvised",
+        "Improvisations",
+        "Improvisation solo",
+        "Improvisaton",
+        "Improvasation"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "49b21619b47b85ea1f65bc2b8d6de43b8ed5cb6e1efe23f31d7b932dd6836122"
+    },
+    {
+      "questionId": "CQ-N3-MC0015-01",
+      "conceptId": "MC-0015",
+      "canonical": "Leap",
+      "previousAcceptedVariants": [
+        "Leap",
+        "Leaping",
+        "Leap / leaping"
+      ],
+      "addedVariants": [
+        "Leaps",
+        "Leaping movement",
+        "Leap movement",
+        "A leap",
+        "Leeping"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ebdb6da010728b8e087f2e4811e6b57443771f78ec543aaa0c6cb0eded6a6d5a"
+    },
+    {
+      "questionId": "CQ-N3-MC0016-Q02",
+      "conceptId": "MC-0016",
+      "canonical": "Question and answer",
+      "previousAcceptedVariants": [
+        "Question and answer",
+        "Question",
+        "Answer"
+      ],
+      "addedVariants": [
+        "Question & answer",
+        "Question answer",
+        "Question and answer phrasing",
+        "Call and response",
+        "Call & response",
+        "Question and answere"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1ee54a08d8b1757a685c347a92373d993695ad03c7b6523a5cfb9763fb7ee106"
+    },
+    {
+      "questionId": "CQ-N3-MC0017-Q02",
+      "conceptId": "MC-0017",
+      "canonical": "Repetition",
+      "previousAcceptedVariants": [
+        "Repetition"
+      ],
+      "addedVariants": [
+        "Repeat",
+        "Repeated",
+        "Repeating",
+        "Repeats",
+        "Repetitions",
+        "Repitition",
+        "Repetiton",
+        "Repition"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "bda6d45f4aeba9c1186d911afaa537446182f9207a1539110649cb985a9a63ff"
+    },
+    {
+      "questionId": "CQ-N3-MC0018-Q02",
+      "conceptId": "MC-0018",
+      "canonical": "Sequence",
+      "previousAcceptedVariants": [
+        "Sequence"
+      ],
+      "addedVariants": [
+        "Sequences",
+        "Sequencing",
+        "Sequenced",
+        "Sequance",
+        "Sequense"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9d33bea5216176de573f32b2c38079771d6b2ec3b9195aca110689ffad1e2f0d"
+    },
+    {
+      "questionId": "CQ-N3-MC0019-01",
+      "conceptId": "MC-0019",
+      "canonical": "Stepwise",
+      "previousAcceptedVariants": [
+        "Stepwise",
+        "Step",
+        "Stepwise movement",
+        "Step / stepwise"
+      ],
+      "addedVariants": [
+        "Steps",
+        "Stepping",
+        "Step wise",
+        "Step-wise",
+        "Stepwise motion",
+        "Stepwise movment"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ee87beb3f883284aa90d350ba13f8fb132130f0031d4db6026b7c7fa5ee32737"
+    },
+    {
+      "questionId": "CQ-N3-MC0021-01",
+      "conceptId": "MC-0021",
+      "canonical": "Accent",
+      "previousAcceptedVariants": [
+        "Accent",
+        "Accented",
+        "Accent / accented"
+      ],
+      "addedVariants": [
+        "Accents",
+        "Accenting",
+        "Accentuation",
+        "Emphasis",
+        "Emphasised",
+        "Emphasized",
+        "Accented notes",
+        "Acent",
+        "Acccent"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "529726d8d7bc7c845e43a0c70d7d364df35b6a8bfb4b22eb20cd8b77ad817db0"
+    },
+    {
+      "questionId": "CQ-N3-MC0022-01",
+      "conceptId": "MC-0022",
+      "canonical": "Adagio",
+      "previousAcceptedVariants": [
+        "Adagio"
+      ],
+      "addedVariants": [
+        "Adajio",
+        "Adagio tempo",
+        "Adigio"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c96fae840ee512871f168a921301353015447f7bbd93688d8ebb6bc18c2bcfe0"
+    },
+    {
+      "questionId": "CQ-N3-MC0023-Q02",
+      "conceptId": "MC-0023",
+      "canonical": "Allegro",
+      "previousAcceptedVariants": [
+        "Allegro"
+      ],
+      "addedVariants": [
+        "Alegro",
+        "Allegro tempo"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ea311841808c6dc103dcdd6f07f5668eba74b1a63fe315a517382f50d9f8aeaf"
+    },
+    {
+      "questionId": "CQ-N3-MC0025-Q02",
+      "conceptId": "MC-0025",
+      "canonical": "Drum fill",
+      "previousAcceptedVariants": [
+        "Drum fill"
+      ],
+      "addedVariants": [
+        "Drum fills",
+        "Drumfill",
+        "Drumfills",
+        "Drum fil"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d87e00dfded21f21fd22a09693c3ff1ca8191d582f72332f0eadca9405a90b71"
+    },
+    {
+      "questionId": "CQ-N3-MC0027-01",
+      "conceptId": "MC-0027",
+      "canonical": "March",
+      "previousAcceptedVariants": [
+        "March"
+      ],
+      "addedVariants": [
+        "Marches",
+        "March music",
+        "Marching music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "91160b144656a4f48dccefe679b28d5fb402b7f67e158d7ecdf4f246d01f5d52"
+    },
+    {
+      "questionId": "CQ-N3-MC0028-Q02",
+      "conceptId": "MC-0028",
+      "canonical": "Off the beat",
+      "previousAcceptedVariants": [
+        "Off the beat"
+      ],
+      "addedVariants": [
+        "Off-beat",
+        "Off beat",
+        "Offbeat",
+        "Off the beats",
+        "Off-the-beat",
+        "Between the beats",
+        "Offthebeat"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5d06abf8c10b32940c24070f12ccf1af085b18194490d4ba9edd281c29ce19e7"
+    },
+    {
+      "questionId": "CQ-N3-MC0030-Q02",
+      "conceptId": "MC-0030",
+      "canonical": "Pause",
+      "previousAcceptedVariants": [
+        "Pause"
+      ],
+      "addedVariants": [
+        "Pauses",
+        "Fermata",
+        "Hold",
+        "Held pause"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "840439cf58dafb63a3da5f9ad1eacbab26266ea0405578294cbd2b545c044dd7"
+    },
+    {
+      "questionId": "CQ-N3-MC0031-Q02",
+      "conceptId": "MC-0031",
+      "canonical": "Reel",
+      "previousAcceptedVariants": [
+        "Reel"
+      ],
+      "addedVariants": [
+        "Reels",
+        "Scottish reel",
+        "Real"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "edbb78dbf6e236e286484317018e84897a8baffd4f448e588ab238429acf5222"
+    },
+    {
+      "questionId": "CQ-N3-MC0033-01",
+      "conceptId": "MC-0033",
+      "canonical": "Waltz",
+      "previousAcceptedVariants": [
+        "Waltz"
+      ],
+      "addedVariants": [
+        "Waltzes",
+        "Waltz music",
+        "Walts",
+        "Walse"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "699be3bb4240999c3d7ed1e168d10a7c70c07dbded0c78a85834a38d9e0cef58"
+    },
+    {
+      "questionId": "CQ-N3-MC0034-Q02",
+      "conceptId": "MC-0034",
+      "canonical": "Accompanied",
+      "previousAcceptedVariants": [
+        "Accompanied"
+      ],
+      "addedVariants": [
+        "Accompaniment",
+        "Accompanying",
+        "Accompany",
+        "Accompanies",
+        "Accompanied music",
+        "Accompaniement",
+        "Accompainment",
+        "Accompiment",
+        "Acompanied",
+        "Accompannied",
+        "Accompanyed",
+        "Acompany",
+        "Accompaning",
+        "Accompanyment"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "008291ab072dae3681d2ffab4c9b6bfde8c08461b8eeb9a6732a8a406bd9dfa0"
+    },
+    {
+      "questionId": "CQ-N3-MC0035-01",
+      "conceptId": "MC-0035",
+      "canonical": "Harmony",
+      "previousAcceptedVariants": [
+        "Harmony"
+      ],
+      "addedVariants": [
+        "Harmonies",
+        "Harmonising",
+        "Harmonizing",
+        "Harmonic texture",
+        "Harmoney",
+        "Harmonie"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a985779be5483c0f26423a48ff54fdfd79e084ae206686d726da1f718605c3d7"
+    },
+    {
+      "questionId": "CQ-N3-MC0037-Q02",
+      "conceptId": "MC-0037",
+      "canonical": "Ostinato",
+      "previousAcceptedVariants": [
+        "Ostinato",
+        "Riff",
+        "Ostinato / riff"
+      ],
+      "addedVariants": [
+        "Ostinatos",
+        "Ostinati",
+        "Riffs",
+        "Repeated riff",
+        "Ostenato",
+        "Ostinatto",
+        "Ostinato pattern"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6917986074d1e4408ea716a748bbdb7c8ec53e4a44ddff089cb7b35971935396"
+    },
+    {
+      "questionId": "CQ-N3-MC0038-Q02",
+      "conceptId": "MC-0038",
+      "canonical": "Round",
+      "previousAcceptedVariants": [
+        "Round"
+      ],
+      "addedVariants": [
+        "Rounds",
+        "Round singing",
+        "A round",
+        "Round song"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "07cdc54806bf621c77ca8bdb4c9cda2213e1a0c8b9b6ba1a1b9c743ceb01c87d"
+    },
+    {
+      "questionId": "CQ-N3-MC0039-01",
+      "conceptId": "MC-0039",
+      "canonical": "Solo",
+      "previousAcceptedVariants": [
+        "Solo"
+      ],
+      "addedVariants": [
+        "Soloist",
+        "Soloists",
+        "Solos",
+        "Solo performance",
+        "Solo singing",
+        "Sollo"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b7de808d3aebc079dcca4db0a80a9f269d8c65cb7361ba36cb0dbb02788ac2d9"
+    },
+    {
+      "questionId": "CQ-N3-MC0040-Q02",
+      "conceptId": "MC-0040",
+      "canonical": "Unaccompanied",
+      "previousAcceptedVariants": [
+        "Unaccompanied"
+      ],
+      "addedVariants": [
+        "Unaccompanied music",
+        "Without accompaniment",
+        "No accompaniment",
+        "Without backing",
+        "Unaccompanied singing",
+        "Unacompanied",
+        "Unaccompanyed",
+        "Unaccompannied",
+        "Unaccompanid",
+        "Unaccompaniment"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ea835cf8c07d80bca58e0e319916199005a1ffc39e55a1f075ba144ff1a02cab"
+    },
+    {
+      "questionId": "CQ-N3-MC0041-01",
+      "conceptId": "MC-0041",
+      "canonical": "Unison",
+      "previousAcceptedVariants": [
+        "Unison"
+      ],
+      "addedVariants": [
+        "In unison",
+        "Unison singing",
+        "Unison melody",
+        "Unision",
+        "Unisone"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "14cd6b7f86bd9b0961f5f6fc246802ae21378030d6524672a5ee94f618aa1464"
+    },
+    {
+      "questionId": "CQ-N3-MC0042-01",
+      "conceptId": "MC-0042",
+      "canonical": "Accordion",
+      "previousAcceptedVariants": [
+        "Accordion"
+      ],
+      "addedVariants": [
+        "Accordian",
+        "Acordion",
+        "Accordeon",
+        "Accordion instrument"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7e9dc31bc780441d5a8014dfd1b62109e69e14bd388e5866241882ca0a2a741a"
+    },
+    {
+      "questionId": "CQ-N3-MC0045-Q02",
+      "conceptId": "MC-0045",
+      "canonical": "Blowing",
+      "previousAcceptedVariants": [
+        "Blowing"
+      ],
+      "addedVariants": [
+        "Blow",
+        "Blown",
+        "Blowing air",
+        "Blowing into the instrument"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ce1164894be5e7fb7118bf0019b0aded81f477bf771f22f6d30dd08d79f927dd"
+    },
+    {
+      "questionId": "CQ-N3-MC0048-Q02",
+      "conceptId": "MC-0048",
+      "canonical": "Choir",
+      "previousAcceptedVariants": [
+        "Choir"
+      ],
+      "addedVariants": [
+        "Choirs",
+        "Chior",
+        "Quire",
+        "Choire"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "535d1c2213c05f1ec9d5cbc2ea298fb04ae3a248c64bbf8d8e157c1f0c8b3216"
+    },
+    {
+      "questionId": "CQ-N3-MC0051-01",
+      "conceptId": "MC-0051",
+      "canonical": "Fiddle",
+      "previousAcceptedVariants": [
+        "Fiddle"
+      ],
+      "addedVariants": [
+        "Fiddles",
+        "Scottish fiddle",
+        "Violin",
+        "Fidel",
+        "Fiddel"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e9c048bdb5b5e15942589f1aa04dc73a0fa2f6c4f64661a2f70425572fa7585f"
+    },
+    {
+      "questionId": "CQ-N3-MC0052-Q02",
+      "conceptId": "MC-0052",
+      "canonical": "Folk group",
+      "previousAcceptedVariants": [
+        "Folk group"
+      ],
+      "addedVariants": [
+        "Folk groups",
+        "Folk band",
+        "Folk ensemble"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9ea3195f280faf35f7ab1f90ae836320c008f49cdaa852dcf0310aac206f7972"
+    },
+    {
+      "questionId": "CQ-N3-MC0053-01",
+      "conceptId": "MC-0053",
+      "canonical": "Legato",
+      "previousAcceptedVariants": [
+        "Legato"
+      ],
+      "addedVariants": [
+        "Legatto",
+        "Legato articulation",
+        "Legato playing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "cd7085d312ac174263ceb4f925a7b799fcbd60aace00e380308ba81a4ceff3f1"
+    },
+    {
+      "questionId": "CQ-N3-MC0054-Q02",
+      "conceptId": "MC-0054",
+      "canonical": "Orchestra",
+      "previousAcceptedVariants": [
+        "Orchestra"
+      ],
+      "addedVariants": [
+        "Orchestras",
+        "Full orchestra",
+        "Symphony orchestra",
+        "Orcestra",
+        "Orchastra"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d9fd647cea656342f4916f86fef7ee41136b5f82215c30b796d2e2c08e32b793"
+    },
+    {
+      "questionId": "CQ-N3-MC0056-Q02",
+      "conceptId": "MC-0056",
+      "canonical": "Percussion",
+      "previousAcceptedVariants": [
+        "Percussion",
+        "Percussion (tuned and untuned)"
+      ],
+      "addedVariants": [
+        "Percussion instruments",
+        "Percussion family",
+        "Percusion",
+        "Percussian",
+        "Percussion section",
+        "Tuned and untuned percussion"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "49528e2395cb10721635cf26dc8ed9646959becd9dfaab75226ac59a38bbfe4f"
+    },
+    {
+      "questionId": "CQ-N3-MC0059-Q02",
+      "conceptId": "MC-0059",
+      "canonical": "Scottish dance band",
+      "previousAcceptedVariants": [
+        "Scottish dance band"
+      ],
+      "addedVariants": [
+        "Scottish dance bands",
+        "Scots dance band",
+        "Scottish danceband",
+        "Scotish dance band"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7942399e8686e67856926c184deaef2eec908c6443ab7bf1f785d88444f1a9d7"
+    },
+    {
+      "questionId": "CQ-N3-MC0060-01",
+      "conceptId": "MC-0060",
+      "canonical": "Staccato",
+      "previousAcceptedVariants": [
+        "Staccato"
+      ],
+      "addedVariants": [
+        "Stacatto",
+        "Staccatto",
+        "Stacato",
+        "Staccato articulation"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e747359f142272382926258da74a889ec2fb4306e5b07b5e37ce2998b98b5f87"
+    },
+    {
+      "questionId": "CQ-N3-MC0061-01",
+      "conceptId": "MC-0061",
+      "canonical": "Steel band",
+      "previousAcceptedVariants": [
+        "Steel band"
+      ],
+      "addedVariants": [
+        "Steel bands",
+        "Steelband",
+        "Steel pan band",
+        "Steel drum band",
+        "Steel pans",
+        "Steel drums",
+        "Steel-band"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "815270803b3c2e0a315fb7082e57966dfde22a172c16c9ffae9d0837025b5dbb"
+    },
+    {
+      "questionId": "CQ-N3-MC0063-Q02",
+      "conceptId": "MC-0063",
+      "canonical": "Strings",
+      "previousAcceptedVariants": [
+        "Strings"
+      ],
+      "addedVariants": [
+        "String",
+        "String family",
+        "String section",
+        "String instruments",
+        "Orchestral strings",
+        "Stings"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a0ef52e56513755511dd1e0f4a7632f9720e94fe2de9c32bc1ca825047731e28"
+    },
+    {
+      "questionId": "CQ-N3-MC0068-Q02",
+      "conceptId": "MC-0068",
+      "canonical": "Woodwind",
+      "previousAcceptedVariants": [
+        "Woodwind"
+      ],
+      "addedVariants": [
+        "Woodwinds",
+        "Woodwind family",
+        "Woodwind instruments",
+        "Woodwind section",
+        "Wood wind",
+        "Wood-wind"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "13c8556370aed80d2f4fe7c99b52ffe2f048b44b2f62c1f9455089e038c7967d"
+    },
+    {
+      "questionId": "CQ-N4-MC0070-01",
+      "conceptId": "MC-0070",
+      "canonical": "Baroque",
+      "previousAcceptedVariants": [
+        "Baroque"
+      ],
+      "addedVariants": [
+        "Baroque music",
+        "Baroque period",
+        "Baroqe",
+        "Barroque",
+        "Boroque"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "4f739f3ad8d512f45a3e0954dadb547cb6a6d48d21e18be54bd75fe758310f3e"
+    },
+    {
+      "questionId": "CQ-N4-MC0071-02",
+      "conceptId": "MC-0071",
+      "canonical": "Concerto",
+      "previousAcceptedVariants": [
+        "Concerto"
+      ],
+      "addedVariants": [
+        "Concertos",
+        "Solo concerto",
+        "Concerto music",
+        "Concherto",
+        "Conserto"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "043cd7e03e1a380238bb05c9fa172a9049271ab3b12ed59dff565159051f1429"
+    },
+    {
+      "questionId": "CQ-N4-MC0072-02",
+      "conceptId": "MC-0072",
+      "canonical": "Mouth music",
+      "previousAcceptedVariants": [
+        "Mouth music"
+      ],
+      "addedVariants": [
+        "Mouth-music",
+        "Puirt a beul",
+        "Mouthmusic"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2b72ca16c82b42494c6e074a61d42f11e50e3fe20ec7f9e0d80b31ac2bae5c67"
+    },
+    {
+      "questionId": "CQ-N4-MC0073-Q02",
+      "conceptId": "MC-0073",
+      "canonical": "Opera",
+      "previousAcceptedVariants": [
+        "Opera"
+      ],
+      "addedVariants": [
+        "Operas",
+        "Opera music",
+        "Operatic music",
+        "Opra"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a155546230b2262410df6b4b243f6f8716b8ed5439bb73be14f79b7bbfe776e3"
+    },
+    {
+      "questionId": "CQ-N4-MC0074-Q02",
+      "conceptId": "MC-0074",
+      "canonical": "Ragtime",
+      "previousAcceptedVariants": [
+        "Ragtime"
+      ],
+      "addedVariants": [
+        "Rag time",
+        "Rag-time",
+        "Ragtime music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "28fe4f49d7afb5bf053ab14b8f52123777ebd7ea702e942ff93b4b9793ad1702"
+    },
+    {
+      "questionId": "CQ-N4-MC0075-Q02",
+      "conceptId": "MC-0075",
+      "canonical": "Rapping",
+      "previousAcceptedVariants": [
+        "Rapping"
+      ],
+      "addedVariants": [
+        "Rap",
+        "Rapped",
+        "Rap music",
+        "Raps",
+        "Raping"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e7556f719e8f602e2c75c17441818295450ddca3bab1493d61f35cbeafa095d8"
+    },
+    {
+      "questionId": "CQ-N4-MC0076-02",
+      "conceptId": "MC-0076",
+      "canonical": "Reggae",
+      "previousAcceptedVariants": [
+        "Reggae"
+      ],
+      "addedVariants": [
+        "Reggae music",
+        "Reggea",
+        "Regae",
+        "Regge"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "902f42563a1cfde3ed1b01183539c3f9d71afcccdb24359de966cbd4c1e07189"
+    },
+    {
+      "questionId": "CQ-N4-MC0077-Q02",
+      "conceptId": "MC-0077",
+      "canonical": "Romantic",
+      "previousAcceptedVariants": [
+        "Romantic"
+      ],
+      "addedVariants": [
+        "Romantic music",
+        "Romantic period",
+        "Romanticism"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "be6c00135ca792c640b0de479d92d67b4ce4b0e4b08ec37dcea08896c9f1159c"
+    },
+    {
+      "questionId": "CQ-N4-MC0078-Q02",
+      "conceptId": "MC-0078",
+      "canonical": "Scots ballad",
+      "previousAcceptedVariants": [
+        "Scots ballad"
+      ],
+      "addedVariants": [
+        "Scots ballads",
+        "Scottish ballad",
+        "Scottish ballads",
+        "Scots balad",
+        "Scots balled"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b201b2e36c3c3707651e134ea557a38d753ba1a59851d9c57b55356be8fbacb9"
+    },
+    {
+      "questionId": "CQ-N4-MC0079-Q02",
+      "conceptId": "MC-0079",
+      "canonical": "Swing",
+      "previousAcceptedVariants": [
+        "Swing"
+      ],
+      "addedVariants": [
+        "Swing music",
+        "Big band swing",
+        "Swung",
+        "Swing style"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5b8693305fcdfa3619e7a8f56944c3a62937debfe6e2d5e17f48500a3f2fb3c1"
+    },
+    {
+      "questionId": "CQ-N4-MC0080-Q02",
+      "conceptId": "MC-0080",
+      "canonical": "Arpeggio",
+      "previousAcceptedVariants": [
+        "Arpeggio",
+        "Broken chord",
+        "Broken chord / arpeggio"
+      ],
+      "addedVariants": [
+        "Arpeggios",
+        "Arpeggiated",
+        "Arpeggiation",
+        "Broken chords",
+        "Broken-chord",
+        "Arpegio",
+        "Brokenchord"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "384d41248b9fd4d02326792e36968d423088e3e1c93475f7f7adf393249879fe"
+    },
+    {
+      "questionId": "CQ-N4-MC0081-Q02",
+      "conceptId": "MC-0081",
+      "canonical": "Change of key",
+      "previousAcceptedVariants": [
+        "Change of key",
+        "Modulation",
+        "Key change"
+      ],
+      "addedVariants": [
+        "Changes of key",
+        "Changing key",
+        "Key changes",
+        "Modulate",
+        "Modulating",
+        "Modulated",
+        "Modulaton",
+        "Keychange"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f95ecc228c274d90354e6fa2488f54ca363ba28c730ae551e6795dd1246a2687"
+    },
+    {
+      "questionId": "CQ-N4-MC0083-Q02",
+      "conceptId": "MC-0083",
+      "canonical": "Drone",
+      "previousAcceptedVariants": [
+        "Drone"
+      ],
+      "addedVariants": [
+        "Drones",
+        "Drone note",
+        "Drone bass"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a5bbf63c7b4fcdec0bc3e386b51489a69c8d6b2fabc0ca1a1059006e142a99f0"
+    },
+    {
+      "questionId": "CQ-N4-MC0084-Q02",
+      "conceptId": "MC-0084",
+      "canonical": "Major tonality",
+      "previousAcceptedVariants": [
+        "Major tonality",
+        "Major",
+        "Major key"
+      ],
+      "addedVariants": [
+        "Major-key",
+        "In a major key",
+        "Major tonalities",
+        "Majour",
+        "Major tonalaty",
+        "Majorkey"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "bdef3b67501419e6907d98d85c4e18a4ec04d52f72d85ad6b0a899a8212c9bb7"
+    },
+    {
+      "questionId": "CQ-N4-MC0085-Q02",
+      "conceptId": "MC-0085",
+      "canonical": "Minor tonality",
+      "previousAcceptedVariants": [
+        "Minor tonality",
+        "Minor",
+        "Minor key"
+      ],
+      "addedVariants": [
+        "Minor-key",
+        "In a minor key",
+        "Minor tonalities",
+        "Minor tonalaty",
+        "Minorkey"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c12e0a4c98c35f3dcbde265d6b9d03e61e451e7b5fd00f2048bc7cfc53dd3cf4"
+    },
+    {
+      "questionId": "CQ-N4-MC0086-Q01",
+      "conceptId": "MC-0086",
+      "canonical": "Octave",
+      "previousAcceptedVariants": [
+        "Octave"
+      ],
+      "addedVariants": [
+        "Octaves",
+        "An octave",
+        "Octive",
+        "Octav"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "3b6f271efe80ef487d3b61f115859caceb45ef8cc7c08a022033a4aaddbf48c1"
+    },
+    {
+      "questionId": "CQ-N4-MC0087-Q02",
+      "conceptId": "MC-0087",
+      "canonical": "Ornament",
+      "previousAcceptedVariants": [
+        "Ornament"
+      ],
+      "addedVariants": [
+        "Ornaments",
+        "Ornamentation",
+        "Ornamented",
+        "Ornamenting",
+        "Ornement",
+        "Ornamant"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7d7ac6aa7fc0e888b7b636ee4f54213d63f69ecc6ccbc6936138e46df01c5559"
+    },
+    {
+      "questionId": "CQ-N4-MC0088-Q02",
+      "conceptId": "MC-0088",
+      "canonical": "Pedal",
+      "previousAcceptedVariants": [
+        "Pedal"
+      ],
+      "addedVariants": [
+        "Pedal note",
+        "Pedal point",
+        "Bass pedal",
+        "Pedal bass",
+        "Pedals",
+        "Peddle",
+        "Pedle"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6a5856aead9d348817ef672c078d9306f4e2e031ccfe226b4bc3114f979fff0e"
+    },
+    {
+      "questionId": "CQ-N4-MC0089-01",
+      "conceptId": "MC-0089",
+      "canonical": "Pentatonic scale",
+      "previousAcceptedVariants": [
+        "Pentatonic scale"
+      ],
+      "addedVariants": [
+        "Pentatonic",
+        "Pentatonic scales",
+        "Pentatonic melody",
+        "Pentatonnic",
+        "Pentatonic scail",
+        "Pentatonic skale"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "aaed0dc0df5d987307c067446fafa2854726159a2980824c2c4f563d4017c718"
+    },
+    {
+      "questionId": "CQ-N4-MC0091-Q02",
+      "conceptId": "MC-0091",
+      "canonical": "Scat singing",
+      "previousAcceptedVariants": [
+        "Scat singing"
+      ],
+      "addedVariants": [
+        "Scat",
+        "Scatting",
+        "Scatted",
+        "Scat vocals",
+        "Skat singing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2bcf304e904b62c07298f415978a17fb6cdd58e245d061ff50e877e9cf1e0f18"
+    },
+    {
+      "questionId": "CQ-N4-MC0093-Q02",
+      "conceptId": "MC-0093",
+      "canonical": "Vamp",
+      "previousAcceptedVariants": [
+        "Vamp"
+      ],
+      "addedVariants": [
+        "Vamps",
+        "Vamping",
+        "Vamped",
+        "Vamp accompaniment"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2ddba9bf01bda2d62f429b09e65be4609b552464f3f61f9f5ed6a45097538042"
+    },
+    {
+      "questionId": "CQ-N4-MC0094-01",
+      "conceptId": "MC-0094",
+      "canonical": "A tempo",
+      "previousAcceptedVariants": [
+        "A tempo"
+      ],
+      "addedVariants": [
+        "A-tempo",
+        "Atempo",
+        "At tempo"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b9d2b336c84a49836f834cd087df17320d38eb45697812d32edb9ffb6fc93753"
+    },
+    {
+      "questionId": "CQ-N4-MC0095-01",
+      "conceptId": "MC-0095",
+      "canonical": "Accelerando",
+      "previousAcceptedVariants": [
+        "Accelerando"
+      ],
+      "addedVariants": [
+        "Accelerating",
+        "Accelerate",
+        "Accelerated",
+        "Accel.",
+        "Accel",
+        "Accellerando",
+        "Acelerando",
+        "Accelerendo"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c29694532a8b8a01a0d0da32f01a41e6dd5bf6e6698d3a26d481115105b5afb5"
+    },
+    {
+      "questionId": "CQ-N4-MC0096-Q02",
+      "conceptId": "MC-0096",
+      "canonical": "Anacrusis",
+      "previousAcceptedVariants": [
+        "Anacrusis"
+      ],
+      "addedVariants": [
+        "Anacrucis",
+        "Anacrusus",
+        "Anacruses",
+        "Anacrusis opening",
+        "Pickup",
+        "Pick-up",
+        "Upbeat",
+        "Anacrisis",
+        "Pick up"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0b5dcb6a6711456d6b80e9783de31adb173b9b153d688592d83ab93eb984724c"
+    },
+    {
+      "questionId": "CQ-N4-MC0097-01",
+      "conceptId": "MC-0097",
+      "canonical": "Andante",
+      "previousAcceptedVariants": [
+        "Andante"
+      ],
+      "addedVariants": [
+        "Andante tempo",
+        "Andantee"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "13f6a1570ac920d83dccd98f36c538b1e2982a607151f3e9cb55e6c4ee21b937"
+    },
+    {
+      "questionId": "CQ-N4-MC0098-01",
+      "conceptId": "MC-0098",
+      "canonical": "Compound time",
+      "previousAcceptedVariants": [
+        "Compound time",
+        "Compound metre",
+        "Compound meter"
+      ],
+      "addedVariants": [
+        "Compound",
+        "Compound rhythm",
+        "Compound-time",
+        "Compund time",
+        "Compound timing",
+        "Compoundtime"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8db24e28abb6a9f131d730b40bb6130d05270e299f3c34a3a8810505eaeb8d44"
+    },
+    {
+      "questionId": "CQ-N4-MC0099-Q02",
+      "conceptId": "MC-0099",
+      "canonical": "Dotted rhythms",
+      "previousAcceptedVariants": [
+        "Dotted rhythms"
+      ],
+      "addedVariants": [
+        "Dotted rhythm",
+        "Dotted notes",
+        "Dotted note rhythm",
+        "Dottted rhythm",
+        "Doted rhythm"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8b751355c1198df2843f248c969ab57205c757c34080ee32cdff49450a741889"
+    },
+    {
+      "questionId": "CQ-N4-MC0100-Q02",
+      "conceptId": "MC-0100",
+      "canonical": "Jig",
+      "previousAcceptedVariants": [
+        "Jig"
+      ],
+      "addedVariants": [
+        "Jigs",
+        "Scottish jig",
+        "Irish jig",
+        "Jigg"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ea2f8c2af7f75fa3e6a8157d8121c09af5a191afcb5aa3d8cb4dff66a8d8f2a5"
+    },
+    {
+      "questionId": "CQ-N4-MC0101-Q02",
+      "conceptId": "MC-0101",
+      "canonical": "Rallentando",
+      "previousAcceptedVariants": [
+        "Rallentando",
+        "Ritardando"
+      ],
+      "addedVariants": [
+        "Rall.",
+        "Rall",
+        "Rallentado",
+        "Ralentando",
+        "Rallentendo",
+        "Ritard.",
+        "Rit.",
+        "Rit"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1898de9c7d7c31f8bc53b4164a5b9690df74cb055c839f5fe69ee91d2ff4d667"
+    },
+    {
+      "questionId": "CQ-N4-MC0102-Q02",
+      "conceptId": "MC-0102",
+      "canonical": "Scotch snap",
+      "previousAcceptedVariants": [
+        "Scotch snap"
+      ],
+      "addedVariants": [
+        "Scotch snaps",
+        "Scottish snap",
+        "Scots snap",
+        "Scotch-snap",
+        "Scoth snap",
+        "Scotchsnap"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f5257246f4bcc40a414a3c6053cf6423e6bfba6258bdc8bfff78f7ca5d61ae5d"
+    },
+    {
+      "questionId": "CQ-N4-MC0103-01",
+      "conceptId": "MC-0103",
+      "canonical": "Simple time",
+      "previousAcceptedVariants": [
+        "Simple time",
+        "Simple metre",
+        "Simple meter",
+        "Simple time (2/4, 3/4 and 4/4)"
+      ],
+      "addedVariants": [
+        "Simple",
+        "Simple rhythm",
+        "Simple-time",
+        "Simple timing",
+        "Simpel time",
+        "Simpletime"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "62f4516b338524d93bc3d330514ca8b936843d2b2fb1f06321ed244a136114ba"
+    },
+    {
+      "questionId": "CQ-N4-MC0104-Q02",
+      "conceptId": "MC-0104",
+      "canonical": "Strathspey",
+      "previousAcceptedVariants": [
+        "Strathspey"
+      ],
+      "addedVariants": [
+        "Strathspeys",
+        "Strathspay",
+        "Strathspey dance",
+        "Strathspay dance",
+        "Strathspe"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "740e35fda0c75e5631779b83757fc391667d353bee9cf07f33e5826903d401b5"
+    },
+    {
+      "questionId": "CQ-N4-MC0105-Q02",
+      "conceptId": "MC-0105",
+      "canonical": "Syncopation",
+      "previousAcceptedVariants": [
+        "Syncopation"
+      ],
+      "addedVariants": [
+        "Syncopated",
+        "Syncopating",
+        "Syncopate",
+        "Syncopations",
+        "Synchopation",
+        "Syncapation",
+        "Sincopation",
+        "Syncopaton"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d76f2783cd7b631b2b3e0aabeace8c499cb49b7791ba9dbf8f6ff11f7701dc29"
+    },
+    {
+      "questionId": "CQ-N4-MC0106-Q02",
+      "conceptId": "MC-0106",
+      "canonical": "Cadenza",
+      "previousAcceptedVariants": [
+        "Cadenza"
+      ],
+      "addedVariants": [
+        "Cadenzas",
+        "Cadensa",
+        "Cadenser",
+        "Cadanza"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "56a7c89c790150be721aae838d8c691b7b66b86074aac22d5410f610142c86f5"
+    },
+    {
+      "questionId": "CQ-N4-MC0107-Q02",
+      "conceptId": "MC-0107",
+      "canonical": "Canon",
+      "previousAcceptedVariants": [
+        "Canon"
+      ],
+      "addedVariants": [
+        "Canons",
+        "Canon singing",
+        "Cannon",
+        "Cannons"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d92b1a5a5a93aae8b19f519fe4013cf1527eeca3042e7633392cf07d0d34f462"
+    },
+    {
+      "questionId": "CQ-N4-MC0108-Q02",
+      "conceptId": "MC-0108",
+      "canonical": "Imitation",
+      "previousAcceptedVariants": [
+        "Imitation"
+      ],
+      "addedVariants": [
+        "Imitate",
+        "Imitating",
+        "Imitated",
+        "Imitations",
+        "Immitation",
+        "Imitaton"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e1bf16c573f29acbb4c29e0a567f76029ce5e096058de9368d779bc147d54e54"
+    },
+    {
+      "questionId": "CQ-N4-MC0109-Q02",
+      "conceptId": "MC-0109",
+      "canonical": "Middle 8",
+      "previousAcceptedVariants": [
+        "Middle 8"
+      ],
+      "addedVariants": [
+        "Middle eight",
+        "Middle-eight",
+        "Middle-8",
+        "Middle eight section",
+        "Middle 8 section",
+        "Middle eigth",
+        "Middleeight",
+        "Middle8"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b9e8ade466aed1b22c91c1747d0945599b451c7feff640979e5b0e7a2d8a9b10"
+    },
+    {
+      "questionId": "CQ-N4-MC0110-Q02",
+      "conceptId": "MC-0110",
+      "canonical": "Ternary",
+      "previousAcceptedVariants": [
+        "Ternary",
+        "Ternary form",
+        "ABA",
+        "Ternary / ABA"
+      ],
+      "addedVariants": [
+        "Ternary structure",
+        "Ternery",
+        "Ternerary"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6e5a781c89fdeeb39ede7f8f5be50460c8dac53136371bd6309a6fb3a4d8ca66"
+    },
+    {
+      "questionId": "CQ-N4-MC0111-Q02",
+      "conceptId": "MC-0111",
+      "canonical": "Theme and variation",
+      "previousAcceptedVariants": [
+        "Theme and variation",
+        "Theme and variations"
+      ],
+      "addedVariants": [
+        "Theme & variations",
+        "Theme & variation",
+        "Theme and varations",
+        "Theme and variation form",
+        "Variations on a theme"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "241ba377d02a182e8f0cd2fe4ca53156db0e5a0d39c2314c95d117aca67d1394"
+    },
+    {
+      "questionId": "CQ-N4-MC0113-01",
+      "conceptId": "MC-0113",
+      "canonical": "Alto",
+      "previousAcceptedVariants": [
+        "Alto"
+      ],
+      "addedVariants": [
+        "Altos",
+        "Alto voice",
+        "Alto singer",
+        "Allto"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9c75f63b7be2644515699d99bcb13636ede99eff152d2326c986f6044d601fb6"
+    },
+    {
+      "questionId": "CQ-N4-MC0114-Q02",
+      "conceptId": "MC-0114",
+      "canonical": "Backing vocals",
+      "previousAcceptedVariants": [
+        "Backing vocals"
+      ],
+      "addedVariants": [
+        "Backing vocal",
+        "Backing singers",
+        "Backing singing",
+        "Backing voice",
+        "Backup vocals",
+        "Back-up vocals",
+        "Back ground vocals",
+        "Backing vocels",
+        "Back up vocals"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d1dd7ce4ff52998be0c1a39494bd81c1777a74c160535421a854f2f9140a453d"
+    },
+    {
+      "questionId": "CQ-N4-MC0115-01",
+      "conceptId": "MC-0115",
+      "canonical": "Bass",
+      "previousAcceptedVariants": [
+        "Bass"
+      ],
+      "addedVariants": [
+        "Bass voice",
+        "Bass singer",
+        "Basses",
+        "Base",
+        "Base voice"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1ad4c56ecbacaf7e2d912d3e141b064577a7d12f5b747c52b32f86a1a6598f58"
+    },
+    {
+      "questionId": "CQ-N4-MC0118-Q02",
+      "conceptId": "MC-0118",
+      "canonical": "Brass band",
+      "previousAcceptedVariants": [
+        "Brass band"
+      ],
+      "addedVariants": [
+        "Brass bands",
+        "Brassband",
+        "Brass-band",
+        "Bras band"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8049be18bcfcc74d775a54712b8989661b697d1e49286f3572dee5cbdfaafcd7"
+    },
+    {
+      "questionId": "CQ-N4-MC0122-Q02",
+      "conceptId": "MC-0122",
+      "canonical": "Distortion",
+      "previousAcceptedVariants": [
+        "Distortion"
+      ],
+      "addedVariants": [
+        "Distorted",
+        "Distort",
+        "Distorting",
+        "Distorsion",
+        "Distotion",
+        "Distortion effect"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f9da7dd70ebcede9a073c74d036df6853e41102dbd4dc7ecfd24aef43b50906f"
+    },
+    {
+      "questionId": "CQ-N4-MC0125-Q02",
+      "conceptId": "MC-0125",
+      "canonical": "Glockenspiel",
+      "previousAcceptedVariants": [
+        "Glockenspiel"
+      ],
+      "addedVariants": [
+        "Glock",
+        "Glockenspiels",
+        "Glockenspeil",
+        "Glockenspel",
+        "Glockenspeel"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1ce14c822c14da4921c9100afb4dba19827b823785fcf28ea726cf4cb0140a25"
+    },
+    {
+      "questionId": "CQ-N4-MC0126-01",
+      "conceptId": "MC-0126",
+      "canonical": "Guiro",
+      "previousAcceptedVariants": [
+        "Guiro"
+      ],
+      "addedVariants": [
+        "Güiro",
+        "Guiros",
+        "Güiros",
+        "Guero",
+        "Giro"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5e004cf0ce41865e07bcd53aaa9b98f727fec42163c060087402ac3f159e523f"
+    },
+    {
+      "questionId": "CQ-N4-MC0128-Q02",
+      "conceptId": "MC-0128",
+      "canonical": "Harpsichord",
+      "previousAcceptedVariants": [
+        "Harpsichord"
+      ],
+      "addedVariants": [
+        "Harpsichords",
+        "Harpsicord",
+        "Harpsicords",
+        "Harpsichord instrument",
+        "Harpischord"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1fa7363d4a7da9e2497d9d607fba11a48e8815355897f1ac8386b0d1a70f628a"
+    },
+    {
+      "questionId": "CQ-N4-MC0131-Q02",
+      "conceptId": "MC-0131",
+      "canonical": "Recorder",
+      "previousAcceptedVariants": [
+        "Recorder"
+      ],
+      "addedVariants": [
+        "Recorders",
+        "Recoder",
+        "Recorder instrument"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f66304535e3f965ec7b22498b49ba33ff21069caa677de892f7a8081e5094d37"
+    },
+    {
+      "questionId": "CQ-N4-MC0132-Q02",
+      "conceptId": "MC-0132",
+      "canonical": "Saxophone",
+      "previousAcceptedVariants": [
+        "Saxophone"
+      ],
+      "addedVariants": [
+        "Sax",
+        "Saxophones",
+        "Saxaphone",
+        "Saxaphones",
+        "Saxofone"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "31ec10d97463c42f70432fae62602d671a2ff30f54ffe5aeef0f530c9c819aa3"
+    },
+    {
+      "questionId": "CQ-N4-MC0133-01",
+      "conceptId": "MC-0133",
+      "canonical": "Snare drum",
+      "previousAcceptedVariants": [
+        "Snare drum"
+      ],
+      "addedVariants": [
+        "Side drum",
+        "Side drums",
+        "Snare",
+        "Snare drums",
+        "Snaredrum",
+        "Snar drum"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7e7a960ed44e93f39f4a5d430abe7df2cf7ae08cfae08215c246ac2b42639993"
+    },
+    {
+      "questionId": "CQ-N4-MC0134-01",
+      "conceptId": "MC-0134",
+      "canonical": "Soprano",
+      "previousAcceptedVariants": [
+        "Soprano"
+      ],
+      "addedVariants": [
+        "Sopranos",
+        "Soprano voice",
+        "Sopprano",
+        "Saprano"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "67bb213b7070434db611afc0329349301aaa2620d615e521eeaa6f456718a472"
+    },
+    {
+      "questionId": "CQ-N4-MC0136-01",
+      "conceptId": "MC-0136",
+      "canonical": "Tenor",
+      "previousAcceptedVariants": [
+        "Tenor"
+      ],
+      "addedVariants": [
+        "Tenors",
+        "Tenor voice",
+        "Tenner",
+        "Tennor"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "eeb3d59ea9e67485ac92db5622ac8735aece041d2e309676073a9f8623f22436"
+    },
+    {
+      "questionId": "CQ-N4-MC0139-01",
+      "conceptId": "MC-0139",
+      "canonical": "Trombone",
+      "previousAcceptedVariants": [
+        "Trombone"
+      ],
+      "addedVariants": [
+        "Trombones",
+        "Trombone instrument"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "27a4b521f18bcd4e32bfe75a2711b6b46db01b030dbde3ad16494477201310c5"
+    },
+    {
+      "questionId": "CQ-N4-MC0141-Q02",
+      "conceptId": "MC-0141",
+      "canonical": "Violin",
+      "previousAcceptedVariants": [
+        "Violin"
+      ],
+      "addedVariants": [
+        "Violins",
+        "Violin instrument",
+        "Viollin",
+        "Violen"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e5e0735c870c5e9dbcb36c03da0b2269822b813c548d1c4ede9197e2d51439dd"
+    },
+    {
+      "questionId": "CQ-N4-MC0142-Q02",
+      "conceptId": "MC-0142",
+      "canonical": "Wind band",
+      "previousAcceptedVariants": [
+        "Wind band"
+      ],
+      "addedVariants": [
+        "Wind bands",
+        "Windband",
+        "Wind-band",
+        "Wind ensemble"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "86064c314b6498a4ecf39eda8c34054736bec55746321b29e37dd89d4a6ddd12"
+    },
+    {
+      "questionId": "CQ-N4-MC0143-Q02",
+      "conceptId": "MC-0143",
+      "canonical": "Xylophone",
+      "previousAcceptedVariants": [
+        "Xylophone"
+      ],
+      "addedVariants": [
+        "Xylophones",
+        "Xylaphone",
+        "Xylophon",
+        "Xylphone",
+        "Xylaphones"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1ee5be0316931f7d238d44b8e30611fb1a384ae862bc07809142cc96c15041ba"
+    },
+    {
+      "questionId": "CQ-N5-MC0144-01",
+      "conceptId": "MC-0144",
+      "canonical": "Aria",
+      "previousAcceptedVariants": [
+        "Aria"
+      ],
+      "addedVariants": [
+        "Arias",
+        "An aria",
+        "Aria song",
+        "Arya"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e0407ddd739888306794679706916b59bb59e915d8b3bcd27d0cd115109b8f00"
+    },
+    {
+      "questionId": "CQ-N5-MC0145-F03",
+      "conceptId": "MC-0145",
+      "canonical": "Bothy ballad",
+      "previousAcceptedVariants": [
+        "Bothy ballad"
+      ],
+      "addedVariants": [
+        "Bothy ballads",
+        "Bothy balad",
+        "Bothy balled",
+        "Bothie ballad"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "16c7f504e8f5353e1979097122d2ccd63fd5c273ddb87b6063e596ad35f0486c"
+    },
+    {
+      "questionId": "CQ-N5-MC0146-F03",
+      "conceptId": "MC-0146",
+      "canonical": "Celtic rock",
+      "previousAcceptedVariants": [
+        "Celtic rock"
+      ],
+      "addedVariants": [
+        "Celtic-rock",
+        "Celtic rock music",
+        "Celtick rock",
+        "Celtic rok",
+        "Celticrock"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "82aa02d036b46c89a38ed1cb96aac920774a8a22ef10089ba05521f6681fa965"
+    },
+    {
+      "questionId": "CQ-N5-MC0147-F03",
+      "conceptId": "MC-0147",
+      "canonical": "Chorus",
+      "previousAcceptedVariants": [
+        "Chorus"
+      ],
+      "addedVariants": [
+        "Choruses",
+        "Operatic chorus",
+        "Opera chorus",
+        "Chorous",
+        "Chorrus"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f8e2e519a559ebb2c895e2e269f5f28cf6eec40b3d484ab9e7130568d2a96d40"
+    },
+    {
+      "questionId": "CQ-N5-MC0148-F02",
+      "conceptId": "MC-0148",
+      "canonical": "Classical",
+      "previousAcceptedVariants": [
+        "Classical"
+      ],
+      "addedVariants": [
+        "Classical music",
+        "Classical period",
+        "Classicism",
+        "Clasical",
+        "Classsical"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "827634e7f4e3e780361874edc9545f1f067535100332ef1e04f27501b000cde0"
+    },
+    {
+      "questionId": "CQ-N5-MC0149-02",
+      "conceptId": "MC-0149",
+      "canonical": "Gaelic psalm",
+      "previousAcceptedVariants": [
+        "Gaelic psalm"
+      ],
+      "addedVariants": [
+        "Gaelic psalms",
+        "Gaelic psalm singing",
+        "Gaelic psalm song",
+        "Gaelic salm",
+        "Gaelic psalm-singing",
+        "Gaelic psalming",
+        "Gaelic psalmsinging"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2d653677d897a773a34bc1a5ebca242d6a3d0bc985d5088744966247c3137e13"
+    },
+    {
+      "questionId": "CQ-N5-MC0150-F03",
+      "conceptId": "MC-0150",
+      "canonical": "Gospel",
+      "previousAcceptedVariants": [
+        "Gospel"
+      ],
+      "addedVariants": [
+        "Gospel music",
+        "Gospell",
+        "Gospal"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "224fab983827c2f4a915e40851a5f2ab7721ad91cbdd7f1e7088fa6f033e4188"
+    },
+    {
+      "questionId": "CQ-N5-MC0151-01",
+      "conceptId": "MC-0151",
+      "canonical": "Indian",
+      "previousAcceptedVariants": [
+        "Indian"
+      ],
+      "addedVariants": [
+        "Indian music",
+        "Indian classical music",
+        "Indain music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8a4ef1e3c9b526a09c5a43647190f5196aa6ff5dffc5a828406421fa0bf96581"
+    },
+    {
+      "questionId": "CQ-N5-MC0152-01",
+      "conceptId": "MC-0152",
+      "canonical": "Minimalist",
+      "previousAcceptedVariants": [
+        "Minimalist"
+      ],
+      "addedVariants": [
+        "Minimalism",
+        "Minimalistic",
+        "Minimalist music",
+        "Minimalisim",
+        "Minimalistic music",
+        "Minamalist"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ffac1b6eddf407820c6205f796527fb72425b5bd6f6eadb3bb4e8cc411429ec0"
+    },
+    {
+      "questionId": "CQ-N5-MC0153-F03",
+      "conceptId": "MC-0153",
+      "canonical": "Pibroch",
+      "previousAcceptedVariants": [
+        "Pibroch"
+      ],
+      "addedVariants": [
+        "Piobaireachd",
+        "Pìobaireachd",
+        "Pibrochs",
+        "Pibrock",
+        "Pibroch music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8ba439adb71cce4ad977101119dc82bc99ff72657cec52f7f59b98508b4ed211"
+    },
+    {
+      "questionId": "CQ-N5-MC0154-01",
+      "conceptId": "MC-0154",
+      "canonical": "Symphony",
+      "previousAcceptedVariants": [
+        "Symphony"
+      ],
+      "addedVariants": [
+        "Symphonies",
+        "Symphany",
+        "Symphonie",
+        "Simphony"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "38890ee09ec3ef1394d1160043baa71f27c547d3109e8c54885cf941b5f8de7f"
+    },
+    {
+      "questionId": "CQ-N5-MC0155-F03",
+      "conceptId": "MC-0155",
+      "canonical": "Waulking song",
+      "previousAcceptedVariants": [
+        "Waulking song"
+      ],
+      "addedVariants": [
+        "Waulking songs",
+        "Waulking",
+        "Waulking-song",
+        "Walking song",
+        "Walking songs",
+        "Waulking sang",
+        "Waulkin song",
+        "Waulkingsong"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6fc794f229528afeeda7c58465e09bf6627601d8d16932a070ec97288e415a82"
+    },
+    {
+      "questionId": "CQ-N5-MC0156-F03",
+      "conceptId": "MC-0156",
+      "canonical": "Atonal",
+      "previousAcceptedVariants": [
+        "Atonal"
+      ],
+      "addedVariants": [
+        "Atonality",
+        "Atonal music",
+        "Atonal tonality",
+        "Atonel",
+        "Attonal"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "4017ac8fadbb4f01633eb75ef10e018456a1e9109e048e767927e913e3a36463"
+    },
+    {
+      "questionId": "CQ-N5-MC0158-F03",
+      "conceptId": "MC-0158",
+      "canonical": "Chromatic",
+      "previousAcceptedVariants": [
+        "Chromatic",
+        "Chromatic movement"
+      ],
+      "addedVariants": [
+        "Chromaticism",
+        "Chromatic scale",
+        "Chromatic scales",
+        "Chromatic notes",
+        "Cromatic",
+        "Chromatc"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "04d53a7f85d32a3b2c448ae19847798e9443707e2d7c25a2f6de071110483c8b"
+    },
+    {
+      "questionId": "CQ-N5-MC0159-F03",
+      "conceptId": "MC-0159",
+      "canonical": "Cluster",
+      "previousAcceptedVariants": [
+        "Cluster"
+      ],
+      "addedVariants": [
+        "Clusters",
+        "Tone cluster",
+        "Tone clusters",
+        "Cluster chord",
+        "Cluster chords",
+        "Clustor"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5bf12af6cdf2c8ef78c0658ad33a6a994ebf6e7e7dd83c81ef4899172a2ff24f"
+    },
+    {
+      "questionId": "CQ-N5-MC0160-01",
+      "conceptId": "MC-0160",
+      "canonical": "Contrary motion",
+      "previousAcceptedVariants": [
+        "Contrary motion"
+      ],
+      "addedVariants": [
+        "Contrary movement",
+        "Contrary-motion",
+        "Contrairy motion",
+        "Contray motion",
+        "Contrarymotion"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b985eeb5cde1f57cb5b86ba3c98e73829eca23fb803d868085cc629cba77b644"
+    },
+    {
+      "questionId": "CQ-N5-MC0161-F02",
+      "conceptId": "MC-0161",
+      "canonical": "Countermelody",
+      "previousAcceptedVariants": [
+        "Countermelody"
+      ],
+      "addedVariants": [
+        "Counter melody",
+        "Counter-melody",
+        "Countermelodies",
+        "Counter melodies",
+        "Countermelody line",
+        "Countermelodie"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "30caa7abb2aa2cfe46b754a356355394fcf6ac1debae0f069e1e6099dc37b4aa"
+    },
+    {
+      "questionId": "CQ-N5-MC0162-F02",
+      "conceptId": "MC-0162",
+      "canonical": "Descant",
+      "previousAcceptedVariants": [
+        "Descant",
+        "Descant (voice)"
+      ],
+      "addedVariants": [
+        "Descants",
+        "Vocal descant",
+        "Descant voice",
+        "Deskant",
+        "Descente"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b18f2fb7af343b0585fb28b62319478e1953b9f4bf7f11ed08c3840d4c76fa84"
+    },
+    {
+      "questionId": "CQ-N5-MC0163-F02",
+      "conceptId": "MC-0163",
+      "canonical": "Glissando",
+      "previousAcceptedVariants": [
+        "Glissando"
+      ],
+      "addedVariants": [
+        "Gliss",
+        "Glissandi",
+        "Glissando slide",
+        "Glisando",
+        "Glisssando"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "264874c994c87f74a83623779cc6be82cc08fc63fbfde449c7c51f96c0c78db3"
+    },
+    {
+      "questionId": "CQ-N5-MC0164-F03",
+      "conceptId": "MC-0164",
+      "canonical": "Grace note",
+      "previousAcceptedVariants": [
+        "Grace note"
+      ],
+      "addedVariants": [
+        "Grace notes",
+        "Gracenote",
+        "Grace-note",
+        "Grace-note ornament",
+        "Grase note",
+        "Grace note ornament",
+        "Gracenote ornament"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "80cc36e8504dca608efbcac3575fd809d3f3213748daa8d9becc1b89701fb687"
+    },
+    {
+      "questionId": "CQ-N5-MC0165-01",
+      "conceptId": "MC-0165",
+      "canonical": "Imperfect cadence",
+      "previousAcceptedVariants": [
+        "Imperfect cadence"
+      ],
+      "addedVariants": [
+        "Imperfect",
+        "Imperfect cadences",
+        "Imperfect cadance"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5c9f7913f3adc5f219933146cbbe9c39e1510d2f764c51364958c9dcc90e57b3"
+    },
+    {
+      "questionId": "CQ-N5-MC0166-F02",
+      "conceptId": "MC-0166",
+      "canonical": "Inverted pedal",
+      "previousAcceptedVariants": [
+        "Inverted pedal"
+      ],
+      "addedVariants": [
+        "Inverted pedal note",
+        "Inverted pedal point",
+        "Inverted pedals",
+        "High pedal",
+        "Inverted peddle"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ab5bf3384f89440cd26699dd5f7466e62d4949f7918e78b62f63884b46fc3dfb"
+    },
+    {
+      "questionId": "CQ-N5-MC0167-01",
+      "conceptId": "MC-0167",
+      "canonical": "Melismatic",
+      "previousAcceptedVariants": [
+        "Melismatic"
+      ],
+      "addedVariants": [
+        "Melisma",
+        "Melismas",
+        "Melismatic singing",
+        "Melismatic word setting",
+        "Melismatical",
+        "Melasmatic",
+        "Melissmatic"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8740cc2af99d01012bf988a56c4c1bff45dd402200ce2ed968a8e50f8c42cde8"
+    },
+    {
+      "questionId": "CQ-N5-MC0168-F03",
+      "conceptId": "MC-0168",
+      "canonical": "Modulation",
+      "previousAcceptedVariants": [
+        "Modulation",
+        "Change of key",
+        "Key change"
+      ],
+      "addedVariants": [
+        "Modulate",
+        "Modulating",
+        "Modulated",
+        "Modulations",
+        "Modulaton"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "48874104ad8822c3bbcb39d83a5d0a571190a78771a28c6b436000c3f7987c12"
+    },
+    {
+      "questionId": "CQ-N5-MC0169-01",
+      "conceptId": "MC-0169",
+      "canonical": "Perfect cadence",
+      "previousAcceptedVariants": [
+        "Perfect cadence"
+      ],
+      "addedVariants": [
+        "Perfect",
+        "Perfect cadences",
+        "Perfect cadance"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0d1c3b5ea31a4d0927be4d669674aa11a19bd851b7d8f6e402053339f5909c40"
+    },
+    {
+      "questionId": "CQ-N5-MC0170-F03",
+      "conceptId": "MC-0170",
+      "canonical": "Pitch bend",
+      "previousAcceptedVariants": [
+        "Pitch bend"
+      ],
+      "addedVariants": [
+        "Pitch bending",
+        "Pitch bends",
+        "Bending pitch",
+        "Bend",
+        "Pitch-bend",
+        "Pitchbend"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8a41f0faa2928a1a2a7ddc0de981f8cedcf9dcc147f75ae378e360403377f27f"
+    },
+    {
+      "questionId": "CQ-N5-MC0171-F03",
+      "conceptId": "MC-0171",
+      "canonical": "Semitone",
+      "previousAcceptedVariants": [
+        "Semitone"
+      ],
+      "addedVariants": [
+        "Semi-tone",
+        "Semi tone",
+        "Semitones",
+        "Half step",
+        "Half-step",
+        "Semitone interval",
+        "Halfstep"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5b2914927fbe4308658a72949f3a185606ea36f0b1e63629c2765d89eeb49a51"
+    },
+    {
+      "questionId": "CQ-N5-MC0172-F02",
+      "conceptId": "MC-0172",
+      "canonical": "Syllabic",
+      "previousAcceptedVariants": [
+        "Syllabic"
+      ],
+      "addedVariants": [
+        "Syllabic singing",
+        "Syllabic word setting",
+        "Syllabically",
+        "Sylabic",
+        "Syllabbic"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "699fd7654a5c4da602187aecf809013c40dd6e71a03b8d55c328e2480f4195ab"
+    },
+    {
+      "questionId": "CQ-N5-MC0173-01",
+      "conceptId": "MC-0173",
+      "canonical": "Tone",
+      "previousAcceptedVariants": [
+        "Tone",
+        "Whole tone"
+      ],
+      "addedVariants": [
+        "Tones",
+        "Whole step",
+        "Whole-step",
+        "Whole tones",
+        "Tone interval",
+        "Wholestep"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "edd3bc5091754386f9f5387e0e8f3be7c60bd8208d288cc98d2c3a26d8956701"
+    },
+    {
+      "questionId": "CQ-N5-MC0174-F02",
+      "conceptId": "MC-0174",
+      "canonical": "Trill",
+      "previousAcceptedVariants": [
+        "Trill"
+      ],
+      "addedVariants": [
+        "Trills",
+        "Tril",
+        "Trill ornament",
+        "Trilling"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "82159f88f7e9d9c2aa978a4c4d53974f00a1b40e018750a9df6633ae9f6a8e5d"
+    },
+    {
+      "questionId": "CQ-N5-MC0177-F03",
+      "conceptId": "MC-0177",
+      "canonical": "Cross rhythms",
+      "previousAcceptedVariants": [
+        "Cross rhythms"
+      ],
+      "addedVariants": [
+        "Cross rhythm",
+        "Cross-rhythm",
+        "Cross-rhythms",
+        "Crossrhythms",
+        "Polyrhythm",
+        "Polyrhythms",
+        "Polyrhythmic",
+        "Cross rythms",
+        "Crossrhythm"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "823bc1e8ec7a8327f0e0a28c2e3efd6fe4ed731bd8a741f1456b66c83f5b8ab3"
+    },
+    {
+      "questionId": "CQ-N5-MC0178-F02",
+      "conceptId": "MC-0178",
+      "canonical": "Moderato",
+      "previousAcceptedVariants": [
+        "Moderato"
+      ],
+      "addedVariants": [
+        "Moderate",
+        "Moderato tempo",
+        "Moderatto",
+        "Modarato"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "3f8811f2c642de0e47aac808698d0afd1230cca86b22efffca939c58283b71b6"
+    },
+    {
+      "questionId": "CQ-N5-MC0179-F03",
+      "conceptId": "MC-0179",
+      "canonical": "Ritardando",
+      "previousAcceptedVariants": [
+        "Ritardando",
+        "Rallentando"
+      ],
+      "addedVariants": [
+        "Rit.",
+        "Rit",
+        "Ritard.",
+        "Ritard",
+        "Ritardano",
+        "Ritardendo",
+        "Rall.",
+        "Rall",
+        "Ralentando"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a5a3953ca72d1536bb91a0da10194c37b1825bf42ec73aa9876f764dacd97317"
+    },
+    {
+      "questionId": "CQ-N5-MC0180-F02",
+      "conceptId": "MC-0180",
+      "canonical": "Rubato",
+      "previousAcceptedVariants": [
+        "Rubato"
+      ],
+      "addedVariants": [
+        "Tempo rubato",
+        "Rubatto",
+        "Roubato",
+        "Rubato timing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "dcfc7b5ddd5e29e4f7acec03c141adb798314c3e5376c1d8fa6e53f04ae8b972"
+    },
+    {
+      "questionId": "CQ-N5-MC0181-01",
+      "conceptId": "MC-0181",
+      "canonical": "Alberti bass",
+      "previousAcceptedVariants": [
+        "Alberti bass"
+      ],
+      "addedVariants": [
+        "Alberti-bass",
+        "Alberti base",
+        "Albertie bass",
+        "Alberti bass pattern",
+        "Albertibass"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "00f21e034c3d44b198edbdd0ccc3b33d4e3ba65f061d9f71e83f1dd32e00c971"
+    },
+    {
+      "questionId": "CQ-N5-MC0182-01",
+      "conceptId": "MC-0182",
+      "canonical": "Binary",
+      "previousAcceptedVariants": [
+        "Binary",
+        "Binary form",
+        "AB",
+        "Binary / AB"
+      ],
+      "addedVariants": [
+        "Binary structure",
+        "Binery",
+        "Binory",
+        "A B",
+        "A-B"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "865428837ab2faf459d9cf7bb22dc05b9bb493609d87c56bcd01d13514d05004"
+    },
+    {
+      "questionId": "CQ-N5-MC0183-F03",
+      "conceptId": "MC-0183",
+      "canonical": "Coda",
+      "previousAcceptedVariants": [
+        "Coda"
+      ],
+      "addedVariants": [
+        "Codas",
+        "Coda section",
+        "Closing coda"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5c400d4c180f77def9f749d5581537cfd2d8e2d1a372e2fd444680265de36453"
+    },
+    {
+      "questionId": "CQ-N5-MC0184-F02",
+      "conceptId": "MC-0184",
+      "canonical": "Contrapuntal",
+      "previousAcceptedVariants": [
+        "Contrapuntal",
+        "Counterpoint",
+        "Polyphonic"
+      ],
+      "addedVariants": [
+        "Counterpoint texture",
+        "Polyphony",
+        "Contrapuntally",
+        "Contrapuntal texture",
+        "Contrapuntel"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b9f7f5214c113faecf4981aff354154bd185b453103ac44ee95fa621251d9984"
+    },
+    {
+      "questionId": "CQ-N5-MC0186-01",
+      "conceptId": "MC-0186",
+      "canonical": "Ground bass",
+      "previousAcceptedVariants": [
+        "Ground bass"
+      ],
+      "addedVariants": [
+        "Ground-bass",
+        "Ground base",
+        "Groundbass",
+        "Ground bass pattern"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8728ee0fe940d7daec36308b93071467539e4f9ed01b01df1d1e9f1d1afa22a2"
+    },
+    {
+      "questionId": "CQ-N5-MC0187-01",
+      "conceptId": "MC-0187",
+      "canonical": "Homophonic",
+      "previousAcceptedVariants": [
+        "Homophonic"
+      ],
+      "addedVariants": [
+        "Homophony",
+        "Homophonic texture",
+        "Homophonically",
+        "Homophonics",
+        "Homofonic",
+        "Homophonic music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "00a2af3b0b0b9d0bf8a6f42f60eedac15e155809f7581053e02bff1511366319"
+    },
+    {
+      "questionId": "CQ-N5-MC0188-F03",
+      "conceptId": "MC-0188",
+      "canonical": "Polyphonic",
+      "previousAcceptedVariants": [
+        "Polyphonic",
+        "Contrapuntal",
+        "Counterpoint"
+      ],
+      "addedVariants": [
+        "Polyphony",
+        "Polyphonic texture",
+        "Polyphonically",
+        "Polyfonic",
+        "Polyphonic music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d0a0ac2e21906052082cad10bf1f34b9b561b28b62e2797c396de2ce3fe281ee"
+    },
+    {
+      "questionId": "CQ-N5-MC0189-F02",
+      "conceptId": "MC-0189",
+      "canonical": "Rondo",
+      "previousAcceptedVariants": [
+        "Rondo",
+        "Rondo form",
+        "ABACA",
+        "Rondo / ABACA"
+      ],
+      "addedVariants": [
+        "Rondo structure",
+        "A B A C A",
+        "A-B-A-C-A"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "721708a5f4ee72fff0e463ae43d70b4546535dd8506dda596bd5817c35f7ee20"
+    },
+    {
+      "questionId": "CQ-N5-MC0190-F02",
+      "conceptId": "MC-0190",
+      "canonical": "Strophic",
+      "previousAcceptedVariants": [
+        "Strophic"
+      ],
+      "addedVariants": [
+        "Strophic form",
+        "Strophic song",
+        "Strophic structure",
+        "Strofic"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "dc7ef9a71ce283bad9dd10ee978052d80683ba67109441798f06bc6a35a090b2"
+    },
+    {
+      "questionId": "CQ-N5-MC0191-F02",
+      "conceptId": "MC-0191",
+      "canonical": "Walking bass",
+      "previousAcceptedVariants": [
+        "Walking bass"
+      ],
+      "addedVariants": [
+        "Walking-bass",
+        "Walking base",
+        "Walking bass line",
+        "Walking bassline",
+        "Walkingbass"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d430c1dfc7a37289b97c36f2a6652ed27573bf845f260b94224e31f17c224ad1"
+    },
+    {
+      "questionId": "CQ-N5-MC0192-F02",
+      "conceptId": "MC-0192",
+      "canonical": "A cappella",
+      "previousAcceptedVariants": [
+        "A cappella"
+      ],
+      "addedVariants": [
+        "A capella",
+        "Acapella",
+        "Acappella",
+        "A-capella",
+        "A-cappella",
+        "A capella singing",
+        "A cappella singing",
+        "Acapela",
+        "A capela"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b5f12841deb56888f1a5c88ae3b3990666a7ffc22ae9d188174c5cf3820a1dac"
+    },
+    {
+      "questionId": "CQ-N5-MC0193-01",
+      "conceptId": "MC-0193",
+      "canonical": "Arco",
+      "previousAcceptedVariants": [
+        "Arco"
+      ],
+      "addedVariants": [
+        "With the bow",
+        "Bowed",
+        "Bowing",
+        "Arcco",
+        "Arco playing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "35ecd8425a0fb7d452534db7d3f3c85ace3ef4d1d4799eae5fae0dc59e5c4ca6"
+    },
+    {
+      "questionId": "CQ-N5-MC0194-F02",
+      "conceptId": "MC-0194",
+      "canonical": "Baritone",
+      "previousAcceptedVariants": [
+        "Baritone"
+      ],
+      "addedVariants": [
+        "Baritones",
+        "Baritone voice",
+        "Barritone"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1715f5ff92a156126103f96bbf371a75fe156bf574b7cbae2523be8a3e375183"
+    },
+    {
+      "questionId": "CQ-N5-MC0195-01",
+      "conceptId": "MC-0195",
+      "canonical": "Bassoon",
+      "previousAcceptedVariants": [
+        "Bassoon"
+      ],
+      "addedVariants": [
+        "Bassoons",
+        "Basson",
+        "Bassoon instrument",
+        "Basoon"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "560133e8f09d45f069639c17b25aa1b4ab9222db9c5da35b262266ac014ccd1e"
+    },
+    {
+      "questionId": "CQ-N5-MC0196-01",
+      "conceptId": "MC-0196",
+      "canonical": "Bodhran",
+      "previousAcceptedVariants": [
+        "Bodhran"
+      ],
+      "addedVariants": [
+        "Bodhrán",
+        "Bodhrans",
+        "Bodhráns",
+        "Bodran",
+        "Bodhran drum",
+        "Bodhram"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "20163fed6b115e2108a8bac9e1869efe563b316992af38e4cdde89819c8dfce1"
+    },
+    {
+      "questionId": "CQ-N5-MC0198-F02",
+      "conceptId": "MC-0198",
+      "canonical": "Castanets",
+      "previousAcceptedVariants": [
+        "Castanets"
+      ],
+      "addedVariants": [
+        "Castanet",
+        "Castenets",
+        "Castanettes",
+        "Castanets percussion"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ac422a2c5c3fef2a5c88d4d88407b2f1fcce9465110649b3396e8ee8e77f29b4"
+    },
+    {
+      "questionId": "CQ-N5-MC0199-F02",
+      "conceptId": "MC-0199",
+      "canonical": "Clarsach",
+      "previousAcceptedVariants": [
+        "Clarsach"
+      ],
+      "addedVariants": [
+        "Clàrsach",
+        "Scottish harp",
+        "Celtic harp",
+        "Clarsachs",
+        "Clarsach harp",
+        "Clarsack"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "bac92017a57d6e07afe4e17dc99e463c1f0ada3b96da0f0136de0b1df4ed9042"
+    },
+    {
+      "questionId": "CQ-N5-MC0200-F03",
+      "conceptId": "MC-0200",
+      "canonical": "Con sordino",
+      "previousAcceptedVariants": [
+        "Con sordino"
+      ],
+      "addedVariants": [
+        "Con-sordino",
+        "Consordino",
+        "Con sordini",
+        "Con sord",
+        "With a mute",
+        "Muted",
+        "Con sordeno",
+        "Con sordino playing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d99241b68ff0f29fb89845014cd50ddebd18e4bb50076df037e97702c6f95fe8"
+    },
+    {
+      "questionId": "CQ-N5-MC0201-F03",
+      "conceptId": "MC-0201",
+      "canonical": "Flutter-tonguing",
+      "previousAcceptedVariants": [
+        "Flutter-tonguing"
+      ],
+      "addedVariants": [
+        "Flutter tonguing",
+        "Fluttertonguing",
+        "Flutter tongue",
+        "Flutter-tongue",
+        "Flutter-tonguing technique",
+        "Flutter tounging",
+        "Flutter tonging",
+        "Fluttertongue",
+        "Flutter tonguing technique",
+        "Fluttertonguing technique"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c7871d344a155a2dd3e97ea397c18fcf5b97519e5d4ceb5ddb4f404d56d83178"
+    },
+    {
+      "questionId": "CQ-N5-MC0202-01",
+      "conceptId": "MC-0202",
+      "canonical": "French horn",
+      "previousAcceptedVariants": [
+        "French horn"
+      ],
+      "addedVariants": [
+        "French horns",
+        "Horn",
+        "French-horn",
+        "Frenchhorn"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "279ae0e604bc19a5092c66a264747070ce68022bde453c2977994646f5ac5dbd"
+    },
+    {
+      "questionId": "CQ-N5-MC0203-F02",
+      "conceptId": "MC-0203",
+      "canonical": "Hi-hat cymbals",
+      "previousAcceptedVariants": [
+        "Hi-hat cymbals"
+      ],
+      "addedVariants": [
+        "Hi-hat",
+        "Hihat",
+        "Hi hat",
+        "Hi hats",
+        "Hi-hats",
+        "Hi hat cymbals",
+        "High-hat",
+        "High hat",
+        "High hat cymbals",
+        "Hihat cymbals",
+        "Hihats",
+        "Highhat"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "c23e021b0a45d6abdeb22e811ef22702c5c0f0c15ed48fca33a3270f05a350e1"
+    },
+    {
+      "questionId": "CQ-N5-MC0204-F03",
+      "conceptId": "MC-0204",
+      "canonical": "Mezzo-soprano",
+      "previousAcceptedVariants": [
+        "Mezzo-soprano"
+      ],
+      "addedVariants": [
+        "Mezzo soprano",
+        "Mezzosoprano",
+        "Mezzos",
+        "Mezzo-sopranos",
+        "Mezo soprano",
+        "Mezzo saprano",
+        "Mezzo sopranos",
+        "Mezzosopranos"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "34667a289e271b4439f8bba087c3d3f6e59246cd005bedfe39925229972d6db4"
+    },
+    {
+      "questionId": "CQ-N5-MC0205-01",
+      "conceptId": "MC-0205",
+      "canonical": "Oboe",
+      "previousAcceptedVariants": [
+        "Oboe"
+      ],
+      "addedVariants": [
+        "Oboes",
+        "Obo",
+        "Oboe instrument"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9e7bf76cbf4a97788583c7e47cf90e44d1511a529e22fc9a3abca735b395feb2"
+    },
+    {
+      "questionId": "CQ-N5-MC0206-01",
+      "conceptId": "MC-0206",
+      "canonical": "Piccolo",
+      "previousAcceptedVariants": [
+        "Piccolo"
+      ],
+      "addedVariants": [
+        "Piccolos",
+        "Picolo",
+        "Piccolo flute",
+        "Piccalo"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6f527b0832d563c6c99ae77d9bdc376ce5637c6835895df00dbd5e1a2f3db4a3"
+    },
+    {
+      "questionId": "CQ-N5-MC0208-01",
+      "conceptId": "MC-0208",
+      "canonical": "Reverb",
+      "previousAcceptedVariants": [
+        "Reverb"
+      ],
+      "addedVariants": [
+        "Reverberation",
+        "Reverberant",
+        "Reverb effect",
+        "Reverberaton",
+        "Reverberation effect",
+        "Reverberating"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7f54b7428377537fb59e53d426e8f993b981be1c1d71de6481562c170204c0da"
+    },
+    {
+      "questionId": "CQ-N5-MC0209-01",
+      "conceptId": "MC-0209",
+      "canonical": "Roll",
+      "previousAcceptedVariants": [
+        "Roll",
+        "Rolls",
+        "Drum roll",
+        "Drum rolls"
+      ],
+      "addedVariants": [
+        "Rolling",
+        "Rolled",
+        "Percussion roll",
+        "Drumroll",
+        "Drumrolls"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "eb60fe28f85ea58716e78c50f1dc1adda85c59714ada1be9ad73dd99ee90d425"
+    },
+    {
+      "questionId": "CQ-N5-MC0210-01",
+      "conceptId": "MC-0210",
+      "canonical": "Sitar",
+      "previousAcceptedVariants": [
+        "Sitar"
+      ],
+      "addedVariants": [
+        "Sitars",
+        "Sitar instrument",
+        "Sittar"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "bd9b615864f5bb86247513aa8ffb84a987442ce30a1ce6e611dbed2e1988056a"
+    },
+    {
+      "questionId": "CQ-N5-MC0211-01",
+      "conceptId": "MC-0211",
+      "canonical": "Tabla",
+      "previousAcceptedVariants": [
+        "Tabla"
+      ],
+      "addedVariants": [
+        "Tablas",
+        "Tabla drums",
+        "Tabla drum",
+        "Tabala"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8334832a9139bed04a31e008bbc43afc7312e1862f38c0654056b91c08907d79"
+    },
+    {
+      "questionId": "CQ-N5-MC0212-01",
+      "conceptId": "MC-0212",
+      "canonical": "Tuba",
+      "previousAcceptedVariants": [
+        "Tuba"
+      ],
+      "addedVariants": [
+        "Tubas",
+        "Tuba instrument",
+        "Tooba"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "153350e1ce8265e560a5ef2f336a149e62a420e5bdb9691a6681d5aa403d626f"
+    },
+    {
+      "questionId": "CQ-N5-MC0213-01",
+      "conceptId": "MC-0213",
+      "canonical": "Viola",
+      "previousAcceptedVariants": [
+        "Viola"
+      ],
+      "addedVariants": [
+        "Violas",
+        "Viola instrument"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0cc727c66769b7bc4e9471768fa3f140456a4f2d02c8a329e0bc0be1bc6e1cc4"
+    },
+    {
+      "questionId": "CQ-H-MC0214-F02",
+      "conceptId": "MC-0214",
+      "canonical": "Chamber music",
+      "previousAcceptedVariants": [
+        "Chamber music"
+      ],
+      "addedVariants": [
+        "Chamber ensemble",
+        "Chamber",
+        "Chamber-music",
+        "Chambermusic"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "71bd975ea6b88860784c2907c4427cf4c9da3ef401404a2c22250bc147927d31"
+    },
+    {
+      "questionId": "CQ-H-MC0215-F02",
+      "conceptId": "MC-0215",
+      "canonical": "Impressionist",
+      "previousAcceptedVariants": [
+        "Impressionist"
+      ],
+      "addedVariants": [
+        "Impressionism",
+        "Impressionistic",
+        "Impressionist music",
+        "Impresionist",
+        "Impressionisim"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "d47f1f501aef579c862e10ad633af36f5e1c29b53da7a035f976106d05bad05d"
+    },
+    {
+      "questionId": "CQ-H-MC0216-01",
+      "conceptId": "MC-0216",
+      "canonical": "Jazz funk",
+      "previousAcceptedVariants": [
+        "Jazz funk",
+        "Jazz-funk"
+      ],
+      "addedVariants": [
+        "Jazzfunk",
+        "Jazz funk music",
+        "Jazz-funk music",
+        "Jaz funk",
+        "Jazzfunk music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "82d5ffda6d99158696d1513c8a12311a90b622679f2aa1c3d094b39a7bbacac4"
+    },
+    {
+      "questionId": "CQ-H-MC0217-F03",
+      "conceptId": "MC-0217",
+      "canonical": "Lied",
+      "previousAcceptedVariants": [
+        "Lied"
+      ],
+      "addedVariants": [
+        "Lieder",
+        "German lied",
+        "German art song",
+        "Lied song",
+        "Lieders"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "70fb9d6fd36e6d139c60af68482a721db8ace794977489db1adeb1ee7f6092ab"
+    },
+    {
+      "questionId": "CQ-H-MC0218-F03",
+      "conceptId": "MC-0218",
+      "canonical": "Mass",
+      "previousAcceptedVariants": [
+        "Mass"
+      ],
+      "addedVariants": [
+        "Masses",
+        "Choral mass",
+        "Latin mass",
+        "Mass setting"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b38968aade9e9c7b82d744000710375f4d11504572087dacdcfb0427abad3415"
+    },
+    {
+      "questionId": "CQ-H-MC0219-F03",
+      "conceptId": "MC-0219",
+      "canonical": "Musique concrète",
+      "previousAcceptedVariants": [
+        "Musique concrète",
+        "Musique concrete"
+      ],
+      "addedVariants": [
+        "Musique-concrete",
+        "Music concrete",
+        "Concrete music",
+        "Musique concréte",
+        "Musique concrète music",
+        "Musique conrete",
+        "Musiqueconcrete",
+        "Musique concrete music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0a282c0f5c4cb60aa3820e88175abe968d536c05a2f9bfa3cc76021f7b683288"
+    },
+    {
+      "questionId": "CQ-H-MC0220-01",
+      "conceptId": "MC-0220",
+      "canonical": "Oratorio",
+      "previousAcceptedVariants": [
+        "Oratorio"
+      ],
+      "addedVariants": [
+        "Oratorios",
+        "Oratario",
+        "Oratorio music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "cddebe01b4aa10fdb5b6a6ea867c9a5dd99fbb128ebe72f4a063d5ea3526ea01"
+    },
+    {
+      "questionId": "CQ-H-MC0221-01",
+      "conceptId": "MC-0221",
+      "canonical": "Plainchant",
+      "previousAcceptedVariants": [
+        "Plainchant"
+      ],
+      "addedVariants": [
+        "Plain chant",
+        "Plain-chant",
+        "Gregorian chant",
+        "Plainchant singing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9ecba0b052974672e9bd9e0716219eeddda890ee36db652d841849e5b3a282ce"
+    },
+    {
+      "questionId": "CQ-H-MC0222-01",
+      "conceptId": "MC-0222",
+      "canonical": "Recitative",
+      "previousAcceptedVariants": [
+        "Recitative"
+      ],
+      "addedVariants": [
+        "Recitatives",
+        "Recitativo",
+        "Recitative singing",
+        "Recititive",
+        "Recititive singing",
+        "Recetative"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "893896156efda508fe38c306b3e8f211d71ea216f9f8dcaac435a36f9b842ba6"
+    },
+    {
+      "questionId": "CQ-H-MC0223-F03",
+      "conceptId": "MC-0223",
+      "canonical": "Sonata",
+      "previousAcceptedVariants": [
+        "Sonata"
+      ],
+      "addedVariants": [
+        "Sonatas",
+        "Solo sonata",
+        "Sonatta",
+        "Sonata piece"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "75a9ba051005e617b9622dc0538edfa6cfec5b109dc6f59556bf7feb226d98e8"
+    },
+    {
+      "questionId": "CQ-H-MC0224-F02",
+      "conceptId": "MC-0224",
+      "canonical": "Soul music",
+      "previousAcceptedVariants": [
+        "Soul music"
+      ],
+      "addedVariants": [
+        "Soul",
+        "Soul-music",
+        "Soulmusic"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ba2c068f944f6123c5e6f5c7dfac98a40abe16cdc362b63f822b2fa27a1e2737"
+    },
+    {
+      "questionId": "CQ-H-MC0225-F03",
+      "conceptId": "MC-0225",
+      "canonical": "String quartet",
+      "previousAcceptedVariants": [
+        "String quartet"
+      ],
+      "addedVariants": [
+        "String quartets",
+        "String-quartet",
+        "String quaret",
+        "String quartett",
+        "String quartet ensemble",
+        "Stringquartet"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "cae6ce0d4a82542786a3747a241bb440cefa47e4061fe194d4f60a3044ce67db"
+    },
+    {
+      "questionId": "CQ-H-MC0226-F02",
+      "conceptId": "MC-0226",
+      "canonical": "Acciaccatura",
+      "previousAcceptedVariants": [
+        "Acciaccatura"
+      ],
+      "addedVariants": [
+        "Acciaccaturas",
+        "Acciacatura",
+        "Aciaccatura",
+        "Acciaccattura",
+        "Acciaccatura ornament",
+        "Acciacattura"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2b6668a9f44b2c0835c31771ab4c33a54ff7b5aa62ce4ad1c7363191787ce726"
+    },
+    {
+      "questionId": "CQ-H-MC0227-F02",
+      "conceptId": "MC-0227",
+      "canonical": "Added 6th",
+      "previousAcceptedVariants": [
+        "Added 6th",
+        "Added sixth",
+        "Added sixth chord",
+        "Added 6th chord"
+      ],
+      "addedVariants": [
+        "Added six",
+        "Added-sixth chord",
+        "Add 6",
+        "Add6",
+        "Major sixth chord",
+        "Added 6",
+        "Added sixth chords",
+        "Addedsixth chord"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "8fe3779dd23b86a0fce06334bb871c652d84882733271d107f88d91fe7120670"
+    },
+    {
+      "questionId": "CQ-H-MC0228-01",
+      "conceptId": "MC-0228",
+      "canonical": "Diminished 7th",
+      "previousAcceptedVariants": [
+        "Diminished 7th",
+        "Diminished seventh",
+        "Diminished seventh chord",
+        "Diminished 7th chord"
+      ],
+      "addedVariants": [
+        "Diminished seventh chords",
+        "Diminished sevenths",
+        "Dim 7",
+        "Dim7",
+        "Diminished 7",
+        "Diminished-seventh chord",
+        "Diminished sevenths chord",
+        "Diminishedseventh chord"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2e3c9780b7ea27bdb29b76c77c9f3e8e9ff7c4a6c19af7c5ad49615f60df1bec"
+    },
+    {
+      "questionId": "CQ-H-MC0230-F03",
+      "conceptId": "MC-0230",
+      "canonical": "Dominant 7th",
+      "previousAcceptedVariants": [
+        "Dominant 7th",
+        "Dominant seventh",
+        "Dominant seventh chord",
+        "Dominant 7th chord"
+      ],
+      "addedVariants": [
+        "Dominant seventh chords",
+        "Dominant sevenths",
+        "Dominant 7",
+        "Dom 7",
+        "Dom7",
+        "Dominant-seventh chord",
+        "Dominent seventh",
+        "Dominant seveth",
+        "Dominantseventh chord"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "da19e544dfe69013ce212534e672e3d686496a9f2ef6aa4d28f21b638607c104"
+    },
+    {
+      "questionId": "CQ-H-MC0231-F03",
+      "conceptId": "MC-0231",
+      "canonical": "Harmonic minor scale",
+      "previousAcceptedVariants": [
+        "Harmonic minor scale"
+      ],
+      "addedVariants": [
+        "Harmonic minor",
+        "Harmonic-minor scale",
+        "Harmonic minor scales",
+        "Harmonic minor scail",
+        "Harmonicminor scale"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0fbc4b017c42ce56e3d287fd12378546caa4a4796aedd9453bf11cc805dfdfcf"
+    },
+    {
+      "questionId": "CQ-H-MC0232-01",
+      "conceptId": "MC-0232",
+      "canonical": "Interrupted cadence",
+      "previousAcceptedVariants": [
+        "Interrupted cadence"
+      ],
+      "addedVariants": [
+        "Interrupted",
+        "Interrupted cadences",
+        "Interrupted cadance",
+        "Interupted cadence",
+        "Interupted cadance"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "83b56fb3b3fc4e9a43993a102012e08d3e03aa4539fbc74557030cce3722a744"
+    },
+    {
+      "questionId": "CQ-H-MC0235-F03",
+      "conceptId": "MC-0235",
+      "canonical": "Mode",
+      "previousAcceptedVariants": [
+        "Mode",
+        "Modal",
+        "Mode or modal",
+        "Modal tonality",
+        "Modal music"
+      ],
+      "addedVariants": [],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b3b8e8190ed0112b8a8f0f51f6a443bac99ccce8600b7405270e1a585ffebf23"
+    },
+    {
+      "questionId": "CQ-H-MC0236-01",
+      "conceptId": "MC-0236",
+      "canonical": "Mordent",
+      "previousAcceptedVariants": [
+        "Mordent"
+      ],
+      "addedVariants": [
+        "Mordents",
+        "Upper mordent",
+        "Lower mordent",
+        "Mordant",
+        "Mordent ornament"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5a8162834aeab00a3211b65205f7ca3a6953c88ee3b7997a44edbe9f08ebf15b"
+    },
+    {
+      "questionId": "CQ-H-MC0237-F02",
+      "conceptId": "MC-0237",
+      "canonical": "Obbligato",
+      "previousAcceptedVariants": [
+        "Obbligato"
+      ],
+      "addedVariants": [
+        "Obligato",
+        "Obbligatos",
+        "Obbligati",
+        "Obligatto",
+        "Obbligatto",
+        "Obligato line"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9cc6eb955b7b90131dcaffd5b22c7e97e5025ebedd93ea8fa335ff51b270abfb"
+    },
+    {
+      "questionId": "CQ-H-MC0238-F02",
+      "conceptId": "MC-0238",
+      "canonical": "Plagal cadence",
+      "previousAcceptedVariants": [
+        "Plagal cadence"
+      ],
+      "addedVariants": [
+        "Plagal",
+        "Plagal cadences",
+        "Plagal cadance",
+        "Plegal cadence",
+        "Plagel cadence",
+        "Amen cadence"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2c712570047b645b8339a62bb41288bee5672c5cea06d7a8be5782526df6f910"
+    },
+    {
+      "questionId": "CQ-H-MC0241-01",
+      "conceptId": "MC-0241",
+      "canonical": "Tierce de Picardie",
+      "previousAcceptedVariants": [
+        "Tierce de Picardie"
+      ],
+      "addedVariants": [
+        "Tierce de picardy",
+        "Picardy third",
+        "Picardie third",
+        "Tierce de Picardi",
+        "Tiers de Picardie",
+        "Tierce de Picardy ending",
+        "Tierce de Piccardie"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2e2daae746df591c22fd657b5a4d52f4d31c6dac47cd261f926c2500bac10882"
+    },
+    {
+      "questionId": "CQ-H-MC0242-01",
+      "conceptId": "MC-0242",
+      "canonical": "3 against 2",
+      "previousAcceptedVariants": [
+        "3 against 2",
+        "Three against two",
+        "3:2"
+      ],
+      "addedVariants": [
+        "3 against two",
+        "Three against 2",
+        "3 over 2",
+        "Three over two",
+        "3:2 rhythm",
+        "3 against 2 rhythm"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "b3961fa2116118f97a73d82e1c5314c97883fa3764697d448fa5a2693d7b7fbb"
+    },
+    {
+      "questionId": "CQ-H-MC0243-F02",
+      "conceptId": "MC-0243",
+      "canonical": "Augmentation",
+      "previousAcceptedVariants": [
+        "Augmentation",
+        "Rhythmic augmentation"
+      ],
+      "addedVariants": [
+        "Augment",
+        "Augmented rhythm",
+        "Augmenting",
+        "Augmented note values",
+        "Augmentaton",
+        "Augumentation"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "3266cdb301d92e54897f754e077aae5b5aaa4cb01185903a2595978d19434166"
+    },
+    {
+      "questionId": "CQ-H-MC0244-F03",
+      "conceptId": "MC-0244",
+      "canonical": "Diminution",
+      "previousAcceptedVariants": [
+        "Diminution",
+        "Rhythmic diminution"
+      ],
+      "addedVariants": [
+        "Diminish",
+        "Diminished rhythm",
+        "Diminishing",
+        "Diminished note values",
+        "Diminishment",
+        "Diminuiton",
+        "Diminution rhythm"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7b2e6aa04afd2a6efd62fbc4485de69d4794bb36af19614d2bb7936cc617ce19"
+    },
+    {
+      "questionId": "CQ-H-MC0245-01",
+      "conceptId": "MC-0245",
+      "canonical": "Irregular time signature",
+      "previousAcceptedVariants": [
+        "Irregular time signature",
+        "Irregular time signatures",
+        "Irregular metre",
+        "Irregular meter"
+      ],
+      "addedVariants": [
+        "Irregular time",
+        "Irregular timing",
+        "Irreguler time signature"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "dd5057e183f8819e1f5748d5b99b2d02300314f0111cbd7d44a5f0de32159414"
+    },
+    {
+      "questionId": "CQ-H-MC0247-F03",
+      "conceptId": "MC-0247",
+      "canonical": "Triplet",
+      "previousAcceptedVariants": [
+        "Triplet",
+        "Triplets"
+      ],
+      "addedVariants": [
+        "Triplet rhythm",
+        "Triplet group",
+        "Triplett",
+        "Tripletts"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "5d6c146e812261ca27ead01e7195c549b9484f6dc1d0e9141e065322cb042f28"
+    },
+    {
+      "questionId": "CQ-H-MC0248-F02",
+      "conceptId": "MC-0248",
+      "canonical": "Basso continuo",
+      "previousAcceptedVariants": [
+        "Basso continuo"
+      ],
+      "addedVariants": [
+        "Continuo",
+        "Basso-continuo",
+        "Bass continuo",
+        "Baso continuo",
+        "Basso contino",
+        "Basso continou",
+        "Bassocontinuo"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "30c1e2d75c94ceda733a5b13b67873c49cd34968db05c1d9e929d0de6f825d39"
+    },
+    {
+      "questionId": "CQ-H-MC0249-F03",
+      "conceptId": "MC-0249",
+      "canonical": "Concerto grosso",
+      "previousAcceptedVariants": [
+        "Concerto grosso"
+      ],
+      "addedVariants": [
+        "Concerti grossi",
+        "Concerto-grosso",
+        "Concerto grosos",
+        "Concerto groso",
+        "Concherto grosso",
+        "Concertogrosso"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a1e518ef474c832454b7f8722f02379b505e3f3f0efd2d47621b6797b3875b18"
+    },
+    {
+      "questionId": "CQ-H-MC0250-01",
+      "conceptId": "MC-0250",
+      "canonical": "Da capo aria",
+      "previousAcceptedVariants": [
+        "Da capo aria"
+      ],
+      "addedVariants": [
+        "Da-capo aria",
+        "Da capo",
+        "Dacapo aria",
+        "Da capo arias",
+        "Da cappo aria"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0ed73634ce20a3265a68be6b8e17ddab2208145f3f3f36148f271bfdb73f489b"
+    },
+    {
+      "questionId": "CQ-H-MC0252-F02",
+      "conceptId": "MC-0252",
+      "canonical": "Passacaglia",
+      "previousAcceptedVariants": [
+        "Passacaglia"
+      ],
+      "addedVariants": [
+        "Passacaglias",
+        "Passacaglia form",
+        "Passacalia",
+        "Passacaglia variations"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "2d1c3cbb2a4400a89cfb0769445e0d2b3968ebae397bf9e33d11d0c8a3af8302"
+    },
+    {
+      "questionId": "CQ-H-MC0253-F03",
+      "conceptId": "MC-0253",
+      "canonical": "Ritornello",
+      "previousAcceptedVariants": [
+        "Ritornello"
+      ],
+      "addedVariants": [
+        "Ritornellos",
+        "Ritornelli",
+        "Ritornello form",
+        "Ritornelo",
+        "Ritornello theme",
+        "Rittornello"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "fdabcedb237328ab718bcb3dc0d7e1093724d5f43abc4b310fe028f030ec94ee"
+    },
+    {
+      "questionId": "CQ-H-MC0256-01",
+      "conceptId": "MC-0256",
+      "canonical": "Through-composed",
+      "previousAcceptedVariants": [
+        "Through-composed"
+      ],
+      "addedVariants": [
+        "Through composed",
+        "Throughcomposed",
+        "Through-composed form",
+        "Through-composed song",
+        "Thorough composed",
+        "Through-compossed",
+        "Through composed form",
+        "Throughcomposed form",
+        "Through composed song",
+        "Throughcomposed song",
+        "Through compossed",
+        "Throughcompossed"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "678a6c8633f7c1b539e5e1f15a75a18d7474c4c7e1c713159fbc1d5769fede5c"
+    },
+    {
+      "questionId": "CQ-H-MC0257-F02",
+      "conceptId": "MC-0257",
+      "canonical": "Coloratura",
+      "previousAcceptedVariants": [
+        "Coloratura"
+      ],
+      "addedVariants": [
+        "Colouratura",
+        "Coloratura singing",
+        "Coloraturas",
+        "Colouratura singing",
+        "Colorattura",
+        "Colaratura"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ab4df637671f3fdf837e5919feea29e770336c63e9efdf5ff0371177d7a1da4f"
+    },
+    {
+      "questionId": "CQ-H-MC0258-F03",
+      "conceptId": "MC-0258",
+      "canonical": "Concertino",
+      "previousAcceptedVariants": [
+        "Concertino"
+      ],
+      "addedVariants": [
+        "Concertinos",
+        "Concertino group",
+        "Conchertino",
+        "Concerteno"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6bab6c441cc053a56a9bbade57da4491f73f23e237e59b006bd17b37d4fa862a"
+    },
+    {
+      "questionId": "CQ-H-MC0259-F03",
+      "conceptId": "MC-0259",
+      "canonical": "Harmonics",
+      "previousAcceptedVariants": [
+        "Harmonics"
+      ],
+      "addedVariants": [
+        "Harmonic",
+        "String harmonics",
+        "Natural harmonics",
+        "Harmonics playing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "afbd9b399201a618cb7d279bca1469bfa055fb11753dc46947de805f7d378afe"
+    },
+    {
+      "questionId": "CQ-H-MC0260-F03",
+      "conceptId": "MC-0260",
+      "canonical": "Ripieno",
+      "previousAcceptedVariants": [
+        "Ripieno"
+      ],
+      "addedVariants": [
+        "Ripienos",
+        "Ripieno group",
+        "Ripeno",
+        "Rippieno",
+        "Ripieno ensemble"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9d2f60f1df9ec3b82e2cf12804054803e6dc4fb2c711afc73774ee67c9e4688c"
+    },
+    {
+      "questionId": "CQ-H-MC0261-01",
+      "conceptId": "MC-0261",
+      "canonical": "Tremolando",
+      "previousAcceptedVariants": [
+        "Tremolando"
+      ],
+      "addedVariants": [
+        "Tremolo",
+        "Tremolandi",
+        "Tremelando",
+        "Tremolando playing"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "bb2413c1de2c838e2da27fb54ca8ed8eb504993228cd1e52732358b3e87d3480"
+    },
+    {
+      "questionId": "CQ-AH-MC0262-01",
+      "conceptId": "MC-0262",
+      "canonical": "Anthem",
+      "previousAcceptedVariants": [
+        "Anthem"
+      ],
+      "addedVariants": [
+        "Anthems",
+        "Church anthem",
+        "Sacred anthem"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "26f0299b5c5581d95d91122aba81f69a42528b305ad82091edbf79db60eeeacf"
+    },
+    {
+      "questionId": "CQ-AH-000007",
+      "conceptId": "MC-0263",
+      "canonical": "Ayre",
+      "previousAcceptedVariants": [
+        "Ayre",
+        "Air",
+        "Ayre or air"
+      ],
+      "addedVariants": [
+        "Ayres",
+        "Airs",
+        "Ayre song",
+        "English ayre",
+        "Aire"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ac5c69d8ec7cf170416877c4467907732f10f93c01faae2ac752a48bb2b633f3"
+    },
+    {
+      "questionId": "CQ-AH-000008",
+      "conceptId": "MC-0264",
+      "canonical": "Ballett",
+      "previousAcceptedVariants": [
+        "Ballett"
+      ],
+      "addedVariants": [
+        "Balletts",
+        "Ballett song",
+        "Ballett madrigal",
+        "Ballette",
+        "Ballett music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "976bcb09793078fa4bab06f210b58e58dbf339e1b27b3b7d49f48213a8f78f98"
+    },
+    {
+      "questionId": "CQ-AH-MC0265-F03",
+      "conceptId": "MC-0265",
+      "canonical": "Chorale",
+      "previousAcceptedVariants": [
+        "Chorale"
+      ],
+      "addedVariants": [
+        "Chorales",
+        "Chorale hymn",
+        "German chorale",
+        "German hymn",
+        "Corale",
+        "Choralle"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "78324f08d2d262ba524368a84eba577b76bdc085269800f7a6d45d89124771d6"
+    },
+    {
+      "questionId": "CQ-AH-MC0266-F01",
+      "conceptId": "MC-0266",
+      "canonical": "Contemporary jazz",
+      "previousAcceptedVariants": [
+        "Contemporary jazz"
+      ],
+      "addedVariants": [
+        "Contemporary-jazz",
+        "Contemporary jazz music",
+        "Contempory jazz",
+        "Contempary jazz",
+        "Contemporary jaz",
+        "Contemporaryjazz"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ed71a9d5fa8c5ac591a9fd1b480ca98f4a66e3b5cdf74d448adb445a377bc76c"
+    },
+    {
+      "questionId": "CQ-AH-000014",
+      "conceptId": "MC-0267",
+      "canonical": "Electronic dance music",
+      "previousAcceptedVariants": [
+        "Electronic dance music",
+        "EDM",
+        "Electronic dance music (EDM)"
+      ],
+      "addedVariants": [
+        "EDM music",
+        "Electronic dance",
+        "Electronic-dance music",
+        "Electronicdance music"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f1ab87c425bc970cd9556f09a9fdf4874088a95a876c4609cf492be009827e98"
+    },
+    {
+      "questionId": "CQ-AH-MC0268-F03",
+      "conceptId": "MC-0268",
+      "canonical": "Galliard",
+      "previousAcceptedVariants": [
+        "Galliard"
+      ],
+      "addedVariants": [
+        "Galliards",
+        "Galiard",
+        "Galliard dance"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0bc977d06ed86ff8fd603da408fdb61139701e2b36b062fb7e1c21875ed7c9d9"
+    },
+    {
+      "questionId": "CQ-AH-MC0269-F03",
+      "conceptId": "MC-0269",
+      "canonical": "Madrigal",
+      "previousAcceptedVariants": [
+        "Madrigal"
+      ],
+      "addedVariants": [
+        "Madrigals",
+        "Madrigal song",
+        "Madrigel",
+        "Madregal"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "083bad4e6fb5f1048c21e5ff2ffbb34a34255a3816982fc71c8dde1ea7c2462b"
+    },
+    {
+      "questionId": "CQ-AH-000004",
+      "conceptId": "MC-0270",
+      "canonical": "Motet",
+      "previousAcceptedVariants": [
+        "Motet"
+      ],
+      "addedVariants": [
+        "Motets",
+        "Mottet",
+        "Motet music",
+        "Motett"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "06f5d490f871200d9b8a32045c0824250544f4437d2fa78d53015c17ea5f2c32"
+    },
+    {
+      "questionId": "CQ-AH-MC0271-F02",
+      "conceptId": "MC-0271",
+      "canonical": "Nationalist",
+      "previousAcceptedVariants": [
+        "Nationalist"
+      ],
+      "addedVariants": [
+        "Nationalism",
+        "Nationalistic",
+        "Nationalist music",
+        "Nationalistic music",
+        "Nationelist"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e8ee83b0cb80cef8492e3c37d20ef5786b82d04e1e383e301795f02f87da10ab"
+    },
+    {
+      "questionId": "CQ-AH-MC0272-F03",
+      "conceptId": "MC-0272",
+      "canonical": "Neoclassical",
+      "previousAcceptedVariants": [
+        "Neoclassical",
+        "Neo-classical"
+      ],
+      "addedVariants": [
+        "Neoclassicism",
+        "Neo classical",
+        "Neo-classicism",
+        "Neo classical music",
+        "Neoclassical music",
+        "Neoclasical",
+        "Neo classicism"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "052300c5504b889a835f3e90427cf49842b73b57b2218910e38e67ca5ca490a1"
+    },
+    {
+      "questionId": "CQ-AH-000002",
+      "conceptId": "MC-0273",
+      "canonical": "Pavan",
+      "previousAcceptedVariants": [
+        "Pavan"
+      ],
+      "addedVariants": [
+        "Pavane",
+        "Pavans",
+        "Pavanes",
+        "Pavan dance",
+        "Pavanne"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f3e152498707689ca0e3704f6959f53e675b4bf070466e0209f132f35234b7ed"
+    },
+    {
+      "questionId": "CQ-AH-MC0274-F03",
+      "conceptId": "MC-0274",
+      "canonical": "Renaissance",
+      "previousAcceptedVariants": [
+        "Renaissance"
+      ],
+      "addedVariants": [
+        "Renaissance music",
+        "Renaissance period",
+        "Renaisance",
+        "Rennaissance",
+        "Reneissance",
+        "Renaissance style"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "ef2b18563b12bd83bbdd428ef489685c58ebe62f49bc73779a271078ec51e400"
+    },
+    {
+      "questionId": "CQ-AH-000013",
+      "conceptId": "MC-0275",
+      "canonical": "Serial",
+      "previousAcceptedVariants": [
+        "Serial",
+        "Serialism",
+        "Serial music"
+      ],
+      "addedVariants": [
+        "Serialist",
+        "Serialistic",
+        "Serial composition",
+        "Twelve-tone serialism",
+        "Twelve tone serialism",
+        "Seriel",
+        "Serialisim",
+        "Twelvetone serialism"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e02d9e3a8fc1d7db660fe70e69bb1fb98cd48feeefb8b493dc8b3f7c2dee4fdc"
+    },
+    {
+      "questionId": "CQ-AH-000016",
+      "conceptId": "MC-0276",
+      "canonical": "Appoggiatura",
+      "previousAcceptedVariants": [
+        "Appoggiatura"
+      ],
+      "addedVariants": [
+        "Appoggiaturas",
+        "Appogiatura",
+        "Apoggiatura",
+        "Appoggiatura ornament",
+        "Appogiattura"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "023abe83eecfbc481fc00daa095a7e57b389a06678435d0dc651e3cc5726ffa0"
+    },
+    {
+      "questionId": "CQ-AH-MC0277-F02",
+      "conceptId": "MC-0277",
+      "canonical": "Augmented triad",
+      "previousAcceptedVariants": [
+        "Augmented triad",
+        "Augmented chord"
+      ],
+      "addedVariants": [
+        "Augmented triads",
+        "Aug triad",
+        "Augmented three-note chord",
+        "Augumented triad",
+        "Augmented three note chord",
+        "Augmented threenote chord"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "a68d3dce9ecd91aed32b3a55d7874ce65972dfd8fd7b75af3f44d63a99493f29"
+    },
+    {
+      "questionId": "CQ-AH-000020",
+      "conceptId": "MC-0280",
+      "canonical": "Polytonality",
+      "previousAcceptedVariants": [
+        "Polytonality",
+        "Bitonality",
+        "Polytonality or bitonality"
+      ],
+      "addedVariants": [
+        "Polytonal",
+        "Bitonal",
+        "Poly-tonality",
+        "Bi-tonality",
+        "Polytonal music",
+        "Bitonal music",
+        "Polytonalities",
+        "Bitonalities",
+        "Politonality",
+        "Poly tonality",
+        "Bi tonality"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f8a55c6a5ea785ee17a55fccbe37aff807601e622c4643a00fbf3725f2b1ee50"
+    },
+    {
+      "questionId": "CQ-AH-MC0281-01",
+      "conceptId": "MC-0281",
+      "canonical": "Suspension",
+      "previousAcceptedVariants": [
+        "Suspension"
+      ],
+      "addedVariants": [
+        "Suspensions",
+        "Suspended note",
+        "Suspended",
+        "Suspention",
+        "Suspenssion"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "855d804bab247524f9e7bbb18f20dec2a5cd47190bad01143e9f837022801f0b"
+    },
+    {
+      "questionId": "CQ-AH-MC0282-F02",
+      "conceptId": "MC-0282",
+      "canonical": "Tone row",
+      "previousAcceptedVariants": [
+        "Tone row",
+        "Note row",
+        "Tone row or note row"
+      ],
+      "addedVariants": [
+        "Tone-row",
+        "Note-row",
+        "Tone rows",
+        "Note rows",
+        "Tonerow",
+        "Noterow",
+        "Tone-row series",
+        "Tone row series",
+        "Tonerow series"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "4060f98e7fa0c3ed8c28eba766367a8235808e99dc0e5469d626e8486d0dd2a4"
+    },
+    {
+      "questionId": "CQ-AH-MC0283-01",
+      "conceptId": "MC-0283",
+      "canonical": "Tritone",
+      "previousAcceptedVariants": [
+        "Tritone"
+      ],
+      "addedVariants": [
+        "Tri-tone",
+        "Tri tone",
+        "Tritones"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "66287b3494a29a0226c58fdde37e8631455577547fee334bb7cdc3fa063e3e9f"
+    },
+    {
+      "questionId": "CQ-AH-MC0284-01",
+      "conceptId": "MC-0284",
+      "canonical": "Turn",
+      "previousAcceptedVariants": [
+        "Turn"
+      ],
+      "addedVariants": [
+        "Turns",
+        "Turn ornament",
+        "Melodic turn",
+        "Turn decoration"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "1d2907e8e00e3768d804e91d3fb8f625d92f20c35567800f17e20ddf8efc8fa2"
+    },
+    {
+      "questionId": "CQ-AH-MC0285-F02",
+      "conceptId": "MC-0285",
+      "canonical": "Hemiola",
+      "previousAcceptedVariants": [
+        "Hemiola"
+      ],
+      "addedVariants": [
+        "Hemiolas",
+        "Hemiola rhythm",
+        "Hemiolla",
+        "Hemolia"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "125b9f61e2b06c0661be711e3f7179b4465c18f8f6bc81aee8454e258fb2b0fb"
+    },
+    {
+      "questionId": "CQ-AH-000024",
+      "conceptId": "MC-0286",
+      "canonical": "Answer",
+      "previousAcceptedVariants": [
+        "Answer"
+      ],
+      "addedVariants": [
+        "Answers",
+        "Fugal answer",
+        "Fugue answer",
+        "Answer entry"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0a060930f6d00b5ed5489c39e8f9440bbecfde77065b048561b470bc6843acfd"
+    },
+    {
+      "questionId": "CQ-AH-MC0287-F02",
+      "conceptId": "MC-0287",
+      "canonical": "Antiphonal",
+      "previousAcceptedVariants": [
+        "Antiphonal"
+      ],
+      "addedVariants": [
+        "Antiphony",
+        "Antiphonally",
+        "Antiphonal texture",
+        "Antiphonal singing",
+        "Antiphonal music",
+        "Antifonal",
+        "Antiphanel"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "45af149ffc081dfcd80be8cf4a9a872823dc7afd583a9435e44a59fc50ec7a5f"
+    },
+    {
+      "questionId": "CQ-AH-MC0288-01",
+      "conceptId": "MC-0288",
+      "canonical": "Bridge",
+      "previousAcceptedVariants": [
+        "Bridge"
+      ],
+      "addedVariants": [
+        "Bridges",
+        "Bridge passage",
+        "Sonata bridge",
+        "Bridging passage",
+        "Bridge section",
+        "Brige"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "263892c9c3ac4ed640f101fd8aa05084ecbf6f156e7b1b6f294358430ee58a51"
+    },
+    {
+      "questionId": "CQ-AH-MC0290-02",
+      "conceptId": "MC-0290",
+      "canonical": "Fugue",
+      "previousAcceptedVariants": [
+        "Fugue"
+      ],
+      "addedVariants": [
+        "Fugues",
+        "Fugal",
+        "Fugal writing",
+        "Fuge",
+        "Fugue form",
+        "Fugue structure"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "02e56084619a5e18b737111f1e8d2458e72991d35f745efa7734111075348984"
+    },
+    {
+      "questionId": "CQ-AH-000027",
+      "conceptId": "MC-0291",
+      "canonical": "Inversion",
+      "previousAcceptedVariants": [
+        "Inversion"
+      ],
+      "addedVariants": [
+        "Melodic inversion",
+        "Inverted melody",
+        "Inverting",
+        "Invert",
+        "Inverted",
+        "Invertion"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "6d377f851b99730ee5ee23976fa14176f4ae49eca77d68550ac006ed9906d3e6"
+    },
+    {
+      "questionId": "CQ-AH-MC0292-F02",
+      "conceptId": "MC-0292",
+      "canonical": "Leitmotif",
+      "previousAcceptedVariants": [
+        "Leitmotif",
+        "Leitmotiv"
+      ],
+      "addedVariants": [
+        "Leitmotifs",
+        "Leitmotivs",
+        "Leit motif",
+        "Leit motiv",
+        "Leitmotif theme",
+        "Leitmotiff",
+        "Light motif"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "e340a160352fe70db953ce0b6a396fb3780298847e58912e2c0c66bca0a95bec"
+    },
+    {
+      "questionId": "CQ-AH-MC0293-F03",
+      "conceptId": "MC-0293",
+      "canonical": "Retrograde",
+      "previousAcceptedVariants": [
+        "Retrograde"
+      ],
+      "addedVariants": [
+        "Retrograde melody",
+        "Retrograde motion",
+        "Retrogradation",
+        "Retrogade"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0e235517cd143c31557bb6fd67ce7c945915ab08aff3c9b312d55f5d4dafe324"
+    },
+    {
+      "questionId": "CQ-AH-MC0294-F02",
+      "conceptId": "MC-0294",
+      "canonical": "Song cycle",
+      "previousAcceptedVariants": [
+        "Song cycle"
+      ],
+      "addedVariants": [
+        "Song cycles",
+        "Song-cycle",
+        "Songcycle",
+        "A cycle of songs",
+        "Song sycle",
+        "Song cyle"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "0674ad5531835798214c170a62d51846c6561b8bffda2685bf85c80233c1901b"
+    },
+    {
+      "questionId": "CQ-AH-000026",
+      "conceptId": "MC-0295",
+      "canonical": "Stretto",
+      "previousAcceptedVariants": [
+        "Stretto"
+      ],
+      "addedVariants": [
+        "Strettos",
+        "Stretti",
+        "Stretto entries",
+        "Streto"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "226509dee1224377ad7ca3619f203a7f0171a8ac6d289e6b199866e689de981f"
+    },
+    {
+      "questionId": "CQ-AH-MC0296-F03",
+      "conceptId": "MC-0296",
+      "canonical": "Subject",
+      "previousAcceptedVariants": [
+        "Subject"
+      ],
+      "addedVariants": [
+        "Subjects",
+        "Fugue subject",
+        "Fugal subject",
+        "Subject theme",
+        "Subjet"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "9a1d5f436260cd0a41eb4179a7aa15839d2c5cf7b81c6333990d3a92c3bd0afc"
+    },
+    {
+      "questionId": "CQ-AH-MC0297-F03",
+      "conceptId": "MC-0297",
+      "canonical": "Consort",
+      "previousAcceptedVariants": [
+        "Consort"
+      ],
+      "addedVariants": [
+        "Consorts",
+        "Whole consort",
+        "Broken consort",
+        "Consort ensemble"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "73c976924b897de62506447a469fb14c93375d50777863dc8bd8bc8ff18df8cd"
+    },
+    {
+      "questionId": "CQ-AH-MC0298-F03",
+      "conceptId": "MC-0298",
+      "canonical": "Countertenor",
+      "previousAcceptedVariants": [
+        "Countertenor"
+      ],
+      "addedVariants": [
+        "Counter tenor",
+        "Counter-tenor",
+        "Countertenors",
+        "Countertenner",
+        "Countetenor"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "7027881e0f1875866808c0c87a6f7cdebb088cb865c2acb65697173da58824f0"
+    },
+    {
+      "questionId": "CQ-AH-MC0299-F02",
+      "conceptId": "MC-0299",
+      "canonical": "Piano trio",
+      "previousAcceptedVariants": [
+        "Piano trio"
+      ],
+      "addedVariants": [
+        "Piano trios",
+        "Piano-trio",
+        "Pianotrio",
+        "Piano trio ensemble"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "fd7117793bf70ce53d1bae92e4ae1e45e472065fbe9a1309c05560129e2b5a81"
+    },
+    {
+      "questionId": "CQ-AH-000030",
+      "conceptId": "MC-0300",
+      "canonical": "Sprechgesang",
+      "previousAcceptedVariants": [
+        "Sprechgesang"
+      ],
+      "addedVariants": [
+        "Sprechgesang singing",
+        "Sprechgesang technique",
+        "Sprechgesang voice",
+        "Sprechgesan",
+        "Sprechgeseng",
+        "Sprechesang"
+      ],
+      "reason": "Reviewed word forms, equivalent terminology, common spelling errors, spacing, hyphens and accents; exact listed matching retained.",
+      "questionContentSha256": "f750a9adf3a08e2f887c1755d0bcec5342b7a1654f2b8328d2e7ba5d51f2f986"
+    }
+  ],
+  "addedVariants": 1553,
+  "definitionBaselineSha256": "5e4cf5924c861054d26cc0320123f70728ed60ac4ca13d7cc241dcf1a27e69d2",
+  "previousDefinitionBaselineSha256": "f7ae8af9ac63a1db6ddcc3e0f78cd9c70146cdd58bea51deb1bb94dc425cb5f7",
+  "languageReviewDate": "2026-11-12"
+}

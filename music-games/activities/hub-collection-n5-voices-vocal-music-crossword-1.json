@@ -1,0 +1,171 @@
+{
+  "id": "hub-collection-n5-voices-vocal-music-crossword-1",
+  "level": "N5",
+  "title": "Vocal Texture",
+  "instructions": "",
+  "description": "Vocal Texture: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Vocal Texture",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0034",
+      "prompt": "Someone sings or plays the main tune while others play along to support them.",
+      "answer": "Accompanied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0034"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0035",
+      "prompt": "Different notes sounding together.",
+      "answer": "Harmony",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0035"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0038",
+      "prompt": "Everyone sings the same tune, but different groups start at different times.",
+      "answer": "Round",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0038"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0039",
+      "prompt": "One person sings or plays a featured part.",
+      "answer": "Solo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0039"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0040",
+      "prompt": "Singing or playing without anyone providing a backing part.",
+      "answer": "Unaccompanied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0040"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0041",
+      "prompt": "Everyone sings or plays the same notes together.",
+      "answer": "Unison",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0041"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0048",
+      "prompt": "A group of people singing together.",
+      "answer": "Choir",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0048"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0067",
+      "prompt": "The sound someone makes when they sing.",
+      "answer": "Voice",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0067"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0114",
+      "prompt": "Singers who support the main singer.",
+      "answer": "Backing vocals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0114"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0162",
+      "prompt": "A higher tune sung above the main tune.",
+      "answer": "Descant",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0162"
+    },
+    {
+      "id": "hub-collection-n5-voices-vocal-music-crossword-1-MC-0192",
+      "prompt": "Singing without instruments.",
+      "answer": "A cappella",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0192"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "voices-vocal-music",
+  "sourceConceptIds": [
+    "MC-0034",
+    "MC-0035",
+    "MC-0038",
+    "MC-0039",
+    "MC-0040",
+    "MC-0041",
+    "MC-0048",
+    "MC-0067",
+    "MC-0114",
+    "MC-0162",
+    "MC-0192"
+  ]
+}

@@ -1,0 +1,2 @@
+const test=require('node:test'),assert=require('node:assert/strict'),{run}=require('../scripts/audit-concept-quizzes.cjs');
+test('every level and collection preserves marking, complete cycles, media paths and balanced single-answer positions',()=>{const report=run(1);assert(report.bankQuestions>0);assert(report.questionsChecked>=report.bankQuestions);assert.deepEqual(Object.keys(report.levels).sort(),["AH","H","N3","N4","N5"]);assert.deepEqual(report.failures,[]);});

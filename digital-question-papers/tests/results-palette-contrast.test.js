@@ -1,0 +1,6 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
+const css=fs.readFileSync(require.resolve('../styles.css'),'utf8');
+function luminance(hex){let h=hex.replace('#','');if(h.length===3)h=[...h].map(c=>c+c).join('');const c=h.match(/../g).map(h=>parseInt(h,16)/255).map(c=>c<=.04045?c/12.92:((c+.055)/1.055)**2.4);return c[0]*.2126+c[1]*.7152+c[2]*.0722;}
+test('every score band supports its small label and score suffix at AA text contrast',()=>{for(const band of ['low','middle','high']){const block=css.match(new RegExp(`\\.result-score-pill\\.is-score-${band}\\s*\\{([^}]+)\\}`))[1],background=block.match(/background:\s*(#[0-9a-f]+)/i)[1],foreground=block.match(/(?:^|;)\s*color:\s*(#[0-9a-f]+)/i)[1],border=block.match(/border-color:\s*(#[0-9a-f]+)/i)[1];const values=[luminance(background),luminance(foreground)].sort((a,b)=>b-a);assert.ok((values[0]+.05)/(values[1]+.05)>=4.5,band);assert.equal(border,background,'matching fill and outline');}});
+test('contrast fixture detects the original bright-green failure',()=>{const ratio=1.05/(luminance('#16a34a')+.05);assert.ok(ratio<4.5&&ratio>3,'the large score alone passed while its small text did not');});

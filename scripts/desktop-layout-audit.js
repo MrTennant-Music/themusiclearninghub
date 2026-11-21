@@ -3,38 +3,44 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const SOURCE_EXTENSIONS = new Set([".html", ".css", ".js", ".jsx", ".ts", ".tsx"]);
-const IGNORED_DIRECTORIES = new Set([".git", "dist", "node_modules", "vendor"]);
-const INTERACTIVE_EXAM_CANVAS_FIT = "interactive-exams/exam-canvas-fit.js";
+const IGNORED_DIRECTORIES = new Set([
+  ".git",
+  "dist",
+  "generated-runtimes",
+  "node_modules",
+  "vendor",
+]);
+const INTERACTIVE_EXAM_CANVAS_FIT = "digital-question-papers/exam-canvas-fit.js";
 const LEGACY_DESKTOP_VARIANT_LIMITS = {
   "accidentals.html": 13,
-  "articulation.html": 33,
+  "articulationmarkings.html": 33,
   "barlines.html": 7,
   "cadences.html": 5,
   "chords.html": 67,
-  "concept-recall.html": 6,
-  "correctrhythm.html": 22,
+  "conceptrecall.html": 6,
+  "rhythmicdictation.html": 22,
   "dynamics.html": 39,
-  "enharmonics.html": 19,
-  "hub-menu.js": 25,
-  "hub-shell.js": 45,
+  "enharmonicequivalents.html": 19,
+  "shared/hub-menu.js": 25,
+  "shared/hub-shell.js": 45,
   "intervals.html": 16,
-  "keysig.html": 36,
-  "millionaire.js": 14,
-  "missingnotes.html": 17,
-  "name-randomiser.html": 3,
-  "notenaming.html": 40,
+  "keysignatures.html": 36,
+  "whowantstobemillionaire/millionaire.js": 14,
+  "melodicdictation.html": 17,
+  "namerandomiser.html": 3,
+  "noteidentification.html": 40,
   "practicequestions.html": 45,
   "readingrhythms.html": 10,
   "repeatsigns.html": 19,
   "rests.html": 27,
-  "rhythmmatch.html": 16,
+  "rhythmidentification.html": 16,
   "rhythmsums.html": 5,
   "tempo.html": 5,
-  "timesig.html": 6,
-  "tonic.html": 23,
+  "timesignatures.html": 6,
+  "scaledegrees.html": 23,
   "transposing.html": 6,
   "triplets.html": 4,
-  "worksheet-generator.html": 1,
+  "worksheetgenerator.html": 1,
   "worksheet-generic.jsx": 3,
 };
 
@@ -56,14 +62,19 @@ const failures = [];
 const sourceFiles = collectFiles(ROOT);
 const productionFiles = sourceFiles.filter((file) => !file.endsWith(".test.js"));
 const htmlFiles = productionFiles.filter((file) => file.endsWith(".html"));
-const desktopLayoutCss = fs.readFileSync(path.join(ROOT, "desktop-layout.css"), "utf8");
+const desktopLayoutCss = fs.readFileSync(path.join(ROOT, "styles/desktop-layout.css"), "utf8");
 const desktopLayoutJs = fs.readFileSync(path.join(ROOT, "desktop-layout.js"), "utf8");
 
 if (!/html\s*\{[^}]*overflow-x:\s*hidden/i.test(desktopLayoutCss)) {
-  failures.push("desktop-layout.css: fitted canvas must prevent horizontal page scrolling");
+  failures.push("styles/desktop-layout.css: fitted canvas must prevent horizontal page scrolling");
 }
 if (!/body\s*\{[^}]*overflow-x:\s*hidden\s*!important/i.test(desktopLayoutCss)) {
-  failures.push("desktop-layout.css: page body must prevent horizontal drift");
+  failures.push("styles/desktop-layout.css: page body must prevent horizontal drift");
+}
+if (!desktopLayoutCss.includes("--mlh-page-background: #f8fafc") ||
+    !/body\s*\{[^}]*background-color:\s*var\(--mlh-page-background\)\s*!important/i.test(desktopLayoutCss) ||
+    !desktopLayoutCss.includes("body > #root > :first-child")) {
+  failures.push("styles/desktop-layout.css: every activity canvas must use the homepage background colour");
 }
 if (!/viewport\.setAttribute\("content", `width=\$\{DESKTOP_WIDTH\}`\)/.test(desktopLayoutJs)) {
   failures.push("desktop-layout.js: viewport must request the fixed canvas width only");
@@ -71,15 +82,27 @@ if (!/viewport\.setAttribute\("content", `width=\$\{DESKTOP_WIDTH\}`\)/.test(des
 if (/viewport\.setAttribute\([^\n]*initial-scale/.test(desktopLayoutJs)) {
   failures.push("desktop-layout.js: forced initial scale prevents fitted mobile rendering");
 }
+if (!desktopLayoutCss.includes('[class$="-menu"]') ||
+    !desktopLayoutCss.includes('[class$="-dropdown"]') ||
+    !desktopLayoutCss.includes('[class$="-popover"]') ||
+    !desktopLayoutCss.includes("transform: none !important") ||
+    !desktopLayoutCss.includes("box-shadow: none !important") ||
+    !desktopLayoutCss.includes("outline-offset: -2px !important")) {
+  failures.push("styles/desktop-layout.css: menu controls must keep hover and focus effects inside menu borders");
+}
 
 for (const file of htmlFiles) {
   const name = relative(file);
   const text = fs.readFileSync(file, "utf8");
+  const viewportTracker = text.indexOf("shared/hub-layout-viewport.js");
+  if (viewportTracker < 0) {
+    failures.push(`${name}: shared zoom tracker is missing`);
+  }
   if (name === "index.html") {
     if (!/<meta name="viewport" content="width=device-width, initial-scale=1\.0" \/>/.test(text)) {
       failures.push(`${name}: responsive homepage viewport is missing`);
     }
-    if (text.includes("desktop-layout.css") || text.includes("desktop-layout.js")) {
+    if (text.includes("styles/desktop-layout.css") || text.includes("desktop-layout.js")) {
       failures.push(`${name}: homepage must not load the fitted fixed-canvas policy`);
     }
     continue;
@@ -87,14 +110,17 @@ for (const file of htmlFiles) {
   if (!/<meta name="viewport" content="width=1280" \/>/.test(text)) {
     failures.push(`${name}: viewport must fit the fixed 1280px canvas without forcing 100% zoom`);
   }
-  if (!text.includes("desktop-layout.css")) {
-    failures.push(`${name}: desktop-layout.css is missing`);
+  if (!text.includes("styles/desktop-layout.css")) {
+    failures.push(`${name}: styles/desktop-layout.css is missing`);
   }
   if (!text.includes("desktop-layout.js")) {
     failures.push(`${name}: desktop-layout.js is missing`);
   }
   const tailwindIndex = text.search(/<script[^>]+(?:tailwindcss\.com|tailwind-[^"']+\.js)/);
   const policyIndex = text.indexOf("desktop-layout.js");
+  if (viewportTracker > policyIndex && policyIndex >= 0) {
+    failures.push(`${name}: shared zoom tracker must load before the desktop layout`);
+  }
   if (tailwindIndex >= 0 && policyIndex < tailwindIndex) {
     failures.push(`${name}: desktop-layout.js must load after Tailwind`);
   }
@@ -102,7 +128,7 @@ for (const file of htmlFiles) {
 
 for (const file of productionFiles) {
   const name = relative(file);
-  if (name === "desktop-layout.js" || name === "scripts/desktop-layout-audit.js" || name === "tailwind.config.js") continue;
+  if (name === "desktop-layout.js" || name === "shared/hub-layout-viewport.js" || name === "scripts/desktop-layout-audit.js" || name === "tailwind.config.js") continue;
   const text = fs.readFileSync(file, "utf8");
   const isResponsiveHomepage = name === "index.html";
   const isInteractiveExamCanvasFit = name === INTERACTIVE_EXAM_CANVAS_FIT;

@@ -1,0 +1,132 @@
+{
+  "id": "hub-collection-h-songs-stage-crossword-1",
+  "level": "H",
+  "title": "Songs and Stage Music",
+  "instructions": "",
+  "description": "Songs and Stage Music: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Songs and Stage Music",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0004",
+      "prompt": "A show that tells a story through acting, songs and dancing.",
+      "answer": "Musical",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0004"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0073",
+      "prompt": "A stage story told mainly through singing, with an orchestra playing along.",
+      "answer": "Opera",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0073"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0144",
+      "prompt": "A solo song in an opera or another large vocal work.",
+      "answer": "Aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0144"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0147",
+      "prompt": "A group of singers performing together in an opera or another large vocal work.",
+      "answer": "Chorus",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0147"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0217",
+      "prompt": "A German song for a solo singer, usually with piano.",
+      "answer": "Lied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0217"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0222",
+      "prompt": "Singing that follows the rhythm of speaking, often to move a story along.",
+      "answer": "Recitative",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0222"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0250",
+      "prompt": "A solo song with three sections: A, B, then A again, often with extra decoration.",
+      "answer": "Da capo aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0250"
+    },
+    {
+      "id": "hub-collection-h-songs-stage-crossword-1-MC-0256",
+      "prompt": "The music keeps moving on to new sections instead of repeating the same verse tune.",
+      "answer": "Through-composed",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0256"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "songs-stage",
+  "sourceConceptIds": [
+    "MC-0004",
+    "MC-0073",
+    "MC-0144",
+    "MC-0147",
+    "MC-0217",
+    "MC-0222",
+    "MC-0250",
+    "MC-0256"
+  ]
+}

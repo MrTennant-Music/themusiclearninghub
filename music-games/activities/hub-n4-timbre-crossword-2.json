@@ -1,0 +1,135 @@
+{
+  "id": "hub-n4-timbre-crossword-2",
+  "level": "N4",
+  "title": "Timbre 2",
+  "instructions": "",
+  "description": "Practise the National 4 Timbre concepts — collection 2 of 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "National 4"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n4-timbre-crossword-2-1",
+      "prompt": "A high woodwind, usually made of metal, played by blowing across an opening instead of through a reed.",
+      "answer": "Flute",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-2",
+      "prompt": "A tuned percussion instrument with metal bars arranged like a keyboard and struck with hard beaters.",
+      "answer": "Glockenspiel",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-3",
+      "prompt": "A stick is drawn across the ridges to create a rasping rhythmic sound.",
+      "answer": "Guiro",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-4",
+      "prompt": "A large plucked string instrument with strings of different lengths stretched across a frame.",
+      "answer": "Harp",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-5",
+      "prompt": "Pressing a key plucks a string inside this keyboard instrument.",
+      "answer": "Harpsichord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-6",
+      "prompt": "An instrument's normal tone becomes softer, thinner, more nasal or more distant when a device is fitted.",
+      "answer": "Muted",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-7",
+      "prompt": "A set of tubes of different lengths tied together. Each tube makes a different pitch.",
+      "answer": "Pan pipes",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-8",
+      "prompt": "An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece.",
+      "answer": "Recorder",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-9",
+      "prompt": "This single-reed instrument has a metal body, unlike the clarinet's wooden or plastic body.",
+      "answer": "Saxophone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-timbre-crossword-2-10",
+      "prompt": "An untuned drum with metal wires under the lower skin, giving a crisp rattling sound.",
+      "answer": "Snare drum",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

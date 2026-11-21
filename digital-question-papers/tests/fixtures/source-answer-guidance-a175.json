@@ -1,0 +1,559 @@
+{
+  "scope": "Source-confirmed A172/A174/A175 acceptance, exclusion and grouped-evidence cases. Expected marks were read from the official guidance, not derived from the marking implementation. Source-section hashes are in source-section-answer-review.json.",
+  "cases": [
+    {
+      "paper": "national5-2018",
+      "part": "q8a",
+      "value": {
+        "final": ">"
+      },
+      "marks": 1
+    },
+    {
+      "paper": "national5-2018",
+      "part": "q8a",
+      "value": {
+        "final": "Accents >"
+      },
+      "marks": 1
+    },
+    {
+      "paper": "national5-2018",
+      "part": "q8a",
+      "value": {
+        "final": "<"
+      },
+      "marks": 0
+    },
+    {
+      "paper": "national5-2023",
+      "part": "q3d",
+      "value": "1.5",
+      "marks": 1
+    },
+    {
+      "paper": "national5-2023",
+      "part": "q3d",
+      "value": "1\u00b75",
+      "marks": 1
+    },
+    {
+      "paper": "national5-2023",
+      "part": "q3d",
+      "value": "1\u00bd",
+      "marks": 1
+    },
+    {
+      "paper": "national5-2023",
+      "part": "q3d",
+      "value": "15",
+      "marks": 0
+    },
+    {
+      "paper": "national5-2023",
+      "part": "q3d",
+      "value": "1.05",
+      "marks": 0
+    },
+    {
+      "paper": "national5-2023",
+      "part": "q3d",
+      "value": "0.15",
+      "marks": 0
+    },
+    {
+      "paper": "higher-2017",
+      "part": "q4c",
+      "value": "1.5",
+      "marks": 1
+    },
+    {
+      "paper": "higher-2017",
+      "part": "q4c",
+      "value": "1\u00b75",
+      "marks": 1
+    },
+    {
+      "paper": "higher-2017",
+      "part": "q4c",
+      "value": "1\u00bd",
+      "marks": 1
+    },
+    {
+      "paper": "higher-2017",
+      "part": "q4c",
+      "value": "15",
+      "marks": 0
+    },
+    {
+      "paper": "higher-2017",
+      "part": "q4c",
+      "value": "1.05",
+      "marks": 0
+    },
+    {
+      "paper": "higher-2017",
+      "part": "q4c",
+      "value": "0.15",
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "part": "q4b",
+      "value": "C\u25b36",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "part": "q4b",
+      "value": "C\u03946",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "part": "q4b",
+      "value": "C\u22066",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "part": "q4b",
+      "value": "CM6",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "part": "q4b",
+      "value": "Cm6",
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses close miking of the individual performers."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2018",
+      "part": "q6a1",
+      "value": {
+        "final": "Major; appoggiatura."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2018",
+      "part": "q6a1",
+      "value": {
+        "final": "Major-minor-major; appoggiatura."
+      },
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2018",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses jazz harmony."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2018",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses the voices sing straight."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2018",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses the voices are not operatic."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2019",
+      "part": "q6a1",
+      "value": {
+        "final": "Monophonic and anacrusis."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2019",
+      "part": "q6a1",
+      "value": {
+        "final": "Monophonic and unison."
+      },
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2019",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it has a wide range of dynamics."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses frequent key changes."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses 7th chords."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses added 6ths."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses time changes."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses syncopation."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses accents."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses wide leaping notes."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is modern because it uses angular melodic lines."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses added chords."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses discords."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses time changes."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses riffs."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses ostinato."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses synthesizer."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses reggae."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses ornamentation."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses traditional harmony."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses accents."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses complex chords."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses a wide range of dynamics."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "part": "q6a1",
+      "value": {
+        "final": "Ornamentation and major and minor."
+      },
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q2b",
+      "value": "G Maj/B, C, D",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q2b",
+      "value": "G Maj 1st Inv, C, D",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q2b",
+      "value": "I 1st Inv, C, D",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Baroque because it uses ornamentation."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Baroque because it uses diatonic harmony."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Baroque because it uses tonic and dominant."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Baroque because it uses clear cadence points."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is Romantic because it uses a wide dynamic range."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is Romantic because it uses accents."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is Romantic because it uses sfz."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is Romantic because it uses tambourine."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses a small ensemble."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses a chamber ensemble."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses a small orchestra with some wind instruments."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses diatonic harmonies."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 1 is Classical because it uses a small orchestra."
+      },
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is Romantic because it uses sfz."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q2c",
+      "value": "VIa, IIa, Ib",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q2c",
+      "value": "6a, 2a, 1b",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q2c",
+      "value": "Bm, Em, D Maj 1st Inv",
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses a large orchestra and prominent percussion."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses a symphony orchestra with xylophone."
+      },
+      "marks": 1
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses a large orchestra."
+      },
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses percussion."
+      },
+      "marks": 0
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "part": "q6bii",
+      "value": {
+        "final": "Excerpt 2 is modern because it uses a large orchestra with drumkit."
+      },
+      "marks": 0
+    }
+  ]
+}

@@ -2,42 +2,63 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { createHash } = require("node:crypto");
 const { spawnSync } = require("node:child_process");
 const Babel = require("@babel/standalone");
 
 const ROOT = path.resolve(__dirname, "..");
 const OUTPUT = path.join(ROOT, "dist");
+const scriptVersions = new Map();
 const EXAM_ASSET_PREFIX = "../exampapers/";
-const MAX_PUBLISHED_BYTES = 1_000_000_000;
+const GITHUB_PAGES_MAX_BYTES = 1_000_000_000;
+const IS_GITHUB_PAGES_BUILD = process.env.HUB_DEPLOY_TARGET === "github-pages";
 const PUBLIC_ROOT_DIRECTORIES = new Set([
-  "board-marker",
-  "copperplate-gothic-std",
-  "familyfortunes-audio",
-  "interactive-exams",
-  "millionaire-starter",
-  "piano audio",
-  "soundsmillionaire",
+  "assessment-recorder",
+  "styles",
+  "shared",
+  "docs",
+  "music-dictionary",
+  "ui-icons",
+  "music-games",
+  "music-escape",
+  "whowantstobemillionaire",
+  "app-icons",
+  "audio",
+  "familyfortunes",
+  "generated-runtimes",
+  "fonts",
+  "digital-question-papers",
+  "images",
   "vendor",
 ]);
 const PUBLIC_ROOT_EXTENSIONS = new Set([
   ".css", ".gif", ".html", ".jpeg", ".jpg", ".js", ".jsx", ".m4a", ".mid", ".mp3",
   ".ogg", ".otf", ".pdf", ".png", ".svg", ".ttf", ".wav", ".webp", ".woff", ".woff2",
 ]);
-const NON_PUBLIC_ROOT_FILES = new Set(["conceptlist.pdf", "tailwind.config.js"]);
+const NON_PUBLIC_ROOT_FILES = new Set(["conceptlist.pdf", "tailwind.config.js", "tailwind.millionaire.config.js"]);
+
+function filenameIsPrivate(sourcePath) { return [".command", ".md"].includes(path.extname(sourcePath)); }
 
 function isExcluded(sourcePath) {
   const relativePath = path.relative(ROOT, sourcePath);
   if (!relativePath) return false;
   const parts = relativePath.split(path.sep);
   if (parts.some(part => part.startsWith("."))) return true;
+  if (sourcePath.endsWith(".test.js")) return true;
+  if (parts[0] === "docs" && parts.length > 1 && !["Music Literacy Question Analysis.pdf", "music-concepts-exam-frequency.pdf"].some(filename => relativePath === path.join("docs", filename))) return true;
+  if (parts[0] === "whowantstobemillionaire" && (parts[1] === "question-editor" || filenameIsPrivate(sourcePath))) return true;
+  if (parts[0] === "music-games" && (parts[1] === "output" || filenameIsPrivate(sourcePath))) return true;
   if (parts.includes("tests") || parts.includes("scripts")) return true;
-  if (parts[0] === "soundsmillionaire" && path.extname(sourcePath).toLowerCase() === ".ogg") return true;
-  if (parts[0] === "interactive-exams" && [".md", ".py"].includes(path.extname(sourcePath).toLowerCase())) return true;
+  if (parts[0] === "digital-question-papers" && parts[1] === "audit") return true;
+  if (parts[0] === "music-games" && parts[1] === "activities" && [".json", ".md"].includes(path.extname(sourcePath).toLowerCase())) return true;
+  if (parts[0] === "whowantstobemillionaire" && parts[1] === "soundsmillionaire" && path.extname(sourcePath).toLowerCase() === ".ogg") return true;
+  if (parts[0] === "digital-question-papers" && [".md", ".py"].includes(path.extname(sourcePath).toLowerCase())) return true;
   return false;
 }
 
 function isPublishedRootFile(filename) {
   if (filename.startsWith(".") || NON_PUBLIC_ROOT_FILES.has(filename) || filename.endsWith(".test.js")) return false;
+  if (filename === "audio-concept-library-data.json") return true;
   return PUBLIC_ROOT_EXTENSIONS.has(path.extname(filename).toLowerCase());
 }
 
@@ -50,6 +71,7 @@ function listFiles(directory) {
 }
 
 function relativeAssetPath(htmlPath) {
+  if (/<base\s+href=["\']\.\.\/["\']/.test(fs.readFileSync(htmlPath, "utf8"))) return "./assets/site.css";
   const relativeHtmlPath = path.relative(OUTPUT, htmlPath);
   const assetPath = path.relative(path.dirname(relativeHtmlPath), "assets/site.css").split(path.sep).join("/");
   return assetPath.startsWith(".") ? assetPath : `./${assetPath}`;
@@ -65,10 +87,25 @@ function compileJsx(source, filename) {
   }).code;
 }
 
+function versionLocalScripts(html, sourceBase) {
+  return html.replace(/(<script\b[^>]*?\s+src\s*=\s*)(["'])([^"'?#]+\.js)(?:\?v=[^"'#]*)?\2/gi, (tag, attribute, quote, url) => {
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/)/i.test(url)) return tag;
+    const file = path.resolve(sourceBase, decodeURIComponent(url));
+    if (!file.startsWith(OUTPUT + path.sep) || !fs.statSync(file, { throwIfNoEntry: false })?.isFile()) return tag;
+    if (!scriptVersions.has(file)) {
+      scriptVersions.set(file, createHash("sha256").update(fs.readFileSync(file)).digest("hex").slice(0, 12));
+    }
+    return `${attribute}${quote}${url}?v=${scriptVersions.get(file)}${quote}`;
+  });
+}
+
 function compileBabelScripts(htmlPath) {
   let html = fs.readFileSync(htmlPath, "utf8");
   const cssPath = relativeAssetPath(htmlPath);
+  const baseHref = html.match(/<base\s+href=["\']([^"\']+)["\']/i)?.[1] || "./";
+  const sourceBase = path.resolve(path.dirname(htmlPath), baseHref);
 
+  html = html.replace(/<link\b[^>]*\bhref=(['"])\s*[^'"]*vendor\/tailwind\/site\.css[^'"]*\1[^>]*>/gi, `<link rel="stylesheet" href="${cssPath}" />`);
   html = html.replace(/<script\b[^>]*\bsrc=(['"])\s*[^'"]*(?:cdn\.tailwindcss\.com|vendor\/tailwind\/tailwind-3\.4\.17\.js)[^'"]*\1[^>]*>\s*<\/script>/gi, `<link rel="stylesheet" href="${cssPath}" />`);
   html = html.replace(/<script\b[^>]*\bsrc=(['"])\s*[^'"]*(?:@babel\/standalone|vendor\/babel\/babel\.min\.js)[^'"]*\1[^>]*>\s*<\/script>\s*/gi, "");
 
@@ -86,7 +123,7 @@ function compileBabelScripts(htmlPath) {
 
     const sourceUrl = sourceMatch[2];
     const sourceFile = sourceUrl.split(/[?#]/)[0];
-    const sourcePath = path.resolve(path.dirname(htmlPath), sourceFile);
+    const sourcePath = path.resolve(sourceBase, sourceFile);
     if (!fs.existsSync(sourcePath)) throw new Error(`Cannot compile JSX source: ${sourceUrl}`);
 
     const parsed = path.parse(sourcePath);
@@ -99,18 +136,20 @@ function compileBabelScripts(htmlPath) {
   if (/type=(['"])text\/babel\1/i.test(html) || /(?:cdn\.tailwindcss\.com|@babel\/standalone)/i.test(html)) {
     throw new Error(`Production build still contains browser compilation code: ${path.relative(ROOT, htmlPath)}`);
   }
-  fs.writeFileSync(htmlPath, html);
+  fs.writeFileSync(htmlPath, versionLocalScripts(html, sourceBase));
 }
 
 function copySource() {
   fs.rmSync(OUTPUT, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   fs.mkdirSync(OUTPUT, { recursive: true });
   for (const entry of fs.readdirSync(ROOT, { withFileTypes: true })) {
-    if (entry.isDirectory() && !PUBLIC_ROOT_DIRECTORIES.has(entry.name)) continue;
-    if (entry.isFile() && !isPublishedRootFile(entry.name)) continue;
+    const published = entry.isDirectory()
+      ? PUBLIC_ROOT_DIRECTORIES.has(entry.name)
+      : entry.isFile() && isPublishedRootFile(entry.name);
+    if (!published) continue;
     fs.cpSync(path.join(ROOT, entry.name), path.join(OUTPUT, entry.name), {
       recursive: true,
-      filter: sourcePath => !isExcluded(sourcePath),
+      filter: sourcePath => !isExcluded(sourcePath) && !fs.lstatSync(sourcePath).isSymbolicLink(),
     });
   }
   copyPublishedExamAssets();
@@ -127,7 +166,7 @@ function collectExamAssets(value, assets, visited = new WeakSet()) {
 }
 
 function copyPublishedExamAssets() {
-  const paperDirectory = path.join(ROOT, "interactive-exams", "papers");
+  const paperDirectory = path.join(ROOT, "digital-question-papers", "papers");
   const examRoot = path.join(ROOT, "exampapers");
   const publishedAssets = new Set();
 
@@ -167,13 +206,24 @@ function assertPublishedSize() {
   const bytes = listFiles(OUTPUT).reduce((total, file) => total + fs.statSync(file).size, 0);
   const mebibytes = (bytes / (1024 ** 2)).toFixed(2);
   const megabytes = (bytes / 1_000_000).toFixed(2);
-  if (bytes > MAX_PUBLISHED_BYTES) {
-    throw new Error(`Published site is ${megabytes} MB, above the 1 GB release limit.`);
+  if (IS_GITHUB_PAGES_BUILD && bytes > GITHUB_PAGES_MAX_BYTES) {
+    throw new Error(`Published site is ${megabytes} MB, above the GitHub Pages 1 GB limit.`);
   }
-  console.log(`Published site size: ${mebibytes} MiB (${megabytes} MB; limit: 1000 MB).`);
+  const sizePolicy = IS_GITHUB_PAGES_BUILD ? "; GitHub Pages limit: 1000 MB" : "; no project-imposed size cap";
+  console.log(`Published site size: ${mebibytes} MiB (${megabytes} MB${sizePolicy}).`);
 }
 
-function main() {
+async function main() {
+  await require("./build-dictionary-quizzes.cjs").build();
+  require("./build-inline-page-runtimes.js");
+  require("./build-bandle.js");
+  await require("./build-music-games.js").build();
+  require("./build-millionaire-runtime.js");
+  require("./build-metronome-runtime.js");
+  require("./build-name-randomiser-runtime.js");
+  require("./build-staff-paper-runtime.js");
+  require("./build-classroom-timer-runtime.js");
+  require("./build-popup-piano-runtime.js");
   copySource();
   for (const htmlPath of listFiles(OUTPUT).filter(file => file.endsWith(".html"))) compileBabelScripts(htmlPath);
   buildTailwind();
@@ -183,4 +233,4 @@ function main() {
   console.log(`Production site built in ${path.relative(ROOT, OUTPUT)}.`);
 }
 
-main();
+main().catch(error => { console.error(error); process.exitCode = 1; });

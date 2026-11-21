@@ -1,0 +1,201 @@
+{
+  "id": "hub-n3-timbre-connections-1",
+  "level": "N3",
+  "title": "Timbre",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting National 3 Timbre concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "National 3"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n3-timbre-connections-1-1",
+      "prompt": "Family with buzzing-lip sound",
+      "answer": "Family with buzzing-lip sound",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-2",
+      "prompt": "Trumpet and trombone family",
+      "answer": "Trumpet and trombone family",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-3",
+      "prompt": "Lips buzz into a mouthpiece",
+      "answer": "Lips buzz into a mouthpiece",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-4",
+      "prompt": "Tuba belongs to this family",
+      "answer": "Tuba belongs to this family",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-5",
+      "prompt": "Flute and clarinet family",
+      "answer": "Flute and clarinet family",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-6",
+      "prompt": "Family using reeds or air edges",
+      "answer": "Family using reeds or air edges",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-7",
+      "prompt": "Oboe belongs to this family",
+      "answer": "Oboe belongs to this family",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-8",
+      "prompt": "Bassoon belongs to this family",
+      "answer": "Bassoon belongs to this family",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-9",
+      "prompt": "Violin and viola family",
+      "answer": "Violin and viola family",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-10",
+      "prompt": "Cello and double bass family",
+      "answer": "Cello and double bass family",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-11",
+      "prompt": "The orchestral bowed family",
+      "answer": "The orchestral bowed family",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-12",
+      "prompt": "Family with four bowed members",
+      "answer": "Family with four bowed members",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-13",
+      "prompt": "Family with drums and cymbals",
+      "answer": "Family with drums and cymbals",
+      "distractors": [],
+      "group": "Percussion (tuned and untuned)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-14",
+      "prompt": "Struck or shaken sound family",
+      "answer": "Struck or shaken sound family",
+      "distractors": [],
+      "group": "Percussion (tuned and untuned)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-15",
+      "prompt": "Family includes tuned xylophone",
+      "answer": "Family includes tuned xylophone",
+      "distractors": [],
+      "group": "Percussion (tuned and untuned)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-connections-1-16",
+      "prompt": "Tuned and untuned rhythm family",
+      "answer": "Tuned and untuned rhythm family",
+      "distractors": [],
+      "group": "Percussion (tuned and untuned)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

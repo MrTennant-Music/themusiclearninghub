@@ -1,0 +1,103 @@
+{
+  "id": "hub-ah-melody-harmony-wordsearch-1",
+  "level": "AH",
+  "title": "Melody/harmony",
+  "instructions": "",
+  "description": "Practise the Advanced Higher Melody/harmony concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Melody/harmony",
+    "Advanced Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-1",
+      "prompt": "An accented non-chord note takes a substantial part of a main note’s written duration before resolving to it by step. Name this ornament.",
+      "answer": "Appoggiatura",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-2",
+      "prompt": "A major triad with its fifth raised by a semitone, giving a root, major third and augmented fifth.",
+      "answer": "Augmented triad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-3",
+      "prompt": "The simultaneous use of more than one key or tonal centre.",
+      "answer": "Polytonality",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-4",
+      "prompt": "A prepared note is held into the next chord, becomes dissonant, then resolves down by step.",
+      "answer": "Suspension",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-5",
+      "prompt": "An ordered arrangement of all twelve chromatic pitch classes, usually using each once before any is repeated.",
+      "answer": "Tone row",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-6",
+      "prompt": "An interval spanning three whole tones, equivalent to an augmented fourth or diminished fifth.",
+      "answer": "Tritone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-melody-harmony-wordsearch-1-7",
+      "prompt": "In its standard form, this ornament plays the upper neighbour, main note, lower neighbour and main note. Name the ornament.",
+      "answer": "Turn",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z",
+  "editorMode": "with-clues"
+}

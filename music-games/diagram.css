@@ -1,0 +1,41 @@
+/* Dedicated scene styles avoid quiz/card transforms affecting source pin geometry. */
+.ig-app .ig-session .ig-game-stage:has(.ig-pin-diagram){padding:0;min-height:0;background:transparent!important}
+.ig-app .ig-session .ig-game-stage .ig-pin-diagram{position:relative;max-width:none;width:100%;margin:0;padding:0;background:transparent;color:#000}
+.ig-app .ig-session .ig-pin-scene{display:block;width:100%;height:auto;overflow:visible;font-family:"Trebuchet MS",Arial,sans-serif;font-weight:400;touch-action:manipulation;user-select:none}
+.ig-pin-scene [role=button]{cursor:pointer;outline:none}
+.ig-pin-label .ig-pin-tile-art{mix-blend-mode:soft-light;pointer-events:none}
+.ig-pin-label .ig-pin-selection{stroke:transparent;stroke-width:2}
+.ig-pin-label:focus-visible .ig-pin-selection{stroke:#fff}
+.ig-pin-handle:focus-visible circle:last-child,.ig-pin-target:focus-visible circle:last-child{stroke:var(--ig-game-accent);stroke-width:4}
+.ig-pin-submit:focus-visible rect{stroke:#1686df;stroke-width:3}
+.ig-pin-submit:hover rect{fill:#f5f5f4}
+.ig-pin-scene text{pointer-events:none}
+.ig-app .ig-session .ig-pin-diagram .ig-pin-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0}
+.ig-app .ig-session:has(.ig-pin-diagram) .ig-player-top .ig-player-progress{visibility:hidden}
+.ig-app .ig-results .ig-pin-diagram{margin-top:24px}
+
+.ig-pin-scene>.ig-pin-image{mix-blend-mode:normal}
+
+.ig-app .ig-session .ig-pin-label text{font-family:ui-sans-serif,system-ui,sans-serif;font-weight:600}
+.ig-pin-label:hover .ig-pin-card{filter:url(#ig-answer-box-shadow) brightness(1.08)}
+
+html body .ig-app .ig-session .ig-game-stage .ig-pin-diagram>.ig-check-action{position:absolute;left:50%;bottom:16px;transform:translateX(-50%)!important;display:block;width:240px;height:58px;min-height:58px;margin:0;padding:12px 20px;border-radius:12px;font-size:22px;line-height:1.2;font-weight:600}
+
+.ig-app .ig-session .ig-pin-tally{display:flex;align-items:center;justify-content:center;gap:20px;min-height:58px;margin:0 auto 24px;font:600 22px ui-sans-serif,system-ui,sans-serif;color:#000}
+.ig-app .ig-session .ig-pin-tally span{font-size:14px;font-weight:400}
+
+
+html body .ig-app .ig-session .ig-game-stage .ig-return-results,html body .ig-app .ig-session .ig-game-stage .ig-return-results:is(:hover,:focus,:focus-visible,:active){background:var(--ig-game-accent)!important;border:1px solid var(--ig-game-accent)!important;color:var(--ig-game-button-ink)!important;box-shadow:none!important;text-shadow:none!important;filter:none!important}
+
+.ig-app .ig-session .ig-pin-diagram>.ig-pin-tally{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);margin:0;white-space:nowrap}
+
+html body .ig-app .ig-session .ig-game-stage .ig-pin-diagram>button.ig-check-action,html body .ig-app .ig-session .ig-game-stage .ig-pin-diagram>button.ig-check-action:is(:hover,:focus,:active){background:var(--ig-game-accent)!important;border:1px solid var(--ig-game-accent)!important;color:var(--ig-game-button-ink)!important;box-shadow:none!important;text-shadow:none!important;filter:none!important}
+html body .ig-app .ig-session .ig-game-stage .ig-pin-diagram>button.ig-check-action:focus:not(:focus-visible){outline:none!important}
+
+html body .ig-app .ig-session .ig-game-stage .ig-pin-diagram>button.ig-check-action:hover:not(:disabled){filter:brightness(1.08)!important;transform:translate(-50%,-2px)!important}
+
+html body .ig-app .ig-session .ig-game-stage .ig-pin-diagram>button.ig-check-action:active:not(:disabled){transform:translate(-50%,0)!important}
+
+
+/* Only the actual draggable labels and pins reserve a touch gesture. */
+.ig-pin-scene :is(.ig-pin-label,.ig-pin-label *,.ig-pin-handle,.ig-pin-handle *){touch-action:none}

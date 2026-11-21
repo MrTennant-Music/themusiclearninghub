@@ -1,0 +1,10 @@
+[
+ {"rhythms":["dotted-minim","semibreve","dotted-minim"],"beats":10},
+ {"rhythms":["semibreve","minim","dotted-minim"],"beats":9},
+ {"rhythms":["dotted-minim","crotchet","semibreve"],"beats":8},
+ {"rhythms":["minim","dotted-minim","minim"],"beats":7},
+ {"rhythms":["crotchet","semibreve","crotchet"],"beats":6},
+ {"rhythms":["minim","minim","crotchet"],"beats":5},
+ {"rhythms":["crotchet","minim","crotchet"],"beats":4},
+ {"rhythms":["crotchet","crotchet","crotchet"],"beats":3}
+]

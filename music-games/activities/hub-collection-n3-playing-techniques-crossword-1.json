@@ -1,0 +1,93 @@
+{
+  "id": "hub-collection-n3-playing-techniques-crossword-1",
+  "level": "N3",
+  "title": "Playing Techniques",
+  "instructions": "",
+  "description": "Playing Techniques: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Playing Techniques",
+    "National 3"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n3-playing-techniques-crossword-1-MC-0046",
+      "prompt": "Pulling a bow across strings to make a sound.",
+      "answer": "Bowing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0046"
+    },
+    {
+      "id": "hub-collection-n3-playing-techniques-crossword-1-MC-0045",
+      "prompt": "Making a sound by blowing air into an instrument.",
+      "answer": "Blowing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0045"
+    },
+    {
+      "id": "hub-collection-n3-playing-techniques-crossword-1-MC-0058",
+      "prompt": "Pulling and releasing a string with a finger or pick to make a sound.",
+      "answer": "Plucking",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0058"
+    },
+    {
+      "id": "hub-collection-n3-playing-techniques-crossword-1-MC-0062",
+      "prompt": "Making a sound by hitting an instrument.",
+      "answer": "Striking",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0062"
+    },
+    {
+      "id": "hub-collection-n3-playing-techniques-crossword-1-MC-0064",
+      "prompt": "Brushing across several strings on a guitar to play them together.",
+      "answer": "Strumming",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0064"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "playing-techniques",
+  "sourceConceptIds": [
+    "MC-0046",
+    "MC-0045",
+    "MC-0058",
+    "MC-0062",
+    "MC-0064"
+  ]
+}

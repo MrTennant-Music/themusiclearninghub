@@ -1,0 +1,190 @@
+{
+  "id": "hub-h-vocal-music-crossword-3",
+  "level": "H",
+  "title": "Vocal Music 3",
+  "instructions": "",
+  "description": "Revise voice types, vocal performance, ensembles and vocal works introduced up to Higher.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Vocal Music",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-h-vocal-music-crossword-3-1",
+      "prompt": "Name the text-setting term for singing exactly one note for each syllable.",
+      "answer": "Syllabic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-2",
+      "prompt": "Each verse is set to the same music throughout, without a separate contrasting chorus section. Name this song form.",
+      "answer": "Strophic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-3",
+      "prompt": "Give the Italian term for singing without instrumental accompaniment.",
+      "answer": "A cappella",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-4",
+      "prompt": "A medium-low adult male voice lying between tenor and bass.",
+      "answer": "Baritone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-5",
+      "prompt": "A medium female voice lying between soprano and alto.",
+      "answer": "Mezzo-soprano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-6",
+      "prompt": "A German Romantic art song for solo voice and piano.",
+      "answer": "Lied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-7",
+      "prompt": "A musical setting of the fixed sections of the Roman Catholic liturgy.",
+      "answer": "Mass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-8",
+      "prompt": "A large concert work telling a sacred or biblical story through soloists, choir and orchestra, without theatrical acting, scenery or costumes.",
+      "answer": "Oratorio",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-9",
+      "prompt": "Early monophonic sacred vocal music, usually sung in Latin and without instrumental accompaniment.",
+      "answer": "Plainchant",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-10",
+      "prompt": "Give the Italian-derived operatic term for speech-like solo singing used to advance dialogue or narrative, often alternating with arias.",
+      "answer": "Recitative",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-11",
+      "prompt": "An African American popular style that developed from gospel, blues, and rhythm-and-blues traditions.",
+      "answer": "Soul music",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-12",
+      "prompt": "An important decorative instrumental line is played alongside a solo vocal melody. Name this accompanying line.",
+      "answer": "Obbligato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-13",
+      "prompt": "Name the specific Baroque aria form with an A section, contrasting B section and a written instruction to return to the beginning.",
+      "answer": "Da capo aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-14",
+      "prompt": "A song uses new music for successive verses instead of reusing a complete verse setting. Name this form.",
+      "answer": "Through-composed",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-vocal-music-crossword-3-15",
+      "prompt": "Highly agile, ornamented vocal writing with rapid scales, arpeggios, leaps, trills and other decorations.",
+      "answer": "Coloratura",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T23:00:00.000Z"
+}

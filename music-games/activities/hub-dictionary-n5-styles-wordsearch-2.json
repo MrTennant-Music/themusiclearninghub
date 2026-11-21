@@ -1,0 +1,117 @@
+{
+  "id": "hub-dictionary-n5-styles-wordsearch-2",
+  "level": "N5",
+  "title": "Styles 2",
+  "instructions": "",
+  "description": "Revise styles with 6 Music Dictionary concepts. Set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-2-mc-0145",
+      "prompt": "A strophic folk song from North-East Scotland, traditionally sung by farm workers who lived in a bothy.",
+      "answer": "Bothy ballad",
+      "distractors": [
+        "Chorus",
+        "Classical",
+        "Gaelic psalm"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-2-mc-0147",
+      "prompt": "In a large vocal work, this is a group of singers, or music written for them.",
+      "answer": "Chorus",
+      "distractors": [
+        "Minimalist",
+        "Pibroch",
+        "Symphony"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-2-mc-0149",
+      "prompt": "A psalm sung in Scottish Gaelic, traditionally in churches of the Western Isles.",
+      "answer": "Gaelic psalm",
+      "distractors": [
+        "Bothy ballad",
+        "Celtic rock",
+        "Chorus"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-2-mc-0151",
+      "prompt": "This music often uses sitar, tabla, drone, improvised melody, ornaments and repeating rhythmic cycles.",
+      "answer": "Indian",
+      "distractors": [
+        "Gospel",
+        "Minimalist",
+        "Pibroch"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-2-mc-0153",
+      "prompt": "An extended form of solo Highland bagpipe music, also called ceol mor.",
+      "answer": "Pibroch",
+      "distractors": [
+        "Aria",
+        "Bothy ballad",
+        "Celtic rock"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-2-mc-0155",
+      "prompt": "A Scottish Gaelic work song sung by women while beating newly woven cloth to soften and shrink it.",
+      "answer": "Waulking song",
+      "distractors": [
+        "Gaelic psalm",
+        "Gospel",
+        "Indian"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

@@ -5,7 +5,7 @@
   "source": {
     "knowledgeBankFile": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
     "knowledgeBankSchemaVersion": "5.0",
-    "knowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e"
+    "knowledgeBankSha256": "a83e4df9820bdc5d6eae142c234b1209b12c8c2a5bc2b107fc9668857ba8c1e7"
   },
   "questions": [
     {
@@ -796,8 +796,7 @@
       "level": "National 3",
       "category": "Melody/harmony",
       "categories": [
-        "Melody/harmony",
-        "Texture/structure/form"
+        "Melody/harmony"
       ],
       "conceptId": "MC-0010",
       "concept": "Chord",
@@ -852,8 +851,7 @@
       "level": "National 3",
       "category": "Melody/harmony",
       "categories": [
-        "Melody/harmony",
-        "Texture/structure/form"
+        "Melody/harmony"
       ],
       "conceptId": "MC-0010",
       "concept": "Chord",
@@ -1299,7 +1297,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n3-literacy-027"
             ],
@@ -1358,7 +1356,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n3-literacy-027"
             ],
@@ -1592,7 +1590,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n4-literacy-medium-009",
               "n4-literacy-medium-010",
@@ -1669,7 +1667,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n4-literacy-medium-009",
               "n4-literacy-medium-010",
@@ -1743,7 +1741,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n3-literacy-015"
             ],
@@ -1802,7 +1800,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n3-literacy-015"
             ],
@@ -1858,7 +1856,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -1917,7 +1915,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -1980,7 +1978,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -3305,7 +3303,7 @@
         "Texture/structure/form"
       ],
       "conceptId": "MC-0035",
-      "concept": "Harmony",
+      "concept": "Harmony / chord",
       "factId": "MC-0035-F01",
       "supportingFactIds": [],
       "senseId": "MC-0035-S01",
@@ -3346,7 +3344,7 @@
         "Texture/structure/form"
       ],
       "conceptId": "MC-0035",
-      "concept": "Harmony",
+      "concept": "Harmony / chord",
       "factId": "MC-0035-F01",
       "supportingFactIds": [],
       "senseId": "MC-0035-S01",
@@ -3383,137 +3381,6 @@
       "explanation": "The statement “Every performer plays the same melody at the same pitch and time” describes Unison, not Harmony. In chordal or multi-part music, two or more different notes sound at the same time.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0041"
-    },
-    {
-      "id": "MCQ-N3-MC0036-F01-E-001",
-      "level": "National 3",
-      "category": "Texture/structure/form",
-      "categories": [
-        "Texture/structure/form"
-      ],
-      "conceptId": "MC-0036",
-      "concept": "Octave",
-      "factId": "MC-0036-F01",
-      "supportingFactIds": [],
-      "senseId": null,
-      "senseContext": null,
-      "comparisonGroupId": null,
-      "difficulty": "Easy",
-      "questionType": "definition",
-      "answerMode": "concept",
-      "question": "The interval from a note to the next higher or lower note with the same letter name, such as C to C. What is this?",
-      "answers": [
-        {
-          "text": "Solo",
-          "correct": false
-        },
-        {
-          "text": "Unaccompanied",
-          "correct": false
-        },
-        {
-          "text": "Unison",
-          "correct": false
-        },
-        {
-          "text": "Octave",
-          "correct": true
-        }
-      ],
-      "hint": "C to the next C: eight scale degrees.",
-      "hintFactId": null,
-      "explanation": "The interval from a note to the next higher or lower note with the same letter name, such as C to C.",
-      "literacyLink": {
-        "relationship": "pitch_harmony_or_staff_notation",
-        "targets": [
-          {
-            "sourceFile": "millionaire-question-bank.js",
-            "localIds": [
-              "n5-literacy-medium-017",
-              "n5-literacy-medium-018",
-              "n5-literacy-medium-019",
-              "n5-literacy-medium-020",
-              "h-literacy-easy-020"
-            ],
-            "matchKind": "exact-question-answer"
-          }
-        ],
-        "targetLiteracyIds": [
-          "h-literacy-easy-020",
-          "n5-literacy-medium-017",
-          "n5-literacy-medium-018",
-          "n5-literacy-medium-019",
-          "n5-literacy-medium-020"
-        ]
-      }
-    },
-    {
-      "id": "MCQ-N3-MC0036-F01-M-001",
-      "level": "National 3",
-      "category": "Texture/structure/form",
-      "categories": [
-        "Texture/structure/form"
-      ],
-      "conceptId": "MC-0036",
-      "concept": "Octave",
-      "factId": "MC-0036-F01",
-      "supportingFactIds": [],
-      "senseId": null,
-      "senseContext": null,
-      "comparisonGroupId": null,
-      "difficulty": "Medium",
-      "questionType": "feature_exclusion",
-      "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Octave?",
-      "answers": [
-        {
-          "text": "The two notes have the same letter name.",
-          "correct": false,
-          "featureOfConceptId": "MC-0036"
-        },
-        {
-          "text": "One note is the next higher or lower version of the other.",
-          "correct": false,
-          "featureOfConceptId": "MC-0036"
-        },
-        {
-          "text": "The notes sound closely related at different pitch levels.",
-          "correct": false,
-          "featureOfConceptId": "MC-0036"
-        },
-        {
-          "text": "A three-note chord is called a triad.",
-          "correct": true,
-          "featureOfConceptId": "MC-0010"
-        }
-      ],
-      "hint": "A guitarist may strum one to support a tune.",
-      "hintFactId": null,
-      "explanation": "The statement “A three-note chord is called a triad” describes Chord, not Octave. The interval from a note to the next higher or lower note with the same letter name, such as C to C.",
-      "literacyLink": {
-        "relationship": "pitch_harmony_or_staff_notation",
-        "targets": [
-          {
-            "sourceFile": "millionaire-question-bank.js",
-            "localIds": [
-              "n5-literacy-medium-017",
-              "n5-literacy-medium-018",
-              "n5-literacy-medium-019",
-              "n5-literacy-medium-020",
-              "h-literacy-easy-020"
-            ],
-            "matchKind": "exact-question-answer"
-          }
-        ],
-        "targetLiteracyIds": [
-          "h-literacy-easy-020",
-          "n5-literacy-medium-017",
-          "n5-literacy-medium-018",
-          "n5-literacy-medium-019",
-          "n5-literacy-medium-020"
-        ]
-      },
-      "featureSourceConceptId": "MC-0010"
     },
     {
       "id": "MCQ-N3-MC0037-F01-E-001",
@@ -3871,7 +3738,7 @@
         "Texture/structure/form"
       ],
       "conceptId": "MC-0041",
-      "concept": "Unison",
+      "concept": "Unison / octave",
       "factId": "MC-0041-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -3912,7 +3779,7 @@
         "Texture/structure/form"
       ],
       "conceptId": "MC-0041",
-      "concept": "Unison",
+      "concept": "Unison / octave",
       "factId": "MC-0041-F01",
       "supportingFactIds": [],
       "senseId": null,

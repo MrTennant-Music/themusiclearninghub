@@ -1,0 +1,94 @@
+{
+  "id": "hub-collection-h-musical-development-wordsearch-1",
+  "level": "H",
+  "title": "Musical Patterns and Development",
+  "instructions": "",
+  "description": "Musical Patterns and Development: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Musical Patterns and Development",
+    "Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-h-musical-development-wordsearch-1-MC-0017",
+      "prompt": "Hearing the same bit of music again.",
+      "answer": "Repetition",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0017"
+    },
+    {
+      "id": "hub-collection-h-musical-development-wordsearch-1-MC-0037",
+      "prompt": "A short pattern that keeps repeating.",
+      "answer": "Ostinato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0037"
+    },
+    {
+      "id": "hub-collection-h-musical-development-wordsearch-1-MC-0038",
+      "prompt": "Everyone sings the same tune, but different groups start at different times.",
+      "answer": "Round",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0038"
+    },
+    {
+      "id": "hub-collection-h-musical-development-wordsearch-1-MC-0107",
+      "prompt": "One part starts a tune and another copies it while the first keeps going.",
+      "answer": "Canon",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0107"
+    },
+    {
+      "id": "hub-collection-h-musical-development-wordsearch-1-MC-0108",
+      "prompt": "One part copies a tune or pattern just played by another part.",
+      "answer": "Imitation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0108"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "musical-development",
+  "sourceConceptIds": [
+    "MC-0017",
+    "MC-0037",
+    "MC-0038",
+    "MC-0107",
+    "MC-0108"
+  ],
+  "editorMode": "with-clues"
+}

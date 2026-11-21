@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Triplets</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/triplets-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/triplets-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./bravura-symbols.js?v=20260629"></script>
-  <script src="./shared-notation-config.js?v=20260629"></script>
-  <script src="./hub-input.js?v=20260629"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/triplets-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/triplets-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js?v=20260629"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
   <style>
     @font-face {
       font-family: "Bravura";
-      src: url("./Bravura.otf") format("opentype");
+      src: url("./fonts/Bravura.otf") format("opentype");
       font-display: block;
     }
 
@@ -35,11 +36,16 @@
       text-rendering: geometricPrecision;
     }
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
 <body>
   <div id="root"></div>
 
-  <script type="text/babel">
+  <script type="text/x-mlh-jsx-source" data-runtime="triplets-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
 
 const SVG = { width: 920, height: 420 };
@@ -72,14 +78,14 @@ const COLOUR = {
 };
 
 const ASSET = {
-  appIcon: "triplets-icon.svg",
-  levels: "levels.svg",
-  customise: "customise.svg",
-  next: "next.svg",
-  bronze: "bronze.svg",
-  silver: "silver.svg",
-  gold: "gold.svg",
-  diamond: "diamond.svg",
+  appIcon: "app-icons/triplets-icon.svg",
+  levels: "ui-icons/levels.svg",
+  customise: "ui-icons/customise.svg",
+  next: "ui-icons/next.svg",
+  bronze: "ui-icons/bronze.svg",
+  silver: "ui-icons/silver.svg",
+  gold: "ui-icons/gold.svg",
+  diamond: "ui-icons/diamond.svg",
 };
 
 const LEVELS = {
@@ -203,7 +209,7 @@ function applyWrittenAccidentals(notes, key) {
   return notes.map((note) => {
     const accidental = melodicAccidentalForLetter(key, note.letter);
     if (accidental === null) return { ...note, writtenAccidental: null };
-    const accidentalKey = `${note.letter}:${accidental}`;
+    const accidentalKey = `${note.step}:${accidental}`;
     const writtenAccidental = shownAccidentals.has(accidentalKey) ? null : accidental;
     shownAccidentals.add(accidentalKey);
     return { ...note, writtenAccidental };
@@ -258,9 +264,11 @@ function makeNotesFromRhythms(rhythms, previousIndex, barIndex, targetGroupId = 
 function makeTargetBar(timeSignature, tripletType, previousIndex, barIndex, key) {
   const remainingBeats = timeSignature.beats - tripletType.beats;
   const texture = tripletType.id === "quaver-triplet" ? "quaver" : "crotchet";
-  const fillPattern = getFillPattern(remainingBeats, texture);
+  const beforeBeats = randomIndex(remainingBeats + 1);
+  const before = getFillPattern(beforeBeats, texture);
+  const after = getFillPattern(remainingBeats - beforeBeats, texture);
   const tripletPattern = [tripletType.rhythm, tripletType.rhythm, tripletType.rhythm];
-  const rhythms = Math.random() < 0.5 ? [...tripletPattern, ...fillPattern] : [...fillPattern, ...tripletPattern];
+  const rhythms = [...before, ...tripletPattern, ...after];
   const targetGroupId = `target-${barIndex}`;
   const made = makeNotesFromRhythms(rhythms, previousIndex, barIndex, targetGroupId, tripletType.rhythm, key);
   return { notes: made.notes, nextIndex: made.nextIndex, targetGroupId };
@@ -272,16 +280,16 @@ function makeNormalBar(timeSignature, previousIndex, texture, barIndex, key) {
   return { notes: made.notes, nextIndex: made.nextIndex, targetGroupId: null };
 }
 
-function createQuestion() {
+function createQuestion(barCount = BAR_COUNT) {
   const timeSignature = randomItem(TIME_SIGNATURES);
   const key = randomItem(KEYS);
   const tripletType = randomItem(TRIPLET_TYPES.filter((type) => type.beats <= timeSignature.beats));
-  const targetBarIndex = randomIndex(BAR_COUNT);
+  const targetBarIndex = randomIndex(barCount);
   const texture = tripletType.id === "quaver-triplet" ? "quaver" : "crotchet";
   const bars = [];
   let previousIndex = randomIndex(NOTE_POOL.length);
 
-  for (let barIndex = 0; barIndex < BAR_COUNT; barIndex += 1) {
+  for (let barIndex = 0; barIndex < barCount; barIndex += 1) {
     const bar = barIndex === targetBarIndex
       ? makeTargetBar(timeSignature, tripletType, previousIndex, barIndex, key)
       : makeNormalBar(timeSignature, previousIndex, texture, barIndex, key);
@@ -319,7 +327,7 @@ function getBarNotePositions(notes, startX, endX) {
 
 function buildLayouts(question) {
   const layouts = [];
-  STAFF.tops.forEach((systemTop, systemIndex) => {
+  STAFF.tops.slice(0, Math.ceil(question.bars.length / BARS_PER_SYSTEM)).forEach((systemTop, systemIndex) => {
     const barWidth = (STAFF.right - MUSIC_START_X) / BARS_PER_SYSTEM;
     for (let localBarIndex = 0; localBarIndex < BARS_PER_SYSTEM; localBarIndex += 1) {
       const barIndex = systemIndex * BARS_PER_SYSTEM + localBarIndex;
@@ -450,11 +458,28 @@ function isValidTripletGroup(group) {
 function tripletTypeFromGroup(group) {
   if (!isValidTripletGroup(group)) return null;
   if (Array.isArray(group.indexes) && group.indexes.some((index, itemIndex) => itemIndex > 0 && index !== group.indexes[itemIndex - 1] + 1)) return null;
-  const rhythm = group.notes[0]?.rhythm;
-  if (!group.notes.every((note) => note.rhythm === rhythm)) return null;
+  const displayRhythm = note => note.rhythm === "triplet-quaver" ? "quaver" : note.rhythm === "triplet-crotchet" ? "crotchet" : note.rhythm;
+  const rhythm = displayRhythm(group.notes[0]);
+  if (!group.notes.every((note) => displayRhythm(note) === rhythm)) return null;
   if (rhythm === "quaver" || rhythm === "triplet-quaver") return TRIPLET_TYPES.find((type) => type.id === "quaver-triplet") || null;
   if (rhythm === "crotchet" || rhythm === "triplet-crotchet") return TRIPLET_TYPES.find((type) => type.id === "crotchet-triplet") || null;
   return null;
+}
+
+function tripletSelectionIsValid(question, noteIds) {
+  const group = findNoteGroup(buildLayouts(question), noteIds);
+  const type = tripletTypeFromGroup(group);
+  if (!type) return false;
+  const bar = question.bars.find(item => group.notes.every(note => item.notes.includes(note)));
+  if (!bar) return false;
+  if (type.id === "quaver-triplet") {
+    const beam = getBeamGroups(bar.notes).find(item => item.start === group.indexes[0]);
+    if (!beam || beam.end !== group.indexes[2]) return false;
+  }
+  const printedBeats = note => rhythmInfo(note.rhythm === "triplet-quaver" ? "quaver" : note.rhythm === "triplet-crotchet" ? "crotchet" : note.rhythm).beats;
+  const correctedTotal = bar.notes.reduce((sum,note) => sum + printedBeats(note), 0)
+    - group.notes.reduce((sum,note) => sum + printedBeats(note), 0) + type.beats;
+  return Math.abs(correctedTotal - question.timeSignature.beats) < 1e-8;
 }
 
 const playFeedbackSound = (...args) => window.MLH?.playFeedbackSound?.(...args);
@@ -603,7 +628,7 @@ function noteSymbolKey(note, stemDown, beamed) {
   return stemDown ? "quarterNoteStemDown" : "quarterNoteStemUp";
 }
 
-function NoteHead({ note, x, systemTop, colour, selected = false, forcedStemDown = null, forcedStemEndY = null, showFlag = true, onPointerDown }) {
+function NoteHead({ note, x, systemTop, colour, selected = false, forcedStemDown = null, forcedStemEndY = null, showFlag = true, onPointerDown, disabled = false }) {
   const info = rhythmInfo(note.rhythm);
   const stem = getStemData(note, x, systemTop, forcedStemDown);
   const stemEndY = forcedStemEndY === null ? stem.stemEndY : forcedStemEndY;
@@ -614,7 +639,7 @@ function NoteHead({ note, x, systemTop, colour, selected = false, forcedStemDown
   const stemThickness = Math.max(1, STAFF.gap * Number(SHARED_CONFIG.drawing?.stemThicknessScale || 0.12));
 
   return (
-    <g onPointerDown={onPointerDown} className="cursor-pointer" filter={selected ? "url(#selectedNoteGlow)" : undefined}>
+    <g onPointerDown={onPointerDown} role="button" tabIndex={disabled ? -1 : 0} aria-disabled={disabled} aria-pressed={selected} aria-label={`Select note ${Number(note.id.split("-")[1])+1} in bar ${Number(note.id.split("-")[0])+1}`} onKeyDown={event=>{if(disabled || (event.key!=="Enter" && event.key!==" "))return;event.preventDefault();onPointerDown?.(event);}} className={disabled ? "" : "cursor-pointer"} filter={selected ? "url(#selectedNoteGlow)" : undefined}>
       <circle cx={x} cy={stem.y} r="17" fill="transparent" />
       <LedgerLines x={x} step={note.step} systemTop={systemTop} colour={colour} />
       <Accidental value={note.writtenAccidental} x={x - STAFF.gap * 2.2} y={stem.y} colour={colour} />
@@ -669,25 +694,28 @@ function TripletMark({ group, tripletType, colour = COLOUR.green, glow = false }
   );
 }
 
-function ScoreArea({ question, selectedNoteIds, feedback, onToggleNote }) {
+function ScoreArea({ question, selectedNoteIds, feedback, onToggleNote, readOnly = false }) {
   const layouts = useMemo(() => buildLayouts(question), [question]);
   const selectedGroup = selectedNoteIds.length === 3 ? findNoteGroup(layouts, selectedNoteIds) : null;
   const selectedTripletType = tripletTypeFromGroup(selectedGroup);
-  const targetGroup = feedback ? findNoteGroup(layouts, question.targetNoteIds) : null;
-  const visibleMarkGroup = feedback ? targetGroup : selectedGroup;
-  const visibleMarkType = feedback ? question.tripletType : selectedTripletType;
+  const feedbackNoteIds = feedback === "correct" ? selectedNoteIds : question.targetNoteIds;
+  const targetGroup = feedback ? findNoteGroup(layouts, feedbackNoteIds) : null;
+  const visibleMarkGroup = readOnly ? findNoteGroup(layouts, question.targetNoteIds) : feedback ? targetGroup : selectedGroup;
+  const visibleMarkType = readOnly || feedback ? question.tripletType : selectedTripletType;
 
+  const tops = STAFF.tops.slice(0, Math.ceil(question.bars.length / BARS_PER_SYSTEM));
+  const height = tops.length < STAFF.tops.length ? tops.at(-1) + STAFF.gap * 4 + 52 : SVG.height;
   return (
-    <svg viewBox={`0 0 ${SVG.width} ${SVG.height}`} className="h-auto w-full select-none touch-none overflow-visible" aria-label="Triplet exercise">
+    <svg viewBox={`0 0 ${SVG.width} ${height}`} className="h-auto w-full select-none touch-manipulation overflow-visible" aria-label="Triplet exercise">
       <defs>
         <filter id="selectedNoteGlow" x="-150%" y="-150%" width="400%" height="400%">
           <feDropShadow dx="0" dy="0" stdDeviation="2.2" floodColor="#facc15" floodOpacity="0.95" />
           <feDropShadow dx="0" dy="0" stdDeviation="4.2" floodColor="#eab308" floodOpacity="0.85" />
         </filter>
       </defs>
-      <rect width={SVG.width} height={SVG.height} fill="white" />
+      <rect width={SVG.width} height={height} fill="white" />
 
-      {STAFF.tops.map((systemTop, systemIndex) => (
+      {tops.map((systemTop, systemIndex) => (
         <g key={systemIndex}>
           <StaffLines systemTop={systemTop} />
           <TrebleClef systemTop={systemTop} />
@@ -707,7 +735,7 @@ function ScoreArea({ question, selectedNoteIds, feedback, onToggleNote }) {
               const beam = group ? getBeamData(groupNotes, groupPositions, layout.systemTop) : null;
               const stem = group ? getStemData(note, layout.positions[noteIndex], layout.systemTop, beam.down) : null;
               const forcedStemEndY = group && stem ? beamYAtX(stem.stemX, beam) : null;
-              const colour = noteColour(note.id, selectedNoteIds, feedback, question.targetNoteIds);
+              const colour = noteColour(note.id, selectedNoteIds, feedback, feedbackNoteIds);
 
               return (
                 <NoteHead
@@ -720,9 +748,11 @@ function ScoreArea({ question, selectedNoteIds, feedback, onToggleNote }) {
                   forcedStemDown={group ? beam.down : null}
                   forcedStemEndY={forcedStemEndY}
                   showFlag={!group}
+                  disabled={readOnly || Boolean(feedback)}
                   onPointerDown={(event) => {
+                    if (feedback) return;
                     event.stopPropagation();
-                    if (!feedback) onToggleNote(note.id);
+                    onToggleNote(note.id);
                   }}
                 />
               );
@@ -734,11 +764,11 @@ function ScoreArea({ question, selectedNoteIds, feedback, onToggleNote }) {
               const beam = getBeamData(groupNotes, groupPositions, layout.systemTop);
               const groupNoteIds = groupNotes.map((note) => note.id);
               const selected = groupNoteIds.every((id) => selectedNoteIds.includes(id));
-              const targetAfterFeedback = feedback && groupNoteIds.every((id) => question.targetNoteIds.includes(id));
+              const targetAfterFeedback = feedback && groupNoteIds.every((id) => feedbackNoteIds.includes(id));
               return <Beam key={groupIndex} beam={beam} colour={targetAfterFeedback ? COLOUR.green : "currentColor"} glow={!feedback && selected} />;
             })}
 
-            {layout.barIndex === BAR_COUNT - 1 ? (
+            {layout.barIndex === question.bars.length - 1 ? (
               <g>
                 <line x1={layout.endX - 5} x2={layout.endX - 5} y1={layout.systemTop - 0.5} y2={layout.systemTop + STAFF.gap * 4 + 0.5} stroke="currentColor" strokeWidth="1.4" />
                 <line x1={layout.endX} x2={layout.endX} y1={layout.systemTop - 0.5} y2={layout.systemTop + STAFF.gap * 4 + 0.5} stroke="currentColor" strokeWidth="4" />
@@ -805,9 +835,10 @@ function App() {
 
   const levelRef = useRef(null);
   const feedbackTimersRef = useRef([]);
+  const questionTimerRef = useRef(null);
 
   useClickOutside([levelRef], [() => levelOpen && setLevelOpen(false)]);
-  useEffect(() => () => clearFeedbackTimers(), []);
+  useEffect(() => () => { window.clearTimeout(questionTimerRef.current); clearFeedbackTimers(); }, []);
 
   const accuracy = attempted === 0 ? 0 : Math.round((correct / attempted) * 100);
   const canConfirm = selectedNoteIds.length === 3 && !feedback;
@@ -837,10 +868,12 @@ function App() {
 
   function newQuestion() {
     clearFeedbackTimers();
+    window.clearTimeout(questionTimerRef.current);
     setQuestionVisible(false);
-    window.setTimeout(() => {
+    questionTimerRef.current = window.setTimeout(() => {
       resetTask(createQuestion());
       setQuestionVisible(true);
+      questionTimerRef.current = null;
     }, 260);
   }
 
@@ -854,6 +887,7 @@ function App() {
   }
 
   function applyLevel(level) {
+    if (!LEVELS[level]) return;
     setActiveLevel(level);
     setLevelOpen(false);
     newQuestion();
@@ -909,9 +943,7 @@ function App() {
 
     const selectedGroup = findNoteGroup(buildLayouts(question), selectedNoteIds);
     const selectedTripletType = tripletTypeFromGroup(selectedGroup);
-    const selectedSet = new Set(selectedNoteIds);
-    const targetSet = new Set(question.targetNoteIds);
-    const notesCorrect = selectedSet.size === targetSet.size && [...selectedSet].every((id) => targetSet.has(id));
+    const notesCorrect = tripletSelectionIsValid(question, selectedNoteIds);
     const typeCorrect = selectedTripletType?.id === question.tripletType.id;
     const feedbackType = notesCorrect && typeCorrect ? "correct" : notesCorrect && !typeCorrect ? "wrong-type" : "incorrect";
     setPrompt("");
@@ -920,14 +952,15 @@ function App() {
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader icon={ASSET.appIcon} title="Triplets" subtitle="Identify quaver triplets and crotchet triplets." worksheetConfig={() => ({ version: 1, activityId: "triplets", sourceUrl: window.location.href, settings: { level: activeLevel } })}>
+      <window.MLH.AppHeader icon={ASSET.appIcon} title="Triplets" subtitle="Identify quaver and crotchet triplets." worksheetConfig={() => ({ version: 1, activityId: "triplets", sourceUrl: window.location.href, settings: { level: activeLevel } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} />
       </window.MLH.AppHeader>
 
       <div className={window.MLH.shell.pageContentClass}>
         <main
           className={`${window.MLH.shell.mainShellClass} flex flex-col pb-5 md:pb-6`}
-          onPointerDown={() => {
+          onPointerDown={(event) => {
+            if (event.target.closest("button,input,[data-menu-trigger],[data-menu-panel]")) return;
             if (feedback) fadeToNextQuestion();
           }}
         >
@@ -978,11 +1011,24 @@ function App() {
   );
 }
 
+function EscapeClue({ activity }) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const question = embed.useQuestion(activity, () => createQuestion(4));
+
+  return <main ref={ref} className="escape-literacy-content">
+    <p className="escape-literacy-content-title">{"How many crotchet beats does the marked triplet last?"}</p>
+    <ScoreArea question={question} selectedNoteIds={[]} readOnly />
+    <embed.NumberedOptions activity={activity} choices={embed.numberedChoices(question.tripletType.beats, [0.5, 1, 2, 3], activity.clue.digit)} columns={2} />
+  </main>;
+}
+
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("triplets");
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Root element not found.");
-if (ReactDOM.createRoot) ReactDOM.createRoot(rootElement).render(<App />);
-else ReactDOM.render(<App />, rootElement);
-  </script>
-<script src="./footer.js?v=20261005-update-history"></script>
+if (ReactDOM.createRoot) ReactDOM.createRoot(rootElement).render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />);
+else ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, rootElement);
+  </script><script src="./generated-runtimes/triplets-1.js?v=dea7edcd174b"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

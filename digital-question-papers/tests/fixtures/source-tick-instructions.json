@@ -1,0 +1,976 @@
+{
+  "method": "Literal source punctuation comparison: only official (✓) restored where removing that symbol yields the existing wording exactly, including case and punctuation. All original line breaks preserved. Category instructions were subsequently checked on all eleven full Question 5 source pages; the 2014 source correctly uses section.",
+  "instructions": [
+    {
+      "id": "higher-2017",
+      "question": "q3",
+      "field": "q3b.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe the chord outlined by the piano.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe the chord outlined by the piano."
+    },
+    {
+      "id": "higher-2018",
+      "question": "q6",
+      "field": "q6a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "higher-2018",
+      "question": "q7",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2018",
+      "question": "q7",
+      "field": "intro",
+      "text": "After the three playings of the music you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the three playings of the music you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2018",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2018",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2018",
+      "question": "q7",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "higher-2019",
+      "question": "q1",
+      "field": "q1c.prompt",
+      "text": "Listen to a new excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a new excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "higher-2019",
+      "question": "q5",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2019",
+      "question": "q5",
+      "field": "intro",
+      "text": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2019",
+      "question": "q5",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2019",
+      "question": "q5",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2019",
+      "question": "q5",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "higher-2022",
+      "question": "q3",
+      "field": "q3a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "higher-2022",
+      "question": "q6",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2022",
+      "question": "q6",
+      "field": "intro",
+      "text": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2022",
+      "question": "q6",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2022",
+      "question": "q6",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2022",
+      "question": "q6",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "higher-2023",
+      "question": "q3",
+      "field": "q3a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "higher-2023",
+      "question": "q7",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2023",
+      "question": "q7",
+      "field": "intro",
+      "text": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2023",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2023",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2023",
+      "question": "q7",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "higher-2024",
+      "question": "q3",
+      "field": "q3a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "higher-2024",
+      "question": "q7",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2024",
+      "question": "q7",
+      "field": "intro",
+      "text": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2024",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2024",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2024",
+      "question": "q7",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "higher-2025",
+      "question": "q3",
+      "field": "q3b.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "higher-2025",
+      "question": "q7",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2025",
+      "question": "q7",
+      "field": "intro",
+      "text": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2025",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2025",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2025",
+      "question": "q7",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "higher-2026",
+      "question": "q3",
+      "field": "q3a.prompt",
+      "text": "Tick (✓) one box to describe the type of scale you hear.",
+      "officialText": "Tick (✓) one box to describe the type of scale you hear."
+    },
+    {
+      "id": "higher-2026",
+      "question": "q7",
+      "field": "intro",
+      "text": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2.",
+      "officialText": "As you listen, tick (✓) boxes in Column A and Column B to identify what you hear in Excerpt 1 and Excerpt 2."
+    },
+    {
+      "id": "higher-2026",
+      "question": "q7",
+      "field": "intro",
+      "text": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C.",
+      "officialText": "After the music has been played three times you will be given 2 minutes to decide which concepts are common to both excerpts and to tick (✓) five boxes in Column C."
+    },
+    {
+      "id": "higher-2026",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A.",
+      "officialText": "Here is Excerpt 1 for the first time. Remember to tick (✓) concepts in Column A."
+    },
+    {
+      "id": "higher-2026",
+      "question": "q7",
+      "field": "intro",
+      "text": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B.",
+      "officialText": "Here is Excerpt 2 for the first time. Remember to tick (✓) concepts in Column B."
+    },
+    {
+      "id": "higher-2026",
+      "question": "q7",
+      "field": "intro",
+      "text": "Remember to tick (✓) five boxes only in Column C.",
+      "officialText": "Remember to tick (✓) five boxes only in Column C."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe features of the music.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe features of the music."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q1",
+      "field": "q1c.prompt",
+      "text": "Listen to a different style of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a different style of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q1",
+      "field": "q1e.prompt",
+      "text": "Listen to more music from that same piece and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to more music from that same piece and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q1",
+      "field": "q1f.prompt",
+      "text": "Listen to a new piece of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a new piece of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q4",
+      "field": "q4b.prompt",
+      "text": "Listen to that excerpt again and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to that excerpt again and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q4",
+      "field": "q4c.prompt",
+      "text": "Listen to a new excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a new excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q4",
+      "field": "q4d.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe a feature of the music.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe a feature of the music."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q4",
+      "field": "q4f.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2017",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2017",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2018",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Tick (✓) one box to describe what you hear.",
+      "officialText": "Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q1",
+      "field": "q1b.prompt",
+      "text": "Listen to another excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to another excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q1",
+      "field": "q1d.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe what you hear. The music will be played twice.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe what you hear. The music will be played twice."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q1",
+      "field": "q1f.prompt",
+      "text": "Listen to another piece of music and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to another piece of music and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q4",
+      "field": "q4b.prompt",
+      "text": "Listen to another excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to another excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q4",
+      "field": "q4d.prompt",
+      "text": "Listen to music in a different style. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to music in a different style. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q4",
+      "field": "q4f.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections.",
+      "officialText": "Tick (✓) one answer only in each of the four sections."
+    },
+    {
+      "id": "national5-2018",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2018",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2019",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q1",
+      "field": "q1c.prompt",
+      "text": "Listen to a different piece of music and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a different piece of music and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q1",
+      "field": "q1d.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q1",
+      "field": "q1f.prompt",
+      "text": "Listen to a new piece of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a new piece of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q4",
+      "field": "q4c.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q4",
+      "field": "q4d.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe a feature of the music.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe a feature of the music."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q4",
+      "field": "q4e.prompt",
+      "text": "Listen to another piece of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to another piece of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q4",
+      "field": "q4g.prompt",
+      "text": "Listen to another piece of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to another piece of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2019",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2019",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2022",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q1",
+      "field": "q1b.prompt",
+      "text": "Listen to a new piece of music and tick (✓) one box to describe a feature of the music.",
+      "officialText": "Listen to a new piece of music and tick (✓) one box to describe a feature of the music."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q1",
+      "field": "q1e.prompt",
+      "text": "Listen to this excerpt. Tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q4",
+      "field": "q4b.prompt",
+      "text": "Listen to a new piece of music and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a new piece of music and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q4",
+      "field": "q4c.prompt",
+      "text": "Listen to the vocals in this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to the vocals in this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q4",
+      "field": "q4e.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q4",
+      "field": "q4f.prompt",
+      "text": "Listen to a different excerpt and tick (✓) one box to describe a feature of the music.",
+      "officialText": "Listen to a different excerpt and tick (✓) one box to describe a feature of the music."
+    },
+    {
+      "id": "national5-2022",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2022",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2023",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q1",
+      "field": "q1b.prompt",
+      "text": "Listen to a different piece of music and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a different piece of music and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q1",
+      "field": "q1e.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q4",
+      "field": "q4b.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q4",
+      "field": "q4c.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q4",
+      "field": "q4d.prompt",
+      "text": "Listen to a different piece of music and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a different piece of music and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q4",
+      "field": "q4f.prompt",
+      "text": "Listen to a new excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a new excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2023",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections:",
+      "officialText": "Tick (✓) one answer only in each of the four sections:"
+    },
+    {
+      "id": "national5-2023",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2023",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2024",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q1",
+      "field": "q1d.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q1",
+      "field": "q1e.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe features of the music.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe features of the music."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q4",
+      "field": "q4b.prompt",
+      "text": "Listen to another excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to another excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q4",
+      "field": "q4c.prompt",
+      "text": "Listen to a new excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to a new excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q4",
+      "field": "q4d.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe features of the music.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe features of the music."
+    },
+    {
+      "id": "national5-2024",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections:",
+      "officialText": "Tick (✓) one answer only in each of the four sections:"
+    },
+    {
+      "id": "national5-2024",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2024",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2025",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q1",
+      "field": "q1b.prompt",
+      "text": "Listen to a new excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a new excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q1",
+      "field": "q1e.prompt",
+      "text": "Listen to another excerpt from the same piece and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to another excerpt from the same piece and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q1",
+      "field": "q1f.prompt",
+      "text": "Listen to a new excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a new excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q4",
+      "field": "q4b.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q4",
+      "field": "q4d.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q4",
+      "field": "q4f.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2025",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections:",
+      "officialText": "Tick (✓) one answer only in each of the four sections:"
+    },
+    {
+      "id": "national5-2025",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2025",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2026",
+      "question": "q1",
+      "field": "q1a.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q1",
+      "field": "q1c.prompt",
+      "text": "Listen to this excerpt. Tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt. Tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q1",
+      "field": "q1e.prompt",
+      "text": "Listen to a different excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to a different excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q1",
+      "field": "q1f.prompt",
+      "text": "Tick (✓) one box to identify the chord sequence heard in this song.",
+      "officialText": "Tick (✓) one box to identify the chord sequence heard in this song."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q4",
+      "field": "q4a.prompt",
+      "text": "Listen to this excerpt and tick (✓) one box to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) one box to describe what you hear."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q4",
+      "field": "q4c.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q4",
+      "field": "q4e.prompt",
+      "text": "Listen to this excerpt and tick (✓) two boxes to describe what you hear.",
+      "officialText": "Listen to this excerpt and tick (✓) two boxes to describe what you hear."
+    },
+    {
+      "id": "national5-2026",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections:",
+      "officialText": "Tick (✓) one answer only in each of the four sections:"
+    },
+    {
+      "id": "national5-2026",
+      "question": "q7",
+      "field": "q7a1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2026",
+      "question": "q7",
+      "field": "q7b1.prompt",
+      "text": "tick (✓) one box to describe the style of music, and",
+      "officialText": "tick (✓) one box to describe the style of music, and"
+    },
+    {
+      "id": "national5-2019",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections",
+      "officialText": "Tick (✓) one answer only in each of the four sections"
+    },
+    {
+      "id": "national5-2022",
+      "question": "q5",
+      "field": "intro",
+      "text": "Tick (✓) one answer only in each of the four sections",
+      "officialText": "Tick (✓) one answer only in each of the four sections"
+    }
+  ],
+  "categoryTables": [
+    {
+      "id": "national5-2014",
+      "instruction": "Tick one box from this section",
+      "heading": "Tick",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2014-q5.png"
+    },
+    {
+      "id": "national5-2015",
+      "instruction": "Tick one box from this selection",
+      "heading": "Tick",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2015-q5.png"
+    },
+    {
+      "id": "national5-2016",
+      "instruction": "Tick one box from this selection",
+      "heading": "Tick",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2016-q5.png"
+    },
+    {
+      "id": "national5-2017",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2017-q5.png"
+    },
+    {
+      "id": "national5-2018",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2018-q5.png"
+    },
+    {
+      "id": "national5-2019",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2019-q5.png"
+    },
+    {
+      "id": "national5-2022",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2022-q5.png"
+    },
+    {
+      "id": "national5-2023",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2023-q5.png"
+    },
+    {
+      "id": "national5-2024",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2024-q5.png"
+    },
+    {
+      "id": "national5-2025",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2025-q5.png"
+    },
+    {
+      "id": "national5-2026",
+      "instruction": "Tick (✓) one box from this selection",
+      "heading": "Tick (✓)",
+      "visualEvidence": "/private/tmp/source-final-punctuation/national5-2026-q5.png"
+    }
+  ]
+}

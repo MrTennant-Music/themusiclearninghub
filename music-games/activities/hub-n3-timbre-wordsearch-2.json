@@ -1,0 +1,114 @@
+{
+  "id": "hub-n3-timbre-wordsearch-2",
+  "level": "N3",
+  "title": "Timbre 2",
+  "instructions": "",
+  "description": "Practise the National 3 Timbre concepts — collection 2 of 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "National 3"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n3-timbre-wordsearch-2-1",
+      "prompt": "A violin used in traditional or folk music, especially Scottish music.",
+      "answer": "Fiddle",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-2",
+      "prompt": "Name the general ensemble category for a group performing folk traditions, often with acoustic instruments and singers.",
+      "answer": "Folk group",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-3",
+      "prompt": "Notes are played or sung smoothly and connected, with little or no audible gap between them.",
+      "answer": "Legato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-4",
+      "prompt": "A large ensemble divided into four main families: strings, woodwind, brass and percussion.",
+      "answer": "Orchestra",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-5",
+      "prompt": "A keyboard instrument whose traditional form sends air through ranks of pipes; electronic versions imitate its sustained tones.",
+      "answer": "Organ",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-6",
+      "prompt": "Name the whole instrument family whose members are mainly struck, shaken or scraped, and which includes both tuned and untuned instruments.",
+      "answer": "Percussion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-7",
+      "prompt": "As a keyboard instrument, pressing a key causes a felt-covered hammer to strike a string.",
+      "answer": "Piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-2-8",
+      "prompt": "A string is pulled and released with a finger or plectrum to make a note, rather than being bowed or struck.",
+      "answer": "Plucking",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z",
+  "editorMode": "with-clues"
+}

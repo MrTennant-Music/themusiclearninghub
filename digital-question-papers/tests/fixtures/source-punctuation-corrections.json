@@ -1,0 +1,34 @@
+{
+  "corrections": [
+    {
+      "id": "advanced-higher-2017",
+      "previous": "Here it is for the second time.",
+      "text": "Here it is for the second time"
+    },
+    {
+      "id": "advanced-higher-2018",
+      "previous": "Write A above the note in bars 15–16 that is harmonised by an Augmented triad.",
+      "text": "Write [A] above the note in bars 15–16 that is harmonised by an Augmented triad."
+    },
+    {
+      "id": "advanced-higher-2018",
+      "previous": "The music will be played twice, with a pause of 10 seconds between playings and a pause of 40 seconds before part (b).",
+      "text": "The music will be played twice with a pause of 10 seconds between playings and a pause of 40 seconds before part (b)."
+    },
+    {
+      "id": "advanced-higher-2019",
+      "previous": "For each excerpt identify at least two prominent concepts in each of the following categories:",
+      "text": "For each excerpt identify at least two prominent concepts in each of the following categories"
+    },
+    {
+      "id": "advanced-higher-2022",
+      "previous": "For each excerpt identify at least two prominent concepts in each of the following categories:",
+      "text": "For each excerpt identify at least two prominent concepts in each of the following categories."
+    },
+    {
+      "id": "advanced-higher-2023",
+      "previous": "You now have 1 minute to read through parts (a) – (d).",
+      "text": "You now have 1 minute to read through parts (a) ― (d)."
+    }
+  ]
+}

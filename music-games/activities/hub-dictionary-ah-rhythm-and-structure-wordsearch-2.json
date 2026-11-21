@@ -1,0 +1,117 @@
+{
+  "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2",
+  "level": "AH",
+  "title": "Rhythm and Structure 2",
+  "instructions": "",
+  "description": "Revise rhythm and structure with 6 Music Dictionary concepts. Set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Rhythm and Structure",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2-mc-0286",
+      "prompt": "In a fugue, the subject is restated by the next voice, usually beginning a fifth above or a fourth below.",
+      "answer": "Answer",
+      "distractors": [
+        "Countersubject",
+        "Retrograde",
+        "Song cycle"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2-mc-0288",
+      "prompt": "In sonata form, a linking or transition passage connects the first and second subjects.",
+      "answer": "Bridge",
+      "distractors": [
+        "Song cycle",
+        "Subject",
+        "Answer"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2-mc-0290",
+      "prompt": "A contrapuntal work in which each independent voice introduces the subject in turn.",
+      "answer": "Fugue",
+      "distractors": [
+        "Countersubject",
+        "Subject",
+        "Answer"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2-mc-0292",
+      "prompt": "A recurring musical idea linked to a character, object, place, emotion or dramatic idea.",
+      "answer": "Leitmotif",
+      "distractors": [
+        "Inversion",
+        "Retrograde",
+        "Song cycle"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2-mc-0294",
+      "prompt": "A connected group of songs intended to form a complete work.",
+      "answer": "Song cycle",
+      "distractors": [
+        "Antiphonal",
+        "Bridge",
+        "Countersubject"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-wordsearch-2-mc-0296",
+      "prompt": "In a fugue, it is the main theme.",
+      "answer": "Subject",
+      "distractors": [
+        "Countersubject",
+        "Retrograde",
+        "Song cycle"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

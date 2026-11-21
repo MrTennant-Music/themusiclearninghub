@@ -1,0 +1,201 @@
+{
+  "id": "hub-h-styles-connections-2",
+  "level": "H",
+  "title": "Styles 2",
+  "instructions": "Find four facts that best describe each style. Some musical features are shared between styles. Find all four groups.",
+  "description": "Practise facts about Jazz funk, Mass, Oratorio, Sonata.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-h-styles-connections-2-1",
+      "prompt": "Jazz solos over a funk groove",
+      "answer": "Jazz solos over a funk groove",
+      "distractors": [],
+      "group": "Jazz funk",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-2",
+      "prompt": "Syncopated electric-bass riffs",
+      "answer": "Syncopated electric-bass riffs",
+      "distractors": [],
+      "group": "Jazz funk",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-3",
+      "prompt": "Jazz harmony and funky drums",
+      "answer": "Jazz harmony and funky drums",
+      "distractors": [],
+      "group": "Jazz funk",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-4",
+      "prompt": "1970s jazz and funk fusion",
+      "answer": "1970s jazz and funk fusion",
+      "distractors": [],
+      "group": "Jazz funk",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-5",
+      "prompt": "Kyrie and Gloria movements",
+      "answer": "Kyrie and Gloria movements",
+      "distractors": [],
+      "group": "Mass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-6",
+      "prompt": "Setting of the Catholic Ordinary",
+      "answer": "Setting of the Catholic Ordinary",
+      "distractors": [],
+      "group": "Mass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-7",
+      "prompt": "Credo, Sanctus and Agnus Dei",
+      "answer": "Credo, Sanctus and Agnus Dei",
+      "distractors": [],
+      "group": "Mass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-8",
+      "prompt": "Mass Ordinary liturgical text",
+      "answer": "Mass Ordinary liturgical text",
+      "distractors": [],
+      "group": "Mass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-9",
+      "prompt": "Sacred story without staging",
+      "answer": "Sacred story without staging",
+      "distractors": [],
+      "group": "Oratorio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-10",
+      "prompt": "Concert work with biblical story",
+      "answer": "Concert work with biblical story",
+      "distractors": [],
+      "group": "Oratorio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-11",
+      "prompt": "Sacred drama without costumes",
+      "answer": "Sacred drama without costumes",
+      "distractors": [],
+      "group": "Oratorio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-12",
+      "prompt": "Biblical drama sung in concert",
+      "answer": "Biblical drama sung in concert",
+      "distractors": [],
+      "group": "Oratorio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-13",
+      "prompt": "Solo multi-movement piano work",
+      "answer": "Solo multi-movement piano work",
+      "distractors": [],
+      "group": "Sonata",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-14",
+      "prompt": "Violin–piano multi-movement work",
+      "answer": "Violin–piano multi-movement work",
+      "distractors": [],
+      "group": "Sonata",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-15",
+      "prompt": "Often fast–slow–fast movements",
+      "answer": "Often fast–slow–fast movements",
+      "distractors": [],
+      "group": "Sonata",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-2-16",
+      "prompt": "Solo or duo multi-movement work",
+      "answer": "Solo or duo multi-movement work",
+      "distractors": [],
+      "group": "Sonata",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

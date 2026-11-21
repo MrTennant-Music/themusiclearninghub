@@ -1,0 +1,179 @@
+{
+  "id": "hub-n5-orchestra-crossword-2",
+  "level": "N5",
+  "title": "Orchestra 2",
+  "instructions": "",
+  "description": "Revise orchestral families and instruments up to National 5, including occasional orchestral additions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Orchestra",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n5-orchestra-crossword-2-1",
+      "prompt": "A tuned orchestral percussion instrument has wooden bars struck with beaters, producing a bright, dry tone.",
+      "answer": "Xylophone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-2",
+      "prompt": "Name the orchestral family containing violin, viola, cello and double bass.",
+      "answer": "Strings",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-3",
+      "prompt": "A standard bowed orchestral string instrument, larger and lower than the viola but smaller and higher than the double bass, is held between the player’s knees.",
+      "answer": "Cello",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-4",
+      "prompt": "The largest and lowest-pitched member of the orchestral string family.",
+      "answer": "Double bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-5",
+      "prompt": "A large orchestral plucked-string instrument has a triangular frame and pedals to alter its string pitches.",
+      "answer": "Harp",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-6",
+      "prompt": "The smallest and highest-pitched standard orchestral string instrument.",
+      "answer": "Violin",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-7",
+      "prompt": "A bowed string instrument slightly larger and lower in pitch than the violin.",
+      "answer": "Viola",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-8",
+      "prompt": "An orchestral family played by blowing across an opening or through a single or double reed.",
+      "answer": "Woodwind",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-9",
+      "prompt": "A single-reed woodwind with a mainly cylindrical bore, usually made from black wood or plastic.",
+      "answer": "Clarinet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-10",
+      "prompt": "Name the standard full-sized, side-blown orchestral woodwind in C, whose smaller relative is the piccolo.",
+      "answer": "Flute",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-11",
+      "prompt": "A single-reed instrument has a conical metal body and belongs to woodwind. It appears in some orchestral works, rather than as a regular core member.",
+      "answer": "Saxophone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-12",
+      "prompt": "A low double-reed woodwind instrument with a long folded tube.",
+      "answer": "Bassoon",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-13",
+      "prompt": "A high double-reed woodwind instrument with a narrow conical bore.",
+      "answer": "Oboe",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-orchestra-crossword-2-14",
+      "prompt": "Name the small, high orchestral relative of the concert flute, sounding an octave above its written notes.",
+      "answer": "Piccolo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

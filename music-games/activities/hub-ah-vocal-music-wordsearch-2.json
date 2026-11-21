@@ -1,0 +1,180 @@
+{
+  "id": "hub-ah-vocal-music-wordsearch-2",
+  "level": "AH",
+  "title": "Vocal Music 2",
+  "instructions": "",
+  "description": "Revise voice types, vocal performance, ensembles and vocal works introduced up to Advanced Higher.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Vocal Music",
+    "Advanced Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-1",
+      "prompt": "Give the two-word term for improvised jazz singing using nonsense syllables.",
+      "answer": "Scat singing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-2",
+      "prompt": "Give the British song-section name for a contrasting passage, traditionally eight bars. Write the number in words.",
+      "answer": "Middle eight",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-3",
+      "prompt": "A song alternates changing-word verses with a separate recurring chorus. Name this form.",
+      "answer": "Verse and chorus",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-4",
+      "prompt": "The lowest standard female voice or choral part, lying below soprano.",
+      "answer": "Alto",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-5",
+      "prompt": "One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background.",
+      "answer": "Backing vocals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-6",
+      "prompt": "As a male voice, it is the lowest standard adult voice or choral part.",
+      "answer": "Bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-7",
+      "prompt": "The highest standard female voice or choral part.",
+      "answer": "Soprano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-8",
+      "prompt": "Name the high adult male part in a standard SATB choir, above the bass part.",
+      "answer": "Tenor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-9",
+      "prompt": "Give the general term for a solo song within an opera or oratorio, rather than a specific ABA type of that song.",
+      "answer": "Aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-10",
+      "prompt": "Name the North-East Scottish farm-worker song tradition, commonly sung in Scots and associated with life in farm bothies.",
+      "answer": "Bothy ballad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-11",
+      "prompt": "Give the term used in opera or oratorio for a body of singers and for music written for them.",
+      "answer": "Chorus",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-12",
+      "prompt": "A psalm sung in Scottish Gaelic, traditionally in churches of the Western Isles.",
+      "answer": "Gaelic psalm",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-13",
+      "prompt": "Religious vocal music rooted in African American church traditions.",
+      "answer": "Gospel",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-vocal-music-wordsearch-2-14",
+      "prompt": "A Scottish Gaelic work song sung by women while beating newly woven cloth to soften and shrink it.",
+      "answer": "Waulking song",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T23:00:00.000Z",
+  "editorMode": "with-clues"
+}

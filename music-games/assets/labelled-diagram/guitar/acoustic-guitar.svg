@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <title>Front view of an acoustic guitar</title>
+  <defs>
+    <linearGradient id="wood" x1="0" x2="1"><stop stop-color="#e8b36b"/><stop offset=".5" stop-color="#f9d79a"/><stop offset="1" stop-color="#d99c50"/></linearGradient>
+    <linearGradient id="neck" x1="0" x2="1"><stop stop-color="#4e3023"/><stop offset=".5" stop-color="#7b5035"/><stop offset="1" stop-color="#4e3023"/></linearGradient>
+  </defs>
+  <g stroke="#4e3023" stroke-linejoin="round">
+    <path d="M367 366C349 380 315 371 292 398C262 433 278 474 290 500C304 533 272 550 253 589C219 661 260 743 335 759C375 771 425 771 465 759C540 743 581 661 547 589C528 550 496 533 510 500C522 474 538 433 508 398C485 371 451 380 433 366Z" fill="url(#wood)" stroke-width="8"/>
+    <path d="M368 375C350 388 321 383 301 405C274 437 290 475 300 498C317 537 282 558 264 594C233 659 270 733 338 748C376 760 424 760 462 748C530 733 567 659 536 594C518 558 483 537 500 498C510 475 526 437 499 405C479 383 450 388 432 375Z" fill="none" stroke="#f9e7bd" stroke-width="3"/>
+    <path d="M442 478C463 494 469 517 483 550C490 568 487 592 471 597C454 601 435 580 435 557L429 506Z" fill="#653e2c" stroke-width="2"/>
+    <circle cx="400" cy="473" r="55" fill="#f6e0b3" stroke-width="4"/>
+    <circle cx="400" cy="473" r="48" fill="none" stroke-width="2"/>
+    <circle cx="400" cy="473" r="43" fill="#251c18" stroke-width="2"/>
+    <path d="M379 157H421L427 427H373Z" fill="url(#neck)" stroke-width="4"/>
+    <path d="M376 157L363 51Q400 31 437 51L424 157Z" fill="#75492f" stroke-width="5"/>
+    <path d="M383 57Q400 49 417 57" fill="none" stroke="#b9814b" stroke-width="3"/>
+    <path d="M378 157H422" stroke="#fff6dc" stroke-width="7"/>
+    <path d="M379 182H421M379 207H421M378 231H422M378 254H422M377 276H423M377 297H423M376 317H424M376 336H424M375 354H425M375 371H425M374 387H426M374 402H426M373 416H427" stroke="#c8c4b8" stroke-width="3"/>
+    <g fill="#eee4cc" stroke="none"><circle cx="400" cy="220" r="3"/><circle cx="400" cy="265" r="3"/><circle cx="400" cy="307" r="3"/><circle cx="400" cy="345" r="3"/><circle cx="390" cy="394" r="3"/><circle cx="410" cy="394" r="3"/></g>
+    <path d="M355 635Q400 642 445 635L450 658Q400 675 350 658Z" fill="#4b3025" stroke-width="3"/>
+    <path d="M373 643H427" stroke="#f7f1dd" stroke-width="5"/>
+  </g>
+  <g stroke="#858b8d" stroke-width="4" fill="#d4d7d8">
+    <path d="M367 77H349M370 103H349M373 130H349M433 77H451M430 103H451M427 130H451"/>
+    <rect x="335" y="68" width="16" height="18" rx="6"/><rect x="335" y="94" width="16" height="18" rx="6"/><rect x="335" y="121" width="16" height="18" rx="6"/>
+    <rect x="449" y="68" width="16" height="18" rx="6"/><rect x="449" y="94" width="16" height="18" rx="6"/><rect x="449" y="121" width="16" height="18" rx="6"/>
+  </g>
+  <g fill="#c7c9c8" stroke="#767b7a" stroke-width="1.5">
+    <circle cx="377" cy="77" r="5"/><circle cx="380" cy="103" r="5"/><circle cx="383" cy="130" r="5"/>
+    <circle cx="423" cy="77" r="5"/><circle cx="420" cy="103" r="5"/><circle cx="417" cy="130" r="5"/>
+  </g>
+  <g fill="none" stroke="#d5d7d4">
+    <path d="M377 77L385 158L382 650" stroke-width="2.3"/><path d="M380 103L391 158L389 650" stroke-width="2"/><path d="M383 130L397 158L396 650" stroke-width="1.7"/>
+    <path d="M417 130L403 158L403 650" stroke-width="1.4"/><path d="M420 103L409 158L410 650" stroke-width="1.2"/><path d="M423 77L415 158L417 650" stroke-width="1"/>
+  </g>
+  <g fill="#eee7d4" stroke="#402c23" stroke-width="1"><circle cx="382" cy="653" r="3"/><circle cx="389" cy="653" r="3"/><circle cx="396" cy="653" r="3"/><circle cx="403" cy="653" r="3"/><circle cx="410" cy="653" r="3"/><circle cx="417" cy="653" r="3"/></g>
+</svg>

@@ -1,0 +1,3382 @@
+{
+  "version": 1,
+  "date": "2026-11-13",
+  "principles": [
+    "Preserve every N3 question and every teacher-edited or finalised question.",
+    "Use direct, concise questions and retain the musical vocabulary taught at each level.",
+    "Prefer plausible distractors from the same level and musical category; use earlier-level concepts when those make better alternatives. Never use later-level concepts.",
+    "Do not manufacture six questions per concept. Retire redundant descriptions, retaining definitions and listening questions.",
+    "Retain recordings, excerpt timings, correct option IDs and typed-answer variants."
+  ],
+  "retireMultiSelectConcepts": [
+    "MC-0116",
+    "MC-0117",
+    "MC-0119",
+    "MC-0120",
+    "MC-0121",
+    "MC-0123",
+    "MC-0124",
+    "MC-0125",
+    "MC-0126",
+    "MC-0127",
+    "MC-0128",
+    "MC-0130",
+    "MC-0131",
+    "MC-0132",
+    "MC-0133",
+    "MC-0135",
+    "MC-0137",
+    "MC-0138",
+    "MC-0139",
+    "MC-0140",
+    "MC-0141",
+    "MC-0143",
+    "MC-0195",
+    "MC-0196",
+    "MC-0197",
+    "MC-0198",
+    "MC-0199",
+    "MC-0202",
+    "MC-0203",
+    "MC-0205",
+    "MC-0206",
+    "MC-0210",
+    "MC-0211",
+    "MC-0212",
+    "MC-0213",
+    "MC-0081",
+    "MC-0160",
+    "MC-0168",
+    "MC-0243",
+    "MC-0244",
+    "MC-0291",
+    "MC-0293"
+  ],
+  "multiSelect": {
+    "MC-0079": {
+      "correct": [
+        "Unequal long-short notes create a swung rhythm",
+        "Brass and saxophones often play in a big band"
+      ],
+      "incorrect": [
+        "Notes in each pair are equal in length",
+        "A solo voice sings a Scots story without instruments",
+        "Off-beat guitar chords create a reggae rhythm",
+        "A fiddle and accordion play a Scottish reel"
+      ],
+      "prompt": "Tick two statements that describe swing music."
+    },
+    "MC-0080": {
+      "correct": [
+        "Chord notes are played separately",
+        "The pattern can rise or fall"
+      ],
+      "incorrect": [
+        "All chord notes sound together",
+        "One pitch is held throughout",
+        "Two neighbouring notes alternate rapidly",
+        "The notes stay on one pitch"
+      ],
+      "prompt": "Tick two statements that describe a broken chord."
+    },
+    "MC-0082": {
+      "correct": [
+        "Chord I is the home chord",
+        "Chord V can lead back to chord I"
+      ],
+      "incorrect": [
+        "Chord IV is built on scale note 5",
+        "Chord V is built on scale note 4",
+        "Chord I is minor in a major key",
+        "Chords I, IV and V contain the same notes"
+      ],
+      "prompt": "Tick two statements that describe chord progressions using I, IV and V in a major key."
+    },
+    "MC-0083": {
+      "correct": [
+        "One or more fixed notes continue below the melody",
+        "The fixed notes may be held or repeated"
+      ],
+      "incorrect": [
+        "The bass follows every note of the melody",
+        "The accompaniment changes key on each beat",
+        "Different chords replace the fixed notes",
+        "A high note is held above changing chords"
+      ],
+      "prompt": "Tick two statements that describe a drone."
+    },
+    "MC-0084": {
+      "correct": [
+        "The home chord is major",
+        "C, E and G form the home chord in C major"
+      ],
+      "incorrect": [
+        "The home chord is minor",
+        "C, E-flat and G form the home chord in C major",
+        "A major key has no home note",
+        "The tempo determines whether the key is major"
+      ],
+      "prompt": "Tick two statements that describe major tonality."
+    },
+    "MC-0085": {
+      "correct": [
+        "The home chord is minor",
+        "A, C and E form the home chord in A minor"
+      ],
+      "incorrect": [
+        "The home chord is major",
+        "A, C-sharp and E form the home chord in A minor",
+        "A minor key has no home note",
+        "Minor music must be slow"
+      ],
+      "prompt": "Tick two statements that describe minor tonality."
+    },
+    "MC-0087": {
+      "correct": [
+        "Extra notes decorate the melody",
+        "A decoration may be a short note or a repeated figure"
+      ],
+      "incorrect": [
+        "A bass note repeats below changing chords",
+        "The whole melody moves to a new key",
+        "The opening melody returns as a new section",
+        "All notes are played as short detached sounds"
+      ],
+      "prompt": "Tick two statements that describe an ornament."
+    },
+    "MC-0088": {
+      "correct": [
+        "A bass note is held or repeated",
+        "The chords above it change"
+      ],
+      "incorrect": [
+        "The bass changes with every chord",
+        "The fixed note is above the melody",
+        "All parts copy the bass melody",
+        "The chord notes are played in a rising pattern"
+      ],
+      "prompt": "Tick two statements that describe a pedal."
+    },
+    "MC-0089": {
+      "correct": [
+        "The scale has five different notes",
+        "C, D, E, G and A form a pentatonic scale"
+      ],
+      "incorrect": [
+        "The scale has seven different notes",
+        "The scale has twelve different notes",
+        "The scale has one repeated pitch",
+        "C, D, E, F, G, A and B form a pentatonic scale"
+      ],
+      "prompt": "Tick two statements that describe a pentatonic scale."
+    },
+    "MC-0090": {
+      "correct": [
+        "Notes are arranged in pitch order",
+        "The scale can be played upwards or downwards"
+      ],
+      "incorrect": [
+        "The notes all sound together",
+        "The notes form a random pattern of leaps",
+        "Only one pitch repeats",
+        "The term describes a change in volume"
+      ],
+      "prompt": "Tick two statements that describe a scale."
+    },
+    "MC-0091": {
+      "correct": [
+        "The singer uses sounds such as doo or ba",
+        "The singer improvises a melody"
+      ],
+      "incorrect": [
+        "The singer tells a story in Scots",
+        "The words are spoken rhythmically without a sung melody",
+        "A choir sings the same hymn words",
+        "The voice copies a Gaelic dance song"
+      ],
+      "prompt": "Tick two statements that describe scat singing."
+    },
+    "MC-0093": {
+      "correct": [
+        "Bass notes alternate with chords",
+        "The accompaniment pattern repeats"
+      ],
+      "incorrect": [
+        "The same bass pitch is held throughout",
+        "Only a high melody note is repeated",
+        "The melody is played without accompaniment",
+        "All chord notes are played as a rising scale"
+      ],
+      "prompt": "Tick two statements that describe a vamp."
+    },
+    "MC-0094": {
+      "correct": [
+        "The earlier speed returns",
+        "It follows a change of tempo"
+      ],
+      "incorrect": [
+        "The opening key returns",
+        "The music continues to slow down",
+        "The music continues to speed up",
+        "The original volume returns"
+      ],
+      "prompt": "Tick two statements that describe the instruction a tempo."
+    },
+    "MC-0095": {
+      "correct": [
+        "The beat gradually gets quicker",
+        "The change affects tempo"
+      ],
+      "incorrect": [
+        "The beat gradually gets slower",
+        "The music gets louder without speeding up",
+        "The earlier speed returns",
+        "The music changes key"
+      ],
+      "prompt": "Tick two statements that describe accelerando."
+    },
+    "MC-0096": {
+      "correct": [
+        "The opening bar is incomplete",
+        "The opening notes lead into the first strong beat"
+      ],
+      "incorrect": [
+        "The melody begins with a complete bar",
+        "The opening starts on the first strong beat",
+        "The term describes the final bar",
+        "A note is held longer than its written value"
+      ],
+      "prompt": "Tick two statements that describe an anacrusis."
+    },
+    "MC-0097": {
+      "correct": [
+        "The tempo is at a walking pace",
+        "It is slower than allegro"
+      ],
+      "incorrect": [
+        "The music gradually speeds up",
+        "The music gradually slows down",
+        "The earlier tempo returns",
+        "The music is very fast"
+      ],
+      "prompt": "Tick two statements that describe andante."
+    },
+    "MC-0098": {
+      "correct": [
+        "Each main beat divides into three",
+        "6/8 normally has two main beats"
+      ],
+      "incorrect": [
+        "Each main beat divides into two",
+        "6/8 has six main beats",
+        "The upper number gives the number of main beats in every compound metre",
+        "The time signature describes the key"
+      ],
+      "prompt": "Tick two statements that describe compound time."
+    },
+    "MC-0099": {
+      "correct": [
+        "A dotted note is half as long again as its original value",
+        "A dotted quaver followed by a semiquaver makes a long-short rhythm"
+      ],
+      "incorrect": [
+        "The two notes in a dotted quaver-semiquaver pair are equal",
+        "A dot doubles a note’s value",
+        "A dotted quaver is shorter than a semiquaver",
+        "A dot halves a note’s value"
+      ],
+      "prompt": "Tick two statements that describe dotted rhythms."
+    },
+    "MC-0100": {
+      "correct": [
+        "The dance is commonly in 6/8",
+        "Each main beat divides into three"
+      ],
+      "incorrect": [
+        "The dance is commonly in 3/4",
+        "Each main beat divides into two",
+        "Scotch snaps are its defining rhythm",
+        "The beat is free, with no regular groups"
+      ],
+      "prompt": "Tick two statements that describe a jig."
+    },
+    "MC-0101": {
+      "correct": [
+        "The beat gradually slows down",
+        "The change affects tempo"
+      ],
+      "incorrect": [
+        "The beat gradually speeds up",
+        "The music gets quieter without slowing down",
+        "The earlier speed returns",
+        "The music changes to a minor key"
+      ],
+      "prompt": "Tick two statements that describe rallentando."
+    },
+    "MC-0102": {
+      "correct": [
+        "A short accented note comes first",
+        "A longer note follows it"
+      ],
+      "incorrect": [
+        "A long note comes before a short note",
+        "The two notes are equal in length",
+        "Three equal notes fit into one beat",
+        "The longer note is accented first"
+      ],
+      "prompt": "Tick two statements that describe a Scotch snap."
+    },
+    "MC-0103": {
+      "correct": [
+        "Each main beat divides into two",
+        "2/4, 3/4 and 4/4 are examples"
+      ],
+      "incorrect": [
+        "Each main beat divides into three",
+        "6/8 is an example of simple time",
+        "9/8 is an example of simple time",
+        "The time signature shows the key"
+      ],
+      "prompt": "Tick two statements that describe simple time."
+    },
+    "MC-0104": {
+      "correct": [
+        "Four main beats are normally heard in each bar",
+        "Scotch snaps are a common feature"
+      ],
+      "incorrect": [
+        "Three main beats are normally heard in each bar",
+        "Each main beat normally divides into three",
+        "It is normally played as fast as a reel",
+        "It is an unaccompanied song in Gaelic"
+      ],
+      "prompt": "Tick two statements that describe a strathspey."
+    },
+    "MC-0105": {
+      "correct": [
+        "Weak beats can be stressed",
+        "A note may be held across a strong beat"
+      ],
+      "incorrect": [
+        "Only the strong beats are stressed",
+        "Every note starts on a strong beat",
+        "The tempo gradually gets faster",
+        "The number of beats in each bar changes"
+      ],
+      "prompt": "Tick two statements that describe syncopation."
+    },
+    "MC-0106": {
+      "correct": [
+        "The soloist plays a showy passage",
+        "The orchestra is usually silent during the solo passage"
+      ],
+      "incorrect": [
+        "The whole orchestra doubles the soloist",
+        "A choir sings above the soloist",
+        "A second soloist copies the melody throughout",
+        "The soloist repeats a short bass pattern"
+      ],
+      "prompt": "Tick two statements that describe a cadenza."
+    },
+    "MC-0107": {
+      "correct": [
+        "A later part copies the opening melody",
+        "The parts overlap as they continue"
+      ],
+      "incorrect": [
+        "All parts begin together in unison",
+        "Each part uses an unrelated melody",
+        "One melody is supported only by chords",
+        "Each part waits until the previous melody has finished"
+      ],
+      "prompt": "Tick two statements that describe a canon."
+    },
+    "MC-0108": {
+      "correct": [
+        "One part copies an idea from another",
+        "The copy may be exact or slightly changed"
+      ],
+      "incorrect": [
+        "All parts play the same melody together from the start",
+        "One part repeats its own phrase at a new pitch",
+        "A bass note stays fixed below changing chords",
+        "Only the volume changes"
+      ],
+      "prompt": "Tick two statements that describe imitation."
+    },
+    "MC-0109": {
+      "correct": [
+        "A contrasting section is heard in a song",
+        "The section is often eight bars long"
+      ],
+      "incorrect": [
+        "It is the main repeated bass pattern",
+        "It is the opening phrase of every verse",
+        "It repeats the chorus without changing it",
+        "It means eight singers perform together"
+      ],
+      "prompt": "Tick two statements that describe a middle 8."
+    },
+    "MC-0110": {
+      "correct": [
+        "The plan is A–B–A",
+        "The opening section returns after contrasting music"
+      ],
+      "incorrect": [
+        "The plan is A–B",
+        "Every section has new music",
+        "A returns between several contrasting sections",
+        "One bass pattern repeats throughout"
+      ],
+      "prompt": "Tick two statements that describe ternary form."
+    },
+    "MC-0111": {
+      "correct": [
+        "A theme returns in changed versions",
+        "Features such as rhythm or harmony may change"
+      ],
+      "incorrect": [
+        "Every version uses an unrelated melody",
+        "The theme is heard only once",
+        "All versions use identical notes and rhythms",
+        "The music alternates only between verse and chorus"
+      ],
+      "prompt": "Tick two statements that describe theme and variation."
+    },
+    "MC-0112": {
+      "correct": [
+        "Verses usually have different words",
+        "The chorus returns with familiar words and music"
+      ],
+      "incorrect": [
+        "Every verse has completely new music",
+        "The chorus is heard only once",
+        "The verse and chorus always have the same words",
+        "The chorus is an instrumental solo"
+      ],
+      "prompt": "Tick two statements that describe verse and chorus."
+    },
+    "MC-0113": {
+      "correct": [
+        "It is a low female voice",
+        "It lies below soprano"
+      ],
+      "incorrect": [
+        "It is the highest female voice",
+        "It lies above soprano",
+        "It is the lowest male voice",
+        "It is a high male voice"
+      ],
+      "prompt": "Tick two statements that describe an alto voice."
+    },
+    "MC-0114": {
+      "correct": [
+        "Extra singers support the lead voice",
+        "They may add harmony or answer the lead singer"
+      ],
+      "incorrect": [
+        "They replace all instruments",
+        "They are always the only singers",
+        "They play an instrumental solo",
+        "They are the name of a bass-guitar part"
+      ],
+      "prompt": "Tick two statements that describe backing vocals."
+    },
+    "MC-0115": {
+      "correct": [
+        "It is a low male voice",
+        "It lies below tenor"
+      ],
+      "incorrect": [
+        "It is the highest male voice",
+        "It lies above tenor",
+        "It is the lowest female voice",
+        "It is the highest female voice"
+      ],
+      "prompt": "Tick two statements that describe a bass voice."
+    },
+    "MC-0118": {
+      "correct": [
+        "The group uses brass instruments",
+        "Percussion is usually included"
+      ],
+      "incorrect": [
+        "Violins form the main section",
+        "Flutes and clarinets form the main section",
+        "Singers perform all the parts",
+        "The group contains only one brass player"
+      ],
+      "prompt": "Tick two statements that describe a brass band."
+    },
+    "MC-0122": {
+      "correct": [
+        "The amplified tone becomes rough or fuzzy",
+        "It is often used on electric guitar"
+      ],
+      "incorrect": [
+        "Each note repeats as a clear echo",
+        "The pitch slides smoothly to another note",
+        "The sound becomes a clean acoustic-guitar tone",
+        "A mute is placed in the instrument"
+      ],
+      "prompt": "Tick two statements that describe distortion."
+    },
+    "MC-0129": {
+      "correct": [
+        "A mute changes the instrument’s tone",
+        "The sound may become softer or more nasal"
+      ],
+      "incorrect": [
+        "The pitch slides between notes",
+        "An echo repeats the phrase",
+        "The instrument changes family",
+        "The music gradually slows down"
+      ],
+      "prompt": "Tick two statements that describe a muted sound."
+    },
+    "MC-0134": {
+      "correct": [
+        "It is a high female voice",
+        "It lies above alto"
+      ],
+      "incorrect": [
+        "It is the lowest female voice",
+        "It lies below alto",
+        "It is the lowest male voice",
+        "It is a high male voice"
+      ],
+      "prompt": "Tick two statements that describe a soprano voice."
+    },
+    "MC-0136": {
+      "correct": [
+        "It is a high male voice",
+        "It lies above bass"
+      ],
+      "incorrect": [
+        "It is the lowest male voice",
+        "It lies below bass",
+        "It is the highest female voice",
+        "It is the lowest female voice"
+      ],
+      "prompt": "Tick two statements that describe a tenor voice."
+    },
+    "MC-0142": {
+      "correct": [
+        "Brass and saxophones form sections",
+        "A rhythm section supports the band"
+      ],
+      "incorrect": [
+        "A choir performs every part",
+        "Only orchestral strings are used",
+        "It is a solo jazz singer without backing",
+        "It is a group of cornets, horns and low brass with percussion"
+      ],
+      "prompt": "Tick two statements that describe a big band."
+    },
+    "MC-0145": {
+      "correct": [
+        "A solo singer tells a story in Scots",
+        "The same melody returns in each verse"
+      ],
+      "incorrect": [
+        "A choir follows a leader singing in Gaelic",
+        "A group sings a work song while beating cloth",
+        "A singer uses nonsense syllables for a dance",
+        "The song is an operatic aria in Italian"
+      ],
+      "prompt": "Tick two statements that describe a bothy ballad."
+    },
+    "MC-0146": {
+      "correct": [
+        "Rock instruments combine with traditional instruments",
+        "Celtic melodies are used"
+      ],
+      "incorrect": [
+        "Only a solo bagpipe melody is heard",
+        "Only a solo classical piano is heard",
+        "The music is an unaccompanied Gaelic psalm",
+        "The music is a Baroque dance for recorder"
+      ],
+      "prompt": "Tick two statements that describe Celtic rock."
+    },
+    "MC-0148": {
+      "correct": [
+        "Balanced phrases are common",
+        "Homophonic texture is common"
+      ],
+      "incorrect": [
+        "A twelve-note row supplies every melody",
+        "Amplified guitar distortion defines the style",
+        "The style developed after the Romantic period",
+        "A programmed drum beat defines the style"
+      ],
+      "prompt": "Tick two statements that describe Classical music."
+    },
+    "MC-0150": {
+      "correct": [
+        "A solo singer may be answered by a choir",
+        "Religious words are sung with popular-style backing"
+      ],
+      "incorrect": [
+        "An unaccompanied leader sings a Gaelic psalm",
+        "A solo singer tells a Scots ballad",
+        "A singer improvises nonsense syllables without words",
+        "A choir sings a Scots ballad"
+      ],
+      "prompt": "Tick two statements that describe gospel music."
+    },
+    "MC-0151": {
+      "correct": [
+        "A sitar may play the melody",
+        "Tabla may provide the rhythm"
+      ],
+      "incorrect": [
+        "A fiddle leads a Scottish reel",
+        "A brass band provides the main sound",
+        "A choir sings a Latin church service",
+        "A harpsichord plays a Baroque dance"
+      ],
+      "prompt": "Tick two statements that describe Indian music."
+    },
+    "MC-0152": {
+      "correct": [
+        "Short patterns repeat",
+        "Patterns may change gradually"
+      ],
+      "incorrect": [
+        "Each phrase avoids earlier material",
+        "Every part plays a new melody on every repeat",
+        "It means no sound is made",
+        "It is another name for an operatic solo"
+      ],
+      "prompt": "Tick two statements that describe minimalist music."
+    },
+    "MC-0154": {
+      "correct": [
+        "It is a work for orchestra",
+        "It usually has several movements"
+      ],
+      "incorrect": [
+        "It is a work for one singer and piano",
+        "It is a solo passage without orchestra",
+        "It is a group of three performers",
+        "It is a short extra closing section"
+      ],
+      "prompt": "Tick two statements that describe a symphony."
+    },
+    "MC-0156": {
+      "correct": [
+        "There is no clear home key",
+        "Clashing harmonies may be heard"
+      ],
+      "incorrect": [
+        "Every phrase settles on a major tonic",
+        "A single clashing chord proves atonality",
+        "The music must have no rhythm",
+        "Only five pitches are used throughout"
+      ],
+      "prompt": "Tick two statements that describe atonal music."
+    },
+    "MC-0157": {
+      "correct": [
+        "Chord I is major in a major key",
+        "Chord VI is minor in a major key"
+      ],
+      "incorrect": [
+        "Chord I is built on scale note 5",
+        "Chord V is built on scale note 4",
+        "Chord VI is major in a major key",
+        "All four chords contain the same notes"
+      ],
+      "prompt": "Tick two statements that describe chords I, IV, V and VI in a major key."
+    },
+    "MC-0158": {
+      "correct": [
+        "Neighbouring notes may move by semitone",
+        "Notes outside the key can add colour"
+      ],
+      "incorrect": [
+        "Every step must be a whole tone",
+        "Only five pitches may be used",
+        "The key changes whenever one chromatic note appears",
+        "Chromatic movement means all notes stay at one pitch"
+      ],
+      "prompt": "Tick two statements that describe chromatic music."
+    },
+    "MC-0159": {
+      "correct": [
+        "Closely spaced notes sound together",
+        "The chord often sounds strongly clashing"
+      ],
+      "incorrect": [
+        "The notes form a scale one at a time",
+        "Only one pitch sounds",
+        "The chord is a widely spaced open fifth",
+        "The sound is an untuned drum roll"
+      ],
+      "prompt": "Tick two statements that describe a cluster."
+    },
+    "MC-0161": {
+      "correct": [
+        "A second melody sounds beside the main melody",
+        "The extra melody has its own shape"
+      ],
+      "incorrect": [
+        "It doubles the main melody in unison",
+        "It is a repeated single bass pitch",
+        "It replaces all the accompaniment",
+        "It is a drum fill between phrases"
+      ],
+      "prompt": "Tick two statements that describe a countermelody."
+    },
+    "MC-0162": {
+      "correct": [
+        "A high vocal melody is added",
+        "It is sung above the main melody"
+      ],
+      "incorrect": [
+        "It is the lowest bass line",
+        "It doubles the main melody at the same pitch",
+        "It is an instrumental solo below the melody",
+        "It is a choir singing without instruments"
+      ],
+      "prompt": "Tick two statements that describe a vocal descant."
+    },
+    "MC-0163": {
+      "correct": [
+        "The pitch moves rapidly up or down",
+        "The movement passes through pitches between its ends"
+      ],
+      "incorrect": [
+        "Two neighbouring notes alternate repeatedly",
+        "One pitch is held without movement",
+        "Only the volume changes",
+        "Every note is played short and detached"
+      ],
+      "prompt": "Tick two statements that describe a glissando."
+    },
+    "MC-0164": {
+      "correct": [
+        "A short extra note decorates a main note",
+        "It is common in bagpipe melodies"
+      ],
+      "incorrect": [
+        "One note is held below changing chords",
+        "Two parts move in opposite directions",
+        "The opening tempo returns",
+        "Every note is played twice as long"
+      ],
+      "prompt": "Tick two statements that describe a grace note."
+    },
+    "MC-0165": {
+      "correct": [
+        "The phrase ends on chord V",
+        "The ending sounds unfinished"
+      ],
+      "incorrect": [
+        "The phrase ends V to I",
+        "The phrase ends IV to I",
+        "The tonic gives a settled ending",
+        "The phrase ends V to VI"
+      ],
+      "prompt": "Tick two statements that describe an imperfect cadence."
+    },
+    "MC-0166": {
+      "correct": [
+        "A high note is held or repeated",
+        "The harmony below it changes"
+      ],
+      "incorrect": [
+        "The fixed note is in the bass",
+        "The high note changes with every chord",
+        "The bass plays a repeated broken-chord pattern",
+        "The whole melody moves to a new key"
+      ],
+      "prompt": "Tick two statements that describe an inverted pedal."
+    },
+    "MC-0167": {
+      "correct": [
+        "Several notes are sung on one syllable",
+        "The voice may sing a flowing group of notes"
+      ],
+      "incorrect": [
+        "Each syllable has exactly one note",
+        "The words are spoken rather than sung",
+        "It means singing without instruments",
+        "Every singer uses the same pitch throughout"
+      ],
+      "prompt": "Tick two statements that describe melismatic word setting."
+    },
+    "MC-0169": {
+      "correct": [
+        "The chords move V to I",
+        "The ending sounds complete"
+      ],
+      "incorrect": [
+        "The phrase ends on chord V",
+        "The chords move IV to I",
+        "The chords move V to VI",
+        "Only the tempo changes"
+      ],
+      "prompt": "Tick two statements that describe a perfect cadence."
+    },
+    "MC-0170": {
+      "correct": [
+        "A sounding note slides higher or lower",
+        "The pitch can change without starting a new note"
+      ],
+      "incorrect": [
+        "A new note is struck at every semitone",
+        "The note stays at a fixed pitch",
+        "Only the volume changes",
+        "The rhythm is played on untuned drums"
+      ],
+      "prompt": "Tick two statements that describe a pitch bend."
+    },
+    "MC-0171": {
+      "correct": [
+        "C to C-sharp is a semitone",
+        "A semitone is half a tone"
+      ],
+      "incorrect": [
+        "C to D is a semitone",
+        "E to G is a semitone",
+        "A semitone equals two tones",
+        "A semitone is an octave"
+      ],
+      "prompt": "Tick two statements that describe a semitone."
+    },
+    "MC-0172": {
+      "correct": [
+        "One note is sung on each syllable",
+        "The notes follow the syllables of the words"
+      ],
+      "incorrect": [
+        "Several notes are sung on each syllable",
+        "The words are spoken without pitch",
+        "It means singing without instruments",
+        "All singers must sing in unison"
+      ],
+      "prompt": "Tick two statements that describe syllabic word setting."
+    },
+    "MC-0173": {
+      "correct": [
+        "A tone equals two semitones",
+        "C to D is a tone"
+      ],
+      "incorrect": [
+        "E to F is a tone",
+        "B to C is a tone",
+        "A tone is half a semitone",
+        "A tone is an octave"
+      ],
+      "prompt": "Tick two statements that describe a tone."
+    },
+    "MC-0174": {
+      "correct": [
+        "Two neighbouring notes alternate rapidly",
+        "The main note alternates with the note above"
+      ],
+      "incorrect": [
+        "One note is repeated without changing pitch",
+        "The melody slides through an octave",
+        "The notes are an octave apart",
+        "The main note and a fifth above alternate"
+      ],
+      "prompt": "Tick two statements that describe a trill."
+    },
+    "MC-0175": {
+      "correct": [
+        "Every step is a tone",
+        "There are six different notes in an octave"
+      ],
+      "incorrect": [
+        "Every step is a semitone",
+        "There are five different notes in an octave",
+        "The steps follow the major-scale pattern",
+        "The scale has seven different notes in an octave"
+      ],
+      "prompt": "Tick two statements that describe a whole-tone scale."
+    },
+    "MC-0176": {
+      "correct": [
+        "Each main beat divides into three",
+        "12/8 normally has four main beats"
+      ],
+      "incorrect": [
+        "Each main beat divides into two",
+        "6/8 has six main beats",
+        "9/8 has nine main beats",
+        "12/8 has twelve main beats"
+      ],
+      "prompt": "Tick two statements that describe compound time in 6/8, 9/8 and 12/8."
+    },
+    "MC-0177": {
+      "correct": [
+        "Different rhythmic groupings sound together",
+        "The parts can pull against each other’s beat patterns"
+      ],
+      "incorrect": [
+        "Every part uses the same accents",
+        "The parts take turns rather than overlap",
+        "Only the tempo changes",
+        "Only the key changes"
+      ],
+      "prompt": "Tick two statements that describe cross rhythms."
+    },
+    "MC-0178": {
+      "correct": [
+        "The tempo is moderate",
+        "It is faster than adagio and slower than allegro"
+      ],
+      "incorrect": [
+        "The tempo gradually increases",
+        "The tempo gradually decreases",
+        "The earlier speed returns",
+        "The music is played with a mute"
+      ],
+      "prompt": "Tick two statements that describe moderato."
+    },
+    "MC-0179": {
+      "correct": [
+        "The pulse gradually slows down",
+        "The change happens through a passage"
+      ],
+      "incorrect": [
+        "The pulse gradually speeds up",
+        "The earlier tempo returns",
+        "Only the volume decreases",
+        "The music changes to a new key"
+      ],
+      "prompt": "Tick two statements that describe ritardando."
+    },
+    "MC-0180": {
+      "correct": [
+        "The performer speeds up and slows down slightly",
+        "The changes add expression"
+      ],
+      "incorrect": [
+        "The tempo increases steadily throughout",
+        "The tempo decreases steadily throughout",
+        "A new time signature is needed for each change",
+        "The beat must stay completely steady"
+      ],
+      "prompt": "Tick two statements that describe rubato."
+    },
+    "MC-0181": {
+      "correct": [
+        "The chord notes are played separately",
+        "The pattern repeats low–high–middle–high"
+      ],
+      "incorrect": [
+        "All chord notes sound together",
+        "The same bass pitch is held throughout",
+        "The bass plays a different scale on every beat",
+        "The pattern alternates bass notes and block chords"
+      ],
+      "prompt": "Tick two statements that describe an Alberti bass."
+    },
+    "MC-0182": {
+      "correct": [
+        "The basic plan is A–B",
+        "Either section may be repeated"
+      ],
+      "incorrect": [
+        "The basic plan is A–B–A",
+        "The basic plan is A–B–A–C–A",
+        "A returns between contrasting episodes",
+        "The opening section cannot be repeated"
+      ],
+      "prompt": "Tick two statements that describe binary form."
+    },
+    "MC-0183": {
+      "correct": [
+        "An extra passage closes the piece",
+        "It follows the main sections"
+      ],
+      "incorrect": [
+        "It is the opening theme",
+        "It links the first and second subjects",
+        "It is the contrasting middle of a song",
+        "It repeats as the bass accompaniment throughout"
+      ],
+      "prompt": "Tick two statements that describe a coda."
+    },
+    "MC-0184": {
+      "correct": [
+        "Two or more melodic lines sound together",
+        "Each line has its own melodic shape"
+      ],
+      "incorrect": [
+        "All parts double one melody in unison",
+        "One melody has only chordal backing",
+        "Only one unaccompanied melody is heard",
+        "Every part must use the same rhythm throughout"
+      ],
+      "prompt": "Tick two statements that describe contrapuntal music."
+    },
+    "MC-0186": {
+      "correct": [
+        "A bass pattern repeats",
+        "The upper parts can change above it"
+      ],
+      "incorrect": [
+        "The bass is completely new each time",
+        "A high note is held above changing chords",
+        "Only one bass note is sustained",
+        "The bass doubles every note of the melody"
+      ],
+      "prompt": "Tick two statements that describe a ground bass."
+    },
+    "MC-0187": {
+      "correct": [
+        "One main melody has chordal backing",
+        "The parts may move together in the same rhythm"
+      ],
+      "incorrect": [
+        "Several independent melodies are equally important throughout",
+        "All parts play the same pitch in unison",
+        "One unaccompanied melody is heard",
+        "Only untuned percussion is used"
+      ],
+      "prompt": "Tick two statements that describe homophonic texture."
+    },
+    "MC-0188": {
+      "correct": [
+        "Two or more independent melodies sound together",
+        "Each part has its own melodic shape"
+      ],
+      "incorrect": [
+        "All parts double one melody in unison",
+        "One melody has only block-chord backing",
+        "Only one unaccompanied melody is heard",
+        "Every part must move in the same rhythm throughout"
+      ],
+      "prompt": "Tick two statements that describe polyphonic texture."
+    },
+    "MC-0189": {
+      "correct": [
+        "The main A section returns several times",
+        "Contrasting episodes come between returns"
+      ],
+      "incorrect": [
+        "The basic plan is only A–B",
+        "Every section uses new music with no returns",
+        "A is heard only once",
+        "One bass pattern supplies the whole form"
+      ],
+      "prompt": "Tick two statements that describe rondo form."
+    },
+    "MC-0190": {
+      "correct": [
+        "The same music returns for each verse",
+        "The words change between verses"
+      ],
+      "incorrect": [
+        "Each verse uses new music",
+        "The basic plan is A–B–A–C–A",
+        "Every verse has the same words",
+        "It is a solo instrumental cadenza"
+      ],
+      "prompt": "Tick two statements that describe strophic form."
+    },
+    "MC-0191": {
+      "correct": [
+        "The bass normally moves on each beat",
+        "Stepwise movement is common in jazz and blues"
+      ],
+      "incorrect": [
+        "The bass holds one pitch throughout",
+        "The notes form a low–high–middle–high pattern",
+        "Only off-beat chords are played",
+        "A high voice sings above the melody"
+      ],
+      "prompt": "Tick two statements that describe a walking bass."
+    },
+    "MC-0192": {
+      "correct": [
+        "Voices sing without instruments",
+        "The voices may still sing in harmony"
+      ],
+      "incorrect": [
+        "A piano accompanies the voices",
+        "Only one singer is allowed",
+        "Every voice must sing in unison",
+        "Only instruments are heard"
+      ],
+      "prompt": "Tick two statements that describe a cappella singing."
+    },
+    "MC-0193": {
+      "correct": [
+        "The strings are played with a bow",
+        "It tells players to return to bowing after pizzicato"
+      ],
+      "incorrect": [
+        "The strings are plucked",
+        "A mute is fitted",
+        "A wind player rolls their tongue",
+        "The sound is made with an electronic effect"
+      ],
+      "prompt": "Tick two statements that describe arco."
+    },
+    "MC-0194": {
+      "correct": [
+        "The voice lies below tenor",
+        "The voice lies above bass"
+      ],
+      "incorrect": [
+        "The voice lies above soprano",
+        "The voice lies below bass",
+        "It is the highest female voice",
+        "It is a low female voice"
+      ],
+      "prompt": "Tick two statements that describe a baritone voice."
+    },
+    "MC-0200": {
+      "correct": [
+        "The instruction means with a mute",
+        "The mute changes the instrument’s tone"
+      ],
+      "incorrect": [
+        "The strings are plucked",
+        "The sound repeats as a clear echo",
+        "The pitch slides upwards",
+        "The tempo gradually increases"
+      ],
+      "prompt": "Tick two statements that describe con sordino."
+    },
+    "MC-0201": {
+      "correct": [
+        "A wind player rolls their tongue",
+        "A fluttering sound is added to the note"
+      ],
+      "incorrect": [
+        "The player fits a mute",
+        "The strings are plucked",
+        "The note slides smoothly in pitch",
+        "A drum is struck repeatedly"
+      ],
+      "prompt": "Tick two statements that describe flutter-tonguing."
+    },
+    "MC-0204": {
+      "correct": [
+        "The voice lies below soprano",
+        "The voice lies above alto"
+      ],
+      "incorrect": [
+        "The voice lies above soprano",
+        "The voice lies below bass",
+        "It is a high male voice",
+        "It is the lowest male voice"
+      ],
+      "prompt": "Tick two statements that describe a mezzo-soprano voice."
+    },
+    "MC-0207": {
+      "correct": [
+        "The strings are plucked",
+        "The notes have a short attack and fade"
+      ],
+      "incorrect": [
+        "The strings are bowed",
+        "A brass instrument is muted",
+        "A wind player rolls their tongue",
+        "A singer joins notes smoothly"
+      ],
+      "prompt": "Tick two statements that describe pizzicato."
+    },
+    "MC-0208": {
+      "correct": [
+        "Reflected sound continues after a note ends",
+        "It can suggest the sound of a large room"
+      ],
+      "incorrect": [
+        "The pitch bends upwards",
+        "The guitar tone becomes rough and fuzzy",
+        "The tempo gradually slows",
+        "The number of beats in the bar changes"
+      ],
+      "prompt": "Tick two statements that describe reverb."
+    },
+    "MC-0209": {
+      "correct": [
+        "Rapid repeated strokes sustain the sound",
+        "They are used on snare drum or timpani"
+      ],
+      "incorrect": [
+        "A single drum hit is played",
+        "A wind player rolls their tongue",
+        "The strings are plucked",
+        "The pitch slides from one note to another"
+      ],
+      "prompt": "Tick two statements that describe percussion rolls."
+    },
+    "MC-0214": {
+      "correct": [
+        "A small instrumental group performs",
+        "There is usually one player per part"
+      ],
+      "incorrect": [
+        "A full symphony orchestra performs",
+        "A large choir sings every part",
+        "Several players double each part",
+        "It is a concerto for soloist and orchestra"
+      ],
+      "prompt": "Tick two statements that describe chamber music."
+    },
+    "MC-0215": {
+      "correct": [
+        "Tone colour helps create a mood",
+        "Whole-tone scales may be used"
+      ],
+      "incorrect": [
+        "A heavy rock riff defines the style",
+        "A twelve-note row is required in every piece",
+        "Only a strict major-scale pattern is used",
+        "A regular marching rhythm defines every piece"
+      ],
+      "prompt": "Tick two statements that describe Impressionist music."
+    },
+    "MC-0216": {
+      "correct": [
+        "Jazz improvisation is used",
+        "A strong funk rhythm supports the music"
+      ],
+      "incorrect": [
+        "Only unaccompanied plainchant is heard",
+        "The music is a Scottish fiddle dance",
+        "The style excludes amplified instruments",
+        "The rhythm has no steady pulse"
+      ],
+      "prompt": "Tick two statements that describe jazz funk."
+    },
+    "MC-0217": {
+      "correct": [
+        "A solo singer performs with piano",
+        "The words are traditionally German"
+      ],
+      "incorrect": [
+        "A choir sings a Latin Mass",
+        "The text is a Scottish work song in Gaelic",
+        "The music is an instrumental sonata",
+        "The voice sings recitative with orchestral backing"
+      ],
+      "prompt": "Tick two statements that describe a lied."
+    },
+    "MC-0218": {
+      "correct": [
+        "Words such as Gloria or Agnus Dei are used",
+        "It sets the main texts of a Catholic service"
+      ],
+      "incorrect": [
+        "The text is a secular German poem",
+        "It tells a staged opera story",
+        "It is a dance song with a fa-la-la refrain",
+        "It is a wordless jazz improvisation"
+      ],
+      "prompt": "Tick two statements that describe a Mass."
+    },
+    "MC-0219": {
+      "correct": [
+        "Recorded real-world sounds are used",
+        "The sounds may be cut, looped or reversed"
+      ],
+      "incorrect": [
+        "Only a live string quartet may perform",
+        "The recordings must stay unchanged",
+        "It is a solo German art song",
+        "It must follow a twelve-bar blues pattern"
+      ],
+      "prompt": "Tick two statements that describe musique concrète."
+    },
+    "MC-0220": {
+      "correct": [
+        "Singers and orchestra tell a story, usually religious",
+        "It is normally performed without stage acting"
+      ],
+      "incorrect": [
+        "It is normally staged with costumes and acting",
+        "It is a solo instrumental sonata",
+        "It is a set of unconnected instrumental dances",
+        "It is a secular song for voices"
+      ],
+      "prompt": "Tick two statements that describe an oratorio."
+    },
+    "MC-0221": {
+      "correct": [
+        "A single melodic line is sung",
+        "There is normally no instrumental backing"
+      ],
+      "incorrect": [
+        "Several independent melodic lines are required",
+        "A regular drum-kit beat accompanies it",
+        "A piano doubles every phrase",
+        "The music uses verse-and-chorus pop structure"
+      ],
+      "prompt": "Tick two statements that describe plainchant."
+    },
+    "MC-0222": {
+      "correct": [
+        "The singing follows speech rhythm",
+        "The words help move the story forward"
+      ],
+      "incorrect": [
+        "A long lyrical melody is the main feature",
+        "A choir repeats a dance refrain",
+        "The voice improvises jazz syllables",
+        "The words are spoken as rhythmic rap over a drum loop"
+      ],
+      "prompt": "Tick two statements that describe recitative."
+    },
+    "MC-0223": {
+      "correct": [
+        "It is written for a solo instrument, sometimes with piano",
+        "It usually has several movements"
+      ],
+      "incorrect": [
+        "It requires a full choir and orchestra",
+        "It is always a soloist with orchestra",
+        "It is the same thing as sonata form",
+        "It is a single unaccompanied folk song"
+      ],
+      "prompt": "Tick two statements that describe a sonata."
+    },
+    "MC-0224": {
+      "correct": [
+        "Expressive solo singing is common",
+        "Gospel and rhythm and blues influenced the style"
+      ],
+      "incorrect": [
+        "The defining sound is a solo pibroch",
+        "It is a German art song with piano",
+        "It is an unaccompanied Gaelic church song",
+        "It excludes syncopated rhythms"
+      ],
+      "prompt": "Tick two statements that describe soul music."
+    },
+    "MC-0225": {
+      "correct": [
+        "There are two violin parts",
+        "Viola and cello complete the group"
+      ],
+      "incorrect": [
+        "A double bass replaces the cello",
+        "A piano replaces the viola",
+        "There is one violin and two cellos",
+        "Four instruments double one single part"
+      ],
+      "prompt": "Tick two statements that describe a string quartet."
+    },
+    "MC-0226": {
+      "correct": [
+        "A short grace note leads into a main note",
+        "It is played very quickly"
+      ],
+      "incorrect": [
+        "A leaning note takes a large share of the main note’s time",
+        "Two neighbouring notes alternate repeatedly",
+        "The pitch slides through all the notes between two pitches",
+        "All note values are doubled"
+      ],
+      "prompt": "Tick two statements that describe an acciaccatura."
+    },
+    "MC-0227": {
+      "correct": [
+        "An extra note is added to a major triad",
+        "The added note is a sixth above the root"
+      ],
+      "incorrect": [
+        "Only the three notes of a triad are used",
+        "A minor seventh is added to chord V",
+        "The fifth of the triad is raised",
+        "The chord has four notes stacked in minor thirds"
+      ],
+      "prompt": "Tick two statements that describe an added-sixth chord."
+    },
+    "MC-0228": {
+      "correct": [
+        "The chord has four notes",
+        "The notes are stacked in minor thirds"
+      ],
+      "incorrect": [
+        "The notes are stacked in major thirds",
+        "It is a three-note major triad",
+        "It is a major triad with an added sixth",
+        "All four notes have the same pitch"
+      ],
+      "prompt": "Tick two statements that describe a diminished-seventh chord."
+    },
+    "MC-0229": {
+      "correct": [
+        "The chord has three notes",
+        "Two minor thirds are stacked"
+      ],
+      "incorrect": [
+        "Two major thirds are stacked",
+        "The chord has four notes",
+        "The chord is a major triad",
+        "The chord has a perfect fifth above its root"
+      ],
+      "prompt": "Tick two statements that describe a diminished triad."
+    },
+    "MC-0230": {
+      "correct": [
+        "A minor seventh is added to chord V",
+        "The chord normally leads towards chord I"
+      ],
+      "incorrect": [
+        "It is built on chord IV",
+        "It contains only three notes",
+        "It is a major triad with an added sixth",
+        "It is a minor triad with a raised fifth"
+      ],
+      "prompt": "Tick two statements that describe a dominant-seventh chord."
+    },
+    "MC-0231": {
+      "correct": [
+        "The seventh note is raised",
+        "There are three semitones between notes 6 and 7"
+      ],
+      "incorrect": [
+        "Both notes 6 and 7 are raised ascending",
+        "Only whole-tone steps are used",
+        "The scale has five different notes",
+        "The seventh is lowered when descending"
+      ],
+      "prompt": "Tick two statements that describe a harmonic minor scale."
+    },
+    "MC-0232": {
+      "correct": [
+        "The chords move V to VI",
+        "The expected tonic ending is avoided"
+      ],
+      "incorrect": [
+        "The chords move V to I",
+        "The chords move IV to I",
+        "The phrase ends on chord V",
+        "Only the tempo changes"
+      ],
+      "prompt": "Tick two statements that describe an interrupted cadence."
+    },
+    "MC-0233": {
+      "correct": [
+        "It is the pitch distance between two notes",
+        "The notes may sound together or one after another"
+      ],
+      "incorrect": [
+        "It measures the length of a note",
+        "It measures the speed of the beat",
+        "It counts the bars in a phrase",
+        "It describes the loudness of a note"
+      ],
+      "prompt": "Tick two statements that describe an interval."
+    },
+    "MC-0234": {
+      "correct": [
+        "Notes 6 and 7 are raised ascending",
+        "Notes 6 and 7 are lowered descending in the traditional form"
+      ],
+      "incorrect": [
+        "Only note 7 is raised ascending",
+        "The raised notes are kept descending in the traditional form",
+        "Every step is a whole tone",
+        "The scale contains only five different notes"
+      ],
+      "prompt": "Tick two statements that describe a melodic minor scale."
+    },
+    "MC-0235": {
+      "correct": [
+        "A mode has its own pattern of tones and semitones",
+        "Modal music can have a clear home note"
+      ],
+      "incorrect": [
+        "Every mode has the major-scale pattern",
+        "Modal music has no home note by definition",
+        "Every step is a whole tone",
+        "All twelve pitches must appear before any repeats"
+      ],
+      "prompt": "Tick two statements that describe modal music."
+    },
+    "MC-0236": {
+      "correct": [
+        "The main note moves to a neighbour and back",
+        "The decoration is brief"
+      ],
+      "incorrect": [
+        "Two neighbours alternate for a long trill",
+        "The pitch slides continuously through many notes",
+        "A bass note is held below changing chords",
+        "Every note value is doubled"
+      ],
+      "prompt": "Tick two statements that describe a mordent."
+    },
+    "MC-0237": {
+      "correct": [
+        "It is a prominent instrumental melody",
+        "It accompanies the main melody with a separate line"
+      ],
+      "incorrect": [
+        "It doubles every note of the main melody in unison",
+        "It is one bass pitch held throughout",
+        "It is a solo voice without instruments",
+        "It consists only of repeated block chords"
+      ],
+      "prompt": "Tick two statements that describe an obbligato."
+    },
+    "MC-0238": {
+      "correct": [
+        "The chords move IV to I",
+        "It is often heard on Amen in hymns"
+      ],
+      "incorrect": [
+        "The chords move V to I",
+        "The chords move V to VI",
+        "The phrase ends on chord V",
+        "A minor piece ends with a major tonic"
+      ],
+      "prompt": "Tick two statements that describe a plagal cadence."
+    },
+    "MC-0239": {
+      "correct": [
+        "The relative keys share a key signature",
+        "C major is the relative major of A minor"
+      ],
+      "incorrect": [
+        "The relative keys have different key signatures",
+        "A major is the relative major of A minor",
+        "G major is the relative major of A minor",
+        "The relative major has the same tonic as the minor"
+      ],
+      "prompt": "Tick two statements that describe relative major keys."
+    },
+    "MC-0240": {
+      "correct": [
+        "The relative keys share a key signature",
+        "A minor is the relative minor of C major"
+      ],
+      "incorrect": [
+        "The relative keys have different key signatures",
+        "C minor is the relative minor of C major",
+        "G minor is the relative minor of C major",
+        "The relative minor has the same tonic as the major"
+      ],
+      "prompt": "Tick two statements that describe relative minor keys."
+    },
+    "MC-0241": {
+      "correct": [
+        "A minor-key piece ends with a major tonic chord",
+        "The third of the final tonic chord is raised"
+      ],
+      "incorrect": [
+        "A major-key piece ends with a minor tonic chord",
+        "The phrase ends V to VI",
+        "The final chord is V",
+        "Only the tempo changes"
+      ],
+      "prompt": "Tick two statements that describe a tierce de Picardie."
+    },
+    "MC-0242": {
+      "correct": [
+        "Three equal notes fit against two equal notes",
+        "Both groups take the same amount of time"
+      ],
+      "incorrect": [
+        "Both parts play the same rhythm",
+        "The group of three takes longer",
+        "The groups happen one after another",
+        "Every bar has five equal beats"
+      ],
+      "prompt": "Tick two statements that describe 3 against 2."
+    },
+    "MC-0245": {
+      "correct": [
+        "Beat groups can have unequal lengths",
+        "5/4 may be grouped as 2+3"
+      ],
+      "incorrect": [
+        "Every bar has four equal beats",
+        "All beat groups must have equal lengths",
+        "Each main beat must divide into three",
+        "The key changes on each strong beat"
+      ],
+      "prompt": "Tick two statements that describe irregular time signatures."
+    },
+    "MC-0246": {
+      "correct": [
+        "The time signature changes",
+        "The number or grouping of beats can change"
+      ],
+      "incorrect": [
+        "Only the tempo changes",
+        "Only the key changes",
+        "Only the volume changes",
+        "The time signature stays the same throughout"
+      ],
+      "prompt": "Tick two statements that describe time changes."
+    },
+    "MC-0247": {
+      "correct": [
+        "Three equal notes fit in the time of two",
+        "A triplet may occur within simple time"
+      ],
+      "incorrect": [
+        "Three notes take the time of four",
+        "The three notes are unequal in length",
+        "Every bar must have three beats",
+        "The tempo must get faster"
+      ],
+      "prompt": "Tick two statements that describe triplets."
+    },
+    "MC-0248": {
+      "correct": [
+        "A bass instrument plays the bass line",
+        "A chordal instrument supplies the harmony"
+      ],
+      "incorrect": [
+        "A solo melody is played without backing",
+        "Only a high pedal note is held",
+        "The bass line is omitted",
+        "Only untuned percussion supplies the accompaniment"
+      ],
+      "prompt": "Tick two statements that describe basso continuo."
+    },
+    "MC-0249": {
+      "correct": [
+        "A small group of soloists contrasts with a larger group",
+        "It is a Baroque form"
+      ],
+      "incorrect": [
+        "Only one soloist is used by definition",
+        "It is a work for solo piano",
+        "It is a solo song with piano",
+        "It is a piece for four strings with no larger group"
+      ],
+      "prompt": "Tick two statements that describe a concerto grosso."
+    },
+    "MC-0250": {
+      "correct": [
+        "The form is A–B–A",
+        "The opening music returns after a contrasting section"
+      ],
+      "incorrect": [
+        "Each verse has entirely new music",
+        "The plan is A–B only",
+        "The main section returns between several episodes",
+        "It is a passage following speech rhythm"
+      ],
+      "prompt": "Tick two statements that describe a da capo aria."
+    },
+    "MC-0251": {
+      "correct": [
+        "It introduces the main musical ideas",
+        "In sonata form it presents the first and second subjects"
+      ],
+      "incorrect": [
+        "It develops themes after they have been introduced",
+        "It brings subjects back after the development",
+        "It is an extra closing coda",
+        "It is a bass pattern repeated throughout"
+      ],
+      "prompt": "Tick two statements about the exposition in sonata form."
+    },
+    "MC-0252": {
+      "correct": [
+        "A bass pattern keeps returning",
+        "The music above it is varied"
+      ],
+      "incorrect": [
+        "The bass is entirely new on each repeat",
+        "The form is one verse and chorus",
+        "The whole work is an unaccompanied vocal melody",
+        "It is the name of the concerto grosso’s small solo group"
+      ],
+      "prompt": "Tick two statements that describe a passacaglia."
+    },
+    "MC-0253": {
+      "correct": [
+        "A recurring passage returns between episodes",
+        "The term is associated with Baroque concertos"
+      ],
+      "incorrect": [
+        "The music has no returning material",
+        "It means a soloist’s unaccompanied cadenza",
+        "It is a final added closing section",
+        "It is a single held bass pitch"
+      ],
+      "prompt": "Tick two statements that describe ritornello form."
+    },
+    "MC-0254": {
+      "correct": [
+        "The exposition introduces contrasting subjects",
+        "The recapitulation brings the subjects back in the tonic key"
+      ],
+      "incorrect": [
+        "The whole form is only A–B",
+        "It is the name of any piece for a solo instrument",
+        "The development repeats the exposition unchanged",
+        "Only the first subject returns in the recapitulation"
+      ],
+      "prompt": "Tick two statements that describe sonata form."
+    },
+    "MC-0255": {
+      "correct": [
+        "It is a main musical theme",
+        "A work can have a first and second subject"
+      ],
+      "incorrect": [
+        "It is only a final closing coda",
+        "It is the name for a held bass note",
+        "It is a linking passage between two themes",
+        "It is the number of beats in a bar"
+      ],
+      "prompt": "Tick two statements about a subject in sonata form."
+    },
+    "MC-0256": {
+      "correct": [
+        "Successive verses use new music",
+        "The music follows changes in the text"
+      ],
+      "incorrect": [
+        "Each verse repeats the same music",
+        "The plan is always A–B–A",
+        "The same chorus returns after every verse",
+        "The work has no sung words"
+      ],
+      "prompt": "Tick two statements that describe through-composed music."
+    },
+    "MC-0257": {
+      "correct": [
+        "The voice sings rapid decorated passages",
+        "Scales, arpeggios and trills may be used"
+      ],
+      "incorrect": [
+        "Every word is spoken without pitch",
+        "Every note stays on one pitch",
+        "It is only a low bass accompaniment",
+        "It means a choir sings without instruments"
+      ],
+      "prompt": "Tick two statements that describe coloratura."
+    },
+    "MC-0258": {
+      "correct": [
+        "A small solo group is heard",
+        "It contrasts with the larger ripieno group"
+      ],
+      "incorrect": [
+        "It is the larger group in a concerto grosso",
+        "It is a single unaccompanied cadenza",
+        "It is the final coda",
+        "It is a choir singing a Mass"
+      ],
+      "prompt": "Tick two statements that describe the concertino in a concerto grosso."
+    },
+    "MC-0259": {
+      "correct": [
+        "The string is touched lightly",
+        "A high light tone is produced"
+      ],
+      "incorrect": [
+        "The string is pressed firmly to the fingerboard",
+        "A mute is fitted to the brass instrument",
+        "A wind player rolls their tongue",
+        "The bow plays rapid repeated strokes for tremolando"
+      ],
+      "prompt": "Tick two statements that describe string harmonics."
+    },
+    "MC-0260": {
+      "correct": [
+        "It is the larger group in a concerto grosso",
+        "It contrasts with the smaller concertino group"
+      ],
+      "incorrect": [
+        "It is the small solo group",
+        "It is a single unaccompanied soloist",
+        "It is the name of a cadenza",
+        "It is a quartet with no larger group"
+      ],
+      "prompt": "Tick two statements that describe the ripieno in a concerto grosso."
+    },
+    "MC-0261": {
+      "correct": [
+        "The bow moves back and forth rapidly",
+        "The string sound is sustained by repeated bow strokes"
+      ],
+      "incorrect": [
+        "The strings are plucked",
+        "The bow bounces for separate light notes",
+        "A brass instrument is muted",
+        "A wind player rolls their tongue"
+      ],
+      "prompt": "Tick two statements that describe tremolando."
+    },
+    "MC-0262": {
+      "correct": [
+        "It is a sacred choral work",
+        "English words are used"
+      ],
+      "incorrect": [
+        "It is a secular fa-la-la dance song",
+        "It is a German solo song with piano",
+        "It is an instrumental Renaissance dance",
+        "It is a solo operatic aria"
+      ],
+      "prompt": "Tick two statements that describe an anthem."
+    },
+    "MC-0263": {
+      "correct": [
+        "A solo voice sings a melody",
+        "A lute commonly provides the accompaniment"
+      ],
+      "incorrect": [
+        "It is a Latin choral Mass",
+        "It is a full orchestral symphony",
+        "It is a bagpipe variation form",
+        "It is an unaccompanied Gaelic work song"
+      ],
+      "prompt": "Tick two statements that describe a Renaissance ayre."
+    },
+    "MC-0264": {
+      "correct": [
+        "It is a secular part-song",
+        "A fa-la-la refrain is a common feature"
+      ],
+      "incorrect": [
+        "It is a sacred Latin choral work",
+        "It is a solo German art song",
+        "It is an instrumental pavan",
+        "It is a solo recitative in opera"
+      ],
+      "prompt": "Tick two statements that describe a ballett."
+    },
+    "MC-0265": {
+      "correct": [
+        "A hymn melody is harmonised",
+        "Four-part vocal harmony is common"
+      ],
+      "incorrect": [
+        "It is a wordless jazz improvisation",
+        "It is an unaccompanied Latin plainchant line",
+        "It is an instrumental Renaissance dance",
+        "It is a solo song with lute"
+      ],
+      "prompt": "Tick two statements that describe a chorale."
+    },
+    "MC-0266": {
+      "correct": [
+        "Jazz improvisation is used",
+        "Rhythms and harmonies may be complex"
+      ],
+      "incorrect": [
+        "It is defined by Renaissance dance forms",
+        "It is a German art song with piano",
+        "It is a solo pibroch for bagpipes",
+        "It excludes improvisation"
+      ],
+      "prompt": "Tick two statements that describe contemporary jazz."
+    },
+    "MC-0267": {
+      "correct": [
+        "Electronic sounds and synthesisers are used",
+        "A regular dance beat is common"
+      ],
+      "incorrect": [
+        "Only an unaccompanied choir is used",
+        "It is a Renaissance lute song",
+        "It is a solo bagpipe variation form",
+        "It is a German art song with piano"
+      ],
+      "prompt": "Tick two statements that describe electronic dance music."
+    },
+    "MC-0268": {
+      "correct": [
+        "It is a lively Renaissance dance",
+        "Three beats are normally felt in each bar"
+      ],
+      "incorrect": [
+        "It is a slow dance in duple time",
+        "It is a secular part-song with fa-la-la words",
+        "It is a German art song",
+        "It is a slow solo bagpipe variation form"
+      ],
+      "prompt": "Tick two statements that describe a galliard."
+    },
+    "MC-0269": {
+      "correct": [
+        "It is a secular song for voices",
+        "Imitation between voices is common"
+      ],
+      "incorrect": [
+        "It is a Latin sacred motet",
+        "It is a German solo song with piano",
+        "It is an instrumental pavan",
+        "It is a wordless jazz solo"
+      ],
+      "prompt": "Tick two statements that describe a madrigal."
+    },
+    "MC-0270": {
+      "correct": [
+        "It is a sacred choral work",
+        "Latin words are commonly used"
+      ],
+      "incorrect": [
+        "It is a secular fa-la-la dance song",
+        "It is a solo German song with piano",
+        "It is an instrumental Renaissance dance",
+        "It is a solo opera cadenza"
+      ],
+      "prompt": "Tick two statements that describe a motet."
+    },
+    "MC-0271": {
+      "correct": [
+        "Folk melodies may be used",
+        "National dance rhythms may be used"
+      ],
+      "incorrect": [
+        "Local folk music is deliberately excluded",
+        "Only twelve-tone rows may be used",
+        "It means music from the Classical period only",
+        "It is the name of a Renaissance dance"
+      ],
+      "prompt": "Tick two statements that describe Nationalist music."
+    },
+    "MC-0272": {
+      "correct": [
+        "Earlier forms and balanced phrases are reused",
+        "Modern harmony may be added"
+      ],
+      "incorrect": [
+        "It was composed only in the Classical period",
+        "It avoids all references to earlier music",
+        "It is defined by a solo Renaissance lute song",
+        "It requires a large Romantic orchestra in every work"
+      ],
+      "prompt": "Tick two statements that describe Neoclassical music."
+    },
+    "MC-0273": {
+      "correct": [
+        "It is a slow Renaissance dance",
+        "Two or four beats are normally felt in each bar"
+      ],
+      "incorrect": [
+        "It is a lively triple-time dance",
+        "It is a secular song with a fa-la-la refrain",
+        "It is a German art song",
+        "It is a solo bagpipe variation form"
+      ],
+      "prompt": "Tick two statements that describe a pavan."
+    },
+    "MC-0274": {
+      "correct": [
+        "Polyphony and imitation are common",
+        "Lutes, viols and recorders may be heard"
+      ],
+      "incorrect": [
+        "Synthesisers and drum machines define the period",
+        "The period followed Romantic music",
+        "A twelve-tone row is required in every piece",
+        "A distorted electric guitar is the defining instrument"
+      ],
+      "prompt": "Tick two statements that describe Renaissance music."
+    },
+    "MC-0275": {
+      "correct": [
+        "A twelve-note row provides the musical material",
+        "The row can be used backwards or inverted"
+      ],
+      "incorrect": [
+        "A five-note scale supplies all the material",
+        "Every phrase must settle on a major tonic",
+        "Only one unchanged tonic chord is used",
+        "It is based only on a twelve-bar blues pattern"
+      ],
+      "prompt": "Tick two statements that describe twelve-tone serial music."
+    },
+    "MC-0276": {
+      "correct": [
+        "A stressed note clashes with the chord",
+        "It resolves by step to a chord note"
+      ],
+      "incorrect": [
+        "A very short note is crushed before the main note",
+        "Two neighbours alternate in a trill",
+        "The pitch slides through an octave",
+        "All note values are doubled"
+      ],
+      "prompt": "Tick two statements that describe an appoggiatura."
+    },
+    "MC-0277": {
+      "correct": [
+        "The triad has three notes",
+        "The fifth of a major triad is raised"
+      ],
+      "incorrect": [
+        "The triad has a minor third and diminished fifth",
+        "Four notes are stacked in minor thirds",
+        "The fifth stays unchanged from a major triad",
+        "A sixth is added to a major triad"
+      ],
+      "prompt": "Tick two statements that describe an augmented triad."
+    },
+    "MC-0278": {
+      "correct": [
+        "Chord II is minor in a major key",
+        "Its third is in the bass in first inversion"
+      ],
+      "incorrect": [
+        "Chord II is major in a major key",
+        "Its root is in the bass in first inversion",
+        "Its fifth is in the bass in first inversion",
+        "Chord II is built on scale note 5"
+      ],
+      "prompt": "Tick two statements that describe chord II and its first inversion in a major key."
+    },
+    "MC-0279": {
+      "correct": [
+        "Chord VI is minor in a major key",
+        "Chord V is major in harmonic minor"
+      ],
+      "incorrect": [
+        "Chord IV is major in harmonic minor",
+        "Chord VI is minor in harmonic minor",
+        "A perfect cadence moves V to VI",
+        "An interrupted cadence moves IV to I"
+      ],
+      "prompt": "Tick two statements that describe chords I, IV, V and VI in major and minor keys."
+    },
+    "MC-0280": {
+      "correct": [
+        "Different keys sound at the same time",
+        "Bitonality uses exactly two keys"
+      ],
+      "incorrect": [
+        "One key follows another with no overlap",
+        "Every part uses the same key",
+        "Every part has no tonal centre",
+        "It means three beats against two"
+      ],
+      "prompt": "Tick two statements that describe polytonality or bitonality."
+    },
+    "MC-0281": {
+      "correct": [
+        "A note is held into a new chord",
+        "The held note clashes before resolving"
+      ],
+      "incorrect": [
+        "A new pitch starts on every chord change",
+        "The melody is played backwards",
+        "A short grace note is crushed before the beat",
+        "The bass repeats one note with no resolution"
+      ],
+      "prompt": "Tick two statements that describe a suspension."
+    },
+    "MC-0282": {
+      "correct": [
+        "All twelve chromatic pitches appear in a set order",
+        "The row can be transformed by inversion or retrograde"
+      ],
+      "incorrect": [
+        "Only five pentatonic pitches are used",
+        "Only the three notes of a major triad are used",
+        "One pitch is repeated throughout",
+        "The notes must follow a major scale"
+      ],
+      "prompt": "Tick two statements that describe a tone row."
+    },
+    "MC-0283": {
+      "correct": [
+        "The interval spans three tones",
+        "C to F-sharp is a tritone"
+      ],
+      "incorrect": [
+        "The interval spans two semitones",
+        "C to F is a tritone",
+        "C to G is a tritone",
+        "The interval is an octave"
+      ],
+      "prompt": "Tick two statements that describe a tritone."
+    },
+    "MC-0284": {
+      "correct": [
+        "The ornament uses neighbours above and below the main note",
+        "The figure returns to the main note"
+      ],
+      "incorrect": [
+        "Only the upper neighbour alternates in a long trill",
+        "The pitch slides through an octave",
+        "One pitch repeats without neighbours",
+        "The whole melody is played backwards"
+      ],
+      "prompt": "Tick two statements that describe a turn."
+    },
+    "MC-0285": {
+      "correct": [
+        "Two groups of three can become three groups of two",
+        "The underlying note lengths can stay the same"
+      ],
+      "incorrect": [
+        "The tempo must gradually slow",
+        "The key must change",
+        "Each bar must contain five equal beats",
+        "Two neighbouring pitches alternate rapidly"
+      ],
+      "prompt": "Tick two statements that describe hemiola."
+    },
+    "MC-0286": {
+      "correct": [
+        "Another voice imitates the subject",
+        "The subject is restated at a new pitch"
+      ],
+      "incorrect": [
+        "It is the first subject entry in the first voice",
+        "It is the recurring countermelody",
+        "It is the final closing coda",
+        "It is a linking bridge in sonata form"
+      ],
+      "prompt": "Tick two statements that describe the answer in a fugue."
+    },
+    "MC-0287": {
+      "correct": [
+        "Two groups answer each other",
+        "The groups take turns with musical phrases"
+      ],
+      "incorrect": [
+        "Both groups play together throughout, without answering",
+        "One performer repeats a bass note alone",
+        "Every part doubles one melody in unison",
+        "The melody is played backwards"
+      ],
+      "prompt": "Tick two statements that describe antiphonal music."
+    },
+    "MC-0288": {
+      "correct": [
+        "It links the subjects in sonata form",
+        "It often moves towards the second subject’s key"
+      ],
+      "incorrect": [
+        "It is the final closing coda",
+        "It is the fugue’s recurring countermelody",
+        "It is the first entry of a fugue subject",
+        "It is the development section after the exposition"
+      ],
+      "prompt": "Tick two statements that describe the bridge in sonata form."
+    },
+    "MC-0289": {
+      "correct": [
+        "It is a countermelody in a fugue",
+        "It can return alongside later subject entries"
+      ],
+      "incorrect": [
+        "It is the second entry of the subject",
+        "It is the first subject entry",
+        "It is the final coda",
+        "It is a linking passage in sonata form"
+      ],
+      "prompt": "Tick two statements that describe a countersubject in a fugue."
+    },
+    "MC-0290": {
+      "correct": [
+        "Parts enter in turn with a subject or answer",
+        "Independent melodic lines overlap"
+      ],
+      "incorrect": [
+        "All parts start together in unison",
+        "One melody has only block-chord backing",
+        "The form is verse and chorus",
+        "It is a solo song with lute accompaniment"
+      ],
+      "prompt": "Tick two statements that describe a fugue."
+    },
+    "MC-0292": {
+      "correct": [
+        "A short idea is linked to a character, place or idea",
+        "The idea may change when it returns"
+      ],
+      "incorrect": [
+        "It is one bass note held throughout",
+        "It is a final major chord in a minor piece",
+        "It can be heard only once",
+        "It is a change in note lengths only"
+      ],
+      "prompt": "Tick two statements that describe a leitmotif."
+    },
+    "MC-0294": {
+      "correct": [
+        "The songs share a theme or story",
+        "A solo voice and piano often perform them"
+      ],
+      "incorrect": [
+        "It is one instrumental sonata movement",
+        "It is one repeated sung phrase",
+        "It is a group of unrelated instrumental dances",
+        "It is a single unaccompanied plainchant melody"
+      ],
+      "prompt": "Tick two statements that describe a song cycle."
+    },
+    "MC-0295": {
+      "correct": [
+        "A new subject entry starts before the previous one ends",
+        "The overlap can make the music more intense"
+      ],
+      "incorrect": [
+        "Each entry waits until the previous subject ends",
+        "All voices sing the subject in unison",
+        "It is a bass note held under changing chords",
+        "It is a contrasting middle 8"
+      ],
+      "prompt": "Tick two statements that describe stretto."
+    },
+    "MC-0296": {
+      "correct": [
+        "The subject is the main idea in a fugue",
+        "It returns in different voices"
+      ],
+      "incorrect": [
+        "It is the accompanying countersubject",
+        "It is only the second entry of the opening idea",
+        "It is the final coda",
+        "It is a bridge between sonata subjects"
+      ],
+      "prompt": "Tick two statements about the subject in a fugue."
+    },
+    "MC-0297": {
+      "correct": [
+        "It is a group of instruments",
+        "A whole consort uses one instrument family"
+      ],
+      "incorrect": [
+        "It is a solo voice with piano",
+        "It is a full choir and orchestra",
+        "A whole consort must mix unrelated families",
+        "It is always one solo instrument"
+      ],
+      "prompt": "Tick two statements that describe a consort."
+    },
+    "MC-0298": {
+      "correct": [
+        "It is a high adult male voice",
+        "Its range may overlap alto"
+      ],
+      "incorrect": [
+        "It is the lowest male voice",
+        "It lies below bass",
+        "It is a high child voice",
+        "It is a low female voice"
+      ],
+      "prompt": "Tick two statements that describe a countertenor voice."
+    },
+    "MC-0299": {
+      "correct": [
+        "Piano, violin and cello form the group",
+        "There is one player on each part"
+      ],
+      "incorrect": [
+        "Three pianos form the group",
+        "Piano, viola and double bass form the standard group",
+        "Two violins, viola and cello form the group",
+        "Piano, bass guitar and drums form the Classical chamber group"
+      ],
+      "prompt": "Tick two statements that describe a Classical piano trio."
+    },
+    "MC-0300": {
+      "correct": [
+        "The delivery is between speech and singing",
+        "The voice follows speech-like pitch shapes"
+      ],
+      "incorrect": [
+        "Every pitch is sustained as a smooth lyrical melody",
+        "It is a choir singing without instruments",
+        "It is a wordless jazz improvisation",
+        "It means one note per syllable in a hymn"
+      ],
+      "prompt": "Tick two statements that describe sprechgesang."
+    }
+  },
+  "questionOverrides": {
+    "CQ-N4-MC0080-01": {
+      "prompt": "What happens in a broken chord? Tick one box.",
+      "correct": [
+        "The chord notes sound one after another"
+      ],
+      "incorrect": [
+        "The chord notes all sound together",
+        "The same bass note is held throughout",
+        "Two neighbouring notes alternate rapidly"
+      ]
+    },
+    "CQ-N4-MC0087-01": {
+      "prompt": "What does an ornament add to a melody? Tick one box.",
+      "correct": [
+        "Extra decorative notes"
+      ],
+      "incorrect": [
+        "A new key",
+        "A repeated bass pattern",
+        "A different time signature"
+      ]
+    },
+    "CQ-N4-MC0091-01": {
+      "prompt": "What does a scat singer use? Tick one box.",
+      "correct": [
+        "Improvised sounds such as doo or ba"
+      ],
+      "incorrect": [
+        "Rhythmically spoken rap words",
+        "Words from a Scots story",
+        "Gaelic words for a dance song"
+      ]
+    },
+    "CQ-N4-MC0093-01": {
+      "prompt": "Which pattern is a vamp? Tick one box.",
+      "correct": [
+        "Bass notes alternating with chords"
+      ],
+      "incorrect": [
+        "A single bass note held throughout",
+        "A scale played upwards and downwards",
+        "The melody copied by another part"
+      ]
+    },
+    "CQ-N4-MC0104-01": {
+      "prompt": "Which rhythm is typical of a strathspey? Tick one box.",
+      "correct": [
+        "Scotch snap"
+      ],
+      "incorrect": [
+        "Three equal parts in each main beat",
+        "A steady waltz rhythm",
+        "A fast reel rhythm without Scotch snaps"
+      ]
+    },
+    "CQ-N4-MC0107-01": {
+      "prompt": "What happens in a canon? Tick one box.",
+      "correct": [
+        "Another part follows with the same melody"
+      ],
+      "incorrect": [
+        "All parts start together in unison",
+        "One part repeats its own phrase at a new pitch",
+        "One melody has block-chord backing"
+      ]
+    },
+    "CQ-N4-MC0109-01": {
+      "prompt": "What is a middle 8? Tick one box.",
+      "correct": [
+        "A contrasting section in a song"
+      ],
+      "incorrect": [
+        "The song’s repeated main chorus",
+        "The opening instrumental introduction",
+        "A repeated bass accompaniment"
+      ]
+    },
+    "CQ-N4-MC0112-01": {
+      "prompt": "How do the words usually change between verse and chorus? Tick one box.",
+      "correct": [
+        "Verses have new words; the chorus repeats familiar words"
+      ],
+      "incorrect": [
+        "Every verse repeats the same words",
+        "The chorus uses new words every time",
+        "The verse and chorus use no words"
+      ]
+    },
+    "CQ-N4-MC0117-01": {
+      "prompt": "What is the bass guitar’s usual role in a band? Tick one box.",
+      "correct": [
+        "To provide a low line supporting the chords and beat"
+      ],
+      "incorrect": [
+        "To play the lead vocal melody throughout",
+        "To provide only off-beat chords",
+        "To play high decorative notes above the singer"
+      ]
+    },
+    "CQ-N4-MC0139-Q02": {
+      "prompt": "Which instrument usually changes pitch using a slide? Tick one box.",
+      "correct": [
+        "Trombone"
+      ],
+      "incorrect": [
+        "Trumpet",
+        "Saxophone",
+        "Clarinet"
+      ]
+    },
+    "CQ-N5-MC0164-01": {
+      "prompt": "What does a grace note do? Tick one box.",
+      "correct": [
+        "Decorates a main note"
+      ],
+      "incorrect": [
+        "Holds a bass pitch under changing chords",
+        "Changes the home key",
+        "Repeats a phrase at a new pitch"
+      ]
+    },
+    "CQ-N5-MC0165-F02": {
+      "prompt": "How does an imperfect cadence sound? Tick one box.",
+      "correct": [
+        "Unfinished, as it ends on chord V"
+      ],
+      "incorrect": [
+        "Complete, ending V to I",
+        "Complete, ending IV to I",
+        "Unexpected, ending V to VI"
+      ]
+    },
+    "CQ-N5-MC0166-01": {
+      "prompt": "Where is the fixed note in an inverted pedal? Tick one box.",
+      "correct": [
+        "In an upper part above changing harmony"
+      ],
+      "incorrect": [
+        "In the bass below changing chords",
+        "In every part moving in unison",
+        "In a repeated low–high–middle–high bass pattern"
+      ]
+    },
+    "CQ-N5-MC0167-F02": {
+      "prompt": "A singer sings six notes on one syllable. What word setting is this? Tick one box.",
+      "correct": [
+        "Melismatic"
+      ],
+      "incorrect": [
+        "Syllabic",
+        "Scat singing",
+        "Rapping"
+      ]
+    },
+    "CQ-N5-MC0168-01": {
+      "prompt": "What changes in a modulation? Tick one box.",
+      "correct": [
+        "The home key"
+      ],
+      "incorrect": [
+        "The tempo",
+        "The time signature",
+        "The texture"
+      ]
+    },
+    "CQ-N5-MC0169-F02": {
+      "prompt": "Which ending gives a perfect cadence? Tick one box.",
+      "correct": [
+        "V to I"
+      ],
+      "incorrect": [
+        "A phrase ending on V",
+        "IV to I",
+        "V to VI"
+      ],
+      "feedback": "A perfect cadence moves V to I and sounds complete."
+    },
+    "CQ-N5-MC0172-01": {
+      "prompt": "What happens in syllabic word setting? Tick one box.",
+      "correct": [
+        "One note is sung on each syllable"
+      ],
+      "incorrect": [
+        "Several notes are sung on each syllable",
+        "Nonsense syllables are improvised",
+        "Words are spoken rhythmically to a beat"
+      ]
+    },
+    "CQ-N5-MC0178-01": {
+      "prompt": "What does moderato mean? Tick one box.",
+      "correct": [
+        "At a moderate tempo"
+      ],
+      "incorrect": [
+        "At a slow tempo",
+        "At a fast lively tempo",
+        "At a walking pace"
+      ]
+    },
+    "CQ-H-MC0214-01": {
+      "prompt": "Which group would perform chamber music? Tick one box.",
+      "correct": [
+        "A small instrumental ensemble"
+      ],
+      "incorrect": [
+        "A full symphony orchestra",
+        "A massed choir",
+        "A full brass band"
+      ]
+    },
+    "CQ-H-MC0216-F02": {
+      "prompt": "Which instruments often drive a jazz-funk rhythm? Tick one box.",
+      "correct": [
+        "Electric bass and drum kit"
+      ],
+      "incorrect": [
+        "Double bass and harpsichord",
+        "Violin and piano",
+        "Lute and recorder"
+      ]
+    },
+    "CQ-H-MC0223-01": {
+      "prompt": "Which group could perform a sonata? Tick one box.",
+      "correct": [
+        "Violin and piano"
+      ],
+      "incorrect": [
+        "Choir and orchestra",
+        "Soloist and orchestra",
+        "Two violins, viola and cello"
+      ]
+    },
+    "CQ-H-MC0224-01": {
+      "prompt": "Which singing style is typical of soul music? Tick one box.",
+      "correct": [
+        "Expressive singing with vocal decoration"
+      ],
+      "incorrect": [
+        "Speech-like recitative with sparse backing",
+        "Unison plainchant with free rhythm",
+        "German art-song singing with piano"
+      ]
+    },
+    "CQ-H-MC0226-01": {
+      "prompt": "How is an acciaccatura played? Tick one box.",
+      "correct": [
+        "As a very short note near the main note"
+      ],
+      "incorrect": [
+        "As a leaning note taking much of the main note’s time",
+        "As repeated alternation with the upper neighbour",
+        "As a main-note–neighbour–main-note figure"
+      ]
+    },
+    "CQ-H-MC0227-01": {
+      "prompt": "Which note is added to a triad in an added-sixth chord? Tick one box.",
+      "correct": [
+        "The sixth above the root"
+      ],
+      "incorrect": [
+        "The seventh above the root",
+        "The fourth above the root",
+        "The second above the root"
+      ]
+    },
+    "CQ-H-MC0232-F02": {
+      "prompt": "Which chord movement gives an interrupted cadence? Tick one box.",
+      "correct": [
+        "V to VI"
+      ],
+      "incorrect": [
+        "V to I",
+        "IV to I",
+        "I to V"
+      ],
+      "feedback": "An interrupted cadence moves V to VI instead of the expected tonic chord."
+    },
+    "CQ-H-MC0235-01": {
+      "prompt": "What gives each mode its sound? Tick one box.",
+      "correct": [
+        "Its pattern of tones and semitones"
+      ],
+      "incorrect": [
+        "Its tempo marking",
+        "Its time signature",
+        "Its orchestral instruments"
+      ]
+    },
+    "CQ-H-MC0237-01": {
+      "prompt": "What is an obbligato? Tick one box.",
+      "correct": [
+        "A prominent instrumental melody beside the main melody"
+      ],
+      "incorrect": [
+        "A repeated single bass note",
+        "A vocal line doubling the melody in unison",
+        "A series of block chords with no separate melody"
+      ]
+    },
+    "CQ-AH-MC0289-F02": {
+      "prompt": "What is a countersubject in a fugue? Tick one box.",
+      "correct": [
+        "A recurring countermelody beside the subject or answer"
+      ],
+      "incorrect": [
+        "The first statement of the main subject",
+        "The subject’s next entry at a new pitch",
+        "The final closing section"
+      ]
+    },
+    "CQ-AH-MC0290-01": {
+      "prompt": "How does a fugue usually begin? Tick one box.",
+      "correct": [
+        "The voices enter in turn with the subject or answer"
+      ],
+      "incorrect": [
+        "All voices start together in unison",
+        "A single melody is supported only by chords",
+        "A repeated bass pattern accompanies a solo throughout"
+      ]
+    },
+    "CQ-AH-MC0300-F02": {
+      "prompt": "Which description fits sprechgesang? Tick one box.",
+      "correct": [
+        "A voice between speech and singing"
+      ],
+      "incorrect": [
+        "A smooth lyrical operatic solo",
+        "Improvised jazz syllables",
+        "One sustained note per syllable in a hymn"
+      ]
+    }
+  },
+  "definitions": {
+    "MC-0070": "Music from about 1600 to 1750, often with ornaments, imitation and harpsichord.",
+    "MC-0078": "A traditional song in Scots that tells a story.",
+    "MC-0099": "A long-short rhythm, often using a dotted quaver followed by a semiquaver.",
+    "MC-0106": "A showy solo passage in a concerto, usually while the orchestra is silent.",
+    "MC-0110": "Music with three sections in an A–B–A pattern.",
+    "MC-0118": "A group of brass instruments, usually with percussion.",
+    "MC-0131": "A woodwind instrument with finger holes and a whistle-like mouthpiece.",
+    "MC-0138": "A triangular metal percussion instrument struck with a beater.",
+    "MC-0159": "A group of closely spaced notes played together.",
+    "MC-0164": "A short extra note that decorates a main note.",
+    "MC-0182": "Music with two main sections, A and B.",
+    "MC-0194": "A male voice between tenor and bass.",
+    "MC-0214": "Music for a small instrumental group, usually one player per part.",
+    "MC-0215": "A style using tone colour, blurred harmony and scales such as the whole-tone scale to create a mood.",
+    "MC-0222": "Solo singing that follows speech rhythm to move a story forward.",
+    "MC-0223": "A work for a solo instrument, sometimes with piano, usually in several movements.",
+    "MC-0233": "The distance in pitch between two notes.",
+    "MC-0236": "A brief decoration moving from the main note to a neighbouring note and back.",
+    "MC-0237": "A prominent instrumental melody played alongside the main melody.",
+    "MC-0241": "A minor-key piece ends with a major tonic chord.",
+    "MC-0263": "A song for solo voice with lute accompaniment.",
+    "MC-0277": "A major triad with its fifth raised by a semitone.",
+    "MC-0281": "A note held into a new chord creates a clash, then resolves.",
+    "MC-0283": "An interval of three tones, such as C to F-sharp.",
+    "MC-0284": "An ornament using the notes above and below the main note.",
+    "MC-0291": "A melody’s intervals change direction: rising intervals fall, and falling intervals rise.",
+    "MC-0294": "A set of songs linked by a theme or story.",
+    "MC-0300": "A vocal technique between speech and singing."
+  },
+  "audioGroups": [
+    {
+      "name": "periods",
+      "conceptIds": [
+        "MC-0070",
+        "MC-0077",
+        "MC-0148",
+        "MC-0215",
+        "MC-0271",
+        "MC-0272",
+        "MC-0274"
+      ]
+    },
+    {
+      "name": "jazz-pop",
+      "conceptIds": [
+        "MC-0001",
+        "MC-0002",
+        "MC-0005",
+        "MC-0006",
+        "MC-0007",
+        "MC-0074",
+        "MC-0075",
+        "MC-0076",
+        "MC-0079",
+        "MC-0146",
+        "MC-0216",
+        "MC-0224",
+        "MC-0266",
+        "MC-0267"
+      ]
+    },
+    {
+      "name": "scottish-songs",
+      "conceptIds": [
+        "MC-0072",
+        "MC-0078",
+        "MC-0145",
+        "MC-0149",
+        "MC-0153",
+        "MC-0155"
+      ]
+    },
+    {
+      "name": "vocal-works",
+      "conceptIds": [
+        "MC-0004",
+        "MC-0073",
+        "MC-0144",
+        "MC-0147",
+        "MC-0150",
+        "MC-0217",
+        "MC-0218",
+        "MC-0220",
+        "MC-0221",
+        "MC-0222",
+        "MC-0250",
+        "MC-0256",
+        "MC-0262",
+        "MC-0263",
+        "MC-0264",
+        "MC-0265",
+        "MC-0269",
+        "MC-0270",
+        "MC-0294",
+        "MC-0300"
+      ]
+    },
+    {
+      "name": "instrumental-works",
+      "conceptIds": [
+        "MC-0071",
+        "MC-0154",
+        "MC-0214",
+        "MC-0223",
+        "MC-0249"
+      ]
+    },
+    {
+      "name": "dances",
+      "conceptIds": [
+        "MC-0027",
+        "MC-0031",
+        "MC-0033",
+        "MC-0100",
+        "MC-0104",
+        "MC-0268",
+        "MC-0273"
+      ]
+    },
+    {
+      "name": "ensembles",
+      "conceptIds": [
+        "MC-0048",
+        "MC-0052",
+        "MC-0054",
+        "MC-0059",
+        "MC-0061",
+        "MC-0118",
+        "MC-0142",
+        "MC-0225",
+        "MC-0297",
+        "MC-0299"
+      ]
+    },
+    {
+      "name": "bowed-strings",
+      "conceptIds": [
+        "MC-0051",
+        "MC-0119",
+        "MC-0123",
+        "MC-0213"
+      ]
+    },
+    {
+      "name": "plucked-strings",
+      "conceptIds": [
+        "MC-0042",
+        "MC-0043",
+        "MC-0050",
+        "MC-0117",
+        "MC-0127",
+        "MC-0199",
+        "MC-0210"
+      ]
+    },
+    {
+      "name": "woodwind",
+      "conceptIds": [
+        "MC-0120",
+        "MC-0124",
+        "MC-0130",
+        "MC-0131",
+        "MC-0132",
+        "MC-0195",
+        "MC-0205",
+        "MC-0206"
+      ]
+    },
+    {
+      "name": "brass",
+      "conceptIds": [
+        "MC-0139",
+        "MC-0140",
+        "MC-0202",
+        "MC-0212"
+      ]
+    },
+    {
+      "name": "percussion",
+      "conceptIds": [
+        "MC-0049",
+        "MC-0056",
+        "MC-0061",
+        "MC-0116",
+        "MC-0121",
+        "MC-0125",
+        "MC-0126",
+        "MC-0133",
+        "MC-0135",
+        "MC-0137",
+        "MC-0138",
+        "MC-0143",
+        "MC-0196",
+        "MC-0197",
+        "MC-0198",
+        "MC-0203",
+        "MC-0211"
+      ]
+    },
+    {
+      "name": "voices",
+      "conceptIds": [
+        "MC-0113",
+        "MC-0115",
+        "MC-0134",
+        "MC-0136",
+        "MC-0194",
+        "MC-0204",
+        "MC-0298"
+      ]
+    },
+    {
+      "name": "keyboards",
+      "conceptIds": [
+        "MC-0055",
+        "MC-0057",
+        "MC-0128"
+      ]
+    },
+    {
+      "name": "ornaments",
+      "conceptIds": [
+        "MC-0087",
+        "MC-0164",
+        "MC-0174",
+        "MC-0226",
+        "MC-0236",
+        "MC-0276",
+        "MC-0284"
+      ]
+    },
+    {
+      "name": "chords",
+      "conceptIds": [
+        "MC-0010",
+        "MC-0013",
+        "MC-0080",
+        "MC-0159",
+        "MC-0227",
+        "MC-0228",
+        "MC-0229",
+        "MC-0230",
+        "MC-0277",
+        "MC-0278"
+      ]
+    },
+    {
+      "name": "progressions",
+      "conceptIds": [
+        "MC-0011",
+        "MC-0082",
+        "MC-0157",
+        "MC-0279"
+      ]
+    },
+    {
+      "name": "cadences",
+      "conceptIds": [
+        "MC-0165",
+        "MC-0169",
+        "MC-0232",
+        "MC-0238",
+        "MC-0241"
+      ]
+    },
+    {
+      "name": "tonalities",
+      "conceptIds": [
+        "MC-0084",
+        "MC-0085",
+        "MC-0156",
+        "MC-0235",
+        "MC-0280"
+      ]
+    },
+    {
+      "name": "scales",
+      "conceptIds": [
+        "MC-0089",
+        "MC-0090",
+        "MC-0158",
+        "MC-0175",
+        "MC-0231",
+        "MC-0234"
+      ]
+    },
+    {
+      "name": "pitch-gaps",
+      "conceptIds": [
+        "MC-0015",
+        "MC-0019",
+        "MC-0086",
+        "MC-0171",
+        "MC-0173",
+        "MC-0233",
+        "MC-0283"
+      ]
+    },
+    {
+      "name": "melodic-direction",
+      "conceptIds": [
+        "MC-0009",
+        "MC-0012",
+        "MC-0160"
+      ]
+    },
+    {
+      "name": "phrase-patterns",
+      "conceptIds": [
+        "MC-0016",
+        "MC-0017",
+        "MC-0018",
+        "MC-0108",
+        "MC-0243",
+        "MC-0244",
+        "MC-0291",
+        "MC-0292",
+        "MC-0293"
+      ]
+    },
+    {
+      "name": "accompaniment",
+      "conceptIds": [
+        "MC-0037",
+        "MC-0083",
+        "MC-0088",
+        "MC-0093",
+        "MC-0166",
+        "MC-0181",
+        "MC-0186",
+        "MC-0191",
+        "MC-0248"
+      ]
+    },
+    {
+      "name": "rhythm",
+      "conceptIds": [
+        "MC-0021",
+        "MC-0024",
+        "MC-0028",
+        "MC-0029",
+        "MC-0099",
+        "MC-0102",
+        "MC-0105",
+        "MC-0177",
+        "MC-0242",
+        "MC-0247",
+        "MC-0285"
+      ]
+    },
+    {
+      "name": "metre",
+      "conceptIds": [
+        "MC-0020",
+        "MC-0098",
+        "MC-0103",
+        "MC-0176",
+        "MC-0245",
+        "MC-0246"
+      ]
+    },
+    {
+      "name": "tempo",
+      "conceptIds": [
+        "MC-0022",
+        "MC-0023",
+        "MC-0026",
+        "MC-0032",
+        "MC-0094",
+        "MC-0095",
+        "MC-0097",
+        "MC-0101",
+        "MC-0178",
+        "MC-0179",
+        "MC-0180"
+      ]
+    },
+    {
+      "name": "forms",
+      "conceptIds": [
+        "MC-0107",
+        "MC-0109",
+        "MC-0110",
+        "MC-0111",
+        "MC-0112",
+        "MC-0182",
+        "MC-0183",
+        "MC-0189",
+        "MC-0190",
+        "MC-0250",
+        "MC-0251",
+        "MC-0252",
+        "MC-0253",
+        "MC-0254",
+        "MC-0255",
+        "MC-0256",
+        "MC-0282",
+        "MC-0286",
+        "MC-0288",
+        "MC-0289",
+        "MC-0290",
+        "MC-0294",
+        "MC-0295",
+        "MC-0296"
+      ]
+    },
+    {
+      "name": "vocal-techniques",
+      "conceptIds": [
+        "MC-0091",
+        "MC-0167",
+        "MC-0172",
+        "MC-0192",
+        "MC-0257",
+        "MC-0300"
+      ]
+    },
+    {
+      "name": "playing-techniques",
+      "conceptIds": [
+        "MC-0046",
+        "MC-0053",
+        "MC-0058",
+        "MC-0060",
+        "MC-0064",
+        "MC-0163",
+        "MC-0170",
+        "MC-0193",
+        "MC-0201",
+        "MC-0207",
+        "MC-0259",
+        "MC-0261"
+      ]
+    },
+    {
+      "name": "sound-effects",
+      "conceptIds": [
+        "MC-0122",
+        "MC-0129",
+        "MC-0200",
+        "MC-0208"
+      ]
+    },
+    {
+      "name": "textures",
+      "conceptIds": [
+        "MC-0034",
+        "MC-0035",
+        "MC-0038",
+        "MC-0039",
+        "MC-0040",
+        "MC-0041",
+        "MC-0107",
+        "MC-0184",
+        "MC-0187",
+        "MC-0188",
+        "MC-0287"
+      ]
+    },
+    {
+      "name": "concerto-groups",
+      "conceptIds": [
+        "MC-0054",
+        "MC-0071",
+        "MC-0214",
+        "MC-0225",
+        "MC-0248",
+        "MC-0249",
+        "MC-0258",
+        "MC-0260",
+        "MC-0297",
+        "MC-0299"
+      ]
+    },
+    {
+      "name": "vocal-delivery",
+      "conceptIds": [
+        "MC-0075",
+        "MC-0091",
+        "MC-0167",
+        "MC-0172",
+        "MC-0222",
+        "MC-0257",
+        "MC-0300"
+      ]
+    }
+  ],
+  "preferredAudioGroups": {
+    "MC-0070": "periods",
+    "MC-0077": "periods",
+    "MC-0148": "periods",
+    "MC-0215": "periods",
+    "MC-0271": "periods",
+    "MC-0272": "periods",
+    "MC-0274": "periods",
+    "MC-0001": "jazz-pop",
+    "MC-0002": "jazz-pop",
+    "MC-0005": "jazz-pop",
+    "MC-0006": "jazz-pop",
+    "MC-0007": "jazz-pop",
+    "MC-0074": "jazz-pop",
+    "MC-0075": "jazz-pop",
+    "MC-0076": "jazz-pop",
+    "MC-0079": "jazz-pop",
+    "MC-0146": "jazz-pop",
+    "MC-0216": "jazz-pop",
+    "MC-0224": "jazz-pop",
+    "MC-0266": "jazz-pop",
+    "MC-0267": "jazz-pop",
+    "MC-0072": "scottish-songs",
+    "MC-0078": "scottish-songs",
+    "MC-0145": "scottish-songs",
+    "MC-0149": "scottish-songs",
+    "MC-0153": "scottish-songs",
+    "MC-0155": "scottish-songs",
+    "MC-0004": "vocal-works",
+    "MC-0073": "vocal-works",
+    "MC-0144": "vocal-works",
+    "MC-0147": "vocal-works",
+    "MC-0150": "vocal-works",
+    "MC-0217": "vocal-works",
+    "MC-0218": "vocal-works",
+    "MC-0220": "vocal-works",
+    "MC-0221": "vocal-works",
+    "MC-0222": "vocal-delivery",
+    "MC-0250": "vocal-works",
+    "MC-0256": "vocal-works",
+    "MC-0262": "vocal-works",
+    "MC-0263": "vocal-works",
+    "MC-0264": "vocal-works",
+    "MC-0265": "vocal-works",
+    "MC-0269": "vocal-works",
+    "MC-0270": "vocal-works",
+    "MC-0294": "vocal-works",
+    "MC-0300": "vocal-delivery",
+    "MC-0071": "instrumental-works",
+    "MC-0154": "instrumental-works",
+    "MC-0214": "instrumental-works",
+    "MC-0223": "instrumental-works",
+    "MC-0249": "instrumental-works",
+    "MC-0027": "dances",
+    "MC-0031": "dances",
+    "MC-0033": "dances",
+    "MC-0100": "dances",
+    "MC-0104": "dances",
+    "MC-0268": "dances",
+    "MC-0273": "dances",
+    "MC-0048": "ensembles",
+    "MC-0052": "ensembles",
+    "MC-0054": "ensembles",
+    "MC-0059": "ensembles",
+    "MC-0061": "ensembles",
+    "MC-0118": "ensembles",
+    "MC-0142": "ensembles",
+    "MC-0225": "ensembles",
+    "MC-0297": "ensembles",
+    "MC-0299": "ensembles",
+    "MC-0051": "bowed-strings",
+    "MC-0119": "bowed-strings",
+    "MC-0123": "bowed-strings",
+    "MC-0213": "bowed-strings",
+    "MC-0042": "plucked-strings",
+    "MC-0043": "plucked-strings",
+    "MC-0050": "plucked-strings",
+    "MC-0117": "plucked-strings",
+    "MC-0127": "plucked-strings",
+    "MC-0199": "plucked-strings",
+    "MC-0210": "plucked-strings",
+    "MC-0120": "woodwind",
+    "MC-0124": "woodwind",
+    "MC-0130": "woodwind",
+    "MC-0131": "woodwind",
+    "MC-0132": "woodwind",
+    "MC-0195": "woodwind",
+    "MC-0205": "woodwind",
+    "MC-0206": "woodwind",
+    "MC-0139": "brass",
+    "MC-0140": "brass",
+    "MC-0202": "brass",
+    "MC-0212": "brass",
+    "MC-0049": "percussion",
+    "MC-0056": "percussion",
+    "MC-0116": "percussion",
+    "MC-0121": "percussion",
+    "MC-0125": "percussion",
+    "MC-0126": "percussion",
+    "MC-0133": "percussion",
+    "MC-0135": "percussion",
+    "MC-0137": "percussion",
+    "MC-0138": "percussion",
+    "MC-0143": "percussion",
+    "MC-0196": "percussion",
+    "MC-0197": "percussion",
+    "MC-0198": "percussion",
+    "MC-0203": "percussion",
+    "MC-0211": "percussion",
+    "MC-0113": "voices",
+    "MC-0115": "voices",
+    "MC-0134": "voices",
+    "MC-0136": "voices",
+    "MC-0194": "voices",
+    "MC-0204": "voices",
+    "MC-0298": "voices",
+    "MC-0055": "keyboards",
+    "MC-0057": "keyboards",
+    "MC-0128": "keyboards",
+    "MC-0087": "ornaments",
+    "MC-0164": "ornaments",
+    "MC-0174": "ornaments",
+    "MC-0226": "ornaments",
+    "MC-0236": "ornaments",
+    "MC-0276": "ornaments",
+    "MC-0284": "ornaments",
+    "MC-0010": "chords",
+    "MC-0013": "chords",
+    "MC-0080": "chords",
+    "MC-0159": "chords",
+    "MC-0227": "chords",
+    "MC-0228": "chords",
+    "MC-0229": "chords",
+    "MC-0230": "chords",
+    "MC-0277": "chords",
+    "MC-0278": "chords",
+    "MC-0011": "progressions",
+    "MC-0082": "progressions",
+    "MC-0157": "progressions",
+    "MC-0279": "progressions",
+    "MC-0165": "cadences",
+    "MC-0169": "cadences",
+    "MC-0232": "cadences",
+    "MC-0238": "cadences",
+    "MC-0241": "cadences",
+    "MC-0084": "tonalities",
+    "MC-0085": "tonalities",
+    "MC-0156": "tonalities",
+    "MC-0235": "tonalities",
+    "MC-0280": "tonalities",
+    "MC-0089": "scales",
+    "MC-0090": "scales",
+    "MC-0158": "scales",
+    "MC-0175": "scales",
+    "MC-0231": "scales",
+    "MC-0234": "scales",
+    "MC-0015": "pitch-gaps",
+    "MC-0019": "pitch-gaps",
+    "MC-0086": "pitch-gaps",
+    "MC-0171": "pitch-gaps",
+    "MC-0173": "pitch-gaps",
+    "MC-0233": "pitch-gaps",
+    "MC-0283": "pitch-gaps",
+    "MC-0009": "melodic-direction",
+    "MC-0012": "melodic-direction",
+    "MC-0160": "melodic-direction",
+    "MC-0016": "phrase-patterns",
+    "MC-0017": "phrase-patterns",
+    "MC-0018": "phrase-patterns",
+    "MC-0108": "phrase-patterns",
+    "MC-0243": "phrase-patterns",
+    "MC-0244": "phrase-patterns",
+    "MC-0291": "phrase-patterns",
+    "MC-0292": "phrase-patterns",
+    "MC-0293": "phrase-patterns",
+    "MC-0037": "accompaniment",
+    "MC-0083": "accompaniment",
+    "MC-0088": "accompaniment",
+    "MC-0093": "accompaniment",
+    "MC-0166": "accompaniment",
+    "MC-0181": "accompaniment",
+    "MC-0186": "accompaniment",
+    "MC-0191": "accompaniment",
+    "MC-0248": "accompaniment",
+    "MC-0021": "rhythm",
+    "MC-0024": "rhythm",
+    "MC-0028": "rhythm",
+    "MC-0029": "rhythm",
+    "MC-0099": "rhythm",
+    "MC-0102": "rhythm",
+    "MC-0105": "rhythm",
+    "MC-0177": "rhythm",
+    "MC-0242": "rhythm",
+    "MC-0247": "rhythm",
+    "MC-0285": "rhythm",
+    "MC-0020": "metre",
+    "MC-0098": "metre",
+    "MC-0103": "metre",
+    "MC-0176": "metre",
+    "MC-0245": "metre",
+    "MC-0246": "metre",
+    "MC-0022": "tempo",
+    "MC-0023": "tempo",
+    "MC-0026": "tempo",
+    "MC-0032": "tempo",
+    "MC-0094": "tempo",
+    "MC-0095": "tempo",
+    "MC-0097": "tempo",
+    "MC-0101": "tempo",
+    "MC-0178": "tempo",
+    "MC-0179": "tempo",
+    "MC-0180": "tempo",
+    "MC-0107": "forms",
+    "MC-0109": "forms",
+    "MC-0110": "forms",
+    "MC-0111": "forms",
+    "MC-0112": "forms",
+    "MC-0182": "forms",
+    "MC-0183": "forms",
+    "MC-0189": "forms",
+    "MC-0190": "forms",
+    "MC-0251": "forms",
+    "MC-0252": "forms",
+    "MC-0253": "forms",
+    "MC-0254": "forms",
+    "MC-0255": "forms",
+    "MC-0282": "forms",
+    "MC-0286": "forms",
+    "MC-0288": "forms",
+    "MC-0289": "forms",
+    "MC-0290": "forms",
+    "MC-0295": "forms",
+    "MC-0296": "forms",
+    "MC-0091": "vocal-delivery",
+    "MC-0167": "vocal-delivery",
+    "MC-0172": "vocal-delivery",
+    "MC-0192": "vocal-techniques",
+    "MC-0257": "vocal-delivery",
+    "MC-0046": "playing-techniques",
+    "MC-0053": "playing-techniques",
+    "MC-0058": "playing-techniques",
+    "MC-0060": "playing-techniques",
+    "MC-0064": "playing-techniques",
+    "MC-0163": "playing-techniques",
+    "MC-0170": "playing-techniques",
+    "MC-0193": "playing-techniques",
+    "MC-0201": "playing-techniques",
+    "MC-0207": "playing-techniques",
+    "MC-0259": "playing-techniques",
+    "MC-0261": "playing-techniques",
+    "MC-0122": "sound-effects",
+    "MC-0129": "sound-effects",
+    "MC-0200": "sound-effects",
+    "MC-0208": "sound-effects",
+    "MC-0034": "textures",
+    "MC-0035": "textures",
+    "MC-0038": "textures",
+    "MC-0039": "textures",
+    "MC-0040": "textures",
+    "MC-0041": "textures",
+    "MC-0184": "textures",
+    "MC-0187": "textures",
+    "MC-0188": "textures",
+    "MC-0287": "textures",
+    "MC-0258": "concerto-groups",
+    "MC-0260": "concerto-groups"
+  }
+}

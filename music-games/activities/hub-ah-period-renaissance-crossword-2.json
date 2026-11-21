@@ -1,0 +1,113 @@
+{
+  "id": "hub-ah-period-renaissance-crossword-2",
+  "level": "AH",
+  "title": "Renaissance 2",
+  "instructions": "",
+  "description": "Revise concepts associated with Renaissance up to Advanced Higher. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Renaissance",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-1",
+      "prompt": "Name the historical ensemble term, especially associated with Renaissance instruments, which may describe a whole group from one instrument family.",
+      "answer": "Consort",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-2",
+      "prompt": "A musical setting of the fixed sections of the Roman Catholic liturgy.",
+      "answer": "Mass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-3",
+      "prompt": "Name the general device in which one part copies an idea heard shortly before in another part; the whole melody need not be copied exactly.",
+      "answer": "Imitation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-4",
+      "prompt": "Two or more independent melodic lines sound together. Give the texture term ending in -phonic.",
+      "answer": "Polyphonic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-5",
+      "prompt": "Give the Italian term for singing without instrumental accompaniment.",
+      "answer": "A cappella",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-6",
+      "prompt": "Name the text-setting term for singing exactly one note for each syllable.",
+      "answer": "Syllabic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-7",
+      "prompt": "Name the text-setting term for singing more than one note on a single syllable.",
+      "answer": "Melismatic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-renaissance-crossword-2-8",
+      "prompt": "A high adult male voice, usually sung mainly in falsetto, with a range similar to alto or sometimes mezzo-soprano.",
+      "answer": "Countertenor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

@@ -1,0 +1,147 @@
+/* Arcade players retain the Hub's fitted desktop canvas on every device. */
+.ig-arc { width:100%; max-width:1000px; margin:0 auto; padding:16px 20px 28px; color:#1c1917; text-align:center; }
+.ig-arc h3 { margin:12px 0 20px; font-size:25px; font-weight:700; line-height:1.35; overflow-wrap:anywhere; }
+.ig-arc p { margin:10px 0 20px; color:#57534e; }
+.ig-arc button { min-height:42px; padding:9px 18px; border:1px solid #d6d3d1; border-radius:12px; background:#fff; color:#1c1917; font:inherit; font-weight:600; cursor:pointer; line-height:1.35; }
+.ig-arc button:hover:not(:disabled) { border-color:#78716c; background:#f5f5f4; }
+.ig-arc button:focus-visible,.ig-arc [tabindex]:focus-visible,.ig-arc input:focus-visible,.ig-arc select:focus-visible,.ig-arc textarea:focus-visible { outline:3px solid #000000; outline-offset:3px; }
+.ig-arc button:disabled { cursor:default; opacity:.45; }
+.ig-arc input,.ig-arc textarea,.ig-arc select { border:1px solid #d6d3d1; border-radius:10px; padding:10px 12px; background:#fff; color:#1c1917; font:inherit; }
+.ig-arc label { font-size:14px; font-weight:600; }
+.ig-arc-empty { padding:60px 20px; text-align:center; }
+.ig-arc .ig-arc-count { margin:0 0 10px; color:#78716c; font-size:14px; }
+.ig-arc-prompt { max-width:720px; margin:0 auto 16px; }
+.ig-arc-media { margin:8px auto; max-width:420px; }
+.ig-arc-media img,.ig-arc-media video { display:block; max-width:100%; max-height:180px; margin:0 auto; object-fit:contain; }
+.ig-arc-media audio { width:100%; max-width:350px; }
+.ig-arc-choices { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; max-width:760px; margin:20px auto; }
+.ig-arc-choices button { min-height:62px; font-size:18px; overflow-wrap:anywhere; }
+.ig-arc-actions { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin:20px 0; }
+.ig-arc .ig-arc-finish { display:block; margin:22px auto 0; background:#171717; color:white; border-color:#171717; }
+.ig-arc .ig-arc-finish:hover { background:#343434; color:white; }
+.ig-arc .ig-arc-subtle { margin:6px 8px; font-size:14px; background:#fafaf9; }
+.ig-arc-feedback { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px; margin:22px auto 0; padding:16px 20px; border-radius:14px; border:1px solid; max-width:760px; }
+.ig-arc-feedback.is-correct { color:#15803d; border-color:#86efac; background:#f0fdf4; }
+.ig-arc-feedback.is-incorrect { color:#b91c1c; border-color:#fca5a5; background:#fef2f2; }
+.ig-arc-feedback>span { font-weight:600; }
+.ig-arc-feedback .ig-arc-media { flex-basis:100%; }
+.ig-arc-label { display:flex; justify-content:center; align-items:center; gap:12px; margin:16px 0; }
+.ig-arc-label select { max-width:480px; }
+/* Image quiz: progressively uncover sixteen panels. */
+.ig-memory-study { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-height:450px; overflow-y:auto; margin:20px 0; padding:4px; }
+.ig-memory-study article { padding:18px; border:1px solid #d6d3d1; border-radius:16px; background:#fff; }
+.ig-memory-study strong,.ig-memory-study span { display:block; overflow-wrap:anywhere; }
+.ig-memory-study span { color:#57534e; margin-top:8px; }
+.ig-memory-study img { max-height:90px; }
+/* Maze has connected corridors and four answer destinations. */
+.ig-maze-board { display:grid; grid-template-columns:repeat(13,minmax(0,1fr)); grid-template-rows:repeat(7,54px); width:884px; margin:20px auto; background:#f5f5f4; border:5px solid #000000; border-radius:14px; overflow:hidden; }
+.ig-maze-cell { position:relative; display:flex; align-items:center; justify-content:center; min-width:0; }
+.ig-maze-cell.is-wall { background:#000000; border:2px solid #000000; border-radius:5px; }
+.ig-maze-cell.is-target { background:#fef3c7; border:1px solid #f59e0b; font-size:11px; font-weight:700; overflow-wrap:anywhere; line-height:1.1; padding:3px; z-index:1; }
+.ig-maze-cell.is-target>span:first-child { max-height:50px; overflow:auto; }
+.ig-maze-player { position:absolute; z-index:2; color:#ea580c; font-size:30px; line-height:1; text-shadow:0 1px white; pointer-events:none; }
+.ig-move-controls { display:flex; justify-content:center; gap:8px; }
+.ig-move-controls button { width:60px; font-size:24px; }
+/* Plane chooses a lane while answer gates approach. */
+.ig-flight-board { width:880px; margin:20px auto; border:1px solid #000000; border-radius:16px; overflow:hidden; background:linear-gradient(#f5f5f4,#f5f5f4); }
+.ig-flight-lane { height:76px; border-bottom:1px dashed #000000; position:relative; }
+.ig-flight-lane:last-child { border-bottom:0; }
+.ig-flight-lane.is-selected { background:#f5f5f4; }
+.ig-arc .ig-flight-steer { position:absolute; left:8px; top:21px; padding:5px 8px; min-height:32px; font-size:11px; border-color:#f5f5f4; background:#ffffffb0; }
+.ig-flight-plane { position:absolute; left:14%; top:13px; color:#000000; font-size:42px; transform:rotate(-8deg); z-index:2; }
+.ig-flight-gate { position:absolute; top:11px; width:140px; height:54px; display:flex; align-items:center; justify-content:center; padding:5px; border:3px solid #000000; background:#fff; border-radius:14px; font-weight:600; font-size:13px; overflow-wrap:anywhere; line-height:1.1; overflow:hidden; transition:left .1s linear; }
+/* Balloons bob gently above their strings. */
+.ig-balloon-sky { display:flex; align-items:center; justify-content:space-evenly; gap:20px; width:880px; height:350px; margin:20px auto; border-radius:20px; background:linear-gradient(#f5f5f4,#fff); overflow:hidden; padding-bottom:60px; }
+.ig-arc .ig-balloon { flex:0 0 165px; width:165px; height:190px; padding:18px; border-radius:50% 50% 47% 47%; border:2px solid #1c191733; position:relative; animation:ig-balloon-bob 3.4s ease-in-out infinite; animation-delay:var(--ig-delay); font-size:17px; box-shadow:inset -10px -8px 0 #00000009; overflow-wrap:anywhere; }
+.ig-arc .ig-balloon-0 { background:#f5f5f4; }.ig-arc .ig-balloon-1 { background:#fecdd3; }.ig-arc .ig-balloon-2 { background:#fde68a; }.ig-arc .ig-balloon-3 { background:#bbf7d0; }
+.ig-balloon-string { position:absolute; left:50%; top:100%; width:1px; height:70px; background:#78716c; }
+.ig-balloon-string::before { content:''; width:12px; height:10px; position:absolute; top:-1px; left:-6px; background:#78716c; clip-path:polygon(50% 0,0 100%,100% 100%); }
+@keyframes ig-balloon-bob { 0%,100% {transform:translateY(14px) rotate(-2deg)} 50% {transform:translateY(-12px) rotate(2deg)} }
+/* Moles rise independently from a bank of holes. */
+.ig-mole-field { width:820px; min-height:290px; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; align-items:end; margin:20px auto; padding:34px 24px; border-radius:20px; background:#dcfce7; }
+.ig-mole-hole { height:210px; position:relative; overflow:hidden; border-bottom:20px solid #57534e; border-radius:0 0 50% 50%; }
+.ig-arc .ig-mole { width:100%; height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:80px 80px 15px 15px; background:#d6bca6; border:3px solid #92745b; transform:translateY(174px); transition:transform .2s ease-out; }
+.ig-arc .ig-mole.is-up { transform:translateY(15px); }
+.ig-mole>span { font-size:23px; letter-spacing:8px; margin-bottom:12px; }
+.ig-mole strong { font-size:15px; overflow-wrap:anywhere; }
+/* Fruit follows repeated parabolic paths. Keyboard focus freezes a target. */
+.ig-fruit-field { width:880px; height:340px; margin:20px auto; position:relative; background:linear-gradient(#fff7ed,#fef3c7); border-radius:20px; overflow:hidden; }
+.ig-arc .ig-fruit { position:absolute; top:145px; width:180px; height:145px; border:0; background:transparent; padding:4px; animation:ig-fruit-flight var(--ig-duration) ease-in-out infinite; animation-delay:var(--ig-delay); }
+.ig-arc .ig-fruit:hover,.ig-arc .ig-fruit:focus-visible { background:transparent; animation-play-state:paused; }
+.ig-fruit>span { display:block; font-size:70px; line-height:1; filter:drop-shadow(0 3px 3px #0002); }
+.ig-fruit strong { display:block; background:white; border-radius:9px; border:1px solid #fdba74; padding:6px; font-size:14px; overflow-wrap:anywhere; }
+.ig-fruit-0 { left:3%; }.ig-fruit-1 { left:27%; }.ig-fruit-2 { left:51%; }.ig-fruit-3 { left:75%; }
+.ig-fruit-field.is-paused .ig-fruit { animation-play-state:paused; }
+@keyframes ig-fruit-flight { 0%,100% {transform:translateY(110px) rotate(-7deg)} 50% {transform:translateY(-115px) rotate(7deg)} }
+/* Cards and teacher-led random selection. */
+.ig-flash-card,.ig-speaking-card { width:640px; min-height:300px; margin:24px auto; padding:40px; border:1px solid #d6d3d1; border-radius:24px; background:#fff; box-shadow:0 6px 24px #0000000c; display:flex; flex-direction:column; justify-content:center; }
+.ig-flash-card { cursor:pointer; }
+.ig-card-face-label { text-transform:uppercase; font-size:12px; letter-spacing:.13em; color:#78716c; }
+.ig-card-answer { margin:20px 0; padding:20px; background:#f5f5f4; border-radius:12px; font-size:20px; }
+.ig-speaking-card { transform:rotate(-1deg); background:#fffbeb; }
+.ig-speaking-card.is-dealt { animation:ig-deal-card .3s ease-out; }
+@keyframes ig-deal-card { from {transform:translateY(-12px) rotate(-5deg);opacity:.3} to {transform:translateY(0) rotate(-1deg);opacity:1} }
+.ig-discussion-timer { display:inline-block; width:70px; font-size:22px; font-variant-numeric:tabular-nums; }
+.ig-box-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:14px; margin:24px 0; }
+.ig-arc .ig-box { height:130px; position:relative; background:#f5f5f4; border-color:#f5f5f4; }
+.ig-box>span { display:block; font-size:55px; color:#000000; line-height:1; }
+.ig-box>strong { display:block; margin-top:6px; }
+.ig-arc .ig-box.is-open { background:#f5f5f4; border-color:#d6d3d1; }.ig-box.is-open>span { color:#a8a29e; }
+.ig-box-reveal { position:relative; padding:24px 48px; border:1px solid #f5f5f4; background:#faf5ff; border-radius:18px; margin:20px auto; max-width:760px; }
+.ig-arc .ig-box-close { position:absolute; right:8px; top:8px; border:0; background:transparent; padding:3px 9px; min-height:30px; font-size:24px; }
+.ig-flip-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:24px 0; }
+.ig-flip-tile { border:1px solid #f5f5f4; border-radius:16px; background:#f5f5f4; min-height:150px; overflow:hidden; }
+.ig-flip-tile.is-flipped { background:#f0fdf4; border-color:#86efac; }
+.ig-arc .ig-flip-tile>button { width:100%; min-height:150px; border:0; border-radius:0; background:transparent; font-size:18px; overflow-wrap:anywhere; }
+.ig-flip-tile .ig-arc-media { margin:0 10px 10px; }
+.ig-flip-tile img { max-height:100px; }
+/* Idea boards and accessible seating. */
+.ig-brainstorm-input { display:flex; align-items:center; justify-content:center; gap:12px; margin:20px auto; }
+.ig-brainstorm-input input { width:520px; }
+.ig-brainstorm-board { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; min-height:220px; padding:20px; border:1px solid #e7e5e4; border-radius:18px; background:#fafaf9; }
+.ig-sticky-note { background:#fef08a; border:1px solid #fde047; padding:14px; box-shadow:0 3px 5px #0000000a; cursor:grab; }
+.ig-sticky-note>span { display:block; font-size:12px; color:#713f12; margin-bottom:8px; }
+.ig-sticky-note textarea { width:100%; min-height:100px; background:transparent; border-color:#ca8a0433; resize:vertical; font-size:16px; }
+.ig-sticky-note>div { display:flex; gap:6px; margin-top:8px; }
+.ig-arc .ig-sticky-note button { min-height:30px; padding:2px 10px; background:#ffffff80; }
+.ig-seat-front { margin:20px auto; padding:8px 16px; width:320px; border-bottom:3px solid #78716c; color:#78716c; }
+.ig-seat-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:16px; margin:24px 0; }
+.ig-arc .ig-seat { min-height:90px; padding:8px; background:#fafaf9; border:2px dashed #d6d3d1; overflow-wrap:anywhere; }
+.ig-arc .ig-seat.is-occupied { background:#f5f5f4; border:2px solid #f5f5f4; }
+.ig-arc .ig-seat.is-selected { border-color:#000000; box-shadow:0 0 0 2px #000000; }
+.ig-seat small { display:block; color:#78716c; font-size:11px; font-weight:400; margin-bottom:6px; }
+.ig-seat-bank { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; padding:16px; background:#f5f5f4; border-radius:14px; }
+.ig-seat-bank button[aria-pressed="true"] { background:#f5f5f4; border-color:#000000; }
+.ig-maths-settings { display:flex; justify-content:center; gap:26px; margin:30px 0; }
+.ig-maths-settings label { display:flex; flex-direction:column; gap:10px; width:170px; }
+.ig-arc .ig-maths-question { font-size:52px; margin:50px 0; }
+.ig-maths-answer { display:flex; justify-content:center; align-items:center; gap:12px; }
+.ig-maths-answer input { width:170px; font-size:26px; text-align:center; }
+.ig-magnet-board { display:flex; flex-wrap:wrap; align-content:flex-start; gap:12px; min-height:250px; margin:24px 0; padding:24px; border:2px solid #d6d3d1; border-radius:18px; background:linear-gradient(#fff,#f5f5f4); }
+.ig-magnet { align-self:flex-start; border:1px solid #f5f5f4; border-radius:10px; padding:12px; background:#f5f5f4; box-shadow:0 3px 2px #0000000a; cursor:grab; }
+.ig-magnet strong { font-size:20px; }
+.ig-magnet>div { display:flex; gap:4px; margin-top:8px; }
+.ig-arc .ig-magnet button { padding:1px 6px; min-height:25px; font-size:12px; border-radius:6px; }
+.ig-magnet-bank { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; min-height:60px; padding:18px; background:#fafaf9; border-radius:14px; }
+.ig-magnet-bank button { font-size:20px; }
+.ig-magnet-placeholder { margin:auto; color:#a8a29e; }
+
+.ig-maze-legend { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:16px auto; width:884px; }
+.ig-maze-legend>span { display:flex; gap:8px; text-align:left; align-items:center; padding:10px; border:1px solid #fcd34d; border-radius:10px; background:#fffbeb; font-size:14px; overflow-wrap:anywhere; }
+.ig-maze-legend b { display:inline-flex; flex:0 0 26px; height:26px; align-items:center; justify-content:center; border-radius:50%; background:#f59e0b; color:#111; }
+.ig-maze-cell.is-target { font-size:23px; }
+.ig-maze-chaser { position:absolute; font-size:29px; color:#b91c1c; line-height:1; pointer-events:none; }
+.ig-arc .ig-arc-storage-error { padding:12px 16px; color:#b91c1c; background:#fef2f2; border:1px solid #fecaca; border-radius:10px; }
+
+/* Restore the colourful classic game boards without changing Hub controls. */
+.ig-session.ig-theme-classic .ig-flight-board{background:linear-gradient(#dff3ff,#f8fcff);border-color:#8dc9ef}
+.ig-session.ig-theme-classic .ig-flight-lane.is-selected{background:#c8ebff}
+.ig-session.ig-theme-classic .ig-flight-gate{border-color:#2455bc}
+.ig-session.ig-theme-classic .ig-balloon-sky{background:linear-gradient(#dff3ff,#fff)}
+.ig-session.ig-theme-classic .ig-arc .ig-balloon-0{background:#9bd5f5}
+.ig-session.ig-theme-classic .ig-arc .ig-box{background:#2455bc;border-color:#183e8e;color:#fff}
+.ig-session.ig-theme-classic .ig-box>span{color:#fff}
+.ig-session.ig-theme-classic .ig-arc .ig-box.is-open{background:#fff2c1;border-color:#e5ba44;color:#1c1917}
+.ig-session.ig-theme-classic .ig-flip-tile{background:#ffe09a;border-color:#d9a74c}
+.ig-session.ig-theme-classic .ig-seat-bank{background:#dff3ff}
+.ig-session.ig-theme-classic .ig-magnet{background:#ffe09a;border-color:#d9a74c}

@@ -1,0 +1,145 @@
+{
+  "id": "hub-collection-ah-chords-crossword-1",
+  "level": "AH",
+  "title": "Chords",
+  "instructions": "",
+  "description": "Chords: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Chords",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0010",
+      "prompt": "Different notes played together at the same time.",
+      "answer": "Chord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0010"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0229",
+      "prompt": "A three-note chord that sounds tense and unsettled.",
+      "answer": "Diminished triad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0229"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0227",
+      "prompt": "A chord with an extra note added: the sixth note above its starting note.",
+      "answer": "Added sixth",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0227"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0228",
+      "prompt": "Four notes, each three small steps apart, making a tense, unsettled chord.",
+      "answer": "Diminished seventh",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0228"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0230",
+      "prompt": "A four-note chord built on note 5 of the scale, often pulling strongly towards home.",
+      "answer": "Dominant seventh",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0230"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0277",
+      "prompt": "A three-note major chord with its top note raised a small step.",
+      "answer": "Augmented triad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0277"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0013",
+      "prompt": "Notes that clash when you hear them together.",
+      "answer": "Discord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0013"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0080",
+      "prompt": "Playing the notes of a chord one after another instead of all together.",
+      "answer": "Broken chord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0080"
+    },
+    {
+      "id": "hub-collection-ah-chords-crossword-1-MC-0159",
+      "prompt": "A bunch of notes very close together, played at the same time.",
+      "answer": "Cluster",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0159"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "chords",
+  "sourceConceptIds": [
+    "MC-0010",
+    "MC-0229",
+    "MC-0227",
+    "MC-0228",
+    "MC-0230",
+    "MC-0277",
+    "MC-0013",
+    "MC-0080",
+    "MC-0159"
+  ]
+}

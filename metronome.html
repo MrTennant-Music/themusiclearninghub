@@ -1,26 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Metronome</title>
-  <link rel="icon" type="image/svg+xml" href="./tempo-icon.svg" />
-  <link rel="apple-touch-icon" href="./tempo-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="./hub-input.js?v=20260629"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-shell.js?v=20260717-worksheet-header-cards"></script>
-  <script src="./hub-menu.js?v=20260712-profile-sharing"></script>
-  <script src="./bravura-symbols.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/tempo-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/tempo-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./metronome-core.js?v=20261006-swing"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
 <style>
-@font-face { font-family:Bravura; src:url("./Bravura.otf") format("opentype"); }
+@font-face { font-family:Bravura; src:url("./fonts/Bravura.otf") format("opentype"); }
 .metro-patterns { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:8px; }
 .metro-pattern { display:flex; align-items:center; justify-content:center; height:68px; border:1px solid #e7e5e4; border-radius:12px; background:#fafaf9; color:#111; }
 .metro-pattern[aria-pressed=true] { background:#111; color:white; border-color:#111; }
@@ -56,42 +57,60 @@ body { margin:0; background:#fafaf9; color:#111; }
 .metro-actions { margin-top:24px; display:flex; justify-content:center; gap:18px; }
 @keyframes metro-tap-bounce { 0%,100% { transform:scale(1); } 35% { transform:scale(.9); } 70% { transform:scale(1.05); } }
 .metro-tap-bounce { animation:metro-tap-bounce 230ms ease-out; }
-@media (prefers-reduced-motion:reduce) { .metro-tap-bounce { animation:none; } }
+
 .metro-actions .metro-button { width:220px; height:76px; font-size:26px; border-radius:16px; }
 .metro-setting { font-size:14px; font-weight:600; padding:6px 14px; }
 .metro-beats-select { height:30px; min-width:64px; padding:0 8px; border:1px solid #d6d3d1; border-radius:8px; background:white; color:#111; font:inherit; cursor:pointer; }
 .metro-error { margin-top:12px; color:#dc2626; font-size:14px; font-weight:700; }
 </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head><body><div id="root"></div>
-<script type="text/babel">
+<script type="text/x-metronome-source" id="metronome-jsx-source">
 const {useState,useEffect,useRef}=React;
 const M=window.MetronomeCore;
-function initial(){try{return M.settings({...JSON.parse(localStorage.getItem('mlh:metronome:v1')),bpm:120,accent:true});}catch{return {...M.defaults};}}
+function initial(){try{return M.settings(JSON.parse(localStorage.getItem('mlh:metronome:v1'))||M.defaults);}catch{return {...M.defaults};}}
 function Pattern({id}){
   const S=window.BRAVURA_SYMBOLS,count=M.subdivisions[id].offsets.length;
   const positions=Array.from({length:count},(_,i)=>(100-((count-1)*22+12))/2+i*22),beamed=id!=='beat';
   return <svg viewBox="0 0 100 64" width="100" height="64" aria-hidden="true">
+    <g transform={id==='triplets'?undefined:'translate(0 -5)'}>
     {positions.map((x,i)=><g key={i}><text x={x} y="49" fontFamily="Bravura" fontSize="36" fill="currentColor">{beamed?S.noteheadBlack:S.quarterNoteStemUp}</text>{beamed&&<line x1={x+10.5} x2={x+10.5} y1="48" y2="19" stroke="currentColor" strokeWidth="1.3"/>}</g>)}
-    {beamed&&<line x1={positions[0]+10.5} x2={positions.at(-1)+10.5} y1="19" y2="19" stroke="currentColor" strokeWidth="4"/>}
-    {id==='semiquavers'&&<line x1={positions[0]+10.5} x2={positions.at(-1)+10.5} y1="25" y2="25" stroke="currentColor" strokeWidth="4"/>}
-    {(id==='dotted'||id==='snap')&&<><text x={(id==='dotted'?positions[0]:positions[1])+15} y="46" fontFamily="Bravura" fontSize="30" fill="currentColor">{S.augmentationDot}</text><line x1={id==='dotted'?positions[1]+2.5:positions[0]+10.5} x2={id==='dotted'?positions[1]+10.5:positions[0]+18.5} y1="25" y2="25" stroke="currentColor" strokeWidth="4"/></>}
-    {id==='triplets'&&<text x="54" y="12" textAnchor="middle" fontFamily="Bravura" fontSize="24" fill="currentColor">{S.timeSig3}</text>}
+    {beamed&&<line x1={positions[0]+10} x2={positions.at(-1)+11} y1="19" y2="19" stroke="currentColor" strokeWidth="4"/>}
+    {id==='semiquavers'&&<line x1={positions[0]+10} x2={positions.at(-1)+11} y1="25" y2="25" stroke="currentColor" strokeWidth="4"/>}
+    {(id==='dotted'||id==='snap')&&<><text x={(id==='dotted'?positions[0]:positions[1])+15} y="46" fontFamily="Bravura" fontSize="30" fill="currentColor">{S.augmentationDot}</text><line x1={id==='dotted'?positions[1]+2:positions[0]+10} x2={id==='dotted'?positions[1]+11:positions[0]+19} y1="25" y2="25" stroke="currentColor" strokeWidth="4"/></>}
+    {id==='triplets'&&<text x="54" y="7" textAnchor="middle" fontFamily="Bravura" fontSize="20" fill="currentColor">{S.timeSig3}</text>}
+    </g>
   </svg>;
 }
+function TempoInput({bpm,onCommit}) {
+  const [draft,setDraft]=useState(null);
+  function commit(event) {
+    const raw=event.currentTarget.value.trim(),number=Number(raw);
+    const next=raw!==''&&Number.isFinite(number)?M.settings({bpm:number}).bpm:bpm;
+    setDraft(null);
+    onCommit(next);
+  }
+  return <input id="metro-bpm" className="metro-bpm" type="text" inputMode="numeric" enterKeyHint="done" autoComplete="off" spellCheck={false} value={draft??bpm} onChange={event=>setDraft(event.target.value)} onBlur={commit} onKeyDown={event=>{
+    if(event.key==='Enter'){event.preventDefault();event.currentTarget.blur();}
+    else if(event.key==='Escape'){event.preventDefault();setDraft(null);}
+  }}/>;
+}
 function App(){
-  const [config,setConfig]=useState(initial),[running,setRunning]=useState(false),[loading,setLoading]=useState(false),[beat,setBeat]=useState(-1),[error,setError]=useState(''),[customiseOpen,setCustomiseOpen]=useState(false);
+  const [config,setConfig]=window.MLH.useProfileState("config", initial),[running,setRunning]=useState(false),[loading,setLoading]=useState(false),[beat,setBeat]=useState(-1),[error,setError]=useState(''),[customiseOpen,setCustomiseOpen]=useState(false);
   const configRef=useRef(config),session=useRef(null),generation=useRef(0),taps=useRef([]),tapButton=useRef(null),pendulum=useRef(null),customiseRef=useRef(null);
   window.MLH.useClickOutside([customiseRef],[()=>setCustomiseOpen(false)]);
   function change(values){setConfig(current=>{const next=M.settings({...current,...values});configRef.current=next;return next;});}
   useEffect(()=>{try{localStorage.setItem('mlh:metronome:v1',JSON.stringify(config));}catch{}},[config]);
-  function stop(){generation.current++;const active=session.current;session.current=null;if(active){clearInterval(active.interval);cancelAnimationFrame(active.frame);active.master.gain.value=0;active.ctx.close().catch(()=>{});}setRunning(false);setLoading(false);setBeat(-1);if(pendulum.current)pendulum.current.setAttribute("transform","rotate(0 24 46)");}
+  function stop(){generation.current++;const active=session.current;session.current=null;if(active){clearInterval(active.interval);cancelAnimationFrame(active.frame);(globalThis.MLH?.closeAudioContext?.(active.ctx) || active.ctx.close()).catch(()=>{});}setRunning(false);setLoading(false);setBeat(-1);if(pendulum.current)pendulum.current.setAttribute("transform","rotate(0 24 46)");}
   async function start(){
     if(session.current||loading){stop();return;}
     const token=++generation.current;setLoading(true);setError('');
     let ctx;
     try{
       const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw Error('Audio playback is not supported in this browser.');
-      ctx=new AC();const master=ctx.createGain();master.connect(ctx.destination);
+      ctx=new AC();const master=ctx.createGain();master.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
       const active={ctx,master,interval:null,frame:null,queue:[]};session.current=active;
       await ctx.resume();const ready=await window.MLH.prepareAudioPlayback(ctx,{metronome:true});
       if(token!==generation.current||session.current!==active)return;
@@ -122,7 +141,7 @@ function App(){
         active.frame=requestAnimationFrame(visual);
       };
       setLoading(false);setRunning(true);schedule();active.interval=setInterval(schedule,25);visual();
-    }catch(err){if(token!==generation.current)return;stop();setError(err.message||'The metronome could not start. Please try again.');if(ctx&&ctx.state!=='closed')ctx.close().catch(()=>{});}
+    }catch(err){if(token!==generation.current)return;stop();setError(err.message||'The metronome could not start. Please try again.');if(ctx&&ctx.state!=='closed')(globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()).catch(()=>{});}
   }
   function tap(){
     const button=tapButton.current;
@@ -131,11 +150,11 @@ function App(){
   useEffect(()=>{const leave=()=>stop();window.addEventListener('pagehide',leave);return()=>{window.removeEventListener('pagehide',leave);stop();};},[]);
   useEffect(()=>{const key=event=>{if(event.repeat||event.target.closest('input,select,textarea,button,[contenteditable]'))return;if(event.code==='Space'){event.preventDefault();if(session.current)stop();else start();}if(event.key.toLowerCase()==='t'){event.preventDefault();tap();}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);},[loading]);
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader icon="./tempo-icon.svg" title="Metronome" subtitle="Keep a steady beat with adjustable tempo, accents and subdivisions." profileUsesSharedSettings={false} profileShowLabel={false}/>
+    <window.MLH.AppHeader profileState={{ config }} icon="./app-icons/tempo-icon.svg" title="Metronome" subtitle="Keep a steady beat with adjustable tempo, accents and subdivisions." profileUsesSharedSettings={false} profileShowLabel={false}/>
     <div className={window.MLH.shell.pageContentClass}><main className={`${window.MLH.shell.mainShellClass} metro-main`}>
       <window.MLH.AppToolbar left={<div className="hub-menu-anchor relative" ref={customiseRef}>
-        <window.MLH.CustomiseButton icon={<img src="./customise.svg" alt="" className="h-[26px] w-[26px]"/>} onClick={()=>setCustomiseOpen(value=>!value)} dataMenuTrigger={true}/>
-        {customiseOpen&&<window.MLH.MenuPanel title="Customise" position="left-0" variant="customise" dataMenuPanel={true}>
+        <window.MLH.CustomiseButton icon={<img src="./ui-icons/customise.svg" alt="" className="h-[26px] w-[26px]"/>} onClick={()=>setCustomiseOpen(value=>!value)} dataMenuTrigger={true} expanded={customiseOpen} ariaControls="metronome-customise-menu"/>
+        {customiseOpen&&<window.MLH.MenuPanel id="metronome-customise-menu" title="Customise" position="left-0" variant="customise" dataMenuPanel={true}>
           <label className="metro-setting hub-toggle-row"><span>Beats Per Bar</span><select className="metro-beats-select" aria-label="Beats Per Bar" value={config.beats} onChange={event=>change({beats:event.target.value})}>{Array.from({length:12},(_,index)=><option key={index+1} value={index+1}>{index+1}</option>)}</select></label>
           <window.MLH.MenuToggleRow showGlyph={false} label="Stress First Beat" checked={config.accent} onChange={()=>change({accent:!config.accent})}/>
           <div style={{marginTop:16}}><p className="text-sm font-semibold text-stone-800">Subdivisions</p><div className="metro-patterns">{Object.entries(M.subdivisions).map(([id,pattern])=><button key={id} className="metro-pattern" title={pattern.label} aria-label={pattern.label} aria-pressed={config.subdivision===id} onClick={()=>change({subdivision:id})}><Pattern id={id}/></button>)}</div></div>
@@ -145,7 +164,7 @@ function App(){
         <div className="metro-display-row">
         <div className="metro-display">
         <p className="metro-label">{M.tempoLabel(config.bpm)}</p>
-        <input id="metro-bpm" className="metro-bpm" type="number" min="30" max="240" value={config.bpm} onChange={event=>change({bpm:event.target.value})}/>
+        <TempoInput bpm={config.bpm} onCommit={bpm=>change({bpm})}/>
         <label className="metro-tempo" htmlFor="metro-bpm" style={{display:"block"}}>BPM</label>
         </div>
         <div className="metro-beats" aria-label={`${config.beats} beats per bar`}>
@@ -158,8 +177,8 @@ function App(){
           {Array.from({length:config.beats},(_,index)=><span key={index} className={`metro-dot ${running&&beat===index?'active':''} ${config.accent&&index===0?'accent':''}`}>{index+1}</span>)}
         </div>
         </div>
-        <div className="metro-slider"><button className="metro-button" aria-label="Decrease tempo" onClick={()=>change({bpm:config.bpm-1})}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M5 12H19"/></svg></button><input type="range" style={{"--tempo-progress":`${(config.bpm-30)/210*100}%`}} aria-label="Tempo" min="30" max="240" value={config.bpm} onChange={event=>change({bpm:event.target.value})}/><button className="metro-button" aria-label="Increase tempo" onClick={()=>change({bpm:config.bpm+1})}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M5 12H19 M12 5V19"/></svg></button></div>
-        <div className="metro-actions"><button ref={tapButton} className="metro-button" onClick={tap} onAnimationEnd={()=>tapButton.current?.classList.remove("metro-tap-bounce")}><img src="./tap.svg" alt="" aria-hidden="true" width="28" height="28"/>Tap BPM</button><button className="metro-button primary" onClick={()=>running||loading?stop():start()}>{loading?'Cancel':running?'Stop':'Start'}</button></div>
+        <div className="metro-slider"><button className="metro-button" aria-label="Decrease tempo" disabled={config.bpm<=30} onClick={()=>change({bpm:config.bpm-1})}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M5 12H19"/></svg></button><input type="range" style={{"--tempo-progress":`${(config.bpm-30)/210*100}%`}} aria-label="Tempo" min="30" max="240" value={config.bpm} onChange={event=>change({bpm:event.target.value})}/><button className="metro-button" aria-label="Increase tempo" disabled={config.bpm>=240} onClick={()=>change({bpm:config.bpm+1})}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M5 12H19 M12 5V19"/></svg></button></div>
+        <div className="metro-actions"><button ref={tapButton} className="metro-button" onClick={tap} onAnimationEnd={()=>tapButton.current?.classList.remove("metro-tap-bounce")}><img src="./ui-icons/tap.svg" alt="" aria-hidden="true" width="28" height="28"/>Tap BPM</button><button className="metro-button primary" onClick={()=>running||loading?stop():start()}>{loading?'Cancel':running?'Stop':'Start'}</button></div>
         {error&&<p role="alert" className="metro-error">{error}</p>}
 
       </div>
@@ -167,4 +186,4 @@ function App(){
   </div>;
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-</script><script src="./footer.js?v=20261005-update-history"></script></body></html>
+</script><script src="./metronome-runtime.js?v=1194d9d4b199"></script><script src="./footer.js?v=120454beac89"></script></body></html>

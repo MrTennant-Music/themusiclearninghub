@@ -1,0 +1,124 @@
+{
+  "id": "hub-n5-world-music-crossword-1",
+  "level": "N5",
+  "title": "World Music 1",
+  "instructions": "",
+  "description": "Revise World Music styles, instruments and musical features up to National 5. Regional labels cover diverse traditions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "World Music",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n5-world-music-crossword-1-1",
+      "prompt": "Give the broad regional course label for traditions from Latin America. Common listening examples use dance rhythms and instruments such as bongos, claves and guiro.",
+      "answer": "Latin American",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-2",
+      "prompt": "An opening musical phrase is followed by a responding phrase.",
+      "answer": "Question and answer",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-3",
+      "prompt": "An ensemble of tuned steel pans is associated with Trinidad and Tobago and the wider Caribbean, with different sizes covering melody, harmony and bass.",
+      "answer": "Steel band",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-4",
+      "prompt": "Give the broad regional course label covering diverse traditions from the African continent. Course examples may use layered percussion, interlocking rhythms and call and response.",
+      "answer": "African music",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-5",
+      "prompt": "A Jamaican popular style with a strong low bass line, relaxed groove and short guitar or keyboard chords emphasising off-beats.",
+      "answer": "Reggae",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-6",
+      "prompt": "An untuned scraper has a ridged surface, traditionally a hollow gourd or wood. A stick drawn over the ridges produces a rasping rhythm.",
+      "answer": "Guiro",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-7",
+      "prompt": "A set of tubes of different lengths tied together. Each tube makes a different pitch.",
+      "answer": "Pan pipes",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-8",
+      "prompt": "Give the broad regional course label for music from India. North Indian traditions using sitar, tabla, a drone and ornamented improvisation are common listening examples.",
+      "answer": "Indian",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-crossword-1-9",
+      "prompt": "A joined pair of small, high-pitched hand drums of different sizes is common in Afro-Cuban and Latin American music.",
+      "answer": "Bongo drums",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

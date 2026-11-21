@@ -1,0 +1,116 @@
+{
+  "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1",
+  "level": "AH",
+  "title": "Rhythm and Structure 1",
+  "instructions": "",
+  "description": "Revise rhythm and structure with 6 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Rhythm and Structure",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1-mc-0285",
+      "prompt": "The beat grouping changes from two groups of three to three groups of two, or the other way round. The note lengths stay the same.",
+      "answer": "Hemiola",
+      "distractors": [
+        "Retrograde",
+        "Song cycle",
+        "Stretto"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1-mc-0287",
+      "prompt": "Two separated groups of singers or instruments answer each other across the space.",
+      "answer": "Antiphonal",
+      "distractors": [
+        "Leitmotif",
+        "Retrograde",
+        "Song cycle"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1-mc-0289",
+      "prompt": "A recurring counter-melody in a fugue.",
+      "answer": "Countersubject",
+      "distractors": [
+        "Answer",
+        "Retrograde",
+        "Song cycle"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1-mc-0291",
+      "prompt": "As a melodic or tone-row transformation, each interval changes direction: upward intervals become downward and vice versa.",
+      "answer": "Inversion",
+      "distractors": [
+        "Tone row / note row",
+        "Fugue",
+        "Leitmotif"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1-mc-0293",
+      "prompt": "A melody or tone row is presented in reverse order, beginning with its final note and ending with its first.",
+      "answer": "Retrograde",
+      "distractors": [
+        "Tone row / note row",
+        "Bridge",
+        "Countersubject"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-rhythm-and-structure-crossword-1-mc-0295",
+      "prompt": "In a fugue, a new subject entry begins before the previous one ends, so they overlap.",
+      "answer": "Stretto",
+      "distractors": [
+        "Answer",
+        "Antiphonal",
+        "Countersubject"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

@@ -1,0 +1,171 @@
+{
+  "id": "hub-collection-n5-jazz-popular-music-crossword-3",
+  "level": "N5",
+  "title": "Jazz and Popular Music 3",
+  "instructions": "",
+  "description": "Jazz and Popular Music: current Music Dictionary definitions — set 3 of 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Jazz and Popular Music",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0004",
+      "prompt": "A show that tells a story through acting, songs and dancing.",
+      "answer": "Musical",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0004"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0007",
+      "prompt": "Lively dance music from the 1950s, often with guitars, piano and a strong beat.",
+      "answer": "Rock 'n' roll",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0007"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0028",
+      "prompt": "Playing between the main beats, or stressing the weaker beats.",
+      "answer": "Off the beat",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0028"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0050",
+      "prompt": "A guitar connected to an amplifier to make its sound louder.",
+      "answer": "Electric guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0050"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0079",
+      "prompt": "A bouncy rhythm where pairs of notes sound long-short rather than evenly spaced.",
+      "answer": "Swing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0079"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0105",
+      "prompt": "Making the weaker beats or the gaps between beats stand out.",
+      "answer": "Syncopation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0105"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0114",
+      "prompt": "Singers who support the main singer.",
+      "answer": "Backing vocals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0114"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0150",
+      "prompt": "Christian music with powerful singing, often with a choir and answering phrases.",
+      "answer": "Gospel",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0150"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0203",
+      "prompt": "Two cymbals on a stand that open and close with a foot pedal.",
+      "answer": "Hi-hat cymbals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0203"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0057",
+      "prompt": "A keyboard instrument where pressing a key makes a small hammer hit strings inside.",
+      "answer": "Piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0057"
+    },
+    {
+      "id": "hub-collection-n5-jazz-popular-music-crossword-3-MC-0123",
+      "prompt": "The biggest and lowest instrument in the orchestral string family.",
+      "answer": "Double bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0123"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "jazz-popular-music",
+  "sourceConceptIds": [
+    "MC-0004",
+    "MC-0007",
+    "MC-0028",
+    "MC-0050",
+    "MC-0079",
+    "MC-0105",
+    "MC-0114",
+    "MC-0150",
+    "MC-0203",
+    "MC-0057",
+    "MC-0123"
+  ]
+}

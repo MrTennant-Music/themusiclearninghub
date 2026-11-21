@@ -1,0 +1,3267 @@
+{
+  "checkedOn": "2026-11-01",
+  "exampleCount": 571,
+  "selectionNote": "YouTube alternatives matched by named work, movement, artist and instrumentation where available. Short teaching clips without an established corresponding upload use related curated demonstrations, labelled as such. Matching is based on source/search metadata, not a claim of waveform-identical recordings. Original excerpt timestamps are not copied onto other performances.",
+  "tracks": {
+    "https://soundcloud.com/user-27915690/palestrina-vestiva-i-colli-les-roses-breves": {
+      "url": "https://www.youtube.com/watch?v=hjbk_7KXQko",
+      "title": "Palestrina: Vestiva i colli",
+      "channel": "Profeti Della Quinta - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/michael-byrne-412665730/07-fantasy-a-5-browning": {
+      "url": "https://www.youtube.com/watch?v=PTw9VrFJask",
+      "title": "Fantasy à 5: Browning",
+      "channel": "Rose Consort of Viols - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/early-music-harpsichord/william-byrd-pavan-the-earl-of-salisburystrings": {
+      "url": "https://www.youtube.com/watch?v=Yx5JaicVZyY",
+      "title": "William Byrd - Pavan \"The Earl of Salisbury\"(String)",
+      "channel": "Harpsichord Music",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/axalder/tielman-susato-pavane-la-bataille-piano": {
+      "url": "https://www.youtube.com/watch?v=W_uf6jdO3Ek",
+      "title": "Tielman Susato - Pavane La Bataille -- soubor La Fiamma",
+      "channel": "ilballarino",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/tunings-929379902/john-dowland-1563-1626-king-of-denmark-his-galliard": {
+      "url": "https://www.youtube.com/watch?v=1yhf1Ogln08",
+      "title": "John Dowland (1563-1626): The King of Denmark's Galliard.",
+      "channel": "Fans of Maurizio Machella",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/lydiamariablank/the-galliarde-for-the-victorie": {
+      "url": "https://www.youtube.com/watch?v=FpN4zZhKCik",
+      "title": "The Galliarde for the Victorie, MB 95",
+      "channel": "Jean-Paul Liardet - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/tenebraechoir/allegri-miserere": {
+      "url": "https://www.youtube.com/watch?v=H3v9unphfi0",
+      "title": "Miserere mei, Deus - Allegri - Tenebrae conducted by Nigel Short",
+      "channel": "Tenebrae Choir",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/emc-575426851/spem-in-alium": {
+      "url": "https://www.youtube.com/watch?v=hKUbJ6nzqVU",
+      "title": "Tallis: Spem in alium",
+      "channel": "Winchester Cathedral Choir - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user-990003796/flow-my-tears-dowland-paula-bar-giese-soprano-hans-meijer-lute": {
+      "url": "https://www.youtube.com/watch?v=u3clX2CJqzs",
+      "title": "John Dowland: Flow my tears (Lachrimae); Phoebe Jevtovic Rosquist, soprano & David Tayler, lute",
+      "channel": "Voices of Music",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/musicaantiqua/i-care-not-for-these-ladies": {
+      "url": "https://www.youtube.com/watch?v=0e3_ly5I7l8",
+      "title": "I Care Not for These Ladies",
+      "channel": "Dorothy Linell - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/johnrutter/fair-phyllis-i-saw-feat-the": {
+      "url": "https://www.youtube.com/watch?v=8eeVMEMxlkc",
+      "title": "John Farmer - Fair Phyllis I saw - The Cambridge Singers",
+      "channel": "margotlorena2",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/collegiumvocalebydgoszcz/the-nightingale-the-organ-of-1": {
+      "url": "https://www.youtube.com/watch?v=n0K2jE8OChE",
+      "title": "The Nightingale, the organ of delight",
+      "channel": "Collegium Vocale Bydgoszcz - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/tallisvocalis/thomas-tallis-if-ye-love-me": {
+      "url": "https://www.youtube.com/watch?v=4flMC-AUZYU",
+      "title": "Thomas Tallis – If Ye Love Me",
+      "channel": "Tallis Vocalis",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/bachcollegiumparis/jesus-bleibet-meine-freude": {
+      "url": "https://www.youtube.com/watch?v=GWtoeYznx8E",
+      "title": "Bach - Jesus bleibet meine Freude from Cantata BWV 147 | Netherlands Bach Society",
+      "channel": "Netherlands Bach Society",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/nevillemarriner/peer-gynt-suite-no-1-op-46-1": {
+      "url": "https://www.youtube.com/watch?v=f8sjaX_imCI",
+      "title": "Peer Gynt Suite No. 1, Op. 46: III. Anitra's Dance",
+      "channel": "Academy of St Martin in the Fields - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/pika5onic/miss-you": {
+      "url": "https://www.youtube.com/watch?v=jP7wze4LzoA",
+      "title": "PIKASONIC - Miss You",
+      "channel": "Firefly Music",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/didlybom/mozart-turkish-march": {
+      "url": "https://www.youtube.com/watch?v=-pKKWDumCAo",
+      "title": "Mozart - Turkish March (Rondo Alla Turca)",
+      "channel": "Piano in a Living Room",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000075799040-r4y895-t500x500.jpg"
+    },
+    "https://soundcloud.com/odjbo/interval_05_600c_tritone-5": {
+      "url": "https://www.youtube.com/watch?v=PMIp_3LM8JE",
+      "title": "tritone",
+      "channel": "Seth David",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/g-sharp-diminished-fifth": {
+      "url": "https://www.youtube.com/watch?v=PMIp_3LM8JE",
+      "title": "tritone",
+      "channel": "Seth David",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/thebeatles/oh-darling-remastered-2009": {
+      "url": "https://www.youtube.com/watch?v=9BznFjbcBVs",
+      "title": "Oh! Darling (Remastered 2009)",
+      "channel": "The Beatles - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-FvU5xsvAy9lU-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/chuck-berry-official/school-day-ring-ring-goes": {
+      "url": "https://www.youtube.com/watch?v=vNrfXJ-WnE0",
+      "title": "School Day (Ring! Ring! Goes the Bell)",
+      "channel": "Chuck Berry - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-BhzMHMLnEDkp-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/edition-lilac/01-pergolesi-stabat-mater-i": {
+      "url": "https://www.youtube.com/watch?v=2MR63GfUnMw",
+      "title": "Pergolesi: Stabat Mater, P. 77: I. Stabat Mater dolorosa",
+      "channel": "Margaret Marshall - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/sergeybryukhno/bach-air-on-the-g-string": {
+      "url": "https://www.youtube.com/watch?v=2aebo37GJQg",
+      "title": "Bach: Air on the G String",
+      "channel": "Sergey Bryukhno - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-T706cQS0x3XO-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/odradek-records/08-darius-milhaud-saudades-1": {
+      "url": "https://www.youtube.com/watch?v=bskIByGLO1w",
+      "title": "Darius Milhaud Saudades do Brasil, Op 67 (1920) 1. Sorocaba. Partitura. Audición",
+      "channel": "Musicnetmaterials",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/daniel-plante-511223801/2-webern-variations-for-orchestra-op-30wav": {
+      "url": "https://www.youtube.com/watch?v=AAQdEMYTdEI",
+      "title": "Anton Webern - Variations for Orchestra, Op. 30 (1940)",
+      "channel": "Bartje Bartmans",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/mikeyipmusic/guitar-harmonics-schoenbergs-piano-suite-tone-row": {
+      "url": "https://www.youtube.com/watch?v=HkDp1NMySls",
+      "title": "the 12-tone National Anthem",
+      "channel": "Seth David",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/robin_browning/mozart-symphony-no-40-k550-mvt-3-menuetto-trio": {
+      "url": "https://www.youtube.com/watch?v=3ovqdRbCe40",
+      "title": "W. A. Mozart: Symphony No. 40 in g minor, K. 550, III. Menuetto Allegretto - Trio",
+      "channel": "Norwegian Chamber Orchestra",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user-66231241-911333342/benjamin-example-14-hemiola": {
+      "url": "https://www.youtube.com/watch?v=uQkrZBXEV9Y",
+      "title": "Hemiola* Explained in 30 Seconds (MuseScore 4)",
+      "channel": "Daniel Kim",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/user-341740072-203931960/bach-little-fugue-in-g-minor-bwv-578-saxophone-quartet": {
+      "url": "https://www.youtube.com/watch?v=1DZTwy9nXPg",
+      "title": "Bach \"Little\" Fugue in G Minor, BWV 578 - Saxophone Quartet | U.S. Army Field Band",
+      "channel": "Capital Premier Military Bands",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/holytrinitynymusic/bach-little-fugue-in-g-minor-bwv-578-andrew-h-yeargin-organ": {
+      "url": "https://www.youtube.com/watch?v=vITIeoxcfdM",
+      "title": "Bach - Little Fugue in G minor BWV 578 - Schouten | Netherlands Bach Society",
+      "channel": "Netherlands Bach Society",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000153674656-ej28jl-t500x500.jpg"
+    },
+    "https://soundcloud.com/teddy-malasky/gabrieli-canzon-septimi-toni": {
+      "url": "https://www.youtube.com/watch?v=yx-_K1rfQ5s",
+      "title": "Canzon Septimi Toni No  2 - Gabrieli edt. Robert King",
+      "channel": "San Francisco Brass Band",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/roman-ialcic/iwc-wagnerian-competition-seattle-2014-hagens-watchrialcicrwagner": {
+      "url": "https://www.youtube.com/watch?v=viPURDd-XC0",
+      "title": "Hagen's Watch – GÖTTERDÄMMERUNG Wagner – La Monnaie De Munt",
+      "channel": "OperaVision",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/raffi-dimoian/wagner-siegfried-short-call": {
+      "url": "https://www.youtube.com/watch?v=YmS6bQYqL1A",
+      "title": "Leah Meyer plays Siegfried Short Call by Richard Wagner",
+      "channel": "Jim M",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000179202755-brvugq-t500x500.jpg"
+    },
+    "https://soundcloud.com/jonathan-dunford/orlando-gibbons-fantasia-4-for-3-viols-4": {
+      "url": "https://www.youtube.com/watch?v=qMkldt-PbyA",
+      "title": "Orlando Gibbons   Fantasia #4 for 3 viols",
+      "channel": "Early Music Alberta",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/rafael-s-nchez-guevara/orlando-gibbons-fantasia-a-3": {
+      "url": "https://www.youtube.com/watch?v=Y2gPhoI9Ym4",
+      "title": "Orlando Gibbons - Fantasia #1 for 3 viols",
+      "channel": "Early Music Alberta",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/milana-strezeva/chopin-piano-trio-in-g-minor": {
+      "url": "https://www.youtube.com/watch?v=Mqct42DUR08",
+      "title": "Camille Thomas – Chopin: Piano Trio in G Minor, Op.8: IV. Finale. Allegretto (Official Video)",
+      "channel": "Deutsche Grammophon - DG",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/arnold_schoenberg/arnold-schonberg-pierrot-lunaire": {
+      "url": "https://www.youtube.com/watch?v=FkF5HY3QLTk",
+      "title": "Arnold Schoenberg: Pierrot Lunaire",
+      "channel": "Benoit Gravel",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000317239635-1kxfkx-t500x500.jpg"
+    },
+    "https://soundcloud.com/pascalzurek/alban-berg-wozzeck": {
+      "url": "https://www.youtube.com/watch?v=bNrPVAyjbvc",
+      "title": "Alban Berg - Wozzeck: Szene des Doktors (1. Akt)",
+      "channel": "Pascal Zurek - voice artist",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/mamiesmithofficial/crazy-blues-3": {
+      "url": "https://www.youtube.com/watch?v=ANQ2Y702hQg",
+      "title": "Crazy Blues (78rpm Version)",
+      "channel": "Mamie Smith and Her Jazz Hounds - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/bb-king-official/the-thrill-is-gone-6": {
+      "url": "https://www.youtube.com/watch?v=oica5jG7FpU",
+      "title": "B.B. King - The Thrill Is Gone ( 1969 ) HD",
+      "channel": "Nicolas Reboux",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-iDLhNCL60uj1-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/kevinmacleodofficial/big-rock": {
+      "url": "https://www.youtube.com/watch?v=xAbKnfdXMxM",
+      "title": "Big Rock - Take the Lead",
+      "channel": "Kevin MacLeod - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/jenzalewski/let-it-be-vocalpiano-cover": {
+      "url": "https://www.youtube.com/watch?v=4LUu0g4cKqY",
+      "title": "Let It Be (The Beatles) - Piano & Vocal Cover - Niels Martens",
+      "channel": "Niels Martens",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/ear-drills/ascending-c-blues-scale-piano": {
+      "url": "https://www.youtube.com/watch?v=Ft8TUKN7G7o",
+      "title": "How To Play a C Blues Scale on Piano",
+      "channel": "Brent Henderson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/c-major-scale": {
+      "url": "https://www.youtube.com/watch?v=R11JuZBGBA0",
+      "title": "C Major Scale : Ascending and Descending",
+      "channel": "Jessclyn Tjandra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/g-flat-perfect-octave-interval": {
+      "url": "https://www.youtube.com/watch?v=fV-p9n7upMc",
+      "title": "What is an Octave? | Music Theory | Video Lesson",
+      "channel": "Liberty Park Music",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/g-perfect-octave-interval": {
+      "url": "https://www.youtube.com/watch?v=xzMAM0LSMR0",
+      "title": "Perfect Octave",
+      "channel": "Aural Skills Guru - Topic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/saaby000/deck-the-halls": {
+      "url": "https://www.youtube.com/watch?v=W4p_1diZOJM",
+      "title": "Deck The Halls | A Cappella Christmas Carol",
+      "channel": "Stephanie Forryan",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/krachwerkerecording/skye-boat-song-outlander-bagpipes": {
+      "url": "https://www.youtube.com/watch?v=z1atOMKEWTY",
+      "title": "The Skye Boat Song | Outlander Theme on Highland Bagpipes",
+      "channel": "Masterson Piping",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/austin-cameron-6/scotland-the-brave-bagpipesdrums": {
+      "url": "https://www.youtube.com/watch?v=ZFSN9HteaNk",
+      "title": "Scotland the Brave: Black Bear / Scotland the Brave",
+      "channel": "Royal Scots Dragoon Guards - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000146676575-rg138k-original.jpg"
+    },
+    "https://soundcloud.com/rfmofficialpage/jason-shaw-solo-acoustic-guitar-royalty-free-music-rfm": {
+      "url": "https://www.youtube.com/watch?v=_jpYNkRswQ0",
+      "title": "Jason Shaw - SOLO ACOUSTIC GUITAR [Copyright Free Music]",
+      "channel": "Lucid RFM",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/fingerstyleguitarist/love-song": {
+      "url": "https://www.youtube.com/watch?v=S33tWZqXhnk",
+      "title": "Classical Gas [Mason Williams] | Tommy Emmanuel",
+      "channel": "Tommy Emmanuel, CGP",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/chuck-berry-official/guitar-boogie-543039263": {
+      "url": "https://www.youtube.com/watch?v=ct_eK8cBKJs",
+      "title": "Guitar Boogie",
+      "channel": "Chuck Berry - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/mozart/piano-sonata-no16-in-c-major-k-545-i-allegro": {
+      "url": "https://www.youtube.com/watch?v=5O9XIvkC-rk",
+      "title": "Lang Lang - Mozart: Piano Sonata No. 16 in C Major, K. 545: I. Allegro",
+      "channel": "LangLangVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/mozart/piano-sonata-no1-in-c-major-k-279-i-allegro": {
+      "url": "https://www.youtube.com/watch?v=NN6DnID3B8E",
+      "title": "Mozart: Piano Sonata No. 1 in C Major, K. 279: I. Allegro",
+      "channel": "Mitsuko Uchida - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/sergiodepieri/bach-toccata-and-fugue-in-f": {
+      "url": "https://www.youtube.com/watch?v=271iJho20LM",
+      "title": "Bach: Toccata and Fugue in F Major, BWV 540: I. Toccata",
+      "channel": "Sergio de Pieri - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/yhs9144/mendelssohn-sonata-no-4-in-b": {
+      "url": "https://www.youtube.com/watch?v=47d3NNd1g0s",
+      "title": "Mendelssohn: Organ Sonata No. 4 in B-flat Major (op. 65, no. 4)",
+      "channel": "Thomas Dawkins",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/mestradoluisamitre/ex-musical-18-figura-43-mordente-piano-cristovao-bastos-minha-crenca": {
+      "url": "https://www.youtube.com/watch?v=SiYCwITiW-Y",
+      "title": "Mordents and Inverted Mordents",
+      "channel": "Learn Piano Complete Guide",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/user-395688447/short-mordent-long-mordent-trill-with-termination": {
+      "url": "https://www.youtube.com/watch?v=kJ65FlqPbcg",
+      "title": "Grace Notes, Trill, and Mordent",
+      "channel": "Ken Nguyen",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-12-2-theory-grace-notes-ex": {
+      "url": "https://www.youtube.com/watch?v=VzTGA1Nnrz8",
+      "title": "Acciaccatura Piece Example - Musical Concepts (Download in Description)",
+      "channel": "The Successful Teacher",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-iCR3A6QjF38FmnCe-KW0v6w-t500x500.jpg"
+    },
+    "https://soundcloud.com/ladolcevolta/js-bach-the-well-tempered-3": {
+      "url": "https://www.youtube.com/watch?v=-5o7lcpMDqs",
+      "title": "Víkingur Ólafsson – Bach: Prelude in C minor, BWV 847 (The Well-Tempered Clavier, Book I., No. 2)",
+      "channel": "Deutsche Grammophon - DG",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/britatastad/mozarts-string-quartet-no-19-in-c-major-k-465-dissonance": {
+      "url": "https://www.youtube.com/watch?v=VarJ-MbdgHg",
+      "title": "Mozart: String Quartet No. 19 in C Major, K. 465 \"Dissonance\": I. Adagio – Allegro",
+      "channel": "Emerson String Quartet - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/alfarojulieta/er-ists-morike-lieder-hugo-wolf": {
+      "url": "https://www.youtube.com/watch?v=2BZtmKE1mII",
+      "title": "Barbara Bonney; Er ist's; Mörike Lieder; Hugo Wolf",
+      "channel": "Robert Brooks",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/performancesamples/river-harp-patch-demo-glissandi": {
+      "url": "https://www.youtube.com/watch?v=5bLUxvMMG04",
+      "title": "Sarah Chase Playing Harp Glissandos",
+      "channel": "Sarah Chase",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/tompkinsl/chromatic-scale-c-c-ascending": {
+      "url": "https://www.youtube.com/watch?v=0IslmRnvSvg",
+      "title": "Chromatic scale ascending and descending",
+      "channel": "The World Of Harmony",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/fabriciopiano/2-mozart-k545-piano-sonata-in": {
+      "url": "https://www.youtube.com/watch?v=qjk-YRuQZDE",
+      "title": "Mozart - Piano Sonata No. 16 in C Major, K.545 (1st Mvt)",
+      "channel": "Rousseau",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/user-688842758/prince-barreto-la-cuenta": {
+      "url": "https://www.youtube.com/watch?v=-Cq3RBuflHg",
+      "title": "PRINCE BARRETO - LA CUENTA 🧾 💰 (SI LA CUENTA HIZO 10 MIL) (VIDEO OFICIAL)",
+      "channel": "Prince Barreto",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/gianluca-dossi/leaving-port-askaig-scottish": {
+      "url": "https://www.youtube.com/watch?v=q9cpwa3WaBo",
+      "title": "Leaving Port Askaig - Scottish Jig with fiddle and piano",
+      "channel": "Gianluca Dossi",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/fats-waller-official/aint-misbehavin-version1": {
+      "url": "https://www.youtube.com/watch?v=dX0Lm6UoA-4",
+      "title": "Ain't Misbehavin' (version1)",
+      "channel": "Fats Waller - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/davebrubeck/take-five-31": {
+      "url": "https://www.youtube.com/watch?v=tT9Eh8wNMkw",
+      "title": "Dave Brubeck - Take Five",
+      "channel": "Tori Chitic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-DXZSD7TzRxWg-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/auralwizapp/e-major-chord": {
+      "url": "https://www.youtube.com/watch?v=G-a32UJR0Bo",
+      "title": "E Major Chord Drone",
+      "channel": "JoseCastilloMusicLessons",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/e-diminished-chord": {
+      "url": "https://www.youtube.com/watch?v=ak9qiMLMJRA",
+      "title": "How to Play E Diminished Voicings | Chord by Chord",
+      "channel": "Acoustic Guitar Magazine",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/2091-popular-music/i-ii-iv-v-in-g-major": {
+      "url": "https://www.youtube.com/watch?v=3HcMEbM_m0I",
+      "title": "I - II - IV - V in G : Popular Chord Progressions #8",
+      "channel": "Jonny Kaine",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/c-major-perfect-cadence-v-i": {
+      "url": "https://www.youtube.com/watch?v=Lyf7iuJqYB0",
+      "title": "Perfect Cadence Example",
+      "channel": "UC Music Department",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/avigailarad/j-s-bach-cello-suite-no1-in-g-major-bwv-1007-prelude-allemande-courante": {
+      "url": "https://www.youtube.com/watch?v=cGnZHIY_hoQ",
+      "title": "Bach - Cello Suite no. 1 in G major BWV 1007 - Swarts | Netherlands Bach Society",
+      "channel": "Netherlands Bach Society",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/telalitcellistsinger/bach-prelude-from-suite-no-4": {
+      "url": "https://www.youtube.com/watch?v=9I4i0SR6LT8",
+      "title": "J.S. BACH -  Prelude from Suite No. 4 for cello solo - Telalit Israeli cellist",
+      "channel": "TELALIT",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000054584436-auim1l-t500x500.jpg"
+    },
+    "https://soundcloud.com/musical-masterworks/bach-sonata-in-e-minor-bwv-1034-allegro": {
+      "url": "https://www.youtube.com/watch?v=3Dkf_bicdOw",
+      "title": "J.S. Bach - Sonata in E Minor, BWV 1034: II. Allegro / Emi Ferguson & Ruckus",
+      "channel": "Emi Ferguson",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/bassba/erlkonig-schubert": {
+      "url": "https://www.youtube.com/watch?v=lTbmRwP7YCY",
+      "title": "Schubert - \"Erlkönig\" (Ian Bostridge & Roger Vignoles) | Théâtre du Châtelet (2002)",
+      "channel": "wocomoMUSIC",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/lansdownesymphony/tchaikovsky-symphony-no-4-in-f-minor-iv-finale-allegro-con-fuoco": {
+      "url": "https://www.youtube.com/watch?v=Y7G5ithbFys",
+      "title": "Tschaikowsky: 4. Sinfonie ∙ hr-Sinfonieorchester ∙ Carlos Miguel Prieto",
+      "channel": "hr-Sinfonieorchester – Frankfurt Radio Symphony",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-uZtR8hVTgBPFzXxa-92QYTg-original.jpg"
+    },
+    "https://soundcloud.com/mahlasediatumelogospelchoir/amazing-grace": {
+      "url": "https://www.youtube.com/watch?v=ZrJF8aDPqNo",
+      "title": "AMAZING GRACE",
+      "channel": "MAHLASEDI A TUMELO GOSPEL CHOIR - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/chicagosymphony/beethoven-overture-to-egmont-1": {
+      "url": "https://www.youtube.com/watch?v=0NbuxS-aFyk",
+      "title": "Beethoven: Egmont, Op. 84: Overture",
+      "channel": "Chicago Symphony Orchestra - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/mozart/serenade-no13-in-g-major-k-525-eine-kleine-nachtmusik-i-allegro": {
+      "url": "https://www.youtube.com/watch?v=YJlAMuuFrEs",
+      "title": "Serenade No.13 in G major K.525 \"Eine kleine Nachtmusik\": I. Allegro",
+      "channel": "Wolfgang Amadeus Mozart - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/ravi-shankar-official/raga-bihag": {
+      "url": "https://www.youtube.com/watch?v=jsvm_3oqWe4",
+      "title": "Raga Bihag",
+      "channel": "Ravi Shankar - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-leLSTO6Xqt0A-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/normankennedy-music/drumdelgie": {
+      "url": "https://www.youtube.com/watch?v=z9NTZ4UEsiA",
+      "title": "Drumdelgie",
+      "channel": "Norman Kennedy - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-vb8wvL4eDGu8-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/abla-ammami/drum-roll-sound-effect": {
+      "url": "https://www.youtube.com/watch?v=X5yyCSqr6tE",
+      "title": "Drum Roll (Ending Celebration) - Sound Effect | ProSounds",
+      "channel": "ProSounds",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/chuck-berry-official/johnny-b-goode-46": {
+      "url": "https://www.youtube.com/watch?v=Y-9Y4CCIWnM",
+      "title": "Johnny Be Goode",
+      "channel": "Chuck Berry - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-wNLvkVicddXo-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/bill-haley-his-comets/were-gonna-rock-around-the-6": {
+      "url": "https://www.youtube.com/watch?v=hzYBEJgKjv0",
+      "title": "[We're Gonna] Rock Around The Clock",
+      "channel": "Bill Haley & His Comets - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/wickedmoviecast/defying-gravity-feat-ariana": {
+      "url": "https://www.youtube.com/watch?v=qemetmTzkeE",
+      "title": "Defying Gravity by Cynthia Erivo featuring Ariana Grande From | Wicked 2024",
+      "channel": "Film Aesthetics",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-7hYAEZG5z8NG-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/julie-andrews-official/do-re-mi-1": {
+      "url": "https://www.youtube.com/watch?v=Opzsew5Xtto",
+      "title": "Do-Re-Mi (1965 Original Soundtrack Version)",
+      "channel": "Julie Andrews - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-X7GbcgMPGi9l-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/alfred-deller/oedipus-z-583-music-for-a": {
+      "url": "https://www.youtube.com/watch?v=v0dKiqTFYzQ",
+      "title": "Oedipus, Z. 583: Music for a While",
+      "channel": "Alfred Deller - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-I41cJnru29tP-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/james-bowman-official/orlando-furioso-act-i-scene-11": {
+      "url": "https://www.youtube.com/watch?v=MW5qj9v-afs",
+      "title": "Orlando Furioso, Act I, Scene 11: Aria \"Sol da te. Mio dolce amore\"",
+      "channel": "James Bowman - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-wR6dkBYDorwW-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/athraa-al-aubody/patricia-jane-kov-les-oiseaux": {
+      "url": "https://www.youtube.com/watch?v=mVUpKIFHqZk",
+      "title": "Patricia JANEČKOVÁ: \"Les oiseaux dans la charmille\" (Jacques Offenbach - Les contes d' Hoffmann)",
+      "channel": "Patricia Janečková",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-MotYuS7rD5ElxEyO-FSscGA-t500x500.jpg"
+    },
+    "https://soundcloud.com/k-j-437105893/una-voce-poco-fa-2": {
+      "url": "https://www.youtube.com/watch?v=YeYFOhuguAI",
+      "title": "Una voce poco fa(펜트하우스2 천서진 립싱크 장면)",
+      "channel": "권가민 / MINALOG 미나",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Azxn4vpDRROZtciv-Ar2G5g-t500x500.jpg"
+    },
+    "https://soundcloud.com/new-century-baroque-ncb/corelli-concerto-grosso-op-6-1": {
+      "url": "https://www.youtube.com/watch?v=zJCV68OHUiw",
+      "title": "Corelli: Concerto grosso in D Major, Op. 6, No. 4: I. Adagio - Allegro",
+      "channel": "The English Concert - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user-917197845/concerto-grosso-in-d-minor-2": {
+      "url": "https://www.youtube.com/watch?v=eioawciTqOc",
+      "title": "Concerto Grosso No. 5 in D Minor, HWV 316, Op. 3: II. Allegro",
+      "channel": "Tafelmusik Baroque Orchestra - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/egeexyz/tremolo-picking-practice": {
+      "url": "https://www.youtube.com/watch?v=E2IIV_6kuIU",
+      "title": "Tremolo Picking for Beginners (Metal Guitar Lesson with Exercises)",
+      "channel": "Jason Stallworth",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/performancesamples/symphonic-strings-tremolo-dynamic-range-pppp-fff-test": {
+      "url": "https://www.youtube.com/watch?v=DzC-QdahtBs",
+      "title": "Tremolo Strings",
+      "channel": "Tetra Curse",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/vox-sound/vx50-ag-reverb-dry-to-wet": {
+      "url": "https://www.youtube.com/watch?v=aFvpeyCmbFw",
+      "title": "Reverb.",
+      "channel": "Rob Scallon",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/user-337680987/sp140-plate-reverb-dry-wet-examples": {
+      "url": "https://www.youtube.com/watch?v=knyauW5VJro",
+      "title": "Iconic Instruments - SP140 Plate Reverb TUTORIAL",
+      "channel": "Iconic Instruments",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/user-347712643/053-colorful-scales-flutter": {
+      "url": "https://www.youtube.com/watch?v=n2Ff5gcB2hg",
+      "title": "053 Colorful scales - Flutter tongue - The Flute Colors way!",
+      "channel": "Flute Colors",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-juuWnxp5EXlRuRze-ORsihw-t500x500.jpg"
+    },
+    "https://soundcloud.com/user-69799253-605709450/soulo-trumpet-straight-mute-james-ackley": {
+      "url": "https://www.youtube.com/watch?v=Wg6_myWGPhg",
+      "title": "Trumpet Straight Mute Review",
+      "channel": "Soulo Mute",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/maykerademakers/prelude-con-sordino-senza": {
+      "url": "https://www.youtube.com/watch?v=MaQWKWRxNDE",
+      "title": "Prelude Con sordino senza sordino",
+      "channel": "Mayke Rademakers - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-SSWwwddwCkHw-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/antelope_audio/berlin-47-viola-pizzicato": {
+      "url": "https://www.youtube.com/watch?v=k7DauoSO8-I",
+      "title": "Tall Round Fingers - viola (pizzicato)",
+      "channel": "Anastasia Verdoljak",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/musicradar-com/3-pizzicato-strings": {
+      "url": "https://www.youtube.com/watch?v=nNWS-NrXEic",
+      "title": "#24 (Playing the Violin Pizzicato)",
+      "channel": "Violin Pizzicato and Keyboards (by Nicole H.)",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/david-oistrakh/franck-violin-sonata-in-a-6": {
+      "url": "https://www.youtube.com/watch?v=DHEq9mxlrVw",
+      "title": "Franck: Violin Sonata in A Major: IV. Allegretto poco mosso",
+      "channel": "Release - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/liz-stratton/john-michel-cello-bach-ave": {
+      "url": "https://www.youtube.com/watch?v=TL2BeYbVKJo",
+      "title": "Ave Maria (Bach/Gounod) John Michel, cello",
+      "channel": "Nad Zegirafe",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/kumarbose/tabla-solo": {
+      "url": "https://www.youtube.com/watch?v=HSWxhS332u8",
+      "title": "Taal Rupak♥️🙏🏻 #Tabla #Music #India #ClassicalMusic #Friday #Love #Viral #Trending #Artist #Indian",
+      "channel": "Savani Talwalkar",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/johnf/tabla-solo-feat-zakir-hussain": {
+      "url": "https://www.youtube.com/watch?v=oLvKNlB1pB0",
+      "title": "Ustad Zakir Hussain Tabla Solo",
+      "channel": "gsingh93",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/sodonnellmusic/bodhran-solo": {
+      "url": "https://www.youtube.com/watch?v=3ChbigufBC8",
+      "title": "John Joe Kelly Bodhran Solo Irishfest - http://www.bodojo.com",
+      "channel": "Paul Marshall",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/de-vazallen-van-haestrecht/bodhran-solo": {
+      "url": "https://www.youtube.com/watch?v=07t1mIJdDQ4",
+      "title": "Bodhrán Solo (Live)",
+      "channel": "Rolf Wagels - Topic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/fiachraharp/17-the-young-mans-dream-aislean-an-oigfear": {
+      "url": "https://www.youtube.com/watch?v=baOsU06tSK4",
+      "title": "Jessica Burton - BBC Radio Scotland Young Trad Finalist",
+      "channel": "BBC",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/iain-mccoll-674782437/scottish-harp": {
+      "url": "https://www.youtube.com/watch?v=52O4rtq3ukU",
+      "title": "Glenlivet (live) - Traditional Scottish Music -  Harp Duygu Aydogan",
+      "channel": "DuyguHarpOfficial",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/thaddeuspercussion/bongoshortcoffeehse": {
+      "url": "https://www.youtube.com/watch?v=PFvny0Az-d4",
+      "title": "Lenny Castro Bongos",
+      "channel": "Gon Bops - Drums and Latin Percussion Instruments",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/julian-whitfield-kasanga/bongo-drums-solo": {
+      "url": "https://www.youtube.com/watch?v=PFvny0Az-d4",
+      "title": "Lenny Castro Bongos",
+      "channel": "Gon Bops - Drums and Latin Percussion Instruments",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-x59yyRf0LY5OJPRY-BBTOpA-t500x500.jpg"
+    },
+    "https://soundcloud.com/user-526712042/hi-hat-closed": {
+      "url": "https://www.youtube.com/watch?v=MgWqFbwMJcY",
+      "title": "Hi Hat Closed Sound Effect",
+      "channel": "Noah Smith - Topic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/thenote/4-just-blending-open-closed-hi": {
+      "url": "https://www.youtube.com/watch?v=xxaDVQ2aNOA",
+      "title": "How to Play a Foot Hi-Hat | Drumming",
+      "channel": "Howcast",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/sonoquilibrium/castanets-1": {
+      "url": "https://www.youtube.com/watch?v=ZgoglMpPTjU",
+      "title": "Albeniz: Asturias - Spanish Chamber Orchestra, dancers & castanets - Horst Sohm",
+      "channel": "MusicArtstrings",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/kavanagh-ensemble/presto-from-telemann-viola": {
+      "url": "https://www.youtube.com/watch?v=582CN9gAaYs",
+      "title": "Telemann Viola Concerto Presto",
+      "channel": "Peter Baxter violins and viola",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/ronan-oday/all-state-tuba-solo": {
+      "url": "https://www.youtube.com/watch?v=PzH4XAv9ZCQ",
+      "title": "Instrument: Tuba",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/marc-papeghin/octavarium-isolated-horn-solo": {
+      "url": "https://www.youtube.com/watch?v=lQa8SaSvj9o",
+      "title": "Dream Theater - Octavarium || French Horn Solo",
+      "channel": "Marc Papeghin",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000184021692-xw0i3n-t500x500.jpg"
+    },
+    "https://soundcloud.com/paolovivaldi/pantalones-theme-bassoon-solo": {
+      "url": "https://www.youtube.com/watch?v=WZfzk7vN5qs",
+      "title": "Pantalone's Theme (Bassoon Solo Version)",
+      "channel": "Paolo Vivaldi - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user-995579945/study-no-3-from-48-studies-by-franz-ferling": {
+      "url": "https://www.youtube.com/watch?v=cDtHIEUMJQs",
+      "title": "Study No. 3 from 48 Studies by Franz Ferling",
+      "channel": "Emily Heldreich - Oboe",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/matt-lengas/barber-violin-concerto-second-movement-oboe-solo": {
+      "url": "https://www.youtube.com/watch?v=t8Cg-9PNCY0",
+      "title": "Barber - Violin Concerto, Andante  (Oboe solo)",
+      "channel": "Erik Behr - oboist",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-B5GNKYmN9y4i3QTV-I6zczg-t500x500.jpg"
+    },
+    "https://soundcloud.com/ableton/piccolo_solo-mp3": {
+      "url": "https://www.youtube.com/watch?v=ivQpiJos1Sw",
+      "title": "Instrument: Piccolo",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/horn-dragon/starsandstripespiccolotubasolo": {
+      "url": "https://www.youtube.com/watch?v=9johOIZUIYI",
+      "title": "Stars & Stripes Forever Piccolo Solo - Flawless",
+      "channel": "Gung Ho Vids",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/lindsay-jazz/20-solo-trumpet-in-bucket-mute": {
+      "url": "https://www.youtube.com/watch?v=9mSXLQ3oSPk",
+      "title": "Soulo Trumpet Bucket Mute Demo",
+      "channel": "Soulo Mute",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/nevada-music-roland/boss-ds1-distortion-pedal": {
+      "url": "https://www.youtube.com/watch?v=EaI1VrA8bt8",
+      "title": "Boss DS1 distortion pedal settings",
+      "channel": "Steve's Musical Gear Reviews",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/silverfoxnik/yamaha-bb300-bass-played-with-a-pick": {
+      "url": "https://www.youtube.com/watch?v=iRfTjfp-ry0",
+      "title": "Yamaha \"players\" BB-300 Bass w/P-J EMG pickups Demo",
+      "channel": "The Life of Howard",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-5-ex-2-relative-scales": {
+      "url": "https://www.youtube.com/watch?v=E7d93VnDh6Y",
+      "title": "Understanding Relative Major and Minor the EASY Way",
+      "channel": "Steve Stine Guitar Lessons",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-PaKoaJxv7yIfcxWX-cp3zWA-t500x500.jpg"
+    },
+    "https://soundcloud.com/fakessh-lacroute/bach-aria-goldberg-variationen": {
+      "url": "https://www.youtube.com/watch?v=MaLxWTwQREE",
+      "title": "BACH: Goldberg Variations BWV 988 -Aria- Harpsichord",
+      "channel": "silverbird69",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/alina-rotaru-1/01-tombeau-blancheroche": {
+      "url": "https://www.youtube.com/watch?v=Zi5uu-vVIeY",
+      "title": "Johann Jakob Froberger: \"Tombeau Blancheroche.\" - Alfonso Fedi, harpsichord.",
+      "channel": "Nanni Pieri",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/samulis/all-up-in-your-business-from-beatcop-solo-xylophone-samuel-gossner-2": {
+      "url": "https://www.youtube.com/watch?v=-lJctvybAJ8&t=149s",
+      "title": "Instruments: Percussion",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Dh8Wgyx9kKYmRNjH-4Pb70w-t500x500.jpg"
+    },
+    "https://soundcloud.com/patricia-perez-gonzalez-518730919/yt1scom-guiro-solo-demo-advanced-techniques-lp-super-guiro-latin-percussion": {
+      "url": "https://www.youtube.com/watch?v=gPdsZ22Dv8o",
+      "title": "Guiro Solo / Demo - Advanced Techniques - \"LP Super Guiro\" (Latin Percussion)",
+      "channel": "Emmanuel Simon",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/uc-press/sound-link-3-11-guiro": {
+      "url": "https://www.youtube.com/watch?v=GuumryelWWo",
+      "title": "Mastering the Guiro percussion instrument",
+      "channel": "Echoes and Footprints",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000385710111-p41mgu-t500x500.jpg"
+    },
+    "https://soundcloud.com/groverpropercussion/sv-tamb-sound-values": {
+      "url": "https://www.youtube.com/watch?v=rky0T-kjwDk",
+      "title": "Grover Pro Sound Values Tambourine 10 in. Dimpled Brass Jingles",
+      "channel": "Woodwind & Brasswind is now Music & Arts ",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/sigeru-simada/tambourine-solo": {
+      "url": "https://www.youtube.com/watch?v=m03Hc491Vxk",
+      "title": "Tambourine Solo",
+      "channel": "sarasacha",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/user-222087815/latin-triangle-02": {
+      "url": "https://www.youtube.com/watch?v=N7Oz752rqVs",
+      "title": "Triangle Solo / Demo - Advanced Techniques - LP Latin Percussion",
+      "channel": "Emmanuel Simon",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/evolution-series/orchestral-bass-drum-no-rooms": {
+      "url": "https://www.youtube.com/watch?v=dN_EzmXbsu8",
+      "title": "PERCUSSION 101: Concert Bass Drum",
+      "channel": "MPO STAGE+",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/3-bass-drum": {
+      "url": "https://www.youtube.com/watch?v=dN_EzmXbsu8",
+      "title": "PERCUSSION 101: Concert Bass Drum",
+      "channel": "MPO STAGE+",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/drakemusic-2/2015-percussion-snare-drum": {
+      "url": "https://www.youtube.com/watch?v=_m4RUlsBf0I",
+      "title": "TMEA 2015 Percussion All-State Music: Snare Drum Etude",
+      "channel": "Vic Firth",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/daniel-gonko/lapse-of-time-timpani-solo": {
+      "url": "https://www.youtube.com/watch?v=40k3AAbA7tM",
+      "title": "Instrument: Timpani",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/kaiwen-1/timpani-solo-carter-march": {
+      "url": "https://www.youtube.com/watch?v=EtC0Wvl96hA",
+      "title": "Aaron Milam performs \"March\" from Carter's \"Eight Pieces for Solo Timpani, SFASU",
+      "channel": "Brad Meyer",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/cherry-classics-music/raum-straight-gets-cool-for-unaccompanied-trombone-solo": {
+      "url": "https://www.youtube.com/watch?v=EndhDQWlUgg",
+      "title": "Instrument: Trombone",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-vkbKGDlXWr9xTzZv-M2oQRw-t500x500.jpg"
+    },
+    "https://soundcloud.com/metmuseum/9317-natural-trumpet": {
+      "url": "https://www.youtube.com/watch?v=8kE-hHuBTk4",
+      "title": "The natural trumpet | Netherlands Bach Society",
+      "channel": "Netherlands Bach Society",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/andrea-stacey-969511398/air-gai-trumpet-solo-for-my": {
+      "url": "https://www.youtube.com/watch?v=WNbWaEN8F2E",
+      "title": "Air Gai (G.P. Berlioz) Trumpet Solo",
+      "channel": "Mark Morgan",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/titus-ong/saxy-night-saxophone-jazz-funk-solo": {
+      "url": "https://www.youtube.com/watch?v=XGZJLMspQlY",
+      "title": "Saxy Night (Saxophone jazz funk solo)",
+      "channel": "Titus Ong",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/danielcostinonsax/jubelsave-me-saxophone-solo-by-daniel-costin": {
+      "url": "https://www.youtube.com/watch?v=ozCXmP0CRVw",
+      "title": "Jubel - Saxophone (Klingande)",
+      "channel": "Daniel Costin",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000610953745-92ffz0-t500x500.jpg"
+    },
+    "https://soundcloud.com/lucia-mcclarinet/harold-wright-performs-the-brahms-trio-in-a-minor-op-114-1949-50-lipkintung": {
+      "url": "https://www.youtube.com/watch?v=ocWWURruTJk",
+      "title": "HAROLD WRIGHT / YO YO MA / EMANUEL AX: BRAHMS TRIO LIVE",
+      "channel": "David Blumberg",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/paulpac/piece-for-unaccompanied-clarinet": {
+      "url": "https://www.youtube.com/watch?v=e0t8vs_s9q0",
+      "title": "Piece for Unaccompanied Clarinet",
+      "channel": "Release - Topic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000123521006-vy9raz-t500x500.jpg"
+    },
+    "https://soundcloud.com/alcixhxan/bach-bourree-angloise-from": {
+      "url": "https://www.youtube.com/watch?v=QLbstctlVnM",
+      "title": "Partita in A Minor for Unaccompanied Flute, BWV 1013: IV. Bourrée anglaise (Instrumental)",
+      "channel": "Frans Brüggen - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user715304124/bach-partita-for-solo-flute-in-a-minor-bwv-1013-i-allemande-gustav-scheck-flute-1957": {
+      "url": "https://www.youtube.com/watch?v=DKdj1ZlhPR4",
+      "title": "J.S. Bach: Partita for Solo Flute in A minor, BWV 1013 – I. Allemande  | Matthew Wu Flute Recital",
+      "channel": "Hong Kong Flute Academy",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000157875105-2qhc2g-t500x500.jpg"
+    },
+    "https://soundcloud.com/kevinmacleodofficial/evening-fall-harp": {
+      "url": "https://www.youtube.com/watch?v=8TYO4Css6tE",
+      "title": "Evening Fall Harp",
+      "channel": "Kevin MacLeod - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/floraleda/salzedo-tenderly-emoted": {
+      "url": "https://www.youtube.com/watch?v=q87SYPXtJZI",
+      "title": "Salzedo: Tenderly Emoted for Harp (from Preludes Intimes) [In a Landscape]",
+      "channel": "Floraleda Sacchi",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000016458125-wqbb81-t500x500.jpg"
+    },
+    "https://soundcloud.com/lluis-cros/jazz-walking-bass-on-double-bass": {
+      "url": "https://www.youtube.com/watch?v=nUUVSxZ4ohI",
+      "title": "Instrument: Double Bass",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/dr-karmon/cant-stop-running-percussive-double-bass-solo-adam-ben-ezra": {
+      "url": "https://www.youtube.com/watch?v=xjhZhI2Zthg",
+      "title": "Can't Stop Running - Percussive Double Bass Solo - Adam Ben Ezra",
+      "channel": "Adam Ben Ezra",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/apartemusic/js-bach-suite-n-1-in-g-major-bwv-1007-prelude-ophelie-gaillard": {
+      "url": "https://www.youtube.com/watch?v=poCw2CCrfzA",
+      "title": "Bach: Prélude, Cello suite Nr.1 | Ophélie Gaillard",
+      "channel": "Aparté Music",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/davidcgale/johann-sebastian-bach-sonata": {
+      "url": "https://www.youtube.com/watch?v=Z8HXTZ270eg",
+      "title": "Johann Sebastian Bach Sonata No. 1 for solo violin in G minor, BWV 1001 - I. Adagio",
+      "channel": "David Gale",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/kristap/johan-sebastian-bach-adagio": {
+      "url": "https://www.youtube.com/watch?v=c3mwVaQIZ1c",
+      "title": "Hilary Hahn - Bach, J.S.: Sonata for Violin Solo No. 1 in G Minor, BWV 1001: 1. Adagio (Audio)",
+      "channel": "HilaryHahnVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/c-alanpublications/centennial-fanfare": {
+      "url": "https://www.youtube.com/watch?v=a-7XWhyvIpE&t=57s",
+      "title": "SOUSA The Stars and Stripes Forever - \"The President's Own\" U.S. Marine Band",
+      "channel": "United States Marine Band",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/sharonconcertband/radetsky-march": {
+      "url": "https://www.youtube.com/watch?v=rdkVBk5EYyE",
+      "title": "Radetzky Marsch - Arr. Franco Cesarini",
+      "channel": "Hal Leonard Europe Concert Band",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-TgCN1XTZupId9JyY-0pSoBg-t500x500.jpg"
+    },
+    "https://soundcloud.com/fodensband/mephistopheles-fodens-prize-brass-band-1914": {
+      "url": "https://www.youtube.com/watch?v=YOhfOOmMp6Y",
+      "title": "Mephistopheles - RNCM Brass Band at UniBrass 2019",
+      "channel": "UniBrass",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user-687319810/radetzky-march": {
+      "url": "https://www.youtube.com/watch?v=bzZ6pSoYTy4",
+      "title": "Radetzky March",
+      "channel": "The Brighouse And Rastrick Brass Band - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/8dioproductions/8dio-anthology-divisi-chamber-sections-legato-demo-naked": {
+      "url": "https://www.youtube.com/watch?v=3vxYPvMsrXw",
+      "title": "Legato and Staccato Touch",
+      "channel": "lionwhalemusic",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/musicradar-com/getting-started-with-legato-1": {
+      "url": "https://www.youtube.com/watch?v=3vxYPvMsrXw",
+      "title": "Legato and Staccato Touch",
+      "channel": "lionwhalemusic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/amy-rizzo-313408861/concertina-scotch-reels-prince": {
+      "url": "https://www.youtube.com/watch?v=iEvUUR9BsQc",
+      "title": "Alexander Prince - Scotch Reels (Winner2055) (1912)",
+      "channel": "Robert Godridge",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/theianandersonscottishdanceband/reel": {
+      "url": "https://www.youtube.com/watch?v=3ErmZIMBe2M",
+      "title": "Reel",
+      "channel": "The Ian Anderson Scottish Dance Band - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-kOoKyx0nmMmx-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/lisa-reshkus/drum-kit-groove-only": {
+      "url": "https://www.youtube.com/watch?v=TfML1WEWfwk",
+      "title": "Overqualified drummer at kid's concert in Japan",
+      "channel": "Asto",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/old-time-jam/they-swung-john-brown-from-a-sour-apple-tree": {
+      "url": "https://www.youtube.com/watch?v=6i-KSQtaXSE",
+      "title": "They Swung John Brown To A Sour Apple Tree",
+      "channel": "Jim Taylor - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/liam-gold/swallowtail-reel-solo-fiddle": {
+      "url": "https://www.youtube.com/watch?v=isSP5YZS9O0",
+      "title": "fiddle: swallow's tail reel",
+      "channel": "Jon Harkness",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000173593173-l73smx-t500x500.jpg"
+    },
+    "https://soundcloud.com/tommy-goddard-1/in-the-twilight": {
+      "url": "https://www.youtube.com/watch?v=-lJctvybAJ8&t=293s",
+      "title": "Instruments: Percussion",
+      "channel": "Philharmonia Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000319465020-i2k8yt-t500x500.jpg"
+    },
+    "https://soundcloud.com/lorin-maazel/symphony-no-4-in-a-major-op-90": {
+      "url": "https://www.youtube.com/watch?v=oUdINtPpiIw",
+      "title": "Mendelssohn: Symphony No. 4 in A Major, Op. 90, MWV N16 \"Italian\": I. Allegro vivace",
+      "channel": "London Symphony Orchestra - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/rocoreplay/9-haydn-symphony-no-94-in-g-1": {
+      "url": "https://www.youtube.com/watch?v=Cj8fmDmwyUc",
+      "title": "Franz Joseph Haydn: Symphony No. 94 in G Major “Surprise Symphony” II. Andante",
+      "channel": "Global Music School",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000144320290-5veb8r-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicradar-com/strummed-rhythms-ex1": {
+      "url": "https://www.youtube.com/watch?v=0jnS1r7ZDMQ",
+      "title": "Basic Guitar Strumming Patterns: #1 All Downstrokes",
+      "channel": "Elias Jireis",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/performancesamples/hyper-active-bowing-small-violin-ensemble-test": {
+      "url": "https://www.youtube.com/watch?v=y6MI2BNhdLI",
+      "title": "17 violin bowing techniques + sheet music symbols",
+      "channel": "Violin Lounge",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/jazzonthesaxophone/baritone-saxophone-solo": {
+      "url": "https://www.youtube.com/watch?v=SPPUTKzGLUU",
+      "title": "Misty | Baritone Saxophone Solo",
+      "channel": "Better Trax",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/swabyssounds/toy-drums-high-tom-sample-audio-96kbps": {
+      "url": "https://www.youtube.com/watch?v=IsfEj_7SKtQ",
+      "title": "What does a xylophone sound like? (Scale)",
+      "channel": "Utah Symphony & Utah Opera (USUO)",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/user-917197845/concerto-grosso-in-g-major-1": {
+      "url": "https://www.youtube.com/watch?v=ja7wKRwyK3s",
+      "title": "Concerto Grosso in G Major, Op. 6 No. 1, HWV 319: IV. Allegro",
+      "channel": "Australian Brandenburg Orchestra - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/scott-kirby-piano/ragtime-oriole-james-scott": {
+      "url": "https://www.youtube.com/watch?v=EAgvAHboPTs",
+      "title": "Scott Kirby Piano: Ragtime Oriole by James Scott",
+      "channel": "Scott Kirby",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/user-418685957/anton-n-dvo-k-symphony-no-9-in": {
+      "url": "https://www.youtube.com/watch?v=pGdtkUiKaA8",
+      "title": "Vienna Philharmonic – Dvořák: Symphony No. 9 ‘From the New World’, IV. Allegro con fuoco",
+      "channel": "Sony Classical",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/bellahristova/tchaikovsky-violin-concerto": {
+      "url": "https://www.youtube.com/watch?v=4TZAQkLDaqk",
+      "title": "Bella Hristova, Tchaikovsky Violin Concerto - III. Finale. Allegro vivacissimo",
+      "channel": "Bella Hristova",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/supereuartistagency/giacomo-pucciniturandot-non-piangere-liu": {
+      "url": "https://www.youtube.com/watch?v=GZkIRuqwCO0",
+      "title": "Giacomo Puccini - Turandot (Non piangere Liu) - Botond Ódor",
+      "channel": "Botond Ódor",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/archiefisher/the-twa-corbies": {
+      "url": "https://www.youtube.com/watch?v=Jbx27VTebmE",
+      "title": "The Twa Corbies",
+      "channel": "Archie Fisher - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-GMyYdbGnUAol-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/kevinmacleodofficial/tea-roots": {
+      "url": "https://www.youtube.com/watch?v=mceuGF3nxZc",
+      "title": "Kevin MacLeod: Tea Roots",
+      "channel": "Kevin MacLeod Archive",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/bob-marley-the-wailers/three-little-birds-album": {
+      "url": "https://www.youtube.com/watch?v=HNBCVM4KbUM",
+      "title": "Bob Marley & The Wailers - Three Little Birds (Official Music Video)",
+      "channel": "BobMarleyVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-F7qfTQOVML9V-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/tocar-percusion/djembe-african-percussion-traditional-african-rhythm": {
+      "url": "https://www.youtube.com/watch?v=jGBBSTOQRG8",
+      "title": "Kpanlogo - Brown Ghanaian Drumming Ensemble",
+      "channel": "Nfewa Music",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/billlivingstone/lament-for-the-children": {
+      "url": "https://www.youtube.com/watch?v=4_XHzNipAJ0",
+      "title": "Lament For The Children",
+      "channel": "Bill Livingstone - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-qLuf7mqp1tZ6-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/korota/001-dancing-willow-the-wind": {
+      "url": "https://www.youtube.com/watch?v=cYJFwLiLFKY",
+      "title": "Dancing Willow -  The Wind That Shakes The Barley",
+      "channel": "Caihgan",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/runrig-official/loch-lomond-live-1": {
+      "url": "https://www.youtube.com/watch?v=CHu0h9XaNcg",
+      "title": "RUNRIG - Loch Lomond (Live In Balloch) Full Version",
+      "channel": "MissFlowerOfScotland",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-HjUwbX5kmUuE-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/pro-cantione-antiqua/gregorian-chant-dies-irae": {
+      "url": "https://www.youtube.com/watch?v=hcBionUi8us",
+      "title": "Gregorian Chant: Dies Irae",
+      "channel": "Pro Cantione Antiqua - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-pZLfzBhf0zrB-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/barry-rose-official/the-crucifixion-1990-digital-2": {
+      "url": "https://www.youtube.com/watch?v=_v-auOqpGRw",
+      "title": "The Crucifixion: XX. For the Love of Jesus, \"All for Jesus\" (Chorus)",
+      "channel": "Choir of Guildford Cathedral/Barry Rose - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/london-symphony-orchestra/the-messiah-for-unto-us-a": {
+      "url": "https://www.youtube.com/watch?v=MS3vpAWW2Zc",
+      "title": "Handel: Messiah, For unto us a child is born (Sir Colin Davis, Tenebrae, LSO)",
+      "channel": "London Symphony Orchestra",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-htx42nuYQyCD-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicofthebaroque/mozart-requiem-kyrie": {
+      "url": "https://www.youtube.com/watch?v=h2aW4gSHEDU",
+      "title": "Mozart Requiem - Kyrie",
+      "channel": "Art Of Sound And Vision",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-9ykx3ligFDiYyfF7-sxdzmw-t500x500.jpg"
+    },
+    "https://soundcloud.com/charisse-baldoria/beethoven-op-101-in-a-major-1": {
+      "url": "https://www.youtube.com/watch?v=osxQPQj4wcU",
+      "title": "Alfred Brendel - Beethoven Piano Sonata Op. 101 Movement 2",
+      "channel": "Nasir Shuja",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/balzalorsky/janacek-violinsonta-3": {
+      "url": "https://www.youtube.com/watch?v=A8ZmSKGQABM",
+      "title": "Janacek - Violin Sonata - Allegretto",
+      "channel": "vladakocian",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/allan-gracebrass/america-the-beautiful-for-brass-quintet": {
+      "url": "https://www.youtube.com/watch?v=VdN2wjgNZc4",
+      "title": "America The Beautiful for Brass Quintet",
+      "channel": "Music Files Library",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/luisa-vander/moonlight-clair_de_lune": {
+      "url": "https://www.youtube.com/watch?v=gVIfOJL-rJ4",
+      "title": "Moonlight - Clair de Lune (From \"Suite Bergamasque\")",
+      "channel": "Claude Debussy - Topic",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/salakapakka-sound-system/salakapakka-sound-system-henki": {
+      "url": "https://www.youtube.com/watch?v=N9pOq8u6-bA",
+      "title": "pierre schaeffer - \"etude aux chemins de fer\"",
+      "channel": "apopcollapse",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/pierreschaeffer/trois-directions-etude-aux": {
+      "url": "https://www.youtube.com/watch?v=ioMr0dQLctI",
+      "title": "Trois directions: Étude aux chemins de fer (Railway Study)",
+      "channel": "Pierre Schaeffer - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-oS8D5mgc8i2E-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/lmao_ayy/herbie-hancock-chameleon": {
+      "url": "https://www.youtube.com/watch?v=oweK8H40kZk",
+      "title": "Herbie Hancock - Chameleon (Live at Montreux Jazz Festival 2010)",
+      "channel": "Montreux Jazz Festival",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/auralwizapp/g-perfect-fifth-interval": {
+      "url": "https://www.youtube.com/watch?v=jYIG3H6DTC4",
+      "title": "Step Skip Leap",
+      "channel": "Australian Music Schools",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/theyoungpavarotti/la-donna-e-mobile": {
+      "url": "https://www.youtube.com/watch?v=fEDMXzOPNbo",
+      "title": "Young Pavarotti La Donna è Mobile 1964: The Golden Voice Before the Legend",
+      "channel": "RoxBlog Classical Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-gjhJq9tGtMux-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/malinkyofficial/sleepytoon": {
+      "url": "https://www.youtube.com/watch?v=o2APcMrlmBQ",
+      "title": "Sleepytoon",
+      "channel": "Malinky - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-yCnxH6Osa5IO-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/connorq/psalm-16-tune-moravia-gaelic": {
+      "url": "https://www.youtube.com/watch?v=6S3XDunMj2Y",
+      "title": "Salm 22 (Psalm 22 in Gaelic) sung by Back Free Church congregation",
+      "channel": "Alastair Jackson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-5DFHoZcnLDLolLr0-yh6QAw-t500x500.jpg"
+    },
+    "https://soundcloud.com/paircfreechurch/psalm-10728-31-gaelic": {
+      "url": "https://www.youtube.com/watch?v=6S3XDunMj2Y",
+      "title": "Salm 22 (Psalm 22 in Gaelic) sung by Back Free Church congregation",
+      "channel": "Alastair Jackson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/capercaillieofficial/skye-waulking-song": {
+      "url": "https://www.youtube.com/watch?v=2yjPf4Bwp1o",
+      "title": "Skye Waulking Song",
+      "channel": "Capercaillie - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-dyvI7f8hrJre-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/the-kings-singers/morley-now-is-the-month-of": {
+      "url": "https://www.youtube.com/watch?v=LJ7VirCScp0",
+      "title": "Now is the Month of Maying.mp4",
+      "channel": "The King's Singers",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-wAvjnFBo2v02-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/snarkypuppy/lingus-2024-remixed-remastered": {
+      "url": "https://www.youtube.com/watch?v=wSoBSncs8hg",
+      "title": "Lingus (2024 Remixed + Remastered)",
+      "channel": "Snarky Puppy - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-E3jLGDVbWM8o-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/kamasiwashington/01-change-of-the-guard": {
+      "url": "https://www.youtube.com/watch?v=NtQRBzSN9Vw",
+      "title": "Kamasi Washington - 'Change of the Guard'",
+      "channel": "Brainfeeder",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000120741851-8fg7m4-t500x500.jpg"
+    },
+    "https://soundcloud.com/leonard-bernstein-official/stravinsky-pulcinella-suite-1": {
+      "url": "https://www.youtube.com/watch?v=HI4t0O03hvI",
+      "title": "Pulcinella Suite: I. Sinfonia (Overture)",
+      "channel": "New York Philharmonic - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-r9TcbsqRLSGR-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/steve-owen-295996989/my-bagpipes-output": {
+      "url": "https://www.youtube.com/watch?v=989tydsWJJQ",
+      "title": "The Drone Of The Great Highland Bagpipe",
+      "channel": "Jim Ramsay",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/iona-brown-official/serenade-no-13-for-strings-2": {
+      "url": "https://www.youtube.com/watch?v=1l7H_6E1D-w",
+      "title": "Serenade No. 13 for Strings in G Major, K. 525 \"Eine kleine Nachtmusik\": I. Allegro",
+      "channel": "Release - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-yC5HlDrdKigl-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/up_north_session_orchestra/morning-peer-gynt-op23-up-north-session-orchestra": {
+      "url": "https://www.youtube.com/watch?v=2cv08m93NsU",
+      "title": "I. Morning Mood in E Major (Morgenstemning)",
+      "channel": "Edvard Grieg - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000119919152-0rka1i-t500x500.jpg"
+    },
+    "https://soundcloud.com/miami-symphony-orchestra/mozart-molto-allegro-from-the-symphony-no-40-in-g-minor": {
+      "url": "https://www.youtube.com/watch?v=NxV9VytEm9c",
+      "title": "W. A. Mozart: Symphony No. 40 in g minor, K. 550, I. Molto allegro",
+      "channel": "Norwegian Chamber Orchestra",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/carlos-kleiber/1-allegro-con-brio": {
+      "url": "https://www.youtube.com/watch?v=ZLsjbprwpzg",
+      "title": "Beethoven Symphony no. 5 in C minor, Op. 67 I. Allegro con brio: Carlos Kleiber ,Wiener Philharmonic",
+      "channel": "Robot Makgui",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-jRnJCGjPKC2w-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/lynne-publishing/vadim-chaimovich-bach-prelude": {
+      "url": "https://www.youtube.com/watch?v=nKUIWFa_8vM",
+      "title": "J.S. Bach: The Well-Tempered Clavier, Book 1: Prelude in C Major, BWV 846",
+      "channel": "Vadim Chaimovich - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-kw50vVOjzX9O1mhm-LRaFHA-t500x500.jpg"
+    },
+    "https://soundcloud.com/peterelst/moonlight-sonata-first-movement": {
+      "url": "https://www.youtube.com/watch?v=sbTVZMJ9Z2I",
+      "title": "Beethoven - Moonlight Sonata (1st Movement)",
+      "channel": "Rousseau",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000096557726-kxwr30-t500x500.jpg"
+    },
+    "https://soundcloud.com/clearwater-music-1/c-major-scale-guitar-audio-demonstration": {
+      "url": "https://www.youtube.com/watch?v=nWCdFZCl10Q",
+      "title": "C Major Scale & 7 Guitar Chords | Beginner Lesson + Play Along",
+      "channel": "Anchor Sound Academy",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/auralwizapp/b-flat-natural-minor-scale": {
+      "url": "https://www.youtube.com/watch?v=bz5djHP_xWI",
+      "title": "Bb Natural Minor Scale",
+      "channel": "Music Rudiments Sounds",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/zhara-flaviani/i-will-always-love-you-whitney-houston": {
+      "url": "https://www.youtube.com/watch?v=3JWTaaS7LdU",
+      "title": "Whitney Houston - I Will Always Love You (Official 4K Video)",
+      "channel": "whitneyhoustonVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/cv19382/michael-jackson-man-in-the-mirror-moonwalker": {
+      "url": "https://www.youtube.com/watch?v=d0WVONOlF4Y",
+      "title": "Man in the Mirror (Moonwalker Version) - Michael Jackson",
+      "channel": "MJ BAD Remixes",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000128154921-wnbcgd-t500x500.jpg"
+    },
+    "https://soundcloud.com/themanytones-1/love-on-top-beyonce": {
+      "url": "https://www.youtube.com/watch?v=Ob7vObnFUJc",
+      "title": "Beyoncé - Love On Top (Official Video)",
+      "channel": "BeyoncéVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000439408284-68n69d-t500x500.jpg"
+    },
+    "https://soundcloud.com/poprocks-1/livin-on-a-prayer-bon-jovi": {
+      "url": "https://www.youtube.com/watch?v=lDK9QqIzhwk",
+      "title": "Bon Jovi - Livin' On A Prayer",
+      "channel": "BonJoviVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000008021296-4xsb9u-t500x500.jpg"
+    },
+    "https://soundcloud.com/rui-gomes-194639196/f-major-pentatonic-scale": {
+      "url": "https://www.youtube.com/watch?v=JR2c0vLyt8I",
+      "title": "major pentatonic scale",
+      "channel": "Seth David",
+      "matchType": "demonstration"
+    },
+    "https://soundcloud.com/vadimchaimovich/bach-prelude-c-major-bwv-846-piano": {
+      "url": "https://www.youtube.com/watch?v=nKUIWFa_8vM",
+      "title": "J.S. Bach: The Well-Tempered Clavier, Book 1: Prelude in C Major, BWV 846",
+      "channel": "Vadim Chaimovich - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-MkY55Gdt9Rg32CUZ-m1ARLQ-t500x500.jpg"
+    },
+    "https://soundcloud.com/rocoreplay/gustav-holstthe-planets-i-mars-the-bringer-of-war": {
+      "url": "https://www.youtube.com/watch?v=CNStjgSWvk4",
+      "title": "Gustav Holst, arr. Jim Stephenson: The Planets (ROCO, Mei-Ann Chen)",
+      "channel": "ROCO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-0BzzkDZpaKr1i464-65MIkA-t500x500.jpg"
+    },
+    "https://soundcloud.com/thesupremes/you-keep-me-hangin-on-stereo": {
+      "url": "https://www.youtube.com/watch?v=pi00f6oiMu4",
+      "title": "The Supremes - You Keep Me Hangin' On (Lyric Video)",
+      "channel": "TheSupremesVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Uqo801Ke2Ms2-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/ge-schneider/johann-sebastian-bach-sonata": {
+      "url": "https://www.youtube.com/watch?v=UMQpsY53CbU",
+      "title": "J.S.Bach - Sonata n. 2 in a minor BWV 1003 for solo Violin - Allegro",
+      "channel": "Georges-Emmanuel Schneider - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000007927194-j3iv5q-t500x500.jpg"
+    },
+    "https://soundcloud.com/auditorylab/acoustic-mallets-glockenspiel": {
+      "url": "https://www.youtube.com/watch?v=xR8xxYAFQiI",
+      "title": "Glockenspiel Plugin (Mac/PC VST, AU)",
+      "channel": "Auditory Lab",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000288073310-tgzwmv-t500x500.jpg"
+    },
+    "https://soundcloud.com/auralwizapp/g-minor-second-interval": {
+      "url": "https://www.youtube.com/watch?v=FzF_z9QQR5o",
+      "title": "Piano Tones and Semitones",
+      "channel": "Justin Florisson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/g-major-second-interval": {
+      "url": "https://www.youtube.com/watch?v=FzF_z9QQR5o",
+      "title": "Piano Tones and Semitones",
+      "channel": "Justin Florisson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/d-major-imperfect-cadence-iv-v": {
+      "url": "https://www.youtube.com/watch?v=k1-NnDVmyqM",
+      "title": "Imperfect Cadence IV-V",
+      "channel": "Richard Kant",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/c-major-interrupted-cadence-v": {
+      "url": "https://www.youtube.com/watch?v=0YRHxOBjQxQ",
+      "title": "How to Build Up an Interrupted Cadence V-VI",
+      "channel": "Pianist, Lucy Hwana Lee",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/c-major-plagal-cadence-iv-i": {
+      "url": "https://www.youtube.com/watch?v=KjPD1ieYC0Y",
+      "title": "I IV I (Plagal) Cadence C Major",
+      "channel": "Blues Busters",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/c-harmonic-minor-scale": {
+      "url": "https://www.youtube.com/watch?v=DTfYtk7rnNg",
+      "title": "C Harmonic Minor Scale",
+      "channel": "Music Rudiments Sounds",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/c-melodic-minor-scale": {
+      "url": "https://www.youtube.com/watch?v=oO3WJ4Kbf_E",
+      "title": "C Melodic Minor Scale",
+      "channel": "Music Rudiments Sounds",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/basic-3-4-riff": {
+      "url": "https://www.youtube.com/watch?v=E2QIUMzaLGc",
+      "title": "4/4 4 Bar Count",
+      "channel": "Tilbymusic tuition",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/3-kick-and-snare": {
+      "url": "https://www.youtube.com/watch?v=aqEg2B-FFao",
+      "title": "Steady Beat Body Percussion | You Should - Patrick Patrikios",
+      "channel": "Music with Ms Morgan",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/4-kick-snare-and-hats": {
+      "url": "https://www.youtube.com/watch?v=aqEg2B-FFao",
+      "title": "Steady Beat Body Percussion | You Should - Patrick Patrikios",
+      "channel": "Music with Ms Morgan",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/rhythm-284-nlg-hi-hat-1": {
+      "url": "https://www.youtube.com/watch?v=Rm8YBuzBy4Q",
+      "title": "Accent Example - Musical Concepts",
+      "channel": "The Successful Teacher",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/ex-2-syncopated-chords": {
+      "url": "https://www.youtube.com/watch?v=vth3W1DDx6E",
+      "title": "Onbeat Offbeat Drumming | Congas #jamuary2023",
+      "channel": "HAPPYDRUMSde",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/6-multi-accented-roll": {
+      "url": "https://www.youtube.com/watch?v=Rm8YBuzBy4Q",
+      "title": "Accent Example - Musical Concepts",
+      "channel": "The Successful Teacher",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/ex1-eighth-note-syncopation": {
+      "url": "https://www.youtube.com/watch?v=CGZn-L0ICkM",
+      "title": "RHYTHM CLAPPING Practice! Level 5, Exercise 1 - EIGHTH NOTE SYNCOPATION",
+      "channel": "Mrs. Musical Pants",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/ex2-16th-note-syncopation": {
+      "url": "https://www.youtube.com/watch?v=o1uFC4wMt4g",
+      "title": "What is syncopation? | Quick and Easy Music Theory Lesson For Beginners",
+      "channel": "Fantastic Mr. Cox",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/troynelsonbooks/lesson-17-twinkle-twinkle": {
+      "url": "https://www.youtube.com/watch?v=Pr2SYCmyEVw",
+      "title": "Twinkle Twinkle Little Star Guitar Play-along Tab (Beginner/ Child freindly) All on one string!",
+      "channel": "Dan Maynard",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-qbkjm1srOZy1OK1z-OqoOYg-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicradar-com/1-ostinatos": {
+      "url": "https://www.youtube.com/watch?v=TTyPAdCfzOA&t=1s",
+      "title": "What Is a Riff?",
+      "channel": "Sweetwater",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-yTTY9oy4qGYTPDxi-Yxp7Bg-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicradar-com/2-ostinatos": {
+      "url": "https://www.youtube.com/watch?v=TTyPAdCfzOA&t=1s",
+      "title": "What Is a Riff?",
+      "channel": "Sweetwater",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-yTTY9oy4qGYTPDxi-Yxp7Bg-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicradar-com/2-diminished-7ths": {
+      "url": "https://www.youtube.com/watch?v=0HwKOcQlRBY",
+      "title": "How To Play a C Diminished 7 Chord on Piano",
+      "channel": "Brent Henderson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/5-4-time-ex2": {
+      "url": "https://www.youtube.com/watch?v=qpoHxb_arcQ",
+      "title": "5/4 (3+2) Time: Rhythm Reading Assessment",
+      "channel": "Rhythm Practice by Musicplay",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/getting-started-with": {
+      "url": "https://www.youtube.com/watch?v=UXC8B3Gv06g",
+      "title": "How to Play Harmonics on the Acoustic Guitar | Beginner Guitar Tips",
+      "channel": "Guitar Center",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/ex4-triplets": {
+      "url": "https://www.youtube.com/watch?v=wYPY9-yjclo&t=11s",
+      "title": "What Is A Triplet? One Minute Drum Lesson 🥁",
+      "channel": "Mike Barnes Drums",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-8-ex-1-counting-triplets": {
+      "url": "https://www.youtube.com/watch?v=wYPY9-yjclo&t=11s",
+      "title": "What Is A Triplet? One Minute Drum Lesson 🥁",
+      "channel": "Mike Barnes Drums",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-WluRTmd86YT6y0nZ-HvP3HA-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-8_dotted-8ths-and-16ths": {
+      "url": "https://www.youtube.com/watch?v=3s5X8M49dHg",
+      "title": "Rhythm tutorial: Dotted notes",
+      "channel": "Amplified Warmups",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-VQWpQYIswTIFhTnv-e1m7mg-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-10-ex-6-rhythm-dotted": {
+      "url": "https://www.youtube.com/watch?v=zFhuX-ZwNKU",
+      "title": "Rhythm of the week #10 🎵. Dotted quarter notes (dotted crotchets).  Learn to read rhythms",
+      "channel": "musicwithnopain",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Yv7Ug8SzX3XvU8Ki-IXZ9ew-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-9-ex-8-d-blues-triads-with": {
+      "url": "https://www.youtube.com/watch?v=IWfGHRpHgds",
+      "title": "How To Play a C6 Chord on Piano",
+      "channel": "Brent Henderson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-WluRTmd86YT6y0nZ-HvP3HA-t500x500.jpg"
+    },
+    "https://soundcloud.com/official-versador/dm-piano-chord-root-position": {
+      "url": "https://www.youtube.com/watch?v=XZyOOGfVfZU",
+      "title": "D minor inversions explained and shown on the piano",
+      "channel": "Music Simply Understood",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000265862891-m9k62i-t500x500.jpg"
+    },
+    "https://soundcloud.com/official-versador/dm-piano-chord-first-inversion": {
+      "url": "https://www.youtube.com/watch?v=XZyOOGfVfZU",
+      "title": "D minor inversions explained and shown on the piano",
+      "channel": "Music Simply Understood",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000268613120-idqyys-t500x500.jpg"
+    },
+    "https://soundcloud.com/huckleberry-forest/frere-jacques-round": {
+      "url": "https://www.youtube.com/watch?v=kZPqYuKwiag",
+      "title": "Frere Jacques Round",
+      "channel": "CS Porter Choir",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/user-245153894/pachelbel-canon-in-d-string-quartet": {
+      "url": "https://www.youtube.com/watch?v=RGIxXgV0OB0",
+      "title": "Pachelbel Canon in D (String Quartet)",
+      "channel": "Leos Strings - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000309644355-juykxt-t500x500.jpg"
+    },
+    "https://soundcloud.com/transmissionsamples/walking-jazz-bass-example": {
+      "url": "https://www.youtube.com/watch?v=tRGXto8AwCw",
+      "title": "#1 Tip for Walking Bass Lines - Christian McBride | 2 Minute Jazz",
+      "channel": "Open Studio",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/jazz-guitar-online/walking-bass-guitar": {
+      "url": "https://www.youtube.com/watch?v=3Pp0A_X1PB0",
+      "title": "Walking Bass Guitar + Chords - F Blues (Jazz Guitar Lesson)",
+      "channel": "Jazz Guitar Online",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/soundpaintmusic/soundpaint-pan-flute-above-the-valley-solo-by-troels-folmann-1": {
+      "url": "https://www.youtube.com/watch?v=B4EoHjZXirw",
+      "title": "Soundpaint Film Flutes: Pan Flute Virtuoso Walkthrough",
+      "channel": "Soundpaint",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-EzNAXJcLowlIP30r-QqoHgw-t500x500.jpg"
+    },
+    "https://soundcloud.com/kensuke-kotori/j-s-bach-two-part-invention-no": {
+      "url": "https://www.youtube.com/watch?v=GKvqNvK4xlU",
+      "title": "バッハ / インヴェンション No.1 ハ長調 ( J.S.Bach: Two-Part Invention No.1, in C major BWV 772 )",
+      "channel": "Kawaz",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/peteralaric/bach-invention-8-in-f-major": {
+      "url": "https://www.youtube.com/watch?v=ZfbpSo9czpI",
+      "title": "J.S. Bach - Invention 8 in F major (harpsichord, A=415)",
+      "channel": "The Flaming Piano",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-oEO2woXg7iX5vI5a-pLTyqw-t500x500.jpg"
+    },
+    "https://soundcloud.com/beth-currie-2/beethoven-moonlight-sonata-first-movement": {
+      "url": "https://www.youtube.com/watch?v=EsC0CHqHAPE",
+      "title": "Sonata in C-Sharp Minor, Op. 27, No. 2 (\"Moonlight\") by Beethoven  - First Movement with Pedal View",
+      "channel": "Beth Tomlin Piano",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicofthebaroque/09-purcell-dido-and-aeneas": {
+      "url": "https://www.youtube.com/watch?v=FJgi_7xoji8",
+      "title": "Academy Baroque Soloists perform Dido's Lament from Purcell's Dido and Aeneas",
+      "channel": "Royal Academy of Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-lGo47YtmRkbdw3xr-8AUrew-t500x500.jpg"
+    },
+    "https://soundcloud.com/vertical-note-2-0/haendel-passacaglia": {
+      "url": "https://www.youtube.com/watch?v=KMxTlk6XK1w",
+      "title": "Händel - Passacaglia / Passacaille in g minor - Eberhard Kraus, harpsichord",
+      "channel": "ktriebler",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-VRZm95W8R4RiYIjD-LHNkLw-t500x500.jpg"
+    },
+    "https://soundcloud.com/pipe_organ/todd-wilson-plays-johann-sebastian-bach-passacaglia-and-fugue-in-c-minor-bwv-582": {
+      "url": "https://www.youtube.com/watch?v=0xRnv6rvOEM",
+      "title": "J.S.  Bach: Passacaglia and Fugue in c, BWV 582 | Todd Wilson | Our Lady of Refuge Brooklyn Diocese",
+      "channel": "pipe-organ",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000108740710-ymxkq8-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/andante-in-c": {
+      "url": "https://www.youtube.com/watch?v=Po4gzmsyELc",
+      "title": "Tempo 101 | BPM & Italian Markings",
+      "channel": "Mikayla Feldman",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-IY7BSy2pIBGgGTCW-dCv1vQ-t500x500.jpg"
+    },
+    "https://soundcloud.com/classical_music_ltd/mozart-12-variations-on-ah-vous-dirai-je-maman-k265": {
+      "url": "https://www.youtube.com/watch?v=yHRQ8nIAiqw",
+      "title": "Mozart - 12 Variations on \"Ah vous dirai-je, Maman\" (Rudolf Buchbinder)",
+      "channel": "Classical Concerts",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-oKOGWMGz7o5LNokV-yI3VGw-t500x500.jpg"
+    },
+    "https://soundcloud.com/nicholaselauqsapid/beethoven-pathetique-sonata": {
+      "url": "https://www.youtube.com/watch?v=xNk6oZAGofo",
+      "title": "Beethoven: Piano Sonata No. 8 in C minor, Op. 13 -\"Pathétique\": 2. Adagio cantabile",
+      "channel": "Claudio Arrau - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000019455126-j0do2a-t500x500.jpg"
+    },
+    "https://soundcloud.com/vikingur-olafsson/schubert-gute-nacht": {
+      "url": "https://www.youtube.com/watch?v=8TIcOHIxz0E",
+      "title": "Schubert: Winterreise D. 911: 1. Gute Nacht -  Kristinn Sigmundsson / Víkingur Ólafsson",
+      "channel": "Kristinn Sigmundsson",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000034069709-nhx983-t500x500.jpg"
+    },
+    "https://soundcloud.com/amr-hesham-3/schumann-dichterliebe-op-48-no": {
+      "url": "https://www.youtube.com/watch?v=rsae10v7CD8",
+      "title": "Robert Schumann: Im wunderschönen Monat Mai  (\"Dichterliebe\")",
+      "channel": "Julian Prégardien",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000067722823-pp2l53-t500x500.jpg"
+    },
+    "https://soundcloud.com/the-silent-howl/16-the-musical-offering-bwv": {
+      "url": "https://www.youtube.com/watch?v=K3pXe4UWkYk",
+      "title": "Musical Offering, BWV 1079: Canon 1. A 2: Canon cancrizans",
+      "channel": "Nils Thilo Krämer - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000111465854-bt19xi-t500x500.jpg"
+    },
+    "https://soundcloud.com/mikeyipmusic/guitar-harmonics-schoenbergs-piano-suite-tone-row-reverse": {
+      "url": "https://www.youtube.com/watch?v=h31-bxhrN40",
+      "title": "Inversion, Retrograde, Retrograde inversion, Augmentation and Diminution",
+      "channel": "mesozoic music",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/epiphanic-serendipity/symphony-no-5-beethoven": {
+      "url": "https://www.youtube.com/watch?v=q_kw904K2bw",
+      "title": "Beethoven: Symphony No. 5 Fate Symphony | Christian Thielemann & Vienna Philharmonic",
+      "channel": "DW Classical Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000140296204-fpodyq-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-5-ex-1-finding-the": {
+      "url": "https://www.youtube.com/watch?v=E7d93VnDh6Y",
+      "title": "Understanding Relative Major and Minor the EASY Way",
+      "channel": "Steve Stine Guitar Lessons",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-PaKoaJxv7yIfcxWX-cp3zWA-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/ex-14_amazing-grace-melody": {
+      "url": "https://www.youtube.com/watch?v=V12WS6ILqAQ",
+      "title": "AMAZING GRACE | Easy guitar melody lesson for beginners (with tabs)",
+      "channel": "Easy Guitar Melodies",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-cfFnwvYehMk82GIb-AssBMw-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-13-4-theory-ritardando-and": {
+      "url": "https://www.youtube.com/watch?v=zrZT7UGdIoE",
+      "title": "Accelerando Example",
+      "channel": "The Successful Teacher",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-evWbZpebAZQwB6H7-ORIgwQ-t500x500.jpg"
+    },
+    "https://soundcloud.com/user-80980160/edvard-grieg-in-the-hall-of-the-mountain-king": {
+      "url": "https://www.youtube.com/watch?v=OqvHWUZZdP0",
+      "title": "Edvard Grieg: In the Hall of the Mountain King // Nicolò Foron & London Symphony Orchestra",
+      "channel": "London Symphony Orchestra",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000206569551-pcc7ev-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/day-13-4-theory-ritardando-1": {
+      "url": "https://www.youtube.com/watch?v=Ymm2wSstiQE",
+      "title": "Ritardando Example",
+      "channel": "Puwanai paoiop",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-evWbZpebAZQwB6H7-ORIgwQ-t500x500.jpg"
+    },
+    "https://soundcloud.com/didlybom/chopin-prelude4": {
+      "url": "https://www.youtube.com/watch?v=_Yyzo9RDf7o",
+      "title": "Chopin - Suffocation (Prelude No. 4 in E minor, Op. 28)",
+      "channel": "Piano in a Living Room",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000534735468-5baw0m-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicradar-com/12-augmentation-diminution": {
+      "url": "https://www.youtube.com/watch?v=abXLUbau0FI",
+      "title": "Masterworks 2020 | Sound and Fury - AUGMENTATION, DIMINUTION",
+      "channel": "Scottish Chamber Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-zDehW1OOLuCe7yUo-av7pDA-t500x500.jpg"
+    },
+    "https://soundcloud.com/musicradar-com/3-augmentation-diminution": {
+      "url": "https://www.youtube.com/watch?v=abXLUbau0FI",
+      "title": "Masterworks 2020 | Sound and Fury - AUGMENTATION, DIMINUTION",
+      "channel": "Scottish Chamber Orchestra",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-zDehW1OOLuCe7yUo-av7pDA-t500x500.jpg"
+    },
+    "https://soundcloud.com/romsey-music/year-8-djembe-cross-rhythms-1": {
+      "url": "https://www.youtube.com/watch?v=Lxs4cvSximc",
+      "title": "Poly Rhythms",
+      "channel": "MUSEONG",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000247731222-e5lli4-t500x500.jpg"
+    },
+    "https://soundcloud.com/larrydondaine/tullochgorum-strathspey": {
+      "url": "https://www.youtube.com/watch?v=nVSAQuLSY0g",
+      "title": "Paul Anderson performs the Strathspey \"Tullochgorum\" at Tullochgorum Farm in Strathspey.",
+      "channel": "Paul Anderson Scottish Fiddler",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000676698082-fpltsn-t500x500.jpg"
+    },
+    "https://soundcloud.com/user-10301333/strathspey-rhythm": {
+      "url": "https://www.youtube.com/watch?v=1EK3PeGsrhY&t=31s",
+      "title": "\"Miss Gibson's Strathspey\" (RSCDS Teaching Certificate: Unit 2 Dances)",
+      "channel": "The Royal Scottish Country Dance Society",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/romainroux/ella-fitzgerald-one-note-samba-scat-singing-1969": {
+      "url": "https://www.youtube.com/watch?v=ekmwIStfR0o",
+      "title": "Ella Fitzgerald - One note Samba (scat singing) 1969",
+      "channel": "MrSarjveladze",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000078492591-65o7q2-t500x500.jpg"
+    },
+    "https://soundcloud.com/caleb-vinson-926949191/scat-singing": {
+      "url": "https://www.youtube.com/watch?v=Wb3notEp4yU",
+      "title": "Louis Armstrong \"Dinah\" (scat singing)",
+      "channel": "Music Appreciation",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-GkiGgTHB8HTFrgbu-KW6kbw-t500x500.jpg"
+    },
+    "https://soundcloud.com/civilian-ciii-307/civilian-civilian-dreams-10-i": {
+      "url": "https://www.youtube.com/watch?v=F9nR8HU0vsg",
+      "title": "C Major Progression (I - IV - V - I) Piano Tutorial",
+      "channel": "Just the Chords",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000031011610-ctotzq-t500x500.jpg"
+    },
+    "https://soundcloud.com/troynelsonbooks/lesson-13-chords-in-c-major-this-old-man": {
+      "url": "https://www.youtube.com/watch?v=dFpryVMgni0",
+      "title": "Axis of Awesome - All Popular Songs Are The Same 4 Chords",
+      "channel": "Just For Laughs",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Cbwy0gqZQvNwLzjS-ueTZFg-t500x500.jpg"
+    },
+    "https://soundcloud.com/treven-persing/project-13-chord-progression-i": {
+      "url": "https://www.youtube.com/watch?v=dFpryVMgni0",
+      "title": "Axis of Awesome - All Popular Songs Are The Same 4 Chords",
+      "channel": "Just For Laughs",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/mitchellspiano/minuet-in-g-major-bwv-anh-114-christian-petzold": {
+      "url": "https://www.youtube.com/watch?v=qYyupn-JcWU",
+      "title": "Christian Petzold's Minuet in G major, BWV Anh.114 & Tutorial (Piano Discoveries)",
+      "channel": "The Tapiola Piano School",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-e6WShZJZxAdzR6td-vFngyA-t500x500.jpg"
+    },
+    "https://soundcloud.com/user-174007805/petzold-minuet-in-g-minor-bwv-anh-115-270818": {
+      "url": "https://www.youtube.com/watch?v=XL7DugH00co",
+      "title": "Bach (Petzold) - Minuet in G Minor - BWV Anh 115",
+      "channel": "IC Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000396658410-exuqnw-t500x500.jpg"
+    },
+    "https://soundcloud.com/mitchellspiano/sonatina-op-36-no-1-muzio-2": {
+      "url": "https://www.youtube.com/watch?v=3OZAOFDB3Qs",
+      "title": "Sonatina Op.36 No.1 by Muzio Clementi",
+      "channel": "Piano Demo",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-tQ8WfDQCW9LzgAI0-OqPbtw-t500x500.jpg"
+    },
+    "https://soundcloud.com/classical_music1/js-bach-sonata-in-e-minor-for-flute-and-basso-continuo-bwv-1034": {
+      "url": "https://www.youtube.com/watch?v=Rx2dTmPAmGA",
+      "title": "J.S. Bach: Sonata in E minor for flute and basso continuo, BWV 1034",
+      "channel": "artpieful",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000147200369-0u2vqs-t500x500.jpg"
+    },
+    "https://soundcloud.com/dj-chrille/original-tropicana-steel-band": {
+      "url": "https://www.youtube.com/watch?v=cfAgUPNuY0I",
+      "title": "ORIGINAL TROPICANA STEEL BAND   Calypso Rock   PETERS INTERNATIONAL RECORDS   1976",
+      "channel": "ujima wanduta",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000064160533-0d1ruq-t500x500.jpg"
+    },
+    "https://soundcloud.com/chiswick-school/year-10-steel-pan-ensemble": {
+      "url": "https://www.youtube.com/watch?v=eI4PbSh6g_Y",
+      "title": "London National Panorama Steelband Competition 2014 – Metronomes Steel Orchestra",
+      "channel": "Steel Pan Trust",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/jimcameronscottishdanceband/cumberland-reel": {
+      "url": "https://www.youtube.com/watch?v=O2HP8MLr3lE",
+      "title": "Cumberland Reel",
+      "channel": "Jim Cameron Scottish Dance Band - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-4X9cFCT4lEGK-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/max-kirchhoff-653258644/irish-jig-68mp3": {
+      "url": "https://www.youtube.com/watch?v=2ZxAVUsuE4Y",
+      "title": "Swallowtail Jig - Irish Fiddle Tune!",
+      "channel": "Katy Adelson",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-E6zzJ0ZebsthGknh-trIzIA-t500x500.jpg"
+    },
+    "https://soundcloud.com/gillian-ingrid-bergmann/irish-jig-6-8-time": {
+      "url": "https://www.youtube.com/watch?v=kDBUhEfWUbU",
+      "title": "The Kesh Jig/The Monaghan/Morrison's Jig (Medley)",
+      "channel": "Craig Duncan - Topic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/lanetudwig/beatles-something-george-paul-isolated-harmony-vocals": {
+      "url": "https://www.youtube.com/watch?v=WTMpt_8eFXI",
+      "title": "Something (Isolated Single Tracked George And Paul Vocals)",
+      "channel": "Rui",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000631955530-bap40v-t500x500.jpg"
+    },
+    "https://soundcloud.com/k-ferrier-alifeinmusic/what-is-life-to-me-without-thee": {
+      "url": "https://www.youtube.com/watch?v=wBKHwJGLtAc",
+      "title": "What Is Life to Me Without Thee",
+      "channel": "Kathleen Ferrier - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000091669295-1p6onb-t500x500.jpg"
+    },
+    "https://soundcloud.com/marianandersonofficial/deep-river-9": {
+      "url": "https://www.youtube.com/watch?v=M9IahLd25cM",
+      "title": "Deep River",
+      "channel": "Marian Anderson - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-DRf8L51mXMfS-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/sandronatadze/nessun-dorma-luciano-pavarotti": {
+      "url": "https://www.youtube.com/watch?v=1Jze-ranWLc",
+      "title": "Luciano Pavarotti - Nessun Dorma - 1986 Silver Jubilee Concert at Madison Square Garden",
+      "channel": "AkumaAPN",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000042930221-sok4kf-t500x500.jpg"
+    },
+    "https://soundcloud.com/gbopera/in-memoriamkurt-moll-1938-2017": {
+      "url": "https://www.youtube.com/watch?v=ls3bgAn8ya0",
+      "title": "Every Singing Voice Type Explained",
+      "channel": "Jaco Explains",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000211301853-6epuae-t500x500.jpg"
+    },
+    "https://soundcloud.com/paulrobesonofficial/ol-man-river-810221152": {
+      "url": "https://www.youtube.com/watch?v=1xDIK_cvl_c",
+      "title": "Ol' Man River (Remastered)",
+      "channel": "Paul Robeson - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-BmBNYN2diItI-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/natalie-thomson/contrary-motion-major-scales": {
+      "url": "https://www.youtube.com/watch?v=TkfMvo40m58",
+      "title": "Contrary Motion",
+      "channel": "June Lee",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-dgrEAlB20ybcuQys-fsLTjg-t500x500.jpg"
+    },
+    "https://soundcloud.com/rousseaumusique/debussy-arabesque-no-1": {
+      "url": "https://www.youtube.com/watch?v=cVYH-7QGE-A",
+      "title": "Debussy - Arabesque No. 1",
+      "channel": "Rousseau",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000353653770-r4c06d-t500x500.jpg"
+    },
+    "https://soundcloud.com/one-of-many-t/dies-irae-unknown-from-lobotomy-corporation": {
+      "url": "https://www.youtube.com/watch?v=2OBB5-bP6qs",
+      "title": "Dies Irae - Gregorian Chant (with lyrics and translation)",
+      "channel": "Tu Es Petrus",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-xUx9lcMm7t2RvBzT-g7nrCw-t500x500.jpg"
+    },
+    "https://soundcloud.com/jessicaabestmezzosoprano/habanera-from-carmen-by-g-bizet-live-recording": {
+      "url": "https://www.youtube.com/watch?v=3pgFiXQrUTQ",
+      "title": "Habañera from Carmen, by Georges Bizet. Jessica Ann Best, Mezzo-Soprano. Ruth Heitz, Piano.",
+      "channel": "Jessica Ann Best",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000131946951-nloadp-t500x500.jpg"
+    },
+    "https://soundcloud.com/ajandamezzo-soprano/voi-che-sapete": {
+      "url": "https://www.youtube.com/watch?v=mS6lPDPPwdo",
+      "title": "Voi che sapete | Mozart | Grace Heldridge, Mezzo-soprano",
+      "channel": "Grace Heldridge",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000115085367-keftbz-t500x500.jpg"
+    },
+    "https://soundcloud.com/lisa-jacobs-5/j-sibelius-violin-concerto": {
+      "url": "https://www.youtube.com/watch?v=Y0taloUm7x8",
+      "title": "J. Sibelius - Cadenza from the Violin Concerto in D minor, Marta Szlubowska, violin.",
+      "channel": "Musical Moments With Marta",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000044092021-olvp57-t500x500.jpg"
+    },
+    "https://soundcloud.com/margaretmurraychorusofthechildrensoperagroup/flute-cadenza": {
+      "url": "https://www.youtube.com/watch?v=fg7gCu-SwTY",
+      "title": "Flute Cadenza",
+      "channel": "Margaret Murray & Chorus Of The Children's Opera Group - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-ueNBSNXGdLdS-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/georgiaviictoria/part-c-changing-time": {
+      "url": "https://www.youtube.com/watch?v=PWHKtkx6F00",
+      "title": "Songs that have a Mixed Meter",
+      "channel": "David Bennett Music Theory",
+      "matchType": "demonstration",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/user-251480219/retrograde-inversion-retrograde-inversion-starting-point": {
+      "url": "https://www.youtube.com/watch?v=h31-bxhrN40",
+      "title": "Inversion, Retrograde, Retrograde inversion, Augmentation and Diminution",
+      "channel": "mesozoic music",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000222255779-3u372e-t500x500.jpg"
+    },
+    "https://soundcloud.com/piano2026/ludwig-van-beethoven-piano": {
+      "url": "https://www.youtube.com/watch?v=cz_wSYpfpW8",
+      "title": "Fabian Müller - Beethoven: Piano Sonata \"Pathétique\", No. 8 in C Minor, Op. 13: III. Rondo - Allegro",
+      "channel": "Deutsche Grammophon - DG",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/didlybom/fur-elise": {
+      "url": "https://www.youtube.com/watch?v=PaTLEn8UjRU",
+      "title": "Beethoven - Für Elise [piano]",
+      "channel": "Piano in a Living Room",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000087550171-eo8uou-t500x500.jpg"
+    },
+    "https://soundcloud.com/anna_fraser_soprano/rejoice-greatly-from-messiah": {
+      "url": "https://www.youtube.com/watch?v=rAAIuHeZQVw",
+      "title": "Regula Mühlemann: Rejoice greatly, O daughter of Zion - G. F. Handel (The Messiah)",
+      "channel": "Regula Mühlemann",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/edition-lilac/05-handel-semele-hwv-58-where": {
+      "url": "https://www.youtube.com/watch?v=FENw8ShZnQU",
+      "title": "Handel: Semele, HWV 58 \"Where'er you walk\" Andreas Scholl",
+      "channel": "civileso",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000099522950-h7o6qh-t500x500.jpg"
+    },
+    "https://soundcloud.com/truro-cathedral/01101a": {
+      "url": "https://www.youtube.com/watch?v=BVcEL5qbK18",
+      "title": "Praise my soul (hymn tune with descant)",
+      "channel": "St. Peter's Choir Leckhampton",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/j-hartenberger3/der-erlkoenig-franz-schubert": {
+      "url": "https://www.youtube.com/watch?v=DbpCe9XzLjI",
+      "title": "Schubert: Erlkönig, D. 328",
+      "channel": "Dietrich Fischer-Dieskau - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-jAFdkSmwEdsIjcxb-fa3g2Q-original.jpg"
+    },
+    "https://soundcloud.com/david-barton-music/a-celtic-blessing-david-barton": {
+      "url": "https://www.youtube.com/watch?v=NmSgGgtmKsk",
+      "title": "\"A Celtic Blessing\" by David Barton",
+      "channel": "David Barton Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000420502719-eokfxl-t500x500.jpg"
+    },
+    "https://soundcloud.com/ellenfpianist/henry-cowell-the-tides-of-manaunaun": {
+      "url": "https://www.youtube.com/watch?v=gbrdHKEpnZk",
+      "title": "The Tides of Manaunaun",
+      "channel": "Henry Cowell - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000387850845-8cpobf-t500x500.jpg"
+    },
+    "https://soundcloud.com/negy_evszak/vivaldi-four-seasons-spring": {
+      "url": "https://www.youtube.com/watch?v=3LiztfE1X7E",
+      "title": "Vivaldi Four Seasons: Spring (La Primavera) Full, original. Youssefian & Voices of Music RV 269 4K",
+      "channel": "Voices of Music",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/marcelo-sousa/vivaldi-the-four-seasons-autumn": {
+      "url": "https://www.youtube.com/watch?v=-pk_hw9Kcuk",
+      "title": "Vivaldi - Autumn (The Four Seasons) 3/4",
+      "channel": "Adagietto",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/musicradar-com/5-building-rubato": {
+      "url": "https://www.youtube.com/watch?v=YAWCSDbt2rQ&t=39s",
+      "title": "What Does Rubato Mean in Music? Playing with Freedom",
+      "channel": "LivingPianosVideos",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000580132331-6t3o7b-t500x500.jpg"
+    },
+    "https://soundcloud.com/fionabechmann/chopin-raindrop-prelude": {
+      "url": "https://www.youtube.com/watch?v=HVau-JRGirg",
+      "title": "Chopin - Raindrop Prelude (Op. 28 No. 15)",
+      "channel": "Rousseau",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-gyX8Lyx70Fqq3QXe-zHzRxQ-t500x500.jpg"
+    },
+    "https://soundcloud.com/antoninhradilleader-music/corelli-concerto-grosso-in-g-4": {
+      "url": "https://www.youtube.com/watch?v=htuUtIW1iVU",
+      "title": "Corelli: Concerto Grosso In G Minor, Op. 6, No. 8 - II. Adagio, Allegro",
+      "channel": "Antonin Hradil - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-CJZgLKIykEUK-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/antoninhradilleader-music/corelli-concerto-grosso-in-g-3": {
+      "url": "https://www.youtube.com/watch?v=Id-5fVZF6Nc",
+      "title": "Corelli: Concerto Grosso In G Minor, Op. 6, No. 8 - III. Vivace",
+      "channel": "Antonin Hradil - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-DiPY61RhVJAK-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/safyeldin/johannes-brahms-hungarian-dance-no-5": {
+      "url": "https://www.youtube.com/watch?v=Nzo3atXtm54",
+      "title": "Johannes Brahms -- Hungarian Dance No.5 - Hungarian Symphony Orchestra Budapest",
+      "channel": "MelosKonzerte",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000091391938-syqyj4-t500x500.jpg"
+    },
+    "https://soundcloud.com/nofi-orchestra/j-brahms-hungarian-dance-no-6": {
+      "url": "https://www.youtube.com/watch?v=Upo01Quh2uo",
+      "title": "Hungarian dance nr. 6",
+      "channel": "Novoměstská filharmonie - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/thebeatlesrevisited/a-hard-days-night": {
+      "url": "https://www.youtube.com/watch?v=zx2TFk0vh1I",
+      "title": "A Hard Day's Night (Remastered 2009)",
+      "channel": "The Beatles - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/brunomars/count-on-me": {
+      "url": "https://www.youtube.com/watch?v=6k8cpUkKK4c",
+      "title": "Bruno Mars - Count on Me (Official Lyric Video)",
+      "channel": "Bruno Mars",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-60GOY5OBdzoF-0-t500x500.jpg"
+    },
+    "https://soundcloud.com/ontario-pops-orchestra/mozart-symphony-no-40-2": {
+      "url": "https://www.youtube.com/watch?v=DDU66veUOOI",
+      "title": "Symphony No. 40 in G minor, K. 550 (II. Andante) | Wolfgang Amadeus Mozart",
+      "channel": "Classical Music to Study Relax & Sleep",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/filippo-balducci-877902776/mozart-sonata-k333-allegretto-grazioso-live": {
+      "url": "https://www.youtube.com/watch?v=bT4c0SfbuG4",
+      "title": "W.A.MOZART, Sonata in B-flat major K333: Allegretto grazioso",
+      "channel": "Boris Feiner",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-URuP6fDr72HG3cFN-cLyTOg-t500x500.jpg"
+    },
+    "https://soundcloud.com/jenna-kind/bach-fugue-c-major": {
+      "url": "https://www.youtube.com/watch?v=juTKhkAmFvI",
+      "title": "J. S. Bach - Fugue in C Major, BWV 846/2 (with Scrolling Score and Piano Visualization)",
+      "channel": "MaestroGreg",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000067618193-nzmtr0-t500x500.jpg"
+    },
+    "https://soundcloud.com/interscope/03-mas-que-nada-2011-rio": {
+      "url": "https://www.youtube.com/watch?v=cuxU6umQ0dc",
+      "title": "Mas Que Nada (2011 Rio Version)",
+      "channel": "Sergio Mendes - Topic",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000005952039-g34qtw-original.jpg"
+    },
+    "https://soundcloud.com/scoot-weese/glenn-miller-in-the-mood": {
+      "url": "https://www.youtube.com/watch?v=dVh3ZzVDZik",
+      "title": "Glenn Miller - In the Mood (Audio)",
+      "channel": "GlennMillerVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000140485761-rkc2qh-original.jpg"
+    },
+    "https://soundcloud.com/kineticrhythm/40s-take-the-a-train-duke": {
+      "url": "https://www.youtube.com/watch?v=r2G1fKYFgVU",
+      "title": "Duke Ellington and His Famous Orchestra - Take the \"A\" Train (Audio)",
+      "channel": "DukeEllingtonVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000006128624-iru5lo-original.jpg"
+    },
+    "https://soundcloud.com/eren-can-266292326/baritenor-michael-spyres-sings": {
+      "url": "https://www.youtube.com/watch?v=-bhlWgyjEQs",
+      "title": "Michael Spyres – Rossini ‘Largo al factotum’ | Classic FM Live",
+      "channel": "Classic FM",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Ts3mJRt2CXXrsHb2-x8QIYA-original.jpg"
+    },
+    "https://soundcloud.com/gallomusicpublishers/shosholoza": {
+      "url": "https://www.youtube.com/watch?v=nlzomGoy97I",
+      "title": "Ladysmith Black Mambazo - Shosholoza (Live) In the USA",
+      "channel": "Ladysmith Black Mambazo",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000535412298-kogujk-original.jpg"
+    },
+    "https://soundcloud.com/tokoant/the-sugarhill-gang-rappers": {
+      "url": "https://www.youtube.com/watch?v=mcCK99wHrk0",
+      "title": "The Sugarhill Gang - Rapper's Delight (Official Video)",
+      "channel": "Sugarhill Records",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000018438631-tbif86-original.jpg"
+    },
+    "https://soundcloud.com/user-371650973/dancing-queen": {
+      "url": "https://www.youtube.com/watch?v=xFrGuyw1V8s",
+      "title": "ABBA - Dancing Queen (Official Music Video)",
+      "channel": "AbbaVEVO",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/artist-portraits/b398f71af6865ec3.jpg"
+    },
+    "https://soundcloud.com/user-976076831/06-back-in-black": {
+      "url": "https://www.youtube.com/watch?v=pAgnJDJN4VA",
+      "title": "AC/DC - Back In Black (Official 4K Video)",
+      "channel": "acdcVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-EGfZPQ4NdrzNZl3z-uzwXCA-original.jpg"
+    },
+    "https://soundcloud.com/quintessential-bristol/tutti-frutti-little-richard": {
+      "url": "https://www.youtube.com/watch?v=L32usj28t9o",
+      "title": "Tutti Frutti",
+      "channel": "Little Richard - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000069015940-4x8459-original.jpg"
+    },
+    "https://soundcloud.com/orkiestra_telemanna/a-vivaldi-koncert-wiosna": {
+      "url": "https://www.youtube.com/watch?v=8cTD9amqphM",
+      "title": "The Four Seasons, Violin Concerto in E Major, Op. 8 No. 1, RV 269 \"Spring\": I. Allegro",
+      "channel": "Itzhak Perlman - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000575274059-1592ld-original.jpg"
+    },
+    "https://soundcloud.com/josephshiner/pcol-mozart-clarinet": {
+      "url": "https://www.youtube.com/watch?v=KDw97cQ0Vos",
+      "title": "Mozart: Clarinet Concerto in A Major, K. 622: II. Adagio (Cadenza: Neidich)",
+      "channel": "Charles Neidich - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000641738196-5dnfej-original.jpg"
+    },
+    "https://soundcloud.com/silver-bullets/silver-bullets-its-tricky-run-dmc": {
+      "url": "https://www.youtube.com/watch?v=l-O5IHVhWj0",
+      "title": "RUN DMC - It's Tricky (Official HD Video)",
+      "channel": "RUNDMCVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000148243847-1iz8k8-original.jpg"
+    },
+    "https://soundcloud.com/alexandrums/tchaikovsky-swan-lake-scene-act-ii-no-14": {
+      "url": "https://www.youtube.com/watch?v=mkfRbCs15Jc",
+      "title": "Swan Lake, Op. 20, Act 2: No. 10, Scene. Moderato",
+      "channel": "André Previn - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000109782556-qb4twv-original.jpg"
+    },
+    "https://soundcloud.com/giannacorbisiero/puccini-o-mio-babbino-caro": {
+      "url": "https://www.youtube.com/watch?v=DLi25fgVuRs",
+      "title": "Puccini: Gianni Schicchi: O mio babbino caro",
+      "channel": "Renée Fleming - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-VzzzufPxnFkg53gR-QGJzpQ-original.jpg"
+    },
+    "https://soundcloud.com/st-johns-cathedral-choir/hallelujah-chorus-from-messiah-handel": {
+      "url": "https://www.youtube.com/watch?v=vkHjMNJ7-sI",
+      "title": "Handel: Messiah, HWV 56, Pt. 2: No. 44, Hallelujah Chorus",
+      "channel": "John Alldis Choir - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000116293203-j99yo8-original.jpg"
+    },
+    "https://soundcloud.com/lightrecords-1/edwin-hawkins-oh-happy-day": {
+      "url": "https://www.youtube.com/watch?v=KJohGa66FJM",
+      "title": "The Edwin Hawkins Singers - Oh Happy Day (Official Audio)",
+      "channel": "EdwinHawkinsVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000328993404-0ntd8h-original.jpg"
+    },
+    "https://soundcloud.com/triomegh/gat-durga-rupak-taal": {
+      "url": "https://www.youtube.com/watch?v=8xDYz74Tjzg",
+      "title": "Ustad Imrat Khan (sitar) - Raga Durga",
+      "channel": "Tushar Dabral",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-xY3ze6gxo9wHBYAM-tjChvA-original.jpg"
+    },
+    "https://soundcloud.com/piano_s/steve-reich-music-for-18": {
+      "url": "https://www.youtube.com/watch?v=UwYrn6gcp7A",
+      "title": "Music for 18 Musicians: Pulses",
+      "channel": "Steve Reich and Musicians - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000122628985-th9lju-original.jpg"
+    },
+    "https://soundcloud.com/charliemagnone/philip-glass-opening-from-glassworks": {
+      "url": "https://www.youtube.com/watch?v=3ULLItGR6mM",
+      "title": "Glassworks: I. Opening",
+      "channel": "Philip Glass - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000141748120-15pjt8-original.jpg"
+    },
+    "https://soundcloud.com/user-334339364/j-haydn-string-quartet-in-c-major-op-763-emperor-i-allegro": {
+      "url": "https://www.youtube.com/watch?v=dEhJmKuuMUQ",
+      "title": "Haydn: String Quartet in C Major, Op. 76 No. 3, Hob. lll: 77 \"Emperor\": I. Allegro",
+      "channel": "Emerson String Quartet - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000228112117-sl5j9d-original.jpg"
+    },
+    "https://soundcloud.com/chaslin/debussy-pre-lude-a-lapre-s": {
+      "url": "https://www.youtube.com/watch?v=Dt7HJ_pWpyA",
+      "title": "Debussy: Prelude To The Afternoon Of A Faun",
+      "channel": "Orchestre National De Lyon - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000339394964-wabdhh-original.jpg"
+    },
+    "https://soundcloud.com/earthstarorgantrio/07-watermelon-man-herbie-hancock-and-the-headhunters-7": {
+      "url": "https://www.youtube.com/watch?v=ppJQKfqhFfE",
+      "title": "Watermelon Man",
+      "channel": "Herbie Hancock - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-wonZxODrA7ZkEWqR-zcVsrg-original.jpg"
+    },
+    "https://soundcloud.com/sean-redrow/kyrie-from-the-mass-for-four-voices": {
+      "url": "https://www.youtube.com/watch?v=gOrDpGh1K1Q",
+      "title": "Kyrie - Mass for Four Voices (William Byrd) - New York Polyphony | Times go by Turns",
+      "channel": "New York Polyphony",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000446913222-k2ku42-original.jpg"
+    },
+    "https://soundcloud.com/user-804393833/rec-es-begab-sich-sich-aber-zu-der-zeit-live-lunds-domkyrka": {
+      "url": "https://www.youtube.com/watch?v=y1nUXJOVzIY",
+      "title": "Christmas Oratorio, BWV 248, Pt. I: No. 2, Recitative. Es begab sich aber zu der Zeit. (Evangelist)",
+      "channel": "Masaaki Suzuki - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000217446052-kams5k-original.jpg"
+    },
+    "https://soundcloud.com/caroline-phillips-mgt/samuel-boden-tenor-sings-handel-comfort-ye-evry-valley-from-messiah": {
+      "url": "https://www.youtube.com/watch?v=vkBEkWKXyuE",
+      "title": "Samuel Boden tenor  - Handel - Messiah - Comfort ye my people … Ev'ry valley shall be exalted",
+      "channel": "ChannelCPM",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000128979858-q8gxzv-original.jpg"
+    },
+    "https://soundcloud.com/rhinorecords/aretha-franklin-respect": {
+      "url": "https://www.youtube.com/watch?v=A134hShx_gw",
+      "title": "Aretha Franklin - Respect (Official Lyric Video)",
+      "channel": "Aretha Franklin",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000242764101-4kmz6p-original.jpg"
+    },
+    "https://soundcloud.com/a-funky-good-time/sitting-on-the-dock-of-the-bay": {
+      "url": "https://www.youtube.com/watch?v=7C-VscEQugk",
+      "title": "(Sittin' On) the Dock of the Bay [Mono]",
+      "channel": "Otis Redding - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000074216751-0u0w0a-original.jpg"
+    },
+    "https://soundcloud.com/jeff-demarco/02-a-lieta-vita-gastoldi": {
+      "url": "https://www.youtube.com/watch?v=rwRxJNqPvqk",
+      "title": "A lieta vita (l'innamorato)",
+      "channel": "Pécs Chamber Choir - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://a1.sndcdn.com/images/default_avatar_large.png"
+    },
+    "https://soundcloud.com/user-517024400/matthaeuspassion-96khz-4": {
+      "url": "https://www.youtube.com/watch?v=kqQtn5-UzxU",
+      "title": "Bach: St. Matthew Passion - 54. O Haupt voll Blut und Wunden - Herreweghe",
+      "channel": "pannonia77",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000310465892-9un70p-original.jpg"
+    },
+    "https://soundcloud.com/duos-recordings/prokofiev-classical-symphony-i": {
+      "url": "https://www.youtube.com/watch?v=VeLmHXnJmlc",
+      "title": "Symphony No. 1 in D Major, Op. 25 \"Classical\": I. Allegro",
+      "channel": "Münchner Philharmoniker - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000024330410-isihd9-original.jpg"
+    },
+    "https://soundcloud.com/daniel-plante-511223801/schoenberg-variations-for-orchestra-op-31-rai-rome-maderna-1-11-1964": {
+      "url": "https://www.youtube.com/watch?v=RELfU1RyBvo",
+      "title": "Schoenberg: Variations, Op. 31: Thema. Molto moderato",
+      "channel": "Chicago Symphony Orchestra - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-c8FyX5qiz93FxPcw-u4bvQQ-original.jpg"
+    },
+    "https://soundcloud.com/hugh-hinton/schoenberg-gigue-from-suite-op": {
+      "url": "https://www.youtube.com/watch?v=AajdTrRrU4c",
+      "title": "Schoenberg: Suite for Piano, Op. 25: VI. Gigue (Musical Moments)",
+      "channel": "Yuja Wang - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://a1.sndcdn.com/images/default_avatar_large.png"
+    },
+    "https://soundcloud.com/sydney-symphony/track04-2": {
+      "url": "https://www.youtube.com/watch?v=xaYWy3eHtCM",
+      "title": "Beethoven - Symphony No 7 in A major, Op 92 II, Allegretto (Thielemann)",
+      "channel": "Shah",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000050347916-hia2p7-original.jpg"
+    },
+    "https://soundcloud.com/user-996563623/02-sumer-is-icumen-in": {
+      "url": "https://www.youtube.com/watch?v=MpLSTbrtp-8",
+      "title": "Sumer is icumen in - Rota (Ms Harley 978, XIII sec)  Musicaround Ensemble, Vera Marenco",
+      "channel": "Musicaround",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000582838790-hkqri3-original.jpg"
+    },
+    "https://soundcloud.com/user-31821240/dona-nobis-pacem-traditional-canonmay-4-2019": {
+      "url": "https://www.youtube.com/watch?v=WHNaEqnlliU",
+      "title": "DONA NOBIS PACEM - Traditional Canon | Boston ChoirFest 2024",
+      "channel": "Cape Town Camerata",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-KKFIZY3BUBwFdjQD-BWzYXw-original.jpg"
+    },
+    "https://soundcloud.com/fingerstyleguitarist/greensleeves": {
+      "url": "https://www.youtube.com/watch?v=MGqrVT4W8Pc",
+      "title": "Greensleeves - Performance Preview | EliteGuitarist.com",
+      "channel": "Elite Guitarist",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000114525543-lcmtk9-original.jpg"
+    },
+    "https://soundcloud.com/florencio-o-solis-iii/the-beatles-we-can-work-it-out": {
+      "url": "https://www.youtube.com/watch?v=Qyclqo_AV2M",
+      "title": "The Beatles - The Beatles - We Can Work It Out (Official Music Video) [Remastered 2015]",
+      "channel": "TheBeatlesVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000110974754-tjokkp-original.jpg"
+    },
+    "https://soundcloud.com/quilisma/mendelssohn-willcocks-hark-the-herald-angels-sing-michi": {
+      "url": "https://www.youtube.com/watch?v=9Bwn0k0k8xI",
+      "title": "Hark! the herald-angels sing (Descant: David Willcocks) | Carols from King's 2021",
+      "channel": "KingsCollegeChoir",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-TyDWdJWNpJJLVp30-7Qd6jg-original.jpg"
+    },
+    "https://soundcloud.com/gon-alo-tavares/c-debussy-cloches-a-travers-les-feuilles-piano-recording": {
+      "url": "https://www.youtube.com/watch?v=StBWl6f_AtE",
+      "title": "Arsenii Moon - Debussy: Images II - I. \"Cloches à travers les feuilles\" (Official Music Video)",
+      "channel": "Deutsche Grammophon - DG",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000219340055-bi8zto-original.jpg"
+    },
+    "https://soundcloud.com/anton-varentsov/franz-schubert-der-doppelganger": {
+      "url": "https://www.youtube.com/watch?v=b-mwvZf5Cw0",
+      "title": "Schubert - Der Doppelgänger (Schwanengesang) Konstantin Krimmel & Ammiel Bushakevitz",
+      "channel": "Les Voix d'Orphée / Voices of Orpheus",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000147757617-qmpjxc-original.jpg"
+    },
+    "https://soundcloud.com/kippbrewer/handel-let-the-bright-seraphim-kipp-brewer-trumpet-julie-strauser-soprano-tara-emerson-piano": {
+      "url": "https://www.youtube.com/watch?v=qCQwwvaUu9U",
+      "title": "Handel: Let the Bright Seraphim (Samson) | Rowan Pierce, David Blackadder & Academy of Ancient Music",
+      "channel": "Academy of Ancient Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000327642136-poyp9h-original.jpg"
+    },
+    "https://soundcloud.com/user-118955054-264259515/the-well-tempered-960945584": {
+      "url": "https://www.youtube.com/watch?v=XKrvI7Yz60U",
+      "title": "J. S. Bach - Fugue in C minor, BWV 847/2 (with Scrolling Score and Piano Visualization)",
+      "channel": "MaestroGreg",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-l5uyQ9meaoto4ZLT-pLrPBw-original.jpg"
+    },
+    "https://soundcloud.com/jernbergahrmanduo/corcovado-saudades-do-brasil-darius-milhaud": {
+      "url": "https://www.youtube.com/watch?v=7DLU4d-96Aw",
+      "title": "Saudades do Brasil, Op. 67: Corcovado",
+      "channel": "Alexandre Tharaud - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000594395559-7oq98j-original.jpg"
+    },
+    "https://soundcloud.com/allpiano/20-nocturne-in-e-flat-op-9-no": {
+      "url": "https://www.youtube.com/watch?v=p29JUpsOSTE",
+      "title": "Chopin - Nocturne in E Flat Major (Op. 9 No. 2)",
+      "channel": "Rousseau",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000023307982-p3sa2a-original.jpg"
+    },
+    "https://soundcloud.com/cherry-classics-music/gabrieli-canzon-per-sonare-primi-toni-for-8-part-antiphonal-brass-ensemble": {
+      "url": "https://www.youtube.com/watch?v=XjntqVWW9eM",
+      "title": "Canzon Primi Toni",
+      "channel": "Philadelphia Brass Ensemble - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-eRNZqeiR6uByfOD1-Z0bZZg-original.jpg"
+    },
+    "https://soundcloud.com/user-118955054-264259515/the-well-tempered-979460509": {
+      "url": "https://www.youtube.com/watch?v=nz7JakMMG-c",
+      "title": "Bach - WTC I Prelude and fugue no. 6 in D minor BWV 851 - Steenbrink | Netherlands Bach Society",
+      "channel": "Netherlands Bach Society",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-l5uyQ9meaoto4ZLT-pLrPBw-original.jpg"
+    },
+    "https://soundcloud.com/user-730340476/g-f-handel-sonata-in-f-major-for-recorder-and-continuo-hwv-369": {
+      "url": "https://www.youtube.com/watch?v=jpx6Ca8YP7s",
+      "title": "George Frideric Handel - Recorder Sonata in F major, HWV. 369 (1712)",
+      "channel": "Bartje Bartmans",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000584853701-5fm4h9-original.jpg"
+    },
+    "https://soundcloud.com/lansdownesymphony/bizet-suite-no-2-larlesienne-iv-farandole": {
+      "url": "https://www.youtube.com/watch?v=3cgNtNt8I0Y",
+      "title": "Bizet - L'Arlésienne, Suite No. 2, Farandole (New York Philharmonic) | Pyongyang Concert (7/9)",
+      "channel": "EuroArtsChannel",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000460279638-y19fhl-original.jpg"
+    },
+    "https://soundcloud.com/user-768269890/schoenbergop11no1": {
+      "url": "https://www.youtube.com/watch?v=xrjg3jzP2uI",
+      "title": "Schoenberg - Three Piano Pieces, No. 1 (with sheet music)",
+      "channel": "VladekMeyer83",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000460372605-10qqzr-original.jpg"
+    },
+    "https://soundcloud.com/auralwizapp/d-dorian-mode": {
+      "url": "https://www.youtube.com/watch?v=w7mdwgbfB5s",
+      "title": "D Dorian Scale Piano Tutorial✨",
+      "channel": "Music Simply Understood",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000604034805-m9q3lu-original.jpg"
+    },
+    "https://soundcloud.com/gaiteirojunosfdbc/piobaireachd-the-desperate": {
+      "url": "https://www.youtube.com/watch?v=v0jGSBly5_g",
+      "title": "OC2021339, Grade 2, Piobaireachd the desperate battle of the birds",
+      "channel": "Pipe n' Beat Music",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000242176609-ltdu1l-original.jpg"
+    },
+    "https://soundcloud.com/user-686792739/fionnghuala-anuna-arr-michael-mcglynn-live-acapella": {
+      "url": "https://www.youtube.com/watch?v=OM8Uv5RFOyM",
+      "title": "Anúna : Fionnghuala, (arr. Michael McGlynn",
+      "channel": "The Anúna Collective",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-cBTXs50CordcwpMr-VYY5WQ-original.jpg"
+    },
+    "https://soundcloud.com/deanchalmersmusic/loch-lomond-runrig-dean": {
+      "url": "https://www.youtube.com/watch?v=uqtpl5n0TYQ",
+      "title": "\"Loch Lomond\" - Dean Chalmers - (EP LAUNCH - 17TH MAY 2014)",
+      "channel": "Dean Chalmers",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000604653501-p9bejt-original.jpg"
+    },
+    "https://soundcloud.com/elenapirasmusic/puirt-a-beul-faca-sibh-m-iri": {
+      "url": "https://www.youtube.com/watch?v=z2juWer0swo",
+      "title": "Elena Piras- Puirt-a-beul",
+      "channel": "Elena Piras",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000011040411-yai56a-original.jpg"
+    },
+    "https://soundcloud.com/fifesing/sleepytoun-in-the-morning": {
+      "url": "https://www.youtube.com/watch?v=v0rwtPkE7R0",
+      "title": "Sleepytoon",
+      "channel": "Gordeanna McCulloch - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000018193079-e3m67j-original.jpg"
+    },
+    "https://soundcloud.com/oldtownschool/hebradian-walking-songs": {
+      "url": "https://www.youtube.com/watch?v=F8HKJ94v2xM",
+      "title": "Waulking Skye Weavers Tweed",
+      "channel": "Skye Weavers",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-ApS6xsmxlIyyqhd4-UOr6ig-original.jpg"
+    },
+    "https://soundcloud.com/user-428444792/orain-luaidh-waulking-song-biodh-an-deoch-seo-n-laimh-mo-ruin": {
+      "url": "https://www.youtube.com/watch?v=m2v2BjNBH7w",
+      "title": "The Highland Sessions: Waulking Songs",
+      "channel": "Alberto Ablanedo",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000240114030-gkt078-original.jpg"
+    },
+    "https://soundcloud.com/queens-college-choir/04-zadok-the-priest": {
+      "url": "https://www.youtube.com/watch?v=HE-T-Hr_Hlg",
+      "title": "Zadok the Priest sung by the Choir of New College Oxford directed by Robert Quinney",
+      "channel": "The Choir of New College Oxford",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000018374709-g6wame-original.jpg"
+    },
+    "https://soundcloud.com/user-auburnsymphonyo/ralph-vaughn-williams-fantasia-on-a-theme-by-thomas-tallis": {
+      "url": "https://www.youtube.com/watch?v=C3nxOF8wnMk",
+      "title": "Vaughan Williams: Fantasia on a Theme by Thomas Tallis / Oundjian · Toronto Symphony Orchestra",
+      "channel": "Toronto Symphony Orchestra",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000668697038-nmf3gi-original.jpg"
+    },
+    "https://soundcloud.com/qazxc/avicii-levels": {
+      "url": "https://www.youtube.com/watch?v=_ovdm2yX4MA",
+      "title": "Avicii - Levels",
+      "channel": "AviciiOfficialVEVO",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000038484088-a3oxcx-original.jpg"
+    },
+    "https://soundcloud.com/musikundmedien/4th": {
+      "url": "https://www.youtube.com/watch?v=PPYnnSKklio",
+      "title": "ATOS Trio: Mendelssohn - Trio No.1 in d-minor, op.49 - IV. Finale. Allegro assai appassionato",
+      "channel": "Thomas Hoppe",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000222982062-5u8k92-original.jpg"
+    },
+    "https://soundcloud.com/seam-june/violin-16-week-artificial-harmonics": {
+      "url": "https://www.youtube.com/watch?v=681ayIovC0k",
+      "title": "How Do I Play Harmonics On The Violin? | Discover Instruments | Classic FM",
+      "channel": "Classic FM",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000182252748-k877le-original.jpg"
+    },
+    "https://soundcloud.com/brettvg/mozart-concerto-mvt-1": {
+      "url": "https://www.youtube.com/watch?v=llwn3Hr9xMc",
+      "title": "Mozart - Concerto in B-flat Major for Bassoon K. 191, Mvt. I",
+      "channel": "Dr. Brett Van Gansbeke",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000062786080-wqni8i-original.jpg"
+    },
+    "https://soundcloud.com/user-442427594/ryan-song-accompanied-by-christian-gante-horn-concerto-in-eb-major-k447-3rd-mvt-mozart1-5": {
+      "url": "https://www.youtube.com/watch?v=d07n9cvsAss",
+      "title": "W.A.Mozart Horn Concerto Nr.3 KV.447 III.Rondo Radek Baborák",
+      "channel": "d6v1d",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-ZRnWt7As0oGtki0R-rK6ysA-original.jpg"
+    },
+    "https://soundcloud.com/stefan-de-leval-jezierski/strauss-horn-concerto-1": {
+      "url": "https://www.youtube.com/watch?v=Al_r9Q2kemY",
+      "title": "Stefan Dohr plays Strauss' Horn Concerto No.1 at the Masters of Brass concert!",
+      "channel": "lemingtan",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000177501965-34bit4-original.jpg"
+    },
+    "https://soundcloud.com/jamesgourlaytuba/vaughan-williams-tuba-concerto-mve-2-romanza": {
+      "url": "https://www.youtube.com/watch?v=kqpYAaDzd5c",
+      "title": "Tuba Concerto in F Minor: II. Romanza",
+      "channel": "James Gourlay - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-HvoqimBNEvEQgchm-iNlFfQ-original.jpg"
+    },
+    "https://soundcloud.com/kamila-olenckov/j-s-bach-suite-bwv-1007-prelude-transcription-for-viola": {
+      "url": "https://www.youtube.com/watch?v=P0h84MvEteM",
+      "title": "Bach: Cello Suite No. 1 in G Major, BWV 1007: I. Prelude | En-Chi Cheng, viola",
+      "channel": "Heifetz International Music Institute",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000086968725-9jzlpx-original.jpg"
+    },
+    "https://soundcloud.com/tarek-hafez-ibrahim/el-vito-by-embrujo-mestizo": {
+      "url": "https://www.youtube.com/watch?v=TuHHUDnFSO0",
+      "title": "\"El Vito\" by Embrujo Mestizo (Guitar & Castanets)",
+      "channel": "Embrujo Mestizo",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000403766916-ixskn9-original.jpg"
+    },
+    "https://soundcloud.com/subhranil-sarkar-sitar/sitar-subhranil-sarkar-jhinjhoti-alap": {
+      "url": "https://www.youtube.com/watch?v=U24NAduwaU0",
+      "title": "Subhranil Sarkar [Sitar] - Raga Jhinjhoti with Pran Gopal Bandhopadhaya on the tabla",
+      "channel": "Subhranil Sarkar (Sitar Player)",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000100899477-tq18tq-original.jpg"
+    },
+    "https://soundcloud.com/arjun-v/raag-kafi-alap-slow-sitar-solo": {
+      "url": "https://www.youtube.com/watch?v=p-_NBGmE2LE",
+      "title": "Kafi Aochar Alaap - Arjun K. Verma Sitar",
+      "channel": "Arjun K. Verma",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000030595840-wq8vto-original.jpg"
+    },
+    "https://soundcloud.com/zgtaabel/yehudi-menuhin-plays-js-bach-partita-for-solo-violin-no-3-in-e-major-prelude-480p": {
+      "url": "https://www.youtube.com/watch?v=RYa4nuBwmWo",
+      "title": "Yehudi Menuhin plays JS Bach. Partita for solo violin No 3 in E major (Prelude)",
+      "channel": "soichi1228",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-ssLekHQbvC23AycL-HzfmHg-original.jpg"
+    },
+    "https://soundcloud.com/lindsay-jazz/18-solo-trumpet-in-harmon-mute": {
+      "url": "https://www.youtube.com/watch?v=x_jSY7JWk_w",
+      "title": "Trumcor Zinger Harmon-Style Mute Demonstration by Trent Austin (ACB)",
+      "channel": "Austin Custom Brass",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-VsyiBeznKg57Y8hi-7A6GhQ-original.jpg"
+    },
+    "https://soundcloud.com/angel-103/flutter-tonuge-on-b-flat": {
+      "url": "https://www.youtube.com/watch?v=daKpYKN_nt0",
+      "title": "How To Flutter Tongue On The Flute!",
+      "channel": "The Flute Geezer",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000010519895-mvaq9s-original.jpg"
+    },
+    "https://soundcloud.com/dsoberlin/15-timpani-roll": {
+      "url": "https://www.youtube.com/watch?v=sPbpgnbJG8k",
+      "title": "Timpani 5: Rolls / Vic Firth Percussion 101",
+      "channel": "Vic Firth",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000132811964-hf70zt-original.jpg"
+    },
+    "https://soundcloud.com/eng_eshak-farag/the-lonely-shepherd-andre-rieu": {
+      "url": "https://www.youtube.com/watch?v=orL-w2QBiN8",
+      "title": "André Rieu ft. Gheorghe Zamfir - The Lonely Shepherd",
+      "channel": "André Rieu",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-rpbIgoGckw6lTqJW-AROnyA-original.jpg"
+    },
+    "https://soundcloud.com/danyiluska/gp-telemann-fantasia-c-major-for-recorder": {
+      "url": "https://www.youtube.com/watch?v=-QQb4UaPEeg",
+      "title": "Georg Philipp Telemann: Fantasia no. 1 | Anna Stegmann (recorder)",
+      "channel": "Anna Stegmann",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000519866454-p5dpw9-original.jpg"
+    },
+    "https://soundcloud.com/user-442427594/aidan-walsh-concerto-for": {
+      "url": "https://www.youtube.com/watch?v=Lx5weckc7us",
+      "title": "Rimsky Korsakov Trombone Concerto Movement 1: Allegro Vivace",
+      "channel": "amy bowers",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000316908621-qms8qm-original.jpg"
+    },
+    "https://soundcloud.com/lucy-rowe-271092090/crazy-army-snare-drum": {
+      "url": "https://www.youtube.com/watch?v=oMTKajAcNJA",
+      "title": "crazy army snaredrum solo",
+      "channel": "Drumschool Ivo Elfers",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-Sg4g8pqIFAGYZ9wM-mh3yHQ-original.jpg"
+    },
+    "https://soundcloud.com/ryan-kahlbaugh/k-zildjian-constantinople-vintage-orchestral-medium-heavy-crash-cymbals": {
+      "url": "https://www.youtube.com/watch?v=zu4mIYATDlk",
+      "title": "Zildjian Sound Lab - 16\" K Constantinople Vintage Orchestral Medium Heavy, Pair",
+      "channel": "Avedis Zildjian Company",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000079236391-phfpy8-original.jpg"
+    },
+    "https://soundcloud.com/cymbalmagic/zildjian-avedis-20-suspended": {
+      "url": "https://www.youtube.com/watch?v=KpKz1A49Avk",
+      "title": "Zildjian 20 inch A Series Medium Thin Suspended Concert Cymbal",
+      "channel": "explorerspercussion",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000069272820-6ddlvd-original.jpg"
+    },
+    "https://soundcloud.com/bell-percussion/triangle": {
+      "url": "https://www.youtube.com/watch?v=zaGPgoLhlfI",
+      "title": "PERCUSSION 101: Triangle",
+      "channel": "MPO STAGE+",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000038792921-4py79x-original.jpg"
+    },
+    "https://soundcloud.com/bell-percussion/xylophone": {
+      "url": "https://www.youtube.com/watch?v=Syvie0f83mo",
+      "title": "PERCUSSION 101: Xylophone",
+      "channel": "MPO STAGE+",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000038792921-4py79x-original.jpg"
+    },
+    "https://soundcloud.com/bell-percussion/glockenspiel": {
+      "url": "https://www.youtube.com/watch?v=HoNsbCTPqHQ",
+      "title": "Keyboard Percussion 7: Bells / Vic Firth Percussion 101",
+      "channel": "Vic Firth",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000038792921-4py79x-original.jpg"
+    },
+    "https://soundcloud.com/chelsea-hollow/e-der-ho-lle-rache": {
+      "url": "https://www.youtube.com/watch?v=nKIiYjuhHpM",
+      "title": "Chelsea Hollow sings \"Der Hölle Rache\" at \"Welcome Home.\"",
+      "channel": "Mercury Theater",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000108283499-ov6cdb-original.jpg"
+    },
+    "https://soundcloud.com/maria-hanke/vissi-darte-16112022": {
+      "url": "https://www.youtube.com/watch?v=rJa6BLkWE3Q",
+      "title": "G. Puccini: Vissi d’arte from ‘Tosca’",
+      "channel": "Maria Hanke",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000010179434-nn2bw6-original.jpg"
+    },
+    "https://soundcloud.com/tatazildo/the-beach-boys-surfer-girl-cover": {
+      "url": "https://www.youtube.com/watch?v=Xlcr04CB4jM",
+      "title": "Surfer Girl (Stereo)",
+      "channel": "The Beach Boys - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-dfMIwf21tqUrfbBl-bsbzQQ-original.jpg"
+    },
+    "https://soundcloud.com/macri-school-of-music/pattern-2": {
+      "url": "https://www.youtube.com/watch?v=MkIuBMBlTIE",
+      "title": "Rhythm Workout #1: Eighth Note Strumming Basics for Guitar",
+      "channel": "Rhinebeck School of Music",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000123390676-8j67bd-original.jpg"
+    },
+    "https://soundcloud.com/stockholm-chamber-brass/ewald-quintet-no-1-i": {
+      "url": "https://www.youtube.com/watch?v=JL9Zwix6DU8",
+      "title": "Brass Quintet No. 1, Op. 5: I. Moderato",
+      "channel": "Stockholm Chamber Brass - Topic",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000129980978-eyv04a-original.jpg"
+    },
+    "https://soundcloud.com/judy-proctor-950503835/mozart-adagio-for-wind-quintet": {
+      "url": "https://www.youtube.com/watch?v=iLcLcCERiPo",
+      "title": "W.A. Mozart - Adagio in B-flat Major, KV 411 | Woodwind Quintet",
+      "channel": "Sjoerd van der Veen",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000224500234-zfzhkx-original.jpg"
+    },
+    "https://soundcloud.com/missmyers2015/overture-for-percussion-ensemble-john-beck-grupo-de-percusion-del-cpm-ciudad-real": {
+      "url": "https://www.youtube.com/watch?v=TsGPtj3MROM",
+      "title": "Overture for Percussion Ensemble - John Beck",
+      "channel": "Eastman Community Music School",
+      "matchType": "work",
+      "artworkUrl": "https://a1.sndcdn.com/images/default_avatar_large.png"
+    },
+    "https://soundcloud.com/davidgillingham/concerto-for-percussion-ensemble": {
+      "url": "https://www.youtube.com/watch?v=wA0ozNMgjgs",
+      "title": "【打楽器８重奏】打楽器アンサンブルのための協奏曲/デイヴィッド・ギリングハム",
+      "channel": "信州大学吹奏楽団打楽器パートOBOG",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/avatars-000686845209-c9i1kr-original.jpg"
+    },
+    "https://soundcloud.com/nikitenko-evgeny/indifference": {
+      "url": "https://www.youtube.com/watch?v=8bxCAEKMTn8",
+      "title": "Indifference - French valse - Accordion musette 💃🏻",
+      "channel": "Yevgeniy Nikitenko Music",
+      "matchType": "recording",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-eMYofcPbaCnN6oZI-tHQR8w-original.jpg"
+    },
+    "https://soundcloud.com/gwatsky/drum-solo-feat-chukwudi-hodge": {
+      "url": "https://www.youtube.com/watch?v=nSjMegetQK8",
+      "title": "Chukwudi Hodge Drum Solo Live with George Watsky at Ace of Spades, Sacramento, CA",
+      "channel": "Will Reynolds Young",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000118865504-vlvi43-original.jpg"
+    },
+    "https://soundcloud.com/corpuschristicambridge/william-byrd-ave-verum-corpus": {
+      "url": "https://www.youtube.com/watch?v=tUwlREWrtLI",
+      "title": "William Byrd: Ave verum corpus | The Choir of Somerville College, Oxford",
+      "channel": "Oxford Choral Recordings",
+      "matchType": "work",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000590252045-ba38f4-original.jpg"
+    },
+    "https://soundcloud.com/dr-tony-goss/staccato-example-flute": {
+      "url": "https://www.youtube.com/watch?v=_aCgKk87iLA",
+      "title": "Flute Playing - Practicing Staccato Passages",
+      "channel": "dawkesmusic",
+      "matchType": "demonstration",
+      "artworkUrl": "https://i1.sndcdn.com/artworks-000363502935-8iwly8-original.jpg"
+    },
+    "https://soundcloud.com/rebecca-gorzynska/ave-maris-stella-gregorian-chant-roman-liturgy": {
+      "url": "https://www.youtube.com/watch?v=G0xOwF215QI",
+      "title": "Ave Maris Stella (Gregorian Chant - Roman Liturgy)",
+      "channel": "Rebecca Gorzynska",
+      "matchType": "recording"
+    },
+    "https://soundcloud.com/truro-cathedral/blessed-be-the-god-and-father-wesley-anthem": {
+      "url": "https://www.youtube.com/watch?v=PNF4PLKBFDA",
+      "title": "Blessed Be the God and Father",
+      "channel": "Truro Cathedral Choir - Topic",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/emwis/laura-et-astor-richard-galliano": {
+      "url": "https://www.youtube.com/watch?v=-sQjQDKzJKo",
+      "title": "Richard Galliano : Laura et Astor (Richard Galliano)",
+      "channel": "France Musique concerts",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/dr-tony-goss/staccato-example-piano": {
+      "url": "https://www.youtube.com/watch?v=QC-eEJfDjSc",
+      "title": "How to achieve detached staccato sound. Piano Basics",
+      "channel": "Piano Teaching With Irina Gorin",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/epiphanic-serendipity/also-sprach-zarathustra-op-30-richard-strauss": {
+      "url": "https://www.youtube.com/watch?v=GfwAPg4rQQE",
+      "title": "Strauss: Also sprach Zarathustra ∙ hr-Sinfonieorchester ∙ Andrés Orozco-Estrada",
+      "channel": "hr-Sinfonieorchester – Frankfurt Radio Symphony",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/westmountsda/joy-to-the-world": {
+      "url": "https://www.youtube.com/watch?v=Dowa4qKmWPQ",
+      "title": "Joy To The World - Piano Cover - Christmas Song Collection - George Frideric Handel",
+      "channel": "Jarvis Phan",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/trackistador/mozart-eine-kleine-nachtmusik-1-allegro-cc-by-sa-20": {
+      "url": "https://www.youtube.com/watch?v=UzEX0-nwN4Y",
+      "title": "Mozart: Eine Kleine Nachtmusik, I. Allegro | New Century Chamber Orchestra",
+      "channel": "New Century Chamber Orchestra",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/david-mosconi/deep-purple-smoke-on-the-water-electric-guitar-cover-by-kfir-ochaion-ft-phil-x-pete-thorn": {
+      "url": "https://www.youtube.com/watch?v=kPUMBFdz8A8",
+      "title": "Deep Purple - Smoke on the Water - Electric Guitar Cover by Kfir Ochaion ft. Phil X & Pete Thorn",
+      "channel": "Kfir Ochaion",
+      "matchType": "recording",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/sydney-symphony/ravel-bolero": {
+      "url": "https://www.youtube.com/watch?v=3T92rCMQOMI",
+      "title": "Bolero // Danish National Symphony Orchestra (Live)",
+      "channel": "DR Koncerthuset",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/jake-oneal/clocks-coldplay-acoustic-cover": {
+      "url": "https://www.youtube.com/watch?v=d020hcWA_Wg",
+      "title": "Coldplay - Clocks (Official Video)",
+      "channel": "Coldplay",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/thehaggischasers/gay-gordons-australian-ladies-rehearsal-22022016-1652": {
+      "url": "https://www.youtube.com/watch?v=YjBbTabfu6E",
+      "title": "Drumtochty Castle - Haggis Chasers Ceilidh Band - Gay Gordons",
+      "channel": "The Haggis Chasers Ceilidh Band",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/oliver-496454185/oom-pah-pah-oliver-1968": {
+      "url": "https://www.youtube.com/watch?v=57W6po5S_KQ",
+      "title": "Oliver! (1968) - Oom-Pah-Pah Scene (9/10) | Movieclips",
+      "channel": "Movieclips",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/daniel-plante-511223801/schoenberg-variations-for": {
+      "url": "https://www.youtube.com/watch?v=iL1XzH6gpAY",
+      "title": "Arnold Schoenberg - Variations Op. 31 {Chicago/Barenboim LIVE}",
+      "channel": "Bartje Bartmans",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/arnold-schoenberg.jpg"
+    },
+    "https://soundcloud.com/jefftrevino/advertisement": {
+      "url": "https://www.youtube.com/watch?v=IyM9y4LW-Fo",
+      "title": "Henry Cowell - Advertisement performed by Mary Prescott",
+      "channel": "rhapsodipre",
+      "matchType": "work",
+      "artworkUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Henry_Cowell_portrait_NYPL_4002097_%28cropped%29.jpg/250px-Henry_Cowell_portrait_NYPL_4002097_%28cropped%29.jpg"
+    },
+    "https://soundcloud.com/slumslug/krzysztof-penderecki-threnody-to-the-victims-of-hiroshima-1960": {
+      "url": "https://www.youtube.com/watch?v=p9xAjiZo7go",
+      "title": "Threnody to the Victims of Hiroshima",
+      "channel": "Polish National Radio Symphony Orchestra - Topic",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/humhyoung/elton-john-can-you-feel-the": {
+      "url": "https://www.youtube.com/watch?v=KjgWWjkNbhU",
+      "title": "Elton John - Can You Feel the Love Tonight (From \"The Lion King\"/Official Video)",
+      "channel": "DisneyMusicVEVO",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/editaadlerova/01-g-bizet-carmen-habanera": {
+      "url": "https://www.youtube.com/watch?v=KJ_HHRJf0xg",
+      "title": "Carmen - Habanera (Bizet; Anna Caterina Antonacci, The Royal Opera)",
+      "channel": "Royal Ballet and Opera",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/georges-bizet.jpg"
+    },
+    "https://soundcloud.com/chicagosymphony/dukas-the-sorcerers-1": {
+      "url": "https://www.youtube.com/watch?v=J4vs0TFrGDU",
+      "title": "Dukas: The Sorcerer's Apprentice – London Philharmonic Orchestra & Edward Gardner",
+      "channel": "London Philharmonic Orchestra",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/paul-dukas.jpg"
+    },
+    "https://soundcloud.com/doyeon-lim-406677724/chopin-waltz-in-a-minor-b-150-op-posth": {
+      "url": "https://www.youtube.com/watch?v=algM0c_u99k",
+      "title": "Chopin, Waltz in A minor, B 150, Op. Posth",
+      "channel": "The Great Repertoire",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/frederic-chopin.jpg"
+    },
+    "https://soundcloud.com/richard_uttley/mazurka": {
+      "url": "https://www.youtube.com/watch?v=H1_2K8K2W3U",
+      "title": "Arthur Rubinstein - Chopin Mazurka, Op. 7, No. 1 in B-flat Major",
+      "channel": "ArRubMusic",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/frederic-chopin.jpg"
+    },
+    "https://soundcloud.com/nurseryrhymestreet/mary-had-a-little-lamb-nursery-rhyme": {
+      "url": "https://www.youtube.com/watch?v=79iqLcucCjw",
+      "title": "Mary Had A Little Lamb | Fun Rhymes For Kids | Nursery Rhyme Street",
+      "channel": "Nursery Rhyme Street - Kids Songs and Rhymes",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/gigg-school-chapel-choir/mozart-ave-verum-corpus": {
+      "url": "https://www.youtube.com/watch?v=pscsAvGjQI0",
+      "title": "Mozart: Ave verum | Easter from King's 2022",
+      "channel": "KingsCollegeChoir",
+      "matchType": "work"
+    },
+    "https://soundcloud.com/paul-boyle-3/17-estudio-no-13-op-35-sor": {
+      "url": "https://www.youtube.com/watch?v=GxUSkYfEoMQ",
+      "title": "Fernando Sor: Andante n.13, op.35, Uros Baric",
+      "channel": "Uros Baric",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/fernando-sor.jpg"
+    },
+    "https://soundcloud.com/rama-bayu-546248775/ed-sheeran-perfect-lyrics-video": {
+      "url": "https://www.youtube.com/watch?v=ORrFJ63nlcA",
+      "title": "Perfect",
+      "channel": "Ed Sheeran",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/artist-portraits/ed-sheeran.jpg"
+    },
+    "https://soundcloud.com/phil-best/fantasie-impromptu-by-chopin": {
+      "url": "https://www.youtube.com/watch?v=Gus4dnQuiGk",
+      "title": "Chopin - Fantaisie-Impromptu (Op. 66)",
+      "channel": "Rousseau",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/frederic-chopin.jpg"
+    },
+    "https://soundcloud.com/pasipantteri/flowers-miley-cyrus": {
+      "url": "https://www.youtube.com/watch?v=G7KNmW9a75Y",
+      "title": "Miley Cyrus - Flowers (Official Video)",
+      "channel": "MileyCyrusVEVO",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/artist-portraits/miley-cyrus.png"
+    },
+    "https://soundcloud.com/anarchyjournal/the-animals-house-of-the-rising-sun": {
+      "url": "https://www.youtube.com/watch?v=N4bFqW_eu2I",
+      "title": "The Animals - House Of The Rising Sun (Music Video) [4K HD]",
+      "channel": "Timeless Music",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/artist-portraits/the-animals.jpg"
+    },
+    "https://soundcloud.com/scottrek55/bridge-over-troubled-water": {
+      "url": "https://www.youtube.com/watch?v=4G-YQA_bsOU",
+      "title": "Simon & Garfunkel - Bridge Over Troubled Water (Audio)",
+      "channel": "Simon & Garfunkel",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/artist-portraits/simon-garfunkel.jpg"
+    },
+    "https://soundcloud.com/leighfuge/essential-blues-guitar-part-18": {
+      "url": "https://www.youtube.com/watch?v=tKBpDmlG4T4",
+      "title": "The Mistake Ruining Every Guitar Bend",
+      "channel": "Leigh Fuge",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/dclowe/dx7ii-vs-montageos35-pitchbend": {
+      "url": "https://www.youtube.com/watch?v=Oi58VGcRcZY",
+      "title": "How to Pitch Bend - Pitch Bend Tutorial & Masterclass!",
+      "channel": "Andertons Synths, Keys and Tech",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/ingmar-lazar/beethoven-sonata-no-21-op-53-waldstein-iii-rondo-allegretto-moderato": {
+      "url": "https://www.youtube.com/watch?v=vAAQVaN5UBQ",
+      "title": "Ingmar Lazar plays Beethoven - Sonata No. 21 Op. 53 \"Waldstein\" 2nd & 3rd mvt.",
+      "channel": "Pierre Logis",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/composer-portraits/ludwig-van-beethoven.jpg"
+    },
+    "https://soundcloud.com/scottishpower-pipeband/the-delaware-marches": {
+      "url": "https://www.youtube.com/watch?v=t0paYEeHJhM",
+      "title": "63 Ben Williams of Tiree (Keith Bowes Bagpipe Lessons)",
+      "channel": "Keith Bowes Bagpipe Lessons",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/scotland-flag.svg"
+    },
+    "https://soundcloud.com/scottishpower-pipeband/march-strathspey-and-reel": {
+      "url": "https://www.youtube.com/watch?v=a9NTii0VCzM",
+      "title": "MSR: The Royal Scottish Pipers Society / The Bob of Fettercairn / Loch Carron (Live)",
+      "channel": "ScottishPower Pipe Band - Topic",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/scotland-flag.svg"
+    },
+    "https://soundcloud.com/tweedvalleyceilidhband/st-bernards-waltz": {
+      "url": "https://www.youtube.com/watch?v=f3jSwZSuPIE",
+      "title": "St. Bernard's Waltz",
+      "channel": "Gordon Pattullo's Ceilidh Band - Topic",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/scotland-flag.svg"
+    },
+    "https://soundcloud.com/thehaggischasers/old-time-waltz-christmas-eve-waltz-rehearsal-23022016-0021": {
+      "url": "https://www.youtube.com/watch?v=Imj-hR60Axk",
+      "title": "The Albert Halls Stirling - St Bernard's Waltz - The Haggis Chasers Ceilidh Band",
+      "channel": "The Haggis Chasers Ceilidh Band",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/scotland-flag.svg"
+    },
+    "https://soundcloud.com/softube/drum-fill": {
+      "url": "https://www.youtube.com/watch?v=A3x7DEj8T_o",
+      "title": "These Fills Are NOT For BEGINNERS! | Advanced DRUM LESSON - That Swedish Drummer",
+      "channel": "That Swedish Drummer",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/reading_museum/01-anon-sumer-is-icumen-in": {
+      "url": "https://www.youtube.com/watch?v=MpLSTbrtp-8",
+      "title": "Sumer is icumen in - Rota (Ms Harley 978, XIII sec)  Musicaround Ensemble, Vera Marenco",
+      "channel": "Musicaround",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/softube/scooped-riff-with-the-lead": {
+      "url": "https://www.youtube.com/watch?v=qYZUscH6wow",
+      "title": "Softube Amp Room - Demo - Metal",
+      "channel": "Johan Lund",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/scott-kirby-piano/maple-leaf-rag-2": {
+      "url": "https://www.youtube.com/watch?v=8kcwQXapg9Q",
+      "title": "'Maple Leaf Rag' Scott Joplin - Paul Barton, piano",
+      "channel": "Paul Barton",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "./music-dictionary/concept-audio/piano-turn-demo.wav": {
+      "url": "https://www.youtube.com/watch?v=3qpn3IZOW2A",
+      "title": "Learn the 10 Must-Know Piano Decorations in 40 Seconds",
+      "channel": "Best Piano Method",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/filmphilharmonie/lalo-schifrin-mission-impossible": {
+      "url": "https://www.youtube.com/watch?v=ifKrjldapaY",
+      "title": "Royal Philharmonic Orchestra -  Mission Impossible Theme (Lalo Sсhifrin)",
+      "channel": "Aleksandr Ilchenko",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/the-beatles-connection/we-can-work-it-out-live": {
+      "url": "https://www.youtube.com/watch?v=Qyclqo_AV2M",
+      "title": "The Beatles - The Beatles - We Can Work It Out (Official Music Video) [Remastered 2015]",
+      "channel": "TheBeatlesVEVO",
+      "matchType": "work",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/user-17979630-214507840/schubert-shepard-on-the-rock": {
+      "url": "https://www.youtube.com/watch?v=zVokI5nBfP8",
+      "title": "Franz Schubert - The Shepherd on the Rock (1828)",
+      "channel": "Dilijan Chamber Music Series",
+      "matchType": "work",
+      "artworkUrl": "https://soundcloud.com/images/fb_placeholder.png"
+    },
+    "https://soundcloud.com/auralwizapp/g-dominant-seventh-chord": {
+      "url": "https://www.youtube.com/watch?v=rXEvWlsg88M",
+      "title": "Dominant 7th Chords",
+      "channel": "Seth David",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/usion117/david-bowie-lets-dance": {
+      "url": "https://www.youtube.com/watch?v=VbD_kBJc_gI",
+      "title": "David Bowie - Let's Dance (Official Video)",
+      "channel": "David Bowie",
+      "matchType": "work"
+    },
+    "./music-dictionary/concept-audio/piano-added-sixth-demo.wav": {
+      "url": "https://www.youtube.com/watch?v=IWfGHRpHgds",
+      "title": "How To Play a C6 Chord on Piano",
+      "channel": "Brent Henderson",
+      "matchType": "demonstration",
+      "artworkUrl": "./ui-icons/assessment-cover-quavers.svg"
+    },
+    "https://soundcloud.com/armando-joins/the-beatles-yesterday": {
+      "url": "https://www.youtube.com/watch?v=NrgmdOz227I",
+      "title": "Yesterday (Remastered 2009)",
+      "channel": "The Beatles",
+      "matchType": "work",
+      "artworkUrl": "./music-dictionary/artist-portraits/b6350031d9af5489.jpg"
+    }
+  }
+}

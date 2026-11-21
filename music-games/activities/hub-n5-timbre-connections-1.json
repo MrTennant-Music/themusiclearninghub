@@ -1,0 +1,201 @@
+{
+  "id": "hub-n5-timbre-connections-1",
+  "level": "N5",
+  "title": "Timbre",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting National 5 Timbre concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "National 5"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n5-timbre-connections-1-1",
+      "prompt": "High double-reed woodwind",
+      "answer": "High double-reed woodwind",
+      "distractors": [],
+      "group": "Oboe",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-2",
+      "prompt": "Narrow high double-reed tube",
+      "answer": "Narrow high double-reed tube",
+      "distractors": [],
+      "group": "Oboe",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-3",
+      "prompt": "Higher than bassoon; double reed",
+      "answer": "Higher than bassoon; double reed",
+      "distractors": [],
+      "group": "Oboe",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-4",
+      "prompt": "Orchestral high penetrating reed",
+      "answer": "Orchestral high penetrating reed",
+      "distractors": [],
+      "group": "Oboe",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-5",
+      "prompt": "Low double-reed woodwind",
+      "answer": "Low double-reed woodwind",
+      "distractors": [],
+      "group": "Bassoon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-6",
+      "prompt": "Long folded double-reed tube",
+      "answer": "Long folded double-reed tube",
+      "distractors": [],
+      "group": "Bassoon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-7",
+      "prompt": "Lower than oboe; double reed",
+      "answer": "Lower than oboe; double reed",
+      "distractors": [],
+      "group": "Bassoon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-8",
+      "prompt": "Low reed with folded wooden body",
+      "answer": "Low reed with folded wooden body",
+      "distractors": [],
+      "group": "Bassoon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-9",
+      "prompt": "North Indian pair of hand drums",
+      "answer": "North Indian pair of hand drums",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-10",
+      "prompt": "Two tuned Indian drums together",
+      "answer": "Two tuned Indian drums together",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-11",
+      "prompt": "Indian drums played with fingers",
+      "answer": "Indian drums played with fingers",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-12",
+      "prompt": "Paired Indian drums of two sizes",
+      "answer": "Paired Indian drums of two sizes",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-13",
+      "prompt": "North Indian long-necked lute",
+      "answer": "North Indian long-necked lute",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-14",
+      "prompt": "Lute with sympathetic strings",
+      "answer": "Lute with sympathetic strings",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-15",
+      "prompt": "Indian lute with movable frets",
+      "answer": "Indian lute with movable frets",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-connections-1-16",
+      "prompt": "Long-necked Indian plucked lute",
+      "answer": "Long-necked Indian plucked lute",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

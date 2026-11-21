@@ -1,0 +1,85 @@
+{
+  "scope": "Full original PDF character rows and 300dpi crops for two previously clipped body paragraphs and two comparison-column labels. Independent source evidence; no visual flags set by rendering.",
+  "rows": [
+    {
+      "paper": "national5-2014",
+      "question": "q3",
+      "source": "exampapers/n5/2014/N5_Music_QP_2014.pdf",
+      "sourceSha256": "6e187d6ba95c76bfca293f5f577cacdb18620dcc376769d1f91a54550ac95e51",
+      "page": 6,
+      "box": [
+        55,
+        145,
+        535,
+        205
+      ],
+      "lines": [
+        "The music will be played three more times with a pause of 30 seconds between",
+        "playings.  After the final playing you will have 2 minutes in which to complete your",
+        "answers.  A warning tone will sound 30 seconds before the next question starts."
+      ],
+      "image": "maintenance/reference/past-paper-source-line-review-final/paragraph-001.png",
+      "actuallyViewed": true,
+      "followingContextLine": "Here is the music for the first time."
+    },
+    {
+      "paper": "national5-2014",
+      "question": "q8",
+      "source": "exampapers/n5/2014/N5_Music_QP_2014.pdf",
+      "sourceSha256": "6e187d6ba95c76bfca293f5f577cacdb18620dcc376769d1f91a54550ac95e51",
+      "page": 14,
+      "box": [
+        55,
+        262,
+        535,
+        313
+      ],
+      "lines": [
+        "You will hear the music three times, with a pause of 2 minutes at the end for you to",
+        "complete your final answer.  A warning tone will sound 30 seconds before the end of",
+        "the question paper."
+      ],
+      "image": "maintenance/reference/past-paper-source-line-review-final/paragraph-002.png",
+      "actuallyViewed": true,
+      "followingContextLine": "You may use the table below for rough working, but your final answer must be"
+    },
+    {
+      "paper": "higher-2019",
+      "question": "q5",
+      "source": "exampapers/higher/2019/Music H 2019 Paper.pdf",
+      "sourceSha256": "f7b832bfb7f7ac03633df467fe1ab505dbd9e4404f1324264e2452f3f263e3c3",
+      "page": 11,
+      "box": [
+        180,
+        327,
+        262,
+        361
+      ],
+      "lines": [
+        "Modulation to",
+        "relative major"
+      ],
+      "image": "maintenance/reference/past-paper-source-line-review-final/paragraph-003.png",
+      "actuallyViewed": true
+    },
+    {
+      "paper": "higher-2022",
+      "question": "q6",
+      "source": "exampapers/higher/2022/Music H 2022 Paper.pdf",
+      "sourceSha256": "e1dd5963be990aea717f1328b9d9a04e5af8d492f57bce6fc1a84f1217578d3f",
+      "page": 11,
+      "box": [
+        180,
+        389,
+        262,
+        423
+      ],
+      "lines": [
+        "Modulation to",
+        "relative major"
+      ],
+      "image": "maintenance/reference/past-paper-source-line-review-final/paragraph-004.png",
+      "actuallyViewed": true
+    }
+  ]
+}

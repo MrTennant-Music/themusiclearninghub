@@ -1,0 +1,106 @@
+{
+  "id": "hub-collection-n5-harmony-crossword-1",
+  "level": "N5",
+  "title": "Harmony",
+  "instructions": "",
+  "description": "Harmony: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Harmony",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n5-harmony-crossword-1-MC-0088",
+      "prompt": "One low note stays the same while the music above it changes.",
+      "answer": "Pedal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0088"
+    },
+    {
+      "id": "hub-collection-n5-harmony-crossword-1-MC-0093",
+      "prompt": "A simple, repeated backing pattern, often alternating a low note and a chord.",
+      "answer": "Vamp",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0093"
+    },
+    {
+      "id": "hub-collection-n5-harmony-crossword-1-MC-0166",
+      "prompt": "One high note stays the same while the music below it changes.",
+      "answer": "Inverted pedal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0166"
+    },
+    {
+      "id": "hub-collection-n5-harmony-crossword-1-MC-0081",
+      "prompt": "The music moves to a new home note.",
+      "answer": "Change of key",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0081"
+    },
+    {
+      "id": "hub-collection-n5-harmony-crossword-1-MC-0158",
+      "prompt": "Notes move in the smallest steps, like playing every neighbouring piano key.",
+      "answer": "Chromatic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0158"
+    },
+    {
+      "id": "hub-collection-n5-harmony-crossword-1-MC-0168",
+      "prompt": "The music changes to a new key, giving it a new home note.",
+      "answer": "Modulation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0168"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "harmony",
+  "sourceConceptIds": [
+    "MC-0088",
+    "MC-0093",
+    "MC-0166",
+    "MC-0081",
+    "MC-0158",
+    "MC-0168"
+  ]
+}

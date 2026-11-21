@@ -1,0 +1,201 @@
+{
+  "id": "hub-n5-period-modern-connections-1",
+  "level": "N5",
+  "title": "20th Century / Modern",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise concepts associated with 20th Century / Modern up to National 5. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "20th Century / Modern",
+    "National 5"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n5-period-modern-connections-1-1",
+      "prompt": "No established tonal centre",
+      "answer": "No established tonal centre",
+      "distractors": [],
+      "group": "Atonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-2",
+      "prompt": "No governing major or minor key",
+      "answer": "No governing major or minor key",
+      "distractors": [],
+      "group": "Atonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-3",
+      "prompt": "Music without a stable home key",
+      "answer": "Music without a stable home key",
+      "distractors": [],
+      "group": "Atonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-4",
+      "prompt": "No functional tonic framework",
+      "answer": "No functional tonic framework",
+      "distractors": [],
+      "group": "Atonal",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-5",
+      "prompt": "Adjacent pitches sound together",
+      "answer": "Adjacent pitches sound together",
+      "distractors": [],
+      "group": "Cluster",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-6",
+      "prompt": "Dense neighbouring-note chord",
+      "answer": "Dense neighbouring-note chord",
+      "distractors": [],
+      "group": "Cluster",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-7",
+      "prompt": "Close notes sound together",
+      "answer": "Close notes sound together",
+      "distractors": [],
+      "group": "Cluster",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-8",
+      "prompt": "Tightly bunched chord pitches",
+      "answer": "Tightly bunched chord pitches",
+      "distractors": [],
+      "group": "Cluster",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-9",
+      "prompt": "Six-note scale of whole tones",
+      "answer": "Six-note scale of whole tones",
+      "distractors": [],
+      "group": "Whole-tone scale",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-10",
+      "prompt": "Scale built only from tone steps",
+      "answer": "Scale built only from tone steps",
+      "distractors": [],
+      "group": "Whole-tone scale",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-11",
+      "prompt": "Scale with no semitone steps",
+      "answer": "Scale with no semitone steps",
+      "distractors": [],
+      "group": "Whole-tone scale",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-12",
+      "prompt": "C D E F sharp G sharp A sharp",
+      "answer": "C D E F sharp G sharp A sharp",
+      "distractors": [],
+      "group": "Whole-tone scale",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-13",
+      "prompt": "Accents displace strong beats",
+      "answer": "Accents displace strong beats",
+      "distractors": [],
+      "group": "Syncopation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-14",
+      "prompt": "Weak beats get rhythmic stress",
+      "answer": "Weak beats get rhythmic stress",
+      "distractors": [],
+      "group": "Syncopation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-15",
+      "prompt": "Strong-beat stress is displaced",
+      "answer": "Strong-beat stress is displaced",
+      "distractors": [],
+      "group": "Syncopation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-period-modern-connections-1-16",
+      "prompt": "Ties displace strong-beat stress",
+      "answer": "Ties displace strong-beat stress",
+      "distractors": [],
+      "group": "Syncopation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "slotCount": 900,
+  "slotCount": 891,
   "slots": [
     {
       "id": "MCQ-N3-MC0001-F01-E-001",
@@ -2762,7 +2762,7 @@
       "levelCode": "N3",
       "difficulty": "Easy",
       "category": "Texture/structure/form",
-      "concept": "Harmony",
+      "concept": "Harmony / chord",
       "conceptId": "MC-0035",
       "factId": "MC-0035-F01",
       "questionType": "definition",
@@ -2789,7 +2789,7 @@
       "levelCode": "N3",
       "difficulty": "Medium",
       "category": "Texture/structure/form",
-      "concept": "Harmony",
+      "concept": "Harmony / chord",
       "conceptId": "MC-0035",
       "factId": "MC-0035-F01",
       "questionType": "feature_exclusion",
@@ -2816,90 +2816,9 @@
       "levelCode": "N3",
       "difficulty": "Hard",
       "category": "Texture/structure/form",
-      "concept": "Harmony",
+      "concept": "Harmony / chord",
       "conceptId": "MC-0035",
       "factId": "MC-0035-F01",
-      "questionType": "teacher_authored",
-      "answerMode": "custom",
-      "conceptDescription": "",
-      "prompt": "",
-      "answers": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "correctAnswer": -1,
-      "hint": "",
-      "explanation": "",
-      "useDescriptionAsFeedback": false,
-      "status": "draft",
-      "completionState": "incomplete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N3-MC0036-F01-E-001",
-      "level": "National 3",
-      "levelCode": "N3",
-      "difficulty": "Easy",
-      "category": "Texture/structure/form",
-      "concept": "Octave",
-      "conceptId": "MC-0036",
-      "factId": "MC-0036-F01",
-      "questionType": "definition",
-      "answerMode": "concept",
-      "conceptDescription": "The interval from a note to the next higher or lower note with the same letter name, such as C to C.",
-      "prompt": "What concept is described?",
-      "answers": [
-        "Solo",
-        "Unaccompanied",
-        "Unison",
-        "Octave"
-      ],
-      "correctAnswer": 3,
-      "hint": "C to the next C: eight scale degrees.",
-      "explanation": "The interval from a note to the next higher or lower note with the same letter name, such as C to C.",
-      "useDescriptionAsFeedback": true,
-      "status": "ready",
-      "completionState": "complete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N3-MC0036-F01-M-001",
-      "level": "National 3",
-      "levelCode": "N3",
-      "difficulty": "Medium",
-      "category": "Texture/structure/form",
-      "concept": "Octave",
-      "conceptId": "MC-0036",
-      "factId": "MC-0036-F01",
-      "questionType": "feature_exclusion",
-      "answerMode": "not_feature",
-      "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Octave?",
-      "answers": [
-        "The two notes have the same letter name.",
-        "One note is the next higher or lower version of the other.",
-        "The notes sound closely related at different pitch levels.",
-        "A three-note chord is called a triad."
-      ],
-      "correctAnswer": 3,
-      "hint": "A guitarist may strum one to support a tune.",
-      "explanation": "The statement “A three-note chord is called a triad” describes Chord, not Octave. The interval from a note to the next higher or lower note with the same letter name, such as C to C.",
-      "useDescriptionAsFeedback": false,
-      "status": "ready",
-      "completionState": "complete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N3-MC0036-F01-H-001",
-      "level": "National 3",
-      "levelCode": "N3",
-      "difficulty": "Hard",
-      "category": "Texture/structure/form",
-      "concept": "Octave",
-      "conceptId": "MC-0036",
-      "factId": "MC-0036-F01",
       "questionType": "teacher_authored",
       "answerMode": "custom",
       "conceptDescription": "",
@@ -3248,7 +3167,7 @@
       "levelCode": "N3",
       "difficulty": "Easy",
       "category": "Texture/structure/form",
-      "concept": "Unison",
+      "concept": "Unison / octave",
       "conceptId": "MC-0041",
       "factId": "MC-0041-F01",
       "questionType": "definition",
@@ -3275,7 +3194,7 @@
       "levelCode": "N3",
       "difficulty": "Medium",
       "category": "Texture/structure/form",
-      "concept": "Unison",
+      "concept": "Unison / octave",
       "conceptId": "MC-0041",
       "factId": "MC-0041-F01",
       "questionType": "feature_exclusion",
@@ -3302,7 +3221,7 @@
       "levelCode": "N3",
       "difficulty": "Hard",
       "category": "Texture/structure/form",
-      "concept": "Unison",
+      "concept": "Unison / octave",
       "conceptId": "MC-0041",
       "factId": "MC-0041-F01",
       "questionType": "teacher_authored",
@@ -6417,7 +6336,7 @@
       "answers": [
         "Vamp",
         "Change of key",
-        "Chord progressions - chords I, IV and V in major keys",
+        "Chord progressions — chords I, IV and V (major keys)",
         "Broken chord / arpeggio"
       ],
       "correctAnswer": 3,
@@ -6449,7 +6368,7 @@
       ],
       "correctAnswer": 3,
       "hint": "The primary triads: tonic, subdominant and dominant.",
-      "explanation": "The statement “It is a sequence built from chords I, IV and V in a major key” describes Chord progressions - chords I, IV and V in major keys, not Broken chord / arpeggio. The notes of a chord are played one after another, not together.",
+      "explanation": "The statement “It is a sequence built from chords I, IV and V in a major key” describes Chord progressions — chords I, IV and V (major keys), not Broken chord / arpeggio. The notes of a chord are played one after another, not together.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -6497,9 +6416,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Change of key",
-        "Pedal",
         "Pentatonic scale",
-        "Scale"
+        "Scale",
+        "Scat singing"
       ],
       "correctAnswer": 0,
       "hint": "The tonal home moves somewhere new.",
@@ -6569,7 +6488,7 @@
       "levelCode": "N4",
       "difficulty": "Easy",
       "category": "Melody/harmony",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "conceptId": "MC-0082",
       "factId": "MC-0082-F01",
       "questionType": "definition",
@@ -6577,10 +6496,10 @@
       "conceptDescription": "A sequence built from the tonic, subdominant and dominant triads of a major key.",
       "prompt": "What concept is described?",
       "answers": [
-        "Drone",
-        "Chord progressions - chords I, IV and V in major keys",
-        "Major",
-        "Minor"
+        "Minor tonality",
+        "Chord progressions — chords I, IV and V (major keys)",
+        "Octave",
+        "Ornament"
       ],
       "correctAnswer": 1,
       "hint": "The primary triads: tonic, subdominant and dominant.",
@@ -6596,13 +6515,13 @@
       "levelCode": "N4",
       "difficulty": "Medium",
       "category": "Melody/harmony",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "conceptId": "MC-0082",
       "factId": "MC-0082-F01",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
       "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Chord progressions - chords I, IV and V in major keys?",
+      "prompt": "Which is NOT a feature of Chord progressions — chords I, IV and V (major keys)?",
       "answers": [
         "It uses the tonic, subdominant and dominant chords of a major key.",
         "It is a five-note scale using scale degrees 1, 2, 3, 5 and 6.",
@@ -6611,7 +6530,7 @@
       ],
       "correctAnswer": 1,
       "hint": "Five notes: often 1, 2, 3, 5 and 6.",
-      "explanation": "The statement “It is a five-note scale using scale degrees 1, 2, 3, 5 and 6” describes Pentatonic scale, not Chord progressions - chords I, IV and V in major keys. A sequence built from the tonic, subdominant and dominant triads of a major key.",
+      "explanation": "The statement “It is a five-note scale using scale degrees 1, 2, 3, 5 and 6” describes Pentatonic scale, not Chord progressions — chords I, IV and V (major keys). A sequence built from the tonic, subdominant and dominant triads of a major key.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -6623,7 +6542,7 @@
       "levelCode": "N4",
       "difficulty": "Hard",
       "category": "Melody/harmony",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "conceptId": "MC-0082",
       "factId": "MC-0082-F01",
       "questionType": "teacher_authored",
@@ -6731,7 +6650,7 @@
       "levelCode": "N4",
       "difficulty": "Easy",
       "category": "Melody/harmony",
-      "concept": "Major",
+      "concept": "Major tonality",
       "conceptId": "MC-0084",
       "factId": "MC-0084-F03",
       "questionType": "definition",
@@ -6739,10 +6658,10 @@
       "conceptDescription": "Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
       "prompt": "What concept is described?",
       "answers": [
-        "Tonality",
-        "Chord progressions - chords I, IV and V in major keys",
+        "Scale",
+        "Chord progressions — chords I, IV and V (major keys)",
         "Drone",
-        "Major"
+        "Major tonality"
       ],
       "correctAnswer": 3,
       "hint": "C–E–G rather than C–E♭–G.",
@@ -6758,13 +6677,13 @@
       "levelCode": "N4",
       "difficulty": "Medium",
       "category": "Melody/harmony",
-      "concept": "Major",
+      "concept": "Major tonality",
       "conceptId": "MC-0084",
       "factId": "MC-0084-F03",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
       "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Major?",
+      "prompt": "Which is NOT a feature of Major tonality?",
       "answers": [
         "It is based on a major scale and major tonic chord.",
         "It often sounds bright or stable, but it is not always happy.",
@@ -6773,7 +6692,7 @@
       ],
       "correctAnswer": 3,
       "hint": "Its sixth and seventh can change on the way up and down.",
-      "explanation": "The statement “Its natural, harmonic and melodic forms alter the sixth and seventh scale degrees” describes Minor, not Major. Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
+      "explanation": "The statement “Its natural, harmonic and melodic forms alter the sixth and seventh scale degrees” describes Minor tonality, not Major tonality. Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -6785,7 +6704,7 @@
       "levelCode": "N4",
       "difficulty": "Hard",
       "category": "Melody/harmony",
-      "concept": "Major",
+      "concept": "Major tonality",
       "conceptId": "MC-0084",
       "factId": "MC-0084-F03",
       "questionType": "teacher_authored",
@@ -6812,7 +6731,7 @@
       "levelCode": "N4",
       "difficulty": "Easy",
       "category": "Melody/harmony",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "conceptId": "MC-0085",
       "factId": "MC-0085-F03",
       "questionType": "definition",
@@ -6820,10 +6739,10 @@
       "conceptDescription": "Natural, harmonic and melodic forms use different sixth and seventh notes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Minor",
-        "Tonality",
+        "Minor tonality",
+        "Pentatonic scale",
         "Change of key",
-        "Chord progressions - chords I, IV and V in major keys"
+        "Chord progressions — chords I, IV and V (major keys)"
       ],
       "correctAnswer": 0,
       "hint": "Its sixth and seventh can change on the way up and down.",
@@ -6839,13 +6758,13 @@
       "levelCode": "N4",
       "difficulty": "Medium",
       "category": "Melody/harmony",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "conceptId": "MC-0085",
       "factId": "MC-0085-F03",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
       "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Minor?",
+      "prompt": "Which is NOT a feature of Minor tonality?",
       "answers": [
         "Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
         "It is based on a minor scale and minor tonic chord.",
@@ -6854,7 +6773,7 @@
       ],
       "correctAnswer": 0,
       "hint": "C–E–G rather than C–E♭–G.",
-      "explanation": "The statement “Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone” describes Major, not Minor. Natural, harmonic and melodic forms use different sixth and seventh notes.",
+      "explanation": "The statement “Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone” describes Major tonality, not Minor tonality. Natural, harmonic and melodic forms use different sixth and seventh notes.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -6866,7 +6785,7 @@
       "levelCode": "N4",
       "difficulty": "Hard",
       "category": "Melody/harmony",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "conceptId": "MC-0085",
       "factId": "MC-0085-F03",
       "questionType": "teacher_authored",
@@ -6901,10 +6820,10 @@
       "conceptDescription": "The interval between notes with the same letter name, eight scale degrees apart, such as C to C.",
       "prompt": "What concept is described?",
       "answers": [
-        "Major",
+        "Broken chord / arpeggio",
         "Octave",
-        "Minor",
-        "Tonality"
+        "Change of key",
+        "Chord progressions — chords I, IV and V (major keys)"
       ],
       "correctAnswer": 1,
       "hint": "Eight scale degrees, yet both notes share a letter.",
@@ -6982,10 +6901,10 @@
       "conceptDescription": "A decorative note or group of notes added to a melody.",
       "prompt": "What concept is described?",
       "answers": [
-        "Drone",
-        "Major",
+        "Pentatonic scale",
+        "Scale",
         "Ornament",
-        "Minor"
+        "Scat singing"
       ],
       "correctAnswer": 2,
       "hint": "A small decoration around the main melody note.",
@@ -7064,8 +6983,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Drone",
-        "Pentatonic scale",
-        "Scale",
+        "Broken chord / arpeggio",
+        "Change of key",
         "Pedal"
       ],
       "correctAnswer": 3,
@@ -7145,7 +7064,7 @@
       "prompt": "What concept is described?",
       "answers": [
         "Pentatonic scale",
-        "Minor",
+        "Major tonality",
         "Pedal",
         "Scat singing"
       ],
@@ -7225,7 +7144,7 @@
       "conceptDescription": "A set of notes arranged in ascending or descending stepwise order.",
       "prompt": "What concept is described?",
       "answers": [
-        "Minor",
+        "Pentatonic scale",
         "Scale",
         "Ornament",
         "Pedal"
@@ -7307,9 +7226,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Backing vocals",
-        "Pentatonic scale",
+        "Major tonality",
         "Scat singing",
-        "Scale"
+        "Minor tonality"
       ],
       "correctAnswer": 2,
       "hint": "Improvised jazz vocals using nonsense syllables.",
@@ -7374,87 +7293,6 @@
       "overridden": false
     },
     {
-      "id": "MCQ-N4-MC0092-F01-E-001",
-      "level": "National 4",
-      "levelCode": "N4",
-      "difficulty": "Easy",
-      "category": "Melody/harmony",
-      "concept": "Tonality",
-      "conceptId": "MC-0092",
-      "factId": "MC-0092-F01",
-      "questionType": "definition",
-      "answerMode": "concept",
-      "conceptDescription": "Music is built around a central or home key.",
-      "prompt": "What concept is described?",
-      "answers": [
-        "Minor",
-        "Drone",
-        "Octave",
-        "Tonality"
-      ],
-      "correctAnswer": 3,
-      "hint": "The sense of a home pitch and home key.",
-      "explanation": "Music is built around a central or home key.",
-      "useDescriptionAsFeedback": true,
-      "status": "ready",
-      "completionState": "complete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N4-MC0092-F01-M-001",
-      "level": "National 4",
-      "levelCode": "N4",
-      "difficulty": "Medium",
-      "category": "Melody/harmony",
-      "concept": "Tonality",
-      "conceptId": "MC-0092",
-      "factId": "MC-0092-F01",
-      "questionType": "feature_exclusion",
-      "answerMode": "not_feature",
-      "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Tonality?",
-      "answers": [
-        "Music is organised around a central key or tonic.",
-        "At this level it mainly contrasts major and minor.",
-        "Scale notes and chords create a pull between dominant and tonic.",
-        "A bass note alternates with an off-beat chord in a repeated accompaniment."
-      ],
-      "correctAnswer": 3,
-      "hint": "Bass on the pulse, chord on the off-beat—repeated.",
-      "explanation": "The statement “A bass note alternates with an off-beat chord in a repeated accompaniment” describes Vamp, not Tonality. Music is built around a central or home key.",
-      "useDescriptionAsFeedback": false,
-      "status": "ready",
-      "completionState": "complete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N4-MC0092-F01-H-001",
-      "level": "National 4",
-      "levelCode": "N4",
-      "difficulty": "Hard",
-      "category": "Melody/harmony",
-      "concept": "Tonality",
-      "conceptId": "MC-0092",
-      "factId": "MC-0092-F01",
-      "questionType": "teacher_authored",
-      "answerMode": "custom",
-      "conceptDescription": "",
-      "prompt": "",
-      "answers": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "correctAnswer": -1,
-      "hint": "",
-      "explanation": "",
-      "useDescriptionAsFeedback": false,
-      "status": "draft",
-      "completionState": "incomplete",
-      "overridden": false
-    },
-    {
       "id": "MCQ-N4-MC0093-F01-E-001",
       "level": "National 4",
       "levelCode": "N4",
@@ -7468,12 +7306,12 @@
       "conceptDescription": "A repeated accompaniment pattern, often alternating a bass note on the beat with a chord off the beat.",
       "prompt": "What concept is described?",
       "answers": [
-        "Vamp",
-        "Broken chord / arpeggio",
-        "Major",
-        "Minor"
+        "Pedal",
+        "Major tonality",
+        "Minor tonality",
+        "Vamp"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Bass on the pulse, chord on the off-beat—repeated.",
       "explanation": "A repeated accompaniment pattern, often alternating a bass note on the beat with a chord off the beat.",
       "useDescriptionAsFeedback": true,
@@ -7495,12 +7333,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Vamp?",
       "answers": [
-        "One bass note stays or repeats while several different harmonies pass above it.",
         "It is a repeated accompaniment pattern.",
         "A bass note on the beat often alternates with a chord off the beat.",
-        "It is common in ragtime, popular and Scottish dance music."
+        "It is common in ragtime, popular and Scottish dance music.",
+        "One bass note stays or repeats while several different harmonies pass above it."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "A bass note stays while the chords above change.",
       "explanation": "The statement “One bass note stays or repeats while several different harmonies pass above it” describes Pedal, not Vamp. A repeated accompaniment pattern, often alternating a bass note on the beat with a chord off the beat.",
       "useDescriptionAsFeedback": false,
@@ -7549,12 +7387,12 @@
       "conceptDescription": "An instruction to return to the previous or main tempo after a temporary change such as a rallentando or accelerando.",
       "prompt": "What concept is described?",
       "answers": [
-        "Rallentando",
         "A tempo",
-        "Andante",
-        "Compound time"
+        "Accelerando",
+        "Dotted rhythms",
+        "Jig"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Return to the original speed.",
       "explanation": "An instruction to return to the previous or main tempo after a temporary change such as a rallentando or accelerando.",
       "useDescriptionAsFeedback": true,
@@ -7576,12 +7414,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of A tempo?",
       "answers": [
-        "It tells performers to return to the earlier tempo.",
         "It tells performers to make the tempo gradually faster.",
+        "It tells performers to return to the earlier tempo.",
         "It follows a temporary speed change.",
         "It restores the previous or main pace of the music."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "The music gradually gathers speed.",
       "explanation": "The statement “It tells performers to make the tempo gradually faster” describes Accelerando, not A tempo. An instruction to return to the previous or main tempo after a temporary change such as a rallentando or accelerando.",
       "useDescriptionAsFeedback": false,
@@ -7630,12 +7468,12 @@
       "conceptDescription": "The tempo gradually becomes faster.",
       "prompt": "What concept is described?",
       "answers": [
-        "A tempo",
-        "Anacrusis",
+        "Rallentando",
         "Accelerando",
-        "Andante"
+        "Compound time",
+        "Dotted rhythms"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "The music gradually gathers speed.",
       "explanation": "The tempo gradually becomes faster.",
       "useDescriptionAsFeedback": true,
@@ -7658,11 +7496,11 @@
       "prompt": "Which is NOT a feature of Accelerando?",
       "answers": [
         "The tempo becomes gradually faster.",
-        "The beat speeds up over a passage.",
         "It tells performers to return to the previous tempo after a change.",
+        "The beat speeds up over a passage.",
         "It is a gradual change rather than an immediate jump."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Return to the original speed.",
       "explanation": "The statement “It tells performers to return to the previous tempo after a change” describes A tempo, not Accelerando. The tempo gradually becomes faster.",
       "useDescriptionAsFeedback": false,
@@ -7711,12 +7549,12 @@
       "conceptDescription": "One or more notes before the first full bar lead into the first strong beat of a phrase.",
       "prompt": "What concept is described?",
       "answers": [
-        "Syncopation",
-        "Jig",
+        "Scotch snap",
         "Rallentando",
-        "Anacrusis"
+        "Anacrusis",
+        "Simple time (2/4, 3/4 and 4/4)"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Notes arrive before the first complete bar.",
       "explanation": "One or more notes before the first full bar lead into the first strong beat of a phrase.",
       "useDescriptionAsFeedback": true,
@@ -7740,10 +7578,10 @@
       "answers": [
         "One or more notes come before the first complete bar.",
         "The notes lead into the first strong beat of a phrase.",
-        "It is also called an upbeat or pickup.",
-        "A note stays or repeats in the bass while the harmony changes above it."
+        "A note stays or repeats in the bass while the harmony changes above it.",
+        "It is also called an upbeat or pickup."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "A bass note stays while the chords above change.",
       "explanation": "The statement “A note stays or repeats in the bass while the harmony changes above it” describes Pedal, not Anacrusis. One or more notes before the first full bar lead into the first strong beat of a phrase.",
       "useDescriptionAsFeedback": false,
@@ -7792,12 +7630,12 @@
       "conceptDescription": "A moderate tempo marking meaning at a walking pace.",
       "prompt": "What concept is described?",
       "answers": [
-        "Andante",
-        "Anacrusis",
-        "Compound time",
-        "Dotted rhythms"
+        "Rallentando",
+        "Scotch snap",
+        "Simple time (2/4, 3/4 and 4/4)",
+        "Andante"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "At a walking pace.",
       "explanation": "A moderate tempo marking meaning at a walking pace.",
       "useDescriptionAsFeedback": true,
@@ -7819,12 +7657,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Andante?",
       "answers": [
-        "It tells performers to make the tempo gradually faster.",
         "It means a moderate walking pace.",
         "It is calmer than allegro and faster than adagio.",
-        "It is often associated with about 76-108 beats per minute."
+        "It is often associated with about 76-108 beats per minute.",
+        "It tells performers to make the tempo gradually faster."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The music gradually gathers speed.",
       "explanation": "The statement “It tells performers to make the tempo gradually faster” describes Accelerando, not Andante. A moderate tempo marking meaning at a walking pace.",
       "useDescriptionAsFeedback": false,
@@ -7873,12 +7711,12 @@
       "conceptDescription": "A metre in which each main beat divides naturally into three equal parts.",
       "prompt": "What concept is described?",
       "answers": [
-        "Simple time (2/4, 3/4 and 4/4)",
         "Compound time",
-        "A tempo",
-        "Accelerando"
+        "Simple time (2/4, 3/4 and 4/4)",
+        "Andante",
+        "Dotted rhythms"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Each main pulse divides into three.",
       "explanation": "A metre in which each main beat divides naturally into three equal parts.",
       "useDescriptionAsFeedback": true,
@@ -7900,12 +7738,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Compound time?",
       "answers": [
-        "Each main beat divides into three equal parts.",
         "Each main beat divides naturally into two equal parts.",
+        "Each main beat divides into three equal parts.",
         "6/8, 9/8 and 12/8 have two, three and four main beats.",
         "Each main beat is often shown by a dotted crotchet."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Each main pulse divides evenly into two.",
       "explanation": "The statement “Each main beat divides naturally into two equal parts” describes Simple time (2/4, 3/4 and 4/4), not Compound time. A metre in which each main beat divides naturally into three equal parts.",
       "useDescriptionAsFeedback": false,
@@ -7954,12 +7792,12 @@
       "conceptDescription": "A dot adds half a note's value, creating long-short or short-long patterns.",
       "prompt": "What concept is described?",
       "answers": [
-        "Syncopation",
-        "Jig",
+        "Scotch snap",
         "Dotted rhythms",
-        "Rallentando"
+        "Rallentando",
+        "Simple time (2/4, 3/4 and 4/4)"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "The dot adds half the note's value.",
       "explanation": "A dot adds half a note's value, creating long-short or short-long patterns.",
       "useDescriptionAsFeedback": true,
@@ -7982,11 +7820,11 @@
       "prompt": "Which is NOT a feature of Dotted rhythms?",
       "answers": [
         "Dotted notes create unequal long-short or short-long patterns.",
-        "A dot lengthens a note by half of its original value.",
         "It is a three-part musical form with sections in the order A-B-A.",
+        "A dot lengthens a note by half of its original value.",
         "A dotted quaver followed by a semiquaver is a common example."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Opening section, contrast, then the opening returns.",
       "explanation": "The statement “It is a three-part musical form with sections in the order A-B-A” describes Ternary / ABA, not Dotted rhythms. A dot adds half a note's value, creating long-short or short-long patterns.",
       "useDescriptionAsFeedback": false,
@@ -8036,11 +7874,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Strathspey",
-        "Rallentando",
-        "Scotch snap",
-        "Jig"
+        "Syncopation",
+        "Jig",
+        "A tempo"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "A lively 6/8 dance with two main pulses.",
       "explanation": "A lively Scottish or Irish dance in compound time, often 6/8.",
       "useDescriptionAsFeedback": true,
@@ -8064,10 +7902,10 @@
       "answers": [
         "It is a lively Scottish or Irish dance.",
         "It is often in 6/8 with two main beats per bar.",
-        "Each dotted-crotchet beat divides into three quavers.",
-        "It is a moderate Scottish dance in simple quadruple time with Scotch snaps."
+        "It is a moderate Scottish dance in simple quadruple time with Scotch snaps.",
+        "Each dotted-crotchet beat divides into three quavers."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Moderate Scottish dance packed with short-long snaps.",
       "explanation": "The statement “It is a moderate Scottish dance in simple quadruple time with Scotch snaps” describes Strathspey, not Jig. A lively Scottish or Irish dance in compound time, often 6/8.",
       "useDescriptionAsFeedback": false,
@@ -8116,12 +7954,12 @@
       "conceptDescription": "The tempo gradually becomes slower, usually over several beats or bars.",
       "prompt": "What concept is described?",
       "answers": [
-        "Rallentando",
-        "A tempo",
-        "Dotted rhythms",
-        "Jig"
+        "Accelerando",
+        "Scotch snap",
+        "Simple time (2/4, 3/4 and 4/4)",
+        "Rallentando"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The tempo gradually applies the brakes.",
       "explanation": "The tempo gradually becomes slower, usually over several beats or bars.",
       "useDescriptionAsFeedback": true,
@@ -8143,12 +7981,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Rallentando?",
       "answers": [
-        "The tempo becomes gradually faster over a passage.",
         "The tempo becomes gradually slower.",
         "The slowing usually happens over several beats or bars.",
-        "It is often shortened to rall. in notation."
+        "It is often shortened to rall. in notation.",
+        "The tempo becomes gradually faster over a passage."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The music gradually gathers speed.",
       "explanation": "The statement “The tempo becomes gradually faster over a passage” describes Accelerando, not Rallentando. The tempo gradually becomes slower, usually over several beats or bars.",
       "useDescriptionAsFeedback": false,
@@ -8197,12 +8035,12 @@
       "conceptDescription": "A short accented note followed by a longer note, often written as a semiquaver followed by a dotted quaver.",
       "prompt": "What concept is described?",
       "answers": [
-        "Syncopation",
         "Scotch snap",
-        "Jig",
-        "Rallentando"
+        "Dotted rhythms",
+        "Rallentando",
+        "Simple time (2/4, 3/4 and 4/4)"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "A short accented note jumps into a longer one.",
       "explanation": "A short accented note followed by a longer note, often written as a semiquaver followed by a dotted quaver.",
       "useDescriptionAsFeedback": true,
@@ -8224,12 +8062,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Scotch snap?",
       "answers": [
-        "A short accented note is followed by a longer note.",
         "A dotted quaver is followed by a shorter semiquaver.",
+        "A short accented note is followed by a longer note.",
         "It is often written as a semiquaver followed by a dotted quaver.",
         "It is strongly associated with the Scottish strathspey."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "The dot adds half the note's value.",
       "explanation": "The statement “A dotted quaver is followed by a shorter semiquaver” describes Dotted rhythms, not Scotch snap. A short accented note followed by a longer note, often written as a semiquaver followed by a dotted quaver.",
       "useDescriptionAsFeedback": false,
@@ -8279,11 +8117,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Compound time",
-        "A tempo",
         "Simple time (2/4, 3/4 and 4/4)",
-        "Accelerando"
+        "Andante",
+        "Dotted rhythms"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Each main pulse divides evenly into two.",
       "explanation": "Metres with two, three or four crotchet beats in each bar, where each main beat divides naturally into two equal parts.",
       "useDescriptionAsFeedback": true,
@@ -8306,11 +8144,11 @@
       "prompt": "Which is NOT a feature of Simple time (2/4, 3/4 and 4/4)?",
       "answers": [
         "Each main beat divides naturally into two equal parts.",
-        "It may have two, three or four crotchet beats in a bar.",
         "Each main beat divides naturally into three equal parts.",
+        "It may have two, three or four crotchet beats in a bar.",
         "2/4, 3/4 and 4/4 are common examples."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Each main pulse divides into three.",
       "explanation": "The statement “Each main beat divides naturally into three equal parts” describes Compound time, not Simple time (2/4, 3/4 and 4/4). Metres with two, three or four crotchet beats in each bar, where each main beat divides naturally into two equal parts.",
       "useDescriptionAsFeedback": false,
@@ -8360,11 +8198,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Jig",
-        "Simple time (2/4, 3/4 and 4/4)",
-        "Syncopation",
-        "Strathspey"
+        "Accelerando",
+        "Strathspey",
+        "Anacrusis"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Moderate Scottish dance packed with short-long snaps.",
       "explanation": "A Scottish dance in simple quadruple time, usually at a moderate tempo.",
       "useDescriptionAsFeedback": true,
@@ -8388,10 +8226,10 @@
       "answers": [
         "It is a Scottish dance in simple quadruple time.",
         "It is usually played at a moderate tempo.",
-        "Dotted rhythms and the Scotch snap are important features.",
-        "It is a lively dance in compound 6/8 with two dotted-crotchet beats."
+        "It is a lively dance in compound 6/8 with two dotted-crotchet beats.",
+        "Dotted rhythms and the Scotch snap are important features."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "A lively 6/8 dance with two main pulses.",
       "explanation": "The statement “It is a lively dance in compound 6/8 with two dotted-crotchet beats” describes Jig, not Strathspey. A Scottish dance in simple quadruple time, usually at a moderate tempo.",
       "useDescriptionAsFeedback": false,
@@ -8440,12 +8278,12 @@
       "conceptDescription": "Rhythmic emphasis is placed on weak beats, off-beats or notes held across strong beats.",
       "prompt": "What concept is described?",
       "answers": [
-        "Syncopation",
-        "Scotch snap",
-        "Jig",
-        "Rallentando"
+        "Dotted rhythms",
+        "Rallentando",
+        "Simple time (2/4, 3/4 and 4/4)",
+        "Syncopation"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Expected strong pulses are displaced by surprising accents.",
       "explanation": "Rhythmic emphasis is placed on weak beats, off-beats or notes held across strong beats.",
       "useDescriptionAsFeedback": true,
@@ -8467,12 +8305,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Syncopation?",
       "answers": [
-        "The tempo gradually slows over several beats or bars.",
         "Emphasis falls on weak beats or off-beats.",
         "A note may be held across a strong beat.",
-        "The expected accent pattern is displaced, adding drive or surprise."
+        "The expected accent pattern is displaced, adding drive or surprise.",
+        "The tempo gradually slows over several beats or bars."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The tempo gradually applies the brakes.",
       "explanation": "The statement “The tempo gradually slows over several beats or bars” describes Rallentando, not Syncopation. Rhythmic emphasis is placed on weak beats, off-beats or notes held across strong beats.",
       "useDescriptionAsFeedback": false,
@@ -8521,12 +8359,12 @@
       "conceptDescription": "A solo section in a concerto that lets the performer show musical and technical skill.",
       "prompt": "What concept is described?",
       "answers": [
-        "Verse and chorus",
         "Cadenza",
-        "Canon",
-        "Imitation"
+        "Ternary / ABA",
+        "Theme and variation",
+        "Verse and chorus"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "The soloist's showpiece near a movement's end.",
       "explanation": "A solo section in a concerto that lets the performer show musical and technical skill.",
       "useDescriptionAsFeedback": true,
@@ -8548,12 +8386,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Cadenza?",
       "answers": [
-        "It is a prominent solo passage in a concerto or similar work.",
         "It is a contrasting popular-song section traditionally about eight bars long.",
+        "It is a prominent solo passage in a concerto or similar work.",
         "It displays the performer's expressive and technical skill.",
         "It often appears near a movement's end and may be unaccompanied."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "A contrasting pop-song section, traditionally eight bars.",
       "explanation": "The statement “It is a contrasting popular-song section traditionally about eight bars long” describes Middle 8, not Cadenza. A solo section in a concerto that lets the performer show musical and technical skill.",
       "useDescriptionAsFeedback": false,
@@ -8603,11 +8441,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Imitation",
-        "Ternary / ABA",
         "Canon",
-        "Theme and variation"
+        "Cadenza",
+        "Middle 8"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "An exact melody chase, starting at different times.",
       "explanation": "A strict type of imitation in which one part begins a melody and another enters later with the same melody.",
       "useDescriptionAsFeedback": true,
@@ -8630,11 +8468,11 @@
       "prompt": "Which is NOT a feature of Canon?",
       "answers": [
         "One part begins a melody and another enters later with the same melody.",
-        "The parts continue together so the melody overlaps.",
         "The copied musical idea may be altered and does not need to continue throughout.",
+        "The parts continue together so the melody overlaps.",
         "Following parts reproduce the melody exactly."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "One part copies an idea shortly after another.",
       "explanation": "The statement “The copied musical idea may be altered and does not need to continue throughout” describes Imitation, not Canon. A strict type of imitation in which one part begins a melody and another enters later with the same melody.",
       "useDescriptionAsFeedback": false,
@@ -8684,11 +8522,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Canon",
-        "Cadenza",
-        "Middle 8",
-        "Imitation"
+        "Theme and variation",
+        "Imitation",
+        "Verse and chorus"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "One part copies an idea shortly after another.",
       "explanation": "A musical idea in one part is copied shortly afterwards by another part.",
       "useDescriptionAsFeedback": true,
@@ -8712,10 +8550,10 @@
       "answers": [
         "A musical idea is copied shortly afterwards by another part.",
         "The copy may be exact or altered.",
-        "The copying does not need to continue for the whole piece.",
-        "Every following part must reproduce the complete melody exactly as it overlaps."
+        "Every following part must reproduce the complete melody exactly as it overlaps.",
+        "The copying does not need to continue for the whole piece."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "An exact melody chase, starting at different times.",
       "explanation": "The statement “Every following part must reproduce the complete melody exactly as it overlaps” describes Canon, not Imitation. A musical idea in one part is copied shortly afterwards by another part.",
       "useDescriptionAsFeedback": false,
@@ -8764,12 +8602,12 @@
       "conceptDescription": "A contrasting section in a popular song, often occurring after repeated verses or choruses.",
       "prompt": "What concept is described?",
       "answers": [
-        "Middle 8",
         "Verse and chorus",
-        "Theme and variation",
-        "Canon"
+        "Imitation",
+        "Ternary / ABA",
+        "Middle 8"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "A contrasting pop-song section, traditionally eight bars.",
       "explanation": "A contrasting section in a popular song, often occurring after repeated verses or choruses.",
       "useDescriptionAsFeedback": true,
@@ -8791,12 +8629,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Middle 8?",
       "answers": [
-        "It is a solo concerto passage designed to display a performer's skill.",
         "It is a contrasting section in a popular song.",
         "It often follows repeated verses or choruses.",
-        "Its name is used even when it is not exactly eight bars long."
+        "Its name is used even when it is not exactly eight bars long.",
+        "It is a solo concerto passage designed to display a performer's skill."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The soloist's showpiece near a movement's end.",
       "explanation": "The statement “It is a solo concerto passage designed to display a performer's skill” describes Cadenza, not Middle 8. A contrasting section in a popular song, often occurring after repeated verses or choruses.",
       "useDescriptionAsFeedback": false,
@@ -8845,12 +8683,12 @@
       "conceptDescription": "A three-part form consisting of an opening A section, a contrasting B section and a return of the A section.",
       "prompt": "What concept is described?",
       "answers": [
-        "Theme and variation",
         "Ternary / ABA",
-        "Cadenza",
-        "Canon"
+        "Theme and variation",
+        "Canon",
+        "Imitation"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Opening section, contrast, then the opening returns.",
       "explanation": "A three-part form consisting of an opening A section, a contrasting B section and a return of the A section.",
       "useDescriptionAsFeedback": true,
@@ -8872,12 +8710,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Ternary / ABA?",
       "answers": [
-        "It has three sections in the order A-B-A.",
         "Verses change their words while a chorus returns with the same words and music.",
+        "It has three sections in the order A-B-A.",
         "The middle B section contrasts with the opening.",
         "The final A returns and may be exact or slightly changed."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Changing lyrics alternate with the same returning hook.",
       "explanation": "The statement “Verses change their words while a chorus returns with the same words and music” describes Verse and chorus, not Ternary / ABA. A three-part form consisting of an opening A section, a contrasting B section and a return of the A section.",
       "useDescriptionAsFeedback": false,
@@ -8927,11 +8765,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Ternary / ABA",
-        "Cadenza",
         "Theme and variation",
-        "Canon"
+        "Canon",
+        "Imitation"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "One tune returns repeatedly, changed each time.",
       "explanation": "A main melody or musical idea is stated and then returns several times in altered forms.",
       "useDescriptionAsFeedback": true,
@@ -8954,11 +8792,11 @@
       "prompt": "Which is NOT a feature of Theme and variation?",
       "answers": [
         "A main melody or idea is stated first.",
-        "The idea returns several times in changed forms.",
         "The structure is always an opening A, a contrasting B and an unchanged final A.",
+        "The idea returns several times in changed forms.",
         "Rhythm, harmony, texture, tempo or instruments may change."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Opening section, contrast, then the opening returns.",
       "explanation": "The statement “The structure is always an opening A, a contrasting B and an unchanged final A” describes Ternary / ABA, not Theme and variation. A main melody or musical idea is stated and then returns several times in altered forms.",
       "useDescriptionAsFeedback": false,
@@ -9008,11 +8846,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Middle 8",
-        "Cadenza",
         "Canon",
-        "Verse and chorus"
+        "Verse and chorus",
+        "Imitation"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Changing lyrics alternate with the same returning hook.",
       "explanation": "Verses repeat the same music with new words. A contrasting chorus returns with the same or similar words and music.",
       "useDescriptionAsFeedback": true,
@@ -9036,10 +8874,10 @@
       "answers": [
         "Verses repeat the same music with changing words.",
         "A contrasting chorus returns with the same or similar words and music.",
-        "The chorus usually contains the main hook.",
-        "The complete form is always an opening A, contrasting B and returning A section."
+        "The complete form is always an opening A, contrasting B and returning A section.",
+        "The chorus usually contains the main hook."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Opening section, contrast, then the opening returns.",
       "explanation": "The statement “The complete form is always an opening A, contrasting B and returning A section” describes Ternary / ABA, not Verse and chorus. Verses repeat the same music with new words. A contrasting chorus returns with the same or similar words and music.",
       "useDescriptionAsFeedback": false,
@@ -9088,12 +8926,12 @@
       "conceptDescription": "The lowest standard female voice or choral part, lying below soprano.",
       "prompt": "What concept is described?",
       "answers": [
-        "Alto",
         "Soprano",
-        "Flute",
-        "Glockenspiel"
+        "Bass guitar",
+        "Brass band",
+        "Alto"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The A in SATB, second from the top.",
       "explanation": "The lowest standard female voice or choral part, lying below soprano.",
       "useDescriptionAsFeedback": true,
@@ -9115,12 +8953,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Alto?",
       "answers": [
-        "It is the highest standard female voice and carries the top SATB line.",
         "It is the lowest standard female voice or choral part.",
         "It lies below soprano.",
-        "It forms the A in SATB."
+        "It forms the A in SATB.",
+        "It is the highest standard female voice and carries the top SATB line."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The highest female part and the S in SATB.",
       "explanation": "The statement “It is the highest standard female voice and carries the top SATB line” describes Soprano, not Alto. The lowest standard female voice or choral part, lying below soprano.",
       "useDescriptionAsFeedback": false,
@@ -9169,12 +9007,12 @@
       "conceptDescription": "One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background.",
       "prompt": "What concept is described?",
       "answers": [
-        "Scat singing",
         "Backing vocals",
-        "Distortion",
-        "Double bass"
+        "Scat singing",
+        "Bass",
+        "Bass drum"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Singers add harmony behind the lead performer.",
       "explanation": "One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background.",
       "useDescriptionAsFeedback": true,
@@ -9196,12 +9034,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Backing vocals?",
       "answers": [
-        "One or more singers support the lead vocalist.",
         "The singers form a Scottish Gaelic style that is usually unaccompanied.",
+        "One or more singers support the lead vocalist.",
         "They may add harmony or repeated responses.",
         "They may sing sustained notes in the background."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Dance rhythms sung with Gaelic or nonsense syllables.",
       "explanation": "The statement “The singers form a Scottish Gaelic style that is usually unaccompanied” describes Mouth music, not Backing vocals. One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background.",
       "useDescriptionAsFeedback": false,
@@ -9251,11 +9089,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Tenor",
-        "Wind band",
         "Bass",
-        "Xylophone"
+        "Snare drum",
+        "Tambourine"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "The B at the bottom of SATB.",
       "explanation": "As a male voice, it is the lowest standard adult voice or choral part.",
       "useDescriptionAsFeedback": true,
@@ -9278,11 +9116,11 @@
       "prompt": "Which is NOT a feature of Bass?",
       "answers": [
         "It is the lowest standard adult male voice.",
-        "It provides the lowest vocal line in SATB writing.",
         "It is a high adult male voice that forms the T in SATB.",
+        "It provides the lowest vocal line in SATB writing.",
         "Its line often supports the harmony."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "The T in SATB: a high adult male part.",
       "explanation": "The statement “It is a high adult male voice that forms the T in SATB” describes Tenor, not Bass. As a male voice, it is the lowest standard adult voice or choral part.",
       "useDescriptionAsFeedback": false,
@@ -9331,12 +9169,12 @@
       "conceptDescription": "A large, low-pitched untuned drum struck with a beater.",
       "prompt": "What concept is described?",
       "answers": [
-        "Cymbals",
-        "Soprano",
-        "Tenor",
-        "Bass drum"
+        "Glockenspiel",
+        "Wind band",
+        "Bass drum",
+        "Alto"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "The biggest drum in a kit, played by foot for a deep thump.",
       "explanation": "A large, low-pitched untuned drum struck with a beater.",
       "useDescriptionAsFeedback": true,
@@ -9360,10 +9198,10 @@
       "answers": [
         "It is a large, low-pitched untuned drum.",
         "It is struck with a beater and provides weight or strong accents.",
-        "In a drum kit it is operated by a foot pedal.",
-        "Metal wires beneath its lower head create a crisp rattling sound."
+        "Metal wires beneath its lower head create a crisp rattling sound.",
+        "In a drum kit it is operated by a foot pedal."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Metal wires beneath the head make a crisp rattle.",
       "explanation": "The statement “Metal wires beneath its lower head create a crisp rattling sound” describes Snare drum, not Bass drum. A large, low-pitched untuned drum struck with a beater.",
       "useDescriptionAsFeedback": false,
@@ -9412,12 +9250,12 @@
       "conceptDescription": "A low-pitched electric string instrument, usually with four strings, played by plucking or with a plectrum.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bass guitar",
-        "Muted",
-        "Soprano",
-        "Tenor"
+        "Tenor",
+        "Wind band",
+        "Alto",
+        "Bass guitar"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Four low strings link harmony to the groove.",
       "explanation": "A low-pitched electric string instrument, usually with four strings, played by plucking or with a plectrum.",
       "useDescriptionAsFeedback": true,
@@ -9439,12 +9277,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Bass guitar?",
       "answers": [
-        "A telescoping slide changes pitch instead of valves.",
         "It is a low-pitched electric string instrument.",
         "It usually has four strings and is played by plucking or with a plectrum.",
-        "It supplies bass lines and usually needs amplification."
+        "It supplies bass lines and usually needs amplification.",
+        "A telescoping slide changes pitch instead of valves."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "A telescoping slide replaces the usual brass valves.",
       "explanation": "The statement “A telescoping slide changes pitch instead of valves” describes Trombone, not Bass guitar. A low-pitched electric string instrument, usually with four strings, played by plucking or with a plectrum.",
       "useDescriptionAsFeedback": false,
@@ -9493,12 +9331,12 @@
       "conceptDescription": "An ensemble of brass instruments and percussion, with no woodwind or strings.",
       "prompt": "What concept is described?",
       "answers": [
-        "Wind band",
         "Brass band",
-        "Guiro",
-        "Harp"
+        "Wind band",
+        "Cello",
+        "Clarinet"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Cornets, horns, euphoniums, trombones, tubas and percussion.",
       "explanation": "An ensemble of brass instruments and percussion, with no woodwind or strings.",
       "useDescriptionAsFeedback": true,
@@ -9520,12 +9358,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Brass band?",
       "answers": [
-        "It contains brass instruments and percussion.",
         "Flutes, clarinets and saxophones form an important part of the ensemble.",
+        "It contains brass instruments and percussion.",
         "It usually has no woodwind or orchestral strings.",
         "Cornets, tenor horns, euphoniums, trombones and tubas are common."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Woodwind, brass and percussion—with no orchestral strings.",
       "explanation": "The statement “Flutes, clarinets and saxophones form an important part of the ensemble” describes Wind band, not Brass band. An ensemble of brass instruments and percussion, with no woodwind or strings.",
       "useDescriptionAsFeedback": false,
@@ -9574,12 +9412,12 @@
       "conceptDescription": "A low string instrument larger than the viola and smaller than the double bass.",
       "prompt": "What concept is described?",
       "answers": [
-        "Violin",
-        "Brass band",
+        "Harp",
         "Cello",
-        "Distortion"
+        "Muted",
+        "Soprano"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Held between the knees and supported by an endpin.",
       "explanation": "A low string instrument larger than the viola and smaller than the double bass.",
       "useDescriptionAsFeedback": true,
@@ -9602,11 +9440,11 @@
       "prompt": "Which is NOT a feature of Cello?",
       "answers": [
         "It is a low orchestral string instrument.",
-        "It is larger than a viola but smaller than a double bass.",
         "It is held under the chin and is the highest standard orchestral string instrument.",
+        "It is larger than a viola but smaller than a double bass.",
         "It rests on an endpin between the knees and is usually bowed."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Smallest orchestral string instrument, held under the chin.",
       "explanation": "The statement “It is held under the chin and is the highest standard orchestral string instrument” describes Violin, not Cello. A low string instrument larger than the viola and smaller than the double bass.",
       "useDescriptionAsFeedback": false,
@@ -9655,12 +9493,12 @@
       "conceptDescription": "A single-reed woodwind instrument with a wide range and a smooth, flexible tone.",
       "prompt": "What concept is described?",
       "answers": [
-        "Saxophone",
-        "Bass",
-        "Brass band",
-        "Clarinet"
+        "Recorder",
+        "Distortion",
+        "Clarinet",
+        "Muted"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "A straight, usually black woodwind with one reed and silver keys.",
       "explanation": "A single-reed woodwind instrument with a wide range and a smooth, flexible tone.",
       "useDescriptionAsFeedback": true,
@@ -9684,10 +9522,10 @@
       "answers": [
         "It is a single-reed woodwind instrument.",
         "It has a wide range and a smooth, flexible tone.",
-        "It appears in orchestras, wind bands and jazz ensembles.",
-        "It is sounded by blowing across an embouchure hole without a reed."
+        "It is sounded by blowing across an embouchure hole without a reed.",
+        "It appears in orchestras, wind bands and jazz ensembles."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Hold this high metal woodwind sideways and blow across a hole.",
       "explanation": "The statement “It is sounded by blowing across an embouchure hole without a reed” describes Flute, not Clarinet. A single-reed woodwind instrument with a wide range and a smooth, flexible tone.",
       "useDescriptionAsFeedback": false,
@@ -9736,12 +9574,12 @@
       "conceptDescription": "Round metal untuned percussion instruments that may be struck together or hit with sticks or mallets.",
       "prompt": "What concept is described?",
       "answers": [
-        "Cymbals",
-        "Snare drum",
-        "Backing vocals",
-        "Bass"
+        "Glockenspiel",
+        "Brass band",
+        "Distortion",
+        "Cymbals"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Round metal plates that crash or shimmer.",
       "explanation": "Round metal untuned percussion instruments that may be struck together or hit with sticks or mallets.",
       "useDescriptionAsFeedback": true,
@@ -9763,12 +9601,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Cymbals?",
       "answers": [
-        "Metal wires beneath a drum head produce a crisp rattling sound.",
         "They are round metal untuned percussion instruments.",
         "They may be struck together or hit with sticks or mallets.",
-        "They can create crashes, accents, rolls and shimmering sounds."
+        "They can create crashes, accents, rolls and shimmering sounds.",
+        "Metal wires beneath a drum head produce a crisp rattling sound."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Metal wires beneath the head make a crisp rattle.",
       "explanation": "The statement “Metal wires beneath a drum head produce a crisp rattling sound” describes Snare drum, not Cymbals. Round metal untuned percussion instruments that may be struck together or hit with sticks or mallets.",
       "useDescriptionAsFeedback": false,
@@ -9817,12 +9655,12 @@
       "conceptDescription": "An electronic effect that makes an amplified sound rough or fuzzy.",
       "prompt": "What concept is described?",
       "answers": [
-        "Guiro",
         "Distortion",
-        "Harp",
-        "Harpsichord"
+        "Brass band",
+        "Cello",
+        "Clarinet"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "An amplified signal is clipped into a rough, fuzzy tone.",
       "explanation": "An electronic effect that makes an amplified sound rough or fuzzy.",
       "useDescriptionAsFeedback": true,
@@ -9844,12 +9682,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Distortion?",
       "answers": [
-        "It electronically alters and clips an amplified signal.",
         "A mute changes an instrument's tone, often making it softer or more distant.",
+        "It electronically alters and clips an amplified signal.",
         "It creates a rough, fuzzy or aggressive tone.",
         "It is especially linked with electric guitar in rock music."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "A device softens and colours an instrument's usual tone.",
       "explanation": "The statement “A mute changes an instrument's tone, often making it softer or more distant” describes Muted, not Distortion. An electronic effect that makes an amplified sound rough or fuzzy.",
       "useDescriptionAsFeedback": false,
@@ -9898,12 +9736,12 @@
       "conceptDescription": "The largest and lowest-pitched member of the orchestral string family.",
       "prompt": "What concept is described?",
       "answers": [
-        "Harp",
-        "Wind band",
+        "Cello",
         "Double bass",
-        "Alto"
+        "Backing vocals",
+        "Bass"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "The orchestra's largest, lowest bowed string instrument.",
       "explanation": "The largest and lowest-pitched member of the orchestral string family.",
       "useDescriptionAsFeedback": true,
@@ -9926,11 +9764,11 @@
       "prompt": "Which is NOT a feature of Double bass?",
       "answers": [
         "It is the largest orchestral string instrument.",
-        "It is the lowest-pitched member of the orchestral string family.",
         "It is the smallest and highest-pitched standard orchestral string instrument.",
+        "It is the lowest-pitched member of the orchestral string family.",
         "It may be played with a bow or by plucking."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Smallest orchestral string instrument, held under the chin.",
       "explanation": "The statement “It is the smallest and highest-pitched standard orchestral string instrument” describes Violin, not Double bass. The largest and lowest-pitched member of the orchestral string family.",
       "useDescriptionAsFeedback": false,
@@ -9979,12 +9817,12 @@
       "conceptDescription": "A high woodwind, usually made of metal, played by blowing across an opening instead of through a reed.",
       "prompt": "What concept is described?",
       "answers": [
-        "Saxophone",
-        "Tenor",
-        "Wind band",
-        "Flute"
+        "Recorder",
+        "Alto",
+        "Flute",
+        "Backing vocals"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Hold this high metal woodwind sideways and blow across a hole.",
       "explanation": "A high woodwind, usually made of metal, played by blowing across an opening instead of through a reed.",
       "useDescriptionAsFeedback": true,
@@ -10008,10 +9846,10 @@
       "answers": [
         "It is a high woodwind instrument that is usually made of metal.",
         "The player blows across an embouchure hole.",
-        "It makes sound without using a reed.",
-        "A single reed attached to a mouthpiece begins the sound."
+        "A single reed attached to a mouthpiece begins the sound.",
+        "It makes sound without using a reed."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "A straight, usually black woodwind with one reed and silver keys.",
       "explanation": "The statement “A single reed attached to a mouthpiece begins the sound” describes Clarinet, not Flute. A high woodwind, usually made of metal, played by blowing across an opening instead of through a reed.",
       "useDescriptionAsFeedback": false,
@@ -10060,12 +9898,12 @@
       "conceptDescription": "A tuned percussion instrument with metal bars arranged like a keyboard and struck with hard beaters.",
       "prompt": "What concept is described?",
       "answers": [
-        "Glockenspiel",
-        "Snare drum",
-        "Soprano",
-        "Tenor"
+        "Cymbals",
+        "Wind band",
+        "Alto",
+        "Glockenspiel"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Small metal bars with a bright, bell-like sound.",
       "explanation": "A tuned percussion instrument with metal bars arranged like a keyboard and struck with hard beaters.",
       "useDescriptionAsFeedback": true,
@@ -10087,12 +9925,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Glockenspiel?",
       "answers": [
-        "Its wooden bars create a dry, sharply defined tone.",
         "It is a tuned percussion instrument with metal bars.",
         "Its bars are arranged like a keyboard and struck with hard beaters.",
-        "It has a bright, high and bell-like sound."
+        "It has a bright, high and bell-like sound.",
+        "Its wooden bars create a dry, sharply defined tone."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Wooden keyboard bars struck for a dry, bright tone.",
       "explanation": "The statement “Its wooden bars create a dry, sharply defined tone” describes Xylophone, not Glockenspiel. A tuned percussion instrument with metal bars arranged like a keyboard and struck with hard beaters.",
       "useDescriptionAsFeedback": false,
@@ -10141,12 +9979,12 @@
       "conceptDescription": "A stick is drawn across the ridges to create a rasping rhythmic sound.",
       "prompt": "What concept is described?",
       "answers": [
-        "Snare drum",
         "Guiro",
-        "Muted",
-        "Soprano"
+        "Cymbals",
+        "Tenor",
+        "Wind band"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Scrape a stick along a ridged hollow surface.",
       "explanation": "A stick is drawn across the ridges to create a rasping rhythmic sound.",
       "useDescriptionAsFeedback": true,
@@ -10168,12 +10006,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Guiro?",
       "answers": [
-        "It is an untuned scraper with a ridged surface.",
         "Pairs of metal jingles sound when a frame drum is shaken or tapped.",
+        "It is an untuned scraper with a ridged surface.",
         "It is traditionally made from a hollow gourd or wood.",
         "A stick is drawn over the ridges to make a rasping sound."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "A handheld frame with pairs of metal jingles.",
       "explanation": "The statement “Pairs of metal jingles sound when a frame drum is shaken or tapped” describes Tambourine, not Guiro. A stick is drawn across the ridges to create a rasping rhythmic sound.",
       "useDescriptionAsFeedback": false,
@@ -10222,12 +10060,12 @@
       "conceptDescription": "A large plucked string instrument with strings of different lengths stretched across a frame.",
       "prompt": "What concept is described?",
       "answers": [
-        "Cello",
-        "Distortion",
+        "Violin",
         "Harp",
-        "Muted"
+        "Soprano",
+        "Tenor"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Forty-seven strings and seven pedals in a triangular frame.",
       "explanation": "A large plucked string instrument with strings of different lengths stretched across a frame.",
       "useDescriptionAsFeedback": true,
@@ -10250,11 +10088,11 @@
       "prompt": "Which is NOT a feature of Harp?",
       "answers": [
         "It is a large plucked string instrument with strings of different lengths.",
-        "A full-size orchestral example usually has pedals that alter its strings.",
         "Its strings are plucked mechanically whenever keyboard keys are pressed.",
+        "A full-size orchestral example usually has pedals that alter its strings.",
         "It can play chords, arpeggios and glissandi."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Keyboard keys mechanically pluck the strings.",
       "explanation": "The statement “Its strings are plucked mechanically whenever keyboard keys are pressed” describes Harpsichord, not Harp. A large plucked string instrument with strings of different lengths stretched across a frame.",
       "useDescriptionAsFeedback": false,
@@ -10303,12 +10141,12 @@
       "conceptDescription": "Pressing a key plucks a string inside this keyboard instrument.",
       "prompt": "What concept is described?",
       "answers": [
-        "Brass band",
-        "Distortion",
         "Muted",
-        "Harpsichord"
+        "Soprano",
+        "Harpsichord",
+        "Tenor"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Keyboard keys mechanically pluck the strings.",
       "explanation": "Pressing a key plucks a string inside this keyboard instrument.",
       "useDescriptionAsFeedback": true,
@@ -10332,10 +10170,10 @@
       "answers": [
         "Pressing its keys makes a mechanism pluck strings.",
         "It has a bright, crisp tone and is strongly linked with Baroque music.",
-        "It offers much less dynamic control than a piano.",
-        "Its strings are plucked directly by a player's fingers and its pedals alter pitch."
+        "Its strings are plucked directly by a player's fingers and its pedals alter pitch.",
+        "It offers much less dynamic control than a piano."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Forty-seven strings and seven pedals in a triangular frame.",
       "explanation": "The statement “Its strings are plucked directly by a player's fingers and its pedals alter pitch” describes Harp, not Harpsichord. Pressing a key plucks a string inside this keyboard instrument.",
       "useDescriptionAsFeedback": false,
@@ -10384,12 +10222,12 @@
       "conceptDescription": "An instrument's normal tone becomes softer, thinner, more nasal or more distant when a device is fitted.",
       "prompt": "What concept is described?",
       "answers": [
-        "Muted",
-        "Cymbals",
-        "Distortion",
-        "Double bass"
+        "Backing vocals",
+        "Bass",
+        "Bass drum",
+        "Muted"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "A device softens and colours an instrument's usual tone.",
       "explanation": "An instrument's normal tone becomes softer, thinner, more nasal or more distant when a device is fitted.",
       "useDescriptionAsFeedback": true,
@@ -10411,12 +10249,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Muted?",
       "answers": [
-        "An electronic signal is deliberately clipped to make a rough, fuzzy tone.",
         "A device changes an instrument's normal tone.",
         "The sound may become softer, thinner, more nasal or more distant.",
-        "The exact effect depends on the instrument and the device used."
+        "The exact effect depends on the instrument and the device used.",
+        "An electronic signal is deliberately clipped to make a rough, fuzzy tone."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "An amplified signal is clipped into a rough, fuzzy tone.",
       "explanation": "The statement “An electronic signal is deliberately clipped to make a rough, fuzzy tone” describes Distortion, not Muted. An instrument's normal tone becomes softer, thinner, more nasal or more distant when a device is fitted.",
       "useDescriptionAsFeedback": false,
@@ -10465,12 +10303,12 @@
       "conceptDescription": "A set of tubes of different lengths tied together. Each tube makes a different pitch.",
       "prompt": "What concept is described?",
       "answers": [
-        "Clarinet",
         "Pan pipes",
-        "Backing vocals",
-        "Bass"
+        "Saxophone",
+        "Brass band",
+        "Distortion"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Different-length tubes, blown across their open tops.",
       "explanation": "A set of tubes of different lengths tied together. Each tube makes a different pitch.",
       "useDescriptionAsFeedback": true,
@@ -10492,12 +10330,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Pan pipes?",
       "answers": [
-        "It consists of several tubes of different lengths joined together.",
         "A whistle-like mouthpiece directs air into a single tube with finger holes.",
+        "It consists of several tubes of different lengths joined together.",
         "Each tube produces a different pitch.",
         "The player blows across the open tops of the tubes."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Whistle mouthpiece, finger holes, no separate reed.",
       "explanation": "The statement “A whistle-like mouthpiece directs air into a single tube with finger holes” describes Recorder, not Pan pipes. A set of tubes of different lengths tied together. Each tube makes a different pitch.",
       "useDescriptionAsFeedback": false,
@@ -10546,12 +10384,12 @@
       "conceptDescription": "An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece.",
       "prompt": "What concept is described?",
       "answers": [
-        "Clarinet",
-        "Alto",
+        "Saxophone",
         "Recorder",
-        "Backing vocals"
+        "Bass",
+        "Brass band"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Whistle mouthpiece, finger holes, no separate reed.",
       "explanation": "An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece.",
       "useDescriptionAsFeedback": true,
@@ -10574,11 +10412,11 @@
       "prompt": "Which is NOT a feature of Recorder?",
       "answers": [
         "It is an end-blown woodwind instrument with finger holes.",
-        "It uses a whistle-like mouthpiece.",
         "The player blows across the open tops of several joined tubes of different lengths.",
+        "It uses a whistle-like mouthpiece.",
         "Descant, treble, tenor and bass are its main sizes."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Different-length tubes, blown across their open tops.",
       "explanation": "The statement “The player blows across the open tops of several joined tubes of different lengths” describes Pan pipes, not Recorder. An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece.",
       "useDescriptionAsFeedback": false,
@@ -10627,12 +10465,12 @@
       "conceptDescription": "This single-reed instrument has a metal body, unlike the clarinet's wooden or plastic body.",
       "prompt": "What concept is described?",
       "answers": [
-        "Clarinet",
-        "Wind band",
-        "Alto",
-        "Saxophone"
+        "Recorder",
+        "Backing vocals",
+        "Saxophone",
+        "Bass"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Brass body, single reed, woodwind family.",
       "explanation": "This single-reed instrument has a metal body, unlike the clarinet's wooden or plastic body.",
       "useDescriptionAsFeedback": true,
@@ -10656,10 +10494,10 @@
       "answers": [
         "It is a single-reed woodwind instrument usually made of brass.",
         "It has a powerful, flexible tone.",
-        "It is prominent in jazz, wind bands and some popular music.",
-        "It is sounded by blowing across an embouchure hole and uses no reed."
+        "It is sounded by blowing across an embouchure hole and uses no reed.",
+        "It is prominent in jazz, wind bands and some popular music."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Hold this high metal woodwind sideways and blow across a hole.",
       "explanation": "The statement “It is sounded by blowing across an embouchure hole and uses no reed” describes Flute, not Saxophone. This single-reed instrument has a metal body, unlike the clarinet's wooden or plastic body.",
       "useDescriptionAsFeedback": false,
@@ -10708,12 +10546,12 @@
       "conceptDescription": "An untuned drum with metal wires under the lower skin, giving a crisp rattling sound.",
       "prompt": "What concept is described?",
       "answers": [
-        "Snare drum",
-        "Cymbals",
-        "Tenor",
-        "Wind band"
+        "Glockenspiel",
+        "Alto",
+        "Backing vocals",
+        "Snare drum"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Metal wires beneath the head make a crisp rattle.",
       "explanation": "An untuned drum with metal wires under the lower skin, giving a crisp rattling sound.",
       "useDescriptionAsFeedback": true,
@@ -10735,12 +10573,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Snare drum?",
       "answers": [
-        "It is a large low drum whose drum-kit version is played with a foot pedal.",
         "It is an untuned drum with metal wires beneath its lower head.",
         "The wires produce a crisp rattling sound.",
-        "It is played with sticks or brushes in orchestras, bands and drum kits."
+        "It is played with sticks or brushes in orchestras, bands and drum kits.",
+        "It is a large low drum whose drum-kit version is played with a foot pedal."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "The biggest drum in a kit, played by foot for a deep thump.",
       "explanation": "The statement “It is a large low drum whose drum-kit version is played with a foot pedal” describes Bass drum, not Snare drum. An untuned drum with metal wires under the lower skin, giving a crisp rattling sound.",
       "useDescriptionAsFeedback": false,
@@ -10789,12 +10627,12 @@
       "conceptDescription": "The highest standard female voice or choral part.",
       "prompt": "What concept is described?",
       "answers": [
-        "Alto",
         "Soprano",
-        "Pan pipes",
-        "Recorder"
+        "Alto",
+        "Double bass",
+        "Flute"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "The highest female part and the S in SATB.",
       "explanation": "The highest standard female voice or choral part.",
       "useDescriptionAsFeedback": true,
@@ -10816,12 +10654,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Soprano?",
       "answers": [
-        "It is the highest standard female voice or choral part.",
         "It is the lowest standard female voice and lies below the soprano.",
+        "It is the highest standard female voice or choral part.",
         "It usually carries the top line in choral writing.",
         "It forms the S in SATB."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "The A in SATB, second from the top.",
       "explanation": "The statement “It is the lowest standard female voice and lies below the soprano” describes Alto, not Soprano. The highest standard female voice or choral part.",
       "useDescriptionAsFeedback": false,
@@ -10870,12 +10708,12 @@
       "conceptDescription": "It may be shaken, tapped or struck by hand to produce both drum and jingling sounds.",
       "prompt": "What concept is described?",
       "answers": [
-        "Snare drum",
-        "Muted",
+        "Cymbals",
         "Tambourine",
-        "Soprano"
+        "Tenor",
+        "Wind band"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "A handheld frame with pairs of metal jingles.",
       "explanation": "It may be shaken, tapped or struck by hand to produce both drum and jingling sounds.",
       "useDescriptionAsFeedback": true,
@@ -10898,11 +10736,11 @@
       "prompt": "Which is NOT a feature of Tambourine?",
       "answers": [
         "It is a frame drum with pairs of metal jingles.",
-        "It may be shaken, tapped or struck by hand.",
         "A stick scrapes a ridged gourd or wooden surface to make a rasping sound.",
+        "It may be shaken, tapped or struck by hand.",
         "It is usually classed as untuned percussion."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Scrape a stick along a ridged hollow surface.",
       "explanation": "The statement “A stick scrapes a ridged gourd or wooden surface to make a rasping sound” describes Guiro, not Tambourine. It may be shaken, tapped or struck by hand to produce both drum and jingling sounds.",
       "useDescriptionAsFeedback": false,
@@ -10952,11 +10790,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Bass",
-        "Cello",
-        "Clarinet",
-        "Tenor"
+        "Violin",
+        "Tenor",
+        "Wind band"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "The T in SATB: a high adult male part.",
       "explanation": "A high adult male voice or choral part, lying above baritone and bass.",
       "useDescriptionAsFeedback": true,
@@ -10980,10 +10818,10 @@
       "answers": [
         "It is a high adult male voice or choral part.",
         "It lies above baritone and bass.",
-        "It forms the T in SATB.",
-        "It is the lowest adult male voice and supplies the bottom SATB line."
+        "It is the lowest adult male voice and supplies the bottom SATB line.",
+        "It forms the T in SATB."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "The B at the bottom of SATB.",
       "explanation": "The statement “It is the lowest adult male voice and supplies the bottom SATB line” describes Bass, not Tenor. A high adult male voice or choral part, lying above baritone and bass.",
       "useDescriptionAsFeedback": false,
@@ -11032,12 +10870,12 @@
       "conceptDescription": "Large tuned drums with skins stretched over bowl-shaped bodies.",
       "prompt": "What concept is described?",
       "answers": [
-        "Timpani",
-        "Snare drum",
-        "Brass band",
-        "Distortion"
+        "Cymbals",
+        "Muted",
+        "Soprano",
+        "Timpani"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Several large tuned drums change pitch with foot pedals and soft mallets.",
       "explanation": "Large tuned drums with skins stretched over bowl-shaped bodies.",
       "useDescriptionAsFeedback": true,
@@ -11059,12 +10897,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Timpani?",
       "answers": [
-        "Metal wires stretched beneath the lower drum head make a rattling sound.",
         "They are large tuned kettle drums with bowl-shaped shells.",
         "A pedal can adjust each drum's pitch.",
-        "They can reinforce harmony as well as rhythm."
+        "They can reinforce harmony as well as rhythm.",
+        "Metal wires stretched beneath the lower drum head make a rattling sound."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Metal wires beneath the head make a crisp rattle.",
       "explanation": "The statement “Metal wires stretched beneath the lower drum head make a rattling sound” describes Snare drum, not Timpani. Large tuned drums with skins stretched over bowl-shaped bodies.",
       "useDescriptionAsFeedback": false,
@@ -11113,12 +10951,12 @@
       "conceptDescription": "A bent metal bar in an open triangular shape, suspended and struck with a metal beater.",
       "prompt": "What concept is described?",
       "answers": [
-        "Snare drum",
         "Triangle",
-        "Bass",
-        "Brass band"
+        "Cymbals",
+        "Distortion",
+        "Muted"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "An open three-sided metal bar rings brightly.",
       "explanation": "A bent metal bar in an open triangular shape, suspended and struck with a metal beater.",
       "useDescriptionAsFeedback": true,
@@ -11140,12 +10978,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Triangle?",
       "answers": [
-        "It is an open triangular shape made from a bent metal bar.",
         "Metal bars arranged like a keyboard play definite, high pitches.",
+        "It is an open triangular shape made from a bent metal bar.",
         "It hangs freely and is struck with a metal beater.",
         "It produces a bright, ringing untuned sound."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Small metal bars with a bright, bell-like sound.",
       "explanation": "The statement “Metal bars arranged like a keyboard play definite, high pitches” describes Glockenspiel, not Triangle. A bent metal bar in an open triangular shape, suspended and struck with a metal beater.",
       "useDescriptionAsFeedback": false,
@@ -11195,11 +11033,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Trumpet",
-        "Backing vocals",
         "Trombone",
-        "Bass"
+        "Brass band",
+        "Distortion"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "A telescoping slide replaces the usual brass valves.",
       "explanation": "A low-to-middle brass instrument that uses a sliding tube to change pitch.",
       "useDescriptionAsFeedback": true,
@@ -11222,11 +11060,11 @@
       "prompt": "Which is NOT a feature of Trombone?",
       "answers": [
         "It is a low-to-middle brass instrument.",
-        "A telescoping slide usually changes its pitch.",
         "It is the highest common orchestral brass instrument and usually has three valves.",
+        "A telescoping slide usually changes its pitch.",
         "It has a powerful tone and can make smooth glissandi."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Three valves and the brightest, highest common brass tone.",
       "explanation": "The statement “It is the highest common orchestral brass instrument and usually has three valves” describes Trumpet, not Trombone. A low-to-middle brass instrument that uses a sliding tube to change pitch.",
       "useDescriptionAsFeedback": false,
@@ -11276,11 +11114,11 @@
       "prompt": "What concept is described?",
       "answers": [
         "Trombone",
-        "Alto",
-        "Backing vocals",
-        "Trumpet"
+        "Bass",
+        "Trumpet",
+        "Brass band"
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "Three valves and the brightest, highest common brass tone.",
       "explanation": "The highest common orchestral brass instrument.",
       "useDescriptionAsFeedback": true,
@@ -11304,10 +11142,10 @@
       "answers": [
         "It is the highest common orchestral brass instrument.",
         "It uses a cup-shaped mouthpiece and usually has three valves.",
-        "It has a bright, penetrating tone.",
-        "A telescoping slide usually changes its pitch and allows smooth glissandi."
+        "A telescoping slide usually changes its pitch and allows smooth glissandi.",
+        "It has a bright, penetrating tone."
       ],
-      "correctAnswer": 3,
+      "correctAnswer": 2,
       "hint": "A telescoping slide replaces the usual brass valves.",
       "explanation": "The statement “A telescoping slide usually changes its pitch and allows smooth glissandi” describes Trombone, not Trumpet. The highest common orchestral brass instrument.",
       "useDescriptionAsFeedback": false,
@@ -11356,12 +11194,12 @@
       "conceptDescription": "The smallest and highest-pitched standard orchestral string instrument.",
       "prompt": "What concept is described?",
       "answers": [
-        "Violin",
-        "Harp",
-        "Wind band",
-        "Alto"
+        "Double bass",
+        "Backing vocals",
+        "Bass",
+        "Violin"
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Smallest orchestral string instrument, held under the chin.",
       "explanation": "The smallest and highest-pitched standard orchestral string instrument.",
       "useDescriptionAsFeedback": true,
@@ -11383,12 +11221,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Violin?",
       "answers": [
-        "It is a low string instrument supported by an endpin and held between the knees.",
         "It is the smallest standard orchestral string instrument.",
         "It is the highest-pitched standard member of its family.",
-        "It is held under the chin and usually played with a bow."
+        "It is held under the chin and usually played with a bow.",
+        "It is a low string instrument supported by an endpin and held between the knees."
       ],
-      "correctAnswer": 0,
+      "correctAnswer": 3,
       "hint": "Held between the knees and supported by an endpin.",
       "explanation": "The statement “It is a low string instrument supported by an endpin and held between the knees” describes Cello, not Violin. The smallest and highest-pitched standard orchestral string instrument.",
       "useDescriptionAsFeedback": false,
@@ -11437,12 +11275,12 @@
       "conceptDescription": "An ensemble of woodwind, brass and percussion instruments, usually without orchestral strings.",
       "prompt": "What concept is described?",
       "answers": [
-        "Brass band",
         "Wind band",
-        "Backing vocals",
-        "Bass"
+        "Brass band",
+        "Timpani",
+        "Triangle"
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Woodwind, brass and percussion—with no orchestral strings.",
       "explanation": "An ensemble of woodwind, brass and percussion instruments, usually without orchestral strings.",
       "useDescriptionAsFeedback": true,
@@ -11464,12 +11302,12 @@
       "conceptDescription": "",
       "prompt": "Which is NOT a feature of Wind band?",
       "answers": [
-        "It contains woodwind, brass and percussion instruments.",
         "It contains brass and percussion only, with no woodwind instruments.",
+        "It contains woodwind, brass and percussion instruments.",
         "It usually has no orchestral string section.",
         "Flute, clarinet, saxophone, trumpet and trombone may be included."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 0,
       "hint": "Cornets, horns, euphoniums, trombones, tubas and percussion.",
       "explanation": "The statement “It contains brass and percussion only, with no woodwind instruments” describes Brass band, not Wind band. An ensemble of woodwind, brass and percussion instruments, usually without orchestral strings.",
       "useDescriptionAsFeedback": false,
@@ -11518,12 +11356,12 @@
       "conceptDescription": "A tuned percussion instrument with wooden bars arranged like a keyboard and struck with beaters.",
       "prompt": "What concept is described?",
       "answers": [
-        "Snare drum",
-        "Soprano",
+        "Cymbals",
         "Xylophone",
-        "Tenor"
+        "Wind band",
+        "Alto"
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Wooden keyboard bars struck for a dry, bright tone.",
       "explanation": "A tuned percussion instrument with wooden bars arranged like a keyboard and struck with beaters.",
       "useDescriptionAsFeedback": true,
@@ -11546,11 +11384,11 @@
       "prompt": "Which is NOT a feature of Xylophone?",
       "answers": [
         "It is a tuned percussion instrument with wooden bars.",
-        "Its bars are arranged like a keyboard and struck with beaters.",
         "Its metal bars create a very high, bell-like sound.",
+        "Its bars are arranged like a keyboard and struck with beaters.",
         "It has a dry, bright and sharply defined tone."
       ],
-      "correctAnswer": 2,
+      "correctAnswer": 1,
       "hint": "Small metal bars with a bright, bell-like sound.",
       "explanation": "The statement “Its metal bars create a very high, bell-like sound” describes Glockenspiel, not Xylophone. A tuned percussion instrument with wooden bars arranged like a keyboard and struck with beaters.",
       "useDescriptionAsFeedback": false,
@@ -11600,9 +11438,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Aria",
-        "Celtic rock",
-        "Chorus",
-        "Classical"
+        "Gospel",
+        "Indian",
+        "Minimalist"
       ],
       "correctAnswer": 0,
       "hint": "The character pauses the story to sing their feelings.",
@@ -11680,10 +11518,10 @@
       "conceptDescription": "A strophic folk song from North-East Scotland, traditionally sung by farm workers who lived in a bothy.",
       "prompt": "What concept is described?",
       "answers": [
-        "Symphony",
+        "Chorus",
         "Bothy ballad",
-        "Waulking song",
-        "Aria"
+        "Classical",
+        "Gaelic psalm"
       ],
       "correctAnswer": 1,
       "hint": "North-East farm workers once sang these strophic stories.",
@@ -11761,10 +11599,10 @@
       "conceptDescription": "A fusion of Celtic or Scottish folk music with rock.",
       "prompt": "What concept is described?",
       "answers": [
-        "Indian",
-        "Minimalist",
+        "Waulking song",
+        "Aria",
         "Celtic rock",
-        "Pibroch"
+        "Bothy ballad"
       ],
       "correctAnswer": 2,
       "hint": "Fiddle and bagpipes meet electric guitars and drum kit.",
@@ -11842,9 +11680,9 @@
       "conceptDescription": "In a large vocal work, this is a group of singers, or music written for them.",
       "prompt": "What concept is described?",
       "answers": [
-        "Classical",
-        "Gaelic psalm",
-        "Gospel",
+        "Minimalist",
+        "Pibroch",
+        "Symphony",
         "Chorus"
       ],
       "correctAnswer": 3,
@@ -11924,9 +11762,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Classical",
-        "Aria",
-        "Bothy ballad",
-        "Celtic rock"
+        "Gaelic psalm",
+        "Gospel",
+        "Indian"
       ],
       "correctAnswer": 0,
       "hint": "Balanced phrases, clear textures and restrained expression.",
@@ -12004,10 +11842,10 @@
       "conceptDescription": "A psalm sung in Scottish Gaelic, traditionally in churches of the Western Isles.",
       "prompt": "What concept is described?",
       "answers": [
-        "Pibroch",
+        "Bothy ballad",
         "Gaelic psalm",
-        "Symphony",
-        "Waulking song"
+        "Celtic rock",
+        "Chorus"
       ],
       "correctAnswer": 1,
       "hint": "A precentor leads overlapping, unaccompanied worship singing.",
@@ -12085,10 +11923,10 @@
       "conceptDescription": "Religious vocal music rooted in African American church traditions.",
       "prompt": "What concept is described?",
       "answers": [
-        "Gaelic psalm",
-        "Indian",
+        "Symphony",
+        "Waulking song",
         "Gospel",
-        "Minimalist"
+        "Aria"
       ],
       "correctAnswer": 2,
       "hint": "Church-rooted singing with call and response and hand-clapping.",
@@ -12166,9 +12004,9 @@
       "conceptDescription": "This music often uses sitar, tabla, drone, improvised melody, ornaments and repeating rhythmic cycles.",
       "prompt": "What concept is described?",
       "answers": [
-        "Celtic rock",
-        "Chorus",
-        "Classical",
+        "Gospel",
+        "Minimalist",
+        "Pibroch",
         "Indian"
       ],
       "correctAnswer": 3,
@@ -12248,9 +12086,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Minimalist",
-        "Waulking song",
-        "Aria",
-        "Bothy ballad"
+        "Chorus",
+        "Classical",
+        "Gaelic psalm"
       ],
       "correctAnswer": 0,
       "hint": "Small repeated patterns change little by little.",
@@ -12328,10 +12166,10 @@
       "conceptDescription": "An extended form of solo Highland bagpipe music, also called ceol mor.",
       "prompt": "What concept is described?",
       "answers": [
-        "Indian",
+        "Aria",
         "Pibroch",
-        "Minimalist",
-        "Symphony"
+        "Bothy ballad",
+        "Celtic rock"
       ],
       "correctAnswer": 1,
       "hint": "Solo Highland bagpipes decorate a theme over steady drones.",
@@ -12409,10 +12247,10 @@
       "conceptDescription": "A large-scale, multi-movement work for orchestra.",
       "prompt": "What concept is described?",
       "answers": [
-        "Classical",
-        "Gaelic psalm",
+        "Minimalist",
+        "Pibroch",
         "Symphony",
-        "Gospel"
+        "Waulking song"
       ],
       "correctAnswer": 2,
       "hint": "A large orchestral work, usually in several movements.",
@@ -12490,9 +12328,9 @@
       "conceptDescription": "A Scottish Gaelic work song sung by women while beating newly woven cloth to soften and shrink it.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bothy ballad",
-        "Celtic rock",
-        "Chorus",
+        "Gaelic psalm",
+        "Gospel",
+        "Indian",
         "Waulking song"
       ],
       "correctAnswer": 3,
@@ -12572,9 +12410,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Atonal",
-        "Whole-tone scale",
-        "Countermelody",
-        "Descant (voice)"
+        "Chromatic",
+        "Semitone",
+        "Syllabic"
       ],
       "correctAnswer": 0,
       "hint": "No home key.",
@@ -12652,10 +12490,10 @@
       "conceptDescription": "A major-key sequence using tonic I, subdominant IV, dominant V and submediant VI.",
       "prompt": "What concept is described?",
       "answers": [
-        "Trill",
+        "Melismatic",
         "Chord progressions - chords I, IV, V and VI in a major key",
-        "Whole-tone scale",
-        "Atonal"
+        "Modulation",
+        "Perfect cadence"
       ],
       "correctAnswer": 1,
       "hint": "Tonic, subdominant, dominant and submediant power countless major-key songs.",
@@ -12733,10 +12571,10 @@
       "conceptDescription": "Melodic movement or harmony that uses notes a semitone apart, including notes outside the main key.",
       "prompt": "What concept is described?",
       "answers": [
-        "Whole-tone scale",
-        "Contrary motion",
+        "Atonal",
+        "Pitch bend",
         "Chromatic",
-        "Countermelody"
+        "Semitone"
       ],
       "correctAnswer": 2,
       "hint": "All twelve pitches, one piano key at a time.",
@@ -12814,9 +12652,9 @@
       "conceptDescription": "A dense chord made from adjacent or very closely spaced notes sounded together.",
       "prompt": "What concept is described?",
       "answers": [
-        "Semitone",
-        "Syllabic",
-        "Tone",
+        "Grace note",
+        "Imperfect cadence",
+        "Inverted pedal",
         "Cluster"
       ],
       "correctAnswer": 3,
@@ -12896,9 +12734,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Contrary motion",
-        "Chord progressions - chords I, IV, V and VI in a major key",
-        "Chromatic",
-        "Cluster"
+        "Pitch bend",
+        "Semitone",
+        "Syllabic"
       ],
       "correctAnswer": 0,
       "hint": "One part rises while the other falls.",
@@ -12976,10 +12814,10 @@
       "conceptDescription": "A distinct secondary melody heard at the same time as the main melody.",
       "prompt": "What concept is described?",
       "answers": [
-        "Modulation",
+        "Chromatic",
         "Countermelody",
-        "Perfect cadence",
-        "Pitch bend"
+        "Cluster",
+        "Glissando"
       ],
       "correctAnswer": 1,
       "hint": "A second tune sounds alongside and supports the main melody.",
@@ -13057,10 +12895,10 @@
       "conceptDescription": "A high vocal countermelody sung above the main tune.",
       "prompt": "What concept is described?",
       "answers": [
-        "Atonal",
-        "Chord progressions - chords I, IV, V and VI in a major key",
+        "Perfect cadence",
+        "Pitch bend",
         "Descant (voice)",
-        "Chromatic"
+        "Semitone"
       ],
       "correctAnswer": 2,
       "hint": "A high vocal tune sits above the main melody, often later.",
@@ -13138,9 +12976,9 @@
       "conceptDescription": "A smooth slide from one pitch to another through the pitches in between.",
       "prompt": "What concept is described?",
       "answers": [
-        "Contrary motion",
-        "Countermelody",
-        "Descant (voice)",
+        "Tone",
+        "Trill",
+        "Whole-tone scale",
         "Glissando"
       ],
       "correctAnswer": 3,
@@ -13221,8 +13059,8 @@
       "answers": [
         "Grace note",
         "Trill",
-        "Perfect cadence",
-        "Pitch bend"
+        "Countermelody",
+        "Descant (voice)"
       ],
       "correctAnswer": 0,
       "hint": "A tiny decorative note just before the main one.",
@@ -13302,8 +13140,8 @@
       "answers": [
         "Perfect cadence",
         "Imperfect cadence",
-        "Chromatic",
-        "Cluster"
+        "Semitone",
+        "Syllabic"
       ],
       "correctAnswer": 1,
       "hint": "The musical comma that ends on chord V.",
@@ -13381,10 +13219,10 @@
       "conceptDescription": "A note sustained or repeatedly sounded in an upper part while the harmony beneath it changes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Ground bass",
-        "Pitch bend",
+        "Alberti bass",
+        "Descant (voice)",
         "Inverted pedal",
-        "Semitone"
+        "Glissando"
       ],
       "correctAnswer": 2,
       "hint": "The held note sits above changing harmony, not below.",
@@ -13462,9 +13300,9 @@
       "conceptDescription": "Several notes are sung on a single syllable of text.",
       "prompt": "What concept is described?",
       "answers": [
-        "A cappella",
-        "Atonal",
-        "Chord progressions - chords I, IV, V and VI in a major key",
+        "Syllabic",
+        "Modulation",
+        "Perfect cadence",
         "Melismatic"
       ],
       "correctAnswer": 3,
@@ -13544,9 +13382,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Modulation",
-        "Inverted pedal",
-        "Melismatic",
-        "Perfect cadence"
+        "Cluster",
+        "Contrary motion",
+        "Countermelody"
       ],
       "correctAnswer": 0,
       "hint": "The music moves house to a new key.",
@@ -13626,8 +13464,8 @@
       "answers": [
         "Imperfect cadence",
         "Perfect cadence",
-        "Trill",
-        "Whole-tone scale"
+        "Inverted pedal",
+        "Melismatic"
       ],
       "correctAnswer": 1,
       "hint": "V–I: music's full stop.",
@@ -13706,9 +13544,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Reverb",
-        "Descant (voice)",
+        "Whole-tone scale",
         "Pitch bend",
-        "Grace note"
+        "Atonal"
       ],
       "correctAnswer": 2,
       "hint": "A sounding note curves smoothly higher or lower.",
@@ -13787,8 +13625,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Tone",
-        "Pitch bend",
-        "Syllabic",
+        "Glissando",
+        "Grace note",
         "Semitone"
       ],
       "correctAnswer": 3,
@@ -13868,9 +13706,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Syllabic",
-        "A cappella",
-        "Contrary motion",
-        "Countermelody"
+        "Melismatic",
+        "Tone",
+        "Trill"
       ],
       "correctAnswer": 0,
       "hint": "In ‘music’, sing one note on ‘mu’ and one on ‘sic’.",
@@ -13950,8 +13788,8 @@
       "answers": [
         "Semitone",
         "Tone",
-        "Modulation",
-        "Perfect cadence"
+        "Countermelody",
+        "Descant (voice)"
       ],
       "correctAnswer": 1,
       "hint": "From C to D: skip the black key between them.",
@@ -14030,9 +13868,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Grace note",
-        "Chromatic",
+        "Pitch bend",
         "Trill",
-        "Cluster"
+        "Semitone"
       ],
       "correctAnswer": 2,
       "hint": "Two neighbouring notes flutter back and forth.",
@@ -14110,9 +13948,9 @@
       "conceptDescription": "A six-note scale built entirely from whole-tone steps, with no semitones.",
       "prompt": "What concept is described?",
       "answers": [
-        "Chromatic",
-        "Contrary motion",
-        "Countermelody",
+        "Atonal",
+        "Pitch bend",
+        "Semitone",
         "Whole-tone scale"
       ],
       "correctAnswer": 3,
@@ -14192,9 +14030,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Compound time (6/8, 9/8 and 12/8)",
-        "Cross rhythms",
         "Moderato",
-        "Ritardando"
+        "Ritardando",
+        "Rubato"
       ],
       "correctAnswer": 0,
       "hint": "Each main beat splits naturally into three.",
@@ -14272,10 +14110,10 @@
       "conceptDescription": "Different rhythmic patterns sound at the same time, creating competing accents.",
       "prompt": "What concept is described?",
       "answers": [
-        "Compound time (6/8, 9/8 and 12/8)",
-        "Cross rhythms",
         "Moderato",
-        "Ritardando"
+        "Cross rhythms",
+        "Ritardando",
+        "Rubato"
       ],
       "correctAnswer": 1,
       "hint": "Different rhythmic groupings compete at the same time.",
@@ -14353,10 +14191,10 @@
       "conceptDescription": "A moderate tempo marking: neither fast nor slow.",
       "prompt": "What concept is described?",
       "answers": [
-        "Compound time (6/8, 9/8 and 12/8)",
         "Cross rhythms",
+        "Ritardando",
         "Moderato",
-        "Ritardando"
+        "Rubato"
       ],
       "correctAnswer": 2,
       "hint": "Not too fast, not too slow.",
@@ -14435,8 +14273,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Rubato",
+        "Moderato",
         "Compound time (6/8, 9/8 and 12/8)",
-        "Cross rhythms",
         "Ritardando"
       ],
       "correctAnswer": 3,
@@ -14517,8 +14355,8 @@
       "answers": [
         "Rubato",
         "Ritardando",
-        "Moderato",
-        "Compound time (6/8, 9/8 and 12/8)"
+        "Cross rhythms",
+        "Moderato"
       ],
       "correctAnswer": 0,
       "hint": "Borrow time, then give it back.",
@@ -14596,10 +14434,10 @@
       "conceptDescription": "A repeating accompaniment made from broken chords in the pattern lowest-highest-middle-highest.",
       "prompt": "What concept is described?",
       "answers": [
-        "Walking bass",
+        "Ground bass",
         "Alberti bass",
-        "Homophonic",
-        "Polyphonic"
+        "Polyphonic",
+        "Rondo/ABACA — episode"
       ],
       "correctAnswer": 1,
       "hint": "Low–high–middle–high, over and over.",
@@ -14677,10 +14515,10 @@
       "conceptDescription": "A two-part form with an opening A section followed by a contrasting B section. Either section may repeat.",
       "prompt": "What concept is described?",
       "answers": [
-        "Strophic",
-        "Ground bass",
+        "Rondo/ABACA — episode",
+        "Homophonic",
         "Binary / AB",
-        "Homophonic"
+        "Polyphonic"
       ],
       "correctAnswer": 2,
       "hint": "Two contrasting sections, then stop.",
@@ -14711,7 +14549,7 @@
       ],
       "correctAnswer": 2,
       "hint": "The main section keeps returning between contrasting sections.",
-      "explanation": "The statement “Its main A section returns between contrasting episodes” describes Rondo / ABACA, not Binary / AB. A two-part form with an opening A section followed by a contrasting B section. Either section may repeat.",
+      "explanation": "The statement “Its main A section returns between contrasting episodes” describes Rondo/ABACA — episode, not Binary / AB. A two-part form with an opening A section followed by a contrasting B section. Either section may repeat.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -14758,9 +14596,9 @@
       "conceptDescription": "A closing passage added after the main structure of a piece or movement.",
       "prompt": "What concept is described?",
       "answers": [
-        "Contrapuntal",
-        "Ground bass",
         "Homophonic",
+        "Polyphonic",
+        "Rondo/ABACA — episode",
         "Coda"
       ],
       "correctAnswer": 3,
@@ -14840,9 +14678,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Contrapuntal",
-        "Polyphonic",
-        "Ground bass",
-        "Rondo / ABACA"
+        "Homophonic",
+        "Rondo/ABACA — episode",
+        "Strophic"
       ],
       "correctAnswer": 0,
       "hint": "Independent melodies are deliberately fitted against one another.",
@@ -14907,87 +14745,6 @@
       "overridden": false
     },
     {
-      "id": "MCQ-N5-MC0185-F01-E-001",
-      "level": "National 5",
-      "levelCode": "N5",
-      "difficulty": "Easy",
-      "category": "Texture/structure/form",
-      "concept": "Episode",
-      "conceptId": "MC-0185",
-      "factId": "MC-0185-F01",
-      "questionType": "definition",
-      "answerMode": "concept",
-      "conceptDescription": "In rondo form, a contrasting passage occurs between returns of the main A section.",
-      "prompt": "What concept is described?",
-      "answers": [
-        "Alberti bass",
-        "Episode",
-        "Binary / AB",
-        "Contrapuntal"
-      ],
-      "correctAnswer": 1,
-      "hint": "The contrasting B or C between returns of A.",
-      "explanation": "In rondo form, a contrasting passage occurs between returns of the main A section.",
-      "useDescriptionAsFeedback": true,
-      "status": "ready",
-      "completionState": "complete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N5-MC0185-F01-M-001",
-      "level": "National 5",
-      "levelCode": "N5",
-      "difficulty": "Medium",
-      "category": "Texture/structure/form",
-      "concept": "Episode",
-      "conceptId": "MC-0185",
-      "factId": "MC-0185-F01",
-      "questionType": "feature_exclusion",
-      "answerMode": "not_feature",
-      "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Episode?",
-      "answers": [
-        "It is a contrasting passage between returns of a rondo's main A section.",
-        "It is a closing passage added after the main structure.",
-        "It belongs between statements of the main rondo theme.",
-        "Different examples are usually labelled B, C and so on."
-      ],
-      "correctAnswer": 1,
-      "hint": "The musical tail at the very end.",
-      "explanation": "The statement “It is a closing passage added after the main structure” describes Coda, not Episode. In rondo form, a contrasting passage occurs between returns of the main A section.",
-      "useDescriptionAsFeedback": false,
-      "status": "ready",
-      "completionState": "complete",
-      "overridden": false
-    },
-    {
-      "id": "MCQ-N5-MC0185-F01-H-001",
-      "level": "National 5",
-      "levelCode": "N5",
-      "difficulty": "Hard",
-      "category": "Texture/structure/form",
-      "concept": "Episode",
-      "conceptId": "MC-0185",
-      "factId": "MC-0185-F01",
-      "questionType": "teacher_authored",
-      "answerMode": "custom",
-      "conceptDescription": "",
-      "prompt": "",
-      "answers": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "correctAnswer": -1,
-      "hint": "",
-      "explanation": "",
-      "useDescriptionAsFeedback": false,
-      "status": "draft",
-      "completionState": "incomplete",
-      "overridden": false
-    },
-    {
       "id": "MCQ-N5-MC0186-F01-E-001",
       "level": "National 5",
       "levelCode": "N5",
@@ -15001,10 +14758,10 @@
       "conceptDescription": "A bass melody or pattern repeated persistently while the upper parts change or develop.",
       "prompt": "What concept is described?",
       "answers": [
-        "Inverted pedal",
-        "Homophonic",
+        "Walking bass",
+        "Polyphonic",
         "Ground bass",
-        "Polyphonic"
+        "Rondo/ABACA — episode"
       ],
       "correctAnswer": 2,
       "hint": "The same low melody repeats beneath changing upper parts.",
@@ -15082,9 +14839,9 @@
       "conceptDescription": "One main melody has chordal support, or all parts move in similar rhythms.",
       "prompt": "What concept is described?",
       "answers": [
-        "Contrapuntal",
-        "Ground bass",
-        "Rondo / ABACA",
+        "Polyphonic",
+        "Rondo/ABACA — episode",
+        "Strophic",
         "Homophonic"
       ],
       "correctAnswer": 3,
@@ -15164,9 +14921,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Polyphonic",
-        "Contrapuntal",
-        "Ground bass",
-        "Rondo / ABACA"
+        "Homophonic",
+        "Rondo/ABACA — episode",
+        "Strophic"
       ],
       "correctAnswer": 0,
       "hint": "Several independent melodies sound together as the resulting texture.",
@@ -15236,7 +14993,7 @@
       "levelCode": "N5",
       "difficulty": "Easy",
       "category": "Texture/structure/form",
-      "concept": "Rondo / ABACA",
+      "concept": "Rondo/ABACA — episode",
       "conceptId": "MC-0189",
       "factId": "MC-0189-F01",
       "questionType": "definition",
@@ -15244,10 +15001,10 @@
       "conceptDescription": "The main A section returns repeatedly between contrasting episodes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Strophic",
-        "Rondo / ABACA",
-        "Ground bass",
-        "Homophonic"
+        "Binary / AB",
+        "Rondo/ABACA — episode",
+        "Homophonic",
+        "Polyphonic"
       ],
       "correctAnswer": 1,
       "hint": "The main section keeps returning between contrasting sections.",
@@ -15263,13 +15020,13 @@
       "levelCode": "N5",
       "difficulty": "Medium",
       "category": "Texture/structure/form",
-      "concept": "Rondo / ABACA",
+      "concept": "Rondo/ABACA — episode",
       "conceptId": "MC-0189",
       "factId": "MC-0189-F01",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
       "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Rondo / ABACA?",
+      "prompt": "Which is NOT a feature of Rondo/ABACA — episode?",
       "answers": [
         "Its main A section returns between contrasting episodes.",
         "It has two contrasting sections, A followed by B.",
@@ -15278,7 +15035,7 @@
       ],
       "correctAnswer": 1,
       "hint": "Two contrasting sections, then stop.",
-      "explanation": "The statement “It has two contrasting sections, A followed by B” describes Binary / AB, not Rondo / ABACA. The main A section returns repeatedly between contrasting episodes.",
+      "explanation": "The statement “It has two contrasting sections, A followed by B” describes Binary / AB, not Rondo/ABACA — episode. The main A section returns repeatedly between contrasting episodes.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -15290,7 +15047,7 @@
       "levelCode": "N5",
       "difficulty": "Hard",
       "category": "Texture/structure/form",
-      "concept": "Rondo / ABACA",
+      "concept": "Rondo/ABACA — episode",
       "conceptId": "MC-0189",
       "factId": "MC-0189-F01",
       "questionType": "teacher_authored",
@@ -15325,10 +15082,10 @@
       "conceptDescription": "A song form in which each verse is sung to the same music while the words change.",
       "prompt": "What concept is described?",
       "answers": [
-        "Rondo / ABACA",
-        "Ground bass",
+        "Binary / AB",
+        "Homophonic",
         "Strophic",
-        "Homophonic"
+        "Polyphonic"
       ],
       "correctAnswer": 2,
       "hint": "Every verse gets the same music.",
@@ -15406,9 +15163,9 @@
       "conceptDescription": "A bass line that moves on each beat, usually outlining the chord progression with scale steps, arpeggio notes and passing notes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Alberti bass",
-        "Homophonic",
+        "Inverted pedal",
         "Polyphonic",
+        "Rondo/ABACA — episode",
         "Walking bass"
       ],
       "correctAnswer": 3,
@@ -15488,9 +15245,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "A cappella",
-        "Syllabic",
-        "Viola",
-        "Arco"
+        "Melismatic",
+        "Piccolo",
+        "Pizzicato"
       ],
       "correctAnswer": 0,
       "hint": "Voices only—no instruments.",
@@ -15570,8 +15327,8 @@
       "answers": [
         "Pizzicato",
         "Arco",
-        "Oboe",
-        "Piccolo"
+        "Bodhran",
+        "Bongo drums"
       ],
       "correctAnswer": 1,
       "hint": "Put the bow back on the string.",
@@ -15649,10 +15406,10 @@
       "conceptDescription": "A medium-low adult male voice lying between tenor and bass.",
       "prompt": "What concept is described?",
       "answers": [
-        "Flutter-tonguing",
-        "French horn",
+        "Arco",
+        "Bassoon",
         "Baritone",
-        "Hi-hat cymbals"
+        "Bodhran"
       ],
       "correctAnswer": 2,
       "hint": "The male voice between tenor and bass.",
@@ -15730,9 +15487,9 @@
       "conceptDescription": "A low double-reed woodwind instrument with a long folded tube.",
       "prompt": "What concept is described?",
       "answers": [
-        "Oboe",
-        "Rolls",
-        "A cappella",
+        "Piccolo",
+        "Arco",
+        "Baritone",
         "Bassoon"
       ],
       "correctAnswer": 3,
@@ -15812,9 +15569,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Bodhran",
-        "Castanets",
-        "Reverb",
-        "Rolls"
+        "Hi-hat cymbals",
+        "A cappella",
+        "Arco"
       ],
       "correctAnswer": 0,
       "hint": "An Irish frame drum played with a small beater.",
@@ -15892,10 +15649,10 @@
       "conceptDescription": "A joined pair of small, high-pitched hand drums of different sizes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Castanets",
+        "Hi-hat cymbals",
         "Bongo drums",
-        "Pizzicato",
-        "Reverb"
+        "Rolls",
+        "A cappella"
       ],
       "correctAnswer": 1,
       "hint": "Two small hand drums joined as a pair.",
@@ -15973,10 +15730,10 @@
       "conceptDescription": "Pairs of small shell-shaped clappers, traditionally made from wood, held in the hand and clicked together.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bongo drums",
-        "Mezzo-soprano",
+        "Hi-hat cymbals",
+        "Reverb",
         "Castanets",
-        "Pizzicato"
+        "Rolls"
       ],
       "correctAnswer": 2,
       "hint": "Hand-held clappers heard in Spanish dance music.",
@@ -16054,9 +15811,9 @@
       "conceptDescription": "The Scottish Gaelic harp: a small folk harp with strings plucked by the fingers.",
       "prompt": "What concept is described?",
       "answers": [
-        "Flutter-tonguing",
-        "Mezzo-soprano",
         "Pizzicato",
+        "Reverb",
+        "Rolls",
         "Clarsach"
       ],
       "correctAnswer": 3,
@@ -16136,9 +15893,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Con sordino",
-        "Tuba",
-        "Viola",
-        "A cappella"
+        "Hi-hat cymbals",
+        "Mezzo-soprano",
+        "Oboe"
       ],
       "correctAnswer": 0,
       "hint": "Fit the device that softens and veils the tone.",
@@ -16216,10 +15973,10 @@
       "conceptDescription": "A wind or brass technique in which the performer rolls the tongue or uvula while blowing.",
       "prompt": "What concept is described?",
       "answers": [
-        "Clarsach",
+        "Viola",
         "Flutter-tonguing",
-        "French horn",
-        "Hi-hat cymbals"
+        "A cappella",
+        "Baritone"
       ],
       "correctAnswer": 1,
       "hint": "Roll the tongue while blowing a held note.",
@@ -16298,9 +16055,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Tuba",
-        "Arco",
+        "Con sordino",
         "French horn",
-        "Baritone"
+        "Flutter-tonguing"
       ],
       "correctAnswer": 2,
       "hint": "Left hand on valves, right hand inside the bell.",
@@ -16378,9 +16135,9 @@
       "conceptDescription": "They may be struck open or closed with sticks, or sounded by closing them with the pedal.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bongo drums",
-        "A cappella",
-        "Arco",
+        "Castanets",
+        "Baritone",
+        "Con sordino",
         "Hi-hat cymbals"
       ],
       "correctAnswer": 3,
@@ -16460,9 +16217,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Mezzo-soprano",
-        "Flutter-tonguing",
-        "French horn",
-        "Hi-hat cymbals"
+        "Arco",
+        "Bassoon",
+        "Bodhran"
       ],
       "correctAnswer": 0,
       "hint": "The female voice between soprano and alto.",
@@ -16540,10 +16297,10 @@
       "conceptDescription": "A high double-reed woodwind instrument with a narrow conical bore.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bassoon",
+        "Piccolo",
         "Oboe",
-        "Reverb",
-        "Rolls"
+        "A cappella",
+        "Arco"
       ],
       "correctAnswer": 1,
       "hint": "The orchestra tunes to this penetrating double-reed woodwind.",
@@ -16621,10 +16378,10 @@
       "conceptDescription": "The smallest and highest standard orchestral woodwind instrument.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bassoon",
-        "Pizzicato",
+        "Oboe",
+        "Rolls",
         "Piccolo",
-        "Reverb"
+        "A cappella"
       ],
       "correctAnswer": 2,
       "hint": "The half-sized flute that sounds an octave higher.",
@@ -16703,8 +16460,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Arco",
-        "Bodhran",
-        "Bongo drums",
+        "Sitar",
+        "Tabla",
         "Pizzicato"
       ],
       "correctAnswer": 3,
@@ -16785,8 +16542,8 @@
       "answers": [
         "Reverb",
         "Pitch bend",
-        "Arco",
-        "Baritone"
+        "Pizzicato",
+        "Rolls"
       ],
       "correctAnswer": 0,
       "hint": "The room keeps sounding after the note stops.",
@@ -16864,10 +16621,10 @@
       "conceptDescription": "Very rapid repeated strokes on a percussion instrument that merge into a sustained or trembling sound.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bassoon",
+        "Reverb",
         "Rolls",
-        "Bodhran",
-        "Bongo drums"
+        "Sitar",
+        "Tabla"
       ],
       "correctAnswer": 1,
       "hint": "Rapid drum strokes merge into one sustained sound.",
@@ -16945,10 +16702,10 @@
       "conceptDescription": "A North Indian plucked long-necked lute with movable frets, melody strings and sympathetic strings.",
       "prompt": "What concept is described?",
       "answers": [
-        "Baritone",
-        "Con sordino",
+        "Flutter-tonguing",
+        "Mezzo-soprano",
         "Sitar",
-        "Flutter-tonguing"
+        "Pizzicato"
       ],
       "correctAnswer": 2,
       "hint": "A buzzing Indian lute with sympathetic strings.",
@@ -17026,9 +16783,9 @@
       "conceptDescription": "The two drums differ in size and pitch and produce many contrasting strokes and rhythmic patterns.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bongo drums",
-        "Arco",
-        "Baritone",
+        "Castanets",
+        "Con sordino",
+        "Flutter-tonguing",
         "Tabla"
       ],
       "correctAnswer": 3,
@@ -17109,8 +16866,8 @@
       "answers": [
         "Tuba",
         "French horn",
-        "A cappella",
-        "Arco"
+        "Baritone",
+        "Con sordino"
       ],
       "correctAnswer": 0,
       "hint": "The biggest brass voice at the bottom.",
@@ -17188,10 +16945,10 @@
       "conceptDescription": "A bowed string instrument slightly larger and lower in pitch than the violin.",
       "prompt": "What concept is described?",
       "answers": [
-        "Rolls",
+        "Arco",
         "Viola",
-        "A cappella",
-        "Arco"
+        "Baritone",
+        "Con sordino"
       ],
       "correctAnswer": 1,
       "hint": "The violin's slightly larger, lower-pitched sibling.",
@@ -17270,9 +17027,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Chamber music",
-        "Impressionist",
-        "Jazz funk",
-        "Lied"
+        "Musique concrète",
+        "Oratorio",
+        "Plainchant"
       ],
       "correctAnswer": 0,
       "hint": "The broad category for intimate works played by small instrumental groups.",
@@ -17350,10 +17107,10 @@
       "conceptDescription": "Common features include whole-tone or modal scales, unresolved or extended harmony, parallel chords and delicate orchestration.",
       "prompt": "What concept is described?",
       "answers": [
-        "Sonata",
+        "Jazz funk",
         "Impressionist",
-        "Soul music",
-        "String quartet"
+        "Lied",
+        "Mass"
       ],
       "correctAnswer": 1,
       "hint": "Blurred pulse, floating harmony and delicate colours.",
@@ -17431,10 +17188,10 @@
       "conceptDescription": "A fusion of jazz harmony and improvisation with funk rhythm.",
       "prompt": "What concept is described?",
       "answers": [
-        "Oratorio",
-        "Plainchant",
+        "Soul music",
+        "String quartet",
         "Jazz funk",
-        "Recitative"
+        "Chamber music"
       ],
       "correctAnswer": 2,
       "hint": "Electric bass drives a syncopated groove under improvisation.",
@@ -17512,9 +17269,9 @@
       "conceptDescription": "A German Romantic art song for solo voice and piano.",
       "prompt": "What concept is described?",
       "answers": [
-        "Jazz funk",
-        "Mass",
-        "Musique concrète",
+        "Plainchant",
+        "Recitative",
+        "Sonata",
         "Lied"
       ],
       "correctAnswer": 3,
@@ -17594,9 +17351,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Mass",
-        "String quartet",
-        "Chamber music",
-        "Impressionist"
+        "Lied",
+        "Musique concrète",
+        "Oratorio"
       ],
       "correctAnswer": 0,
       "hint": "One large sacred work links five fixed Latin sections.",
@@ -17674,10 +17431,10 @@
       "conceptDescription": "Music constructed from recorded real-world sounds rather than only conventional instruments.",
       "prompt": "What concept is described?",
       "answers": [
-        "Recitative",
+        "Chamber music",
         "Musique concrète",
-        "Sonata",
-        "Soul music"
+        "Impressionist",
+        "Jazz funk"
       ],
       "correctAnswer": 1,
       "hint": "Recorded everyday sounds are cut, looped and transformed.",
@@ -17755,10 +17512,10 @@
       "conceptDescription": "A large-scale concert work for soloists, choir and orchestra, usually based on a sacred or biblical story.",
       "prompt": "What concept is described?",
       "answers": [
-        "Mass",
-        "Musique concrète",
+        "Sonata",
+        "Soul music",
         "Oratorio",
-        "Plainchant"
+        "String quartet"
       ],
       "correctAnswer": 2,
       "hint": "A sacred story for soloists, choir and orchestra—no acting.",
@@ -17836,9 +17593,9 @@
       "conceptDescription": "Early monophonic sacred vocal music, usually sung in Latin and without instrumental accompaniment.",
       "prompt": "What concept is described?",
       "answers": [
-        "Impressionist",
-        "Jazz funk",
-        "Lied",
+        "Musique concrète",
+        "Oratorio",
+        "Recitative",
         "Plainchant"
       ],
       "correctAnswer": 3,
@@ -17918,9 +17675,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Recitative",
-        "Soul music",
-        "String quartet",
-        "Chamber music"
+        "Jazz funk",
+        "Lied",
+        "Mass"
       ],
       "correctAnswer": 0,
       "hint": "Speech-like singing that moves the story along.",
@@ -17951,7 +17708,7 @@
       ],
       "correctAnswer": 0,
       "hint": "The white notes from D to D make Dorian.",
-      "explanation": "The statement “It uses a mode rather than a familiar major or minor scale” describes Mode / modal, not Recitative. Speech-like solo singing in which the musical rhythm follows the natural rhythm of the words.",
+      "explanation": "The statement “It uses a mode rather than a familiar major or minor scale” describes Mode or modal, not Recitative. Speech-like solo singing in which the musical rhythm follows the natural rhythm of the words.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -17998,10 +17755,10 @@
       "conceptDescription": "A multi-movement work for a solo instrument, or for one instrument with piano.",
       "prompt": "What concept is described?",
       "answers": [
-        "Oratorio",
+        "String quartet",
         "Sonata",
-        "Plainchant",
-        "Recitative"
+        "Chamber music",
+        "Impressionist"
       ],
       "correctAnswer": 1,
       "hint": "A multi-movement work for solo instrument, sometimes with piano.",
@@ -18079,10 +17836,10 @@
       "conceptDescription": "An African American popular style that developed from gospel, blues, and rhythm-and-blues traditions.",
       "prompt": "What concept is described?",
       "answers": [
-        "Lied",
-        "Mass",
+        "Plainchant",
+        "Recitative",
         "Soul music",
-        "Musique concrète"
+        "Sonata"
       ],
       "correctAnswer": 2,
       "hint": "Gospel-style vocals meet a strong groove and horn section.",
@@ -18160,9 +17917,9 @@
       "conceptDescription": "As a chamber work, it is written for four string players, with closely interacting parts and usually four movements.",
       "prompt": "What concept is described?",
       "answers": [
-        "Chamber music",
-        "Impressionist",
-        "Jazz funk",
+        "Mass",
+        "Musique concrète",
+        "Oratorio",
         "String quartet"
       ],
       "correctAnswer": 3,
@@ -18243,8 +18000,8 @@
       "answers": [
         "Acciaccatura",
         "Mordent",
-        "Relative minor",
-        "Tierce de Picardie"
+        "Interrupted cadence",
+        "Interval"
       ],
       "correctAnswer": 0,
       "hint": "A tiny slashed note crushed into the main note.",
@@ -18322,10 +18079,10 @@
       "conceptDescription": "A four-note chord formed by combining a major or minor triad with the pitch six scale steps above its root.",
       "prompt": "What concept is described?",
       "answers": [
-        "Diminished 7th",
+        "Dominant 7th",
         "Added 6th",
-        "Acciaccatura",
-        "Harmonic minor scale"
+        "Mode or modal",
+        "Mordent"
       ],
       "correctAnswer": 1,
       "hint": "C–E–G gains an A.",
@@ -18403,10 +18160,10 @@
       "conceptDescription": "A four-note chord built from stacked minor thirds.",
       "prompt": "What concept is described?",
       "answers": [
-        "Dominant 7th",
-        "Plagal cadence",
+        "Diminished triad",
+        "Harmonic minor scale",
         "Diminished 7th",
-        "Relative major"
+        "Interrupted cadence"
       ],
       "correctAnswer": 2,
       "hint": "Four notes stacked in equal minor thirds.",
@@ -18484,9 +18241,9 @@
       "conceptDescription": "A three-note chord containing a root, minor third and diminished fifth.",
       "prompt": "What concept is described?",
       "answers": [
-        "Diminished 7th",
-        "Melodic minor scale",
-        "Mode / modal",
+        "Added 6th",
+        "Relative major",
+        "Relative minor",
         "Diminished triad"
       ],
       "correctAnswer": 3,
@@ -18566,9 +18323,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Dominant 7th",
-        "Added 6th",
-        "Acciaccatura",
-        "Harmonic minor scale"
+        "Diminished triad",
+        "Mode or modal",
+        "Mordent"
       ],
       "correctAnswer": 0,
       "hint": "Four notes built on scale degree five pull strongly towards chord I.",
@@ -18646,10 +18403,10 @@
       "conceptDescription": "A minor scale with the seventh degree raised by a semitone in both ascending and descending forms.",
       "prompt": "What concept is described?",
       "answers": [
-        "Mode / modal",
+        "Relative major",
         "Harmonic minor scale",
-        "Mordent",
-        "Obbligato"
+        "Acciaccatura",
+        "Added 6th"
       ],
       "correctAnswer": 1,
       "hint": "Raise scale degree seven both going up and down.",
@@ -18728,9 +18485,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Plagal cadence",
-        "Dominant 7th",
+        "Relative major",
         "Interrupted cadence",
-        "Harmonic minor scale"
+        "Relative minor"
       ],
       "correctAnswer": 2,
       "hint": "V heads for I—but lands unexpectedly on VI.",
@@ -18808,9 +18565,9 @@
       "conceptDescription": "The distance in pitch between two notes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Acciaccatura",
-        "Added 6th",
-        "Diminished 7th",
+        "Mode or modal",
+        "Mordent",
+        "Obbligato",
         "Interval"
       ],
       "correctAnswer": 3,
@@ -18890,9 +18647,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Melodic minor scale",
-        "Mode / modal",
-        "Plagal cadence",
-        "Tierce de Picardie"
+        "Relative major",
+        "Diminished 7th",
+        "Diminished triad"
       ],
       "correctAnswer": 0,
       "hint": "Raise six and seven up; lower them coming down.",
@@ -18962,7 +18719,7 @@
       "levelCode": "H",
       "difficulty": "Easy",
       "category": "Melody/harmony",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "conceptId": "MC-0235",
       "factId": "MC-0235-F01",
       "questionType": "definition",
@@ -18970,10 +18727,10 @@
       "conceptDescription": "Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales.",
       "prompt": "What concept is described?",
       "answers": [
-        "Melodic minor scale",
-        "Mode / modal",
-        "Interval",
-        "Mordent"
+        "Relative major",
+        "Mode or modal",
+        "Tierce de Picardie",
+        "Acciaccatura"
       ],
       "correctAnswer": 1,
       "hint": "The white notes from D to D make Dorian.",
@@ -18989,13 +18746,13 @@
       "levelCode": "H",
       "difficulty": "Medium",
       "category": "Melody/harmony",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "conceptId": "MC-0235",
       "factId": "MC-0235-F01",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
       "conceptDescription": "",
-      "prompt": "Which is NOT a feature of Mode / modal?",
+      "prompt": "Which is NOT a feature of Mode or modal?",
       "answers": [
         "It uses a mode rather than a familiar major or minor scale.",
         "It is an ensemble of two violins, viola and cello.",
@@ -19004,7 +18761,7 @@
       ],
       "correctAnswer": 1,
       "hint": "A chamber work for two violins, viola and cello, usually in four movements.",
-      "explanation": "The statement “It is an ensemble of two violins, viola and cello” describes String quartet, not Mode / modal. Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales.",
+      "explanation": "The statement “It is an ensemble of two violins, viola and cello” describes String quartet, not Mode or modal. Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales.",
       "useDescriptionAsFeedback": false,
       "status": "ready",
       "completionState": "complete",
@@ -19016,7 +18773,7 @@
       "levelCode": "H",
       "difficulty": "Hard",
       "category": "Melody/harmony",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "conceptId": "MC-0235",
       "factId": "MC-0235-F01",
       "questionType": "teacher_authored",
@@ -19052,9 +18809,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Acciaccatura",
-        "Mode / modal",
+        "Diminished 7th",
         "Mordent",
-        "Obbligato"
+        "Diminished triad"
       ],
       "correctAnswer": 2,
       "hint": "Main note, neighbour, main note—in a flash.",
@@ -19132,9 +18889,9 @@
       "conceptDescription": "An important decorative instrumental line played alongside the main melody, especially a vocal part.",
       "prompt": "What concept is described?",
       "answers": [
-        "Diminished 7th",
-        "Diminished triad",
-        "Dominant 7th",
+        "Mordent",
+        "Plagal cadence",
+        "Relative major",
         "Obbligato"
       ],
       "correctAnswer": 3,
@@ -19215,8 +18972,8 @@
       "answers": [
         "Plagal cadence",
         "Interrupted cadence",
-        "Obbligato",
-        "Relative major"
+        "Diminished triad",
+        "Dominant 7th"
       ],
       "correctAnswer": 0,
       "hint": "The ‘Amen’ ending: IV–I.",
@@ -19294,10 +19051,10 @@
       "conceptDescription": "The major key that has the same key signature as a given minor key.",
       "prompt": "What concept is described?",
       "answers": [
-        "Melodic minor scale",
+        "Mode or modal",
         "Relative major",
-        "Interrupted cadence",
-        "Interval"
+        "Plagal cadence",
+        "Tierce de Picardie"
       ],
       "correctAnswer": 1,
       "hint": "Same key signature; tonic three semitones above its minor partner.",
@@ -19375,10 +19132,10 @@
       "conceptDescription": "The minor key that has the same key signature as a given major key.",
       "prompt": "What concept is described?",
       "answers": [
-        "Melodic minor scale",
-        "Diminished 7th",
+        "Mode or modal",
+        "Interval",
         "Relative minor",
-        "Diminished triad"
+        "Mordent"
       ],
       "correctAnswer": 2,
       "hint": "Same key signature; tonic three semitones below its major partner.",
@@ -19456,9 +19213,9 @@
       "conceptDescription": "A major tonic chord used at the end of a piece or section in a minor key.",
       "prompt": "What concept is described?",
       "answers": [
-        "Dominant 7th",
-        "Harmonic minor scale",
-        "Interrupted cadence",
+        "Plagal cadence",
+        "Relative major",
+        "Relative minor",
         "Tierce de Picardie"
       ],
       "correctAnswer": 3,
@@ -19539,8 +19296,8 @@
       "answers": [
         "3 against 2",
         "Triplets",
-        "Irregular time signatures",
-        "Time changes"
+        "Time changes",
+        "Irregular time signatures"
       ],
       "correctAnswer": 0,
       "hint": "Tap two even notes with one hand while the other taps three.",
@@ -19618,10 +19375,10 @@
       "conceptDescription": "A theme, melody or rhythm is repeated with every note value lengthened in the same proportion.",
       "prompt": "What concept is described?",
       "answers": [
-        "Irregular time signatures",
-        "Augmentation",
         "Time changes",
-        "Ritornello"
+        "Augmentation",
+        "Irregular time signatures",
+        "Basso continuo"
       ],
       "correctAnswer": 1,
       "hint": "Same musical idea, longer note values.",
@@ -19699,10 +19456,10 @@
       "conceptDescription": "A theme, melody or rhythm is repeated with every note value shortened in the same proportion.",
       "prompt": "What concept is described?",
       "answers": [
-        "Irregular time signatures",
         "Time changes",
+        "Irregular time signatures",
         "Diminution",
-        "Tremolando"
+        "Sonata form"
       ],
       "correctAnswer": 2,
       "hint": "Same musical idea, shorter note values.",
@@ -19781,8 +19538,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Time changes",
-        "3 against 2",
         "Augmentation",
+        "Diminution",
         "Irregular time signatures"
       ],
       "correctAnswer": 3,
@@ -19863,8 +19620,8 @@
       "answers": [
         "Time changes",
         "Irregular time signatures",
-        "3 against 2",
-        "Augmentation"
+        "Augmentation",
+        "Diminution"
       ],
       "correctAnswer": 0,
       "hint": "The metre switches during the piece.",
@@ -19944,8 +19701,8 @@
       "answers": [
         "3 against 2",
         "Triplets",
-        "Irregular time signatures",
-        "Time changes"
+        "Time changes",
+        "Irregular time signatures"
       ],
       "correctAnswer": 1,
       "hint": "One part shows a bracketed 3 over three equal notes.",
@@ -20023,10 +19780,10 @@
       "conceptDescription": "In Baroque music, a bass instrument plays the bass line while a chordal instrument fills in the harmony, often from figured bass.",
       "prompt": "What concept is described?",
       "answers": [
-        "Ritornello",
         "Sonata form",
+        "Subject",
         "Basso continuo",
-        "Subject"
+        "Through-composed"
       ],
       "correctAnswer": 2,
       "hint": "Baroque bass line plus improvised chords.",
@@ -20104,7 +19861,7 @@
       "conceptDescription": "A Baroque concerto that contrasts a small group of soloists, the concertino, with the larger ensemble, the ripieno.",
       "prompt": "What concept is described?",
       "answers": [
-        "Ritornello",
+        "Ripieno",
         "Basso continuo",
         "Da capo aria",
         "Concerto grosso"
@@ -20186,9 +19943,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Da capo aria",
-        "Ritornello",
         "Sonata form",
-        "Subject"
+        "Subject",
+        "Through-composed"
       ],
       "correctAnswer": 0,
       "hint": "A–B, then return to the beginning and decorate A.",
@@ -20266,7 +20023,7 @@
       "conceptDescription": "An opening section in which the main musical ideas are introduced.",
       "prompt": "What concept is described?",
       "answers": [
-        "Subject",
+        "Sonata form",
         "Exposition",
         "Da capo aria",
         "Passacaglia"
@@ -20428,7 +20185,7 @@
       "conceptDescription": "A Baroque form in which a recurring orchestral passage alternates with contrasting solo episodes.",
       "prompt": "What concept is described?",
       "answers": [
-        "Concertino",
+        "Concerto grosso",
         "Sonata form",
         "Subject",
         "Ritornello"
@@ -20510,9 +20267,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Sonata form",
-        "Through-composed",
+        "Subject",
         "Ritornello",
-        "Subject"
+        "Basso continuo"
       ],
       "correctAnswer": 0,
       "hint": "Present two main ideas, explore them, then bring both home.",
@@ -20590,10 +20347,10 @@
       "conceptDescription": "As a musical theme, it is the main musical idea on which a piece or section is based.",
       "prompt": "What concept is described?",
       "answers": [
-        "Exposition",
+        "Sonata form",
         "Subject",
-        "Passacaglia",
-        "Ritornello"
+        "Ritornello",
+        "Through-composed"
       ],
       "correctAnswer": 1,
       "hint": "The main musical theme a piece is built on.",
@@ -20752,9 +20509,9 @@
       "conceptDescription": "Highly agile, ornamented vocal writing with rapid scales, arpeggios, leaps, trills and other decorations.",
       "prompt": "What concept is described?",
       "answers": [
-        "Concertino",
         "Harmonics",
         "Ripieno",
+        "Tremolando",
         "Coloratura"
       ],
       "correctAnswer": 3,
@@ -20834,9 +20591,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Concertino",
-        "Ritornello",
-        "Tremolando",
-        "Coloratura"
+        "Ripieno",
+        "Harmonics",
+        "Tremolando"
       ],
       "correctAnswer": 0,
       "hint": "The small featured group facing the full ensemble.",
@@ -20916,8 +20673,8 @@
       "answers": [
         "Tremolando",
         "Harmonics",
-        "Concertino",
-        "Ripieno"
+        "Coloratura",
+        "Concertino"
       ],
       "correctAnswer": 1,
       "hint": "Touch the string lightly for a high, glassy note.",
@@ -20995,10 +20752,10 @@
       "conceptDescription": "The larger body of players in a concerto grosso, contrasted with the smaller concertino.",
       "prompt": "What concept is described?",
       "answers": [
-        "Concerto grosso",
-        "Coloratura",
+        "Ritornello",
+        "Tremolando",
         "Ripieno",
-        "Harmonics"
+        "Coloratura"
       ],
       "correctAnswer": 2,
       "hint": "The full ensemble facing the small solo group.",
@@ -21077,8 +20834,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Harmonics",
+        "Concertino",
         "Ripieno",
-        "Coloratura",
         "Tremolando"
       ],
       "correctAnswer": 3,
@@ -21158,9 +20915,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Anthem",
-        "Neoclassical",
-        "Pavan",
-        "Renaissance"
+        "Chorale",
+        "Contemporary jazz",
+        "Electronic dance music (EDM)"
       ],
       "correctAnswer": 0,
       "hint": "English sacred choral music, often using words from the Bible.",
@@ -21238,10 +20995,10 @@
       "conceptDescription": "A simple song or melody.",
       "prompt": "What concept is described?",
       "answers": [
-        "Neoclassical",
+        "Chorale",
         "Ayre / air",
-        "Pavan",
-        "Serial"
+        "Contemporary jazz",
+        "Electronic dance music (EDM)"
       ],
       "correctAnswer": 1,
       "hint": "Lute-backed solo song from late-Renaissance England.",
@@ -21319,10 +21076,10 @@
       "conceptDescription": "A light, dance-like English madrigal with a recurring fa-la-la refrain.",
       "prompt": "What concept is described?",
       "answers": [
-        "Serial",
-        "Anthem",
+        "Galliard",
+        "Madrigal",
         "Ballett",
-        "Ayre / air"
+        "Motet"
       ],
       "correctAnswer": 2,
       "hint": "Fa-la-la refrains and a light, dance-like style.",
@@ -21400,9 +21157,9 @@
       "conceptDescription": "A German Lutheran hymn tune, usually in a clear regular rhythm.",
       "prompt": "What concept is described?",
       "answers": [
-        "Motet",
-        "Nationalist",
-        "Neoclassical",
+        "Anthem",
+        "Ayre / air",
+        "Ballett",
         "Chorale"
       ],
       "correctAnswer": 3,
@@ -21482,9 +21239,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Contemporary jazz",
-        "Ballett",
-        "Chorale",
-        "Electronic dance music (EDM)"
+        "Nationalist",
+        "Neoclassical",
+        "Pavan"
       ],
       "correctAnswer": 0,
       "hint": "Modal harmony, electronics and changing metres meet improvisation.",
@@ -21562,10 +21319,10 @@
       "conceptDescription": "Dance music made mainly with electronic instruments and computers, often for clubs.",
       "prompt": "What concept is described?",
       "answers": [
-        "Pavan",
+        "Chorale",
         "Electronic dance music (EDM)",
-        "Renaissance",
-        "Serial"
+        "Contemporary jazz",
+        "Galliard"
       ],
       "correctAnswer": 1,
       "hint": "Built for clubs: programmed beats, build-ups and drops.",
@@ -21643,10 +21400,10 @@
       "conceptDescription": "A lively Renaissance court dance in triple metre, often following a slower pavan.",
       "prompt": "What concept is described?",
       "answers": [
-        "Electronic dance music (EDM)",
-        "Madrigal",
+        "Renaissance",
+        "Serial",
         "Galliard",
-        "Motet"
+        "Anthem"
       ],
       "correctAnswer": 2,
       "hint": "Lively triple-time court dance, often paired after something stately.",
@@ -21724,9 +21481,9 @@
       "conceptDescription": "A secular Renaissance vocal work, usually for several unaccompanied voices.",
       "prompt": "What concept is described?",
       "answers": [
-        "Anthem",
-        "Ayre / air",
-        "Ballett",
+        "Galliard",
+        "Motet",
+        "Nationalist",
         "Madrigal"
       ],
       "correctAnswer": 3,
@@ -21806,9 +21563,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Motet",
-        "Nationalist",
-        "Neoclassical",
-        "Pavan"
+        "Ayre / air",
+        "Ballett",
+        "Chorale"
       ],
       "correctAnswer": 0,
       "hint": "Latin sacred polyphony outside the fixed Mass movements.",
@@ -21886,10 +21643,10 @@
       "conceptDescription": "Art music that deliberately draws on the folk culture or identity of a nation.",
       "prompt": "What concept is described?",
       "answers": [
-        "Chorale",
+        "Neoclassical",
         "Nationalist",
-        "Contemporary jazz",
-        "Electronic dance music (EDM)"
+        "Pavan",
+        "Renaissance"
       ],
       "correctAnswer": 1,
       "hint": "A nation's folk tunes and dances enter its art music.",
@@ -21967,10 +21724,10 @@
       "conceptDescription": "It uses the balance, clarity, forms and textures of older Classical music, but with modern harmony, rhythm and orchestration.",
       "prompt": "What concept is described?",
       "answers": [
-        "Renaissance",
-        "Serial",
+        "Contemporary jazz",
+        "Electronic dance music (EDM)",
         "Neoclassical",
-        "Anthem"
+        "Galliard"
       ],
       "correctAnswer": 2,
       "hint": "Old forms and clear textures dressed in modern harmony.",
@@ -22048,9 +21805,9 @@
       "conceptDescription": "A slow, stately Renaissance court dance, usually in duple metre.",
       "prompt": "What concept is described?",
       "answers": [
-        "Electronic dance music (EDM)",
-        "Galliard",
-        "Madrigal",
+        "Neoclassical",
+        "Serial",
+        "Anthem",
         "Pavan"
       ],
       "correctAnswer": 3,
@@ -22130,9 +21887,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Renaissance",
-        "Ayre / air",
-        "Ballett",
-        "Chorale"
+        "Madrigal",
+        "Motet",
+        "Nationalist"
       ],
       "correctAnswer": 0,
       "hint": "Lutes, viols and recorders meet flowing modal polyphony.",
@@ -22210,10 +21967,10 @@
       "conceptDescription": "Music built from a fixed series instead of traditional major or minor tonality.",
       "prompt": "What concept is described?",
       "answers": [
-        "Nationalist",
+        "Ballett",
         "Serial",
-        "Neoclassical",
-        "Pavan"
+        "Chorale",
+        "Contemporary jazz"
       ],
       "correctAnswer": 1,
       "hint": "A predetermined series, not a home key, organises the music.",
@@ -22534,10 +22291,10 @@
       "conceptDescription": "Triads built on the first, fourth, fifth and sixth scale degrees.",
       "prompt": "What concept is described?",
       "answers": [
-        "Suspension",
-        "Chords I, IV, V and VI in major and minor keys",
         "Tone row / note row",
-        "Tritone"
+        "Chords I, IV, V and VI in major and minor keys",
+        "Tritone",
+        "Turn"
       ],
       "correctAnswer": 1,
       "hint": "Tonic, subdominant, dominant and submediant across both tonalities.",
@@ -22696,9 +22453,9 @@
       "conceptDescription": "A prepared note is held into the next chord, becomes dissonant, then resolves down by step.",
       "prompt": "What concept is described?",
       "answers": [
-        "Polytonality / bitonality",
         "Tone row / note row",
         "Tritone",
+        "Turn",
         "Suspension"
       ],
       "correctAnswer": 3,
@@ -22778,7 +22535,7 @@
       "prompt": "What concept is described?",
       "answers": [
         "Tone row / note row",
-        "Retrograde",
+        "Inversion",
         "Tritone",
         "Turn"
       ],
@@ -22858,10 +22615,10 @@
       "conceptDescription": "An interval spanning three whole tones, equivalent to an augmented fourth or diminished fifth.",
       "prompt": "What concept is described?",
       "answers": [
-        "Polytonality / bitonality",
-        "Tritone",
         "Suspension",
-        "Tone row / note row"
+        "Tritone",
+        "Tone row / note row",
+        "Turn"
       ],
       "correctAnswer": 1,
       "hint": "Three tones.",
@@ -23020,9 +22777,9 @@
       "conceptDescription": "The beat grouping changes from two groups of three to three groups of two, or the other way round. The note lengths stay the same.",
       "prompt": "What concept is described?",
       "answers": [
-        "Sprechgesang",
-        "Appoggiatura",
-        "Augmented triad",
+        "Retrograde",
+        "Song cycle",
+        "Stretto",
         "Hemiola"
       ],
       "correctAnswer": 3,
@@ -23102,9 +22859,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Answer",
-        "Subject",
-        "Leitmotif",
-        "Retrograde"
+        "Countersubject",
+        "Retrograde",
+        "Song cycle"
       ],
       "correctAnswer": 0,
       "hint": "The fugue's next voice enters at the dominant.",
@@ -23182,10 +22939,10 @@
       "conceptDescription": "Two separated groups of singers or instruments answer each other across the space.",
       "prompt": "What concept is described?",
       "answers": [
-        "Countersubject",
+        "Leitmotif",
         "Antiphonal",
-        "Fugue",
-        "Inversion"
+        "Retrograde",
+        "Song cycle"
       ],
       "correctAnswer": 1,
       "hint": "Separated groups toss music across the space.",
@@ -23263,10 +23020,10 @@
       "conceptDescription": "In sonata form, a linking or transition passage connects the first and second subjects.",
       "prompt": "What concept is described?",
       "answers": [
-        "Leitmotif",
-        "Retrograde",
+        "Song cycle",
+        "Subject",
         "Bridge",
-        "Song cycle"
+        "Answer"
       ],
       "correctAnswer": 2,
       "hint": "A key-changing passage links the two main themes.",
@@ -23344,9 +23101,9 @@
       "conceptDescription": "A recurring counter-melody in a fugue.",
       "prompt": "What concept is described?",
       "answers": [
-        "Subject",
-        "Leitmotif",
+        "Answer",
         "Retrograde",
+        "Song cycle",
         "Countersubject"
       ],
       "correctAnswer": 3,
@@ -23426,9 +23183,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Fugue",
-        "Answer",
-        "Retrograde",
-        "Song cycle"
+        "Countersubject",
+        "Subject",
+        "Answer"
       ],
       "correctAnswer": 0,
       "hint": "One main theme chases itself through independent voices.",
@@ -23506,10 +23263,10 @@
       "conceptDescription": "As a melodic or tone-row transformation, each interval changes direction: upward intervals become downward and vice versa.",
       "prompt": "What concept is described?",
       "answers": [
-        "Retrograde",
+        "Tone row / note row",
         "Inversion",
-        "Bridge",
-        "Countersubject"
+        "Fugue",
+        "Leitmotif"
       ],
       "correctAnswer": 1,
       "hint": "Up becomes down; every interval flips direction.",
@@ -23587,10 +23344,10 @@
       "conceptDescription": "A recurring musical idea linked to a character, object, place, emotion or dramatic idea.",
       "prompt": "What concept is described?",
       "answers": [
-        "Bridge",
-        "Countersubject",
+        "Inversion",
+        "Retrograde",
         "Leitmotif",
-        "Fugue"
+        "Song cycle"
       ],
       "correctAnswer": 2,
       "hint": "A character's musical calling card returns with the story.",
@@ -23668,9 +23425,9 @@
       "conceptDescription": "A melody or tone row is presented in reverse order, beginning with its final note and ending with its first.",
       "prompt": "What concept is described?",
       "answers": [
-        "Inversion",
-        "Answer",
-        "Antiphonal",
+        "Tone row / note row",
+        "Bridge",
+        "Countersubject",
         "Retrograde"
       ],
       "correctAnswer": 3,
@@ -23750,9 +23507,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Song cycle",
-        "Stretto",
-        "Subject",
-        "Answer"
+        "Antiphonal",
+        "Bridge",
+        "Countersubject"
       ],
       "correctAnswer": 0,
       "hint": "Several linked vocal pieces form one complete journey.",
@@ -23830,10 +23587,10 @@
       "conceptDescription": "In a fugue, a new subject entry begins before the previous one ends, so they overlap.",
       "prompt": "What concept is described?",
       "answers": [
-        "Subject",
+        "Answer",
         "Stretto",
-        "Song cycle",
-        "Answer"
+        "Antiphonal",
+        "Countersubject"
       ],
       "correctAnswer": 1,
       "hint": "Fugal entries pile in before their predecessors finish.",
@@ -23911,10 +23668,10 @@
       "conceptDescription": "In a fugue, it is the main theme.",
       "prompt": "What concept is described?",
       "answers": [
-        "Answer",
-        "Leitmotif",
+        "Countersubject",
+        "Retrograde",
         "Subject",
-        "Retrograde"
+        "Song cycle"
       ],
       "correctAnswer": 2,
       "hint": "The main theme enters alone before other voices copy it.",
@@ -23993,8 +23750,8 @@
       "prompt": "What concept is described?",
       "answers": [
         "Piano trio",
-        "Countertenor",
         "Sprechgesang",
+        "Countertenor",
         "Consort"
       ],
       "correctAnswer": 3,
@@ -24074,9 +23831,9 @@
       "prompt": "What concept is described?",
       "answers": [
         "Countertenor",
+        "Consort",
         "Piano trio",
-        "Sprechgesang",
-        "Consort"
+        "Sprechgesang"
       ],
       "correctAnswer": 0,
       "hint": "An adult male voice soaring in the alto range.",
@@ -24156,8 +23913,8 @@
       "answers": [
         "Consort",
         "Piano trio",
-        "Countertenor",
-        "Sprechgesang"
+        "Sprechgesang",
+        "Countertenor"
       ],
       "correctAnswer": 1,
       "hint": "Keyboard, violin and cello: three equal chamber partners.",
@@ -24235,10 +23992,10 @@
       "conceptDescription": "A vocal technique between speech and singing.",
       "prompt": "What concept is described?",
       "answers": [
+        "Countertenor",
         "Piano trio",
-        "Consort",
         "Sprechgesang",
-        "Countertenor"
+        "Consort"
       ],
       "correctAnswer": 2,
       "hint": "Half spoken, half sung: follow pitch, then release it.",

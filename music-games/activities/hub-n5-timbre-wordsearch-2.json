@@ -1,0 +1,147 @@
+{
+  "id": "hub-n5-timbre-wordsearch-2",
+  "level": "N5",
+  "title": "Timbre 2",
+  "instructions": "",
+  "description": "Practise the National 5 Timbre concepts — collection 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "National 5"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n5-timbre-wordsearch-2-1",
+      "prompt": "A pair of cymbals mounted on a foot-operated stand can be played open or closed with sticks, or closed together using the pedal.",
+      "answer": "Hi-hat cymbals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-2",
+      "prompt": "A medium female voice lying between soprano and alto.",
+      "answer": "Mezzo-soprano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-3",
+      "prompt": "A high double-reed woodwind instrument with a narrow conical bore.",
+      "answer": "Oboe",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-4",
+      "prompt": "The smallest and highest standard orchestral woodwind instrument.",
+      "answer": "Piccolo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-5",
+      "prompt": "Give the Italian instruction for string players to pluck the strings instead of using the bow.",
+      "answer": "Pizzicato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-6",
+      "prompt": "Sound continues and reflects around a space after the original sound is made.",
+      "answer": "Reverb",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-7",
+      "prompt": "Very rapid repeated strokes on a percussion instrument that merge into a sustained or trembling sound.",
+      "answer": "Rolls",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-8",
+      "prompt": "A North Indian plucked long-necked lute with movable frets, melody strings and sympathetic strings.",
+      "answer": "Sitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-9",
+      "prompt": "A North Indian pair of hand drums of different sizes and pitches, traditionally called dayan and bayan, produces contrasting finger and palm strokes.",
+      "answer": "Tabla",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-10",
+      "prompt": "The largest and lowest-pitched standard brass instrument.",
+      "answer": "Tuba",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-timbre-wordsearch-2-11",
+      "prompt": "A bowed string instrument slightly larger and lower in pitch than the violin.",
+      "answer": "Viola",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z",
+  "editorMode": "with-clues"
+}

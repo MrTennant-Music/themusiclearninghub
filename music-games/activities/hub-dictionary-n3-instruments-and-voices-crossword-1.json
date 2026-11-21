@@ -1,0 +1,161 @@
+{
+  "id": "hub-dictionary-n3-instruments-and-voices-crossword-1",
+  "level": "N3",
+  "title": "Instruments and Voices 1",
+  "instructions": "",
+  "description": "Revise instruments and voices with 9 Music Dictionary concepts. Set 1 of 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Instruments and Voices",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0042",
+      "prompt": "A free-reed instrument sounded by opening and closing bellows.",
+      "answer": "Accordion",
+      "distractors": [
+        "Organ",
+        "Scottish dance band",
+        "Staccato"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0045",
+      "prompt": "A performer directs air into or across an instrument to make it sound.",
+      "answer": "Blowing",
+      "distractors": [
+        "Choir",
+        "Drum kit",
+        "Electric guitar"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0048",
+      "prompt": "An organised group of singers performing together.",
+      "answer": "Choir",
+      "distractors": [
+        "Folk group",
+        "Drum kit",
+        "Electric guitar"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0051",
+      "prompt": "A violin used in traditional or folk music, especially Scottish music.",
+      "answer": "Fiddle",
+      "distractors": [
+        "Legato",
+        "Orchestra",
+        "Percussion"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0054",
+      "prompt": "A large ensemble divided into four main families: strings, woodwind, brass and percussion.",
+      "answer": "Orchestra",
+      "distractors": [
+        "Folk group",
+        "Organ",
+        "Percussion"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0057",
+      "prompt": "As a keyboard instrument, pressing a key causes a felt-covered hammer to strike a string.",
+      "answer": "Piano",
+      "distractors": [
+        "Accordion",
+        "Tuned percussion",
+        "Untuned percussion"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0060",
+      "prompt": "Notes are performed short and detached, with a clear gap or separation between them.",
+      "answer": "Staccato",
+      "distractors": [
+        "Accent / accented",
+        "Acoustic guitar",
+        "Bagpipes"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0063",
+      "prompt": "The sound comes from vibrations made by bowing or plucking.",
+      "answer": "Strings",
+      "distractors": [
+        "Brass",
+        "Percussion",
+        "Woodwind"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-instruments-and-voices-crossword-1-mc-0068",
+      "prompt": "An orchestral family played by blowing across an opening or through a single or double reed.",
+      "answer": "Woodwind",
+      "distractors": [
+        "Brass",
+        "Percussion",
+        "Strings"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

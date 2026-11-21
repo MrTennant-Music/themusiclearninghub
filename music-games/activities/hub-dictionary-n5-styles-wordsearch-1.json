@@ -1,0 +1,117 @@
+{
+  "id": "hub-dictionary-n5-styles-wordsearch-1",
+  "level": "N5",
+  "title": "Styles 1",
+  "instructions": "",
+  "description": "Revise styles with 6 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-1-mc-0144",
+      "prompt": "A solo song in an opera, oratorio or similar large vocal work.",
+      "answer": "Aria",
+      "distractors": [
+        "Gospel",
+        "Indian",
+        "Minimalist"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-1-mc-0146",
+      "prompt": "A fusion of Celtic or Scottish folk music with rock.",
+      "answer": "Celtic rock",
+      "distractors": [
+        "Waulking song",
+        "Aria",
+        "Bothy ballad"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-1-mc-0148",
+      "prompt": "Features include clear melody, balanced phrases, mainly homophonic texture and controlled dynamics.",
+      "answer": "Classical",
+      "distractors": [
+        "Gaelic psalm",
+        "Gospel",
+        "Indian"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-1-mc-0150",
+      "prompt": "Religious vocal music rooted in African American church traditions.",
+      "answer": "Gospel",
+      "distractors": [
+        "Symphony",
+        "Waulking song",
+        "Aria"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-1-mc-0152",
+      "prompt": "A style based on short repeated rhythmic or melodic patterns.",
+      "answer": "Minimalist",
+      "distractors": [
+        "Chorus",
+        "Classical",
+        "Gaelic psalm"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-styles-wordsearch-1-mc-0154",
+      "prompt": "A large-scale, multi-movement work for orchestra.",
+      "answer": "Symphony",
+      "distractors": [
+        "Minimalist",
+        "Pibroch",
+        "Waulking song"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

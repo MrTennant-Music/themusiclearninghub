@@ -1,0 +1,491 @@
+{
+  "scope": "Complete final-answer paragraphs; source crop visual review pending",
+  "rows": [
+    {
+      "paper": "advanced-higher-2016",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        55,
+        110
+      ],
+      "source": "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 18,
+          "text": "Comment on six similarities/differences you hear in the excerpts.",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerpts",
+          "box": [
+            138.9035,
+            141.4533,
+            473.6225,
+            152.4533
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 18,
+          "text": "Your final answer should be a written description of what you have",
+          "normal": "yourfinalanswershouldbeawrittendescriptionofwhatyouhave",
+          "box": [
+            138.9035,
+            154.65330000000006,
+            473.6225000000002,
+            165.65330000000006
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 18,
+          "text": "heard and not simply a list of similarities/differences.4",
+          "normal": "heardandnotsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.9035,
+            167.8533000000001,
+            496.0735,
+            178.8533000000001
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2017",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        55,
+        110
+      ],
+      "source": "exampapers/adv higher/2017/Music AH 2017 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts.",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerpts",
+          "box": [
+            138.8976,
+            141.4638,
+            473.61969999999997,
+            152.4638
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Your final answer should be a written description of what you have",
+          "normal": "yourfinalanswershouldbeawrittendescriptionofwhatyouhave",
+          "box": [
+            138.8976,
+            154.66369999999995,
+            473.6177000000002,
+            165.66369999999995
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "heard and not simply a list of similarities/differences.4",
+          "normal": "heardandnotsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.8976,
+            167.8637,
+            496.0639,
+            178.86379999999997
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2018",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        55,
+        110
+      ],
+      "source": "exampapers/adv higher/2018/Music AH 2018 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts.",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerpts",
+          "box": [
+            138.9035,
+            141.4533,
+            473.6214,
+            152.4533
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Your final answer should be a written description of what you have",
+          "normal": "yourfinalanswershouldbeawrittendescriptionofwhatyouhave",
+          "box": [
+            138.9035,
+            154.65330000000006,
+            473.6236000000002,
+            165.65330000000006
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "heard and not simply a list of similarities/differences.4",
+          "normal": "heardandnotsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.9035,
+            167.8533000000001,
+            496.0735,
+            178.8533000000001
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2019",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        55,
+        110
+      ],
+      "source": "exampapers/adv higher/2019/Music AH 2019 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts.",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerpts",
+          "box": [
+            138.9035,
+            147.1183000000001,
+            473.6214,
+            158.1183000000001
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Your final answer should be a written description of what you have",
+          "normal": "yourfinalanswershouldbeawrittendescriptionofwhatyouhave",
+          "box": [
+            138.9035,
+            160.31830000000014,
+            473.6236000000002,
+            171.31830000000014
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "heard and not simply a list of similarities/differences.4",
+          "normal": "heardandnotsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.9035,
+            173.51830000000018,
+            496.0735,
+            184.51830000000018
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2022",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        64,
+        127
+      ],
+      "source": "exampapers/adv higher/2022/Music AH 2022 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts. Your final",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinal",
+          "box": [
+            110.5522,
+            149.96770410199997,
+            486.66348809339297,
+            160.96770410199997
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "answer should be a written description of what you have heard and not simply",
+          "normal": "answershouldbeawrittendescriptionofwhatyouhaveheardandnotsimply",
+          "box": [
+            110.5522,
+            163.16771630899996,
+            497.79950000420223,
+            174.16771630899996
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "a list of similarities/differences.4",
+          "normal": "alistofsimilaritiesdifferences4",
+          "box": [
+            110.5522,
+            176.36772851600006,
+            524.410326171,
+            187.36772851600006
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        59,
+        118
+      ],
+      "source": "exampapers/adv higher/2023/Music AH 2023 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 22,
+          "text": "Comment on six similarities/differences you hear in the excerpts. Your",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyour",
+          "box": [
+            138.897598266,
+            141.46392000000003,
+            489.520786922393,
+            152.46392000000003
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 22,
+          "text": "final answer should be a written description of what you have heard and",
+          "normal": "finalanswershouldbeawrittendescriptionofwhatyouhaveheardand",
+          "box": [
+            138.897598266,
+            154.663871094,
+            497.04769827440407,
+            165.663871094
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 22,
+          "text": "not simply a list of similarities/differences.4",
+          "normal": "notsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.897598266,
+            167.86382226600006,
+            524.410326171,
+            178.86382226600006
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2024",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        59,
+        118
+      ],
+      "source": "exampapers/adv higher/2024/Music AH 2024 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts. Your",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyour",
+          "box": [
+            138.897598266,
+            149.96770410199997,
+            490.160008113393,
+            160.96770410199997
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "final answer should be a written description of what you have heard and",
+          "normal": "finalanswershouldbeawrittendescriptionofwhatyouhaveheardand",
+          "box": [
+            138.897598266,
+            163.16771630899996,
+            497.04769827440407,
+            174.16771630899996
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "not simply a list of similarities/differences.4",
+          "normal": "notsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.897598266,
+            176.36772851600006,
+            524.410326171,
+            187.36772851600006
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2025",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        59,
+        118
+      ],
+      "source": "exampapers/adv higher/2025/Music AH 2025 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts. Your",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyour",
+          "box": [
+            138.897598266,
+            144.298524649,
+            489.520786922393,
+            155.298524649
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "final answer should be a written description of what you have heard and",
+          "normal": "finalanswershouldbeawrittendescriptionofwhatyouhaveheardand",
+          "box": [
+            138.897598266,
+            157.498536856,
+            497.04769827440407,
+            168.498536856
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "not simply a list of similarities/differences.4",
+          "normal": "notsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.897598266,
+            170.69842699999992,
+            524.410326171,
+            181.69848802799993
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    },
+    {
+      "paper": "advanced-higher-2026",
+      "question": "q6",
+      "text": "Comment on six similarities/differences you hear in the excerpts. Your final answer should be a written description of what you have heard and not simply a list of similarities/differences.",
+      "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyourfinalanswershouldbeawrittendescriptionofwhatyouhaveheardandnotsimplyalistofsimilaritiesdifferences",
+      "breaks": [
+        59,
+        118
+      ],
+      "source": "exampapers/adv higher/2026/NAH_Music_QP_2026.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "Comment on six similarities/differences you hear in the excerpts. Your",
+          "normal": "commentonsixsimilaritiesdifferencesyouhearintheexcerptsyour",
+          "box": [
+            138.897598266,
+            144.29851464900003,
+            490.159886043393,
+            155.29851464900003
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "final answer should be a written description of what you have heard and",
+          "normal": "finalanswershouldbeawrittendescriptionofwhatyouhaveheardand",
+          "box": [
+            138.897598266,
+            157.498526856,
+            497.04769827440407,
+            168.498526856
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "not simply a list of similarities/differences.4",
+          "normal": "notsimplyalistofsimilaritiesdifferences4",
+          "box": [
+            138.897598266,
+            170.69841699999995,
+            524.410326171,
+            181.69847802799995
+          ]
+        }
+      ],
+      "paths": [
+        "q6.q6bi.finalAnswerIntro"
+      ],
+      "sourceMatchCount": 1,
+      "sourceMatchPolicy": "Complete printed paragraph spanning the two existing model sentences."
+    }
+  ]
+}

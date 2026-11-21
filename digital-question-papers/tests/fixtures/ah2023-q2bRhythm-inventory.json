@@ -1,0 +1,83 @@
+{
+  "key": "C major",
+  "timeSignature": "4/4",
+  "bars": [
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "quaverRest",
+          "beats": 0.5
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "chord": [
+            "C5",
+            "E5"
+          ]
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "chord": [
+            "D5",
+            "F5"
+          ]
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "chord": [
+            "E5",
+            "G5"
+          ]
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "chord": [
+            "C5",
+            "E5"
+          ]
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "semiquaver",
+          "beats": 0.25,
+          "chord": [
+            "D5",
+            "F5"
+          ]
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "minim",
+          "beats": 2,
+          "chord": [
+            "E5",
+            "G5"
+          ]
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "finalBarline": "double"
+    }
+  ],
+  "layout": {
+    "height": 170
+  }
+}

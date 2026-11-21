@@ -158,8 +158,35 @@
     return cleanSegments(segments).filter((segment) => segment.id !== id);
   }
 
+  function createClassStorage(storage, key) {
+    const prefix = `${key}:class:`, marker = `${key}:classes-migrated`;
+    function read(legacy = []) {
+      if (storage.getItem(marker) !== "1") {
+        for (const list of legacy) if (!storage.getItem(prefix + list.id)) storage.setItem(prefix + list.id, JSON.stringify(list));
+        storage.setItem(marker, "1");
+      }
+      const lists = [];
+      for (let i = 0; i < storage.length; i++) {
+        const itemKey = storage.key(i);
+        if (itemKey?.startsWith(prefix)) lists.push(JSON.parse(storage.getItem(itemKey)));
+      }
+      return cleanPersistence({ savedLists: lists }).savedLists;
+    }
+    function check(list, expected) {
+      const existing = JSON.parse(storage.getItem(prefix + list.id) || "null");
+      if (JSON.stringify(existing) !== JSON.stringify(expected)) throw Error("This class changed in another tab. Reopen the latest class before saving or deleting it. Your current names have been kept.");
+    }
+    return {
+      read,
+      save(list, expected = null) { check(list, expected); storage.setItem(prefix + list.id, JSON.stringify(list)); },
+      remove(list) { check(list, list); storage.removeItem(prefix + list.id); },
+      matchesKey(itemKey) { return itemKey === null || itemKey.startsWith(prefix); },
+    };
+  }
+
   return {
     STORAGE_VERSION,
+    createClassStorage,
     DEFAULT_SEGMENT_COLOUR,
     MULTI_SEGMENT_COLOUR,
     MULTI_SEGMENT_PALETTE,

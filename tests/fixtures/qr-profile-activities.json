@@ -1,0 +1,351 @@
+[
+  {
+    "file": "accidentals.html",
+    "states": [
+      "enabledAccidentals",
+      "enabledQuestionTypes",
+      "showNoteNames"
+    ],
+    "level": null
+  },
+  {
+    "file": "articulationmarkings.html",
+    "states": [
+      "enabledMarkings",
+      "enabledTypes",
+      "tempo",
+      "metronomeEnabled",
+      "followPlayback"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "auralrecognition.html",
+    "states": [
+      "activeTopic",
+      "enabled",
+      "metronome",
+      "ornamentPassage",
+      "scalesPassage",
+      "chordPassage",
+      "expandedPassages",
+      "chooserLevel",
+      "activityListOpen",
+      "playbackTempo",
+      "isolatedPlaybackTempo"
+    ],
+    "level": "level"
+  },
+  {
+    "file": "barlines.html",
+    "states": [
+      "enabledRhythms",
+      "restsEnabled",
+      "showRhythmGuide"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "cadences.html",
+    "states": [
+      "enabled",
+      "tempo",
+      "metronome",
+      "follow"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "chords.html",
+    "states": [
+      "tempo",
+      "metronomeOn",
+      "showNoteNames",
+      "showScaleDegrees",
+      "n5Customise",
+      "ahCustomise",
+      "highlightPlayback"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "rhythmicdictation.html",
+    "states": [
+      "followPlayback",
+      "tempo",
+      "metronomeOn",
+      "syncopationOn",
+      "enabledQuestionTypes"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "dynamics.html",
+    "states": [
+      "enabledTypes",
+      "enabledDynamics",
+      "tempo",
+      "metronomeEnabled",
+      "followPlayback"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "enharmonicequivalents.html",
+    "states": [
+      "options",
+      "showNoteNames"
+    ],
+    "level": null
+  },
+  {
+    "file": "intervals.html",
+    "states": [
+      "enabledModes",
+      "showHelp"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "keyboardnoteidentification.html",
+    "states": [
+      "showC",
+      "options",
+      "questionTypes"
+    ],
+    "level": "level"
+  },
+  {
+    "file": "keysignatures.html",
+    "states": [
+      "modes"
+    ],
+    "level": "session.level"
+  },
+  {
+    "file": "melodicdictation.html",
+    "states": [
+      "tempo",
+      "metronomeOn",
+      "followPlayback"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "noteidentification.html",
+    "states": [
+      "settings",
+      "showNoteNames"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "readingrhythms.html",
+    "states": [
+      "enabledRhythms",
+      "enabledTimeSignatures",
+      "restsEnabled",
+      "tiesEnabled",
+      "tempo"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "repeatsigns.html",
+    "states": [
+      "enabledQuestionTypes",
+      "tempo",
+      "metronomeEnabled",
+      "followPlayback"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "rests.html",
+    "states": [
+      "enabledOptions",
+      "showRhythmGuide"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "rhythmidentification.html",
+    "states": [
+      "enabledRhythms",
+      "enabledCardTypes"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "rhythmsums.html",
+    "states": [
+      "settings",
+      "showRhythmGuide"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "tempo.html",
+    "states": [
+      "enabled",
+      "metronome",
+      "follow"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "timesignatures.html",
+    "states": [
+      "enabledRhythms",
+      "restsEnabled",
+      "showRhythmGuide"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "scaledegrees.html",
+    "states": [
+      "questionTypeOptions",
+      "revealKey",
+      "showScaleDegrees"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "transposing.html",
+    "states": [
+      "wholeBarMode",
+      "questionOptions",
+      "noteNamesVisible"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "practicequestions.html",
+    "states": [
+      "tempo",
+      "metronomeOn",
+      "followPlayback",
+      "enabledQuestionTypes",
+      "limitPlays",
+      "timerEnabled"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "followthescore.html",
+    "states": [
+      "tempo",
+      "metronomeOn",
+      "followPlayback",
+      "enabledQuestionTypes",
+      "showFollowNoteNames",
+      "limitPlays",
+      "timerEnabled"
+    ],
+    "level": "activeLevel"
+  },
+  {
+    "file": "metronome.html",
+    "states": [
+      "config"
+    ],
+    "level": null
+  },
+  {
+    "file": "chromatic-tuner.js",
+    "states": [
+      "instrument"
+    ],
+    "level": null
+  },
+  {
+    "file": "classroom-timer.jsx",
+    "states": [
+      "options"
+    ],
+    "level": null
+  },
+  {
+    "file": "namerandomiser.html",
+    "states": [
+      "soundEffects",
+      "randomiserMethod"
+    ],
+    "level": null
+  },
+  {
+    "file": "familyfortunes/familyfortunes.js",
+    "states": [
+      "options",
+      "selectedQuestionIds",
+      "customCategories",
+      "roundOverrides"
+    ],
+    "level": "level"
+  },
+  {
+    "file": "whowantstobemillionaire/millionaire.js",
+    "states": [
+      "settings"
+    ],
+    "level": null
+  },
+  {
+    "file": "popup-piano.jsx",
+    "states": [
+      "sustain",
+      "guide",
+      "piano"
+    ],
+    "level": null
+  },
+  {
+    "file": "staff-paper.jsx",
+    "states": [
+      "paper"
+    ],
+    "level": null
+  },
+  {
+    "file": "music-dictionary/music-concepts.js",
+    "sources": [
+      "music-dictionary/music-concepts-quizzes.js"
+    ],
+    "states": [
+      "dictionaryViews",
+      "dictionaryQuizSettings"
+    ],
+    "level": null
+  },
+  {
+    "file": "chord-generator.jsx",
+    "sources": [
+      "composition-sections.jsx",
+      "composition-imported-midi.jsx"
+    ],
+    "states": [
+      "studioTab",
+      "studioSustain",
+      "studioBassFilter",
+      "studioMelodyFilter",
+      "studioVelocity",
+      "importedPart"
+    ],
+    "level": null
+  },
+  {
+    "file": "bandle.jsx",
+    "states": [
+      "gameMode"
+    ],
+    "level": null
+  },
+  {
+    "file": "music-games/app.jsx",
+    "states": [
+      "includeBelow"
+    ],
+    "level": null
+  }
+]

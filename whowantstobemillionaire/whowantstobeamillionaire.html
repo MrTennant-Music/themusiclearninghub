@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="../" />
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <title>Who Wants to Be a Millionaire?</title>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/millionaire-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/millionaire-icon.svg" />
+  <link rel="stylesheet" href="./whowantstobemillionaire/millionaire-tailwind.css?v=834ebae10b2b" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <link rel="stylesheet" href="./whowantstobemillionaire/millionaire.css?v=1881063193f0" />
+  <link rel="stylesheet" href="./styles/hub-media-library.css?v=1" />
+  <script src="./vendor/react/react.production.min.js?v=18.2.0"></script>
+  <script src="./vendor/react/react-dom.production.min.js?v=18.2.0"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js?v=20260712"></script>
+  <script src="./whowantstobemillionaire/millionaire-core.js?v=18e04fee174e"></script>
+  <script src="./whowantstobemillionaire/millionaire-question-bank.js?v=f05927f78594"></script>
+  <script src="./whowantstobemillionaire/millionaire-concept-questions.js?v=943fbf14952e"></script>
+  <script src="./vendor/jszip/jszip.min.js?v=3.10.1"></script>
+  <script src="./whowantstobemillionaire/millionaire-custom-sets.js?v=20261102-storage-retry"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+<link rel="stylesheet" href="./styles/hub-collections.css?v=3901e5218d10" />
+<script src="./shared/hub-collections.js?v=1bdde7b4f410"></script>
+<script src="./shared/music-games-concepts.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    (() => {
+      const root = document.getElementById("root");
+      let ready = false;
+      window.addEventListener("millionaire-ready", () => { ready = true; });
+      window.setTimeout(() => {
+        if (ready || root.childElementCount) return;
+        root.innerHTML = '<section class="millionaire-load-error" role="alert"><img src="./app-icons/millionaire-icon.svg" alt=""><h1>The game could not load</h1><p>Reload the page to try again.</p><button type="button" onclick="window.location.reload()">Reload</button></section>';
+      }, 8000);
+    })();
+  </script>
+  <script src="./music-games/image-bank.compiled.js?v=20261102-audit-fixes-3"></script>
+  <script src="./whowantstobemillionaire/millionaire-media-library.compiled.js?v=20261102-audit-fixes-3"></script>
+  <script src="./whowantstobemillionaire/millionaire-creator.compiled.js?v=971c8ea7fa8c"></script>
+  <script src="./whowantstobemillionaire/millionaire.compiled.js?v=a8d00ed76bf5"></script>
+  <script src="./footer.js?v=120454beac89"></script>
+</body>
+</html>

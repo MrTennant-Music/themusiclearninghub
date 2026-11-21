@@ -1,0 +1,559 @@
+{
+  "sourceReading": "QP page 6: all four independently calibrated 300 dpi systems read twice. MI page 4 confirms missing G4 dotted-crotchet/quaver. Old import prose contained pitch discrepancies; current implementation agrees with the printed source.",
+  "key": "C major",
+  "keySignature": [],
+  "clef": "treble",
+  "timeSignature": "4/4",
+  "printedDynamic": "mp",
+  "pitchMap": "Treble lines E4 G4 B4 D5 F5; spaces F4 A4 C5 E5; D4 below staff and C4 on lower ledger line",
+  "editableBar": 13,
+  "editableNoteIndices": [
+    4,
+    5
+  ],
+  "finalBarline": "single",
+  "sources": [
+    {
+      "path": "exampapers/n5/2022/N5_Music_QP_2022.pdf",
+      "sha256": "b5d1bb22f652aea9118c16a55a2f1b6c39010ff13864a4f9fa68174714be80ed"
+    },
+    {
+      "path": "exampapers/n5/2022/mi_N5_Music_mi_2022.pdf",
+      "sha256": "c34291b027883125b3fd71e3815f39e989f7defba05003caf7b45db47c28ae84"
+    }
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "notes": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": true,
+      "beats": 4
+    },
+    {
+      "bar": 2,
+      "notes": [
+        [
+          "G4",
+          "dottedMinim"
+        ],
+        [
+          "rest",
+          "crotchetRest"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 3,
+      "notes": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": true,
+      "beats": 4
+    },
+    {
+      "bar": 4,
+      "notes": [
+        [
+          "G4",
+          "dottedMinim"
+        ],
+        [
+          "rest",
+          "crotchetRest"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 5,
+      "notes": [
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 6,
+      "notes": [
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 7,
+      "notes": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": true,
+      "beats": 4
+    },
+    {
+      "bar": 8,
+      "notes": [
+        [
+          "G4",
+          "dottedMinim"
+        ],
+        [
+          "C4",
+          "quaver"
+        ],
+        [
+          "C4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 9,
+      "notes": [
+        [
+          "C5",
+          "minim"
+        ],
+        [
+          "C5",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 10,
+      "notes": [
+        [
+          "G4",
+          "dottedMinim"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 11,
+      "notes": [
+        [
+          "C4",
+          "minim"
+        ],
+        [
+          "C5",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 12,
+      "notes": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "minim"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        },
+        {
+          "start": 3,
+          "end": 4
+        }
+      ],
+      "tiesFrom": [
+        1
+      ],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 13,
+      "notes": [
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "dottedCrotchet"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 14,
+      "notes": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 15,
+      "notes": [
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    },
+    {
+      "bar": 16,
+      "notes": [
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "beats": 4
+    }
+  ],
+  "staffSystems": [
+    [
+      265.0,
+      270.2,
+      275.5,
+      280.7,
+      286.0
+    ],
+    [
+      344.3,
+      349.5,
+      354.8,
+      360.0,
+      365.3
+    ],
+    [
+      428.6,
+      433.9,
+      439.2,
+      444.4,
+      449.7
+    ],
+    [
+      513.2,
+      518.4,
+      523.7,
+      529.0,
+      534.2
+    ]
+  ]
+}

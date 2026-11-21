@@ -1,0 +1,117 @@
+{
+  "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2",
+  "level": "N4",
+  "title": "Rhythm and Tempo 2",
+  "instructions": "",
+  "description": "Revise rhythm and tempo with 6 Music Dictionary concepts. Set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Rhythm and Tempo",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2-mc-0095",
+      "prompt": "The tempo gradually becomes faster.",
+      "answer": "Accelerando",
+      "distractors": [
+        "Rallentando",
+        "Compound time",
+        "Dotted rhythms"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2-mc-0097",
+      "prompt": "A moderate tempo marking meaning at a walking pace.",
+      "answer": "Andante",
+      "distractors": [
+        "Rallentando",
+        "Scotch snap",
+        "Simple time (2/4, 3/4 and 4/4)"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2-mc-0099",
+      "prompt": "A dot adds half a note's value, creating long-short or short-long patterns.",
+      "answer": "Dotted rhythms",
+      "distractors": [
+        "Scotch snap",
+        "Rallentando",
+        "Simple time (2/4, 3/4 and 4/4)"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2-mc-0101",
+      "prompt": "The tempo gradually becomes slower, usually over several beats or bars.",
+      "answer": "Rallentando",
+      "distractors": [
+        "Accelerando",
+        "Scotch snap",
+        "Simple time (2/4, 3/4 and 4/4)"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2-mc-0103",
+      "prompt": "Metres with two, three or four crotchet beats in each bar, where each main beat divides naturally into two equal parts.",
+      "answer": "Simple time",
+      "distractors": [
+        "Compound time",
+        "Andante",
+        "Dotted rhythms"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-rhythm-and-tempo-wordsearch-2-mc-0105",
+      "prompt": "Rhythmic emphasis is placed on weak beats, off-beats or notes held across strong beats.",
+      "answer": "Syncopation",
+      "distractors": [
+        "Dotted rhythms",
+        "Rallentando",
+        "Simple time (2/4, 3/4 and 4/4)"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

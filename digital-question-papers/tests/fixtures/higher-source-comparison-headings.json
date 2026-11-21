@@ -1,0 +1,92 @@
+[
+  {
+    "id": "higher-2015",
+    "sourcePage": 15,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2015-header.png",
+    "columnC": "5 features common to both",
+    "roughWorkShaded": true,
+    "columnABWeight": 400,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2016",
+    "sourcePage": 13,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2016-header.png",
+    "columnC": "5 features common to both",
+    "roughWorkShaded": true,
+    "columnABWeight": 400,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2017",
+    "sourcePage": 11,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2017-header.png",
+    "columnC": "5 features common to both",
+    "roughWorkShaded": true,
+    "columnABWeight": 400,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2018",
+    "sourcePage": 13,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2018-header.png",
+    "columnC": "5 features common to both",
+    "roughWorkShaded": true,
+    "columnABWeight": 400,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2019",
+    "sourcePage": 11,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2019-header.png",
+    "columnC": "5 concepts common to both",
+    "roughWorkShaded": false,
+    "columnABWeight": 700,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2022",
+    "sourcePage": 11,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2022-header.png",
+    "columnC": "5 concepts common to both",
+    "roughWorkShaded": false,
+    "columnABWeight": 700,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2023",
+    "sourcePage": 13,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2023-header.png",
+    "columnC": "5 concepts common to both",
+    "roughWorkShaded": false,
+    "columnABWeight": 700,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2024",
+    "sourcePage": 13,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2024-header.png",
+    "columnC": "5 concepts common to both",
+    "roughWorkShaded": false,
+    "columnABWeight": 700,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2025",
+    "sourcePage": 13,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2025-header.png",
+    "columnC": "5 concepts common to both",
+    "roughWorkShaded": false,
+    "columnABWeight": 700,
+    "columnCWeight": 700
+  },
+  {
+    "id": "higher-2026",
+    "sourcePage": 13,
+    "sourceEvidence": "maintenance/generated/past-paper-comparison-heading-source/higher-2026-header.png",
+    "columnC": "5 concepts common to both",
+    "roughWorkShaded": false,
+    "columnABWeight": 700,
+    "columnCWeight": 700
+  }
+]

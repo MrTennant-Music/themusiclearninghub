@@ -1,0 +1,132 @@
+{
+  "id": "hub-collection-ah-pitch-melody-scales-crossword-2",
+  "level": "AH",
+  "title": "Pitch and Melody 2",
+  "instructions": "",
+  "description": "Pitch and Melody: current Music Dictionary definitions — set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Pitch and Melody",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0012",
+      "prompt": "The notes go down, getting lower.",
+      "answer": "Descending",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0012"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0016",
+      "prompt": "One short bit of music sounds like a question, and the next bit answers it.",
+      "answer": "Question and answer",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0016"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0018",
+      "prompt": "The same little tune is repeated, but starts on a higher or lower note.",
+      "answer": "Sequence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0018"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0086",
+      "prompt": "The same note name higher or lower, like one C and the next C.",
+      "answer": "Octave",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0086"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0161",
+      "prompt": "A second tune played alongside the main tune.",
+      "answer": "Countermelody",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0161"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0173",
+      "prompt": "A distance of two small steps between notes, like C to D.",
+      "answer": "Tone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0173"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0282",
+      "prompt": "All twelve different notes put in a set order to build music from.",
+      "answer": "Tone row",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0282"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-2-MC-0291",
+      "prompt": "Turning a tune upside down: where it went up, it now goes down, and the other way round.",
+      "answer": "Inversion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0291"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "pitch-melody-scales",
+  "sourceConceptIds": [
+    "MC-0012",
+    "MC-0016",
+    "MC-0018",
+    "MC-0086",
+    "MC-0161",
+    "MC-0173",
+    "MC-0282",
+    "MC-0291"
+  ]
+}

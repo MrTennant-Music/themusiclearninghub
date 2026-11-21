@@ -1,0 +1,9 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const concepts=require('../music-dictionary/music-concepts-data.js'),photos=require('../music-dictionary/music-concepts-photos.json');
+test('Photo assignments are credited Wikimedia images, local illustrations or explicit empty slots',()=>{
+ assert.ok(concepts.concepts.every(concept=>Object.hasOwn(photos.concepts,concept.id)), "Every current concept needs an explicit photo assignment");
+ for(const concept of concepts.concepts){const key=photos.concepts[concept.id];if(key===null)continue;const photo=photos.subjects[key];assert.ok(photo,concept.name+' needs a photo');assert.ok(photo.alt&&photo.caption&&photo.credit&&photo.license,concept.name+' needs photo attribution');if(photo.locallyRendered){assert.equal(photo.credit,'The Music Learning Hub');assert.ok(photo.sourceTitle,'Locally rendered images need a source description');}else if(photo.generated){assert.equal(photo.generated,true);assert.equal(photo.credit,'AI-generated illustration');}else{assert.match(photo.sourceUrl,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);assert.match(photo.src,/^https:\/\/(?:upload|thumb)\.wikimedia\.org\//);continue;}const bytes=fs.readFileSync(path.resolve(require('node:path').resolve(__dirname, '..'),photo.src));const valid=bytes.subarray(0,3).equals(Buffer.from([255,216,255]))||bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||/^GIF8[79]a$/.test(bytes.subarray(0,6).toString())||(bytes.subarray(0,4).toString()==='RIFF'&&bytes.subarray(8,12).toString()==='WEBP');assert.ok(valid,concept.name+' needs a valid image file');}
+ assert.deepEqual(require('../music-dictionary/music-concepts-photos.js'),photos);
+});
+
+test('Removed Bernstein and piano-key placeholders stay absent',()=>{assert.doesNotMatch(JSON.stringify(photos),/Bernstein/i);assert.ok(!photos.subjects.keyboard);});

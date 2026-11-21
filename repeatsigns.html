@@ -1,30 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Repeat Signs</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/repeat-signs-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/repeat-signs-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./hub-input.js?v=1.3"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="./bravura-symbols.js"></script>
-  <script src="./shared-notation-config.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/repeat-signs-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/repeat-signs-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
   <style>
     @font-face {
       font-family: "Bravura";
-      src: url("./Bravura.otf") format("opentype");
+      src: url("./fonts/Bravura.otf") format("opentype");
       font-display: block;
     }
     .music-symbol {
@@ -34,11 +35,16 @@
       text-rendering: geometricPrecision;
     }
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
 <body>
 <div id="root"></div>
 
-<script type="text/babel">
+<script type="text/x-mlh-jsx-source" data-runtime="repeatsigns-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
 
 const W = 920;
@@ -53,22 +59,22 @@ const STEM = 32;
 const BAR_COUNT = 8;
 const BARS_PER_SYSTEM = 4;
 const ACCOMP_MAX_MIDI = 67;
-const MEDAL_THRESHOLDS = [2, 4, 6, 10];
+const MEDAL_THRESHOLDS = [10, 15, 20, 30];
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || { drawing: {}, symbols: {} };
 
 const ASSET = {
-  appIcon: "https://themusicliteracyhub.netlify.app/repeat-signs-icon.svg",
-  customise: "https://themusicliteracyhub.netlify.app/customise.svg",
-  levels: "https://themusicliteracyhub.netlify.app/levels.svg",
-  next: "https://themusicliteracyhub.netlify.app/next.svg",
-  eye: "./eye.svg",
-  metronome: "./metronome.svg",
-  tempo: "./tempo.svg",
-  bronze: "https://themusicliteracyhub.netlify.app/bronze.svg",
-  silver: "https://themusicliteracyhub.netlify.app/silver.svg",
-  gold: "https://themusicliteracyhub.netlify.app/gold.svg",
-  diamond: "https://themusicliteracyhub.netlify.app/diamond.svg",
+  appIcon: "./app-icons/repeat-signs-icon.svg",
+  customise: "./ui-icons/customise.svg",
+  levels: "./ui-icons/levels.svg",
+  next: "./ui-icons/next.svg",
+  eye: "./ui-icons/eye.svg",
+  metronome: "./ui-icons/metronome.svg",
+  tempo: "./ui-icons/tempo.svg",
+  bronze: "./ui-icons/bronze.svg",
+  silver: "./ui-icons/silver.svg",
+  gold: "./ui-icons/gold.svg",
+  diamond: "./ui-icons/diamond.svg",
 };
 
 const COLOUR = {
@@ -105,10 +111,10 @@ function taskMatchesLevel(level, enabledTypes) {
 }
 
 function medalSoundForStreak(streak) {
-  if (streak >= 10) return "platinum";
-  if (streak >= 6) return "gold";
-  if (streak >= 4) return "silver";
-  if (streak >= 2) return "bronze";
+  if (streak >= 30) return "platinum";
+  if (streak >= 20) return "gold";
+  if (streak >= 15) return "silver";
+  if (streak >= 10) return "bronze";
   return null;
 }
 
@@ -556,8 +562,9 @@ function makeMelodyForBar(key, chordSymbol, barIndex, previousIndex, ts) {
     const before = currentIndex;
     currentIndex = notePoolIndex(base) >= 0 ? notePoolIndex(base) : currentIndex;
     const accidentalValue = writtenAccidentalForMelody(key, chord, base.letter);
-    const shouldShowAccidental = accidentalValue !== null && accidentalMemory[base.letter] !== accidentalValue;
-    if (accidentalValue !== null) accidentalMemory[base.letter] = accidentalValue;
+    const accidentalKey = `${base.letter}${base.octave}`;
+    const shouldShowAccidental = accidentalValue !== null && accidentalMemory[accidentalKey] !== accidentalValue;
+    if (accidentalValue !== null) accidentalMemory[accidentalKey] = accidentalValue;
     const midi = pitchForLetter(key, chord, base.letter, base.octave);
     const note = {
       id: `${barIndex}-${noteIndex}`,
@@ -621,7 +628,9 @@ function makeQuestion(level = "N4", enabledTypes = null) {
   }
 
   if (type === "straight-repeat") {
-    const repeat = r([{ start: 0, end: 3 }, { start: 4, end: 7 }, { start: 6, end: 7 }, { start: 0, end: 7 }]);
+    // Balance the end position first, then choose a valid opening boundary.
+    const end = r(Array.from({ length: BAR_COUNT - 1 }, (_, index) => index + 1));
+    const repeat = { start: r(Array.from({ length: end }, (_, index) => index)), end };
     performedOrder = [
       ...Array.from({ length: repeat.end + 1 }, (_, i) => i),
       ...Array.from({ length: repeat.end - repeat.start + 1 }, (_, i) => repeat.start + i),
@@ -852,6 +861,11 @@ function wrongPlacements(question, placements) {
   });
 }
 
+function placementForBar(barIndex, symbolId) {
+  const anchor = symbolId === "start-repeat" ? "start" : symbolId === "end-repeat" ? "end" : "above";
+  return { symbolId, barIndex, anchor };
+}
+
 function snap(pointer, selectedSymbolId) {
   if (!selectedSymbolId) return null;
   const systemIndex = pointer.y < (SYSTEM_TOPS[0] + SYSTEM_TOPS[1]) / 2 ? 0 : 1;
@@ -1006,16 +1020,19 @@ function SymbolGlyph({ id }) {
   </svg>;
 }
 
-function Score({ question, selectedSymbolId, placements, hoverPlacement, feedback, wrong, missing, activeNoteId, onPointerMove, onPointerLeave, onLockPlacement }) {
+function Score({ question, selectedSymbolId, placements, hoverPlacement, feedback, wrong, missing, activeNoteId, onPointerMove, onPointerLeave, onLockPlacement, onKeyDown }) {
   const ls = useMemo(() => buildLayouts(question), [question]);
 
   return <svg
     viewBox={`0 0 ${W} ${H}`}
-    className="h-auto w-full select-none touch-none overflow-visible"
+    className="h-auto w-full select-none touch-manipulation overflow-visible"
     aria-label="Repeat signs exercise"
+    aria-description="Select a symbol, then use the arrow keys to choose a bar and Enter to place it. Escape cancels placement."
+    tabIndex={selectedSymbolId && !feedback ? 0 : -1}
+    onKeyDown={onKeyDown}
     onPointerMove={onPointerMove}
     onPointerLeave={onPointerLeave}
-    onPointerDown={onLockPlacement}
+    onClick={onLockPlacement}
   >
     <rect width={W} height={H} fill="transparent" />
     {SYSTEM_TOPS.map((top, i) => <g key={i}>
@@ -1181,7 +1198,7 @@ function RepeatAnswers({ question, selectedSymbolId, setSelectedSymbolId, feedba
   const compact = symbols.length > 4;
   const single = symbols.length === 1;
   return <div className={`flex min-w-0 flex-wrap justify-start ${compact ? "gap-1.5" : "gap-2"} overflow-visible pb-1`}>
-    {symbols.map(symbol => <button key={symbol.id} disabled={Boolean(feedback)} onClick={() => setSelectedSymbolId(symbol.id)} className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border font-bold transition ${single ? "h-[72px] w-[132px]" : "basis-[calc(50%-0.25rem)] sm:basis-auto"} ${compact ? "h-[58px] sm:w-[92px] px-2 py-1 text-[0.95em]" : "h-[72px] sm:w-[132px] px-3 py-2 text-[1.1em]"} ${selectedSymbolId === symbol.id ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`}><span className={`flex items-center justify-center ${compact ? "h-[42px] w-[78px]" : "h-[50px] w-[96px]"} overflow-hidden`}><SymbolGlyph id={symbol.id} /></span></button>)}
+    {symbols.map(symbol => <button key={symbol.id} aria-label={symbol.label} aria-pressed={selectedSymbolId === symbol.id} title={symbol.label} disabled={Boolean(feedback)} onClick={() => setSelectedSymbolId(selectedSymbolId === symbol.id ? null : symbol.id)} className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border font-bold transition ${single ? "h-[72px] w-[132px]" : "basis-[calc(50%-0.25rem)] sm:basis-auto"} ${compact ? "h-[58px] sm:w-[92px] px-2 py-1 text-[0.95em]" : "h-[72px] sm:w-[132px] px-3 py-2 text-[1.1em]"} ${selectedSymbolId === symbol.id ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`}><span className={`flex items-center justify-center ${compact ? "h-[42px] w-[78px]" : "h-[50px] w-[96px]"} overflow-hidden`}><SymbolGlyph id={symbol.id} /></span></button>)}
   </div>;
 }
 
@@ -1202,8 +1219,8 @@ function App() {
   useStyles();
 
   const [activeLevel, setActiveLevel] = useState(levelFromUrl);
-  const [question, setQuestion] = useState(() => makeQuestion(levelFromUrl()));
-  const [enabledQuestionTypes, setEnabledQuestionTypes] = useState(() => [...(LEVELS[levelFromUrl()]?.types || LEVELS.N4.types)]);
+  const [enabledQuestionTypes, setEnabledQuestionTypes] = window.MLH.useProfileState("enabledQuestionTypes", () => [...(LEVELS[levelFromUrl()]?.types || LEVELS.N4.types)]);
+  const [question, setQuestion] = useState(() => makeQuestion(levelFromUrl(), enabledQuestionTypes));
   const [questionVisible, setQuestionVisible] = useState(true);
   const [levelOpen, setLevelOpen] = useState(false);
   const [customiseOpen, setCustomiseOpen] = useState(false);
@@ -1215,7 +1232,7 @@ function App() {
   const [feedbackFading, setFeedbackFading] = useState(false);
   const [wrong, setWrong] = useState([]);
   const [missing, setMissing] = useState([]);
-  const [tempo, setTempo] = useState("andante"), [metronomeEnabled, setMetronomeEnabled] = useState(false), [followPlayback, setFollowPlayback] = useState(false);
+  const [tempo, setTempo] = window.MLH.useProfileState("tempo", "andante"), [metronomeEnabled, setMetronomeEnabled] = window.MLH.useProfileState("metronomeEnabled", false), [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
   const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
   const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
   const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
@@ -1236,9 +1253,14 @@ function App() {
   const feedbackNextTimerRef = useRef(null);
   const medalTimerRef = useRef(null);
   const levelTaskStatusRef = useRef(null);
+  const questionTimerRef = useRef(null);
 
   useClickOutside([levelRef, customiseRef], [() => levelOpen && setLevelOpen(false), () => customiseOpen && setCustomiseOpen(false)]);
-  useEffect(() => () => stopAudio(), []);
+  useEffect(() => () => {
+    stopAudio(true);
+    clearFeedbackTimers();
+    clearTimeout(questionTimerRef.current);
+  }, []);
 
   const acc = attempted === 0 ? 0 : Math.round((correct / attempted) * 100);
   const medalEligible = taskMatchesLevel(activeLevel, enabledQuestionTypes);
@@ -1271,9 +1293,9 @@ function App() {
         masterRef.current.gain.setValueAtTime(Math.max(masterRef.current.gain.value, 0.0001), now);
         masterRef.current.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
       } catch {}
-      setTimeout(() => { try { ctx.close(); } catch {} }, 220);
+      setTimeout(() => { try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()); } catch {} }, (window.MLH.naturalPlaybackTailMs?.() ?? 650));
     } else {
-      try { ctx.close(); } catch {}
+      try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()); } catch {}
     }
     audioRef.current = null;
     setPlaying(false);
@@ -1281,11 +1303,12 @@ function App() {
   }
 
   function resetTask(q) {
-    stopAudio();
+    stopAudio(true);
     clearFeedbackTimers();
     setQuestion(q);
     setSelectedSymbolId(null);
     setPlacements([]);
+    setSelectedSymbolId(null);
     setHoverPlacement(null);
     setPromptMessage("");
     setFeedback(null);
@@ -1296,10 +1319,13 @@ function App() {
 
   function newQuestion(level = activeLevel, types = enabledQuestionTypes) {
     clearFeedbackTimers();
+    clearTimeout(questionTimerRef.current);
+    stopAudio(true);
     setQuestionVisible(false);
-    setTimeout(() => {
+    questionTimerRef.current = setTimeout(() => {
       resetTask(makeQuestion(level, types));
       setQuestionVisible(true);
+      questionTimerRef.current = null;
     }, 260);
   }
 
@@ -1353,7 +1379,7 @@ function App() {
     if (!feedback || feedbackFading) return;
     clearFeedbackTimers();
     setFeedbackFading(true);
-    setTimeout(() => newQuestion(), 280);
+    feedbackNextTimerRef.current = setTimeout(() => newQuestion(), 280);
   }
 
   function score(ok) {
@@ -1395,6 +1421,10 @@ function App() {
     const placement = snap(pointerToSvg(event), selectedSymbolId);
     if (!placement) return;
     event.preventDefault();
+    commitPlacement(placement);
+  }
+
+  function commitPlacement(placement) {
     const newPlacement = { ...placement, localId: Math.random().toString(36).slice(2) };
     setPlacements(current => {
       const isTimeBar = newPlacement.symbolId === "first-time" || newPlacement.symbolId === "second-time";
@@ -1410,12 +1440,33 @@ function App() {
         newPlacement,
       ];
     });
+    setSelectedSymbolId(null);
+    setHoverPlacement(null);
     setPromptMessage("");
+  }
+
+  function handleScoreKeyDown(event) {
+    if (!selectedSymbolId || feedback) return;
+    const currentBar = hoverPlacement?.barIndex ?? 0;
+    const moves = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -BARS_PER_SYSTEM, ArrowDown: BARS_PER_SYSTEM };
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setSelectedSymbolId(null);
+      setHoverPlacement(null);
+    } else if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      commitPlacement(placementForBar(currentBar, selectedSymbolId));
+    } else if (event.key in moves || event.key === "Home" || event.key === "End") {
+      event.preventDefault();
+      const barIndex = event.key === "Home" ? 0 : event.key === "End" ? BAR_COUNT - 1 : clamp(currentBar + moves[event.key], 0, BAR_COUNT - 1);
+      setHoverPlacement(placementForBar(barIndex, selectedSymbolId));
+    }
   }
 
   function clearPlacements() {
     if (feedback) return;
     setPlacements([]);
+    setSelectedSymbolId(null);
     setHoverPlacement(null);
     setPromptMessage("");
   }
@@ -1453,7 +1504,7 @@ function App() {
     setPromptMessage("");
     const master = ctx.createGain();
     master.gain.value = 1;
-    master.connect(ctx.destination);
+    master.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
     masterRef.current = master;
 
     const frequencies = question.bars.flatMap(bar => {
@@ -1524,12 +1575,12 @@ function App() {
       setActiveNoteId(null);
       highlightTimersRef.current = [];
       audioRef.current = null;
-      try { ctx.close(); } catch {}
-    }, Math.max(0, (t - ctx.currentTime) * 1000) + 120);
+      try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()); } catch {}
+    }, Math.max(0, (t - ctx.currentTime) * 1000) + (window.MLH.naturalPlaybackTailMs?.() ?? 650));
   }
 
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader icon={ASSET.appIcon} title="Repeat Signs" subtitle="Identify repeat signs and navigation marks.">
+    <window.MLH.AppHeader profileState={{ activeLevel, enabledQuestionTypes, tempo, metronomeEnabled, followPlayback }} icon={ASSET.appIcon} title="Repeat Signs" subtitle="Identify repeat signs and navigation marks.">
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
         assets={ASSET}
         correct={correct}
@@ -1547,7 +1598,7 @@ function App() {
 
     <div className={window.MLH.shell.pageContentClass}>
 
-    <main className="relative overflow-visible rounded-2xl border border-stone-200 bg-white px-4 pb-8 pt-[10px] shadow-sm md:h-auto md:overflow-visible md:px-6 md:pb-10 md:pt-[14px]" onPointerDown={() => { if (feedback) fadeToNext(); }}>
+    <main className="relative overflow-visible rounded-2xl border border-stone-200 bg-white px-4 pb-8 pt-[10px] shadow-sm md:h-auto md:overflow-visible md:px-6 md:pb-10 md:pt-[14px]" onPointerDown={event => { if (feedback && !event.target.closest("button,input,[data-menu-trigger],[data-menu-panel]")) fadeToNext(); }}>
       <div className="relative z-20 mb-2.5 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <div className="hub-menu-anchor relative" ref={levelRef}>
@@ -1580,7 +1631,7 @@ function App() {
       </div>
 
       <div className={`relative top-[18px] mb-8 transition-opacity duration-300 md:-top-[18px] md:mb-0 ${questionVisible ? "opacity-100" : "opacity-0"}`}>
-        <Score question={question} selectedSymbolId={selectedSymbolId} placements={placements} hoverPlacement={hoverPlacement} feedback={feedback} wrong={wrong} missing={missing} activeNoteId={followPlayback ? activeNoteId : null} onPointerMove={handlePointerMove} onPointerLeave={() => setHoverPlacement(null)} onLockPlacement={handleLockPlacement}/>
+        <Score question={question} selectedSymbolId={selectedSymbolId} placements={placements} hoverPlacement={hoverPlacement} feedback={feedback} wrong={wrong} missing={missing} activeNoteId={followPlayback ? activeNoteId : null} onPointerMove={handlePointerMove} onPointerLeave={() => setHoverPlacement(null)} onLockPlacement={handleLockPlacement} onKeyDown={handleScoreKeyDown}/>
       </div>
 
       <div className="relative z-10 mt-3 min-h-[132px] overflow-hidden rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-md md:-mt-[190px] md:mx-3 md:overflow-visible">
@@ -1591,7 +1642,7 @@ function App() {
         </div>
 
         <div className="mt-6 flex flex-col items-stretch gap-2 md:flex-row md:items-center md:justify-between">
-          <button onClick={() => playing ? stopAudio(true) : playExcerpt()} disabled={Boolean(feedback)} className={`${window.MLH.PlayButtonClass} ${Boolean(feedback) ? "border-stone-300 bg-stone-200 text-stone-500" : ""}`}><span className="text-lg leading-none">{playing ? "■" : "▶"}</span><span>{playing ? "Stop" : "Play"}</span></button>
+          <button onClick={() => playing ? stopAudio(true) : playExcerpt()} disabled={feedback?.correct === true} className={`${window.MLH.PlayButtonClass} ${feedback?.correct === true ? "border-stone-300 bg-stone-200 text-stone-500" : ""}`}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing ? "Stop" : "Play"}</span></button>
           <div className={window.MLH.ActionButtonGroupClass}>
             <button disabled={Boolean(feedback) || placements.length === 0} onClick={clearPlacements} className={window.MLH.ClearButtonClass}>Clear</button>
             <window.MLH.ConfirmButton disabled={Boolean(feedback) || placements.length === 0} onClick={confirmAnswer} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton>
@@ -1603,10 +1654,38 @@ function App() {
   </div>;
 }
 
+function EscapeClue({ activity }) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const question = embed.useQuestion(activity, ({level}) => {
+    const question = makeQuestion(level);
+    return { symbol: r(question.required.filter(placement => !placement.optional)).symbolId };
+  });
+  const meanings = {
+    "start-repeat": "Start the repeat here",
+    "end-repeat": "Go back to the start of the repeat",
+    "first-time": "Play this ending the first time",
+    "second-time": "Play this ending the second time",
+    dc: "Go back to the beginning",
+    ds: "Go back to the segno",
+    segno: "Return to this sign at D.S.",
+    fine: "Finish here on the repeat"
+  };
+  const count = activity.level === "N4" ? 2 : 4;
+  const pool = SYMBOLS.slice(0, {N4:2, N5:4, H:5, AH:8}[activity.level]);
+  const choices = embed.numberedChoices(meanings[question.symbol], pool.map(symbol => meanings[symbol.id]), activity.clue.digit, count);
+  return <main ref={ref} className="escape-literacy-content">
+    <p className="escape-literacy-content-title">{"What does this repeat marking mean?"}</p>
+    <div className="escape-literacy-symbol"><SymbolGlyph id={question.symbol} /></div>
+    <embed.NumberedOptions activity={activity} choices={choices} columns={2} />
+  </main>;
+}
+
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("repeats");
 const root = document.getElementById("root");
-if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(<App />);
-else ReactDOM.render(<App />, root);
-</script>
-<script src="./footer.js?v=20261005-update-history"></script>
+if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />);
+else ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, root);
+</script><script src="./generated-runtimes/repeatsigns-1.js?v=3179d92bf081"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

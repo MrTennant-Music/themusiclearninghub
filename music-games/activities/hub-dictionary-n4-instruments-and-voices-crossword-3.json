@@ -1,0 +1,146 @@
+{
+  "id": "hub-dictionary-n4-instruments-and-voices-crossword-3",
+  "level": "N4",
+  "title": "Instruments and Voices 3",
+  "instructions": "",
+  "description": "Revise instruments and voices with 8 Music Dictionary concepts. Set 3 of 4.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Instruments and Voices",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0115",
+      "prompt": "As a male voice, it is the lowest standard adult voice or choral part.",
+      "answer": "Bass",
+      "distractors": [
+        "Tenor",
+        "Snare drum",
+        "Tambourine"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0119",
+      "prompt": "A low string instrument larger than the viola and smaller than the double bass.",
+      "answer": "Cello",
+      "distractors": [
+        "Harp",
+        "Muted",
+        "Soprano"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0123",
+      "prompt": "The largest and lowest-pitched member of the orchestral string family.",
+      "answer": "Double bass",
+      "distractors": [
+        "Cello",
+        "Backing vocals",
+        "Bass"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0127",
+      "prompt": "A large plucked string instrument with strings of different lengths stretched across a frame.",
+      "answer": "Harp",
+      "distractors": [
+        "Violin",
+        "Soprano",
+        "Tenor"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0131",
+      "prompt": "An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece.",
+      "answer": "Recorder",
+      "distractors": [
+        "Saxophone",
+        "Bass",
+        "Brass band"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0135",
+      "prompt": "It may be shaken, tapped or struck by hand to produce both drum and jingling sounds.",
+      "answer": "Tambourine",
+      "distractors": [
+        "Cymbals",
+        "Tenor",
+        "Wind band"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0139",
+      "prompt": "A low-to-middle brass instrument that uses a sliding tube to change pitch.",
+      "answer": "Trombone",
+      "distractors": [
+        "Trumpet",
+        "Brass band",
+        "Distortion"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-crossword-3-mc-0143",
+      "prompt": "A tuned percussion instrument with wooden bars arranged like a keyboard and struck with beaters.",
+      "answer": "Xylophone",
+      "distractors": [
+        "Cymbals",
+        "Wind band",
+        "Alto"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

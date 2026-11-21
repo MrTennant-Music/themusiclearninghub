@@ -1,0 +1,442 @@
+[
+  {
+    "id": "styles-popular",
+    "family": "styles",
+    "label": "Styles",
+    "conceptIds": [
+      "MC-0001",
+      "MC-0002",
+      "MC-0005",
+      "MC-0006"
+    ]
+  },
+  {
+    "id": "styles-varied",
+    "family": "styles",
+    "label": "Styles",
+    "conceptIds": [
+      "MC-0003",
+      "MC-0004",
+      "MC-0007",
+      "MC-0008"
+    ]
+  },
+  {
+    "id": "pitch-movement",
+    "family": "pitch",
+    "label": "Pitch movement",
+    "conceptIds": [
+      "MC-0009",
+      "MC-0012",
+      "MC-0015",
+      "MC-0019"
+    ]
+  },
+  {
+    "id": "melody-harmony",
+    "family": "harmony",
+    "label": "Melody and harmony",
+    "conceptIds": [
+      "MC-0010",
+      "MC-0013",
+      "MC-0014",
+      "MC-0018"
+    ]
+  },
+  {
+    "id": "musical-patterns",
+    "family": "patterns",
+    "label": "Musical patterns",
+    "conceptIds": [
+      "MC-0016",
+      "MC-0017",
+      "MC-0018",
+      "MC-0037"
+    ]
+  },
+  {
+    "id": "tempo",
+    "family": "tempo",
+    "label": "Tempo",
+    "conceptIds": [
+      "MC-0022",
+      "MC-0023",
+      "MC-0026",
+      "MC-0032"
+    ]
+  },
+  {
+    "id": "rhythm-metre",
+    "family": "rhythm",
+    "label": "Rhythm and metre",
+    "conceptIds": [
+      "MC-0020",
+      "MC-0027",
+      "MC-0031",
+      "MC-0033"
+    ]
+  },
+  {
+    "id": "rhythmic-features",
+    "family": "rhythm",
+    "label": "Rhythm",
+    "conceptIds": [
+      "MC-0021",
+      "MC-0024",
+      "MC-0025",
+      "MC-0030"
+    ]
+  },
+  {
+    "id": "rhythmic-placement",
+    "family": "rhythm",
+    "label": "Rhythm",
+    "conceptIds": [
+      "MC-0021",
+      "MC-0024",
+      "MC-0028",
+      "MC-0029"
+    ]
+  },
+  {
+    "id": "texture-structure",
+    "family": "texture",
+    "label": "Texture and structure",
+    "conceptIds": [
+      "MC-0034",
+      "MC-0035",
+      "MC-0038",
+      "MC-0041"
+    ]
+  },
+  {
+    "id": "texture",
+    "family": "texture",
+    "label": "Texture",
+    "conceptIds": [
+      "MC-0034",
+      "MC-0039",
+      "MC-0040",
+      "MC-0041"
+    ]
+  },
+  {
+    "id": "playing-techniques-strings",
+    "family": "techniques",
+    "label": "Playing techniques",
+    "conceptIds": [
+      "MC-0045",
+      "MC-0046",
+      "MC-0058",
+      "MC-0064"
+    ]
+  },
+  {
+    "id": "playing-techniques-varied",
+    "family": "techniques",
+    "label": "Playing techniques",
+    "conceptIds": [
+      "MC-0045",
+      "MC-0046",
+      "MC-0062",
+      "MC-0064"
+    ]
+  },
+  {
+    "id": "techniques-articulation",
+    "family": "techniques",
+    "label": "Playing techniques and articulation",
+    "conceptIds": [
+      "MC-0046",
+      "MC-0053",
+      "MC-0058",
+      "MC-0060"
+    ]
+  },
+  {
+    "id": "styles-jazz-stage",
+    "family": "styles",
+    "label": "Styles",
+    "conceptIds": [
+      "MC-0001",
+      "MC-0002",
+      "MC-0007",
+      "MC-0004"
+    ]
+  },
+  {
+    "id": "pitch-tempo-directions",
+    "family": "directions",
+    "label": "Pitch and tempo directions",
+    "conceptIds": [
+      "MC-0009",
+      "MC-0012",
+      "MC-0026",
+      "MC-0032"
+    ]
+  },
+  {
+    "id": "vocal-sounds",
+    "family": "voice-context",
+    "label": "Vocal music",
+    "conceptIds": [
+      "MC-0067",
+      "MC-0048",
+      "MC-0039",
+      "MC-0040"
+    ]
+  },
+  {
+    "id": "orchestral-families",
+    "family": "families",
+    "label": "Orchestral families",
+    "conceptIds": [
+      "MC-0047",
+      "MC-0056",
+      "MC-0063",
+      "MC-0068"
+    ]
+  },
+  {
+    "id": "ensembles-varied",
+    "family": "ensembles",
+    "label": "Ensembles",
+    "conceptIds": [
+      "MC-0048",
+      "MC-0052",
+      "MC-0054",
+      "MC-0059"
+    ]
+  },
+  {
+    "id": "ensembles-steel",
+    "family": "ensembles",
+    "label": "Ensembles",
+    "conceptIds": [
+      "MC-0048",
+      "MC-0052",
+      "MC-0054",
+      "MC-0061"
+    ]
+  },
+  {
+    "id": "instruments-keys-strings",
+    "family": "instruments",
+    "label": "Instruments",
+    "conceptIds": [
+      "MC-0057",
+      "MC-0055",
+      "MC-0042",
+      "MC-0051"
+    ]
+  },
+  {
+    "id": "scottish-dances",
+    "family": "scottish-context",
+    "label": "Scottish dance music",
+    "conceptIds": [
+      "MC-0008",
+      "MC-0031",
+      "MC-0033",
+      "MC-0042"
+    ]
+  },
+  {
+    "id": "scottish-sounds",
+    "family": "scottish-context",
+    "label": "Scottish music",
+    "conceptIds": [
+      "MC-0008",
+      "MC-0042",
+      "MC-0044",
+      "MC-0051"
+    ]
+  },
+  {
+    "id": "scottish-band",
+    "family": "scottish-context",
+    "label": "In a Scottish dance band",
+    "conceptIds": [
+      "MC-0042",
+      "MC-0051",
+      "MC-0049",
+      "MC-0059"
+    ]
+  },
+  {
+    "id": "folk-playing",
+    "family": "folk-context",
+    "label": "Folk music",
+    "conceptIds": [
+      "MC-0043",
+      "MC-0042",
+      "MC-0051",
+      "MC-0052"
+    ]
+  },
+  {
+    "id": "guitar-techniques",
+    "family": "guitar-context",
+    "label": "Guitars",
+    "conceptIds": [
+      "MC-0043",
+      "MC-0050",
+      "MC-0058",
+      "MC-0064"
+    ]
+  },
+  {
+    "id": "bowed-plucked",
+    "family": "string-context",
+    "label": "Bowed or plucked strings",
+    "conceptIds": [
+      "MC-0063",
+      "MC-0046",
+      "MC-0058",
+      "MC-0051"
+    ]
+  },
+  {
+    "id": "wind-playing",
+    "family": "wind-context",
+    "label": "Wind instruments",
+    "conceptIds": [
+      "MC-0047",
+      "MC-0068",
+      "MC-0044",
+      "MC-0045"
+    ]
+  },
+  {
+    "id": "stringed-instruments",
+    "family": "instruments",
+    "label": "Instruments with strings",
+    "conceptIds": [
+      "MC-0057",
+      "MC-0043",
+      "MC-0050",
+      "MC-0051"
+    ]
+  },
+  {
+    "id": "rock-sounds",
+    "family": "rock-context",
+    "label": "Rock music",
+    "conceptIds": [
+      "MC-0006",
+      "MC-0050",
+      "MC-0049",
+      "MC-0037"
+    ]
+  },
+  {
+    "id": "rocknroll-sounds",
+    "family": "rock-context",
+    "label": "Rock 'n' roll",
+    "conceptIds": [
+      "MC-0007",
+      "MC-0057",
+      "MC-0050",
+      "MC-0049"
+    ]
+  },
+  {
+    "id": "jazz-sounds",
+    "family": "jazz-context",
+    "label": "Jazz music",
+    "conceptIds": [
+      "MC-0002",
+      "MC-0014",
+      "MC-0057",
+      "MC-0049"
+    ]
+  },
+  {
+    "id": "choral-sounds",
+    "family": "voice-context",
+    "label": "Choral music",
+    "conceptIds": [
+      "MC-0048",
+      "MC-0067",
+      "MC-0038",
+      "MC-0041"
+    ]
+  },
+  {
+    "id": "orchestral-sounds",
+    "family": "orchestral-context",
+    "label": "Orchestral music",
+    "conceptIds": [
+      "MC-0054",
+      "MC-0063",
+      "MC-0047",
+      "MC-0068"
+    ]
+  },
+  {
+    "id": "accompaniment-articulation",
+    "family": "performance-contrasts",
+    "label": "Accompaniment and articulation",
+    "conceptIds": [
+      "MC-0034",
+      "MC-0040",
+      "MC-0053",
+      "MC-0060"
+    ]
+  },
+  {
+    "id": "latin-sounds",
+    "family": "latin-context",
+    "label": "Latin American music",
+    "conceptIds": [
+      "MC-0003",
+      "MC-0056",
+      "MC-0021",
+      "MC-0028"
+    ]
+  },
+  {
+    "id": "styles-jazz-latin-stage",
+    "family": "styles",
+    "label": "Styles",
+    "conceptIds": [
+      "MC-0001",
+      "MC-0002",
+      "MC-0003",
+      "MC-0004"
+    ]
+  },
+  {
+    "id": "styles-traditional-popular",
+    "family": "styles",
+    "label": "Styles",
+    "conceptIds": [
+      "MC-0001",
+      "MC-0005",
+      "MC-0003",
+      "MC-0008"
+    ]
+  },
+  {
+    "id": "repeated-ideas",
+    "family": "patterns",
+    "label": "Repeated musical ideas",
+    "conceptIds": [
+      "MC-0017",
+      "MC-0018",
+      "MC-0037",
+      "MC-0038"
+    ]
+  },
+  {
+    "id": "percussion-sounds",
+    "family": "percussion-context",
+    "label": "Percussion sounds",
+    "conceptIds": [
+      "MC-0056",
+      "MC-0049",
+      "MC-0061",
+      "MC-0062"
+    ]
+  }
+]

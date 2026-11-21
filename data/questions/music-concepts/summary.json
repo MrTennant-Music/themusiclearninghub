@@ -2,60 +2,56 @@
   "schemaVersion": "1.0",
   "generatedAt": "2026-07-22",
   "sourceKnowledgeBank": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
-  "sourceKnowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e",
-  "totalQuestions": 601,
-  "totalEditorSlots": 900,
+  "sourceKnowledgeBankSha256": "a83e4df9820bdc5d6eae142c234b1209b12c8c2a5bc2b107fc9668857ba8c1e7",
+  "totalQuestions": 595,
+  "totalEditorSlots": 891,
   "editorSlotsPerDifficulty": {
-    "Easy": 300,
-    "Hard": 300,
-    "Medium": 300
+    "Easy": 297,
+    "Medium": 297,
+    "Hard": 297
   },
-  "readyEditorSlots": 601,
-  "draftEditorSlots": 299,
+  "readyEditorSlots": 595,
+  "draftEditorSlots": 296,
   "questionsPerLevel": {
-    "Advanced Higher": 78,
+    "National 3": 135,
+    "National 4": 148,
+    "National 5": 138,
     "Higher": 96,
-    "National 3": 137,
-    "National 4": 150,
-    "National 5": 140
+    "Advanced Higher": 78
   },
   "questionsPerDifficulty": {
-    "Easy": 300,
-    "Hard": 1,
-    "Medium": 300
+    "Easy": 297,
+    "Medium": 297,
+    "Hard": 1
   },
   "questionsPerLevelAndDifficulty": {
     "National 3": {
-      "Easy": 68,
-      "Medium": 68,
+      "Easy": 67,
+      "Medium": 67,
       "Hard": 1
     },
     "National 4": {
-      "Easy": 75,
-      "Medium": 75,
-      "Hard": 0
+      "Easy": 74,
+      "Medium": 74
     },
     "National 5": {
-      "Easy": 70,
-      "Medium": 70,
-      "Hard": 0
+      "Easy": 69,
+      "Medium": 69
     },
     "Higher": {
       "Easy": 48,
-      "Medium": 48,
-      "Hard": 0
+      "Medium": 48
     },
     "Advanced Higher": {
       "Easy": 39,
-      "Medium": 39,
-      "Hard": 0
+      "Medium": 39
     }
   },
   "questionsPerCategory": {
-    "Melody/harmony": 140,
-    "Rhythm/tempo": 77,
     "Styles": 114,
-    "Texture/structure/form": 92,
+    "Melody/harmony": 138,
+    "Rhythm/tempo": 77,
+    "Texture/structure/form": 88,
     "Timbre": 178
   },
   "questionsPerConceptType": {
@@ -89,7 +85,7 @@
     "pitch_effect": 4,
     "pulse_or_metre": 15,
     "rhythmic_device": 30,
-    "scale_or_tonality": 30,
+    "scale_or_tonality": 28,
     "serial_or_transformational_technique": 4,
     "sound_source": 2,
     "structural_section": 16,
@@ -101,9 +97,9 @@
     "voice_type": 14
   },
   "questionsPerQuestionType": {
-    "definition": 271,
-    "feature_exclusion": 298,
     "feature_identification": 28,
+    "feature_exclusion": 295,
+    "definition": 268,
     "teacher_authored": 4
   },
   "questionsPerConcept": {
@@ -142,7 +138,6 @@
     "MC-0033": 2,
     "MC-0034": 2,
     "MC-0035": 2,
-    "MC-0036": 2,
     "MC-0037": 2,
     "MC-0038": 2,
     "MC-0039": 2,
@@ -198,7 +193,6 @@
     "MC-0089": 2,
     "MC-0090": 2,
     "MC-0091": 2,
-    "MC-0092": 2,
     "MC-0093": 2,
     "MC-0094": 2,
     "MC-0095": 2,
@@ -291,7 +285,6 @@
     "MC-0182": 2,
     "MC-0183": 2,
     "MC-0184": 2,
-    "MC-0185": 2,
     "MC-0186": 2,
     "MC-0187": 2,
     "MC-0188": 2,
@@ -433,13 +426,13 @@
       "Easy": [
         19,
         19,
-        19,
+        18,
         18
       ],
       "Medium": [
         19,
         19,
-        19,
+        18,
         18
       ],
       "Hard": [
@@ -1155,7 +1148,7 @@
     {
       "conceptId": "MC-0082",
       "level": "National 4",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "Easy": 1,
       "Medium": 1,
       "Hard": 0
@@ -1171,7 +1164,7 @@
     {
       "conceptId": "MC-0084",
       "level": "National 4",
-      "concept": "Major",
+      "concept": "Major tonality",
       "Easy": 1,
       "Medium": 1,
       "Hard": 0
@@ -1179,7 +1172,7 @@
     {
       "conceptId": "MC-0085",
       "level": "National 4",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "Easy": 1,
       "Medium": 1,
       "Hard": 0
@@ -1228,14 +1221,6 @@
       "conceptId": "MC-0091",
       "level": "National 4",
       "concept": "Scat singing",
-      "Easy": 1,
-      "Medium": 1,
-      "Hard": 0
-    },
-    {
-      "conceptId": "MC-0092",
-      "level": "National 4",
-      "concept": "Tonality",
       "Easy": 1,
       "Medium": 1,
       "Hard": 0
@@ -2379,7 +2364,7 @@
     {
       "conceptId": "MC-0235",
       "level": "Higher",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "Easy": 1,
       "Medium": 1,
       "Hard": 0
@@ -2941,7 +2926,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n3-literacy-027"
             ],
@@ -2964,7 +2949,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n4-literacy-medium-009",
               "n4-literacy-medium-010",
@@ -3006,7 +2991,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n3-literacy-015"
             ],
@@ -3029,7 +3014,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -3128,7 +3113,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-medium-017",
               "n5-literacy-medium-018",
@@ -3232,7 +3217,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-medium-017",
               "n5-literacy-medium-018",
@@ -3286,7 +3271,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "6/8",
               "9/8",
@@ -3367,7 +3352,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -3473,7 +3458,7 @@
             "matchKind": "exact-answer-id"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-hard-012",
               "n5-literacy-hard-015",
@@ -3515,7 +3500,7 @@
             "matchKind": "exact-answer-id-for-reviewed-interval-sense"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-hard-013",
               "n5-literacy-hard-014",
@@ -3553,7 +3538,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "6/8",
               "9/8",
@@ -3695,7 +3680,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "h-literacy-easy-014",
               "h-literacy-easy-015",
@@ -3825,7 +3810,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "ah-literacy-hard-chord-004",
               "ah-literacy-hard-chord-005",
@@ -3866,7 +3851,7 @@
         ],
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "ah-literacy-hard-chord-001",
               "ah-literacy-hard-chord-002",
@@ -4091,7 +4076,7 @@
             "matchKind": "exact-component-id"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "ah-literacy-hard-017",
               "ah-literacy-hard-018",
@@ -4315,7 +4300,7 @@
       {
         "conceptId": "MC-0082",
         "level": "National 4",
-        "concept": "Chord progressions - chords I, IV and V in major keys",
+        "concept": "Chord progressions — chords I, IV and V (major keys)",
         "relationship": "pitch_harmony_or_staff_notation",
         "lookupTerms": [
           "Chord progressions - chords I, IV and V in major keys",
@@ -4329,7 +4314,7 @@
       {
         "conceptId": "MC-0084",
         "level": "National 4",
-        "concept": "Major",
+        "concept": "Major tonality",
         "relationship": "pitch_harmony_or_staff_notation",
         "lookupTerms": [
           "Major",
@@ -4343,7 +4328,7 @@
       {
         "conceptId": "MC-0085",
         "level": "National 4",
-        "concept": "Minor",
+        "concept": "Minor tonality",
         "relationship": "pitch_harmony_or_staff_notation",
         "lookupTerms": [
           "Minor",
@@ -4895,7 +4880,7 @@
       {
         "conceptId": "MC-0235",
         "level": "Higher",
-        "concept": "Mode / modal",
+        "concept": "Mode or modal",
         "relationship": "pitch_harmony_or_staff_notation",
         "lookupTerms": [
           "Mode / modal",
@@ -5723,16 +5708,6 @@
       "reason": "An authored, source-faithful clue avoids revealing the answer, ungrammatical masking or excessive on-screen length."
     },
     {
-      "factId": "MC-0092-F02",
-      "action": "rewritten-as-answer-neutral-clue",
-      "reason": "An authored, source-faithful clue avoids revealing the answer, ungrammatical masking or excessive on-screen length."
-    },
-    {
-      "factId": "MC-0092-F03",
-      "action": "rewritten-as-answer-neutral-clue",
-      "reason": "An authored, source-faithful clue avoids revealing the answer, ungrammatical masking or excessive on-screen length."
-    },
-    {
       "factId": "MC-0098-F02",
       "action": "rewritten-as-answer-neutral-clue",
       "reason": "An authored, source-faithful clue avoids revealing the answer, ungrammatical masking or excessive on-screen length."
@@ -6263,11 +6238,11 @@
       "review": "Reviewed: this pair deliberately contrasts lengthening every note value with shortening every note value."
     }
   ],
-  "validationStatus": "passed",
+  "validationStatus": "failed",
   "validatedAt": "2026-07-22",
   "validator": {
-    "errors": 0,
+    "errors": 18,
     "warnings": 0,
-    "questionsValidated": 601
+    "questionsValidated": 595
   }
 }

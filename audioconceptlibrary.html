@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <title>Concept Audio Library</title>
+  <link rel="icon" type="image/svg+xml" href="app-icons/audio-concept-library-icon.svg?v=20261102-music-play" />
+  <link rel="apple-touch-icon" href="app-icons/audio-concept-library-icon.svg?v=20261102-music-play" />
+  <script src="shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <link rel="stylesheet" href="music-dictionary/music-concepts.css?v=9a549ae8cc83" />
+  <link rel="stylesheet" href="styles/audio-concept-library.css?v=20261115-heading-size" />
+  <script src="music-dictionary/music-concepts-data.js?v=b95ba92f0056"></script>
+  <script src="audio-concept-library-artwork.js?v=911c9fec0de4"></script>
+  <script defer src="audio-concept-library.js?v=cff34824b32e"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+</head>
+<body>
+  <div id="library-header"></div>
+  <main class="library-main">
+    <section class="library-panel" aria-label="Find audio examples">
+      <form id="library-filters" class="library-filters" role="search">
+        <div class="library-toolbar-left">
+          <div id="library-level-menu" class="hub-menu-anchor relative"></div>
+          <div id="library-back-control" hidden><button id="library-back" type="button" class="library-button">← Back</button></div>
+          <button id="library-favourites-button" type="button" disabled class="library-button library-favourites-button" aria-pressed="false" title="Show favourite excerpts"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.5 4.4 1 6.3-5.6-3-5.6 3 1-6.3L2.9 9.6l6.3-.9z"/></svg>Favourites</button>
+        </div>
+        <div class="library-toolbar-message">
+          <h2 id="library-concept-title" hidden></h2>
+        </div>
+        <p id="library-count" class="sr-only" role="status" aria-live="polite">Loading library…</p>
+        <label class="library-search"><img src="ui-icons/search.svg" alt="" /><input id="library-search" type="search" aria-label="Search concepts, songs or artists" placeholder="Loading library…" autocomplete="off" disabled /></label>
+        <input id="library-favourites" type="hidden" value="" />
+        <select id="library-level" hidden aria-label="Level"><option value="">All Levels</option></select>
+      </form>
+      <p class="library-access-note">To listen to or download excerpts, sign in with your Glow account when prompted.</p>
+      <div id="library-results"></div>
+    </section>
+    <p class="library-note">Every effort has been made to check the audio examples, but some excerpts may contain errors or may not clearly demonstrate the intended concept. If you notice an issue, please use the feedback link below and include the concept and recording title.</p>
+    <noscript><p>Enable JavaScript to search the catalogue.</p></noscript>
+  </main>
+  <script src="footer.js?v=120454beac89"></script>
+</body>
+</html>

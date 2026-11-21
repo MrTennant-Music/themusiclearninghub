@@ -1,0 +1,14 @@
+{
+  "MC-0035": {
+    "definitionSha256": "61aa85bd0ebabb39b9f9ed8a44fadf6915aa8a61b041f1fee4a02c99b6fc27fd",
+    "questionContentSha256": "244a9514c68e8038c2fd8a7d6914aa7f93ffe66ee755a8ec8bc47d72b280c345"
+  },
+  "MC-0041": {
+    "definitionSha256": "84ca87173095d513e3a44d8a31fdd0677e11bae53b039cf57a198f1951418311",
+    "questionContentSha256": "21f049ec617e5981dabcd5b87baa34dd9e1a4b0cd41b702d0515e4b2e87d6c00"
+  },
+  "MC-0086": {
+    "definitionSha256": "93f58c351c82b7193f3b60a9db2902f839b9a843112f8b3a009c37da10d9f41b",
+    "questionContentSha256": "e721ecba743d83ecd59d48c98a222a8f10fc73955039ce192d122205b0cdd2f1"
+  }
+}

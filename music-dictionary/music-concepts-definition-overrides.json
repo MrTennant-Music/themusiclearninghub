@@ -1,0 +1,8 @@
+{
+  "description": "Existing Dictionary wording retained during source-data recovery on 2026-10-24. These entries override historical source definitions and listening additions.",
+  "concepts": {
+    "MC-0001": "An African American style that developed from spirituals, work songs and field hollers. It is commonly in 4/4 and often follows a 12-bar chord pattern. Characteristic features include use of a blues scale, call and response, repeated riffs and improvisation.",
+    "MC-0086": "The interval between one note and the next higher or lower note with the same letter name, such as C to the next C. The two notes sound closely related, although one is higher or lower.",
+    "MC-0296": "The principal musical theme on which a work or section is based. The term is used especially for the main theme of a fugue and for the first and second subjects in sonata form."
+  }
+}

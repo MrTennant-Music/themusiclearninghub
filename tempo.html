@@ -1,28 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script id="tempo-ear-training-redirect">
+    // Keep old links working after merging Tempo into Ear Training.
+    const tempoLevel = new URLSearchParams(window.location.search).get("level");
+    const tempoDestination = new URL("auralrecognition.html", window.location.href);
+    tempoDestination.searchParams.set("level", ["N3", "N4", "N5"].includes(tempoLevel) ? tempoLevel : "N3");
+    tempoDestination.searchParams.set("exercise", "steadyTempo");
+    if (new URLSearchParams(window.location.search).get("embed") !== "escape") window.location.replace(tempoDestination.href);
+  </script>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Tempo</title>
-  <link rel="icon" type="image/svg+xml" href="./tempo-icon.svg" />
-  <link rel="apple-touch-icon" href="./tempo-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./hub-input.js?v=1.3"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="./bravura-symbols.js"></script>
-  <script src="./shared-notation-config.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/tempo-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/tempo-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
   <style>
-    @font-face { font-family: "Bravura"; src: url("./Bravura.otf") format("opentype"); font-display: block; }
+    @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
     .music-symbol { font-family: "Bravura", serif; font-weight: 400; dominant-baseline: alphabetic; text-rendering: geometricPrecision; }
     .chords-question-card > div.mt-3 {
       display: flex;
@@ -49,10 +58,15 @@
       }
 
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel">
+<script type="text/x-mlh-jsx-source" data-runtime="tempo-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
 const useClickOutside = window.MLH.useClickOutside;
 const W = 920, H = 430, GAP = 11, BAR_COUNT = 8, BARS_PER_SYSTEM = 4;
@@ -62,7 +76,7 @@ const NOTE = { rx: 8.2, stemLength: 21 };
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || { symbols: {}, drawing: {} };
 const MEDAL_THRESHOLDS = [10, 15, 20, 30];
-const ASSET = { appIcon: "./tempo-icon.svg", level: "https://themusicliteracyhub.netlify.app/levels.svg", customise: "https://themusicliteracyhub.netlify.app/customise.svg", next: "https://themusicliteracyhub.netlify.app/next.svg", eye: "./eye.svg", metronome: "./metronome.svg", tempo: "./tempo.svg", bronze: "https://themusicliteracyhub.netlify.app/bronze.svg", silver: "https://themusicliteracyhub.netlify.app/silver.svg", gold: "https://themusicliteracyhub.netlify.app/gold.svg", diamond: "https://themusicliteracyhub.netlify.app/diamond.svg" };
+const ASSET = { appIcon: "./app-icons/tempo-icon.svg", level: "./ui-icons/levels.svg", customise: "./ui-icons/customise.svg", next: "./ui-icons/next.svg", eye: "./ui-icons/eye.svg", metronome: "./ui-icons/metronome.svg", tempo: "./ui-icons/tempo.svg", bronze: "./ui-icons/bronze.svg", silver: "./ui-icons/silver.svg", gold: "./ui-icons/gold.svg", diamond: "./ui-icons/diamond.svg" };
 function r(items) { return items[Math.floor(Math.random() * items.length)]; }
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function midiToFrequency(midi) { return 440 * Math.pow(2, (midi - 69) / 12); }
@@ -97,7 +111,7 @@ function getBeamData(notes, group, top) { const groupNotes = notes.slice(group.s
 function NoteGlyph({ note, position, active=false, beamed=false, stemDownOverride=null, forcedStemEndY=null }) { const top = getSystemTop(note.barIndex); const xx = position.x; const yy = position.y - 1; const down = stemDownOverride ?? position.step > 4; const colour = active ? COLOUR.blue : "currentColor"; const dotKey = Math.abs(position.step % 2) === 1 ? "augmentationDotSpace" : "augmentationDotLine"; const dotY = Math.abs(position.step % 2) === 1 ? yy : yy - GAP * 0.25; const stem = stemData(note, xx, yy, down, forcedStemEndY); const stemThickness = Math.max(1, GAP * Number(SHARED_CONFIG.drawing?.stemThicknessScale || 0.12)); return <g opacity={active ? 1 : 0.98}><LedgerLines x={xx} step={position.step} top={top} colour={colour}/><Accidental value={note.writtenAccidental} x={xx - GAP * 1.75} y={yy + 2} colour={colour}/><CalibratedSymbol symbolKey={noteSymbolKey(note.rhythm, stem.stemDown, beamed)} x={xx} y={yy + 1} colour={colour}/>{beamed && <line x1={stem.stemX} x2={stem.stemX} y1={yy} y2={stem.stemEndY} stroke={colour} strokeWidth={stemThickness}/>} {(note.rhythm === "dottedMinim" || note.rhythm === "dottedCrotchet") && <CalibratedSymbol symbolKey={dotKey} x={xx + GAP * 1.35} y={dotY} colour={colour}/>}</g>; }
 function beamYOffset(beam) { return beam.stemDown ? 5.5 : -1.5; }
 function Beam({ beam }) { const beamShift = beam.stemDown ? -1 : 1; const yOffset = beamYOffset(beam); const beamStartX = beam.stemDown ? beam.start.x + beamShift + 1 : beam.start.x + beamShift - 1; const beamEndX = beam.stemDown ? beam.end.x + beamShift + 1 : beam.end.x + beamShift - 1; const beamSettings = sharedSymbolConfig("quaverBeam"); const beamThickness = Math.max(1, GAP * Number(SHARED_CONFIG.drawing?.beamThicknessScale || 0.42) * Number(beamSettings.fontSizeScale || 1)); return <line x1={beamStartX} y1={beam.start.y + yOffset} x2={beamEndX} y2={beam.end.y + yOffset} stroke="currentColor" strokeWidth={beamThickness} strokeLinecap="butt"/>; }
-function Score({ question, activeNoteId=null, placement=null, hoverPlacement=null, feedback=null, onPointerMove, onPointerLeave, onPointerDown }) { const layout = getLayout(question); return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none overflow-visible touch-none" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} onPointerDown={onPointerDown}><rect width={W} height={H} fill="transparent"/>{SYSTEM_TOPS.map((top, index) => <Staff key={index} top={top} question={question} systemIndex={index} hiddenBarNumber={placement?.barIndex}/>)}{question.bars.map(bar => { const rendered = new Set(); const notes = getPositionedNotes(bar, layout); const top = getSystemTop(bar.barIndex); return <g key={bar.barIndex}>{notes.map((note, index) => { const group = getQuaverGroup(notes, index); const beam = group ? getBeamData(notes, group, top) : null; const position = layout.positions[note.id]; const stem = beam ? stemData(note, position.x, position.y, beam.stemDown) : null; let forcedStemEndY = beam && stem ? beamYAtX(stem.stemX, beam.start, beam.end) + beamYOffset(beam) : null; if (beam && stem && forcedStemEndY !== null) { const stemLength = Math.abs(forcedStemEndY - position.y); if (stemLength < 15) forcedStemEndY = stem.stemDown ? position.y + 15 : position.y - 15; } return <React.Fragment key={note.id}><NoteGlyph note={note} position={position} active={activeNoteId === note.id} beamed={Boolean(group)} stemDownOverride={beam?.stemDown ?? null} forcedStemEndY={forcedStemEndY}/>{group && group.start === index && !rendered.has(`${bar.barIndex}-${group.start}`) && (() => { rendered.add(`${bar.barIndex}-${group.start}`); return <Beam beam={beam}/>; })()}</React.Fragment>; })}</g>; })}{hoverPlacement && <TempoMark placement={hoverPlacement} opacity="0.45"/>}{placement && <TempoMark placement={placement} feedback={feedback}/>}</svg>; }
+function Score({ question, activeNoteId=null, placement=null, hoverPlacement=null, feedback=null, onPointerMove, onPointerLeave, onPointerDown }) { const layout = getLayout(question); return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none overflow-visible touch-manipulation" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} onClick={onPointerDown}><rect width={W} height={H} fill="transparent"/>{SYSTEM_TOPS.map((top, index) => <Staff key={index} top={top} question={question} systemIndex={index} hiddenBarNumber={placement?.barIndex}/>)}{question.bars.map(bar => { const rendered = new Set(); const notes = getPositionedNotes(bar, layout); const top = getSystemTop(bar.barIndex); return <g key={bar.barIndex}>{notes.map((note, index) => { const group = getQuaverGroup(notes, index); const beam = group ? getBeamData(notes, group, top) : null; const position = layout.positions[note.id]; const stem = beam ? stemData(note, position.x, position.y, beam.stemDown) : null; let forcedStemEndY = beam && stem ? beamYAtX(stem.stemX, beam.start, beam.end) + beamYOffset(beam) : null; if (beam && stem && forcedStemEndY !== null) { const stemLength = Math.abs(forcedStemEndY - position.y); if (stemLength < 15) forcedStemEndY = stem.stemDown ? position.y + 15 : position.y - 15; } return <React.Fragment key={note.id}><NoteGlyph note={note} position={position} active={activeNoteId === note.id} beamed={Boolean(group)} stemDownOverride={beam?.stemDown ?? null} forcedStemEndY={forcedStemEndY}/>{group && group.start === index && !rendered.has(`${bar.barIndex}-${group.start}`) && (() => { rendered.add(`${bar.barIndex}-${group.start}`); return <Beam beam={beam}/>; })()}</React.Fragment>; })}</g>; })}{hoverPlacement && <TempoMark placement={hoverPlacement} opacity="0.45"/>}{placement && <TempoMark placement={placement} feedback={feedback}/>}</svg>; }
 function TempoMark({ placement, opacity = 1, feedback = null }) { if (!placement?.term) return null; const x = placement.barIndex === 0 ? KEY_SIG_X - GAP * 0.15 : getBarStart(placement.barIndex) + GAP * 0.35; const y = getSystemTop(placement.barIndex) - 22; const colour = feedback ? (feedback.correct ? COLOUR.green : COLOUR.red) : "black"; return <text x={x} y={y} opacity={opacity} fill={colour} fontFamily="Georgia, serif" fontSize="17" fontStyle="italic" fontWeight="800" textAnchor="start" style={{ paintOrder: "stroke", stroke: "white", strokeWidth: 4, strokeLinejoin: "round" }}>{placement.term.label}</text>; }
 
 const LEVELS = { N3:{label:"National 3", description:"Allegro • Adagio"}, N4:{label:"National 4", description:"Andante"}, N5:{label:"National 5", description:"Moderato"} };
@@ -286,13 +300,15 @@ function TempoMenuRows({ level, enabled, setEnabled, metronome, setMetronome, fo
   </>;
 }
 function pointerToPlacement(event, term){ const rect=event.currentTarget.getBoundingClientRect(); const x=((event.clientX-rect.left)/rect.width)*W; const y=((event.clientY-rect.top)/rect.height)*H; const system=y < (SYSTEM_TOPS[0]+SYSTEM_TOPS[1])/2 ? 0 : 1; const barIndex=system*4+clamp(Math.floor((x-MUSIC_START)/barWidth()),0,3); const id=Object.keys(TERMS).find(termId=>TERMS[termId]===term); return { barIndex, term:{...term,id} }; }
-function App(){
+function App({escapeActivity} = {}){
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const escapeRef = embed.useContentHeight(escapeActivity);
   const [activeLevel,setActiveLevel]=useState(levelFromUrl());
-  const [enabled,setEnabled]=useState(()=>termIdsForLevel(levelFromUrl()));
-  const [question,setQuestion]=useState(()=>buildQuestion(levelFromUrl(),termIdsForLevel(levelFromUrl())));
+  const [enabled,setEnabled]=window.MLH.useProfileState("enabled", ()=>termIdsForLevel(levelFromUrl()));
+  const [question,setQuestion]=useState(()=>escapeActivity ? loadEscapeQuestion(escapeActivity) : buildQuestion(levelFromUrl(),enabled));
   const [selected,setSelected]=useState(null), [typed,setTyped]=useState(""), [placement,setPlacement]=useState(null), [hover,setHover]=useState(null);
   const [feedback,setFeedback]=useState(null), [feedbackFading,setFeedbackFading]=useState(false), [prompt,setPrompt]=useState("");
-  const [metronome,setMetronome]=useState(false), [follow,setFollow]=useState(false);
+  const [metronome,setMetronome]=window.MLH.useProfileState("metronome", false), [follow,setFollow]=window.MLH.useProfileState("follow", false);
   const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: enabled, options: { metronome, follow } } }), [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: enabled, options: { metronome, follow } } }), [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: enabled, options: { metronome, follow } } }), [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: enabled, options: { metronome, follow } } }), [confetti,setConfetti]=useState(0), [autoShowMedals,setAutoShowMedals]=useState(false);
   const [levelOpen,setLevelOpen]=useState(false), [customiseOpen,setCustomiseOpen]=useState(false), [playing,setPlaying]=useState(false), [activeNoteId,setActiveNoteId]=useState(null);
   const levelRef=useRef(null), customiseRef=useRef(null), audioRef=useRef(null), timers=useRef([]), levelTaskStatusRef=useRef(null);
@@ -316,8 +332,9 @@ function App(){
     setAutoShowMedals(false);
   },[medalEligible]);
 
+  embed.useStopAudio(escapeActivity, stopAudio);
   function clearTimers(){timers.current.forEach(clearTimeout);timers.current=[];}
-  function stopAudio(){clearTimers(); if(audioRef.current){try{audioRef.current.close();}catch{}} audioRef.current=null; setPlaying(false); setActiveNoteId(null);}
+  function stopAudio(){clearTimers(); if(audioRef.current){try{(globalThis.MLH?.closeAudioContext?.(audioRef.current) || audioRef.current.close());}catch{}} audioRef.current=null; setPlaying(false); setActiveNoteId(null);}
   function newQuestion(level=activeLevel, ids=enabled){stopAudio(); setQuestion(buildQuestion(level,safeEnabled(ids,level))); setSelected(null); setTyped(""); setPlacement(null); setHover(null); setFeedback(null); setFeedbackFading(false); setPrompt("");}
   function applyLevel(level){setActiveLevel(level);     setConfetti(0); setAutoShowMedals(false); const ids=termIdsForLevel(level); setEnabled(ids); const url=new URL(location.href); url.searchParams.set("level",level); history.replaceState(null,"",url.toString()); newQuestion(level,ids); setLevelOpen(false);}
   function score(ok){ stopAudio(); const ns=ok?streak+1:0; playFeedbackSound(ok); setAttempted(v=>v+1); setCorrect(v=>v+(ok?1:0)); setStreak(ns); setBest(v=>Math.max(v,ns)); setFeedback({correct:ok}); if(ok){const medal=medalSoundForStreak(ns); if(medalEligible&&medal&&MEDAL_THRESHOLDS.includes(ns)){setConfetti(v=>v+1); setAutoShowMedals(true); timers.current.push(setTimeout(()=>setAutoShowMedals(false),2000)); timers.current.push(setTimeout(()=>playFeedbackSound(true,true,medal),180));} timers.current.push(setTimeout(()=>setFeedbackFading(true),1700)); timers.current.push(setTimeout(()=>newQuestion(),2000));}}
@@ -358,6 +375,7 @@ function App(){
   }
   async function play() {
     if (playing || audioRef.current) { stopAudio(); return; }
+    if (escapeActivity?.bridge.muted()) { setPrompt("Turn on game audio to listen."); return; }
     const AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) { setPrompt("Audio playback is not supported in this browser."); return; }
     stopAudio();
@@ -366,7 +384,7 @@ function App(){
     setPlaying(true);
     const master = ctx.createGain();
     master.gain.value = 0.86;
-    master.connect(ctx.destination);
+    master.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
     const frequencies = [
       ...question.notes.map(note => effectiveMidiForNote(question, question.bars[note.barIndex], note)),
       ...question.bars.flatMap(bar => {
@@ -394,7 +412,7 @@ function App(){
     if (metronome) {
       for (let b = 0; b < BAR_COUNT * 4; b++) playClick(ctx, master, start + b * beat, b % 4 === 0);
     }
-    timers.current.push(setTimeout(stopAudio, BAR_COUNT * 4 * beat * 1000 + 300));
+    timers.current.push(setTimeout(stopAudio, BAR_COUNT * 4 * beat * 1000 + (window.MLH.naturalPlaybackTailMs?.() ?? 650)));
   }
   function answerButtonClass(id){
     const base="min-h-12 rounded-xl border px-3 py-2 text-sm font-bold transition";
@@ -405,11 +423,28 @@ function App(){
     return `${base} border-stone-200 bg-white text-stone-400`;
   }
 
-  return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={ASSET.appIcon} title="Tempo" subtitle="Listen to music and identify the tempo."><window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={acc} streak={streak} bestStreak={best} resetScore={()=>{setCorrect(0);setAttempted(0);setStreak(0);setBest(0);setConfetti(0);}} confettiKey={confetti} autoShowMedals={autoShowMedals} medalEligible={medalEligible} medalThresholdValues={MEDAL_THRESHOLDS}/></window.MLH.AppHeader><div className={window.MLH.shell.pageContentClass}><main className={window.MLH.shell.mainShellClass} onPointerDown={e=>{if(feedback&&!e.target.closest("button,input,[data-menu-trigger],[data-menu-panel]"))newQuestion();}}><div className="hub-toolbar relative z-20"><div className="hub-toolbar-left"><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.level} alt="" className="h-[26px] w-[28px]"/>} activeLevel={displayedLevel} activeLabel={displayedLevelLabel} isCustom={!medalEligible} onClick={()=>{setCustomiseOpen(false);setLevelOpen(v=>!v);}} dataMenuTrigger={true}/>{levelOpen&&<window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS}/></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]"/>} onClick={()=>{setLevelOpen(false);setCustomiseOpen(v=>!v);}} dataMenuTrigger={true}/>{customiseOpen&&<window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><TempoMenuRows level={activeLevel} enabled={enabled} setEnabled={(ids)=>{setEnabled(ids);newQuestion(activeLevel,ids);}} metronome={metronome} setMetronome={setMetronome} follow={follow} setFollow={setFollow} stopAudio={stopAudio}/></window.MLH.MenuPanel>}</div></div><div className="hub-toolbar-feedback"><window.MLH.FeedbackBadge feedback={feedback} fading={feedbackFading} animationPrefix="note"/></div><div className="hub-toolbar-right"><window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px]"/>}/></div></div><div className="relative -top-[20px]"><Score question={question} activeNoteId={follow?activeNoteId:null} placement={placement} hoverPlacement={hover} feedback={feedback} onPointerMove={e=>{ if(question.mode==="place"&&selected&&!feedback) setHover(pointerToPlacement(e,TERMS[selected])); }} onPointerLeave={()=>setHover(null)} onPointerDown={e=>{ if(question.mode==="place"&&selected&&!feedback) setPlacement(pointerToPlacement(e,TERMS[selected])); }}/></div><div className="chords-question-card relative z-10 -mt-[47px] flex flex-col rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-md md:mx-3"><div><p className="text-base font-semibold leading-tight">{question.mode==="place"?"Identify the tempo by inserting it into the correct place in the music.":"Listen to the music and identify the tempo."}</p>{prompt&&<p className="mt-2 text-sm font-bold text-red-600">{prompt}</p>}<div className="mt-2">{question.mode==="text"?<div className="flex flex-wrap items-center gap-3"><input value={typed} disabled={Boolean(feedback)} onChange={e=>setTyped(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!disabledConfirm){e.preventDefault();confirm();}}} placeholder="Type your answer" className={window.MLH.typedAnswerClass(feedback?{correct:isCorrectText(typed,question.answerId)}:null,"w-full md:w-1/2")}/>{feedback&&!feedback.correct&&<div className="text-base font-bold text-green-600">{question.answer.group==="middle"?"Andante or Moderato":question.answer.label}</div>}</div>:<div className="grid w-full grid-cols-4 gap-2 md:w-1/2">{termButtons.map(id=><button key={id} disabled={Boolean(feedback)} onClick={()=>{setSelected(id); if(question.mode==="choice") score(equivalent(id,question.answerId));}} className={answerButtonClass(id)}>{TERMS[id].label}</button>)}</div>}</div></div>{question.mode==="text"?<div className={window.MLH.PlayClearConfirmRowClass}><button type="button" onClick={play} disabled={Boolean(feedback)} className={window.MLH.PlayButtonClass}><span className="text-lg leading-none">{playing?"■":"▶"}</span><span>{playing?"Stop":"Play"}</span></button><div className={window.MLH.ActionButtonGroupClass}><button type="button" disabled={Boolean(feedback) || !typed.trim()} onClick={clearAnswer} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={disabledConfirm} onClick={confirm} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div></div>:<div className="mt-3"><button type="button" onClick={play} disabled={Boolean(feedback)} className={window.MLH.PlayButtonClass}><span className="text-lg leading-none">{playing?"■":"▶"}</span><span>{playing?"Stop":"Play"}</span></button>{question.mode==="place"&&<div className="mt-3 flex justify-end gap-3"><button type="button" disabled={Boolean(feedback) || !placement} onClick={clearAnswer} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={disabledConfirm} onClick={confirm} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div>}</div>}</div></main></div></div>;
+  if (escapeActivity) return <main ref={escapeRef} className="escape-literacy-content">
+    <embed.AudioHeader activity={escapeActivity} prompt="Which term describes the tempo?" playing={playing} onPlay={play} />
+    <embed.NumberedOptions activity={escapeActivity} choices={(() => {
+      const name = id => LEVEL_TERMS.N5.includes(id) && escapeActivity.level === "N5" && TERMS[id].group === "middle" ? "Andante / Moderato" : TERMS[id].label;
+      return embed.numberedChoices(name(question.answerId), termIdsForLevel(escapeActivity.level).map(name), escapeActivity.clue.digit, escapeActivity.level === "N3" ? 2 : 3);
+    })()} columns={2} />
+    {prompt && <p role="status">{prompt}</p>}
+  </main>;
+  return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader profileState={{ activeLevel, enabled, metronome, follow }} icon={ASSET.appIcon} title="Tempo" subtitle="Listen to music and identify the tempo."><window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={acc} streak={streak} bestStreak={best} resetScore={()=>{setCorrect(0);setAttempted(0);setStreak(0);setBest(0);setConfetti(0);}} confettiKey={confetti} autoShowMedals={autoShowMedals} medalEligible={medalEligible} medalThresholdValues={MEDAL_THRESHOLDS}/></window.MLH.AppHeader><div className={window.MLH.shell.pageContentClass}><main className={window.MLH.shell.mainShellClass} onPointerDown={e=>{if(feedback&&!e.target.closest("button,input,[data-menu-trigger],[data-menu-panel]"))newQuestion();}}><div className="hub-toolbar relative z-20"><div className="hub-toolbar-left"><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.level} alt="" className="h-[26px] w-[28px]"/>} activeLevel={displayedLevel} activeLabel={displayedLevelLabel} isCustom={!medalEligible} onClick={()=>{setCustomiseOpen(false);setLevelOpen(v=>!v);}} dataMenuTrigger={true}/>{levelOpen&&<window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS}/></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]"/>} onClick={()=>{setLevelOpen(false);setCustomiseOpen(v=>!v);}} dataMenuTrigger={true}/>{customiseOpen&&<window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><TempoMenuRows level={activeLevel} enabled={enabled} setEnabled={(ids)=>{setEnabled(ids);newQuestion(activeLevel,ids);}} metronome={metronome} setMetronome={setMetronome} follow={follow} setFollow={setFollow} stopAudio={stopAudio}/></window.MLH.MenuPanel>}</div></div><div className="hub-toolbar-feedback"><window.MLH.FeedbackBadge feedback={feedback} fading={feedbackFading} animationPrefix="note"/></div><div className="hub-toolbar-right"><window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px]"/>}/></div></div><div className="relative -top-[20px]"><Score question={question} activeNoteId={follow?activeNoteId:null} placement={placement} hoverPlacement={hover} feedback={feedback} onPointerMove={e=>{ if(question.mode==="place"&&selected&&!feedback) setHover(pointerToPlacement(e,TERMS[selected])); }} onPointerLeave={()=>setHover(null)} onPointerDown={e=>{ if(question.mode==="place"&&selected&&!feedback) setPlacement(pointerToPlacement(e,TERMS[selected])); }}/></div><div className="chords-question-card relative z-10 -mt-[47px] flex flex-col rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-md md:mx-3"><div><p className="text-base font-semibold leading-tight">{question.mode==="place"?"Identify the tempo by inserting it into the correct place in the music.":"Listen to the music and identify the tempo."}</p>{prompt&&<p className="mt-2 text-sm font-bold text-red-600">{prompt}</p>}<div className="mt-2">{question.mode==="text"?<div className="flex flex-wrap items-center gap-3"><input value={typed} disabled={Boolean(feedback)} onChange={e=>setTyped(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!disabledConfirm){e.preventDefault();confirm();}}} placeholder="Type your answer" className={window.MLH.typedAnswerClass(feedback?{correct:isCorrectText(typed,question.answerId)}:null,"w-full md:w-1/2")}/>{feedback&&!feedback.correct&&<div className="text-base font-bold text-green-600">{question.answer.group==="middle"?"Andante or Moderato":question.answer.label}</div>}</div>:<div className="grid w-full grid-cols-4 gap-2 md:w-1/2">{termButtons.map(id=><button key={id} disabled={Boolean(feedback)} onClick={()=>{setSelected(id); if(question.mode==="choice") score(equivalent(id,question.answerId));}} className={answerButtonClass(id)}>{TERMS[id].label}</button>)}</div>}</div></div>{question.mode==="text"?<div className={window.MLH.PlayClearConfirmRowClass}><button type="button" onClick={play} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button><div className={window.MLH.ActionButtonGroupClass}><button type="button" disabled={Boolean(feedback) || !typed.trim()} onClick={clearAnswer} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={disabledConfirm} onClick={confirm} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div></div>:<div className="mt-3"><button type="button" onClick={play} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button>{question.mode==="place"&&<div className="mt-3 flex justify-end gap-3"><button type="button" disabled={Boolean(feedback) || !placement} onClick={clearAnswer} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={disabledConfirm} onClick={confirm} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div>}</div>}</div></main></div></div>;
 }
-const root=document.getElementById("root"); if(ReactDOM.createRoot) ReactDOM.createRoot(root).render(<App/>); else ReactDOM.render(<App/>,root);
+function loadEscapeQuestion(activity) {
+  const cached = activity.bridge.readActivity(activity.token);
+  if (cached) return cached;
+  const generate = ({level}) => buildQuestion(level, termIdsForLevel(level));
+  const question = generate(activity);
+  activity.bridge.saveActivity(activity.token, question);
+  return question;
+}
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("tempo");
+const root=document.getElementById("root"); if(ReactDOM.createRoot) ReactDOM.createRoot(root).render(<App escapeActivity={escapeActivity} />); else ReactDOM.render(<App escapeActivity={escapeActivity} />,root);
 
-</script>
-<script src="./footer.js?v=20261005-update-history"></script>
+</script><script src="./generated-runtimes/tempo-1.js?v=acf3ea7bb75c"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

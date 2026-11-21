@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1280" />
+<title>Audio Review · Music Learning Hub</title>
+<script src="/shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+<link rel="stylesheet" href="/styles/desktop-layout.css?v=605f791dfa61" />
+<link rel="stylesheet" href="/review.css" />
+<script src="/desktop-layout.js?v=2ba28152c0b9" defer></script>
+<script src="/music-concepts-data.js" defer></script>
+<script src="/review.js" defer></script>
+<link rel="stylesheet" href="../styles/hub-touch.css?v=45815c4bffba" />
+<script src="../shared/hub-touch.js?v=43d579e0d082"></script>
+</head>
+<body>
+<main>
+
+<button id="undoDelete" hidden>Undo last deletion</button>
+
+<nav class="view-tabs" aria-label="Review sections"><button id="reviewView" aria-pressed="true" class="selected">Review</button><button id="filesView" aria-pressed="false">All Files</button><button id="conceptsView" aria-pressed="false">Concept Folders</button><section class="summary" aria-label="Review progress"><div><strong id="total">—</strong><span>Files</span></div><div><strong id="remaining">—</strong><span>To review</span></div><div><strong id="totalSize">—</strong><span>MB</span></div><div class="progress-summary"><strong id="progressText">—%</strong><progress id="progress" value="0" max="1"></progress></div></section></nav>
+<section id="conceptsPanel" hidden class="concept-availability" aria-labelledby="availabilityTitle"><h2 id="availabilityTitle">Examples in each concept folder</h2><p class="muted">Excludes Multiple Concepts · counts all files in each folder, regardless of filters · amber counts have fewer than the selected number of examples</p><div class="concept-count-filter"><label class="inline"><input id="underFiveOnly" type="checkbox" /> Show folders with fewer than</label><select id="conceptThreshold" aria-label="Example count threshold"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><span>examples</span><label class="concept-sort">Sort<select id="conceptSort"><option value="name-asc">Name A–Z</option><option value="name-desc">Name Z–A</option><option value="count-asc">Fewest examples first</option><option value="count-desc">Most examples first</option></select></label></div><div id="levelConceptCounts" class="level-concept-counts"></div></section>
+
+<section id="filesPanel" hidden aria-label="All audio files">
+<div class="file-tools"><label>Search files<input id="fileSearch" type="search" placeholder="Name, concept, notes…" /></label><label>Show<select id="fileScope"><option value="all">All Files</option><option value="single">Single concept only</option><option value="multiple">Multiple concepts only</option><option value="duplicates">Exact duplicates only</option></select></label></div>
+<div class="file-summary"><span id="fileSummary"></span><span class="muted">Click a column heading to sort. Click a filename to review it.</span></div>
+<table id="fileTable"><colgroup><col style="width:24%"/><col style="width:7%"/><col style="width:8%"/><col style="width:9%"/><col style="width:11%"/><col style="width:12%"/><col style="width:10%"/><col style="width:8%"/><col style="width:11%"/></colgroup><thead><tr>
+<th scope="col" data-column="name" aria-sort="ascending"><button data-column="name">Filename ↑</button></th><th scope="col" data-column="bytes"><button data-column="bytes">Size</button></th><th scope="col" data-column="duplicateCount"><button data-column="duplicateCount">Copies</button></th><th scope="col" data-column="level"><button data-column="level">Level</button></th><th scope="col" data-column="heading"><button data-column="heading">Heading</button></th><th scope="col" data-column="concept"><button data-column="concept">Concept</button></th><th scope="col" data-column="status"><button data-column="status">Review status</button></th><th scope="col" data-column="use"><button data-column="use">Use</button></th><th scope="col" data-column="updated"><button data-column="updated">Last reviewed</button></th>
+</tr></thead><tbody id="fileRows"></tbody></table>
+<div class="file-pagination"><button id="filePrev">← Previous page</button><span id="filePage" class="muted"></span><label>Rows per page<select id="filePageSize"><option>50</option><option selected>100</option><option>250</option></select></label><button id="fileNext">Next page →</button></div>
+</section>
+<div class="workspace" id="reviewPanel">
+<aside><div class="list-tools"><input id="search" type="search" placeholder="Search title or concept…" aria-label="Search library" /><select id="reviewScope" aria-label="Files shown"><option value="review">Files for Review</option><option value="all">All Files</option></select><span id="listCount" class="muted"></span></div><div id="list" role="list" aria-label="Files"></div><div class="list-footer"><button id="more" hidden>Show more</button></div></aside>
+<article id="editor" aria-label="File editor">
+
+<div id="empty" hidden>No files match these filters.</div>
+<div id="detail">
+<div class="clip-top"><span id="location" class="eyebrow"></span></div>
+<h2 id="title">Choose a file</h2>
+<div class="transport"><button id="previous" aria-label="Previous file">← Previous</button><button id="play" class="primary">Play</button><div class="transport-end"><span id="time">0:00 / 0:00</span><button id="next" aria-label="Next file">Next →</button></div></div>
+<audio id="audio" preload="metadata"></audio>
+<div class="wave-head" hidden><label>Zoom<select id="zoom"><option value="1">1× · whole file</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option><option value="16">16×</option></select></label><span id="waveStatus" class="muted">Loading waveform…</span></div>
+<div class="wave-wrap"><canvas id="wave" width="1500" height="250" aria-label="Waveform: drag to select a passage; drag the end handles to adjust it"></canvas></div>
+<div class="wave-scroll" hidden><label for="pan">Position in file</label><input id="pan" type="range" min="0" max="1" step="0.001" value="0" /></div>
+<div class="trim-controls" hidden><label>Start (seconds)<input id="start" type="number" min="0" step="0.01" value="0" /></label><button id="setStart" title="Set start at playhead (I)">Set start here</button><label>End (seconds)<input id="end" type="number" min="0" step="0.01" value="0" /></label><button id="setEnd" title="Set end at playhead (O)">Set end here</button><span id="selectionLength" class="muted"></span><button id="resetSelection">Select all</button></div>
+<div class="save-trim"><button id="saveTrim" class="primary">Save</button><button id="deleteFile" class="danger">Delete</button></div>
+</div></article>
+</div>
+<p id="message" role="alert" hidden></p>
+</main>
+
+</body></html>

@@ -5,7 +5,7 @@
   "source": {
     "knowledgeBankFile": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
     "knowledgeBankSchemaVersion": "5.0",
-    "knowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e"
+    "knowledgeBankSha256": "a83e4df9820bdc5d6eae142c234b1209b12c8c2a5bc2b107fc9668857ba8c1e7"
   },
   "questions": [
     {
@@ -32,15 +32,15 @@
           "correct": true
         },
         {
-          "text": "Impressionist",
+          "text": "Musique concrète",
           "correct": false
         },
         {
-          "text": "Jazz funk",
+          "text": "Oratorio",
           "correct": false
         },
         {
-          "text": "Lied",
+          "text": "Plainchant",
           "correct": false
         }
       ],
@@ -115,7 +115,7 @@
       "question": "Common features include whole-tone or modal scales, unresolved or extended harmony, parallel chords and delicate orchestration. What is this?",
       "answers": [
         {
-          "text": "Sonata",
+          "text": "Jazz funk",
           "correct": false
         },
         {
@@ -123,11 +123,11 @@
           "correct": true
         },
         {
-          "text": "Soul music",
+          "text": "Lied",
           "correct": false
         },
         {
-          "text": "String quartet",
+          "text": "Mass",
           "correct": false
         }
       ],
@@ -202,11 +202,11 @@
       "question": "A fusion of jazz harmony and improvisation with funk rhythm. What is this?",
       "answers": [
         {
-          "text": "Oratorio",
+          "text": "Soul music",
           "correct": false
         },
         {
-          "text": "Plainchant",
+          "text": "String quartet",
           "correct": false
         },
         {
@@ -214,7 +214,7 @@
           "correct": true
         },
         {
-          "text": "Recitative",
+          "text": "Chamber music",
           "correct": false
         }
       ],
@@ -289,15 +289,15 @@
       "question": "A German Romantic art song for solo voice and piano. What is this?",
       "answers": [
         {
-          "text": "Jazz funk",
+          "text": "Plainchant",
           "correct": false
         },
         {
-          "text": "Mass",
+          "text": "Recitative",
           "correct": false
         },
         {
-          "text": "Musique concrète",
+          "text": "Sonata",
           "correct": false
         },
         {
@@ -380,15 +380,15 @@
           "correct": true
         },
         {
-          "text": "String quartet",
+          "text": "Lied",
           "correct": false
         },
         {
-          "text": "Chamber music",
+          "text": "Musique concrète",
           "correct": false
         },
         {
-          "text": "Impressionist",
+          "text": "Oratorio",
           "correct": false
         }
       ],
@@ -463,7 +463,7 @@
       "question": "Music constructed from recorded real-world sounds rather than only conventional instruments. What is this?",
       "answers": [
         {
-          "text": "Recitative",
+          "text": "Chamber music",
           "correct": false
         },
         {
@@ -471,11 +471,11 @@
           "correct": true
         },
         {
-          "text": "Sonata",
+          "text": "Impressionist",
           "correct": false
         },
         {
-          "text": "Soul music",
+          "text": "Jazz funk",
           "correct": false
         }
       ],
@@ -550,11 +550,11 @@
       "question": "A large-scale concert work for soloists, choir and orchestra, usually based on a sacred or biblical story. What is this?",
       "answers": [
         {
-          "text": "Mass",
+          "text": "Sonata",
           "correct": false
         },
         {
-          "text": "Musique concrète",
+          "text": "Soul music",
           "correct": false
         },
         {
@@ -562,7 +562,7 @@
           "correct": true
         },
         {
-          "text": "Plainchant",
+          "text": "String quartet",
           "correct": false
         }
       ],
@@ -637,15 +637,15 @@
       "question": "Early monophonic sacred vocal music, usually sung in Latin and without instrumental accompaniment. What is this?",
       "answers": [
         {
-          "text": "Impressionist",
+          "text": "Musique concrète",
           "correct": false
         },
         {
-          "text": "Jazz funk",
+          "text": "Oratorio",
           "correct": false
         },
         {
-          "text": "Lied",
+          "text": "Recitative",
           "correct": false
         },
         {
@@ -728,15 +728,15 @@
           "correct": true
         },
         {
-          "text": "Soul music",
+          "text": "Jazz funk",
           "correct": false
         },
         {
-          "text": "String quartet",
+          "text": "Lied",
           "correct": false
         },
         {
-          "text": "Chamber music",
+          "text": "Mass",
           "correct": false
         }
       ],
@@ -787,7 +787,7 @@
       ],
       "hint": "The white notes from D to D make Dorian.",
       "hintFactId": null,
-      "explanation": "The statement “It uses a mode rather than a familiar major or minor scale” describes Mode / modal, not Recitative. Speech-like solo singing in which the musical rhythm follows the natural rhythm of the words.",
+      "explanation": "The statement “It uses a mode rather than a familiar major or minor scale” describes Mode or modal, not Recitative. Speech-like solo singing in which the musical rhythm follows the natural rhythm of the words.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0235"
     },
@@ -811,7 +811,7 @@
       "question": "A multi-movement work for a solo instrument, or for one instrument with piano. What is this?",
       "answers": [
         {
-          "text": "Oratorio",
+          "text": "String quartet",
           "correct": false
         },
         {
@@ -819,11 +819,11 @@
           "correct": true
         },
         {
-          "text": "Plainchant",
+          "text": "Chamber music",
           "correct": false
         },
         {
-          "text": "Recitative",
+          "text": "Impressionist",
           "correct": false
         }
       ],
@@ -898,11 +898,11 @@
       "question": "An African American popular style that developed from gospel, blues, and rhythm-and-blues traditions. What is this?",
       "answers": [
         {
-          "text": "Lied",
+          "text": "Plainchant",
           "correct": false
         },
         {
-          "text": "Mass",
+          "text": "Recitative",
           "correct": false
         },
         {
@@ -910,7 +910,7 @@
           "correct": true
         },
         {
-          "text": "Musique concrète",
+          "text": "Sonata",
           "correct": false
         }
       ],
@@ -986,15 +986,15 @@
       "question": "As a chamber work, it is written for four string players, with closely interacting parts and usually four movements. What is this?",
       "answers": [
         {
-          "text": "Chamber music",
+          "text": "Mass",
           "correct": false
         },
         {
-          "text": "Impressionist",
+          "text": "Musique concrète",
           "correct": false
         },
         {
-          "text": "Jazz funk",
+          "text": "Oratorio",
           "correct": false
         },
         {
@@ -1082,11 +1082,11 @@
           "correct": false
         },
         {
-          "text": "Relative minor",
+          "text": "Interrupted cadence",
           "correct": false
         },
         {
-          "text": "Tierce de Picardie",
+          "text": "Interval",
           "correct": false
         }
       ],
@@ -1161,7 +1161,7 @@
       "question": "A four-note chord formed by combining a major or minor triad with the pitch six scale steps above its root. What is this?",
       "answers": [
         {
-          "text": "Diminished 7th",
+          "text": "Dominant 7th",
           "correct": false
         },
         {
@@ -1169,11 +1169,11 @@
           "correct": true
         },
         {
-          "text": "Acciaccatura",
+          "text": "Mode or modal",
           "correct": false
         },
         {
-          "text": "Harmonic minor scale",
+          "text": "Mordent",
           "correct": false
         }
       ],
@@ -1276,11 +1276,11 @@
       "question": "A four-note chord built from stacked minor thirds. What is this?",
       "answers": [
         {
-          "text": "Dominant 7th",
+          "text": "Diminished triad",
           "correct": false
         },
         {
-          "text": "Plagal cadence",
+          "text": "Harmonic minor scale",
           "correct": false
         },
         {
@@ -1288,7 +1288,7 @@
           "correct": true
         },
         {
-          "text": "Relative major",
+          "text": "Interrupted cadence",
           "correct": false
         }
       ],
@@ -1391,15 +1391,15 @@
       "question": "A three-note chord containing a root, minor third and diminished fifth. What is this?",
       "answers": [
         {
-          "text": "Diminished 7th",
+          "text": "Added 6th",
           "correct": false
         },
         {
-          "text": "Melodic minor scale",
+          "text": "Relative major",
           "correct": false
         },
         {
-          "text": "Mode / modal",
+          "text": "Relative minor",
           "correct": false
         },
         {
@@ -1482,15 +1482,15 @@
           "correct": true
         },
         {
-          "text": "Added 6th",
+          "text": "Diminished triad",
           "correct": false
         },
         {
-          "text": "Acciaccatura",
+          "text": "Mode or modal",
           "correct": false
         },
         {
-          "text": "Harmonic minor scale",
+          "text": "Mordent",
           "correct": false
         }
       ],
@@ -1593,7 +1593,7 @@
       "question": "A minor scale with the seventh degree raised by a semitone in both ascending and descending forms. What is this?",
       "answers": [
         {
-          "text": "Mode / modal",
+          "text": "Relative major",
           "correct": false
         },
         {
@@ -1601,11 +1601,11 @@
           "correct": true
         },
         {
-          "text": "Mordent",
+          "text": "Acciaccatura",
           "correct": false
         },
         {
-          "text": "Obbligato",
+          "text": "Added 6th",
           "correct": false
         }
       ],
@@ -1684,7 +1684,7 @@
           "correct": false
         },
         {
-          "text": "Dominant 7th",
+          "text": "Relative major",
           "correct": false
         },
         {
@@ -1692,7 +1692,7 @@
           "correct": true
         },
         {
-          "text": "Harmonic minor scale",
+          "text": "Relative minor",
           "correct": false
         }
       ],
@@ -1795,15 +1795,15 @@
       "question": "The distance in pitch between two notes. What is this?",
       "answers": [
         {
-          "text": "Acciaccatura",
+          "text": "Mode or modal",
           "correct": false
         },
         {
-          "text": "Added 6th",
+          "text": "Mordent",
           "correct": false
         },
         {
-          "text": "Diminished 7th",
+          "text": "Obbligato",
           "correct": false
         },
         {
@@ -1818,7 +1818,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "h-literacy-easy-014",
               "h-literacy-easy-015",
@@ -1889,7 +1889,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "h-literacy-easy-014",
               "h-literacy-easy-015",
@@ -1938,15 +1938,15 @@
           "correct": true
         },
         {
-          "text": "Mode / modal",
+          "text": "Relative major",
           "correct": false
         },
         {
-          "text": "Plagal cadence",
+          "text": "Diminished 7th",
           "correct": false
         },
         {
-          "text": "Tierce de Picardie",
+          "text": "Diminished triad",
           "correct": false
         }
       ],
@@ -2009,7 +2009,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0235",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "factId": "MC-0235-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -2021,19 +2021,19 @@
       "question": "Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales. What is this?",
       "answers": [
         {
-          "text": "Melodic minor scale",
+          "text": "Relative major",
           "correct": false
         },
         {
-          "text": "Mode / modal",
+          "text": "Mode or modal",
           "correct": true
         },
         {
-          "text": "Interval",
+          "text": "Tierce de Picardie",
           "correct": false
         },
         {
-          "text": "Mordent",
+          "text": "Acciaccatura",
           "correct": false
         }
       ],
@@ -2050,7 +2050,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0235",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "factId": "MC-0235-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -2059,7 +2059,7 @@
       "difficulty": "Medium",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Mode / modal?",
+      "question": "Which is NOT a feature of Mode or modal?",
       "answers": [
         {
           "text": "It uses a mode rather than a familiar major or minor scale.",
@@ -2084,7 +2084,7 @@
       ],
       "hint": "A chamber work for two violins, viola and cello, usually in four movements.",
       "hintFactId": null,
-      "explanation": "The statement “It is an ensemble of two violins, viola and cello” describes String quartet, not Mode / modal. Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales.",
+      "explanation": "The statement “It is an ensemble of two violins, viola and cello” describes String quartet, not Mode or modal. Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0225"
     },
@@ -2112,7 +2112,7 @@
           "correct": false
         },
         {
-          "text": "Mode / modal",
+          "text": "Diminished 7th",
           "correct": false
         },
         {
@@ -2120,7 +2120,7 @@
           "correct": true
         },
         {
-          "text": "Obbligato",
+          "text": "Diminished triad",
           "correct": false
         }
       ],
@@ -2195,15 +2195,15 @@
       "question": "An important decorative instrumental line played alongside the main melody, especially a vocal part. What is this?",
       "answers": [
         {
-          "text": "Diminished 7th",
+          "text": "Mordent",
           "correct": false
         },
         {
-          "text": "Diminished triad",
+          "text": "Plagal cadence",
           "correct": false
         },
         {
-          "text": "Dominant 7th",
+          "text": "Relative major",
           "correct": false
         },
         {
@@ -2290,11 +2290,11 @@
           "correct": false
         },
         {
-          "text": "Obbligato",
+          "text": "Diminished triad",
           "correct": false
         },
         {
-          "text": "Relative major",
+          "text": "Dominant 7th",
           "correct": false
         }
       ],
@@ -2397,7 +2397,7 @@
       "question": "The major key that has the same key signature as a given minor key. What is this?",
       "answers": [
         {
-          "text": "Melodic minor scale",
+          "text": "Mode or modal",
           "correct": false
         },
         {
@@ -2405,11 +2405,11 @@
           "correct": true
         },
         {
-          "text": "Interrupted cadence",
+          "text": "Plagal cadence",
           "correct": false
         },
         {
-          "text": "Interval",
+          "text": "Tierce de Picardie",
           "correct": false
         }
       ],
@@ -2484,11 +2484,11 @@
       "question": "The minor key that has the same key signature as a given major key. What is this?",
       "answers": [
         {
-          "text": "Melodic minor scale",
+          "text": "Mode or modal",
           "correct": false
         },
         {
-          "text": "Diminished 7th",
+          "text": "Interval",
           "correct": false
         },
         {
@@ -2496,7 +2496,7 @@
           "correct": true
         },
         {
-          "text": "Diminished triad",
+          "text": "Mordent",
           "correct": false
         }
       ],
@@ -2571,15 +2571,15 @@
       "question": "A major tonic chord used at the end of a piece or section in a minor key. What is this?",
       "answers": [
         {
-          "text": "Dominant 7th",
+          "text": "Plagal cadence",
           "correct": false
         },
         {
-          "text": "Harmonic minor scale",
+          "text": "Relative major",
           "correct": false
         },
         {
-          "text": "Interrupted cadence",
+          "text": "Relative minor",
           "correct": false
         },
         {
@@ -2666,11 +2666,11 @@
           "correct": false
         },
         {
-          "text": "Irregular time signatures",
+          "text": "Time changes",
           "correct": false
         },
         {
-          "text": "Time changes",
+          "text": "Irregular time signatures",
           "correct": false
         }
       ],
@@ -2745,7 +2745,7 @@
       "question": "A theme, melody or rhythm is repeated with every note value lengthened in the same proportion. What is this?",
       "answers": [
         {
-          "text": "Irregular time signatures",
+          "text": "Time changes",
           "correct": false
         },
         {
@@ -2753,11 +2753,11 @@
           "correct": true
         },
         {
-          "text": "Time changes",
+          "text": "Irregular time signatures",
           "correct": false
         },
         {
-          "text": "Ritornello",
+          "text": "Basso continuo",
           "correct": false
         }
       ],
@@ -2832,11 +2832,11 @@
       "question": "A theme, melody or rhythm is repeated with every note value shortened in the same proportion. What is this?",
       "answers": [
         {
-          "text": "Irregular time signatures",
+          "text": "Time changes",
           "correct": false
         },
         {
-          "text": "Time changes",
+          "text": "Irregular time signatures",
           "correct": false
         },
         {
@@ -2844,7 +2844,7 @@
           "correct": true
         },
         {
-          "text": "Tremolando",
+          "text": "Sonata form",
           "correct": false
         }
       ],
@@ -2923,11 +2923,11 @@
           "correct": false
         },
         {
-          "text": "3 against 2",
+          "text": "Augmentation",
           "correct": false
         },
         {
-          "text": "Augmentation",
+          "text": "Diminution",
           "correct": false
         },
         {
@@ -3014,11 +3014,11 @@
           "correct": false
         },
         {
-          "text": "3 against 2",
+          "text": "Augmentation",
           "correct": false
         },
         {
-          "text": "Augmentation",
+          "text": "Diminution",
           "correct": false
         }
       ],
@@ -3129,11 +3129,11 @@
           "correct": true
         },
         {
-          "text": "Irregular time signatures",
+          "text": "Time changes",
           "correct": false
         },
         {
-          "text": "Time changes",
+          "text": "Irregular time signatures",
           "correct": false
         }
       ],
@@ -3240,11 +3240,11 @@
       "question": "In Baroque music, a bass instrument plays the bass line while a chordal instrument fills in the harmony, often from figured bass. What is this?",
       "answers": [
         {
-          "text": "Ritornello",
+          "text": "Sonata form",
           "correct": false
         },
         {
-          "text": "Sonata form",
+          "text": "Subject",
           "correct": false
         },
         {
@@ -3252,7 +3252,7 @@
           "correct": true
         },
         {
-          "text": "Subject",
+          "text": "Through-composed",
           "correct": false
         }
       ],
@@ -3327,7 +3327,7 @@
       "question": "A Baroque concerto that contrasts a small group of soloists, the concertino, with the larger ensemble, the ripieno. What is this?",
       "answers": [
         {
-          "text": "Ritornello",
+          "text": "Ripieno",
           "correct": false
         },
         {
@@ -3418,15 +3418,15 @@
           "correct": true
         },
         {
-          "text": "Ritornello",
-          "correct": false
-        },
-        {
           "text": "Sonata form",
           "correct": false
         },
         {
           "text": "Subject",
+          "correct": false
+        },
+        {
+          "text": "Through-composed",
           "correct": false
         }
       ],
@@ -3501,7 +3501,7 @@
       "question": "An opening section in which the main musical ideas are introduced. What is this?",
       "answers": [
         {
-          "text": "Subject",
+          "text": "Sonata form",
           "correct": false
         },
         {
@@ -3675,7 +3675,7 @@
       "question": "A Baroque form in which a recurring orchestral passage alternates with contrasting solo episodes. What is this?",
       "answers": [
         {
-          "text": "Concertino",
+          "text": "Concerto grosso",
           "correct": false
         },
         {
@@ -3766,7 +3766,7 @@
           "correct": true
         },
         {
-          "text": "Through-composed",
+          "text": "Subject",
           "correct": false
         },
         {
@@ -3774,7 +3774,7 @@
           "correct": false
         },
         {
-          "text": "Subject",
+          "text": "Basso continuo",
           "correct": false
         }
       ],
@@ -3849,7 +3849,7 @@
       "question": "As a musical theme, it is the main musical idea on which a piece or section is based. What is this?",
       "answers": [
         {
-          "text": "Exposition",
+          "text": "Sonata form",
           "correct": false
         },
         {
@@ -3857,11 +3857,11 @@
           "correct": true
         },
         {
-          "text": "Passacaglia",
+          "text": "Ritornello",
           "correct": false
         },
         {
-          "text": "Ritornello",
+          "text": "Through-composed",
           "correct": false
         }
       ],
@@ -4023,15 +4023,15 @@
       "question": "Highly agile, ornamented vocal writing with rapid scales, arpeggios, leaps, trills and other decorations. What is this?",
       "answers": [
         {
-          "text": "Concertino",
-          "correct": false
-        },
-        {
           "text": "Harmonics",
           "correct": false
         },
         {
           "text": "Ripieno",
+          "correct": false
+        },
+        {
+          "text": "Tremolando",
           "correct": false
         },
         {
@@ -4114,15 +4114,15 @@
           "correct": true
         },
         {
-          "text": "Ritornello",
+          "text": "Ripieno",
+          "correct": false
+        },
+        {
+          "text": "Harmonics",
           "correct": false
         },
         {
           "text": "Tremolando",
-          "correct": false
-        },
-        {
-          "text": "Coloratura",
           "correct": false
         }
       ],
@@ -4205,11 +4205,11 @@
           "correct": true
         },
         {
-          "text": "Concertino",
+          "text": "Coloratura",
           "correct": false
         },
         {
-          "text": "Ripieno",
+          "text": "Concertino",
           "correct": false
         }
       ],
@@ -4284,11 +4284,11 @@
       "question": "The larger body of players in a concerto grosso, contrasted with the smaller concertino. What is this?",
       "answers": [
         {
-          "text": "Concerto grosso",
+          "text": "Ritornello",
           "correct": false
         },
         {
-          "text": "Coloratura",
+          "text": "Tremolando",
           "correct": false
         },
         {
@@ -4296,7 +4296,7 @@
           "correct": true
         },
         {
-          "text": "Harmonics",
+          "text": "Coloratura",
           "correct": false
         }
       ],
@@ -4375,11 +4375,11 @@
           "correct": false
         },
         {
-          "text": "Ripieno",
+          "text": "Concertino",
           "correct": false
         },
         {
-          "text": "Coloratura",
+          "text": "Ripieno",
           "correct": false
         },
         {

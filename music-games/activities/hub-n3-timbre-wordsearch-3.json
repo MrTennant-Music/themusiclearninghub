@@ -1,0 +1,114 @@
+{
+  "id": "hub-n3-timbre-wordsearch-3",
+  "level": "N3",
+  "title": "Timbre 3",
+  "instructions": "",
+  "description": "Practise the National 3 Timbre concepts — collection 3 of 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "National 3"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n3-timbre-wordsearch-3-1",
+      "prompt": "Name the specific Scottish social-dance ensemble commonly featuring accordion, fiddle, piano, bass and drum kit.",
+      "answer": "Scottish dance band",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-2",
+      "prompt": "Notes are performed short and detached, with a clear gap or separation between them.",
+      "answer": "Staccato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-3",
+      "prompt": "An ensemble of different-sized steel pans, traditionally associated with Trinidad and Tobago, plays melody, harmony and bass parts.",
+      "answer": "Steel band",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-4",
+      "prompt": "A performer makes an instrument sound with a hand, stick, mallet or beater.",
+      "answer": "Striking",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-5",
+      "prompt": "Name the orchestral family containing violin, viola, cello and double bass.",
+      "answer": "Strings",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-6",
+      "prompt": "A finger or plectrum sweeps quickly across several strings, usually to play a chord.",
+      "answer": "Strumming",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-7",
+      "prompt": "The sound made when a person sings or speaks.",
+      "answer": "Voice",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-timbre-wordsearch-3-8",
+      "prompt": "An orchestral family played by blowing across an opening or through a single or double reed.",
+      "answer": "Woodwind",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z",
+  "editorMode": "with-clues"
+}

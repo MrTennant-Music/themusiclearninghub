@@ -1,0 +1,116 @@
+{
+  "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1",
+  "level": "H",
+  "title": "Rhythm and Tempo",
+  "instructions": "",
+  "description": "Revise rhythm and tempo with 6 Music Dictionary concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Rhythm and Tempo",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1-mc-0242",
+      "prompt": "One part plays two equal notes in the same time as another part plays three.",
+      "answer": "Three against two",
+      "distractors": [
+        "Triplets",
+        "Time changes",
+        "Irregular time signatures"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1-mc-0243",
+      "prompt": "A theme, melody or rhythm is repeated with every note value lengthened in the same proportion.",
+      "answer": "Augmentation",
+      "distractors": [
+        "Time changes",
+        "Irregular time signatures",
+        "Basso continuo"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1-mc-0244",
+      "prompt": "A theme, melody or rhythm is repeated with every note value shortened in the same proportion.",
+      "answer": "Diminution",
+      "distractors": [
+        "Time changes",
+        "Irregular time signatures",
+        "Sonata form"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1-mc-0245",
+      "prompt": "Metres with an unusual number or grouping of beats, such as 5/4, 5/8, 7/8 or 7/4.",
+      "answer": "Irregular time signatures",
+      "distractors": [
+        "Time changes",
+        "Augmentation",
+        "Diminution"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1-mc-0246",
+      "prompt": "The time signature changes during the music, altering the number or grouping of beats and sometimes unsettling the pulse.",
+      "answer": "Time changes",
+      "distractors": [
+        "Irregular time signatures",
+        "Augmentation",
+        "Diminution"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-rhythm-and-tempo-crossword-1-mc-0247",
+      "prompt": "Three equal notes are performed in the time usually occupied by two notes of the same written value.",
+      "answer": "Triplets",
+      "distractors": [
+        "3 against 2",
+        "Time changes",
+        "Irregular time signatures"
+      ],
+      "group": "Rhythm/tempo",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

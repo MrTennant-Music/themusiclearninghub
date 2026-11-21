@@ -1,10 +1,10 @@
 /*
-  Standard Bravura symbols used across The Music Literacy Hub.
+  Standard Bravura symbols used across The Music Learning Hub.
 
   This file is a shared reference for common music symbols. It is not connected
   to the pupil apps yet, so changing this file will not change an app by itself.
 
-  Use bravura-glyph-picker.html when you want to browse symbols and copy codes.
+  Use bravuraglyphpicker.html when you want to browse symbols and copy codes.
 */
 const BRAVURA_SYMBOLS = {
   // Braces and barlines
@@ -22,6 +22,7 @@ const BRAVURA_SYMBOLS = {
   // Clefs
   gClef: "\uE050",
   fClef: "\uE062",
+  unpitchedPercussionClef1: "\uE069",
 
   // Time signature numbers
   timeSig1: "\uE081",
@@ -36,6 +37,16 @@ const BRAVURA_SYMBOLS = {
 
   // Full note symbols
   noteheadBlack: "\uE0A4",
+  noteheadWhole: "\uE0A2",
+  noteheadXBlack: "\uE0A9",
+  noteheadCircleX: "\uE0B3",
+  marcatoAbove: "\uE4AC",
+  flag8thUp: "\uE240",
+  flag8thDown: "\uE241",
+  flag16thUp: "\uE242",
+  flag16thDown: "\uE243",
+  doubleSharp: "\uE263",
+  doubleFlat: "\uE264",
   noteheadHalf: "\uE0A3",
   wholeNote: "\uE1D2",
   halfNoteStemUp: "\uE1D3",
@@ -51,6 +62,8 @@ const BRAVURA_SYMBOLS = {
 
   // Grace notes and ornaments
   slashedGraceNoteStemUp: "\uE560",
+  ornamentTrill: "\uE566",
+  ornamentTurn: "\uE567",
 
   // Accidentals
   flat: "\uE260",

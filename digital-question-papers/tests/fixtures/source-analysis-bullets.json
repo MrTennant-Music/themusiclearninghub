@@ -1,0 +1,135 @@
+{
+  "method": "All eleven official Q8 introduction crops visually inspected. 2014 keeps bold bullets. Later years use regular bullets, with source case and final punctuation.",
+  "papers": [
+    {
+      "id": "national5-2015",
+      "bullets": [
+        "Rhythm/tempo",
+        "Melody/harmony",
+        "Instruments/voices",
+        "Dynamics (Italian terms)"
+      ],
+      "emphasis": false
+    },
+    {
+      "id": "national5-2016",
+      "bullets": [
+        "Rhythm/tempo",
+        "Melody/harmony",
+        "Instruments/voices",
+        "Dynamics (Italian terms)"
+      ],
+      "emphasis": false
+    },
+    {
+      "id": "national5-2017",
+      "bullets": [
+        "Rhythm/tempo",
+        "Melody/harmony",
+        "Instruments",
+        "Dynamics (Italian terms)"
+      ],
+      "emphasis": false
+    },
+    {
+      "id": "national5-2018",
+      "bullets": [
+        "melody/harmony",
+        "rhythm",
+        "instruments",
+        "dynamics (Italian terms)"
+      ],
+      "emphasis": false,
+      "roughWorkLabels": {
+        "melody": "melody/harmony",
+        "rhythm": "rhythm",
+        "instruments": "instruments",
+        "dynamics": "dynamics (Italian terms)"
+      }
+    },
+    {
+      "id": "national5-2019",
+      "bullets": [
+        "melody/harmony",
+        "rhythm/tempo",
+        "instruments",
+        "dynamics (Italian terms)."
+      ],
+      "emphasis": false,
+      "roughWorkLabels": {
+        "melody": "melody/harmony",
+        "rhythm": "rhythm/tempo",
+        "instruments": "instruments",
+        "dynamics": "dynamics (Italian terms)"
+      }
+    },
+    {
+      "id": "national5-2022",
+      "bullets": [
+        "melody/harmony",
+        "rhythm",
+        "timbre",
+        "tempo."
+      ],
+      "emphasis": false,
+      "roughWorkLabels": {
+        "melody": "melody/harmony",
+        "rhythm": "rhythm",
+        "timbre": "timbre",
+        "tempo": "tempo"
+      }
+    },
+    {
+      "id": "national5-2023",
+      "bullets": [
+        "rhythm",
+        "melody/harmony",
+        "instruments",
+        "dynamics."
+      ],
+      "emphasis": false,
+      "roughWorkLabels": {
+        "rhythm": "rhythm",
+        "melody": "melody/harmony",
+        "instruments": "instruments",
+        "dynamics": "dynamics"
+      }
+    },
+    {
+      "id": "national5-2024",
+      "bullets": [
+        "melody/harmony",
+        "rhythm/tempo",
+        "instruments",
+        "dynamics (Italian terms)."
+      ],
+      "emphasis": false,
+      "roughWorkLabels": {
+        "melody": "melody/harmony",
+        "rhythm": "rhythm/tempo",
+        "instruments": "instruments",
+        "dynamics": "dynamics (Italian terms)"
+      }
+    },
+    {
+      "id": "national5-2025",
+      "bullets": [
+        "melody/harmony",
+        "rhythm/tempo",
+        "instruments",
+        "dynamics (Italian terms)."
+      ],
+      "emphasis": false
+    },
+    {
+      "id": "national5-2026",
+      "bullets": [
+        "melody/harmony",
+        "rhythm/tempo",
+        "timbre",
+        "dynamics (Italian terms)."
+      ],
+      "emphasis": false
+    }
+  ]
+}

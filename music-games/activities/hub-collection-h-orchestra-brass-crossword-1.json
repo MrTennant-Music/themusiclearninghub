@@ -1,0 +1,80 @@
+{
+  "id": "hub-collection-h-orchestra-brass-crossword-1",
+  "level": "H",
+  "title": "Brass",
+  "instructions": "",
+  "description": "Brass: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Brass",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-h-orchestra-brass-crossword-1-MC-0140",
+      "prompt": "A brass instrument with a bright sound, usually with three valves to press.",
+      "answer": "Trumpet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0140"
+    },
+    {
+      "id": "hub-collection-h-orchestra-brass-crossword-1-MC-0139",
+      "prompt": "A brass instrument with a slide that moves to change the notes.",
+      "answer": "Trombone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0139"
+    },
+    {
+      "id": "hub-collection-h-orchestra-brass-crossword-1-MC-0202",
+      "prompt": "A coiled brass instrument with a round, warm sound and a wide bell.",
+      "answer": "French horn",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0202"
+    },
+    {
+      "id": "hub-collection-h-orchestra-brass-crossword-1-MC-0212",
+      "prompt": "The biggest and lowest brass instrument in the orchestra.",
+      "answer": "Tuba",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0212"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "orchestra-brass",
+  "sourceConceptIds": [
+    "MC-0140",
+    "MC-0139",
+    "MC-0202",
+    "MC-0212"
+  ]
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "instrument": "Violin",
+    "family": "Strings",
+    "file": "violin.jpg",
+    "sourceTitle": "File:Violin VL100.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Violin_VL100.png",
+    "credit": "Just plain Bill",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Viola",
+    "family": "Strings",
+    "file": "viola.jpg",
+    "sourceTitle": "File:Bratsche.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bratsche.jpg",
+    "credit": "Just plain Bill",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Cello",
+    "family": "Strings",
+    "file": "cello.jpg",
+    "sourceTitle": "File:Cello front side.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cello_front_side.png",
+    "credit": "Georg Feitscher",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Double bass",
+    "family": "Strings",
+    "file": "double-bass.jpg",
+    "sourceTitle": "File:Double Bass MET DP217153.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_Bass_MET_DP217153.jpg",
+    "credit": "Bartolomeo Cristofori",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Harp",
+    "family": "Strings",
+    "file": "harp.jpg",
+    "sourceTitle": "File:Harp at Institut Français.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harp_at_Institut_Fran%C3%A7ais.jpg",
+    "credit": "Syced",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Flute",
+    "family": "Woodwind",
+    "file": "flute.jpg",
+    "sourceTitle": "File:Western Concert Flute.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Western_Concert_Flute.jpg",
+    "credit": "Thea Paraskevaides",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Piccolo",
+    "family": "Woodwind",
+    "file": "piccolo.jpg",
+    "sourceTitle": "File:Yamaha Piccolo YPC-81.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_Piccolo_YPC-81.png",
+    "credit": "Yamaha Corporation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Oboe",
+    "family": "Woodwind",
+    "file": "oboe.jpg",
+    "sourceTitle": "File:Oboe modern.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oboe_modern.jpg",
+    "credit": "Hustvedt, Editor/Bearbeiter der Version vom 11.März 2022 = User:Gisbert K",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Clarinet",
+    "family": "Woodwind",
+    "file": "clarinet.jpg",
+    "sourceTitle": "File:Yamaha Clarinet YCL-457II-22 l.tif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_Clarinet_YCL-457II-22_l.tif",
+    "credit": "Yamaha Corporation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Bassoon",
+    "family": "Woodwind",
+    "file": "bassoon.jpg",
+    "sourceTitle": "File:Bassoon 001.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bassoon_001.jpg",
+    "credit": "mark.drummer",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Trumpet",
+    "family": "Brass",
+    "file": "trumpet.jpg",
+    "sourceTitle": "File:Yamaha Trumpet YTR-8335LA crop.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_Trumpet_YTR-8335LA_crop.jpg",
+    "credit": "Yamaha Corporation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "French horn",
+    "family": "Brass",
+    "file": "french-horn.jpg",
+    "sourceTitle": "File:French horn front.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_horn_front.png",
+    "credit": "BenP",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Trombone",
+    "family": "Brass",
+    "file": "trombone.jpg",
+    "sourceTitle": "File:Yamaha Tenor trombone YSL-891Z.tif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_Tenor_trombone_YSL-891Z.tif",
+    "credit": "Yamaha Corporation",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Tuba",
+    "family": "Brass",
+    "file": "tuba.jpg",
+    "sourceTitle": "File:Tuba Melton Meinl Weston.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tuba_Melton_Meinl_Weston.png",
+    "credit": "Buffet Crampon",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Timpani",
+    "family": "Percussion",
+    "file": "timpani.jpg",
+    "sourceTitle": "File:Munich - A standard set of timpani Percussion - 5647.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Munich_-_A_standard_set_of_timpani_Percussion_-_5647.jpg",
+    "credit": "Jorge Royan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Snare drum",
+    "family": "Percussion",
+    "file": "snare-drum.jpg",
+    "sourceTitle": "File:Curly maple snare drum with legacy \"S\" style lugs.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Curly_maple_snare_drum_with_legacy_%22S%22_style_lugs.jpg",
+    "credit": "Unnecessary user",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Bass drum",
+    "family": "Percussion",
+    "file": "bass-drum.jpg",
+    "sourceTitle": "File:Bass drum hayman.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bass_drum_hayman.jpg",
+    "credit": "http://muzyczny.pl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Cymbals",
+    "family": "Percussion",
+    "file": "cymbals.jpg",
+    "sourceTitle": "File:Aaclashcymbals.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aaclashcymbals.jpg",
+    "credit": "",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Triangle",
+    "family": "Percussion",
+    "file": "triangle.jpg",
+    "sourceTitle": "File:Triangel1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Triangel1.jpg",
+    "credit": "Žiga",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Xylophone",
+    "family": "Percussion",
+    "file": "xylophone.jpg",
+    "sourceTitle": "File:Xylophone.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xylophone.jpg",
+    "credit": "Roumpf",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  },
+  {
+    "instrument": "Glockenspiel",
+    "family": "Percussion",
+    "file": "glockenspiel.jpg",
+    "sourceTitle": "File:Glockenspiel-malletech.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Glockenspiel-malletech.jpg",
+    "credit": "flamurai",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "adaptation": "Resized and converted to JPEG on a white background."
+  }
+]

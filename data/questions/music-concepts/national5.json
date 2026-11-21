@@ -5,7 +5,7 @@
   "source": {
     "knowledgeBankFile": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
     "knowledgeBankSchemaVersion": "5.0",
-    "knowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e"
+    "knowledgeBankSha256": "a83e4df9820bdc5d6eae142c234b1209b12c8c2a5bc2b107fc9668857ba8c1e7"
   },
   "questions": [
     {
@@ -32,15 +32,15 @@
           "correct": true
         },
         {
-          "text": "Celtic rock",
+          "text": "Gospel",
           "correct": false
         },
         {
-          "text": "Chorus",
+          "text": "Indian",
           "correct": false
         },
         {
-          "text": "Classical",
+          "text": "Minimalist",
           "correct": false
         }
       ],
@@ -115,7 +115,7 @@
       "question": "A strophic folk song from North-East Scotland, traditionally sung by farm workers who lived in a bothy. What is this?",
       "answers": [
         {
-          "text": "Symphony",
+          "text": "Chorus",
           "correct": false
         },
         {
@@ -123,11 +123,11 @@
           "correct": true
         },
         {
-          "text": "Waulking song",
+          "text": "Classical",
           "correct": false
         },
         {
-          "text": "Aria",
+          "text": "Gaelic psalm",
           "correct": false
         }
       ],
@@ -202,11 +202,11 @@
       "question": "A fusion of Celtic or Scottish folk music with rock. What is this?",
       "answers": [
         {
-          "text": "Indian",
+          "text": "Waulking song",
           "correct": false
         },
         {
-          "text": "Minimalist",
+          "text": "Aria",
           "correct": false
         },
         {
@@ -214,7 +214,7 @@
           "correct": true
         },
         {
-          "text": "Pibroch",
+          "text": "Bothy ballad",
           "correct": false
         }
       ],
@@ -289,15 +289,15 @@
       "question": "In a large vocal work, this is a group of singers, or music written for them. What is this?",
       "answers": [
         {
-          "text": "Classical",
+          "text": "Minimalist",
           "correct": false
         },
         {
-          "text": "Gaelic psalm",
+          "text": "Pibroch",
           "correct": false
         },
         {
-          "text": "Gospel",
+          "text": "Symphony",
           "correct": false
         },
         {
@@ -380,15 +380,15 @@
           "correct": true
         },
         {
-          "text": "Aria",
+          "text": "Gaelic psalm",
           "correct": false
         },
         {
-          "text": "Bothy ballad",
+          "text": "Gospel",
           "correct": false
         },
         {
-          "text": "Celtic rock",
+          "text": "Indian",
           "correct": false
         }
       ],
@@ -463,7 +463,7 @@
       "question": "A psalm sung in Scottish Gaelic, traditionally in churches of the Western Isles. What is this?",
       "answers": [
         {
-          "text": "Pibroch",
+          "text": "Bothy ballad",
           "correct": false
         },
         {
@@ -471,11 +471,11 @@
           "correct": true
         },
         {
-          "text": "Symphony",
+          "text": "Celtic rock",
           "correct": false
         },
         {
-          "text": "Waulking song",
+          "text": "Chorus",
           "correct": false
         }
       ],
@@ -550,11 +550,11 @@
       "question": "Religious vocal music rooted in African American church traditions. What is this?",
       "answers": [
         {
-          "text": "Gaelic psalm",
+          "text": "Symphony",
           "correct": false
         },
         {
-          "text": "Indian",
+          "text": "Waulking song",
           "correct": false
         },
         {
@@ -562,7 +562,7 @@
           "correct": true
         },
         {
-          "text": "Minimalist",
+          "text": "Aria",
           "correct": false
         }
       ],
@@ -637,15 +637,15 @@
       "question": "This music often uses sitar, tabla, drone, improvised melody, ornaments and repeating rhythmic cycles. What is this?",
       "answers": [
         {
-          "text": "Celtic rock",
+          "text": "Gospel",
           "correct": false
         },
         {
-          "text": "Chorus",
+          "text": "Minimalist",
           "correct": false
         },
         {
-          "text": "Classical",
+          "text": "Pibroch",
           "correct": false
         },
         {
@@ -728,15 +728,15 @@
           "correct": true
         },
         {
-          "text": "Waulking song",
+          "text": "Chorus",
           "correct": false
         },
         {
-          "text": "Aria",
+          "text": "Classical",
           "correct": false
         },
         {
-          "text": "Bothy ballad",
+          "text": "Gaelic psalm",
           "correct": false
         }
       ],
@@ -811,7 +811,7 @@
       "question": "An extended form of solo Highland bagpipe music, also called ceol mor. What is this?",
       "answers": [
         {
-          "text": "Indian",
+          "text": "Aria",
           "correct": false
         },
         {
@@ -819,11 +819,11 @@
           "correct": true
         },
         {
-          "text": "Minimalist",
+          "text": "Bothy ballad",
           "correct": false
         },
         {
-          "text": "Symphony",
+          "text": "Celtic rock",
           "correct": false
         }
       ],
@@ -898,11 +898,11 @@
       "question": "A large-scale, multi-movement work for orchestra. What is this?",
       "answers": [
         {
-          "text": "Classical",
+          "text": "Minimalist",
           "correct": false
         },
         {
-          "text": "Gaelic psalm",
+          "text": "Pibroch",
           "correct": false
         },
         {
@@ -910,7 +910,7 @@
           "correct": true
         },
         {
-          "text": "Gospel",
+          "text": "Waulking song",
           "correct": false
         }
       ],
@@ -985,15 +985,15 @@
       "question": "A Scottish Gaelic work song sung by women while beating newly woven cloth to soften and shrink it. What is this?",
       "answers": [
         {
-          "text": "Bothy ballad",
+          "text": "Gaelic psalm",
           "correct": false
         },
         {
-          "text": "Celtic rock",
+          "text": "Gospel",
           "correct": false
         },
         {
-          "text": "Chorus",
+          "text": "Indian",
           "correct": false
         },
         {
@@ -1076,15 +1076,15 @@
           "correct": true
         },
         {
-          "text": "Whole-tone scale",
+          "text": "Chromatic",
           "correct": false
         },
         {
-          "text": "Countermelody",
+          "text": "Semitone",
           "correct": false
         },
         {
-          "text": "Descant (voice)",
+          "text": "Syllabic",
           "correct": false
         }
       ],
@@ -1159,7 +1159,7 @@
       "question": "A major-key sequence using tonic I, subdominant IV, dominant V and submediant VI. What is this?",
       "answers": [
         {
-          "text": "Trill",
+          "text": "Melismatic",
           "correct": false
         },
         {
@@ -1167,11 +1167,11 @@
           "correct": true
         },
         {
-          "text": "Whole-tone scale",
+          "text": "Modulation",
           "correct": false
         },
         {
-          "text": "Atonal",
+          "text": "Perfect cadence",
           "correct": false
         }
       ],
@@ -1246,11 +1246,11 @@
       "question": "Melodic movement or harmony that uses notes a semitone apart, including notes outside the main key. What is this?",
       "answers": [
         {
-          "text": "Whole-tone scale",
+          "text": "Atonal",
           "correct": false
         },
         {
-          "text": "Contrary motion",
+          "text": "Pitch bend",
           "correct": false
         },
         {
@@ -1258,7 +1258,7 @@
           "correct": true
         },
         {
-          "text": "Countermelody",
+          "text": "Semitone",
           "correct": false
         }
       ],
@@ -1333,15 +1333,15 @@
       "question": "A dense chord made from adjacent or very closely spaced notes sounded together. What is this?",
       "answers": [
         {
-          "text": "Semitone",
+          "text": "Grace note",
           "correct": false
         },
         {
-          "text": "Syllabic",
+          "text": "Imperfect cadence",
           "correct": false
         },
         {
-          "text": "Tone",
+          "text": "Inverted pedal",
           "correct": false
         },
         {
@@ -1424,15 +1424,15 @@
           "correct": true
         },
         {
-          "text": "Chord progressions - chords I, IV, V and VI in a major key",
+          "text": "Pitch bend",
           "correct": false
         },
         {
-          "text": "Chromatic",
+          "text": "Semitone",
           "correct": false
         },
         {
-          "text": "Cluster",
+          "text": "Syllabic",
           "correct": false
         }
       ],
@@ -1507,7 +1507,7 @@
       "question": "A distinct secondary melody heard at the same time as the main melody. What is this?",
       "answers": [
         {
-          "text": "Modulation",
+          "text": "Chromatic",
           "correct": false
         },
         {
@@ -1515,11 +1515,11 @@
           "correct": true
         },
         {
-          "text": "Perfect cadence",
+          "text": "Cluster",
           "correct": false
         },
         {
-          "text": "Pitch bend",
+          "text": "Glissando",
           "correct": false
         }
       ],
@@ -1594,11 +1594,11 @@
       "question": "A high vocal countermelody sung above the main tune. What is this?",
       "answers": [
         {
-          "text": "Atonal",
+          "text": "Perfect cadence",
           "correct": false
         },
         {
-          "text": "Chord progressions - chords I, IV, V and VI in a major key",
+          "text": "Pitch bend",
           "correct": false
         },
         {
@@ -1606,7 +1606,7 @@
           "correct": true
         },
         {
-          "text": "Chromatic",
+          "text": "Semitone",
           "correct": false
         }
       ],
@@ -1681,15 +1681,15 @@
       "question": "A smooth slide from one pitch to another through the pitches in between. What is this?",
       "answers": [
         {
-          "text": "Contrary motion",
+          "text": "Tone",
           "correct": false
         },
         {
-          "text": "Countermelody",
+          "text": "Trill",
           "correct": false
         },
         {
-          "text": "Descant (voice)",
+          "text": "Whole-tone scale",
           "correct": false
         },
         {
@@ -1776,11 +1776,11 @@
           "correct": false
         },
         {
-          "text": "Perfect cadence",
+          "text": "Countermelody",
           "correct": false
         },
         {
-          "text": "Pitch bend",
+          "text": "Descant (voice)",
           "correct": false
         }
       ],
@@ -1863,11 +1863,11 @@
           "correct": true
         },
         {
-          "text": "Chromatic",
+          "text": "Semitone",
           "correct": false
         },
         {
-          "text": "Cluster",
+          "text": "Syllabic",
           "correct": false
         }
       ],
@@ -1970,11 +1970,11 @@
       "question": "A note sustained or repeatedly sounded in an upper part while the harmony beneath it changes. What is this?",
       "answers": [
         {
-          "text": "Ground bass",
+          "text": "Alberti bass",
           "correct": false
         },
         {
-          "text": "Pitch bend",
+          "text": "Descant (voice)",
           "correct": false
         },
         {
@@ -1982,7 +1982,7 @@
           "correct": true
         },
         {
-          "text": "Semitone",
+          "text": "Glissando",
           "correct": false
         }
       ],
@@ -2057,15 +2057,15 @@
       "question": "Several notes are sung on a single syllable of text. What is this?",
       "answers": [
         {
-          "text": "A cappella",
+          "text": "Syllabic",
           "correct": false
         },
         {
-          "text": "Atonal",
+          "text": "Modulation",
           "correct": false
         },
         {
-          "text": "Chord progressions - chords I, IV, V and VI in a major key",
+          "text": "Perfect cadence",
           "correct": false
         },
         {
@@ -2148,15 +2148,15 @@
           "correct": true
         },
         {
-          "text": "Inverted pedal",
+          "text": "Cluster",
           "correct": false
         },
         {
-          "text": "Melismatic",
+          "text": "Contrary motion",
           "correct": false
         },
         {
-          "text": "Perfect cadence",
+          "text": "Countermelody",
           "correct": false
         }
       ],
@@ -2239,11 +2239,11 @@
           "correct": true
         },
         {
-          "text": "Trill",
+          "text": "Inverted pedal",
           "correct": false
         },
         {
-          "text": "Whole-tone scale",
+          "text": "Melismatic",
           "correct": false
         }
       ],
@@ -2350,7 +2350,7 @@
           "correct": false
         },
         {
-          "text": "Descant (voice)",
+          "text": "Whole-tone scale",
           "correct": false
         },
         {
@@ -2358,7 +2358,7 @@
           "correct": true
         },
         {
-          "text": "Grace note",
+          "text": "Atonal",
           "correct": false
         }
       ],
@@ -2437,11 +2437,11 @@
           "correct": false
         },
         {
-          "text": "Pitch bend",
+          "text": "Glissando",
           "correct": false
         },
         {
-          "text": "Syllabic",
+          "text": "Grace note",
           "correct": false
         },
         {
@@ -2463,7 +2463,7 @@
             "matchKind": "exact-answer-id"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-hard-012",
               "n5-literacy-hard-015",
@@ -2540,7 +2540,7 @@
             "matchKind": "exact-answer-id"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-hard-012",
               "n5-literacy-hard-015",
@@ -2588,15 +2588,15 @@
           "correct": true
         },
         {
-          "text": "A cappella",
+          "text": "Melismatic",
           "correct": false
         },
         {
-          "text": "Contrary motion",
+          "text": "Tone",
           "correct": false
         },
         {
-          "text": "Countermelody",
+          "text": "Trill",
           "correct": false
         }
       ],
@@ -2679,11 +2679,11 @@
           "correct": true
         },
         {
-          "text": "Modulation",
+          "text": "Countermelody",
           "correct": false
         },
         {
-          "text": "Perfect cadence",
+          "text": "Descant (voice)",
           "correct": false
         }
       ],
@@ -2701,7 +2701,7 @@
             "matchKind": "exact-answer-id-for-reviewed-interval-sense"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-hard-013",
               "n5-literacy-hard-014",
@@ -2778,7 +2778,7 @@
             "matchKind": "exact-answer-id-for-reviewed-interval-sense"
           },
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-hard-013",
               "n5-literacy-hard-014",
@@ -2826,7 +2826,7 @@
           "correct": false
         },
         {
-          "text": "Chromatic",
+          "text": "Pitch bend",
           "correct": false
         },
         {
@@ -2834,7 +2834,7 @@
           "correct": true
         },
         {
-          "text": "Cluster",
+          "text": "Semitone",
           "correct": false
         }
       ],
@@ -2909,15 +2909,15 @@
       "question": "A six-note scale built entirely from whole-tone steps, with no semitones. What is this?",
       "answers": [
         {
-          "text": "Chromatic",
+          "text": "Atonal",
           "correct": false
         },
         {
-          "text": "Contrary motion",
+          "text": "Pitch bend",
           "correct": false
         },
         {
-          "text": "Countermelody",
+          "text": "Semitone",
           "correct": false
         },
         {
@@ -3000,15 +3000,15 @@
           "correct": true
         },
         {
-          "text": "Cross rhythms",
-          "correct": false
-        },
-        {
           "text": "Moderato",
           "correct": false
         },
         {
           "text": "Ritardando",
+          "correct": false
+        },
+        {
+          "text": "Rubato",
           "correct": false
         }
       ],
@@ -3019,7 +3019,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "6/8",
               "9/8",
@@ -3082,7 +3082,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "6/8",
               "9/8",
@@ -3119,7 +3119,7 @@
       "question": "Different rhythmic patterns sound at the same time, creating competing accents. What is this?",
       "answers": [
         {
-          "text": "Compound time (6/8, 9/8 and 12/8)",
+          "text": "Moderato",
           "correct": false
         },
         {
@@ -3127,11 +3127,11 @@
           "correct": true
         },
         {
-          "text": "Moderato",
+          "text": "Ritardando",
           "correct": false
         },
         {
-          "text": "Ritardando",
+          "text": "Rubato",
           "correct": false
         }
       ],
@@ -3206,11 +3206,11 @@
       "question": "A moderate tempo marking: neither fast nor slow. What is this?",
       "answers": [
         {
-          "text": "Compound time (6/8, 9/8 and 12/8)",
+          "text": "Cross rhythms",
           "correct": false
         },
         {
-          "text": "Cross rhythms",
+          "text": "Ritardando",
           "correct": false
         },
         {
@@ -3218,7 +3218,7 @@
           "correct": true
         },
         {
-          "text": "Ritardando",
+          "text": "Rubato",
           "correct": false
         }
       ],
@@ -3325,11 +3325,11 @@
           "correct": false
         },
         {
-          "text": "Compound time (6/8, 9/8 and 12/8)",
+          "text": "Moderato",
           "correct": false
         },
         {
-          "text": "Cross rhythms",
+          "text": "Compound time (6/8, 9/8 and 12/8)",
           "correct": false
         },
         {
@@ -3416,11 +3416,11 @@
           "correct": false
         },
         {
-          "text": "Moderato",
+          "text": "Cross rhythms",
           "correct": false
         },
         {
-          "text": "Compound time (6/8, 9/8 and 12/8)",
+          "text": "Moderato",
           "correct": false
         }
       ],
@@ -3495,7 +3495,7 @@
       "question": "A repeating accompaniment made from broken chords in the pattern lowest-highest-middle-highest. What is this?",
       "answers": [
         {
-          "text": "Walking bass",
+          "text": "Ground bass",
           "correct": false
         },
         {
@@ -3503,11 +3503,11 @@
           "correct": true
         },
         {
-          "text": "Homophonic",
+          "text": "Polyphonic",
           "correct": false
         },
         {
-          "text": "Polyphonic",
+          "text": "Rondo/ABACA — episode",
           "correct": false
         }
       ],
@@ -3582,11 +3582,11 @@
       "question": "A two-part form with an opening A section followed by a contrasting B section. Either section may repeat. What is this?",
       "answers": [
         {
-          "text": "Strophic",
+          "text": "Rondo/ABACA — episode",
           "correct": false
         },
         {
-          "text": "Ground bass",
+          "text": "Homophonic",
           "correct": false
         },
         {
@@ -3594,7 +3594,7 @@
           "correct": true
         },
         {
-          "text": "Homophonic",
+          "text": "Polyphonic",
           "correct": false
         }
       ],
@@ -3645,7 +3645,7 @@
       ],
       "hint": "The main section keeps returning between contrasting sections.",
       "hintFactId": null,
-      "explanation": "The statement “Its main A section returns between contrasting episodes” describes Rondo / ABACA, not Binary / AB. A two-part form with an opening A section followed by a contrasting B section. Either section may repeat.",
+      "explanation": "The statement “Its main A section returns between contrasting episodes” describes Rondo/ABACA — episode, not Binary / AB. A two-part form with an opening A section followed by a contrasting B section. Either section may repeat.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0189"
     },
@@ -3669,15 +3669,15 @@
       "question": "A closing passage added after the main structure of a piece or movement. What is this?",
       "answers": [
         {
-          "text": "Contrapuntal",
-          "correct": false
-        },
-        {
-          "text": "Ground bass",
-          "correct": false
-        },
-        {
           "text": "Homophonic",
+          "correct": false
+        },
+        {
+          "text": "Polyphonic",
+          "correct": false
+        },
+        {
+          "text": "Rondo/ABACA — episode",
           "correct": false
         },
         {
@@ -3727,14 +3727,14 @@
         {
           "text": "It is a contrasting passage between returns of a rondo's main A section.",
           "correct": true,
-          "featureOfConceptId": "MC-0185"
+          "featureOfConceptId": "MC-0189"
         }
       ],
       "hint": "The contrasting B or C between returns of A.",
       "hintFactId": null,
       "explanation": "The statement “It is a contrasting passage between returns of a rondo's main A section” describes Episode, not Coda. A closing passage added after the main structure of a piece or movement.",
       "literacyLink": null,
-      "featureSourceConceptId": "MC-0185"
+      "featureSourceConceptId": "MC-0189"
     },
     {
       "id": "MCQ-N5-MC0184-F01-E-001",
@@ -3760,15 +3760,15 @@
           "correct": true
         },
         {
-          "text": "Polyphonic",
+          "text": "Homophonic",
           "correct": false
         },
         {
-          "text": "Ground bass",
+          "text": "Rondo/ABACA — episode",
           "correct": false
         },
         {
-          "text": "Rondo / ABACA",
+          "text": "Strophic",
           "correct": false
         }
       ],
@@ -3824,93 +3824,6 @@
       "featureSourceConceptId": "MC-0187"
     },
     {
-      "id": "MCQ-N5-MC0185-F01-E-001",
-      "level": "National 5",
-      "category": "Texture/structure/form",
-      "categories": [
-        "Texture/structure/form"
-      ],
-      "conceptId": "MC-0185",
-      "concept": "Episode",
-      "factId": "MC-0185-F01",
-      "supportingFactIds": [],
-      "senseId": "MC-0185-S01",
-      "senseContext": "In rondo form,",
-      "comparisonGroupId": null,
-      "difficulty": "Easy",
-      "questionType": "definition",
-      "answerMode": "concept",
-      "question": "In rondo form, a contrasting passage occurs between returns of the main A section. What is this?",
-      "answers": [
-        {
-          "text": "Alberti bass",
-          "correct": false
-        },
-        {
-          "text": "Episode",
-          "correct": true
-        },
-        {
-          "text": "Binary / AB",
-          "correct": false
-        },
-        {
-          "text": "Contrapuntal",
-          "correct": false
-        }
-      ],
-      "hint": "The contrasting B or C between returns of A.",
-      "hintFactId": null,
-      "explanation": "In rondo form, a contrasting passage occurs between returns of the main A section.",
-      "literacyLink": null
-    },
-    {
-      "id": "MCQ-N5-MC0185-F01-M-001",
-      "level": "National 5",
-      "category": "Texture/structure/form",
-      "categories": [
-        "Texture/structure/form"
-      ],
-      "conceptId": "MC-0185",
-      "concept": "Episode",
-      "factId": "MC-0185-F01",
-      "supportingFactIds": [],
-      "senseId": "MC-0185-S01",
-      "senseContext": "In rondo form,",
-      "comparisonGroupId": null,
-      "difficulty": "Medium",
-      "questionType": "feature_exclusion",
-      "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Episode?",
-      "answers": [
-        {
-          "text": "It is a contrasting passage between returns of a rondo's main A section.",
-          "correct": false,
-          "featureOfConceptId": "MC-0185"
-        },
-        {
-          "text": "It is a closing passage added after the main structure.",
-          "correct": true,
-          "featureOfConceptId": "MC-0183"
-        },
-        {
-          "text": "It belongs between statements of the main rondo theme.",
-          "correct": false,
-          "featureOfConceptId": "MC-0185"
-        },
-        {
-          "text": "Different examples are usually labelled B, C and so on.",
-          "correct": false,
-          "featureOfConceptId": "MC-0185"
-        }
-      ],
-      "hint": "The musical tail at the very end.",
-      "hintFactId": null,
-      "explanation": "The statement “It is a closing passage added after the main structure” describes Coda, not Episode. In rondo form, a contrasting passage occurs between returns of the main A section.",
-      "literacyLink": null,
-      "featureSourceConceptId": "MC-0183"
-    },
-    {
       "id": "MCQ-N5-MC0186-F01-E-001",
       "level": "National 5",
       "category": "Texture/structure/form",
@@ -3930,11 +3843,11 @@
       "question": "A bass melody or pattern repeated persistently while the upper parts change or develop. What is this?",
       "answers": [
         {
-          "text": "Inverted pedal",
+          "text": "Walking bass",
           "correct": false
         },
         {
-          "text": "Homophonic",
+          "text": "Polyphonic",
           "correct": false
         },
         {
@@ -3942,7 +3855,7 @@
           "correct": true
         },
         {
-          "text": "Polyphonic",
+          "text": "Rondo/ABACA — episode",
           "correct": false
         }
       ],
@@ -4017,15 +3930,15 @@
       "question": "One main melody has chordal support, or all parts move in similar rhythms. What is this?",
       "answers": [
         {
-          "text": "Contrapuntal",
+          "text": "Polyphonic",
           "correct": false
         },
         {
-          "text": "Ground bass",
+          "text": "Rondo/ABACA — episode",
           "correct": false
         },
         {
-          "text": "Rondo / ABACA",
+          "text": "Strophic",
           "correct": false
         },
         {
@@ -4108,15 +4021,15 @@
           "correct": true
         },
         {
-          "text": "Contrapuntal",
+          "text": "Homophonic",
           "correct": false
         },
         {
-          "text": "Ground bass",
+          "text": "Rondo/ABACA — episode",
           "correct": false
         },
         {
-          "text": "Rondo / ABACA",
+          "text": "Strophic",
           "correct": false
         }
       ],
@@ -4179,7 +4092,7 @@
         "Texture/structure/form"
       ],
       "conceptId": "MC-0189",
-      "concept": "Rondo / ABACA",
+      "concept": "Rondo/ABACA — episode",
       "factId": "MC-0189-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -4191,19 +4104,19 @@
       "question": "The main A section returns repeatedly between contrasting episodes. What is this?",
       "answers": [
         {
-          "text": "Strophic",
+          "text": "Binary / AB",
           "correct": false
         },
         {
-          "text": "Rondo / ABACA",
+          "text": "Rondo/ABACA — episode",
           "correct": true
         },
         {
-          "text": "Ground bass",
+          "text": "Homophonic",
           "correct": false
         },
         {
-          "text": "Homophonic",
+          "text": "Polyphonic",
           "correct": false
         }
       ],
@@ -4220,7 +4133,7 @@
         "Texture/structure/form"
       ],
       "conceptId": "MC-0189",
-      "concept": "Rondo / ABACA",
+      "concept": "Rondo/ABACA — episode",
       "factId": "MC-0189-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -4229,7 +4142,7 @@
       "difficulty": "Medium",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Rondo / ABACA?",
+      "question": "Which is NOT a feature of Rondo/ABACA — episode?",
       "answers": [
         {
           "text": "Its main A section returns between contrasting episodes.",
@@ -4254,7 +4167,7 @@
       ],
       "hint": "Two contrasting sections, then stop.",
       "hintFactId": null,
-      "explanation": "The statement “It has two contrasting sections, A followed by B” describes Binary / AB, not Rondo / ABACA. The main A section returns repeatedly between contrasting episodes.",
+      "explanation": "The statement “It has two contrasting sections, A followed by B” describes Binary / AB, not Rondo/ABACA — episode. The main A section returns repeatedly between contrasting episodes.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0182"
     },
@@ -4278,11 +4191,11 @@
       "question": "A song form in which each verse is sung to the same music while the words change. What is this?",
       "answers": [
         {
-          "text": "Rondo / ABACA",
+          "text": "Binary / AB",
           "correct": false
         },
         {
-          "text": "Ground bass",
+          "text": "Homophonic",
           "correct": false
         },
         {
@@ -4290,7 +4203,7 @@
           "correct": true
         },
         {
-          "text": "Homophonic",
+          "text": "Polyphonic",
           "correct": false
         }
       ],
@@ -4365,15 +4278,15 @@
       "question": "A bass line that moves on each beat, usually outlining the chord progression with scale steps, arpeggio notes and passing notes. What is this?",
       "answers": [
         {
-          "text": "Alberti bass",
-          "correct": false
-        },
-        {
-          "text": "Homophonic",
+          "text": "Inverted pedal",
           "correct": false
         },
         {
           "text": "Polyphonic",
+          "correct": false
+        },
+        {
+          "text": "Rondo/ABACA — episode",
           "correct": false
         },
         {
@@ -4456,15 +4369,15 @@
           "correct": true
         },
         {
-          "text": "Syllabic",
+          "text": "Melismatic",
           "correct": false
         },
         {
-          "text": "Viola",
+          "text": "Piccolo",
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Pizzicato",
           "correct": false
         }
       ],
@@ -4547,11 +4460,11 @@
           "correct": true
         },
         {
-          "text": "Oboe",
+          "text": "Bodhran",
           "correct": false
         },
         {
-          "text": "Piccolo",
+          "text": "Bongo drums",
           "correct": false
         }
       ],
@@ -4626,11 +4539,11 @@
       "question": "A medium-low adult male voice lying between tenor and bass. What is this?",
       "answers": [
         {
-          "text": "Flutter-tonguing",
+          "text": "Arco",
           "correct": false
         },
         {
-          "text": "French horn",
+          "text": "Bassoon",
           "correct": false
         },
         {
@@ -4638,7 +4551,7 @@
           "correct": true
         },
         {
-          "text": "Hi-hat cymbals",
+          "text": "Bodhran",
           "correct": false
         }
       ],
@@ -4713,15 +4626,15 @@
       "question": "A low double-reed woodwind instrument with a long folded tube. What is this?",
       "answers": [
         {
-          "text": "Oboe",
+          "text": "Piccolo",
           "correct": false
         },
         {
-          "text": "Rolls",
+          "text": "Arco",
           "correct": false
         },
         {
-          "text": "A cappella",
+          "text": "Baritone",
           "correct": false
         },
         {
@@ -4804,15 +4717,15 @@
           "correct": true
         },
         {
-          "text": "Castanets",
+          "text": "Hi-hat cymbals",
           "correct": false
         },
         {
-          "text": "Reverb",
+          "text": "A cappella",
           "correct": false
         },
         {
-          "text": "Rolls",
+          "text": "Arco",
           "correct": false
         }
       ],
@@ -4887,7 +4800,7 @@
       "question": "A joined pair of small, high-pitched hand drums of different sizes. What is this?",
       "answers": [
         {
-          "text": "Castanets",
+          "text": "Hi-hat cymbals",
           "correct": false
         },
         {
@@ -4895,11 +4808,11 @@
           "correct": true
         },
         {
-          "text": "Pizzicato",
+          "text": "Rolls",
           "correct": false
         },
         {
-          "text": "Reverb",
+          "text": "A cappella",
           "correct": false
         }
       ],
@@ -4974,11 +4887,11 @@
       "question": "Pairs of small shell-shaped clappers, traditionally made from wood, held in the hand and clicked together. What is this?",
       "answers": [
         {
-          "text": "Bongo drums",
+          "text": "Hi-hat cymbals",
           "correct": false
         },
         {
-          "text": "Mezzo-soprano",
+          "text": "Reverb",
           "correct": false
         },
         {
@@ -4986,7 +4899,7 @@
           "correct": true
         },
         {
-          "text": "Pizzicato",
+          "text": "Rolls",
           "correct": false
         }
       ],
@@ -5061,15 +4974,15 @@
       "question": "The Scottish Gaelic harp: a small folk harp with strings plucked by the fingers. What is this?",
       "answers": [
         {
-          "text": "Flutter-tonguing",
-          "correct": false
-        },
-        {
-          "text": "Mezzo-soprano",
-          "correct": false
-        },
-        {
           "text": "Pizzicato",
+          "correct": false
+        },
+        {
+          "text": "Reverb",
+          "correct": false
+        },
+        {
+          "text": "Rolls",
           "correct": false
         },
         {
@@ -5152,15 +5065,15 @@
           "correct": true
         },
         {
-          "text": "Tuba",
+          "text": "Hi-hat cymbals",
           "correct": false
         },
         {
-          "text": "Viola",
+          "text": "Mezzo-soprano",
           "correct": false
         },
         {
-          "text": "A cappella",
+          "text": "Oboe",
           "correct": false
         }
       ],
@@ -5235,7 +5148,7 @@
       "question": "A wind or brass technique in which the performer rolls the tongue or uvula while blowing. What is this?",
       "answers": [
         {
-          "text": "Clarsach",
+          "text": "Viola",
           "correct": false
         },
         {
@@ -5243,11 +5156,11 @@
           "correct": true
         },
         {
-          "text": "French horn",
+          "text": "A cappella",
           "correct": false
         },
         {
-          "text": "Hi-hat cymbals",
+          "text": "Baritone",
           "correct": false
         }
       ],
@@ -5326,7 +5239,7 @@
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Con sordino",
           "correct": false
         },
         {
@@ -5334,7 +5247,7 @@
           "correct": true
         },
         {
-          "text": "Baritone",
+          "text": "Flutter-tonguing",
           "correct": false
         }
       ],
@@ -5409,15 +5322,15 @@
       "question": "They may be struck open or closed with sticks, or sounded by closing them with the pedal. What is this?",
       "answers": [
         {
-          "text": "Bongo drums",
+          "text": "Castanets",
           "correct": false
         },
         {
-          "text": "A cappella",
+          "text": "Baritone",
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Con sordino",
           "correct": false
         },
         {
@@ -5500,15 +5413,15 @@
           "correct": true
         },
         {
-          "text": "Flutter-tonguing",
+          "text": "Arco",
           "correct": false
         },
         {
-          "text": "French horn",
+          "text": "Bassoon",
           "correct": false
         },
         {
-          "text": "Hi-hat cymbals",
+          "text": "Bodhran",
           "correct": false
         }
       ],
@@ -5583,7 +5496,7 @@
       "question": "A high double-reed woodwind instrument with a narrow conical bore. What is this?",
       "answers": [
         {
-          "text": "Bassoon",
+          "text": "Piccolo",
           "correct": false
         },
         {
@@ -5591,11 +5504,11 @@
           "correct": true
         },
         {
-          "text": "Reverb",
+          "text": "A cappella",
           "correct": false
         },
         {
-          "text": "Rolls",
+          "text": "Arco",
           "correct": false
         }
       ],
@@ -5670,11 +5583,11 @@
       "question": "The smallest and highest standard orchestral woodwind instrument. What is this?",
       "answers": [
         {
-          "text": "Bassoon",
+          "text": "Oboe",
           "correct": false
         },
         {
-          "text": "Pizzicato",
+          "text": "Rolls",
           "correct": false
         },
         {
@@ -5682,7 +5595,7 @@
           "correct": true
         },
         {
-          "text": "Reverb",
+          "text": "A cappella",
           "correct": false
         }
       ],
@@ -5761,11 +5674,11 @@
           "correct": false
         },
         {
-          "text": "Bodhran",
+          "text": "Sitar",
           "correct": false
         },
         {
-          "text": "Bongo drums",
+          "text": "Tabla",
           "correct": false
         },
         {
@@ -5852,11 +5765,11 @@
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Pizzicato",
           "correct": false
         },
         {
-          "text": "Baritone",
+          "text": "Rolls",
           "correct": false
         }
       ],
@@ -5931,7 +5844,7 @@
       "question": "Very rapid repeated strokes on a percussion instrument that merge into a sustained or trembling sound. What is this?",
       "answers": [
         {
-          "text": "Bassoon",
+          "text": "Reverb",
           "correct": false
         },
         {
@@ -5939,11 +5852,11 @@
           "correct": true
         },
         {
-          "text": "Bodhran",
+          "text": "Sitar",
           "correct": false
         },
         {
-          "text": "Bongo drums",
+          "text": "Tabla",
           "correct": false
         }
       ],
@@ -6018,11 +5931,11 @@
       "question": "A North Indian plucked long-necked lute with movable frets, melody strings and sympathetic strings. What is this?",
       "answers": [
         {
-          "text": "Baritone",
+          "text": "Flutter-tonguing",
           "correct": false
         },
         {
-          "text": "Con sordino",
+          "text": "Mezzo-soprano",
           "correct": false
         },
         {
@@ -6030,7 +5943,7 @@
           "correct": true
         },
         {
-          "text": "Flutter-tonguing",
+          "text": "Pizzicato",
           "correct": false
         }
       ],
@@ -6105,15 +6018,15 @@
       "question": "The two drums differ in size and pitch and produce many contrasting strokes and rhythmic patterns. What is this?",
       "answers": [
         {
-          "text": "Bongo drums",
+          "text": "Castanets",
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Con sordino",
           "correct": false
         },
         {
-          "text": "Baritone",
+          "text": "Flutter-tonguing",
           "correct": false
         },
         {
@@ -6200,11 +6113,11 @@
           "correct": false
         },
         {
-          "text": "A cappella",
+          "text": "Baritone",
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Con sordino",
           "correct": false
         }
       ],
@@ -6279,7 +6192,7 @@
       "question": "A bowed string instrument slightly larger and lower in pitch than the violin. What is this?",
       "answers": [
         {
-          "text": "Rolls",
+          "text": "Arco",
           "correct": false
         },
         {
@@ -6287,11 +6200,11 @@
           "correct": true
         },
         {
-          "text": "A cappella",
+          "text": "Baritone",
           "correct": false
         },
         {
-          "text": "Arco",
+          "text": "Con sordino",
           "correct": false
         }
       ],

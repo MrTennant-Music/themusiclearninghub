@@ -1,0 +1,3133 @@
+{
+  "sourceReading": "Fresh independent 300 dpi per-staff calibration and clef/key mapping, followed by notehead-centre/rhythm/rest/chord/accidental/beam/tie/slur/tuplet/box reading and a second source comparison on pages 4,5,8,11,12. All existing pitches independently confirmed. Explicit teacher removals of all Q4 tenutos and optical offsets preserved. MI pages 3–4 note diagrams independently checked. Snapshot below recorded only after complete source verification; renderer output is a separate check.",
+  "staffCalibration": [
+    {
+      "page": 4,
+      "render": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/source-page-04.png",
+      "systems": [
+        {
+          "lineCentresPt": [
+            192.5,
+            197.4,
+            202.4,
+            207.3,
+            212.3
+          ],
+          "gapPt": 4.9,
+          "leftPt": 96.472801208,
+          "rightPt": 485.406791686,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-04-system-01-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            268.1,
+            273.1,
+            278,
+            283,
+            287.9
+          ],
+          "gapPt": 5,
+          "leftPt": 96.472801208,
+          "rightPt": 485.406791686,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-04-system-02-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            412,
+            416.9,
+            421.9,
+            426.8,
+            431.8
+          ],
+          "gapPt": 4.9,
+          "leftPt": 96.472801208,
+          "rightPt": 485.406791686,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-04-system-03-300dpi.png"
+        }
+      ],
+      "musicFont": false,
+      "rhythmGraphic": false,
+      "rasterCandidate": false
+    },
+    {
+      "page": 5,
+      "render": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/source-page-05.png",
+      "systems": [
+        {
+          "lineCentresPt": [
+            214.6,
+            219.6,
+            224.6,
+            229.5,
+            234.5
+          ],
+          "gapPt": 5,
+          "leftPt": 111.017097473,
+          "rightPt": 499.79709625199996,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-05-system-01-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            318.2,
+            323.1,
+            328.1,
+            333.1,
+            338
+          ],
+          "gapPt": 4.9,
+          "leftPt": 110.5522995,
+          "rightPt": 499.797294617,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-05-system-02-300dpi.png"
+        }
+      ],
+      "musicFont": true,
+      "rhythmGraphic": false,
+      "rasterCandidate": false
+    },
+    {
+      "page": 8,
+      "render": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/source-page-08.png",
+      "systems": [
+        {
+          "lineCentresPt": [
+            212.3,
+            217.3,
+            222.2,
+            227.2,
+            232.1
+          ],
+          "gapPt": 5,
+          "leftPt": 95.839797973,
+          "rightPt": 484.463790893,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-01-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            259.4,
+            264.4,
+            269.3,
+            274.3,
+            279.3
+          ],
+          "gapPt": 5,
+          "leftPt": 95.839797973,
+          "rightPt": 484.463790893,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-02-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            347.3,
+            352.3,
+            357.2,
+            362.2,
+            367.2
+          ],
+          "gapPt": 5,
+          "leftPt": 96.149803161,
+          "rightPt": 484.46379852200005,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-03-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            394.4,
+            399.4,
+            404.4,
+            409.3,
+            414.3
+          ],
+          "gapPt": 5,
+          "leftPt": 96.149803161,
+          "rightPt": 484.46379852200005,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-04-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            486.2,
+            491.2,
+            496.1,
+            501.1,
+            506
+          ],
+          "gapPt": 5,
+          "leftPt": 96.149803161,
+          "rightPt": 484.46379852200005,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-05-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            533.3,
+            538.3,
+            543.2,
+            548.2,
+            553.2
+          ],
+          "gapPt": 5,
+          "leftPt": 96.149803161,
+          "rightPt": 484.46379852200005,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-06-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            629,
+            633.9,
+            638.9,
+            643.8,
+            648.8
+          ],
+          "gapPt": 4.9,
+          "leftPt": 96.149803161,
+          "rightPt": 484.46379852200005,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-07-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            676.1,
+            681.1,
+            686,
+            691,
+            695.9
+          ],
+          "gapPt": 5,
+          "leftPt": 96.149803161,
+          "rightPt": 484.46379852200005,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-08-system-08-300dpi.png"
+        }
+      ],
+      "musicFont": false,
+      "rhythmGraphic": false,
+      "rasterCandidate": false
+    },
+    {
+      "page": 11,
+      "render": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/source-page-11.png",
+      "systems": [
+        {
+          "lineCentresPt": [
+            161.8,
+            166.8,
+            171.8,
+            176.7,
+            181.7
+          ],
+          "gapPt": 5,
+          "leftPt": 67.952301025,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-01-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            240.6,
+            245.5,
+            250.5,
+            255.5,
+            260.4
+          ],
+          "gapPt": 4.9,
+          "leftPt": 67.952301025,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-02-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            319,
+            324,
+            328.9,
+            333.9,
+            338.9
+          ],
+          "gapPt": 5,
+          "leftPt": 67.642303466,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-03-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            397.6,
+            402.6,
+            407.5,
+            412.5,
+            417.5
+          ],
+          "gapPt": 5,
+          "leftPt": 67.952301025,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-04-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            476.4,
+            481.3,
+            486.3,
+            491.2,
+            496.2
+          ],
+          "gapPt": 4.9,
+          "leftPt": 67.952301025,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-05-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            562.9,
+            567.8,
+            572.8,
+            577.7,
+            582.7
+          ],
+          "gapPt": 4.9,
+          "leftPt": 67.952301025,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-06-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            614.6,
+            619.6,
+            624.5,
+            629.5,
+            634.5
+          ],
+          "gapPt": 5,
+          "leftPt": 67.952301025,
+          "rightPt": 457.041290282,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-11-system-07-300dpi.png"
+        }
+      ],
+      "musicFont": false,
+      "rhythmGraphic": false,
+      "rasterCandidate": false
+    },
+    {
+      "page": 12,
+      "render": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/source-page-12.png",
+      "systems": [
+        {
+          "lineCentresPt": [
+            224.3,
+            229.2,
+            234.2,
+            239.1,
+            244.1
+          ],
+          "gapPt": 4.9,
+          "leftPt": 87.874099731,
+          "rightPt": 499.131088256,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-12-system-01-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            340.1,
+            345,
+            350,
+            354.9,
+            359.9
+          ],
+          "gapPt": 4.9,
+          "leftPt": 87.874099731,
+          "rightPt": 499.131088256,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-12-system-02-300dpi.png"
+        },
+        {
+          "lineCentresPt": [
+            417.7,
+            422.7,
+            427.6,
+            432.6,
+            437.6
+          ],
+          "gapPt": 5,
+          "leftPt": 87.874099731,
+          "rightPt": 499.131088256,
+          "crop": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/page-12-system-03-300dpi.png"
+        }
+      ],
+      "musicFont": true,
+      "rhythmGraphic": false,
+      "rasterCandidate": false
+    },
+    {
+      "page": 16,
+      "render": "maintenance/reference/past-paper-source-audit/advanced-higher-2022/source-page-16.png",
+      "systems": [],
+      "musicFont": false,
+      "rhythmGraphic": true,
+      "rasterCandidate": false
+    }
+  ],
+  "q2a": {
+    "pickup": {
+      "upper": {
+        "notes": [
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "G3",
+            "dottedSemiquaver"
+          ],
+          [
+            "G3",
+            "demisemiquaver"
+          ],
+          [
+            "A3",
+            "quaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "D4",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 2,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 6
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      "lower": {
+        "notes": [
+          [
+            "r",
+            "dottedCrotchetRest"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      }
+    },
+    "bars": [
+      {
+        "upper": {
+          "notes": [
+            [
+              "E4",
+              "dottedCrotchet"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "crotchet"
+            ],
+            [
+              "D4",
+              "crotchet"
+            ],
+            [
+              "G3",
+              "dottedSemiquaver"
+            ],
+            [
+              "G3",
+              "demisemiquaver"
+            ],
+            [
+              "D4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "D4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 4,
+              "end": 5
+            },
+            {
+              "start": 6,
+              "end": 8
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "C3",
+              "dottedCrotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "C3",
+              "crotchet"
+            ],
+            [
+              "B2",
+              "dottedCrotchet"
+            ],
+            [
+              "B2",
+              "dottedCrotchet"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [
+            [
+              0,
+              1
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "bassUpper": {
+          "notes": [
+            [
+              "C4",
+              "dottedMinim"
+            ],
+            [
+              "G3",
+              "dottedMinim"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "E4",
+              "dottedCrotchet"
+            ],
+            [
+              "E4",
+              "crotchet"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "crotchet"
+            ],
+            [
+              "G3",
+              "dottedSemiquaver"
+            ],
+            [
+              "G3",
+              "demisemiquaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "D4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 4,
+              "end": 5
+            },
+            {
+              "start": 6,
+              "end": 8
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "A2",
+              "dottedCrotchet"
+            ],
+            [
+              "A2",
+              "quaver"
+            ],
+            [
+              "A2",
+              "crotchet"
+            ],
+            [
+              "G2",
+              "dottedCrotchet"
+            ],
+            [
+              "G2",
+              "dottedCrotchet"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [
+            [
+              0,
+              1
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "bassUpper": {
+          "notes": [
+            [
+              "E3+C4",
+              "dottedMinim"
+            ],
+            [
+              "E3+G3",
+              "dottedMinim"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "Eb4",
+              "dottedCrotchet"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "Eb4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "D4",
+              "crotchet"
+            ],
+            [
+              "G3",
+              "dottedSemiquaver"
+            ],
+            [
+              "G3",
+              "demisemiquaver"
+            ],
+            [
+              "A3",
+              "quaver"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "D4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 1,
+              "end": 3
+            },
+            {
+              "start": 5,
+              "end": 6
+            },
+            {
+              "start": 7,
+              "end": 9
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "r",
+              "dottedMinimRest"
+            ],
+            [
+              "r",
+              "dottedMinimRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "G3",
+              "quaver"
+            ],
+            [
+              "G3",
+              "quaver"
+            ],
+            [
+              "A3",
+              "quaver"
+            ],
+            [
+              "B3",
+              "quaver"
+            ],
+            [
+              "G3",
+              "quaver"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 0,
+              "end": 2
+            },
+            {
+              "start": 3,
+              "end": 5
+            },
+            {
+              "start": 6,
+              "end": 8
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              0,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "r",
+              "dottedMinimRest"
+            ],
+            [
+              "r",
+              "dottedMinimRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      }
+    ],
+    "sourceBoxes": {
+      "chords": [
+        1,
+        2
+      ],
+      "bassRewrite": {
+        "bar": 3,
+        "indices": [
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "finalBarline": "double"
+  },
+  "q2b": {
+    "bars": [
+      {
+        "notes": [
+          [
+            "r",
+            "dottedCrotchetRest"
+          ],
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "C5",
+            "semiquaver"
+          ],
+          [
+            "B4",
+            "semiquaver"
+          ],
+          [
+            "C5",
+            "quaver"
+          ],
+          [
+            "G4",
+            "dottedMinim"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 2,
+            "end": 4
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "r",
+            "crotchetRest"
+          ],
+          [
+            "r",
+            "semiquaverRest"
+          ],
+          [
+            "C4",
+            "semiquaver"
+          ],
+          [
+            "E4",
+            "semiquaver"
+          ],
+          [
+            "D4",
+            "semiquaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "C4",
+            "dottedMinim"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 3,
+            "end": 6
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "r",
+            "crotchetRest"
+          ],
+          [
+            "C4",
+            "semiquaver"
+          ],
+          [
+            "C4",
+            "semiquaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "D4",
+            "crotchet"
+          ],
+          [
+            "D4",
+            "crotchet"
+          ],
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 1,
+            "end": 2
+          }
+        ],
+        "ties": [
+          [
+            4,
+            5
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "A4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "crotchet"
+          ],
+          [
+            "G4",
+            "dottedCrotchet"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [
+          [
+            1,
+            2
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      }
+    ],
+    "sourceBoxes": {
+      "interval": {
+        "bar": 1,
+        "indices": [
+          4,
+          5
+        ]
+      },
+      "accidental": {
+        "bar": 3,
+        "index": 3
+      }
+    },
+    "finalBarline": "double"
+  },
+  "q4a": {
+    "pickup": {
+      "upper": {
+        "notes": [
+          [
+            "D#4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "A4",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 1,
+            "end": 3
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      "lower": {
+        "notes": [
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      }
+    },
+    "bars": [
+      {
+        "upper": {
+          "notes": [
+            [
+              "C5",
+              "dottedMinim"
+            ],
+            [
+              "C5",
+              "dottedMinim"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "C3+G3",
+              "dottedCrotchet"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "D3+A3",
+              "dottedCrotchet"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "innerVoice": {
+          "notes": [
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "E4",
+              "dottedCrotchet"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "F4",
+              "dottedCrotchet"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "C5",
+              "dottedMinim"
+            ],
+            [
+              "C5",
+              "dottedMinim"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "D#3+A3",
+              "dottedCrotchet"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "E3+Bb3",
+              "dottedCrotchet"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "innerVoice": {
+          "notes": [
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "F#4",
+              "dottedCrotchet"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "G4",
+              "dottedCrotchet"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "Eb5+G5",
+              "crotchet"
+            ],
+            [
+              "A4",
+              "quaver"
+            ],
+            [
+              "D5+F5",
+              "crotchet"
+            ],
+            [
+              "A4",
+              "quaver"
+            ],
+            [
+              "C5+Eb5",
+              "crotchet"
+            ],
+            [
+              "D5+F5",
+              "quaver"
+            ],
+            [
+              "D5+F5",
+              "crotchet"
+            ],
+            [
+              "A4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [
+            [
+              5,
+              6
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "F2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "B2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "F2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "B2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [
+            [
+              0,
+              3
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "triplets": [],
+          "accidentals": [
+            [
+              2,
+              "natural"
+            ]
+          ]
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "Eb5+G5",
+              "crotchet"
+            ],
+            [
+              "A4",
+              "quaver"
+            ],
+            [
+              "D5+F5",
+              "crotchet"
+            ],
+            [
+              "C5+Eb5",
+              "quaver"
+            ],
+            [
+              "C5+Eb5",
+              "crotchet"
+            ],
+            [
+              "D#5",
+              "quaver"
+            ],
+            [
+              "E5",
+              "quaver"
+            ],
+            [
+              "G5",
+              "quaver"
+            ],
+            [
+              "A5",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 6,
+              "end": 8
+            }
+          ],
+          "ties": [
+            [
+              3,
+              4
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              6,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "F2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "B2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "F2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ],
+            [
+              "B2",
+              "crotchet"
+            ],
+            [
+              "C3",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [
+            [
+              0,
+              3
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "C6",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "C6",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "C6",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "C6",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "C2",
+              "crotchet"
+            ],
+            [
+              "G2",
+              "quaver"
+            ],
+            [
+              "D2",
+              "crotchet"
+            ],
+            [
+              "G2",
+              "quaver"
+            ],
+            [
+              "E2",
+              "crotchet"
+            ],
+            [
+              "G2",
+              "quaver"
+            ],
+            [
+              "D2",
+              "crotchet"
+            ],
+            [
+              "G2",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "Eb6",
+              "quaver"
+            ],
+            [
+              "D6",
+              "quaver"
+            ],
+            [
+              "C6",
+              "quaver"
+            ],
+            [
+              "G#5",
+              "quaver"
+            ],
+            [
+              "A5",
+              "quaver"
+            ],
+            [
+              "C6",
+              "quaver"
+            ],
+            [
+              "C5",
+              "quaver"
+            ],
+            [
+              "Eb5",
+              "quaver"
+            ],
+            [
+              "D5",
+              "quaver"
+            ],
+            [
+              "C5",
+              "quaver"
+            ],
+            [
+              "Eb5",
+              "quaver"
+            ],
+            [
+              "E5",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 0,
+              "end": 2
+            },
+            {
+              "start": 3,
+              "end": 5
+            },
+            {
+              "start": 6,
+              "end": 8
+            },
+            {
+              "start": 9,
+              "end": 11
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              11,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "C2",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "G5",
+              "crotchet"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "Bb4",
+              "quaver"
+            ],
+            [
+              "A4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "C5",
+              "crotchet"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "Eb4",
+              "quaver"
+            ],
+            [
+              "D4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 2,
+              "end": 4
+            },
+            {
+              "start": 7,
+              "end": 9
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              0,
+              "natural"
+            ],
+            [
+              1,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "G2+F3+B3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ],
+            [
+              "Eb3+F3+A3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "r",
+              "dottedCrotchetRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "D#4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "crotchet"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "crotchet"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "A4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 0,
+              "end": 2
+            },
+            {
+              "start": 7,
+              "end": 9
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              1,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "C3+G3",
+              "dottedCrotchet"
+            ],
+            [
+              "F3+A3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "E3+G3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "D3+F3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [
+            {
+              "from": 0,
+              "to": 1,
+              "above": true
+            }
+          ],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "D#4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "crotchet"
+            ],
+            [
+              "C4",
+              "quaver"
+            ],
+            [
+              "C4",
+              "dottedMinim"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 0,
+              "end": 2
+            }
+          ],
+          "ties": [],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        },
+        "lower": {
+          "notes": [
+            [
+              "C3+G3",
+              "dottedCrotchet"
+            ],
+            [
+              "F3+A3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "E3+G3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ],
+            [
+              "D3+F3",
+              "crotchet"
+            ],
+            [
+              "r",
+              "quaverRest"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [],
+          "slurs": [
+            {
+              "from": 0,
+              "to": 1,
+              "above": true
+            }
+          ],
+          "triplets": [],
+          "accidentals": []
+        }
+      }
+    ],
+    "endings": [
+      {
+        "bar": 8,
+        "type": "repeat",
+        "closed": true
+      },
+      {
+        "bar": 9,
+        "type": "single",
+        "closed": false
+      }
+    ],
+    "teacherAdaptations": [
+      "All tenutos omitted at explicit teacher request",
+      "Source bar-6 final six pitches confirmed C5 Eb5 D5 C5 Eb5 E5"
+    ],
+    "sourceBoxes": {
+      "timeSignature": "before pickup",
+      "chord": {
+        "bar": 7,
+        "index": 0,
+        "hands": [
+          "upper",
+          "lower"
+        ]
+      }
+    }
+  },
+  "q4b": {
+    "bars": [
+      {
+        "notes": [
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "Ab4",
+            "quaver"
+          ],
+          [
+            "A4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "C5",
+            "dottedCrotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "Ab4",
+            "quaver"
+          ],
+          [
+            "A4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "C5",
+            "dottedCrotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "C4",
+            "minim"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "A3",
+            "quaver"
+          ],
+          [
+            "Bb3",
+            "quaver"
+          ],
+          [
+            "B3",
+            "quaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "C4",
+            "crotchet"
+          ],
+          [
+            "r",
+            "crotchetRest"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "D4",
+            "quaver"
+          ],
+          [
+            "Eb4",
+            "quaver"
+          ],
+          [
+            "E4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "Ab4",
+            "quaver"
+          ],
+          [
+            "A4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "C5",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            2,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "C5",
+            "quaver"
+          ],
+          [
+            "G4",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "C#5",
+            "quaver"
+          ],
+          [
+            "C#5",
+            "quaver"
+          ],
+          [
+            "Bb4",
+            "quaver"
+          ],
+          [
+            "C5",
+            "quaver"
+          ],
+          [
+            "C#5",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 7
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": [
+          [
+            6,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "D5",
+              "crotchet"
+            ],
+            [
+              "G5",
+              "quaver"
+            ],
+            [
+              "F5",
+              "quaver"
+            ],
+            [
+              "F5",
+              "quaver"
+            ],
+            [
+              "D5",
+              "quaver"
+            ],
+            [
+              "B4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 1,
+              "end": 2
+            },
+            {
+              "start": 3,
+              "end": 6
+            }
+          ],
+          "ties": [
+            [
+              2,
+              3
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              5,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "F3",
+              "dottedCrotchet"
+            ],
+            [
+              "G3",
+              "quaver"
+            ],
+            [
+              "G3",
+              "minim"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [
+            [
+              1,
+              2
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      },
+      {
+        "upper": {
+          "notes": [
+            [
+              "Eb4",
+              "quaver"
+            ],
+            [
+              "E4",
+              "quaver"
+            ],
+            [
+              "G4",
+              "quaver"
+            ],
+            [
+              "Db5",
+              "quaver"
+            ],
+            [
+              "Db5",
+              "quaver"
+            ],
+            [
+              "C5",
+              "quaver"
+            ],
+            [
+              "A4",
+              "quaver"
+            ],
+            [
+              "F4",
+              "quaver"
+            ]
+          ],
+          "beamGroups": [
+            {
+              "start": 0,
+              "end": 3
+            },
+            {
+              "start": 4,
+              "end": 7
+            }
+          ],
+          "ties": [
+            [
+              3,
+              4
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": [
+            [
+              1,
+              "natural"
+            ]
+          ]
+        },
+        "lower": {
+          "notes": [
+            [
+              "C3",
+              "dottedCrotchet"
+            ],
+            [
+              "F3",
+              "quaver"
+            ],
+            [
+              "F3",
+              "minim"
+            ]
+          ],
+          "beamGroups": [],
+          "ties": [
+            [
+              1,
+              2
+            ]
+          ],
+          "slurs": [],
+          "triplets": [],
+          "accidentals": []
+        }
+      }
+    ],
+    "sourceTieBelowBars": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14
+    ],
+    "finalBarline": "single"
+  },
+  "q5": {
+    "bars": [
+      {
+        "notes": [
+          [
+            "r",
+            "crotchetRest"
+          ],
+          [
+            "E5",
+            "dottedCrotchet"
+          ],
+          [
+            "A5",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "D5",
+            "crotchet"
+          ],
+          [
+            "G#5",
+            "crotchet"
+          ],
+          [
+            "B5",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "E5",
+            "crotchet"
+          ],
+          [
+            "A5",
+            "crotchet"
+          ],
+          [
+            "C6",
+            "crotchet"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "C6",
+            "crotchet"
+          ],
+          [
+            "B5",
+            "crotchet"
+          ],
+          [
+            "A5",
+            "tripletQuaver"
+          ],
+          [
+            "G#5",
+            "tripletQuaver"
+          ],
+          [
+            "A5",
+            "tripletQuaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 2,
+            "end": 4
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [
+          [
+            2,
+            4
+          ]
+        ],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "G#5",
+            "minim"
+          ],
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "D6",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "C6",
+            "tripletQuaver"
+          ],
+          [
+            "B5",
+            "tripletQuaver"
+          ],
+          [
+            "A5",
+            "tripletQuaver"
+          ],
+          [
+            "G#5",
+            "dottedCrotchet"
+          ],
+          [
+            "A5",
+            "quaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 2
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [
+          [
+            0,
+            2
+          ]
+        ],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "A5",
+            "dottedQuaver"
+          ],
+          [
+            "B5",
+            "semiquaver"
+          ],
+          [
+            "C6",
+            "tripletQuaver"
+          ],
+          [
+            "B5",
+            "tripletQuaver"
+          ],
+          [
+            "A5",
+            "tripletQuaver"
+          ],
+          [
+            "G5",
+            "tripletQuaver"
+          ],
+          [
+            "F5",
+            "tripletQuaver"
+          ],
+          [
+            "E5",
+            "tripletQuaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 1
+          },
+          {
+            "start": 2,
+            "end": 4
+          },
+          {
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [
+          [
+            2,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "accidentals": [
+          [
+            5,
+            "natural"
+          ]
+        ]
+      },
+      {
+        "notes": [
+          [
+            "D5",
+            "tripletQuaver"
+          ],
+          [
+            "E5",
+            "tripletQuaver"
+          ],
+          [
+            "F5",
+            "tripletQuaver"
+          ],
+          [
+            "E5",
+            "tripletQuaver"
+          ],
+          [
+            "D5",
+            "tripletQuaver"
+          ],
+          [
+            "C5",
+            "tripletQuaver"
+          ],
+          [
+            "G4",
+            "tripletQuaver"
+          ],
+          [
+            "A4",
+            "tripletQuaver"
+          ],
+          [
+            "F4",
+            "tripletQuaver"
+          ]
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 5
+          },
+          {
+            "start": 6,
+            "end": 8
+          }
+        ],
+        "ties": [],
+        "slurs": [],
+        "triplets": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "accidentals": []
+      },
+      {
+        "notes": [
+          [
+            "E5",
+            "minim"
+          ],
+          [
+            "r",
+            "crotchetRest"
+          ]
+        ],
+        "beamGroups": [],
+        "ties": [],
+        "slurs": [],
+        "triplets": [],
+        "accidentals": []
+      }
+    ],
+    "crossBarTies": {
+      "3": [
+        2
+      ]
+    },
+    "finalBarline": "double"
+  },
+  "editable": {
+    "q2aii": [
+      "A3",
+      "C4",
+      "D4"
+    ],
+    "q4biii": [
+      "F3",
+      "C3"
+    ],
+    "q5ai": [
+      "Ab5"
+    ],
+    "q5aii": [
+      "G4",
+      "A4",
+      "F4"
+    ]
+  },
+  "sources": [
+    {
+      "path": "exampapers/adv higher/2022/Music AH 2022 Paper.pdf",
+      "sha256": "081309588e291677ccc5968526ef2ee3c31965b0089c595a74d9177862037f76"
+    },
+    {
+      "path": "exampapers/adv higher/2022/Music AH 2022 Answers.pdf",
+      "sha256": "bc8294ab2d46cc0310eee64c5fcc7c68558c2c109de5336b614807aea478c46d"
+    }
+  ]
+}

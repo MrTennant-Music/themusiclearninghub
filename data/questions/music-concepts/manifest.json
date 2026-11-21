@@ -5,44 +5,44 @@
   "source": {
     "knowledgeBankFile": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
     "knowledgeBankSchemaVersion": "5.0",
-    "knowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e"
+    "knowledgeBankSha256": "a83e4df9820bdc5d6eae142c234b1209b12c8c2a5bc2b107fc9668857ba8c1e7"
   },
   "levels": [
     {
       "level": "National 3",
       "levelCode": "N3",
       "file": "national3.json",
-      "questionCount": 137,
+      "questionCount": 135,
       "difficultyCounts": {
-        "Easy": 68,
-        "Medium": 68,
+        "Easy": 67,
+        "Medium": 67,
         "Hard": 1
       },
-      "sha256": "52a8e317d5363800b8402913657fae9efad8a4a0850595c48599f02cc917948c"
+      "sha256": "591863dcaca1c95844cc19bee59594fd1b173cc1c729aa50879ed148ee86bad2"
     },
     {
       "level": "National 4",
       "levelCode": "N4",
       "file": "national4.json",
-      "questionCount": 150,
+      "questionCount": 148,
       "difficultyCounts": {
-        "Easy": 75,
-        "Medium": 75,
+        "Easy": 74,
+        "Medium": 74,
         "Hard": 0
       },
-      "sha256": "ef60cf0602223771d9dea62b08b9dfb312c3065e6f5d51c93cab1c74187a776c"
+      "sha256": "3ac15c5b8cf4cd9c7e153886737f646e679666ba291a3cd1174ece6b4ac22c56"
     },
     {
       "level": "National 5",
       "levelCode": "N5",
       "file": "national5.json",
-      "questionCount": 140,
+      "questionCount": 138,
       "difficultyCounts": {
         "Easy": 70,
         "Medium": 70,
         "Hard": 0
       },
-      "sha256": "3e8edf2244d310330b5c813ab778164cf69e68be258f652983f5e556e07e8d70"
+      "sha256": "6829ee6a07a893ee58565e9206db51318f9e1a4052c9d0c2db792774aab64b43"
     },
     {
       "level": "Higher",
@@ -54,7 +54,7 @@
         "Medium": 48,
         "Hard": 0
       },
-      "sha256": "de1ed31120c684cf2eb2b4fd8eb63040035e64d9505a4603cbdefde4b0ffa998"
+      "sha256": "e5c4fb5b29c41f67e3302be2456cf53f66bf53f30a6afca8ebc2b3b86d71b5fe"
     },
     {
       "level": "Advanced Higher",
@@ -66,17 +66,12 @@
         "Medium": 39,
         "Hard": 0
       },
-      "sha256": "d06f6f04cbc1d56d7ccedfeaae85ea47c14be60f8214cbcb692acfe9f1e1961b"
+      "sha256": "f5f06816d0906bf358f15869887fbda4e7472663a3004dbcf3bdde03ddf268e9"
     }
   ],
-  "runtimeAdapter": {
-    "file": "millionaire-music-concept-bank.js",
-    "sha256": "de3b6f8c4d23c675414454eb26e9b60e20c43626e9add4ee23344a814ff2c2d6",
-    "loadingNote": "The Hub is a no-build static site, so this generated adapter preserves the existing synchronous script-loading architecture."
-  },
   "editorSlots": {
     "file": "data/questions/music-concepts/editor-slots.json",
-    "slotCount": 900,
-    "sha256": "089658ef236d3aa1a2c504b3904d2fa8722f9e7d5bde7b18ecf3532521e0eca5"
+    "slotCount": 891,
+    "sha256": "dad7f5555ac57b1d2c35068df256c9887f2f2b8f2a87a4c8eb25a9adf99836dd"
   }
 }

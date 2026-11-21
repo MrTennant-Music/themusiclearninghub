@@ -36,6 +36,8 @@ jobs:
       - name: Run checks
         run: pnpm test && pnpm run test:desktop-layout
       - name: Build the published website
+        env:
+          HUB_DEPLOY_TARGET: github-pages
         run: pnpm run build:site
       - name: Upload the published website
         uses: actions/upload-pages-artifact@v3

@@ -1,30 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Rests</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/rests-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/rests-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./bravura-symbols.js?v=20260629"></script>
-  <script src="./shared-notation-config.js?v=20260629"></script>
-  <script src="./hub-input.js?v=20260629"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/rests-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/rests-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/rests-question-core.js?v=ae183df55ae9"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js?v=20260629"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <style>
     @font-face {
       font-family: "Bravura";
-      src: url("./Bravura.otf") format("opentype");
+      src: url("./fonts/Bravura.otf") format("opentype");
       font-display: block;
     }
 
@@ -35,12 +39,15 @@
       text-rendering: geometricPrecision;
     }
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
 <body>
   <div id="root"></div>
 
-  <script type="text/babel">
-const { useEffect, useRef, useState } = React;
+  <script type="text/x-mlh-jsx-source" data-runtime="rests-1.js">
+const { useEffect, useMemo, useRef, useState } = React;
 
 const VIEWBOX_WIDTH = 920;
 const VIEWBOX_HEIGHT = 430;
@@ -58,14 +65,14 @@ const FIRST_SYSTEM_MUSIC_START_X = STAFF_LEFT + 86;
 const OTHER_SYSTEM_MUSIC_START_X = STAFF_LEFT + 70;
 const COLOUR = { green: "#16a34a", red: "#dc2626", black: "#000000" };
 const ASSET = {
-  appIcon: "rests-icon.svg",
-  levels: "levels.svg",
-  customise: "customise.svg",
-  next: "next.svg",
-  bronze: "bronze.svg",
-  silver: "silver.svg",
-  gold: "gold.svg",
-  diamond: "diamond.svg",
+  appIcon: "app-icons/rests-icon.svg",
+  levels: "ui-icons/levels.svg",
+  customise: "ui-icons/customise.svg",
+  next: "ui-icons/next.svg",
+  bronze: "ui-icons/bronze.svg",
+  silver: "ui-icons/silver.svg",
+  gold: "ui-icons/gold.svg",
+  diamond: "ui-icons/diamond.svg",
 };
 
 function barsPerSystemForQuestion(question) {
@@ -81,12 +88,12 @@ const NOTES = [
 ];
 
 const TIME_SIGNATURES = [
-  { id: "2/4", top: "2", bottom: "4", unitsPerBar: 8, type: "simple", weight: 1 },
-  { id: "3/4", top: "3", bottom: "4", unitsPerBar: 12, type: "simple", weight: 1 },
-  { id: "4/4", top: "4", bottom: "4", unitsPerBar: 16, type: "simple", weight: 1 },
-  { id: "6/8", top: "6", bottom: "8", unitsPerBar: 12, type: "compound", compoundGroups: 2, weight: 1 },
-  { id: "9/8", top: "9", bottom: "8", unitsPerBar: 18, type: "compound", compoundGroups: 3, weight: 1 },
-  { id: "12/8", top: "12", bottom: "8", unitsPerBar: 24, type: "compound", compoundGroups: 4, weight: 0.4 },
+  { id: "2/4", top: "2", bottom: "4", unitsPerBar: 8, type: "simple" },
+  { id: "3/4", top: "3", bottom: "4", unitsPerBar: 12, type: "simple" },
+  { id: "4/4", top: "4", bottom: "4", unitsPerBar: 16, type: "simple" },
+  { id: "6/8", top: "6", bottom: "8", unitsPerBar: 12, type: "compound", compoundGroups: 2 },
+  { id: "9/8", top: "9", bottom: "8", unitsPerBar: 18, type: "compound", compoundGroups: 3 },
+  { id: "12/8", top: "12", bottom: "8", unitsPerBar: 24, type: "compound", compoundGroups: 4 },
 ];
 
 const LEVELS = {
@@ -123,19 +130,6 @@ const RHYTHM_INFO = {
   "semiquaver-rest": { units: 1, rest: true },
 };
 
-const SIMPLE_FULL_BAR_PATTERNS = {
-  "2/4": [["minim"], ["crotchet", "crotchet"], ["quaver-group-2", "crotchet"], ["crotchet", "quaver-group-2"], ["quaver-group-2", "quaver-group-2"], ["semiquaver-group-4", "crotchet"], ["crotchet", "semiquaver-group-4"], ["quaver-2semiquavers", "crotchet"], ["2semiquavers-quaver", "crotchet"], ["dotted-quaver-semiquaver", "crotchet"], ["dotted-crotchet", "quaver"], ["quaver", "dotted-crotchet"]],
-  "3/4": [["minim", "crotchet"], ["crotchet", "minim"], ["crotchet", "crotchet", "crotchet"], ["quaver-group-2", "crotchet", "crotchet"], ["crotchet", "quaver-group-2", "crotchet"], ["crotchet", "crotchet", "quaver-group-2"], ["semiquaver-group-4", "crotchet", "crotchet"], ["crotchet", "semiquaver-group-4", "crotchet"], ["crotchet", "crotchet", "semiquaver-group-4"], ["quaver-2semiquavers", "crotchet", "crotchet"], ["crotchet", "2semiquavers-quaver", "crotchet"], ["crotchet", "crotchet", "dotted-quaver-semiquaver"], ["dotted-crotchet", "quaver", "crotchet"], ["crotchet", "dotted-crotchet", "quaver"]],
-  "4/4": [["minim", "minim"], ["minim", "crotchet", "crotchet"], ["crotchet", "crotchet", "minim"], ["crotchet", "crotchet", "crotchet", "crotchet"], ["quaver-group-2", "crotchet", "crotchet", "crotchet"], ["crotchet", "quaver-group-2", "crotchet", "crotchet"], ["crotchet", "crotchet", "quaver-group-2", "crotchet"], ["crotchet", "crotchet", "crotchet", "quaver-group-2"], ["quaver-group-2", "quaver-group-2", "minim"], ["minim", "quaver-group-2", "quaver-group-2"], ["semiquaver-group-4", "crotchet", "crotchet", "crotchet"], ["crotchet", "quaver-2semiquavers", "crotchet", "crotchet"], ["crotchet", "crotchet", "2semiquavers-quaver", "crotchet"], ["crotchet", "crotchet", "crotchet", "dotted-quaver-semiquaver"], ["dotted-crotchet", "quaver", "minim"], ["quaver", "dotted-crotchet", "minim"], ["minim", "dotted-crotchet", "quaver"], ["minim", "quaver", "dotted-crotchet"], ["crotchet", "dotted-crotchet", "quaver", "crotchet"]],
-};
-
-const COMPOUND_BEAT_PATTERNS = [
-  { pattern: ["dotted-crotchet"], weight: 4 },
-  { pattern: ["crotchet", "quaver"], weight: 4 },
-  { pattern: ["quaver", "crotchet"], weight: 4 },
-  { pattern: ["quaver-group-3"], weight: 1 },
-];
-
 function randomIndex(length) { return Math.floor(Math.random() * length); }
 function randomItem(items) { return items[randomIndex(items.length)]; }
 function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
@@ -143,7 +137,6 @@ function rhythmInfo(rhythm) { return RHYTHM_INFO[rhythm] ?? RHYTHM_INFO.crotchet
 function noteByIndex(index) { return NOTES[clamp(index, 0, NOTES.length - 1)]; }
 function yForStep(step, systemTop) { return systemTop + LINE_GAP * 4 - step * (LINE_GAP / 2); }
 function stemGoesDown(step) { return step > 4; }
-function weightedItem(items) { return randomItem(items.flatMap((item) => Array.from({ length: item.weight }, () => item.pattern))); }
 function initialLevelFromUrl() {
   const requested = new URLSearchParams(window.location.search).get("level") || "H";
   return LEVELS[requested] ? requested : "H";
@@ -160,28 +153,6 @@ function taskMatchesLevel(levelKey, enabledOptions) {
   const keys = new Set([...Object.keys(official), ...Object.keys(enabledOptions)]);
   return [...keys].every((key) => Boolean(enabledOptions[key]) === Boolean(official[key]));
 }
-function enabledTimeSignatureIds(levelKey, enabledOptions) {
-  const level = LEVELS[levelKey] || LEVELS.H;
-  const ids = level.timeSignatureIds.filter((id) => enabledOptions?.[`time-${id}`]);
-  return ids.length ? ids : level.timeSignatureIds;
-}
-function enabledRestIds(enabledOptions) {
-  const ids = REST_OPTION_IDS.filter((id) => enabledOptions?.[`rest-${id}`]);
-  return ids.length ? ids : REST_OPTION_IDS;
-}
-function templateAnswers(template) {
-  return template.answers || [template.answer];
-}
-function weightedSignatureChoice(enabledTimeTypes = { simple: true, compound: true }, allowedTimeSignatureIds = TIME_SIGNATURES.map((signature) => signature.id)) {
-  const pool = [];
-  TIME_SIGNATURES.filter((signature) => allowedTimeSignatureIds.includes(signature.id) && enabledTimeTypes[signature.type]).forEach((signature) => {
-    const copies = Math.max(1, Math.round((signature.weight ?? 1) * 10));
-    for (let i = 0; i < copies; i += 1) pool.push(signature);
-  });
-  const fallback = TIME_SIGNATURES.filter((signature) => allowedTimeSignatureIds.includes(signature.id));
-  return randomItem(pool.length ? pool : fallback.length ? fallback : TIME_SIGNATURES);
-}
-
 function nearestMelodicIndex(previousIndex, stepwise = false) {
   if (!stepwise) return clamp(previousIndex + randomItem([-2, -1, 0, 0, 1, 2]), 0, NOTES.length - 1);
   if (previousIndex <= 0) return 1;
@@ -218,90 +189,21 @@ function addNotesFromRhythms(rhythms, previousIndex, options = {}) {
 }
 
 
-function compoundQuestionForGroup(groupIndex, groupCount) {
-  const beforeGroups = Array.from({ length: groupIndex }, () => weightedItem(COMPOUND_BEAT_PATTERNS)).flat();
-  const afterGroups = Array.from({ length: groupCount - groupIndex - 1 }, () => weightedItem(COMPOUND_BEAT_PATTERNS)).flat();
-  const choices = [
-    { answer: "dotted-crotchet-rest", before: [], after: [] },
-    { answers: ["crotchet-rest", "quaver-rest"], before: [], after: [] },
-    { answer: "crotchet-rest", before: [], after: ["quaver"] },
-    { answer: "crotchet-rest", before: ["quaver"], after: [] },
-    { answer: "quaver-rest", before: [], after: ["quaver-group-2"] },
-    { answer: "quaver-rest", before: ["quaver-group-2"], after: [] },
-  ];
-  const chosen = randomItem(choices);
-  return { answer: chosen.answer, before: [...beforeGroups, ...chosen.before], after: [...chosen.after, ...afterGroups] };
-}
-
-function getValidQuestions(timeSignature) {
-  if (timeSignature.type === "compound") {
-    const result = [{ answer: "semibreve-rest", before: [], after: [], isFullBar: true }];
-    for (let groupIndex = 0; groupIndex < timeSignature.compoundGroups; groupIndex += 1) result.push(compoundQuestionForGroup(groupIndex, timeSignature.compoundGroups));
-    return result;
-  }
-  if (timeSignature.id === "2/4") return [
-    { answer: "semibreve-rest", before: [], after: [], isFullBar: true }, { answer: "crotchet-rest", before: [], after: ["crotchet"] }, { answer: "crotchet-rest", before: ["crotchet"], after: [] },
-    { answers: ["crotchet-rest", "quaver-rest"], before: [], after: ["quaver"] }, { answers: ["quaver-rest", "crotchet-rest"], before: ["quaver"], after: [] },
-    { answer: "crotchet-rest", before: [], after: ["quaver-group-2"] }, { answer: "crotchet-rest", before: ["quaver-group-2"], after: [] },
-    { answer: "quaver-rest", before: [], after: ["quaver", "crotchet"] }, { answer: "quaver-rest", before: ["quaver"], after: ["crotchet"] }, { answer: "quaver-rest", before: ["crotchet"], after: ["quaver"] }, { answer: "quaver-rest", before: ["crotchet", "quaver"], after: [] },
-  ];
-  if (timeSignature.id === "3/4") return [
-    { answer: "semibreve-rest", before: [], after: [], isFullBar: true }, { answer: "crotchet-rest", before: [], after: ["crotchet", "crotchet"] }, { answer: "crotchet-rest", before: ["crotchet"], after: ["crotchet"] },
-    { answer: "crotchet-rest", before: ["crotchet", "crotchet"], after: [] }, { answer: "crotchet-rest", before: ["quaver-group-2"], after: ["crotchet"] }, { answer: "crotchet-rest", before: ["crotchet"], after: ["quaver-group-2"] },
-    { answers: ["crotchet-rest", "quaver-rest"], before: ["crotchet"], after: ["quaver"] }, { answers: ["quaver-rest", "crotchet-rest"], before: ["quaver"], after: ["crotchet"] },
-    { answer: "quaver-rest", before: [], after: ["quaver", "crotchet", "crotchet"] }, { answer: "quaver-rest", before: ["quaver"], after: ["crotchet", "crotchet"] }, { answer: "quaver-rest", before: ["crotchet"], after: ["quaver", "crotchet"] },
-    { answer: "quaver-rest", before: ["crotchet", "quaver"], after: ["crotchet"] }, { answer: "quaver-rest", before: ["crotchet", "crotchet"], after: ["quaver"] }, { answer: "quaver-rest", before: ["crotchet", "crotchet", "quaver"], after: [] },
-  ];
-  return [
-    { answer: "semibreve-rest", before: [], after: [], isFullBar: true }, { answer: "minim-rest", before: [], after: ["minim"] }, { answer: "minim-rest", before: ["minim"], after: [] },
-    { answer: "minim-rest", before: [], after: ["crotchet", "crotchet"] }, { answer: "minim-rest", before: ["crotchet", "crotchet"], after: [] },
-    { answer: "crotchet-rest", before: [], after: ["crotchet", "crotchet", "crotchet"] }, { answer: "crotchet-rest", before: ["crotchet"], after: ["crotchet", "crotchet"] }, { answer: "crotchet-rest", before: ["crotchet", "crotchet"], after: ["crotchet"] }, { answer: "crotchet-rest", before: ["crotchet", "crotchet", "crotchet"], after: [] },
-    { answers: ["crotchet-rest", "quaver-rest"], before: ["crotchet"], after: ["quaver", "crotchet"] }, { answers: ["quaver-rest", "crotchet-rest"], before: ["quaver", "crotchet"], after: ["crotchet"] },
-    { answer: "crotchet-rest", before: ["quaver-group-2"], after: ["crotchet", "crotchet"] }, { answer: "crotchet-rest", before: ["crotchet", "quaver-group-2"], after: ["crotchet"] }, { answer: "crotchet-rest", before: ["crotchet", "crotchet"], after: ["quaver-group-2"] },
-    { answer: "quaver-rest", before: [], after: ["quaver", "crotchet", "crotchet", "crotchet"] }, { answer: "quaver-rest", before: ["quaver"], after: ["crotchet", "crotchet", "crotchet"] }, { answer: "quaver-rest", before: ["crotchet"], after: ["quaver", "crotchet", "crotchet"] }, { answer: "quaver-rest", before: ["crotchet", "quaver"], after: ["crotchet", "crotchet"] }, { answer: "quaver-rest", before: ["crotchet", "crotchet"], after: ["quaver", "crotchet"] }, { answer: "quaver-rest", before: ["crotchet", "crotchet", "quaver"], after: ["crotchet"] }, { answer: "quaver-rest", before: ["crotchet", "crotchet", "crotchet"], after: ["quaver"] }, { answer: "quaver-rest", before: ["crotchet", "crotchet", "crotchet", "quaver"], after: [] },
-  ];
-}
-
-function hasValidQuestionCombination(activeLevel, enabledOptions) {
-  const timeIds = enabledTimeSignatureIds(activeLevel, enabledOptions);
-  const restIds = enabledRestIds(enabledOptions);
-  return TIME_SIGNATURES
-    .filter((signature) => timeIds.includes(signature.id))
-    .some((signature) => getValidQuestions(signature).some((template) => templateAnswers(template).every((answer) => restIds.includes(answer))));
-}
-
+const restsQuestionCore = window.MLH.RestsQuestionCore;
+const restsGenerator = restsQuestionCore.create();
+function getValidQuestions(timeSignature) { return restsQuestionCore.templates(timeSignature.id); }
+function hasValidQuestionCombination(activeLevel, enabledOptions) { return restsQuestionCore.valid(enabledOptions); }
 function makeQuestion(activeLevel = "H", enabledOptions = defaultEnabledOptions("H")) {
-  const level = LEVELS[activeLevel] || LEVELS.H;
-  const allowedTimeSignatureIds = enabledTimeSignatureIds(activeLevel, enabledOptions);
-  const enabledTimeTypes = {
-    simple: allowedTimeSignatureIds.some((id) => TIME_SIGNATURES.find((signature) => signature.id === id)?.type === "simple"),
-    compound: allowedTimeSignatureIds.some((id) => TIME_SIGNATURES.find((signature) => signature.id === id)?.type === "compound"),
-  };
-  const timeSignature = weightedSignatureChoice(enabledTimeTypes, allowedTimeSignatureIds);
-  const restIds = enabledRestIds(enabledOptions);
-  const filteredQuestions = getValidQuestions(timeSignature).filter((template) => templateAnswers(template).every((answer) => restIds.includes(answer)));
-  const validQuestions = filteredQuestions.length ? filteredQuestions : getValidQuestions(timeSignature);
-  const wholeBarQuestions = validQuestions.filter((template) => template.isFullBar);
-  const regularQuestions = validQuestions.filter((template) => !template.isFullBar);
-  const multiRestQuestions = regularQuestions.filter((template) => templateAnswers(template).length > 1);
+  const options = hasValidQuestionCombination(activeLevel, enabledOptions) ? enabledOptions : defaultEnabledOptions(activeLevel);
+  const template = restsGenerator.next(options);
+  const timeSignature = TIME_SIGNATURES.find(signature => signature.id === template.timeSignature);
   let previousIndex = randomIndex(NOTES.length);
-  const template = wholeBarQuestions.length && Math.random() < 1 / 15
-    ? randomItem(wholeBarQuestions)
-    : multiRestQuestions.length && Math.random() < 0.4
-      ? randomItem(multiRestQuestions)
-      : randomItem(regularQuestions.length ? regularQuestions : validQuestions);
-  const options = { disableAutoBeam: timeSignature.type === "compound" };
-  const before = addNotesFromRhythms(template.before, previousIndex, options);
-  previousIndex = before.nextIndex;
-  const answers = templateAnswers(template);
-  const boxes = answers.map((answer, index) => {
-    const units = template.isFullBar ? timeSignature.unitsPerBar : rhythmInfo(answer).units;
-    return { id: `missing-${index}`, barIndex: 0, answer, units, isFullBar: Boolean(template.isFullBar) };
-  });
-  const after = addNotesFromRhythms(template.after, previousIndex, options);
-  const missingNotes = boxes.map((box) => ({ rhythm: "missing", units: box.units, missingBoxId: box.id, isFullBar: box.isFullBar }));
-  const bars = [{ notes: [...before.notes, ...missingNotes, ...after.notes] }];
-  return { id: Math.random().toString(36).slice(2), activeLevel, timeSignature, bars, missingBoxes: boxes };
+  const noteOptions = {disableAutoBeam:timeSignature.type === "compound"};
+  const before = addNotesFromRhythms(template.before, previousIndex, noteOptions);
+  const boxes = template.answers.map((answer,index)=>({id:`missing-${index}`,barIndex:0,answer,units:template.isFullBar?timeSignature.unitsPerBar:rhythmInfo(answer).units,isFullBar:template.isFullBar}));
+  const after = addNotesFromRhythms(template.after, before.nextIndex, noteOptions);
+  const missing = boxes.map(box=>({rhythm:"missing",units:box.units,missingBoxId:box.id,isFullBar:box.isFullBar}));
+  return {id:Math.random().toString(36).slice(2),activeLevel,timeSignature,bars:[{notes:[...before.notes,...missing,...after.notes]}],missingBoxes:boxes};
 }
 
 const playFeedbackSound = (...args) => window.MLH?.playFeedbackSound?.(...args);
@@ -462,16 +364,13 @@ function Note({ item, x, systemTop, colour = "currentColor", stemDownOverride = 
     </g>
   );
 }
-function getBarNotePositions(notes, startX, endX) {
-  const totalSpacing = notes.reduce((sum, note) => sum + (note.rhythm === "missing" ? Math.max(1.15, note.units / 2) : rhythmInfo(note.rhythm).spacing), 0);
-  const unitWidth = Math.max(1, endX - startX) / Math.max(1, totalSpacing);
-  let cursor = startX + unitWidth * 0.35;
-  return notes.map((note) => {
-    const x = cursor;
-    cursor += (note.rhythm === "missing" ? Math.max(1.15, note.units / 2) : rhythmInfo(note.rhythm).spacing) * unitWidth;
-    return x;
+function getBarNotePositions(notes, startX, endX, completeBar = false) {
+  return restsQuestionCore.notationPositions(notes, startX, endX, note => {
+    if (completeBar && note.missingBoxId === "missing-0") return rhythmInfo("quaver").spacing;
+    return note.rhythm === "missing" ? Math.max(1.15, note.units / 2) : rhythmInfo(note.rhythm).spacing;
   });
 }
+
 function getBeamLineYAtX(x, start, end) { if (!start || !end || start.x === end.x) return start?.y ?? end?.y ?? 0; return start.y + ((x - start.x) / (end.x - start.x)) * (end.y - start.y); }
 function getBeamData(items, positions, systemTop) {
   const settings = sharedSymbolConfig("quaverBeam");
@@ -541,46 +440,22 @@ function Beam({ start, end, groupNotes, groupPositions, stemDown }) {
 function MissingTarget({ box, x, width, systemTop, selectedRest, placedAnswers, onPlace, feedback, onMissingSelection }) {
   const [isHovering, setIsHovering] = useState(false);
   const answer = placedAnswers[box.id] ?? null;
-  const isCorrect = feedback && answer === box.answer;
+  const isCorrect = feedback && answer === (feedback.acceptedAnswers?.[box.id] || box.answer);
   const isWrong = feedback && answer && !isCorrect;
   const centerX = x + width / 2;
   const outlineWidth = Math.max(40, Math.min(58, width));
   const outlineX = centerX - outlineWidth / 2;
   function handleClick() { if (feedback) return; if (!selectedRest) { onMissingSelection(); return; } onPlace(box.id, selectedRest); }
-  function FeedbackRest({ rhythm, targetSystemTop, colour }) {
-    if (rhythm === "minim-rest") {
-      return <UiRestGlyph rhythm={rhythm} x={centerX} y={targetSystemTop + LINE_GAP * 2} fontSize={42} colour={colour} />;
-    }
-    if (rhythm === "semibreve-rest") {
-      return <UiRestGlyph rhythm={rhythm} x={centerX} y={targetSystemTop + LINE_GAP * 1.25 - 2} fontSize={42} colour={colour} />;
-    }
-    return <Rest rhythm={rhythm} x={centerX} systemTop={targetSystemTop} colour={colour} />;
-  }
-  return <g onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} onClick={handleClick} style={{ cursor: feedback ? "default" : "pointer" }}>{!feedback && <rect x={outlineX} y={systemTop - 9} width={outlineWidth} height={LINE_GAP * 4 + 17} rx="7" ry="7" fill="none" stroke="#78716c" strokeWidth="1.6" />}{!feedback && isHovering && selectedRest && <Rest rhythm={selectedRest} x={centerX} systemTop={systemTop} colour="#000" opacity={0.35} />}{!feedback && answer && <Rest rhythm={answer} x={centerX} systemTop={systemTop} colour="#000" />}{feedback && answer && <FeedbackRest rhythm={answer} targetSystemTop={systemTop} colour={isCorrect ? "#16a34a" : "#dc2626"} />}{feedback && isWrong && <FeedbackRest rhythm={box.answer} targetSystemTop={systemTop + 46} colour="#16a34a" />}<rect x={x} y={systemTop - 8} width={width} height={LINE_GAP * 5 + 16} fill="transparent" /></g>;
+  function FeedbackRest({ rhythm, targetSystemTop, colour }) { return <Rest rhythm={rhythm} x={centerX} systemTop={targetSystemTop} colour={colour} />; }
+  return <g role="button" tabIndex={feedback ? -1 : 0} aria-label={`Place rest in space ${Number(box.id.split("-").at(-1))+1}`} aria-disabled={Boolean(feedback)} aria-pressed={Boolean(answer)} onKeyDown={event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();event.stopPropagation();handleClick();}}} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} onClick={handleClick} style={{ cursor: feedback ? "default" : "pointer" }}>{!feedback && <rect x={outlineX} y={systemTop - 9} width={outlineWidth} height={LINE_GAP * 4 + 17} rx="7" ry="7" fill="none" stroke="#78716c" strokeWidth="1.6" />}{!feedback && isHovering && selectedRest && <Rest rhythm={selectedRest} x={centerX} systemTop={systemTop} colour="#000" opacity={0.35} />}{!feedback && answer && <Rest rhythm={answer} x={centerX} systemTop={systemTop} colour="#000" />}{feedback && answer && <FeedbackRest rhythm={answer} targetSystemTop={systemTop} colour={isCorrect ? "#16a34a" : "#dc2626"} />}{feedback && isWrong && <FeedbackRest rhythm={box.answer} targetSystemTop={systemTop + 46} colour="#16a34a" />}<rect x={x} y={systemTop - 8} width={width} height={LINE_GAP * 5 + 16} fill="transparent" /></g>;
 }
-function Bar({ bar, barIndex, systemTop, startX, endX, staffStartX = startX, isFinalBar, selectedRest, placedAnswers, onPlace, missingBoxesById, feedback, onMissingSelection }) {
+function Bar({ bar, barIndex, systemTop, startX, endX, staffStartX = startX, isFinalBar, selectedRest, placedAnswers, onPlace, missingBoxesById, feedback, onMissingSelection, completeBar = false }) {
   if (!bar) return null;
-  const positions = getBarNotePositions(bar.notes, startX + ((barIndex === 0 || barIndex === 4) ? 7 : 12), endX - 6);
+  const rightPadding = completeBar ? LINE_GAP * 3 : 6;
+  const positions = getBarNotePositions(bar.notes, startX + ((barIndex === 0 || barIndex === 4) ? 7 : 12), endX - rightPadding, completeBar);
   const beamGroups = getBeamGroups(bar.notes);
   function missingTargetLayout(index, box, width) {
-    if (box.isFullBar) return { centreX: (staffStartX + endX) / 2, width };
-    let runStart = index;
-    let runEnd = index;
-    while (runStart > 0 && bar.notes[runStart - 1]?.rhythm === "missing") runStart -= 1;
-    while (runEnd < bar.notes.length - 1 && bar.notes[runEnd + 1]?.rhythm === "missing") runEnd += 1;
-    const runLength = runEnd - runStart + 1;
-    if (runLength === 1) return { centreX: positions[index], width };
-    const compactWidth = Math.max(40, Math.min(48, width));
-    const gap = 8;
-    const groupCenter = (positions[runStart] + positions[runEnd]) / 2;
-    const offset = (index - runStart - (runLength - 1) / 2) * (compactWidth + gap);
-    const firstPairNudge = runLength === 2 && index === runStart ? -14 : 0;
-    const nextNote = bar.notes[runEnd + 1];
-    let centreX = groupCenter + offset + firstPairNudge;
-    if (runLength === 2 && index === runEnd && box.answer === "quaver-rest" && nextNote?.rhythm === "quaver") {
-      centreX = Math.min(positions[runEnd + 1] - 54, centreX + 115);
-    }
-    return { centreX, width: compactWidth };
+    return {centreX:box.isFullBar?(startX+endX)/2:positions[index],width};
   }
   return (
     <g>
@@ -605,6 +480,11 @@ function Bar({ bar, barIndex, systemTop, startX, endX, staffStartX = startX, isF
         const box = missingBoxesById[note.missingBoxId];
         const baseWidth = box.isFullBar ? 78 : Math.max(36, Math.min(78, note.units * 8));
         const { centreX, width } = missingTargetLayout(i, box, baseWidth);
+        if (completeBar) {
+          if (box.id !== "missing-0") return <Rest key={box.id} rhythm={box.answer} x={centreX} systemTop={systemTop} />;
+          return <rect key={box.id} data-rest-gap="" x={centreX - width / 2} y={systemTop - 7}
+            width={width} height={LINE_GAP * 4 + 14} rx="4" fill="white" stroke="#57534e" strokeDasharray="4 3" />;
+        }
         return <MissingTarget key={note.missingBoxId} box={box} x={centreX - width / 2} width={width} systemTop={systemTop} selectedRest={selectedRest} placedAnswers={placedAnswers} onPlace={onPlace} feedback={feedback} onMissingSelection={onMissingSelection} />;
       })}
       {isFinalBar ? (
@@ -618,13 +498,15 @@ function Bar({ bar, barIndex, systemTop, startX, endX, staffStartX = startX, isF
     </g>
   );
 }
-function Score({ question, selectedRest, placedAnswers, onPlace, feedback, onMissingSelection }) {
+function Score({ question, selectedRest, placedAnswers, onPlace, feedback, onMissingSelection, completeBar = false }) {
   const missingBoxesById = Object.fromEntries(question.missingBoxes.map((box) => [box.id, box]));
   const barsPerSystem = barsPerSystemForQuestion(question);
   const systemCount = Math.ceil(question.bars.length / barsPerSystem);
+  const top = completeBar ? SYSTEM_TOPS[0] - 48 : 0;
+  const height = completeBar ? LINE_GAP * 4 + 48 + 35 : VIEWBOX_HEIGHT;
   return (
-    <svg viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`} className="h-auto w-full select-none overflow-visible" aria-label="Rests exercise">
-      <rect x="0" y="0" width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="white" />
+    <svg viewBox={`0 ${top} ${VIEWBOX_WIDTH} ${height}`} className="h-auto w-full select-none overflow-visible" aria-label="Rests exercise">
+      <rect x="0" y={top} width={VIEWBOX_WIDTH} height={height} fill="white" />
       {SYSTEM_TOPS.slice(0, systemCount).map((systemTop, systemIndex) => {
         const isSingleBar = question.bars.length === 1 && barsPerSystem === 1;
         const staffInset = isSingleBar ? (STAFF_RIGHT - STAFF_LEFT) * 0.15 : 0;
@@ -645,7 +527,7 @@ function Score({ question, selectedRest, placedAnswers, onPlace, feedback, onMis
               const globalBarIndex = systemIndex * barsPerSystem + localBarIndex;
               const startX = systemStartX + localBarIndex * barWidth;
               const endX = systemStartX + (localBarIndex + 1) * barWidth;
-              return <Bar key={globalBarIndex} bar={question.bars[globalBarIndex]} barIndex={globalBarIndex} systemTop={systemTop} startX={startX} endX={endX} staffStartX={staffStartX} isFinalBar={globalBarIndex === question.bars.length - 1} selectedRest={selectedRest} placedAnswers={placedAnswers} onPlace={onPlace} missingBoxesById={missingBoxesById} feedback={feedback} onMissingSelection={onMissingSelection} />;
+              return <Bar key={globalBarIndex} bar={question.bars[globalBarIndex]} barIndex={globalBarIndex} systemTop={systemTop} startX={startX} endX={endX} staffStartX={staffStartX} isFinalBar={globalBarIndex === question.bars.length - 1} selectedRest={selectedRest} placedAnswers={placedAnswers} onPlace={onPlace} missingBoxesById={missingBoxesById} feedback={feedback} onMissingSelection={onMissingSelection} completeBar={completeBar} />;
             })}
           </g>
         );
@@ -660,7 +542,7 @@ function StatCard({ label, value, footer, progress = null, medal = null, variant
   const fillHeight = safeProgress == null || safeProgress <= 0 ? 0 : safeProgress;
   const fillColour = safeProgress == null ? "transparent" : safeProgress < 50 ? "rgba(220, 38, 38, 0.38)" : safeProgress < 70 ? "rgba(255, 120, 0, 0.42)" : "rgba(22, 163, 74, 0.38)";
   const isStreak = variant === "streak";
-  return <div className={isStreak ? "relative overflow-visible bg-transparent p-3" : `relative overflow-hidden rounded-xl border border-stone-200 p-3 shadow-sm ${medal ? medal.bg : "bg-stone-50"}`}>{safeProgress !== null && <div className="absolute bottom-0 left-0 right-0 transition-all duration-700" style={{ height: `${fillHeight}%`, background: fillColour }} />}<div className="relative z-10 text-center"><div className="text-xs uppercase tracking-wide text-stone-500">{label}</div><div className={`text-xl font-semibold leading-tight ${isStreak && medal ? medal.text : ""}`}>{value}</div>{footer && <div className="mt-1 text-[13px] leading-none text-stone-500">{footer}</div>}</div>{isStreak && <div className="pointer-events-none absolute -right-[12px] top-[12px] z-[999] select-none text-3xl leading-none" style={medal?.emoji ? { animation: "medalShine 1.4s ease-in-out infinite" } : { opacity: 0.16, filter: "grayscale(1) brightness(0.7)" }}>{medal?.emoji ?? "🥉"}</div>}</div>;
+  return <div className={isStreak ? "relative overflow-visible bg-transparent p-3" : `relative overflow-hidden rounded-xl border border-stone-200 p-3 shadow-sm ${medal ? medal.bg : "bg-stone-50"}`}>{safeProgress !== null && <div className="absolute bottom-0 left-0 right-0 transition-all duration-700" style={{ height: `${fillHeight}%`, background: fillColour }} />}<div className="relative z-10 text-center"><div className="text-xs uppercase tracking-wide text-stone-500">{label}</div><div className={`text-xl font-semibold leading-tight ${isStreak && medal ? medal.text : ""}`}>{value}</div>{footer && <div className="mt-1 text-[13px] leading-none text-stone-500">{footer}</div>}</div>{isStreak && <div className="pointer-events-none absolute -right-[12px] top-[12px] z-[999] select-none text-3xl leading-none" style={medal?.icon ? { animation: "medalShine 1.4s ease-in-out infinite" } : { opacity: 0.16, filter: "grayscale(1) brightness(0.7)" }}><img src={medal?.icon ?? "./ui-icons/bronze.svg"} alt="" aria-hidden="true" style={{width:32,height:32,objectFit:"contain"}}/></div>}</div>;
 }
 function FeedbackBanner({ feedback, fading = false, warning = "" }) {
   if (!feedback && warning) return <div className="text-lg font-bold text-amber-700">{warning}</div>;
@@ -675,7 +557,7 @@ function FeedbackBanner({ feedback, fading = false, warning = "" }) {
 
 function RestOptionButton({ option, selected, disabled, onClick }) {
   const y = ["dotted-crotchet-rest", "crotchet-rest", "quaver-rest"].includes(option.rhythm) ? 42 : 45;
-  return <button type="button" disabled={disabled} onClick={onClick} className={`flex h-[74px] min-w-[65px] items-center justify-center rounded-xl border px-3 text-sm font-bold transition ${selected ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`} aria-label={option.label} title={option.label}><svg viewBox="0 0 70 90" className="h-14 w-12 overflow-visible">
+  return <button type="button" disabled={disabled} onClick={onClick} className={`flex h-[74px] min-w-[65px] items-center justify-center rounded-xl border px-3 text-sm font-bold transition ${selected ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`} aria-label={option.label} aria-pressed={selected} title={option.label}><svg viewBox="0 0 70 90" className="h-14 w-12 overflow-visible">
       <g transform={`translate(35 ${y}) scale(1.2) translate(-35 ${-y})`}>
         <UiRestGlyph rhythm={option.rhythm} x={35} y={y} fontSize={40} colour="currentColor" />
       </g>
@@ -755,7 +637,7 @@ function RhythmGuide() {
 function AppIcon() {
   return (
     <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-stone-200 bg-stone-50">
-      <img src="https://themusicliteracyhub.netlify.app/rests-icon.svg" alt="" aria-hidden="true" className="block h-full w-full object-contain" />
+      <img src="./app-icons/rests-icon.svg" alt="" aria-hidden="true" className="block h-full w-full object-contain" />
     </div>
   );
 }
@@ -836,7 +718,7 @@ function MenuRows({ activeLevel, enabledOptions, setEnabledOptions, showRhythmGu
     <>
       <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
       <window.MLH.MenuToggleRow
-        glyph={<img src="guide.svg" alt="" aria-hidden="true" className="relative -top-px h-9 w-9 object-contain" />}
+        glyph={<img src="ui-icons/guide.svg" alt="" aria-hidden="true" className="relative -top-px h-9 w-9 object-contain" />}
         label="Show Rhythm Guide"
         checked={showRhythmGuide}
         onChange={() => setShowRhythmGuide((value) => !value)}
@@ -904,12 +786,14 @@ function RestsApp() {
   useInjectedStyles();
   const initialLevel = initialLevelFromUrl();
   const [activeLevel, setActiveLevel] = useState(initialLevel);
-  const [enabledOptions, setEnabledOptions] = useState(() => defaultEnabledOptions(initialLevel));
-  const [question, setQuestion] = useState(() => makeQuestion(initialLevel, defaultEnabledOptions(initialLevel)));
+  const [savedOptions, setSavedOptions] = window.MLH.useProfileState("enabledOptions", () => defaultEnabledOptions(initialLevel));
+  const enabledOptions = useMemo(() => hasValidQuestionCombination(activeLevel,savedOptions) ? savedOptions : defaultEnabledOptions(activeLevel), [savedOptions,activeLevel]);
+  function setEnabledOptions(value) { setSavedOptions(current => { const valid = hasValidQuestionCombination(activeLevel,current) ? current : defaultEnabledOptions(activeLevel); return typeof value === "function" ? value(valid) : value; }); }
+  const [question, setQuestion] = useState(() => makeQuestion(initialLevel, enabledOptions));
   const [questionVisible, setQuestionVisible] = useState(true);
   const [levelOpen, setLevelOpen] = useState(false);
   const [customiseOpen, setCustomiseOpen] = useState(false);
-  const [showRhythmGuide, setShowRhythmGuide] = useState(false);
+  const [showRhythmGuide, setShowRhythmGuide] = window.MLH.useProfileState("showRhythmGuide", false);
   const [selectedRest, setSelectedRest] = useState(null);
   const [placedAnswers, setPlacedAnswers] = useState({});
   const [feedback, setFeedback] = useState(null);
@@ -924,6 +808,7 @@ function RestsApp() {
   const customiseRef = useRef(null);
   const warningTimeoutRef = useRef(null);
   const feedbackTimersRef = useRef([]);
+  const transitionTimerRef = useRef(null);
   const levelTaskStatusRef = useRef(null);
   useClickOutside([levelRef, customiseRef], [() => levelOpen && setLevelOpen(false), () => customiseOpen && setCustomiseOpen(false)]);
 
@@ -944,7 +829,11 @@ function RestsApp() {
     setConfettiKey(0);
   }, [medalEligible]);
 
+  useEffect(() => () => clearFeedbackTimers(), []);
   function clearFeedbackTimers() {
+    window.clearTimeout(transitionTimerRef.current);
+    window.clearTimeout(warningTimeoutRef.current);
+    transitionTimerRef.current = null;
     feedbackTimersRef.current.forEach((timer) => window.clearTimeout(timer));
     feedbackTimersRef.current = [];
   }
@@ -963,8 +852,9 @@ function RestsApp() {
   }
   function newQuestion(nextEnabledOptions = enabledOptions, nextLevel = activeLevel) {
     const options = nextEnabledOptions || defaultEnabledOptions(nextLevel);
+    clearFeedbackTimers();
     setQuestionVisible(false);
-    window.setTimeout(() => {
+    transitionTimerRef.current = window.setTimeout(() => {
       resetTask(makeQuestion(nextLevel, options));
       setQuestionVisible(true);
     }, 260);
@@ -989,15 +879,22 @@ function RestsApp() {
     newQuestion();
   }
   function showSelectRestWarning() {
-    return;
+    setWarning("Select a rest first.");
+    window.clearTimeout(warningTimeoutRef.current);
+    warningTimeoutRef.current = window.setTimeout(() => setWarning(""), 1800);
   }
   function placeRest(boxId, rhythm) {
-    if (feedback) return;
+    if (feedback || !questionVisible) return;
+    if (!REST_OPTION_IDS.includes(rhythm) || !question.missingBoxes.some(box => box.id === boxId)) return;
+    window.clearTimeout(warningTimeoutRef.current);
+    setWarning("");
     setPlacedAnswers((current) => ({ ...current, [boxId]: rhythm }));
   }
   function clearAnswers() {
-    if (feedback) return;
+    if (feedback || !questionVisible) return;
     setPlacedAnswers({});
+    setWarning("");
+    window.clearTimeout(warningTimeoutRef.current);
   }
   function fadeToNextQuestion() {
     if (!feedback || feedbackFading) return;
@@ -1012,11 +909,11 @@ function RestsApp() {
     setCorrect((value) => value + (isCorrect ? 1 : 0));
     setStreak(nextStreak);
     setBestStreak((value) => Math.max(value, nextStreak));
-    setFeedback({ correct: isCorrect });
+    setFeedback({ correct: isCorrect, acceptedAnswers: isCorrect ? {...placedAnswers} : null });
     if (medalEligible && isCorrect && [10, 15, 20, 30].includes(nextStreak)) {
       const medal = getStreakMedal(nextStreak);
       setConfettiKey((value) => value + 1);
-      window.setTimeout(() => playFeedbackSound(true, true, medal.sound), 180);
+      scheduleFeedbackTimer(() => playFeedbackSound(true, true, medal.sound), 180);
     }
     if (isCorrect) {
       setFeedbackFading(false);
@@ -1025,23 +922,23 @@ function RestsApp() {
     }
   }
   function confirmAnswers() {
-    if (!allBoxesAnswered || feedback) return;
+    if (!allBoxesAnswered || feedback || !questionVisible) return;
     const semibreveRuleBroken = question.missingBoxes.some((box) => box.isFullBar && placedAnswers[box.id] !== "semibreve-rest");
     if (semibreveRuleBroken) {
       setWarning("An empty bar should always be shown using a semibreve rest, regardless of the time signature.");
       if (warningTimeoutRef.current) window.clearTimeout(warningTimeoutRef.current);
     }
-    scoreAnswer(question.missingBoxes.every((box) => placedAnswers[box.id] === box.answer));
+    scoreAnswer(restsQuestionCore.isCorrect(question.timeSignature.id, question.missingBoxes.map(box => box.answer), question.missingBoxes.map(box => placedAnswers[box.id])));
   }
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader icon={ASSET.appIcon} title="Rests" subtitle="Identify and apply rests." worksheetConfig={() => ({ version: 1, activityId: "rests", sourceUrl: window.location.href, settings: { level: activeLevel, enabledOptions } })}>
+      <window.MLH.AppHeader profileState={{ activeLevel, enabledOptions, showRhythmGuide }} icon={ASSET.appIcon} title="Rests" subtitle="Identify and apply rests." worksheetConfig={() => ({ version: 1, activityId: "rests", sourceUrl: window.location.href, settings: { level: activeLevel, enabledOptions } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalEligible={medalEligible} />
       </window.MLH.AppHeader>
 
       <div className={window.MLH.shell.pageContentClass}>
-        <main className={`${window.MLH.shell.mainShellClass} flex flex-col pb-5 md:pb-6`} onPointerDown={() => { if (feedback) fadeToNextQuestion(); }}>
+        <main className={`${window.MLH.shell.mainShellClass} flex flex-col pb-5 md:pb-6`} onPointerDown={(event) => { if (feedback && !event.target.closest("button,input,[role=button],[data-menu-trigger],[data-menu-panel],.hub-menu-anchor")) fadeToNextQuestion(); }}>
           <window.MLH.AppToolbar
             left={
               <div className="flex items-center gap-2">
@@ -1090,10 +987,10 @@ function RestsApp() {
               <p className="text-base font-semibold leading-tight">Select the missing rests and place them in the outlined spaces.</p>
             </div>
             <div className="mt-6 flex flex-wrap items-end justify-between gap-3 pb-[0px]">
-              <RestOptions selectedRest={selectedRest} disabled={Boolean(feedback)} onSelect={setSelectedRest} />
+              <RestOptions selectedRest={selectedRest} disabled={Boolean(feedback) || !questionVisible} onSelect={setSelectedRest} />
               <div className={`ml-auto ${window.MLH.ActionButtonGroupClass}`}>
-                <button type="button" onClick={clearAnswers} disabled={Boolean(feedback) || Object.keys(placedAnswers).length === 0} className={window.MLH.ClearButtonClass}>Clear</button>
-                <window.MLH.ConfirmButton onClick={confirmAnswers} disabled={!allBoxesAnswered || Boolean(feedback)}>Confirm</window.MLH.ConfirmButton>
+                <button type="button" onClick={clearAnswers} disabled={Boolean(feedback) || !questionVisible || Object.keys(placedAnswers).length === 0} className={window.MLH.ClearButtonClass}>Clear</button>
+                <window.MLH.ConfirmButton onClick={confirmAnswers} disabled={!allBoxesAnswered || Boolean(feedback) || !questionVisible}>Confirm</window.MLH.ConfirmButton>
               </div>
             </div>
           </div>
@@ -1104,9 +1001,27 @@ function RestsApp() {
 }
 
 const rootElement = document.getElementById("root");
-if (ReactDOM.createRoot) ReactDOM.createRoot(rootElement).render(<RestsApp />);
-else ReactDOM.render(<RestsApp />, rootElement);
-  </script>
-<script src="./footer.js?v=20261005-update-history"></script>
+function EscapeRest({ activity }) {
+  useInjectedStyles();
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const question = embed.useQuestion(activity, () => makeQuestion());
+  const correct = REST_OPTIONS.find(option => option.rhythm === question.missingBoxes[0].answer);
+  const options = embed.codeOrder(REST_OPTIONS, correct, activity.clue.digit);
+  return (
+    <main ref={ref} className="escape-literacy-content">
+      <p className="escape-literacy-content-title">Which rest is needed to complete the bar?</p>
+      <Score question={question} completeBar />
+      <embed.NumberedOptions activity={activity} choices={options.map(option => option.rhythm === "semibreve-rest" ? "Whole bar rest" : option.label)} />
+    </main>
+  );
+}
+
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("rest");
+const app = escapeActivity ? <EscapeRest activity={escapeActivity} /> : <RestsApp />;
+if (ReactDOM.createRoot) ReactDOM.createRoot(rootElement).render(app);
+else ReactDOM.render(app, rootElement);
+  </script><script src="./generated-runtimes/rests-1.js?v=120865d0bb26"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

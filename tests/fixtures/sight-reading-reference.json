@@ -1,0 +1,38 @@
+{
+  "referenceUrl": "https://www.tonegym.co/playground/test?t=sightreading&lp=sightreading",
+  "reaEvidence": {
+    "application": "ev_2eb2f1266ea6a993d3294d408e9660124d77bf1f0a36105425a51c28a9624acd",
+    "summary": "ev_f04edd81221107aef0332835e66b43d2124d827ed0e93b1df628eb7722dc73e2",
+    "module": "jag_node_9acc34ffdf6332bf5e4a608c06c2ac4f937e848e18f7e6a95e0cced798241fb9"
+  },
+  "sourceDigests": {
+    "page.html": "81d9fdf6113aa3861ed262f9f728f3d660d1696b310b04fd7d00f869ac816264",
+    "sightreading-test.js": "53d85378518584f35225e8fb70d2700db958dd630762e9955ccc1a9a5cfd5ae4",
+    "keyboard.js": "7196ed171085668d644baf4712774640c7112dea736dbd36c030540425bb48ac"
+  },
+  "observations": [
+    "The page model declares 12 stages.",
+    "SelectKey stores the current note-name selection; showResult marks it at the animation deadline.",
+    "Both unanswered and wrong rounds increment step; each correct round adds one point.",
+    "The source duration table starts at 4000ms and the reveal threshold is 10 percent remaining; default speed is 1.",
+    "The inspected test increments step, not game.play.stage; no progressive acceleration is established.",
+    "waitForNext is 500ms.",
+    "Default test uses treble clef and natural C-D-E-F-G-A-B note-name answers.",
+    "The live start screen and all-unanswered final screen were observed in the browser."
+  ],
+  "inferences": [
+    "The default visual deadline is approximately 3600ms: 4000 times 0.9."
+  ],
+  "hubDesignChoices": [
+    "Use the selected Hub level, clefs, range and accidentals.",
+    "Pause explicitly and on window blur or hidden document; require Resume.",
+    "Use the Hub notation glyphs, staff spacing and controls.",
+    "Show score, percentage and per-stage feedback; omit unverified comparative population rankings.",
+    "Keep this attempt transient and separate from ordinary Note Identification progress."
+  ],
+  "limitations": [
+    "Static REA call-flow and dynamic property resolution are partial for the obfuscated reference.",
+    "The derived string lookup mapping was inspected as text; original scripts were not copied into the Hub.",
+    "No claim of source equivalence or reconstruction of other ToneGym trainers."
+  ]
+}

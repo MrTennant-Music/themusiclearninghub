@@ -1,8 +1,8 @@
-# The Music Literacy Hub project instructions
+# The Music Learning Hub project instructions
 
 ## Permanent fitted desktop-canvas layout policy
 
-The Music Literacy Hub uses a fixed 1280px desktop layout on every device for
+The Music Learning Hub uses a fixed 1280px desktop layout on every device for
 all pages except `index.html`. The homepage is the sole responsive,
 mobile-friendly exception. On screens narrower than 1280px, the complete
 desktop layout is proportionally fitted to the visible width as one canvas so
@@ -14,7 +14,7 @@ project tool.
    `<meta name="viewport" content="width=1280" />`. Do not force
    `initial-scale=1.0`; mobile browsers must infer the scale that fits the
    complete 1280px canvas into the visible width.
-2. Every HTML page except `index.html` must load `desktop-layout.css` and
+2. Every HTML page except `index.html` must load `styles/desktop-layout.css` and
    `desktop-layout.js`. Tailwind pages must load `desktop-layout.js`
    immediately after Tailwind.
 3. Never add viewport-width media queries, responsive utility variants,
@@ -31,7 +31,7 @@ project tool.
 8. `index.html` must keep its device-width viewport and established responsive
    header, cards, filters, footer and modals. Never extend this exception to
    another page.
-9. `interactive-exams/exam.html` may retain its existing canvas-fit fallback
+9. `digital-question-papers/digitalquestionpapers.html` may retain its existing canvas-fit fallback
    for narrow desktop browser windows. Avoid double scaling on mobile devices,
    and keep PDF and print output unscaled.
 
@@ -40,7 +40,7 @@ project tool.
 When creating or changing a notation-based question in Interactive Exam Papers:
 
 1. Treat `practicequestions.html` as the source of truth for appearance and interaction. Find the closest existing question at the same qualification level before implementing anything new.
-2. Reuse the established notation code, `shared-notation-config.js`, Bravura glyphs, staff spacing, note positioning, beaming, stem rules, buttons, hover behaviour, dragging, clear/reset behaviour and responsive layout. Do not create a separate approximation when an equivalent component already exists.
+2. Reuse the established notation code, `shared/shared-notation-config.js`, Bravura glyphs, staff spacing, note positioning, beaming, stem rules, buttons, hover behaviour, dragging, clear/reset behaviour and responsive layout. Do not create a separate approximation when an equivalent component already exists.
 3. Compare the original Qualifications Scotland paper, the matching Practice Questions implementation and the shared notation configuration before writing code.
 4. Describe the musical content as structured data: pitches, rhythms, bars, key and time signatures, barlines, repeat signs, editable elements and correct answers. Keep this content separate from the renderer.
 5. Reuse complete interactions, not only their visual styling. If Practice Questions already supports placing notes, dynamics, time signatures, repeat signs or other symbols, adapt that behaviour directly.
@@ -81,20 +81,20 @@ Apply these established decisions when the same interaction appears in later pap
 
 ## Reusable Digital Past Paper design and interaction decisions
 
-Use the completed National 5 Music 2014 paper in `interactive-exams/` as the reference implementation for later Digital Past Papers. Apply the following decisions by default unless the source paper or the user explicitly requires something different.
+Use the completed National 5 Music 2014 paper in `digital-question-papers/` as the reference implementation for later Digital Past Papers. Apply the following decisions by default unless the source paper or the user explicitly requires something different.
 
 ### Source fidelity and typography
 
 1. Recreate the usable question area of the original Qualifications Scotland paper; do not embed the PDF and do not reproduce print-only material such as candidate boxes, barcodes, official-use columns, page-turn instructions or blank pages.
 2. Follow the source paper wording verbatim, including its original use of “tick”, “write”, “insert”, “name”, punctuation, capitalisation, line breaks, bold text, question numbering, lettered parts and Roman-numeral subparts. Only change wording when a digital interaction makes the printed instruction impossible or misleading.
 3. Omit repeated “Question … (continued)” headings when the content is presented continuously on one digital page.
-4. Load the supplied Trebuchet MS files locally with `@font-face`, and use Trebuchet only for text that belongs to the original paper or for answers entered by the pupil. Keep site navigation, audio controls, toolbar buttons, mode controls, Clear controls and other added interface text in the normal Music Literacy Hub interface font.
+4. Load the supplied Trebuchet MS files locally with `@font-face`, and use Trebuchet only for text that belongs to the original paper or for answers entered by the pupil. Keep site navigation, audio controls, toolbar buttons, mode controls, Clear controls and other added interface text in the normal Music Learning Hub interface font.
 5. Match the source paper’s emphasis rather than making all question text bold. Main “Question …” headings and mark numerals are bold; part labels such as “(a)” remain regular unless the source shows otherwise.
 
 ### Paper layout and marks
 
 6. Present each question on a white, A4-proportioned paper panel with a sensible A4 minimum height, restrained border, subtle paper shadow and the source paper’s thick right-angle corner decorations. Keep the surrounding page white and do not add a coloured or grey backdrop container around the paper.
-7. Keep the paper visually square and document-like. Rounded Music Literacy Hub styling remains appropriate for interface controls and menus, but not for the paper itself.
+7. Keep the paper visually square and document-like. Rounded Music Learning Hub styling remains appropriate for interface controls and menus, but not for the paper itself.
 8. Put the paper toolbar inside the top of the paper, recessed between the upper corner decorations. Keep its controls close together without pushing the authentic question content down. Put the bottom navigation controls inside the paper as well.
 9. Show `MARKS` in capitals at the top-right of every paper page. Show only the bold mark numeral beside the relevant source-paper row; do not append the word “mark” or “marks”. Where the source paper includes opening instructions such as `Total marks — …` and `Attempt ALL questions`, reproduce them centred above Question 1 in single-question, Practice, Exam and All Questions views. Where the source gives one combined mark for a whole question, place that numeral on the same row as the source does rather than adding marks beside every answer.
 10. Keep question letters, question text and mark numerals on the same row where the source does. Preserve the source indentation from part (a) onwards, its deliberate line wrapping and the alignment of answer spaces.
@@ -103,7 +103,7 @@ Use the completed National 5 Music 2014 paper in `interactive-exams/` as the ref
 
 ### Answer controls and pupil input
 
-13. Render choice answers as large empty square boxes aligned with their labels, matching the paper rather than using radio circles or quiz tiles. A selected box displays `prtick.svg` as a CSS mask, optically shifted `0.5px` to the right, so the same tick can inherit the neutral, red or green answer colour. Retain correct radio or checkbox semantics invisibly for accessibility.
+13. Render choice answers as large empty square boxes aligned with their labels, matching the paper rather than using radio circles or quiz tiles. A selected box displays `ui-icons/prtick.svg` as a CSS mask, optically shifted `0.5px` to the right, so the same tick can inherit the neutral, red or green answer colour. Retain correct radio or checkbox semantics invisibly for accessibility.
 14. Limit each choice row’s clickable area to the square and its text; empty space to the right must not select an answer accidentally.
 15. Use simple underline fields for short answers, inline answer lines for sentence completions and paper-like ruled or bordered areas for longer answers. Keep short-answer lines to the established Question 1 width unless the source clearly requires another length.
 16. Display pupil-entered text in bold Trebuchet so it is distinct from printed paper text. Automatically capitalise the first character of standalone answers, but not answers embedded inside a sentence-completion line.
@@ -113,27 +113,27 @@ Use the completed National 5 Music 2014 paper in `interactive-exams/` as the ref
 
 ### Audio marker calibration
 
-Before importing National 5 Music 2016, read `interactive-exams/papers/national5-2015-review-notes.md` and apply its complete import checklist.
+Before importing National 5 Music 2016, read `digital-question-papers/papers/national5-2015-review-notes.md` and apply its complete import checklist.
 
-Before importing National 5 Music 2017 or any later paper, also read `interactive-exams/papers/national5-2016-import-notes.md` and apply its source, audio, notation and marking checklist.
+Before importing National 5 Music 2017 or any later paper, also read `digital-question-papers/papers/national5-2016-import-notes.md` and apply its source, audio, notation and marking checklist.
 
-Before importing National 5 Music 2018 or any later paper, also read `interactive-exams/papers/national5-2017-import-notes.md`. It records the 2017 Whisper marker workflow, the rhythm-correction and missing-note notation interactions, shared Question 8 concept de-duplication and the official-answer edge cases that must remain regression-tested.
+Before importing National 5 Music 2018 or any later paper, also read `digital-question-papers/papers/national5-2017-import-notes.md`. It records the 2017 Whisper marker workflow, the rhythm-correction and missing-note notation interactions, shared Question 8 concept de-duplication and the official-answer edge cases that must remain regression-tested.
 
-Before importing Higher Music 2016 or any later Higher paper, read `interactive-exams/papers/higher-2015-import-notes.md`. It records the Higher concept-line, comparison-grid and lyric-placement interactions, the six-mark analysis rules, the score-after-questions literacy layout, the across-the-board additional-answer rule and the local Whisper calibration workflow.
+Before importing Higher Music 2016 or any later Higher paper, read `digital-question-papers/papers/higher-2015-import-notes.md`. It records the Higher concept-line, comparison-grid and lyric-placement interactions, the six-mark analysis rules, the score-after-questions literacy layout, the across-the-board additional-answer rule and the local Whisper calibration workflow.
 
-Before importing Higher Music 2017 or any later Higher paper, also read `interactive-exams/papers/higher-2016-import-notes.md`. It records the 2016 source inventory, 32 calibrated Whisper markers, sixteen-bar F-major Question 4 transcription and interactions, official marking alternatives.
+Before importing Higher Music 2017 or any later Higher paper, also read `digital-question-papers/papers/higher-2016-import-notes.md`. It records the 2016 source inventory, 32 calibrated Whisper markers, sixteen-bar F-major Question 4 transcription and interactions, official marking alternatives.
 
-Before importing National 5 Music 2019 or any later paper, also read `interactive-exams/papers/national5-2018-import-notes.md`. It records the 2018 source inventory, Whisper marker calibration, 16-bar Question 3 interaction model, official marking alternatives and Question 8 concept rules that must remain regression-tested.
+Before importing National 5 Music 2019 or any later paper, also read `digital-question-papers/papers/national5-2018-import-notes.md`. It records the 2018 source inventory, Whisper marker calibration, 16-bar Question 3 interaction model, official marking alternatives and Question 8 concept rules that must remain regression-tested.
 
-Before importing National 5 Music 2020 or any later paper, also read `interactive-exams/papers/national5-2019-import-notes.md`. It records the 2019 source inventory, 30 calibrated Whisper markers, eight-bar Question 3 transcription and correction model, the two-concept Bothy ballad reason rule and the official Question 8 acceptance and rejection cases that must remain regression-tested.
+Before importing National 5 Music 2020 or any later paper, also read `digital-question-papers/papers/national5-2019-import-notes.md`. It records the 2019 source inventory, 30 calibrated Whisper markers, eight-bar Question 3 transcription and correction model, the two-concept Bothy ballad reason rule and the official Question 8 acceptance and rejection cases that must remain regression-tested.
 
-Before importing National 5 Music 2023 or any later paper, also read `interactive-exams/papers/national5-2022-import-notes.md`. It records the 2022 source inventory, Whisper marker workflow, sixteen-bar C-major Question 3 transcription with direct bar-13 note entry, official marking alternatives and Question 8 acceptance and exclusion rules.
+Before importing National 5 Music 2023 or any later paper, also read `digital-question-papers/papers/national5-2022-import-notes.md`. It records the 2022 source inventory, Whisper marker workflow, sixteen-bar C-major Question 3 transcription with direct bar-13 note entry, official marking alternatives and Question 8 acceptance and exclusion rules.
 
-Before importing National 5 Music 2024 or any later paper, also read `interactive-exams/papers/national5-2023-import-notes.md`. It records the 2023 source inventory, Whisper marker workflow, ten-bar F-major Question 3 transcription with anacrusis, endings, direct bar-2 note entry and physical repeat-sign placement, plus the official Question 7 and Question 8 marking edge cases.
+Before importing National 5 Music 2024 or any later paper, also read `digital-question-papers/papers/national5-2023-import-notes.md`. It records the 2023 source inventory, Whisper marker workflow, ten-bar F-major Question 3 transcription with anacrusis, endings, direct bar-2 note entry and physical repeat-sign placement, plus the official Question 7 and Question 8 marking edge cases.
 
-Before importing National 5 Music 2025 or any later paper, also read `interactive-exams/papers/national5-2024-import-notes.md`. It records the 2024 source inventory, Whisper marker workflow, eight-bar A-minor Question 3 transcription with direct bar-3 note entry and quiet-dynamic placement, the Question 7 evidence rules, and the Question 8 concept-overlap safeguards.
+Before importing National 5 Music 2025 or any later paper, also read `digital-question-papers/papers/national5-2024-import-notes.md`. It records the 2024 source inventory, Whisper marker workflow, eight-bar A-minor Question 3 transcription with direct bar-3 note entry and quiet-dynamic placement, the Question 7 evidence rules, and the Question 8 concept-overlap safeguards.
 
-Before importing National 5 Music 2026 or any later paper, also read `interactive-exams/papers/national5-2025-import-notes.md`. It records the 2025 source inventory, Whisper marker workflow, ten-bar F-major Question 3 transcription with first/second endings, direct bar-3 note entry and physical end-repeat placement, the Question 7 evidence rules, and the Question 8 mezzo-forte overlap safeguard.
+Before importing National 5 Music 2026 or any later paper, also read `digital-question-papers/papers/national5-2025-import-notes.md`. It records the 2025 source inventory, Whisper marker workflow, ten-bar F-major Question 3 transcription with first/second endings, direct bar-3 note entry and physical end-repeat placement, the Question 7 evidence rules, and the Question 8 mezzo-forte overlap safeguard.
 
 1. When implementing a new Digital Past Paper, transcribe every official question audio track with a local Whisper speech-to-text model before setting section markers. Use the transcription to locate each spoken question, part and replay cue; do not estimate markers from track duration or visual waveform alone.
 2. Refine every transcribed cue against the waveform boundary and compare its optical and playback behaviour with the completed National 5 Music 2014 paper. Markers should land at the start of the relevant spoken cue, using the same small lead-in convention as the 2014 reference.
@@ -152,7 +152,7 @@ Before importing National 5 Music 2026 or any later paper, also read `interactiv
 
 ### Practice Mode and Exam Mode
 
-27. Always offer two title-cased modes: `Practice Mode` with `practicemode.svg`, and `Exam Mode` with `worksheet.svg`. The toolbar button displays the currently selected mode. Present both as full menu buttons styled like the Level menu, not as a native select dropdown, and include a full-width red `Restart` control with no glyph.
+27. Always offer two title-cased modes: `Practice Mode` with `ui-icons/practicemode.svg`, and `Exam Mode` with `ui-icons/worksheet.svg`. The toolbar button displays the currently selected mode. Present both as full menu buttons styled like the Level menu, not as a native select dropdown, and include a full-width red `Restart` control with no glyph.
 28. Practice Mode has no timer, unlimited audio replay and free movement between questions or into Show All. Do not interrupt normal next/previous navigation merely because a question is incomplete.
 29. Before the first attempt, show the centred `Select Mode` prompt with neither mode preselected and no start button visible. Selecting a mode reveals its matching information panel and start button. Exam Mode must still start only after explicit confirmation.
 30. Exam Mode uses a 45-minute timer and the All Questions view. The timer and continuous Question 1-to-Question 8 audio begin together when the attempt starts. Audio cannot be paused or replayed; future questions unlock as their audio begins.
@@ -176,14 +176,14 @@ Before importing National 5 Music 2026 or any later paper, also read `interactiv
 12. After submission, show a score card containing a centred `Results` heading, `Score`, `Percentage`, `Best Question` and `Weakest Question`, followed by the automatic-marking disclaimer, review actions and marked paper. Do not show Personal Best or Mode in this row. Determine best and weakest by percentage earned; show only one question for each, breaking percentage ties by choosing the question with the most marks available. Display `Question …` with `… of … marks` beneath it.
 13. Show feedback inside the marked paper beside each answer. Colour the pupil’s correct tick, text or notation green and an incorrect response red; use the same red feedback container for unanswered parts. Identify the correct answer in green text inside the written feedback, but do not add a green tick or green answer styling to an unselected correct choice merely to reveal it. Use written `Correct`, `Partially correct`, `Incorrect` or `Not answered` labels as well as colour so the feedback remains accessible. Multi-mark parts with some earned marks use yellow feedback and `Partially correct`.
 14. In the marked Question 8 paper, keep rough work visibly unmarked and assess only the Final answer. Present the marking-instruction concepts under their original headings and highlight earned concepts green in those lists. Do not add a separate `Awarded concepts` summary line above the lists.
-15. Keep marked-paper feedback self-contained within Digital Past Papers. Do not include links from feedback to Practice Questions pages or other areas outside `interactive-exams/`.
-15a. Put the automatic-marking notice on a full-width row above the feedback actions. On the row beneath, show the recorded completion date and time at the left, separated by a middle dot, and keep `Marking Instructions`, `Share` and `Try Again` together at the right. Keep the vertical space above the action row equal to the space beneath it. Give the buttons the same 44px control height as the Level, Year and Mode buttons. Use `worksheet.svg`, `share.svg` and `restart.svg` respectively, using the same icon size and vertically centring each beside its button text. In the Score pill, make the available-mark suffix such as `/40` smaller than the pupil's earned score. Record the exact completion timestamp when a full paper is submitted and use its UK-formatted date and 24-hour time on-screen and in the PDF. Pressing Share opens a centred prompt titled `Share`, with `share.svg` to the left of the title, an optional name field and `Cancel` and `Share` buttons; when a name is supplied, place `Name: …` alongside the completion details in the PDF only. Generate the marked feedback PDF using the same captured-page PDF approach as Practice Questions, open the finished PDF in a new browser tab, and leave saving or sharing to the pupil from that tab. Before capture, replace Bravura font characters in notation scores with the shared `bravura-worksheet-outlines.js` vector paths so notation cannot become square placeholders. Place the compact Results summary and the first marked question together on the first PDF page when they fit rather than giving the summary a mostly blank page of its own. Render the complete marked paper and restore the pupil’s previous feedback view after preparing the PDF. Do not show a separate Download action.
+15. Keep marked-paper feedback self-contained within Digital Past Papers. Do not include links from feedback to Practice Questions pages or other areas outside `digital-question-papers/`.
+15a. Put the automatic-marking notice on a full-width row above the feedback actions. On the row beneath, show the recorded completion date and time at the left, separated by a middle dot, and keep `Marking Instructions`, `Share` and `Try Again` together at the right. Keep the vertical space above the action row equal to the space beneath it. Give the buttons the same 44px control height as the Level, Year and Mode buttons. Use `ui-icons/worksheet.svg`, `ui-icons/share.svg` and `ui-icons/restart.svg` respectively, using the same icon size and vertically centring each beside its button text. In the Score pill, make the available-mark suffix such as `/40` smaller than the pupil's earned score. Record the exact completion timestamp when a full paper is submitted and use its UK-formatted date and 24-hour time on-screen and in the PDF. Pressing Share opens a centred prompt titled `Share`, with `ui-icons/share.svg` to the left of the title, an optional name field and `Cancel` and `Share` buttons; when a name is supplied, place `Name: …` alongside the completion details in the PDF only. Generate the marked feedback PDF using the same captured-page PDF approach as Practice Questions, open the finished PDF in a new browser tab, and leave saving or sharing to the pupil from that tab. Before capture, replace Bravura font characters in notation scores with the shared `bravura-worksheet-outlines.js` vector paths so notation cannot become square placeholders. Place the compact Results summary and the first marked question together on the first PDF page when they fit rather than giving the summary a mostly blank page of its own. Render the complete marked paper and restore the pupil’s previous feedback view after preparing the PDF. Do not show a separate Download action.
 15b. When the pupil's total paper score is zero, show an en dash (`–`) for both `Best Question` and `Weakest Question` instead of selecting a question. Preserve the normal two-line result footprint so all summary headings remain vertically aligned.
 16. Persist the submitted attempt and marked feedback screen across refreshes. Keep restoring that feedback until the pupil deliberately starts a new attempt or confirms Restart; merely opening the mode picker must not discard the submitted result.
 17. Keep audio section markers hidden by default and vertically centre the progress line and times. When the player is hovered or contains keyboard focus, reveal the markers and animate only the progress line and playhead to their lower marked position; keep both time labels fixed. On touchscreens, tapping an eligible audio-player container must reveal the markers persistently so the pupil can tap them; keep them open during interactions inside that player and close them only when the pupil taps elsewhere. During an active Exam Mode attempt, never reveal section markers.
 18. On the marked feedback screen, show the active question’s unrestricted audio player in the site header when reviewing one question at a time. In All Questions, hide the header player and give every question in the read-only paper its own unrestricted audio player. Allow unlimited replay, pausing, seeking and section-marker navigation regardless of whether the submitted attempt used Practice Mode or Exam Mode.
 19. Run the pupil-answer text and tick glimmer on the established shared 8-second cycle. Synchronise newly entered text and newly selected ticks to the same page-wide animation phase so all visible pupil input glimmers together, while continuing to respect reduced-motion preferences.
-20. On the feedback screen, place the complete experience inside one main Music Literacy Hub container: Level, Year and Mode toolbar; score card containing the disclaimer and action; and the full marked paper. Keep the paper itself visually distinct within that container.
+20. On the feedback screen, place the complete experience inside one main Music Learning Hub container: Level, Year and Mode toolbar; score card containing the disclaimer and action; and the full marked paper. Keep the paper itself visually distinct within that container.
 21. Open marked feedback on `Question 1` by default. Keep the toolbar question button and previous/next arrows available on feedback: the question menu switches between individual marked questions, the arrows move through them, and `Show All` opens the complete marked paper. Repeat the previous/next arrows at the bottom of each single-question feedback paper; do not add them between pages in the continuous All Questions view.
 22. Do not show `MARKS` or `BEST` stat cards in the site header. Keep only the essential timer card during an active Exam Mode attempt, and collapse the header-stat area completely at all other times.
 23. On feedback, place the score card beneath the in-container toolbar, with a centred `Results` heading at the top, followed by the automatic-marking disclaimer. Keep `20px` above and below the score card so its spacing from the toolbar matches its spacing from the disclaimer.
@@ -257,3 +257,69 @@ Before importing National 5 Music 2026 or any later paper, also read `interactiv
 34. Extend the existing shared HTML, CSS and JavaScript rather than building a separate paper renderer. Store paper wording, marks, audio timing and answer data separately from reusable rendering and interaction behaviour.
 35. Preserve keyboard labels, visible focus, radio/checkbox semantics, reduced-motion support and screen-reader names even when the visual controls imitate printed boxes.
 36. When adding a new paper, compare every question against its source PDF and the 2014 reference implementation. Verify wording, bold text, indentation, line breaks, marks, control limits, audio markers, answer persistence, submission, both modes and Show All alignment before considering it complete.
+
+
+## Maintenance files and cleanup
+
+Shared browser code lives in `shared/`; page-specific sources and prebuilt
+runtimes remain beside their existing activities. Shared styles live in
+`styles/`. The site build explicitly publishes `shared/` and `styles/`.
+When moving a script, update page loaders, generated runtimes, tests and
+authoring scripts together. URLs based on `document.currentScript.src` must
+be resolved relative to the new script location.
+
+Permanent paper source evidence lives in
+`digital-question-papers/tests/fixtures/source/`; paper-specific musical
+decisions remain in import notes, inventories and other regression fixtures.
+Disposable paper audit results belong under ignored
+`digital-question-papers/audit/`. Audit tools can require previous report
+stages; regenerate these before running downstream checks. Do not treat
+historical audit passes as evidence that current files are verified.
+
+The former `maintenance/reference/` and `maintenance/audio-evidence/`
+directories and `class workbooks/` are currently absent. Some manual
+generators and evidence tests still require their original inputs. Do not
+invent evidence, silently skip tests or recreate large backup folders.
+Consult `docs/music-dictionary-maintenance.md` for the missing-evidence policy.
+Local Audio Review may create its ignored `maintenance/audio-review/`
+database and original/version storage; these are working data, not reports.
+
+Keep licence/source-credit notices, original source documents, current
+implementation notes and pending verification limits. Do not recreate root
+`tmp/` or accumulate backups, duplicate previews or chronological test reports.
+Keep `node_modules/` while developing; it is ignored and required by local
+builds. Generated runtimes in use by pages are required site assets.
+
+## Touch text selection
+
+Load `styles/hub-touch.css` on every Hub page, including the homepage. This
+shared stylesheet blocks native text highlighting and callouts for a coarse
+primary pointer while retaining text editing in inputs and contenteditable
+areas. Keep ordinary desktop text selection available; do not add blanket
+selection blocking outside touch-specific rules.
+## Shared touch text entry
+
+Touch text fields use the device's native keyboard; mouse and physical keyboard
+input retain normal desktop behaviour. Do not add a custom floating keyboard.
+## Audio stopping policy
+
+Prefer a quick fade-out (about 160ms) whenever pupil actions interrupt audio,
+including Confirm, Check Answers, question changes, Stop/Pause and leaving an
+activity. Use the shared `MLH.fadeOutAudio` helper for recorded media and route
+synthesised output through `MLH.audioOutput`, releasing it with
+`MLH.closeAudioContext`. Preserve existing musical release envelopes and longer
+intentional crossfades. Delay resetting playheads, clearing media sources or
+closing audio contexts until the release finishes; restore recorded-media
+volume for replay. Playback failures may still stop immediately.
+
+## Finalised Concept Quiz questions
+
+The concept-level finalisation tick marks every question in that concept with
+`review.finalisedAt`, meaning it has been read and signed off by the user.
+Never change its prompt, answers, choices, feedback, recording, audio window or
+other content during AI wording sweeps, regeneration or automatic reconciliation.
+This applies to locked browser review exports as well as the authored banks.
+Back up and read the latest browser reviews before any bulk question changes;
+merge their finalisation state before deciding which questions are eligible.
+Only an explicit user request to edit a particular locked question or unlock it
+permits a change. Preserve finalisation metadata in saves, exports and imports.

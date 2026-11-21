@@ -1,0 +1,43 @@
+(() => {
+  const sets = window.MILLIONAIRE_CUSTOM_SETS;
+  function readFile(file, type) {
+    const extension = String(file.name || '').split('.').pop().toLowerCase();
+    const fallback = type === 'audio' ? { mp3: 'audio/mpeg', wav: 'audio/wav', m4a: 'audio/mp4', aac: 'audio/aac', ogg: 'audio/ogg' } : { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp', gif: 'image/gif' };
+    const allowed = type === 'audio' ? sets.AUDIO_MIME_TYPES : sets.IMAGE_MIME_TYPES;
+    const mime = allowed.includes(file.type) ? file.type : fallback[extension];
+    if (!mime) throw Error(`Choose a supported ${type} file.`);
+    const limit = type === 'audio' ? sets.LIMITS.audioBytes : sets.LIMITS.imageBytes;
+    if (!file.size || file.size > limit) throw Error(`${type === 'audio' ? 'Audio' : 'Image'} files must be ${limit / 1024 / 1024} MB or smaller.`);
+    return { type, mime, name: file.name, blob: file.slice(0, file.size, mime) };
+  }
+  async function prepareMedia(media, signal) {
+    let file = media.blob;
+    if (!(file instanceof Blob)) {
+      const url = new URL(media.src);
+      if (url.protocol !== 'https:' || url.hostname !== 'upload.wikimedia.org') throw Error('Choose a file from the media collection.');
+      const response = await fetch(url.href, { signal, credentials: 'omit' });
+      if (!response.ok) throw Error('This file could not be downloaded. Please try another.');
+      const limit = media.type === 'audio' ? sets.LIMITS.audioBytes : sets.LIMITS.imageBytes;
+      if (Number(response.headers.get('content-length')) > limit) { response.body?.cancel(); throw Error(`Choose a file smaller than ${limit / 1024 / 1024} MB.`); }
+      const blob = await response.blob();
+      const extension = ({ 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg', 'application/ogg': 'ogg', 'audio/wav': 'wav', 'audio/mp4': 'm4a' })[blob.type.split(';')[0]] || url.pathname.split('.').pop();
+      file = new File([blob], `${media.name || 'Media'}.${extension}`, { type: blob.type.split(';')[0] });
+    } else file = new File([file], media.name || 'Media', { type: media.mime || file.type });
+    const checked = readFile(file, media.type);
+    return { id: sets.uniqueId('media'), name: checked.name, type: checked.mime, size: checked.blob.size, duration: null, blob: checked.blob, ...(media.sourceUrl ? { sourceUrl: media.sourceUrl, credit: media.credit || '', license: media.license || '' } : {}) };
+  }
+  window.MillionaireMediaFiles = { readFile, prepareMedia };
+  window.MillionaireMediaLibrary = function MediaLibrary({ type, Modal, onChange, onClose }) {
+    const request = React.useRef(null);
+    React.useEffect(() => () => request.current?.abort(), []);
+    async function choose(media) {
+      request.current?.abort();
+      const controller = new AbortController(); request.current = controller;
+      const timeout = setTimeout(() => controller.abort(), 30000);
+      try { const stored = await prepareMedia(media, controller.signal); if (!controller.signal.aborted) { onChange(stored); onClose(); } }
+      catch (error) { if (controller.signal.aborted) throw Error('The download took too long. Please try again.'); throw error; }
+      finally { clearTimeout(timeout); }
+    }
+    return <window.IGMediaBank Modal={Modal} type={type} onClose={onClose} onChange={choose} readFile={readFile} normalizeMedia={media => media} />;
+  };
+})();

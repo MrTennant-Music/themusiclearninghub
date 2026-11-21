@@ -1,0 +1,201 @@
+{
+  "id": "hub-h-styles-connections-3",
+  "level": "H",
+  "title": "Styles 3",
+  "instructions": "Find four facts that best describe each style. Some musical features are shared between styles. Find all four groups.",
+  "description": "Practise facts about Plainchant, Recitative, Soul music, String quartet.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-h-styles-connections-3-1",
+      "prompt": "Single Latin chant line",
+      "answer": "Single Latin chant line",
+      "distractors": [],
+      "group": "Plainchant",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-2",
+      "prompt": "Liturgical modal unison chant",
+      "answer": "Liturgical modal unison chant",
+      "distractors": [],
+      "group": "Plainchant",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-3",
+      "prompt": "Sacred chant in flexible rhythm",
+      "answer": "Sacred chant in flexible rhythm",
+      "distractors": [],
+      "group": "Plainchant",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-4",
+      "prompt": "Latin text in flexible unison",
+      "answer": "Latin text in flexible unison",
+      "distractors": [],
+      "group": "Plainchant",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-5",
+      "prompt": "Speech-like operatic singing",
+      "answer": "Speech-like operatic singing",
+      "distractors": [],
+      "group": "Recitative",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-6",
+      "prompt": "Word-led operatic solo rhythm",
+      "answer": "Word-led operatic solo rhythm",
+      "distractors": [],
+      "group": "Recitative",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-7",
+      "prompt": "Sung dialogue moves the story",
+      "answer": "Sung dialogue moves the story",
+      "distractors": [],
+      "group": "Recitative",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-8",
+      "prompt": "Operatic dialogue sung as speech",
+      "answer": "Operatic dialogue sung as speech",
+      "distractors": [],
+      "group": "Recitative",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-9",
+      "prompt": "Gospel-influenced popular vocals",
+      "answer": "Gospel-influenced popular vocals",
+      "distractors": [],
+      "group": "Soul music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-10",
+      "prompt": "Memphis and Motown traditions",
+      "answer": "Memphis and Motown traditions",
+      "distractors": [],
+      "group": "Soul music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-11",
+      "prompt": "Passionate lead and horn backing",
+      "answer": "Passionate lead and horn backing",
+      "distractors": [],
+      "group": "Soul music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-12",
+      "prompt": "1960s expressive vocal groove",
+      "answer": "1960s expressive vocal groove",
+      "distractors": [],
+      "group": "Soul music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-13",
+      "prompt": "Two violins, viola and cello",
+      "answer": "Two violins, viola and cello",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-14",
+      "prompt": "Four solo string players",
+      "answer": "Four solo string players",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-15",
+      "prompt": "One player per string part",
+      "answer": "One player per string part",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-styles-connections-3-16",
+      "prompt": "Violin pair with viola and cello",
+      "answer": "Violin pair with viola and cello",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

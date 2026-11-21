@@ -1,0 +1,201 @@
+{
+  "id": "hub-ah-timbre-connections-1",
+  "level": "AH",
+  "title": "Timbre",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting Advanced Higher Timbre concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Timbre",
+    "Advanced Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-ah-timbre-connections-1-1",
+      "prompt": "Renaissance instrument ensemble",
+      "answer": "Renaissance instrument ensemble",
+      "distractors": [],
+      "group": "Consort",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-2",
+      "prompt": "Historical group of viols",
+      "answer": "Historical group of viols",
+      "distractors": [],
+      "group": "Consort",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-3",
+      "prompt": "Whole consort: one family",
+      "answer": "Whole consort: one family",
+      "distractors": [],
+      "group": "Consort",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-4",
+      "prompt": "Renaissance mixed ensemble",
+      "answer": "Renaissance mixed ensemble",
+      "distractors": [],
+      "group": "Consort",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-5",
+      "prompt": "High male voice using falsetto",
+      "answer": "High male voice using falsetto",
+      "distractors": [],
+      "group": "Countertenor",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-6",
+      "prompt": "Adult male in an alto-like range",
+      "answer": "Adult male in an alto-like range",
+      "distractors": [],
+      "group": "Countertenor",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-7",
+      "prompt": "Male voice above tenor range",
+      "answer": "Male voice above tenor range",
+      "distractors": [],
+      "group": "Countertenor",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-8",
+      "prompt": "High adult male voice type",
+      "answer": "High adult male voice type",
+      "distractors": [],
+      "group": "Countertenor",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-9",
+      "prompt": "Piano, violin and cello ensemble",
+      "answer": "Piano, violin and cello ensemble",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-10",
+      "prompt": "Violin-cello-piano chamber trio",
+      "answer": "Violin-cello-piano chamber trio",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-11",
+      "prompt": "Violin and cello join the piano",
+      "answer": "Violin and cello join the piano",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-12",
+      "prompt": "Violin joins cello and piano",
+      "answer": "Violin joins cello and piano",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-13",
+      "prompt": "Voice between speech and singing",
+      "answer": "Voice between speech and singing",
+      "distractors": [],
+      "group": "Sprechgesang",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-14",
+      "prompt": "Speech-song vocal delivery",
+      "answer": "Speech-song vocal delivery",
+      "distractors": [],
+      "group": "Sprechgesang",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-15",
+      "prompt": "Spoken-sung vocal technique",
+      "answer": "Spoken-sung vocal technique",
+      "distractors": [],
+      "group": "Sprechgesang",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-timbre-connections-1-16",
+      "prompt": "Partly spoken pitched vocal line",
+      "answer": "Partly spoken pitched vocal line",
+      "distractors": [],
+      "group": "Sprechgesang",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

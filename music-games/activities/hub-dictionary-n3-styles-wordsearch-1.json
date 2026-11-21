@@ -1,0 +1,147 @@
+{
+  "id": "hub-dictionary-n3-styles-wordsearch-1",
+  "level": "N3",
+  "title": "Styles",
+  "instructions": "",
+  "description": "Revise styles with 8 Music Dictionary concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0001",
+      "prompt": "It is usually in 4/4 and often uses a 12-bar chord pattern. 8-bar and 16-bar forms are also used.",
+      "answer": "Blues",
+      "distractors": [
+        "Latin American",
+        "Musical",
+        "Pop"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0002",
+      "prompt": "Common features are syncopation, improvisation, distinctive harmony and instrumental solos, played by small groups or big bands.",
+      "answer": "Jazz",
+      "distractors": [
+        "Musical",
+        "Pop",
+        "Rock"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0003",
+      "prompt": "Dance music from Latin America, often with lively syncopated or off-beat rhythms, a strong pulse and clear percussion.",
+      "answer": "Latin American",
+      "distractors": [
+        "Pop",
+        "Rock",
+        "Rock 'n' roll"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0004",
+      "prompt": "A stage show with speaking, songs, acting and usually dancing.",
+      "answer": "Musical",
+      "distractors": [
+        "Rock",
+        "Rock 'n' roll",
+        "Scottish"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0005",
+      "prompt": "Commercial popular music built around memorable songs, clear hooks and repeated sections such as verses and choruses.",
+      "answer": "Pop",
+      "distractors": [
+        "Rock 'n' roll",
+        "Scottish",
+        "Blues"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0006",
+      "prompt": "A popular style with a strong driving beat and loud amplified sound.",
+      "answer": "Rock",
+      "distractors": [
+        "Scottish",
+        "Blues",
+        "Jazz"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0007",
+      "prompt": "A lively American style combining elements of blues, rhythm and blues, gospel and country.",
+      "answer": "Rock 'n' roll",
+      "distractors": [
+        "Blues",
+        "Jazz",
+        "Latin American"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n3-styles-wordsearch-1-mc-0008",
+      "prompt": "Traditional songs, dances and instrumental music from Scotland.",
+      "answer": "Scottish",
+      "distractors": [
+        "Jazz",
+        "Latin American",
+        "Musical"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

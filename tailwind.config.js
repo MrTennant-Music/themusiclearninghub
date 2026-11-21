@@ -1,5 +1,5 @@
 /**
- * Production Tailwind settings for the published Music Literacy Hub.
+ * Production Tailwind settings for the published Music Learning Hub.
  * The `all` media type makes existing desktop utility variants unconditional
  * without adding viewport-width breakpoints to the published stylesheet.
  */
@@ -8,7 +8,9 @@ module.exports = {
     "./*.html",
     "./*.js",
     "./*.jsx",
-    "./interactive-exams/**/*.js",
+    "./digital-question-papers/**/*.js",
+    "./shared/**/*.js",
+    "./music-dictionary/**/*.js",
   ],
   theme: {
     screens: {

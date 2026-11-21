@@ -3,11 +3,17 @@
 ## How the Millionaire question system works
 
 `Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json` is the permanent,
-authoritative source. It is read but never changed by the question generator.
+authoritative source. It is read but never changed by the question generator. It now lives alongside these
+question banks in `data/questions/music-concepts/`.
 
-The knowledge bank contains 300 assessed concepts. The development-time
+The source was recovered from local Git history on 24 October 2026 and
+reconciled with the current concept names and retired Tonality entry. Its
+`source_history.local_recovery_2026_10_24` field records that recovery; the
+generator and validator pin the recovered file checksum.
+
+The knowledge bank contains 299 assessed concepts. The development-time
 generator creates three permanent Question Editor slots for every concept:
-one Easy, one Medium and one Hard. This gives exactly 900 slots—300 at each
+one Easy, one Medium and one Hard. This gives exactly 897 slots—299 at each
 difficulty—recorded in `editor-slots.json`.
 
 Easy slots ask `What concept is described?` and show the definition in the
@@ -18,7 +24,7 @@ to be the final answer to a teacher-written Hard question.
 
 A slot becomes playable when it has a question, four answers and a selected
 correct answer. Playable slots are copied into the five qualification-level
-JSON banks and `millionaire-music-concept-bank.js`. The editor labels a
+JSON banks and `whowantstobemillionaire/millionaire-music-concept-bank.js`. The editor labels a
 playable question `needs details` until its supporting description (for Easy
 questions), punctuation, hint and explanation are also complete. This allows a
 teacher-written question to be used while clearly showing what can still be
@@ -32,8 +38,8 @@ musical feature. Production validation rejects missing hints, generic solving
 instructions and wording that contains the answer or one of its approved names.
 
 The Hub is a static website with synchronous script loading, so the generator
-also creates `millionaire-music-concept-bank.js` as a smaller browser adapter.
-`millionaire-question-bank.js` places those records into the existing level,
+also creates `whowantstobemillionaire/millionaire-music-concept-bank.js` as a smaller browser adapter.
+`whowantstobemillionaire/millionaire-question-bank.js` places those records into the existing level,
 difficulty and category pools. Until teacher-written Hard Music Concept slots
 are ready, the final five Music Concept stages use complete Medium questions.
 When both Music Literacy and Music Concepts are selected, each five-question
@@ -44,8 +50,8 @@ notation or any runtime AI service.
 
 ## Editing questions manually
 
-Double-click `Edit Millionaire Questions.command` in the main project folder.
-The local Question Editor always shows all 900 slots. They can be filtered by
+Double-click `whowantstobemillionaire/Edit Millionaire Questions.command` in the main project folder.
+The local Question Editor always shows all 897 slots. They can be filtered by
 qualification, difficulty, exact concept, Edited/Unedited status or search
 text. Each slot's difficulty is fixed so every concept always retains one Easy,
 one Medium and one Hard position.
@@ -72,7 +78,7 @@ their choices are descriptions rather than concept names.
 
 Keep permanent teacher edits in `manual-question-overrides.json`. The generated
 `editor-slots.json`, qualification-level banks and
-`millionaire-music-concept-bank.js` must not be edited directly.
+`whowantstobemillionaire/millionaire-music-concept-bank.js` must not be edited directly.
 
 ## Regenerating and checking the banks
 
@@ -94,7 +100,7 @@ manifest incomplete.
 ## Audit files
 
 - `manifest.json` records every level file, question count and file hash.
-- `editor-slots.json` records all 900 permanent slots and whether each is ready
+- `editor-slots.json` records all 897 permanent slots and whether each is ready
   or still a draft.
 - `summary.json` contains the full machine-readable coverage and review data.
 - `review-report.md` is the concise human-readable review.

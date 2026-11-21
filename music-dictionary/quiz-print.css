@@ -1,0 +1,39 @@
+/* Print the exact generated quiz as a clean, unanswered worksheet. */
+.cq-print-header{display:none}
+@media print{
+ @page{size:A4;margin:16mm}
+ html:has(.cq-paper),body:has(.cq-paper){min-width:0!important;width:auto!important;height:auto!important;overflow:visible!important;background:#fff!important}
+ body:has(.cq-paper)>#root,body:has(.cq-paper)>#root>*{min-width:0!important;width:auto!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;overflow:visible!important;background:#fff!important;transform:none!important}
+ body:has(.cq-paper) header.fixed,body:has(.cq-paper)>footer,body:has(.cq-paper) .mc-toolbar,body:has(.cq-paper) .mc-revision-selection,body:has(.cq-paper) [data-menu-panel],body:has(.cq-paper) [role=dialog],body:has(.cq-paper) .cq-worksheet-dialog,body:has(.cq-paper) .cq-run-toolbar,body:has(.cq-paper) .cq-paper-actions,body:has(.cq-paper) .cq-paper-results,body:has(.cq-paper) .inline-answer-feedback{display:none!important}
+ body:has(.cq-paper) #root>.overflow-x-hidden>.max-w-6xl,body:has(.cq-paper) main.mc-main{min-width:0!important;width:auto!important;max-width:none!important;min-height:0!important;height:auto!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;background:#fff!important;transform:none!important}
+ .cq-paper{min-width:0!important;width:auto!important;margin:0!important;padding:0!important;animation:none!important;color:#000!important;background:#fff!important;transform:none!important}
+ .cq-paper .cq-print-header{display:block;min-width:0;margin:0 0 9mm;text-align:center;break-after:avoid}
+ .cq-print-header h1{margin:0 0 2mm;font-size:18pt;font-weight:800;line-height:1.2}
+ .cq-print-header p{margin:0;font-size:11pt}
+ .cq-print-pupil-fields{display:flex;justify-content:space-between;gap:4mm;margin-top:8mm;font-size:10pt;text-align:left}
+ .cq-paper>.subquestions{display:block!important;width:100%;max-width:none;margin:0;height:auto!important;min-height:0!important}
+ .cq-paper .cq-question-stage>.cq-paper-question{display:block!important;visibility:visible!important;position:static!important;grid-area:auto!important;width:auto!important;height:auto!important;min-height:0!important;transform:none!important}
+ .cq-paper .cq-paper-question{margin:0 0 6mm;padding:0;break-inside:avoid;page-break-inside:avoid}
+ .cq-paper .cq-paper-question+.cq-paper-question{padding-top:6mm;border-color:#d6d3d1}
+ .cq-paper .question-header{min-width:0;margin-left:0;padding-bottom:2mm;break-after:avoid}
+ .cq-paper .question-header h3{font-size:11pt;color:#000}
+ .cq-paper .subquestion{margin-left:0;padding:0}
+ .cq-paper .subquestion-heading-question{max-width:none;margin-bottom:3mm;font-size:11pt;line-height:1.4;color:#000}
+ .cq-paper .subquestion-heading-marks{font-size:0!important;color:#000!important}
+ .cq-paper .subquestion-heading-marks::after{content:attr(data-print-marks);font-size:11pt;color:#000}
+ .cq-paper .answer-options{max-width:none}
+ .cq-paper .answer-options.is-tick-two{column-gap:6mm}
+ .cq-paper .answer-option{min-height:8mm;padding:1mm 0;gap:3mm;align-items:flex-start;color:#000!important;background:none!important}
+ .cq-paper .answer-option-copy{font-size:10.5pt;line-height:1.35;color:#000!important}
+ .cq-paper .answer-option input{flex:0 0 5mm;width:5mm;height:5mm;min-width:5mm;min-height:5mm;margin-top:.5mm;border:1px solid #555!important;background:#fff!important;color:transparent!important;opacity:1!important;box-shadow:none!important}
+ .cq-paper .answer-option input::after{display:none!important}
+ .cq-paper .text-answer,.cq-paper.marked-question-card .text-answer{width:100%;max-width:none;min-height:10mm;border:0!important;border-bottom:1px solid #000!important;border-radius:0!important;background:transparent!important;color:transparent!important;-webkit-text-fill-color:transparent!important;caret-color:transparent!important;box-shadow:none!important;text-shadow:none!important;outline:none!important;animation:none!important;opacity:1!important}
+ .cq-paper .sentence-answer .text-answer{width:40mm;min-height:6mm}
+}
+
+@media print{.cq-audio-question{display:none!important}}
+
+@media print{
+ .cq-paper .cq-practice-feedback,.cq-paper .cq-question-stage>.cq-practice-current{display:none!important}
+ .cq-paper .cq-practice-measure{visibility:visible!important;display:block!important}
+}

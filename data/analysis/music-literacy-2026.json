@@ -1,0 +1,319 @@
+{
+  "N5": {
+    "tasks": [
+      {
+        "question": "3(a)",
+        "category": "Time signature",
+        "audio_required": false,
+        "answer": "3/4",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "3(b)",
+        "category": "Dynamics",
+        "audio_required": true,
+        "answer": "mp; also p or mf",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "3(c)",
+        "category": "Interval identification",
+        "audio_required": false,
+        "answer": "Tone; also 2 or any 2nd or whole-tone",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "3(d)",
+        "category": "Note-value identification",
+        "audio_required": false,
+        "answer": "3 beats (dotted minim)",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "3(e)",
+        "category": "Missing notes",
+        "audio_required": true,
+        "answer": "Crotchets B, C, B",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "3(f)",
+        "category": "Cadence identification",
+        "audio_required": true,
+        "answer": "Imperfect; also cadence ending in V or 5",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      }
+    ],
+    "sources": [
+      "exampapers/n5/2026/N5_Music_QP_2026.pdf",
+      "exampapers/n5/2026/mi_N5_Music_mi_2026.pdf"
+    ],
+    "source_sha256": {
+      "exampapers/n5/2026/N5_Music_QP_2026.pdf": "7fa4ea6b8ab4359b046fa20ffdce7218f9642cd6fd441015dc8a52985e5b01ee",
+      "exampapers/n5/2026/mi_N5_Music_mi_2026.pdf": "086a8935ada30cd6f1a8216dcc09a84a6552d2970d9ab77d73cd0990a686be35"
+    },
+    "audio_rule": "Audio required for aural completion or correction; no audio required where printed notation supplies the answer. Existing historical audio classifications are retained."
+  },
+  "H": {
+    "tasks": [
+      {
+        "question": "4(a)",
+        "category": "Transposition",
+        "audio_required": false,
+        "answer": "Four notes one octave lower in bass clef, preserving the tie",
+        "question_pages": [
+          6,
+          7
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "4(b)",
+        "category": "Interval identification",
+        "audio_required": false,
+        "answer": "6th; any type of 6th accepted",
+        "question_pages": [
+          6,
+          7
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "4(c)",
+        "category": "Chord identification",
+        "audio_required": true,
+        "answer": "D / V and G / I",
+        "question_pages": [
+          6,
+          7
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(d)",
+        "category": "Missing notes",
+        "audio_required": true,
+        "answer": "Four quavers in bar 13; pitch and rhythm must match",
+        "question_pages": [
+          6,
+          7
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(e)",
+        "category": "Rest insertion",
+        "audio_required": true,
+        "answer": "Quaver rest in bar 16",
+        "question_pages": [
+          6,
+          7
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(f)",
+        "category": "Time signature",
+        "audio_required": false,
+        "answer": "3/4 in bar 20; opening metre is 4/4",
+        "question_pages": [
+          6,
+          7
+        ],
+        "marking_pages": [
+          4
+        ]
+      }
+    ],
+    "sources": [
+      "exampapers/higher/2026/NH_Music_QP_2026.pdf",
+      "exampapers/higher/2026/mi_NH_Music_mi_2026.pdf"
+    ],
+    "source_sha256": {
+      "exampapers/higher/2026/NH_Music_QP_2026.pdf": "8fce5d8642e151d4bbd0e754ec9f53d9ccfc456158d2db4a70ca5b18d19a36a6",
+      "exampapers/higher/2026/mi_NH_Music_mi_2026.pdf": "c18dc69e48d4d1be8986a91f871db41f0a8da32f2119a3cfa680b147eee9676f"
+    },
+    "audio_rule": "Audio required for aural completion or correction; no audio required where printed notation supplies the answer. Existing historical audio classifications are retained."
+  },
+  "AH": {
+    "tasks": [
+      {
+        "question": "2(a)(i)",
+        "category": "Key identification",
+        "audio_required": false,
+        "answer": "D major",
+        "question_pages": [
+          4,
+          5
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "2(a)(ii)",
+        "category": "Repeat signs",
+        "audio_required": true,
+        "answer": "End-repeat at bar 8",
+        "question_pages": [
+          4,
+          5
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "2(a)(iii)",
+        "category": "Clef rewriting",
+        "audio_required": false,
+        "answer": "Boxed bar-10 notes rewritten at the same pitch in bass clef",
+        "question_pages": [
+          4,
+          5
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "2(a)(iv)",
+        "category": "Tie insertion",
+        "audio_required": true,
+        "answer": "Tie from last note of bar 19 to first note of bar 20",
+        "question_pages": [
+          4,
+          5
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "2(b)",
+        "category": "Chord identification",
+        "audio_required": false,
+        "answer": "Diminished 7th",
+        "question_pages": [
+          6
+        ],
+        "marking_pages": [
+          3
+        ]
+      },
+      {
+        "question": "2(c)",
+        "category": "Chord identification",
+        "audio_required": false,
+        "answer": "B minor / VI; E minor / II; D major first inversion / Ib",
+        "question_pages": [
+          7
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(a)",
+        "category": "Time signature",
+        "audio_required": false,
+        "answer": "5/4",
+        "question_pages": [
+          10,
+          11
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(b)",
+        "category": "Accidental insertion",
+        "audio_required": true,
+        "answer": "C-sharp in bar 5",
+        "question_pages": [
+          10,
+          11
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(c)",
+        "category": "Interval identification",
+        "audio_required": false,
+        "answer": "Augmented 4th / tritone; diminished 5th not accepted",
+        "question_pages": [
+          10,
+          11
+        ],
+        "marking_pages": [
+          4
+        ]
+      },
+      {
+        "question": "4(d)",
+        "category": "Missing notes",
+        "audio_required": true,
+        "answer": "Four quavers in bar 9; pitch and rhythm must match",
+        "question_pages": [
+          10,
+          11
+        ],
+        "marking_pages": [
+          5
+        ]
+      }
+    ],
+    "sources": [
+      "exampapers/adv higher/2026/NAH_Music_QP_2026.pdf",
+      "exampapers/adv higher/2026/mi_NAH_Music_mi_2026.pdf"
+    ],
+    "source_sha256": {
+      "exampapers/adv higher/2026/NAH_Music_QP_2026.pdf": "bf531bae9129c4b267edeedc5120c1493ebb37f4f80d24b787fcac334245fa97",
+      "exampapers/adv higher/2026/mi_NAH_Music_mi_2026.pdf": "c15b061ae8b2cde1d5b149891e6c2887490e2d7773421e96a7da170b661a3628"
+    },
+    "audio_rule": "Audio required for aural completion or correction; no audio required where printed notation supplies the answer. Existing historical audio classifications are retained."
+  }
+}

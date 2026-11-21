@@ -1,0 +1,158 @@
+{
+  "id": "hub-n5-styles-wordsearch-1",
+  "level": "N5",
+  "title": "Styles",
+  "instructions": "",
+  "description": "Practise the 12 National 5 Styles concepts from the Music Dictionary.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "National 5"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n5-styles-wordsearch-1-1",
+      "prompt": "A solo song in an opera, oratorio or similar large vocal work.",
+      "answer": "Aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-2",
+      "prompt": "A strophic folk song from North-East Scotland, traditionally sung by farm workers who lived in a bothy.",
+      "answer": "Bothy ballad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-3",
+      "prompt": "A fusion of Celtic or Scottish folk music with rock.",
+      "answer": "Celtic rock",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-4",
+      "prompt": "In a large vocal work, this is a group of singers, or music written for them.",
+      "answer": "Chorus",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-5",
+      "prompt": "The historical period associated with Haydn and Mozart, between the Baroque and Romantic periods, with clear melodies and balanced phrases.",
+      "answer": "Classical",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-6",
+      "prompt": "A psalm sung in Scottish Gaelic, traditionally in churches of the Western Isles.",
+      "answer": "Gaelic psalm",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-7",
+      "prompt": "Religious vocal music rooted in African American church traditions.",
+      "answer": "Gospel",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-8",
+      "prompt": "In course listening examples, this traditional music is often identified by sitar and tabla, a drone, ornamented improvisation and repeating rhythmic cycles.",
+      "answer": "Indian",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-9",
+      "prompt": "A style using short repeating patterns which change gradually through processes such as phasing, adding notes or layering parts.",
+      "answer": "Minimalist",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-10",
+      "prompt": "An extended form of solo Highland bagpipe music, also called ceol mor.",
+      "answer": "Pibroch",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-11",
+      "prompt": "A large-scale, multi-movement work for orchestra.",
+      "answer": "Symphony",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-wordsearch-1-12",
+      "prompt": "A Scottish Gaelic work song sung by women while beating newly woven cloth to soften and shrink it.",
+      "answer": "Waulking song",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z",
+  "editorMode": "with-clues"
+}

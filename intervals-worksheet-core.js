@@ -48,45 +48,49 @@
   function decorate(question) {
     const createLabel = intervalLabel(question.intervalSize).toLowerCase();
     const createPrompt = createLabel === "tritone" ? `Write a note a tritone ${question.direction} than the note given.` : `Create an interval ${createLabel} ${question.direction} than the note given.`;
-    return { ...question, activityId: "intervals", prompt: question.type === "create" ? createPrompt : "Identify the interval.", answerText: question.answer || intervalLabel(question.intervalSize), answerData: { interval: question.answer || intervalLabel(question.intervalSize), targetIndex: question.targetIndex ?? question.endIndex }, marks: 1, metadata: { level: question.level, mode: question.type } };
+    return { ...question, activityId: "intervals", prompt: question.level === "N3" ? "Is the movement a step or a leap?" : question.type === "create" ? createPrompt : "Identify the interval.", answerText: question.answer || intervalLabel(question.intervalSize), answerData: { interval: question.answer || intervalLabel(question.intervalSize), targetIndex: question.targetIndex ?? question.endIndex }, marks: 1, metadata: { level: question.level, mode: question.type } };
   }
-  function makeIdentifyQuestion(level, random) {
-    if (level === "AH" && random() < 0.4) {
-      const weighted = randomItem(CHROMATIC_INTERVAL_WEIGHTS, random);
-      const interval = weighted || CHROMATIC_INTERVALS.find((item) => item.id.startsWith("tritone"));
-      const keySignature = KEY_SIGNATURES[interval.key].accidentals;
-      const halfSteps = semitoneDistance(interval.startIndex, interval.endIndex, keySignature, interval.targetAccidental);
-      const answer = interval.id.startsWith("tritone") && halfSteps === 6 ? "Tritone" : intervalNameFromHalfSteps(interval.startIndex, interval.endIndex, keySignature, interval.targetAccidental);
-      return decorate({ id: Math.random().toString(36).slice(2), level, type: "identify", chromatic: true, typedMode: true, startIndex: interval.startIndex, endIndex: interval.endIndex, intervalSize: answer, answer, direction: "higher", targetAccidental: interval.targetAccidental || null, keySignature });
-    }
-    const interval = randomItem(intervalsForLevel(level), random);
-    const distance = interval.size - 1;
-    const direction = random() < 0.5 ? "higher" : "lower";
-    const allowed = new Set(noteIndexesForLevel(level));
-    const possibleStarts = [...allowed].filter((index) => { const end = direction === "higher" ? index + distance : index - distance; return allowed.has(end) && isPlainIntervalQuestion(index, end); });
-    const startIndex = randomItem(possibleStarts, random);
-    const endIndex = direction === "higher" ? startIndex + distance : startIndex - distance;
-    return decorate({ id: Math.random().toString(36).slice(2), level, type: "identify", typedMode: random() < 0.35, startIndex, endIndex, intervalSize: interval.size, direction, answer: interval.label });
+  function normaliseModes(saved){const modes={identify:typeof saved?.identify==='boolean'?saved.identify:true,create:typeof saved?.create==='boolean'?saved.create:true};if(!modes.identify&&!modes.create)modes.identify=true;return modes;}
+  function create(random=Math.random){
+    const bags=new Map(),variantCounts=new Map();let last='',serial=0;
+    function pick(name,items){const id=name+JSON.stringify(items);let bag=bags.get(id);if(!bag?.values.length){const values=items.slice();for(let i=values.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[values[i],values[j]]=[values[j],values[i]];}if(bag&&values.length>1&&JSON.stringify(values.at(-1))===bag.last){const i=values.findIndex(value=>JSON.stringify(value)!==bag.last);if(i>=0)[values[i],values[values.length-1]]=[values.at(-1),values[i]];}bag={values,last:bag?.last};bags.set(id,bag);}const value=bag.values.pop();bag.last=JSON.stringify(value);return value;}
+    function pickMode(modes,level='H'){const safe=normaliseModes(modes);return pick(level+'/mode',['identify','create'].filter(mode=>safe[mode]));}
+    return {pickMode,next(config={}){
+      const level=['N3','N5','H','AH'].includes(config.level)?config.level:'N5',type=['N3','N5'].includes(level)?'identify':['identify','create'].includes(config.mode)?config.mode:pickMode(config.enabledModes,level),name=level+'/'+type;
+      const codeSize=config.codeIntervalSize;
+      const chromatic=level==='AH'&&(!codeSize||codeSize===4||codeSize===5)&&pick(name+'/chromatic',type==='identify'?[true,true,false,false,false]:[true,false,false,false,false]);
+      let answer,intervalSize,variants=[];
+      const allowed=new Set(noteIndexesForLevel(level));
+      if(chromatic){
+        const categories=codeSize===4?['Tritone','Augmented 4th']:codeSize===5?['Diminished 5th']:['Tritone','Augmented 4th','Diminished 5th'];
+        const category=type==='create'?'Tritone':pick(name+'/chromatic-answer',categories);answer=category;intervalSize=category==='Tritone'?'tritone':category;
+        const templates=type==='create'?CREATE_TRITONE_INTERVALS:CHROMATIC_INTERVALS.filter(item=>category==='Tritone'?item.id.startsWith('tritone'):category==='Augmented 4th'?item.id.startsWith('augmented'):item.id.startsWith('diminished'));
+        for(const template of templates)for(const shift of [-7,0,7]){const first=template.startIndex+shift,second=template.endIndex+shift;if(!allowed.has(first)||!allowed.has(second))continue;for(const lower of [false,true]){const startIndex=lower?second:first,endIndex=lower?first:second;variants.push({startIndex,...(type==='create'?{targetIndex:endIndex}:{endIndex}),startAccidental:lower?template.targetAccidental||null:null,targetAccidental:lower?null:template.targetAccidental||null,keySignature:KEY_SIGNATURES[template.key].accidentals,direction:lower?'lower':'higher'});}}
+      }else{
+        const interval=INTERVALS.find(item=>item.size===codeSize)??(level==='N3'?(pick(name+'/step-leap',[true,false])?INTERVALS[0]:pick(name+'/leap-size',INTERVALS.slice(1))):pick(name+'/interval',intervalsForLevel(level)));
+        intervalSize=level==='N3'?(interval.size===2?'Step':'Leap'):interval.size;answer=level==='N3'?intervalSize:interval.label;
+        const distance=interval.size-1;
+        for(const startIndex of allowed)for(const lower of [false,true]){const endIndex=startIndex+(lower?-distance:distance);if(allowed.has(endIndex)&&isPlainIntervalQuestion(startIndex,endIndex))variants.push({startIndex,...(type==='create'?{targetIndex:endIndex}:{endIndex}),direction:lower?'lower':'higher'});}
+      }
+      if(!chromatic&&intervalSize===2){const distance=pick(name+'/second-kind',[1,2]);variants=variants.filter(v=>semitoneDistance(v.startIndex,v.endIndex??v.targetIndex)===distance);}
+      const direction=pick(name+'/'+answer+'/direction',['higher','lower']);
+      const blocked=config.excludeSignatures||new Set();
+      const signature=v=>questionSignature({...v,type,intervalSize});
+      if(config.excludeSignatures&&variants.every(v=>blocked.has(signature(v)))&&(config._retry||0)<24)return this.next({...config,_retry:(config._retry||0)+1});
+      let available=variants.filter(v=>v.direction===direction&&!blocked.has(signature(v))&&signature(v)!==last);
+      if(!available.length)available=variants.filter(v=>!blocked.has(signature(v))&&signature(v)!==last);
+      if(!available.length)available=variants.filter(v=>signature(v)!==last);
+      if(!available.length)available=variants;
+      const minimum=Math.min(...available.map(v=>variantCounts.get(name+signature(v))||0)),variant=pick(name+'/'+answer+'/position',available.filter(v=>(variantCounts.get(name+signature(v))||0)===minimum));
+      variantCounts.set(name+signature(variant),(variantCounts.get(name+signature(variant))||0)+1);last=signature(variant);
+      const typedMode=type==='identify'&&(chromatic||level!=='N3'&&pick(name+'/input',Array.from({length:20},(_,i)=>i<7)));
+      return decorate({id:'interval-'+(++serial),level,type,chromatic,typedMode,...variant,intervalSize,answer});
+    }};
   }
-  function makeCreateQuestion(level, random) {
-    if (level === "AH" && random() < 0.2) {
-      const interval = randomItem(CREATE_TRITONE_INTERVALS, random);
-      const lower = random() < 0.5;
-      const startIndex = lower ? interval.endIndex : interval.startIndex;
-      const targetIndex = lower ? interval.startIndex : interval.endIndex;
-      return decorate({ id: Math.random().toString(36).slice(2), level, type: "create", chromatic: true, startIndex, targetIndex, intervalSize: "tritone", answer: "Tritone", direction: lower ? "lower" : "higher", targetAccidental: null, keySignature: KEY_SIGNATURES[interval.key].accidentals });
-    }
-    const valid = [], allowed = new Set(noteIndexesForLevel(level));
-    intervalsForLevel(level).forEach((interval) => allowed.forEach((startIndex) => { const distance = interval.size - 1; if (allowed.has(startIndex + distance)) valid.push({ startIndex, targetIndex: startIndex + distance, intervalSize: interval.size, direction: "higher" }); if (allowed.has(startIndex - distance)) valid.push({ startIndex, targetIndex: startIndex - distance, intervalSize: interval.size, direction: "lower" }); }));
-    return decorate({ id: Math.random().toString(36).slice(2), level, type: "create", ...randomItem(valid, random) });
-  }
-  function generateQuestion(config = {}) {
-    const level = ["N5", "H", "AH"].includes(config.level) ? config.level : "N5";
-    const modes = config.enabledModes && typeof config.enabledModes === "object" ? config.enabledModes : { identify: true, create: true };
-    const available = level === "N5" ? ["identify"] : ["identify", "create"].filter((mode) => modes[mode]);
-    const mode = config.mode === "identify" || config.mode === "create" ? config.mode : randomItem(available.length ? available : ["identify"], config.random || Math.random);
-    return mode === "create" && level !== "N5" ? makeCreateQuestion(level, config.random || Math.random) : makeIdentifyQuestion(level, config.random || Math.random);
-  }
-  function questionSignature(question) { return JSON.stringify([question.type, question.startIndex, question.endIndex, question.targetIndex, question.intervalSize, question.targetAccidental, question.keySignature]); }
-  window.MLHIntervalsWorksheet = { generateQuestion, questionSignature, noteByIndex, notes: NOTES, intervalLabel };
+  const generators=new WeakMap();
+  function generator(random=Math.random){if(!generators.has(random))generators.set(random,create(random));return generators.get(random);}
+  function generateQuestion(config={}){return generator(config.random||Math.random).next(config);}
+  function pickMode(modes,level){return generator().pickMode(modes,level);}
+  function questionSignature(question) { return JSON.stringify([question.type, question.startIndex, question.endIndex, question.targetIndex, question.intervalSize, question.startAccidental, question.targetAccidental, question.keySignature]); }
+  window.MLHIntervalsWorksheet = { create, normaliseModes, pickMode, generateQuestion, questionSignature, noteByIndex, notes: NOTES, intervalLabel };
 }());

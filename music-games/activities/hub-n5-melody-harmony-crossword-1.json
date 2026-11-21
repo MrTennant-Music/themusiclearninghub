@@ -1,0 +1,135 @@
+{
+  "id": "hub-n5-melody-harmony-crossword-1",
+  "level": "N5",
+  "title": "Melody/harmony 1",
+  "instructions": "",
+  "description": "Practise the National 5 Melody/harmony concepts — collection 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Melody/harmony",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-1",
+      "prompt": "Music with no established tonal centre and no functional major or minor key.",
+      "answer": "Atonal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-2",
+      "prompt": "Name the general pitch adjective for movement by semitones, including notes outside the main key, rather than the name of a particular densely packed chord.",
+      "answer": "Chromatic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-3",
+      "prompt": "A dense chord made from adjacent or very closely spaced notes sounded together.",
+      "answer": "Cluster",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-4",
+      "prompt": "Two melodic parts move in opposite directions at the same time.",
+      "answer": "Contrary motion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-5",
+      "prompt": "Name the general term for a distinct secondary melody heard alongside the main tune, rather than the specific high vocal part.",
+      "answer": "Countermelody",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-6",
+      "prompt": "Name the specific high vocal part that decorates a main tune by singing an independent melody above it.",
+      "answer": "Descant",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-7",
+      "prompt": "A pianist or harpist sweeps rapidly across consecutive notes between two pitches. Name this sliding run across the intervening notes.",
+      "answer": "Glissando",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-8",
+      "prompt": "Name the general term for a very short ornamental note immediately before a main note, rather than a repeated alternation of two notes.",
+      "answer": "Grace note",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-9",
+      "prompt": "A two-chord cadence ending on V. It sounds open or unfinished because chord I has not arrived.",
+      "answer": "Imperfect cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-melody-harmony-crossword-1-10",
+      "prompt": "A note sustained or repeatedly sounded in an upper part while the harmony beneath it changes.",
+      "answer": "Inverted pedal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

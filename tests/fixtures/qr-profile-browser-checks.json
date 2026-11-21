@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-21",
+  "source": "Local in-app browser; same local origin; defaults and generated custom URL variants",
+  "checks": [
+    {
+      "route": "keyboardnoteidentification.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "accidentals.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "cadences.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "chords.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "enharmonicequivalents.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "intervals.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "keysignatures.html",
+      "changed": false,
+      "pass": true
+    },
+    {
+      "route": "melodicdictation.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "noteidentification.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "barlines.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "readingrhythms.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "rests.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "rhythmidentification.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "rhythmsums.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "rhythmicdictation.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "tempo.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "timesignatures.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "articulationmarkings.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "dynamics.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "scaledegrees.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "transposing.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "repeatsigns.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "auralrecognition.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "practicequestions.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "followthescore.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "metronome.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "chromatictuner.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "classroomtimer.html",
+      "changed": false,
+      "pass": true
+    },
+    {
+      "route": "namerandomiser.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "familyfortunes/familyfortunes.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "whowantstobemillionaire/whowantstobeamillionaire.html",
+      "changed": true,
+      "pass": true
+    },
+    {
+      "route": "keysignatures.html",
+      "variant": "nested settings",
+      "pass": true
+    },
+    {
+      "route": "classroomtimer.html",
+      "variant": "nested settings",
+      "pass": true
+    },
+    {
+      "route": "music-dictionary/musicdictionary.html",
+      "variant": "search, level and frequency exam",
+      "pass": true
+    },
+    {
+      "route": "conceptrecall.html",
+      "variant": "hints and categories",
+      "pass": true
+    },
+    {
+      "route": "triplets.html",
+      "variant": "fixed Higher activity, no customisation",
+      "pass": true
+    }
+  ]
+}

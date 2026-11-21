@@ -1,0 +1,144 @@
+{
+  "purpose": "Teacher-supplied classroom scope for question authoring and review",
+  "authoringRules": [
+    "Retain typed definition-to-concept questions as requested.",
+    "Choice questions should rehearse audible recognition, musical features and knowledge directly supporting those features.",
+    "Use the relevant workbook to choose the taught scope, level, vocabulary and useful comparisons.",
+    "Historical context, construction details and dramatic purpose may explain a definition, but should not displace listening recognition as the question focus.",
+    "Do not infer a genre from one generic cue; use combinations and appropriate context.",
+    "Booklet content supplies classroom scope, not permission to copy an inaccurate or overgeneralised musical statement. Preserve musical accuracy and qualify tendencies."
+  ],
+  "classroomExamples": [
+    {
+      "topic": "Musical",
+      "source": {
+        "kind": "classroom-workbook",
+        "path": "class workbooks/Unit 4 - Jazz and Popular Music.docx",
+        "sourceSha256": "3be36286d67a283b1aaacbbe88adaf9acd5b96c8097a7ef779af4b3266cbdfc5",
+        "locator": "word/document.xml paragraphs 51, 52, 54, 55, 56",
+        "supportingText": "Musical (N3) 1930\nA musical is a theatre stage production involving music and drama. \nActing, dialogue, and dancing\nOrchestra, modern band\nSoloists, chorus "
+      },
+      "application": "Soloists and chorus with orchestra or modern band; songs and spoken dialogue. Do not ask pupils to infer the dramatic role of character development."
+    },
+    {
+      "topic": "Passacaglia",
+      "source": {
+        "kind": "classroom-workbook",
+        "path": "class workbooks/Unit 1 - Baroque and Early Music.docx",
+        "sourceSha256": "2183d3ec947b6350fa9ff586597c40bebd3664574bd226ecf59c200904540418",
+        "locator": "word/document.xml paragraphs 167, 168",
+        "supportingText": "A passacaglia is a structure with 3 beats per bar featuring variations over a ground bass (N5).\nA ground bass is a repeated theme in the bass line. Here is an example:"
+      },
+      "application": "Ground-bass variations with triple metre as the taught listening distinction."
+    },
+    {
+      "topic": "Contemporary jazz",
+      "source": {
+        "kind": "classroom-workbook",
+        "path": "class workbooks/Unit 3 - 20th Century Music 2.docx",
+        "sourceSha256": "1bb5c8b171cef0aa158742065a3f1ab1c715cb9099bc102a05f29c7886f2880b",
+        "locator": "word/document.xml paragraphs 117, 119, 120, 121, 122",
+        "supportingText": "Contemporary jazz (AH)  A broad term for modern jazz styles that extend earlier jazz language through advanced harmony, rhythmic experimentation and unusual tone colours.\n•  Rhythmic experimentation, including cross-rhythms and changing time signatures.\n•  Experimental instrumental effects, such as melodic instruments used percussively and harmonics.\n•  Unconventional jazz instruments, including flugelhorn, flute and oboe.\n•  Improvisation may be combined with complex written material and changing textures."
+      },
+      "application": "Improvisation with advanced harmony, rhythmic experimentation, unusual timbres and changing textures."
+    }
+  ],
+  "files": [
+    {
+      "path": "class workbooks/Unit 1 - Baroque and Early Music.docx",
+      "qualification": "Higher",
+      "sha256": "2183d3ec947b6350fa9ff586597c40bebd3664574bd226ecf59c200904540418",
+      "paragraphs": 473
+    },
+    {
+      "path": "class workbooks/Unit 1 - Renaissance and Baroque Music.docx",
+      "qualification": "Advanced Higher",
+      "sha256": "db04622427e6a50cd1e330e3085879cf630193c977087150835a28f0245b4e45",
+      "paragraphs": 740
+    },
+    {
+      "path": "class workbooks/Unit 1 - Scottish Music.docx",
+      "qualification": "National 5",
+      "sha256": "b791a29fbd4d6d0496b8836048b785238421853ac432023e2f0f62ef7391e4d8",
+      "paragraphs": 348
+    },
+    {
+      "path": "class workbooks/Unit 2 - Classical and Romantic Music 2.docx",
+      "qualification": "Advanced Higher",
+      "sha256": "4388263e0d1ea1c2c70e40feb53753d44eed781c4b41c80b62ec4d96d7fed7c2",
+      "paragraphs": 349
+    },
+    {
+      "path": "class workbooks/Unit 2 - Classical and Romantic Music.docx",
+      "qualification": "Higher",
+      "sha256": "9dafe0b954f77bacb23755d3c5a3e687cc34e17896d7e32e498260bbd0539e3c",
+      "paragraphs": 481
+    },
+    {
+      "path": "class workbooks/Unit 2 - World Music.docx",
+      "qualification": "National 5",
+      "sha256": "202e9cf08bc5b1d3c63a8aecdfb7ac483c2c9f03b514c42d404a4fc660edb44a",
+      "paragraphs": 168
+    },
+    {
+      "path": "class workbooks/Unit 3 - 20th Century Music 2.docx",
+      "qualification": "Advanced Higher",
+      "sha256": "1bb5c8b171cef0aa158742065a3f1ab1c715cb9099bc102a05f29c7886f2880b",
+      "paragraphs": 366
+    },
+    {
+      "path": "class workbooks/Unit 3 - 20th Century Music.docx",
+      "qualification": "Higher",
+      "sha256": "e51241438c7088b8051cb7fd5c0d8425bf77e59f20a8cdf7b7270d3b489cb730",
+      "paragraphs": 336
+    },
+    {
+      "path": "class workbooks/Unit 3 - Vocal Music.docx",
+      "qualification": "National 5",
+      "sha256": "d7e42dd4071d943446e60206fa360c4a8e62de5ac3d5e97bc698c60c3974cbb7",
+      "paragraphs": 287
+    },
+    {
+      "path": "class workbooks/Unit 4 - Jazz and Popular Music.docx",
+      "qualification": "National 5",
+      "sha256": "3be36286d67a283b1aaacbbe88adaf9acd5b96c8097a7ef779af4b3266cbdfc5",
+      "paragraphs": 205
+    },
+    {
+      "path": "class workbooks/Unit 5 - Elements of Music.docx",
+      "qualification": "National 5",
+      "sha256": "4fa72a4c49bc85fa418aaf5861fc363a8a8aab5dd73276a39f0d159da96ee1e9",
+      "paragraphs": 440
+    },
+    {
+      "path": "class workbooks/Unit 6 - History of Music.docx",
+      "qualification": "National 5",
+      "sha256": "aeeeb11349e99bbdfa923757c96eddd48d5cdad186c4715fba864b921dd94fd1",
+      "paragraphs": 381
+    },
+    {
+      "path": "class workbooks/Unit 7 - Instruments of the Orchestra.docx",
+      "qualification": "National 5",
+      "sha256": "15e1027c3294a7d487070ad58c1f41a6b4fbbdd765895626c39dad7f131a2ab8",
+      "paragraphs": 202
+    }
+  ],
+  "fullChoiceAudit": {
+    "path": "workbook-choice-audit.json",
+    "reviewDate": "2026-11-07",
+    "reviewedQuestions": 594,
+    "rewrittenQuestions": 64,
+    "typedQuestionsPreserved": 297,
+    "scope": "All prompts, options, keys and explanations for tick-one and tick-two questions; coverage distinguishes written teaching from listening exercises, related foundations and missing sections.",
+    "gaps": [
+      {
+        "conceptId": "MC-0278",
+        "reason": "Chord II and first inversion not explained in the thirteen supplied booklets; Dictionary-supported questions retained."
+      },
+      {
+        "conceptId": "MC-0279",
+        "reason": "Major I/IV/V/VI covered; AH minor-key extension not explained in supplied text."
+      }
+    ]
+  }
+}

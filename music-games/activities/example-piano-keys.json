@@ -1,0 +1,106 @@
+{
+  "id": "example-piano-keys",
+  "level": "N3",
+  "title": "Piano Keys",
+  "instructions": "",
+  "description": "Match each note name to its white key on the piano keyboard.",
+  "folder": "Music examples",
+  "tags": [
+    "Music",
+    "Keyboard"
+  ],
+  "template": "labelled-diagram",
+  "items": [
+    {
+      "id": "example-piano-key-0",
+      "prompt": "Label 1",
+      "answer": "C",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 7.142857142857143,
+      "y": 80
+    },
+    {
+      "id": "example-piano-key-1",
+      "prompt": "Label 2",
+      "answer": "D",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 21.428571428571427,
+      "y": 80
+    },
+    {
+      "id": "example-piano-key-2",
+      "prompt": "Label 3",
+      "answer": "E",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 35.714285714285715,
+      "y": 80
+    },
+    {
+      "id": "example-piano-key-3",
+      "prompt": "Label 4",
+      "answer": "F",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 80
+    },
+    {
+      "id": "example-piano-key-4",
+      "prompt": "Label 5",
+      "answer": "G",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 64.28571428571429,
+      "y": 80
+    },
+    {
+      "id": "example-piano-key-5",
+      "prompt": "Label 6",
+      "answer": "A",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 78.57142857142857,
+      "y": 80
+    },
+    {
+      "id": "example-piano-key-6",
+      "prompt": "Label 7",
+      "answer": "B",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 92.85714285714286,
+      "y": 80
+    }
+  ],
+  "diagram": {
+    "type": "image",
+    "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAC0AQAAAADzlmW3AAAAWklEQVR4nO3LsQ2AMAwEQDMJo7B6dqJFMgaRiiaVq/vC8cu5iMYcWblq2esdEdvT83znV3/XQVEURVEURVEURVEURVEURVGdan7LXKoURVEURVEURVEUNVVjbhO1moptl8t7AAAAAElFTkSuQmCC",
+    "name": "Piano keyboard"
+  },
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-16T07:42:28.480Z"
+}

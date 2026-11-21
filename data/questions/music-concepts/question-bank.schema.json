@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://musicliteracyhub.org/schemas/music-concept-question-bank-1.0.json",
-  "title": "Music Literacy Hub Music Concept Question Bank",
+  "title": "Music Learning Hub Music Concept Question Bank",
   "type": "object",
   "additionalProperties": false,
   "required": [

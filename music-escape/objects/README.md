@@ -1,0 +1,1 @@
+Room objects from Microsoft Fluent Emoji, copyright Microsoft Corporation, MIT licence (LICENSE.txt). Original transparent 3D PNG assets; sources and hashes in sources.json. https://github.com/microsoft/fluentui-emoji

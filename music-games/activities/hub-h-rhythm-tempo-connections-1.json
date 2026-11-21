@@ -1,0 +1,201 @@
+{
+  "id": "hub-h-rhythm-tempo-connections-1",
+  "level": "H",
+  "title": "Rhythm/tempo",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting Higher Rhythm/tempo concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Rhythm/tempo",
+    "Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-1",
+      "prompt": "Theme in longer note values",
+      "answer": "Theme in longer note values",
+      "distractors": [],
+      "group": "Augmentation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-2",
+      "prompt": "Values lengthen by one factor",
+      "answer": "Values lengthen by one factor",
+      "distractors": [],
+      "group": "Augmentation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-3",
+      "prompt": "Rhythmic motif enlarged in time",
+      "answer": "Rhythmic motif enlarged in time",
+      "distractors": [],
+      "group": "Augmentation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-4",
+      "prompt": "Original crotchets become minims",
+      "answer": "Original crotchets become minims",
+      "distractors": [],
+      "group": "Augmentation",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-5",
+      "prompt": "Theme returns in shorter values",
+      "answer": "Theme returns in shorter values",
+      "distractors": [],
+      "group": "Diminution",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-6",
+      "prompt": "All values shorten by one factor",
+      "answer": "All values shorten by one factor",
+      "distractors": [],
+      "group": "Diminution",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-7",
+      "prompt": "Rhythmic motif compressed",
+      "answer": "Rhythmic motif compressed",
+      "distractors": [],
+      "group": "Diminution",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-8",
+      "prompt": "Original minims become crotchets",
+      "answer": "Original minims become crotchets",
+      "distractors": [],
+      "group": "Diminution",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-9",
+      "prompt": "Three equal notes in time of two",
+      "answer": "Three equal notes in time of two",
+      "distractors": [],
+      "group": "Triplets",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-10",
+      "prompt": "Three quavers fill one crotchet",
+      "answer": "Three quavers fill one crotchet",
+      "distractors": [],
+      "group": "Triplets",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-11",
+      "prompt": "Three equal notes in a 3 bracket",
+      "answer": "Three equal notes in a 3 bracket",
+      "distractors": [],
+      "group": "Triplets",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-12",
+      "prompt": "A three-in-two rhythmic division",
+      "answer": "A three-in-two rhythmic division",
+      "distractors": [],
+      "group": "Triplets",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-13",
+      "prompt": "Time signature changes mid-piece",
+      "answer": "Time signature changes mid-piece",
+      "distractors": [],
+      "group": "Time changes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-14",
+      "prompt": "Metre switches during the music",
+      "answer": "Metre switches during the music",
+      "distractors": [],
+      "group": "Time changes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-15",
+      "prompt": "A move from 3/4 to 4/4",
+      "answer": "A move from 3/4 to 4/4",
+      "distractors": [],
+      "group": "Time changes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-rhythm-tempo-connections-1-16",
+      "prompt": "Beats per bar change mid-piece",
+      "answer": "Beats per bar change mid-piece",
+      "distractors": [],
+      "group": "Time changes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

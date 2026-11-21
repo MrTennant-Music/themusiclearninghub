@@ -1,0 +1,40 @@
+/* Touch users can play and drag without invoking native text selection.
+   A mouse or trackpad keeps the page's normal desktop selection behaviour. */
+@media (pointer:coarse) {
+  html body,html body * {
+    -webkit-user-select:none!important;
+    user-select:none!important;
+    -webkit-touch-callout:none!important;
+  }
+  html body input,html body textarea,
+  html body [contenteditable]:not([contenteditable="false"]),
+  html body [contenteditable]:not([contenteditable="false"]) * {
+    -webkit-user-select:text!important;
+    user-select:text!important;
+    -webkit-touch-callout:default!important;
+  }
+  /* Broad score hit areas must not trap a swipe. Actual drag handles,
+     piano keys and game pieces keep their own gesture rules. */
+  html body svg.touch-none,
+  html body svg.touch-manipulation,
+  html body svg .touch-none,
+  html body svg .touch-manipulation {
+    touch-action:manipulation!important;
+    overscroll-behavior:auto!important;
+  }
+  /* A dedicated note target owns its drag from first contact. */
+  html body svg [data-mlh-staff-input] {
+    touch-action:none!important;
+    overscroll-behavior:contain!important;
+  }
+}
+/* Let browser zoom magnify text and controls together without mobile text inflation. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+[data-mlh-pointer-surface] {
+  touch-action: none;
+}
+

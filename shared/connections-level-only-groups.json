@@ -1,0 +1,25 @@
+{
+  "N5": [
+    { "id": "n5-only-percussion", "label": "Percussion instruments", "family": "percussion", "conceptIds": ["MC-0196", "MC-0197", "MC-0198", "MC-0203"] },
+    { "id": "n5-only-scales", "label": "Scales and intervals", "family": "scales", "conceptIds": ["MC-0158", "MC-0171", "MC-0173", "MC-0175"] },
+    { "id": "n5-only-opera", "label": "Opera", "family": "opera", "conceptIds": ["MC-0144", "MC-0147", "MC-0194", "MC-0204"] },
+    { "id": "n5-only-bass", "label": "Accompaniment patterns", "family": "bass", "conceptIds": ["MC-0166", "MC-0181", "MC-0186", "MC-0191"] },
+    { "id": "n5-only-wind", "label": "Wind instruments", "family": "wind", "conceptIds": ["MC-0195", "MC-0202", "MC-0205", "MC-0206"] }
+  ],
+  "H": [
+    { "id": "h-only-chords", "label": "Chord types", "family": "chords", "conceptIds": ["MC-0227", "MC-0228", "MC-0229", "MC-0230"] },
+    { "id": "h-only-concerto", "label": "Concerto grosso", "family": "concerto", "conceptIds": ["MC-0249", "MC-0258", "MC-0260", "MC-0253"] },
+    { "id": "h-only-time", "label": "Rhythm and metre", "family": "rhythm", "conceptIds": ["MC-0242", "MC-0245", "MC-0246", "MC-0247"] },
+    { "id": "h-only-scales", "label": "Minor scales and their relative keys", "family": "scales", "conceptIds": ["MC-0231", "MC-0234", "MC-0239", "MC-0240"] },
+    { "id": "h-only-sacred", "label": "Sacred music", "family": "sacred", "conceptIds": ["MC-0218", "MC-0220", "MC-0221", "MC-0238"] },
+    { "id": "h-only-sonata", "label": "Sonata and sonata-form terms", "family": "sonata", "conceptIds": ["MC-0223", "MC-0251", "MC-0254", "MC-0255"] }
+  ],
+  "AH": [
+    { "id": "ah-only-renaissance-vocal", "label": "Renaissance vocal music", "family": "renaissance", "conceptIds": ["MC-0274", "MC-0269", "MC-0270", "MC-0264"] },
+    { "id": "ah-only-renaissance-dance", "label": "Renaissance dances and their performers", "family": "renaissance", "conceptIds": ["MC-0268", "MC-0273", "MC-0274", "MC-0297"] },
+    { "id": "ah-only-fugue", "label": "Fugue", "family": "fugue", "conceptIds": ["MC-0290", "MC-0296", "MC-0286", "MC-0289"] },
+    { "id": "ah-only-fugal-entries", "label": "Fugal entries and accompanying lines", "family": "fugue", "conceptIds": ["MC-0296", "MC-0286", "MC-0289", "MC-0295"] },
+    { "id": "ah-only-styles", "label": "20th- and 21st-century styles", "family": "styles", "conceptIds": ["MC-0266", "MC-0267", "MC-0272", "MC-0275"] },
+    { "id": "ah-only-dissonance", "label": "Dissonant chords, intervals and non-chord notes", "family": "harmony", "conceptIds": ["MC-0277", "MC-0283", "MC-0276", "MC-0281"] }
+  ]
+}

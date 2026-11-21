@@ -1,0 +1,190 @@
+{
+  "id": "hub-ah-music-literacy-crossword-1",
+  "level": "AH",
+  "title": "Music Literacy",
+  "instructions": "",
+  "description": "Practise Advanced Higher music literacy: keys, enharmonic equivalents, inversions, extended chords, chromatic intervals, ties and score directions.",
+  "folder": "",
+  "tags": [
+    "Music Literacy",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-ah-music-literacy-crossword-1-1",
+      "prompt": "The major key whose key signature contains F sharp and C sharp.",
+      "answer": "D major",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-2",
+      "prompt": "The major key whose key signature contains B flat and E flat.",
+      "answer": "B flat major",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-3",
+      "prompt": "The minor key with F sharp in its key signature.",
+      "answer": "E minor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-4",
+      "prompt": "The minor key with B flat in its key signature.",
+      "answer": "D minor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-5",
+      "prompt": "A different note name for the same sounding pitch.",
+      "answer": "Enharmonic equivalent",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-6",
+      "prompt": "A triad with its third as the lowest note.",
+      "answer": "First inversion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-7",
+      "prompt": "A triad with its fifth as the lowest note.",
+      "answer": "Second inversion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-8",
+      "prompt": "A three-note chord built from two major thirds.",
+      "answer": "Augmented triad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-9",
+      "prompt": "A four-note chord built from three minor thirds.",
+      "answer": "Diminished seventh",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-10",
+      "prompt": "A major triad with an added minor seventh.",
+      "answer": "Dominant seventh",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-11",
+      "prompt": "An interval spanning three whole tones.",
+      "answer": "Tritone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-12",
+      "prompt": "A curved line joining notes of the same pitch so their lengths are added together.",
+      "answer": "Tie",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-13",
+      "prompt": "Emphasis on normally weak beats or offbeats, often sustained across a stronger beat.",
+      "answer": "Syncopation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-14",
+      "prompt": "The direction D.S., telling the performer to return to the sign.",
+      "answer": "Dal segno",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-music-literacy-crossword-1-15",
+      "prompt": "The instruction marking where to stop after a directed return.",
+      "answer": "Fine",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-25T13:03:20.595Z"
+}

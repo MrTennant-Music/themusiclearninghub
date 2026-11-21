@@ -1,0 +1,442 @@
+[
+  {
+    "id": "n5-classical-links",
+    "family": "classical",
+    "label": "Classical music",
+    "conceptIds": [
+      "MC-0148",
+      "MC-0154",
+      "MC-0181",
+      "MC-0057"
+    ]
+  },
+  {
+    "id": "n5-scottish-songs",
+    "family": "scottish-voice",
+    "label": "Scottish songs",
+    "conceptIds": [
+      "MC-0145",
+      "MC-0149",
+      "MC-0155",
+      "MC-0078"
+    ]
+  },
+  {
+    "id": "n5-celtic-rock",
+    "family": "rock",
+    "label": "Celtic rock",
+    "conceptIds": [
+      "MC-0146",
+      "MC-0006",
+      "MC-0050",
+      "MC-0051"
+    ]
+  },
+  {
+    "id": "n5-opera-links",
+    "family": "opera",
+    "label": "Opera",
+    "conceptIds": [
+      "MC-0144",
+      "MC-0147",
+      "MC-0073",
+      "MC-0054"
+    ]
+  },
+  {
+    "id": "n5-indian-links",
+    "family": "indian",
+    "label": "Indian music",
+    "conceptIds": [
+      "MC-0151",
+      "MC-0210",
+      "MC-0211",
+      "MC-0083"
+    ]
+  },
+  {
+    "id": "n5-minimalist-links",
+    "family": "patterns",
+    "label": "Minimalist music",
+    "conceptIds": [
+      "MC-0152",
+      "MC-0017",
+      "MC-0037",
+      "MC-0018"
+    ]
+  },
+  {
+    "id": "n5-pibroch-links",
+    "family": "scottish-instrumental",
+    "label": "Pibroch",
+    "conceptIds": [
+      "MC-0153",
+      "MC-0044",
+      "MC-0164",
+      "MC-0111"
+    ]
+  },
+  {
+    "id": "n5-orchestral-strings",
+    "family": "strings",
+    "label": "Orchestral strings",
+    "conceptIds": [
+      "MC-0141",
+      "MC-0213",
+      "MC-0119",
+      "MC-0123"
+    ]
+  },
+  {
+    "id": "n5-woodwind-instruments",
+    "family": "woodwind",
+    "label": "Woodwind instruments",
+    "conceptIds": [
+      "MC-0206",
+      "MC-0124",
+      "MC-0205",
+      "MC-0195"
+    ]
+  },
+  {
+    "id": "n5-brass-instruments",
+    "family": "brass",
+    "label": "Brass instruments",
+    "conceptIds": [
+      "MC-0140",
+      "MC-0202",
+      "MC-0139",
+      "MC-0212"
+    ]
+  },
+  {
+    "id": "n5-percussion-instruments",
+    "family": "percussion",
+    "label": "Percussion instruments",
+    "conceptIds": [
+      "MC-0196",
+      "MC-0197",
+      "MC-0198",
+      "MC-0203"
+    ]
+  },
+  {
+    "id": "n5-scottish-instruments",
+    "family": "scottish-instrumental",
+    "label": "Scottish instruments",
+    "conceptIds": [
+      "MC-0199",
+      "MC-0051",
+      "MC-0042",
+      "MC-0044"
+    ]
+  },
+  {
+    "id": "n5-plucked-strings",
+    "family": "strings",
+    "label": "Plucked strings",
+    "conceptIds": [
+      "MC-0207",
+      "MC-0127",
+      "MC-0199",
+      "MC-0210"
+    ]
+  },
+  {
+    "id": "n5-bowed-strings",
+    "family": "strings",
+    "label": "Bowed strings",
+    "conceptIds": [
+      "MC-0193",
+      "MC-0141",
+      "MC-0213",
+      "MC-0119"
+    ]
+  },
+  {
+    "id": "n5-wind-techniques",
+    "family": "wind-context",
+    "label": "Wind playing",
+    "conceptIds": [
+      "MC-0201",
+      "MC-0045",
+      "MC-0124",
+      "MC-0140"
+    ]
+  },
+  {
+    "id": "n5-muted-brass",
+    "family": "brass",
+    "label": "Muted brass",
+    "conceptIds": [
+      "MC-0200",
+      "MC-0140",
+      "MC-0139",
+      "MC-0202"
+    ]
+  },
+  {
+    "id": "n5-sound-effects",
+    "family": "effects",
+    "label": "Sound effects",
+    "conceptIds": [
+      "MC-0208",
+      "MC-0122",
+      "MC-0170",
+      "MC-0163"
+    ]
+  },
+  {
+    "id": "n5-drum-kit",
+    "family": "percussion",
+    "label": "Drum kit",
+    "conceptIds": [
+      "MC-0209",
+      "MC-0203",
+      "MC-0133",
+      "MC-0116"
+    ]
+  },
+  {
+    "id": "n5-voice-types",
+    "family": "voices",
+    "label": "Voice types",
+    "conceptIds": [
+      "MC-0194",
+      "MC-0204",
+      "MC-0134",
+      "MC-0113"
+    ]
+  },
+  {
+    "id": "n5-choral-music",
+    "family": "vocal-context",
+    "label": "Choral music",
+    "conceptIds": [
+      "MC-0162",
+      "MC-0147",
+      "MC-0048",
+      "MC-0134"
+    ]
+  },
+  {
+    "id": "n5-word-setting",
+    "family": "vocal-context",
+    "label": "Singing words",
+    "conceptIds": [
+      "MC-0172",
+      "MC-0167",
+      "MC-0067",
+      "MC-0144"
+    ]
+  },
+  {
+    "id": "n5-gospel-music",
+    "family": "gospel",
+    "label": "Gospel music",
+    "conceptIds": [
+      "MC-0150",
+      "MC-0048",
+      "MC-0114",
+      "MC-0016"
+    ]
+  },
+  {
+    "id": "n5-gaelic-singing",
+    "family": "scottish-voice",
+    "label": "Gaelic singing",
+    "conceptIds": [
+      "MC-0149",
+      "MC-0155",
+      "MC-0067",
+      "MC-0016"
+    ]
+  },
+  {
+    "id": "n5-tonality",
+    "family": "tonality",
+    "label": "Tonality",
+    "conceptIds": [
+      "MC-0156",
+      "MC-0084",
+      "MC-0085",
+      "MC-0168"
+    ]
+  },
+  {
+    "id": "n5-scales-intervals",
+    "family": "pitch",
+    "label": "Scales and intervals",
+    "conceptIds": [
+      "MC-0158",
+      "MC-0171",
+      "MC-0173",
+      "MC-0175"
+    ]
+  },
+  {
+    "id": "n5-melodic-parts",
+    "family": "texture",
+    "label": "Melodic parts",
+    "conceptIds": [
+      "MC-0160",
+      "MC-0161",
+      "MC-0162",
+      "MC-0108"
+    ]
+  },
+  {
+    "id": "n5-decoration",
+    "family": "ornaments",
+    "label": "Melodic decoration",
+    "conceptIds": [
+      "MC-0164",
+      "MC-0174",
+      "MC-0087",
+      "MC-0163"
+    ]
+  },
+  {
+    "id": "n5-endings",
+    "family": "cadences",
+    "label": "Musical endings",
+    "conceptIds": [
+      "MC-0169",
+      "MC-0165",
+      "MC-0010",
+      "MC-0183"
+    ]
+  },
+  {
+    "id": "n5-held-repeated-notes",
+    "family": "accompaniment",
+    "label": "Held or repeating notes",
+    "conceptIds": [
+      "MC-0166",
+      "MC-0088",
+      "MC-0083",
+      "MC-0186"
+    ]
+  },
+  {
+    "id": "n5-tempo",
+    "family": "tempo",
+    "label": "Tempo",
+    "conceptIds": [
+      "MC-0178",
+      "MC-0179",
+      "MC-0180",
+      "MC-0094"
+    ]
+  },
+  {
+    "id": "n5-rhythm-metre",
+    "family": "rhythm",
+    "label": "Rhythm and metre",
+    "conceptIds": [
+      "MC-0176",
+      "MC-0177",
+      "MC-0105",
+      "MC-0099"
+    ]
+  },
+  {
+    "id": "n5-bass-patterns",
+    "family": "accompaniment",
+    "label": "Bass patterns",
+    "conceptIds": [
+      "MC-0181",
+      "MC-0186",
+      "MC-0191",
+      "MC-0093"
+    ]
+  },
+  {
+    "id": "n5-forms",
+    "family": "form",
+    "label": "Musical forms",
+    "conceptIds": [
+      "MC-0182",
+      "MC-0189",
+      "MC-0190",
+      "MC-0110"
+    ]
+  },
+  {
+    "id": "n5-textures",
+    "family": "texture",
+    "label": "Texture",
+    "conceptIds": [
+      "MC-0187",
+      "MC-0188",
+      "MC-0041",
+      "MC-0039"
+    ]
+  },
+  {
+    "id": "n5-imitative-writing",
+    "family": "texture",
+    "label": "Imitative writing",
+    "conceptIds": [
+      "MC-0184",
+      "MC-0107",
+      "MC-0108",
+      "MC-0038"
+    ]
+  },
+  {
+    "id": "n5-solo-singing",
+    "family": "opera",
+    "label": "Solo singing",
+    "conceptIds": [
+      "MC-0144",
+      "MC-0039",
+      "MC-0067",
+      "MC-0073"
+    ]
+  },
+  {
+    "id": "n5-a-cappella",
+    "family": "vocal-context",
+    "label": "A cappella singing",
+    "conceptIds": [
+      "MC-0192",
+      "MC-0048",
+      "MC-0147",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "n5-jazz-links",
+    "family": "jazz",
+    "label": "Jazz music",
+    "conceptIds": [
+      "MC-0191",
+      "MC-0091",
+      "MC-0079",
+      "MC-0132"
+    ]
+  },
+  {
+    "id": "n5-orchestral-music",
+    "family": "orchestral-context",
+    "label": "Orchestral music",
+    "conceptIds": [
+      "MC-0154",
+      "MC-0054",
+      "MC-0202",
+      "MC-0213"
+    ]
+  },
+  {
+    "id": "n5-atonal-links",
+    "family": "tonality",
+    "label": "Atonal music",
+    "conceptIds": [
+      "MC-0159",
+      "MC-0013",
+      "MC-0156",
+      "MC-0158"
+    ]
+  }
+]

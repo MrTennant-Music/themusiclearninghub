@@ -1,0 +1,389 @@
+{
+  "scope": "Independent visual reading of all 39 visible rough-work headings across 30 official PDFs. AH 2016 and Higher 2016 font extraction case is normalised to the visually printed case.",
+  "papers": [
+    {
+      "id": "advanced-higher-2016",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough Work",
+          "sourcePage": 14,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "ROUGH WORK",
+          "sourcePage": 17,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2017",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough Work",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "ROUGH WORK",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2018",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough Work",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "ROUGH WORK",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2019",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "ROUGH WORK",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "ROUGH WORK",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2022",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough work",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Rough work",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2023",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough work",
+          "sourcePage": 18,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Rough work",
+          "sourcePage": 21,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2024",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough work",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Rough work",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2025",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough Work",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Rough Work",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2026",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Rough Work",
+          "sourcePage": 16,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Rough Work",
+          "sourcePage": 19,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2015",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Rough Work",
+          "sourcePage": 10,
+          "fontWeight": 400
+        }
+      ]
+    },
+    {
+      "id": "higher-2016",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Rough Work",
+          "sourcePage": 10,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2017",
+      "headings": [
+        {
+          "part": "q7a",
+          "text": "Rough Work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2018",
+      "headings": [
+        {
+          "part": "q4a",
+          "text": "Rough Work",
+          "sourcePage": 8,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2019",
+      "headings": [
+        {
+          "part": "q7a",
+          "text": "Rough work",
+          "sourcePage": 14,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2022",
+      "headings": [
+        {
+          "part": "q7a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2023",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Rough work",
+          "sourcePage": 10,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2024",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Rough work",
+          "sourcePage": 10,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2025",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Rough work",
+          "sourcePage": 10,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2026",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Rough work",
+          "sourcePage": 10,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2014",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 14,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2015",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2016",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2017",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2018",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2019",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2022",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2023",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2024",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2025",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2026",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Rough work",
+          "sourcePage": 12,
+          "fontWeight": 700
+        }
+      ]
+    }
+  ]
+}

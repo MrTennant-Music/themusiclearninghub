@@ -1,0 +1,158 @@
+{
+  "id": "hub-n4-vocal-music-wordsearch-2",
+  "level": "N4",
+  "title": "Vocal Music 2",
+  "instructions": "",
+  "description": "Revise voice types, vocal performance, ensembles and vocal works introduced up to National 4.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Vocal Music",
+    "National 4"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-1",
+      "prompt": "Give the two-word English name for rhythmic Gaelic dance singing, also called puirt-a-beul.",
+      "answer": "Mouth music",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-2",
+      "prompt": "In the Western classical stage tradition, a sung drama uses solo arias, recitative and choruses with orchestral accompaniment. Name this type of work.",
+      "answer": "Opera",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-3",
+      "prompt": "Rhyming words delivered as rhythmic speech, characteristically over a hip-hop beat. Name the vocal style.",
+      "answer": "Rapping",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-4",
+      "prompt": "Give the general Scots-language narrative folk-song category, rather than the specific North-East farm-worker song tradition.",
+      "answer": "Scots ballad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-5",
+      "prompt": "Give the two-word term for improvised jazz singing using nonsense syllables.",
+      "answer": "Scat singing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-6",
+      "prompt": "Give the British song-section name for a contrasting passage, traditionally eight bars. Write the number in words.",
+      "answer": "Middle eight",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-7",
+      "prompt": "A song alternates changing-word verses with a separate recurring chorus. Name this form.",
+      "answer": "Verse and chorus",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-8",
+      "prompt": "The lowest standard female voice or choral part, lying below soprano.",
+      "answer": "Alto",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-9",
+      "prompt": "One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background.",
+      "answer": "Backing vocals",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-10",
+      "prompt": "As a male voice, it is the lowest standard adult voice or choral part.",
+      "answer": "Bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-11",
+      "prompt": "The highest standard female voice or choral part.",
+      "answer": "Soprano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-vocal-music-wordsearch-2-12",
+      "prompt": "Name the high adult male part in a standard SATB choir, above the bass part.",
+      "answer": "Tenor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T23:00:00.000Z",
+  "editorMode": "with-clues"
+}

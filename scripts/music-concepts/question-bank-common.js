@@ -6,9 +6,8 @@ const crypto = require("node:crypto");
 
 const REPOSITORY_ROOT = path.resolve(__dirname, "../..");
 const KNOWLEDGE_BANK_FILENAME = "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json";
-const KNOWLEDGE_BANK_PATH = path.join(REPOSITORY_ROOT, KNOWLEDGE_BANK_FILENAME);
 const OUTPUT_DIRECTORY = path.join(REPOSITORY_ROOT, "data/questions/music-concepts");
-const RUNTIME_BANK_PATH = path.join(REPOSITORY_ROOT, "millionaire-music-concept-bank.js");
+const KNOWLEDGE_BANK_PATH = path.join(OUTPUT_DIRECTORY, KNOWLEDGE_BANK_FILENAME);
 const MANUAL_OVERRIDES_PATH = path.join(OUTPUT_DIRECTORY, "manual-question-overrides.json");
 const EDITOR_SLOTS_PATH = path.join(OUTPUT_DIRECTORY, "editor-slots.json");
 const MEDIUM_FEATURE_DIRECTORY = path.join(OUTPUT_DIRECTORY, "medium-features");
@@ -63,7 +62,6 @@ const SENSE_RULES = {
   "MC-0115": { default: ["MC-0115-S01", "As a male voice, "] },
   "MC-0147": { default: ["MC-0147-S01", "In a large vocal work, "] },
   "MC-0173": { default: ["MC-0173-S01", "As a pitch interval, "] },
-  "MC-0185": { default: ["MC-0185-S01", "In rondo form, "] },
   "MC-0225": {
     default: ["MC-0225-S01", "As an ensemble, "],
     "MC-0225-F02": ["MC-0225-S02", "As a chamber work, "],
@@ -92,7 +90,6 @@ const CURATED_DERIVED_TERMS = {
   "MC-0034": ["accompaniment", "accompany", "accompanies", "accompanying"],
   "MC-0046": ["bow", "bowed"],
   "MC-0062": ["strike", "strikes", "struck", "hit", "hits"],
-  "MC-0092": ["tonal"],
   "MC-0099": ["dotted rhythm"],
   "MC-0129": ["mute", "mutes", "muting"],
   "MC-0176": ["compound metre", "compound metres"],
@@ -307,7 +304,6 @@ module.exports = {
   KNOWLEDGE_BANK_FILENAME,
   KNOWLEDGE_BANK_PATH,
   OUTPUT_DIRECTORY,
-  RUNTIME_BANK_PATH,
   MANUAL_OVERRIDES_PATH,
   EDITOR_SLOTS_PATH,
   MEDIUM_FEATURE_DIRECTORY,

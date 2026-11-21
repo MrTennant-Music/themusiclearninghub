@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Transposing</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/transposing-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/transposing-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script src="./hub-input.js?v=1.4"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="./bravura-symbols.js"></script>
-  <script src="./shared-notation-config.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/transposing-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/transposing-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
   <style>
-    @font-face { font-family: "Bravura"; src: url("./Bravura.otf") format("opentype"); font-display: block; }
+    @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
     .music-symbol { font-family: "Bravura", serif; font-weight: 400; dominant-baseline: alphabetic; text-rendering: geometricPrecision; }
+    .escape-literacy-short-score > .escape-transposition-example { max-height: 180px; }
+    .escape-literacy-numbered-option > .escape-transposition-example { max-height: 155px; }
 
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
 <body>
   <div id="root"></div>
 
-  <script type="text/babel">
+  <script src="./shared/transposing-core.js?v=3b1a66fc02da"></script>
+  <script type="text/x-mlh-jsx-source" data-runtime="transposing-1.js">
 const { useRef, useState } = React;
 const SHELL = window.MLH?.shell || {};
 function hasTouchInput() {
@@ -38,14 +47,14 @@ function hasTouchInput() {
 }
 
 const ASSET = {
-  appIcon: "https://themusicliteracyhub.netlify.app/transposing-icon.svg",
-  levels: "https://themusicliteracyhub.netlify.app/levels.svg",
-  customise: "https://themusicliteracyhub.netlify.app/customise.svg",
-  next: "https://themusicliteracyhub.netlify.app/next.svg",
-  bronze: "https://themusicliteracyhub.netlify.app/bronze.svg",
-  silver: "https://themusicliteracyhub.netlify.app/silver.svg",
-  gold: "https://themusicliteracyhub.netlify.app/gold.svg",
-  diamond: "https://themusicliteracyhub.netlify.app/diamond.svg",
+  appIcon: "./app-icons/transposing-icon.svg",
+  levels: "./ui-icons/levels.svg",
+  customise: "./ui-icons/customise.svg",
+  next: "./ui-icons/next.svg",
+  bronze: "./ui-icons/bronze.svg",
+  silver: "./ui-icons/silver.svg",
+  gold: "./ui-icons/gold.svg",
+  diamond: "./ui-icons/diamond.svg",
 };
 
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS ?? {};
@@ -158,89 +167,9 @@ function noteSymbolKey(rhythm, down, beamed = false) {
   return down ? "quarterNoteStemDown" : "quarterNoteStemUp";
 }
 
-const LETTER_INDEX = { C: 0, D: 1, E: 2, F: 3, G: 4, A: 5, B: 6 };
-const INDEX_LETTER = ["C", "D", "E", "F", "G", "A", "B"];
-
-function pitch(letter, octave) {
-  return { letter, octave, index: octave * 7 + LETTER_INDEX[letter] };
-}
-
-function pitchFromIndex(index) {
-  return { letter: INDEX_LETTER[((index % 7) + 7) % 7], octave: Math.floor(index / 7), index };
-}
-
-function transposePitch(note, octaves) {
-  return pitchFromIndex(note.index + octaves * 7);
-}
-
-function stepForClef(note, clef) {
-  const reference = clef === "treble" ? pitch("E", 4).index : pitch("G", 2).index;
-  return note.index - reference;
-}
-
-function noteItem(note, clef, rhythm = "crotchet") {
-  return { ...note, clef, rhythm, step: stepForClef(note, clef) };
-}
-
-function pitchRange(startLetter, startOctave, endLetter, endOctave) {
-  const start = pitch(startLetter, startOctave).index;
-  const end = pitch(endLetter, endOctave).index;
-  return Array.from({ length: end - start + 1 }, (_, index) => pitchFromIndex(start + index));
-}
-
-const HIGHER_SOURCE_NOTES = pitchRange("C", 4, "C", 5);
-const SAME_PITCH_NOTES = pitchRange("A", 3, "E", 4);
-const BASS_OCTAVE_SOURCE_NOTES = pitchRange("C", 3, "C", 4);
-const OTTAVA_SOURCE_NOTES = pitchRange("C", 4, "A", 4);
-const OTTAVA_BASS_SOURCE_NOTES = pitchRange("C", 3, "C", 4);
-
-const RHYTHMS = [
-  { id: "minim", label: "Minim", beats: 2 },
-  { id: "dotted-crotchet", label: "Dotted crotchet", beats: 1.5 },
-  { id: "crotchet", label: "Crotchet", beats: 1 },
-  { id: "quaver", label: "Quaver", beats: 0.5 },
-];
-
-const TOOLS = [...RHYTHMS, { id: "tie", label: "Tie", type: "tie" }];
-
-const DEFAULT_QUESTION_OPTIONS = {
-  ottava: true,
-  samePitch: true,
-  octaveHigher: true,
-  octaveLower: true,
-};
-
-function taskMatchesLevel(level, questionOptions) {
-  if (level !== "AH") return true;
-  return Object.keys(DEFAULT_QUESTION_OPTIONS).every((key) => Boolean(questionOptions[key]) === DEFAULT_QUESTION_OPTIONS[key]);
-}
-
-const RHYTHM_BEATS = Object.fromEntries(RHYTHMS.map((rhythm) => [rhythm.id, rhythm.beats]));
-
-const RHYTHM_SPACING = {
-  minim: 3.4,
-  "dotted-crotchet": 2.45,
-  crotchet: 1.65,
-  quaver: 0.95,
-};
-
-const FOUR_BEAT_PATTERNS = [
-  { rhythms: ["minim", "crotchet", "crotchet"] },
-  { rhythms: ["dotted-crotchet", "quaver", "crotchet", "crotchet"] },
-  { rhythms: ["crotchet", "crotchet", "dotted-crotchet", "quaver"] },
-  { rhythms: ["crotchet", "crotchet", "crotchet", "crotchet"] },
-  { rhythms: ["dotted-crotchet", "quaver", "dotted-crotchet", "quaver"] },
-  { rhythms: ["crotchet", "crotchet", "minim"] },
-  { rhythms: ["minim", "minim"] },
-  { rhythms: ["dotted-crotchet", "quaver", "minim"] },
-  { rhythms: ["crotchet", "quaver", "quaver", "crotchet", "crotchet"], stepwise: true },
-  { rhythms: ["quaver", "quaver", "quaver", "quaver", "minim"], stepwise: true },
-  { rhythms: ["crotchet", "quaver", "quaver", "quaver", "quaver", "crotchet"], stepwise: true },
-  { rhythms: ["minim", "quaver", "quaver", "quaver", "quaver"], stepwise: true },
-  { rhythms: ["crotchet", "quaver", "quaver", "minim"], tieStart: 2 },
-  { rhythms: ["crotchet", "quaver", "quaver", "crotchet", "crotchet"], tieStart: 2 },
-  { rhythms: ["dotted-crotchet", "quaver", "quaver", "quaver", "crotchet"], tieStart: 1 },
-].filter((pattern) => Math.abs(pattern.rhythms.reduce((sum, rhythm) => sum + RHYTHM_BEATS[rhythm], 0) - 4) < 0.001);
+const {pitch,pitchFromIndex,transposePitch,stepForClef,noteItem,pitchRange,HIGHER_SOURCE_NOTES,SAME_PITCH_NOTES,BASS_OCTAVE_SOURCE_NOTES,OTTAVA_SOURCE_NOTES,OTTAVA_BASS_SOURCE_NOTES,RHYTHMS,TOOLS,DEFAULT_QUESTION_OPTIONS,RHYTHM_BEATS,RHYTHM_SPACING,FOUR_BEAT_PATTERNS,isCorrectMeaningAnswer} = window.TRANSPOSING_CORE;
+const transposingGenerator=window.TRANSPOSING_CORE.create(Math.random);
+function taskMatchesLevel(level,options){return level!=="AH"||Object.keys(DEFAULT_QUESTION_OPTIONS).every(key=>options[key]);}
 
 const NOTE_NAME_LABELS = {
   treble: {
@@ -277,17 +206,6 @@ const NOTE_NAME_LABELS = {
   },
 };
 
-function randomItem(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
-
-function randomIndex(length, previous = null) {
-  if (length <= 1) return 0;
-  let index = Math.floor(Math.random() * length);
-  while (index === previous) index = Math.floor(Math.random() * length);
-  return index;
-}
-
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
@@ -300,10 +218,10 @@ function stepFromSvgY(y, top) {
   return clamp(Math.round((top + STAFF.gap * 4 - y) / (STAFF.gap / 2)), -4, 12);
 }
 
-function meaningQuestion(marking) {
+function meaningQuestion(marking, existingPassage = null) {
   const direction = marking === "8vb" ? "lower" : "higher";
   const transform = marking === "8vb" ? TRANSFORMS.ottavaBassa : TRANSFORMS.ottavaAlta;
-  const passage = createPassage(transform);
+  const passage = existingPassage || [];
   return {
     id: Math.random().toString(36).slice(2),
     type: "meaning",
@@ -318,22 +236,6 @@ function meaningQuestion(marking) {
     correctMeaning: direction,
     passage,
   };
-}
-
-function isCorrectMeaningAnswer(answer, direction, marking = null) {
-  const normalised = answer.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-  const words = normalised.split(/\s+/).filter(Boolean);
-  const hasOctave = words.includes("octave");
-  const acceptedDirections = marking === "8vb"
-    ? ["lower", "down", "higher", "up"]
-    : direction === "higher"
-      ? ["higher", "up"]
-      : ["lower", "down"];
-  const matchedDirection = acceptedDirections.find((word) => words.includes(word));
-  const hasDirection = Boolean(matchedDirection);
-  const hasCount = words.some((word) => ["an", "one", "1"].includes(word));
-  const hasShortPhrase = matchedDirection ? normalised.includes(`octave ${matchedDirection}`) : false;
-  return hasOctave && hasDirection && (hasCount || hasShortPhrase);
 }
 
 function meaningCorrectionText(direction) {
@@ -354,38 +256,6 @@ function getStem(x, y, step, rhythm = "crotchet", forcedDown = null, forcedEndY 
   return { down, stemX, stemStartY, stemEndY };
 }
 
-function createStepwiseIndices(count, poolLength = HIGHER_SOURCE_NOTES.length) {
-  const indices = [randomIndex(poolLength)];
-  for (let i = 1; i < count; i += 1) {
-    const current = indices[i - 1];
-    const moves = [];
-    if (current > 0) moves.push(-1);
-    if (current < poolLength - 1) moves.push(1);
-    indices.push(current + randomItem(moves));
-  }
-  return indices;
-}
-
-function createPassage(transform) {
-  const pattern = randomItem(FOUR_BEAT_PATTERNS);
-  const sourceNotes = transform.sourcePool;
-  const noteIndices = pattern.stepwise
-    ? createStepwiseIndices(pattern.rhythms.length, sourceNotes.length)
-    : pattern.rhythms.map(() => randomIndex(sourceNotes.length));
-
-  if (pattern.tieStart != null && noteIndices[pattern.tieStart + 1] != null) {
-    noteIndices[pattern.tieStart + 1] = noteIndices[pattern.tieStart];
-  }
-
-  return pattern.rhythms.map((rhythm, index) => ({
-    rhythm,
-    noteIndex: noteIndices[index],
-    source: noteItem(sourceNotes[noteIndices[index]], transform.sourceClef, rhythm),
-    answer: noteItem(transform.answerFor(sourceNotes[noteIndices[index]]), transform.answerClef, rhythm),
-    tieToNext: pattern.tieStart === index,
-  }));
-}
-
 const TRANSFORMS = {
   higher: {
     id: "higher",
@@ -396,6 +266,7 @@ const TRANSFORMS = {
     instruction: {
       practice: <>Transpose the note from the treble clef <strong>down one octave</strong> into the bass clef.</>,
       exam: <>Transpose each note <strong>one octave lower</strong> into the bass clef. Choose the rhythm, then place the note.</>,
+      choice: <>Which bar transposes the notes <strong>one octave lower</strong> into the bass clef?</>,
     },
   },
   samePitch: {
@@ -405,6 +276,7 @@ const TRANSFORMS = {
     instruction: {
       practice: <>Rewrite the note at the <strong>same pitch</strong> in the other clef.</>,
       exam: <>Rewrite each note at the <strong>same pitch</strong> in the other clef. Choose the rhythm, then place the note.</>,
+      choice: <>Which bar shows the notes at the <strong>same pitch</strong> in the other clef?</>,
     },
   },
   bassOctaveUp: {
@@ -416,6 +288,7 @@ const TRANSFORMS = {
     instruction: {
       practice: <>Transpose the note from the bass clef <strong>one octave higher</strong> into the treble clef.</>,
       exam: <>Transpose each note from the bass clef <strong>one octave higher</strong> into the treble clef. Choose the rhythm, then place the note.</>,
+      choice: <>Which bar transposes the notes <strong>one octave higher</strong> into the treble clef?</>,
     },
   },
   ottavaAlta: {
@@ -448,56 +321,11 @@ const TRANSFORMS = {
   },
 };
 
-function createTransform(level, options = DEFAULT_QUESTION_OPTIONS) {
-  if (level !== "AH") return TRANSFORMS.higher;
-  const pool = [
-    options.octaveLower && TRANSFORMS.higher,
-    options.samePitch && TRANSFORMS.samePitch,
-    options.octaveHigher && TRANSFORMS.bassOctaveUp,
-    options.ottava && TRANSFORMS.ottavaAlta,
-    options.ottava && TRANSFORMS.ottavaBassa,
-    options.ottava && TRANSFORMS.ottavaMeaning,
-  ].filter(Boolean);
-  const transform = randomItem(pool.length ? pool : [
-    TRANSFORMS.higher,
-    TRANSFORMS.samePitch,
-    TRANSFORMS.bassOctaveUp,
-    TRANSFORMS.ottavaAlta,
-    TRANSFORMS.ottavaBassa,
-    TRANSFORMS.ottavaMeaning,
-  ]);
-
-  if (transform.id !== "samePitch") return transform;
-  const sourceClef = Math.random() < 0.5 ? "treble" : "bass";
-  return {
-    ...transform,
-    sourceClef,
-    answerClef: sourceClef === "treble" ? "bass" : "treble",
-  };
+function createQuestion(mode="exam",previousSingleIndex=null,level="H",options=DEFAULT_QUESTION_OPTIONS, generation){
+ return transpositionInstruction(transposingGenerator.next(mode,level,options,generation));
 }
-
-function createQuestion(mode = "exam", previousSingleIndex = null, level = "H", options = DEFAULT_QUESTION_OPTIONS) {
-  const transform = createTransform(level, options);
-  if (transform.type === "meaning") return meaningQuestion(randomItem(["8va", "8vb"]));
-
-  const singleIndex = randomIndex(transform.sourcePool.length, previousSingleIndex);
-  const singleSource = noteItem(transform.sourcePool[singleIndex], transform.sourceClef);
-  const singleAnswer = noteItem(transform.answerFor(transform.sourcePool[singleIndex]), transform.answerClef);
-
-  return {
-    id: Math.random().toString(36).slice(2),
-    mode,
-    level,
-    transformId: transform.id,
-    sourceClef: transform.sourceClef,
-    answerClef: transform.answerClef,
-    marking: transform.marking ?? null,
-    instruction: transform.instruction,
-    singleIndex,
-    singleSource,
-    singleAnswer,
-    passage: createPassage(transform),
-  };
+function transpositionInstruction(question){
+ return {...question,instruction:question.type==="meaning"?meaningQuestion(question.marking,question.passage).instruction:TRANSFORMS[question.transformId].instruction};
 }
 
 function safePlayFeedbackSound(...args) {
@@ -530,6 +358,12 @@ function getPassagePositions(passage) {
     cursor += width + (index < passage.length - 1 ? noteGap * unit : 0);
     return x;
   });
+}
+
+function answerSlotBounds(positions,index) {
+  const x=index===0?positions[index]-32:(positions[index-1]+positions[index])/2;
+  const right=index===positions.length-1?positions[index]+32:(positions[index]+positions[index+1])/2;
+  return {x,width:right-x};
 }
 
 function getQuaverGroups(items) {
@@ -884,6 +718,7 @@ function ScoreArea({
   onPointerDown,
   onPointerUp,
   onPointerCancel,
+  onKeyboardInput,
 }) {
   const singleX = 490;
   const singleSource = question.singleSource;
@@ -895,7 +730,7 @@ function ScoreArea({
   const userPassage = question.passage.map((item, index) => ({
     rhythm: selectedRhythms[index] ?? (index === activeSlot && selectedRhythmTool !== "tie" ? selectedRhythmTool : null),
     step: examSteps[index] ?? (index === activeSlot && hoverStep != null && selectedRhythmTool !== "tie" && (selectedRhythmTool || selectedRhythms[index]) ? hoverStep : null),
-    tieToNext: Boolean(userTies[index]) || Boolean(item.tieToNext),
+    tieToNext: Boolean(userTies[index]),
     isHover: index === activeSlot && examSteps[index] == null && hoverStep != null,
   }));
 
@@ -999,13 +834,15 @@ function ScoreArea({
           <rect
             ref={window.MLH?.preventTouchScrollWhileDragging}
             key={`slot-hit-${index}`}
-            x={x - 32}
+            tabIndex={feedback ? -1 : 0} role="button" aria-label={`Answer note ${index+1}`}
+            onKeyDown={event=>onKeyboardInput(event,index)}
+            x={answerSlotBounds(positions,index).x}
             y={answerTop - 58}
-            width="64"
+            width={answerSlotBounds(positions,index).width}
             height="220"
             fill="transparent"
             pointerEvents="all"
-            className="touch-none"
+            className="touch-manipulation"
             style={{ touchAction: "none" }}
             onPointerDown={(event) => onPointerDown(event, index)}
             onPointerMove={(event) => onPointerMove(event, index)}
@@ -1023,6 +860,8 @@ function ScoreArea({
           height="220"
           fill="transparent"
           pointerEvents="all"
+          tabIndex={feedback ? -1 : 0} role="button" aria-label="Place answer note"
+          onKeyDown={event=>onKeyboardInput(event,0)}
           className="touch-none"
           style={{ touchAction: "none" }}
           onPointerMove={onPointerMove}
@@ -1183,14 +1022,15 @@ function MenuRows({ wholeBarMode, setWholeBarMode, noteNamesVisible, setNoteName
 }
 
 function App() {
-  const [wholeBarMode, setWholeBarMode] = useState(true);
+  const [wholeBarMode, setWholeBarMode] = window.MLH.useProfileState("wholeBarMode", true);
   const [activeLevel, setActiveLevel] = useState(INITIAL_LEVEL);
-  const [question, setQuestion] = useState(() => createQuestion("exam", null, INITIAL_LEVEL));
-  const [questionOptions, setQuestionOptions] = useState(DEFAULT_QUESTION_OPTIONS);
+  const [savedQuestionOptions, setQuestionOptions] = window.MLH.useProfileState("questionOptions", DEFAULT_QUESTION_OPTIONS);
+  const questionOptions = window.TRANSPOSING_CORE.normaliseOptions(savedQuestionOptions);
+  const [question, setQuestion] = useState(() => createQuestion(wholeBarMode ? "exam" : "practice", null, INITIAL_LEVEL, questionOptions));
   const [questionVisible, setQuestionVisible] = useState(true);
   const [levelOpen, setLevelOpen] = useState(false);
   const [customiseOpen, setCustomiseOpen] = useState(false);
-  const [noteNamesVisible, setNoteNamesVisible] = useState(false);
+  const [noteNamesVisible, setNoteNamesVisible] = window.MLH.useProfileState("noteNamesVisible", false);
   const [hoverStep, setHoverStep] = useState(null);
   const [lockedStep, setLockedStep] = useState(null);
   const [examSteps, setExamSteps] = useState([]);
@@ -1214,6 +1054,10 @@ function App() {
   const feedbackTimerRef = useRef(null);
   const feedbackFadeTimerRef = useRef(null);
   const levelTaskStatusRef = useRef(null);
+  const transitionTimerRef = useRef(null), medalTimerRef = useRef(null);
+  function clearTaskTimers() { [feedbackTimerRef,feedbackFadeTimerRef,transitionTimerRef,medalTimerRef].forEach(ref => { if(ref.current!==null)window.clearTimeout(ref.current); ref.current=null; }); }
+  React.useEffect(() => () => clearTaskTimers(), []);
+
 
   const mode = wholeBarMode ? "exam" : "practice";
   const customiseRef = useRef(null);
@@ -1234,7 +1078,7 @@ function App() {
   const meaningMode = question.type === "meaning";
   const meaningMarked = meaningMode && feedback;
   const examReady = wholeBarMode && !meaningMode && question.passage.every((_, index) => examSteps[index] != null && selectedRhythms[index] != null);
-  const canConfirm = meaningMode ? typedAnswer.trim().length > 0 && !feedback : wholeBarMode ? examReady && !feedback : lockedStep != null && !feedback;
+  const canConfirm = questionVisible && (meaningMode ? typedAnswer.trim().length > 0 && !feedback : wholeBarMode ? examReady && !feedback : lockedStep != null && !feedback);
   const canClear = !feedback && (meaningMode ? typedAnswer.trim().length > 0 : wholeBarMode ? examSteps.some((step) => step != null) || selectedRhythms.some((rhythm) => rhythm != null) || userTies.some(Boolean) : lockedStep != null);
   const { answerTop } = getSystemLayout(question);
   const instruction = meaningMode
@@ -1251,6 +1095,7 @@ function App() {
   }
 
   function resetTask(nextQuestion = question) {
+    clearTaskTimers();
     if (feedbackTimerRef.current) {
       window.clearTimeout(feedbackTimerRef.current);
       feedbackTimerRef.current = null;
@@ -1277,6 +1122,7 @@ function App() {
   }
 
   function newQuestion(nextMode = mode, nextLevel = activeLevel, nextOptions = questionOptions) {
+    clearTaskTimers();
     if (feedbackTimerRef.current) {
       window.clearTimeout(feedbackTimerRef.current);
       feedbackTimerRef.current = null;
@@ -1286,7 +1132,7 @@ function App() {
       feedbackFadeTimerRef.current = null;
     }
     setQuestionVisible(false);
-    window.setTimeout(() => {
+    transitionTimerRef.current = window.setTimeout(() => {
       resetTask(createQuestion(nextMode, question.singleIndex, nextLevel, nextOptions));
       setQuestionVisible(true);
     }, 260);
@@ -1294,6 +1140,7 @@ function App() {
 
   function setQuestionOption(key) {
     const next = { ...questionOptions, [key]: !questionOptions[key] };
+    if (!Object.values(next).some(Boolean)) return;
     setQuestionOptions(next);
     newQuestion(mode, activeLevel, next);
   }
@@ -1372,7 +1219,7 @@ function App() {
   }
 
   function placeStep(step, targetSlot = activeSlot) {
-    if (feedback) return;
+    if (feedback || !questionVisible) return;
 
     if (mode === "practice") {
       setLockedStep(step);
@@ -1385,7 +1232,7 @@ function App() {
       const existingTieSlot = userTies[targetSlot] ? targetSlot : userTies[targetSlot - 1] ? targetSlot - 1 : null;
 
       if (existingTieSlot != null) {
-        setUserTies(Array(question.passage.length).fill(false));
+        setUserTies(current => current.map((value,index) => index===existingTieSlot ? false : value));
         setActiveSlot(existingTieSlot);
         setHoverStep(null);
         updateTouchPreview(null);
@@ -1399,8 +1246,8 @@ function App() {
         return;
       }
 
-      setUserTies(() => {
-        const next = Array(question.passage.length).fill(false);
+      setUserTies((current) => {
+        const next = Array.from({length:question.passage.length},(_,i)=>Boolean(current[i]));
         next[targetSlot] = true;
         return next;
       });
@@ -1418,7 +1265,7 @@ function App() {
       return;
     }
 
-    const shouldRemoveExisting = !touchPreviewRef.current?.dragged && selectedRhythms[targetSlot] === rhythmToPlace && examSteps[targetSlot] != null;
+    const shouldRemoveExisting = !touchPreviewRef.current?.dragged && selectedRhythms[targetSlot] === rhythmToPlace && examSteps[targetSlot] != null && examSteps[targetSlot] === step;
 
     setExamSteps((current) => {
       const next = [...current];
@@ -1530,6 +1377,18 @@ function App() {
     updateTouchPreview(null);
   }
 
+  function handleKeyboardInput(event, targetSlot=0) {
+    if (feedback || !questionVisible || event.repeat || !["ArrowUp","ArrowDown","Enter"," ","Delete","Backspace"].includes(event.key)) return;
+    event.preventDefault(); event.stopPropagation(); setActiveSlot(targetSlot);
+    const current = (activeSlot===targetSlot ? hoverStep : null) ?? (wholeBarMode ? examSteps[targetSlot] : lockedStep) ?? 4;
+    if (["ArrowUp","ArrowDown"].includes(event.key)) { setHoverStep(clamp(current+(event.key==="ArrowUp"?1:-1),-8,16)); if(!wholeBarMode)setLockedStep(null); return; }
+    if (["Delete","Backspace"].includes(event.key)) {
+      if (!wholeBarMode) { setLockedStep(null); setHoverStep(null); return; }
+      setExamSteps(values=>values.map((value,index)=>index===targetSlot?null:value)); setSelectedRhythms(values=>values.map((value,index)=>index===targetSlot?null:value)); setUserTies(values=>values.map((value,index)=>index===targetSlot||index===targetSlot-1?false:value)); setHoverStep(null); return;
+    }
+    placeStep(current,targetSlot);
+  }
+
   function handlePointerCancel() {
     updateTouchPreview(null);
   }
@@ -1556,7 +1415,7 @@ function App() {
       const medal = safeGetStreakMedal(nextStreak);
       setConfettiKey((value) => value + 1);
       if (medal?.sound) {
-        window.setTimeout(() => safePlayFeedbackSound(true, true, medal.sound), 180);
+        medalTimerRef.current = window.setTimeout(() => safePlayFeedbackSound(true, true, medal.sound), 180);
       }
     }
 
@@ -1581,7 +1440,8 @@ function App() {
     feedbackTimerRef.current = window.setTimeout(() => newQuestion(mode), 280);
   }
 
-  function handleFeedbackAdvance() {
+  function handleFeedbackAdvance(event) {
+    if (event?.target?.closest?.("button,input,textarea,select,a,[data-menu-panel],[data-menu-trigger]")) return;
     if (feedback?.correct) {
       skipCorrectFeedback();
       return;
@@ -1593,7 +1453,7 @@ function App() {
   }
 
   function confirmAnswer() {
-    if (feedback) return;
+    if (feedback || !questionVisible || !canConfirm) return;
 
     if (meaningMode) {
       scoreAnswer(isCorrectMeaningAnswer(typedAnswer, question.correctMeaning, question.marking));
@@ -1624,9 +1484,18 @@ function App() {
     scoreAnswer(details.every((item) => item.pitchCorrect && item.rhythmCorrect && item.tieCorrect));
   }
 
+  const scoreView = meaningMode ? <MeaningExampleScore question={question} /> : <ScoreArea
+    question={question} mode={mode} noteNamesVisible={noteNamesVisible}
+    hoverStep={hoverStep} lockedStep={lockedStep} examSteps={examSteps}
+    selectedRhythms={selectedRhythms} selectedRhythmTool={selectedRhythmTool}
+    userTies={userTies} activeSlot={activeSlot} feedback={feedback} feedbackDetails={feedbackDetails}
+    touchPreview={touchPreview} onPointerMove={handlePointerMove} onPointerDown={handlePointerDown}
+    onPointerUp={handlePointerUp} onPointerCancel={handlePointerCancel} onKeyboardInput={handleKeyboardInput}
+  />;
+
   return (
     <div className={SHELL.pageShellClass}>
-      <window.MLH.AppHeader icon={ASSET.appIcon} title="Transposing" subtitle="Transpose between the treble and bass clefs." worksheetConfig={() => ({ version: 1, activityId: "transposing", sourceUrl: window.location.href, settings: { level: activeLevel, mode, questionOptions } })}>
+      <window.MLH.AppHeader profileState={{ activeLevel, wholeBarMode, questionOptions, noteNamesVisible }} icon={ASSET.appIcon} title="Transposing" subtitle="Transpose between the treble and bass clefs." worksheetConfig={() => ({ version: 1, activityId: "transposing", sourceUrl: window.location.href, settings: { level: activeLevel, mode, questionOptions } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
           assets={ASSET}
           correct={correct}
@@ -1737,29 +1606,7 @@ function App() {
           )}
 
           <div className={`transposing-score-wrap relative top-[0px] transition-opacity duration-300 ${questionVisible ? "opacity-100" : "opacity-0"}`}>
-            {meaningMode ? (
-              <MeaningExampleScore question={question} />
-            ) : (
-              <ScoreArea
-                question={question}
-                mode={mode}
-                noteNamesVisible={noteNamesVisible}
-                hoverStep={hoverStep}
-                lockedStep={lockedStep}
-                examSteps={examSteps}
-                selectedRhythms={selectedRhythms}
-                selectedRhythmTool={selectedRhythmTool}
-                userTies={userTies}
-                activeSlot={activeSlot}
-                feedback={feedback}
-                feedbackDetails={feedbackDetails}
-                touchPreview={touchPreview}
-                onPointerMove={handlePointerMove}
-                onPointerDown={handlePointerDown}
-                onPointerUp={handlePointerUp}
-                onPointerCancel={handlePointerCancel}
-              />
-            )}
+            {scoreView}
           </div>
 
           <div className={`transposing-question-panel relative z-10 mt-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md md:mx-3 ${meaningMode ? "h-[120px] md:-mt-[123px]" : wholeBarMode ? "h-[160px] md:-mt-[123px]" : "h-[108px] md:-mt-[123px]"}`}>
@@ -1807,9 +1654,38 @@ function App() {
 }
 
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+function EscapeTransposition({ activity }) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const question = embed.useQuestion(activity, ({ level }) =>
+    transposingGenerator.next("exam", level, DEFAULT_QUESTION_OPTIONS, { includeMeaning: false }));
+  const source = question.passage;
+  const correct = source.map(item => ({ ...item.answer, rhythm: item.rhythm }));
+  const variants = [-1, 1, -2].map(offset => correct.map(note =>
+    noteItem(pitchFromIndex(note.index + offset), question.answerClef, note.rhythm)));
+  const options = embed.codeOrder(variants, correct, activity.clue.digit);
+  const top = 78;
+  const score = (clef, answerItems, marking) => (
+    <svg viewBox="200 -16 535 280" className="escape-transposition-example" role="img"
+      aria-label={answerItems ? answerItems.map(note => note.letter + note.octave).join(", ") : "Written melody"}>
+      <Staff top={top} clef={clef} />
+      {marking && <OttavaMark marking={marking} top={top} />}
+      <RenderPassage passage={source} top={top} clef={clef} answerItems={answerItems} />
+    </svg>
+  );
+  return (
+    <main ref={ref} className="escape-literacy-content">
+      <p className="escape-literacy-content-title">{question.marking ? "Which bar shows the notes as they sound?" : transpositionInstruction(question).instruction.choice}</p>
+      <div className="escape-literacy-short-score">{score(question.sourceClef, null, question.marking)}</div>
+      <embed.NumberedOptions activity={activity} columns={2} choices={options.map(notes => score(question.answerClef, notes))} />
+    </main>
+  );
+}
 
-  </script>
-  <script src="./footer.js?v=20261005-update-history"></script>
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("transpose");
+ReactDOM.createRoot(document.getElementById("root")).render(escapeActivity ? <EscapeTransposition activity={escapeActivity} /> : <App />);
+
+  </script><script src="./generated-runtimes/transposing-1.js?v=c64a1885d38d"></script>
+  <script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

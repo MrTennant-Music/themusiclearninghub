@@ -1,0 +1,1108 @@
+{
+  "key": "C major",
+  "timeSignature": "12/8",
+  "pickup": {
+    "upper": {
+      "notes": [
+        {
+          "pitch": "D#4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "E4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 3
+        }
+      ]
+    },
+    "lower": {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "quaverRest",
+          "beats": 0.5
+        },
+        {
+          "rest": true,
+          "rhythm": "dottedCrotchetRest",
+          "beats": 1.5
+        }
+      ],
+      "beamGroups": []
+    },
+    "partialBarBeats": 2,
+    "dynamic": "f",
+    "crescendo": true,
+    "finalBarline": "start-repeat"
+  },
+  "bars": [
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "stemDown": false
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "stemDown": false
+          }
+        ],
+        "beamGroups": []
+      },
+      "lower": {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "chord": [
+              "C3",
+              "G3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "D3",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "chord": [
+              "D3",
+              "A3"
+            ],
+            "stemDown": true
+          }
+        ],
+        "beamGroups": []
+      },
+      "innerVoice": {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "F4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": true
+          }
+        ],
+        "beamGroups": []
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "stemDown": false
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "stemDown": false
+          }
+        ],
+        "beamGroups": []
+      },
+      "lower": {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "D#3",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "chord": [
+              "D#3",
+              "A3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "E3",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "chord": [
+              "E3",
+              "Bb3"
+            ],
+            "stemDown": true,
+            "chordAccidentalXOffsets": {
+              "Bb3": -5
+            }
+          }
+        ],
+        "beamGroups": []
+      },
+      "innerVoice": {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": true
+          }
+        ],
+        "beamGroups": []
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "Eb5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "Eb5",
+              "G5"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D5",
+              "F5"
+            ],
+            "stemDown": true,
+            "chordAccidentals": {
+              "F5": "natural"
+            }
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "C5",
+              "Eb5"
+            ],
+            "stemDown": true,
+            "suppressAccidental": true
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "chord": [
+              "D5",
+              "F5"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D5",
+              "F5"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [],
+        "ties": [
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "F2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B2",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "courtesyAccidental": "natural"
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "F2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [],
+        "slurs": [
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "Eb5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "Eb5",
+              "G5"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D5",
+              "F5"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "chord": [
+              "C5",
+              "Eb5"
+            ],
+            "stemDown": true,
+            "suppressAccidental": true
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "C5",
+              "Eb5"
+            ],
+            "stemDown": true,
+            "suppressAccidental": true
+          },
+          {
+            "pitch": "D#5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "courtesyAccidental": "natural"
+          },
+          {
+            "pitch": "G5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [
+          {
+            "start": 6,
+            "end": 8
+          }
+        ],
+        "ties": [
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "F2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "F2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C3",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [],
+        "slurs": [
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "C6",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C6",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C6",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C6",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": []
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "C2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "G2",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "G2",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "G2",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "G2",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [],
+        "slurs": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "Eb6",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D6",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C6",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G#5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C6",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "Eb5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "Eb5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "suppressAccidental": true
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "courtesyAccidental": "natural"
+          }
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 5
+          },
+          {
+            "start": 6,
+            "end": 8
+          },
+          {
+            "start": 9,
+            "end": 11
+          }
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "C2",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          }
+        ],
+        "beamGroups": []
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "G5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "courtesyAccidental": "natural"
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "courtesyAccidental": "natural"
+          },
+          {
+            "pitch": "Bb4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "Eb4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [
+          {
+            "start": 2,
+            "end": 4
+          },
+          {
+            "start": 7,
+            "end": 9
+          }
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "G2",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "G2",
+              "F3",
+              "B3"
+            ],
+            "stemDown": true,
+            "arpeggio": true,
+            "accent": true,
+            "accentYOffset": -13
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          },
+          {
+            "pitch": "Eb3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "Eb3",
+              "F3",
+              "A3"
+            ],
+            "stemDown": true,
+            "xOffset": -10
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "rest": true,
+            "rhythm": "dottedCrotchetRest",
+            "beats": 1.5
+          }
+        ],
+        "beamGroups": []
+      },
+      "chord": {
+        "answer": "G7",
+        "noteIndices": [
+          0
+        ],
+        "hands": [
+          "upper",
+          "lower"
+        ]
+      }
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "D#4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "courtesyAccidental": "natural"
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 2
+          },
+          {
+            "start": 7,
+            "end": 9
+          }
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "C3",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "chord": [
+              "C3",
+              "G3"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "F3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F3",
+              "A3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E3",
+              "G3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "F3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [],
+        "slurs": [
+          {
+            "from": 0,
+            "to": 1,
+            "above": true
+          }
+        ]
+      },
+      "ending": 1,
+      "finalBarline": "repeat"
+    },
+    {
+      "upper": {
+        "notes": [
+          {
+            "pitch": "D#4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C4",
+            "rhythm": "dottedMinim",
+            "beats": 3
+          }
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 2
+          }
+        ]
+      },
+      "lower": {
+        "notes": [
+          {
+            "pitch": "C3",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "chord": [
+              "C3",
+              "G3"
+            ],
+            "stemDown": true
+          },
+          {
+            "pitch": "F3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "F3",
+              "A3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "E3",
+              "G3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D3",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "chord": [
+              "D3",
+              "F3"
+            ],
+            "stemDown": true
+          },
+          {
+            "rest": true,
+            "rhythm": "quaverRest",
+            "beats": 0.5
+          }
+        ],
+        "beamGroups": [],
+        "slurs": [
+          {
+            "from": 0,
+            "to": 1,
+            "above": true
+          }
+        ]
+      },
+      "ending": 2,
+      "finalBarline": "single"
+    }
+  ],
+  "timeSignatureBar": 0,
+  "chord": {
+    "bar": 7,
+    "answer": "G7"
+  }
+}

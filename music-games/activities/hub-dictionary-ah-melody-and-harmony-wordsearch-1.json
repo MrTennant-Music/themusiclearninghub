@@ -1,0 +1,128 @@
+{
+  "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1",
+  "level": "AH",
+  "title": "Melody and Harmony",
+  "instructions": "",
+  "description": "Revise melody and harmony with 7 Music Dictionary concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Melody and Harmony",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0276",
+      "prompt": "An expressive non-chord note that takes a significant part of the following main note's value.",
+      "answer": "Appoggiatura",
+      "distractors": [
+        "Turn",
+        "Tritone",
+        "Augmented triad"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0277",
+      "prompt": "A major triad with its fifth raised by a semitone, giving a root, major third and augmented fifth.",
+      "answer": "Augmented triad",
+      "distractors": [
+        "Appoggiatura"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0280",
+      "prompt": "The simultaneous use of more than one key or tonal centre.",
+      "answer": "Polytonality",
+      "distractors": [
+        "Suspension",
+        "Tritone"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0281",
+      "prompt": "A prepared note is held into the next chord, becomes dissonant, then resolves down by step.",
+      "answer": "Suspension",
+      "distractors": [
+        "Tone row / note row",
+        "Tritone",
+        "Turn"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0282",
+      "prompt": "An ordered arrangement of all twelve chromatic pitch classes, usually using each once before any is repeated.",
+      "answer": "Tone row",
+      "distractors": [
+        "Inversion",
+        "Tritone",
+        "Turn"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0283",
+      "prompt": "An interval spanning three whole tones, equivalent to an augmented fourth or diminished fifth.",
+      "answer": "Tritone",
+      "distractors": [
+        "Suspension",
+        "Tone row / note row",
+        "Turn"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-melody-and-harmony-wordsearch-1-mc-0284",
+      "prompt": "An ornament that circles the main note by using the neighbouring note above and the neighbouring note below before returning to the main note.",
+      "answer": "Turn",
+      "distractors": [
+        "Appoggiatura",
+        "Augmented triad"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

@@ -1,0 +1,236 @@
+/* Paper geometry and answer controls reuse Digital Question Papers styles, scoped to Dictionary quizzes. */
+.cq-paper{--paper-text:#111;--paper-muted:#555;--paper-border:#222;--paper-fill:#fff;--paper-line-height:1.5;--green:#15803d;--green-soft:#f0fdf4;--red:#b91c1c;background:#fff;color:var(--paper-text);font-family:inherit;box-sizing:border-box;scroll-margin-top:110px}
+.cq-paper .cq-run-toolbar{margin:0 0 28px}.cq-paper .cq-run-subtitle{font-size:14px;margin:4px 0 0;text-align:center}
+.cq-paper-question{padding:0;margin:0 0 28px;break-inside:avoid}.cq-paper .subquestion{margin-left:50px;padding:10px 0 24px}.cq-paper .subquestion-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:14px;color:var(--paper-text)}.cq-paper .subquestion-heading-question{min-width:0;max-width:46rem;font-size:1rem;font-weight:400;line-height:1.5;margin:0 0 12px}.cq-paper .subquestion-heading-marks{font-size:1rem;font-weight:700;text-align:right;white-space:nowrap}.cq-paper .answer-fieldset{min-width:0;margin:0;border:0;padding:0}
+
+.cq-paper .paper-marks-heading { margin: 0 0 4px; font-size: 1rem; font-weight: 700; line-height: var(--paper-line-height); text-align: right; }
+.cq-paper .question-header { margin-left:50px; min-width: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 10px; }
+.cq-paper .question-header h2 { margin: 0; font-size: 1rem; font-weight: 700; line-height: var(--paper-line-height); }
+.cq-paper .subquestions { display: grid; gap: 0; }
+.cq-paper .answer-options { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 42rem; }
+.cq-paper .answer-option { width: fit-content; max-width: 100%; min-height: 42px; display: flex; align-items: center; justify-self: start; gap: 16px; border: 0; border-radius: 0; background: transparent; padding: 3px 0; cursor: pointer; }
+.cq-paper .answer-option:hover, .cq-paper .answer-option.is-selected { border: 0; background: transparent; box-shadow: none; }
+.cq-paper .answer-option:focus-within { outline: none; }
+.cq-paper .answer-option input { appearance: none; width: 32px; height: 32px; flex: 0 0 32px; display: grid; place-items: center; margin: 0; border: 1px solid #777; border-radius: 0; background: var(--paper-fill); color: #111; cursor: pointer; }
+.cq-paper .answer-option input::after { content: ""; width: 28px; height: 28px; opacity: 0; background-color: currentColor; -webkit-mask: url("../ui-icons/prtick.svg") center / contain no-repeat; mask: url("../ui-icons/prtick.svg") center / contain no-repeat; transform: translate(.5px, -1px) scale(.8); transition: opacity .1s ease, transform .1s ease; }
+.cq-paper .answer-option input:checked::after { opacity: 1; transform: translate(.5px, -1px) scale(1); animation: user-answer-glimmer 8s ease-in-out infinite; animation-delay: var(--user-answer-glimmer-delay, 0ms); }
+.cq-paper .answer-option input:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.cq-paper .answer-option-copy { font-size: 1rem; font-weight: 400; line-height: 1.35; }
+.cq-paper .text-answer, .cq-paper .structured-answer textarea { width: 100%; background: var(--paper-fill); color: var(--paper-text); outline: none; }
+.cq-paper .short-answer-line { width: min(100%, calc(46rem - 20px)); max-width: calc(46rem - 20px); border: 0; border-bottom: 1.5px solid var(--paper-border); border-radius: 0; padding: 7px 4px 5px; }
+.cq-paper .short-answer-line:focus { border-color: #111; box-shadow: 0 2px 0 #111; }
+.cq-paper .inline-answer-feedback { margin: 18px 0 0 44px; border: 1px solid #d6d3d1; border-left-width: 5px; border-radius: 10px; background: #fafaf9; padding: 12px 14px; color: #292524; font-family: var(--ui-font); font-size: .82rem; line-height: 1.45; }
+.cq-paper .inline-answer-feedback.is-correct { border-color: #86efac; border-left-color: var(--green); background: var(--green-soft); }
+.cq-paper .inline-answer-feedback.is-incorrect { border-color: #fecaca; border-left-color: var(--red); background: #fef2f2; }
+.cq-paper .inline-answer-feedback.is-unanswered { border-color: #fecaca; border-left-color: var(--red); background: #fef2f2; }
+.cq-paper .inline-answer-feedback p { margin: 7px 0 0; }
+.cq-paper .inline-correct-answer { color: var(--green); }
+.cq-paper .answer-option.is-user-incorrect { border-radius: 0; background: transparent; color: var(--red); }
+.cq-paper .answer-option.is-user-incorrect .answer-option-copy { font-weight: 700; }
+.cq-paper .answer-option.is-user-incorrect input { border: 2px solid var(--red); color: var(--red); }
+.cq-paper .answer-option.is-user-correct input:checked::after { color: var(--green); animation: none; text-shadow: none; }
+.cq-paper .answer-option.is-user-incorrect input:checked::after { color: var(--red); animation: none; text-shadow: none; }
+.cq-paper .text-answer.is-user-correct { border-color: var(--green); color: var(--green); -webkit-text-fill-color: var(--green); box-shadow: 0 2px 0 var(--green); animation: none; }
+.cq-paper .text-answer.is-user-incorrect { border-color: var(--red); color: var(--red); -webkit-text-fill-color: var(--red); box-shadow: 0 2px 0 var(--red); animation: none; }
+
+.cq-paper .answer-option.is-user-correct input{color:var(--green)}
+.cq-paper .text-answer{display:block;min-height:42px;font:inherit;font-weight:700;line-height:1.25;opacity:1}.cq-paper .answer-option input:disabled{opacity:1;cursor:default}.cq-paper .short-answer-line:focus-visible{outline:2px solid #111;outline-offset:3px}.cq-paper .inline-answer-feedback{margin-left:0}.cq-paper .inline-feedback-heading strong{font-weight:700}.cq-paper .is-correct .inline-feedback-heading{color:var(--green)}.cq-paper .is-incorrect .inline-feedback-heading,.cq-paper .is-unanswered .inline-feedback-heading{color:var(--red)}
+.cq-paper .cq-paper-actions{display:flex;justify-content:center;align-items:center;gap:16px;padding:16px 0}.cq-paper .cq-paper-actions>.cq-button{min-width:65px;width:65px;height:44px;padding:8px}.cq-paper-results{display:flex;align-items:center;justify-content:center;gap:12px;width:fit-content;max-width:100%;height:44px;box-sizing:border-box;margin:4px auto 0;padding:0 16px;color:#fff;border:1px solid transparent;border-radius:10px;text-align:center;scroll-margin-top:110px}.cq-paper-results.is-fail{background:var(--red);border-color:var(--red)}.cq-paper-results.is-pass{background:var(--green);border-color:var(--green)}.cq-paper-results h3{margin:0;font-size:18px;font-weight:700}.cq-paper-results p{margin:0}
+.cq-submit-overlay{position:fixed;inset:0;z-index:1000;background:rgb(0 0 0 / .4);display:flex;align-items:center;justify-content:center;padding:24px}.cq-submit-dialog{width:480px;max-width:100%;border:1px solid #e7e5e4;border-radius:16px;background:#fff;padding:24px;box-shadow:0 20px 50px rgb(0 0 0 / .2)}.cq-submit-dialog h2{font-size:22px;font-weight:800;margin:0 0 12px}.cq-submit-dialog p{font-size:15px;line-height:1.5;margin:0 0 24px}.cq-submit-dialog .cq-actions{justify-content:flex-end}
+
+.cq-paper:not(.marked-question-card) .has-user-answer{animation:cq-paper-answer-glimmer 8s ease-in-out infinite}.cq-paper:not(.marked-question-card) .answer-option input:checked::after{animation:cq-paper-answer-glimmer 8s ease-in-out infinite}@keyframes cq-paper-answer-glimmer{0%,56%,82%,100%{color:#111;text-shadow:none}63%,75%{color:#555;text-shadow:0 0 7px #fff}69%{color:#aaa;text-shadow:0 0 5px #fff}}
+
+.cq-paper .question-header h3{margin:0;font-size:1rem;font-weight:700;line-height:var(--paper-line-height)}.cq-paper .sentence-answer .text-answer{display:inline-block;width:16rem;max-width:100%;min-height:32px;margin:0 5px;vertical-align:baseline}
+
+.cq-paper>.subquestions,.cq-paper>.paper-marks-heading,.cq-paper>.cq-paper-actions{width:100%;max-width:52rem;margin-left:auto;margin-right:auto}
+
+/* Match the collection preview's centred Back and Start actions. */
+.cq-quiz-inline>.cq-paper-actions{max-width:none;justify-content:center;gap:12px;margin-top:20px;padding:20px 0 0;border-top:1px solid #d6d3d1}
+.cq-quiz-inline>.cq-paper-actions>.cq-button{min-width:0}
+
+
+.cq-paper-footer-buttons{display:flex;align-items:center;justify-content:center;gap:12px}
+.cq-paper-footer-buttons>.cq-button{min-width:168px;height:60px;font-size:22px;font-weight:800;padding:12px 32px}
+
+
+
+.cq-paper>.cq-paper-results h3{margin:0}
+.cq-paper-question{scroll-margin-top:110px}
+
+.cq-paper .subquestion-heading-marks.cq-mark-zero{color:var(--red)}
+.cq-paper .subquestion-heading-marks.cq-mark-partial{color:#b45309}
+.cq-paper .subquestion-heading-marks.cq-mark-full{color:var(--green)}
+
+.cq-paper .inline-answer-feedback.is-partial{border-color:#fcd34d;border-left-color:#b45309;background:#fffbeb}
+.cq-paper .is-partial .inline-feedback-heading{color:#b45309}
+.cq-paper .answer-option input:disabled:not(:checked){cursor:default}
+
+.cq-paper .answer-options:is(.is-tick-two,.is-tick-three,.is-tick-four){grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--cq-answer-rows,3),auto);grid-auto-flow:column;column-gap:24px;max-width:none;align-items:start}
+.cq-paper .answer-options.is-tick-three{--cq-answer-rows:4}
+.cq-paper .answer-options.is-tick-four{--cq-answer-rows:5}
+.cq-paper .subquestion-heading-question strong{font-weight:700}
+
+.cq-paper .cq-paper-question+.cq-paper-question{padding-top:4px}
+
+.cq-paper>.cq-paper-actions.is-submitted{justify-content:center}
+.cq-paper-actions.is-submitted .cq-paper-footer-buttons{gap:12px}
+.cq-paper-actions.is-submitted .cq-paper-footer-buttons>.cq-button{min-width:168px;height:60px;font-size:22px;font-weight:800;padding:12px 32px}
+
+/* Keep question navigation fixed within the desktop canvas. */
+.cq-quiz-inline{overflow-anchor:none}
+.cq-question-stage{display:grid;align-items:start}
+.cq-question-stage>.cq-paper-question{grid-area:1 / 1;padding-top:0!important}
+.cq-paper .cq-question-inactive{visibility:hidden;pointer-events:none}
+.cq-quiz-inline>.cq-question-navigation{display:grid;grid-template-columns:minmax(65px,1fr) auto minmax(65px,1fr);align-items:center}
+.cq-question-navigation>.cq-button{display:flex;align-items:center;justify-content:center;min-width:65px;width:65px;height:44px;padding:8px}
+.cq-question-position{text-align:center;font-size:14px;font-weight:700}
+@media print{.cq-question-stage{display:block}.cq-paper .cq-question-inactive{visibility:visible;pointer-events:auto}}
+
+.cq-question-navigation>.cq-button:first-child{justify-self:start}
+.cq-quiz-inline>.cq-question-navigation>.cq-button:last-child{justify-self:end;min-width:65px;width:max-content;white-space:nowrap}
+.cq-quiz-inline>.cq-question-navigation>.cq-question-check{justify-self:center;min-width:158px;width:auto;padding:8px 18px;white-space:nowrap}
+.cq-question-navigation>.cq-button:disabled{background:#f5f5f4;border-color:#e7e5e4;color:#a8a29e;opacity:1}
+.cq-question-navigation>.cq-button:disabled img{opacity:.3}
+
+.cq-question-stage.cq-show-all{display:block}
+.cq-show-all>.cq-paper-question{margin-bottom:28px}
+
+.cq-question-stage{opacity:1;transition:opacity 160ms ease-in-out}
+.cq-question-stage.cq-question-leaving{opacity:0;pointer-events:none}
+.cq-question-stage.cq-question-entering{animation:cq-question-reveal 240ms ease-in-out both}
+@keyframes cq-question-reveal{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.cq-question-stage,.cq-question-stage.cq-question-entering{animation:none;transition:none}}
+@media print{.cq-question-stage{opacity:1!important;animation:none!important;transition:none!important}}
+
+/* Use the Digital Papers footer's interface typography and dark buttons. */
+.cq-paper .cq-question-navigation>.cq-button{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;font-weight:700;line-height:normal;letter-spacing:normal}
+.cq-paper .cq-question-navigation>.cq-button.primary{padding:10px 18px;border-color:transparent;background:#1c1917;color:#fff}
+.cq-paper .cq-question-navigation>.cq-button.primary:hover:not(:disabled){background:#44403c}
+.cq-paper .cq-question-navigation>.cq-button:disabled{background:#f5f5f4;border-color:#e7e5e4;color:#a8a29e}
+
+/* Reveal newly marked answers without delaying their feedback. */
+.cq-paper .inline-answer-feedback{animation:cq-feedback-reveal 240ms cubic-bezier(.22,1,.36,1) both}
+@keyframes cq-feedback-reveal{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cq-paper .inline-answer-feedback{animation:none}}
+@media print{.cq-paper .inline-answer-feedback{animation:none!important}}
+
+/* Checked answers use the same colours as submitted answers. */
+.cq-paper .answer-option.is-user-correct{color:var(--green);background:transparent}
+.cq-paper .answer-option.is-user-correct .answer-option-copy{font-weight:700}
+.cq-paper .answer-option.is-user-correct input{border:2px solid var(--green);color:var(--green)}
+.cq-paper .is-practice-checked .answer-option input:checked::after,.cq-paper .is-practice-checked .text-answer{animation:none;text-shadow:none}
+
+/* Collection practice reserves space for the current question and its feedback. */
+.cq-practice-feedback{height:40px;display:flex;align-items:center;justify-content:center;margin:0 0 20px}
+.cq-practice-stage{display:grid;align-items:start}
+@media(prefers-reduced-motion:no-preference){
+ .cq-question-stage.cq-practice-stage{transition-duration:100ms}
+ .cq-question-stage.cq-practice-stage.cq-question-entering{animation-duration:140ms}
+}
+.cq-practice-stage>.cq-paper-question{grid-area:1 / 1}
+.cq-practice-stage>.cq-practice-measure{visibility:hidden;pointer-events:none}
+.cq-practice-stage .subquestion-heading{display:block}
+.cq-practice>.cq-practice-actions{display:flex;justify-content:center;padding-top:20px}
+.cq-practice>.cq-practice-actions>.cq-practice-submit{display:flex;align-items:center;justify-content:center;width:auto;min-width:112px;height:44px;border-radius:12px;padding:10px 18px;font:700 16px/normal ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#1c1917;color:#fff}
+.cq-paper .cq-practice-submit:disabled{background:#f5f5f4;border-color:#e7e5e4;color:#a8a29e;opacity:1;cursor:default}
+
+/* The practice prompt is sufficient on screen; retain numbered worksheet headings. */
+.cq-practice-stage .question-header{display:none}
+@media print{.cq-practice-stage .question-header{display:flex}}
+
+/* Centre the current prompt without adding space for other questions in the pool. */
+.cq-practice{position:relative}
+.cq-practice>.cq-practice-feedback{position:absolute;top:-10px;left:0;right:0;height:40px;margin:0;pointer-events:none;z-index:2;contain:layout size}
+.cq-paper>.cq-practice-stage{max-width:49rem;align-items:center;padding:24px 0}
+.cq-practice-stage>.cq-paper-question{margin:0;align-self:center}
+.cq-practice-stage .subquestion{margin-left:0;padding:0}
+@media print{
+ .cq-paper>.cq-practice-stage{max-width:none;padding:0}
+ .cq-practice-stage>.cq-paper-question{margin-bottom:28px}
+}
+
+/* Keep the current question and its feedback footprint compact. */
+.cq-paper>.cq-practice-stage{padding:8px 0;min-height:0}
+
+/* Centre each question's natural width, including single- and two-column answers. */
+.cq-practice-stage>.cq-paper-question{width:fit-content;max-width:100%;justify-self:center}
+@media print{.cq-practice-stage>.cq-paper-question{width:100%;justify-self:stretch}}
+
+.cq-practice-stage .cq-audio-question{margin:0 0 20px}
+
+/* Keep both feedback states centred in the same container-anchored slot. */
+.cq-practice-feedback>div{height:100%;width:100%;display:flex;align-items:center;justify-content:center}
+.cq-practice-feedback>div>div{--tw-translate-x:0px;--tw-translate-y:0px;flex:none}
+
+/* Reserve each question’s feedback footprint before submission so its prompt never moves. */
+.cq-paper .inline-answer-feedback.is-feedback-pending{visibility:hidden;pointer-events:none;animation:none}
+
+/* Reserve feedback height independently of the visible panel's contents. */
+.cq-inline-feedback-slot{display:grid;grid-template-columns:minmax(0,1fr);contain:inline-size;width:100%}
+.cq-inline-feedback-slot>.inline-answer-feedback{grid-area:1 / 1;align-self:start;justify-self:center;box-sizing:border-box;width:784px}
+
+/* Match the soft grey Ear Training question cards. */
+.cq-practice-question-card{box-sizing:border-box;min-width:0;max-width:100%;padding:20px;border:1px solid #e7e5e4;border-radius:12px;background:#fafaf9;box-shadow:0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a}
+@media print{.cq-practice-question-card{padding:0;border:0;border-radius:0;background:#fff;box-shadow:none}}
+
+/* Editable quiz answers use a complete input outline inside the grey card. */
+.cq-practice-question-card .short-answer-line{box-sizing:border-box;border:1px solid #111;border-radius:0;background:#fff;padding:9px 12px}
+.cq-practice-question-card .short-answer-line:focus{border-color:#111;box-shadow:0 0 0 1px #111}
+.cq-practice-question-card .short-answer-line.is-user-correct{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+.cq-practice-question-card .short-answer-line.is-user-incorrect{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+
+/* Use the available feedback width and compact outer gaps, retaining a fixed question footprint. */
+.cq-paper>.cq-practice-stage{padding:4px 0}
+.cq-practice>.cq-practice-actions{margin-top:12px;padding-top:12px}
+@media print{.cq-inline-feedback-slot>.inline-answer-feedback{width:100%}.cq-paper>.cq-practice-stage{padding:0}}
+
+.cq-practice-measurements{display:none}
+.cq-practice-measurements>.cq-paper-question{grid-area:1 / 1;visibility:hidden;pointer-events:none;margin:0;padding-top:0!important;align-self:center;justify-self:center;width:fit-content;max-width:100%}
+@media print{.cq-practice-measurements{display:contents}.cq-practice-measurements>.cq-paper-question{visibility:visible;display:block;width:100%;margin-bottom:28px}}
+
+/* Ordering answers use the existing quiz card typography and arrow-only controls. */
+.cq-paper .cq-order-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:12px 0 0;padding:0;min-width:440px}
+.cq-paper .cq-order-item{position:relative;display:flex;align-items:center;gap:16px;min-height:62px;padding:8px 12px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#111}
+.cq-paper .cq-order-position{width:20px;text-align:center;font-size:14px;color:#57534e}
+.cq-paper .cq-order-text{flex:1;font-size:1rem;line-height:1.35}
+.cq-paper .cq-order-arrows{display:flex;gap:6px}
+.cq-paper .cq-order-arrows button{display:flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid #d6d3d1;border-radius:8px;background:#fff;color:#111;font:inherit;font-size:20px;cursor:pointer}
+.cq-paper .cq-order-arrows button:hover:not(:disabled){background:#f5f5f4}
+.cq-paper .cq-order-arrows button:disabled{opacity:.35;cursor:default}
+.cq-paper .cq-order-arrows button:focus-visible{outline:2px solid #111;outline-offset:3px}
+.cq-paper .cq-order-item.is-user-correct{border-color:var(--green);color:var(--green);background:var(--green-soft)}
+.cq-paper .cq-order-item.is-user-incorrect{border-color:var(--red);color:var(--red);background:#fef2f2}
+
+.cq-paper .cq-order-audio{display:flex;align-items:center;gap:10px;min-height:36px;margin-top:7px;flex-wrap:wrap}
+.cq-paper .cq-order-play{display:flex;align-items:center;justify-content:center;gap:7px;min-width:78px;height:34px;border:1px solid #d6d3d1;border-radius:8px;background:#fff;color:#111;font:inherit;font-size:13px;font-weight:700}
+.cq-paper .cq-order-play .hub-playback-glyph{width:12px;height:12px}
+.cq-paper .cq-order-audio input[type=range],.cq-paper .cq-order-audio progress{width:120px;height:5px;accent-color:#111}
+.cq-paper .cq-order-audio-time{font-size:11px;font-variant-numeric:tabular-nums;color:#57534e}
+.cq-paper .cq-order-audio-error{flex-basis:100%;margin:0;font-size:12px;color:#b91c1c}
+.cq-paper .cq-order-reference{padding:12px;margin:0 0 16px;border:1px solid #d6d3d1;border-radius:10px;background:#fff}
+.cq-paper .cq-order-reference>strong{font-size:14px}
+.cq-paper .cq-order-audio-measure{height:43px;min-width:300px}
+@media print{.cq-paper .cq-order-audio,.cq-paper .cq-order-reference{display:none}}
+
+/* Direction guides sit outside the question card and remain fixed while tiles move. */
+.cq-paper .cq-order-answer{position:relative;display:flow-root;margin-top:12px}
+.cq-paper .cq-order-answer>.cq-order-list{margin-top:0}
+.cq-paper .cq-order-endpoints{position:absolute;top:0;bottom:0;left:-128px;width:96px;text-align:right;pointer-events:none;color:#44403c;font-size:14px;font-weight:700;line-height:1.3}
+.cq-paper .cq-order-endpoint{position:absolute;right:0;width:96px;white-space:normal}
+.cq-paper .cq-order-endpoint.is-first{top:calc(var(--cq-order-first-height,62px)/2);transform:translateY(-50%)}
+.cq-paper .cq-order-endpoint.is-last{bottom:calc(var(--cq-order-last-height,62px)/2);transform:translateY(50%)}
+@media print{.cq-paper .cq-order-answer{padding-left:100px}.cq-paper .cq-order-endpoints{left:0}}
+
+.cq-paper .cq-features-hint{margin:0 0 8px;font-size:.875rem;color:var(--paper-muted)}
+.cq-paper .cq-features-answer{box-sizing:border-box;resize:vertical;border:1px solid #777;border-radius:0;padding:9px 12px;line-height:1.5}
+.cq-paper .cq-features-answer:focus-visible{outline:2px solid #111;outline-offset:2px}
+.cq-paper .cq-features-areas{margin:0 0 8px;font-size:.875rem}
+.cq-paper .cq-credited-feature{color:var(--green);font-weight:700}
+
+.cq-worksheet-dialog{width:360px;max-width:calc(100% - 32px);margin:auto;padding:24px;border:1px solid #e7e5e4;border-radius:16px;background:#fff;color:#1c1917;box-shadow:0 20px 50px #0003}
+.cq-worksheet-dialog::backdrop{background:#0006}
+.cq-worksheet-dialog h2{margin:0 0 16px;text-align:center;font-size:18px;font-weight:800}
+.cq-worksheet-dialog label{display:grid;gap:6px;font-weight:600}
+.cq-worksheet-dialog select{min-height:44px;border:1px solid #a8a29e;border-radius:9px;padding:6px 10px}
+.cq-worksheet-dialog p{margin-top:10px;color:#57534e;font-size:.875rem}
+.cq-worksheet-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}

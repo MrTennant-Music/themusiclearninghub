@@ -1,0 +1,116 @@
+{
+  "id": "hub-dictionary-n4-styles-crossword-1",
+  "level": "N4",
+  "title": "Styles 1",
+  "instructions": "",
+  "description": "Revise styles with 6 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-styles-crossword-1-mc-0069",
+      "prompt": "Music from a range of African traditions.",
+      "answer": "African music",
+      "distractors": [
+        "Rapping",
+        "Reggae",
+        "Romantic"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-1-mc-0071",
+      "prompt": "A piece for solo instrument and orchestra.",
+      "answer": "Concerto",
+      "distractors": [
+        "Baroque",
+        "Mouth music",
+        "Opera"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-1-mc-0073",
+      "prompt": "A stage drama in which most or all of the story is sung.",
+      "answer": "Opera",
+      "distractors": [
+        "Romantic",
+        "Scots ballad",
+        "Swing"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-1-mc-0075",
+      "prompt": "Rhyming words spoken in time with a beat.",
+      "answer": "Rapping",
+      "distractors": [
+        "Mouth music",
+        "Opera",
+        "Ragtime"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-1-mc-0077",
+      "prompt": "Common features include expressive melody, rubato, chromatic harmony, wide dynamic range, programmatic ideas and an expanded orchestra.",
+      "answer": "Romantic",
+      "distractors": [
+        "Swing",
+        "African music",
+        "Baroque"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-1-mc-0079",
+      "prompt": "A danceable swung rhythm with riffs and call and response, played by trumpets, trombones, saxophones and a rhythm section.",
+      "answer": "Swing",
+      "distractors": [
+        "Ragtime",
+        "Rapping",
+        "Reggae"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

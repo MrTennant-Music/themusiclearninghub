@@ -1,0 +1,157 @@
+{
+  "id": "hub-n4-music-literacy-wordsearch-1",
+  "level": "N4",
+  "title": "Music Literacy",
+  "instructions": "",
+  "description": "Practise National 4 music literacy: note values, dynamics, tempo and notation.",
+  "folder": "",
+  "tags": [
+    "Music Literacy",
+    "National 4"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-1",
+      "prompt": "A note worth half a beat.",
+      "answer": "Quaver",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-2",
+      "prompt": "A note worth a quarter of a beat.",
+      "answer": "Semiquaver",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-3",
+      "prompt": "The Italian term meaning moderately quiet.",
+      "answer": "Mezzo piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-4",
+      "prompt": "The Italian term meaning moderately loud.",
+      "answer": "Mezzo forte",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-5",
+      "prompt": "The Italian tempo term meaning at a walking pace.",
+      "answer": "Andante",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-6",
+      "prompt": "A sign telling the performer to play a section again.",
+      "answer": "Repeat sign",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-7",
+      "prompt": "The clef whose four spaces, from bottom to top, spell FACE.",
+      "answer": "Treble clef",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-8",
+      "prompt": "The numbers at the start showing the beats in each bar and the note value of each beat.",
+      "answer": "Time signature",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-9",
+      "prompt": "The pair of lines marking the end of a piece of music.",
+      "answer": "Double bar line",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-10",
+      "prompt": "The Italian term meaning gradually becoming louder.",
+      "answer": "Crescendo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-11",
+      "prompt": "The Italian term meaning gradually becoming quieter.",
+      "answer": "Diminuendo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-music-literacy-wordsearch-1-12",
+      "prompt": "A musical pattern repeated at a higher or lower pitch.",
+      "answer": "Sequence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-25T13:03:19.670Z"
+}

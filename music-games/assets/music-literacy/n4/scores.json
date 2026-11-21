@@ -1,0 +1,128 @@
+[
+  {
+    "number": 1,
+    "time": 2,
+    "tempo": "Andante",
+    "dynamic": "mezzoPiano",
+    "meaning": [
+      "At a walking pace",
+      "Moderately quiet"
+    ],
+    "notes": [
+      [
+        "G4",
+        "minim",
+        500
+      ]
+    ],
+    "end": "double"
+  },
+  {
+    "number": 2,
+    "time": 3,
+    "tempo": "Adagio",
+    "dynamic": "mezzoForte",
+    "meaning": [
+      "Slow",
+      "Moderately loud"
+    ],
+    "notes": [
+      [
+        "A4",
+        "crotchet",
+        430
+      ],
+      [
+        "C5",
+        "minim",
+        620
+      ]
+    ],
+    "end": "double"
+  },
+  {
+    "number": 3,
+    "time": 2,
+    "notes": [
+      [
+        "E4",
+        "quaver",
+        400,
+        "a"
+      ],
+      [
+        "G4",
+        "quaver",
+        480,
+        "a"
+      ],
+      [
+        "B4",
+        "crotchet",
+        630
+      ]
+    ],
+    "end": "repeat"
+  },
+  {
+    "number": 4,
+    "time": 2,
+    "notes": [
+      [
+        "G4",
+        "semiquaver",
+        370,
+        "a"
+      ],
+      [
+        "A4",
+        "semiquaver",
+        430,
+        "a"
+      ],
+      [
+        "B4",
+        "semiquaver",
+        490,
+        "a"
+      ],
+      [
+        "A4",
+        "semiquaver",
+        550,
+        "a"
+      ],
+      [
+        "C5",
+        "crotchet",
+        660
+      ]
+    ],
+    "end": "repeat"
+  },
+  {
+    "number": 5,
+    "time": 3,
+    "startRepeat": true,
+    "notes": [
+      [
+        "D5",
+        "minim",
+        440
+      ],
+      [
+        "E5",
+        "quaver",
+        570,
+        "a"
+      ],
+      [
+        "D5",
+        "quaver",
+        650,
+        "a"
+      ]
+    ],
+    "end": "repeat"
+  }
+]

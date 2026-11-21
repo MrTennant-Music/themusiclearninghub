@@ -4,6 +4,9 @@
   publish = "dist"
   functions = "classroom-pilot/functions"
 
+[build.environment]
+  HUB_DEPLOY_TARGET = "netlify"
+
 [functions]
   node_bundler = "esbuild"
   included_files = ["keyboard-notes.js"]

@@ -1,0 +1,136 @@
+{
+  "id": "hub-n3-melody-harmony-wordsearch-1",
+  "level": "N3",
+  "title": "Melody/harmony",
+  "instructions": "",
+  "description": "Practise the National 3 Melody/harmony concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Melody/harmony",
+    "National 3"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-1",
+      "prompt": "Pitch moves upwards, so each later note is higher than the note before it.",
+      "answer": "Ascending",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-2",
+      "prompt": "Name the general term for a single group of two or more different notes sounded together, such as C, E and G played at once.",
+      "answer": "Chord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-3",
+      "prompt": "Pitch moves downwards, so each later note is lower than the note before it.",
+      "answer": "Descending",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-4",
+      "prompt": "A combination of notes that clash and create tension or instability.",
+      "answer": "Discord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-5",
+      "prompt": "The performer makes up music while playing instead of following a fully written part.",
+      "answer": "Improvisation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-6",
+      "prompt": "A melody moves between notes that are not next to one another.",
+      "answer": "Leap",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-7",
+      "prompt": "An opening musical phrase is followed by a responding phrase.",
+      "answer": "Question and answer",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-8",
+      "prompt": "Name the general musical device of restating a phrase or section unchanged.",
+      "answer": "Repetition",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-9",
+      "prompt": "A melodic phrase is immediately repeated starting on a higher or lower pitch.",
+      "answer": "Sequence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-melody-harmony-wordsearch-1-10",
+      "prompt": "A melody moves between neighbouring notes of a scale.",
+      "answer": "Step",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z",
+  "editorMode": "with-clues"
+}

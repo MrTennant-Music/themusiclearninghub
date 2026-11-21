@@ -1,0 +1,263 @@
+{
+  "date": "2026-11-14",
+  "scope": "Completed teacher National 4 review; spelling and grammar only. Accepted-answer variants, audio, deletions and finalisation preserved.",
+  "questionsReviewed": 346,
+  "questionsCorrected": 25,
+  "corrections": [
+    {
+      "id": "CQ-N4-MC0069-Q02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Several percussion rhythms overlap in an African music. What is another defining feature? Tick one box.",
+          "to": "Several percussion rhythms overlap in African music. What is another defining feature? Tick one box."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0070-Q03",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Tick TWO statements that describe Baroque.",
+          "to": "Tick TWO statements that describe Baroque music."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0071-Q03",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Tick TWO statements that describe concerto.",
+          "to": "Tick TWO statements that describe a concerto."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0073-Q02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Name the concept: A stage story told mainly through singing, with an orchestra playing along. Often sung in a foreign language.",
+          "to": "Name the concept: A stage story told mainly through singing, with an orchestra playing along, often sung in a foreign language."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0077-Q03",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Tick TWO statements that describe Romantic.",
+          "to": "Tick TWO statements that describe Romantic music."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0078-01",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "What is a key feature of Scots ballad? Tick one box.",
+          "to": "What is a key feature of a Scots ballad? Tick one box."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0078-Q03",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Tick TWO statements that describe Scots ballad.",
+          "to": "Tick TWO statements that describe a Scots ballad."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0083-Q02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Name the concept: A low note that keep sounding underneath the melody. This is a associated with bagpipes.",
+          "to": "Name the concept: A low note that keeps sounding underneath the melody. This is associated with bagpipes."
+        },
+        {
+          "field": "feedback",
+          "from": "Drone: A low note, or a few notes, that keep sounding underneath the melody.",
+          "to": "Drone: One or more low notes that keep sounding underneath the melody."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0086-Q03",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Tick two statements that describe octave.",
+          "to": "Tick two statements that describe an octave."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0087-Q03",
+      "changes": [
+        {
+          "field": "option e",
+          "from": "All notes are played as short detached sounds",
+          "to": "All notes are played as short, detached sounds"
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0089-Q03",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "The scale has five different notes. E.g. C, D, E, G. This scale is commonly used in folk and traditional music.",
+          "to": "The scale has five different notes. For example, C, D, E, G and A. This scale is commonly used in folk and traditional music."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0105-01",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Which beats are stressed in syncopation? Tick one box.",
+          "to": "Which description matches syncopation? Tick one box."
+        }
+      ]
+    },
+    {
+      "id": "CQ-N4-MC0128-Q02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Name the concept: Name the keyboard instrument commonly associated with the Baroque period.",
+          "to": "Name the keyboard instrument commonly associated with the Baroque period."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0070-02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Listen to this excerpt and name the period its from.",
+          "to": "Listen to this excerpt and name the period it is from."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0078-01",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Scots ballad: A traditional song from Scotland tells a story, often about love, loss or historical events.",
+          "to": "Scots ballad: A traditional song from Scotland that tells a story, often about love, loss or historical events."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0078-02",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Scots ballad: A traditional song from Scotland tells a story, often about love, loss or historical events.",
+          "to": "Scots ballad: A traditional song from Scotland that tells a story, often about love, loss or historical events."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0078-03",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Scots ballad: A traditional song from Scotland tells a story, often about love, loss or historical events.",
+          "to": "Scots ballad: A traditional song from Scotland that tells a story, often about love, loss or historical events."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0081-02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Listen to this excerpt and identify the concepts which describes what happens to the key.",
+          "to": "Listen to this excerpt and identify the concept which describes what happens to the key."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0106-02",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Listen to this excerpt of a piano concerto and identify the name given to free, showy passage played by the soloist while the orchestra is silent.",
+          "to": "Listen to this excerpt of a piano concerto and identify the name given to the free, showy passage played by the soloist while the orchestra is silent."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0122-01",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Distortion makes an amplified sound rougher or more buzzing.",
+          "to": "Distortion makes an amplified sound rougher or buzzier."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0122-02",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Distortion makes an amplified sound rougher or more buzzing.",
+          "to": "Distortion makes an amplified sound rougher or buzzier."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0122-03",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Distortion makes an amplified sound rougher or more buzzing.",
+          "to": "Distortion makes an amplified sound rougher or buzzier."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0125-03",
+      "changes": [
+        {
+          "field": "option c",
+          "from": "Traingle",
+          "to": "Triangle"
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0129-03",
+      "changes": [
+        {
+          "field": "prompt",
+          "from": "Listen to this excerpt and tick one box to identify what you hear. It is the english meaning of con sordino; when a performer uses a device to soften or alter the sound of their instrument.",
+          "to": "Listen to this excerpt and tick one box to identify what you hear. This is the English meaning of con sordino and describes the sound made when a performer uses a device to soften or alter the sound of their instrument."
+        }
+      ]
+    },
+    {
+      "id": "AQ-N4-MC0141-03",
+      "changes": [
+        {
+          "field": "feedback",
+          "from": "Violin: a violin is often playing classical music. The fiddle is the Scottish equivalent using the same instrument but playing Scottish or traditional music.",
+          "to": "Violin: A violin is often used to play classical music. The fiddle is the Scottish equivalent using the same instrument but playing Scottish or traditional music."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1965 @@
+{
+  "reviewed_on": "2026-10-18",
+  "policy": "Concise audible recognition cues, written individually for each concept as continuations of “Listen For”; start each cue lowercase and end only the final cue with a full stop. Never copy sentences from the main definition.",
+  "concepts": {
+    "MC-0001": {
+      "name": "Blues",
+      "cues": [
+        "four beats per bar and a recurring 12-bar chord cycle",
+        "flattened notes, bent pitches and answering phrases",
+        "riffs and improvised solos."
+      ]
+    },
+    "MC-0002": {
+      "name": "Jazz",
+      "cues": [
+        "syncopated rhythms, often with a swung feel",
+        "improvised solos, often on saxophone, trumpet or piano."
+      ]
+    },
+    "MC-0003": {
+      "name": "Latin American",
+      "cues": [
+        "lively dance pulse with off-beat rhythms",
+        "prominent bongos, claves, shakers or a scraping güiro."
+      ]
+    },
+    "MC-0004": {
+      "name": "Musical",
+      "cues": [
+        "theatrical solo or group singing with a band or orchestra",
+        "a direct, popular-style vocal delivery with clear words",
+        "spoken dialogue alternating with songs."
+      ]
+    },
+    "MC-0005": {
+      "name": "Pop",
+      "cues": [
+        "lead vocals with guitar, keyboards, bass and a regular drum beat",
+        "catchy choruses, repeated hooks and returning verse tunes."
+      ]
+    },
+    "MC-0006": {
+      "name": "Rock",
+      "cues": [
+        "heavy, driving drum beat",
+        "distorted guitar riffs with bass and vocals."
+      ]
+    },
+    "MC-0007": {
+      "name": "Rock 'n' roll",
+      "cues": [
+        "fast, lively backbeat with repeated riffs",
+        "a walking bass and 12-bar blues pattern."
+      ]
+    },
+    "MC-0008": {
+      "name": "Scottish",
+      "cues": [
+        "fiddle, accordion or droning bagpipes, often with a strong dance pulse",
+        "songs using Scots or Gaelic words."
+      ]
+    },
+    "MC-0009": {
+      "name": "Ascending",
+      "cues": [
+        "the notes climbing higher."
+      ]
+    },
+    "MC-0010": {
+      "name": "Chord",
+      "cues": [
+        "several pitches sounding as one block."
+      ]
+    },
+    "MC-0011": {
+      "name": "Chord change",
+      "cues": [
+        "a shift in the accompanying chord sound."
+      ]
+    },
+    "MC-0012": {
+      "name": "Descending",
+      "cues": [
+        "the notes moving lower."
+      ]
+    },
+    "MC-0013": {
+      "name": "Discord",
+      "cues": [
+        "clashing pitches that sound tense or unsettled."
+      ]
+    },
+    "MC-0014": {
+      "name": "Improvisation",
+      "cues": [
+        "free, spontaneous-sounding phrases, often varying a familiar tune or backing pattern."
+      ]
+    },
+    "MC-0015": {
+      "name": "Leap / leaping",
+      "cues": [
+        "the tune making noticeable pitch jumps, skipping neighbouring scale notes."
+      ]
+    },
+    "MC-0016": {
+      "name": "Question and answer",
+      "cues": [
+        "a short phrase followed by a balancing reply",
+        "similar rhythms or phrase lengths."
+      ]
+    },
+    "MC-0017": {
+      "name": "Repetition",
+      "cues": [
+        "the same musical idea coming back unchanged."
+      ]
+    },
+    "MC-0018": {
+      "name": "Sequence",
+      "cues": [
+        "the same part immediately restating a phrase higher or lower",
+        "a recognisable rhythm and melodic shape in each restatement."
+      ]
+    },
+    "MC-0019": {
+      "name": "Step / stepwise",
+      "cues": [
+        "the tune moving up or down through neighbouring scale notes."
+      ]
+    },
+    "MC-0020": {
+      "name": "2, 3 or 4 beats in the bar",
+      "cues": [
+        "a recurring strong beat followed by weaker beats",
+        "the pulse falling into groups of two, three or four."
+      ]
+    },
+    "MC-0021": {
+      "name": "Accent / accented",
+      "cues": [
+        "one note standing out with extra force."
+      ]
+    },
+    "MC-0022": {
+      "name": "Adagio",
+      "cues": [
+        "a slow, unhurried pace."
+      ]
+    },
+    "MC-0023": {
+      "name": "Allegro",
+      "cues": [
+        "a quick, lively pace."
+      ]
+    },
+    "MC-0024": {
+      "name": "Beat / pulse",
+      "cues": [
+        "a regular pulse you can tap along to."
+      ]
+    },
+    "MC-0025": {
+      "name": "Drum fill",
+      "cues": [
+        "a brief burst of extra drum notes",
+        "a drum fill leading into a new phrase or section."
+      ]
+    },
+    "MC-0026": {
+      "name": "Faster",
+      "cues": [
+        "the pulse becoming quicker."
+      ]
+    },
+    "MC-0027": {
+      "name": "March",
+      "cues": [
+        "firm, even beats at a walking pace",
+        "clear groups of two or four, often with strong percussion."
+      ]
+    },
+    "MC-0028": {
+      "name": "Off the beat",
+      "cues": [
+        "emphasis between main beats or on weaker beats, such as 2 and 4."
+      ]
+    },
+    "MC-0029": {
+      "name": "On the beat",
+      "cues": [
+        "notes landing with the main pulse",
+        "reinforced strong beats, such as 1 and 3."
+      ]
+    },
+    "MC-0030": {
+      "name": "Pause",
+      "cues": [
+        "a note or silence lasting longer than expected."
+      ]
+    },
+    "MC-0031": {
+      "name": "Reel",
+      "cues": [
+        "fast, flowing Scottish dance rhythm",
+        "two or four beats, dividing evenly into twos."
+      ]
+    },
+    "MC-0032": {
+      "name": "Slower",
+      "cues": [
+        "the pulse becoming less quick."
+      ]
+    },
+    "MC-0033": {
+      "name": "Waltz",
+      "cues": [
+        "a repeating ONE-two-three dance pulse",
+        "a bass note followed by two lighter chords."
+      ]
+    },
+    "MC-0034": {
+      "name": "Accompanied",
+      "cues": [
+        "supporting music underneath the main tune."
+      ]
+    },
+    "MC-0035": {
+      "name": "Harmony / chord",
+      "cues": [
+        "different pitches sounding together in chords or separate voice parts."
+      ]
+    },
+    "MC-0037": {
+      "name": "Ostinato / riff",
+      "cues": [
+        "a short tune or rhythm looping repeatedly."
+      ]
+    },
+    "MC-0038": {
+      "name": "Round",
+      "cues": [
+        "the same tune starting at different times in overlapping parts",
+        "each part looping back to the beginning."
+      ]
+    },
+    "MC-0039": {
+      "name": "Solo",
+      "cues": [
+        "one featured singer or instrument standing out."
+      ]
+    },
+    "MC-0040": {
+      "name": "Unaccompanied",
+      "cues": [
+        "the main voice or instrument sounding without backing."
+      ]
+    },
+    "MC-0041": {
+      "name": "Unison / octave",
+      "cues": [
+        "several performers sharing one tune at the same pitch."
+      ]
+    },
+    "MC-0042": {
+      "name": "Accordion",
+      "cues": [
+        "a bright, reedy, sustained tone",
+        "a melody over alternating bass notes and chords."
+      ]
+    },
+    "MC-0043": {
+      "name": "Acoustic guitar",
+      "cues": [
+        "clear, resonant strums or individually plucked notes",
+        "notes ringing briefly, then fading."
+      ]
+    },
+    "MC-0044": {
+      "name": "Bagpipes",
+      "cues": [
+        "a piercing, ornamented tune over continuous low drones."
+      ]
+    },
+    "MC-0045": {
+      "name": "Blowing",
+      "cues": [
+        "airy, reedy or brassy tones, sometimes with audible breaths."
+      ]
+    },
+    "MC-0046": {
+      "name": "Bowing",
+      "cues": [
+        "a sustained string tone, often smoothly joined between notes."
+      ]
+    },
+    "MC-0047": {
+      "name": "Brass",
+      "cues": [
+        "a bright, brassy or mellow rounded tone",
+        "powerful fanfares, sustained chords or bold melodies."
+      ]
+    },
+    "MC-0048": {
+      "name": "Choir",
+      "cues": [
+        "many voices blending in unison or harmony."
+      ]
+    },
+    "MC-0049": {
+      "name": "Drum kit",
+      "cues": [
+        "a repeating groove combining deep thuds, snare rattles and cymbal sounds."
+      ]
+    },
+    "MC-0050": {
+      "name": "Electric guitar",
+      "cues": [
+        "amplified guitar notes or chords, sometimes sustained or distorted."
+      ]
+    },
+    "MC-0051": {
+      "name": "Fiddle",
+      "cues": [
+        "a bright bowed violin sound in a folk tune",
+        "quick ornaments and dance rhythms."
+      ]
+    },
+    "MC-0052": {
+      "name": "Folk group",
+      "cues": [
+        "a small acoustic group, with or without singing",
+        "a blend of acoustic guitar, fiddle, whistle, accordion or bagpipes."
+      ]
+    },
+    "MC-0053": {
+      "name": "Legato",
+      "cues": [
+        "smoothly joined notes with no obvious breaks."
+      ]
+    },
+    "MC-0054": {
+      "name": "Orchestra",
+      "cues": [
+        "a large instrumental sound blending strings, winds, brass and percussion."
+      ]
+    },
+    "MC-0055": {
+      "name": "Organ",
+      "cues": [
+        "long-held keyboard tones that do not quickly die away",
+        "full chords and deep pedal notes."
+      ]
+    },
+    "MC-0056": {
+      "name": "Percussion (tuned and untuned)",
+      "cues": [
+        "a mix of definite pitches and untuned rhythmic sounds",
+        "struck, shaken or scraped attacks."
+      ]
+    },
+    "MC-0057": {
+      "name": "Piano",
+      "cues": [
+        "a clear struck attack followed by a fading ring",
+        "a melody and chords heard together",
+        "sharp contrasts between soft and loud notes."
+      ]
+    },
+    "MC-0058": {
+      "name": "Plucking",
+      "cues": [
+        "a sharp string attack followed by a quick fade."
+      ]
+    },
+    "MC-0059": {
+      "name": "Scottish dance band",
+      "cues": [
+        "dance tunes from Scotland led by accordion or fiddle",
+        "a steady piano, bass and drum backing."
+      ]
+    },
+    "MC-0060": {
+      "name": "Staccato",
+      "cues": [
+        "clipped notes with audible spaces between them."
+      ]
+    },
+    "MC-0061": {
+      "name": "Steel band",
+      "cues": [
+        "bright, metallic, bell-like pan tones",
+        "melody, chords and bass played by different pans."
+      ]
+    },
+    "MC-0062": {
+      "name": "Striking / hitting",
+      "cues": [
+        "a clear impact or hit at the start of each sound."
+      ]
+    },
+    "MC-0063": {
+      "name": "Strings",
+      "cues": [
+        "blending bowed tones or short plucked attacks",
+        "high violin lines through to deep bass notes."
+      ]
+    },
+    "MC-0064": {
+      "name": "Strumming",
+      "cues": [
+        "a sweeping chord sound as several strings ring together."
+      ]
+    },
+    "MC-0067": {
+      "name": "Voice",
+      "cues": [
+        "human singing or speech, with recognisable words, vowels or breaths."
+      ]
+    },
+    "MC-0068": {
+      "name": "Woodwind",
+      "cues": [
+        "airy, whistling or reedy tones in the instrumental lines."
+      ]
+    },
+    "MC-0069": {
+      "name": "African music",
+      "cues": [
+        "layered drum patterns and interlocking rhythms",
+        "repeated ideas, call and response, voices or clapping."
+      ]
+    },
+    "MC-0070": {
+      "name": "Baroque",
+      "cues": [
+        "interweaving parts, ornaments and repeated sequences",
+        "continuous bass-and-chord support, often with harpsichord or organ",
+        "abrupt step-like changes between loud and soft."
+      ]
+    },
+    "MC-0071": {
+      "name": "Concerto",
+      "cues": [
+        "one solo instrument trading phrases with the orchestra",
+        "a free solo flourish (cadenza) interrupting the accompaniment."
+      ]
+    },
+    "MC-0072": {
+      "name": "Mouth music",
+      "cues": [
+        "rapid Gaelic or nonsense syllables fitting a dance rhythm",
+        "unaccompanied singing with a strong rhythmic lilt."
+      ]
+    },
+    "MC-0073": {
+      "name": "Opera",
+      "cues": [
+        "operatic solo voices or chorus with orchestral backing",
+        "sustained, projected singing, often with vibrato."
+      ]
+    },
+    "MC-0074": {
+      "name": "Ragtime",
+      "cues": [
+        "syncopated piano tune over a steady bass-note–chord pattern."
+      ]
+    },
+    "MC-0075": {
+      "name": "Rapping",
+      "cues": [
+        "rhythmic, rhyming speech over a backing beat."
+      ]
+    },
+    "MC-0076": {
+      "name": "Reggae",
+      "cues": [
+        "clipped guitar or piano chords emphasising off-beats, often beats 2 and 4",
+        "a strong, deep bass line and relaxed groove."
+      ]
+    },
+    "MC-0077": {
+      "name": "Romantic",
+      "cues": [
+        "long, sweeping melodies with expressive give-and-take in tempo",
+        "rich, chromatic harmony and wide changes in loudness",
+        "a full, colourful orchestral sound."
+      ]
+    },
+    "MC-0078": {
+      "name": "Scots ballad",
+      "cues": [
+        "a story sung in Scots",
+        "the tune returning for successive verses",
+        "one singer with sparse backing or no instruments."
+      ]
+    },
+    "MC-0079": {
+      "name": "Swing",
+      "cues": [
+        "uneven long-short pairs of notes",
+        "a big-band sound with brass, saxophones and a rhythm section",
+        "repeated riffs and answering brass/saxophone phrases."
+      ]
+    },
+    "MC-0080": {
+      "name": "Broken chord / arpeggio",
+      "cues": [
+        "chord notes unfolding separately, often rising or falling."
+      ]
+    },
+    "MC-0081": {
+      "name": "Change of key",
+      "cues": [
+        "the music settling around a new home note or key."
+      ]
+    },
+    "MC-0082": {
+      "name": "Chord progressions — chords I, IV and V (major keys)",
+      "cues": [
+        "three major-chord colours: home (I), IV and V",
+        "a pull from chord V back towards chord I."
+      ]
+    },
+    "MC-0083": {
+      "name": "Drone",
+      "cues": [
+        "a held or repeated low note/open fifth beneath a moving tune."
+      ]
+    },
+    "MC-0084": {
+      "name": "Major",
+      "cues": [
+        "a bright, happy or cheerful character."
+      ]
+    },
+    "MC-0085": {
+      "name": "Minor",
+      "cues": [
+        "a darker, sadder or more serious character."
+      ]
+    },
+    "MC-0086": {
+      "name": "Octave",
+      "cues": [
+        "two matching note sounds, eight scale notes apart."
+      ]
+    },
+    "MC-0087": {
+      "name": "Ornament",
+      "cues": [
+        "quick decorative notes around the main tune."
+      ]
+    },
+    "MC-0088": {
+      "name": "Pedal",
+      "cues": [
+        "a held or repeating bass note underneath changing chords",
+        "brief clashes between the held bass note and new chords."
+      ]
+    },
+    "MC-0089": {
+      "name": "Pentatonic scale",
+      "cues": [
+        "a tune built from five pitches",
+        "an open, folk-like sound without semitone steps."
+      ]
+    },
+    "MC-0090": {
+      "name": "Scale",
+      "cues": [
+        "a run of neighbouring notes climbing or falling in order."
+      ]
+    },
+    "MC-0091": {
+      "name": "Scat singing",
+      "cues": [
+        "improvised vocal runs on “doo”, “ba” or other wordless syllables",
+        "jazz-like phrasing that can imitate instrumental solos."
+      ]
+    },
+    "MC-0093": {
+      "name": "Vamp",
+      "cues": [
+        "bass notes on strong beats, chords on the weaker beats between",
+        "a steady piano or guitar accompaniment."
+      ]
+    },
+    "MC-0094": {
+      "name": "A tempo",
+      "cues": [
+        "the earlier speed returning after a temporary change."
+      ]
+    },
+    "MC-0095": {
+      "name": "Accelerando",
+      "cues": [
+        "the pulse speeding up little by little."
+      ]
+    },
+    "MC-0096": {
+      "name": "Anacrusis",
+      "cues": [
+        "pickup notes leading into the first strong beat."
+      ]
+    },
+    "MC-0097": {
+      "name": "Andante",
+      "cues": [
+        "a calm, walking-speed pulse."
+      ]
+    },
+    "MC-0098": {
+      "name": "Compound time",
+      "cues": [
+        "a rolling three-part subdivision of each main beat",
+        "a “jig-ge-ty” rhythm fitting each beat."
+      ]
+    },
+    "MC-0099": {
+      "name": "Dotted rhythms",
+      "cues": [
+        "unequal long-short or short-long note pairs."
+      ]
+    },
+    "MC-0100": {
+      "name": "Jig",
+      "cues": [
+        "a quick, lilting Scottish or Irish dance",
+        "two main beats, each dividing into three."
+      ]
+    },
+    "MC-0101": {
+      "name": "Rallentando",
+      "cues": [
+        "the pulse easing back gradually."
+      ]
+    },
+    "MC-0102": {
+      "name": "Scotch snap",
+      "cues": [
+        "a sharply accented short note followed by a longer one."
+      ]
+    },
+    "MC-0103": {
+      "name": "Simple time (2/4, 3/4 and 4/4)",
+      "cues": [
+        "main beats dividing evenly into two",
+        "a two-, three- or four-beat pulse."
+      ]
+    },
+    "MC-0104": {
+      "name": "Strathspey",
+      "cues": [
+        "moderate four-beat Scottish dance pulse",
+        "dotted rhythms and clipped short-long Scotch snaps."
+      ]
+    },
+    "MC-0105": {
+      "name": "Syncopation",
+      "cues": [
+        "accents landing off the strong beats, or notes carrying across them."
+      ]
+    },
+    "MC-0106": {
+      "name": "Cadenza",
+      "cues": [
+        "a showy solo passage, usually with little or no backing",
+        "rapid runs, ending with a trill before the orchestra returns."
+      ]
+    },
+    "MC-0107": {
+      "name": "Canon",
+      "cues": [
+        "one tune copied exactly by a later-entering part",
+        "the overlapping lines continuing together."
+      ]
+    },
+    "MC-0108": {
+      "name": "Imitation",
+      "cues": [
+        "one part copying a recognisable idea just heard in another."
+      ]
+    },
+    "MC-0109": {
+      "name": "Middle 8",
+      "cues": [
+        "a contrasting passage interrupting the familiar verse or chorus",
+        "a passage lasting about eight bars."
+      ]
+    },
+    "MC-0110": {
+      "name": "Ternary / ABA",
+      "cues": [
+        "opening music, contrasting middle, then the opening music again."
+      ]
+    },
+    "MC-0111": {
+      "name": "Theme and variation",
+      "cues": [
+        "a recognisable tune returning with changed rhythm, decoration, instruments or accompaniment."
+      ]
+    },
+    "MC-0112": {
+      "name": "Verse and chorus",
+      "cues": [
+        "the verse melody repeating with new words",
+        "a contrasting chorus returning with familiar words and music."
+      ]
+    },
+    "MC-0113": {
+      "name": "Alto",
+      "cues": [
+        "a low female singing line, beneath soprano."
+      ]
+    },
+    "MC-0114": {
+      "name": "Backing vocals",
+      "cues": [
+        "extra voices behind the lead singer",
+        "harmonies, echoes or held backing notes."
+      ]
+    },
+    "MC-0115": {
+      "name": "Bass",
+      "cues": [
+        "the deepest adult male singing line."
+      ]
+    },
+    "MC-0116": {
+      "name": "Bass drum",
+      "cues": [
+        "a deep, low thump beneath the other percussion."
+      ]
+    },
+    "MC-0117": {
+      "name": "Bass guitar",
+      "cues": [
+        "a low, amplified, plucked line supporting the groove."
+      ]
+    },
+    "MC-0118": {
+      "name": "Brass band",
+      "cues": [
+        "a full blend of brass with percussion",
+        "an ensemble sound without bowed strings or woodwind lines."
+      ]
+    },
+    "MC-0119": {
+      "name": "Cello",
+      "cues": [
+        "a warm, singing string tone, lower than violin but higher than double bass",
+        "short, resonant notes in plucked passages."
+      ]
+    },
+    "MC-0120": {
+      "name": "Clarinet",
+      "cues": [
+        "a rounded, reedy tone",
+        "darker low notes and clear, bright high notes."
+      ]
+    },
+    "MC-0121": {
+      "name": "Cymbals",
+      "cues": [
+        "metallic crashes or a lingering shimmer."
+      ]
+    },
+    "MC-0122": {
+      "name": "Distortion",
+      "cues": [
+        "a rough, fuzzy or gritty amplified tone."
+      ]
+    },
+    "MC-0123": {
+      "name": "Double bass",
+      "cues": [
+        "very deep string notes",
+        "bowed rumble or a plucked, resonant bass line."
+      ]
+    },
+    "MC-0124": {
+      "name": "Flute",
+      "cues": [
+        "a clear, airy high tone",
+        "light, flowing runs or a breathy melody."
+      ]
+    },
+    "MC-0125": {
+      "name": "Glockenspiel",
+      "cues": [
+        "very high, bright bell-like notes with a metallic ring."
+      ]
+    },
+    "MC-0126": {
+      "name": "Guiro",
+      "cues": [
+        "a dry, rasping scrape, often repeated rhythmically."
+      ]
+    },
+    "MC-0127": {
+      "name": "Harp",
+      "cues": [
+        "resonant plucked notes, rippling chords or sweeping glissandi."
+      ]
+    },
+    "MC-0128": {
+      "name": "Harpsichord",
+      "cues": [
+        "a crisp, twangy keyboard sound with a quick decay",
+        "fairly even volume compared with expressive piano playing."
+      ]
+    },
+    "MC-0129": {
+      "name": "Muted",
+      "cues": [
+        "a change to a softer, veiled or nasal instrumental tone."
+      ]
+    },
+    "MC-0130": {
+      "name": "Pan pipes",
+      "cues": [
+        "a breathy, hollow whistle changing between pitches."
+      ]
+    },
+    "MC-0131": {
+      "name": "Recorder",
+      "cues": [
+        "a clear, whistle-like tone, often with an airy edge."
+      ]
+    },
+    "MC-0132": {
+      "name": "Saxophone",
+      "cues": [
+        "a strong, reedy tone, often breathy or slightly husky",
+        "a saxophone line in jazz solos or big bands."
+      ]
+    },
+    "MC-0133": {
+      "name": "Snare drum",
+      "cues": [
+        "a sharp, rattling drum sound",
+        "rapid rolls creating a continuous buzz."
+      ]
+    },
+    "MC-0134": {
+      "name": "Soprano",
+      "cues": [
+        "the highest adult female singing line."
+      ]
+    },
+    "MC-0135": {
+      "name": "Tambourine",
+      "cues": [
+        "bright jingles, sometimes mixed with a hand-drum tap."
+      ]
+    },
+    "MC-0136": {
+      "name": "Tenor",
+      "cues": [
+        "a high adult male singing line."
+      ]
+    },
+    "MC-0137": {
+      "name": "Timpani",
+      "cues": [
+        "deep, rounded drum notes with a recognisable pitch",
+        "rolls creating a sustained rumble."
+      ]
+    },
+    "MC-0138": {
+      "name": "Triangle",
+      "cues": [
+        "a high, clear metallic ping that rings on."
+      ]
+    },
+    "MC-0139": {
+      "name": "Trombone",
+      "cues": [
+        "a bold, low-to-middle brass tone",
+        "audible slides between pitches."
+      ]
+    },
+    "MC-0140": {
+      "name": "Trumpet",
+      "cues": [
+        "a bright, ringing high brass sound, often clear and piercing."
+      ]
+    },
+    "MC-0141": {
+      "name": "Violin",
+      "cues": [
+        "a bright, high bowed-string line",
+        "short, lightly plucked notes."
+      ]
+    },
+    "MC-0142": {
+      "name": "Wind band",
+      "cues": [
+        "a blend of woodwind, brass and percussion",
+        "an ensemble sound without the bowed strings of an orchestra."
+      ]
+    },
+    "MC-0143": {
+      "name": "Xylophone",
+      "cues": [
+        "hard, bright wooden knocks with clear pitches and a short decay."
+      ]
+    },
+    "MC-0144": {
+      "name": "Aria",
+      "cues": [
+        "a tuneful operatic solo over orchestral backing",
+        "shaped, lyrical phrases, often with sustained notes and vibrato."
+      ]
+    },
+    "MC-0145": {
+      "name": "Bothy ballad",
+      "cues": [
+        "a male soloist telling a rural-life story in Scots dialect",
+        "unaccompanied singing, with others sometimes joining the chorus",
+        "the same tune returning through many verses."
+      ]
+    },
+    "MC-0146": {
+      "name": "Celtic rock",
+      "cues": [
+        "traditional sounds such as fiddle or bagpipes over electric guitar, bass and drums."
+      ]
+    },
+    "MC-0147": {
+      "name": "Chorus",
+      "cues": [
+        "a large body of singers sharing each voice part",
+        "several choral lines with orchestral backing."
+      ]
+    },
+    "MC-0148": {
+      "name": "Classical",
+      "cues": [
+        "clear tunes and balanced question-and-answer phrases",
+        "mostly melody with accompaniment",
+        "light, orderly textures, sometimes with Alberti bass."
+      ]
+    },
+    "MC-0149": {
+      "name": "Gaelic psalm",
+      "cues": [
+        "unaccompanied Gaelic congregation singing",
+        "a leader starting each line, followed by the group",
+        "slow, ornamented voices overlapping unevenly."
+      ]
+    },
+    "MC-0150": {
+      "name": "Gospel",
+      "cues": [
+        "expressive lead singing answered by a group",
+        "strong rhythmic backing, often with clapping",
+        "religious words and improvised vocal decoration."
+      ]
+    },
+    "MC-0151": {
+      "name": "Indian",
+      "cues": [
+        "a sitar-like buzzing melody above a constant drone",
+        "tabla drums repeating a rhythmic cycle",
+        "freely improvised, ornamented melodic lines."
+      ]
+    },
+    "MC-0152": {
+      "name": "Minimalist",
+      "cues": [
+        "short melodic or rhythmic loops repeating insistently",
+        "layers building, gaining notes or gradually slipping out of alignment."
+      ]
+    },
+    "MC-0153": {
+      "name": "Pibroch",
+      "cues": [
+        "solo bagpipes with continuous drones",
+        "a theme returning with increasingly elaborate grace-note decoration."
+      ]
+    },
+    "MC-0154": {
+      "name": "Symphony",
+      "cues": [
+        "a full orchestra with changing instrumental colours",
+        "contrasting themes or movements within a large-scale work."
+      ]
+    },
+    "MC-0155": {
+      "name": "Waulking song",
+      "cues": [
+        "rhythmic Gaelic singing, usually by women without instruments",
+        "a solo line answered by the group",
+        "a steady thudding or tapping pulse beneath the voices."
+      ]
+    },
+    "MC-0156": {
+      "name": "Atonal",
+      "cues": [
+        "the absence of a clear home note or major/minor key",
+        "unsettled, clashing harmony."
+      ]
+    },
+    "MC-0157": {
+      "name": "Chord progressions - chords I, IV, V and VI in a major key",
+      "cues": [
+        "familiar major-key chord changes",
+        "major-sounding chords I, IV and V, with VI introducing a minor colour."
+      ]
+    },
+    "MC-0158": {
+      "name": "Chromatic",
+      "cues": [
+        "a line creeping up or down in semitone steps."
+      ]
+    },
+    "MC-0159": {
+      "name": "Cluster",
+      "cues": [
+        "a dense block of tightly clashing neighbouring pitches."
+      ]
+    },
+    "MC-0160": {
+      "name": "Contrary motion",
+      "cues": [
+        "one line climbing while another falls."
+      ]
+    },
+    "MC-0161": {
+      "name": "Countermelody",
+      "cues": [
+        "a distinct secondary tune heard at the same time as the main melody."
+      ]
+    },
+    "MC-0162": {
+      "name": "Descant (voice)",
+      "cues": [
+        "an extra vocal tune above the main singing line",
+        "the extra line entering on a later verse and making the texture brighter."
+      ]
+    },
+    "MC-0163": {
+      "name": "Glissando",
+      "cues": [
+        "a smooth pitch slide, or a rapid keyboard/harp sweep."
+      ]
+    },
+    "MC-0164": {
+      "name": "Grace note",
+      "cues": [
+        "a tiny, quick flick just before a main note."
+      ]
+    },
+    "MC-0165": {
+      "name": "Imperfect cadence",
+      "cues": [
+        "a phrase stopping on the dominant chord",
+        "an open ending, as though more music should follow."
+      ]
+    },
+    "MC-0166": {
+      "name": "Inverted pedal",
+      "cues": [
+        "a held or repeating high note above moving lower chords."
+      ]
+    },
+    "MC-0167": {
+      "name": "Melismatic",
+      "cues": [
+        "one syllable stretching across several changing pitches."
+      ]
+    },
+    "MC-0168": {
+      "name": "Modulation",
+      "cues": [
+        "a new home key becoming established during the music."
+      ]
+    },
+    "MC-0169": {
+      "name": "Perfect cadence",
+      "cues": [
+        "chord V moving to I at a phrase ending",
+        "a strong, settled full-stop effect."
+      ]
+    },
+    "MC-0170": {
+      "name": "Pitch bend",
+      "cues": [
+        "a held note bending smoothly up or down."
+      ]
+    },
+    "MC-0171": {
+      "name": "Semitone",
+      "cues": [
+        "a very small pitch step: the gap to the nearest standard note."
+      ]
+    },
+    "MC-0172": {
+      "name": "Syllabic",
+      "cues": [
+        "a separate note for each syllable, making the words clear."
+      ]
+    },
+    "MC-0173": {
+      "name": "Tone",
+      "cues": [
+        "a whole-step gap, twice the size of a semitone."
+      ]
+    },
+    "MC-0174": {
+      "name": "Trill",
+      "cues": [
+        "a rapid shake between a note and its upper neighbour."
+      ]
+    },
+    "MC-0175": {
+      "name": "Whole-tone scale",
+      "cues": [
+        "six equally spaced pitches, with no small semitone gaps",
+        "a floating sound without a strong pull home."
+      ]
+    },
+    "MC-0176": {
+      "name": "Compound time (6/8, 9/8 and 12/8)",
+      "cues": [
+        "each strong pulse dividing into three quavers",
+        "two main beats in 6/8, three in 9/8 or four in 12/8."
+      ]
+    },
+    "MC-0177": {
+      "name": "Cross rhythms",
+      "cues": [
+        "competing accents or rhythmic groupings heard at the same time",
+        "a two-against-three effect, or 3+3+2 over a four-beat pulse."
+      ]
+    },
+    "MC-0178": {
+      "name": "Moderato",
+      "cues": [
+        "a medium pace: neither quick nor slow."
+      ]
+    },
+    "MC-0179": {
+      "name": "Ritardando",
+      "cues": [
+        "a gradual easing of the speed."
+      ]
+    },
+    "MC-0180": {
+      "name": "Rubato",
+      "cues": [
+        "expressive pushing forward and holding back of the tempo."
+      ]
+    },
+    "MC-0181": {
+      "name": "Alberti bass",
+      "cues": [
+        "individual chord notes cycling low–high–middle–high",
+        "this pattern beneath a piano melody."
+      ]
+    },
+    "MC-0182": {
+      "name": "Binary / AB",
+      "cues": [
+        "two different sections, A then B",
+        "either section being heard twice."
+      ]
+    },
+    "MC-0183": {
+      "name": "Coda",
+      "cues": [
+        "an extra closing passage rounding off the piece."
+      ]
+    },
+    "MC-0184": {
+      "name": "Contrapuntal",
+      "cues": [
+        "several independent tunes weaving together."
+      ]
+    },
+    "MC-0186": {
+      "name": "Ground bass",
+      "cues": [
+        "the same bass tune returning under changing upper parts."
+      ]
+    },
+    "MC-0187": {
+      "name": "Homophonic",
+      "cues": [
+        "one clear tune with supporting chords",
+        "several parts moving together in matching rhythms."
+      ]
+    },
+    "MC-0188": {
+      "name": "Polyphonic",
+      "cues": [
+        "two or more distinct tunes sounding together, each with its own rhythm."
+      ]
+    },
+    "MC-0189": {
+      "name": "Rondo/ABACA — episode",
+      "cues": [
+        "the main tune returning between contrasting sections: A–B–A–C–A",
+        "the returning A section in its original key.",
+        "the contrasting B and C sections, called episodes, between returns of A."
+      ]
+    },
+    "MC-0190": {
+      "name": "Strophic",
+      "cues": [
+        "the verse tune staying the same while the words change."
+      ]
+    },
+    "MC-0191": {
+      "name": "Walking bass",
+      "cues": [
+        "a moving bass note on every beat",
+        "a plucked double bass in jazz."
+      ]
+    },
+    "MC-0192": {
+      "name": "A cappella",
+      "cues": [
+        "voices only, without instrumental backing."
+      ]
+    },
+    "MC-0193": {
+      "name": "Arco",
+      "cues": [
+        "smooth, sustained string tones from the bow."
+      ]
+    },
+    "MC-0194": {
+      "name": "Baritone",
+      "cues": [
+        "a male voice between the high tenor and low bass."
+      ]
+    },
+    "MC-0195": {
+      "name": "Bassoon",
+      "cues": [
+        "a low, woody, reedy tone",
+        "a rounded bass line or a nasal-sounding solo."
+      ]
+    },
+    "MC-0196": {
+      "name": "Bodhran",
+      "cues": [
+        "a hollow drum pulse with quick strokes and bending, changing tones."
+      ]
+    },
+    "MC-0197": {
+      "name": "Bongo drums",
+      "cues": [
+        "quick, high hand-drum taps alternating between two pitches."
+      ]
+    },
+    "MC-0198": {
+      "name": "Castanets",
+      "cues": [
+        "dry, sharp wooden clicks, often in rapid patterns."
+      ]
+    },
+    "MC-0199": {
+      "name": "Clarsach",
+      "cues": [
+        "light, ringing plucked notes, often in a Scottish folk tune."
+      ]
+    },
+    "MC-0200": {
+      "name": "Con sordino",
+      "cues": [
+        "a softened or altered instrumental colour, often veiled or nasal."
+      ]
+    },
+    "MC-0201": {
+      "name": "Flutter-tonguing",
+      "cues": [
+        "a rapid rolled-R or growling flutter inside a held wind or brass note."
+      ]
+    },
+    "MC-0202": {
+      "name": "French horn",
+      "cues": [
+        "warm, mellow brass in a middle register."
+      ]
+    },
+    "MC-0203": {
+      "name": "Hi-hat cymbals",
+      "cues": [
+        "a short metallic “chick” when closed",
+        "a longer sizzling sound when open."
+      ]
+    },
+    "MC-0204": {
+      "name": "Mezzo-soprano",
+      "cues": [
+        "a female voice between the high soprano and low alto."
+      ]
+    },
+    "MC-0205": {
+      "name": "Oboe",
+      "cues": [
+        "a focused, penetrating nasal tone in a high woodwind line."
+      ]
+    },
+    "MC-0206": {
+      "name": "Piccolo",
+      "cues": [
+        "an exceptionally high, piercing flute-like sound."
+      ]
+    },
+    "MC-0207": {
+      "name": "Pizzicato",
+      "cues": [
+        "short, lightly plucked string notes that fade quickly."
+      ]
+    },
+    "MC-0208": {
+      "name": "Reverb",
+      "cues": [
+        "a lingering, spacious tail after notes or voices stop",
+        "reflections blending together instead of repeating as separate echoes."
+      ]
+    },
+    "MC-0209": {
+      "name": "Rolls",
+      "cues": [
+        "rapid percussion strokes merging into a continuous roll."
+      ]
+    },
+    "MC-0210": {
+      "name": "Sitar",
+      "cues": [
+        "a bright, buzzing plucked melody with ringing resonance",
+        "sliding ornaments over a drone."
+      ]
+    },
+    "MC-0211": {
+      "name": "Tabla",
+      "cues": [
+        "two contrasting hand-drum tones in intricate repeating patterns",
+        "tabla accompaniment beneath a sitar melody."
+      ]
+    },
+    "MC-0212": {
+      "name": "Tuba",
+      "cues": [
+        "a very deep, rounded brass bass line."
+      ]
+    },
+    "MC-0213": {
+      "name": "Viola",
+      "cues": [
+        "a darker, lower bowed-string tone than violin",
+        "an inner harmony line."
+      ]
+    },
+    "MC-0214": {
+      "name": "Chamber music",
+      "cues": [
+        "a small ensemble, with one player carrying each line",
+        "exposed instrumental parts exchanging and answering musical ideas."
+      ]
+    },
+    "MC-0215": {
+      "name": "Impressionist",
+      "cues": [
+        "floating whole-tone or modal melodies",
+        "parallel chords and unresolved harmonies",
+        "a blurred pulse with delicate orchestral colours or ringing piano resonance."
+      ]
+    },
+    "MC-0216": {
+      "name": "Jazz funk",
+      "cues": [
+        "repeated, syncopated bass riffs locked to a strong drum groove",
+        "improvised solos with electric keyboard, guitar or synthesiser sounds."
+      ]
+    },
+    "MC-0217": {
+      "name": "Lied",
+      "cues": [
+        "one singer with an expressive piano part",
+        "words in German, with voice and piano sharing the musical interest",
+        "the piano echoing the words’ mood or action."
+      ]
+    },
+    "MC-0218": {
+      "name": "Mass",
+      "cues": [
+        "words such as “Gloria”, “Credo”, “Sanctus”, “Agnus Dei” or “Kyrie”",
+        "interweaving choral lines",
+        "instrumental backing or voices alone."
+      ]
+    },
+    "MC-0219": {
+      "name": "Musique concrète",
+      "cues": [
+        "recorded everyday sounds used as musical material",
+        "loops, backwards sounds or altered playback speeds."
+      ]
+    },
+    "MC-0220": {
+      "name": "Oratorio",
+      "cues": [
+        "operatic soloists, choir and orchestra",
+        "sacred storytelling through arias, choruses and speech-like recitative."
+      ]
+    },
+    "MC-0221": {
+      "name": "Plainchant",
+      "cues": [
+        "unaccompanied voices sharing one chant line",
+        "words in Latin, with no regular beat",
+        "a modal melody without chord changes underneath."
+      ]
+    },
+    "MC-0222": {
+      "name": "Recitative",
+      "cues": [
+        "solo singing that sounds like heightened speech",
+        "irregular, word-led rhythm with sparse backing."
+      ]
+    },
+    "MC-0223": {
+      "name": "Sonata",
+      "cues": [
+        "a solo instrument, or an instrument with piano",
+        "contrasting movements or passages; no orchestral backing."
+      ]
+    },
+    "MC-0224": {
+      "name": "Soul music",
+      "cues": [
+        "passionate, gospel-like lead singing",
+        "vocal riffs, answering phrases and a strong groove",
+        "backing singers and brass."
+      ]
+    },
+    "MC-0225": {
+      "name": "String quartet",
+      "cues": [
+        "four solo strings: two violins, viola and cello",
+        "exposed lines exchanging the tune and accompaniment."
+      ]
+    },
+    "MC-0226": {
+      "name": "Acciaccatura",
+      "cues": [
+        "a very quick crushed note flicking into the main pitch."
+      ]
+    },
+    "MC-0227": {
+      "name": "Added 6th",
+      "cues": [
+        "an extra sixth adding a mellow, jazzy colour to a triad",
+        "a soft-edged closing chord."
+      ]
+    },
+    "MC-0228": {
+      "name": "Diminished 7th",
+      "cues": [
+        "a tense, unstable four-note chord",
+        "equally spaced minor thirds creating a dramatic, ambiguous sound."
+      ]
+    },
+    "MC-0229": {
+      "name": "Diminished triad",
+      "cues": [
+        "a minor-sounding triad with a flattened fifth",
+        "tense clash from two stacked minor thirds."
+      ]
+    },
+    "MC-0230": {
+      "name": "Dominant 7th",
+      "cues": [
+        "a tense four-note chord formed by adding a seventh to V",
+        "strong pressure to settle onto I."
+      ]
+    },
+    "MC-0231": {
+      "name": "Harmonic minor scale",
+      "cues": [
+        "a tone-and-a-half gap between the sixth and raised seventh",
+        "the seventh remaining raised on the descent as well as the ascent."
+      ]
+    },
+    "MC-0232": {
+      "name": "Interrupted cadence",
+      "cues": [
+        "chord V unexpectedly moving to VI, usually a minor chord in a major key",
+        "the expected full-stop ending being avoided."
+      ]
+    },
+    "MC-0233": {
+      "name": "Interval",
+      "cues": [
+        "the pitch gap between two notes, heard together or one after another."
+      ]
+    },
+    "MC-0234": {
+      "name": "Melodic minor scale",
+      "cues": [
+        "a smoother minor-scale rise with raised sixth and seventh",
+        "a descent returning to the natural minor notes."
+      ]
+    },
+    "MC-0235": {
+      "name": "Mode or modal",
+      "cues": [
+        "a clear home note with an unfamiliar major/minor colour",
+        "a minor-like sound with a brighter raised sixth in Dorian examples."
+      ]
+    },
+    "MC-0236": {
+      "name": "Mordent",
+      "cues": [
+        "a quick three-note flick: main–neighbour–main",
+        "a neighbouring note above or below the main note."
+      ]
+    },
+    "MC-0237": {
+      "name": "Obbligato",
+      "cues": [
+        "an independent solo instrument weaving around the singer’s tune."
+      ]
+    },
+    "MC-0238": {
+      "name": "Plagal cadence",
+      "cues": [
+        "chord IV settling onto I",
+        "a gentle, hymn-like “Amen” ending."
+      ]
+    },
+    "MC-0239": {
+      "name": "Relative major",
+      "cues": [
+        "a minor key brightening into its closely related major",
+        "a new home note three semitones higher."
+      ]
+    },
+    "MC-0240": {
+      "name": "Relative minor",
+      "cues": [
+        "a major key darkening into its closely related minor",
+        "a new home note three semitones lower."
+      ]
+    },
+    "MC-0241": {
+      "name": "Tierce de Picardie",
+      "cues": [
+        "minor-key music ending with a suddenly brighter major chord."
+      ]
+    },
+    "MC-0242": {
+      "name": "3 against 2",
+      "cues": [
+        "one part playing three evenly spaced notes against another part’s two",
+        "both groups covering the same time span."
+      ]
+    },
+    "MC-0243": {
+      "name": "Augmentation",
+      "cues": [
+        "a familiar tune returning in longer note values, often twice as long",
+        "the accompanying pulse staying steady."
+      ]
+    },
+    "MC-0244": {
+      "name": "Diminution",
+      "cues": [
+        "a familiar tune returning in shorter note values, often half as long",
+        "the accompanying pulse staying steady."
+      ]
+    },
+    "MC-0245": {
+      "name": "Irregular time signatures",
+      "cues": [
+        "uneven recurring groups of five or seven, such as 3+2 or 2+2+3."
+      ]
+    },
+    "MC-0246": {
+      "name": "Time changes",
+      "cues": [
+        "changes in the number or grouping of beats during the piece",
+        "accents regrouping while the underlying note speed stays the same."
+      ]
+    },
+    "MC-0247": {
+      "name": "Triplets",
+      "cues": [
+        "three equally spaced notes fitted where two would normally go."
+      ]
+    },
+    "MC-0248": {
+      "name": "Basso continuo",
+      "cues": [
+        "a continuous low line with chords above it",
+        "harpsichord, organ or lute chords over a cello/bassoon-like bass line."
+      ]
+    },
+    "MC-0249": {
+      "name": "Concerto grosso",
+      "cues": [
+        "a few soloists (concertino) answering a fuller ensemble (ripieno)",
+        "low bass and keyboard chords supporting both groups."
+      ]
+    },
+    "MC-0250": {
+      "name": "Da capo aria",
+      "cues": [
+        "an operatic solo in A–B–A form",
+        "extra vocal ornaments in the returning A section."
+      ]
+    },
+    "MC-0251": {
+      "name": "Exposition",
+      "cues": [
+        "two contrasting themes, usually in different related keys, in sonata form",
+        "the same theme entering in successive parts in a fugue."
+      ]
+    },
+    "MC-0252": {
+      "name": "Passacaglia",
+      "cues": [
+        "a repeating bass foundation with varied music unfolding above it."
+      ]
+    },
+    "MC-0253": {
+      "name": "Ritornello",
+      "cues": [
+        "a recognisable ensemble refrain returning between solo episodes",
+        "shortened returns or returns in a new key."
+      ]
+    },
+    "MC-0254": {
+      "name": "Sonata form",
+      "cues": [
+        "two themes in related keys, an exploratory middle, then their return",
+        "both themes coming back in the home key."
+      ]
+    },
+    "MC-0255": {
+      "name": "Subject",
+      "cues": [
+        "a distinctive main tune that returns or is developed."
+      ]
+    },
+    "MC-0256": {
+      "name": "Through-composed",
+      "cues": [
+        "new music following the words instead of repeating a verse tune."
+      ]
+    },
+    "MC-0257": {
+      "name": "Coloratura",
+      "cues": [
+        "fast, agile vocal runs, leaps and ornaments",
+        "many changing notes on one syllable",
+        "a high soprano voice."
+      ]
+    },
+    "MC-0258": {
+      "name": "Concertino",
+      "cues": [
+        "a light group of soloists answering the full ensemble."
+      ]
+    },
+    "MC-0259": {
+      "name": "Harmonics",
+      "cues": [
+        "unusually high, thin or eerie string tones",
+        "guitar or harp harmonics ringing like small bells."
+      ]
+    },
+    "MC-0260": {
+      "name": "Ripieno",
+      "cues": [
+        "a fuller, weightier sound when the main ensemble joins in."
+      ]
+    },
+    "MC-0261": {
+      "name": "Tremolando",
+      "cues": [
+        "agitated, trembling strings from rapid repetitions of one pitch",
+        "a fast alternation between separated pitches, wider than a trill."
+      ]
+    },
+    "MC-0262": {
+      "name": "Anthem",
+      "cues": [
+        "sacred words in English sung by a choir, sometimes alternating with soloists",
+        "organ backing or a cappella passages."
+      ]
+    },
+    "MC-0263": {
+      "name": "Ayre / air",
+      "cues": [
+        "a solo voice, usually with plucked lute accompaniment",
+        "a melancholy or reflective character."
+      ]
+    },
+    "MC-0264": {
+      "name": "Ballett",
+      "cues": [
+        "light, dance-like group singing",
+        "the tune repeating by verse, ending with “fa-la-la”."
+      ]
+    },
+    "MC-0265": {
+      "name": "Chorale",
+      "cues": [
+        "a hymn tune in four blended voice parts",
+        "mostly chordal movement in a clear, regular rhythm",
+        "words in German in sung versions."
+      ]
+    },
+    "MC-0266": {
+      "name": "Contemporary jazz",
+      "cues": [
+        "improvised solos over repeating two- or three-chord grooves",
+        "complex cross-rhythms, changing metres and chromatic harmony",
+        "electronic sounds or unusual instrumental techniques."
+      ]
+    },
+    "MC-0267": {
+      "name": "Electronic dance music (EDM)",
+      "cues": [
+        "a strong programmed dance beat",
+        "repeated electronic loops, synth sounds and samples",
+        "layered build-ups followed by drops."
+      ]
+    },
+    "MC-0268": {
+      "name": "Galliard",
+      "cues": [
+        "a quick, lively dance pulse in three",
+        "closing accents regrouping the beat into twos."
+      ]
+    },
+    "MC-0269": {
+      "name": "Madrigal",
+      "cues": [
+        "non-religious words in English with unaccompanied voices",
+        "imitative entries and interweaving parts",
+        "word painting and changing music rather than a repeating verse tune."
+      ]
+    },
+    "MC-0270": {
+      "name": "Motet",
+      "cues": [
+        "sacred Latin singing, usually without instruments",
+        "flowing choral lines entering imitatively and overlapping."
+      ]
+    },
+    "MC-0271": {
+      "name": "Nationalist",
+      "cues": [
+        "folk-like tunes, dance rhythms or instrumental colours within an art-music setting."
+      ]
+    },
+    "MC-0272": {
+      "name": "Neoclassical",
+      "cues": [
+        "clear, balanced phrases and lean instrumental textures",
+        "sharper dissonances or unexpected rhythms within an orderly form."
+      ]
+    },
+    "MC-0273": {
+      "name": "Pavan",
+      "cues": [
+        "a slow, stately dance pulse in two",
+        "lute, keyboard or a small early-instrument ensemble."
+      ]
+    },
+    "MC-0274": {
+      "name": "Renaissance",
+      "cues": [
+        "flowing modal melodies and imitative vocal lines",
+        "unaccompanied choir, or soft consort colours such as viols and recorders."
+      ]
+    },
+    "MC-0275": {
+      "name": "Serial",
+      "cues": [
+        "angular, often dissonant lines without a clear home key",
+        "a twelve-pitch row returning transposed, reversed or mirrored."
+      ]
+    },
+    "MC-0276": {
+      "name": "Appoggiatura",
+      "cues": [
+        "a stressed note on the beat clashing, then stepping to a settled pitch",
+        "the stressed note taking noticeable time from the following note."
+      ]
+    },
+    "MC-0277": {
+      "name": "Augmented triad",
+      "cues": [
+        "a major-like chord with a raised fifth",
+        "bright but unsettled, with two equal major-third gaps."
+      ]
+    },
+    "MC-0278": {
+      "name": "Chord II and its first inversion (major keys only)",
+      "cues": [
+        "a minor chord on the second scale note, often approaching V",
+        "the chord’s third sounding as the lowest note in first inversion."
+      ]
+    },
+    "MC-0279": {
+      "name": "Chords I, IV, V and VI in major and minor keys",
+      "cues": [
+        "major-sounding chords I, IV and V, with a minor VI, in a major key",
+        "minor-sounding chords I and IV, with major V and VI, in a minor key."
+      ]
+    },
+    "MC-0280": {
+      "name": "Polytonality / bitonality",
+      "cues": [
+        "two or more different key colours sounding at once",
+        "individually tuneful parts clashing when combined."
+      ]
+    },
+    "MC-0281": {
+      "name": "Suspension",
+      "cues": [
+        "a held note clashing as the chord underneath changes",
+        "the held note then stepping, usually downwards, into a settled harmony."
+      ]
+    },
+    "MC-0282": {
+      "name": "Tone row / note row",
+      "cues": [
+        "a twelve-note pattern using each chromatic pitch once",
+        "the absence of a pitch that stands out as the home note."
+      ]
+    },
+    "MC-0283": {
+      "name": "Tritone",
+      "cues": [
+        "a stark, tense pitch gap spanning three tones."
+      ]
+    },
+    "MC-0284": {
+      "name": "Turn",
+      "cues": [
+        "a quick curl around one note: above–main–below–main",
+        "the inverted version starting below."
+      ]
+    },
+    "MC-0285": {
+      "name": "Hemiola",
+      "cues": [
+        "beat accents regrouping from two groups of three into three groups of two, or the reverse",
+        "an apparent shift in the pulse without the notes slowing down."
+      ]
+    },
+    "MC-0286": {
+      "name": "Answer",
+      "cues": [
+        "the fugue’s opening tune entering in a new part at a different pitch",
+        "an entry a fifth higher or fourth lower."
+      ]
+    },
+    "MC-0287": {
+      "name": "Antiphonal",
+      "cues": [
+        "two groups taking turns and answering each other across the texture."
+      ]
+    },
+    "MC-0288": {
+      "name": "Bridge",
+      "cues": [
+        "a linking passage moving from one main theme towards another",
+        "a shift into a new key during the linking passage."
+      ]
+    },
+    "MC-0289": {
+      "name": "Countersubject",
+      "cues": [
+        "a recurring second tune accompanying the fugue’s main theme",
+        "the second tune continuing in the part that has just finished its entry."
+      ]
+    },
+    "MC-0290": {
+      "name": "Fugue",
+      "cues": [
+        "one clear theme beginning alone",
+        "other parts joining with the same idea at different pitches",
+        "independent lines continuing to weave beneath later entries."
+      ]
+    },
+    "MC-0291": {
+      "name": "Inversion",
+      "cues": [
+        "a tune’s upward steps becoming downward ones, and vice versa",
+        "the chord’s third in the bass for first inversion, or its fifth for second inversion."
+      ]
+    },
+    "MC-0292": {
+      "name": "Leitmotif",
+      "cues": [
+        "a recognisable musical idea returning with the same character or dramatic situation",
+        "changes in its sound as the story develops."
+      ]
+    },
+    "MC-0293": {
+      "name": "Retrograde",
+      "cues": [
+        "a tune or rhythmic pattern running backwards, last note first."
+      ]
+    },
+    "MC-0294": {
+      "name": "Song cycle",
+      "cues": [
+        "a sequence of songs linked by words, mood or story",
+        "one singer with piano throughout."
+      ]
+    },
+    "MC-0295": {
+      "name": "Stretto",
+      "cues": [
+        "a new theme entry beginning before the previous one ends",
+        "overlapping entries crowding together and building intensity."
+      ]
+    },
+    "MC-0296": {
+      "name": "Subject",
+      "cues": [
+        "a distinctive main tune that returns or is developed."
+      ]
+    },
+    "MC-0297": {
+      "name": "Consort",
+      "cues": [
+        "several sizes of one instrument family blending, often viols or recorders",
+        "contrasting families, such as strings and wind, mixed in a broken consort."
+      ]
+    },
+    "MC-0298": {
+      "name": "Countertenor",
+      "cues": [
+        "male singing in an alto-like range",
+        "a light, clear, falsetto-like colour."
+      ]
+    },
+    "MC-0299": {
+      "name": "Piano trio",
+      "cues": [
+        "piano, violin and cello clearly audible together",
+        "the tune and accompaniment passing between the three."
+      ]
+    },
+    "MC-0300": {
+      "name": "Sprechgesang",
+      "cues": [
+        "a dramatic vocal line halfway between talking and singing",
+        "inflected pitches rather than notes held as a regular sung tune."
+      ]
+    }
+  }
+}

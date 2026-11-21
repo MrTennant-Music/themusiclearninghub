@@ -1,4 +1,4 @@
-// Melody generation shared by Melodic Dictation and Aural Recognition.
+// Melody generation shared by Melodic Dictation and Ear Training.
 // The existing question generators retain their original defaults.
 (function attachMelodicDictationGenerator(MLH) {
   "use strict";
@@ -123,8 +123,16 @@ const KEYS = [
       { id: "C", tonic: "C", signature: [], chords: { I: ["C", "E", "G"], IV: ["F", "A", "C"], V: ["G", "B", "D"], VI: ["A", "C", "E"] } },
       { id: "F", tonic: "F", signature: [{ type: "flat", step: 4 }], chords: { I: ["F", "A", "C"], IV: ["B", "D", "F"], V: ["C", "E", "G"], VI: ["D", "F", "A"] } },
       { id: "G", tonic: "G", signature: [{ type: "sharp", step: 8 }], chords: { I: ["G", "B", "D"], IV: ["C", "E", "G"], V: ["D", "F", "A"], VI: ["E", "G", "B"] } },
+      { id: "D", tonic: "D", signature: [{ type: "sharp", step: 8 }, { type: "sharp", step: 5 }], chords: { I: ["D", "F", "A"], IV: ["G", "B", "D"], V: ["A", "C", "E"], VI: ["B", "D", "F"] } },
+      { id: "Bb", tonic: "B", signature: [{ type: "flat", step: 4 }, { type: "flat", step: 7 }], chords: { I: ["B", "D", "F"], IV: ["E", "G", "B"], V: ["F", "A", "C"], VI: ["G", "B", "D"] } },
       { id: "Am", tonic: "A", signature: [], chords: { I: ["A", "C", "E"], IV: ["D", "F", "A"], V: ["E", "G", "B"], VI: ["F", "A", "C"] }, raised: { V: { G: 1 } } },
+      { id: "Dm", tonic: "D", signature: [{ type: "flat", step: 4 }], chords: { I: ["D", "F", "A"], IV: ["G", "B", "D"], V: ["A", "C", "E"], VI: ["B", "D", "F"] }, raised: { V: { C: 1 } } },
+      { id: "Em", tonic: "E", signature: [{ type: "sharp", step: 8 }], chords: { I: ["E", "G", "B"], IV: ["A", "C", "E"], V: ["B", "D", "F"], VI: ["C", "E", "G"] }, raised: { V: { D: 1 } } },
     ];
+const LEVEL_KEY_IDS = {
+      N3: ["C"], N4: ["C"], N5: ["C", "G", "F", "Am"], H: ["C", "G", "F", "Am"],
+      AH: ["C", "G", "F", "Am", "D", "Bb", "Em", "Dm"],
+    };
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
@@ -158,14 +166,12 @@ const noteByLetter = (letter, preferredIndex = 6) => {
     };
 
 const keyAccidentalForLetter = (key, letter) => {
-      if (key?.id === "F" && letter === "B") return -1;
-      if (key?.id === "G" && letter === "F") return 1;
-      return 0;
+      return ({ F:{ B:-1 }, G:{ F:1 }, D:{ F:1,C:1 }, Bb:{ B:-1,E:-1 }, Dm:{ B:-1 }, Em:{ F:1 } }[key?.id]?.[letter] ?? 0);
     };
 
 const chordAccidentalForLetter = (key, chordSymbol, letter) => key?.raised?.[chordSymbol]?.[letter] ?? null;
 
-const melodicAccidentalForLetter = (key, letter) => key?.id === "Am" && letter === "G" ? 1 : null;
+const melodicAccidentalForLetter = (key, letter) => ({ Am:{ G:1 }, Dm:{ C:1 }, Em:{ D:1 } }[key?.id]?.[letter] ?? null);
 
 const cloneNotesForBar = (notes, barIndex) => notes.map((note, noteIndex) => ({
       ...note,
@@ -569,21 +575,21 @@ function sequenceSourceCandidates(bars, targetBar, level) {
       return bars.filter((bar) => bar.barIndex === targetBar - 1 && bar.notes?.length);
     }
 
-function makeCompletionQuestion(level = "N5", attempt = 0, allowDenseAhPatterns = false, forcedKey = null) {
+function makeCompletionQuestion(level = "N5", attempt = 0, allowDenseAhPatterns = false, forcedKey = null, plan = null) {
       const activeBarCount = barCountForLevel(level);
-      const timeSignature = randomItem(timeSignaturesForLevel(level));
-      const majorKeys = KEYS.filter((key) => key.id !== "Am");
-      const key = forcedKey ?? (level === "N3" || level === "N4"
+      const timeSignature = plan?.timeSignature ?? randomItem(timeSignaturesForLevel(level));
+      const majorKeys = KEYS.filter((key) => (LEVEL_KEY_IDS[level]||LEVEL_KEY_IDS.N5).includes(key.id) && !key.id.endsWith("m"));
+      const key = plan?.key ?? forcedKey ?? (level === "N3" || level === "N4"
         ? KEYS.find((item) => item.id === "C")
         : Math.random() < 0.82 ? randomItem(majorKeys) : KEYS.find((item) => item.id === "Am"));
       const progression = makeChordProgression();
 
-      const targetBar = level === "N4" || level === "N5" || isHigherLevel(level)
+      const targetBar = plan?.targetBar ?? (level === "N4" || level === "N5" || isHigherLevel(level)
         ? randomItem([1, 2])
-        : randomItem(Array.from({ length: activeBarCount }, (_, index) => index));
+        : randomItem(Array.from({ length: activeBarCount }, (_, index) => index)));
       const bars = [];
       let previousIndex = noteBaseIndex(tonicStartNoteForLevel(level, key));
-      const mode = levelMode(level);
+      const mode = plan?.mode ?? levelMode(level);
 
       for (let barIndex = 0; barIndex < activeBarCount; barIndex += 1) {
         const chordSymbol = progression[barIndex];
@@ -634,54 +640,55 @@ function makeCompletionQuestion(level = "N5", attempt = 0, allowDenseAhPatterns 
 
       const targetMaximumInterval = isHigherLevel(level) && mode === "free" ? 1 : maxStepForLevel(level, mode);
 
-      if ((level === "N3" || level === "N4" || level === "N5" || isHigherLevel(level)) && !targetMovesWithinInterval(bars, targetBar, targetMaximumInterval) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if ((level === "N3" || level === "N4" || level === "N5" || isHigherLevel(level)) && !targetMovesWithinInterval(bars, targetBar, targetMaximumInterval) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if ((level === "N3" || level === "N4") && !hasEnoughPitchVariety(bars) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if ((level === "N3" || level === "N4") && !hasEnoughPitchVariety(bars) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if ((level === "N5" || isHigherLevel(level)) && ((bars[targetBar]?.notes ?? []).filter((note) => !note.rest).length) < 3 && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if ((level === "N5" || isHigherLevel(level)) && ((bars[targetBar]?.notes ?? []).filter((note) => !note.rest).length) < 3 && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if (level === "N3" && melodyHasOctaveLeap(bars) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if (level === "N3" && melodyHasOctaveLeap(bars) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if (level === "N4" && !targetHasSourcePattern(bars, targetBar, mode === "repetition" ? hasSamePitchPattern : hasSequencePitchPattern) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if (level === "N4" && !targetHasSourcePattern(bars, targetBar, mode === "repetition" ? hasSamePitchPattern : hasSequencePitchPattern) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if (level === "N5" && !targetHasSourcePattern(bars, targetBar, mode === "repetition" ? hasSamePitchPattern : hasSequencePitchPattern) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if (level === "N5" && !targetHasSourcePattern(bars, targetBar, mode === "repetition" ? hasSamePitchPattern : hasSequencePitchPattern) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if (isHigherLevel(level) && mode !== "free" && !targetHasSourcePattern(bars, targetBar, mode === "repetition" ? hasSamePitchPattern : hasSequencePitchPattern) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if (isHigherLevel(level) && mode !== "free" && !targetHasSourcePattern(bars, targetBar, mode === "repetition" ? hasSamePitchPattern : hasSequencePitchPattern) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if (isHigherLevel(level) && mode === "free" && targetHasAnySourcePattern(bars, targetBar) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if (isHigherLevel(level) && mode === "free" && targetHasAnySourcePattern(bars, targetBar) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
-      if (!melodyPassesQualityRules(question) && attempt < 160) {
-        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey);
+      if (!melodyPassesQualityRules(question) && attempt < (plan ? 600 : 160)) {
+        return makeCompletionQuestion(level, attempt + 1, allowDenseAhPatterns, forcedKey, plan);
       }
 
       return question;
     }
 
-function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = null) {
+function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = null, plan = null) {
       const activeBarCount = BAR_COUNT;
-      const timeSignature = randomItem(timeSignaturesForLevel(level));
-      const majorKeys = KEYS.filter((key) => key.id !== "Am");
-      const key = forcedKey ?? (level === "N3" || level === "N4"
+      const timeSignature = plan?.timeSignature ?? randomItem(timeSignaturesForLevel(level));
+      const levelKeys = KEYS.filter((key) => (LEVEL_KEY_IDS[level] || LEVEL_KEY_IDS.N5).includes(key.id));
+      const majorKeys = levelKeys.filter((key) => !key.id.endsWith("m"));
+      const key = plan?.key ?? forcedKey ?? (level === "N3" || level === "N4"
         ? KEYS.find((item) => item.id === "C")
-        : Math.random() < 0.82 ? randomItem(majorKeys) : KEYS.find((item) => item.id === "Am"));
+        : Math.random() < 0.82 ? randomItem(majorKeys) : randomItem(levelKeys.filter((item) => item.id.endsWith("m"))));
       const progression = makeEightBarRepetitionProgression();
-      const targetBar = randomItem([4, 5]);
+      const targetBar = plan?.targetBar ?? randomItem([4, 5]);
       const bars = [];
       let previousIndex = noteBaseIndex(tonicStartNoteForLevel(level, key));
       const mode = "repetition";
@@ -732,20 +739,20 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
       };
 
       const targetMaximumInterval = maxStepForLevel(level, mode);
-      if (!targetMovesWithinInterval(bars, targetBar, targetMaximumInterval) && attempt < 160) {
-        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey);
+      if (!targetMovesWithinInterval(bars, targetBar, targetMaximumInterval) && attempt < (plan ? 600 : 160)) {
+        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey, plan);
       }
 
-      if ((level === "N3" || level === "N4") && !hasEnoughPitchVariety(bars) && attempt < 160) {
-        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey);
+      if ((level === "N3" || level === "N4") && !hasEnoughPitchVariety(bars) && attempt < (plan ? 600 : 160)) {
+        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey, plan);
       }
 
-      if (level === "N5" && ((bars[targetBar]?.notes ?? []).filter((note) => !note.rest).length) < 3 && attempt < 160) {
-        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey);
+      if (level === "N5" && ((bars[targetBar]?.notes ?? []).filter((note) => !note.rest).length) < 3 && attempt < (plan ? 600 : 160)) {
+        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey, plan);
       }
 
-      if (level === "N3" && melodyHasOctaveLeap(bars) && attempt < 160) {
-        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey);
+      if (level === "N3" && melodyHasOctaveLeap(bars) && attempt < (plan ? 600 : 160)) {
+        return makeEightBarRepetitionQuestion(level, attempt + 1, forcedKey, plan);
       }
 
       return question;
@@ -1069,6 +1076,7 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
     AH_BAR_PATTERNS,
     NOTE_POOL,
     KEYS,
+    LEVEL_KEY_IDS,
     clamp,
     randomItem,
     rhythmInfo,

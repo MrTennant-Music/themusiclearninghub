@@ -1,0 +1,389 @@
+{
+  "scope": "Independent visual comparison of isolated official final-answer headings in all 30 source PDFs; AH 2016 mixed-case extraction normalised only after viewing the printed all-capital heading.",
+  "papers": [
+    {
+      "id": "advanced-higher-2016",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "FINAL ANSWER",
+          "sourcePage": 15,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "FINAL ANSWER",
+          "sourcePage": 18,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2017",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "FINAL ANSWER",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "FINAL ANSWER",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2018",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "FINAL ANSWER",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "FINAL ANSWER",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2019",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "FINAL ANSWER",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "FINAL ANSWER",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2022",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Final answer",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Final answer",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2023",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Final answer",
+          "sourcePage": 19,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Final answer",
+          "sourcePage": 22,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2024",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Final answer",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Final answer",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2025",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Final Answer",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Final Answer",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "advanced-higher-2026",
+      "headings": [
+        {
+          "part": "q6a1",
+          "text": "Final Answer",
+          "sourcePage": 17,
+          "fontWeight": 700
+        },
+        {
+          "part": "q6bi",
+          "text": "Final answer",
+          "sourcePage": 20,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2015",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Final Answer",
+          "sourcePage": 11,
+          "fontWeight": 400
+        }
+      ]
+    },
+    {
+      "id": "higher-2016",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Final Answer",
+          "sourcePage": 11,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2017",
+      "headings": [
+        {
+          "part": "q7a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2018",
+      "headings": [
+        {
+          "part": "q4a",
+          "text": "Final Answer",
+          "sourcePage": 9,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2019",
+      "headings": [
+        {
+          "part": "q7a",
+          "text": "Final answer",
+          "sourcePage": 15,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2022",
+      "headings": [
+        {
+          "part": "q7a",
+          "text": "Final answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2023",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Final Answer",
+          "sourcePage": 11,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2024",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Final answer",
+          "sourcePage": 11,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2025",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Final answer",
+          "sourcePage": 11,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "higher-2026",
+      "headings": [
+        {
+          "part": "q6a",
+          "text": "Final answer",
+          "sourcePage": 11,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2014",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final answer",
+          "sourcePage": 15,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2015",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2016",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2017",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2018",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2019",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2022",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2023",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2024",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2025",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    },
+    {
+      "id": "national5-2026",
+      "headings": [
+        {
+          "part": "q8a",
+          "text": "Final Answer",
+          "sourcePage": 13,
+          "fontWeight": 700
+        }
+      ]
+    }
+  ]
+}

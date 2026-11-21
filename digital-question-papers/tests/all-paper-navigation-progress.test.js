@@ -1,0 +1,48 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const vm=require('node:vm');
+const fs=require('node:fs');
+global.localStorage={values:new Map(),getItem(key){return this.values.get(key)??null;},setItem(key,value){this.values.set(key,value);},removeItem(key){this.values.delete(key);}};
+global.ExamStorage=require('../exam-storage.js');
+global.ExamMarking=require('../exam-marking.js');
+const {ExamEngine,validateAttempt}=require('../exam-engine.js');
+const registry=require('../paper-registry.js');
+const ui=fs.readFileSync(path.join(__dirname,'../exam-ui.js'),'utf8');
+const selectors=ui.slice(ui.indexOf('  function renderPaperSelectors()'),ui.indexOf('  function destroyAudioPlayers()'));
+for(const entry of Object.values(registry))test(entry.id+': navigation, draft restoration, status and submitted feedback',()=>{
+  const paper=require(path.join(__dirname,'..',entry.dataFile.split('?')[0]));
+  const first=paper.questions[0].id,last=paper.questions.at(-1).id;
+  const nodes={};const $=selector=>nodes[selector]||={setAttribute(){}};
+  vm.runInNewContext(selectors+';renderPaperSelectors()',{paper,$});
+  assert.equal(nodes['[data-back-to-papers]'].href,'digitalquestionpapers.html?level='+entry.levelCode);
+  const engine=new ExamEngine(paper);engine.start('practice');
+  for(const question of paper.questions){engine.goToQuestion(question.id);assert.equal(engine.attempt.currentQuestion,question.id);}
+  assert.equal(ExamStorage.paperStatus(paper.id),null,'browsing does not mark in progress');
+  const blank=ExamStorage.loadDraft(paper.id);assert.equal(blank.currentQuestion,last);
+  const refreshed=new ExamEngine(paper);assert.equal(refreshed.resume(blank,{navigationType:'reload'}),true);
+  assert.equal(refreshed.attempt.currentQuestion,last,'refresh preserves the current question in an unedited paper');
+  const resumed=new ExamEngine(paper);assert.equal(resumed.resume(blank),true);
+  assert.equal(resumed.attempt.currentQuestion,first,'returning to a blank paper opens question 1');
+  assert.equal(ExamStorage.loadDraft(paper.id).currentQuestion,first);
+  const part=paper.questions[0].subquestions[0];
+  const answer=part.type==='checkbox'?['sample answer']:part.type==='comparison-grid'?{c:['sample answer']}:'sample answer';
+  resumed.setAnswer(part.id,answer);resumed.goToQuestion(last);
+  assert.equal(ExamStorage.paperStatus(paper.id),'in-progress');
+  const edited=ExamStorage.loadDraft(paper.id);
+  const editedResume=new ExamEngine(paper);assert.equal(editedResume.resume(edited),true);
+  assert.equal(editedResume.attempt.currentQuestion,last);
+  assert.deepEqual(editedResume.attempt.answers[part.id],answer);
+  const submitted=editedResume.submit();assert.ok(submitted);
+  assert.equal(ExamStorage.paperStatus(paper.id),'completed');
+  const saved=ExamStorage.loadSubmitted(paper.id);assert.equal(validateAttempt(paper,saved,'submitted'),true);
+  const feedback=new ExamEngine(paper);assert.equal(feedback.restoreSubmitted(saved),true);
+  assert.equal(feedback.attempt.status,'submitted');assert.deepEqual(feedback.attempt.answers[part.id],answer);
+  assert.equal(feedback.attempt.result.score,saved.result.score);
+  // Starting an explicitly requested new attempt resets the chooser's status.
+  const startCode=ui.slice(ui.indexOf('  function startAttempt(mode)'),ui.indexOf('  function openSubmitModal()'));
+  vm.runInNewContext(startCode+';startAttempt("practice")',{paper,engine:feedback,root:{ExamStorage},clearTransientNotationState(){},renderCustomiseMenu(){},document:{body:{dataset:{}}},feedbackPrintState:null});
+  assert.equal(ExamStorage.paperStatus(paper.id),null);
+  assert.equal(feedback.attempt.currentQuestion,first);
+  [engine,refreshed,resumed,editedResume,feedback].forEach(e=>e.destroy());
+});

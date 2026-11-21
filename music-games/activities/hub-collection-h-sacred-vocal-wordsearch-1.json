@@ -1,0 +1,81 @@
+{
+  "id": "hub-collection-h-sacred-vocal-wordsearch-1",
+  "level": "H",
+  "title": "Sacred Vocal Music",
+  "instructions": "",
+  "description": "Sacred Vocal Music: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Sacred Vocal Music",
+    "Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-h-sacred-vocal-wordsearch-1-MC-0150",
+      "prompt": "Christian music with powerful singing, often with a choir and answering phrases.",
+      "answer": "Gospel",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0150"
+    },
+    {
+      "id": "hub-collection-h-sacred-vocal-wordsearch-1-MC-0218",
+      "prompt": "A piece of music setting the main words of a Catholic church service.",
+      "answer": "Mass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0218"
+    },
+    {
+      "id": "hub-collection-h-sacred-vocal-wordsearch-1-MC-0220",
+      "prompt": "A large work for singers and orchestra telling a story, usually religious, without stage acting.",
+      "answer": "Oratorio",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0220"
+    },
+    {
+      "id": "hub-collection-h-sacred-vocal-wordsearch-1-MC-0221",
+      "prompt": "A single, unaccompanied religious tune, usually sung in Latin with a free-flowing rhythm.",
+      "answer": "Plainchant",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0221"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "sacred-vocal",
+  "sourceConceptIds": [
+    "MC-0150",
+    "MC-0218",
+    "MC-0220",
+    "MC-0221"
+  ],
+  "editorMode": "with-clues"
+}

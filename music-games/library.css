@@ -1,0 +1,271 @@
+/* Match the Hub's rounded white panels across the activity workspace. */
+.ig-app .ig-panel,
+.ig-app .ig-create-toolbar,
+.ig-app .ig-template-picker,
+.ig-app .ig-content-editor,
+.ig-app .ig-leaderboard,
+.ig-app .ig-options-panel,
+.ig-app .ig-unscored {
+  border:1px solid #e7e5e4;
+  border-radius:16px;
+  box-shadow:0 1px 2px #0000000d;
+}
+.ig-app .ig-resource-card{overflow:hidden}
+.ig-app .ig-notice,
+.ig-app .ig-edit-row,
+.ig-app .ig-media-editor,
+.ig-app .ig-import-text{border-radius:12px}
+
+
+.ig-level-badge{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;min-width:30px;padding:1px 7px;border:1px solid #d6d3d1;border-radius:6px;background:#f5f5f4;color:#44403c;font-size:11px;font-weight:600;line-height:18px;margin-left:8px;flex-shrink:0}
+.ig-activity-format{justify-content:flex-start}
+.ig-library-game-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:0 0 16px;color:#1e4e70}
+.ig-library-game-icon svg{display:block;width:100%;height:100%}
+.ig-library-filters{display:flex;flex-direction:column;gap:8px;margin:20px 0 0}
+.ig-library-filter-row{display:block}
+.ig-library-filter-options{display:grid;grid-template-columns:repeat(12,max-content);justify-content:start;gap:6px}
+.ig-app .ig-library-filter-options>button{display:flex;align-items:center;justify-content:center;min-width:0;padding:6px 4px;border:1px solid #e7e5e4;border-radius:10px;background:#fff;color:#292524;font-size:12px;font-weight:600;line-height:1.25;text-align:center}
+.ig-app .ig-library-game-filters>button{flex-direction:row;justify-self:start;box-sizing:border-box;gap:6px;height:30px;min-height:30px;padding:2px 9px 2px 4px;border-color:#f0eeeb;background:#f5f5f4;color:#57534e;font-weight:700;line-height:18px;white-space:nowrap;box-shadow:0 1px 2px #0000000d}
+.ig-library-game-filters .ig-library-game-icon{width:18px;height:18px;flex-basis:18px;color:inherit}
+.ig-library-game-filters>button>span:last-child{overflow-wrap:normal;word-break:normal}
+.ig-app .ig-library-filter-options>button:hover{background:#f5f5f4;border-color:#a8a29e}
+.ig-app .ig-library-filter-options>button[aria-pressed=true]{background:#000;border-color:#000;color:#fff}
+.ig-library-game-filters>button[aria-pressed=true]>img{filter:brightness(0) invert(1)}
+.ig-activity-format .ig-library-game-icon{box-sizing:border-box;width:18px;height:18px;flex-basis:18px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+
+.ig-activity-level-symbol{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:32px;height:30px;flex:0 0 auto;margin-left:8px;padding:2px 8px;border:1px solid #f0eeeb;border-radius:10px;background:#fff;color:#57534e;font-size:12px;font-weight:700;line-height:18px;box-shadow:0 1px 2px #0000000d}
+
+/* Use the shared Hub toolbar's control sizing and typography in the library. */
+.ig-app .ig-library-toolbar.hub-toolbar{display:flex;align-items:center;gap:8px;margin:0}
+.ig-app .ig-library-toolbar input[type=search]{height:44px;min-height:44px;padding:0 12px;border:1px solid #d6d3d1;border-radius:12px;background:#fff;color:#292524;font-size:14px;line-height:20px}
+.ig-library-toolbar input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}
+.ig-app .ig-library-toolbar button{height:44px;min-height:44px;box-sizing:border-box;border:1px solid #d6d3d1;border-radius:12px;background:#fff;color:#292524;font-size:14px;font-weight:600;line-height:20px}
+.ig-app .ig-library-toolbar .ig-filter-button{width:auto;padding:0 10px;gap:8px}
+.ig-app .ig-library-toolbar .ig-view-toggle{gap:8px}
+.ig-app .ig-library-toolbar .ig-view-toggle button[aria-pressed=true],.ig-app .ig-library-toolbar>.ig-primary{background:#000;color:#fff;border-color:#000}
+.ig-app .ig-library-toolbar>.ig-primary{padding:0 12px}
+
+
+/* Library and shared Hub controls; loaded without player or editor styles. */
+/* Shared Hub control shape and neutral selection treatment. */
+.ig-app button,.ig-modal button{border-radius:12px!important}
+.ig-app input:not([type=checkbox]):not([type=radio]):not([type=file]),
+.ig-app select,.ig-app textarea,.ig-modal input,.ig-modal textarea,.ig-modal select{border-radius:10px}
+.ig-app .ig-workspace-toolbar nav>button.is-active{color:#000;background:#f5f5f4;border-color:#a8a29e}
+.ig-app button:focus-visible,.ig-modal button:focus-visible,
+.ig-app input:focus-visible,.ig-app textarea:focus-visible,.ig-app select:focus-visible{outline-color:#000}
+.ig-app input,.ig-modal input{accent-color:#000}
+.ig-app .ig-primary,.ig-modal .ig-primary,.ig-app .ig-content-done{background:#000;border-color:#000;color:#fff}
+.ig-app .ig-primary:hover,.ig-modal .ig-primary:hover,.ig-app .ig-content-done:hover{background:#292524;border-color:#292524}
+.ig-app .ig-activity-art{border-radius:12px;overflow:hidden}
+.ig-app .ig-template-card,.ig-modal .ig-template-card{border-radius:12px!important}
+
+.ig-library-main>.ig-workspace-toolbar input[type=search]{flex:1;min-width:0;height:44px}
+.ig-library-main>.ig-workspace-toolbar nav>.ig-primary{height:44px;flex-shrink:0}
+.ig-library-main>.ig-library-title{margin-bottom:24px}
+
+.ig-library-group+.ig-library-group{margin-top:32px;padding-top:28px;border-top:1px solid #e7e5e4}
+.ig-library-group>.ig-library-title{margin-bottom:24px}
+
+.ig-library-main>.ig-workspace-toolbar input[type=search]{flex:1;min-width:0;width:auto}
+
+.ig-library-group>.ig-library-title{display:block}
+.ig-app .ig-library-subtitle{margin:4px 0 0;font-size:14px;font-weight:400;line-height:1.5;color:#57534e}
+.ig-library-group>.ig-library-title{display:flex;justify-content:flex-start;align-items:baseline;gap:18px}
+.ig-library-group>.ig-library-title h2{margin:0;flex-shrink:0}
+.ig-app .ig-library-subtitle{margin:0}
+
+.ig-activity-format time{margin-left:0;white-space:nowrap}
+.ig-activity-type-badge{display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;min-height:30px;padding:2px 9px 2px 4px;border:1px solid #f0eeeb;border-radius:10px;background:#fff;color:#57534e;white-space:nowrap;box-shadow:0 1px 2px #0000000d}
+.ig-activity-type-badge>span:last-child{font-size:12px;font-weight:700;line-height:18px}
+.ig-activity-copy .ig-activity-type-badge,.ig-activity-copy .ig-activity-level-symbol{background:#f5f5f4}
+
+.ig-view-toggle{display:flex;gap:6px;margin-left:auto}
+.ig-app .ig-view-toggle button{display:grid;place-items:center;width:44px;height:44px;padding:10px;background:#fff;border:1px solid #d6d3d1}
+.ig-app .ig-view-toggle button[aria-pressed=true]{background:#000;color:#fff;border-color:#000}
+.ig-library-main>.ig-workspace-toolbar nav>.ig-primary{margin-left:0}
+.ig-activity-grid.is-list{grid-template-columns:minmax(0,1fr);gap:10px}
+.ig-app .ig-activity-grid.is-list .ig-activity-card{display:flex;align-items:center;gap:18px;padding:12px!important;border:1px solid #e7e5e4!important}
+.ig-activity-grid.is-list .ig-activity-art{width:112px;height:70px;flex:0 0 112px;margin:0;padding:0}
+.ig-activity-grid.is-list .ig-activity-copy{flex:1;min-width:0;padding:0}
+.ig-activity-grid.is-list .ig-activity-copy h3{margin:0 0 6px}
+.ig-app .ig-activity-grid.is-list .ig-activity-card{border-radius:12px!important}
+
+.ig-list-view-glyph{display:block;width:20px;height:20px}
+.ig-view-toggle button[aria-pressed=true] .ig-list-view-glyph{filter:invert(1)}
+.ig-library-group>.ig-activity-grid:not(.is-list){grid-template-columns:repeat(4,minmax(0,1fr))}
+.ig-library-group>.ig-activity-grid.is-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ig-library-group>.ig-activity-grid.is-list{gap:8px 10px}
+.ig-app .ig-activity-grid.is-list .ig-activity-card{padding:8px!important;gap:12px}
+.ig-activity-grid.is-list .ig-activity-art{width:80px;height:50px;flex-basis:80px;border-radius:8px}
+.ig-activity-grid.is-list .ig-activity-copy h3{margin:0 0 3px;font-size:14px;line-height:1.25}
+.ig-activity-grid.is-list .ig-activity-format{line-height:1.3}
+
+
+
+.ig-app .ig-activity-card{position:relative;isolation:isolate;cursor:pointer;background:transparent;border:0;border-radius:12px;font:inherit;text-align:left;overflow:visible;transition:background .15s,box-shadow .15s}
+.ig-app .ig-activity-card:hover{transform:none;background:#f5f5f4;box-shadow:0 0 0 1px #d6d3d1,0 3px 10px #00000008}
+.ig-app .ig-activity-grid.is-list .ig-activity-card:hover{outline:2px solid #000;outline-offset:1px;box-shadow:none}
+.ig-activity-grid.is-list .ig-activity-card:hover .ig-activity-art{outline:none}
+.ig-app .ig-activity-grid.is-list button.ig-activity-open:hover{transform:none;filter:none;box-shadow:none}
+.ig-app .ig-activity-card.is-menu-open{z-index:10}
+.ig-app button.ig-activity-open{position:absolute;inset:0;z-index:1;width:100%;height:100%;margin:0;padding:0;border:0;border-radius:12px;background:transparent;box-shadow:none}
+.ig-app button.ig-activity-open:hover{background:transparent;border:0}
+.ig-app button.ig-activity-open:focus-visible{outline:3px solid #000;outline-offset:3px}
+.ig-activity-meta-row{display:flex;align-items:center;gap:6px}
+.ig-activity-meta-row .ig-activity-format{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:6px;min-width:0;margin:0}
+.ig-activity-meta-row .ig-activity-level-symbol{margin-left:0}
+.ig-activity-details{display:inline-flex;align-items:center;gap:6px}
+.ig-activity-meta-row .ig-activity-date{margin-left:0;white-space:nowrap}
+.ig-activity-actions{position:relative;z-index:2;margin-left:auto;flex-shrink:0}
+.ig-app .ig-activity-more{display:grid;place-items:center;box-sizing:border-box;width:30px;min-width:30px;max-width:30px;height:30px;min-height:30px;max-height:30px;padding:4px;border:1px solid #e7e5e4;border-radius:50%!important;background:#fff;color:#57534e}
+.ig-app .ig-activity-more[aria-expanded=true]{background:#e7e5e4;border-color:#a8a29e}
+.ig-activity-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:grid;gap:6px;box-sizing:border-box;width:160px;min-width:160px;padding:6px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;box-shadow:0 8px 24px #0003}
+.ig-app .ig-activity-menu button{display:flex;align-items:center;justify-content:center;gap:10px;box-sizing:border-box;width:100%;height:44px;min-height:44px;padding:7px 12px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#292524;text-align:center;font-size:15px;font-weight:600;white-space:nowrap;cursor:pointer}
+.ig-app .ig-activity-menu button:hover,.ig-app .ig-activity-menu button:focus-visible{background:#f5f5f4}
+.ig-activity-menu img{width:28px;height:26px;object-fit:contain;flex:none}
+.ig-app .ig-activity-menu .ig-activity-delete{color:#b91c1c}
+
+/* Keep library popups above the footer; bottom-row menus open upwards. */
+.ig-app.ig-view-library{z-index:1}
+.ig-activity-menu.is-above{top:auto;bottom:calc(100% + 6px)}
+
+.ig-app .ig-activity-menu button.ig-activity-download{background:#292524;border-color:#292524;color:#fff}
+.ig-app .ig-activity-menu button.ig-activity-download:hover,.ig-app .ig-activity-menu button.ig-activity-download:focus-visible{background:#44403c;border-color:#44403c}
+.ig-activity-menu .ig-activity-download img{filter:brightness(0) invert(1)}
+
+.ig-app .ig-activity-menu button.ig-activity-delete{background:#b91c1c;border-color:#b91c1c;color:#fff}
+.ig-app .ig-activity-menu button.ig-activity-delete:hover,.ig-app .ig-activity-menu button.ig-activity-delete:focus-visible{background:#991b1b;border-color:#991b1b}
+.ig-activity-menu .ig-activity-delete img{filter:brightness(0) invert(1)}
+
+/* Activity organisation stays within the shared desktop canvas. */
+.ig-app .ig-new-folder{display:flex;align-items:center;gap:8px;margin-left:auto;box-sizing:border-box;height:44px;min-height:44px;padding:7px 12px}
+.ig-new-folder img,.ig-library-folder summary>img{width:20px;height:20px;flex:none}
+.ig-library-folders{display:grid;gap:16px}
+.ig-library-folder{border:1px solid #e7e5e4;border-radius:12px;background:#fff;overflow:visible}
+.ig-library-folder>summary{display:flex;align-items:center;gap:10px;padding:14px 16px;list-style:none;cursor:pointer;font-size:16px;font-weight:700;border-radius:12px}
+.ig-library-folder>summary::-webkit-details-marker{display:none}
+.ig-library-folder>summary:hover{background:#f5f5f4}
+.ig-library-folder>summary:focus-visible{outline:3px solid #000;outline-offset:3px}
+.ig-library-folder>summary>svg{width:16px;height:16px;margin-left:auto;fill:none;stroke:currentColor;stroke-width:2;transition:transform .15s}
+.ig-library-folder[open]>summary>svg{transform:rotate(90deg)}
+.ig-folder-count{display:grid;place-items:center;min-width:25px;height:25px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#f5f5f4;color:#57534e;font-size:12px}
+.ig-library-folder>.ig-activity-grid{padding:4px 14px 16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ig-library-folder>.ig-activity-grid.is-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ig-app .ig-folder-empty{margin:0;padding:0 16px 18px;color:#78716c;font-size:14px}
+.ig-modal.ig-modal-folder{box-sizing:border-box;width:360px;min-width:0;max-width:360px;padding:28px;border:1px solid #e7e5e4;border-radius:20px;background:#fff;color:#171717;box-shadow:0 20px 60px #0002;outline:none}
+.ig-modal.ig-modal-folder>h2{margin:0 20px 24px;font-size:25px;line-height:1.2;text-align:center}
+.ig-modal.ig-modal-folder .ig-folder-form input,.ig-modal.ig-modal-folder .ig-folder-form select{height:44px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;padding:10px 12px}
+.ig-modal.ig-modal-folder .ig-folder-form button{height:44px}
+.ig-modal.ig-modal-folder .ig-modal-close{height:32px;width:32px;top:12px;right:12px;padding:0;border:0;background:transparent;color:#78716c;font-size:24px}
+.ig-folder-form{display:flex;flex-direction:column;gap:18px}
+.ig-folder-form>p{margin:0;text-align:center;color:#57534e}
+.ig-folder-form input,.ig-folder-form select{box-sizing:border-box;width:100%}
+.ig-folder-form .ig-inline{margin-top:6px}
+
+.ig-library-folders>.ig-activity-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ig-library-folders>.ig-activity-grid.is-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ig-library-title>.ig-new-folder{flex-shrink:0;align-self:center}
+
+.ig-app button.ig-new-folder{background:#000;border-color:#000;color:#fff;font-size:14px;font-weight:600;line-height:20px}
+.ig-app button.ig-new-folder:hover{background:#292524;border-color:#292524}
+.ig-app button.ig-new-folder img{filter:brightness(0) invert(1)}
+
+.ig-library-folder.is-drop-target{border-color:#2455bc;box-shadow:0 0 0 2px #2455bc;background:#eff6ff}
+.ig-library-folder.is-drop-target>summary{background:#eff6ff}
+.ig-app .ig-activity-card[draggable=true]>.ig-activity-open{cursor:grab}
+.ig-app .ig-activity-card[draggable=true]>.ig-activity-open:active{cursor:grabbing}
+.ig-draft-notice{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 18px;margin:16px 0 24px;background:#f5f5f4;border:1px solid #e7e5e4;border-radius:12px}
+.ig-draft-notice>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ig-draft-notice strong{font-size:15px}
+.ig-draft-notice span{font-size:14px;color:#57534e;overflow-wrap:anywhere}
+.ig-draft-notice>button{height:44px;flex:none;padding:8px 16px;border:1px solid #d6d3d1;border-radius:12px;background:white;font-weight:600}
+
+
+
+
+/* Delete confirmation uses the shared Create Folder button typography. */
+.ig-modal.ig-delete-modal{box-sizing:border-box;width:420px!important;min-width:0!important;max-width:100%;padding:32px;border:1px solid #e2e8f0;border-radius:20px;background:#fff;color:#0f172a;box-shadow:0 24px 80px rgba(15,23,42,.28)}
+.ig-delete-modal>h2{margin:0 40px 16px;color:#0f172a;font-size:28px;font-weight:800;line-height:1.15}
+.ig-delete-modal>p{margin:0 0 20px;color:#475569;line-height:1.55;text-align:center}
+.ig-delete-actions{gap:10px}
+.ig-delete-actions>button{min-width:112px;height:44px}
+.ig-delete-actions>button.ig-danger{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid #b91c1c!important;background:#b91c1c!important;color:#fff!important}
+.ig-delete-actions>button.ig-danger:hover{border-color:#991b1b!important;background:#991b1b!important}
+.ig-delete-actions>button.ig-danger img{width:18px;height:18px;filter:brightness(0) invert(1)}
+
+.ig-modal.ig-delete-modal .ig-delete-actions>button{font-family:inherit;font-size:14px;font-weight:600;line-height:20px}
+
+
+.ig-app .ig-library-level-filters>button:not(:first-child){padding-left:9px;padding-right:9px}
+
+/* Game → Level → Content Pack keeps each choice focused on one step. */
+.ig-library-journey{margin-top:20px}
+.ig-library-journey h2{font-size:22px;font-weight:700;margin:24px 0 16px}
+.ig-journey-path{display:flex;align-items:center;gap:12px;color:#78716c}
+.ig-game-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ig-app .ig-game-choice{display:flex;flex-direction:column;align-items:center;gap:12px;min-height:200px;padding:22px 18px;background:#fff;border:1px solid #e7e5e4;border-radius:16px;color:#000;text-align:center}
+.ig-game-choice .ig-template-art{width:68px;height:68px;display:flex;align-items:center;justify-content:center;color:#1e4e70}
+.ig-game-choice .ig-template-art svg{width:100%;height:100%}
+.ig-game-choice strong{font-size:20px}
+.ig-game-choice>span:last-child{font-size:14px;font-weight:400;line-height:1.5;color:#000}
+.ig-level-choice-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ig-app .ig-level-choice-grid button{min-height:90px;background:#fff;border:1px solid #d6d3d1;border-radius:14px;font-size:17px;font-weight:600;color:#292524}
+.ig-app .ig-game-choice:hover,.ig-app .ig-level-choice-grid button:hover{background:#f5f5f4;border-color:#a8a29e}
+
+.ig-library-journey{margin-top:0}
+.ig-app .ig-journey-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;border:0;box-shadow:none;background:transparent;margin:0 0 .625rem;padding:0;min-height:44px}
+.ig-app .ig-library-journey>.ig-journey-heading{margin:0 0 24px;font-size:22px;line-height:1.3;text-align:center}
+.ig-journey-path{gap:8px;white-space:nowrap;font-size:14px}
+.ig-library-main>.ig-workspace-toolbar{border-bottom:0}
+
+/* Journey controls use the shared Hub button and menu styles. */
+
+.ig-journey-path>button{display:inline-flex;align-items:center;gap:8px}
+.ig-journey-path>button>img{width:28px;height:26px;object-fit:contain}
+
+.ig-app .ig-journey-actions.hub-toolbar{justify-self:end;justify-content:flex-end;min-width:0;border:0;background:transparent;box-shadow:none;padding:0}
+.ig-app .ig-library-toolbar.ig-journey-actions input[type=search]{width:270px;min-width:270px;flex:0 0 270px}
+
+.ig-journey-path>button>svg{width:28px;height:26px;flex-shrink:0;color:currentColor}
+
+
+.ig-game-choice-grid>.ig-show-all-games{grid-column:1/-1;align-self:center;justify-self:center;margin-bottom:16px;color:#2563eb;text-decoration:underline;text-underline-offset:3px;font-size:16px}
+.ig-game-choice-grid>.ig-show-all-games:hover{color:#1d4ed8}
+
+.ig-app .ig-activity-favourite{display:grid;place-items:center;width:32px;height:32px;padding:4px;border:0;background:transparent;color:#78716c;box-shadow:none}
+.ig-app .ig-activity-favourite:hover{background:#f5f5f4;color:#a16207}
+.ig-app .ig-activity-favourite[aria-pressed=true]{color:#ca8a04}
+.ig-library-favourites{margin-top:28px;padding-top:24px;border-top:1px solid #e7e5e4}
+.ig-app .ig-library-favourites>h2{margin:0 0 20px;font-size:22px;text-align:center}
+
+
+/* Level-wide practice tests retain the existing game format and stand out in yellow. */
+.ig-activity-type-badge.ig-level-test-badge{background:#fde047;color:#422006;border-color:#eab308}
+
+/* Compact game choices and grouped topic lists. */
+.ig-app .ig-game-choice{flex-direction:row;justify-content:flex-start;align-items:center;gap:12px;min-height:80px;padding:10px 14px;text-align:left;border-radius:12px}
+.ig-game-choice .ig-template-art{width:42px;height:42px;flex:0 0 42px}
+.ig-game-choice-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ig-game-choice-copy strong{font-size:16px;line-height:1.25;color:#000}
+.ig-game-choice-copy span{font-size:13px;line-height:1.35;color:#000;font-weight:400}
+.ig-topic-groups{display:flex;flex-direction:column;gap:24px}
+.ig-topic-group{min-width:0}
+.ig-topic-group>.ig-topic-heading{display:flex;align-items:baseline;gap:12px;margin:0 0 20px;font-size:22px;font-weight:700;line-height:1.3}
+.ig-topic-count{font-size:13px;font-weight:600;color:#78716c}
+.ig-topic-group>.ig-activity-grid{padding:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ig-topic-group>.ig-activity-grid.is-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+.ig-app .ig-library-toolbar.ig-journey-actions input[type=search]{padding-left:40px;background:#fff url("../ui-icons/search.svg") no-repeat 12px center;background-size:20px 20px}
+
+/* Match the shared menu typography despite the library's smaller base text. */
+.ig-journey-path .hub-menu-panel{font-size:16px;line-height:24px}
+
+/* Keep the journey toolbar in the same position before and after player CSS loads. */
+.ig-page-content:has(.ig-library-layout),
+.ig-page-content:has(.ig-resource-layout){padding-left:32px!important;padding-right:32px!important}
+.ig-app .ig-library-main,
+.ig-app .ig-resource-card{padding:18px}
+.ig-app .ig-resource-card .ig-resource-toolbar.hub-toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:44px;padding:0;margin:0 0 18px;border:0;background:transparent}
+
+.ig-back-button img{width:28px;height:26px;object-fit:contain;transform:rotate(180deg)}

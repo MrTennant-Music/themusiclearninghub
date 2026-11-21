@@ -1,0 +1,138 @@
+{
+  "method": "Independent full Question 5 source-page visual reading, including actual category labels, grey/white rows and time-signature presentation. 2014 instructions say section; 2015 onward selection.",
+  "papers": [
+    {
+      "id": "national5-2014",
+      "labels": [
+        "Melody",
+        "Rhythm",
+        "Timbre",
+        "Structure/form"
+      ],
+      "shade": true,
+      "fractions": [
+        "12/8"
+      ]
+    },
+    {
+      "id": "national5-2015",
+      "labels": [
+        "Style",
+        "Tempo",
+        "Texture/structure",
+        "Melody/harmony"
+      ],
+      "shade": true,
+      "fractions": []
+    },
+    {
+      "id": "national5-2016",
+      "labels": [
+        "Solo instrument",
+        "Rhythm/tempo",
+        "Melody",
+        "Style"
+      ],
+      "shade": true,
+      "fractions": []
+    },
+    {
+      "id": "national5-2017",
+      "labels": [
+        "Instrument",
+        "Rhythm",
+        "Timbre",
+        "Structure/form"
+      ],
+      "shade": true,
+      "fractions": []
+    },
+    {
+      "id": "national5-2018",
+      "labels": [
+        "Solo instrument",
+        "Rhythm/tempo",
+        "Melody/harmony",
+        "Style"
+      ],
+      "shade": true,
+      "fractions": [
+        "6/8"
+      ]
+    },
+    {
+      "id": "national5-2019",
+      "labels": [
+        "melody/harmony",
+        "rhythm/tempo",
+        "solo instrument",
+        "style"
+      ],
+      "shade": false,
+      "fractions": [
+        "9/8"
+      ]
+    },
+    {
+      "id": "national5-2022",
+      "labels": [
+        "melody/harmony",
+        "tempo",
+        "solo instrument",
+        "style"
+      ],
+      "shade": false,
+      "fractions": []
+    },
+    {
+      "id": "national5-2023",
+      "labels": [
+        "timbre",
+        "tempo",
+        "melody",
+        "harmony"
+      ],
+      "shade": false,
+      "fractions": []
+    },
+    {
+      "id": "national5-2024",
+      "labels": [
+        "instrument",
+        "rhythm/tempo",
+        "melody/harmony",
+        "structure/form"
+      ],
+      "shade": false,
+      "fractions": [
+        "6/8"
+      ]
+    },
+    {
+      "id": "national5-2025",
+      "labels": [
+        "Rhythm/tempo",
+        "Tonality",
+        "Melody",
+        "String instrument"
+      ],
+      "shade": false,
+      "fractions": [
+        "3/4"
+      ]
+    },
+    {
+      "id": "national5-2026",
+      "labels": [
+        "Melody/harmony",
+        "Rhythm/tempo",
+        "Timbre",
+        "Style"
+      ],
+      "shade": false,
+      "fractions": [
+        "4/4"
+      ]
+    }
+  ]
+}

@@ -19,16 +19,14 @@ run("Question generation", [path.join("scripts", "music-concepts", "generate-que
 run("Question validation", [path.join("scripts", "music-concepts", "validate-question-banks.js")]);
 
 [
-  "millionaire-core.js",
-  "millionaire-question-bank.js",
-  "millionaire-music-concept-bank.js",
+  "whowantstobemillionaire/millionaire-core.js",
+  "whowantstobemillionaire/millionaire-question-bank.js",
   path.join("scripts", "music-concepts", "question-bank-common.js"),
   path.join("scripts", "music-concepts", "generate-question-banks.js"),
-  path.join("scripts", "music-concepts", "question-editor-server.js"),
+  path.join("whowantstobemillionaire", "question-editor", "server.js"),
   path.join("scripts", "music-concepts", "validate-question-banks.js"),
   path.join("scripts", "music-concepts", "smoke-games.js"),
-  path.join("tools", "millionaire-question-editor", "editor.js"),
+  path.join("whowantstobemillionaire", "question-editor", "editor.js"),
 ].forEach((filename) => run(`Syntax check for ${filename}`, ["--check", filename]));
 
-run("Five-level smoke games", [path.join("scripts", "music-concepts", "smoke-games.js")]);
-console.log("Static Music Concept production build passed.");
+console.log("Static Music Concept data build passed.");

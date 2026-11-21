@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <title>Concept Collections</title>
+  <link rel="icon" href="./app-icons/my-collections-icon.svg" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css" />
+  <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+  <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+  <link rel="stylesheet" href="./music-dictionary/music-concepts.css?v=9a549ae8cc83" />
+  <link rel="stylesheet" href="./music-dictionary/quiz-app.css?v=32129e57638d" />
+  <link rel="stylesheet" href="./styles/hub-collections.css?v=3901e5218d10" />
+  <script src="./shared/hub-collections.js?v=1bdde7b4f410"></script>
+  <script src="./music-games/core.js?v=491308b3efdb"></script>
+  <script src="./shared/music-games-concepts.js"></script>
+  <script src="./shared/music-games-literacy.js?v=38dee6d85e7e"></script>
+  <script src="./shared/concept-level-priority.js?v=eb4641d340ee"></script>
+<script src="./shared/music-games-collections.js?v=a5a25829aacc"></script>
+  <script src="./music-dictionary/music-concepts-data.js?v=b95ba92f0056"></script>
+  <script src="./concept-recall-data.js?v=20261022-dictionary-groups"></script>
+  <script src="./concept-recall-core.js?v=56a0648c50d2"></script>
+  <script src="./music-dictionary/music-concepts-revision-groups.js?v=0ddb26cbd12b"></script>
+  <script src="./music-dictionary/quiz-collections.js?v=da915f9554d8"></script>
+  <script src="./music-dictionary/music-concepts-quizzes.js?v=88252ff39243"></script>
+  <script src="./shared/music-literacy-curriculum.js?v=5057913fe9ce"></script>
+  <script src="./music-dictionary/music-literacy-dictionary.js?v=5fb8d4a20a4a"></script>
+  <script defer src="./shared/hub-collections-page.js?v=6ed066148230" data-millionaire-scripts="./whowantstobemillionaire/millionaire-core.js?v=18e04fee174e ./whowantstobemillionaire/millionaire-question-bank.js?v=f05927f78594 ./whowantstobemillionaire/millionaire-concept-questions.js?v=943fbf14952e"></script>
+</head>
+<body class="collections-page">
+  <header class="collections-header">
+    <div class="collections-header-inner">
+      <span class="collections-header-icon"><img src="./app-icons/my-collections-icon.svg" alt="" /></span>
+      <div>
+        <h1>Concept Collections</h1>
+        <p>Browse curated collections or create your own to use across activities.</p>
+      </div>
+    </div>
+  </header>
+  <main class="collections-main collections-panel">
+    <div id="collections-toolbar" class="hub-toolbar collections-toolbar" hidden>
+      <div class="hub-toolbar-left">
+        <button type="button" id="collections-back" class="collections-control" hidden><img class="collections-back-icon" src="./ui-icons/next.svg" alt="" /> Back</button>
+      </div>
+      <div id="collections-toolbar-title" class="collections-toolbar-title" hidden>
+        <h2 id="details-heading" tabindex="-1"></h2>
+        <p id="collection-size"></p>
+      </div>
+      <div id="collection-detail-actions" class="hub-toolbar-right" hidden>
+        <button type="button" id="edit-collection" class="collections-control collections-primary">Edit</button>
+        <button type="button" id="delete-collection" class="collections-control collections-danger">Delete</button>
+      </div>
+      <div id="collections-toolbar-actions" class="collections-toolbar-actions" hidden>
+        <label class="cq-collection-name">
+          <span class="sr-only">Collection name</span>
+          <input id="collection-name" form="collection-editor" placeholder="Name" autocomplete="off" required maxlength="160" />
+        </label>
+        <button type="submit" id="save-collection" form="collection-editor" class="collections-control collections-primary collections-save" disabled>Save</button>
+      </div>
+    </div>
+    <div id="collections-overview">
+      <section class="collections-catalog cq-collections-home" aria-labelledby="catalog-heading">
+        <div class="hub-toolbar collections-catalog-toolbar">
+          <div id="catalog-level"></div>
+          <label class="mc-search">
+            <img src="./ui-icons/search.svg" alt="" />
+            <input id="catalog-search" type="search" placeholder="Search" aria-label="Search curated collections" />
+          </label>
+        </div>
+        <h2 id="catalog-heading">Hub Collections</h2>
+        <p id="collections-intro" class="cq-collections-intro">Choose a curated Hub collection to see its concepts and open it in an activity.</p>
+        <p id="collection-unavailable" role="status" hidden>This collection is unavailable in this browser.</p>
+        <div id="catalog-collections"></div>
+      </section>
+      <section class="collections-saved" aria-labelledby="saved-heading">
+        <h2 id="saved-heading" tabindex="-1">My Collections</h2>
+        <p id="saved-collections-intro">Open one of your saved collections or create a new one.</p>
+        <button type="button" id="new-collection" class="collections-control collections-primary">Create</button>
+        <div id="saved-collections" class="collections-list"></div>
+      </section>
+    </div>
+    <section id="collections-workspace" aria-labelledby="details-heading" hidden>
+      <div id="collection-detail" hidden>
+        <h3>Concepts</h3>
+        <div id="collection-concepts-table" class="mc-table-wrap">
+          <table class="mc-table">
+            <caption id="preview-caption" class="sr-only">Collection concepts grouped by musical element</caption>
+            <thead><tr id="preview-headings"></tr></thead>
+            <tbody><tr id="preview-concepts"></tr></tbody>
+            <tbody id="preview-literacy" hidden></tbody>
+          </table>
+        </div>
+        <div id="collection-literacy-preview" hidden>
+          <h3 id="collection-literacy-heading">Music literacy concepts</h3>
+          <div class="mc-table-wrap">
+            <table class="mc-table">
+              <caption class="sr-only">Collection Music Literacy concepts grouped by musical element</caption>
+              <thead><tr id="preview-saved-literacy-headings"></tr></thead>
+              <tbody><tr id="preview-saved-literacy-results"></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <h3>Activity</h3>
+        <div id="collection-apps" class="collections-apps"></div>
+      </div>
+    </section>
+    <form id="collection-editor" aria-label="Collection editor" hidden>
+      <div class="mc-quiz-selection-footer is-above-grid is-collection-builder">
+        <div class="mc-quiz-selection-summary"><p id="selected-count" role="status"></p></div>
+        <div class="mc-quiz-selection-actions">
+          <label class="collections-selected-only"><input type="checkbox" id="concept-selected" /> Show Selected</label>
+        </div>
+      </div>
+      <div class="collections-editor-section-heading">
+        <h2 class="collections-editor-heading">Music concepts</h2>
+        <div class="mc-quiz-bulk-actions">
+          <button type="button" id="select-all-concepts" class="collections-control" aria-label="Select All Music Concepts">Select All</button>
+          <button type="button" id="remove-all-concepts" class="collections-control" aria-label="Remove All Music Concepts">Remove All</button>
+        </div>
+      </div>
+      <div class="mc-table-wrap">
+        <table class="mc-table">
+          <caption class="sr-only">Music concepts grouped by musical element</caption>
+          <thead><tr id="concept-headings"></tr></thead>
+          <tbody><tr id="concept-results"></tr></tbody>
+        </table>
+      </div>
+      <div class="collections-editor-section-heading">
+        <h2 class="collections-editor-heading">Music literacy concepts</h2>
+        <div class="mc-quiz-bulk-actions">
+          <button type="button" id="select-all-literacy" class="collections-control" aria-label="Select All Music Literacy Concepts">Select All</button>
+          <button type="button" id="remove-all-literacy" class="collections-control" aria-label="Remove All Music Literacy Concepts">Remove All</button>
+        </div>
+      </div>
+      <div class="mc-table-wrap">
+        <table class="mc-table">
+          <caption class="sr-only">Music Literacy concepts grouped by musical element</caption>
+          <thead><tr id="literacy-headings"></tr></thead>
+          <tbody id="literacy-results"></tbody>
+        </table>
+      </div>
+      <p id="concept-empty" role="status" hidden>No matching concepts.</p>
+    </form>
+    <p id="collections-status" role="status"></p>
+  </main>
+  <dialog id="delete-confirm" class="collections-panel" aria-labelledby="delete-heading">
+    <form method="dialog">
+      <h2 id="delete-heading">Delete Collection</h2>
+      <p>This removes the saved collection from Concept Collections in this browser.</p>
+      <div class="collections-actions"><button value="cancel" class="collections-control" autofocus>Cancel</button><button value="delete" class="collections-control collections-primary">Delete</button></div>
+    </form>
+  </dialog>
+  <script src="./footer.js"></script>
+</body>
+</html>

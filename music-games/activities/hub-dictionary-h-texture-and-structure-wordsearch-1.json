@@ -1,0 +1,162 @@
+{
+  "id": "hub-dictionary-h-texture-and-structure-wordsearch-1",
+  "level": "H",
+  "title": "Texture and Structure",
+  "instructions": "",
+  "description": "Revise texture and structure with 9 Music Dictionary concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Texture and Structure",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0248",
+      "prompt": "In Baroque music, a bass instrument plays the bass line while a chordal instrument fills in the harmony, often from figured bass.",
+      "answer": "Basso continuo",
+      "distractors": [
+        "Sonata form",
+        "Subject",
+        "Through-composed"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0249",
+      "prompt": "A Baroque concerto that contrasts a small group of soloists, the concertino, with the larger ensemble, the ripieno.",
+      "answer": "Concerto grosso",
+      "distractors": [
+        "Ripieno",
+        "Basso continuo",
+        "Da capo aria"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0250",
+      "prompt": "A Baroque aria in ternary (ABA) form.",
+      "answer": "Da capo aria",
+      "distractors": [
+        "Sonata form",
+        "Subject",
+        "Through-composed"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0251",
+      "prompt": "An opening section in which the main musical ideas are introduced.",
+      "answer": "Exposition",
+      "distractors": [
+        "Sonata form",
+        "Da capo aria",
+        "Passacaglia"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0252",
+      "prompt": "A variation form built over a recurring bass line and usually a repeating harmonic pattern.",
+      "answer": "Passacaglia",
+      "distractors": [
+        "Ritornello",
+        "Sonata form",
+        "Subject"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0253",
+      "prompt": "A Baroque form in which a recurring orchestral passage alternates with contrasting solo episodes.",
+      "answer": "Ritornello",
+      "distractors": [
+        "Concerto grosso",
+        "Sonata form",
+        "Subject"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0254",
+      "prompt": "A large-scale form with exposition, development and recapitulation; the subjects return in the tonic.",
+      "answer": "Sonata form",
+      "distractors": [
+        "Subject",
+        "Ritornello",
+        "Basso continuo"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0255",
+      "prompt": "As a musical theme, it is the main musical idea on which a piece or section is based.",
+      "answer": "Subject",
+      "distractors": [
+        "Sonata form",
+        "Ritornello",
+        "Through-composed"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-texture-and-structure-wordsearch-1-mc-0256",
+      "prompt": "The music keeps changing from beginning to end instead of repeating for each verse.",
+      "answer": "Through-composed",
+      "distractors": [
+        "Sonata form",
+        "Basso continuo",
+        "Concerto grosso"
+      ],
+      "group": "Texture/structure/form",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

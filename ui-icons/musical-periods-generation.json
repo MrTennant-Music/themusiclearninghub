@@ -1,0 +1,5 @@
+{
+  "tool": "Built-in image_gen",
+  "prompt": "Create one clean black glyph for a school music learning app menu labelled Musical Periods. The icon should clearly mean YEARS AND THE PASSAGE OF HISTORICAL TIME: a simple compact calendar page with two top binding rings, three broad horizontal date marks, and a small clearly recognisable clock overlapping its bottom right corner. Single cohesive silhouette, bold solid black shapes with clean transparent negative spaces, balanced simple rounded line weight. Absolutely no musical notes, chart bars, graphs, text, letters, numbers, fine details, gradients, colours, grey, shadows, borders around the whole image, app tile, white background or checkerboard. Flat black monochrome UI symbol, optically balanced and very legible at 32 pixels. One icon centred on a square canvas, filling roughly 75 percent of it with clear transparent margins. Genuinely transparent PNG background, including the open spaces inside the calendar and clock. Match a plain black Hub menu glyph, not a decorative illustration.",
+  "asset": "musical-periods.png"
+}

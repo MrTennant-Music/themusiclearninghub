@@ -1,0 +1,124 @@
+{
+  "id": "hub-n4-jazz-popular-music-crossword-2",
+  "level": "N4",
+  "title": "Jazz and Popular Music 2",
+  "instructions": "",
+  "description": "Revise Jazz and Popular Music concepts introduced up to National 4, including styles, instruments, effects and musical devices.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Jazz and Popular Music",
+    "National 4"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-1",
+      "prompt": "An unplugged guitar usually has six strings and a hollow body that naturally projects their sound. Name this type of guitar.",
+      "answer": "Acoustic guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-2",
+      "prompt": "A collection of drums and cymbals played by one performer using sticks, brushes and foot pedals.",
+      "answer": "Drum kit",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-3",
+      "prompt": "Name the usual six-string, guitar-register instrument whose pickups send the string sound to an amplifier.",
+      "answer": "Electric guitar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-4",
+      "prompt": "As a keyboard instrument, pressing a key causes a felt-covered hammer to strike a string.",
+      "answer": "Piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-5",
+      "prompt": "An early piano style with a syncopated melody against a steady left-hand bass-note-and-chord accompaniment.",
+      "answer": "Ragtime",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-6",
+      "prompt": "Rhyming words delivered as rhythmic speech, characteristically over a hip-hop beat. Name the vocal style.",
+      "answer": "Rapping",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-7",
+      "prompt": "Name the danceable big-band jazz style especially associated with the 1930s and 1940s, uneven quaver pairs, and brass-and-saxophone riffs.",
+      "answer": "Swing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-8",
+      "prompt": "Give the two-word term for improvised jazz singing using nonsense syllables.",
+      "answer": "Scat singing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-jazz-popular-music-crossword-2-9",
+      "prompt": "A repeated accompaniment pattern, often alternating a bass note on the beat with a chord off the beat.",
+      "answer": "Vamp",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

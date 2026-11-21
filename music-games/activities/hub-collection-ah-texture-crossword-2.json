@@ -1,0 +1,67 @@
+{
+  "id": "hub-collection-ah-texture-crossword-2",
+  "level": "AH",
+  "title": "Texture 2",
+  "instructions": "",
+  "description": "Texture: current Music Dictionary definitions — set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Texture",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-ah-texture-crossword-2-MC-0188",
+      "prompt": "Two or more different tunes happening together.",
+      "answer": "Polyphonic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0188"
+    },
+    {
+      "id": "hub-collection-ah-texture-crossword-2-MC-0287",
+      "prompt": "Two groups take turns playing or singing, answering one another.",
+      "answer": "Antiphonal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0287"
+    },
+    {
+      "id": "hub-collection-ah-texture-crossword-2-MC-0041",
+      "prompt": "Everyone sings or plays the same notes together.",
+      "answer": "Unison",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0041"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "texture",
+  "sourceConceptIds": [
+    "MC-0188",
+    "MC-0287",
+    "MC-0041"
+  ]
+}

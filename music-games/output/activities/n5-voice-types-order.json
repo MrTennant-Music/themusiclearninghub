@@ -1,0 +1,98 @@
+{
+  "format": "music-literacy-interactive-games",
+  "version": 1,
+  "activities": [
+    {
+      "id": "hub-n5-voice-order",
+      "level": "N5",
+      "title": "Voice Types — Highest to Lowest",
+      "instructions": "Arrange the voice types from highest to lowest, then select Submit.",
+      "description": "Order the six standard voice types from highest to lowest.",
+      "folder": "Music examples",
+      "tags": [
+        "Music",
+        "Voices",
+        "Pitch"
+      ],
+      "template": "rank-order",
+      "items": [
+        {
+          "id": "hub-n5-voice-order-1",
+          "prompt": "Soprano",
+          "answer": "Soprano",
+          "distractors": [],
+          "group": "",
+          "media": null,
+          "answerMedia": null,
+          "x": 50,
+          "y": 50
+        },
+        {
+          "id": "hub-n5-voice-order-2",
+          "prompt": "Mezzo-soprano",
+          "answer": "Mezzo-soprano",
+          "distractors": [],
+          "group": "",
+          "media": null,
+          "answerMedia": null,
+          "x": 50,
+          "y": 50
+        },
+        {
+          "id": "hub-n5-voice-order-3",
+          "prompt": "Alto",
+          "answer": "Alto",
+          "distractors": [],
+          "group": "",
+          "media": null,
+          "answerMedia": null,
+          "x": 50,
+          "y": 50
+        },
+        {
+          "id": "hub-n5-voice-order-4",
+          "prompt": "Tenor",
+          "answer": "Tenor",
+          "distractors": [],
+          "group": "",
+          "media": null,
+          "answerMedia": null,
+          "x": 50,
+          "y": 50
+        },
+        {
+          "id": "hub-n5-voice-order-5",
+          "prompt": "Baritone",
+          "answer": "Baritone",
+          "distractors": [],
+          "group": "",
+          "media": null,
+          "answerMedia": null,
+          "x": 50,
+          "y": 50
+        },
+        {
+          "id": "hub-n5-voice-order-6",
+          "prompt": "Bass",
+          "answer": "Bass",
+          "distractors": [],
+          "group": "",
+          "media": null,
+          "answerMedia": null,
+          "x": 50,
+          "y": 50
+        }
+      ],
+      "diagram": null,
+      "options": {
+        "shuffle": true,
+        "timer": 0,
+        "difficulty": "normal",
+        "theme": "blue",
+        "sound": false
+      },
+      "revision": 1,
+      "updatedAt": "2026-10-18T20:00:00.000Z"
+    }
+  ]
+}

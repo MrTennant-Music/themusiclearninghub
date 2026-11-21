@@ -1,0 +1,1194 @@
+{
+  "revision": "044fab8e1456bfafc5776e86dfd6bb8697149aef",
+  "license": "CC-BY-3.0",
+  "instruments": {
+    "electricpiano": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/electric_piano_1-mp3.js",
+      "sourceSha256": "19041530232e66f8d9b00f43ede2fa50f59a55b1a27a81daf864c54d371426b2",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "electricpiano/36.m4a",
+          "bytes": 25786,
+          "sha256": "b2ccb9243693d3f6e84c8b7043793cbefc20d874dd5d945e244bfb7f83712f50"
+        },
+        {
+          "midi": 39,
+          "file": "electricpiano/39.m4a",
+          "bytes": 26006,
+          "sha256": "ad3dbd99801a264c619a9760ef3249e282eebcfdb747435ee7b7e8906e44b52e"
+        },
+        {
+          "midi": 42,
+          "file": "electricpiano/42.m4a",
+          "bytes": 26387,
+          "sha256": "b3cbfee0a224bd68624b6042f4a8e3a4cb9b2a5d007cc785027982f98777d723"
+        },
+        {
+          "midi": 45,
+          "file": "electricpiano/45.m4a",
+          "bytes": 26215,
+          "sha256": "f9bbbd450accfbd2c11be73c5fcdca13cb6e7d467dea8003d001b3c64586743e"
+        },
+        {
+          "midi": 48,
+          "file": "electricpiano/48.m4a",
+          "bytes": 26008,
+          "sha256": "a1bfd520c03ac373d0e6885ec751173cb4e477af8e19bd3e119ee345a4e8b52d"
+        },
+        {
+          "midi": 51,
+          "file": "electricpiano/51.m4a",
+          "bytes": 26186,
+          "sha256": "6894bcffe9a2c1df9faed840fd433638164c8c19128a4c6398b9b3e439c8be9f"
+        },
+        {
+          "midi": 54,
+          "file": "electricpiano/54.m4a",
+          "bytes": 26411,
+          "sha256": "0747c49b35351e93580151963f83c4f8164089d27b4f6474c4936d7cec744055"
+        },
+        {
+          "midi": 57,
+          "file": "electricpiano/57.m4a",
+          "bytes": 26542,
+          "sha256": "974b1b83e6ddf9737150589ed1de3ee175f7fad6523a9822898228a8e9f28477"
+        },
+        {
+          "midi": 60,
+          "file": "electricpiano/60.m4a",
+          "bytes": 25961,
+          "sha256": "f934e0d48ab8159efe12d2616d07cf4c356966654efdab87124fae14dbc43574"
+        },
+        {
+          "midi": 63,
+          "file": "electricpiano/63.m4a",
+          "bytes": 26382,
+          "sha256": "8e0a4366dd832e2151285c5446d7c90bbd6d2e0a7594c04055e6d231830226ec"
+        },
+        {
+          "midi": 66,
+          "file": "electricpiano/66.m4a",
+          "bytes": 24573,
+          "sha256": "a7658491b821e6f33633dbb10509e9030f744fda8b43ff7350c41c0a44d63df6"
+        },
+        {
+          "midi": 69,
+          "file": "electricpiano/69.m4a",
+          "bytes": 25286,
+          "sha256": "7bdb1e048ed05a02c83690e6a46cc783b2f8736fe0dd68c96a361a9ebe6803f4"
+        },
+        {
+          "midi": 72,
+          "file": "electricpiano/72.m4a",
+          "bytes": 24369,
+          "sha256": "577c014e36a28d715c8f8b49978b40162e1d94a2c6fe580fdc6d3b0de260cc64"
+        },
+        {
+          "midi": 75,
+          "file": "electricpiano/75.m4a",
+          "bytes": 25495,
+          "sha256": "0fc0cab3a1a9fde680b2b5689ca1b667dba874d9e937cec9f737c66865bc35cd"
+        },
+        {
+          "midi": 78,
+          "file": "electricpiano/78.m4a",
+          "bytes": 23676,
+          "sha256": "3911882041c7960e14a92b0b050c46403bc63644ab57cab2a604a14d00150072"
+        },
+        {
+          "midi": 81,
+          "file": "electricpiano/81.m4a",
+          "bytes": 23168,
+          "sha256": "342a39fa3dea4f6133113e4c166cf189f2edc144fdf2c7b9179cf1dc957aa8d1"
+        },
+        {
+          "midi": 84,
+          "file": "electricpiano/84.m4a",
+          "bytes": 21206,
+          "sha256": "e7d22c53d0bcfa8bcf967812c05987391f1dbe21b104d76b05a808d1894d02ef"
+        },
+        {
+          "midi": 87,
+          "file": "electricpiano/87.m4a",
+          "bytes": 21248,
+          "sha256": "11b66a52bd55df256af7830467018acf946c76707e074d8121653f37d9e35762"
+        },
+        {
+          "midi": 90,
+          "file": "electricpiano/90.m4a",
+          "bytes": 22256,
+          "sha256": "8a0aefbaa550c7f042d153ebc1ce50a81df58a5f5f4af2a7f2a0c2efa71efb92"
+        },
+        {
+          "midi": 93,
+          "file": "electricpiano/93.m4a",
+          "bytes": 18887,
+          "sha256": "6ea9c7eb58d8e23443aff39efbbfbc910c6a01647db499200e89b210291810f8"
+        },
+        {
+          "midi": 96,
+          "file": "electricpiano/96.m4a",
+          "bytes": 21426,
+          "sha256": "828738f3d720569fc1416dfc413f47101be3448f9a1a505e8e41c8baa10815a7"
+        }
+      ]
+    },
+    "guitar": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/acoustic_guitar_nylon-mp3.js",
+      "sourceSha256": "5375fa9e0408d960e12b6e4ec120c42bce824d80b18e982b27ddaece146a4f64",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "guitar/36.m4a",
+          "bytes": 25984,
+          "sha256": "cb46c506449508b9889fe6aa603b55a6f7600bac9136efbb3af86779b04d8115"
+        },
+        {
+          "midi": 39,
+          "file": "guitar/39.m4a",
+          "bytes": 26261,
+          "sha256": "5a4f98c17f8d32eeb028e10844e1030d191e494022938cdaaa1eb93fb3407810"
+        },
+        {
+          "midi": 42,
+          "file": "guitar/42.m4a",
+          "bytes": 25898,
+          "sha256": "755dec922f51912161d0604375aaa5eabe0db64a7e99b17288009cfb7b1e955e"
+        },
+        {
+          "midi": 45,
+          "file": "guitar/45.m4a",
+          "bytes": 25201,
+          "sha256": "46b91afe5277ad592d22f7337e172810e20ac28b66d94ee162e5d43f4eb9f9aa"
+        },
+        {
+          "midi": 48,
+          "file": "guitar/48.m4a",
+          "bytes": 25329,
+          "sha256": "5e8da025b03554ec92df0dd5c7454f53dad2f817ad094c72895fd8f1387dacce"
+        },
+        {
+          "midi": 51,
+          "file": "guitar/51.m4a",
+          "bytes": 26364,
+          "sha256": "d05fb114947bc223ba28dba934a4276a6ddba9019d422822929b1c44b9d52708"
+        },
+        {
+          "midi": 54,
+          "file": "guitar/54.m4a",
+          "bytes": 23360,
+          "sha256": "de877fa55d5e32444a1d460f6484329d41052133ec8a03217916b21e73280783"
+        },
+        {
+          "midi": 57,
+          "file": "guitar/57.m4a",
+          "bytes": 24442,
+          "sha256": "af093287939f96b6b385f4ad53fdd000c484bf596edd7af7d5521dd11f495913"
+        },
+        {
+          "midi": 60,
+          "file": "guitar/60.m4a",
+          "bytes": 25650,
+          "sha256": "bdbedb82f9488bbfcfd1703516c8e77c262a3132ddd3cc77f3693c0212729f1c"
+        },
+        {
+          "midi": 63,
+          "file": "guitar/63.m4a",
+          "bytes": 26309,
+          "sha256": "3c3a70be63e5da9a25ed46cb2d3e6f4dcc6e5a25b826b720e69f231b1f2ee0c0"
+        },
+        {
+          "midi": 66,
+          "file": "guitar/66.m4a",
+          "bytes": 26656,
+          "sha256": "bca2f1b23e3db81beae0a328b2af032de5ae1a43df8a19e161c5dc0a7e1a5ebb"
+        },
+        {
+          "midi": 69,
+          "file": "guitar/69.m4a",
+          "bytes": 26680,
+          "sha256": "34c1c9f93a8980445c072048632fdebc79083ce64c07b8418c303d385f5f5b06"
+        },
+        {
+          "midi": 72,
+          "file": "guitar/72.m4a",
+          "bytes": 26711,
+          "sha256": "17c4edac14a469d6777f5d388a08ef856d4155f7c94a1121987bbafd0bae74dd"
+        },
+        {
+          "midi": 75,
+          "file": "guitar/75.m4a",
+          "bytes": 26747,
+          "sha256": "e65cf9fc3704e718aa0074e393ebe59993449522b77cfe9af7550770925cef7c"
+        },
+        {
+          "midi": 78,
+          "file": "guitar/78.m4a",
+          "bytes": 25764,
+          "sha256": "61b8cd920d540ef25d91dfe407e9202fcfb2ed75bc3348c3a67be07e8b2c00be"
+        },
+        {
+          "midi": 81,
+          "file": "guitar/81.m4a",
+          "bytes": 24958,
+          "sha256": "9c5cdd14faae01a07ae705f09781e899d578149cdefb2dd6a6d425a9cb1a7204"
+        },
+        {
+          "midi": 84,
+          "file": "guitar/84.m4a",
+          "bytes": 26388,
+          "sha256": "3011b7c201854fbdb1c72cf835d264580b20a07bf4f3101dd581d3953d2cccda"
+        },
+        {
+          "midi": 87,
+          "file": "guitar/87.m4a",
+          "bytes": 26307,
+          "sha256": "cf09ec08c1e7fd6a887280d862decb77c45449f5fad1bbe2afb25ddc89ef86f7"
+        },
+        {
+          "midi": 90,
+          "file": "guitar/90.m4a",
+          "bytes": 26132,
+          "sha256": "af5ab07839716c31eb520891c6e79e7eb14ac0f011e767727f587800af9849e6"
+        },
+        {
+          "midi": 93,
+          "file": "guitar/93.m4a",
+          "bytes": 24760,
+          "sha256": "2c57308df314b6bb2625e4777533626e0fff837113f39905639842aad4f2184d"
+        },
+        {
+          "midi": 96,
+          "file": "guitar/96.m4a",
+          "bytes": 26680,
+          "sha256": "868001f959396929642038ccbbc2168a0e54c2f54840fb63bf0c9dce667c4ad4"
+        }
+      ]
+    },
+    "organ": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/church_organ-mp3.js",
+      "sourceSha256": "ab13baf72584d80c4ed989a64559d170e8d62a6bddc3964ccc4de3cd2e206490",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "organ/36.m4a",
+          "bytes": 26724,
+          "sha256": "d2bf89756fbacf960f7f9a6436b225e3d3e67d667e1d790f17225d1c44ce8c87"
+        },
+        {
+          "midi": 39,
+          "file": "organ/39.m4a",
+          "bytes": 26634,
+          "sha256": "a80b45772bf8e5d40e6c9b3eb31d70dc1fb878ce7b86f47e042a0dd45896090a"
+        },
+        {
+          "midi": 42,
+          "file": "organ/42.m4a",
+          "bytes": 26713,
+          "sha256": "1196b8a3cab0642b34d2b2dd10916a916079c724122dec553de90e63ec7c3397"
+        },
+        {
+          "midi": 45,
+          "file": "organ/45.m4a",
+          "bytes": 26734,
+          "sha256": "7024cad5d650fec8b273d5ad977ad2bd5a8b377f9b2b2925caeec8195304945c"
+        },
+        {
+          "midi": 48,
+          "file": "organ/48.m4a",
+          "bytes": 26717,
+          "sha256": "417d0dc0d67737ffa834e02d45fcf9a66f7e6751c54f54f9ddc8341f6a7dceb1"
+        },
+        {
+          "midi": 51,
+          "file": "organ/51.m4a",
+          "bytes": 26703,
+          "sha256": "0bb22499afc6d4e4827f2fae748e0de2ce383a1890fdaab5ef881c1d0ebc4cca"
+        },
+        {
+          "midi": 54,
+          "file": "organ/54.m4a",
+          "bytes": 26630,
+          "sha256": "fad0e33c6e9e940cc8f668ea67179c52a151f5c8810a65eb32cdfaee7f937de2"
+        },
+        {
+          "midi": 57,
+          "file": "organ/57.m4a",
+          "bytes": 26719,
+          "sha256": "6477d8c3f33bb874294fd9b6a2644e92e71dcd42433aa73d4d3c534cc5b440df"
+        },
+        {
+          "midi": 60,
+          "file": "organ/60.m4a",
+          "bytes": 26681,
+          "sha256": "f294e8b221131549b462c34c1d023f9b4941576aef621517ac9b471d52c69674"
+        },
+        {
+          "midi": 63,
+          "file": "organ/63.m4a",
+          "bytes": 26713,
+          "sha256": "1341d490663c2e24458c11f46baf86190faaff4c6babde0d665b6b0ff0b28557"
+        },
+        {
+          "midi": 66,
+          "file": "organ/66.m4a",
+          "bytes": 26702,
+          "sha256": "59534fbfeb904af7bc31965d51d15f704cb648866fa619b29a24d0a447eb5890"
+        },
+        {
+          "midi": 69,
+          "file": "organ/69.m4a",
+          "bytes": 26747,
+          "sha256": "bb770ba41d29a5dc1e78a96c88af82f2a81f71c759c178367f811888f2cd5ca6"
+        },
+        {
+          "midi": 72,
+          "file": "organ/72.m4a",
+          "bytes": 26728,
+          "sha256": "d428a519efdd4d5cb19534bcb64541cce91c517fa36f2afe38603410ebb4c341"
+        },
+        {
+          "midi": 75,
+          "file": "organ/75.m4a",
+          "bytes": 26699,
+          "sha256": "dd4516ffa0749379d51f9986a4511f7be38bedf230e333723d861033650a8b52"
+        },
+        {
+          "midi": 78,
+          "file": "organ/78.m4a",
+          "bytes": 26735,
+          "sha256": "da14025c5400b43c8bde90742d6e721963842b0aa642076928fb9fb648bde9ba"
+        },
+        {
+          "midi": 81,
+          "file": "organ/81.m4a",
+          "bytes": 26720,
+          "sha256": "a4e63348e7bbc749b483a6a1f3da080f8fc48e07f57872d81f0066a98b252db0"
+        },
+        {
+          "midi": 84,
+          "file": "organ/84.m4a",
+          "bytes": 26727,
+          "sha256": "25eefd2299167c8146be079e9a322d074ffca828532469059b48e06c0c6295b8"
+        },
+        {
+          "midi": 87,
+          "file": "organ/87.m4a",
+          "bytes": 26636,
+          "sha256": "faafd5bc2fd82308d213b3e579ed20a28d8493093439ba60d2ee8d9310403615"
+        },
+        {
+          "midi": 90,
+          "file": "organ/90.m4a",
+          "bytes": 26754,
+          "sha256": "78d13643940cf1120fb86192bd7f0c80b3d4b811a8f49f604b56ce3925e30d7d"
+        },
+        {
+          "midi": 93,
+          "file": "organ/93.m4a",
+          "bytes": 26698,
+          "sha256": "18e422bc5f13f5234f02e1865abe2fdfb8ade840782cdc90365904e561785fb4"
+        },
+        {
+          "midi": 96,
+          "file": "organ/96.m4a",
+          "bytes": 26710,
+          "sha256": "c74c2f56ec22061124c25e96e07247b5a49bcdaf0d47d2836526cf79e57234c4"
+        }
+      ]
+    },
+    "strings": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/string_ensemble_1-mp3.js",
+      "sourceSha256": "8571395f4c42a989a63e0aed48ad9d79f0ac1a822ff2afd7cb356191be8fd4a2",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "strings/36.m4a",
+          "bytes": 26634,
+          "sha256": "311b66ad790e4f4e9257501e530dfae53889a87d87a8565ad24e6c920370bbac"
+        },
+        {
+          "midi": 39,
+          "file": "strings/39.m4a",
+          "bytes": 26669,
+          "sha256": "4ab754c0ca53ec72b4cffdd4423215c318e8f13136e6c7b91924e741d8843f3b"
+        },
+        {
+          "midi": 42,
+          "file": "strings/42.m4a",
+          "bytes": 26635,
+          "sha256": "4957b4a45fc0a049ab96903acea10ae03a3e02fa0115de710f8b8dbf29993d1c"
+        },
+        {
+          "midi": 45,
+          "file": "strings/45.m4a",
+          "bytes": 26680,
+          "sha256": "c9a9a4b3a12bc360d21fd4b197d019f83fa886e07688fab1684accd55f009562"
+        },
+        {
+          "midi": 48,
+          "file": "strings/48.m4a",
+          "bytes": 26670,
+          "sha256": "2ec9209e323fd1dea4052c509779a7d2ade075c14f7a1f7ffb3024b0de7ed4ec"
+        },
+        {
+          "midi": 51,
+          "file": "strings/51.m4a",
+          "bytes": 26681,
+          "sha256": "5bfb1709e926f431bb9517b76388699f64aecbc62f20f0012a9b025c95bfc123"
+        },
+        {
+          "midi": 54,
+          "file": "strings/54.m4a",
+          "bytes": 26653,
+          "sha256": "2c30ed9f5e60c621dedb7f9ed19af57c745b34e64b2e87ece789cb06901e6b3d"
+        },
+        {
+          "midi": 57,
+          "file": "strings/57.m4a",
+          "bytes": 26635,
+          "sha256": "44d1d294a8243ca816083cf5cb56121ddcaa3a44e1a9641b4130eaa353ddab8f"
+        },
+        {
+          "midi": 60,
+          "file": "strings/60.m4a",
+          "bytes": 26700,
+          "sha256": "129857b7c9fbe8d7138dcd3a8658cc05f7d7b2e9252c1af5a3a846f3f4d879ef"
+        },
+        {
+          "midi": 63,
+          "file": "strings/63.m4a",
+          "bytes": 26687,
+          "sha256": "da7d54a5bfd07f11e116cee4fab45f6fb9f35fe5c65eb41d1225fb396c94c2af"
+        },
+        {
+          "midi": 66,
+          "file": "strings/66.m4a",
+          "bytes": 26678,
+          "sha256": "d9d844013e9e780972981a97c31c56c1106b76b31f4fcf5b197eee4ea5cb8da3"
+        },
+        {
+          "midi": 69,
+          "file": "strings/69.m4a",
+          "bytes": 26700,
+          "sha256": "deb35ad3cfe5fc73a1c157248cc1f1d2f8b9e2535439f42202fc4ec139516790"
+        },
+        {
+          "midi": 72,
+          "file": "strings/72.m4a",
+          "bytes": 26718,
+          "sha256": "194f024649ea481182f7ea2598c6139a17d5b7efde40b94cd1bc1a73d84712ed"
+        },
+        {
+          "midi": 75,
+          "file": "strings/75.m4a",
+          "bytes": 26714,
+          "sha256": "7acfe8a08ed06cb40f1a01b17f37859c50eda4dbb07e9900935ed6d165827e34"
+        },
+        {
+          "midi": 78,
+          "file": "strings/78.m4a",
+          "bytes": 26726,
+          "sha256": "a0f89accea89d18aa243017e7cbc2bbd044ca014416f209e29928745edad2bb6"
+        },
+        {
+          "midi": 81,
+          "file": "strings/81.m4a",
+          "bytes": 26709,
+          "sha256": "44c7784d317f1489dd75c2c785875c5be5e8187e7f2cd403fe13cc84109e0df9"
+        },
+        {
+          "midi": 84,
+          "file": "strings/84.m4a",
+          "bytes": 26715,
+          "sha256": "d39497f590492ab7469af51c4ce588e22e601c15a852c45669106a415a7917d4"
+        },
+        {
+          "midi": 87,
+          "file": "strings/87.m4a",
+          "bytes": 26706,
+          "sha256": "551e81541d512c67eb7bb0c70e42d8a50b35ef3662280d44ef011af6187ea644"
+        },
+        {
+          "midi": 90,
+          "file": "strings/90.m4a",
+          "bytes": 26706,
+          "sha256": "7535da0b779022a77ec28b697c34ce7b447f440be5bd497c3b705127ae9196eb"
+        },
+        {
+          "midi": 93,
+          "file": "strings/93.m4a",
+          "bytes": 26734,
+          "sha256": "1e7c59a2ea4bdce09e2bb42dafc82c02b24d7d5ac66609d23e97a61a784c5ea6"
+        },
+        {
+          "midi": 96,
+          "file": "strings/96.m4a",
+          "bytes": 26704,
+          "sha256": "bd3ff9c459640f25c66b741b8bb658df9a48d32fa4a719a33d26d4b1559a0655"
+        }
+      ]
+    },
+    "flute": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/flute-mp3.js",
+      "sourceSha256": "e2e35283876eec60b919beeb8bfa49f46f12dddf5b8c6025e7a45c5d2a24bda5",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "flute/36.m4a",
+          "bytes": 26670,
+          "sha256": "9caa82b758480b2aaf77ffea5540283ccbb6899817c64b07d081c2de5853024d"
+        },
+        {
+          "midi": 39,
+          "file": "flute/39.m4a",
+          "bytes": 26643,
+          "sha256": "e63b2a3e15962da9945584db15aac4c67093d0c57793d69e32e1f5b8789ef1a9"
+        },
+        {
+          "midi": 42,
+          "file": "flute/42.m4a",
+          "bytes": 26668,
+          "sha256": "8390e29454d83c28e94c0a1ff88ef31271aa6750a733d6a54f534d584355cf79"
+        },
+        {
+          "midi": 45,
+          "file": "flute/45.m4a",
+          "bytes": 26656,
+          "sha256": "9a1595d261cc5a343835784db047dafb7ad380e6cd5eaa58e77a3cf0539edc48"
+        },
+        {
+          "midi": 48,
+          "file": "flute/48.m4a",
+          "bytes": 26645,
+          "sha256": "a547e833d3e5afe12b8e1e29d848946191bfaf9beac0056a485e5e8566ed6f02"
+        },
+        {
+          "midi": 51,
+          "file": "flute/51.m4a",
+          "bytes": 26672,
+          "sha256": "494fa104343fa606eadd1f0724927cf4eb1a89b4d1549cdd54b23e71a1626f5f"
+        },
+        {
+          "midi": 54,
+          "file": "flute/54.m4a",
+          "bytes": 26692,
+          "sha256": "45898c0d51fbd021fe859d3bf5cc1dd0de44f9a65d5ca81c3a1324f0c3e2b7ea"
+        },
+        {
+          "midi": 57,
+          "file": "flute/57.m4a",
+          "bytes": 26668,
+          "sha256": "8dd905b3dc8e597f72278acd330a7aaa7b5eb23c0a0c2d3e9b7c22aae479c6c2"
+        },
+        {
+          "midi": 60,
+          "file": "flute/60.m4a",
+          "bytes": 26696,
+          "sha256": "971e7ad49379ce990304dcf15acd3240969d44e34194be61534712c94ccc432e"
+        },
+        {
+          "midi": 63,
+          "file": "flute/63.m4a",
+          "bytes": 26662,
+          "sha256": "b37fc7836427cfeefb56bc81a1c17958b887e098a197f570177c7c80048c01da"
+        },
+        {
+          "midi": 66,
+          "file": "flute/66.m4a",
+          "bytes": 26682,
+          "sha256": "560b60943bb1506c360b3a293fcbcc9fa3884a1d3bfe72d39eeb21ebf02b07fe"
+        },
+        {
+          "midi": 69,
+          "file": "flute/69.m4a",
+          "bytes": 26706,
+          "sha256": "71ab16b89bfe1b481de08deb515f7ed87731665f77a1d6b66df9e254ed39755a"
+        },
+        {
+          "midi": 72,
+          "file": "flute/72.m4a",
+          "bytes": 26689,
+          "sha256": "d6294623603db2115f5568dc61fd45b23586001ba514d7faff5b711edf91e5c7"
+        },
+        {
+          "midi": 75,
+          "file": "flute/75.m4a",
+          "bytes": 26694,
+          "sha256": "6f7aa73bea56f9dc7804cd106d344394c2a62325f0803d9f586777eb4b75cffc"
+        },
+        {
+          "midi": 78,
+          "file": "flute/78.m4a",
+          "bytes": 26708,
+          "sha256": "bb3f9a67fba7c1c63c39b045d70a72b34cbd13f85ce96354b83d045da3674fc7"
+        },
+        {
+          "midi": 81,
+          "file": "flute/81.m4a",
+          "bytes": 26708,
+          "sha256": "b75008f902742ebad96b8b386179ee7ff60ff73a5482b49d47e9b75364b6d4b0"
+        },
+        {
+          "midi": 84,
+          "file": "flute/84.m4a",
+          "bytes": 26706,
+          "sha256": "4726f1135ac0a5ffb3a3837e75c889d3c4735791643a100098d4b64b452ca8b9"
+        },
+        {
+          "midi": 87,
+          "file": "flute/87.m4a",
+          "bytes": 26691,
+          "sha256": "f117f243aa698f00239dd6a1a72aed7161ffcd0025c68f872fd7fe7b302c7836"
+        },
+        {
+          "midi": 90,
+          "file": "flute/90.m4a",
+          "bytes": 26690,
+          "sha256": "633d238b3e0319fdfcaafefedecef33577f276b63a3157884a1139f2261249aa"
+        },
+        {
+          "midi": 93,
+          "file": "flute/93.m4a",
+          "bytes": 26703,
+          "sha256": "4887235620efad88fe9132422f3285ca320b290cca388a270c5b0cc55697700a"
+        },
+        {
+          "midi": 96,
+          "file": "flute/96.m4a",
+          "bytes": 26701,
+          "sha256": "ddc05c71923c874b9d8bda842400f0222bc1dbcc0d7c19293f7bb4ea76a7952a"
+        }
+      ]
+    },
+    "marimba": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/marimba-mp3.js",
+      "sourceSha256": "57249b9905d5298469a52a2e0557738e852b5db6387040a8e1cff19e12549cff",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "marimba/36.m4a",
+          "bytes": 13542,
+          "sha256": "dfcbd3b0311e2dc1daa36b4aaf1e4275bb9471a00284ba84926de4b2faa9c483"
+        },
+        {
+          "midi": 39,
+          "file": "marimba/39.m4a",
+          "bytes": 12567,
+          "sha256": "1bdbbdabdcb9a621fb3079c812dd36bcaaa2c7a065ebe875fc4718095d43f33b"
+        },
+        {
+          "midi": 42,
+          "file": "marimba/42.m4a",
+          "bytes": 12620,
+          "sha256": "f6cf706fc9aa194c0242a5da248fcb06bb3e684ee51aed81f9e188991befdf33"
+        },
+        {
+          "midi": 45,
+          "file": "marimba/45.m4a",
+          "bytes": 11940,
+          "sha256": "1baf53bf3c0a2ffd27fea3bbeeb064a09f856e1cf5a0e9a64a73fa39a12336eb"
+        },
+        {
+          "midi": 48,
+          "file": "marimba/48.m4a",
+          "bytes": 10859,
+          "sha256": "95c4d4b302e84e8e9172743329bedff38eb2d3d4d222f02544a52aa7fc1d3198"
+        },
+        {
+          "midi": 51,
+          "file": "marimba/51.m4a",
+          "bytes": 9923,
+          "sha256": "c9a128b629a9c99f4a9be5cc216c30816d4ba3228806bab0fa3bd02b7519207c"
+        },
+        {
+          "midi": 54,
+          "file": "marimba/54.m4a",
+          "bytes": 11770,
+          "sha256": "f0bd3dcc39ebf4ee607aee371d4a98fa15644189642b498ac5d50feb67583c96"
+        },
+        {
+          "midi": 57,
+          "file": "marimba/57.m4a",
+          "bytes": 10943,
+          "sha256": "8a4821d0ead8fd70a7965552ddc864f89c75801a16b55be3483663c1a3824e35"
+        },
+        {
+          "midi": 60,
+          "file": "marimba/60.m4a",
+          "bytes": 10304,
+          "sha256": "2710567bf232fde327cbc632d3b089e1b3e40cffa87c958a09d897c1332d3c39"
+        },
+        {
+          "midi": 63,
+          "file": "marimba/63.m4a",
+          "bytes": 9381,
+          "sha256": "9764878758374c1d806b2a0601f9dcc271f236c47169d15d8fb6659b80065dcd"
+        },
+        {
+          "midi": 66,
+          "file": "marimba/66.m4a",
+          "bytes": 10405,
+          "sha256": "689ed2fcab2a17f2b5f4d9d1b86d477d857c244d9e4929f5d595e98e5aa80190"
+        },
+        {
+          "midi": 69,
+          "file": "marimba/69.m4a",
+          "bytes": 9952,
+          "sha256": "baa408ccf480c43ecc69d405fe346ed2c86a8e6ecbf4173fa3cea852e9a54ac6"
+        },
+        {
+          "midi": 72,
+          "file": "marimba/72.m4a",
+          "bytes": 10312,
+          "sha256": "a052e604766e4c20d6e3bc190eea5d6aa4dd6d79158e408596820ec253f46738"
+        },
+        {
+          "midi": 75,
+          "file": "marimba/75.m4a",
+          "bytes": 8836,
+          "sha256": "f0d4960726de225b832e95da727eddc265ad35f41ea129ca76aa5a434752fc53"
+        },
+        {
+          "midi": 78,
+          "file": "marimba/78.m4a",
+          "bytes": 9774,
+          "sha256": "bb70b8fe08505a2740c510aba926e02f360f1e25ed7659355e3b09f64c16ac76"
+        },
+        {
+          "midi": 81,
+          "file": "marimba/81.m4a",
+          "bytes": 8351,
+          "sha256": "4792094a918cfd6e989ecf7dc669a8b5f839d9f9879b6f5106e6225905104ab6"
+        },
+        {
+          "midi": 84,
+          "file": "marimba/84.m4a",
+          "bytes": 9104,
+          "sha256": "312853168c118a7f113b6999557260915f85480239b1465ab24b819ed1c77649"
+        },
+        {
+          "midi": 87,
+          "file": "marimba/87.m4a",
+          "bytes": 8438,
+          "sha256": "22a6115de9b5461adfe775c69182d67640211bed9b0a3794e2e1191c1864ff12"
+        },
+        {
+          "midi": 90,
+          "file": "marimba/90.m4a",
+          "bytes": 7090,
+          "sha256": "c3de9c9b2c96c45c6a6c66ae642ce01977d329ae21020dad1495c281a3839ec9"
+        },
+        {
+          "midi": 93,
+          "file": "marimba/93.m4a",
+          "bytes": 6150,
+          "sha256": "da1fd1b67dfeffc6069649ff5d192fa1152b7cf86fad16b9204169800279ba27"
+        },
+        {
+          "midi": 96,
+          "file": "marimba/96.m4a",
+          "bytes": 5778,
+          "sha256": "84b8483741cfe7b48ced4af9b59a940b7359a036f36529965e783904af968002"
+        }
+      ]
+    },
+    "brass": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/brass_section-mp3.js",
+      "sourceSha256": "616692d454aafa99de7203940bc6b20bc5c478e5045cc972fc819480e4c64d05",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "brass/36.m4a",
+          "bytes": 26548,
+          "sha256": "f9388171f4bb4f53638213903073a1365dec7dacdc642691df4ce2c043317754"
+        },
+        {
+          "midi": 39,
+          "file": "brass/39.m4a",
+          "bytes": 26689,
+          "sha256": "5c1af38268209f628070f762afdbe7d6f1fd2aaca36b1050d094ce24ec6d5e2a"
+        },
+        {
+          "midi": 42,
+          "file": "brass/42.m4a",
+          "bytes": 26773,
+          "sha256": "0164495fba945aadf7a37c296010cea73b0633b14ba53fdb98644a02365ebc49"
+        },
+        {
+          "midi": 45,
+          "file": "brass/45.m4a",
+          "bytes": 26696,
+          "sha256": "e5e1e1095bb1196aa9a3f025aa648bab2f481ef59967e3a8ab4348edbb22c6cb"
+        },
+        {
+          "midi": 48,
+          "file": "brass/48.m4a",
+          "bytes": 26569,
+          "sha256": "4523d6dd98be0d84715d9220112a0bcbd415e61d06b6c97fb8e53eabb76cb2d2"
+        },
+        {
+          "midi": 51,
+          "file": "brass/51.m4a",
+          "bytes": 26681,
+          "sha256": "23f69d5f369196a802307038369d87fa60b1ff8b8ff5048af7ca518005cf9b53"
+        },
+        {
+          "midi": 54,
+          "file": "brass/54.m4a",
+          "bytes": 26627,
+          "sha256": "51c47e0ad0b4ee908bae047813fdf71f764a2a5b8dc0beadbd64a20faa835166"
+        },
+        {
+          "midi": 57,
+          "file": "brass/57.m4a",
+          "bytes": 26698,
+          "sha256": "30627a7700a9a190f7e44c759b0e7f341dd038a222308b04436e52bdc0d906cf"
+        },
+        {
+          "midi": 60,
+          "file": "brass/60.m4a",
+          "bytes": 26605,
+          "sha256": "8622c5b3788b3ae4a430a311268625e7eb201e3eadaa5297d87efbfd6c6921c6"
+        },
+        {
+          "midi": 63,
+          "file": "brass/63.m4a",
+          "bytes": 26638,
+          "sha256": "7070cc3f920f0200181d4b6a9a3f9850dcf84a5b212495e18c3162b9947a65a7"
+        },
+        {
+          "midi": 66,
+          "file": "brass/66.m4a",
+          "bytes": 26622,
+          "sha256": "1889efb0f38ad2651252776a520c5f5c8bdff4ea11b57110d236c4d3038f4413"
+        },
+        {
+          "midi": 69,
+          "file": "brass/69.m4a",
+          "bytes": 26573,
+          "sha256": "c02421528e614024abbc9735a5872feab0407109a26fa1bd1cd6cc01fc253fbe"
+        },
+        {
+          "midi": 72,
+          "file": "brass/72.m4a",
+          "bytes": 26765,
+          "sha256": "0d7f524d35d20ae8043e95c5eab9d3a57779412b3c030d28b94c081d863d7a8c"
+        },
+        {
+          "midi": 75,
+          "file": "brass/75.m4a",
+          "bytes": 26691,
+          "sha256": "3942e3e14c41213f3b5cec33890177d77d836b7dc9a3cfe583fa0b1d7b55383b"
+        },
+        {
+          "midi": 78,
+          "file": "brass/78.m4a",
+          "bytes": 26664,
+          "sha256": "f52cf5e1d0a17a68909050d869aa737c4efd5631dd02999e75085511f625c236"
+        },
+        {
+          "midi": 81,
+          "file": "brass/81.m4a",
+          "bytes": 26663,
+          "sha256": "a0906650ceec98efac94c34c96cd7774dcee7c5e3156458685134f9ab235f331"
+        },
+        {
+          "midi": 84,
+          "file": "brass/84.m4a",
+          "bytes": 26671,
+          "sha256": "e2568637759c81b2cdd6f88667d49601b9c2c454becefd63b05235cdb81a6bfc"
+        },
+        {
+          "midi": 87,
+          "file": "brass/87.m4a",
+          "bytes": 26716,
+          "sha256": "39fc5ac701b5d362720b129bc2eda243fd8f7bb82b4e1b1c25ae6145118e24f6"
+        },
+        {
+          "midi": 90,
+          "file": "brass/90.m4a",
+          "bytes": 26726,
+          "sha256": "1dbba1a9b3759a4bbe713a5c2f60eefe706e1ff02b22a807e105f7b58d83481f"
+        },
+        {
+          "midi": 93,
+          "file": "brass/93.m4a",
+          "bytes": 26717,
+          "sha256": "f6944c318af63006511d118e080bf7bd2cbb10b9814749dc49a66e3fe14be379"
+        },
+        {
+          "midi": 96,
+          "file": "brass/96.m4a",
+          "bytes": 26677,
+          "sha256": "f9cf3884c3ca6e8c3df52f495e7feb216e3492ada1ea39f2b95687a3b27e27c8"
+        }
+      ]
+    },
+    "synth": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/lead_1_square-mp3.js",
+      "sourceSha256": "233a52d98f704399fcee0a41323a26e7e358d50a5a18fa81b59a4150b4fdda62",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "synth/36.m4a",
+          "bytes": 26767,
+          "sha256": "76d26aa0d4b929152855c476a8de3c6d6cc46f2f5658189a602abcf57e1e409d"
+        },
+        {
+          "midi": 39,
+          "file": "synth/39.m4a",
+          "bytes": 27492,
+          "sha256": "ac650e90105fa0467a13e324d853df0e3e7e7af5b0be3acaf2d5e59bc7e06b06"
+        },
+        {
+          "midi": 42,
+          "file": "synth/42.m4a",
+          "bytes": 27387,
+          "sha256": "c2a4e4c7e35f2b900ca5c2e1b02039bd4c3211e3c2679219ff8b749b1a732849"
+        },
+        {
+          "midi": 45,
+          "file": "synth/45.m4a",
+          "bytes": 26807,
+          "sha256": "b15d88c23c91c8594365ba71013680ba50939325e1415b086968c723ac20468e"
+        },
+        {
+          "midi": 48,
+          "file": "synth/48.m4a",
+          "bytes": 26749,
+          "sha256": "994297be4e0f2930261eec0ce3afd250d3d4fc65162d7b8721f24bcebd91d26a"
+        },
+        {
+          "midi": 51,
+          "file": "synth/51.m4a",
+          "bytes": 26758,
+          "sha256": "53cf4385c517c4d5dd4c0b565062f74b97f1dfe3dfecda53cf7b7edeb92cc033"
+        },
+        {
+          "midi": 54,
+          "file": "synth/54.m4a",
+          "bytes": 26551,
+          "sha256": "4d5cb7856e20bf4a69fcd810ee79ff496d49e4995779f552c63982e4ac240105"
+        },
+        {
+          "midi": 57,
+          "file": "synth/57.m4a",
+          "bytes": 26684,
+          "sha256": "be34ecd3d044fa2b615dabee9d3b3310e83ba6d0970027cd9e75829307241687"
+        },
+        {
+          "midi": 60,
+          "file": "synth/60.m4a",
+          "bytes": 26727,
+          "sha256": "40403159568ef6865f78fa40c4b4ae8127fdec129666c71f5edd5f6b641b9e41"
+        },
+        {
+          "midi": 63,
+          "file": "synth/63.m4a",
+          "bytes": 26598,
+          "sha256": "caa050137f65294fdaff05e7022cb5d859c002de288a434eb084c410f7e0ce3b"
+        },
+        {
+          "midi": 66,
+          "file": "synth/66.m4a",
+          "bytes": 26677,
+          "sha256": "b62b10f46c678f6b0e57f3aae3247623ea1d4407d6a5b4955567cc44c7e0a65c"
+        },
+        {
+          "midi": 69,
+          "file": "synth/69.m4a",
+          "bytes": 26712,
+          "sha256": "0913599fdafc64d300d5982b5be099fa68899c5ae7ff2cd3fb14e39ce5977668"
+        },
+        {
+          "midi": 72,
+          "file": "synth/72.m4a",
+          "bytes": 26731,
+          "sha256": "b49d1056a5211997a8a3e1331a2853a71253fb82546ae73a1a5d1a2a28c6bc99"
+        },
+        {
+          "midi": 75,
+          "file": "synth/75.m4a",
+          "bytes": 26734,
+          "sha256": "69829dbbc8d01781fa917dc4e8109e8c733d7e9854f5f0932add22c84e9b7667"
+        },
+        {
+          "midi": 78,
+          "file": "synth/78.m4a",
+          "bytes": 26742,
+          "sha256": "931e9a54f649852c833b2f3ed556e6c80efb1ea47d8ce9aa8ee79d6d8b3bbd18"
+        },
+        {
+          "midi": 81,
+          "file": "synth/81.m4a",
+          "bytes": 26716,
+          "sha256": "95602cdc1dd5fc26f1ed14973c15d02f9d29181041d7036b5090ebc00b467c95"
+        },
+        {
+          "midi": 84,
+          "file": "synth/84.m4a",
+          "bytes": 26717,
+          "sha256": "241bab95ea8ccb0dee8719c1a10ba63c0829a664afd1dae76cfce6787834f055"
+        },
+        {
+          "midi": 87,
+          "file": "synth/87.m4a",
+          "bytes": 26665,
+          "sha256": "57656d5b5435d8aa0bb492651c5518716193b074500234735584aaa68eab5829"
+        },
+        {
+          "midi": 90,
+          "file": "synth/90.m4a",
+          "bytes": 26732,
+          "sha256": "596498b0265c627665d87b6ade3080bac7beb8d98f8d03410b47a0616b56bc2c"
+        },
+        {
+          "midi": 93,
+          "file": "synth/93.m4a",
+          "bytes": 26719,
+          "sha256": "e0053d334e7d63d03d51b16e445fe86562697eac75a39daf1e80bc70448f4ac2"
+        },
+        {
+          "midi": 96,
+          "file": "synth/96.m4a",
+          "bytes": 26750,
+          "sha256": "07cc4708b8dfcbf96d62ae3b8f8bc7c336bb741d0f1e9377d3f2ce566883186a"
+        }
+      ]
+    },
+    "pad": {
+      "source": "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/044fab8e1456bfafc5776e86dfd6bb8697149aef/FluidR3_GM/pad_1_new_age-mp3.js",
+      "sourceSha256": "317d73384aa92bd342f3b87383e4a48b22d2a52a1b4d32141b764060bd54ad36",
+      "samples": [
+        {
+          "midi": 36,
+          "file": "pad/36.m4a",
+          "bytes": 26643,
+          "sha256": "64c0c6bf81fbff0621b3beeb786f5855ae16f0f499aca67ad96fac393c0ccbac"
+        },
+        {
+          "midi": 39,
+          "file": "pad/39.m4a",
+          "bytes": 26848,
+          "sha256": "9fe10df5d33b9b174f9cc0f1efb38ef90dadd52ec7273acd18e9ebee8c0007d5"
+        },
+        {
+          "midi": 42,
+          "file": "pad/42.m4a",
+          "bytes": 26791,
+          "sha256": "294e33c48a4b23af6f4c7cc0bacbaef3b1ca092d19d3d9de93fc7aebf39e7971"
+        },
+        {
+          "midi": 45,
+          "file": "pad/45.m4a",
+          "bytes": 26779,
+          "sha256": "c4856a32561c25a99019c9ea884775724253a58eac2687b76fba570c8c657169"
+        },
+        {
+          "midi": 48,
+          "file": "pad/48.m4a",
+          "bytes": 26758,
+          "sha256": "02aa142b321e80049ebebd06a3342ad303100f57d849f831c3a00ec431522988"
+        },
+        {
+          "midi": 51,
+          "file": "pad/51.m4a",
+          "bytes": 26759,
+          "sha256": "3830ca56e6fcba00e6eb9cdb28c82bc61aee00b8f8a00ff7041344de37a180de"
+        },
+        {
+          "midi": 54,
+          "file": "pad/54.m4a",
+          "bytes": 26681,
+          "sha256": "e10b9289971354f88ca90737eac3c4632a3e0cc7847427ea232d2c39076947bb"
+        },
+        {
+          "midi": 57,
+          "file": "pad/57.m4a",
+          "bytes": 26720,
+          "sha256": "9002caac298fdef788ac082ff0a0f15a4fb1783ed7b6ba8b15b3db65971a2f3e"
+        },
+        {
+          "midi": 60,
+          "file": "pad/60.m4a",
+          "bytes": 26750,
+          "sha256": "ae37acd6a657b313fe98bed6490c7a1a38f79eea523fdeef63d3670daa02924d"
+        },
+        {
+          "midi": 63,
+          "file": "pad/63.m4a",
+          "bytes": 26702,
+          "sha256": "29cf4354a65d53d56b40459f9cbeb8cbfb4d7cc1138641ea73da21cd720e34db"
+        },
+        {
+          "midi": 66,
+          "file": "pad/66.m4a",
+          "bytes": 26701,
+          "sha256": "2f71cff909e46173d8b0883af5cc48398b6a3f320196b4d7551265c7f24fefdb"
+        },
+        {
+          "midi": 69,
+          "file": "pad/69.m4a",
+          "bytes": 26677,
+          "sha256": "90f3252c1037743b21907f76198b5931bdd0936c3dc8cd43e1461a3b11f18d69"
+        },
+        {
+          "midi": 72,
+          "file": "pad/72.m4a",
+          "bytes": 26707,
+          "sha256": "70470d757cfbe0f7498eadcf424fe0295fd807d3d24c6b9096bc56b08abb35ed"
+        },
+        {
+          "midi": 75,
+          "file": "pad/75.m4a",
+          "bytes": 26632,
+          "sha256": "1f0c619f14d185a79d12b8c5424fb0d0593d48e4ed1b2a686c950afd5dcae654"
+        },
+        {
+          "midi": 78,
+          "file": "pad/78.m4a",
+          "bytes": 26610,
+          "sha256": "2aa99486a4bbb2c43bdeec8831af842b8533886932c905355c911407772af269"
+        },
+        {
+          "midi": 81,
+          "file": "pad/81.m4a",
+          "bytes": 26626,
+          "sha256": "586e6553e18687744b60ae57ebe18a83db890ca7728a45747c340e5c730afbcb"
+        },
+        {
+          "midi": 84,
+          "file": "pad/84.m4a",
+          "bytes": 26610,
+          "sha256": "92beb01a8540ad7989a3ec628298edb94e8997eec417273bdd0ecaef3f254945"
+        },
+        {
+          "midi": 87,
+          "file": "pad/87.m4a",
+          "bytes": 26711,
+          "sha256": "605357101ae1e177cf6649e66af00a0d788c04e356b0644b437c764185d5ef0f"
+        },
+        {
+          "midi": 90,
+          "file": "pad/90.m4a",
+          "bytes": 26715,
+          "sha256": "acc5084245b32f616faf89779b320b858da36000469912d1ce9a6cb072f1dc79"
+        },
+        {
+          "midi": 93,
+          "file": "pad/93.m4a",
+          "bytes": 26713,
+          "sha256": "b33d8533dd6960f341deb9c6c48a8fbc3d8e2998972a85a1b6651102fc64b30d"
+        },
+        {
+          "midi": 96,
+          "file": "pad/96.m4a",
+          "bytes": 26709,
+          "sha256": "5e1a6115114e342a7d103b5b9c5e33908ae1b4a393b3a62e43d8826efb5de4b1"
+        }
+      ]
+    }
+  }
+}

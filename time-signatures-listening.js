@@ -1,6 +1,6 @@
-// Rhythm generation and Bravura notation reused from timesig.html.
+// Rhythm generation and Bravura notation reused from timesignatures.html.
 // The listening adapter hides time signatures and counts dotted-crotchet pulses in compound time.
-// Beats Per Bar and Metres use the shared 16-bar Advanced Higher Practice Questions generator.
+// Beats in the Bar and Metres use the shared 16-bar Advanced Higher Practice Questions generator.
 (function attachTimeSignaturesListening(MLH) {
   const STAFF_LEFT = 24;
   const STAFF_RIGHT = 896;
@@ -241,35 +241,35 @@
       description: "Crotchet • Minim • Dotted minim • Semibreve",
       rhythmIds: ["crotchet", "minim", "dotted-minim", "semibreve"],
       timeSignatureIds: ["2/4", "3/4", "4/4"],
-      keyIds: ["C"]
+      keyIds: ["C", "G", "D", "Bb", "Am", "Em", "Dm", "F"]
     },
     N4: {
       label: "National 4",
       description: "Quaver • Semiquaver • Grouped semiquavers • Paired quavers",
       rhythmIds: ["crotchet", "minim", "dotted-minim", "semibreve", "quaver", "semiquaver"],
       timeSignatureIds: ["2/4", "3/4", "4/4"],
-      keyIds: ["C"]
+      keyIds: ["C", "G", "D", "Bb", "Am", "Em", "Dm", "F"]
     },
     N5: {
       label: "National 5",
       description: "Dotted rhythms • Dotted crotchet • Dotted quaver",
       rhythmIds: ["crotchet", "minim", "dotted-minim", "semibreve", "quaver", "semiquaver", "dotted-crotchet", "dotted-quaver"],
       timeSignatureIds: ["2/4", "3/4", "4/4"],
-      keyIds: ["C", "G", "F", "Am"]
+      keyIds: ["C", "G", "D", "Bb", "Am", "Em", "Dm", "F"]
     },
     H: {
       label: "Higher",
       description: "6/8, 9/8, 12/8 • Rests",
       rhythmIds: ["crotchet", "minim", "dotted-minim", "semibreve", "quaver", "semiquaver", "dotted-crotchet", "dotted-quaver", "rests"],
       timeSignatureIds: ["2/4", "3/4", "4/4", "6/8", "9/8", "12/8"],
-      keyIds: ["C", "G", "F", "Am"]
+      keyIds: ["C", "G", "D", "Bb", "Am", "Em", "Dm", "F"]
     },
     AH: {
       label: "Advanced Higher",
       description: "Syncopated rhythms • 5/4 • Time changes",
       rhythmIds: ["crotchet", "minim", "dotted-minim", "semibreve", "quaver", "semiquaver", "dotted-crotchet", "dotted-quaver", "rests", "syncopation", "time-changes"],
       timeSignatureIds: ["2/4", "3/4", "4/4", "5/4", "6/8", "9/8", "12/8"],
-      keyIds: ["C", "G", "F", "Am", "D", "Bb", "Em", "Dm"]
+      keyIds: ["C", "G", "D", "Bb", "Am", "Em", "Dm", "F"]
     }
   };
   const SIMPLE_PATTERNS_BY_LENGTH = {
@@ -1237,7 +1237,49 @@
     });
   }
 
-  function buildAdvancedHigherListeningMelody(signatureIds, { subdivisions = false } = {}) {
+  const n4MetrePendingByLevel = {};
+  const n4MetreSerialByLevel = {};
+  function buildN4MetreListeningMelody(answerId, level = "N4") {
+    const n4MetrePending=n4MetrePendingByLevel[level] ||= {simple:[],compound:[]};
+    const other = answerId === "simple" ? "compound" : "simple";
+    let comparison = n4MetrePending[answerId].shift();
+    if (!comparison) {
+      const serial = n4MetreSerialByLevel[level]||0;
+      n4MetreSerialByLevel[level]=serial+1;
+      const seed = `${Date.now()}-${Math.random()}`;
+      comparison = {
+        id:seed, keyId:randomItem(LEVELS[level].keyIds),
+        simpleSignature:["H","AH"].includes(level)?["2/4","3/4","4/4"][serial%3]:["2/4","3/4","2/4","4/4"][serial % 4],
+        compoundSignature:["H","AH"].includes(level)?["6/8","9/8","12/8"][serial%3]:"6/8",
+        tempo:[{id:"adagio",label:"Adagio",bpm:60},{id:"andante",label:"Andante",bpm:80},{id:"allegro",label:"Allegro",bpm:100}][serial % 3],
+        plan:window.PracticeMelodyGenerator.generateAdvancedHigherPlan({seed,cadenceId:"perfect",timeSignatureId:"2/4",allowRests:false}),
+        splitPulses:Array.from({length:8},()=>Array.from({length:4},(_,pulse)=>pulse===0||Math.random()<.7)),
+      };
+      n4MetrePending[other].push(comparison);
+      if(n4MetrePending[other].length>8) n4MetrePending[other].shift();
+    }
+    return buildAdvancedHigherListeningMelody([answerId === "simple" ? comparison.simpleSignature : comparison.compoundSignature],{level,subdivisions:true,comparison});
+  }
+
+  function n4ListeningNotes(generator, plannedBar, signature, tonicMidi, minor, subdivisions, comparison) {
+    if(plannedBar.barIndex===7) return [{relativeStep:0,rest:false,beat:0,beats:signature.beats}];
+    const chord=generator.CHORD_DEGREES[plannedBar.chordSymbol] || generator.CHORD_DEGREES.I;
+    const candidates=Array.from({length:29},(_,index)=>index-7).filter(step=>chord.includes(((step%7)+7)%7+1)&&practiceScaleMidi(generator,step,tonicMidi,minor)>=57&&practiceScaleMidi(generator,step,tonicMidi,minor)<=84);
+    const notes=[],pulseBeats=signature.pulseQuarterBeats;
+    const motif=plannedBar.notes.filter(note=>!note.rest);
+    for(let pulse=0;pulse<signature.pulseCount;pulse++) {
+      const reference=motif[pulse%motif.length]?.relativeStep ?? 0;
+      const anchor=candidates.reduce((best,step)=>Math.abs(step-reference)<Math.abs(best-reference)?step:best,candidates[0]);
+      const position=candidates.indexOf(anchor),direction=pulse%2===0?1:-1;
+      const neighbour=candidates[position+direction] ?? candidates[position-direction] ?? anchor;
+      const split=plannedBar.barIndex>=2&&(subdivisions || pulse===0)&&(comparison?.splitPulses[plannedBar.barIndex][pulse] ?? true);
+      const degrees=split?(signature.type==="compound"?[anchor,neighbour,anchor]:[anchor,neighbour]):[anchor];
+      degrees.forEach((relativeStep,index)=>notes.push({relativeStep,rest:false,beat:pulse*pulseBeats+index*pulseBeats/degrees.length,beats:pulseBeats/degrees.length}));
+    }
+    return notes;
+  }
+
+  function buildAdvancedHigherListeningMelody(signatureIds, { subdivisions = false, level = "AH", comparison = null } = {}) {
     const generator = window.PracticeMelodyGenerator;
     if (!generator?.generateAdvancedHigherPlan) throw new Error("The Practice Questions melody generator is unavailable.");
     const sourceSignature = randomItem(TIME_SIGNATURES.filter(signature => signatureIds.includes(signature.id)));
@@ -1247,30 +1289,65 @@
       pulseCount: pulseCount(sourceSignature),
       pulseQuarterBeats: sourceSignature.type === "compound" ? 1.5 : 1
     };
-    const key = randomItem(Object.values(KEYS));
+    const keyIds = LEVELS[level]?.keyIds || LEVELS.AH.keyIds;
+    const key = KEYS[comparison?.keyId || randomItem(keyIds)] || KEYS.C;
     const minor = key.id.endsWith("m");
     const tonicMidi = midiForPitch({ name: key.tonic + (key.id === "C" ? "5" : "4"), letter: key.tonic }, key);
-    const plan = generator.generateAdvancedHigherPlan({
+    const plan = comparison?.plan || generator.generateAdvancedHigherPlan({
       seed: `${Date.now()}-${Math.random()}`,
       cadenceId: "perfect", timeSignatureId: timeSignature.id, allowRests: true
     });
-    const accompanimentStyle = MLH.AuralAccompaniment.chooseStyle();
-    const bars = plan.bars.map(plannedBar => {
+    // Listening questions need an audible hierarchy within each bar.
+    const accompanimentStyle = "metre-pulses";
+    const clearPulse = ["N3", "N4", "H", "AH"].includes(level);
+    const excerptBars = clearPulse ? plan.bars.slice(0, 8) : plan.bars;
+    const bars = excerptBars.map(plannedBar => {
+      const chordDegrees = generator.CHORD_DEGREES[plannedBar.chordSymbol] || generator.CHORD_DEGREES.I;
+      const pulseBeats = timeSignature.pulseQuarterBeats;
+      const clearOpening = clearPulse && plannedBar.barIndex < 2;
+      const sourceNotes = ["N4","H","AH"].includes(level) ? n4ListeningNotes(generator,plannedBar,timeSignature,tonicMidi,minor,subdivisions,comparison) : clearOpening ? Array.from({length:timeSignature.pulseCount}, (_,index)=>{
+        const reference = plannedBar.notes.find(note=>!note.rest)?.relativeStep ?? 0;
+        const candidates = Array.from({length:22},(_,step)=>step-7).filter(step=>chordDegrees.includes(((step%7)+7)%7+1));
+        const target = reference + (index%2 ? 1 : 0);
+        const relativeStep = candidates.sort((a,b)=>Math.abs(a-target)-Math.abs(b-target))[0];
+        return {relativeStep,rest:false,beat:index*pulseBeats,beats:pulseBeats};
+      }) : plannedBar.notes;
       const bar = {
-        ...plannedBar, totalBars: plan.bars.length, timeSignature,
-        notes: plannedBar.notes.map((note, noteIndex) => ({
+        ...plannedBar, totalBars: excerptBars.length, timeSignature,
+        notes: sourceNotes.map((note, noteIndex) => ({
           ...note, id: `${plannedBar.barIndex}-${noteIndex}`, barIndex: plannedBar.barIndex, noteIndex,
-          midi: note.rest ? 0 : practiceScaleMidi(generator, note.relativeStep, tonicMidi, minor)
+          midi: note.rest ? 0 : practiceScaleMidi(generator, note.relativeStep, tonicMidi, minor),
+          volume: note.beat === 0 ? 1.12 : timeSignature.id === "4/4" && note.beat === 2 ? 1.02 : ["N4","H","AH"].includes(level) && Math.abs(note.beat/pulseBeats-Math.round(note.beat/pulseBeats))>1e-8 ? .7 : .88
         }))
       };
-      bar.accompaniment = practiceAccompanimentForBar(generator, bar, key, timeSignature, accompanimentStyle, bar.barIndex === plan.bars.length - 1, subdivisions);
+      const support = practiceAccompanimentForBar(generator, bar, key, timeSignature, "block_chords", false, false);
+      const pitches = [...new Set(support.flatMap(event=>event.pitches))].sort((a,b)=>a-b);
+      const root = practiceScaleMidi(generator,chordDegrees[0]-1,tonicMidi-12,minor);
+      const bass = pitch=>{while(pitch<45)pitch+=12;return pitch;};
+      bar.accompaniment = Array.from({length:timeSignature.pulseCount},(_,pulse)=>({
+        beat:pulse*pulseBeats, beats:pulseBeats*.82,
+        pitches:pulse===0?[bass(root),...pitches]:timeSignature.id==="4/4"&&pulse===2?[bass(root+7),...pitches]:pitches,
+        volume:pulse===0?1.25:timeSignature.id==="4/4"&&pulse===2?.9:.62,
+      }));
+      if(subdivisions) for(let pulse=0;pulse<timeSignature.pulseCount;pulse++) {
+        const division=timeSignature.type==="compound"?3:2;
+        for(let part=1;part<division;part++) bar.accompaniment.push({beat:(pulse+part/division)*pulseBeats,beats:pulseBeats/division*.65,pitches:[pitches.at(-1)],volume:.32});
+      }
+      bar.accompaniment.sort((a,b)=>a.beat-b.beat);
+      bar.metrePulseAccents=Array.from({length:timeSignature.pulseCount},(_,pulse)=>pulse===0?1.25:timeSignature.id==="4/4"&&pulse===2?.9:.62);
       return bar;
     });
     return {
       id: Math.random().toString(36).slice(2), key, timeSignature, bars,
+      ...(comparison?{metreComparisonId:comparison.id,playbackTempo:{...comparison.tempo}}:{}),
       barCount: bars.length, totalBeats: bars.length * timeSignature.beats,
-      generationLevel: "AH", melodyGenerationStyle: "advancedHigher", melodyPlan: plan,
-      accompanimentStyle
+      generationLevel: "AH", melodyGenerationStyle: "advancedHigher", melodyPlan: {
+        ...plan,timeSignatureId:timeSignature.id,sourceValidation:plan.validation,
+        validation:{scope:"playback-structure",accepted:bars.every(bar=>bar.notes.every(note=>note.beat>=0&&note.beats>0&&note.beat+note.beats<=timeSignature.beats+1e-8&&(note.rest||Number.isFinite(note.midi))))},
+        bars:bars.map(bar=>({barIndex:bar.barIndex,chordSymbol:bar.chordSymbol,beats:timeSignature.beats,notes:bar.notes.map(note=>({...note}))})),
+      },
+      accompanimentStyle, listeningExcerptBars: bars.length, clearOpeningBars:clearPulse?2:0,
+      listeningPhraseLength: 4, listeningCadence: "perfect"
     };
   }
   function ListeningScore({
@@ -1320,6 +1397,7 @@
     pulseCount,
     buildListeningMelody,
     buildAdvancedHigherListeningMelody,
+    buildN4MetreListeningMelody,
     ListeningScore
   };
 })(window.MLH || (window.MLH = {}));

@@ -1,0 +1,1024 @@
+{
+  "sourceReading": "Official QP page 7: ten separately calibrated staves, 300 dpi crops plus the complete short final staff boundary, second reading of every notehead/rhythm. MI page 4 confirms missing notes/transposition/triplet and chords. Printed marcato accents, grace G5 notes, down-stem drums, 5-beat incorrect bar and final open fragment explicitly recorded.",
+  "key": "C major",
+  "clef": "treble",
+  "timeSignature": "4/4",
+  "pitchMap": "Treble lines E4 G4 B4 D5 F5; spaces F4 A4 C5 E5. Ledger C4 below, A3 below second ledger, A5 above first upper ledger. Explicit E-flat5 in line 2 and F-sharp4 in lines 3/4/5.",
+  "lines": {
+    "line3": [
+      {
+        "notes": [
+          [
+            "A4",
+            "minim"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "F4",
+            "minim"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ],
+          [
+            "D4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "minim"
+          ],
+          [
+            "rest",
+            "crotchetRest"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "A4",
+            "minim"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      }
+    ],
+    "line4": [
+      {
+        "notes": [
+          [
+            "F4",
+            "minim"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ],
+          [
+            "D4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "minim"
+          ],
+          [
+            "rest",
+            "crotchetRest"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "D5",
+            "minim"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ],
+          [
+            "D5",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "B4",
+            "minim"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ],
+          [
+            "G4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      }
+    ],
+    "line5": [
+      {
+        "notes": [
+          [
+            "A4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "A4",
+            "minim"
+          ],
+          [
+            "rest",
+            "crotchetRest"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "A4",
+            "minim"
+          ],
+          [
+            "E4",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "F4",
+            "minim"
+          ],
+          [
+            "E4",
+            "minim"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      }
+    ],
+    "line6": [
+      {
+        "notes": [
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "minim"
+          ],
+          [
+            "A3",
+            "minim"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "A3",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      }
+    ],
+    "line7": [
+      {
+        "notes": [
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "C4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "quaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ],
+          [
+            "F4",
+            "semiquaver"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      }
+    ],
+    "line8": [
+      {
+        "notes": [
+          [
+            "rest",
+            "crotchetRest"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ],
+          [
+            "C5",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "B4",
+            "minim"
+          ],
+          [
+            "C5",
+            "crotchet"
+          ],
+          [
+            "D5",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "E5",
+            "crotchet"
+          ],
+          [
+            "D5",
+            "crotchet"
+          ],
+          [
+            "C5",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "minim"
+          ]
+        ],
+        "beats": 5
+      }
+    ],
+    "line9": [
+      {
+        "notes": [
+          [
+            "A4",
+            "semibreve"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "rest",
+            "crotchetRest"
+          ],
+          [
+            "F4",
+            "crotchet"
+          ],
+          [
+            "A4",
+            "crotchet"
+          ],
+          [
+            "C5",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "B4",
+            "minim"
+          ],
+          [
+            "C5",
+            "crotchet"
+          ],
+          [
+            "D5",
+            "crotchet"
+          ]
+        ],
+        "beats": 4
+      },
+      {
+        "notes": [
+          [
+            "G4",
+            "dottedCrotchet"
+          ]
+        ],
+        "beats": 1.5
+      }
+    ]
+  },
+  "line1": {
+    "notes": [
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ],
+      [
+        "B4",
+        "quaver"
+      ]
+    ],
+    "noteheads": "cross",
+    "beamGroups": [
+      {
+        "start": 0,
+        "end": 3
+      },
+      {
+        "start": 4,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 11
+      },
+      {
+        "start": 12,
+        "end": 15
+      }
+    ],
+    "barlineAfterIndices": [
+      7,
+      15
+    ],
+    "sourceDownStems": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "line2": {
+    "notes": [
+      [
+        "rest",
+        "crotchetRest"
+      ],
+      [
+        "A4",
+        "quaver"
+      ],
+      [
+        "C5",
+        "quaver"
+      ],
+      [
+        "D5",
+        "quaver"
+      ],
+      [
+        "E5",
+        "quaver"
+      ],
+      [
+        "D5",
+        "crotchet"
+      ],
+      [
+        "D5",
+        "crotchet"
+      ],
+      [
+        "A4",
+        "quaver"
+      ],
+      [
+        "C5",
+        "quaver"
+      ],
+      [
+        "A5",
+        "quaver"
+      ],
+      [
+        "G5",
+        "quaver"
+      ],
+      [
+        "E5",
+        "crotchet"
+      ],
+      [
+        "E5",
+        "crotchet"
+      ],
+      [
+        "A4",
+        "quaver"
+      ],
+      [
+        "C5",
+        "quaver"
+      ],
+      [
+        "D5",
+        "quaver"
+      ],
+      [
+        "E5",
+        "quaver"
+      ],
+      [
+        "D5",
+        "crotchet"
+      ],
+      [
+        "D5",
+        "crotchet"
+      ],
+      [
+        "A4",
+        "semiquaver"
+      ],
+      [
+        "C5",
+        "dottedQuaver"
+      ],
+      [
+        "A5",
+        "quaver"
+      ],
+      [
+        "G5",
+        "quaver"
+      ],
+      [
+        "E5",
+        "quaver"
+      ],
+      [
+        "E4",
+        "quaver"
+      ]
+    ],
+    "beamGroups": [
+      {
+        "start": 1,
+        "end": 2
+      },
+      {
+        "start": 3,
+        "end": 4
+      },
+      {
+        "start": 7,
+        "end": 8
+      },
+      {
+        "start": 9,
+        "end": 10
+      },
+      {
+        "start": 13,
+        "end": 14
+      },
+      {
+        "start": 15,
+        "end": 16
+      },
+      {
+        "start": 19,
+        "end": 20
+      },
+      {
+        "start": 21,
+        "end": 24
+      }
+    ],
+    "tiesFrom": [
+      5,
+      11,
+      17
+    ],
+    "barlineAfterIndices": [
+      5,
+      11,
+      17,
+      24
+    ],
+    "missingBarlineAfterIndices": [
+      5,
+      11
+    ],
+    "accidentals": [
+      [
+        4,
+        "flat"
+      ],
+      [
+        16,
+        "flat"
+      ]
+    ],
+    "marcatoIndices": [
+      3,
+      4,
+      15,
+      16
+    ],
+    "graceNotes": [
+      {
+        "mainNoteIndex": 9,
+        "gracePitch": "G5",
+        "symbol": "slashedGraceNoteStemUp"
+      },
+      {
+        "mainNoteIndex": 21,
+        "gracePitch": "G5",
+        "symbol": "slashedGraceNoteStemUp"
+      }
+    ],
+    "finalBarline": "single"
+  },
+  "crossBarTies": {
+    "line3": [
+      [
+        2,
+        3,
+        0
+      ]
+    ],
+    "line4": [
+      [
+        1,
+        2,
+        0
+      ]
+    ],
+    "line5": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ]
+    ],
+    "line6": [
+      [
+        2,
+        3,
+        1
+      ]
+    ],
+    "line7": [
+      [
+        2,
+        3,
+        0
+      ]
+    ]
+  },
+  "crossLineTie": {
+    "fromLine": "line8",
+    "fromBar": 2,
+    "fromNote": 3,
+    "toLine": "line9",
+    "toBar": 0,
+    "toNote": 0
+  },
+  "sourceDownStems": {
+    "line8": {
+      "1": [
+        0
+      ]
+    },
+    "line9": {
+      "2": [
+        0
+      ]
+    }
+  },
+  "editable": {
+    "missingPitches": [
+      "B4",
+      "A4",
+      "G4"
+    ],
+    "missingLine": "line4",
+    "missingBar": 4,
+    "missingIndices": [
+      0,
+      1,
+      2
+    ],
+    "transposition": [
+      "A3",
+      "E3",
+      "A3",
+      "F\u266f3"
+    ],
+    "rhythmLine": "line8",
+    "rhythmBar": 2,
+    "rhythmIndices": [
+      0,
+      1,
+      2
+    ],
+    "rhythmAnswer": "crotchetTriplet",
+    "intervalLine": "line5",
+    "intervalBar": 2,
+    "intervalIndices": [
+      0,
+      1
+    ],
+    "chords": [
+      "F",
+      "G"
+    ]
+  },
+  "rhythmExceptions": {
+    "line8.3": "Five printed beats deliberately wrong; first three crotchets become a triplet.",
+    "line9.4": "1.5-beat closing fragment with open staff ending."
+  },
+  "finalBarline": "none",
+  "sources": [
+    {
+      "path": "exampapers/higher/2018/NH_Music_QP_2018.pdf",
+      "sha256": "c97f9e77f751bfc15ad1806cefebf0df9b22e71b5fff9619b1ae039fec4aec0b"
+    },
+    {
+      "path": "exampapers/higher/2018/mi_NH_Music_mi_2018.pdf",
+      "sha256": "739e6568e81b270a56c322b036a4fbb964397b9245ecae48c4598784a3823ba4"
+    }
+  ]
+}

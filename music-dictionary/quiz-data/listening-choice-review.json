@@ -1,0 +1,6366 @@
+{
+  "scope": "All tick-one and tick-two questions; typed definitions intentionally unchanged",
+  "reviewedQuestions": 594,
+  "rewrittenQuestions": 259,
+  "retainedQuestions": 335,
+  "typedQuestionsPreserved": 297,
+  "source": "music-concepts-data.js definitions and Listen For features",
+  "verificationLimits": "Text-based rehearsal of listening concepts, not an audition of recordings. Style clues are typical supporting evidence, not unique identification guarantees.",
+  "questions": [
+    {
+      "questionId": "CQ-N3-MC0001-02",
+      "conceptId": "MC-0001",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "four beats per bar and a recurring 12-bar chord cycle",
+        "flattened notes, bent pitches and answering phrases",
+        "riffs and improvised solos."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0001-L01",
+      "conceptId": "MC-0001",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "four beats per bar and a recurring 12-bar chord cycle",
+        "flattened notes, bent pitches and answering phrases",
+        "riffs and improvised solos."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0002-L01",
+      "conceptId": "MC-0002",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "syncopated rhythms, often with a swung feel",
+        "improvised solos, often on saxophone, trumpet or piano."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0002-L02",
+      "conceptId": "MC-0002",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "syncopated rhythms, often with a swung feel",
+        "improvised solos, often on saxophone, trumpet or piano."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0003-L02",
+      "conceptId": "MC-0003",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "lively dance pulse with off-beat rhythms",
+        "prominent bongos, claves, shakers or a scraping güiro."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0003-L03",
+      "conceptId": "MC-0003",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "lively dance pulse with off-beat rhythms",
+        "prominent bongos, claves, shakers or a scraping güiro."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0004-L01",
+      "conceptId": "MC-0004",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "theatrical solo or group singing with a band or orchestra",
+        "a direct, popular-style vocal delivery with clear words",
+        "spoken dialogue alternating with songs."
+      ],
+      "classroomSources": [
+        {
+          "path": "class workbooks/Unit 4 - Jazz and Popular Music.docx",
+          "locator": "word/document.xml paragraphs 51, 52, 54, 55, 56"
+        }
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0004-L02",
+      "conceptId": "MC-0004",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "theatrical solo or group singing with a band or orchestra",
+        "a direct, popular-style vocal delivery with clear words",
+        "spoken dialogue alternating with songs."
+      ],
+      "classroomSources": [
+        {
+          "path": "class workbooks/Unit 4 - Jazz and Popular Music.docx",
+          "locator": "word/document.xml paragraphs 51, 52, 54, 55, 56"
+        }
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0005-L01",
+      "conceptId": "MC-0005",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "lead vocals with guitar, keyboards, bass and a regular drum beat",
+        "catchy choruses, repeated hooks and returning verse tunes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0005-L02",
+      "conceptId": "MC-0005",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "lead vocals with guitar, keyboards, bass and a regular drum beat",
+        "catchy choruses, repeated hooks and returning verse tunes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0006-L01",
+      "conceptId": "MC-0006",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "heavy, driving drum beat",
+        "distorted guitar riffs with bass and vocals."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0006-L02",
+      "conceptId": "MC-0006",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "heavy, driving drum beat",
+        "distorted guitar riffs with bass and vocals."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0007-L01",
+      "conceptId": "MC-0007",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "fast, lively backbeat with repeated riffs",
+        "a walking bass and 12-bar blues pattern."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0007-L02",
+      "conceptId": "MC-0007",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "fast, lively backbeat with repeated riffs",
+        "a walking bass and 12-bar blues pattern."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0008-L01",
+      "conceptId": "MC-0008",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "fiddle, accordion or droning bagpipes, often with a strong dance pulse",
+        "songs using Scots or Gaelic words."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0008-L02",
+      "conceptId": "MC-0008",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "fiddle, accordion or droning bagpipes, often with a strong dance pulse",
+        "songs using Scots or Gaelic words."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0009-01",
+      "conceptId": "MC-0009",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the notes climbing higher."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0009-Q03",
+      "conceptId": "MC-0009",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the notes climbing higher."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0010-01",
+      "conceptId": "MC-0010",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "several pitches sounding as one block."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0010-Q03",
+      "conceptId": "MC-0010",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "several pitches sounding as one block."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0011-01",
+      "conceptId": "MC-0011",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a shift in the accompanying chord sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0011-Q03",
+      "conceptId": "MC-0011",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a shift in the accompanying chord sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0012-01",
+      "conceptId": "MC-0012",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the notes moving lower."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0012-Q03",
+      "conceptId": "MC-0012",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the notes moving lower."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0013-Q02",
+      "conceptId": "MC-0013",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "clashing pitches that sound tense or unsettled."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0013-Q03",
+      "conceptId": "MC-0013",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "clashing pitches that sound tense or unsettled."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0014-Q02",
+      "conceptId": "MC-0014",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "free, spontaneous-sounding phrases, often varying a familiar tune or backing pattern."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0014-Q03",
+      "conceptId": "MC-0014",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "free, spontaneous-sounding phrases, often varying a familiar tune or backing pattern."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0015-Q02",
+      "conceptId": "MC-0015",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the tune making noticeable pitch jumps, skipping neighbouring scale notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0015-Q03",
+      "conceptId": "MC-0015",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the tune making noticeable pitch jumps, skipping neighbouring scale notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0016-01",
+      "conceptId": "MC-0016",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a short phrase followed by a balancing reply",
+        "similar rhythms or phrase lengths."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0016-Q03",
+      "conceptId": "MC-0016",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a short phrase followed by a balancing reply",
+        "similar rhythms or phrase lengths."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0017-01",
+      "conceptId": "MC-0017",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the same musical idea coming back unchanged."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0017-Q03",
+      "conceptId": "MC-0017",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the same musical idea coming back unchanged."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0018-01",
+      "conceptId": "MC-0018",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the same part immediately restating a phrase higher or lower",
+        "a recognisable rhythm and melodic shape in each restatement."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0018-Q03",
+      "conceptId": "MC-0018",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the same part immediately restating a phrase higher or lower",
+        "a recognisable rhythm and melodic shape in each restatement."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0019-Q02",
+      "conceptId": "MC-0019",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the tune moving up or down through neighbouring scale notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0019-Q03",
+      "conceptId": "MC-0019",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the tune moving up or down through neighbouring scale notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0020-Q02",
+      "conceptId": "MC-0020",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a recurring strong beat followed by weaker beats",
+        "the pulse falling into groups of two, three or four."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0020-Q03",
+      "conceptId": "MC-0020",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a recurring strong beat followed by weaker beats",
+        "the pulse falling into groups of two, three or four."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0021-Q02",
+      "conceptId": "MC-0021",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one note standing out with extra force."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0021-Q03",
+      "conceptId": "MC-0021",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one note standing out with extra force."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0022-Q02",
+      "conceptId": "MC-0022",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a slow, unhurried pace."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0022-Q03",
+      "conceptId": "MC-0022",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a slow, unhurried pace."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0023-01",
+      "conceptId": "MC-0023",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a quick, lively pace."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0023-Q03",
+      "conceptId": "MC-0023",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a quick, lively pace."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0024-01",
+      "conceptId": "MC-0024",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a regular pulse you can tap along to."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0024-Q03",
+      "conceptId": "MC-0024",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a regular pulse you can tap along to."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0025-01",
+      "conceptId": "MC-0025",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a brief burst of extra drum notes",
+        "a drum fill leading into a new phrase or section."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0025-Q03",
+      "conceptId": "MC-0025",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a brief burst of extra drum notes",
+        "a drum fill leading into a new phrase or section."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0026-01",
+      "conceptId": "MC-0026",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the pulse becoming quicker."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0026-Q03",
+      "conceptId": "MC-0026",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the pulse becoming quicker."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0027-Q02",
+      "conceptId": "MC-0027",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "firm, even beats at a walking pace",
+        "clear groups of two or four, often with strong percussion."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0027-Q03",
+      "conceptId": "MC-0027",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "firm, even beats at a walking pace",
+        "clear groups of two or four, often with strong percussion."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0028-01",
+      "conceptId": "MC-0028",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "emphasis between main beats or on weaker beats, such as 2 and 4."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0028-Q03",
+      "conceptId": "MC-0028",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "emphasis between main beats or on weaker beats, such as 2 and 4."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0029-01",
+      "conceptId": "MC-0029",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "notes landing with the main pulse",
+        "reinforced strong beats, such as 1 and 3."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0029-Q03",
+      "conceptId": "MC-0029",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "notes landing with the main pulse",
+        "reinforced strong beats, such as 1 and 3."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0030-01",
+      "conceptId": "MC-0030",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a note or silence lasting longer than expected."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0030-Q03",
+      "conceptId": "MC-0030",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a note or silence lasting longer than expected."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0031-01",
+      "conceptId": "MC-0031",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "fast, flowing Scottish dance rhythm",
+        "two or four beats, dividing evenly into twos."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0031-Q03",
+      "conceptId": "MC-0031",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "fast, flowing Scottish dance rhythm",
+        "two or four beats, dividing evenly into twos."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0032-01",
+      "conceptId": "MC-0032",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the pulse becoming less quick."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0032-Q03",
+      "conceptId": "MC-0032",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the pulse becoming less quick."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0033-Q02",
+      "conceptId": "MC-0033",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a repeating ONE-two-three dance pulse",
+        "a bass note followed by two lighter chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0033-Q03",
+      "conceptId": "MC-0033",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a repeating ONE-two-three dance pulse",
+        "a bass note followed by two lighter chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0034-01",
+      "conceptId": "MC-0034",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "supporting music underneath the main tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0034-Q03",
+      "conceptId": "MC-0034",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "supporting music underneath the main tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0035-Q02",
+      "conceptId": "MC-0035",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "different pitches sounding together in chords or separate voice parts."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0035-Q03",
+      "conceptId": "MC-0035",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "different pitches sounding together in chords or separate voice parts."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0036-Q02",
+      "conceptId": "MC-0036",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two matching note sounds, eight scale notes apart."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0036-Q03",
+      "conceptId": "MC-0036",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "two matching note sounds, eight scale notes apart."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0037-01",
+      "conceptId": "MC-0037",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a short tune or rhythm looping repeatedly."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0037-Q03",
+      "conceptId": "MC-0037",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a short tune or rhythm looping repeatedly."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0038-01",
+      "conceptId": "MC-0038",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the same tune starting at different times in overlapping parts",
+        "each part looping back to the beginning."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0038-Q03",
+      "conceptId": "MC-0038",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the same tune starting at different times in overlapping parts",
+        "each part looping back to the beginning."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0039-Q02",
+      "conceptId": "MC-0039",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one featured singer or instrument standing out."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0039-Q03",
+      "conceptId": "MC-0039",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one featured singer or instrument standing out."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0040-01",
+      "conceptId": "MC-0040",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the main voice or instrument sounding without backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0040-Q03",
+      "conceptId": "MC-0040",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the main voice or instrument sounding without backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0041-Q02",
+      "conceptId": "MC-0041",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "several performers sharing one tune at the same pitch."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0041-Q03",
+      "conceptId": "MC-0041",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "several performers sharing one tune at the same pitch."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0042-Q02",
+      "conceptId": "MC-0042",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a bright, reedy, sustained tone",
+        "a melody over alternating bass notes and chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0042-Q03",
+      "conceptId": "MC-0042",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright, reedy, sustained tone",
+        "a melody over alternating bass notes and chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0043-01",
+      "conceptId": "MC-0043",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "clear, resonant strums or individually plucked notes",
+        "notes ringing briefly, then fading."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0043-Q03",
+      "conceptId": "MC-0043",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "clear, resonant strums or individually plucked notes",
+        "notes ringing briefly, then fading."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0044-Q02",
+      "conceptId": "MC-0044",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a piercing, ornamented tune over continuous low drones."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0044-Q03",
+      "conceptId": "MC-0044",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a piercing, ornamented tune over continuous low drones."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0045-01",
+      "conceptId": "MC-0045",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "airy, reedy or brassy tones, sometimes with audible breaths."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0045-Q03",
+      "conceptId": "MC-0045",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "airy, reedy or brassy tones, sometimes with audible breaths."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0046-01",
+      "conceptId": "MC-0046",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a sustained string tone, often smoothly joined between notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0046-Q03",
+      "conceptId": "MC-0046",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sustained string tone, often smoothly joined between notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0047-01",
+      "conceptId": "MC-0047",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a bright, brassy or mellow rounded tone",
+        "powerful fanfares, sustained chords or bold melodies."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0047-Q03",
+      "conceptId": "MC-0047",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright, brassy or mellow rounded tone",
+        "powerful fanfares, sustained chords or bold melodies."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0048-01",
+      "conceptId": "MC-0048",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "many voices blending in unison or harmony."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0048-Q03",
+      "conceptId": "MC-0048",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "many voices blending in unison or harmony."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0049-01",
+      "conceptId": "MC-0049",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a repeating groove combining deep thuds, snare rattles and cymbal sounds."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0049-Q03",
+      "conceptId": "MC-0049",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a repeating groove combining deep thuds, snare rattles and cymbal sounds."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0050-Q02",
+      "conceptId": "MC-0050",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "amplified guitar notes or chords, sometimes sustained or distorted."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0050-Q03",
+      "conceptId": "MC-0050",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "amplified guitar notes or chords, sometimes sustained or distorted."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0051-Q02",
+      "conceptId": "MC-0051",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a bright bowed violin sound in a folk tune",
+        "quick ornaments and dance rhythms."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0051-Q03",
+      "conceptId": "MC-0051",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright bowed violin sound in a folk tune",
+        "quick ornaments and dance rhythms."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0052-01",
+      "conceptId": "MC-0052",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a small acoustic group, with or without singing",
+        "a blend of acoustic guitar, fiddle, whistle, accordion or bagpipes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0052-Q03",
+      "conceptId": "MC-0052",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a small acoustic group, with or without singing",
+        "a blend of acoustic guitar, fiddle, whistle, accordion or bagpipes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0053-Q02",
+      "conceptId": "MC-0053",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "smoothly joined notes with no obvious breaks."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0053-Q03",
+      "conceptId": "MC-0053",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "smoothly joined notes with no obvious breaks."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0054-01",
+      "conceptId": "MC-0054",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a large instrumental sound blending strings, winds, brass and percussion."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0054-Q03",
+      "conceptId": "MC-0054",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a large instrumental sound blending strings, winds, brass and percussion."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0055-Q02",
+      "conceptId": "MC-0055",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "long-held keyboard tones that do not quickly die away",
+        "full chords and deep pedal notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0055-Q03",
+      "conceptId": "MC-0055",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "long-held keyboard tones that do not quickly die away",
+        "full chords and deep pedal notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0056-01",
+      "conceptId": "MC-0056",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a mix of definite pitches and untuned rhythmic sounds",
+        "struck, shaken or scraped attacks."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0056-Q03",
+      "conceptId": "MC-0056",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a mix of definite pitches and untuned rhythmic sounds",
+        "struck, shaken or scraped attacks."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0057-Q02",
+      "conceptId": "MC-0057",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a clear struck attack followed by a fading ring",
+        "a melody and chords heard together",
+        "sharp contrasts between soft and loud notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0057-Q03",
+      "conceptId": "MC-0057",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a clear struck attack followed by a fading ring",
+        "a melody and chords heard together",
+        "sharp contrasts between soft and loud notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0058-01",
+      "conceptId": "MC-0058",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a sharp string attack followed by a quick fade."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0058-Q03",
+      "conceptId": "MC-0058",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sharp string attack followed by a quick fade."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0059-01",
+      "conceptId": "MC-0059",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "dance tunes from Scotland led by accordion or fiddle",
+        "a steady piano, bass and drum backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0059-Q03",
+      "conceptId": "MC-0059",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "dance tunes from Scotland led by accordion or fiddle",
+        "a steady piano, bass and drum backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0060-Q02",
+      "conceptId": "MC-0060",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "clipped notes with audible spaces between them."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0060-Q03",
+      "conceptId": "MC-0060",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "clipped notes with audible spaces between them."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0061-02",
+      "conceptId": "MC-0061",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "bright, metallic, bell-like pan tones",
+        "melody, chords and bass played by different pans."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0061-Q03",
+      "conceptId": "MC-0061",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "bright, metallic, bell-like pan tones",
+        "melody, chords and bass played by different pans."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0062-01",
+      "conceptId": "MC-0062",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a clear impact or hit at the start of each sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0062-Q03",
+      "conceptId": "MC-0062",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a clear impact or hit at the start of each sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0063-01",
+      "conceptId": "MC-0063",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "blending bowed tones or short plucked attacks",
+        "high violin lines through to deep bass notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0063-Q03",
+      "conceptId": "MC-0063",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "blending bowed tones or short plucked attacks",
+        "high violin lines through to deep bass notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0064-01",
+      "conceptId": "MC-0064",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a sweeping chord sound as several strings ring together."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0064-Q03",
+      "conceptId": "MC-0064",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sweeping chord sound as several strings ring together."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0067-Q02",
+      "conceptId": "MC-0067",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "human singing or speech, with recognisable words, vowels or breaths."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0067-Q03",
+      "conceptId": "MC-0067",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "human singing or speech, with recognisable words, vowels or breaths."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0068-01",
+      "conceptId": "MC-0068",
+      "levelCode": "N3",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "airy, whistling or reedy tones in the instrumental lines."
+      ]
+    },
+    {
+      "questionId": "CQ-N3-MC0068-Q03",
+      "conceptId": "MC-0068",
+      "levelCode": "N3",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "airy, whistling or reedy tones in the instrumental lines."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0069-Q02",
+      "conceptId": "MC-0069",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "layered drum patterns and interlocking rhythms",
+        "repeated ideas, call and response, voices or clapping."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0069-Q03",
+      "conceptId": "MC-0069",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "layered drum patterns and interlocking rhythms",
+        "repeated ideas, call and response, voices or clapping."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0070-02",
+      "conceptId": "MC-0070",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "interweaving parts, ornaments and repeated sequences",
+        "continuous bass-and-chord support, often with harpsichord or organ",
+        "abrupt step-like changes between loud and soft."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0070-Q03",
+      "conceptId": "MC-0070",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "interweaving parts, ornaments and repeated sequences",
+        "continuous bass-and-chord support, often with harpsichord or organ",
+        "abrupt step-like changes between loud and soft."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0071-01",
+      "conceptId": "MC-0071",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one solo instrument trading phrases with the orchestra",
+        "a free solo flourish (cadenza) interrupting the accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0071-Q03",
+      "conceptId": "MC-0071",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one solo instrument trading phrases with the orchestra",
+        "a free solo flourish (cadenza) interrupting the accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0072-01",
+      "conceptId": "MC-0072",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "rapid Gaelic or nonsense syllables fitting a dance rhythm",
+        "unaccompanied singing with a strong rhythmic lilt."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0072-Q03",
+      "conceptId": "MC-0072",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "rapid Gaelic or nonsense syllables fitting a dance rhythm",
+        "unaccompanied singing with a strong rhythmic lilt."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0073-01",
+      "conceptId": "MC-0073",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "operatic solo voices or chorus with orchestral backing",
+        "sustained, projected singing, often with vibrato."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0073-Q03",
+      "conceptId": "MC-0073",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "operatic solo voices or chorus with orchestral backing",
+        "sustained, projected singing, often with vibrato."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0074-01",
+      "conceptId": "MC-0074",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "syncopated piano tune over a steady bass-note–chord pattern."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0074-Q03",
+      "conceptId": "MC-0074",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "syncopated piano tune over a steady bass-note–chord pattern."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0075-01",
+      "conceptId": "MC-0075",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "rhythmic, rhyming speech over a backing beat."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0075-Q03",
+      "conceptId": "MC-0075",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "rhythmic, rhyming speech over a backing beat."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0076-01",
+      "conceptId": "MC-0076",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "clipped guitar or piano chords emphasising off-beats, often beats 2 and 4",
+        "a strong, deep bass line and relaxed groove."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0076-Q03",
+      "conceptId": "MC-0076",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "clipped guitar or piano chords emphasising off-beats, often beats 2 and 4",
+        "a strong, deep bass line and relaxed groove."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0077-01",
+      "conceptId": "MC-0077",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "long, sweeping melodies with expressive give-and-take in tempo",
+        "rich, chromatic harmony and wide changes in loudness",
+        "a full, colourful orchestral sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0077-Q03",
+      "conceptId": "MC-0077",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "long, sweeping melodies with expressive give-and-take in tempo",
+        "rich, chromatic harmony and wide changes in loudness",
+        "a full, colourful orchestral sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0078-01",
+      "conceptId": "MC-0078",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a story sung in Scots",
+        "the tune returning for successive verses",
+        "one singer with sparse backing or no instruments."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0078-Q03",
+      "conceptId": "MC-0078",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a story sung in Scots",
+        "the tune returning for successive verses",
+        "one singer with sparse backing or no instruments."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0079-01",
+      "conceptId": "MC-0079",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "uneven long-short pairs of notes",
+        "a big-band sound with brass, saxophones and a rhythm section",
+        "repeated riffs and answering brass/saxophone phrases."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0079-Q03",
+      "conceptId": "MC-0079",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "uneven long-short pairs of notes",
+        "a big-band sound with brass, saxophones and a rhythm section",
+        "repeated riffs and answering brass/saxophone phrases."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0080-01",
+      "conceptId": "MC-0080",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "chord notes unfolding separately, often rising or falling."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0080-Q03",
+      "conceptId": "MC-0080",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "chord notes unfolding separately, often rising or falling."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0081-01",
+      "conceptId": "MC-0081",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the music settling around a new home note or key."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0081-Q03",
+      "conceptId": "MC-0081",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the music settling around a new home note or key."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0082-01",
+      "conceptId": "MC-0082",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "three major-chord colours: home (I), IV and V",
+        "a pull from chord V back towards chord I."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0082-Q03",
+      "conceptId": "MC-0082",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "three major-chord colours: home (I), IV and V",
+        "a pull from chord V back towards chord I."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0083-01",
+      "conceptId": "MC-0083",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a held or repeated low note/open fifth beneath a moving tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0083-Q03",
+      "conceptId": "MC-0083",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a held or repeated low note/open fifth beneath a moving tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0084-01",
+      "conceptId": "MC-0084",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a bright, happy or cheerful character."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0084-Q03",
+      "conceptId": "MC-0084",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright, happy or cheerful character."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0085-01",
+      "conceptId": "MC-0085",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a darker, sadder or more serious character."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0085-Q03",
+      "conceptId": "MC-0085",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a darker, sadder or more serious character."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0086-Q02",
+      "conceptId": "MC-0086",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two matching note sounds, eight scale notes apart."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0086-Q03",
+      "conceptId": "MC-0086",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "two matching note sounds, eight scale notes apart."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0087-01",
+      "conceptId": "MC-0087",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "quick decorative notes around the main tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0087-Q03",
+      "conceptId": "MC-0087",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "quick decorative notes around the main tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0088-01",
+      "conceptId": "MC-0088",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a held or repeating bass note underneath changing chords",
+        "brief clashes between the held bass note and new chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0088-Q03",
+      "conceptId": "MC-0088",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a held or repeating bass note underneath changing chords",
+        "brief clashes between the held bass note and new chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0089-Q02",
+      "conceptId": "MC-0089",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tune built from five pitches",
+        "an open, folk-like sound without semitone steps."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0089-Q03",
+      "conceptId": "MC-0089",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a tune built from five pitches",
+        "an open, folk-like sound without semitone steps."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0090-01",
+      "conceptId": "MC-0090",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a run of neighbouring notes climbing or falling in order."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0090-Q03",
+      "conceptId": "MC-0090",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a run of neighbouring notes climbing or falling in order."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0091-01",
+      "conceptId": "MC-0091",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "improvised vocal runs on “doo”, “ba” or other wordless syllables",
+        "jazz-like phrasing that can imitate instrumental solos."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0091-Q03",
+      "conceptId": "MC-0091",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "improvised vocal runs on “doo”, “ba” or other wordless syllables",
+        "jazz-like phrasing that can imitate instrumental solos."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0093-01",
+      "conceptId": "MC-0093",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "bass notes on strong beats, chords on the weaker beats between",
+        "a steady piano or guitar accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0093-Q03",
+      "conceptId": "MC-0093",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "bass notes on strong beats, chords on the weaker beats between",
+        "a steady piano or guitar accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0094-Q02",
+      "conceptId": "MC-0094",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the earlier speed returning after a temporary change."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0094-Q03",
+      "conceptId": "MC-0094",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the earlier speed returning after a temporary change."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0095-Q02",
+      "conceptId": "MC-0095",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the pulse speeding up little by little."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0095-Q03",
+      "conceptId": "MC-0095",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the pulse speeding up little by little."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0096-01",
+      "conceptId": "MC-0096",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "pickup notes leading into the first strong beat."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0096-Q03",
+      "conceptId": "MC-0096",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "pickup notes leading into the first strong beat."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0097-Q02",
+      "conceptId": "MC-0097",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a calm, walking-speed pulse."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0097-Q03",
+      "conceptId": "MC-0097",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a calm, walking-speed pulse."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0098-Q02",
+      "conceptId": "MC-0098",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a rolling three-part subdivision of each main beat",
+        "a “jig-ge-ty” rhythm fitting each beat."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0098-Q03",
+      "conceptId": "MC-0098",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a rolling three-part subdivision of each main beat",
+        "a “jig-ge-ty” rhythm fitting each beat."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0099-01",
+      "conceptId": "MC-0099",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "unequal long-short or short-long note pairs."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0099-Q03",
+      "conceptId": "MC-0099",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "unequal long-short or short-long note pairs."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0100-01",
+      "conceptId": "MC-0100",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a quick, lilting Scottish or Irish dance",
+        "two main beats, each dividing into three."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0100-Q03",
+      "conceptId": "MC-0100",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a quick, lilting Scottish or Irish dance",
+        "two main beats, each dividing into three."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0101-01",
+      "conceptId": "MC-0101",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the pulse easing back gradually."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0101-Q03",
+      "conceptId": "MC-0101",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the pulse easing back gradually."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0102-01",
+      "conceptId": "MC-0102",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a sharply accented short note followed by a longer one."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0102-Q03",
+      "conceptId": "MC-0102",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sharply accented short note followed by a longer one."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0103-Q02",
+      "conceptId": "MC-0103",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "main beats dividing evenly into two",
+        "a two-, three- or four-beat pulse."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0103-Q03",
+      "conceptId": "MC-0103",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "main beats dividing evenly into two",
+        "a two-, three- or four-beat pulse."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0104-01",
+      "conceptId": "MC-0104",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "moderate four-beat Scottish dance pulse",
+        "dotted rhythms and clipped short-long Scotch snaps."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0104-Q03",
+      "conceptId": "MC-0104",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "moderate four-beat Scottish dance pulse",
+        "dotted rhythms and clipped short-long Scotch snaps."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0105-01",
+      "conceptId": "MC-0105",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "accents landing off the strong beats, or notes carrying across them."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0105-Q03",
+      "conceptId": "MC-0105",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "accents landing off the strong beats, or notes carrying across them."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0106-01",
+      "conceptId": "MC-0106",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a showy solo passage, usually with little or no backing",
+        "rapid runs, ending with a trill before the orchestra returns."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0106-Q03",
+      "conceptId": "MC-0106",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a showy solo passage, usually with little or no backing",
+        "rapid runs, ending with a trill before the orchestra returns."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0107-01",
+      "conceptId": "MC-0107",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one tune copied exactly by a later-entering part",
+        "the overlapping lines continuing together."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0107-Q03",
+      "conceptId": "MC-0107",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one tune copied exactly by a later-entering part",
+        "the overlapping lines continuing together."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0108-01",
+      "conceptId": "MC-0108",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one part copying a recognisable idea just heard in another."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0108-Q03",
+      "conceptId": "MC-0108",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one part copying a recognisable idea just heard in another."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0109-01",
+      "conceptId": "MC-0109",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a contrasting passage interrupting the familiar verse or chorus",
+        "a passage lasting about eight bars."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0109-Q03",
+      "conceptId": "MC-0109",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a contrasting passage interrupting the familiar verse or chorus",
+        "a passage lasting about eight bars."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0110-01",
+      "conceptId": "MC-0110",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "opening music, contrasting middle, then the opening music again."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0110-Q03",
+      "conceptId": "MC-0110",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "opening music, contrasting middle, then the opening music again."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0111-01",
+      "conceptId": "MC-0111",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a recognisable tune returning with changed rhythm, decoration, instruments or accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0111-Q03",
+      "conceptId": "MC-0111",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a recognisable tune returning with changed rhythm, decoration, instruments or accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0112-01",
+      "conceptId": "MC-0112",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the verse melody repeating with new words",
+        "a contrasting chorus returning with familiar words and music."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0112-Q03",
+      "conceptId": "MC-0112",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the verse melody repeating with new words",
+        "a contrasting chorus returning with familiar words and music."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0113-Q02",
+      "conceptId": "MC-0113",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a low female singing line, beneath soprano."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0113-Q03",
+      "conceptId": "MC-0113",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a low female singing line, beneath soprano."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0114-01",
+      "conceptId": "MC-0114",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "extra voices behind the lead singer",
+        "harmonies, echoes or held backing notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0114-Q03",
+      "conceptId": "MC-0114",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "extra voices behind the lead singer",
+        "harmonies, echoes or held backing notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0115-Q02",
+      "conceptId": "MC-0115",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the deepest adult male singing line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0115-Q03",
+      "conceptId": "MC-0115",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "the deepest adult male singing line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0116-01",
+      "conceptId": "MC-0116",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a deep, low thump beneath the other percussion."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0116-Q03",
+      "conceptId": "MC-0116",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a deep, low thump beneath the other percussion."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0117-01",
+      "conceptId": "MC-0117",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a low, amplified, plucked line supporting the groove."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0117-Q03",
+      "conceptId": "MC-0117",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a low, amplified, plucked line supporting the groove."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0118-01",
+      "conceptId": "MC-0118",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a full blend of brass with percussion",
+        "an ensemble sound without bowed strings or woodwind lines."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0118-Q03",
+      "conceptId": "MC-0118",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a full blend of brass with percussion",
+        "an ensemble sound without bowed strings or woodwind lines."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0119-01",
+      "conceptId": "MC-0119",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a warm, singing string tone, lower than violin but higher than double bass",
+        "short, resonant notes in plucked passages."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0119-Q03",
+      "conceptId": "MC-0119",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a warm, singing string tone, lower than violin but higher than double bass",
+        "short, resonant notes in plucked passages."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0120-Q02",
+      "conceptId": "MC-0120",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a rounded, reedy tone",
+        "darker low notes and clear, bright high notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0120-Q03",
+      "conceptId": "MC-0120",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a rounded, reedy tone",
+        "darker low notes and clear, bright high notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0121-01",
+      "conceptId": "MC-0121",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "metallic crashes or a lingering shimmer."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0121-Q03",
+      "conceptId": "MC-0121",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "metallic crashes or a lingering shimmer."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0122-01",
+      "conceptId": "MC-0122",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a rough, fuzzy or gritty amplified tone."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0122-Q03",
+      "conceptId": "MC-0122",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a rough, fuzzy or gritty amplified tone."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0123-Q02",
+      "conceptId": "MC-0123",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "very deep string notes",
+        "bowed rumble or a plucked, resonant bass line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0123-Q03",
+      "conceptId": "MC-0123",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "very deep string notes",
+        "bowed rumble or a plucked, resonant bass line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0124-01",
+      "conceptId": "MC-0124",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a clear, airy high tone",
+        "light, flowing runs or a breathy melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0124-Q03",
+      "conceptId": "MC-0124",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a clear, airy high tone",
+        "light, flowing runs or a breathy melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0125-01",
+      "conceptId": "MC-0125",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "very high, bright bell-like notes with a metallic ring."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0125-Q03",
+      "conceptId": "MC-0125",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "very high, bright bell-like notes with a metallic ring."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0126-Q02",
+      "conceptId": "MC-0126",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a dry, rasping scrape, often repeated rhythmically."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0126-Q03",
+      "conceptId": "MC-0126",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a dry, rasping scrape, often repeated rhythmically."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0127-01",
+      "conceptId": "MC-0127",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "resonant plucked notes, rippling chords or sweeping glissandi."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0127-Q03",
+      "conceptId": "MC-0127",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "resonant plucked notes, rippling chords or sweeping glissandi."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0128-01",
+      "conceptId": "MC-0128",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a crisp, twangy keyboard sound with a quick decay",
+        "fairly even volume compared with expressive piano playing."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0128-Q03",
+      "conceptId": "MC-0128",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a crisp, twangy keyboard sound with a quick decay",
+        "fairly even volume compared with expressive piano playing."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0129-01",
+      "conceptId": "MC-0129",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a change to a softer, veiled or nasal instrumental tone."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0129-Q03",
+      "conceptId": "MC-0129",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a change to a softer, veiled or nasal instrumental tone."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0130-01",
+      "conceptId": "MC-0130",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a breathy, hollow whistle changing between pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0130-Q03",
+      "conceptId": "MC-0130",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a breathy, hollow whistle changing between pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0131-01",
+      "conceptId": "MC-0131",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a clear, whistle-like tone, often with an airy edge."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0131-Q03",
+      "conceptId": "MC-0131",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a clear, whistle-like tone, often with an airy edge."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0132-01",
+      "conceptId": "MC-0132",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a strong, reedy tone, often breathy or slightly husky",
+        "a saxophone line in jazz solos or big bands."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0132-Q03",
+      "conceptId": "MC-0132",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a strong, reedy tone, often breathy or slightly husky",
+        "a saxophone line in jazz solos or big bands."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0133-Q02",
+      "conceptId": "MC-0133",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a sharp, rattling drum sound",
+        "rapid rolls creating a continuous buzz."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0133-Q03",
+      "conceptId": "MC-0133",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sharp, rattling drum sound",
+        "rapid rolls creating a continuous buzz."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0134-Q02",
+      "conceptId": "MC-0134",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the highest adult female singing line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0134-Q03",
+      "conceptId": "MC-0134",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "the highest adult female singing line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0135-Q02",
+      "conceptId": "MC-0135",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "bright jingles, sometimes mixed with a hand-drum tap."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0135-Q03",
+      "conceptId": "MC-0135",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "bright jingles, sometimes mixed with a hand-drum tap."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0136-Q02",
+      "conceptId": "MC-0136",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a high adult male singing line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0136-Q03",
+      "conceptId": "MC-0136",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a high adult male singing line."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0137-01",
+      "conceptId": "MC-0137",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "deep, rounded drum notes with a recognisable pitch",
+        "rolls creating a sustained rumble."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0137-Q03",
+      "conceptId": "MC-0137",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "deep, rounded drum notes with a recognisable pitch",
+        "rolls creating a sustained rumble."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0138-01",
+      "conceptId": "MC-0138",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a high, clear metallic ping that rings on."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0138-Q03",
+      "conceptId": "MC-0138",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a high, clear metallic ping that rings on."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0139-Q02",
+      "conceptId": "MC-0139",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a bold, low-to-middle brass tone",
+        "audible slides between pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0139-Q03",
+      "conceptId": "MC-0139",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bold, low-to-middle brass tone",
+        "audible slides between pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0140-01",
+      "conceptId": "MC-0140",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a bright, ringing high brass sound, often clear and piercing."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0140-Q03",
+      "conceptId": "MC-0140",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright, ringing high brass sound, often clear and piercing."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0141-01",
+      "conceptId": "MC-0141",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a bright, high bowed-string line",
+        "short, lightly plucked notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0141-Q03",
+      "conceptId": "MC-0141",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright, high bowed-string line",
+        "short, lightly plucked notes."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0142-01",
+      "conceptId": "MC-0142",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a blend of woodwind, brass and percussion",
+        "an ensemble sound without the bowed strings of an orchestra."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0142-Q03",
+      "conceptId": "MC-0142",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a blend of woodwind, brass and percussion",
+        "an ensemble sound without the bowed strings of an orchestra."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0143-01",
+      "conceptId": "MC-0143",
+      "levelCode": "N4",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "hard, bright wooden knocks with clear pitches and a short decay."
+      ]
+    },
+    {
+      "questionId": "CQ-N4-MC0143-Q03",
+      "conceptId": "MC-0143",
+      "levelCode": "N4",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "hard, bright wooden knocks with clear pitches and a short decay."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0144-02",
+      "conceptId": "MC-0144",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a tuneful operatic solo over orchestral backing",
+        "shaped, lyrical phrases, often with sustained notes and vibrato."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0144-F03",
+      "conceptId": "MC-0144",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a tuneful operatic solo over orchestral backing",
+        "shaped, lyrical phrases, often with sustained notes and vibrato."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0145-01",
+      "conceptId": "MC-0145",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a male soloist telling a rural-life story in Scots dialect",
+        "unaccompanied singing, with others sometimes joining the chorus",
+        "the same tune returning through many verses."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0145-02",
+      "conceptId": "MC-0145",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a male soloist telling a rural-life story in Scots dialect",
+        "unaccompanied singing, with others sometimes joining the chorus",
+        "the same tune returning through many verses."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0146-01",
+      "conceptId": "MC-0146",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "traditional sounds such as fiddle or bagpipes over electric guitar, bass and drums."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0146-F02",
+      "conceptId": "MC-0146",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "traditional sounds such as fiddle or bagpipes over electric guitar, bass and drums."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0147-01",
+      "conceptId": "MC-0147",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a large body of singers sharing each voice part",
+        "several choral lines with orchestral backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0147-F02",
+      "conceptId": "MC-0147",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a large body of singers sharing each voice part",
+        "several choral lines with orchestral backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0148-01",
+      "conceptId": "MC-0148",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "clear tunes and balanced question-and-answer phrases",
+        "mostly melody with accompaniment",
+        "light, orderly textures, sometimes with Alberti bass."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0148-F03",
+      "conceptId": "MC-0148",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "clear tunes and balanced question-and-answer phrases",
+        "mostly melody with accompaniment",
+        "light, orderly textures, sometimes with Alberti bass."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0149-01",
+      "conceptId": "MC-0149",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "unaccompanied Gaelic congregation singing",
+        "a leader starting each line, followed by the group",
+        "slow, ornamented voices overlapping unevenly."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0149-F03",
+      "conceptId": "MC-0149",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "unaccompanied Gaelic congregation singing",
+        "a leader starting each line, followed by the group",
+        "slow, ornamented voices overlapping unevenly."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0150-01",
+      "conceptId": "MC-0150",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "expressive lead singing answered by a group",
+        "strong rhythmic backing, often with clapping",
+        "religious words and improvised vocal decoration."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0150-F02",
+      "conceptId": "MC-0150",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "expressive lead singing answered by a group",
+        "strong rhythmic backing, often with clapping",
+        "religious words and improvised vocal decoration."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0151-F02",
+      "conceptId": "MC-0151",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a sitar-like buzzing melody above a constant drone",
+        "tabla drums repeating a rhythmic cycle",
+        "freely improvised, ornamented melodic lines."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0151-F03",
+      "conceptId": "MC-0151",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sitar-like buzzing melody above a constant drone",
+        "tabla drums repeating a rhythmic cycle",
+        "freely improvised, ornamented melodic lines."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0152-F02",
+      "conceptId": "MC-0152",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "short melodic or rhythmic loops repeating insistently",
+        "layers building, gaining notes or gradually slipping out of alignment."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0152-F03",
+      "conceptId": "MC-0152",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "short melodic or rhythmic loops repeating insistently",
+        "layers building, gaining notes or gradually slipping out of alignment."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0153-01",
+      "conceptId": "MC-0153",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "solo bagpipes with continuous drones",
+        "a theme returning with increasingly elaborate grace-note decoration."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0153-02",
+      "conceptId": "MC-0153",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "solo bagpipes with continuous drones",
+        "a theme returning with increasingly elaborate grace-note decoration."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0154-F02",
+      "conceptId": "MC-0154",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a full orchestra with changing instrumental colours",
+        "contrasting themes or movements within a large-scale work."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0154-F03",
+      "conceptId": "MC-0154",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a full orchestra with changing instrumental colours",
+        "contrasting themes or movements within a large-scale work."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0155-01",
+      "conceptId": "MC-0155",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "rhythmic Gaelic singing, usually by women without instruments",
+        "a solo line answered by the group",
+        "a steady thudding or tapping pulse beneath the voices."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0155-02",
+      "conceptId": "MC-0155",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "rhythmic Gaelic singing, usually by women without instruments",
+        "a solo line answered by the group",
+        "a steady thudding or tapping pulse beneath the voices."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0156-01",
+      "conceptId": "MC-0156",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the absence of a clear home note or major/minor key",
+        "unsettled, clashing harmony."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0156-F02",
+      "conceptId": "MC-0156",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the absence of a clear home note or major/minor key",
+        "unsettled, clashing harmony."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0157-F02",
+      "conceptId": "MC-0157",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "familiar major-key chord changes",
+        "major-sounding chords I, IV and V, with VI introducing a minor colour."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0157-F03",
+      "conceptId": "MC-0157",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "familiar major-key chord changes",
+        "major-sounding chords I, IV and V, with VI introducing a minor colour."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0158-01",
+      "conceptId": "MC-0158",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a line creeping up or down in semitone steps."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0158-F02",
+      "conceptId": "MC-0158",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a line creeping up or down in semitone steps."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0159-01",
+      "conceptId": "MC-0159",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a dense block of tightly clashing neighbouring pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0159-F02",
+      "conceptId": "MC-0159",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a dense block of tightly clashing neighbouring pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0160-F02",
+      "conceptId": "MC-0160",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one line climbing while another falls."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0160-F03",
+      "conceptId": "MC-0160",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one line climbing while another falls."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0161-01",
+      "conceptId": "MC-0161",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a distinct secondary tune heard at the same time as the main melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0161-F03",
+      "conceptId": "MC-0161",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a distinct secondary tune heard at the same time as the main melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0162-01",
+      "conceptId": "MC-0162",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "an extra vocal tune above the main singing line",
+        "the extra line entering on a later verse and making the texture brighter."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0162-F03",
+      "conceptId": "MC-0162",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "an extra vocal tune above the main singing line",
+        "the extra line entering on a later verse and making the texture brighter."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0163-01",
+      "conceptId": "MC-0163",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a smooth pitch slide, or a rapid keyboard/harp sweep."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0163-F03",
+      "conceptId": "MC-0163",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a smooth pitch slide, or a rapid keyboard/harp sweep."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0164-01",
+      "conceptId": "MC-0164",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tiny, quick flick just before a main note."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0164-F02",
+      "conceptId": "MC-0164",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a tiny, quick flick just before a main note."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0165-F02",
+      "conceptId": "MC-0165",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a phrase stopping on the dominant chord",
+        "an open ending, as though more music should follow."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0165-F03",
+      "conceptId": "MC-0165",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a phrase stopping on the dominant chord",
+        "an open ending, as though more music should follow."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0166-01",
+      "conceptId": "MC-0166",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a held or repeating high note above moving lower chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0166-F03",
+      "conceptId": "MC-0166",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a held or repeating high note above moving lower chords."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0167-F02",
+      "conceptId": "MC-0167",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one syllable stretching across several changing pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0167-F03",
+      "conceptId": "MC-0167",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one syllable stretching across several changing pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0168-01",
+      "conceptId": "MC-0168",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a new home key becoming established during the music."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0168-F02",
+      "conceptId": "MC-0168",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a new home key becoming established during the music."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0169-F02",
+      "conceptId": "MC-0169",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "chord V moving to I at a phrase ending",
+        "a strong, settled full-stop effect."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0169-F03",
+      "conceptId": "MC-0169",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "chord V moving to I at a phrase ending",
+        "a strong, settled full-stop effect."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0170-01",
+      "conceptId": "MC-0170",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a held note bending smoothly up or down."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0170-F02",
+      "conceptId": "MC-0170",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a held note bending smoothly up or down."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0171-01",
+      "conceptId": "MC-0171",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a very small pitch step: the gap to the nearest standard note."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0171-F02",
+      "conceptId": "MC-0171",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a very small pitch step: the gap to the nearest standard note."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0172-01",
+      "conceptId": "MC-0172",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a separate note for each syllable, making the words clear."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0172-F03",
+      "conceptId": "MC-0172",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a separate note for each syllable, making the words clear."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0173-F02",
+      "conceptId": "MC-0173",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a whole-step gap, twice the size of a semitone."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0173-F03",
+      "conceptId": "MC-0173",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a whole-step gap, twice the size of a semitone."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0174-01",
+      "conceptId": "MC-0174",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a rapid shake between a note and its upper neighbour."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0174-F03",
+      "conceptId": "MC-0174",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a rapid shake between a note and its upper neighbour."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0175-01",
+      "conceptId": "MC-0175",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "six equally spaced pitches, with no small semitone gaps",
+        "a floating sound without a strong pull home."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0175-F03",
+      "conceptId": "MC-0175",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "six equally spaced pitches, with no small semitone gaps",
+        "a floating sound without a strong pull home."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0176-F02",
+      "conceptId": "MC-0176",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "each strong pulse dividing into three quavers",
+        "two main beats in 6/8, three in 9/8 or four in 12/8."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0176-F03",
+      "conceptId": "MC-0176",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "each strong pulse dividing into three quavers",
+        "two main beats in 6/8, three in 9/8 or four in 12/8."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0177-01",
+      "conceptId": "MC-0177",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "competing accents or rhythmic groupings heard at the same time",
+        "a two-against-three effect, or 3+3+2 over a four-beat pulse."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0177-F02",
+      "conceptId": "MC-0177",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "competing accents or rhythmic groupings heard at the same time",
+        "a two-against-three effect, or 3+3+2 over a four-beat pulse."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0178-01",
+      "conceptId": "MC-0178",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a medium pace: neither quick nor slow."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0178-F03",
+      "conceptId": "MC-0178",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a medium pace: neither quick nor slow."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0179-01",
+      "conceptId": "MC-0179",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a gradual easing of the speed."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0179-F02",
+      "conceptId": "MC-0179",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a gradual easing of the speed."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0180-01",
+      "conceptId": "MC-0180",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "expressive pushing forward and holding back of the tempo."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0180-F03",
+      "conceptId": "MC-0180",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "expressive pushing forward and holding back of the tempo."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0181-F02",
+      "conceptId": "MC-0181",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "individual chord notes cycling low–high–middle–high",
+        "this pattern beneath a piano melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0181-F03",
+      "conceptId": "MC-0181",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "individual chord notes cycling low–high–middle–high",
+        "this pattern beneath a piano melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0182-F02",
+      "conceptId": "MC-0182",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "two different sections, A then B",
+        "either section being heard twice."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0182-F03",
+      "conceptId": "MC-0182",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "two different sections, A then B",
+        "either section being heard twice."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0183-01",
+      "conceptId": "MC-0183",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "an extra closing passage rounding off the piece."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0183-F02",
+      "conceptId": "MC-0183",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "an extra closing passage rounding off the piece."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0184-01",
+      "conceptId": "MC-0184",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "several independent tunes weaving together."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0184-F03",
+      "conceptId": "MC-0184",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "several independent tunes weaving together."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0185-01",
+      "conceptId": "MC-0185",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "new, contrasting material between returns of a main theme."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0185-F03",
+      "conceptId": "MC-0185",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "new, contrasting material between returns of a main theme."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0186-F02",
+      "conceptId": "MC-0186",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the same bass tune returning under changing upper parts."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0186-F03",
+      "conceptId": "MC-0186",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the same bass tune returning under changing upper parts."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0187-F02",
+      "conceptId": "MC-0187",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one clear tune with supporting chords",
+        "several parts moving together in matching rhythms."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0187-F03",
+      "conceptId": "MC-0187",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one clear tune with supporting chords",
+        "several parts moving together in matching rhythms."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0188-F01",
+      "conceptId": "MC-0188",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two or more distinct tunes sounding together, each with its own rhythm."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0188-F02",
+      "conceptId": "MC-0188",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "two or more distinct tunes sounding together, each with its own rhythm."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0189-01",
+      "conceptId": "MC-0189",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the main tune returning between contrasting sections: A–B–A–C–A",
+        "the returning A section in its original key."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0189-F03",
+      "conceptId": "MC-0189",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the main tune returning between contrasting sections: A–B–A–C–A",
+        "the returning A section in its original key."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0190-01",
+      "conceptId": "MC-0190",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the verse tune staying the same while the words change."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0190-F03",
+      "conceptId": "MC-0190",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "the verse tune staying the same while the words change."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0191-01",
+      "conceptId": "MC-0191",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a moving bass note on every beat",
+        "a plucked double bass in jazz."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0191-F03",
+      "conceptId": "MC-0191",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a moving bass note on every beat",
+        "a plucked double bass in jazz."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0192-01",
+      "conceptId": "MC-0192",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "voices only, without instrumental backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0192-F03",
+      "conceptId": "MC-0192",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "voices only, without instrumental backing."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0193-F02",
+      "conceptId": "MC-0193",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "smooth, sustained string tones from the bow."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0193-F03",
+      "conceptId": "MC-0193",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "smooth, sustained string tones from the bow."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0194-01",
+      "conceptId": "MC-0194",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a male voice between the high tenor and low bass."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0194-F03",
+      "conceptId": "MC-0194",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a male voice between the high tenor and low bass."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0195-F02",
+      "conceptId": "MC-0195",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a low, woody, reedy tone",
+        "a rounded bass line or a nasal-sounding solo."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0195-F03",
+      "conceptId": "MC-0195",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a low, woody, reedy tone",
+        "a rounded bass line or a nasal-sounding solo."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0196-F02",
+      "conceptId": "MC-0196",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a hollow drum pulse with quick strokes and bending, changing tones."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0196-F03",
+      "conceptId": "MC-0196",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a hollow drum pulse with quick strokes and bending, changing tones."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0197-01",
+      "conceptId": "MC-0197",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "quick, high hand-drum taps alternating between two pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0197-F03",
+      "conceptId": "MC-0197",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "quick, high hand-drum taps alternating between two pitches."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0198-01",
+      "conceptId": "MC-0198",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "dry, sharp wooden clicks, often in rapid patterns."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0198-F03",
+      "conceptId": "MC-0198",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "dry, sharp wooden clicks, often in rapid patterns."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0199-01",
+      "conceptId": "MC-0199",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "light, ringing plucked notes, often in a Scottish folk tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0199-F03",
+      "conceptId": "MC-0199",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "light, ringing plucked notes, often in a Scottish folk tune."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0200-01",
+      "conceptId": "MC-0200",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a softened or altered instrumental colour, often veiled or nasal."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0200-F02",
+      "conceptId": "MC-0200",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a softened or altered instrumental colour, often veiled or nasal."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0201-01",
+      "conceptId": "MC-0201",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a rapid rolled-R or growling flutter inside a held wind or brass note."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0201-F02",
+      "conceptId": "MC-0201",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a rapid rolled-R or growling flutter inside a held wind or brass note."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0202-F02",
+      "conceptId": "MC-0202",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "warm, mellow brass in a middle register."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0202-F03",
+      "conceptId": "MC-0202",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "warm, mellow brass in a middle register."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0203-01",
+      "conceptId": "MC-0203",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a short metallic “chick” when closed",
+        "a longer sizzling sound when open."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0203-F03",
+      "conceptId": "MC-0203",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a short metallic “chick” when closed",
+        "a longer sizzling sound when open."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0204-01",
+      "conceptId": "MC-0204",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a female voice between the high soprano and low alto."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0204-F02",
+      "conceptId": "MC-0204",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a female voice between the high soprano and low alto."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0205-F02",
+      "conceptId": "MC-0205",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a focused, penetrating nasal tone in a high woodwind line."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0205-F03",
+      "conceptId": "MC-0205",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a focused, penetrating nasal tone in a high woodwind line."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0206-F02",
+      "conceptId": "MC-0206",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "an exceptionally high, piercing flute-like sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0206-F03",
+      "conceptId": "MC-0206",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "an exceptionally high, piercing flute-like sound."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0207-01",
+      "conceptId": "MC-0207",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "short, lightly plucked string notes that fade quickly."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0207-F02",
+      "conceptId": "MC-0207",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "short, lightly plucked string notes that fade quickly."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0208-F02",
+      "conceptId": "MC-0208",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a lingering, spacious tail after notes or voices stop",
+        "reflections blending together instead of repeating as separate echoes."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0208-F03",
+      "conceptId": "MC-0208",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a lingering, spacious tail after notes or voices stop",
+        "reflections blending together instead of repeating as separate echoes."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0209-F02",
+      "conceptId": "MC-0209",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "rapid percussion strokes merging into a continuous roll."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0209-F03",
+      "conceptId": "MC-0209",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "rapid percussion strokes merging into a continuous roll."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0210-F02",
+      "conceptId": "MC-0210",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a bright, buzzing plucked melody with ringing resonance",
+        "sliding ornaments over a drone."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0210-F03",
+      "conceptId": "MC-0210",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a bright, buzzing plucked melody with ringing resonance",
+        "sliding ornaments over a drone."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0211-F02",
+      "conceptId": "MC-0211",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "two contrasting hand-drum tones in intricate repeating patterns",
+        "tabla accompaniment beneath a sitar melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0211-F03",
+      "conceptId": "MC-0211",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "two contrasting hand-drum tones in intricate repeating patterns",
+        "tabla accompaniment beneath a sitar melody."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0212-F02",
+      "conceptId": "MC-0212",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a very deep, rounded brass bass line."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0212-F03",
+      "conceptId": "MC-0212",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a very deep, rounded brass bass line."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0213-F02",
+      "conceptId": "MC-0213",
+      "levelCode": "N5",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a darker, lower bowed-string tone than violin",
+        "an inner harmony line."
+      ]
+    },
+    {
+      "questionId": "CQ-N5-MC0213-F03",
+      "conceptId": "MC-0213",
+      "levelCode": "N5",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a darker, lower bowed-string tone than violin",
+        "an inner harmony line."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0214-01",
+      "conceptId": "MC-0214",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a small ensemble, with one player carrying each line",
+        "exposed instrumental parts exchanging and answering musical ideas."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0214-F03",
+      "conceptId": "MC-0214",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a small ensemble, with one player carrying each line",
+        "exposed instrumental parts exchanging and answering musical ideas."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0215-01",
+      "conceptId": "MC-0215",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "floating whole-tone or modal melodies",
+        "parallel chords and unresolved harmonies",
+        "a blurred pulse with delicate orchestral colours or ringing piano resonance."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0215-F03",
+      "conceptId": "MC-0215",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "floating whole-tone or modal melodies",
+        "parallel chords and unresolved harmonies",
+        "a blurred pulse with delicate orchestral colours or ringing piano resonance."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0216-F02",
+      "conceptId": "MC-0216",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "repeated, syncopated bass riffs locked to a strong drum groove",
+        "improvised solos with electric keyboard, guitar or synthesiser sounds."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0216-F03",
+      "conceptId": "MC-0216",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "repeated, syncopated bass riffs locked to a strong drum groove",
+        "improvised solos with electric keyboard, guitar or synthesiser sounds."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0217-01",
+      "conceptId": "MC-0217",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "one singer with an expressive piano part",
+        "words in German, with voice and piano sharing the musical interest",
+        "the piano echoing the words’ mood or action."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0217-02",
+      "conceptId": "MC-0217",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "one singer with an expressive piano part",
+        "words in German, with voice and piano sharing the musical interest",
+        "the piano echoing the words’ mood or action."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0218-01",
+      "conceptId": "MC-0218",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "words such as “Gloria”, “Credo”, “Sanctus”, “Agnus Dei” or “Kyrie”",
+        "interweaving choral lines",
+        "instrumental backing or voices alone."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0218-F02",
+      "conceptId": "MC-0218",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "words such as “Gloria”, “Credo”, “Sanctus”, “Agnus Dei” or “Kyrie”",
+        "interweaving choral lines",
+        "instrumental backing or voices alone."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0219-01",
+      "conceptId": "MC-0219",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "recorded everyday sounds used as musical material",
+        "loops, backwards sounds or altered playback speeds."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0219-02",
+      "conceptId": "MC-0219",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "recorded everyday sounds used as musical material",
+        "loops, backwards sounds or altered playback speeds."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0220-F02",
+      "conceptId": "MC-0220",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "operatic soloists, choir and orchestra",
+        "sacred storytelling through arias, choruses and speech-like recitative."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0220-F03",
+      "conceptId": "MC-0220",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "operatic soloists, choir and orchestra",
+        "sacred storytelling through arias, choruses and speech-like recitative."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0221-02",
+      "conceptId": "MC-0221",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "unaccompanied voices sharing one chant line",
+        "words in Latin, with no regular beat",
+        "a modal melody without chord changes underneath."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0221-F03",
+      "conceptId": "MC-0221",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "unaccompanied voices sharing one chant line",
+        "words in Latin, with no regular beat",
+        "a modal melody without chord changes underneath."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0222-F02",
+      "conceptId": "MC-0222",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "solo singing that sounds like heightened speech",
+        "irregular, word-led rhythm with sparse backing."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0222-F03",
+      "conceptId": "MC-0222",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "solo singing that sounds like heightened speech",
+        "irregular, word-led rhythm with sparse backing."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0223-01",
+      "conceptId": "MC-0223",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a solo instrument, or an instrument with piano",
+        "contrasting movements or passages; no orchestral backing."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0223-F02",
+      "conceptId": "MC-0223",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a solo instrument, or an instrument with piano",
+        "contrasting movements or passages; no orchestral backing."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0224-01",
+      "conceptId": "MC-0224",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "passionate, gospel-like lead singing",
+        "vocal riffs, answering phrases and a strong groove",
+        "backing singers and brass."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0224-F03",
+      "conceptId": "MC-0224",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "passionate, gospel-like lead singing",
+        "vocal riffs, answering phrases and a strong groove",
+        "backing singers and brass."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0225-01",
+      "conceptId": "MC-0225",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "four solo strings: two violins, viola and cello",
+        "exposed lines exchanging the tune and accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0225-F02",
+      "conceptId": "MC-0225",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "four solo strings: two violins, viola and cello",
+        "exposed lines exchanging the tune and accompaniment."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0226-01",
+      "conceptId": "MC-0226",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a very quick crushed note flicking into the main pitch."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0226-F03",
+      "conceptId": "MC-0226",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a very quick crushed note flicking into the main pitch."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0227-01",
+      "conceptId": "MC-0227",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "an extra sixth adding a mellow, jazzy colour to a triad",
+        "a soft-edged closing chord."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0227-F03",
+      "conceptId": "MC-0227",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "an extra sixth adding a mellow, jazzy colour to a triad",
+        "a soft-edged closing chord."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0228-F02",
+      "conceptId": "MC-0228",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tense, unstable four-note chord",
+        "equally spaced minor thirds creating a dramatic, ambiguous sound."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0228-F03",
+      "conceptId": "MC-0228",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a tense, unstable four-note chord",
+        "equally spaced minor thirds creating a dramatic, ambiguous sound."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0229-01",
+      "conceptId": "MC-0229",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a minor-sounding triad with a flattened fifth",
+        "tense clash from two stacked minor thirds."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0229-F02",
+      "conceptId": "MC-0229",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a minor-sounding triad with a flattened fifth",
+        "tense clash from two stacked minor thirds."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0230-01",
+      "conceptId": "MC-0230",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tense four-note chord formed by adding a seventh to V",
+        "strong pressure to settle onto I."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0230-02",
+      "conceptId": "MC-0230",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a tense four-note chord formed by adding a seventh to V",
+        "strong pressure to settle onto I."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0231-01",
+      "conceptId": "MC-0231",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tone-and-a-half gap between the sixth and raised seventh",
+        "the seventh remaining raised on the descent as well as the ascent."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0231-F02",
+      "conceptId": "MC-0231",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a tone-and-a-half gap between the sixth and raised seventh",
+        "the seventh remaining raised on the descent as well as the ascent."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0232-F02",
+      "conceptId": "MC-0232",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "chord V unexpectedly moving to VI, usually a minor chord in a major key",
+        "the expected full-stop ending being avoided."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0232-F03",
+      "conceptId": "MC-0232",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "chord V unexpectedly moving to VI, usually a minor chord in a major key",
+        "the expected full-stop ending being avoided."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0233-01",
+      "conceptId": "MC-0233",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "the pitch gap between two notes, heard together or one after another."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0233-F03",
+      "conceptId": "MC-0233",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "the pitch gap between two notes, heard together or one after another."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0234-01",
+      "conceptId": "MC-0234",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a smoother minor-scale rise with raised sixth and seventh",
+        "a descent returning to the natural minor notes."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0234-F03",
+      "conceptId": "MC-0234",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a smoother minor-scale rise with raised sixth and seventh",
+        "a descent returning to the natural minor notes."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0235-01",
+      "conceptId": "MC-0235",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a clear home note with an unfamiliar major/minor colour",
+        "a minor-like sound with a brighter raised sixth in Dorian examples."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0235-F02",
+      "conceptId": "MC-0235",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a clear home note with an unfamiliar major/minor colour",
+        "a minor-like sound with a brighter raised sixth in Dorian examples."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0236-F02",
+      "conceptId": "MC-0236",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a quick three-note flick: main–neighbour–main",
+        "a neighbouring note above or below the main note."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0236-F03",
+      "conceptId": "MC-0236",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a quick three-note flick: main–neighbour–main",
+        "a neighbouring note above or below the main note."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0237-01",
+      "conceptId": "MC-0237",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "an independent solo instrument weaving around the singer’s tune."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0237-F03",
+      "conceptId": "MC-0237",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "an independent solo instrument weaving around the singer’s tune."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0238-01",
+      "conceptId": "MC-0238",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "chord IV settling onto I",
+        "a gentle, hymn-like “Amen” ending."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0238-F03",
+      "conceptId": "MC-0238",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "chord IV settling onto I",
+        "a gentle, hymn-like “Amen” ending."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0239-01",
+      "conceptId": "MC-0239",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a minor key brightening into its closely related major",
+        "a new home note three semitones higher."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0239-F03",
+      "conceptId": "MC-0239",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a minor key brightening into its closely related major",
+        "a new home note three semitones higher."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0240-01",
+      "conceptId": "MC-0240",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a major key darkening into its closely related minor",
+        "a new home note three semitones lower."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0240-F02",
+      "conceptId": "MC-0240",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a major key darkening into its closely related minor",
+        "a new home note three semitones lower."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0241-F02",
+      "conceptId": "MC-0241",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "minor-key music ending with a suddenly brighter major chord."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0241-F03",
+      "conceptId": "MC-0241",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "minor-key music ending with a suddenly brighter major chord."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0242-F02",
+      "conceptId": "MC-0242",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "one part playing three evenly spaced notes against another part’s two",
+        "both groups covering the same time span."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0242-F03",
+      "conceptId": "MC-0242",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one part playing three evenly spaced notes against another part’s two",
+        "both groups covering the same time span."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0243-01",
+      "conceptId": "MC-0243",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a familiar tune returning in longer note values, often twice as long",
+        "the accompanying pulse staying steady."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0243-F03",
+      "conceptId": "MC-0243",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a familiar tune returning in longer note values, often twice as long",
+        "the accompanying pulse staying steady."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0244-01",
+      "conceptId": "MC-0244",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a familiar tune returning in shorter note values, often half as long",
+        "the accompanying pulse staying steady."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0244-F02",
+      "conceptId": "MC-0244",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a familiar tune returning in shorter note values, often half as long",
+        "the accompanying pulse staying steady."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0245-F02",
+      "conceptId": "MC-0245",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "uneven recurring groups of five or seven, such as 3+2 or 2+2+3."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0245-F03",
+      "conceptId": "MC-0245",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "uneven recurring groups of five or seven, such as 3+2 or 2+2+3."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0246-01",
+      "conceptId": "MC-0246",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "changes in the number or grouping of beats during the piece",
+        "accents regrouping while the underlying note speed stays the same."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0246-F02",
+      "conceptId": "MC-0246",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "changes in the number or grouping of beats during the piece",
+        "accents regrouping while the underlying note speed stays the same."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0247-01",
+      "conceptId": "MC-0247",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "three equally spaced notes fitted where two would normally go."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0247-F02",
+      "conceptId": "MC-0247",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "three equally spaced notes fitted where two would normally go."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0248-01",
+      "conceptId": "MC-0248",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a continuous low line with chords above it",
+        "harpsichord, organ or lute chords over a cello/bassoon-like bass line."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0248-F03",
+      "conceptId": "MC-0248",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a continuous low line with chords above it",
+        "harpsichord, organ or lute chords over a cello/bassoon-like bass line."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0249-01",
+      "conceptId": "MC-0249",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a few soloists (concertino) answering a fuller ensemble (ripieno)",
+        "low bass and keyboard chords supporting both groups."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0249-F02",
+      "conceptId": "MC-0249",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a few soloists (concertino) answering a fuller ensemble (ripieno)",
+        "low bass and keyboard chords supporting both groups."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0250-F02",
+      "conceptId": "MC-0250",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "an operatic solo in A–B–A form",
+        "extra vocal ornaments in the returning A section."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0250-F03",
+      "conceptId": "MC-0250",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "an operatic solo in A–B–A form",
+        "extra vocal ornaments in the returning A section."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0251-01",
+      "conceptId": "MC-0251",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two contrasting themes, usually in different related keys, in sonata form",
+        "the same theme entering in successive parts in a fugue."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0251-F03",
+      "conceptId": "MC-0251",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "two contrasting themes, usually in different related keys, in sonata form",
+        "the same theme entering in successive parts in a fugue."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0252-01",
+      "conceptId": "MC-0252",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a repeating bass foundation with varied music unfolding above it."
+      ],
+      "classroomSources": [
+        {
+          "path": "class workbooks/Unit 1 - Baroque and Early Music.docx",
+          "locator": "word/document.xml paragraphs 167, 168"
+        }
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0252-F03",
+      "conceptId": "MC-0252",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a repeating bass foundation with varied music unfolding above it."
+      ],
+      "classroomSources": [
+        {
+          "path": "class workbooks/Unit 1 - Baroque and Early Music.docx",
+          "locator": "word/document.xml paragraphs 167, 168"
+        }
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0253-01",
+      "conceptId": "MC-0253",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a recognisable ensemble refrain returning between solo episodes",
+        "shortened returns or returns in a new key."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0253-02",
+      "conceptId": "MC-0253",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a recognisable ensemble refrain returning between solo episodes",
+        "shortened returns or returns in a new key."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0254-02",
+      "conceptId": "MC-0254",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two themes in related keys, an exploratory middle, then their return",
+        "both themes coming back in the home key."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0254-F03",
+      "conceptId": "MC-0254",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "two themes in related keys, an exploratory middle, then their return",
+        "both themes coming back in the home key."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0255-F02",
+      "conceptId": "MC-0255",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a distinctive main tune that returns or is developed."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0255-F03",
+      "conceptId": "MC-0255",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a distinctive main tune that returns or is developed."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0256-F02",
+      "conceptId": "MC-0256",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "new music following the words instead of repeating a verse tune."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0256-F03",
+      "conceptId": "MC-0256",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "new music following the words instead of repeating a verse tune."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0257-01",
+      "conceptId": "MC-0257",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "fast, agile vocal runs, leaps and ornaments",
+        "many changing notes on one syllable",
+        "a high soprano voice."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0257-F03",
+      "conceptId": "MC-0257",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "fast, agile vocal runs, leaps and ornaments",
+        "many changing notes on one syllable",
+        "a high soprano voice."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0258-01",
+      "conceptId": "MC-0258",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a light group of soloists answering the full ensemble."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0258-F02",
+      "conceptId": "MC-0258",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a light group of soloists answering the full ensemble."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0259-01",
+      "conceptId": "MC-0259",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "unusually high, thin or eerie string tones",
+        "guitar or harp harmonics ringing like small bells."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0259-F02",
+      "conceptId": "MC-0259",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "unusually high, thin or eerie string tones",
+        "guitar or harp harmonics ringing like small bells."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0260-01",
+      "conceptId": "MC-0260",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a fuller, weightier sound when the main ensemble joins in."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0260-F02",
+      "conceptId": "MC-0260",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a fuller, weightier sound when the main ensemble joins in."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0261-F02",
+      "conceptId": "MC-0261",
+      "levelCode": "H",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "agitated, trembling strings from rapid repetitions of one pitch",
+        "a fast alternation between separated pitches, wider than a trill."
+      ]
+    },
+    {
+      "questionId": "CQ-H-MC0261-F03",
+      "conceptId": "MC-0261",
+      "levelCode": "H",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "agitated, trembling strings from rapid repetitions of one pitch",
+        "a fast alternation between separated pitches, wider than a trill."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0262-02",
+      "conceptId": "MC-0262",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "sacred words in English sung by a choir, sometimes alternating with soloists",
+        "organ backing or a cappella passages."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0262-F03",
+      "conceptId": "MC-0262",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "sacred words in English sung by a choir, sometimes alternating with soloists",
+        "organ backing or a cappella passages."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000006",
+      "conceptId": "MC-0263",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a solo voice, usually with plucked lute accompaniment",
+        "a melancholy or reflective character."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0263-F03",
+      "conceptId": "MC-0263",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a solo voice, usually with plucked lute accompaniment",
+        "a melancholy or reflective character."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000009",
+      "conceptId": "MC-0264",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "light, dance-like group singing",
+        "the tune repeating by verse, ending with “fa-la-la”."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0264-F03",
+      "conceptId": "MC-0264",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "light, dance-like group singing",
+        "the tune repeating by verse, ending with “fa-la-la”."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000010",
+      "conceptId": "MC-0265",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a hymn tune in four blended voice parts",
+        "mostly chordal movement in a clear, regular rhythm",
+        "words in German in sung versions."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000011",
+      "conceptId": "MC-0265",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a hymn tune in four blended voice parts",
+        "mostly chordal movement in a clear, regular rhythm",
+        "words in German in sung versions."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0266-F02",
+      "conceptId": "MC-0266",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "improvised solos over repeating two- or three-chord grooves",
+        "complex cross-rhythms, changing metres and chromatic harmony",
+        "electronic sounds or unusual instrumental techniques."
+      ],
+      "classroomSources": [
+        {
+          "path": "class workbooks/Unit 3 - 20th Century Music 2.docx",
+          "locator": "word/document.xml paragraphs 117, 119, 120, 121, 122"
+        }
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0266-F03",
+      "conceptId": "MC-0266",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "improvised solos over repeating two- or three-chord grooves",
+        "complex cross-rhythms, changing metres and chromatic harmony",
+        "electronic sounds or unusual instrumental techniques."
+      ],
+      "classroomSources": [
+        {
+          "path": "class workbooks/Unit 3 - 20th Century Music 2.docx",
+          "locator": "word/document.xml paragraphs 117, 119, 120, 121, 122"
+        }
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000015",
+      "conceptId": "MC-0267",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a strong programmed dance beat",
+        "repeated electronic loops, synth sounds and samples",
+        "layered build-ups followed by drops."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0267-F03",
+      "conceptId": "MC-0267",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a strong programmed dance beat",
+        "repeated electronic loops, synth sounds and samples",
+        "layered build-ups followed by drops."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000003",
+      "conceptId": "MC-0268",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a quick, lively dance pulse in three",
+        "closing accents regrouping the beat into twos."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0268-F02",
+      "conceptId": "MC-0268",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a quick, lively dance pulse in three",
+        "closing accents regrouping the beat into twos."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0269-01",
+      "conceptId": "MC-0269",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "non-religious words in English with unaccompanied voices",
+        "imitative entries and interweaving parts",
+        "word painting and changing music rather than a repeating verse tune."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0269-02",
+      "conceptId": "MC-0269",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "non-religious words in English with unaccompanied voices",
+        "imitative entries and interweaving parts",
+        "word painting and changing music rather than a repeating verse tune."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000005",
+      "conceptId": "MC-0270",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "sacred Latin singing, usually without instruments",
+        "flowing choral lines entering imitatively and overlapping."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0270-F03",
+      "conceptId": "MC-0270",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "sacred Latin singing, usually without instruments",
+        "flowing choral lines entering imitatively and overlapping."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0271-01",
+      "conceptId": "MC-0271",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "folk-like tunes, dance rhythms or instrumental colours within an art-music setting."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0271-F03",
+      "conceptId": "MC-0271",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "folk-like tunes, dance rhythms or instrumental colours within an art-music setting."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0272-01",
+      "conceptId": "MC-0272",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "clear, balanced phrases and lean instrumental textures",
+        "sharper dissonances or unexpected rhythms within an orderly form."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0272-F02",
+      "conceptId": "MC-0272",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "clear, balanced phrases and lean instrumental textures",
+        "sharper dissonances or unexpected rhythms within an orderly form."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000001",
+      "conceptId": "MC-0273",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a slow, stately dance pulse in two",
+        "lute, keyboard or a small early-instrument ensemble."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0273-F03",
+      "conceptId": "MC-0273",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a slow, stately dance pulse in two",
+        "lute, keyboard or a small early-instrument ensemble."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0274-01",
+      "conceptId": "MC-0274",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "flowing modal melodies and imitative vocal lines",
+        "unaccompanied choir, or soft consort colours such as viols and recorders."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0274-02",
+      "conceptId": "MC-0274",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "flowing modal melodies and imitative vocal lines",
+        "unaccompanied choir, or soft consort colours such as viols and recorders."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000012",
+      "conceptId": "MC-0275",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "angular, often dissonant lines without a clear home key",
+        "a twelve-pitch row returning transposed, reversed or mirrored."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0275-F03",
+      "conceptId": "MC-0275",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "angular, often dissonant lines without a clear home key",
+        "a twelve-pitch row returning transposed, reversed or mirrored."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000017",
+      "conceptId": "MC-0276",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a stressed note on the beat clashing, then stepping to a settled pitch",
+        "the stressed note taking noticeable time from the following note."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0276-F03",
+      "conceptId": "MC-0276",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a stressed note on the beat clashing, then stepping to a settled pitch",
+        "the stressed note taking noticeable time from the following note."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000018",
+      "conceptId": "MC-0277",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a major-like chord with a raised fifth",
+        "bright but unsettled, with two equal major-third gaps."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0277-F03",
+      "conceptId": "MC-0277",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a major-like chord with a raised fifth",
+        "bright but unsettled, with two equal major-third gaps."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0278-02",
+      "conceptId": "MC-0278",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a minor chord on the second scale note, often approaching V",
+        "the chord’s third sounding as the lowest note in first inversion."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0278-03",
+      "conceptId": "MC-0278",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a minor chord on the second scale note, often approaching V",
+        "the chord’s third sounding as the lowest note in first inversion."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0279-01",
+      "conceptId": "MC-0279",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "major-sounding chords I, IV and V, with a minor VI, in a major key",
+        "minor-sounding chords I and IV, with major V and VI, in a minor key."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0279-F02",
+      "conceptId": "MC-0279",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "major-sounding chords I, IV and V, with a minor VI, in a major key",
+        "minor-sounding chords I and IV, with major V and VI, in a minor key."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000021",
+      "conceptId": "MC-0280",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two or more different key colours sounding at once",
+        "individually tuneful parts clashing when combined."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0280-F03",
+      "conceptId": "MC-0280",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "two or more different key colours sounding at once",
+        "individually tuneful parts clashing when combined."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0281-F02",
+      "conceptId": "MC-0281",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a held note clashing as the chord underneath changes",
+        "the held note then stepping, usually downwards, into a settled harmony."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0281-F03",
+      "conceptId": "MC-0281",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a held note clashing as the chord underneath changes",
+        "the held note then stepping, usually downwards, into a settled harmony."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0282-01",
+      "conceptId": "MC-0282",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a twelve-note pattern using each chromatic pitch once",
+        "the absence of a pitch that stands out as the home note."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0282-F03",
+      "conceptId": "MC-0282",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a twelve-note pattern using each chromatic pitch once",
+        "the absence of a pitch that stands out as the home note."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0283-F02",
+      "conceptId": "MC-0283",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a stark, tense pitch gap spanning three tones."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0283-F03",
+      "conceptId": "MC-0283",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a stark, tense pitch gap spanning three tones."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0284-F02",
+      "conceptId": "MC-0284",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a quick curl around one note: above–main–below–main",
+        "the inverted version starting below."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0284-F03",
+      "conceptId": "MC-0284",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a quick curl around one note: above–main–below–main",
+        "the inverted version starting below."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000022",
+      "conceptId": "MC-0285",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "beat accents regrouping from two groups of three into three groups of two, or the reverse",
+        "an apparent shift in the pulse without the notes slowing down."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0285-F03",
+      "conceptId": "MC-0285",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "beat accents regrouping from two groups of three into three groups of two, or the reverse",
+        "an apparent shift in the pulse without the notes slowing down."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000025",
+      "conceptId": "MC-0286",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "the fugue’s opening tune entering in a new part at a different pitch",
+        "an entry a fifth higher or fourth lower."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0286-F03",
+      "conceptId": "MC-0286",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "the fugue’s opening tune entering in a new part at a different pitch",
+        "an entry a fifth higher or fourth lower."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0287-01",
+      "conceptId": "MC-0287",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "two groups taking turns and answering each other across the texture."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0287-F03",
+      "conceptId": "MC-0287",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "two groups taking turns and answering each other across the texture."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0288-F02",
+      "conceptId": "MC-0288",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a linking passage moving from one main theme towards another",
+        "a shift into a new key during the linking passage."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0288-F03",
+      "conceptId": "MC-0288",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a linking passage moving from one main theme towards another",
+        "a shift into a new key during the linking passage."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0289-F02",
+      "conceptId": "MC-0289",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a recurring second tune accompanying the fugue’s main theme",
+        "the second tune continuing in the part that has just finished its entry."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0289-F03",
+      "conceptId": "MC-0289",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a recurring second tune accompanying the fugue’s main theme",
+        "the second tune continuing in the part that has just finished its entry."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0290-01",
+      "conceptId": "MC-0290",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "one clear theme beginning alone",
+        "other parts joining with the same idea at different pitches",
+        "independent lines continuing to weave beneath later entries."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0290-F03",
+      "conceptId": "MC-0290",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "one clear theme beginning alone",
+        "other parts joining with the same idea at different pitches",
+        "independent lines continuing to weave beneath later entries."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0291-F02",
+      "conceptId": "MC-0291",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tune’s upward steps becoming downward ones, and vice versa",
+        "the chord’s third in the bass for first inversion, or its fifth for second inversion."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0291-F03",
+      "conceptId": "MC-0291",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a tune’s upward steps becoming downward ones, and vice versa",
+        "the chord’s third in the bass for first inversion, or its fifth for second inversion."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0292-01",
+      "conceptId": "MC-0292",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a recognisable musical idea returning with the same character or dramatic situation",
+        "changes in its sound as the story develops."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0292-F03",
+      "conceptId": "MC-0292",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a recognisable musical idea returning with the same character or dramatic situation",
+        "changes in its sound as the story develops."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0293-01",
+      "conceptId": "MC-0293",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a tune or rhythmic pattern running backwards, last note first."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0293-F02",
+      "conceptId": "MC-0293",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a tune or rhythmic pattern running backwards, last note first."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0294-01",
+      "conceptId": "MC-0294",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "rewritten",
+      "focus": [
+        "a sequence of songs linked by words, mood or story",
+        "one singer with piano throughout."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0294-F03",
+      "conceptId": "MC-0294",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a sequence of songs linked by words, mood or story",
+        "one singer with piano throughout."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0295-F02",
+      "conceptId": "MC-0295",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a new theme entry beginning before the previous one ends",
+        "overlapping entries crowding together and building intensity."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0295-F03",
+      "conceptId": "MC-0295",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a new theme entry beginning before the previous one ends",
+        "overlapping entries crowding together and building intensity."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000023",
+      "conceptId": "MC-0296",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a distinctive main tune that returns or is developed."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0296-F02",
+      "conceptId": "MC-0296",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "a distinctive main tune that returns or is developed."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000028",
+      "conceptId": "MC-0297",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "several sizes of one instrument family blending, often viols or recorders",
+        "contrasting families, such as strings and wind, mixed in a broken consort."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-000029",
+      "conceptId": "MC-0297",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "several sizes of one instrument family blending, often viols or recorders",
+        "contrasting families, such as strings and wind, mixed in a broken consort."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0298-01",
+      "conceptId": "MC-0298",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "male singing in an alto-like range",
+        "a light, clear, falsetto-like colour."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0298-F02",
+      "conceptId": "MC-0298",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "male singing in an alto-like range",
+        "a light, clear, falsetto-like colour."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0299-01",
+      "conceptId": "MC-0299",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "piano, violin and cello clearly audible together",
+        "the tune and accompaniment passing between the three."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0299-F03",
+      "conceptId": "MC-0299",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "rewritten",
+      "focus": [
+        "piano, violin and cello clearly audible together",
+        "the tune and accompaniment passing between the three."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0300-F02",
+      "conceptId": "MC-0300",
+      "levelCode": "AH",
+      "format": "multiple-choice",
+      "action": "retained",
+      "focus": [
+        "a dramatic vocal line halfway between talking and singing",
+        "inflected pitches rather than notes held as a regular sung tune."
+      ]
+    },
+    {
+      "questionId": "CQ-AH-MC0300-F03",
+      "conceptId": "MC-0300",
+      "levelCode": "AH",
+      "format": "multi-select",
+      "action": "retained",
+      "focus": [
+        "a dramatic vocal line halfway between talking and singing",
+        "inflected pitches rather than notes held as a regular sung tune."
+      ]
+    }
+  ],
+  "classroomReference": "classroom-reference.json",
+  "subsequentWorkbookAudit": "workbook-choice-audit.json",
+  "note": "This records the earlier Dictionary/listening pass. The subsequent full classroom-booklet cross-check and current question fingerprints are recorded separately in workbook-choice-audit.json."
+}

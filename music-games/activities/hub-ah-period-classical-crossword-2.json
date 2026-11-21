@@ -1,0 +1,168 @@
+{
+  "id": "hub-ah-period-classical-crossword-2",
+  "level": "AH",
+  "title": "Classical 2",
+  "instructions": "",
+  "description": "Revise concepts associated with Classical up to Advanced Higher. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Classical",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-ah-period-classical-crossword-2-1",
+      "prompt": "A brass instrument has tightly coiled circular tubing and a backward-facing bell, normally played with the right hand inside the bell.",
+      "answer": "French horn",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-2",
+      "prompt": "A repeating accompaniment made from broken chords in the pattern lowest-highest-middle-highest.",
+      "answer": "Alberti bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-3",
+      "prompt": "An ensemble of exactly two violins, viola and cello, or a work written for this ensemble.",
+      "answer": "String quartet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-4",
+      "prompt": "In the Western classical stage tradition, a sung drama uses solo arias, recitative and choruses with orchestral accompaniment. Name this type of work.",
+      "answer": "Opera",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-5",
+      "prompt": "Name the chamber ensemble whose standard classical combination is piano, violin and cello.",
+      "answer": "Piano trio",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-6",
+      "prompt": "An orchestral family played by blowing across an opening or through a single or double reed.",
+      "answer": "Woodwind",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-7",
+      "prompt": "The main A section returns repeatedly between contrasting episodes.",
+      "answer": "Rondo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-8",
+      "prompt": "Name the main thematic idea of a movement, such as a first or second theme in sonata form.",
+      "answer": "Subject",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-9",
+      "prompt": "Give the linking word used as an alternative to transition for the passage between the first and second sonata-form subjects.",
+      "answer": "Bridge",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-10",
+      "prompt": "A three-part form consisting of an opening A section, a contrasting B section and a return of the A section.",
+      "answer": "Ternary",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-11",
+      "prompt": "A deliberate change from one key to another within a piece.",
+      "answer": "Modulation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-12",
+      "prompt": "A V-I cadence that sounds complete, also called a full close.",
+      "answer": "Perfect cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-crossword-2-13",
+      "prompt": "A two-chord cadence ending on V. It sounds open or unfinished because chord I has not arrived.",
+      "answer": "Imperfect cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

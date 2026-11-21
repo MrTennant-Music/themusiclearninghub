@@ -1,0 +1,395 @@
+{
+  "key": "C major",
+  "timeSignature": "3/4",
+  "bars": [
+    {
+      "notes": [
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "dottedCrotchet",
+          "beats": 1.5
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": []
+    },
+    {
+      "notes": [
+        {
+          "pitch": "D5",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "G#5",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "B5",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "beamGroups": []
+    },
+    {
+      "notes": [
+        {
+          "pitch": "E5",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "C6",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "tieToNextBar": true
+        }
+      ],
+      "beamGroups": []
+    },
+    {
+      "notes": [
+        {
+          "pitch": "C6",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "tiedFromPreviousBar": true
+        },
+        {
+          "pitch": "B5",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "G#5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        }
+      ],
+      "triplets": [
+        [
+          2,
+          4
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "G#5",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "rest": true,
+          "rhythm": "quaverRest",
+          "beats": 0.5
+        },
+        {
+          "pitch": "D6",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "enharmonic": {
+        "source": "G#5",
+        "answer": "Ab5"
+      },
+      "beamGroups": []
+    },
+    {
+      "notes": [
+        {
+          "pitch": "C6",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "B5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "G#5",
+          "rhythm": "dottedCrotchet",
+          "beats": 1.5
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "triplets": [
+        [
+          0,
+          2
+        ]
+      ],
+      "ornament": "trill",
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "A5",
+          "rhythm": "dottedQuaver",
+          "beats": 0.75
+        },
+        {
+          "pitch": "B5",
+          "rhythm": "semiquaver",
+          "beats": 0.25
+        },
+        {
+          "pitch": "C6",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "B5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "A5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "G5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333,
+          "courtesyAccidental": "natural"
+        },
+        {
+          "pitch": "F5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        }
+      ],
+      "triplets": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        },
+        {
+          "start": 2,
+          "end": 4
+        },
+        {
+          "start": 5,
+          "end": 7
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "D5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "F5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333,
+          "missing": true
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333,
+          "missing": true
+        },
+        {
+          "pitch": "F4",
+          "rhythm": "tripletQuaver",
+          "beats": 0.3333333333333333,
+          "missing": true
+        }
+      ],
+      "missingIndices": [
+        6,
+        7,
+        8
+      ],
+      "triplets": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 2
+        },
+        {
+          "start": 3,
+          "end": 5
+        },
+        {
+          "start": 6,
+          "end": 8
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "E5",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        }
+      ],
+      "finalBarline": "double",
+      "beamGroups": []
+    }
+  ],
+  "enharmonic": {
+    "bar": 5,
+    "source": "G#5",
+    "answer": "Ab5"
+  },
+  "missing": {
+    "bar": 8,
+    "indices": [
+      6,
+      7,
+      8
+    ],
+    "answer": [
+      "G4",
+      "A4",
+      "F4"
+    ],
+    "rhythm": "tripletQuaver"
+  },
+  "finalBarline": "double",
+  "layout": {
+    "height": 660,
+    "groups": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "systemTops": [
+      90,
+      350,
+      540
+    ],
+    "lastSystemBounds": [
+      105,
+      625,
+      870
+    ]
+  }
+}

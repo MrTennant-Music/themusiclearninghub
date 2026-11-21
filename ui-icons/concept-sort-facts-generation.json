@@ -1,0 +1,7 @@
+{
+  "asset": "ui-icons/concept-sort-facts.png",
+  "tool": "Built-in image_gen",
+  "prompt": "Use case: logo-brand. Asset type: small menu glyph for Facts in The Music Learning Hub. Generate one isolated monochrome black UI icon: a compact rounded speech bubble containing a bold musical eighth note on the left and two short thick horizontal fact lines on the right. Strong simple silhouette, clean smooth edges, balanced geometry, consistent medium-bold black strokes. Match an educational music app's black glyphs; legible at 32 by 32 pixels. True transparent background and transparent negative spaces. Flat black only; no white tile, no background, no grey, shadows, gradients, text, letters, border frame outside the bubble, or decoration. One icon centred with modest transparent padding.",
+  "source": "/Users/bobbytennant/.codex/generated_images/01a1dd97-5234-71b1-982d-38da2923a668/exec-10943eed-14d0-40fd-9299-267e997e0ab9.png",
+  "processing": "Trimmed transparent margins, proportionally resized and compressed as a 192px transparent PNG."
+}

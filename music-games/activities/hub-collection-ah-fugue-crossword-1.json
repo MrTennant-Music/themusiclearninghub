@@ -1,0 +1,93 @@
+{
+  "id": "hub-collection-ah-fugue-crossword-1",
+  "level": "AH",
+  "title": "Fugue",
+  "instructions": "",
+  "description": "Fugue: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Fugue",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-ah-fugue-crossword-1-MC-0290",
+      "prompt": "A piece where different parts take turns starting the same main tune, then weave together.",
+      "answer": "Fugue",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0290"
+    },
+    {
+      "id": "hub-collection-ah-fugue-crossword-1-MC-0296",
+      "prompt": "The main tune or idea that a piece is built around.",
+      "answer": "Subject",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0296"
+    },
+    {
+      "id": "hub-collection-ah-fugue-crossword-1-MC-0289",
+      "prompt": "An extra tune that regularly goes alongside the main tune in a fugue.",
+      "answer": "Countersubject",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0289"
+    },
+    {
+      "id": "hub-collection-ah-fugue-crossword-1-MC-0286",
+      "prompt": "The main fugue tune copied by the next part, starting at a different pitch.",
+      "answer": "Answer",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0286"
+    },
+    {
+      "id": "hub-collection-ah-fugue-crossword-1-MC-0295",
+      "prompt": "The next part starts the fugue tune before the previous part has finished it.",
+      "answer": "Stretto",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0295"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "fugue",
+  "sourceConceptIds": [
+    "MC-0290",
+    "MC-0296",
+    "MC-0289",
+    "MC-0286",
+    "MC-0295"
+  ]
+}

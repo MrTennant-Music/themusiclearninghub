@@ -1,0 +1,3 @@
+# AH2026 Q4 source audit
+
+Page 10 at 300 dpi; five individual system crops independently checked twice, bottom E4/top F5, G-major key (F#). Two-crotchet pickup B3/C#4 precedes numbered bar 1. Bars 1–11 total five crotchets; final bar 12 D#4 minim plus crotchet rest is a three-beat complement to the pickup. Excerpt has no closing barline. Source bar 5 deliberately omits sharp before C5; bar 7 interval is A#4→E4. Marking pages 4–5 rendered and checked: four missing quavers G4/A4/G4/F#4. Note-entry box covers only the first two beats of bar 9, with the rhythm guide above it. Source interval answer is an ordinary written line below the question. Full exact pitch/rhythm inventory in ah2026-q4-inventory.json.

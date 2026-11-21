@@ -1,30 +1,34 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Chords</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/chords-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/chords-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./hub-input.js?v=1.4"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="./bravura-symbols.js"></script>
-  <script src="./shared-notation-config.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/chords-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/chords-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./shared/chords-selection.js?v=e682f9703438"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
   <style>
     @font-face {
       font-family: "Bravura";
-      src: url("./Bravura.otf") format("opentype");
+      src: url("./fonts/Bravura.otf") format("opentype");
       font-display: block;
     }
     .music-symbol {
@@ -33,11 +37,14 @@
       text-rendering: geometricPrecision;
     }
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
 <body>
 <div id="root"></div>
 
-<script type="text/babel">
+<script type="text/x-mlh-jsx-source" data-runtime="chords-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
 
 const W = 920;
@@ -48,7 +55,6 @@ const SYSTEM_TOPS = [96, 240];
 const GAP = 10;
 const BAR_COUNT = 8;
 const BARS_PER_SYSTEM = 4;
-const NOTE_RX = 6.3;
 const NOTE_RY = 4.6;
 const STEM = 32;
 const CLEF_X = STAFF_LEFT + 8;
@@ -82,17 +88,17 @@ function hasTouchInput() {
   return window.MLH?.isTouchDevice?.() || ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
 }
 const ASSET = {
-  appIcon: "https://themusicliteracyhub.netlify.app/chords-icon.svg",
-  level: "https://themusicliteracyhub.netlify.app/levels.svg",
-  customise: "https://themusicliteracyhub.netlify.app/customise.svg",
-  next: "https://themusicliteracyhub.netlify.app/next.svg",
-  bronze: "https://themusicliteracyhub.netlify.app/bronze.svg",
-  silver: "https://themusicliteracyhub.netlify.app/silver.svg",
-  gold: "https://themusicliteracyhub.netlify.app/gold.svg",
-  diamond: "https://themusicliteracyhub.netlify.app/diamond.svg",
-  eye: "./eye.svg",
-  metronome: "./metronome.svg",
-  tempo: "./tempo.svg",
+  appIcon: "./app-icons/chords-icon.svg",
+  level: "./ui-icons/levels.svg",
+  customise: "./ui-icons/customise.svg",
+  next: "./ui-icons/next.svg",
+  bronze: "./ui-icons/bronze.svg",
+  silver: "./ui-icons/silver.svg",
+  gold: "./ui-icons/gold.svg",
+  diamond: "./ui-icons/diamond.svg",
+  eye: "./ui-icons/eye.svg",
+  metronome: "./ui-icons/metronome.svg",
+  tempo: "./ui-icons/tempo.svg",
 };
 const LEVELS = {
   N5: { label: "National 5", description: "Chords — C major, G major, F major and A minor" },
@@ -193,6 +199,7 @@ const NOTE_POOL = [
   { letter:"A", octave:5, step:10, midi:81 },
 ];
 
+const chordSelection=window.CHORDS_SELECTION.create(Math.random);
 function r(items){ return items[Math.floor(Math.random()*items.length)]; }
 function shuffleCopy(items){
   const copy=[...items];
@@ -226,10 +233,14 @@ function writtenAccidentalForMelody(key, chord, letter){
   const a = chordAccidentalForLetter(chord, letter);
   return a !== null ? a : null;
 }
-function pitchForChordLetter(key, chord, letter, preferredIndex=6){ const base=noteByLetter(letter, preferredIndex); const ca=chordAccidentalForLetter(chord, letter); const acc=ca!==null?ca:keyAccidentalForLetter(key, letter); return base.midi + acc; }
+function pitchForChordLetter(key, chord, tone, preferredIndex=6){
+  const base = Array.isArray(tone) ? noteByPitch(...tone) : noteByLetter(tone, preferredIndex);
+  const accidental = chordAccidentalForLetter(chord, base.letter) ?? keyAccidentalForLetter(key, base.letter);
+  return base.midi + accidental;
+}
 function effectivePitchForMelodyNote(question, bar, noteIndex){
   const note=bar.notes[noteIndex]; let active=null;
-  for(let i=0;i<=noteIndex;i++){ const cur=bar.notes[i]; if(cur.letter===note.letter && cur.writtenAccidental !== null && cur.writtenAccidental !== undefined) active=cur.writtenAccidental; }
+  for(let i=0;i<=noteIndex;i++){ const cur=bar.notes[i]; if(cur.letter===note.letter && cur.octave===note.octave && cur.writtenAccidental !== null && cur.writtenAccidental !== undefined) active=cur.writtenAccidental; }
   return note.midi + (active ?? keyAccidentalForLetter(question.key, note.letter));
 }
 function getChordShortName(chord){ return chord?.shortName || ""; }
@@ -324,7 +335,7 @@ function n5CustomiseMatchesLevel(settings=DEFAULT_N5_CUSTOMISE){
 }
 const AH_CHORD_SPELLINGS = [
   { root:"C", type:"dom7", tones:[["C",4,0],["E",4,0],["G",4,0],["B",4,-1]] },
-  { root:"C", type:"dim7", tones:[["C",4,0],["E",4,-1],["G",4,-1],["A",4,0]] },
+  { root:"C", type:"dim7", tones:[["C",4,0],["E",4,-1],["G",4,-1],["B",4,-2]] },
   { root:"C", type:"aug", tones:[["C",4,0],["E",4,0],["G",4,1]] },
   { root:"C", type:"add6", tones:[["C",4,0],["E",4,0],["G",4,0],["A",4,0]] },
   { root:"D", type:"dom7", tones:[["D",4,0],["F",4,1],["A",4,0],["C",5,0]] },
@@ -333,10 +344,10 @@ const AH_CHORD_SPELLINGS = [
   { root:"D", type:"add6", tones:[["D",4,0],["F",4,1],["A",4,0],["B",4,0]] },
   { root:"E", type:"dom7", tones:[["E",4,0],["G",4,1],["B",4,0],["D",5,0]] },
   { root:"E", type:"dim7", tones:[["E",4,0],["G",4,0],["B",4,-1],["D",5,-1]] },
-  { root:"E", type:"aug", tones:[["E",4,0],["G",4,1],["C",5,0]] },
+  { root:"E", type:"aug", tones:[["E",4,0],["G",4,1],["B",4,1]] },
   { root:"E", type:"add6", tones:[["E",4,0],["G",4,1],["B",4,0],["C",5,1]] },
   { root:"F", type:"dom7", tones:[["F",4,0],["A",4,0],["C",5,0],["E",5,-1]] },
-  { root:"F", type:"dim7", tones:[["F",4,0],["A",4,-1],["B",4,0],["D",5,0]] },
+  { root:"F", type:"dim7", tones:[["F",4,0],["A",4,-1],["C",5,-1],["E",5,-2]] },
   { root:"F", type:"aug", tones:[["F",4,0],["A",4,0],["C",5,1]] },
   { root:"F", type:"add6", tones:[["F",4,0],["A",4,0],["C",5,0],["D",5,0]] },
   { root:"G", type:"dom7", tones:[["G",4,0],["B",4,0],["D",5,0],["F",5,0]] },
@@ -345,11 +356,11 @@ const AH_CHORD_SPELLINGS = [
   { root:"G", type:"add6", tones:[["G",4,0],["B",4,0],["D",5,0],["E",5,0]] },
   { root:"A", type:"dom7", tones:[["A",4,0],["C",5,1],["E",5,0],["G",5,0]] },
   { root:"A", type:"dim7", tones:[["A",4,0],["C",5,0],["E",5,-1],["G",5,-1]] },
-  { root:"A", type:"aug", tones:[["A",4,0],["C",5,1],["F",5,0]] },
+  { root:"A", type:"aug", tones:[["A",4,0],["C",5,1],["E",5,1]] },
   { root:"A", type:"add6", tones:[["A",4,0],["C",5,1],["E",5,0],["F",5,1]] },
   { root:"B", type:"dom7", tones:[["B",4,0],["D",5,1],["F",5,1],["A",5,0]] },
   { root:"B", type:"dim7", tones:[["B",4,0],["D",5,0],["F",5,0],["A",5,-1]] },
-  { root:"B", type:"aug", tones:[["B",4,0],["D",5,1],["G",5,0]] },
+  { root:"B", type:"aug", tones:[["B",4,0],["D",5,1],["F",5,2]] },
   { root:"B", type:"add6", tones:[["B",4,0],["D",5,1],["F",5,1],["G",5,1]] },
 ];
 function normaliseAHChordTypeAnswer(value){ return String(value||"").trim().toLowerCase().replace(/[\s\-]+/g,"").replace(/7/g,"7th").replace(/6/g,"6th").replace(/7thth/g,"7th").replace(/6thth/g,"6th"); }
@@ -568,7 +579,7 @@ function makeAHInversionVoicing(key, chord, inversion, idPrefix){
   }).sort((a,b)=>a.step-b.step);
   while(trebleStack[trebleStack.length-1].step - trebleStack[0].step > 7){
     const highest = trebleStack[trebleStack.length-1];
-    trebleStack[trebleStack.length-1] = {...highest, step:highest.step-7, midi:highest.midi-12};
+    trebleStack[trebleStack.length-1] = {...highest, step:highest.step-7, midi:highest.midi-12, octave:highest.octave-1};
     trebleStack.sort((a,b)=>a.step-b.step);
   }
   return {
@@ -577,19 +588,12 @@ function makeAHInversionVoicing(key, chord, inversion, idPrefix){
   };
 }
 function makeAHInversionQuestion(){
-  const key=r(AH_INVERSION_KEYS);
-  const symbols=key.major ? ["I","II","IV","V","VI"] : ["I","IV","V","VI"];
-  const chords=[];
+  const key=chordSelection.pick('ahInversionBar-key',AH_INVERSION_KEYS);
+  const symbols=key.major?["I","II","IV","V","VI"]:["I","IV","V","VI"],chords=[];
   for(let i=0;i<4;i++){
-    const previousBaseSymbol=chords[i-1]?.baseSymbol;
-    const availableSymbols=symbols.filter(option=>i===0 || option!==previousBaseSymbol);
-    const baseSymbol=r(availableSymbols.length ? availableSymbols : symbols);
-    const picked=maybeDominantSeventh(baseSymbol,key.chords[baseSymbol]);
-    const {symbol,chord}=picked;
-    const inversionOptions=ahInversionOptionsForChord(baseSymbol,chord);
-    const inversion=r(inversionOptions);
-    const voicing=makeAHInversionVoicing(key,chord,inversion,`ah-inv-${i}`);
-    chords.push({ index:i, baseSymbol, symbol, chord, inversion, ...voicing });
+    const choices=symbols.flatMap(baseSymbol=>{const {symbol,chord}=maybeDominantSeventh(baseSymbol,key.chords[baseSymbol]);return ahInversionOptionsForChord(baseSymbol,chord).map(inversion=>({baseSymbol,symbol,chord,inversion}));});
+    const item=chordSelection.ahItem(choices,'ahInversionBar',chords[i-1]?.baseSymbol,i?'answer':'given');
+    chords.push({index:i,...item,...makeAHInversionVoicing(key,item.chord,item.inversion,`ah-inv-${i}`)});
   }
   return {
     type:"ahInversionBar",
@@ -602,7 +606,7 @@ function makeAHInversionQuestion(){
   };
 }
 function makeAHBassLineQuestion(){
-  const key=r(AH_INVERSION_KEYS);
+  const key=chordSelection.pick("ahBassLine-key",AH_INVERSION_KEYS);
   const symbols=key.major ? ["I","II","IV","V","VI"] : ["I","IV","V","VI"];
   const chords=[];
   for(let i=0;i<4;i++){
@@ -618,11 +622,7 @@ function makeAHBassLineQuestion(){
         if(bassTone.writtenAccidental===null) choices.push({baseSymbol,symbol,chord,inversion,voicing});
       });
     });
-    const picked=r(choices.length?choices:symbols.map(baseSymbol=>{
-      const {symbol,chord}=maybeDominantSeventh(baseSymbol,key.chords[baseSymbol]);
-      const inversion=0, voicing=makeAHInversionVoicing(key,chord,inversion,`ah-bass-${i}`);
-      return {baseSymbol,symbol,chord,inversion,voicing};
-    }));
+    const picked=chordSelection.ahItem(choices,'ahBassLine',chords[i-1]?.baseSymbol,i?'answer':'given');
     chords.push({ index:i, baseSymbol:picked.baseSymbol, symbol:picked.symbol, chord:picked.chord, inversion:picked.inversion, ...picked.voicing });
   }
   return {
@@ -636,10 +636,9 @@ function makeAHBassLineQuestion(){
   };
 }
 function makeChordProgression(key){
-  const opts=["IV","V","VI"], prog=["I"];
-  for(let i=1;i<BAR_COUNT-1;i++){ const available=opts.filter(s=>s!==prog[i-1]); prog.push(r(available)); }
-  const final=["I","V"].filter(s=>s!==prog[prog.length-1]); prog.push(r(final));
-  return prog;
+  const opts=["I","IV","V","VI"],target5=chordSelection.pick('H-target-5',opts),target6=chordSelection.least('H-target-6',opts.filter(value=>value!==target5)),prog=["I"];
+  for(let i=1;i<BAR_COUNT-1;i++){const available=opts.filter(symbol=>symbol!==prog[i-1]&&(i!==4||symbol!==target5));prog.push(i===5?target5:i===6?target6:r(available));}
+  prog.push(chordSelection.least('H-final',["I","V"].filter(symbol=>symbol!==prog.at(-1))));return prog;
 }
 function chooseMelodyBase({ key, chord, rhythmId, previousBase, currentIndex, strongBeat, phraseDirection, previousMove, phraseAnchorIndex, repeatedCount }){
   const previousIndex = notePoolIndex(previousBase) >= 0 ? notePoolIndex(previousBase) : currentIndex;
@@ -684,8 +683,9 @@ function makeMelodyForBar(key, chordSymbol, barIndex, previousIndex, ts, totalBa
     const before=currentIndex;
     currentIndex=notePoolIndex(base)>=0?notePoolIndex(base):currentIndex;
     const accidentalValue=writtenAccidentalForMelody(key,chord,base.letter);
-    const shouldShow=accidentalValue!==null && accidentalMemory[base.letter]!==accidentalValue;
-    if(accidentalValue!==null) accidentalMemory[base.letter]=accidentalValue;
+    const accidentalId=base.letter+base.octave;
+    const shouldShow=accidentalValue!==null && accidentalMemory[accidentalId]!==accidentalValue;
+    if(accidentalValue!==null) accidentalMemory[accidentalId]=accidentalValue;
     const note={ id:`${barIndex}-${noteIndex}`, barIndex, noteIndex, rhythm:rhythmId, beats, beatPosition, letter:base.letter, octave:base.octave, step:base.step, midi:base.midi, writtenAccidental:shouldShow?accidentalValue:null };
     const newIndex=notePoolIndex(base);
     previousMove=newIndex>=0?newIndex-before:0;
@@ -697,8 +697,8 @@ function makeMelodyForBar(key, chordSymbol, barIndex, previousIndex, ts, totalBa
   return { notes, lastIndex:currentIndex };
 }
 function makeN5Question(){
-  const chord = r(N5_CHORD_OPTIONS);
-  const pattern = r(N5_RHYTHM_PATTERNS);
+  const chord = chordSelection.pick("N5-chord",N5_CHORD_OPTIONS);
+  const pattern = chordSelection.pick("N5-pattern",N5_RHYTHM_PATTERNS);
   const noteOrder = shuffleCopy(chord.notes);
   let beatPosition = 0;
   const notes = noteOrder.map(([letter,octave],noteIndex)=>{
@@ -715,7 +715,7 @@ function makeN5Question(){
     key:KEYS.find(k=>k.id==="C"),
     timeSignature:TIME_SIGNATURES.find(t=>t.id==="4/4"),
     chord,
-    answerMode:Math.random()<.5?"choice":"typed",
+    answerMode:chordSelection.pick("N5-input",["choice","typed"]),
     bars:[{ barIndex:0, chordSymbol:chord.id, chord, notes }],
     targetBars:[],
   };
@@ -743,10 +743,10 @@ function makeN5SequenceOptions(){
   return shuffleCopy(sequences).map((symbols,index)=>({id:`sequence-${index}`,symbols}));
 }
 function makeN5ChordSequenceQuestion(){
-  const key=r(KEYS.filter(item=>["C","F","G"].includes(item.id)));
-  const timeSignature=r(TIME_SIGNATURES);
+  const key=chordSelection.pick("N5-sequence-key",KEYS.filter(item=>["C","F","G"].includes(item.id)));
+  const timeSignature=chordSelection.pick("sequence-metre",TIME_SIGNATURES);
   const options=makeN5SequenceOptions();
-  const answerIndex=Math.floor(Math.random()*options.length);
+  const answerIndex=chordSelection.pick("N5-sequence-answer",[0,1,2]);
   const progression=options[answerIndex].symbols;
   let previousIndex=notePoolIndex(noteByLetter(key.tonic,6));
   const bars=progression.map((symbol,barIndex)=>{
@@ -768,8 +768,8 @@ function makeN5ChordSequenceQuestion(){
 }
 function makeHigherQuestion(){
   const majorKeys=KEYS.filter(k=>k.id!=="Am");
-  const key=Math.random()<.8?r(majorKeys):KEYS.find(k=>k.id==="Am");
-  const timeSignature=r(TIME_SIGNATURES);
+  const key=chordSelection.pick("H-key",KEYS);
+  const timeSignature=chordSelection.pick("H-metre",TIME_SIGNATURES);
   const progression=makeChordProgression(key);
   let previousIndex=notePoolIndex(noteByLetter(key.tonic,6));
   const bars=progression.map((symbol,barIndex)=>{ const melody=makeMelodyForBar(key,symbol,barIndex,previousIndex,timeSignature); previousIndex=melody.lastIndex; return { barIndex, chordSymbol:symbol, chord:key.chords[symbol], notes:melody.notes }; });
@@ -778,7 +778,8 @@ function makeHigherQuestion(){
 function makeAHAudioChordQuestion(){
   const key=KEYS.find(k=>k.id==="C");
   const timeSignature=TIME_SIGNATURES.find(t=>t.id==="4/4");
-  const spelling=r(AH_CHORD_SPELLINGS);
+  const selectedType=chordSelection.pick("AH-audio-type",AH_CHORD_TYPES);
+  const spelling=chordSelection.pick("AH-audio-root/"+selectedType.id,AH_CHORD_SPELLINGS.filter(item=>item.type===selectedType.id));
   const chordType=AH_CHORD_TYPES.find(type=>type.id===spelling.type) || AH_CHORD_TYPES[0];
   const stack=makeAHChordStack(spelling);
   const root=stack[0];
@@ -792,7 +793,7 @@ function makeAHAudioChordQuestion(){
     timeSignature,
     targetBar:0,
     chordType,
-    answerMode:Math.random()<.5?"choice":"typed",
+    answerMode:chordSelection.pick("AH-audio-input",["choice","typed"]),
     bars,
     audioBars,
     targetBars:[],
@@ -803,7 +804,7 @@ function makeQuestion(level="N5", ahCustomise=DEFAULT_AH_CUSTOMISE, n5Customise=
     const pool=[];
     if(n5Customise.chordProgression) pool.push(makeN5ChordSequenceQuestion);
     if(n5Customise.identifyChord) pool.push(makeN5Question);
-    return r(pool.length?pool:[makeN5ChordSequenceQuestion,makeN5Question])();
+    return chordSelection.pick("N5-type/"+JSON.stringify(n5Customise),pool.length?pool:[makeN5ChordSequenceQuestion,makeN5Question])();
   }
   if(level==="AH"){
     const hasAudio=Boolean(ahCustomise.identifyChords);
@@ -812,7 +813,7 @@ function makeQuestion(level="N5", ahCustomise=DEFAULT_AH_CUSTOMISE, n5Customise=
     if(hasAudio) pool.push(makeAHAudioChordQuestion);
     if(hasInsert) pool.push(makeAHInversionQuestion);
     if(ahCustomise.createBassLine) pool.push(makeAHBassLineQuestion);
-    if(pool.length) return r(pool)();
+    if(pool.length) return chordSelection.pick("AH-type/"+JSON.stringify(ahCustomise),pool)();
     return r([makeAHAudioChordQuestion,makeAHInversionQuestion,makeAHBassLineQuestion])();
   }
   return makeHigherQuestion();
@@ -965,7 +966,8 @@ function StaffNoteNames({visible,clef,top,lineX,spaceX}){
 function Note({note,x,top,colour="currentColor",active=false,showFlag=true,override=null,forced=null,stackLayout="alternate",stackStemDown=null,accidentalXAdjust=0,accidentalYAdjust=0,accidentalSizeScale=1,showNoteNames=false}){
   const info=rhythmInfo(note.rhythm), st=stemData(note,x,top,override), ey=forced===null?st.ey:forced, noteColour=active?COLOUR.blue:colour, isLine=note.step%2===0;
   if(note.stack?.length){
-    const down=override===null?false:override;
+    const down=stackStemDown??st.down;
+    const sharedStem=info.stem&&note.stack.length>1;
     const ys=note.stack.map(tone=>y(tone.step,top));
     const adjacentStackOffsets=()=>{
       const sorted=note.stack.map((tone,index)=>({tone,index})).sort((a,b)=>a.tone.step-b.tone.step);
@@ -973,7 +975,11 @@ function Note({note,x,top,colour="currentColor",active=false,showFlag=true,overr
       let cluster=[];
       const flush=()=>{
         if(!cluster.length) return;
-        cluster.forEach((item,i)=>offsets.set(item.index, cluster.length>1 && i%2===1 ? 12 : 0));
+        cluster.forEach((item,i)=>{
+          const distanceFromStemStart=sharedStem&&down ? cluster.length-1-i : i;
+          const displacement=sharedStem ? (down ? -GAP : GAP) : 12;
+          offsets.set(item.index,distanceFromStemStart%2===1 ? displacement : 0);
+        });
         cluster=[];
       };
       sorted.forEach(item=>{
@@ -989,7 +995,7 @@ function Note({note,x,top,colour="currentColor",active=false,showFlag=true,overr
       return (i%2)*4;
     };
     const accidentalStackOffset=(i)=>{
-      const accidentalEntries=note.stack.map((tone,index)=>({tone,index})).filter(item=>item.tone.writtenAccidental);
+      const accidentalEntries=note.stack.map((tone,index)=>({tone,index})).filter(item=>item.tone.writtenAccidental!==null&&item.tone.writtenAccidental!==undefined);
       const accidentalCount=accidentalEntries.length;
       if(accidentalCount<=1) return 0;
       if(stackLayout==="lineSpace"){
@@ -1001,16 +1007,20 @@ function Note({note,x,top,colour="currentColor",active=false,showFlag=true,overr
       }
       return i*12;
     };
-    const stemX=down?x-NOTE_RX:x+NOTE_RX;
+    const stemX=x+(down?-GAP/2:GAP/2);
     const stemStart=down?Math.min(...ys):Math.max(...ys);
-    const stemEnd=down?stemStart+STEM:stemStart-STEM;
+    const stemEnd=down?Math.max(...ys)+STEM:Math.min(...ys)-STEM;
     return <g opacity={active?1:.98}>
+      {sharedStem&&<line className="chord-stem" x1={stemX} x2={stemX} y1={stemStart} y2={stemEnd}
+        stroke={noteColour} strokeWidth={Math.max(1,GAP*Number(SHARED_CONFIG.drawing?.stemThicknessScale||0.12))}/>}
       {note.stack.map((tone,i)=>{
         const yy=y(tone.step,top), isStackLine=tone.step%2===0, noteHeadX=x+stackOffset(tone,i);
         return <g key={`${note.id}-tone-${i}`}>
-          <Ledger x={x} step={tone.step} top={top} colour={noteColour}/>
+          <Ledger x={noteHeadX} step={tone.step} top={top} colour={noteColour}/>
           <Accidental value={tone.writtenAccidental} x={scoreAccidentalBaseX(x)-accidentalStackOffset(i)} yy={yy} xAdjust={accidentalXAdjust} yAdjust={accidentalYAdjust} sizeScale={accidentalSizeScale}/>
-          <NoteGlyph x={noteHeadX} yy={yy} info={info} colour={noteColour} down={stackStemDown===null?tone.step>4:stackStemDown} showFlag={showFlag}/>
+          {sharedStem
+            ? <CalibratedSymbol symbolKey={info.open?"noteheadHalf":"noteheadBlack"} x={noteHeadX} y={yy} colour={noteColour} settingOverrides={{xOffsetScale:0}}/>
+            : <NoteGlyph x={noteHeadX} yy={yy} info={info} colour={noteColour} down={stackStemDown??stemDown(tone.step)} showFlag={showFlag}/>}
           {isStackLine && <line x1={noteHeadX-8} x2={noteHeadX+12} y1={yy} y2={yy} stroke={noteColour} strokeWidth="1.2"/>}
         </g>;
       })}
@@ -1143,13 +1153,13 @@ function BeamShape({beam,colour="currentColor"}){
   const thickness=Math.max(1,GAP*Number(SHARED_CONFIG.drawing?.beamThicknessScale||0.42)*Number(settings.fontSizeScale||1));
   return <polygon points={beamPolygonPoints(beam.start.x,beam.start.y,beam.end.x,beam.end.y,thickness)} fill={colour}/>;
 }
-function Score({question,answers,setAnswers,feedback,activeNoteId,activeBarIndex,level,showNoteNames=false}){
+function Score({question,answers,setAnswers,feedback,activeNoteId,activeBarIndex,level,showNoteNames=false,compact=false}){
   const accidentalXAdjust=0;
   const accidentalYAdjust=0;
   const accidentalSizeScale=1;
-  return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none overflow-visible">
+  return <svg viewBox={compact?`0 45 ${W} 130`:`0 0 ${W} ${H}`} className="h-auto w-full select-none overflow-visible">
     <rect width={W} height={H} fill="transparent" />
-    {SYSTEM_TOPS.map((top,si)=>{ const finalBar=si===0?3:7; return <g key={si}>{[0,1,2,3,4].map(line=><line key={line} x1={STAFF_LEFT} x2={getBarStart(finalBar)+barWidth(finalBar)} y1={top+line*GAP} y2={top+line*GAP} stroke="currentColor" strokeWidth="1.2"/>)}<StaffNoteNames visible={showNoteNames} clef="treble" top={top} lineX={STAFF_LEFT-11} spaceX={STAFF_LEFT+7}/><TrebleClef top={top}/>{si===0&&<KeySignature keySignature={question.key} top={top}/>} {si===0&&<TimeSignature signature={question.timeSignature} top={top}/>}</g>; })}
+    {SYSTEM_TOPS.slice(0,Math.ceil(question.bars.length/BARS_PER_SYSTEM)).map((top,si)=>{ const finalBar=si===0?3:7; return <g key={si}>{[0,1,2,3,4].map(line=><line key={line} x1={STAFF_LEFT} x2={getBarStart(finalBar)+barWidth(finalBar)} y1={top+line*GAP} y2={top+line*GAP} stroke="currentColor" strokeWidth="1.2"/>)}<StaffNoteNames visible={showNoteNames} clef="treble" top={top} lineX={STAFF_LEFT-11} spaceX={STAFF_LEFT+7}/><TrebleClef top={top}/>{si===0&&<KeySignature keySignature={question.key} top={top}/>} {si===0&&<TimeSignature signature={question.timeSignature} top={top}/>}</g>; })}
     {question.bars.map(bar=>{
       const start=getBarStart(bar.barIndex), end=start+barWidth(bar.barIndex), top=getSystemTop(bar.barIndex), pos=getBarNotePositions(bar.barIndex,bar.notes), isAnswer=question.targetBars.includes(bar.barIndex), showBox=[4,5,6].includes(bar.barIndex), typed=answers[bar.barIndex]||"", ok=isAnswerCorrect(typed,bar.chordSymbol,bar.chord), status=feedback&&isAnswer?(ok?"correct":"incorrect"):null, boxX=bar.barIndex===4?start+5:start+25, boxY=top-78, hi=false, gs=quaverGroups(bar.notes);
       return <g key={bar.barIndex}>
@@ -1157,7 +1167,7 @@ function Score({question,answers,setAnswers,feedback,activeNoteId,activeBarIndex
         <text x={(bar.barIndex===0||bar.barIndex===4)?start-15:start+5} y={top-18} fontSize="13" fontWeight="600">{bar.barIndex+1}</text>
         {bar.notes.map((note,i)=>{ const g=groupFor(gs,i), beam=g?beamData(bar.notes.slice(g.start,g.end+1),pos.slice(g.start,g.end+1),top):null, stem=beam?stemData(note,pos[i],top,beam.down):null; return <Note key={note.id} note={note} x={pos[i]} top={top} active={activeNoteId===note.id} showFlag={!beam} override={beam?beam.down:null} forced={beam&&stem?beamYAtX(stem.sx,beam):null} accidentalXAdjust={accidentalXAdjust} accidentalYAdjust={accidentalYAdjust} accidentalSizeScale={accidentalSizeScale} showNoteNames={showNoteNames}/>; })}
         {gs.map((g,i)=>{ const beam=beamData(bar.notes.slice(g.start,g.end+1),pos.slice(g.start,g.end+1),top); return <BeamShape key={`beam-${bar.barIndex}-${i}`} beam={beam}/>; })}
-        {bar.barIndex===BAR_COUNT-1 ? <CalibratedSymbol symbolKey="barlineFinal" x={end} y={y(4,top)} /> : <line x1={end} x2={end} y1={top} y2={top+GAP*4} stroke="currentColor" strokeWidth="1.4"/>}
+        {bar.barIndex===question.bars.length-1 ? <CalibratedSymbol symbolKey="barlineFinal" x={end} y={y(4,top)} /> : <line x1={end} x2={end} y1={top} y2={top+GAP*4} stroke="currentColor" strokeWidth="1.4"/>}
       </g>;
     })}
   </svg>;
@@ -1288,59 +1298,58 @@ function AHChordTypedAnswer({question,answers,setAnswers,feedback,onConfirm}){
     {feedback && !ok && <div className="whitespace-nowrap text-base font-bold text-green-600">{question.chordType.label}</div>}
   </div>;
 }
-function AHInversionCell({children,status,muted=false,withArrows=false,onPrev,onNext,disabled=false,compact=false,large=false}){
+function AHInversionCell({children,status,muted=false,withArrows=false,onPrev,onNext,disabled=false,compact=false,large=false,scoreOverlay=false}){
   const colour=status==="correct"?COLOUR.green:status==="incorrect"?COLOUR.red:muted?"#a8a29e":"#111";
-  const arrowSize=large?56:28;
-  const buttonStyle={height:"100%",width:`${arrowSize}px`,border:"0",background:"transparent",borderRadius:"0",fontSize:large?"25px":"17px",fontWeight:muted?650:900,lineHeight:"1",color:muted?"#333":"#111",cursor:disabled?"default":"pointer",padding:"0",display:"flex",alignItems:"center",justifyContent:"center",touchAction:"manipulation"};
+  const arrowSize=scoreOverlay?"3.439cqw":large?"56px":"28px";
+  const buttonStyle={height:"100%",width:arrowSize,border:"0",background:"transparent",borderRadius:"0",fontSize:large?"25px":"17px",fontWeight:muted?650:900,lineHeight:"1",color:muted?"#333":"#111",cursor:disabled?"default":"pointer",padding:"0",display:"flex",alignItems:"center",justifyContent:"center",touchAction:"manipulation"};
   const cellWeight=muted?500:compact?600:700;
-  const fontSize=large?"23px":compact?"13px":"13.5px";
-  return <td style={{height:large?"53px":"34px",border:"1.2px solid #111",background:"white",color:colour,fontSize,fontWeight:cellWeight,lineHeight:"1",whiteSpace:"nowrap",overflow:"hidden",padding:"0",cursor:"default"}}>
-    <div className="ah-inversion-cell-inner" style={{height:"100%",display:"grid",gridTemplateColumns:withArrows?`${arrowSize}px 1fr ${arrowSize}px`:"1fr",alignItems:"center"}}>
-      {withArrows&&<button className="ah-inversion-arrow" type="button" disabled={disabled} onClick={event=>{event.stopPropagation();onPrev();}} style={buttonStyle} aria-label="Previous option">◀</button>}
+  const fontSize=scoreOverlay?"1.658cqw":large?"23px":compact?"13px":"13.5px";
+  return <td style={{height:scoreOverlay?"4.176cqw":large?"53px":"34px",border:"1.2px solid #111",background:"white",color:colour,fontSize,fontWeight:cellWeight,lineHeight:"1",whiteSpace:"nowrap",overflow:"hidden",padding:"0",cursor:"default"}}>
+    <div className="ah-inversion-cell-inner" style={{height:"100%",display:"grid",gridTemplateColumns:withArrows?`${arrowSize} 1fr ${arrowSize}`:"1fr",alignItems:"center"}}>
+      {withArrows&&<button className="ah-inversion-arrow" type="button" disabled={disabled} onClick={event=>{event.stopPropagation();onPrev();}} style={buttonStyle} aria-label="Previous option"><img src="./ui-icons/next.svg" alt="" aria-hidden="true" style={{width:scoreOverlay?"1.965cqw":"16px",height:scoreOverlay?"1.965cqw":"16px",transform:"rotate(180deg)"}} /></button>}
       <div style={{display:"flex",alignItems:"center",justifyContent:"center",minWidth:0,padding:"0 3px"}}>{children}</div>
-      {withArrows&&<button className="ah-inversion-arrow" type="button" disabled={disabled} onClick={event=>{event.stopPropagation();onNext();}} style={buttonStyle} aria-label="Next option">▶</button>}
+      {withArrows&&<button className="ah-inversion-arrow" type="button" disabled={disabled} onClick={event=>{event.stopPropagation();onNext();}} style={buttonStyle} aria-label="Next option"><img src="./ui-icons/next.svg" alt="" aria-hidden="true" style={{width:scoreOverlay?"1.965cqw":"16px",height:scoreOverlay?"1.965cqw":"16px"}} /></button>}
     </div>
   </td>;
 }
-function AHInversionTable({question,answers,feedback,onCycle,isMobile=false,tableWidth=null,columnWidth=null}){
+function AHInversionTable({question,answers,feedback,onCycle,isMobile=false,tableWidth=null,columnWidth=null,scoreOverlay=false}){
       const visibleChords=isMobile?question.chords.slice(0,2):question.chords;
       const resolvedColumnWidth=columnWidth || (isMobile?228:120);
       const resolvedTableWidth=tableWidth || resolvedColumnWidth*visibleChords.length;
       const tableScale=isMobile?0.95:1;
-      const tableStyle={borderCollapse:"collapse",tableLayout:"fixed",width:`${resolvedTableWidth}px`,color:"#111",fontSize:isMobile?"21px":"11px",lineHeight:"1"};
-      return <div xmlns="http://www.w3.org/1999/xhtml" style={{display:"block",width:`${resolvedTableWidth}px`,transform:`scale(${tableScale})`,transformOrigin:"center center"}}>
+      const tableStyle={borderCollapse:"collapse",tableLayout:"fixed",width:scoreOverlay?"100%":`${resolvedTableWidth}px`,color:"#111",fontSize:isMobile?"21px":"11px",lineHeight:"1"};
+      return <div xmlns="http://www.w3.org/1999/xhtml" style={{display:"block",width:scoreOverlay?"100%":`${resolvedTableWidth}px`,transform:`scale(${tableScale})`,transformOrigin:"center center"}}>
       <table style={tableStyle}>
         <colgroup>
-          {visibleChords.map(item=><col key={`col-${item.index}`} style={{width:`${resolvedColumnWidth}px`}} />)}
+          {visibleChords.map(item=><col key={`col-${item.index}`} style={{width:scoreOverlay?`${100/visibleChords.length}%`:`${resolvedColumnWidth}px`}} />)}
         </colgroup>
         <tbody>
           <tr>
             {visibleChords.map((item,index)=>{
               const key=`ah-inv-${index}`, value=answers[key]||null, correct=isAHInversionSelectionCorrect(value,item), status=feedback&&index>0?(correct?"correct":"incorrect"):null, selectedSymbol=normalizeAHInversionSelection(value).symbol, label=index===0?ahSymbolOrChordLabel(question.key,item.symbol,item.chord):ahSymbolOrChordLabel(question.key,selectedSymbol), muted=index>0&&!selectedSymbol;
               return index===0
-                ? <AHInversionCell key={`symbol-${index}`} large={isMobile}>{label}</AHInversionCell>
-                : <AHInversionCell key={`symbol-${index}`} status={status} muted={muted} withArrows disabled={Boolean(feedback)} onPrev={()=>onCycle(key,"symbol",-1)} onNext={()=>onCycle(key,"symbol",1)} large={isMobile}>{label}</AHInversionCell>;
+                ? <AHInversionCell key={`symbol-${index}`} large={isMobile} scoreOverlay={scoreOverlay}>{label}</AHInversionCell>
+                : <AHInversionCell key={`symbol-${index}`} status={status} muted={muted} withArrows disabled={Boolean(feedback)} onPrev={()=>onCycle(key,"symbol",-1)} onNext={()=>onCycle(key,"symbol",1)} large={isMobile} scoreOverlay={scoreOverlay}>{label}</AHInversionCell>;
             })}
           </tr>
           <tr>
             {visibleChords.map((item,index)=>{
               const key=`ah-inv-${index}`, value=answers[key]||null, correct=isAHInversionSelectionCorrect(value,item), status=feedback&&index>0?(correct?"correct":"incorrect"):null, position=AH_POSITION_PICKER_OPTIONS.find(option=>option.value===item.inversion)?.label || "Root", label=index===0?position:ahPickerLabel(value,"inversion"), muted=index>0&&!Number.isInteger(normalizeAHInversionSelection(value).inversion);
               return index===0
-                ? <AHInversionCell key={`position-${index}`} large={isMobile}>{label}</AHInversionCell>
-                : <AHInversionCell key={`position-${index}`} status={status} muted={muted} withArrows disabled={Boolean(feedback)} onPrev={()=>onCycle(key,"inversion",-1)} onNext={()=>onCycle(key,"inversion",1)} large={isMobile}>{label}</AHInversionCell>;
+                ? <AHInversionCell key={`position-${index}`} large={isMobile} scoreOverlay={scoreOverlay}>{label}</AHInversionCell>
+                : <AHInversionCell key={`position-${index}`} status={status} muted={muted} withArrows disabled={Boolean(feedback)} onPrev={()=>onCycle(key,"inversion",-1)} onNext={()=>onCycle(key,"inversion",1)} large={isMobile} scoreOverlay={scoreOverlay}>{label}</AHInversionCell>;
             })}
           </tr>
         </tbody>
       </table>
   </div>;
 }
-function AHInversionScore({question,answers,setAnswers,feedback,showNoteNames=false,isMobile=false}){
+function AHInversionScore({question,answers,setAnswers,feedback,showNoteNames=false,isMobile=false,readOnly=false}){
   const scoreYShift=isMobile?-25:0, trebleTop=112+scoreYShift, bassTop=220+scoreYShift, staffStart=250, staffEnd=710, scoreWidth=staffEnd+130-staffStart, staveShift=((W-scoreWidth)/2)-staffStart+(isMobile?100:0), shiftedStart=staffStart+staveShift, shiftedEnd=staffEnd+130+staveShift-(isMobile?220:0), keyX=shiftedStart+68, chordXs=isMobile?[385,525]:[382,500,618,736], fadeId=`ah-inv-staff-fade-${question.id}`;
   const actualChordXs=chordXs.map(x=>x+staveShift);
   const visibleChords=isMobile?question.chords.slice(0,2):question.chords;
   const tableColumnWidth=isMobile?228:actualChordXs[1]-actualChordXs[0];
   const tableWidth=tableColumnWidth*visibleChords.length;
-  const tablePadding=8;
   const tableX=isMobile?(W-tableWidth)/2:actualChordXs[0]-tableColumnWidth/2;
   const scoreTransform=`translate(${W/2} 202) scale(${isMobile?1.56:1.13}) translate(${-W/2} -202)`;
   const mobileFeedbackItems=isMobile&&feedback
@@ -1355,7 +1364,7 @@ function AHInversionScore({question,answers,setAnswers,feedback,showNoteNames=fa
       return {...cur,[key]:next};
     });
   };
-  return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none overflow-visible">
+  return <div style={{position:"relative",containerType:"inline-size"}}><svg viewBox={`0 0 ${W} ${readOnly ? 310 : H}`} className="h-auto w-full select-none overflow-visible">
     <defs>
       <linearGradient id={fadeId} gradientUnits="userSpaceOnUse" x1={shiftedStart} x2={shiftedEnd} y1="0" y2="0">
         <stop offset="0%" stopColor="#000" stopOpacity="1"/>
@@ -1363,7 +1372,7 @@ function AHInversionScore({question,answers,setAnswers,feedback,showNoteNames=fa
         <stop offset="100%" stopColor="#000" stopOpacity="0"/>
       </linearGradient>
     </defs>
-    <rect width={W} height={H} fill="transparent" />
+    <rect width={W} height={readOnly ? 310 : H} fill="transparent" />
     <g transform={scoreTransform}>
     {[trebleTop,bassTop].map((top,staffIndex)=><g key={staffIndex}>
       {[0,1,2,3,4].map(line=><line key={line} x1={shiftedStart} x2={shiftedEnd} y1={top+line*GAP} y2={top+line*GAP} stroke={`url(#${fadeId})`} strokeWidth="1.2"/>)}
@@ -1378,15 +1387,11 @@ function AHInversionScore({question,answers,setAnswers,feedback,showNoteNames=fa
     {visibleChords.map((item,index)=>{
       const x=actualChordXs[index], key=`ah-inv-${index}`, value=answers[key]||null, correct=isAHInversionSelectionCorrect(value,item), status=feedback&&index>0?(correct?"correct":"incorrect"):null, trebleStemDown=!item.trebleNote.stack.some(tone=>tone.step<4);
       return <g key={key}>
+        {readOnly && <text x={x} y={trebleTop-30} textAnchor="middle" fontSize="14">{index+1}</text>}
         <Note note={item.trebleNote} x={x} top={trebleTop} stackLayout="lineSpace" stackStemDown={trebleStemDown} showNoteNames={showNoteNames}/>
         <Note note={item.bassNote} x={x} top={bassTop} stackLayout="lineSpace" showNoteNames={showNoteNames}/>
       </g>;
     })}
-    <foreignObject x={tableX-tablePadding/2} y={bassTop+72} width={tableWidth+tablePadding} height={isMobile?114:72}>
-      <div xmlns="http://www.w3.org/1999/xhtml" style={{padding:`0 ${tablePadding/2}px`,boxSizing:"border-box"}}>
-        <AHInversionTable question={question} answers={answers} feedback={feedback} onCycle={updatePicker} isMobile={isMobile} tableWidth={tableWidth} columnWidth={tableColumnWidth}/>
-      </div>
-    </foreignObject>
     {!isMobile&&feedback&&visibleChords.map((item,index)=>{
       if(index===0 || isAHInversionSelectionCorrect(answers[`ah-inv-${index}`]||null,item)) return null;
       return <foreignObject key={`feedback-${index}`} x={actualChordXs[index]-tableColumnWidth/2} y={bassTop+150} width={tableColumnWidth} height="24">
@@ -1403,38 +1408,40 @@ function AHInversionScore({question,answers,setAnswers,feedback,showNoteNames=fa
       </foreignObject>
     )}
     </g>
-  </svg>;
+  </svg>
+    {!readOnly && <div style={{position:"absolute",left:`${(W/2+(tableX-W/2)*1.13)/W*100}%`,top:`${(202+(bassTop+72-202)*1.13)/H*100}%`,width:`${tableWidth*1.13/W*100}%`}}>
+      <AHInversionTable question={question} answers={answers} feedback={feedback} onCycle={updatePicker} isMobile={isMobile} tableWidth={tableWidth} columnWidth={tableColumnWidth} scoreOverlay />
+    </div>}
+  </div>;
 }
 function stepFromSvgY(yy,top){ return clamp(Math.round((top+GAP*4-yy)/(GAP/2)),-4,12); }
 function letterForClefStep(step,clef){
   const base=clef==="bass"?LETTERS.indexOf("G"):LETTERS.indexOf("E");
   return LETTERS[((base+step)%7+7)%7];
 }
-function AHCompletedTable({question,isMobile=false,tableWidth=null,columnWidth=null}){
+function AHCompletedTable({question,isMobile=false,tableWidth=null,columnWidth=null,x=0,y=0}){
   const visibleChords=isMobile?question.chords.slice(0,2):question.chords;
   const resolvedColumnWidth=columnWidth || (isMobile?228:120);
   const resolvedTableWidth=tableWidth || resolvedColumnWidth*visibleChords.length;
+  const rowHeight=isMobile?53:34;
   const tableScale=isMobile?0.95:1;
-  const tableStyle={borderCollapse:"collapse",tableLayout:"fixed",width:`${resolvedTableWidth}px`,color:"#111",fontSize:isMobile?"21px":"11px",lineHeight:"1"};
-  return <div xmlns="http://www.w3.org/1999/xhtml" style={{display:"block",width:`${resolvedTableWidth}px`,transform:`scale(${tableScale})`,transformOrigin:"center center"}}>
-    <table style={tableStyle}>
-      <colgroup>
-        {visibleChords.map(item=><col key={`col-${item.index}`} style={{width:`${resolvedColumnWidth}px`}} />)}
-      </colgroup>
-      <tbody>
-        <tr>{visibleChords.map(item=><AHInversionCell key={`chord-${item.index}`} large={isMobile}>{ahSymbolOrChordLabel(question.key,item.symbol,item.chord)}</AHInversionCell>)}</tr>
-        <tr>{visibleChords.map(item=><AHInversionCell key={`position-${item.index}`} large={isMobile}>{inversionLabel(item.inversion)||"Root"}</AHInversionCell>)}</tr>
-      </tbody>
-    </table>
-  </div>;
+  const labels=[visibleChords.map(item=>ahSymbolOrChordLabel(question.key,item.symbol,item.chord)),visibleChords.map(item=>inversionLabel(item.inversion)||"Root")];
+  return <g className="ah-completed-table" role="table" aria-label="Chord information" transform={`translate(${x+(1-tableScale)*resolvedTableWidth/2} ${y+(1-tableScale)*rowHeight}) scale(${tableScale})`}>
+    <rect width={resolvedTableWidth} height={rowHeight*2} fill="white" stroke="#111" strokeWidth="1.2"/>
+    <line x1="0" x2={resolvedTableWidth} y1={rowHeight} y2={rowHeight} stroke="#111" strokeWidth="1.2"/>
+    {visibleChords.slice(1).map((item,index)=><line key={item.index} x1={(index+1)*resolvedColumnWidth} x2={(index+1)*resolvedColumnWidth} y1="0" y2={rowHeight*2} stroke="#111" strokeWidth="1.2"/>)}
+    {labels.map((row,rowIndex)=><g key={rowIndex} role="row">{row.map((label,index)=><text key={index} role="cell" x={(index+.5)*resolvedColumnWidth} y={(rowIndex+.5)*rowHeight} textAnchor="middle" dominantBaseline="central" fill="#111" fontFamily="ui-sans-serif,system-ui,sans-serif" fontSize={isMobile?23:13.5} fontWeight="700">{label}</text>)}</g>)}
+  </g>;
 }
-function AHBassLineScore({question,answers,setAnswers,feedback,showNoteNames=false,isMobile=false}){
+function AHBassLineScore({question,answers,setAnswers,feedback,showNoteNames=false,isMobile=false,disabled=false,boxedChordIndex}){
+  const previewRef=useRef(null);
+  useEffect(()=>{previewRef.current=null;},[question.id]);
+  const updatePreview=value=>{previewRef.current=value;setAnswers(cur=>{const next={...cur};if(value)next.ahBassPreview=value;else delete next.ahBassPreview;return next;});};
   const scoreYShift=isMobile?-25:0, trebleTop=112+scoreYShift, bassTop=220+scoreYShift, staffStart=250, staffEnd=710, scoreWidth=staffEnd+130-staffStart, staveShift=((W-scoreWidth)/2)-staffStart+(isMobile?100:0), shiftedStart=staffStart+staveShift, shiftedEnd=staffEnd+130+staveShift-(isMobile?220:0), keyX=shiftedStart+68, chordXs=isMobile?[385,525]:[382,500,618,736], fadeId=`ah-bass-staff-fade-${question.id}`;
   const actualChordXs=chordXs.map(x=>x+staveShift);
   const visibleChords=isMobile?question.chords.slice(0,2):question.chords;
   const tableColumnWidth=isMobile?228:actualChordXs[1]-actualChordXs[0];
   const tableWidth=tableColumnWidth*visibleChords.length;
-  const tablePadding=8;
   const tableX=isMobile?(W-tableWidth)/2:actualChordXs[0]-tableColumnWidth/2;
   const scoreScale=isMobile?1.56:1.13;
   const scoreTransform=`translate(${W/2} 202) scale(${scoreScale}) translate(${-W/2} -202)`;
@@ -1445,45 +1452,42 @@ function AHBassLineScore({question,answers,setAnswers,feedback,showNoteNames=fal
     return { x:W/2+(outer.x-W/2)/scoreScale, y:202+(outer.y-202)/scoreScale };
   };
   const placeStep=(slot,step)=>{
-    if(feedback || slot===0) return;
+    if(feedback || disabled || slot===0) return;
     const letter=letterForClefStep(step,"bass");
     setAnswers(cur=>({...cur,[`ah-bass-${slot}`]:{step,letter}}));
   };
   const movePreview=(event,slot,dragged=false)=>{
-    if(feedback || slot===0) return;
+    if(feedback || disabled || slot===0) return;
     const pointer=pointerToSvg(event), touchOffset=event.pointerType==="touch"?44:0, step=stepFromSvgY(pointer.y-touchOffset,bassTop);
-    setAnswers(cur=>({...cur,ahBassPreview:{active:true,slot,x:actualChordXs[slot],y:pointer.y,step,dragged}}));
+    updatePreview({active:true,slot,x:actualChordXs[slot],y:pointer.y,step,dragged});
   };
   const shouldUseDragPreview=event=>isMobile || event.pointerType==="touch" || hasTouchInput();
   const pointerDown=(event,slot)=>{
     event.preventDefault();
-    if(feedback || slot===0) return;
+    if(feedback || disabled || slot===0) return;
     const pointer=pointerToSvg(event), touchOffset=event.pointerType==="touch"?44:0, step=stepFromSvgY(pointer.y-touchOffset,bassTop);
     if(!shouldUseDragPreview(event)){
       placeStep(slot,step);
-      setAnswers(cur=>{ const next={...cur}; delete next.ahBassPreview; return next; });
+      updatePreview(null);
       return;
     }
     event.currentTarget.setPointerCapture?.(event.pointerId);
-    setAnswers(cur=>({...cur,ahBassPreview:{active:true,slot,x:actualChordXs[slot],y:pointer.y,step,dragged:false}}));
+    updatePreview({active:true,slot,x:actualChordXs[slot],y:pointer.y,step,dragged:false});
   };
   const pointerMove=(event,slot)=>{
     if(shouldUseDragPreview(event)){
-      if(!answers.ahBassPreview?.active) return;
+      if(!previewRef.current?.active) return;
       movePreview(event,slot,true);
       return;
     }
     movePreview(event,slot,false);
   };
-  const pointerLeave=()=>setAnswers(cur=>{
-    if(cur.ahBassPreview?.dragged) return cur;
-    const next={...cur}; delete next.ahBassPreview; return next;
-  });
+  const pointerLeave=()=>{if(!previewRef.current?.dragged)updatePreview(null);};
   const pointerUp=event=>{
     event.preventDefault(); event.currentTarget.releasePointerCapture?.(event.pointerId);
-    const preview=answers.ahBassPreview;
-    if(preview?.active) placeStep(preview.slot,preview.step);
-    setAnswers(cur=>{ const next={...cur}; delete next.ahBassPreview; return next; });
+    const preview=previewRef.current;
+    if(preview?.active){const pointer=pointerToSvg(event),step=stepFromSvgY(pointer.y-(event.pointerType==="touch"?44:0),bassTop);placeStep(preview.slot,step);}
+    updatePreview(null);
   };
   const preview=answers.ahBassPreview;
   return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none overflow-visible">
@@ -1508,24 +1512,32 @@ function AHBassLineScore({question,answers,setAnswers,feedback,showNoteNames=fal
       <line x1={shiftedStart} x2={shiftedStart} y1={trebleTop} y2={bassTop+GAP*4} stroke="currentColor" strokeWidth="1.4"/>
       {visibleChords.map((item,index)=>{
         const x=actualChordXs[index], placed=answers[`ah-bass-${index}`], correctLetter=item.bassNote.stack[0].letter, isCorrect=feedback&&index>0&&placed?.letter===correctLetter, isWrong=feedback&&index>0&&placed?.letter!==correctLetter, userNote=placed?{id:`user-bass-${index}`,rhythm:"crotchet",step:placed.step,letter:placed.letter,writtenAccidental:null}:null;
+        const trebleStemDown=!item.trebleNote.stack.some(tone=>tone.step<4);
+        let chordBox;
+        if(index===boxedChordIndex){
+          const noteYs=item.trebleNote.stack.map(tone=>y(tone.step,trebleTop));
+          const top=Math.min(...noteYs)-(trebleStemDown ? NOTE_RY : STEM);
+          const bottom=Math.max(...noteYs)+(trebleStemDown ? STEM : NOTE_RY);
+          const size=Math.max(60,bottom-top+16);
+          chordBox=<rect x={x-size/2} y={(top+bottom-size)/2} width={size} height={size}
+            fill="none" stroke="currentColor" strokeWidth="1.5" pointerEvents="none"
+            role="img" aria-label={`Boxed chord ${index+1} on the treble staff`}/>;
+        }
         return <g key={`bass-line-${index}`}>
-          <Note note={item.trebleNote} x={x} top={trebleTop} stackLayout="lineSpace" stackStemDown={!item.trebleNote.stack.some(tone=>tone.step<4)}/>
+          {chordBox}
+          <Note note={item.trebleNote} x={x} top={trebleTop} stackLayout="lineSpace" stackStemDown={trebleStemDown}/>
           {index===0&&<Note note={item.bassNote} x={x} top={bassTop} stackLayout="lineSpace"/>}
           {index>0&&<CalibratedSymbol symbolKey="quarterNoteStemUp" x={x} y={bassTop-18} colour="#777" opacity="0.55"/>}
           {userNote&&<Note note={userNote} x={x} top={bassTop} colour={isCorrect?COLOUR.green:isWrong?"rgba(220,38,38,.45)":"currentColor"}/>}
           {feedback&&index>0&&placed?.letter!==correctLetter&&<Note note={item.bassNote} x={x+24} top={bassTop} colour={COLOUR.green} stackLayout="lineSpace"/>}
-          {index>0&&<rect ref={window.MLH?.preventTouchScrollWhileDragging} x={x-32} y={bassTop-58} width="64" height="220" fill="transparent" pointerEvents="all" className="touch-none" style={{touchAction:"none"}} onPointerDown={event=>pointerDown(event,index)} onPointerMove={event=>pointerMove(event,index)} onPointerLeave={pointerLeave} onPointerUp={pointerUp} onPointerCancel={()=>setAnswers(cur=>{const next={...cur};delete next.ahBassPreview;return next;})}/>}
+          {index>0&&<rect role="button" aria-label={`Enter bass note ${index+1}`} tabIndex={feedback||disabled?-1:0} onKeyDown={event=>{if(feedback||disabled||event.repeat)return;if(["ArrowUp","ArrowDown","Enter"," ","Delete","Backspace"].includes(event.key)){event.preventDefault();if(event.key==="Delete"||event.key==="Backspace"){setAnswers(cur=>{const next={...cur};delete next[`ah-bass-${index}`];return next;});return;}const step=clamp((answers[`ah-bass-${index}`]?.step??0)+(event.key==="ArrowUp"?1:event.key==="ArrowDown"?-1:0),-4,12);placeStep(index,step);}}} ref={window.MLH?.preventTouchScrollWhileDragging} x={x-32} y={bassTop-58} width="64" height="220" fill="transparent" pointerEvents="all" className="touch-manipulation" style={{touchAction:"none"}} onPointerDown={event=>pointerDown(event,index)} onPointerMove={event=>pointerMove(event,index)} onPointerLeave={pointerLeave} onPointerUp={pointerUp} onPointerCancel={()=>updatePreview(null)}/>}
         </g>;
       })}
       {preview?.active&&preview.step!=null&&!feedback&&<g pointerEvents="none">
         {preview.dragged&&<line x1={shiftedStart-14} x2={shiftedEnd+14} y1={y(preview.step,bassTop)} y2={y(preview.step,bassTop)} stroke="black" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.55"/>}
         <Note note={{id:"bass-preview",rhythm:"crotchet",step:preview.step,letter:letterForClefStep(preview.step,"bass"),writtenAccidental:null}} x={preview.x} top={bassTop} colour="black"/>
       </g>}
-      <foreignObject x={tableX-tablePadding/2} y={bassTop+72} width={tableWidth+tablePadding} height={isMobile?114:72}>
-        <div xmlns="http://www.w3.org/1999/xhtml" style={{padding:`0 ${tablePadding/2}px`,boxSizing:"border-box"}}>
-          <AHCompletedTable question={question} isMobile={isMobile} tableWidth={tableWidth} columnWidth={tableColumnWidth}/>
-        </div>
-      </foreignObject>
+      <AHCompletedTable question={question} isMobile={isMobile} tableWidth={tableWidth} columnWidth={tableColumnWidth} x={tableX} y={bassTop+72}/>
     </g>
   </svg>;
 }
@@ -1631,26 +1643,40 @@ function ChordOptions({question}){ const options=getChordOptions(question.key); 
 function useStyles(){ useEffect(()=>{ if(document.getElementById("golden-style"))return; const s=document.createElement("style"); s.id="golden-style"; s.innerHTML=`button{-webkit-tap-highlight-color:transparent;user-select:none;transition:transform .08s ease,filter .08s ease,background-color .12s ease,box-shadow .12s ease;cursor:pointer}button:hover{transform:translateY(-1px) scale(1.01);filter:brightness(1.08);box-shadow:0 6px 18px rgba(0,0,0,.08)}button:active{transform:scale(.96);filter:brightness(.92)}button:disabled{cursor:not-allowed;opacity:.5}.chords-customise-panel{z-index:900;max-height:calc(100dvh - 170px);overflow-y:auto}.higher-mobile-answers{display:none}@keyframes medalShine{0%,100%{transform:scale(1) rotate(-4deg);filter:drop-shadow(0 0 0 rgba(250,204,21,0))}50%{transform:scale(1.16) rotate(4deg);filter:drop-shadow(0 0 10px rgba(250,204,21,.9))}}@keyframes incorrectDropShake{0%{transform:translateY(-28px);opacity:0}55%{transform:translateY(0);opacity:1}68%{transform:translateX(-5px)}78%{transform:translateX(5px)}88%{transform:translateX(-3px)}100%{transform:translateX(0);opacity:1}}@keyframes correctFade{0%{transform:translateY(-18px);opacity:0}100%{transform:translateY(0);opacity:1}}@keyframes feedbackFadeOut{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-10px)}}@keyframes pulseBorder{0%{outline:0 solid rgba(0,0,0,.55);border-color:#000}50%{outline:4px solid rgba(0,0,0,.12);border-color:#666}100%{outline:0 solid rgba(0,0,0,.55);border-color:#000}}`; document.head.appendChild(s); },[]); }
 const useClickOutside = window.MLH.useClickOutside;
 const playFeedbackSound = (...args) => window.MLH?.playFeedbackSound?.(...args);
-function App(){
+function consumeChordsWorksheetReturn(){
+  try{const raw=window.sessionStorage.getItem("worksheetReturnConfig");if(!raw)return null;const config=JSON.parse(raw);if(config?.activityId!=="chords")return null;window.sessionStorage.removeItem("worksheetReturnConfig");return config.version===1&&LEVELS[config.settings?.level]?config.settings:null;}catch{return null;}
+}
+function App({escapeActivity}={}){
   useStyles();
+  const worksheetReturn=useMemo(()=>escapeActivity?null:consumeChordsWorksheetReturn(),[]);
   const initialLevel=useMemo(()=>{
+    if(worksheetReturn?.level)return worksheetReturn.level;
     const requested=new URLSearchParams(window.location.search).get("level");
     return LEVELS[requested] ? requested : "N5";
   },[]);
   const [activeLevel,setActiveLevel]=useState(initialLevel);
-  const [tempo,setTempo]=useState(initialLevel==="N5"?"slow":"medium");
-  const [metronomeOn,setMetronomeOn]=useState(false);
-  const [showNoteNames,setShowNoteNames]=useState(false);
-  const [showScaleDegrees,setShowScaleDegrees]=useState(false);
-  const [n5Customise,setN5Customise]=useState(DEFAULT_N5_CUSTOMISE);
-  const [ahCustomise,setAhCustomise]=useState(DEFAULT_AH_CUSTOMISE);
-  const [question,setQuestion]=useState(()=>makeQuestion(initialLevel,DEFAULT_AH_CUSTOMISE,DEFAULT_N5_CUSTOMISE));
+  const [tempo,setTempo]=window.MLH.useProfileState("tempo", worksheetReturn?.tempo||(initialLevel==="N5"?"slow":"medium"));
+  const [metronomeOn,setMetronomeOn]=window.MLH.useProfileState("metronomeOn", worksheetReturn?.metronomeOn===true);
+  const [showNoteNames,setShowNoteNames]=window.MLH.useProfileState("showNoteNames", worksheetReturn?.showNoteNames===true);
+  const [showScaleDegrees,setShowScaleDegrees]=window.MLH.useProfileState("showScaleDegrees", worksheetReturn?.showScaleDegrees===true);
+  const [savedN5Customise,setN5Customise]=window.MLH.useProfileState("n5Customise", worksheetReturn?.n5Customise||DEFAULT_N5_CUSTOMISE);
+  const [savedAHCustomise,setAhCustomise]=window.MLH.useProfileState("ahCustomise", worksheetReturn?.ahCustomise||DEFAULT_AH_CUSTOMISE);
+  const n5Customise=window.CHORDS_SELECTION.normalise(savedN5Customise,DEFAULT_N5_CUSTOMISE),ahCustomise=window.CHORDS_SELECTION.normalise(savedAHCustomise,DEFAULT_AH_CUSTOMISE);
+  const [question,setQuestion]=useState(()=>{
+    if(!escapeActivity)return makeQuestion(initialLevel,ahCustomise,n5Customise);
+    const {bridge,token,level}=escapeActivity;
+    const saved=bridge.readActivity(token);
+    if(saved)return saved;
+    const generated=makeEscapeChordQuestion(level);
+    bridge.saveActivity(token,generated);
+    return generated;
+  });
   const [questionVisible,setQuestionVisible]=useState(true);
   const [answers,setAnswers]=useState({});
   const [promptMessage,setPromptMessage]=useState("");
   const [feedback,setFeedback]=useState(null);
   const [feedbackFading,setFeedbackFading]=useState(false);
-  const [highlightPlayback,setHighlightPlayback]=useState(false);
+  const [highlightPlayback,setHighlightPlayback]=window.MLH.useProfileState("highlightPlayback", worksheetReturn?.highlightPlayback===true);
   const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
   const [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
   const [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
@@ -1664,6 +1690,7 @@ function App(){
   const [activeNoteId,setActiveNoteId]=useState(null);
   const [activeBarIndex,setActiveBarIndex]=useState(null);
   const isMobileView=false;
+  const answerLock=useRef(false);
   const levelRef=useRef(null), customiseRef=useRef(null), audioRef=useRef(null), stopTimerRef=useRef(null), questionTimerRef=useRef(null), feedbackTimersRef=useRef([]), highlightTimersRef=useRef([]), levelTaskStatusRef=useRef(null);
   useClickOutside(
     [levelRef,customiseRef],
@@ -1696,13 +1723,13 @@ function App(){
   function stopAudio(){
     clearTimeout(stopTimerRef.current); stopTimerRef.current=null;
     highlightTimersRef.current.forEach(t=>clearTimeout(t)); highlightTimersRef.current=[];
-    if(audioRef.current){ try{ if(audioRef.current.state!=="closed") audioRef.current.close(); }catch{} }
+    if(audioRef.current){ try{ if(audioRef.current.state!=="closed") (globalThis.MLH?.closeAudioContext?.(audioRef.current) || audioRef.current.close()); }catch{} }
     audioRef.current=null; setPlaying(false); setActiveNoteId(null); setActiveBarIndex(null);
   }
   function clearQuestionTimer(){ if(questionTimerRef.current){ clearTimeout(questionTimerRef.current); questionTimerRef.current=null; } }
   function clearFeedbackTimers(){ feedbackTimersRef.current.forEach(t=>clearTimeout(t)); feedbackTimersRef.current=[]; clearQuestionTimer(); }
-  function resetTask(q){ clearFeedbackTimers(); stopAudio(); setQuestion(q); setAnswers({}); setPromptMessage(""); setFeedback(null); setFeedbackFading(false); }
-  function newQuestion(level=activeLevel, nextAHCustomise=ahCustomise, nextN5Customise=n5Customise){ clearQuestionTimer(); setQuestionVisible(false); questionTimerRef.current=setTimeout(()=>{ questionTimerRef.current=null; resetTask(makeQuestion(level,nextAHCustomise,nextN5Customise)); setQuestionVisible(true); },260); }
+  function resetTask(q){ answerLock.current=false;clearFeedbackTimers(); stopAudio(); setQuestion(q); setAnswers({}); setPromptMessage(""); setFeedback(null); setFeedbackFading(false); }
+  function newQuestion(level=activeLevel, nextAHCustomise=ahCustomise, nextN5Customise=n5Customise){ answerLock.current=true;clearFeedbackTimers();stopAudio(); setQuestionVisible(false); questionTimerRef.current=setTimeout(()=>{ questionTimerRef.current=null; resetTask(makeQuestion(level,nextAHCustomise,nextN5Customise)); setQuestionVisible(true); },260); }
   function handleN5CustomiseChange(nextN5Customise){
     window.MLH.resetLevelSessionProgress?.({ setCorrect, setAttempted, setStreak, setBest });
     if(activeLevel==="N5") newQuestion("N5",ahCustomise,nextN5Customise);
@@ -1735,6 +1762,7 @@ function App(){
   }
   function fadeToNext(){ if(!feedback||feedbackFading)return; clearFeedbackTimers(); setFeedbackFading(true); feedbackTimersRef.current.push(setTimeout(()=>newQuestion(),280)); }
   function score(ok){
+    if(answerLock.current||feedback||!questionVisible)return;answerLock.current=true;
     const ns=ok?streak+1:0;
     clearFeedbackTimers();
     playFeedbackSound(ok);
@@ -1755,7 +1783,7 @@ function App(){
       feedbackTimersRef.current.push(setTimeout(()=>newQuestion(),2000));
     }
   }
-  function clearAnswers(){ if(feedback)return; setAnswers({}); setPromptMessage(""); }
+  function clearAnswers(){ if(feedback||answerLock.current||!questionVisible)return; setAnswers({}); setPromptMessage(""); }
   function hasAnyAnswer(){
     if(question.type==="n5ChordSequence") return Boolean(answers.n5Sequence);
     if(question.type==="n5"){
@@ -1800,7 +1828,7 @@ function App(){
     return question.targetBars.every(i=>Boolean(String(answers[i]||"").trim()));
   }
   function confirmAnswer(){
-    if(feedback)return; stopAudio();
+    if(feedback||answerLock.current||!questionVisible)return; stopAudio();
     if(question.type==="n5ChordSequence"){
       if(!answers.n5Sequence) return;
       score(answers.n5Sequence===question.options[question.answerIndex].id);
@@ -1840,12 +1868,12 @@ function App(){
     score(ok);
   }
   function selectN5Choice(id){
-    if(feedback)return;
+    if(feedback||answerLock.current||!questionVisible)return;
     setAnswers({n5Choice:id});
     score(id===question.chord.id);
   }
   function selectAHChordChoice(id){
-    if(feedback)return;
+    if(feedback||answerLock.current||!questionVisible)return;
     stopAudio();
     setAnswers({ahChoice:id});
     score(id===question.chordType.id);
@@ -1859,13 +1887,14 @@ function App(){
     gain.gain.exponentialRampToValueAtTime(volume,start+.015);
     gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume*.55),start+Math.max(.05,duration*.82));
     gain.gain.exponentialRampToValueAtTime(.0001,start+duration+.06);
-    oscillator.connect(gain); gain.connect(ctx.destination);
+    oscillator.connect(gain); gain.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
     oscillator.start(start); oscillator.stop(start+duration+.1);
   }
   function playDrumHit(ctx,start,accented=false,destination=ctx.destination){ window.MLH?.playMetronomeClick?.(ctx,destination,start,accented); }
   async function playQuestionAudio(startOffsetSeconds=0, forcePlay=false){
-    if(question.type==="ahInversionBar") return;
+    if(!questionVisible||(answerLock.current&&!feedback)||question.type==="ahInversionBar"||question.type==="ahBassLine") return;
     if((playing || audioRef.current) && !forcePlay){ stopAudio(); return; }
+    if(escapeActivity?.bridge.muted()){setPromptMessage("Turn on game audio to listen.");return;}
     const AC=window.AudioContext||window.webkitAudioContext; if(!AC){setPromptMessage("Audio playback is not supported in this browser.");return;}
     stopAudio(); const ctx=new AC(); audioRef.current=ctx; setPlaying(true); setPromptMessage("");
     const selectedTempo=TEMPOS.find(t=>t.id===tempo)||TEMPOS[1], beatSeconds=60/selectedTempo.bpm, beatsPerBar=question.timeSignature.beats, barSeconds=beatSeconds*beatsPerBar;
@@ -1900,7 +1929,7 @@ function App(){
             }),
           ].map(midiToFrequency);
         });
-    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies, metronome: metronomeOn });
+    let ready;try{ready=await window.MLH.prepareAudioPlayback(ctx,{piano:frequencies,metronome:metronomeOn});}catch{if(audioRef.current===ctx){stopAudio();setPromptMessage("Audio could not start. Please try again.");}return;}
     if (audioRef.current !== ctx) return;
     if (!ready) { stopAudio(); return; }
     const audioStartTime=ctx.currentTime+.08;
@@ -1947,7 +1976,7 @@ function App(){
           });
         });
       });
-      stopTimerRef.current=setTimeout(()=>{setPlaying(false);setActiveNoteId(null);setActiveBarIndex(null);audioRef.current=null;try{ctx.close()}catch{}},Math.max(0,(activeDuration-startOffset)*1000)+150);
+      stopTimerRef.current=setTimeout(()=>{setPlaying(false);setActiveNoteId(null);setActiveBarIndex(null);audioRef.current=null;try{(globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close())}catch{}},Math.max(0,(activeDuration-startOffset+.08)*1000)+(window.MLH.naturalPlaybackTailMs?.() ?? 650));
       return;
     }
     if(question.type==="ahAudioChord"){
@@ -1980,7 +2009,7 @@ function App(){
           playOscillator(ctx,{frequency,start:barStart,duration:playableDuration,volume:.052,type:"triangle"});
         });
       });
-      stopTimerRef.current=setTimeout(()=>{setPlaying(false);setActiveNoteId(null);setActiveBarIndex(null);audioRef.current=null;try{ctx.close()}catch{}},Math.max(0,(activeDuration-startOffset)*1000)+150);
+      stopTimerRef.current=setTimeout(()=>{setPlaying(false);setActiveNoteId(null);setActiveBarIndex(null);audioRef.current=null;try{(globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close())}catch{}},Math.max(0,(activeDuration-startOffset+.08)*1000)+(window.MLH.naturalPlaybackTailMs?.() ?? 650));
       return;
     }
     question.bars.forEach(bar=>{
@@ -2021,11 +2050,19 @@ function App(){
         }
         playOscillator(ctx,{frequency:frequency*.5,start:barStart,duration:(relativeBarEnd-Math.max(relativeBarStart,startOffset))*.95,volume:.03*accompanimentVolumeScale,type:"sine"}); });
     });
-    stopTimerRef.current=setTimeout(()=>{setPlaying(false);setActiveNoteId(null);setActiveBarIndex(null);audioRef.current=null;try{ctx.close()}catch{}},Math.max(0,(activeDuration-startOffset)*1000)+150);
+    stopTimerRef.current=setTimeout(()=>{setPlaying(false);setActiveNoteId(null);setActiveBarIndex(null);audioRef.current=null;try{(globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close())}catch{}},Math.max(0,(activeDuration-startOffset+.08)*1000)+(window.MLH.naturalPlaybackTailMs?.() ?? 650));
   }
 
+  useEffect(()=>{const onHide=()=>{if(document.hidden)stopAudio();};document.addEventListener('visibilitychange',onHide);return ()=>{document.removeEventListener('visibilitychange',onHide);clearFeedbackTimers();stopAudio();};},[]);
+  useEffect(()=>{
+    if(!escapeActivity)return undefined;
+    const stop=event=>{if(event.origin===location.origin&&event.source===window.parent&&event.data?.type==="escape-practice-stop")stopAudio();};
+    window.addEventListener("message",stop);
+    return ()=>window.removeEventListener("message",stop);
+  },[escapeActivity]);
+  if(escapeActivity)return <EscapeChord activity={escapeActivity} question={question} playing={playing} activeNoteId={activeNoteId} onPlay={()=>playQuestionAudio(0)} prompt={promptMessage} />;
   return <div className={SHELL.pageShellClass || "overflow-x-hidden bg-stone-50 pb-10 text-black md:pb-12"}>
-    <window.MLH.AppHeader icon={ASSET.appIcon} title="Chords" subtitle="Identify, create and apply chords in music." worksheetConfig={activeLevel==="N5"||(activeLevel==="AH"&&(ahCustomise.insertPosition||ahCustomise.createBassLine)) ? () => ({ version: 1, activityId: "chords", sourceUrl: window.location.href, settings: { level: activeLevel, n5Customise, ahCustomise } }) : null}>
+    <window.MLH.AppHeader profileQrIcon="./ui-icons/qr-code-svgrepo-com.svg?v=20261106-roundest" profileState={{ activeLevel, tempo, metronomeOn, showNoteNames, showScaleDegrees, n5Customise, ahCustomise, highlightPlayback }} icon={ASSET.appIcon} title="Chords" subtitle="Identify, create and apply chords in music." worksheetConfig={activeLevel==="N5"||(activeLevel==="AH"&&(ahCustomise.insertPosition||ahCustomise.createBassLine)) ? () => ({ version: 1, activityId: "chords", sourceUrl: window.location.href, settings: { level: activeLevel, n5Customise, ahCustomise,tempo,metronomeOn,showNoteNames,showScaleDegrees,highlightPlayback } }) : null}>
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
         assets={ASSET}
         correct={correct}
@@ -2088,7 +2125,7 @@ function App(){
           : question.type==="ahInversionBar"
           ? <AHInversionScore question={question} answers={answers} setAnswers={setAnswers} feedback={feedback} showNoteNames={showNoteNames} isMobile={isMobileView}/>
         : question.type==="ahBassLine"
-          ? <AHBassLineScore question={question} answers={answers} setAnswers={setAnswers} feedback={feedback} showNoteNames={showNoteNames} isMobile={isMobileView}/>
+          ? <AHBassLineScore disabled={!questionVisible} question={question} answers={answers} setAnswers={setAnswers} feedback={feedback} showNoteNames={showNoteNames} isMobile={isMobileView}/>
           : <Score question={question} answers={answers} setAnswers={setAnswers} feedback={feedback} activeNoteId={highlightPlayback?activeNoteId:undefined} activeBarIndex={activeBarIndex} level={activeLevel} showNoteNames={showNoteNames}/>}
       </div>
       {question.type==="n5ChordSequence" ? (
@@ -2098,8 +2135,8 @@ function App(){
             {promptMessage&&<p className="mt-2 text-sm font-bold text-red-600">{promptMessage}</p>}
           </div>
           <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <button type="button" onClick={()=>playQuestionAudio(0)} disabled={Boolean(feedback)} className={window.MLH.PlayButtonClass}>
-              <span className="text-lg leading-none">{playing?"■":"▶"}</span>
+            <button type="button" onClick={()=>playQuestionAudio(0)} disabled={!questionVisible||feedback?.correct === true} className={window.MLH.PlayButtonClass}>
+              <span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
               <span>{playing?"Stop":"Play"}</span>
             </button>
             <div className={window.MLH.ActionButtonGroupClass}>
@@ -2133,16 +2170,16 @@ function App(){
             {question.answerMode==="choice"
               ? <div className="flex flex-col gap-3 sm:absolute sm:bottom-4 sm:left-4 sm:right-4 sm:flex-row sm:items-end sm:justify-between">
                   <AHChordChoiceAnswers question={question} answers={answers} feedback={feedback} onSelect={selectAHChordChoice}/>
-                  <button onClick={()=>playQuestionAudio(0)} disabled={Boolean(feedback)} className={window.MLH.PlayButtonClass}>
-                    <span className="text-lg leading-none">{playing?"■":"▶"}</span>
+                  <button onClick={()=>playQuestionAudio(0)} disabled={!questionVisible||feedback?.correct === true} className={window.MLH.PlayButtonClass}>
+                    <span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
                     <span>{playing?"Stop":"Play"}</span>
                   </button>
                 </div>
               : <div className="flex flex-col gap-3">
                   <div className="min-w-0"><AHChordTypedAnswer question={question} answers={answers} setAnswers={setAnswers} feedback={feedback} onConfirm={confirmAnswer}/></div>
                   <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-between">
-                    <button onClick={()=>playQuestionAudio(0)} disabled={Boolean(feedback)} className={window.MLH.PlayButtonClass}>
-                      <span className="text-lg leading-none">{playing?"■":"▶"}</span>
+                    <button onClick={()=>playQuestionAudio(0)} disabled={!questionVisible||feedback?.correct === true} className={window.MLH.PlayButtonClass}>
+                      <span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
                       <span>{playing?"Stop":"Play"}</span>
                     </button>
                     <div className={window.MLH.ActionButtonGroupClass}>
@@ -2207,8 +2244,8 @@ function App(){
 
             <div className="flex w-full flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex min-w-0 items-center">
-                <button onClick={()=>playQuestionAudio(0)} disabled={Boolean(feedback)} className={window.MLH.PlayButtonClass}>
-                  <span className="text-lg leading-none">{playing?"■":"▶"}</span>
+                <button onClick={()=>playQuestionAudio(0)} disabled={!questionVisible||feedback?.correct === true} className={window.MLH.PlayButtonClass}>
+                  <span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
                   <span>{playing?"Stop":"Play"}</span>
                 </button>
               </div>
@@ -2231,10 +2268,64 @@ function App(){
   </div></div>;
 }
 
+function makeEscapeChordQuestion(level) {
+  if (level === "AH") return makeAHAudioChordQuestion();
+  if (level === "H") {
+    const generated = makeHigherQuestion();
+    return { ...generated, bars: generated.bars.slice(0, 4), targetBars: [] };
+  }
+  return makeN5Question();
+}
+
+function EscapeChord({ activity, question, playing, activeNoteId, onPlay, prompt }) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const { level, clue } = activity;
+  const options = level === "AH" ? AH_CHORD_TYPES : level === "H" ? getChordOptions(question.key) : N5_CHORD_OPTIONS;
+  const correct = level === "AH" ? options.find(option => option.id === question.chordType.id)
+    : level === "H" ? options.find(option => option.symbol === question.bars[clue.barIndex].chordSymbol)
+    : options.find(option => option.id === question.chord.id);
+  return (
+    <main ref={ref} className="escape-literacy-content">
+      <embed.AudioHeader activity={activity} prompt={level === "H" ? `Which chord fits bar ${clue.barIndex + 1}?` : "Identify the chord."} playing={playing} onPlay={onPlay} />
+      <div className={level === "H" ? "escape-literacy-score" : "escape-literacy-short-score"}>
+        {level === "AH" ? <AHListeningScore question={question} activeNoteId={activeNoteId} /> : level === "H" ? <Score question={question} answers={{}} activeNoteId={activeNoteId} compact /> : <N5Score question={question} />}
+      </div>
+      <embed.NumberedOptions activity={activity} choices={embed.codeOrder(options, correct, clue.digit).map(option => option.label)} columns={2} />
+      {prompt && <p role="status" className="mt-2 text-center">{prompt}</p>}
+    </main>
+  );
+}
+
 const root = document.getElementById("root");
-if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(<App />);
-else ReactDOM.render(<App />, root);
-</script>
-<script src="./footer.js?v=20261005-update-history"></script>
+function EscapeAdvancedChord({activity}) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const inversion = activity.clue.kind === "chordInversion";
+  const question = embed.useQuestion(activity, inversion ? makeAHInversionQuestion : makeAHBassLineQuestion);
+  const index = activity.clue.barIndex;
+  const item = question.chords[index];
+  const keyName = question.key.displayName || question.key.name;
+  const positions = ["Root position", "First inversion", "Second inversion"];
+  const answer = inversion ? positions[item.inversion] : item.bassNote.stack[0].letter;
+  const choices = embed.numberedChoices(answer, inversion ? positions : LETTERS, activity.clue.digit, inversion ? 3 : 4);
+  const prompt = inversion
+    ? `What position is the ${["1st", "2nd", "3rd", "4th"][index]} chord in? The key is ${keyName}.`
+    : `In ${keyName}, which bass note gives the boxed chord the position shown?`;
+  return <main ref={ref} className="escape-literacy-content">
+    <p className="escape-literacy-content-title">{prompt}</p>
+    <div className="escape-literacy-score">{inversion ? <AHInversionScore question={question} answers={{}} readOnly /> : <AHBassLineScore question={question} answers={{}} disabled boxedChordIndex={index} />}</div>
+    <embed.NumberedOptions activity={activity} choices={choices} columns={2} />
+  </main>;
+}
+
+const embed = window.MLH.EscapeLiteracyActivity;
+const escapeActivity = embed?.request("chord");
+const advancedChord = embed?.request("chordInversion") ?? embed?.request("chordBassLine");
+const app = advancedChord ? <EscapeAdvancedChord activity={advancedChord} /> : <App escapeActivity={escapeActivity} />;
+if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(app);
+else ReactDOM.render(app, root);
+</script><script src="./generated-runtimes/chords-1.js?v=77afabfe3c02"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

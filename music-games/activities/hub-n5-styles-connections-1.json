@@ -1,0 +1,201 @@
+{
+  "id": "hub-n5-styles-connections-1",
+  "level": "N5",
+  "title": "Styles 1",
+  "instructions": "Find four facts that best describe each style. Some musical features are shared between styles. Find all four groups.",
+  "description": "Practise facts about Aria, Bothy ballad, Celtic rock, Classical.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "National 5"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n5-styles-connections-1-1",
+      "prompt": "Lyrical operatic solo song",
+      "answer": "Lyrical operatic solo song",
+      "distractors": [],
+      "group": "Aria",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-2",
+      "prompt": "Operatic solo expressing feeling",
+      "answer": "Operatic solo expressing feeling",
+      "distractors": [],
+      "group": "Aria",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-3",
+      "prompt": "Shaped operatic solo phrases",
+      "answer": "Shaped operatic solo phrases",
+      "distractors": [],
+      "group": "Aria",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-4",
+      "prompt": "Tuneful opera or oratorio solo",
+      "answer": "Tuneful opera or oratorio solo",
+      "distractors": [],
+      "group": "Aria",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-5",
+      "prompt": "North-East farm-worker song",
+      "answer": "North-East farm-worker song",
+      "distractors": [],
+      "group": "Bothy ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-6",
+      "prompt": "Scots song about bothy life",
+      "answer": "Scots song about bothy life",
+      "distractors": [],
+      "group": "Bothy ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-7",
+      "prompt": "Farm-worker Scots solo song",
+      "answer": "Farm-worker Scots solo song",
+      "distractors": [],
+      "group": "Bothy ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-8",
+      "prompt": "Farm-life verses in Scots",
+      "answer": "Farm-life verses in Scots",
+      "distractors": [],
+      "group": "Bothy ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-9",
+      "prompt": "Fiddle with electric-guitar rock",
+      "answer": "Fiddle with electric-guitar rock",
+      "distractors": [],
+      "group": "Celtic rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-10",
+      "prompt": "Bagpipes over a rock drum kit",
+      "answer": "Bagpipes over a rock drum kit",
+      "distractors": [],
+      "group": "Celtic rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-11",
+      "prompt": "Celtic tunes with rock backing",
+      "answer": "Celtic tunes with rock backing",
+      "distractors": [],
+      "group": "Celtic rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-12",
+      "prompt": "Folk melodies and amplified rock",
+      "answer": "Folk melodies and amplified rock",
+      "distractors": [],
+      "group": "Celtic rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-13",
+      "prompt": "Viennese late-1700s style",
+      "answer": "Viennese late-1700s style",
+      "distractors": [],
+      "group": "Classical",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-14",
+      "prompt": "Haydn and Mozart period",
+      "answer": "Haydn and Mozart period",
+      "distractors": [],
+      "group": "Classical",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-15",
+      "prompt": "Late-1700s balanced phrases",
+      "answer": "Late-1700s balanced phrases",
+      "distractors": [],
+      "group": "Classical",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-styles-connections-1-16",
+      "prompt": "Mozart-era orchestral clarity",
+      "answer": "Mozart-era orchestral clarity",
+      "distractors": [],
+      "group": "Classical",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

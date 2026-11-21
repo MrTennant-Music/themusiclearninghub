@@ -1,0 +1,752 @@
+{
+  "sourceReading": "QP page 7, six separately calibrated 300 dpi staves, independent notehead/rhythm/stem/beam/tie reading. Final open bar has only a tied minim and quaver, not the hidden rest retained in the old inventory.",
+  "key": "F major",
+  "clef": "treble",
+  "keySignature": [
+    "B flat"
+  ],
+  "timeSignature": "4/4",
+  "pitchMap": "Treble lines E4 G4 B4 D5 F5; spaces F4 A4 C5 E5; A5 on first upper ledger. B inherits flat. Bass lines G2 B2 D3 F3 A3; no key signature printed on blank bass staff.",
+  "pickup": [
+    [
+      "E4",
+      "quaver"
+    ],
+    [
+      "F4",
+      "quaver"
+    ],
+    [
+      "G4",
+      "quaver"
+    ]
+  ],
+  "pickupBeamGroups": [
+    {
+      "start": 1,
+      "end": 2
+    }
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "notes": [
+        [
+          "A4",
+          "dottedCrotchet"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 2,
+      "notes": [
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        },
+        {
+          "start": 3,
+          "end": 6
+        }
+      ],
+      "tiesFrom": [
+        2
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 3,
+      "notes": [
+        [
+          "C5",
+          "dottedCrotchet"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 4,
+      "notes": [
+        [
+          "G4",
+          "minim"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 4
+        }
+      ],
+      "tiesFrom": [
+        0
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 5,
+      "notes": [
+        [
+          "A4",
+          "crotchet"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 6,
+      "notes": [
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "crotchet"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        },
+        {
+          "start": 3,
+          "end": 6
+        }
+      ],
+      "tiesFrom": [
+        2
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 7,
+      "notes": [
+        [
+          "A4",
+          "dottedCrotchet"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 8,
+      "notes": [
+        [
+          "F4",
+          "minim"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "E5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 4
+        }
+      ],
+      "tiesFrom": [
+        0
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 9,
+      "notes": [
+        [
+          "F5",
+          "dottedCrotchet"
+        ],
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 10,
+      "notes": [
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "crotchet"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "E5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        },
+        {
+          "start": 3,
+          "end": 6
+        }
+      ],
+      "tiesFrom": [
+        2
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 11,
+      "notes": [
+        [
+          "F5",
+          "dottedCrotchet"
+        ],
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 12,
+      "notes": [
+        [
+          "G4",
+          "minim"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 4
+        }
+      ],
+      "tiesFrom": [
+        0
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 13,
+      "notes": [
+        [
+          "A5",
+          "dottedCrotchet"
+        ],
+        [
+          "G5",
+          "quaver"
+        ],
+        [
+          "G5",
+          "quaver"
+        ],
+        [
+          "F5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "F5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 14,
+      "notes": [
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "crotchet"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 1
+        },
+        {
+          "start": 3,
+          "end": 6
+        }
+      ],
+      "tiesFrom": [
+        2
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 15,
+      "notes": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 7
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 16,
+      "notes": [
+        [
+          "F4",
+          "minim"
+        ],
+        [
+          "F4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [
+        0
+      ],
+      "beats": 2.5
+    }
+  ],
+  "sourceDownStems": {
+    "1": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "5": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "7": [
+      1
+    ],
+    "10": [
+      0,
+      1
+    ],
+    "14": [
+      0,
+      1
+    ],
+    "15": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "editable": {
+    "missingBar": 14,
+    "missingIndices": [
+      4,
+      5,
+      6
+    ],
+    "missingPitches": [
+      "E4",
+      "F4",
+      "G4"
+    ],
+    "transposition": [
+      "G3",
+      "F3",
+      "D3",
+      "E3",
+      "F3",
+      "F3"
+    ],
+    "transposeBar": 15,
+    "transposeIndices": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "transposeFinalBarIndices": [
+      0,
+      1
+    ],
+    "rhythmBar": 5,
+    "rhythmIndices": [
+      0,
+      1
+    ],
+    "rhythmAnswer": [
+      "dottedCrotchet",
+      "quaver"
+    ]
+  },
+  "fermata": {
+    "bar": 14,
+    "note": 2
+  },
+  "finalBarline": "none",
+  "rhythmExceptions": {
+    "16": "Final 2.5 beats complement the 1.5-beat pickup; no rest is printed."
+  },
+  "sources": [
+    {
+      "path": "exampapers/higher/2016/NH_Music_QP_2016.pdf",
+      "sha256": "6cdd779816262edc2ad60d7e6fdb66b4dcb81dedb263afe0487ee9d7c0899ec4"
+    },
+    {
+      "path": "exampapers/higher/2016/mi_NH_Music_mi_2016.pdf",
+      "sha256": "490ac67f79bd094de4d8a534db2c20cf9eeccb552478d7218f0502269cee8063"
+    }
+  ],
+  "sourceBelowTies": {
+    "8": [
+      0
+    ],
+    "10": [
+      2
+    ],
+    "12": [
+      0
+    ]
+  }
+}

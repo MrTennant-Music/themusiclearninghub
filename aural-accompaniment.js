@@ -1,21 +1,38 @@
-// Shared accompaniment patterns for Aural Recognition. Harmony is supplied by
+// Shared accompaniment patterns for Ear Training. Harmony is supplied by
 // each exercise so changing the texture never changes the concept being heard.
 (function attachAuralAccompaniment(MLH) {
   "use strict";
 
   const styles = [
-    "block_chords", "broken_chords", "alberti_bass", "piano_ballad",
-    "contemporary_pop", "stride_piano", "walking_bass"
+    "block_chords", "broken_chords", "alberti_bass", "waltz",
+    "piano_ballad", "contemporary_pop", "power_chords", "stride_piano",
+    "walking_bass"
   ];
-  let previousStyle = null;
+  const minimumMidi = 45; // A2
+  const styleBags = new Map();
 
-  function chooseStyle() {
-    const candidates = styles.filter(style => style !== previousStyle);
-    previousStyle = candidates[Math.floor(Math.random() * candidates.length)];
-    return previousStyle;
+  function stylesForSignature(signature) {
+    // Waltz requires three distinct crotchet beats. The other styles have
+    // dedicated simple- and compound-time variants, as in Practice Questions.
+    return styles.filter(style => style !== "waltz" || signature?.id === "3/4");
+  }
+
+  function isStyleCompatible(style, signature) {
+    return style === "ground_bass" || stylesForSignature(signature).includes(style);
+  }
+
+  function chooseStyle(signature) {
+    const signatureId = signature?.id || "unspecified";
+    const available = stylesForSignature(signature);
+    let bag = styleBags.get(signatureId) || [];
+    if (!bag.length) bag = [...available].sort(() => Math.random() - 0.5);
+    const selected = bag.shift();
+    styleBags.set(signatureId,bag);
+    return selected;
   }
 
   function eventsForBar({ signature, notes, segments, style, finalBar = false, subdivisions = false }) {
+    if (!isStyleCompatible(style,signature)) style = "block_chords";
     const events = [];
     const barBeats = signature.beats;
     const compound = signature.type === "compound";
@@ -34,6 +51,11 @@
       const start = segment.beat ?? 0;
       const end = Math.min(barBeats, start + (segment.beats ?? barBeats));
       const chord = [...new Set(segment.pitches)];
+      const eventFloor = style === "alberti_bass" ? 50 : minimumMidi;
+      if (style === "alberti_bass" && chord.length && chord[0] < eventFloor) {
+        const shift = Math.ceil((eventFloor - chord[0]) / 12) * 12;
+        chord.forEach((pitch,index) => { chord[index] = pitch + shift; });
+      }
       if (!chord.length || end <= start) return;
       const root = chord[0];
       const third = chord[1] ?? root;
@@ -50,7 +72,8 @@
         events.push({
           beat, beats: duration,
           pitches: [...new Set((Array.isArray(pitches) ? pitches : [pitches]).map(pitch => {
-            while (pitch > ceiling) pitch -= 12;
+            while (style !== "alberti_bass" && pitch > ceiling && pitch - 12 >= eventFloor) pitch -= 12;
+            while (pitch < eventFloor) pitch += 12;
             return pitch;
           }))],
           volume: volume * (segment.volume ?? 1) / 0.018
@@ -82,6 +105,11 @@
             : [...chord, root + 12];
           arpeggio(tones, 0.017);
           add(begin, compound ? 1.35 : Math.min(0.88, length), lowRoot, 0.021);
+        } else if (style === "waltz") {
+          add(begin, Math.min(compound ? 1.35 : .88,length), lowRoot, 0.028);
+          for (let offset = compound ? .5 : 1; offset < length; offset += compound ? .5 : 1) {
+            add(begin + offset, Math.min(compound ? .43 : .88,length-offset), highChord, 0.014);
+          }
         } else if (style === "piano_ballad") {
           add(begin, compound ? 1.4 : Math.min(1.8, length), lowRoot, 0.027);
           if (!compound && length > 2) add(begin + 2, Math.min(1.8, length - 2), lowFifth, 0.023);
@@ -90,6 +118,11 @@
           add(begin, compound ? 1.35 : Math.min(0.9, length), lowRoot, 0.027);
           for (let offset = 0.5; offset < length; offset += compound ? 0.5 : 1) {
             add(begin + offset, 0.43, highChord, 0.012);
+          }
+        } else if (style === "power_chords") {
+          const powerChord = [lowRoot,lowRoot+7,root];
+          for (let offset = 0; offset < length; offset += compound ? .5 : 1) {
+            add(begin + offset, Math.min(compound ? .43 : .88,length-offset), powerChord, offset===0 ? .027 : .021);
           }
         } else if (style === "walking_bass") {
           const step = compound ? 0.5 : 1;
@@ -130,5 +163,5 @@
     return events.sort((a, b) => a.beat - b.beat);
   }
 
-  MLH.AuralAccompaniment = { styles, chooseStyle, eventsForBar };
+  MLH.AuralAccompaniment = { styles, minimumMidi, stylesForSignature, isStyleCompatible, chooseStyle, eventsForBar };
 })(window.MLH || (window.MLH = {}));

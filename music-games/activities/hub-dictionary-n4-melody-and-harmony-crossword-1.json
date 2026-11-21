@@ -1,0 +1,114 @@
+{
+  "id": "hub-dictionary-n4-melody-and-harmony-crossword-1",
+  "level": "N4",
+  "title": "Melody and Harmony 1",
+  "instructions": "",
+  "description": "Revise melody and harmony with 6 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Melody and Harmony",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-melody-and-harmony-crossword-1-mc-0080",
+      "prompt": "The notes of a chord are played one after another, not together.",
+      "answer": "Broken chord",
+      "distractors": [
+        "Vamp",
+        "Change of key"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-melody-and-harmony-crossword-1-mc-0083",
+      "prompt": "As an accompaniment, a note or fifth is sustained or repeated beneath a changing melody.",
+      "answer": "Drone",
+      "distractors": [
+        "Vamp",
+        "Broken chord / arpeggio",
+        "Change of key"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-melody-and-harmony-crossword-1-mc-0085",
+      "prompt": "Natural, harmonic and melodic forms use different sixth and seventh notes.",
+      "answer": "Minor tonality",
+      "distractors": [
+        "Pentatonic scale",
+        "Change of key"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-melody-and-harmony-crossword-1-mc-0087",
+      "prompt": "A decorative note or group of notes added to a melody.",
+      "answer": "Ornament",
+      "distractors": [
+        "Pentatonic scale",
+        "Scale",
+        "Scat singing"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-melody-and-harmony-crossword-1-mc-0089",
+      "prompt": "A scale made from five different notes within the octave.",
+      "answer": "Pentatonic scale",
+      "distractors": [
+        "Major tonality",
+        "Pedal",
+        "Scat singing"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-melody-and-harmony-crossword-1-mc-0091",
+      "prompt": "Improvised jazz singing that uses nonsense syllables and sounds instead of words.",
+      "answer": "Scat singing",
+      "distractors": [
+        "Backing vocals",
+        "Major tonality",
+        "Minor tonality"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

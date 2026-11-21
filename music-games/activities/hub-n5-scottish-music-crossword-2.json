@@ -1,0 +1,157 @@
+{
+  "id": "hub-n5-scottish-music-crossword-2",
+  "level": "N5",
+  "title": "Scottish Music 2",
+  "instructions": "",
+  "description": "Revise Scottish Music concepts introduced up to National 5, including instruments and features used in related Celtic music.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Scottish Music",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n5-scottish-music-crossword-2-1",
+      "prompt": "As a keyboard instrument, pressing a key causes a felt-covered hammer to strike a string.",
+      "answer": "Piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-2",
+      "prompt": "Name the specific Scottish social-dance ensemble commonly featuring accordion, fiddle, piano, bass and drum kit.",
+      "answer": "Scottish dance band",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-3",
+      "prompt": "The sound made when a person sings or speaks.",
+      "answer": "Voice",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-4",
+      "prompt": "A Scottish Gaelic vocal style, also called puirt-a-beul, using rhythmic Gaelic or nonsense syllables.",
+      "answer": "Mouth music",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-5",
+      "prompt": "Give the general Scots-language narrative folk-song category, rather than a particular farm-worker or cloth-working song tradition.",
+      "answer": "Scots ballad",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-6",
+      "prompt": "An accompaniment holds or repeats one note or a fifth beneath a melody, without a sequence of changing chords. Name the accompaniment.",
+      "answer": "Drone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-7",
+      "prompt": "Name the general term for a decorative note or group added to a melody, rather than one particular type of decoration.",
+      "answer": "Ornament",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-8",
+      "prompt": "A scale made from five different notes within the octave.",
+      "answer": "Pentatonic scale",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-9",
+      "prompt": "A repeated accompaniment pattern, often alternating a bass note on the beat with a chord off the beat.",
+      "answer": "Vamp",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-10",
+      "prompt": "Name the general rhythmic feature created by adding half of a note’s written value with a dot, often producing unequal long-short or short-long pairs.",
+      "answer": "Dotted rhythms",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-11",
+      "prompt": "A lively Scottish or Irish dance in compound time, often 6/8.",
+      "answer": "Jig",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-scottish-music-crossword-2-12",
+      "prompt": "A short accented note followed by a longer note, often written as a semiquaver followed by a dotted quaver.",
+      "answer": "Scotch snap",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T22:00:00.000Z"
+}

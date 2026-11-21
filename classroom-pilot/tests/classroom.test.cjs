@@ -20,18 +20,18 @@ test('host creates a game without a teacher key and never receives server creden
   assert.ok(!response.body.includes('test-server-secret'));assert.ok(!response.body.includes('test-invite'));
  }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
 });
-test('database denies public access and prevents duplicate answers without capacity caps',()=>{
+test('database denies public access and prevents duplicate answers and caps games at 20 pupils',()=>{
  const sql=require('node:fs').readFileSync(require('node:path').join(__dirname,'../schema.sql'),'utf8');
  assert.match(sql,/enable row level security/);assert.match(sql,/from public,anon,authenticated/);
- assert.match(sql,/for update/);assert.match(sql,/Answer already submitted/);assert.doesNotMatch(sql,/request_limit|daily_game_limit|room_limit|player_limit|Pilot capacity reached/);
+ assert.match(sql,/for update/);assert.match(sql,/Answer already submitted/);assert.match(sql,/jsonb_array_length\(r.players\)>=20/);
 });
 
 test('pupil action waits for an active poll and prevents a duplicate click',async()=>{
- const html=require('node:fs').readFileSync(require('node:path').join(__dirname,'../../keyboard-classroom.html'),'utf8');
+ const html=require('node:fs').readFileSync(require('node:path').join(__dirname,'../../keyboardnoteidentificationclassroom.html'),'utf8');
  const body=html.slice(html.indexOf(' async function act('),html.indexOf(' useEffect(()=>{let timeout;'));
  let release;const read=new Promise(resolve=>{release=resolve;});let calls=0,busy=false;
  const refs={session:{current:{pin:'123456',token:'test'}},inFlight:{current:true},actionPending:{current:false},pendingRead:{current:read}};
- const context={...refs,setBusy:value=>{busy=value;},setError:()=>{},request:async()=>{calls++;return {phase:'question'};},update:()=>{},setSelected:()=>{}};
+ const context={...refs,mounted:{current:true},setBusy:value=>{busy=value;},setError:()=>{},request:async()=>{calls++;return {phase:'question'};},update:()=>{},setSelected:()=>{}};
  require('node:vm').runInNewContext(body+';this.act=act;',context);
  const answer=context.act('answer',{answer:'E',index:0});
  assert.equal(busy,true);assert.equal(calls,0);
@@ -64,5 +64,45 @@ test('empty or out-of-level classroom customisation is rejected before database 
    {level:'N5',options:{octaves:200,naturals:true,sharps:true,flats:true,enharmonics:false}},
   ])assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',...setup,count:5})})).statusCode,400);
   assert.equal(called,false);
+ }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
+});
+
+test('host can choose 5–50 questions and every supported timer',async()=>{
+ env();const original=global.fetch;let payload;
+ global.fetch=async(url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({phase:'lobby'})};};
+ try{
+  for(const count of [5,10,15,20,25,30,35,40,45,50]){
+   const response=await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',count,questionTime:30})});
+   assert.equal(response.statusCode,200);assert.equal(payload.p_data.questions.length,count);
+   assert.equal(payload.p_data.questionTime,30);assert.equal(payload.p_data.scoringVersion,2);
+  }
+  for(const questionTime of [5,10,15,20,30,45,60,90,120]){
+   assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',count:5,questionTime})})).statusCode,200);
+   assert.equal(payload.p_data.questionTime,questionTime);
+  }
+ }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
+});
+
+test('invalid counts and timers cannot reach the database',async()=>{
+ env();const original=global.fetch;let called=false;
+ global.fetch=async()=>{called=true;throw Error('Unexpected database call');};
+ try{
+  for(const values of [{count:51},{count:7},{count:-5},{count:'abc'},{count:5.5},{questionTime:0},{questionTime:500},{questionTime:'bad'}]){
+   assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',...values})})).statusCode,400);
+  }
+  assert.equal(called,false);
+ }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
+});
+
+test('race creates private question pool and validates teacher streak targets',async()=>{
+ env();const original=global.fetch;let payload;
+ global.fetch=async(url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({phase:'lobby'})};};
+ try{
+  const response=await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',gameType:'race',targetStreak:30})});
+  assert.equal(response.statusCode,200);assert.equal(payload.p_data.gameType,'race');assert.equal(payload.p_data.targetStreak,30);assert.equal(payload.p_data.raceMinutes,0);assert.equal(payload.p_data.questions.length,50);
+  for(let raceMinutes=1;raceMinutes<=10;raceMinutes++){assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',gameType:'race',raceMinutes})})).statusCode,200);assert.equal(payload.p_data.raceMinutes,raceMinutes);}
+  for(const raceMinutes of [-1,11,1.5])assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',gameType:'race',raceMinutes})})).statusCode,400);
+  for(const targetStreak of [0,101,2.5])assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',gameType:'race',targetStreak})})).statusCode,400);
+  assert.equal((await handler({httpMethod:'POST',body:JSON.stringify({action:'create',level:'N3',gameType:'unknown'})})).statusCode,400);
  }finally{global.fetch=original;vars.forEach(key=>delete process.env[key]);}
 });

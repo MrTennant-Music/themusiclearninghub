@@ -1,0 +1,719 @@
+/* Desktop content editor, reconstructed from the published create/editors CSS.
+   All measurements apply to the fitted desktop canvas; no mobile reflow. */
+.ig-app .ig-content-editor{box-sizing:border-box;background:#fff;padding:13px 40px 20px;border:1px solid #dfdfdf;box-shadow:3px 3px 3px #2828280f;min-height:500px;margin:13px auto 30px;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";color:#202020}
+.ig-content-header{display:flex;align-items:center;gap:15px;min-height:60px;padding:9px 0 12px;margin-bottom:15px;border-bottom:1px solid #00000014}
+.ig-content-header .ig-create-steps{flex:1;margin:0;padding:0;justify-content:flex-start;gap:17px;border:0;min-width:0;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}
+.ig-app .ig-content-header .ig-create-steps button{padding:0;background:none;border:0;border-radius:0;color:#888;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:19px;font-weight:600;white-space:nowrap;opacity:1;box-shadow:none}
+.ig-app .ig-content-header .ig-create-steps button.is-current{color:#222;font-size:22px}
+.ig-content-header .ig-create-steps button b{display:none}
+.ig-content-header .ig-step-line{width:auto;flex:none;height:auto;background:none;color:#999}
+.ig-content-header .ig-step-line::before{content:'›';font-size:24px;line-height:1}
+.ig-content-template{display:flex;gap:8px;align-items:center;flex-shrink:0;margin-left:auto;font-size:16px;font-weight:700}
+.ig-content-template .ig-template-art{width:46px;height:36px;border:1px solid #e0e0e0;border-radius:0;background:white}
+.ig-content-template .ig-template-art img{max-width:100%;max-height:100%;object-fit:contain}
+.ig-app .ig-content-title{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#606060;margin:0 0 29px}
+.ig-app .ig-content-title input{box-sizing:border-box;width:100%;height:40px;min-height:40px;border:1px solid #aaa;border-radius:0;background:white;padding:5px 8px;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:21px;font-weight:600;line-height:28px;color:#222}
+.ig-app .ig-content-title input::placeholder{color:#b0b0b0;font-weight:600}
+.ig-content-rows{margin:25px 0 0}
+.ig-content-row{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr) 96px;align-items:start;column-gap:0;margin-bottom:40px}
+.ig-content-index{font-size:21px;line-height:44px;font-weight:600;text-align:left;padding-top:15px}
+.ig-content-row-main{min-width:0;background:#f4f4f4;border-radius:4px;padding:5px 7px 7px}
+.ig-content-small-label{font-size:12px;line-height:17px;font-weight:600;padding:0 2px 1px}
+.ig-content-answers-label{padding-top:10px}
+.ig-content-field{position:relative;min-width:0;background:#fff;border:1px solid #d8d8d8;border-bottom-color:#c0c0c0;box-sizing:border-box}
+.ig-content-field.is-focused{border-color:#000000;z-index:4}
+.ig-content-input-wrap{display:flex;align-items:flex-start;min-height:44px;min-width:0}
+.ig-app .ig-content-input-wrap textarea{box-sizing:border-box;display:block;flex:1;min-width:0;width:0;height:44px;min-height:44px;max-height:352px;resize:none;overflow:auto;border:0;border-radius:0;outline:none;background:transparent;padding:10px 8px;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;font-size:17.333px;line-height:23px;color:#000;box-shadow:none}
+.ig-app .ig-content-input-wrap textarea:focus-visible{outline:none;box-shadow:none}
+.ig-content-media-tools{display:flex;align-items:center;flex-shrink:0;padding:3px 2px;gap:1px}
+.ig-app .ig-content-media-tools button{display:grid;place-items:center;width:30px;height:35px;padding:5px;border:1px solid transparent;border-radius:0;background:none;color:#a0a0a0;box-shadow:none}
+.ig-app .ig-content-media-tools button:hover,.ig-app .ig-content-media-tools button.has-media{color:#000000;background:#f5f5f4;border-color:#f5f5f4}
+.ig-content-media-tools svg,.ig-content-media-tools img{display:block;width:19px;height:19px;object-fit:contain}
+.ig-editor-glyph{display:block;width:20px;height:20px;object-fit:contain;opacity:.36}
+.ig-content-media-tools img{opacity:.36}
+.ig-content-media-tools .ig-editor-audio-glyph{transform:scale(1.2)}
+.ig-content-media-tools button:hover img,.ig-content-media-tools button.has-media img{opacity:1}
+.ig-content-statement-media{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ig-content-statement-media>.ig-content-attached{align-self:stretch}
+.ig-content-answers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5px 24px;align-items:start}
+.ig-content-answer{display:flex;align-items:start;gap:4px;min-width:0;position:relative}
+.ig-content-letter{flex:0 0 16px;font-size:15px;font-weight:600;margin-top:12px;line-height:20px}
+.ig-content-answer>.ig-content-field{flex:1;min-width:0}
+.ig-app .ig-content-correct{position:relative;display:grid;place-items:center;flex:0 0 23px;width:23px;height:23px;margin:11px 2px 0 0;padding:0;border:0;border-radius:50%;color:#a80000;background:#fff;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:27px;font-weight:700;line-height:1;box-shadow:inset 0 0 0 2px #a80000}
+.ig-app .ig-content-correct:hover{background:#fff;border:0;color:#8f0000}
+.ig-app .ig-content-correct.is-correct{background:#008529;color:white;box-shadow:none;font-size:18px}
+.ig-app .ig-content-correct.is-correct:hover{background:#006e22;color:white}
+.ig-app .ig-content-remove-answer{background:transparent;border:0;color:#a0a0a0;font-size:20px;padding:7px 0;width:15px;flex:0 0 15px;line-height:28px}
+.ig-app .ig-content-remove-answer:hover{color:#c81414;background:transparent;border:0}
+.ig-app .ig-content-add-answer{display:block;margin:0 auto;padding:10px;background:transparent;border:0;border-radius:0;box-shadow:none;color:#222;font-size:14px;font-weight:600;line-height:22px}
+.ig-app .ig-content-add-answer:hover,.ig-app .ig-content-add:hover{color:#000000;background:transparent;border:0}
+.ig-app .ig-content-add{display:inline-block;margin:5px 0 10px 32px;padding:3px;border:0;background:transparent;font-size:14px;font-weight:600;line-height:24px;border-radius:0;color:#222}
+.ig-content-actions{display:grid;grid-template-columns:repeat(3,28px);grid-template-rows:22px 22px;align-items:center;justify-content:end;padding-top:18px;margin-left:9px;gap:0 3px}
+.ig-app .ig-content-actions button{display:grid;place-items:center;width:28px;height:28px;padding:4px;background:transparent;border:0;border-radius:0;box-shadow:none;color:#aaa}
+.ig-content-actions button:nth-child(1){grid-column:1;grid-row:1}.ig-content-actions button:nth-child(2){grid-column:1;grid-row:2}.ig-content-actions button:nth-child(3){grid-column:2;grid-row:1 / 3}.ig-content-actions button:nth-child(4){grid-column:3;grid-row:1 / 3}
+.ig-app .ig-content-actions button:hover:not(:disabled){background:transparent;color:#000000;border:0}
+.ig-app .ig-content-actions button:disabled{opacity:.2}
+.ig-content-actions svg{width:21px;height:21px}
+.ig-content-media-popover{position:absolute;right:0;top:100%;width:440px;max-width:780px;background:#fff;border:1px solid #aaa;box-shadow:0 5px 18px #0002;z-index:14;padding:16px}
+.ig-content-media-popover .ig-media-editor{margin:0;padding:0;border:0;background:#fff;border-radius:0}
+.ig-content-media-popover .ig-media-editor>summary{list-style:none;font-size:14px;font-weight:600;padding-right:25px;pointer-events:none}
+.ig-content-media-popover .ig-media-editor .ig-inline{flex-wrap:wrap}
+.ig-content-media-popover .ig-media-editor input{max-width:100%}
+.ig-modal-backdrop{z-index:10000}
+.ig-app .ig-content-popover-close{position:absolute;right:4px;top:3px;background:transparent;border:0;color:#777;padding:0 6px;font-size:23px}
+.ig-content-attached{position:relative;padding:5px 24px 7px 8px;max-width:100%}
+.ig-content-attached img,.ig-content-attached video{max-height:100px;max-width:100%;object-fit:contain;display:block}
+.ig-content-attached audio{max-width:100%;height:30px}
+.ig-app .ig-content-attached>button{position:absolute;right:2px;top:0;border:0;background:transparent;color:#888;padding:0 4px;font-size:20px}
+.ig-app .ig-content-require-all{display:flex;flex-direction:row;align-items:center;gap:10px;border-top:1px solid #d8d8d8;padding:10px 6px 6px;font-size:13px;font-weight:400}
+.ig-app .ig-content-require-all select{border-radius:0;font-size:13px;font-weight:600;padding:5px 8px;background:white}
+.ig-app .ig-content-swap{font-size:12px;font-weight:400;color:#888;padding:2px 0;border:0;background:none;border-radius:0}
+.ig-app .ig-content-swap:hover{background:none;color:#000000;border:0}
+.ig-app .ig-content-section-heading:has(>.ig-content-swap){box-sizing:border-box;width:100%}
+.ig-app .ig-content-section-heading>.ig-content-swap{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;height:44px;min-height:44px;margin-left:auto;padding:0 14px;border:1px solid #292524;border-radius:10px;background:#292524;color:#fff;font-size:14px;font-weight:600;line-height:20px;white-space:nowrap;box-shadow:none}
+.ig-app .ig-content-section-heading>.ig-content-swap:hover{background:#44403c;border-color:#44403c;color:#fff}
+.ig-app .ig-content-editor .ig-content-match-up-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ig-app .ig-content-editor .ig-content-match-field{display:flex;min-width:0;flex-direction:column;gap:8px}
+.ig-app .ig-content-editor .ig-content-match-field>span{padding-left:2px;color:#292524;font-size:14px;line-height:20px;font-weight:700}
+.ig-content-row.is-simple{margin-bottom:15px}
+.ig-content-row.is-simple .ig-content-row-main{padding:0;background:transparent;border-radius:0}
+.ig-content-row.is-simple .ig-content-index{padding-top:0;font-size:16px}
+.ig-content-row.is-simple .ig-content-actions{padding-top:0}
+.ig-content-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0}
+.ig-content-pair>.ig-content-field+ .ig-content-field{border-left:0}
+.ig-content-pair>.ig-content-field.is-focused+ .ig-content-field{border-left:1px solid #000000}
+.ig-content-position{display:flex;align-items:center;gap:18px;margin:8px 0 15px}
+.ig-app .ig-content-position label{flex-direction:row;align-items:center;gap:8px;font-size:12px;font-weight:400}
+.ig-app .ig-content-position input{width:65px;border-radius:0;padding:5px;font-size:13px}
+.ig-content-groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-top:25px}
+.ig-content-group{min-width:0;background:#f4f4f4;padding:16px;border-radius:4px}
+.ig-app .ig-content-group>label{display:flex;flex-direction:row;gap:8px;align-items:center;margin:0 0 16px;font-size:0}
+.ig-app .ig-content-group>label input{width:100%;font-size:21px;font-weight:600;color:#222;border:1px solid transparent;background:transparent;border-radius:0;padding:0 2px;line-height:30px}
+.ig-app .ig-content-group>label input:focus{border-color:#000000;background:#fff}
+.ig-content-group .ig-content-row{grid-template-columns:24px minmax(0,1fr) 52px;margin-bottom:10px}
+.ig-content-group .ig-content-actions{grid-template-columns:22px 22px;grid-template-rows:22px 22px;padding-top:0;gap:0;margin-left:5px}
+.ig-content-group .ig-content-actions button{width:22px;height:22px;padding:2px}
+.ig-content-group .ig-content-actions button:nth-child(3){grid-column:2;grid-row:1}.ig-content-group .ig-content-actions button:nth-child(4){grid-column:2;grid-row:2}
+.ig-content-group .ig-content-actions svg{width:17px;height:17px}
+.ig-content-group .ig-content-media-tools button{width:23px;padding:3px}
+.ig-content-group .ig-content-media-tools svg,.ig-content-group .ig-content-media-tools img{width:16px;height:16px}
+.ig-content-group .ig-content-add{margin-left:24px}
+.ig-content-diagram{margin:0 0 30px}
+.ig-content-details{border:0;border-top:1px solid #eee;margin:24px 0 0;padding-top:12px;color:#777;font-size:13px}
+.ig-content-details>summary{cursor:pointer;display:list-item;list-style:disclosure-closed;font-weight:400}
+.ig-content-details[open]>summary{list-style:disclosure-open}
+.ig-content-detail-fields{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin:14px 0}
+.ig-app .ig-content-detail-fields label{font-size:12px;font-weight:400}
+.ig-app .ig-content-detail-fields input{font-size:14px;border-radius:0;padding:7px}
+.ig-content-spreadsheet{margin:12px 0;font-size:13px}
+.ig-content-spreadsheet summary{cursor:pointer}
+.ig-app .ig-content-spreadsheet textarea{border-radius:0;margin:8px 0;width:100%;font-size:14px}
+.ig-content-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:24px 0 0}
+.ig-content-footer>span{font-size:12px;color:#888;font-weight:400}
+.ig-app .ig-content-done{display:block;box-sizing:border-box;min-width:200px;height:52px;padding:10px 28px;background:#000000;border:1px solid #000000;color:#fff;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:21px;font-weight:600;line-height:30px;border-radius:3px;box-shadow:0 2px 0 #0000000a}
+.ig-app .ig-content-done:hover:not(:disabled){background:#000000;border-color:#000000;color:white}
+.ig-content-errors{scroll-margin-top:100px;background:#f6e1e1;color:#c81414;border:1px solid #c81414;padding:8px 14px;margin:12px 0 20px;font-size:14px;font-weight:600}
+.ig-app .ig-content-errors p{margin:4px 0}
+.ig-content-maths-note{padding:30px 0;color:#555;font-size:15px}
+.ig-content-editor button:focus-visible{outline:2px solid #000000;outline-offset:3px}
+.ig-app .ig-content-title input{width:980px;max-width:100%}
+/* Keep these internal rows separate from the site's fixed-canvas header/footer. */
+.ig-app .ig-content-editor{margin-top:0;padding-top:20px}
+.ig-content-header,.ig-content-footer{min-width:0;width:100%;box-sizing:border-box}
+.ig-content-header .ig-step-line::before{content:none}
+.ig-app .ig-content-header .ig-create-steps{gap:0}
+.ig-app .ig-content-header .ig-create-steps button{font-size:21px}
+.ig-app .ig-content-header .ig-create-steps button.is-current{font-size:24px}
+.ig-app .ig-content-title{margin-bottom:25px}
+.ig-app .ig-content-correct{flex-basis:28px;width:28px;height:16px;margin-top:15px;border-radius:10px;background:#e4e4e4;color:transparent;font-size:0;box-shadow:none}
+.ig-app .ig-content-correct:hover{background:#d8d8d8;color:transparent}
+.ig-app .ig-content-correct.is-correct{background:#008529;color:white;font-size:12px}
+.ig-content-details{border:0;margin:0;padding:0;font-size:12px}
+.ig-content-footer{margin-top:0}
+.ig-app .ig-content-done{font-size:16px;background:#000000;border-color:#000000}
+.ig-content-header .ig-content-template .ig-template-art{height:46px;margin-top:-5px;margin-bottom:-5px}
+
+/* Observed word-list, pair-mode and paragraph-cloze editors. */
+.ig-content-mode{display:flex;align-items:center;gap:28px;border:0;padding:0;margin:0 32px 25px;min-height:28px}
+.ig-content-mode legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.ig-app .ig-content-mode label{display:flex;flex-direction:row;align-items:center;gap:8px;font-size:16px;font-weight:400;color:#222;cursor:pointer}
+.ig-content-mode input{width:17px;height:17px;accent-color:#000000;margin:0}
+.ig-content-row.is-cloze{margin-bottom:35px}
+.ig-content-row.is-cloze>.ig-content-index{padding-top:0}
+.ig-content-row.is-cloze .ig-content-row-main{padding:0;border:1px solid #808080;border-radius:0;background:#fff}
+.ig-app textarea.ig-content-cloze-text{display:block;width:100%;height:104px;min-height:100px;max-height:300px;resize:vertical;padding:6px 10px;border:0;border-bottom:1px solid #e0e0e0;border-radius:0;background:white;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:15px;line-height:1.9;color:#222;outline:0}
+.ig-app textarea.ig-content-cloze-text:focus-visible{outline:1px solid #000000;outline-offset:0}
+.ig-content-cloze-text::placeholder{color:#b0b0b0}
+.ig-content-cloze-missing{min-height:100px;padding:10px;background:#f4f4f4;box-sizing:border-box;border-bottom:1px solid #808080}
+.ig-app .ig-content-cloze-missing>button,.ig-app .ig-content-add-incorrect{display:inline-block;padding:6px 9px;margin:5px;border:1px solid #00000059;border-radius:2px;background:#f8f8f8;color:#222;font-size:14px;font-weight:400;line-height:22px;box-shadow:none}
+.ig-app .ig-content-cloze-missing>button:hover:not(:disabled),.ig-app .ig-content-add-incorrect:hover{background:white;border-color:#777;color:#000}
+.ig-app .ig-content-cloze-missing>button:disabled{opacity:.45}
+.ig-content-cloze-gaps{display:flex;flex-wrap:wrap;gap:8px;padding:5px}
+.ig-content-cloze-gaps>span{display:flex;align-items:center;justify-content:space-between;gap:15px;min-width:100px;padding:6px;border:1px solid #ccc;border-bottom-color:#aaa;border-radius:5px;background:#d5d5d5;color:#202020;font-size:15px;font-weight:700}
+.ig-content-cloze-gaps>span::before{content:'✓';color:#008000;font-weight:700}
+.ig-app .ig-content-cloze-gaps button{border:0;border-radius:0;background:transparent;color:#555;padding:0 3px;font-size:19px;line-height:21px;font-weight:400}
+.ig-app .ig-content-cloze-gaps button:hover{color:#c81414;background:transparent;border:0}
+.ig-content-cloze-incorrect{min-height:65px;padding:10px;background:#fff;box-sizing:border-box;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.ig-content-cloze-distractor{display:flex;align-items:center;border:1px solid #ccc;border-radius:4px;background:#f6f6f6;padding:3px}
+.ig-app .ig-content-cloze-distractor input{font-size:15px;padding:5px 7px;border:0;border-radius:0;background:transparent;width:150px}
+.ig-app .ig-content-cloze-distractor button{padding:0 5px;border:0;background:transparent;color:#888;font-size:20px;border-radius:0}
+.ig-app .ig-content-cloze-distractor button:hover{color:#c81414;background:transparent;border:0}
+
+/* The diagram begins with the source editor's image canvas and simple labels. */
+.ig-content-diagram h2 { font-size:18px; font-weight:600; margin:18px 0 14px; }
+.ig-content-diagram-empty { width:720px; height:380px; border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; margin-bottom:24px; }
+.ig-content-diagram-empty > button { width:184px; height:52px; background:white; border:1px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; gap:10px; font-size:17px; }
+.ig-content-diagram-empty svg { width:21px; height:21px; }
+.ig-content-diagram .ig-diagram-editor { width:720px; }
+.ig-content-change-image { margin:10px 0; color:#000000; }
+.ig-content-diagram-media { border:1px solid #ccc; padding:16px; width:720px; margin:12px 0; }
+.ig-content-diagram-media > button { float:right; font-size:22px; }
+.ig-content-label-rows { width:693px; }
+.ig-content-label-rows .ig-content-row-main { padding:0; background:white; }
+.ig-content-label-rows .ig-content-field textarea:disabled { background:#f5f5f5; cursor:default; }
+.ig-content-label-positions { display:flex; flex-direction:column; gap:8px; margin-bottom:20px; }
+.ig-content-label-positions .ig-content-position { justify-content:flex-start; }
+.ig-app .ig-content-title input:not([type=checkbox]):not([type=file]){font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:21px;font-weight:600;line-height:28px}
+.ig-app .ig-content-group>label input:not([type=checkbox]):not([type=file]){font-size:21px;font-weight:600;line-height:30px}
+.ig-content-row.is-cloze{grid-template-columns:50px minmax(0,1fr) 96px}
+.ig-app .ig-content-cloze-text{height:100px;min-height:100px;box-sizing:border-box}
+.ig-content-cloze-incorrect{background:#f4f4f4}
+
+/* Bring the authoring controls in line with the Hub's stone and green UI. */
+.ig-app .ig-content-editor{color:#292524}
+.ig-app .ig-content-editor label,
+.ig-content-small-label{color:#44403c}
+.ig-app .ig-content-title,
+.ig-app .ig-content-description{color:#44403c}
+.ig-app .ig-content-title input,
+.ig-app .ig-content-description input,
+.ig-app .ig-content-level select{border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#292524}
+.ig-content-row:not(.is-simple) .ig-content-row-main,
+.ig-content-group{border:1px solid #e7e5e4;border-radius:12px;background:#fafaf9;padding:12px}
+.ig-content-row:not(.is-simple){margin-bottom:20px}
+.ig-content-row.is-cloze .ig-content-row-main{overflow:hidden;border:1px solid #e7e5e4;border-radius:12px;background:#fff}
+.ig-app textarea.ig-content-cloze-text{padding:12px 14px;border:0;border-bottom:1px solid #e7e5e4;border-radius:0;background:#fff;color:#292524;font-size:15px;line-height:1.6}
+.ig-content-cloze-missing{min-height:82px;padding:12px;background:#fafaf9;border-bottom:1px solid #e7e5e4}
+.ig-content-cloze-incorrect{min-height:58px;padding:10px 12px;background:#fff}
+.ig-app .ig-content-cloze-missing>button,
+.ig-app .ig-content-add-incorrect,
+.ig-app .ig-content-add-answer{border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#292524;font-weight:600}
+.ig-app .ig-content-cloze-missing>button:hover:not(:disabled),
+.ig-app .ig-content-add-incorrect:hover,
+.ig-app .ig-content-add-answer:hover{background:#f5f5f4;border-color:#a8a29e;color:#171717}
+.ig-content-cloze-gaps>span{gap:10px;padding:6px 10px;border:1px solid #bbf7d0;border-radius:10px;background:#f0fdf4;color:#166534;font-size:14px}
+.ig-content-cloze-gaps>span::before{display:grid;place-items:center;width:18px;height:18px;flex:0 0 18px;border-radius:50%;background:#15803d;color:#fff;font-size:12px}
+.ig-content-cloze-distractor{border-color:#e7e5e4;border-radius:10px;background:#fafaf9}
+.ig-app .ig-content-correct{position:relative;display:grid;place-items:center;flex:0 0 20px;width:20px;height:20px;margin:13px 4px 0 0;padding:0;border:1.5px solid #a8a29e;border-radius:5px;background:#fff;color:transparent;font-size:0;box-shadow:none}
+.ig-app .ig-content-correct:not(.is-correct)::before{content:"";width:9px;height:9px}
+.ig-app .ig-content-correct:hover{border:1.5px solid #15803d;background:#f0fdf4;color:transparent}
+.ig-app .ig-content-correct.is-correct{border:1px solid #15803d;border-radius:5px;background:#15803d;color:#fff;font-size:13px;box-shadow:none}
+.ig-app .ig-content-correct.is-correct:hover{border-color:#166534;background:#166534;color:#fff}
+.ig-app .ig-content-errors{border:1px solid #fecaca;border-radius:10px;background:#fef2f2;color:#b91c1c;padding:12px 16px}
+.ig-app .ig-content-done{border-radius:12px;background:#171717;border-color:#171717}
+.ig-app .ig-content-done:hover:not(:disabled){background:#3b3734;border-color:#3b3734}
+.ig-app .ig-content-editor{color:#171717}
+.ig-app .ig-content-editor input,
+.ig-app .ig-content-editor textarea,
+.ig-app .ig-content-editor select,
+.ig-app .ig-content-editor button{color:#171717}
+.ig-app .ig-content-editor .ig-content-add{display:inline-flex;align-items:center;min-height:44px;margin:8px 0 10px 32px;padding:0 16px;border:1px solid #171717;border-radius:12px;background:#fff;color:#171717;font-size:14px;font-weight:600;line-height:20px}
+.ig-app .ig-content-editor .ig-content-add:hover:not(:disabled){border-color:#44403c;background:#f5f5f4;color:#171717}
+.ig-app .ig-content-editor .ig-content-cloze-missing>button:disabled{color:#171717;opacity:.65}
+.ig-app .ig-content-editor .ig-content-title input,
+.ig-app .ig-content-editor .ig-content-description input,
+.ig-app .ig-content-editor .ig-content-level select,
+.ig-app .ig-content-editor .ig-content-row:not(.is-simple) .ig-content-row-main,
+.ig-app .ig-content-editor .ig-content-group,
+.ig-app .ig-content-editor .ig-content-field,
+.ig-app .ig-content-editor .ig-content-cloze-incorrect,
+.ig-app .ig-content-editor .ig-content-cloze-missing>button,
+.ig-app .ig-content-editor .ig-content-add-incorrect,
+.ig-app .ig-content-editor .ig-content-distractor,
+.ig-app .ig-content-editor .ig-content-add{border-color:#000}
+.ig-app .ig-content-editor .ig-content-cloze-text,
+.ig-app .ig-content-editor .ig-content-cloze-missing,
+.ig-app .ig-content-editor .ig-content-require-all,
+.ig-app .ig-content-editor .ig-content-details{border-color:#000}
+.ig-app .ig-content-editor .ig-content-actions button,
+.ig-app .ig-content-editor .ig-content-remove-answer,
+.ig-app .ig-content-editor .ig-content-distractor button,
+.ig-app .ig-content-editor .ig-content-cloze-gaps button,
+.ig-app .ig-content-editor .ig-content-attached>button{color:#000}
+.ig-app .ig-content-editor .ig-content-actions svg{stroke:#000}
+.ig-app .ig-content-editor .ig-content-media-tools button{color:#000}
+.ig-content-actions button img{display:block;width:21px;height:21px;object-fit:contain}
+.ig-app .ig-content-editor .ig-content-done{background:#fff;border-color:#000;color:#000}
+.ig-app .ig-content-editor .ig-content-done:hover:not(:disabled){background:#f5f5f4;border-color:#000;color:#000}
+
+.ig-app .ig-content-level{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0;font-size:14px;font-weight:600}
+.ig-app .ig-content-level select{width:100px;height:40px}
+.ig-content-identity{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin-bottom:12px}
+.ig-app .ig-content-identity .ig-content-title{min-width:0;width:100%;margin:0}
+.ig-app .ig-content-identity .ig-content-title input{width:100%;max-width:none}
+.ig-app .ig-content-identity .ig-content-level{margin:0 0 0;align-self:end}
+.ig-app .ig-content-description{display:flex;flex-direction:column;gap:6px;margin:0 0 25px;font-size:14px;font-weight:600;color:#606060}
+.ig-app .ig-content-description input{box-sizing:border-box;width:100%;height:40px;min-height:40px;border:1px solid #aaa;border-radius:0;background:#fff;padding:5px 8px;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:16px;color:#222}
+.ig-content-footer{justify-content:center}
+/* Full-width Hub player, followed by its supporting controls. */
+.ig-resource-layout{grid-template-columns:minmax(0,1fr);gap:14px}
+.ig-resource-main{display:contents}
+.ig-resource-card{grid-row:1}
+.ig-resource-sidebar{grid-row:2}
+.ig-resource-sidebar .ig-switch-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ig-resource-main>.ig-leaderboard,.ig-resource-main>.ig-options-panel,.ig-resource-main>.ig-unscored{margin-top:0}
+.ig-resource-sidebar .ig-show-all{margin-top:12px}
+
+.ig-app .ig-resource-title>.ig-classroom-qr-button{display:grid;place-items:center;width:40px;height:40px;padding:8px;min-width:40px}
+.ig-modal-backdrop.ig-qr-backdrop{background:rgba(15,23,42,.72);backdrop-filter:blur(6px)}
+.ig-modal.ig-qr-modal{width:320px;min-width:0;max-width:320px;box-sizing:border-box;max-height:90vh;padding:28px;border:0;border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.25);text-align:center}
+.ig-modal.ig-qr-modal:has(.ig-classroom-qr img){width:536px;max-width:536px}
+.ig-qr-modal>h2{margin:0 38px 18px;font-size:28px}
+.ig-qr-modal .ig-modal-close{top:14px;right:14px;display:grid;place-items:center;width:38px;height:38px;padding:0;border:0;border-radius:50%!important;background:#eff6ff;color:#1e40af;font-size:26px;line-height:1}
+.ig-classroom-qr{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.ig-classroom-qr img{display:block;width:480px;height:480px;max-width:100%;border:1px solid #e2e8f0;border-radius:16px}
+.ig-qr-modal .ig-session-action{display:inline-flex;align-items:center;justify-content:center;min-width:120px;height:40px;padding:0 20px;border:1px solid #000;border-radius:10px!important;background:#000;color:#fff;font-size:14px;font-weight:600}
+.ig-qr-modal .ig-session-action:hover:not(:disabled){background:#292524;border-color:#292524}
+.ig-classroom-join{max-width:480px;margin:30px auto;padding:28px}
+.ig-classroom-join h2{text-align:center}
+.ig-classroom-join form{display:flex;flex-direction:column;gap:20px;margin-top:24px}
+.ig-classroom-title{padding:16px 0}
+
+.ig-resource-toolbar{display:flex;align-items:center;min-height:68px;padding:12px 20px;background:#fff;border-bottom:1px solid #e7e5e4}
+.ig-customise-menu{font-family:ui-sans-serif,system-ui,sans-serif}
+.ig-customise-menu .hub-menu-title-text{font-family:inherit;font-weight:600}
+.ig-customise-menu .ig-options{display:flex;flex-direction:column;align-items:stretch;gap:14px;padding:0;border:0}
+.ig-customise-menu .ig-options label{display:flex;flex-direction:row;justify-content:space-between;align-items:center;width:100%;font-size:14px;gap:12px}
+.ig-customise-menu .ig-options select{width:170px;max-width:170px;height:40px;padding:6px 10px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;font:inherit}
+.ig-customise-menu .ig-check{justify-content:flex-start!important;min-height:32px}
+.ig-customise-menu input{accent-color:#000}
+
+.ig-resource-toolbar{gap:10px}
+.ig-template-dropdown{width:300px;font-family:ui-sans-serif,system-ui,sans-serif}
+.ig-template-dropdown .hub-menu-title-text{font-family:inherit;font-weight:600}
+.ig-template-dropdown [role=menu]{max-height:360px;overflow-y:auto;overscroll-behavior-y:contain;display:flex;flex-direction:column;gap:5px}
+.ig-template-dropdown [role=menuitemradio]{box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:8px 10px;border:1px solid #e7e5e4;border-radius:12px;background:#fff;color:#000;text-align:left;font:inherit;font-size:14px}
+.ig-template-dropdown [role=menuitemradio][aria-checked=true]{border-color:#a8a29e;background:#f5f5f4;font-weight:600}
+.ig-template-dropdown .ig-template-art{width:36px;height:36px;border-radius:6px;overflow:hidden}
+.ig-template-selected{margin-left:auto}
+
+/* Keep the resource controls identical to the shared Hub toolbar. */
+.ig-app .ig-resource-toolbar.hub-toolbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;min-height:0;padding:14px 24px 0;margin:0 0 10px;border:0;background:transparent}
+.ig-app .ig-resource-toolbar .hub-toolbar-left{gap:8px}
+.ig-app .ig-resource-toolbar button[data-menu-trigger]{height:44px;width:auto;padding:0 10px;border:1px solid #d6d3d1;border-radius:12px;background:#fff;color:#292524;font-size:14px;font-weight:600;line-height:20px}
+.ig-app .ig-resource-toolbar button[data-menu-trigger]:hover{background:#f5f5f4;border-color:#a8a29e}
+.ig-app .ig-resource-toolbar button[data-menu-trigger]>svg{width:26px;height:26px}
+.ig-app .ig-resource-toolbar .ig-game-trigger{min-width:max-content;white-space:nowrap;flex-shrink:0}
+.ig-app .ig-resource-toolbar .ig-game-trigger{font-weight:700}
+
+.ig-app .ig-leaderboard-qr{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;min-width:40px;padding:8px;border-radius:10px!important}
+
+.ig-resource-meta{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ig-resource-meta>.ig-resource-title{min-width:0;flex:1;align-items:center}
+.ig-resource-meta>.ig-resource-title>h2{margin:0}
+.ig-resource-meta>.ig-resource-actions{flex-shrink:0;flex-wrap:nowrap}
+.ig-leaderboard .ig-section-heading{align-items:center}
+.ig-leaderboard .ig-section-heading>div:first-child{display:flex;align-items:baseline;gap:18px;min-width:0}
+.ig-leaderboard .ig-section-heading h3{margin:0;flex-shrink:0}
+.ig-leaderboard .ig-section-heading .ig-fine{margin:0;font-size:12px}
+.ig-template-dropdown{width:520px;max-width:520px}
+.ig-template-dropdown [role=menu]{gap:8px;overflow-x:hidden}
+.ig-template-dropdown [role=menu].is-faded-top{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18px);mask-image:linear-gradient(to bottom,transparent,#000 18px)}
+.ig-template-dropdown [role=menu].is-faded-bottom{-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 18px),transparent)}
+.ig-template-dropdown [role=menu].is-faded-top.is-faded-bottom{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18px,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(to bottom,transparent,#000 18px,#000 calc(100% - 18px),transparent)}
+.ig-template-dropdown [role=menuitemradio]{min-height:70px;padding:8px 16px;background:#fafaf9;border-color:#e7e5e4;font-weight:600;font-size:14px}
+.ig-template-dropdown [role=menuitemradio][aria-checked=true]{background:#f5f5f4;border-color:#a8a29e}
+.ig-template-dropdown [role=menuitemradio]:hover{background:#f5f5f4;transform:none!important;filter:none!important;box-shadow:none!important;transition:background-color .15s,border-color .15s!important}
+.ig-template-dropdown .ig-template-art.is-compact{width:46px;height:46px;border:1px solid #e7e5e4;border-radius:16px;background:#fff;color:#292524;box-shadow:0 1px 2px #0000000d;transform:none}
+.ig-template-dropdown .ig-game-menu-copy{display:flex;min-width:0;flex-direction:column;gap:3px;white-space:nowrap}
+.ig-template-dropdown .ig-game-menu-name{font-size:14px;line-height:18px;font-weight:700}
+.ig-template-dropdown .ig-game-menu-description{color:#78716c;font-size:12px;line-height:16px;font-weight:400}
+.ig-template-selected{width:22px;height:22px;object-fit:contain}
+.ig-customise-menu{min-width:340px}
+.ig-customise-menu .ig-options{gap:10px}
+.ig-customise-menu .ig-options>.hub-toggle-row{margin:0;padding:10px 14px;min-height:44px;border:1px solid #e7e5e4;border-radius:12px;background:#fafaf9;font-size:14px;font-weight:600}
+.ig-customise-menu .ig-options>.ig-shuffle-toggle{height:58px;min-height:58px}
+.ig-customise-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;margin-top:0}
+.ig-customise-actions button{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-width:0;height:44px;min-height:44px;padding:7px 12px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#292524;font-size:14px;font-weight:600}
+.ig-customise-actions button:hover{background:#f5f5f4}
+.ig-customise-actions img{width:20px;height:20px;object-fit:contain}
+.ig-customise-actions img[src$="ui-icons/rename.svg"]{transform:scale(.7)}
+.ig-customise-actions button:not(.ig-customise-delete){border-color:#000;background:#000;color:#fff}
+.ig-customise-actions button:not(.ig-customise-delete):hover{background:#292524}
+.ig-customise-actions button:not(.ig-customise-delete) img{filter:brightness(0) invert(1)}
+.ig-customise-actions button:first-child{border-color:#d6d3d1;background:#fff;color:#000}
+.ig-customise-actions button:first-child:hover{background:#f5f5f4}
+.ig-customise-actions button:first-child img{filter:brightness(0)}
+.ig-customise-actions button:only-child{grid-column:1/-1}
+.ig-customise-actions .ig-customise-delete{border-color:#b91c1c;background:#b91c1c;color:#fff}
+.ig-customise-actions .ig-customise-delete:hover{border-color:#991b1b;background:#991b1b;color:#fff}
+
+
+.ig-app .ig-resource-controls{gap:8px}
+.ig-app .ig-resource-controls button{position:relative;display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;min-height:44px;padding:4px;border:0;border-radius:50%!important;background:#292524;color:#fff}
+.ig-app .ig-resource-controls button:hover{background:#44403c}
+.ig-resource-audio img{display:block;width:100%;height:100%;filter:brightness(0) invert(1)}
+.ig-resource-audio[aria-pressed=false]::after{position:absolute;width:32px;height:3px;border-radius:999px;background:#fff;content:"";transform:rotate(-45deg)}
+.ig-app .ig-resource-actions>.ig-resource-icon-action{display:grid;place-items:center;width:36px;height:36px;padding:6px;border:1px solid #d6d3d1;border-radius:10px;background:#fff!important}
+.ig-resource-icon-action img{display:block;width:24px;height:24px;object-fit:contain}
+.ig-app .ig-leaderboard-qr{padding:3px}
+.ig-app .ig-leaderboard-qr svg{width:32px;height:32px}
+.ig-resource-game:fullscreen{width:100%;height:100%;overflow:auto;background:#000}
+.ig-resource-game:fullscreen>.ig-play-preview,.ig-resource-game:fullscreen>.ig-session{width:100%;height:100%;min-height:100%;border-radius:0}
+.ig-app .ig-leaderboard .ig-section-heading .ig-leaderboard-qr{padding:3px}
+.ig-app .ig-leaderboard-qr svg{flex-shrink:0;display:block}
+.ig-app .ig-leaderboard .ig-session-action{display:inline-flex;align-items:center;justify-content:center;height:40px;min-height:40px;padding:0 16px;border:1px solid #000;border-radius:10px;background:#000;color:#fff;font-size:14px;font-weight:600}
+.ig-app .ig-leaderboard .ig-session-action:hover{background:#292524;border-color:#292524}
+.ig-app .ig-leaderboard td.ig-empty-results{text-align:center}
+.ig-session .ig-player-top{top:auto;bottom:10px;height:34px;align-items:center;line-height:1}
+.ig-session .ig-player-progress{top:50%;transform:translate(-50%,-50%)}
+.ig-session .ig-player-top,.ig-session .ig-player-progress{font-family:Arial,Helvetica,sans-serif;font-weight:600}
+.ig-session .ig-player-correct{display:inline-flex;align-items:center;gap:4px}
+.ig-session .ig-player-correct img{display:block;width:26px;height:26px}
+.ig-session.ig-has-player-controls .ig-player-correct{margin-right:0}
+.ig-app .ig-resource-controls button{background:#fff;color:#292524;border:1px solid #d6d3d1}
+.ig-app .ig-resource-controls button:hover{background:#e7e5e4}
+.ig-resource-audio img{filter:brightness(0)}
+.ig-resource-audio[aria-pressed=false]::after{background:#292524}
+.ig-app .ig-resource-toolbar.hub-toolbar{display:flex;justify-content:space-between;align-items:center}
+.ig-resource-toolbar-right{gap:8px}
+.ig-resource-toolbar-right>.ig-resource-actions{display:flex;align-items:center;gap:8px}
+.ig-app .ig-resource-toolbar-right .ig-resource-controls{gap:8px}
+
+.ig-app .ig-library-toolbar .ig-filter-button.is-active,.ig-app .ig-library-toolbar .ig-filter-popover>button{background:#000;color:#fff;border-color:#000}
+
+/* One segmented control for the library's tile and list views. */
+.ig-app .ig-library-toolbar .ig-view-toggle{gap:0;height:44px;border:0;border-radius:12px;overflow:hidden}
+.ig-app .ig-library-toolbar .ig-view-toggle button{position:relative;width:44px;height:44px;min-height:44px;border:1px solid #d6d3d1;border-radius:0!important;transform:none!important}
+.ig-app .ig-library-toolbar .ig-view-toggle button:first-child{border-radius:12px 0 0 12px!important}
+.ig-app .ig-library-toolbar .ig-view-toggle button:last-child{margin-left:-1px;border-radius:0 12px 12px 0!important}
+.ig-app .ig-library-toolbar .ig-view-toggle button[aria-pressed=true]{z-index:1;border-color:#000}
+.ig-app .ig-library-toolbar .ig-view-toggle button:focus-visible{outline-offset:-4px}
+
+.ig-app .ig-library-toolbar input[type=search]{padding-left:40px;background-image:url('../ui-icons/search.svg');background-repeat:no-repeat;background-position:13px center;background-size:18px 18px}
+
+/* Keep the view switch beside Filter and reserve the far edge for actions. */
+.ig-app .ig-library-toolbar input[type=search]{flex:0 0 34%;width:34%}
+.ig-app .ig-library-toolbar .ig-view-toggle{margin-left:0}
+.ig-app .ig-library-toolbar .ig-import-button{margin-left:auto}
+
+/* Authoring screen: the same card, control and spacing language as the Hub. */
+.ig-app .ig-content-editor{min-height:0;margin:0 auto 28px;padding:28px;border:1px solid #e7e5e4;border-radius:16px;background:#fff;box-shadow:0 1px 2px #0000000d;color:#171717}
+.ig-content-overview{padding:20px 22px;border:1px solid #e7e5e4;border-radius:14px;background:#fafaf9}
+.ig-content-identity{grid-template-columns:minmax(0,1fr) 112px;gap:20px;margin:0 0 16px}
+.ig-app .ig-content-overview label{gap:7px;margin:0;color:#171717;font-size:20px;line-height:1.3;font-weight:700}
+.ig-app .ig-content-overview input,
+.ig-app .ig-content-overview select{box-sizing:border-box;width:100%;height:44px;min-height:44px;padding:9px 12px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#171717;box-shadow:none}
+.ig-app .ig-content-overview .ig-content-title input{font-size:18px;line-height:24px;font-weight:700}
+.ig-app .ig-content-overview .ig-content-description input{font-size:14px;font-weight:400}
+.ig-app .ig-content-overview .ig-content-level select{width:112px}
+.ig-content-section-heading{display:flex;align-items:center;gap:10px;margin:28px 0 14px}
+.ig-app .ig-content-section-heading h2{margin:0;color:#171717;font-size:20px;line-height:1.3;font-weight:700}
+.ig-content-section-heading>span{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#e7e5e4;color:#44403c;font-size:12px;font-weight:700}
+.ig-content-rows{margin:0}
+.ig-content-empty{padding:28px;text-align:center;border:1px dashed #a8a29e;border-radius:12px;background:#fafaf9;color:#57534e;font-size:14px}
+.ig-app .ig-content-editor .ig-content-row{box-sizing:border-box;display:grid;grid-template-columns:42px minmax(0,1fr) 112px;gap:12px;align-items:start;margin:0 0 12px;padding:18px;border:1px solid #e7e5e4;border-radius:14px;background:#fafaf9;box-shadow:0 1px 2px #00000008}
+.ig-app .ig-content-editor .ig-content-row-main,
+.ig-app .ig-content-editor .ig-content-row:not(.is-simple) .ig-content-row-main{min-width:0;padding:0;border:0;border-radius:0;background:transparent;overflow:visible}
+.ig-app .ig-content-editor .ig-content-index{display:grid;place-items:center;width:34px;height:34px;margin:0;padding:0;border-radius:50%;background:#f5f5f4;color:#000;font-size:15px;line-height:1;font-weight:700}
+.ig-app .ig-content-editor .ig-content-actions{display:grid;grid-template-columns:repeat(3,32px);grid-template-rows:32px 32px;justify-content:end;align-items:center;gap:2px;margin:0;padding:0}
+.ig-app .ig-content-editor .ig-content-actions button{width:32px;height:32px;padding:6px;border:0;border-radius:8px;background:transparent;color:#171717;box-shadow:none}
+.ig-app .ig-content-editor .ig-content-actions button:hover:not(:disabled){border:0;background:#f5f5f4;color:#171717}
+.ig-app .ig-content-editor .ig-content-actions svg,
+.ig-app .ig-content-editor .ig-content-actions img{width:20px;height:20px;stroke:#171717}
+.ig-app .ig-content-editor .ig-content-actions button:disabled{opacity:.3}
+.ig-app .ig-content-editor textarea.ig-content-cloze-text{box-sizing:border-box;display:block;width:100%;height:96px;min-height:96px;max-height:300px;padding:12px 14px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#171717;font-size:15px;line-height:1.5}
+.ig-app .ig-content-editor .ig-content-cloze-missing{min-height:0;margin-top:12px;padding:12px;border:1px solid #e7e5e4;border-radius:10px;background:#fafaf9}
+.ig-app .ig-content-editor .ig-content-cloze-incorrect{min-height:0;margin-top:10px;padding:0;border:0;background:transparent}
+.ig-app .ig-content-editor .ig-content-cloze-missing>button,
+.ig-app .ig-content-editor .ig-content-add-incorrect,
+.ig-app .ig-content-editor .ig-content-add-answer{min-height:36px;margin:0;padding:6px 11px;border:1px solid #d6d3d1;border-radius:9px;background:#fff;color:#171717;font-size:13px;line-height:20px;font-weight:600}
+.ig-app .ig-content-editor .ig-content-cloze-missing>button:disabled{opacity:.55}
+.ig-content-cloze-gaps{gap:8px;padding:10px 0 0}
+.ig-content-cloze-gaps:empty{display:none}
+.ig-content-cloze-gaps>span{min-width:0;border-color:#bbf7d0;background:#f0fdf4;color:#166534}
+.ig-app .ig-content-editor .ig-content-field{border:1px solid #d6d3d1;border-radius:10px;background:#fff}
+.ig-content-pair{gap:10px}
+.ig-content-pair>.ig-content-field+ .ig-content-field{border-left:1px solid #d6d3d1}
+.ig-content-answers{gap:10px 16px}
+.ig-app .ig-content-editor .ig-content-answers+.ig-content-add-answer{margin-top:8px}
+.ig-app .ig-content-editor .ig-content-add-answer{border-color:#171717;background:#171717;color:#fff}
+.ig-app .ig-content-editor .ig-content-add-answer:hover:not(:disabled){border-color:#44403c;background:#44403c;color:#fff}
+.ig-app .ig-content-editor .ig-content-small-label{padding:0 0 6px;color:#44403c;font-size:13px}
+.ig-app .ig-content-editor .ig-content-answers-label{padding-top:16px}
+.ig-app .ig-content-editor .ig-content-labelled-field{display:flex;min-width:0;flex-direction:column;gap:6px}
+.ig-app .ig-content-editor .ig-content-labelled-field>span{padding-left:2px;color:#292524;font-size:14px;line-height:20px;font-weight:700}
+.ig-app .ig-content-editor .ig-content-add{min-height:44px;margin:6px 0 0;padding:0 16px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#171717;font-size:14px;font-weight:600}
+.ig-app .ig-content-editor .ig-content-add:hover:not(:disabled),
+.ig-app .ig-content-editor .ig-content-done:hover:not(:disabled){background:#f5f5f4;border-color:#a8a29e;color:#171717}
+.ig-app .ig-content-editor .ig-content-footer{justify-content:flex-end;margin-top:24px;padding-top:22px;border-top:1px solid #e7e5e4}
+.ig-app .ig-content-editor .ig-content-done{min-width:192px;height:44px;padding:0 18px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#171717;font-size:14px;line-height:20px;font-weight:700;box-shadow:none}
+.ig-app .ig-content-editor .ig-content-group{border:1px solid #e7e5e4;border-radius:14px;background:#fafaf9}
+.ig-app .ig-content-group .ig-content-row{grid-template-columns:34px minmax(0,1fr) 72px;padding:12px}
+.ig-app .ig-content-group .ig-content-actions{grid-template-columns:repeat(2,32px)}
+.ig-app .ig-content-editor .ig-content-errors{margin:0 0 24px;padding:16px;border:1px solid #fecaca;border-radius:10px;background:#fef2f2;color:#991b1b}
+.ig-app .ig-content-editor .ig-content-errors ul{margin:0;padding-left:20px;list-style:disc}
+.ig-app .ig-content-editor .ig-content-errors li{margin:0;line-height:1.5;overflow-wrap:anywhere}
+.ig-app .ig-content-editor .ig-content-errors li+li{margin-top:8px}
+
+/* Keep authoring controls quiet while retaining a clear keyboard focus ring. */
+.ig-app .ig-content-editor :is(input:not([type=checkbox]):not([type=file]),select,textarea){border-color:#d6d3d1}
+.ig-app .ig-content-editor .ig-content-field.is-focused{border-color:#a8a29e}
+.ig-app .ig-content-editor :is(button,input,select,textarea):focus-visible{outline:2px solid #64748b;outline-offset:3px}
+.ig-app .ig-content-editor .ig-content-input-wrap textarea:focus-visible{outline:none}
+.ig-app .ig-content-editor .ig-content-field:has(:focus-visible){outline:2px solid #64748b;outline-offset:3px}
+
+/* Keep the editor's final actions together, without a divider. */
+.ig-app .ig-content-editor .ig-content-footer{gap:12px;padding-top:0;border-top:0}
+.ig-app .ig-content-editor .ig-content-footer .ig-content-add{margin:0}
+.ig-app .ig-content-editor .ig-content-done{background:#000;border-color:#000;color:#fff}
+.ig-app .ig-content-editor .ig-content-done:hover:not(:disabled){background:#262626;border-color:#262626;color:#fff}
+
+/* Game selection shares the overview row and the existing game menu. */
+.ig-content-identity{grid-template-columns:minmax(0,1fr) 230px 112px}
+.ig-content-game-type{display:flex;flex-direction:column;gap:7px;min-width:0}
+.ig-content-game-label{color:#171717;font-size:20px;line-height:1.3;font-weight:700}
+.ig-app .ig-content-game-type .ig-game-trigger{width:100%;height:44px;justify-content:flex-start;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#171717}
+.ig-content-game-type .ig-template-dropdown{left:auto;right:0}
+.ig-content-game-type .ig-template-dropdown [role=menu]{max-height:360px;overflow-y:auto}
+.ig-content-game-type .ig-template-dropdown [role=menuitemradio]>svg{width:38px;height:38px;flex-shrink:0}
+
+/* Separate activity details from the question-editing card. */
+.ig-app .ig-content-editor{padding:0;border:0;background:transparent;box-shadow:none}
+.ig-app .ig-content-editor .ig-content-overview,
+.ig-app .ig-content-editor .ig-content-questions{padding:24px 28px;border:1px solid #e7e5e4;border-radius:16px;background:#fff;box-shadow:0 1px 2px #0000000d}
+.ig-app .ig-content-editor .ig-content-overview{position:relative;z-index:2;margin-bottom:24px}
+.ig-content-questions>.ig-content-section-heading{margin-top:0}
+/* Silhouettes need explicit dimensions inside toolbar icon wrappers. */
+.ig-app .ig-content-game-type .ig-game-trigger svg{display:block;width:26px;height:26px;min-width:26px;max-width:26px;flex:0 0 26px}
+.ig-app .ig-content-game-type .ig-game-trigger{align-items:center;gap:8px;overflow:hidden}
+.ig-app .ig-content-game-type .ig-game-type-chevron{margin-left:auto;color:#78716c;font-size:18px;line-height:1}
+.ig-app .ig-content-game-type .ig-template-dropdown [role=menuitemradio]>svg{display:block;width:32px;height:32px;min-width:32px;max-width:32px;flex:0 0 32px}
+
+/* Floating game menus are portalled to body, outside the editor. */
+.ig-template-dropdown [role=menuitemradio]>svg{display:block;width:36px;height:36px;min-width:36px;max-width:36px;min-height:36px;max-height:36px;flex:0 0 36px;align-self:center}
+.ig-template-dropdown .ig-game-menu-copy{flex:1;overflow:hidden}
+.ig-template-dropdown .ig-game-menu-description{white-space:normal;overflow-wrap:anywhere}
+.ig-template-dropdown .ig-template-selected{width:22px;height:22px;flex:0 0 22px}
+
+.ig-app .ig-content-editor .ig-content-footer{display:grid;grid-template-columns:repeat(2,max-content);justify-content:end}
+.ig-app .ig-content-editor .ig-content-footer:has(>.ig-content-add){grid-template-columns:repeat(2,144px)}
+.ig-app .ig-content-editor .ig-content-footer>.ig-content-add,
+.ig-app .ig-content-editor .ig-content-footer>.ig-content-done{box-sizing:border-box;width:100%;min-width:0}
+
+.ig-app .ig-content-editor .ig-content-actions button:is([title="Duplicate"],[title="Delete"]){border:1px solid #d6d3d1;border-radius:8px;background:#fff}
+.ig-app .ig-content-editor .ig-content-actions button:is([title="Duplicate"],[title="Delete"]):hover:not(:disabled){border:1px solid #a8a29e;background:#f5f5f4}
+
+/* Give duplicate and delete comfortable targets beside the reorder arrows. */
+.ig-app .ig-content-editor .ig-content-actions{grid-template-columns:28px 40px 40px;grid-template-rows:24px 24px;gap:4px 2px}
+.ig-app .ig-content-editor .ig-content-actions button:is([title="Duplicate"],[title="Delete"]){width:40px;height:40px;padding:8px}
+.ig-app .ig-content-editor .ig-content-actions button:is([title="Duplicate"],[title="Delete"]) svg{width:24px;height:24px}
+
+/* Reordering sits beside the text; copy and delete occupy the lower corner. */
+.ig-app .ig-content-editor .ig-content-actions{display:contents}
+.ig-app .ig-content-editor .ig-content-reorder{grid-column:3;grid-row:1;align-self:center;justify-self:center;display:flex;flex-direction:column;gap:2px}
+.ig-app .ig-content-editor .ig-content-copy-delete{grid-column:2 / 4;grid-row:2;justify-self:end;display:flex;gap:8px}
+.ig-app .ig-content-editor .ig-content-row{row-gap:12px}
+
+/* Sort keeps matching group and answer fields in two desktop columns. */
+.ig-app .ig-content-editor .ig-content-groups{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:20px;margin-top:18px}
+.ig-app .ig-content-editor .ig-content-group{box-sizing:border-box;padding:24px 28px;background:#f4f4f4;border:0;border-radius:10px}
+.ig-app .ig-content-editor .ig-content-group>label{margin:0 0 22px}
+.ig-app .ig-content-editor .ig-content-group>label input{flex:1;min-width:0}
+.ig-app .ig-content-editor .ig-content-group>label input{box-sizing:border-box;height:54px;padding:0 12px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;font-size:25px;font-weight:700;line-height:34px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-row{grid-template-columns:36px minmax(0,1fr) 40px;width:100%;max-width:800px;align-items:center;gap:12px;margin:0 0 12px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.ig-app .ig-content-editor .ig-content-group .ig-content-row>.ig-content-index{position:static;grid-column:1;grid-row:1;justify-self:center;display:inline-grid;place-items:center;box-sizing:border-box;width:auto;min-width:24px;height:24px;margin:0;padding:0 6px;border-radius:999px;background:#e7e5e4;color:#000;font-size:12px;line-height:1;font-weight:700}
+.ig-app .ig-content-editor .ig-content-group .ig-content-row>.ig-content-row-main,
+.ig-app .ig-content-editor .ig-content-group .ig-content-row:not(.is-simple) .ig-content-row-main{grid-column:2;grid-row:1;width:100%;padding:0;border:0;background:transparent}
+.ig-app .ig-content-editor .ig-content-group .ig-content-field{border:1px solid #d6d3d1;border-radius:10px;background:#fff}
+.ig-app .ig-content-editor .ig-content-group .ig-content-input-wrap{min-height:52px;align-items:center}
+.ig-app .ig-content-editor .ig-content-group .ig-content-input-wrap textarea{height:52px;min-height:52px;padding:15px 12px;font-size:14px;line-height:22px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-media-tools{gap:8px;padding:0 12px 0 4px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-media-tools button{width:30px;height:36px;padding:5px;color:#a3a3a3}
+.ig-app .ig-content-editor .ig-content-group .ig-content-media-tools svg,.ig-app .ig-content-editor .ig-content-group .ig-content-media-tools img{width:20px;height:20px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions{grid-column:3;grid-row:1;display:flex;flex-direction:row;align-self:center;align-items:center;justify-content:flex-end;gap:8px;margin:0;padding:0}
+.ig-app .ig-content-editor .ig-content-group .ig-content-reorder{display:flex;flex-direction:column;gap:0}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions .ig-content-reorder button{height:22px;padding:2px 8px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-copy-delete{display:flex;flex-direction:row;gap:6px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button{display:grid;place-items:center;width:40px;height:40px;padding:8px;border:0;border-radius:5px;background:transparent;color:#a3a3a3;box-shadow:none}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button:hover:not(:disabled){background:#e8e8e8;color:#555}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button:is([title="Duplicate"],[title="Delete"]){width:40px;height:40px;border:0;border-radius:5px;color:#fff}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button[title="Duplicate"]{background:#000}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button[title="Delete"]{background:#dc2626}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button[title="Duplicate"]:hover:not(:disabled){background:#262626}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button[title="Delete"]:hover:not(:disabled){background:#b91c1c}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions svg,
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions img{width:25px;height:25px;stroke:#a3a3a3}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions .ig-content-reorder svg{width:18px;height:18px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-add{display:grid;place-items:center;width:44px;height:44px;min-height:44px;margin:0 auto;padding:0;font-size:26px;line-height:1}
+.ig-app .ig-content-editor .ig-content-copy-delete button img{width:24px;height:24px}
+
+.ig-app .ig-content-editor .ig-content-footer,
+.ig-app .ig-content-editor .ig-content-footer:has(>.ig-content-add){display:grid;grid-template-columns:minmax(0,1fr) minmax(144px,max-content) minmax(0,1fr);align-items:center}
+.ig-app .ig-content-editor .ig-content-footer>.ig-content-add{grid-column:2;width:auto;min-width:144px;height:44px;padding:0 16px;font-size:14px;line-height:20px;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.ig-app .ig-content-editor .ig-content-footer>.ig-content-done{grid-column:3;justify-self:end;width:144px}
+
+/* A shared segmented reorder control at the top-right of each question. */
+.ig-app .ig-content-editor .ig-content-reorder{align-self:start;justify-self:end;gap:0;border:1px solid #d6d3d1;border-radius:8px;background:#fff;overflow:hidden}
+.ig-app .ig-content-editor .ig-content-reorder button{box-sizing:border-box;width:40px;height:32px;padding:6px;border:0;border-radius:0;background:transparent}
+.ig-app .ig-content-editor .ig-content-reorder button+button{border-top:1px solid #d6d3d1}
+.ig-app .ig-content-editor .ig-content-reorder button:hover:not(:disabled){border:0;background:#f5f5f4}
+.ig-app .ig-content-editor .ig-content-reorder button+button:hover:not(:disabled){border-top:1px solid #d6d3d1}
+.ig-app .ig-content-editor .ig-content-reorder button:focus-visible{outline-offset:-3px}
+
+/* Use an inset rule, independent of the individual button corners. */
+.ig-app .ig-content-editor .ig-content-reorder{position:relative}
+.ig-app .ig-content-editor .ig-content-actions .ig-content-reorder button,
+.ig-app .ig-content-editor .ig-content-actions .ig-content-reorder button:hover:not(:disabled){border:0;border-radius:0}
+.ig-app .ig-content-editor .ig-content-reorder::after{content:"";position:absolute;left:8px;right:8px;top:50%;height:1px;background:#d6d3d1;pointer-events:none}
+
+/* Place the numbered badges in a gutter outside the question cards. */
+.ig-app .ig-content-editor .ig-content-row{margin-left:46px;grid-template-columns:minmax(0,1fr) 112px}
+.ig-app .ig-content-editor .ig-content-row>.ig-content-index{position:absolute;left:-46px;top:18px}
+.ig-app .ig-content-editor .ig-content-row>.ig-content-row-main{grid-column:1;grid-row:1}
+.ig-app .ig-content-editor .ig-content-reorder{grid-column:2}
+.ig-app .ig-content-editor .ig-content-copy-delete{grid-column:1 / 3}
+
+.ig-app .ig-content-editor .ig-content-statement-fields{display:flex;flex-direction:column;gap:12px}
+.ig-app .ig-content-editor .ig-content-statement-fields label{font-size:16px;line-height:1.3;font-weight:700;gap:7px}
+.ig-app .ig-content-editor .ig-content-statement-fields input{box-sizing:border-box;width:100%;height:44px;border:1px solid #d6d3d1;border-radius:10px;padding:9px 12px;background:#fff;font-size:14px;font-weight:400}
+.ig-app .ig-content-editor .ig-content-statement-fields p{margin:-6px 0 0;font-size:12px}
+.ig-app .ig-content-editor .ig-content-statement-fields input[aria-invalid=true]{border-color:#dc2626}
+
+.ig-content-word-group{display:flex;flex-direction:column;gap:7px}
+.ig-content-word-heading{font-size:16px;line-height:1.3;font-weight:700}
+.ig-content-word-inputs{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.ig-content-word-entry{display:flex;gap:8px;align-items:center;width:100%}
+.ig-content-word-entry input{flex:1;min-width:0}
+.ig-app .ig-content-editor .ig-content-add-word,
+.ig-app .ig-content-editor .ig-content-remove-word{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;padding:0;border:1px solid #d6d3d1;border-radius:8px;background:#fff;font-size:22px;line-height:1}
+
+/* Keep word entries compact, with the add control beside the last entry. */
+.ig-content-word-inputs{display:grid;grid-template-columns:180px 36px;gap:8px;align-items:center;justify-content:start}
+.ig-content-word-entry{grid-column:1;width:180px}
+.ig-app .ig-content-editor .ig-content-add-word{grid-column:2;grid-row:auto;align-self:center}
+
+
+.ig-content-word-inputs{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:8px}
+.ig-content-word-entry{flex:0 0 auto;width:auto}
+.ig-app .ig-content-editor .ig-content-word-entry input{flex:0 0 180px;width:180px}
+.ig-app .ig-content-editor .ig-content-add-word{flex:0 0 36px}
+
+.ig-app .ig-content-editor :is(.ig-content-add-word,.ig-content-remove-word){display:flex;align-items:center;justify-content:center;padding:0;color:#000;line-height:1}
+.ig-app .ig-content-editor :is(.ig-content-add-word,.ig-content-remove-word) svg{display:block;width:20px;height:20px;flex:0 0 20px;margin:0;color:#000}
+
+.ig-app .ig-content-editor .ig-content-remove-word{background:#000;border-color:#000;color:#fff}
+.ig-app .ig-content-editor .ig-content-remove-word svg{color:#fff}
+.ig-app .ig-content-editor .ig-content-remove-word:hover:not(:disabled){background:#262626;border-color:#262626;color:#fff}
+
+.ig-app .ig-content-editor .ig-content-actions button[title="Delete"]{background:#dc2626;border-color:#dc2626;color:#fff}
+.ig-app .ig-content-editor .ig-content-actions button[title="Delete"] img{filter:brightness(0) invert(1)}
+.ig-app .ig-content-editor .ig-content-actions button[title="Delete"]:hover:not(:disabled){background:#b91c1c;border-color:#b91c1c;color:#fff}
+
+.ig-app .ig-content-editor .ig-content-actions button[title="Duplicate"]{background:#000;border-color:#000;color:#fff}
+.ig-app .ig-content-editor .ig-content-actions button[title="Duplicate"] img{filter:brightness(0) invert(1)}
+.ig-app .ig-content-editor .ig-content-actions button[title="Duplicate"]:hover:not(:disabled){background:#262626;border-color:#262626;color:#fff}
+
+/* Use true black for question text and field labels. */
+.ig-app .ig-content-editor .ig-content-questions,
+.ig-app .ig-content-editor .ig-content-questions :is(h2,h3,label,input,textarea,select,p,.ig-content-word-heading,.ig-content-index,.ig-content-section-heading>span){color:#000}
+.ig-app .ig-content-editor .ig-content-questions :is(input,textarea)::placeholder{color:#000;opacity:1}
+
+/* Keep copy and delete on the same row as the item's text fields. */
+.ig-app .ig-content-editor .ig-content-row{grid-template-columns:minmax(0,1fr) 148px}
+.ig-app .ig-content-editor .ig-content-actions{display:flex;flex-direction:row-reverse;align-items:center;gap:8px;grid-column:2;grid-row:1;align-self:start;justify-self:end;margin:0;padding:0}
+.ig-app .ig-content-editor .ig-content-copy-delete{display:flex;flex-direction:row;gap:8px;align-items:center}
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row .ig-content-actions{align-items:flex-start}
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row .ig-content-copy-delete{align-self:flex-start;margin-top:2px}
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row.is-simple .ig-content-actions{align-self:center;align-items:center}
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row.is-simple .ig-content-copy-delete{align-self:center;margin-top:0}
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row:has(.ig-content-match-field) .ig-content-copy-delete,
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row.is-question .ig-content-copy-delete,
+.ig-app .ig-content-editor .ig-content-rows>.ig-content-row:has(.ig-content-statement-fields>label) .ig-content-copy-delete{margin-top:28px}
+.ig-app .ig-content-editor .ig-content-actions button:is([title="Duplicate"],[title="Delete"]){box-sizing:border-box;width:44px;height:44px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-row{grid-template-columns:36px minmax(0,1fr) 52px}
+.ig-app .ig-content-editor .ig-content-group .ig-content-actions button:is([title="Duplicate"],[title="Delete"]){box-sizing:border-box;width:52px;height:52px}
+.ig-app .ig-content-editor .ig-content-remove-answer{box-sizing:border-box;display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;margin:0;padding:0;border:1px solid #000;border-radius:8px;background:#000;color:#fff;font-size:25px;font-weight:500;line-height:1}
+.ig-app .ig-content-editor .ig-content-remove-answer:hover{border-color:#262626;background:#262626;color:#fff}
+
+/* Mirror the editable statement so missing words can be coloured as they are typed. */
+.ig-content-statement-highlight{position:relative;border-radius:10px;background:#fff;overflow:hidden}
+.ig-app .ig-content-editor .ig-content-statement-mirror{position:absolute;inset:0;box-sizing:border-box;overflow:hidden;padding:12px 14px;border:1px solid transparent;white-space:pre-wrap;overflow-wrap:break-word;font:400 15px/1.5 ui-sans-serif,system-ui,sans-serif;color:#000;pointer-events:none}
+.ig-app .ig-content-editor .ig-content-statement-highlight .ig-content-statement-mirror{padding-right:78px}
+.ig-app .ig-content-editor .ig-content-statement-highlight>.ig-content-cloze-text{padding-right:78px}
+.ig-app .ig-content-editor .ig-content-statement-highlight>.ig-content-media-tools{position:absolute;z-index:2;top:4px;right:4px;padding:0;background:#fff}
+.ig-content-statement-mirror mark{color:#2563eb;background:#dbeafe;border-radius:2px}
+.ig-app .ig-content-editor .ig-content-questions .ig-content-statement-highlight textarea.ig-content-cloze-text{position:relative;background:transparent;color:transparent;caret-color:#000;font:400 15px/1.5 ui-sans-serif,system-ui,sans-serif}
+.ig-app .ig-content-editor .ig-content-questions .ig-content-statement-highlight textarea.ig-content-cloze-text::placeholder{color:#000}
+
+/* Use the description field's 14px size for editor content and control text. */
+.ig-app .ig-content-editor .ig-content-overview :is(input,select),
+.ig-app .ig-content-editor .ig-content-overview .ig-content-title input,
+.ig-app .ig-content-editor .ig-content-overview .ig-content-description input,
+.ig-app .ig-content-editor .ig-content-game-type .ig-game-trigger,
+.ig-app .ig-content-editor .ig-content-game-type .ig-game-trigger span,
+.ig-app .ig-content-editor .ig-content-questions :is(input,textarea,p),
+.ig-app .ig-content-editor .ig-content-statement-mirror,
+.ig-app .ig-content-editor .ig-content-questions .ig-content-statement-highlight textarea.ig-content-cloze-text{font-size:14px;line-height:1.5}
+
+.ig-app .ig-content-editor .ig-content-overview .ig-content-identity{margin-bottom:0}
+
+/* Match item fields to the Level control while keeping their hints subdued. */
+.ig-app .ig-content-editor .ig-content-overview .ig-content-title input{font-size:14px;font-style:normal;font-weight:400;line-height:21px;color:#292524}
+.ig-app .ig-content-editor .ig-content-overview .ig-content-title input::placeholder{color:#a8a29e;font-style:normal;font-weight:400;opacity:1}
+.ig-app .ig-content-editor .ig-content-game-type .ig-game-trigger,
+.ig-app .ig-content-editor .ig-content-game-type .ig-game-trigger span{font-size:14px;font-style:normal;font-weight:400;line-height:21px;letter-spacing:normal}
+.ig-app .ig-content-editor .ig-content-questions .ig-content-input-wrap textarea:not(.ig-content-cloze-text){font-family:inherit;font-size:14px;font-style:normal;font-weight:400;line-height:21px;letter-spacing:normal;color:#292524}
+.ig-app .ig-content-editor .ig-content-questions .ig-content-input-wrap textarea:not(.ig-content-cloze-text)::placeholder{color:#a8a29e;opacity:1}
+
+/* Validation warnings retain their red colour above ordinary black text. */
+.ig-app .ig-content-editor .ig-content-questions p.ig-error,
+.ig-app .ig-content-editor .ig-content-errors,
+.ig-app .ig-content-editor .ig-content-errors li{color:#991b1b}
+
+/* Keep editor pins attached to the image coordinate system. */
+.ig-content-diagram .ig-diagram-edit-board{position:relative;width:100%;cursor:crosshair;isolation:isolate}
+.ig-content-diagram .ig-diagram-edit-board>img{display:block;width:100%;height:auto;max-height:none;user-select:none;-webkit-user-drag:none}
+.ig-content-diagram .ig-diagram-edit-board>span{position:absolute;z-index:1;display:grid;place-items:center;width:30px;height:30px;transform:translate(-50%,-50%);border:2px solid #fff;border-radius:50%;background:#000;color:#fff;font-size:14px;font-weight:700;line-height:1;pointer-events:none;box-shadow:0 1px 4px #0004}
+.ig-content-diagram .ig-diagram-edit-board>span.is-active{background:#2453bf;outline:2px solid #2453bf;outline-offset:2px}
+
+.ig-app .ig-content-diagram{width:100%;margin:0}
+.ig-app .ig-content-diagram>h2{font-size:20px;font-weight:700;line-height:1.3;margin:0 0 14px}
+.ig-app .ig-content-diagram .ig-fine{color:#737373!important;font-size:14px;font-weight:400;margin:8px 0 12px}
+.ig-diagram-label-menu{position:relative;width:100%;z-index:3}
+.ig-diagram-label-heading{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
+.ig-app .ig-diagram-label-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;height:44px;background:#fff;color:#000;font-weight:400;text-align:left}
+.ig-diagram-label-options{position:absolute;top:100%;left:0;right:0;max-height:360px;overflow:auto;margin-top:6px;padding:12px;background:#fff;border:1px solid #d6d3d1;border-radius:12px;box-shadow:0 8px 20px #0002}
+.ig-diagram-label-option{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ig-app .ig-diagram-label-option>button{width:40px;height:40px;padding:8px;flex-shrink:0}
+.ig-app .ig-diagram-label-option>button.is-selected{background:#000;color:#fff;border-color:#000}
+.ig-app .ig-diagram-label-option>input{flex:1;width:0;height:40px;font-size:14px}
+.ig-app .ig-diagram-label-option>.ig-diagram-delete-label{background:#dc2626;border-color:#dc2626}
+.ig-diagram-delete-label img{width:20px;height:20px;filter:brightness(0) invert(1)}
+.ig-app .ig-diagram-add-label{display:grid;place-items:center;width:40px;min-width:40px;height:40px;margin:0 auto;padding:0;font-size:26px;line-height:1}
+
+.ig-content-diagram .ig-diagram-editor{width:100%}
+.ig-content-diagram .ig-diagram-label-menu{width:720px;max-width:100%;margin:0}
+.ig-content-diagram .ig-diagram-edit-board{width:720px;max-width:100%;margin:12px auto 0}
+.ig-app .ig-content-diagram .ig-diagram-label-heading.ig-fine{margin:0 0 8px}
+
+.ig-app .ig-content-editor .ig-content-footer>.ig-content-change-image{grid-column:2;justify-self:center;box-sizing:border-box;width:144px;min-width:144px;height:44px;padding:0 18px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#000;font-size:14px;line-height:20px;font-weight:700;box-shadow:none}
+.ig-app .ig-content-editor .ig-content-footer>.ig-content-change-image:hover{background:#f5f5f4;border-color:#a8a29e;color:#000}
+
+.ig-content-diagram .ig-diagram-edit-viewport{width:720px;max-width:100%;margin:12px auto 0}
+.ig-content-diagram .ig-diagram-edit-viewport .ig-diagram-edit-board{margin:0}
+.ig-content-diagram .ig-diagram-edit-viewport.is-drumkit{aspect-ratio:100/76;overflow:hidden}
+.ig-content-diagram .ig-diagram-edit-viewport.is-drumkit .ig-diagram-edit-board{transform:translateY(-12%)}
+
+.ig-app .ig-game-type-fixed{display:flex;align-items:center;gap:8px;box-sizing:border-box;min-height:44px;padding:8px 12px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#000;font-size:14px;font-weight:600;white-space:nowrap}
+.ig-app .ig-game-type-fixed>svg{width:26px;height:26px;flex-shrink:0}
+
+.ig-customise-actions .ig-customise-delete img{filter:brightness(0) invert(1)}
+.ig-app .ig-library-empty{box-sizing:border-box;min-height:150px;margin:0;padding:68px 0 28px;text-align:center;font-size:14px;font-weight:400;line-height:1.5;color:#57534e}
+
+/* One instruction statement shared by all activity editors. */
+.ig-app .ig-content-instructions{display:flex;flex-direction:column;gap:6px;margin:14px 0 0;font-size:14px;font-weight:600;color:#57534e}
+.ig-app .ig-content-instructions input{box-sizing:border-box;width:100%;height:40px;padding:8px 10px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#292524;font:400 14px/20px ui-sans-serif,system-ui,sans-serif}
+.ig-app .ig-content-instructions input:focus-visible{outline:2px solid #2453bf;outline-offset:2px}
+
+.ig-app .ig-content-editor .ig-content-overview label.ig-content-instructions{margin-top:24px}

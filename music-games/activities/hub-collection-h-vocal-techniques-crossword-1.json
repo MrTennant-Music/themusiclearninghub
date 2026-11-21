@@ -1,0 +1,54 @@
+{
+  "id": "hub-collection-h-vocal-techniques-crossword-1",
+  "level": "H",
+  "title": "Word Setting",
+  "instructions": "",
+  "description": "Word Setting: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Word Setting",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-h-vocal-techniques-crossword-1-MC-0167",
+      "prompt": "Singing several notes on one syllable of a word.",
+      "answer": "Melismatic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0167"
+    },
+    {
+      "id": "hub-collection-h-vocal-techniques-crossword-1-MC-0172",
+      "prompt": "Singing one note for each syllable of a word.",
+      "answer": "Syllabic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0172"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "vocal-techniques",
+  "sourceConceptIds": [
+    "MC-0167",
+    "MC-0172"
+  ]
+}

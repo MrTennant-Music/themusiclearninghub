@@ -1,0 +1,172 @@
+{
+  "id": "hub-collection-ah-romantic-wordsearch-1",
+  "level": "AH",
+  "title": "Romantic Period 1",
+  "instructions": "",
+  "description": "Romantic Period: current Music Dictionary definitions — set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Romantic Period",
+    "Advanced Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0077",
+      "prompt": "A style from the 1800s with strong feelings, big contrasts and often a large orchestra.",
+      "answer": "Romantic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0077"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0071",
+      "prompt": "A piece where a solo instrument is featured alongside an orchestra.",
+      "answer": "Concerto",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0071"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0217",
+      "prompt": "A German song for a solo singer, usually with piano.",
+      "answer": "Lied",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0217"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0271",
+      "prompt": "Music that shows a country’s identity through its folk tunes, dances or stories.",
+      "answer": "Nationalist",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0271"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0057",
+      "prompt": "A keyboard instrument where pressing a key makes a small hammer hit strings inside.",
+      "answer": "Piano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0057"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0180",
+      "prompt": "Gently stretch or squeeze the timing to make the music more expressive.",
+      "answer": "Rubato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0180"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0111",
+      "prompt": "A tune is played, then comes back several times with changes.",
+      "answer": "Theme and variation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0111"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0225",
+      "prompt": "Two violins, a viola and a cello playing together.",
+      "answer": "String quartet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0225"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0047",
+      "prompt": "Instruments such as trumpets and trombones, played by buzzing your lips.",
+      "answer": "Brass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0047"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0190",
+      "prompt": "Each verse uses the same music but different words.",
+      "answer": "Strophic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0190"
+    },
+    {
+      "id": "hub-collection-ah-romantic-wordsearch-1-MC-0228",
+      "prompt": "Four notes, each three small steps apart, making a tense, unsettled chord.",
+      "answer": "Diminished seventh",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0228"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "romantic",
+  "sourceConceptIds": [
+    "MC-0077",
+    "MC-0071",
+    "MC-0217",
+    "MC-0271",
+    "MC-0057",
+    "MC-0180",
+    "MC-0111",
+    "MC-0225",
+    "MC-0047",
+    "MC-0190",
+    "MC-0228"
+  ],
+  "editorMode": "with-clues"
+}

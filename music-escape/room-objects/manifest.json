@@ -1,0 +1,254 @@
+[
+  {
+    "room": 0,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-0/archive.png",
+    "sha256": "033da730b0d3b7b900633df2f8d2a0613b18edb3e65f0de8af3dd226cba6d8c3",
+    "source": "exec-1a1083c6-277a-40f4-bd12-57ba9602a042.png"
+  },
+  {
+    "room": 0,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-0/mechanism.png",
+    "sha256": "06ca24a65196a13f6b2accb34fb78ef3d783ce3bcb5b1a2564ec156cc88c6ef6",
+    "source": "exec-1a1083c6-277a-40f4-bd12-57ba9602a042.png"
+  },
+  {
+    "room": 0,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-0/recording.png",
+    "sha256": "6d5130f11c1cdaa9170843780cb1c24452e57371f0d69c88d8904d6791cf6640",
+    "source": "exec-1a1083c6-277a-40f4-bd12-57ba9602a042.png"
+  },
+  {
+    "room": 0,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-0/exit.png",
+    "sha256": "d43c99a06c66d3017a40ee1f33cd91b95b46869c76334a42f9f8d2453dcfe8d5",
+    "source": "exec-1a1083c6-277a-40f4-bd12-57ba9602a042.png"
+  },
+  {
+    "room": 1,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-1/archive.png",
+    "sha256": "e97e01ace3314fba83d7d6a09f9e764da840d2df33cb3ec34560b58f1baaf340",
+    "source": "exec-872173ae-f47b-49f3-b590-9731edc1c2ea.png"
+  },
+  {
+    "room": 1,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-1/mechanism.png",
+    "sha256": "847e13d84b3eec402d2338f017971913ea60a6118f4c4c559d890b50a68d9987",
+    "source": "exec-872173ae-f47b-49f3-b590-9731edc1c2ea.png"
+  },
+  {
+    "room": 1,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-1/recording.png",
+    "sha256": "0c86f1fae7fbe26ec678caa44cd0ba6309e1a55667fd88989f7a00366038a5c2",
+    "source": "exec-872173ae-f47b-49f3-b590-9731edc1c2ea.png"
+  },
+  {
+    "room": 1,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-1/exit.png",
+    "sha256": "16a0c8469f1dca07e9bc61b5437fd67d66b2640ba92073391f81247e0ad450f9",
+    "source": "exec-872173ae-f47b-49f3-b590-9731edc1c2ea.png"
+  },
+  {
+    "room": 2,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-2/archive.png",
+    "sha256": "ce48e65a57993000bd9c71e08e9af9268f91fbd313b095c8643162e7020c5345",
+    "source": "exec-844ce695-efbc-4f4f-9a85-b49cb880a898.png"
+  },
+  {
+    "room": 2,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-2/mechanism.png",
+    "sha256": "9901cfeacd05e24ce68af5be74c06d95e526f6e357cad0af37fafb7187d276e3",
+    "source": "exec-9c91d8be-cc9f-45ab-80ad-8ebae373b8f1.png"
+  },
+  {
+    "room": 2,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-2/recording.png",
+    "sha256": "edaf109c2504dd5ef91ecd7f2d7f5cf8e755f5cb57c09292068e41dc90d65609",
+    "source": "exec-9c91d8be-cc9f-45ab-80ad-8ebae373b8f1.png"
+  },
+  {
+    "room": 2,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-2/exit.png",
+    "sha256": "573abb98e6ca3be6e709129b214175b098268a6fc20eb54d8bde1e6e52d4a8d4",
+    "source": "exec-9c91d8be-cc9f-45ab-80ad-8ebae373b8f1.png"
+  },
+  {
+    "room": 3,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-3/archive.png",
+    "sha256": "66d5a26e81ba7093759514a229ecf318c0c621899f3affc4e471f3b71cdfea12",
+    "source": "exec-089bf302-6b75-428e-8855-2098e46a5aea.png"
+  },
+  {
+    "room": 3,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-3/mechanism.png",
+    "sha256": "ad2aa6533e96028d6cf549dd5a2ed552d46290cf0c9f1ee540d0c55fa817b9ff",
+    "source": "exec-089bf302-6b75-428e-8855-2098e46a5aea.png"
+  },
+  {
+    "room": 3,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-3/recording.png",
+    "sha256": "6fcdb8a8879cfb50c618dd7a4659c7b0358136b5cadb98ab1c2458ae99207b03",
+    "source": "exec-089bf302-6b75-428e-8855-2098e46a5aea.png"
+  },
+  {
+    "room": 3,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-3/exit.png",
+    "sha256": "24cc365704d3c6c09dc7dafa2b5eecd8f162cf962d989082f8fb49d6a665ab81",
+    "source": "exec-089bf302-6b75-428e-8855-2098e46a5aea.png"
+  },
+  {
+    "room": 4,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-4/archive.png",
+    "sha256": "bb28ceb5043c965772576485ee1104e8c419fad5be465b8434abc3620ababc59",
+    "source": "exec-9127c536-b239-4fc3-8d1a-73af7b6cda62.png"
+  },
+  {
+    "room": 4,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-4/mechanism.png",
+    "sha256": "e5442c19d8340de4acff6b4651915307699560c9486f312fb2507e6d59ab8bec",
+    "source": "exec-9127c536-b239-4fc3-8d1a-73af7b6cda62.png"
+  },
+  {
+    "room": 4,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-4/recording.png",
+    "sha256": "44989365c9da649932f0bb24adc7c4150ce46028cbc26fe2e47ccef3e0255545",
+    "source": "exec-9127c536-b239-4fc3-8d1a-73af7b6cda62.png"
+  },
+  {
+    "room": 4,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-4/exit.png",
+    "sha256": "e3e5984ad0daa0383b0673fe6218ef3cf973a9331ce9d6a8cf1838c700a57f6f",
+    "source": "exec-9127c536-b239-4fc3-8d1a-73af7b6cda62.png"
+  },
+  {
+    "room": 5,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-5/archive.png",
+    "sha256": "42118215a16f6ad5770583bc7be2c2897bc0912609afced765d1a9663742adfd",
+    "source": "exec-67cfd74b-7cd8-41c6-ae88-cee406e41658.png"
+  },
+  {
+    "room": 5,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-5/mechanism.png",
+    "sha256": "ccd65a84e04a6420270bed4c2033e78feb075cff9013221e4444d0651d06e2b2",
+    "source": "exec-67cfd74b-7cd8-41c6-ae88-cee406e41658.png"
+  },
+  {
+    "room": 5,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-5/recording.png",
+    "sha256": "87df76519f06dee7397c0a604b47f4d449ccf6ceca28c19fa02a17a7ad4a8172",
+    "source": "exec-67cfd74b-7cd8-41c6-ae88-cee406e41658.png"
+  },
+  {
+    "room": 5,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-5/exit.png",
+    "sha256": "3fe7a2a29b445e470c3fb6fef29b4032cd386698ed3f5757e470089f17c81b8b",
+    "source": "exec-67cfd74b-7cd8-41c6-ae88-cee406e41658.png"
+  },
+  {
+    "room": 6,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-6/archive.png",
+    "sha256": "654c2f5097eeaf65580b049bd73a27d15eb7b739abad3f087718312f4f6f2824",
+    "source": "exec-e1640b0e-ca69-4d95-bd5f-90989a7c7e6c.png"
+  },
+  {
+    "room": 6,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-6/mechanism.png",
+    "sha256": "2aa53379ec0d96ca48b03e29ccb133350a2e25b6b74bb2dccb5d61686b9a3d13",
+    "source": "exec-e1640b0e-ca69-4d95-bd5f-90989a7c7e6c.png"
+  },
+  {
+    "room": 6,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-6/recording.png",
+    "sha256": "f2163f488877db5ded375bfaf88dfe2af6eb60b709e6d16c9d6a007cfeb9db87",
+    "source": "exec-e1640b0e-ca69-4d95-bd5f-90989a7c7e6c.png"
+  },
+  {
+    "room": 6,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-6/exit.png",
+    "sha256": "bb02668b01ff89f518e82f704170e88379f38be6633cffd23fc6cc75092e9faf",
+    "source": "exec-e1640b0e-ca69-4d95-bd5f-90989a7c7e6c.png"
+  },
+  {
+    "room": 7,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-7/archive.png",
+    "sha256": "9bcd5d65735218edee84724544efde4b5d3a98709313ae3c1056e1c347b1d909",
+    "source": "exec-5f158ba1-4603-4c72-9d29-963461657696.png"
+  },
+  {
+    "room": 7,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-7/mechanism.png",
+    "sha256": "642749f97f0843ca519f18b13a3c54ba1cea6b6ceafbdf3cce62394aab1ceb74",
+    "source": "exec-5f158ba1-4603-4c72-9d29-963461657696.png"
+  },
+  {
+    "room": 7,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-7/recording.png",
+    "sha256": "1154a8089505c006065cada8cd19661dfff713c9de707a1b1deee7b9cd0de41b",
+    "source": "exec-5f158ba1-4603-4c72-9d29-963461657696.png"
+  },
+  {
+    "room": 7,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-7/exit.png",
+    "sha256": "26b725d2e0f48f3b0fe34923707c2bdb47996a25f3192d98aa007b14d434decf",
+    "source": "exec-5f158ba1-4603-4c72-9d29-963461657696.png"
+  },
+  {
+    "room": 8,
+    "object": "archive",
+    "path": "music-escape/room-objects/room-8/archive.png",
+    "sha256": "5a5418d7cebe175f29acca8159e3f6b8fc0f1253fffa1aafd5ff22284166f9b5",
+    "source": "exec-2030aa3e-e888-4cef-ac89-4a0b023fc447.png"
+  },
+  {
+    "room": 8,
+    "object": "mechanism",
+    "path": "music-escape/room-objects/room-8/mechanism.png",
+    "sha256": "25432a9d128fcfd3298d0eea81d35da813a92a6e96f84487d45aacca3e1e6535",
+    "source": "exec-2030aa3e-e888-4cef-ac89-4a0b023fc447.png"
+  },
+  {
+    "room": 8,
+    "object": "recording",
+    "path": "music-escape/room-objects/room-8/recording.png",
+    "sha256": "0650cee838f6b3c90f941640d7009e7d0e8a75ab99166de152df425e9b2ae84d",
+    "source": "exec-2030aa3e-e888-4cef-ac89-4a0b023fc447.png"
+  },
+  {
+    "room": 8,
+    "object": "exit",
+    "path": "music-escape/room-objects/room-8/exit.png",
+    "sha256": "5669c52c1532326548fe196bb892bfe88bab05c4e019e04a6586d19b783000cd",
+    "source": "exec-d794fbc9-3443-4db2-8dea-a517c7ba546f.png"
+  }
+]

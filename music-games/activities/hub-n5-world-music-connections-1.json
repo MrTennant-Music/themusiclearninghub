@@ -1,0 +1,201 @@
+{
+  "id": "hub-n5-world-music-connections-1",
+  "level": "N5",
+  "title": "World Music",
+  "instructions": "Find four descriptions of each instrument. Find all four groups.",
+  "description": "Revise World Music styles, instruments and musical features up to National 5. Regional labels cover diverse traditions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "World Music",
+    "National 5"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n5-world-music-connections-1-1",
+      "prompt": "Ridged gourd scraped by a stick",
+      "answer": "Ridged gourd scraped by a stick",
+      "distractors": [],
+      "group": "Guiro",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-2",
+      "prompt": "Scraping ridges makes a rasp",
+      "answer": "Scraping ridges makes a rasp",
+      "distractors": [],
+      "group": "Guiro",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-3",
+      "prompt": "Untuned grooved scraper",
+      "answer": "Untuned grooved scraper",
+      "distractors": [],
+      "group": "Guiro",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-4",
+      "prompt": "Stick drawn along a ribbed gourd",
+      "answer": "Stick drawn along a ribbed gourd",
+      "distractors": [],
+      "group": "Guiro",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-5",
+      "prompt": "Bound tubes of varied lengths",
+      "answer": "Bound tubes of varied lengths",
+      "distractors": [],
+      "group": "Pan pipes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-6",
+      "prompt": "Air blown across open pipe tops",
+      "answer": "Air blown across open pipe tops",
+      "distractors": [],
+      "group": "Pan pipes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-7",
+      "prompt": "Each pipe gives one pitch",
+      "answer": "Each pipe gives one pitch",
+      "distractors": [],
+      "group": "Pan pipes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-8",
+      "prompt": "A row of graduated wind tubes",
+      "answer": "A row of graduated wind tubes",
+      "distractors": [],
+      "group": "Pan pipes",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-9",
+      "prompt": "North Indian long-necked lute",
+      "answer": "North Indian long-necked lute",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-10",
+      "prompt": "Lute with sympathetic strings",
+      "answer": "Lute with sympathetic strings",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-11",
+      "prompt": "Indian lute with movable frets",
+      "answer": "Indian lute with movable frets",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-12",
+      "prompt": "Long-necked Indian plucked lute",
+      "answer": "Long-necked Indian plucked lute",
+      "distractors": [],
+      "group": "Sitar",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-13",
+      "prompt": "North Indian pair of hand drums",
+      "answer": "North Indian pair of hand drums",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-14",
+      "prompt": "Two tuned Indian drums together",
+      "answer": "Two tuned Indian drums together",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-15",
+      "prompt": "Indian drums played with fingers",
+      "answer": "Indian drums played with fingers",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-world-music-connections-1-16",
+      "prompt": "Paired Indian drums of two sizes",
+      "answer": "Paired Indian drums of two sizes",
+      "distractors": [],
+      "group": "Tabla",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

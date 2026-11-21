@@ -1,0 +1,80 @@
+{
+  "id": "hub-collection-ah-cadences-crossword-1",
+  "level": "AH",
+  "title": "Cadences",
+  "instructions": "",
+  "description": "Cadences: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Cadences",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-ah-cadences-crossword-1-MC-0169",
+      "prompt": "A strong chord ending that sounds finished, like a musical full stop.",
+      "answer": "Perfect cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0169"
+    },
+    {
+      "id": "hub-collection-ah-cadences-crossword-1-MC-0165",
+      "prompt": "A chord ending that sounds unfinished, as if more music should follow.",
+      "answer": "Imperfect cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0165"
+    },
+    {
+      "id": "hub-collection-ah-cadences-crossword-1-MC-0232",
+      "prompt": "A chord ending that seems about to finish, but takes a surprise turn instead.",
+      "answer": "Interrupted cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0232"
+    },
+    {
+      "id": "hub-collection-ah-cadences-crossword-1-MC-0238",
+      "prompt": "A gentle, finished chord ending, often heard on “Amen” in hymns.",
+      "answer": "Plagal cadence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0238"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "cadences",
+  "sourceConceptIds": [
+    "MC-0169",
+    "MC-0165",
+    "MC-0232",
+    "MC-0238"
+  ]
+}

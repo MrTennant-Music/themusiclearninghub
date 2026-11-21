@@ -1,0 +1,201 @@
+{
+  "id": "hub-ah-period-classical-connections-1",
+  "level": "AH",
+  "title": "Classical",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise concepts associated with Classical up to Advanced Higher. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Classical",
+    "Advanced Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-ah-period-classical-connections-1-1",
+      "prompt": "Piano, violin and cello ensemble",
+      "answer": "Piano, violin and cello ensemble",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-2",
+      "prompt": "Violin-cello-piano chamber trio",
+      "answer": "Violin-cello-piano chamber trio",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-3",
+      "prompt": "Violin and cello join the piano",
+      "answer": "Violin and cello join the piano",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-4",
+      "prompt": "Violin joins cello and piano",
+      "answer": "Violin joins cello and piano",
+      "distractors": [],
+      "group": "Piano trio",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-5",
+      "prompt": "Two violins, viola and cello",
+      "answer": "Two violins, viola and cello",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-6",
+      "prompt": "Four solo bowed-string players",
+      "answer": "Four solo bowed-string players",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-7",
+      "prompt": "Violin pair with viola and cello",
+      "answer": "Violin pair with viola and cello",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-8",
+      "prompt": "Four strings; two violin parts",
+      "answer": "Four strings; two violin parts",
+      "distractors": [],
+      "group": "String quartet",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-9",
+      "prompt": "Links first and second subjects",
+      "answer": "Links first and second subjects",
+      "distractors": [],
+      "group": "Bridge",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-10",
+      "prompt": "Sonata transition between themes",
+      "answer": "Sonata transition between themes",
+      "distractors": [],
+      "group": "Bridge",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-11",
+      "prompt": "Connecting sonata-form passage",
+      "answer": "Connecting sonata-form passage",
+      "distractors": [],
+      "group": "Bridge",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-12",
+      "prompt": "Link between sonata theme groups",
+      "answer": "Link between sonata theme groups",
+      "distractors": [],
+      "group": "Bridge",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-13",
+      "prompt": "Bass goes low-high-middle-high",
+      "answer": "Bass goes low-high-middle-high",
+      "distractors": [],
+      "group": "Alberti bass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-14",
+      "prompt": "Four-note broken-chord bass",
+      "answer": "Four-note broken-chord bass",
+      "distractors": [],
+      "group": "Alberti bass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-15",
+      "prompt": "Lowest-highest-middle-highest",
+      "answer": "Lowest-highest-middle-highest",
+      "distractors": [],
+      "group": "Alberti bass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-period-classical-connections-1-16",
+      "prompt": "Classical low-high-mid-high bass",
+      "answer": "Classical low-high-mid-high bass",
+      "distractors": [],
+      "group": "Alberti bass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

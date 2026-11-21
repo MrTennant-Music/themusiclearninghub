@@ -1,0 +1,94 @@
+{
+  "id": "hub-collection-ah-concerto-grosso-wordsearch-1",
+  "level": "AH",
+  "title": "Concerto Grosso",
+  "instructions": "",
+  "description": "Concerto Grosso: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Concerto Grosso",
+    "Advanced Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-ah-concerto-grosso-wordsearch-1-MC-0249",
+      "prompt": "A piece where a small group of solo players takes turns with a larger group.",
+      "answer": "Concerto grosso",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0249"
+    },
+    {
+      "id": "hub-collection-ah-concerto-grosso-wordsearch-1-MC-0260",
+      "prompt": "The larger group of players in a concerto grosso.",
+      "answer": "Ripieno",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0260"
+    },
+    {
+      "id": "hub-collection-ah-concerto-grosso-wordsearch-1-MC-0258",
+      "prompt": "The small group of solo players in a concerto grosso.",
+      "answer": "Concertino",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0258"
+    },
+    {
+      "id": "hub-collection-ah-concerto-grosso-wordsearch-1-MC-0248",
+      "prompt": "A low instrument and a chord-playing instrument provide the backing in Baroque music.",
+      "answer": "Basso continuo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0248"
+    },
+    {
+      "id": "hub-collection-ah-concerto-grosso-wordsearch-1-MC-0253",
+      "prompt": "A returning section for the orchestra, with solo passages in between.",
+      "answer": "Ritornello",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0253"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "concerto-grosso",
+  "sourceConceptIds": [
+    "MC-0249",
+    "MC-0260",
+    "MC-0258",
+    "MC-0248",
+    "MC-0253"
+  ],
+  "editorMode": "with-clues"
+}

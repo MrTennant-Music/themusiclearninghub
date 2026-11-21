@@ -1,0 +1,131 @@
+{
+  "id": "hub-dictionary-ah-styles-crossword-2",
+  "level": "AH",
+  "title": "Styles 2",
+  "instructions": "",
+  "description": "Revise styles with 7 Music Dictionary concepts. Set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0263",
+      "prompt": "A simple song or melody.",
+      "answer": "Ayre",
+      "distractors": [
+        "Chorale",
+        "Contemporary jazz",
+        "Electronic dance music (EDM)"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0265",
+      "prompt": "A German Lutheran hymn tune, usually in a clear regular rhythm.",
+      "answer": "Chorale",
+      "distractors": [
+        "Anthem",
+        "Ayre / air",
+        "Ballett"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0267",
+      "prompt": "Dance music made mainly with electronic instruments and computers, often for clubs.",
+      "answer": "Electronic dance music",
+      "distractors": [
+        "Chorale",
+        "Contemporary jazz",
+        "Galliard"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0269",
+      "prompt": "A secular Renaissance vocal work, usually for several unaccompanied voices.",
+      "answer": "Madrigal",
+      "distractors": [
+        "Galliard",
+        "Motet",
+        "Nationalist"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0271",
+      "prompt": "Art music that deliberately draws on the folk culture or identity of a nation.",
+      "answer": "Nationalist",
+      "distractors": [
+        "Neoclassical",
+        "Pavan",
+        "Renaissance"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0273",
+      "prompt": "A slow, stately Renaissance court dance, usually in duple metre.",
+      "answer": "Pavan",
+      "distractors": [
+        "Neoclassical",
+        "Serial",
+        "Anthem"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-crossword-2-mc-0275",
+      "prompt": "Music built from a fixed series instead of traditional major or minor tonality.",
+      "answer": "Serial",
+      "distractors": [
+        "Ballett",
+        "Chorale",
+        "Contemporary jazz"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

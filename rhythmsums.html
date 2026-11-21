@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Rhythm Sums</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/rhythm-sums-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/rhythm-sums-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./bravura-symbols.js?v=20260629"></script>
-  <script src="./shared-notation-config.js?v=20260629"></script>
-  <script src="./hub-input.js?v=20260629"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/rhythm-sums-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/rhythm-sums-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/rhythm-sums-generator.js?v=5af57042439b"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js?v=20260629"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <style>
     @font-face {
       font-family: "Bravura";
-      src: url("./Bravura.otf") format("opentype");
+      src: url("./fonts/Bravura.otf") format("opentype");
       font-display: block;
     }
 
@@ -34,11 +38,37 @@
       dominant-baseline: alphabetic;
       text-rendering: geometricPrecision;
     }
+
+    .escape-rhythm-operator {
+      min-width: 44px;
+      text-align: center;
+      transform: translateY(-10px);
+    }
+
+    .rhythm-order-board{max-width:960px;margin:0 auto}
+    .rhythm-order-board h2{text-align:center;font-size:22px;font-weight:800;margin:8px 0}
+    .rhythm-order-board>p{text-align:center;margin:8px 0 20px;color:#57534e}
+    .rhythm-order-board ol{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
+    .rhythm-order-board li{position:relative;display:flex;align-items:center;gap:14px;padding:8px 14px;min-height:108px;border:1px solid #d6d3d1;border-radius:14px;background:#fff}
+    .rhythm-order-position{font-weight:800;min-width:18px;text-align:center}
+    .rhythm-order-notes{display:flex;flex:1;align-items:center;justify-content:center;gap:8px}
+    .rhythm-order-glyph{display:flex;align-items:center;justify-content:center;width:130px;height:88px}
+    .rhythm-order-glyph svg{max-height:88px}
+    .rhythm-order-plus{font-size:22px;font-weight:600}
+    .rhythm-order-arrows{display:flex;flex-direction:column;gap:2px}
+    .rhythm-order-arrows button{width:36px;min-height:38px;border:1px solid #e7e5e4;border-radius:8px;font-size:20px}
+    .rhythm-order-controls{display:flex;justify-content:center;gap:12px;margin:20px 0}
+    .rhythm-order-board .is-correct{border-color:#15803d;background:#f0fdf4}
+    .rhythm-order-board .is-incorrect{border-color:#b91c1c;background:#fef2f2}
+    .rhythm-order-total{min-width:64px;text-align:center;font-size:13px}
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
 <body>
   <div id="root"></div>
-  <script type="text/babel">
+  <script type="text/x-mlh-jsx-source" data-runtime="rhythmsums-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
 
 const NOTE_RX = 7;
@@ -53,14 +83,14 @@ const COLOUR = {
 };
 
 const ASSET = {
-  appIcon: "rhythm-sums-icon.svg",
-  levels: "levels.svg",
-  customise: "customise.svg",
-  next: "next.svg",
-  bronze: "bronze.svg",
-  silver: "silver.svg",
-  gold: "gold.svg",
-  diamond: "diamond.svg",
+  appIcon: "app-icons/rhythm-sums-icon.svg",
+  levels: "ui-icons/levels.svg",
+  customise: "ui-icons/customise.svg",
+  next: "ui-icons/next.svg",
+  bronze: "ui-icons/bronze.svg",
+  silver: "ui-icons/silver.svg",
+  gold: "ui-icons/gold.svg",
+  diamond: "ui-icons/diamond.svg",
 };
 
 const OPERATORS = ["+", "−", "×", "÷"];
@@ -106,6 +136,45 @@ const LEVELS = {
     includeRests: true,
   },
 };
+
+const ORDER_LEVELS = LEVELS;
+function makeOrderQuestion(levelKey) {
+  const level=levelKey;
+  const official=settingsForLevel(level);
+  const question=window.MLH.RhythmSumsGenerator.makeOrder(itemPoolFromSettings(official),{count:4,length:levelKey==="N3"?3:4});
+  return {...question,rows:question.rows.map(row=>({...row,items:row.items.map(item=>makeDisplayItem(item,official))}))};
+}
+function RhythmOrderBoard({question,rows,setRows,feedback,disabled}) {
+  const elements=useRef(new Map()),previous=useRef(null),moving=useRef(null);
+  React.useLayoutEffect(()=>{
+    const before=previous.current;previous.current=null;if(!before)return;
+    if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;
+    for(const [id,element] of elements.current){
+      const delta=before.get(id)-element.getBoundingClientRect().top;
+      if(!Number.isFinite(delta)||Math.abs(delta)<1||!element.animate)continue;
+      element.style.zIndex=id===moving.current?'2':'1';
+      const animation=element.animate([{transform:`translateY(${delta}px)`},{transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.22,1,.36,1)'});
+      animation.onfinish=animation.oncancel=()=>{element.style.zIndex='';};
+    }
+  },[rows]);
+  function step(id,delta){
+    if(disabled)return;
+    const index=rows.findIndex(row=>row.id===id);if(!rows[index+delta])return;
+    previous.current=new Map([...elements.current].map(([key,element])=>[key,element.getBoundingClientRect().top]));
+    for(const element of elements.current.values())for(const animation of element.getAnimations?.()||[])animation.cancel();
+    moving.current=id;
+    setRows(current=>{const next=current.slice();[next[index],next[index+delta]]=[next[index+delta],next[index]];return next;});
+  }
+  return <section className="rhythm-order-board" aria-label="Order rhythms">
+    <h2>Order Mode</h2><p>Arrange the rhythms from longest total length to shortest.</p>
+    <ol>{rows.map((row,index)=><li key={row.id} ref={element=>{if(element)elements.current.set(row.id,element);else elements.current.delete(row.id);}} data-rhythm-order-row={row.id} className={feedback?(question.answer[index]===row.id?'is-correct':'is-incorrect'):''}>
+      <span className="rhythm-order-position">{index+1}</span>
+      <div className="rhythm-order-notes" aria-label={row.items.map(item=>item.label+(item.displayType==='rest'?' rest':'')).join(' + ')}>{row.items.map((item,i)=><React.Fragment key={i}>{i>0&&<span className="rhythm-order-plus" aria-hidden="true">+</span>}<div className="rhythm-order-glyph"><RhythmGlyph item={item} scale={.78}/></div></React.Fragment>)}</div>
+      {feedback&&<strong className="rhythm-order-total">{formatBeat(row.beats)} beats</strong>}
+      <div className="rhythm-order-arrows"><button type="button" aria-label={`Move rhythm ${index+1} up`} disabled={disabled||index===0} onClick={()=>step(row.id,-1)}>↑</button><button type="button" aria-label={`Move rhythm ${index+1} down`} disabled={disabled||index===rows.length-1} onClick={()=>step(row.id,1)}>↓</button></div>
+    </li>)}</ol>
+  </section>;
+}
 
 const RHYTHMS = {
   semibreve: { label: "Semibreve", beats: 4, open: true, stem: false, dots: 0, rest: "semibreve-rest" },
@@ -160,7 +229,7 @@ const DEFAULT_SETTINGS = {
 
 function initialLevelFromUrl() {
   const requested = new URLSearchParams(window.location.search).get("level") || "N3";
-  return LEVELS[requested] ? requested : "N3";
+  return (new URLSearchParams(window.location.search).get("mode")==="order"?ORDER_LEVELS:LEVELS)[requested] ? requested : "N3";
 }
 
 function settingsForLevel(levelKey, current = DEFAULT_SETTINGS) {
@@ -262,40 +331,28 @@ function makeDisplayItem(item, settings = DEFAULT_SETTINGS) {
   };
 }
 
+const rhythmSumGenerator = window.MLH.RhythmSumsGenerator.create();
+function usableSettings(settings, levelKey = "N3") {
+  const defaults = settingsForLevel(levelKey);
+  const enabledItems = [...new Set((Array.isArray(settings.enabledItems) ? settings.enabledItems : defaults.enabledItems).filter(id => RHYTHMS[id]))];
+  const clean = {...defaults, ...settings, enabledItems: enabledItems.length ? enabledItems : defaults.enabledItems,
+    enabledOperators: [...new Set((settings.enabledOperators || defaults.enabledOperators).filter(operator => OPERATORS.includes(operator)))]};
+  if (!clean.enabledOperators.length) clean.enabledOperators = defaults.enabledOperators;
+  const choices = window.MLH.RhythmSumsGenerator.buildChoices(itemPoolFromSettings(clean), clean.enabledOperators);
+  clean.enabledOperators = clean.enabledOperators.filter(operator => choices.has(operator));
+  if (!clean.enabledOperators.length) clean.enabledOperators = defaults.enabledOperators;
+  return clean;
+}
 function makeQuestion(settings = DEFAULT_SETTINGS) {
-  for (let attempt = 0; attempt < 400; attempt += 1) {
-    const itemPool = itemPoolFromSettings(settings);
-    const operatorPool = OPERATORS.filter((operator) => settings.enabledOperators.includes(operator));
-
-    if (itemPool.length < 2 || operatorPool.length < 1) break;
-
-    let left = randomItem(itemPool);
-    let right = randomItem(itemPool);
-    const operator = randomItem(operatorPool);
-
-    if (operator === "−" && left.beats < right.beats) [left, right] = [right, left];
-
-    const answer = calculate(left.beats, operator, right.beats);
-    if (!isQuarterBeat(answer)) continue;
-
-    return {
-      id: Math.random().toString(36).slice(2),
-      left: makeDisplayItem(left, settings),
-      right: makeDisplayItem(right, settings),
-      operator,
-      answer,
-      prompt: "Calculate the total number of beats.",
-    };
-  }
-
-  return {
-    id: Math.random().toString(36).slice(2),
-    left: makeDisplayItem(BASE_RHYTHMS.find((item) => item.id === "crotchet"), settings),
-    right: makeDisplayItem(BASE_RHYTHMS.find((item) => item.id === "quaver"), settings),
-    operator: "+",
-    answer: 1.5,
-    prompt: "Calculate the total number of beats.",
-  };
+  const clean = usableSettings(settings);
+  const equation = rhythmSumGenerator.next(itemPoolFromSettings(clean), clean.enabledOperators);
+  return {...equation, id: Math.random().toString(36).slice(2), left: makeDisplayItem(equation.left, clean), right: makeDisplayItem(equation.right, clean), prompt: "Calculate the total number of beats."};
+}
+function parseAnswer(text) {
+  const value = String(text).trim();
+  if (!/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(value)) return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
 }
 
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
@@ -796,7 +853,7 @@ function GlyphToggleButton({ label, active, disabled = false, onClick, glyph, sh
   );
 }
 
-function MenuRows({ activeLevel, settings, updateSettings, newQuestion, showRhythmGuide, setShowRhythmGuide }) {
+function MenuRows({ activeLevel, settings, updateSettings, newQuestion, showRhythmGuide, setShowRhythmGuide, orderMode, onOrderMode }) {
   const level = LEVELS[activeLevel] || LEVELS.N3;
   const levelRhythms = BASE_RHYTHMS.filter((item) => level.rhythmIds.includes(item.id));
   const levelGroups = BEAMED_RHYTHMS.filter((item) => level.beamedIds.includes(item.id));
@@ -811,6 +868,8 @@ function MenuRows({ activeLevel, settings, updateSettings, newQuestion, showRhyt
       includeRests: level.includeRests && next.includeRests,
       includeBeamedGroups,
     };
+    const choices = window.MLH.RhythmSumsGenerator.buildChoices(itemPoolFromSettings(clean), clean.enabledOperators);
+    if (!clean.enabledOperators.every(operator => choices.has(operator))) return;
     updateSettings(clean);
     setTimeout(() => newQuestion(clean), 0);
   }
@@ -832,8 +891,9 @@ function MenuRows({ activeLevel, settings, updateSettings, newQuestion, showRhyt
   return (
     <div style={{ width: "360px" }}>
       <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
-      <window.MLH.MenuToggleRow glyph={<img src="guide.svg" alt="" aria-hidden="true" className="relative -top-px h-9 w-9 object-contain" />} label="Show Rhythm Guide" checked={showRhythmGuide} onChange={() => setShowRhythmGuide((value) => !value)} />
+      <window.MLH.MenuToggleRow glyph={<img src="ui-icons/guide.svg" alt="" aria-hidden="true" className="relative -top-px h-9 w-9 object-contain" />} label="Show Rhythm Guide" checked={showRhythmGuide} onChange={() => setShowRhythmGuide((value) => !value)} />
 
+      {!orderMode&&<>
       <window.MLH.MenuSubheading>Operations</window.MLH.MenuSubheading>
       <div className="grid grid-cols-4 gap-2">
         {OPERATORS.map((operator) => (
@@ -892,6 +952,12 @@ function MenuRows({ activeLevel, settings, updateSettings, newQuestion, showRhyt
         </>
       )}
 
+      </>}
+      <window.MLH.MenuSubheading>Games</window.MLH.MenuSubheading>
+      <button type="button" onClick={onOrderMode} className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600">
+        <img src="./ui-icons/game-type.svg" alt="" aria-hidden="true" className="h-[24px] w-[24px] shrink-0 object-contain invert"/>
+        <span className="hub-toggle-label leading-none" style={{color:"inherit"}}>{orderMode?"Rhythm Sums":"Order Mode"}</span>
+      </button>
     </div>
   );
 }
@@ -913,27 +979,31 @@ function RhythmSumsGoldenApp() {
   useInjectedStyles();
 
   const initialLevel = initialLevelFromUrl();
+  const [orderMode,setOrderMode]=useState(()=>new URLSearchParams(window.location.search).get("mode")==="order");
+  const [orderQuestion,setOrderQuestion]=useState(()=>makeOrderQuestion(initialLevel));
+  const [orderRows,setOrderRows]=useState(()=>orderQuestion.rows);
   const [activeLevel, setActiveLevel] = useState(initialLevel);
-  const [settings, setSettings] = useState(() => loadSettings(initialLevel));
-  const [question, setQuestion] = useState(() => makeQuestion(loadSettings(initialLevel)));
+  const [settings, setSettings] = window.MLH.useProfileState("settings", () => usableSettings(loadSettings(initialLevel), initialLevel));
+  const [question, setQuestion] = useState(() => makeQuestion(settings));
   const [questionVisible, setQuestionVisible] = useState(true);
   const [levelOpen, setLevelOpen] = useState(false);
   const [customiseOpen, setCustomiseOpen] = useState(false);
-  const [showRhythmGuide, setShowRhythmGuide] = useState(false);
+  const [showRhythmGuide, setShowRhythmGuide] = window.MLH.useProfileState("showRhythmGuide", false);
   const [answerText, setAnswerText] = useState("");
   const [feedback, setFeedback] = useState(null);
   const [feedbackFading, setFeedbackFading] = useState(false);
   const [warning, setWarning] = useState("");
-  const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: settings, options: { showRhythmGuide } } });
-  const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: settings, options: { showRhythmGuide } } });
-  const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: settings, options: { showRhythmGuide } } });
-  const [bestStreak, setBestStreak] = window.MLH.usePersistentScoreState(0, "bestStreak", { level: activeLevel, scope: "", settings: { questions: settings, options: { showRhythmGuide } } });
+  const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: settings, options: { showRhythmGuide } } });
+  const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: settings, options: { showRhythmGuide } } });
+  const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: settings, options: { showRhythmGuide } } });
+  const [bestStreak, setBestStreak] = window.MLH.usePersistentScoreState(0, "bestStreak", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: settings, options: { showRhythmGuide } } });
   const [confettiKey, setConfettiKey] = useState(0);
 
   const levelRef = useRef(null);
   const customiseRef = useRef(null);
   const warningTimer = useRef(null);
   const nextTimer = useRef(null);
+  const transitionTimer = useRef(null);
   const fadeTimer = useRef(null);
   const levelTaskStatusRef = useRef(null);
 
@@ -946,9 +1016,9 @@ function RhythmSumsGoldenApp() {
   );
 
   const accuracy = attempted === 0 ? 0 : Math.round((correct / attempted) * 100);
-  const medalEligible = taskMatchesLevel(activeLevel, settings);
+  const medalEligible = orderMode || taskMatchesLevel(activeLevel, settings);
   const displayedLevel = medalEligible ? activeLevel : "Custom";
-  const displayedLevelLabel = medalEligible ? LEVELS[activeLevel].label : "Custom";
+  const displayedLevelLabel = medalEligible ? (orderMode?ORDER_LEVELS:LEVELS)[activeLevel].label : "Custom";
   const hasAnswer = answerText.trim().length > 0;
 
   function updateSettings(nextSettings) {
@@ -964,12 +1034,16 @@ function RhythmSumsGoldenApp() {
     setCustomiseOpen(false);
 
     setConfettiKey(0);
-    newQuestion(nextSettings);
+    newQuestion(nextSettings,levelKey);
   }
 
+  function clearTimers() {
+    [warningTimer, nextTimer, fadeTimer, transitionTimer].forEach(ref => { if (ref.current) clearTimeout(ref.current); ref.current = null; });
+  }
+  useEffect(() => () => clearTimers(), []);
+
   function resetTask(nextQuestion = question) {
-    if (nextTimer.current) clearTimeout(nextTimer.current);
-    if (fadeTimer.current) clearTimeout(fadeTimer.current);
+    clearTimers();
     setQuestion(nextQuestion);
     setAnswerText("");
     setFeedback(null);
@@ -977,13 +1051,24 @@ function RhythmSumsGoldenApp() {
     setWarning("");
   }
 
-  function newQuestion(nextSettings = settings) {
+  function newQuestion(nextSettings = settings, nextLevel=activeLevel) {
+    clearTimers();
     setQuestionVisible(false);
-    setTimeout(() => {
+    transitionTimer.current = setTimeout(() => {
       resetTask(makeQuestion(nextSettings));
+      if(orderMode){const next=makeOrderQuestion(nextLevel);setOrderQuestion(next);setOrderRows(next.rows);}
       setQuestionVisible(true);
     }, 260);
   }
+
+  function changeMode(nextMode){
+    clearTimers();const level=activeLevel;
+    const nextSettings=settingsForLevel(level,settings);
+    setOrderMode(nextMode);setActiveLevel(level);updateSettings(nextSettings);resetTask(makeQuestion(nextSettings));
+    const next=makeOrderQuestion(level);setOrderQuestion(next);setOrderRows(next.rows);setQuestionVisible(true);setCustomiseOpen(false);
+    const url=new URL(window.location.href);url.searchParams.set('level',level);if(nextMode)url.searchParams.set('mode','order');else url.searchParams.delete('mode');history.replaceState(null,'',url);
+  }
+  function confirmOrder(){if(feedback||!questionVisible)return;scoreAnswer(orderRows.every((row,i)=>row.id===orderQuestion.answer[i]));}
 
   function resetScore() {
     setCorrect(0);
@@ -1012,14 +1097,16 @@ function RhythmSumsGoldenApp() {
   }
 
   function handleInput(event) {
-    if (feedback) return;
+    if (feedback || !questionVisible) return;
     const value = event.target.value;
     if (/^\d*\.?\d*$/.test(value)) setAnswerText(value);
   }
 
   function clearAnswer() {
-    if (feedback) return;
+    if (feedback || !questionVisible) return;
     setAnswerText("");
+    setWarning("");
+    if (warningTimer.current) clearTimeout(warningTimer.current);
   }
 
   function scoreAnswer(ok) {
@@ -1044,8 +1131,10 @@ function RhythmSumsGoldenApp() {
   }
 
   function confirmAnswer() {
-    if (!hasAnswer || feedback) return showWarning("Enter an answer before pressing Confirm.");
-    const userAnswer = Number(answerText);
+    if (feedback || !questionVisible) return;
+    if (!hasAnswer) return showWarning("Enter an answer before pressing Confirm.");
+    const userAnswer = parseAnswer(answerText);
+    if (userAnswer === null) return showWarning("Enter a valid number.");
     scoreAnswer(Math.abs(userAnswer - question.answer) < 0.0001);
   }
 
@@ -1059,15 +1148,16 @@ function RhythmSumsGoldenApp() {
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader icon={ASSET.appIcon} title="Rhythm Sums" subtitle="Calculate rhythm values." worksheetConfig={() => ({ version: 1, activityId: "rhythmsums", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
+      <window.MLH.AppHeader profileState={{ activeLevel, settings, showRhythmGuide, orderMode }} profileShareUrl={orderMode?window.location.href:undefined} icon={ASSET.appIcon} title="Rhythm Sums" subtitle="Calculate rhythm values." worksheetConfig={orderMode?undefined:() => ({ version: 1, activityId: "rhythmsums", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalEligible={medalEligible} />
       </window.MLH.AppHeader>
 
       <div className={window.MLH.shell.pageContentClass}>
-        <main className={`${window.MLH.shell.mainShellClass} flex flex-col pb-5 md:pb-6`} onPointerDownCapture={() => { if (feedback) fadeToNextQuestion(); }}>
+        <main className={`${window.MLH.shell.mainShellClass} flex flex-col pb-5 md:pb-6`} onPointerDownCapture={(event) => { if (feedback && !event.target.closest("button,input,[data-menu-trigger],[data-menu-panel],.hub-menu-anchor")) fadeToNextQuestion(); }}>
           <window.MLH.AppToolbar
             left={
               <div className="flex items-center gap-2">
+                {orderMode&&<button type="button" className={window.MLH.ToolbarButtonClass+' gap-2'} onClick={()=>changeMode(false)}><span aria-hidden="true">←</span>Rhythm Sums</button>}
                 <div className="hub-menu-anchor relative" ref={levelRef}>
                   <window.MLH.LevelButton
                     icon={<img src={ASSET.levels} alt="" aria-hidden="true" className="h-[26.6px] w-[26.6px] object-contain" />}
@@ -1082,7 +1172,7 @@ function RhythmSumsGoldenApp() {
                   />
                   {levelOpen && (
                     <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}>
-                      <window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS} />
+                      <window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={orderMode?ORDER_LEVELS:LEVELS} />
                     </window.MLH.MenuPanel>
                   )}
                 </div>
@@ -1098,6 +1188,8 @@ function RhythmSumsGoldenApp() {
                   {customiseOpen && (
                     <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
                       <MenuRows
+                        orderMode={orderMode}
+                        onOrderMode={()=>changeMode(!orderMode)}
                         activeLevel={activeLevel}
                         settings={settings}
                         updateSettings={updateSettings}
@@ -1120,10 +1212,13 @@ function RhythmSumsGoldenApp() {
             </div>
           )}
 
-          <div className={`relative z-10 mt-4 transition-opacity duration-300 ${questionVisible ? "opacity-100" : "opacity-0"}`}>
+          {orderMode?<div className={`relative z-10 mt-4 transition-opacity duration-300 ${questionVisible?'opacity-100':'opacity-0'}`}>
+            <RhythmOrderBoard question={orderQuestion} rows={orderRows} setRows={setOrderRows} feedback={feedback} disabled={Boolean(feedback)||!questionVisible}/>
+            <div className="rhythm-order-controls"><window.MLH.ConfirmButton disabled={Boolean(feedback)||!questionVisible} onClick={confirmOrder}>Confirm</window.MLH.ConfirmButton></div>
+          </div>:<><div className={`relative z-10 mt-4 transition-opacity duration-300 ${questionVisible ? "opacity-100" : "opacity-0"}`}>
             <div className="flex flex-wrap items-center justify-center gap-5 overflow-visible py-7 text-4xl font-medium" style={{ transform: "scale(1.14)", transformOrigin: "center" }}>
               <RhythmSlot>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center" role="img" aria-label={question.left.displayType === "rest" ? `${question.left.label} rest` : question.left.label}>
                   <RhythmGlyph item={question.left} scale={1.14} />
                 </div>
               </RhythmSlot>
@@ -1131,7 +1226,7 @@ function RhythmSumsGoldenApp() {
               <span className="min-w-[44px] text-center leading-none">{question.operator}</span>
 
               <RhythmSlot>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center" role="img" aria-label={question.right.displayType === "rest" ? `${question.right.label} rest` : question.right.label}>
                   <RhythmGlyph item={question.right} scale={1.14} />
                 </div>
               </RhythmSlot>
@@ -1148,7 +1243,7 @@ function RhythmSumsGoldenApp() {
                     onChange={handleInput}
                     onKeyDown={(event) => { if (event.key === "Enter") confirmAnswer(); }}
                     inputMode="decimal"
-                    disabled={Boolean(feedback)}
+                    disabled={Boolean(feedback) || !questionVisible}
                     aria-label="Answer"
                     placeholder="Type your answer"
                     className={window.MLH.typedAnswerClass(feedback, "w-[260px] max-w-full shrink-0 font-normal")}
@@ -1156,20 +1251,45 @@ function RhythmSumsGoldenApp() {
                   {feedback && !feedback.correct && <span className="shrink-0 min-w-[2.4rem] text-left text-lg font-semibold text-green-700">{formatBeat(question.answer)}</span>}
                 </div>
                 <div className={window.MLH.ActionButtonGroupClass}>
-                  <button type="button" onClick={clearAnswer} disabled={Boolean(feedback) || !hasAnswer} className={window.MLH.ClearButtonClass}>Clear</button>
-                  <window.MLH.ConfirmButton onClick={confirmAnswer} disabled={Boolean(feedback) || !hasAnswer}>Confirm</window.MLH.ConfirmButton>
+                  <button type="button" onClick={clearAnswer} disabled={Boolean(feedback) || !questionVisible || !hasAnswer} className={window.MLH.ClearButtonClass}>Clear</button>
+                  <window.MLH.ConfirmButton onClick={confirmAnswer} disabled={Boolean(feedback) || !questionVisible || !hasAnswer}>Confirm</window.MLH.ConfirmButton>
                 </div>
               </div>
             </div>
-          </div>
+          </div></>}
         </main>
       </div>
     </div>
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<RhythmSumsGoldenApp />);
-  </script>
-<script src="./footer.js?v=20261005-update-history"></script>
+function EscapeRhythmSum({ activity }) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const question = embed.useQuestion(activity, ({ level }) => makeQuestion(settingsForLevel(level)));
+  const correct = formatBeat(question.answer);
+  const choices = embed.numberedChoices(correct, [0.5, 1, 1.5, 2].map(offset => formatBeat(question.answer + offset)), activity.clue.digit);
+  return (
+    <main ref={ref} className="escape-literacy-content escape-rhythm-sum">
+      <p className="escape-literacy-content-title">How many crotchet beats does this calculation give?</p>
+      <div className="escape-rhythm-equation">
+        {[question.left, question.right].map((item, index) => <React.Fragment key={index}>
+          {index === 1 && <span className="escape-rhythm-operator">{question.operator}</span>}
+          <RhythmSlot>
+            <div role="img" aria-label={item.displayType === "rest" ? `${item.label} rest` : item.label}>
+              <RhythmGlyph item={item} scale={1.65} />
+            </div>
+          </RhythmSlot>
+        </React.Fragment>)}
+      </div>
+      <embed.NumberedOptions activity={activity} choices={choices} columns={2} />
+    </main>
+  );
+}
+
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("rhythmSum");
+ReactDOM.createRoot(document.getElementById("root")).render(escapeActivity ? <EscapeRhythmSum activity={escapeActivity} /> : <RhythmSumsGoldenApp />);
+  </script><script src="./generated-runtimes/rhythmsums-1.js?v=1f75a1c17c22"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

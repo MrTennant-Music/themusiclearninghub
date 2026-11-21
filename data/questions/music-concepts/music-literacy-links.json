@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "sourceKnowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e",
+  "sourceKnowledgeBankSha256": "99fd80902ff1e2996831c5951e7b08c9829963b4edc157dade547d897d114a8d",
   "mappings": [
     {
       "conceptId": "MC-0009",
@@ -88,7 +88,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "n3-literacy-027"
           ],
@@ -111,7 +111,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "n4-literacy-medium-009",
             "n4-literacy-medium-010",
@@ -153,7 +153,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "n3-literacy-015"
           ],
@@ -176,7 +176,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "timesig.html",
+          "sourceFile": "timesignatures.html",
           "localIds": [
             "2/4",
             "3/4",
@@ -347,37 +347,6 @@
       "resolutionMethod": null
     },
     {
-      "conceptId": "MC-0036",
-      "level": "National 3",
-      "concept": "Octave",
-      "relationship": "pitch_harmony_or_staff_notation",
-      "lookupTerms": [
-        "Octave"
-      ],
-      "targets": [
-        {
-          "sourceFile": "millionaire-question-bank.js",
-          "localIds": [
-            "n5-literacy-medium-017",
-            "n5-literacy-medium-018",
-            "n5-literacy-medium-019",
-            "n5-literacy-medium-020",
-            "h-literacy-easy-020"
-          ],
-          "matchKind": "exact-question-answer"
-        }
-      ],
-      "targetLiteracyIds": [
-        "h-literacy-easy-020",
-        "n5-literacy-medium-017",
-        "n5-literacy-medium-018",
-        "n5-literacy-medium-019",
-        "n5-literacy-medium-020"
-      ],
-      "resolutionStatus": "resolved",
-      "resolutionMethod": "Manually reviewed exact canonical, listed-name or alias match to stable existing Music Literacy component or question IDs."
-    },
-    {
       "conceptId": "MC-0042",
       "level": "National 3",
       "concept": "Accordion",
@@ -506,7 +475,7 @@
     {
       "conceptId": "MC-0082",
       "level": "National 4",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "relationship": "pitch_harmony_or_staff_notation",
       "lookupTerms": [
         "Chord progressions - chords I, IV and V in major keys",
@@ -520,7 +489,7 @@
     {
       "conceptId": "MC-0084",
       "level": "National 4",
-      "concept": "Major",
+      "concept": "Major tonality",
       "relationship": "pitch_harmony_or_staff_notation",
       "lookupTerms": [
         "Major",
@@ -534,7 +503,7 @@
     {
       "conceptId": "MC-0085",
       "level": "National 4",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "relationship": "pitch_harmony_or_staff_notation",
       "lookupTerms": [
         "Minor",
@@ -555,7 +524,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "n5-literacy-medium-017",
             "n5-literacy-medium-018",
@@ -687,7 +656,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "timesig.html",
+          "sourceFile": "timesignatures.html",
           "localIds": [
             "6/8",
             "9/8",
@@ -781,7 +750,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "timesig.html",
+          "sourceFile": "timesignatures.html",
           "localIds": [
             "2/4",
             "3/4",
@@ -1097,7 +1066,7 @@
           "matchKind": "exact-answer-id"
         },
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "n5-literacy-hard-012",
             "n5-literacy-hard-015",
@@ -1139,7 +1108,7 @@
           "matchKind": "exact-answer-id-for-reviewed-interval-sense"
         },
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "n5-literacy-hard-013",
             "n5-literacy-hard-014",
@@ -1203,7 +1172,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "timesig.html",
+          "sourceFile": "timesignatures.html",
           "localIds": [
             "6/8",
             "9/8",
@@ -1309,26 +1278,12 @@
       "resolutionMethod": null
     },
     {
-      "conceptId": "MC-0185",
-      "level": "National 5",
-      "concept": "Episode",
-      "relationship": "form_or_structure_diagram",
-      "lookupTerms": [
-        "Episode",
-        "Rondo/ABACA - episode"
-      ],
-      "targets": [],
-      "targetLiteracyIds": [],
-      "resolutionStatus": "unresolved",
-      "resolutionMethod": null
-    },
-    {
       "conceptId": "MC-0189",
       "level": "National 5",
-      "concept": "Rondo / ABACA",
+      "concept": "Rondo/ABACA — episode",
       "relationship": "form_or_structure_diagram",
       "lookupTerms": [
-        "Rondo / ABACA"
+        "Rondo/ABACA — episode"
       ],
       "targets": [],
       "targetLiteracyIds": [],
@@ -1543,7 +1498,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "h-literacy-easy-014",
             "h-literacy-easy-015",
@@ -1584,7 +1539,7 @@
     {
       "conceptId": "MC-0235",
       "level": "Higher",
-      "concept": "Mode / modal",
+      "concept": "Mode or modal",
       "relationship": "pitch_harmony_or_staff_notation",
       "lookupTerms": [
         "Mode / modal",
@@ -1896,7 +1851,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "ah-literacy-hard-chord-004",
             "ah-literacy-hard-chord-005",
@@ -1937,7 +1892,7 @@
       ],
       "targets": [
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "ah-literacy-hard-chord-001",
             "ah-literacy-hard-chord-002",
@@ -2205,7 +2160,7 @@
           "matchKind": "exact-component-id"
         },
         {
-          "sourceFile": "millionaire-question-bank.js",
+          "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
           "localIds": [
             "ah-literacy-hard-017",
             "ah-literacy-hard-018",

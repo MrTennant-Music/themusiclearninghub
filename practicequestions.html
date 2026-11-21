@@ -1,72 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Practice Questions</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/practice-app-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/practice-app-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script src="./hub-input.js?v=1.4"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./piano%20audio/salamander-browser-map.js"></script>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./hub-shell.js?v=20260714-controls-removed"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
-  <script src="./hub-menu.js?v=20260920-independent-toggle-keys"></script>
-  <script src="./bravura-symbols.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/practice-app-icon.svg?v=14d0b2a52c0a" />
+  <link rel="apple-touch-icon" href="./app-icons/practice-app-icon.svg?v=14d0b2a52c0a" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./audio/piano/salamander-browser-map.js"></script>
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=f16bc07ec24c"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./bravura-worksheet-outlines.js?v=20260805-pdf-glyphs"></script>
-  <script src="./shared-notation-config.js"></script>
+  <script src="./shared/shared-notation-config.js"></script>
   <script src="./practice-melody-generator.js?v=20260710-ah-rules"></script>
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./keyboard-notes.js?v=d394fb2b445a"></script>
+  <script src="./shared/keyboard-note-keyboard.js?v=1a9d8d753ed3"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+<style>
+.escape-practice-embed #resources{display:none!important}
+.escape-practice-embed{--mlh-page-background:#fff}
+.escape-practice-embed,.escape-practice-embed body,.escape-practice-embed #root{background:#fff!important}
+.escape-practice-main{width:1240px;margin:0 auto;padding:10px 24px 16px;color:#000;background:#fff}
+.escape-practice-main .practice-part-navigation[hidden]{display:none}
+.escape-literacy-clue{text-align:center;margin:0 auto;font-size:20px;font-weight:600}
+.escape-practice-score{margin:0 auto;width:1020px;max-width:100%;background:#fff}
+.escape-practice-score>div{width:100%}
+.escape-piano{display:block;width:190px;margin:4px auto}
+.escape-piano .keyboard-score{display:block;width:100%;height:100px}
+.escape-perform-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:12px auto;font-size:15px}
+</style>
 </head>
 <body class="overflow-x-hidden bg-stone-50">
   <div id="root"></div>
 
-  <script type="text/babel">
+  <script type="text/x-mlh-jsx-source" data-runtime="practicequestions-1.js">
     const { useEffect, useMemo, useRef, useState } = React;
 
     const ASSET = {
-      appIcon: "https://themusicliteracyhub.netlify.app/practice-app-icon.svg",
-      level: "https://themusicliteracyhub.netlify.app/levels.svg",
-      customise: "https://themusicliteracyhub.netlify.app/customise.svg",
-      next: "./next.svg",
-      restart: "https://themusicliteracyhub.netlify.app/restart.svg",
-      bronze: "https://themusicliteracyhub.netlify.app/bronze.svg",
-      silver: "https://themusicliteracyhub.netlify.app/silver.svg",
-      gold: "https://themusicliteracyhub.netlify.app/gold.svg",
-      diamond: "https://themusicliteracyhub.netlify.app/diamond.svg",
-      eye: "./eye.svg",
-      metronome: "./metronome.svg",
-      tempo: "./tempo.svg",
-      timer: "./timer.svg",
-      loading: "./load.svg",
-      keySignatures: "./key-signatures-icon.svg",
-      timeSignatures: "./time-signatures-icon.svg",
-      melodicDictation: "./insert-missing-notes-icon.svg",
-      chords: "./chords-icon.svg",
-      cadences: "./cadences-icon.svg",
-      dynamics: "./dynamics-icon.svg",
-      intervals: "./intervals-icon.svg",
-      noteIdentification: "./notenaming-icon.svg",
-      barlines: "./barlines-icon.svg",
-      rhythmicDictation: "./correct-the-rhythm-icon.svg",
-      rhythmIdentification: "./rhythm-groups-icon.svg",
-      tempoIcon: "./tempo-icon.svg",
-      repeatSigns: "./repeat-signs-icon.svg",
-      rests: "./rests-icon.svg",
-      scaleDegrees: "./scale-degrees-icon.svg",
-      accidentals: "./accidentals-icon.svg",
-      enharmonics: "./enharmonic-icon.svg",
-      triplets: "./triplets-icon.svg",
-      articulation: "./articulation-markings-icon.svg",
-      transposition: "./transposing-icon.svg",
-      audio: "https://themusicliteracyhub.netlify.app/audio-svgrepo-com.svg?v=20260722-smaller15",
-      tick: "./prtick.svg",
-      cross: "./prcross.svg",
+      appIcon: "./app-icons/practice-app-icon.svg?v=14d0b2a52c0a",
+      level: "./ui-icons/levels.svg",
+      customise: "./ui-icons/customise.svg",
+      next: "./ui-icons/next.svg",
+      restart: "./ui-icons/restart.svg",
+      bronze: "./ui-icons/bronze.svg",
+      silver: "./ui-icons/silver.svg",
+      gold: "./ui-icons/gold.svg",
+      diamond: "./ui-icons/diamond.svg",
+      eye: "./ui-icons/eye.svg",
+      metronome: "./ui-icons/metronome.svg",
+      tempo: "./ui-icons/tempo.svg",
+      timer: "./ui-icons/timer.svg",
+      loading: "./ui-icons/load.svg",
+      keySignatures: "./app-icons/key-signatures-icon.svg",
+      timeSignatures: "./app-icons/time-signatures-icon.svg",
+      melodicDictation: "./app-icons/insert-missing-notes-icon.svg",
+      chords: "./app-icons/chords-icon.svg",
+      cadences: "./app-icons/cadences-icon.svg",
+      dynamics: "./app-icons/dynamics-icon.svg",
+      intervals: "./app-icons/intervals-icon.svg",
+      noteIdentification: "./app-icons/notenaming-icon.svg",
+      barlines: "./app-icons/barlines-icon.svg",
+      rhythmicDictation: "./app-icons/correct-the-rhythm-icon.svg",
+      rhythmIdentification: "./app-icons/rhythm-groups-icon.svg",
+      tempoIcon: "./app-icons/tempo-icon.svg",
+      repeatSigns: "./app-icons/repeat-signs-icon.svg",
+      rests: "./app-icons/rests-icon.svg",
+      scaleDegrees: "./app-icons/scale-degrees-icon.svg",
+      accidentals: "./app-icons/accidentals-icon.svg",
+      enharmonics: "./app-icons/enharmonic-icon.svg",
+      triplets: "./app-icons/triplets-icon.svg",
+      articulation: "./app-icons/articulation-markings-icon.svg",
+      transposition: "./app-icons/transposing-icon.svg",
+      audio: "./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15",
+      tick: "./ui-icons/prtick.svg",
+      cross: "./ui-icons/prcross.svg",
     };
 
     const LEVELS = {
@@ -82,6 +103,7 @@
 
     const SVG = { x: 40, width: 840, height: 420 };
     const STAFF = { left: 78, right: 842, topA: 82, topB: 242, gap: 11 };
+    const UPWARD_QUAVER_NUDGE_X = 0.5;
     const EXTRA_SYSTEM_SPACING = 20;
     const BAR_COUNT = 8;
     const BARS_PER_SYSTEM = 4;
@@ -883,6 +905,7 @@
     const ACCIDENTAL_PLACEMENT_OPTIONS = [
       { id: "sharp", label: "Sharp", value: 1, symbolKey: "sharpInScore" },
       { id: "flat", label: "Flat", value: -1, symbolKey: "flatInScore" },
+      { id: "natural", label: "Natural", value: 0, symbolKey: "naturalInScore" },
     ];
     const TRIPLET_MARKING_OPTIONS = [
       { id: "quaverTriplet", label: "Quaver Triplet", rhythm: "quaver" },
@@ -1321,6 +1344,14 @@
         ? noteBaseForLetterOctave(tone.letter, tone.octave).midi + tone.absoluteAccidental
         : effectiveMidiForNote(question, bar, tone)
     );
+    const MELODY_MIN_MIDI = 57; // A3
+    const MELODY_MAX_MIDI = 84; // C6
+    const fitMelodyPlaybackMidi = (midi) => {
+      let adjusted = midi;
+      while (adjusted < MELODY_MIN_MIDI) adjusted += 12;
+      while (adjusted > MELODY_MAX_MIDI) adjusted -= 12;
+      return adjusted;
+    };
     const effectivePlaybackMidiForNote = (question, bar, note, noteIndex) => {
       const accidentalTarget = question.accidentalTarget;
       const octaveShift = question.transpositionTarget?.type === "meaning" && question.transpositionTarget.barIndex === bar.barIndex
@@ -1330,15 +1361,21 @@
         && accidentalTarget.barIndex === bar.barIndex
         && (accidentalTarget.noteIndices ?? [accidentalTarget.noteIndex]).includes(noteIndex)
       ) {
-        return effectiveMidiForNote(question, bar, { ...note, writtenAccidental: accidentalTarget.value }) + octaveShift;
+        return fitMelodyPlaybackMidi(effectiveMidiForNote(question, bar, {
+          ...note,
+          writtenAccidental: accidentalTarget.value,
+          ...(Object.prototype.hasOwnProperty.call(note, "absoluteAccidental")
+            ? { absoluteAccidental: accidentalTarget.value }
+            : {}),
+        }) + octaveShift);
       }
-      return effectiveMidiForNote(question, bar, note) + octaveShift;
+      return fitMelodyPlaybackMidi(effectiveMidiForNote(question, bar, note) + octaveShift);
     };
     const effectivePlaybackMidiForStackTone = (question, bar, tone) => {
       const octaveShift = question.transpositionTarget?.type === "meaning" && question.transpositionTarget.barIndex === bar.barIndex
         ? question.transpositionTarget.symbol === "8vb" ? -12 : 12
         : 0;
-      return effectiveMidiForStackTone(question, bar, tone) + octaveShift;
+      return fitMelodyPlaybackMidi(effectiveMidiForStackTone(question, bar, tone) + octaveShift);
     };
     const articulationTargetForPlayback = (question, bar) => {
       const target = question.articulationTarget;
@@ -1399,7 +1436,11 @@
       "12/8": "dottedMinim",
     }[signature.id] ?? "semibreve");
     const finalPatternForSignature = (signature) => (
-      signature?.id === "5/4" ? ["dottedMinim", "minim"] : [finalRhythmForSignature(signature)]
+      ({
+        "5/4": ["dottedMinim", "minim"],
+        "9/8": ["dottedMinim", "dottedCrotchet"],
+        "12/8": ["dottedMinim", "dottedMinim"],
+      })[signature?.id] ?? [finalRhythmForSignature(signature)]
     );
 
     function makeFinalBarNotes(base, barIndex, key, chordSymbol, timeSignature) {
@@ -1409,7 +1450,7 @@
         beat += rhythmInfo(rhythm).beats;
         return note;
       });
-      if (timeSignature?.id === "5/4" && notes.length === 2) {
+      if (notes.length === 2) {
         notes[0] = { ...notes[0], tieToNext: true };
         notes[1] = { ...notes[1], ...tiedContinuationPitch(notes[0]), tiedFromPrevious: true };
       }
@@ -1444,6 +1485,9 @@
         barIndex,
         noteIndex,
         writtenAccidental: melodicAccidental ?? chordAccidental,
+        ...(Object.prototype.hasOwnProperty.call(base, "absoluteAccidental") ? {
+          absoluteAccidental: keyAccidentalForLetter(key, base.letter) + (melodicAccidental ?? chordAccidental ?? 0),
+        } : {}),
       };
     }
 
@@ -1583,6 +1627,23 @@
       if (level === "N5" || level === "H") return { min: -2, max: 10 };
       if (level === "AH") return { min: -4, max: 12 };
       return { min: NOTE_POOL[0].step, max: NOTE_POOL.at(-1).step };
+    }
+
+    function missingNoteRangeForLevel(level) {
+      const range = stepRangeForLevel(level);
+      return {
+        min: noteBaseForStep(range.min),
+        max: noteBaseForStep(range.max),
+      };
+    }
+
+    function practiceEntryNoteForStep(question, step, barIndex, noteIndex) {
+      const targetNote = question.bars[barIndex]?.notes[noteIndex];
+      if (!targetNote || targetNote.rest || !Number.isInteger(step)) return null;
+      const range = stepRangeForLevel(question.practiceLevel ?? question.level);
+      const base = noteBaseForStep(clamp(step, range.min, range.max));
+      if (!base) return null;
+      return { ...base, id: `user-${noteIndex}`, rhythm: targetNote.rhythm, beats: targetNote.beats, barIndex, noteIndex, writtenAccidental: base.step === targetNote.step ? targetNote.writtenAccidental : melodicAccidentalForLetter(question.key, base.letter), ...(base.step === targetNote.step && targetNote.absoluteAccidental !== undefined ? { absoluteAccidental: targetNote.absoluteAccidental } : {}) };
     }
 
     function noteAllowedForLevel(level, note) {
@@ -1835,7 +1896,7 @@
       question.targetBar = targetBarIndex;
       question.missingSourceBar = sourceBarIndex;
       question.missingNoteScope = "bar";
-      question.missingNoteIndices = notes.map((_, noteIndex) => noteIndex);
+      question.missingNoteIndices = notes.flatMap((note, noteIndex) => note.rest ? [] : [noteIndex]);
       return true;
     }
 
@@ -2023,10 +2084,19 @@
       return bars;
     }
 
-    function buildCadenceBar({ key, chordSymbol, targetLetter, barIndex, timeSignature, previousIndex, totalBars, level }) {
-      const pattern = barIndex === totalBars - 1
+    function buildCadenceBar({ key, chordSymbol, targetLetter, barIndex, timeSignature, previousIndex, totalBars, level, splitSustainedNote = false }) {
+      let pattern = barIndex === totalBars - 1
         ? finalPatternForSignature(timeSignature)
         : nonFinalCadencePatternForSignature(timeSignature);
+      // National 4 copies this cadence one step higher/lower in the next bar.
+      // A single sustained note cannot supply the required two-note task.
+      if (splitSustainedNote && pattern.length === 1) {
+        pattern = {
+          "2/4": ["crotchet", "crotchet"],
+          "3/4": ["minim", "crotchet"],
+          "4/4": ["minim", "minim"],
+        }[timeSignature.id] ?? pattern;
+      }
       const previous = NOTE_POOL[previousIndex] ?? noteByLetter(key.tonic, 6);
       const options = NOTE_POOL
         .filter((note) => note.letter === targetLetter && noteAllowedForLevel(level, note));
@@ -2532,45 +2602,41 @@
       return bar;
     }
 
-    function findAdjacentRhythmTotalTarget(question, barCandidates) {
-      const candidates = barCandidates.flatMap((barIndex) => {
-        const bar = question.bars[barIndex];
-        if (!bar?.notes?.length) return [];
-        return bar.notes.slice(0, -1).flatMap((note, noteIndex) => {
-          const next = bar.notes[noteIndex + 1];
-          if (!note || !next || note.rest || next.rest || note.rhythm === next.rhythm) return [];
-          const totalBeats = rhythmInfo(note.rhythm).beats + rhythmInfo(next.rhythm).beats;
-          return [{
-            variant: "noteValueTotal",
-            barIndex,
-            noteIndex,
-            startIndex: noteIndex,
-            noteIndices: [noteIndex, noteIndex + 1],
-            targetRhythms: [note.rhythm, next.rhythm],
-            totalBeats,
-          }];
-        });
-      });
-      return randomItem(candidates);
+    function rhythmTotalPatternCandidates(signature) {
+      return barPatternsForSignature(signature, "H").flatMap((pattern) => (
+        pattern.slice(0, -1).flatMap((rhythm, noteIndex) => {
+          const next = pattern[noteIndex + 1];
+          if (rhythm.endsWith("Rest") || next.endsWith("Rest")) return [];
+          return [{ pattern, noteIndex, totalBeats: rhythmInfo(rhythm).beats + rhythmInfo(next).beats }];
+        })
+      ));
+    }
+
+    function plantAdjacentRhythmTotalTarget(question, barCandidates) {
+      const candidates = barCandidates.flatMap((barIndex) => (
+        rhythmTotalPatternCandidates(timeSignatureForBar(question, barIndex)).map((candidate) => ({ ...candidate, barIndex }))
+      ));
+      if (!candidates.length) return null;
+      // Choose the answer first so the many quaver/crotchet combinations
+      // cannot crowd out longer notes and dotted values.
+      const totalBeats = randomItem([...new Set(candidates.map((candidate) => candidate.totalBeats))]);
+      const target = randomItem(candidates.filter((candidate) => candidate.totalBeats === totalBeats));
+      applyPracticeRhythmPattern(question, target.barIndex, target.pattern);
+      return {
+        variant: "noteValueTotal",
+        barIndex: target.barIndex,
+        noteIndex: target.noteIndex,
+        startIndex: target.noteIndex,
+        noteIndices: [target.noteIndex, target.noteIndex + 1],
+        targetRhythms: target.pattern.slice(target.noteIndex, target.noteIndex + 2),
+        totalBeats,
+      };
     }
 
     function plantHigherRhythmTotalTarget(question, excludedBars = []) {
-      const excluded = new Set([...excludedBars, question.bars.length - 1]);
-      const barCandidates = question.bars
-        .filter((bar) => !excluded.has(bar.barIndex) && bar.barIndex !== question.targetBar)
-        .map((bar) => bar.barIndex);
-      if (!barCandidates.length) return null;
-
-      const existingTarget = findAdjacentRhythmTotalTarget(question, barCandidates);
-      if (existingTarget) return existingTarget;
-
-      const barIndex = randomItem(barCandidates);
-      const patterns = barPatternsForSignature(question.timeSignature, "H").filter((pattern) => (
-        pattern.some((rhythm, index) => index < pattern.length - 1 && rhythm !== pattern[index + 1])
-      ));
-      if (!patterns.length) return null;
-      const bar = applyPracticeRhythmPattern(question, barIndex, randomBarPatternForSignature(patterns, question.timeSignature));
-      return findAdjacentRhythmTotalTarget(question, [bar.barIndex]);
+      const excluded = new Set([...excludedBars, 0, 3, 7, 11, question.bars.length - 1, question.targetBar, question.missingSourceBar]);
+      const barCandidates = question.bars.filter((bar) => !excluded.has(bar.barIndex)).map((bar) => bar.barIndex);
+      return plantAdjacentRhythmTotalTarget(question, barCandidates);
     }
 
     function advancedHigherTiedRhythmTotalTemplate(timeSignature) {
@@ -2587,7 +2653,7 @@
     }
 
     function plantAdvancedHigherRhythmTotalTarget(question, excludedBars = [], allowedBars = null) {
-      const excluded = new Set([...excludedBars, question.bars.length - 1]);
+      const excluded = new Set([...excludedBars, 0, 1, 3, 7, 11, 12, 13, question.bars.length - 1, question.missingSourceBar]);
       const allowed = Array.isArray(allowedBars) ? new Set(allowedBars) : null;
       const adjacentBarCandidates = question.bars
         .filter((bar) => (
@@ -2596,7 +2662,6 @@
           && (!allowed || allowed.has(bar.barIndex))
         ))
         .map((bar) => bar.barIndex);
-      const adjacentTarget = findAdjacentRhythmTotalTarget(question, adjacentBarCandidates);
       const tiedBarCandidates = question.bars
         .filter((bar) => {
           const nextBar = question.bars[bar.barIndex + 1];
@@ -2607,8 +2672,8 @@
           return Math.floor(bar.barIndex / BARS_PER_SYSTEM) === Math.floor(nextBar.barIndex / BARS_PER_SYSTEM);
         })
         .map((bar) => bar.barIndex);
-      if (adjacentTarget && (!tiedBarCandidates.length || Math.random() < 0.5)) return adjacentTarget;
-      if (!tiedBarCandidates.length) return adjacentTarget ?? null;
+      if (adjacentBarCandidates.length && (!tiedBarCandidates.length || Math.random() < 0.5)) return plantAdjacentRhythmTotalTarget(question, adjacentBarCandidates);
+      if (!tiedBarCandidates.length) return null;
 
       const startBarIndex = randomItem(tiedBarCandidates);
       const endBarIndex = startBarIndex + 1;
@@ -2806,7 +2871,7 @@
       if (rhythm === "quaver") {
         return {
           answer: "0.5 beats",
-          accepts: acceptedAnswers("0.5", "half", "a half", "half a beat", "halve", "a halve", "halve a beat", "1/2", "0.50"),
+          accepts: acceptedAnswers("0.5", "0.5 beat", "0.5 beats", "half", "half beat", "half a beat", "a half", "halve", "a halve", "halve a beat", "1/2", "1/2 beat", "1/2 beats", "0.50"),
         };
       }
       return {
@@ -2913,6 +2978,15 @@
     function circleSelectionCorrectForQuestion(question, part, selection, target) {
       const sourceId = part?.sourceId ?? part?.id;
       if (sourceId === "scaleDegrees") return scaleDegreeSelectionCorrect(question, selection);
+      const notes = question.bars?.[selection?.barIndex]?.notes ?? [];
+      const index = selection?.startIndex ?? selection?.noteIndex;
+      if (target?.variant === "circleNoteValue") {
+        const note = notes[index];
+        return Boolean(note && !note.rest && note.rhythm === target.targetRhythm);
+      }
+      if (sourceId === "rhythmIdentification" && target?.variant === "pairedQuaversCircle") {
+        return [notes[index], notes[index + 1]].every((note) => note && !note.rest && note.rhythm === "quaver");
+      }
       if (sourceId === "rhythmIdentification" && target?.variant === "scotchSnap") {
         return isScotchSnapSelection(question, selection);
       }
@@ -2963,7 +3037,13 @@
     function applyMelodicAccidentals(notes, key) {
       return notes.map((note) => {
         const accidental = melodicAccidentalForLetter(key, note.letter);
-        return accidental === null ? note : { ...note, writtenAccidental: accidental };
+        return accidental === null ? note : {
+          ...note,
+          writtenAccidental: accidental,
+          ...(Object.prototype.hasOwnProperty.call(note, "absoluteAccidental") ? {
+            absoluteAccidental: keyAccidentalForLetter(key, note.letter) + accidental,
+          } : {}),
+        };
       });
     }
 
@@ -2977,13 +3057,10 @@
       const excluded = new Set(excludedBars);
       return question.bars.some((bar) => {
         if (excluded.has(bar.barIndex)) return false;
-        const shownAccidentals = new Set();
-        return (bar.notes ?? []).some((note) => {
+        const displayAccidentals = accidentalDisplayValuesForBar(bar.notes ?? [], question.key?.signatureAccidentals ?? {});
+        return (bar.notes ?? []).some((note, noteIndex) => {
           if (!note || note.rest) return false;
-          const accidentalKey = `${note.letter}:${note.writtenAccidental}`;
-          const showAccidental = Boolean(note.writtenAccidental) && !shownAccidentals.has(accidentalKey);
-          if (note.writtenAccidental) shownAccidentals.add(accidentalKey);
-          return required.some(([letter, accidental]) => note.letter === letter && note.writtenAccidental === accidental && showAccidental);
+          return required.some(([letter, accidental]) => note.letter === letter && displayAccidentals[noteIndex] === accidental);
         });
       });
     }
@@ -3582,7 +3659,7 @@
         .filter((signature) => !Array.isArray(allowedTimeSignatureIds) || allowedTimeSignatureIds.includes(signature.id));
       const fallbackSignatures = timeSignaturesForLevel(generationLevel).filter((signature) => signature.id !== "5/4");
       const timeSignature = withFiveFourGrouping(weightedItemWith(random, availableSignatures.length ? availableSignatures : fallbackSignatures));
-      const key = randomPracticeKeyWith(random, generationLevel);
+      const key = KEYS.find(item => item.id === generationOptions.keyId) ?? randomPracticeKeyWith(random, generationLevel);
       const questionTypes = Array.isArray(generationOptions.questionTypes) ? generationOptions.questionTypes : [];
       const plan = generator.generateAdvancedHigherPlan({
         seed,
@@ -3853,7 +3930,7 @@
         return {
           ...bar,
           chordSymbol: bestChord,
-          notes: (bar.notes ?? []).map((note) => note.rest ? note : makeNote(note, note.rhythm, bar.barIndex, note.noteIndex, note.beat, question.key, bestChord)),
+          notes: (bar.notes ?? []).map((note) => note.rest ? note : ({ ...makeNote(note, note.rhythm, bar.barIndex, note.noteIndex, note.beat, question.key, bestChord), beats: note.beats })),
         };
       });
       return question;
@@ -3911,17 +3988,18 @@
     function missingNoteIndicesForQuestion(question) {
       const bar = question.bars?.[question.targetBar];
       const allIndices = (bar?.notes ?? []).map((_, index) => index);
-      return question.missingNoteIndices?.length ? question.missingNoteIndices : allIndices;
+      const selected = question.missingNoteIndices?.length ? question.missingNoteIndices : allIndices;
+      return selected.filter((index) => bar?.notes?.[index] && !bar.notes[index].rest);
     }
 
     function chooseMissingNoteScope(question) {
       const bar = question.bars?.[question.targetBar];
       const notes = bar?.notes ?? [];
-      const allIndices = notes.map((_, index) => index);
+      const allIndices = notes.flatMap((note, index) => note.rest ? [] : [index]);
       if (question.missingNoteIndices?.length) {
         return {
           missingNoteScope: "bar",
-          missingNoteIndices: question.missingNoteIndices,
+          missingNoteIndices: missingNoteIndicesForQuestion(question),
         };
       }
       if (question.level === "H") {
@@ -3932,10 +4010,10 @@
       }
       const midpoint = (question.timeSignature?.beats ?? 4) / 2;
       const firstHalf = notes
-        .map((note, index) => note.beat < midpoint ? index : null)
+        .map((note, index) => !note.rest && note.beat < midpoint ? index : null)
         .filter((index) => index !== null);
       const secondHalf = notes
-        .map((note, index) => note.beat >= midpoint ? index : null)
+        .map((note, index) => !note.rest && note.beat >= midpoint ? index : null)
         .filter((index) => index !== null);
       const candidates = [
         { scope: "bar", indices: allIndices, weight: 2 },
@@ -4075,7 +4153,7 @@
     const EIGHT_BAR_QUESTION_RETRY = Symbol("eight-bar-question-retry");
 
     function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, cadenceId = "perfect", requireMissingCopy = true, requireSimpleTime = false, timeSignatureLevel = level, allowedTimeSignatureIds = null, allowRests = true, generationOptions = {}) {
-      if (level === "H") return generateAdvancedHigherPhraseQuestion(cadenceId, requireMissingCopy, requireSimpleTime, allowedTimeSignatureIds, allowRests, generationOptions, "H");
+      if (level === "H") return generateAdvancedHigherPhraseQuestion(cadenceId, requireMissingCopy, requireSimpleTime, allowedTimeSignatureIds, allowRests, generationOptions, timeSignatureLevel === "AH" ? "AH" : "H");
       let currentAttempt = attempt;
       while (true) {
         try {
@@ -4129,6 +4207,7 @@
             previousIndex,
             totalBars: activeBarCount,
             level,
+            splitSustainedNote: level === "N4" && requireMissingCopy,
           });
         } else if (barIndex === activeBarCount - 1) {
           if ((level === "N5" || level === "H") && cadenceId === "imperfect") {
@@ -5002,9 +5081,9 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     const ADVANCED_HIGHER_CHORD_INVERSION_WEIGHTS = {
-      0: 50,
-      1: 30,
-      2: 20,
+      0: 20,
+      1: 40,
+      2: 40,
     };
 
     function advancedHigherChordPositionKey(chordSymbol, inversion) {
@@ -5184,9 +5263,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
     function transpositionNoteAnswerCorrect(actual, expected, answerClef) {
       if (!actual || !expected) return false;
-      const pitchCorrect = answerClef === "bass"
-        ? actual.letter === expected.letter
-        : actual.step === expected.step;
+      const pitchCorrect = actual.letter === expected.letter && actual.octave === expected.octave;
       return Boolean(
         pitchCorrect
         && actual.rhythm === expected.rhythm
@@ -5690,16 +5767,18 @@ function advancedHigherInversionAnswerLabel(inversion) {
       };
 
       if (question.practiceLevel === "AH") {
-        const wantsTritone = Math.random() < 0.2;
+        const wantsTritone = question.preferredIntervalType ? question.preferredIntervalType === "tritone" : Math.random() < 0.2;
         if (wantsTritone) {
           const existingTritone = randomItem(targets.filter(isTritoneTarget));
           if (existingTritone) return { ...targetWithNotes(existingTritone), advancedHigherIntervalLabel: "Tritone" };
           const developmentTargets = targets.filter((target) => ADVANCED_HIGHER_DEVELOPMENT_BARS.includes(target.bar.barIndex));
-          const chromaticTarget = tryPlantAdvancedHigherChromaticInterval(true, developmentTargets);
+          const chromaticTarget = tryPlantAdvancedHigherChromaticInterval(true, developmentTargets.length ? developmentTargets : targets);
           if (chromaticTarget) return { ...chromaticTarget, advancedHigherIntervalLabel: "Tritone" };
+          if (question.preferredIntervalType) return null;
         } else {
           const existingTargets = targets
             .filter((target) => isSupportedExistingInterval(target) && !isTritoneTarget(target))
+            .filter((target) => !question.preferredIntervalType || Math.abs(target.bar.notes[target.secondIndex].step - target.bar.notes[target.firstIndex].step) + 1 === ADVANCED_HIGHER_INTERVAL_TYPE_WEIGHTS.find((item) => item.type === question.preferredIntervalType)?.number)
             .map((target) => {
               const intervalNumber = Math.abs(target.bar.notes[target.secondIndex].step - target.bar.notes[target.firstIndex].step) + 1;
               return { ...target, weight: intervalNumber === 3 ? 1 : 4 };
@@ -5714,20 +5793,31 @@ function advancedHigherInversionAnswerLabel(inversion) {
           ? higherIntervalTypeOrder(ADVANCED_HIGHER_INTERVAL_TYPE_WEIGHTS)
           : higherIntervalTypeOrder()
         : ["second", "octave"];
-      const preferredType = question.level === "H" ? null : randomItem(levelIntervalTypes);
-      const intervalTypes = question.level === "H" ? levelIntervalTypes : [preferredType, ...levelIntervalTypes.filter((type) => type !== preferredType)];
+      const preferredType = question.preferredIntervalType ?? (question.level === "H" ? null : randomItem(levelIntervalTypes));
+      const intervalTypes = question.preferredIntervalType ? [question.preferredIntervalType]
+        : question.level === "H" ? levelIntervalTypes : [preferredType, ...levelIntervalTypes.filter((type) => type !== preferredType)];
       for (const intervalType of intervalTypes) {
         const pitchPairs = intervalPitchPairsForType(intervalType, question.level);
         if (!pitchPairs.length) continue;
-        const allowedTargets = targets.filter(({ bar, firstIndex, secondIndex }) => intervalTargetAllowedForType(bar.notes[firstIndex], bar.notes[secondIndex], intervalType));
-        if (!allowedTargets.length) continue;
-        const target = randomItem(allowedTargets);
-        const chordCompatiblePitchPairs = pitchPairs.filter(([firstPitch, secondPitch]) => (
-          pitchFitsStrongBeatChord(question, target.bar, target.bar.notes[target.firstIndex], firstPitch)
-          && pitchFitsStrongBeatChord(question, target.bar, target.bar.notes[target.secondIndex], secondPitch)
-        ));
-        if (!chordCompatiblePitchPairs.length) continue;
-        const [firstPitch, secondPitch] = chooseSmoothIntervalPitchPair(chordCompatiblePitchPairs, target.bar, target.firstIndex, target.secondIndex);
+        let allowedTargets = targets.filter(({ bar, firstIndex, secondIndex }) => intervalTargetAllowedForType(bar.notes[firstIndex], bar.notes[secondIndex], intervalType));
+        if (!allowedTargets.length && question.preferredIntervalType === "octave") {
+          // Give a wide interval readable note values when the source bar
+          // contains only quavers. Other questions' reserved bars are excluded.
+          const barIndex = randomItem([...new Set(targets.map((target) => target.bar.barIndex))]);
+          const signature = timeSignatureForBar(question, barIndex);
+          const pattern = { "2/4": ["crotchet", "crotchet"], "3/4": ["minim", "crotchet"], "4/4": ["minim", "minim"], "6/8": ["dottedCrotchet", "dottedCrotchet"], "9/8": ["dottedMinim", "dottedCrotchet"] }[signature?.id];
+          if (pattern) allowedTargets = [{ bar: applyPracticeRhythmPattern(question, barIndex, pattern), firstIndex: 0, secondIndex: 1 }];
+        }
+        const feasibleTargets = allowedTargets.flatMap((target) => {
+          const pairs = pitchPairs.filter(([firstPitch, secondPitch]) => (
+            pitchFitsStrongBeatChord(question, target.bar, target.bar.notes[target.firstIndex], firstPitch)
+            && pitchFitsStrongBeatChord(question, target.bar, target.bar.notes[target.secondIndex], secondPitch)
+          ));
+          return pairs.length ? [{ ...target, pairs }] : [];
+        });
+        const target = randomItem(feasibleTargets);
+        if (!target) continue;
+        const [firstPitch, secondPitch] = chooseSmoothIntervalPitchPair(target.pairs, target.bar, target.firstIndex, target.secondIndex);
         const first = applyIntervalPitch(target.bar.notes[target.firstIndex], firstPitch, question.key, target.bar.chordSymbol);
         const second = applyIntervalPitch(target.bar.notes[target.secondIndex], secondPitch, question.key, target.bar.chordSymbol);
         target.bar.notes[target.firstIndex] = first;
@@ -5741,7 +5831,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         };
       }
 
-      if (question.practiceLevel === "AH") {
+      if (question.practiceLevel === "AH" && !question.preferredIntervalType) {
         const chromaticTarget = tryPlantAdvancedHigherChromaticInterval();
         if (chromaticTarget) return chromaticTarget;
       }
@@ -6076,12 +6166,14 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (!key) return null;
       if (isMinorKey(key)) {
         const minorSixth = letterAtDiatonicOffset(key.tonic, 5);
-        if (keyAccidentalForLetter(key, minorSixth) !== 0) return null;
+        const minorSixthValue = keyAccidentalForLetter(key, minorSixth) + 1;
+        if (minorSixthValue > 1) return null;
         return {
           mode: "minor",
+          minorSixthValue,
           chords: {},
           raised: {
-            IV: { [minorSixth]: 1 },
+            IV: { [minorSixth]: minorSixthValue },
           },
           minorSixth,
         };
@@ -6133,7 +6225,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         notes: (bar.notes ?? []).map((note, noteIndex) => (
           note.rest
             ? note
-            : makeNote(note, note.rhythm, bar.barIndex, noteIndex, note.beat, question.key, chordSymbol)
+            : { ...makeNote(note, note.rhythm, bar.barIndex, noteIndex, note.beat, question.key, chordSymbol), beats: note.beats }
         )),
       };
       question.bars[barIndex] = updated;
@@ -6255,7 +6347,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
           const targetNoteIndices = prominentAccidentalTargetIndices(bar, expectedLetter, noteIndex);
           if (!targetNoteIndices.length) return [];
           const target = harmony.mode === "minor"
-            ? { bar, note, noteIndex, noteIndices: targetNoteIndices, direction: "sharp", value: 1, chordSymbol: "IV" }
+            ? { bar, note, noteIndex, noteIndices: targetNoteIndices, direction: harmony.minorSixthValue === 0 ? "natural" : "sharp", value: harmony.minorSixthValue, chordSymbol: "IV" }
             : { bar, note, noteIndex, noteIndices: targetNoteIndices, direction: "sharp", value: 1, chordSymbol: "III", resolutionChordSymbol: "VI", resolutionLetter: harmony.relativeMinorTonic };
           if (target.note.writtenAccidental !== null && target.note.writtenAccidental !== undefined) return [];
           if (keyAccidentalForLetter(question.key, note.letter) === target.value) return [];
@@ -6293,7 +6385,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             )
           ) {
             options.push(harmony.mode === "minor"
-              ? { bar, note: firstSounding.note, noteIndex: firstSounding.noteIndex, noteIndices, direction: "sharp", value: 1, chordSymbol: "IV", weight: 1 }
+              ? { bar, note: firstSounding.note, noteIndex: firstSounding.noteIndex, noteIndices, direction: harmony.minorSixthValue === 0 ? "natural" : "sharp", value: harmony.minorSixthValue, chordSymbol: "IV", weight: 1 }
               : { bar, note: firstSounding.note, noteIndex: firstSounding.noteIndex, noteIndices, direction: "sharp", value: 1, chordSymbol: "III", resolutionChordSymbol: "VI", resolutionLetter: harmony.relativeMinorTonic, weight: 1 });
           }
           return options;
@@ -6319,7 +6411,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         targetLetter,
         symbolId: target.direction,
         value: target.value,
-        answer: target.direction === "sharp" ? "Sharp" : "Flat",
+        answer: ACCIDENTAL_PLACEMENT_OPTIONS.find((option) => option.id === target.direction)?.label ?? "Sharp",
       };
     }
 
@@ -6554,17 +6646,23 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     function plantTranspositionFallbackBar(question, excluded, variant = HIGHER_TRANSPOSITION_VARIANTS[0]) {
-      const bar = question.bars.find((item) => item.barIndex >= 1 && item.barIndex < 8 && !excluded.has(item.barIndex));
+      const bar = question.bars.find((item) => (question.practiceLevel === "AH" ? [4, 5].includes(item.barIndex) : item.barIndex >= 1 && item.barIndex < 8) && !excluded.has(item.barIndex));
       if (!bar) return null;
-      const pattern = transpositionFallbackPatternForSignature(question.timeSignature);
+      const pattern = transpositionFallbackPatternForSignature(timeSignatureForBar(question, bar.barIndex));
+      const safeBases = NOTE_POOL.filter((base) => {
+        const answer = transposedByOctaves(base, bar.barIndex, 0, variant.answerOctavesFromMain, "transposition-answer");
+        const source = transposedByOctaves(base, bar.barIndex, 0, variant.sourceOctavesFromMain, "transposition-source");
+        return noteAllowedForLevel(question.practiceLevel ?? question.level, base)
+          && transpositionNoteFitsClefForQuestion(answer, variant.answerClef, question)
+          && transpositionNoteFitsClefForQuestion(source, variant.sourceClef, question);
+      });
+      if (!safeBases.length) return null;
+      const originalStep = bar.notes.find((note) => !note.rest)?.step ?? 0;
+      const centre = safeBases.reduce((best, base) => Math.abs(base.step - originalStep) < Math.abs(best.step - originalStep) ? base : best, safeBases[0]);
+      const nearby = safeBases.filter((base) => Math.abs(base.step - centre.step) <= 2);
       let beat = 0;
-      const safeSteps = variant.sourceClef === "bass"
-        ? [-9, -8, -7, -6, -7, -8]
-        : variant.answerClef === "bass" && variant.answerOctavesFromMain === 0
-          ? [-4, -3, -2, -3, -4, -2]
-          : [0, 1, 2, 3, 2, 1];
       const notes = pattern.map((rhythm, noteIndex) => {
-        const base = noteBaseForStep(safeSteps[noteIndex % safeSteps.length]);
+        const base = nearby[noteIndex % nearby.length];
         const note = makeNote(base, rhythm, bar.barIndex, noteIndex, beat, question.key, bar.chordSymbol);
         beat += rhythmInfo(rhythm).beats;
         return note;
@@ -6579,6 +6677,17 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return question.bars[bar.barIndex];
     }
 
+    function transpositionMeaningFitsPlaybackRange(question, target) {
+      if (target?.type !== "meaning") return true;
+      const bar = question.bars[target.barIndex];
+      const shift = target.symbol === "8vb" ? -12 : 12;
+      const tones = (bar?.notes ?? []).filter((note) => !note.rest).flatMap((note) => note.stack?.length ? note.stack : [note]);
+      return tones.length > 0 && tones.every((note) => {
+        const midi = effectiveMidiForNote(question, bar, note) + shift;
+        return midi >= MELODY_MIN_MIDI && midi <= MELODY_MAX_MIDI;
+      });
+    }
+
     function makeTranspositionTarget(question, excludedBars = []) {
       const canUseMeaning = question.practiceLevel === "AH";
       if (canUseMeaning && Math.random() < 0.01) {
@@ -6586,36 +6695,40 @@ function advancedHigherInversionAnswerLabel(inversion) {
         const availableBars = question.bars
           .filter((bar) => bar.barIndex >= 1 && bar.barIndex < 8 && !excluded.has(bar.barIndex))
           .map((bar) => bar.barIndex);
-        const barIndex = randomItem(availableBars.length ? availableBars : [2]);
-        const meaning = TRANSPOSITION_MEANING_OPTIONS[randomItem(["8va", "8vb"])];
-        const barNumber = barIndex + 1;
-        return {
-          type: "meaning",
-          barIndex,
-          symbol: meaning.symbol,
-          prompt: `What does the marking ${meaning.symbol} mean in bar ${barNumber}?`,
-          answer: meaning.answer,
-          accepts: meaning.accepts,
+        // Keep the established A3–C6 sounding register without undoing the
+        // octave marking through the playback range safeguard.
+        const candidates = availableBars.flatMap((barIndex) => ["8va", "8vb"]
+          .map((symbol) => ({ type: "meaning", barIndex, ...TRANSPOSITION_MEANING_OPTIONS[symbol] }))
+          .filter((target) => transpositionMeaningFitsPlaybackRange(question, target)));
+        const meaning = randomItem(candidates);
+        if (meaning) return {
+          ...meaning,
+          prompt: `What does the marking ${meaning.symbol} mean in bar ${meaning.barIndex + 1}?`,
         };
       }
       const excluded = new Set([...excludedBars]);
       const variants = question.practiceLevel === "AH" ? ADVANCED_HIGHER_TRANSPOSITION_VARIANTS : HIGHER_TRANSPOSITION_VARIANTS;
       if (!variants.length) return null;
-      const variant = question.practiceLevel === "AH" ? weightedRandomItem(variants) : randomItem(variants);
       const transpositionStartBar = question.practiceLevel === "AH" ? 1 : 0;
       const transpositionEndBar = question.practiceLevel === "AH" ? 8 : question.bars.length - 1;
-      const eligibleBars = question.bars
-        .filter((bar) => bar.barIndex >= transpositionStartBar && bar.barIndex < transpositionEndBar)
-        .filter((bar) => (bar.notes ?? []).length >= 3 && (bar.notes ?? []).every((note) => !note.rest))
-        .filter((bar) => bar.notes.every((note, noteIndex) => {
-          const answer = transposedByOctaves(note, bar.barIndex, noteIndex, variant.answerOctavesFromMain, "transposition-answer");
-          const source = transposedByOctaves(note, bar.barIndex, noteIndex, variant.sourceOctavesFromMain, "transposition-source");
-          return transpositionNoteFitsClefForQuestion(answer, variant.answerClef, question)
-            && transpositionNoteFitsClefForQuestion(source, variant.sourceClef, question);
-        }));
-      const candidates = eligibleBars
-        .filter((bar) => !excluded.has(bar.barIndex));
-      const bar = randomItem(candidates)
+      // Select a weighted clef variant from the ones that can use the actual
+      // printed melody. AH must not rewrite a bar just to fit a chosen clef.
+      const availableVariants = variants.map((variant) => ({
+        ...variant,
+        candidateBars: question.bars
+          .filter((bar) => bar.barIndex >= transpositionStartBar && bar.barIndex < transpositionEndBar && !excluded.has(bar.barIndex))
+          .filter((bar) => (bar.notes ?? []).length >= (question.practiceLevel === "AH" ? 2 : 3) && bar.notes.every((note) => !note.rest))
+          .filter((bar) => bar.notes.every((note, noteIndex) => {
+            const answer = transposedByOctaves(note, bar.barIndex, noteIndex, variant.answerOctavesFromMain, "transposition-answer");
+            const source = transposedByOctaves(note, bar.barIndex, noteIndex, variant.sourceOctavesFromMain, "transposition-source");
+            return transpositionNoteFitsClefForQuestion(answer, variant.answerClef, question)
+              && transpositionNoteFitsClefForQuestion(source, variant.sourceClef, question);
+          })),
+      })).filter((variant) => variant.candidateBars.length);
+      const variant = availableVariants.length ? weightedRandomItem(availableVariants)
+        : question.practiceLevel === "AH" ? null : randomItem(variants);
+      if (!variant) return null;
+      const bar = randomItem(variant.candidateBars ?? [])
         ?? (question.practiceLevel === "AH" ? null : plantTranspositionFallbackBar(question, excluded, variant));
       if (!bar) return null;
       const { answerNotes, sourceNotes } = transpositionVariantNotesForBar(bar, variant);
@@ -6649,6 +6762,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         (bar.notes ?? []).flatMap((note, noteIndex) => {
           if (
             excluded.has(bar.barIndex)
+            || bar.barIndex === question.bars.length - 1
             || previousBarOnSameSystemIsExcluded(bar.barIndex)
             || (bar.barIndex === 0 && noteIndex === 0)
             || noteIndex !== 0
@@ -6836,7 +6950,21 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
     function hasQuestionTypeConflict(ids, level = null) {
       const idSet = new Set(ids);
-      if (level === "AH") return idSet.has("ahChordTypes") && idSet.has("cadence");
+      if (level === "AH") return (idSet.has("ahChordTypes") && idSet.has("cadence"))
+        || (idSet.has("ahBassLine") && idSet.has("key"))
+        || ["ahBassLine", "barlines", "time"].every((id) => idSet.has(id))
+        || advancedHigherDevelopmentBarCost(ids) > ADVANCED_HIGHER_DEVELOPMENT_BARS.length;
+      // N5 has eight score bars. Missing-note source/answer pairs, cadence
+      // pairs and hidden-barline windows each occupy two; tempo uses none.
+      // Reject overfull selections before drawing them, rather than letting
+      // generation retries silently favour easier question combinations.
+      if (level === "N5" && [...idSet].reduce((bars, id) => bars + (id === "tempoQuestion" ? 0 : ["missing", "cadence", "barlines"].includes(id) ? 2 : 1), 0) > 8) return true;
+      // The Higher chord guide explicitly gives the key and its named chords.
+      // It cannot accompany a separate question asking the pupil to name it.
+      if (level === "H" && idSet.has("chord") && idSet.has("key")) return true;
+      // Higher chord answers occupy bars 9–11 and a time change occupies bar
+      // 12, leaving no development bar for an accidental-placement question.
+      if (level === "H" && ["chord", "time", "accidentals"].every((id) => idSet.has(id))) return true;
       return QUESTION_TYPE_CONFLICT_PAIRS.some(([first, second]) => idSet.has(first) && idSet.has(second));
     }
 
@@ -6860,6 +6988,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (selected.has("ahChord")) cost += 1;
       if (selected.has("ahBassLine")) cost += 1;
       if (selected.has("ahChordTypes") && !selected.has("cadence")) cost += 1;
+      if (selected.has("time")) cost += 1;
       if (selected.has("barlines")) cost += 2;
       if (selected.has("rhythmIdentification")) cost += 2;
       if (selected.has("rests")) cost += 1;
@@ -6959,16 +7088,18 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return finalSelection;
     }
 
-    function selectedHigherPracticeQuestionTypeIds(enabledQuestionTypes, level = "H") {
+    function selectedHigherPracticeQuestionTypeIds(enabledQuestionTypes, level = "H", lockedHarmonyId = null) {
       if (level === "AH") return selectedAdvancedHigherPracticeQuestionTypeIds(enabledQuestionTypes);
       const questionCount = practiceQuestionCountForLevel(level);
-      const exactCustomOptions = customPracticeQuestionSelectionOptions(enabledQuestionTypes, level);
       const enabledIds = practiceQuestionTypesForLevel(level).filter((type) => enabledQuestionTypes[type.id]).map((type) => type.id);
-      if (enabledIds.length === questionCount && exactCustomOptions.length) return randomItem(exactCustomOptions);
+      if (enabledIds.length === questionCount) {
+        const exactCustomOptions = customPracticeQuestionSelectionOptions(enabledQuestionTypes, level);
+        if (exactCustomOptions.length) return randomItem(exactCustomOptions);
+      }
       const selected = [...HIGHER_STANDARD_FIXED_QUESTION_TYPES];
       const transpositionTypeId = selectedTranspositionQuestionTypeId(enabledQuestionTypes, level);
       if (transpositionTypeId) selected.push(transpositionTypeId);
-      const standardHarmony = higherWeightedQuestionCandidate(HIGHER_STANDARD_HARMONY_ALTERNATES, selected, enabledQuestionTypes, true, level);
+      const standardHarmony = lockedHarmonyId ?? higherWeightedQuestionCandidate(HIGHER_STANDARD_HARMONY_ALTERNATES, selected, enabledQuestionTypes, true, level);
       if (standardHarmony) selected.push(standardHarmony);
 
       const standardAudio = higherWeightedQuestionCandidate(HIGHER_STANDARD_AUDIO_ALTERNATES, selected, enabledQuestionTypes, true, level);
@@ -7023,7 +7154,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (enabledIds.length < questionCount) return [];
       const options = combinations(enabledIds, questionCount);
       const conflictFreeOptions = options.filter((selection) => !hasQuestionTypeConflict(selection, level));
-      return conflictFreeOptions.length ? conflictFreeOptions : options;
+      // Written worksheets deliberately combine time signatures and barlines;
+      // their printed answer areas do not require the interactive audio mix.
+      if (conflictFreeOptions.length || !enabledQuestionTypes.worksheetWrittenOnly) return conflictFreeOptions;
+      if (level !== "N3" && level !== "N4") return [];
+      return options.filter((selection) => selection.includes("time") && selection.includes("barlines")
+        && !hasQuestionTypeConflict(selection.filter((id) => id !== "barlines"), level));
     }
 
     function hasConflictFreePracticeQuestionSelection(enabledQuestionTypes, level = "N5") {
@@ -7039,8 +7175,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return customPracticeQuestionSelectionOptions(enabledQuestionTypes, level).length > 0;
     }
 
-    function selectedPracticeQuestionTypeIds(enabledQuestionTypes, level = "N5") {
-      if (level === "H" || level === "AH") return selectedHigherPracticeQuestionTypeIds(enabledQuestionTypes, level);
+    function selectedPracticeQuestionTypeIds(enabledQuestionTypes, level = "N5", lockedHarmonyId = null) {
+      if (level === "H" || level === "AH") return selectedHigherPracticeQuestionTypeIds(enabledQuestionTypes, level, lockedHarmonyId);
       const balancedOptions = practiceQuestionSelectionOptions(enabledQuestionTypes, level);
       if (balancedOptions.length) return randomItem(balancedOptions);
       const options = customPracticeQuestionSelectionOptions(enabledQuestionTypes, level);
@@ -7178,9 +7314,39 @@ function advancedHigherInversionAnswerLabel(inversion) {
     function makePracticePaperQuestion(level = "N5", attempt = 0, enabledQuestionTypes = DEFAULT_PRACTICE_QUESTION_TYPES, timeSignatureLevel = level, lockedTimeSignatureId = null) {
       let currentAttempt = attempt;
       let currentLockedTimeSignatureId = lockedTimeSignatureId;
+      let incompleteCandidates = 0;
+      // Retain the weighted harmony choice through generation retries. A
+      // rejected key draft must not become another chance to draw chords.
+      const lockedHarmonyId = level === "H" && timeSignatureLevel !== "AH"
+        ? higherWeightedQuestionCandidate(HIGHER_STANDARD_HARMONY_ALTERNATES, [], enabledQuestionTypes, true, "H")
+        : null;
+      const selectionLevel = timeSignatureLevel === "AH" ? "AH" : level;
+      let sourceIds = selectedPracticeQuestionTypeIds(enabledQuestionTypes, selectionLevel, lockedHarmonyId);
+      if (sourceIds.length !== practiceQuestionCountForLevel(selectionLevel) || hasQuestionTypeConflict(sourceIds, selectionLevel)) {
+        const completeSelections = customPracticeQuestionSelectionOptions(enabledQuestionTypes, selectionLevel);
+        if (completeSelections.length) sourceIds = randomItem(completeSelections);
+      }
+      const simpleTime = sourceIds.includes("triplets") || (level === "H" && sourceIds.includes("rhythmicDictation"));
+      const signatureOptions = (simpleTime ? simpleTimeSignaturesForLevel(selectionLevel) : timeSignaturesForLevel(selectionLevel))
+        .filter((signature) => selectionLevel !== "AH" || signature.id !== "5/4");
+      currentLockedTimeSignatureId ??= weightedRandomItem(signatureOptions).id;
+      const frequencyPlan = {
+        sourceIds,
+        intervalType: !sourceIds.includes("interval") ? null
+          : selectionLevel === "N5" ? randomItem(["second", "octave"])
+          : selectionLevel === "AH" ? Math.random() < 0.2 ? "tritone" : weightedRandomItem(ADVANCED_HIGHER_INTERVAL_TYPE_WEIGHTS).type
+          : null,
+      };
       while (true) {
         try {
-          return makePracticePaperQuestionAttempt(level, currentAttempt, enabledQuestionTypes, timeSignatureLevel, currentLockedTimeSignatureId);
+          const candidate = makePracticePaperQuestionAttempt(level, currentAttempt, enabledQuestionTypes, timeSignatureLevel, currentLockedTimeSignatureId, lockedHarmonyId, frequencyPlan);
+          const expectedCount = practiceQuestionCountForLevel(timeSignatureLevel);
+          if (candidate.subquestions.length !== expectedCount || new Set(candidate.subquestions.map((part) => part.sourceId)).size !== expectedCount || candidate.subquestions.some((part) => !sourceIds.includes(part.sourceId))) {
+            if (++incompleteCandidates >= 40) throw new Error(`Unable to generate a complete ${timeSignatureLevel} practice paper with the selected question types.`);
+            currentAttempt = attempt;
+            continue;
+          }
+          return candidate;
         } catch (error) {
           if (error?.type !== PRACTICE_QUESTION_RETRY) throw error;
           currentAttempt += 1;
@@ -7192,7 +7358,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
     }
 
-    function makePracticePaperQuestionAttempt(level = "N5", attempt = 0, enabledQuestionTypes = DEFAULT_PRACTICE_QUESTION_TYPES, timeSignatureLevel = level, lockedTimeSignatureId = null) {
+    function makePracticePaperQuestionAttempt(level = "N5", attempt = 0, enabledQuestionTypes = DEFAULT_PRACTICE_QUESTION_TYPES, timeSignatureLevel = level, lockedTimeSignatureId = null, lockedHarmonyId = null, frequencyPlan = null) {
       const canRetryPracticeQuestion = canRetryForLevel(level, attempt);
       const canRetryQualityPracticeQuestion = canRetryQualityRules(level, attempt, timeSignatureLevel);
       let retryTimeSignatureId = lockedTimeSignatureId;
@@ -7200,8 +7366,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
         throw { type: PRACTICE_QUESTION_RETRY, lockedTimeSignatureId: retryTimeSignatureId };
       };
       const questionSelectionLevel = timeSignatureLevel === "AH" ? "AH" : level;
-      const targetPracticeQuestionCount = practiceQuestionCountForLevel(questionSelectionLevel);
-      const selectedSourceIds = new Set(selectedPracticeQuestionTypeIds(enabledQuestionTypes, questionSelectionLevel));
+      const targetPracticeQuestionCount = frequencyPlan?.single ? 1 : practiceQuestionCountForLevel(questionSelectionLevel);
+      const selectedSourceIds = new Set(frequencyPlan?.sourceIds ?? selectedPracticeQuestionTypeIds(enabledQuestionTypes, questionSelectionLevel, lockedHarmonyId));
       const selectedTranspositionTypeIds = TRANSPOSITION_QUESTION_TYPE_IDS.filter((id) => selectedSourceIds.has(id));
       TRANSPOSITION_QUESTION_TYPE_IDS.forEach((id) => selectedSourceIds.delete(id));
       if (selectedTranspositionTypeIds.length || selectedSourceIds.has("transposition")) selectedSourceIds.add("transposition");
@@ -7247,11 +7413,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const generationOptions = { questionTypes: [...selectedSourceIds] };
       let question = makeEightBarRepetitionQuestion(level, 0, cadenceId, needsMissing, needsSimpleTime, timeSignatureLevel, questionTimeSignatureIds, allowGeneratedRests, generationOptions);
       question.practiceLevel = questionSelectionLevel;
+      question.preferredIntervalType = frequencyPlan?.intervalType ?? null;
       retryTimeSignatureId = question.timeSignature?.id ?? retryTimeSignatureId;
       if (level === "H" && isMinorKey(question.key) && ["plagal", "interrupted"].includes(cadenceId)) {
         cadenceId = randomItem(["perfect", "imperfect"]);
         question = makeEightBarRepetitionQuestion(level, 0, cadenceId, needsMissing, needsSimpleTime, timeSignatureLevel, questionTimeSignatureIds, allowGeneratedRests, generationOptions);
         question.practiceLevel = questionSelectionLevel;
+        question.preferredIntervalType = frequencyPlan?.intervalType ?? null;
       }
       const usesAdvancedHigherMelodyRules = question.melodyGenerationStyle === "advancedHigher"
         && (level === "H" || questionSelectionLevel === "AH");
@@ -7288,7 +7456,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (needsKey || needsTime) reserveQuestionBar(0);
       if (questionSelectionLevel === "AH" && timeChangeTarget) reserveQuestionBar(timeChangeTarget.barIndex);
       const advancedHigherChordTarget = needsAdvancedHigherChordTask ? makeAdvancedHigherChordTarget(question) : null;
-      if (needsAdvancedHigherChordTask && !advancedHigherChordTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsAdvancedHigherChordTask && !advancedHigherChordTarget) return retryPracticeQuestion();
       if (advancedHigherChordTarget) {
         alignAdvancedHigherChordMelodyToSlots(question, advancedHigherChordTarget, {
           includeIdentifyBar: true,
@@ -7300,7 +7468,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const advancedHigherChordTypeTarget = needsAdvancedHigherChordTypes ? makeAdvancedHigherChordTypeTarget(question, usedQuestionBars, {
         forceFinalDominantCadence: forceAdvancedHigherDominantCadence,
       }) : null;
-      if (needsAdvancedHigherChordTypes && !advancedHigherChordTypeTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsAdvancedHigherChordTypes && !advancedHigherChordTypeTarget) return retryPracticeQuestion();
       if (advancedHigherChordTypeTarget) (advancedHigherChordTypeTarget.reservedBars ?? [advancedHigherChordTypeTarget.barIndex]).forEach(reserveQuestionBar);
       if (questionSelectionLevel === "AH") setAdvancedHigherBarTwelveDominant(question);
       const unusedQuestionBars = (barIndexes) => barIndexes.filter((barIndex) => !usedQuestionBars.has(barIndex));
@@ -7334,7 +7502,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (needsChord && level !== "H") outlineChordInBar(question, chordBar);
       forceFirstNoteToTonic(question.bars, level, question.key);
       const barlineTarget = needsBarlines ? chooseBarlineTarget(question, usedQuestionBars) : null;
-      if (needsBarlines && !barlineTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsBarlines && !barlineTarget) return retryPracticeQuestion();
       const barlineTargets = needsBarlines && barlineTarget ? [barlineTarget] : [];
       const hiddenBarNumbers = needsBarlines ? barlineTargets.flatMap((target) => target.hiddenBarNumbers ?? []) : [];
       const displayHiddenBarNumbers = needsBarlines
@@ -7412,7 +7580,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const higherRepeatTargetOptions = level === "H"
         ? timeSignatureLevel === "AH"
           ? dsFineTargetOptions
-          : [{ symbolId: "dc", barIndex: randomItem(dcLineEndBarIndexes), anchor: "above" }]
+          : dcLineEndBarIndexes.map((barIndex) => ({ symbolId: "dc", barIndex, anchor: "above" }))
         : level === "N5" && (needsCadence || needsBarlines)
           ? repeatTargetOptions.filter((target) => target.symbolId !== "first-time" && target.symbolId !== "second-time")
           : repeatTargetOptions;
@@ -7442,6 +7610,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       );
       const unusedNational4RepeatTargets = national4RepeatTargets.filter(repeatTargetFitsUsedBars);
       const unusedRepeatTargetOptions = higherRepeatTargetOptions.filter(repeatTargetFitsUsedBars);
+      if (needsRepeatSigns && level === "H" && timeSignatureLevel !== "AH" && !unusedRepeatTargetOptions.length) return retryPracticeQuestion();
       const repeatTarget = needsRepeatSigns
         ? level === "N4" ? randomItem(unusedNational4RepeatTargets.length ? unusedNational4RepeatTargets : national4RepeatTargets) : timeSignatureLevel === "AH" ? randomItem(higherRepeatTargetOptions) : randomItem(unusedRepeatTargetOptions.length ? unusedRepeatTargetOptions : higherRepeatTargetOptions)
         : null;
@@ -7467,11 +7636,20 @@ function advancedHigherInversionAnswerLabel(inversion) {
       ensureRequiredMelodicAccidental(question, excludedBars);
       forceFirstNoteToTonic(question.bars, level, question.key);
       if (level === "H" && questionSelectionLevel !== "AH") enforceHigherTrebleRange(question);
+      // Reserve the scarce development-bar accidental/resolution pair before
+      // placing flexible interval, rest and scale-degree tasks.
+      const accidentalTarget = needsAccidentals ? makeAccidentalQuestionTarget(
+        question,
+        [...usedQuestionBars],
+        questionSelectionLevel === "AH" || level === "H" ? ADVANCED_HIGHER_DEVELOPMENT_BARS : null
+      ) : null;
+      if (needsAccidentals && !accidentalTarget) return retryPracticeQuestion();
+      if (needsAccidentals && accidentalTarget) reserveQuestionBar(accidentalTarget.barIndex);
+      if (needsAccidentals && Number.isInteger(accidentalTarget?.resolutionBarIndex)) reserveQuestionBar(accidentalTarget.resolutionBarIndex);
+      if (accidentalTarget) excludedBars.push(accidentalTarget.barIndex, accidentalTarget.resolutionBarIndex);
       const transpositionTarget = needsTransposition ? makeTranspositionTarget(question, [...usedQuestionBars]) : null;
       if (needsTransposition && !transpositionTarget) {
-        return canRetryPracticeQuestion
-          ? retryPracticeQuestion()
-          : makePracticePaperQuestion(level, 0, enabledQuestionTypes, timeSignatureLevel);
+        return retryPracticeQuestion();
       }
       if (needsTransposition && Number.isInteger(transpositionTarget?.barIndex)) {
         reserveQuestionBar(transpositionTarget.barIndex);
@@ -7483,7 +7661,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
           .map((bar) => bar.barIndex)
         : [];
       const enharmonicTarget = needsEnharmonics ? makeEnharmonicTarget(question, [...usedQuestionBars, ...transpositionSystemBars]) : null;
-      if (needsEnharmonics && !enharmonicTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsEnharmonics && !enharmonicTarget) return retryPracticeQuestion();
       if (needsEnharmonics && enharmonicTarget) {
         reserveQuestionBar(enharmonicTarget.barIndex);
         excludedBars.push(enharmonicTarget.barIndex);
@@ -7501,7 +7679,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       let intervalTarget = needsInterval && !intervalInsertTarget
         ? level === "N3" || level === "N4" ? plantNational3IntervalTarget(question, excludedBars) : plantIntervalTarget(question, excludedBars, higherIntervalBars)
         : null;
-      if (needsInterval && !intervalTarget && !intervalInsertTarget) {
+      if (needsInterval && !intervalTarget && !intervalInsertTarget && !frequencyPlan) {
         const looseExcludedBars = [0, finalBarIndex, ...higherChordGuideProtectedBars];
         intervalInsertTarget = wantsIntervalInsert ? makeIntervalInsertTarget(question, looseExcludedBars, higherIntervalBars) : null;
         intervalTarget = !intervalInsertTarget
@@ -7514,7 +7692,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (needsInterval && Number.isInteger(intervalQuestionBar)) ensureRequiredMelodicAccidental(question, [...excludedBars, intervalQuestionBar]);
       const intervalAnswer = intervalTarget ? intervalAnswerForTarget(question, intervalTarget) : null;
       const restTarget = needsRests ? plantRestTarget(question, [...usedQuestionBars], higherRestBars) : null;
-      if (needsRests && !restTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsRests && !restTarget) return retryPracticeQuestion();
       if (needsRests && restTarget) reserveQuestionBar(restTarget.barIndex);
       const wantsNoteValueCircle = needsNoteIdentification && (level === "N3" || level === "N4") && Math.random() < 0.5;
       const noteValueCircleTarget = wantsNoteValueCircle ? chooseCircleNoteValueTarget(question, level, [...usedQuestionBars]) : null;
@@ -7534,15 +7712,15 @@ function advancedHigherInversionAnswerLabel(inversion) {
             null
           )
         : null;
-      if (needsRhythmIdentification && !rhythmIdentificationTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsRhythmIdentification && !rhythmIdentificationTarget) return retryPracticeQuestion();
       if (needsRhythmIdentification && rhythmIdentificationTarget) reserveQuestionBar(rhythmIdentificationTarget.barIndex);
       if (needsRhythmIdentification && rhythmIdentificationTarget) reserveQuestionBar(rhythmIdentificationTarget.endBarIndex);
       const scaleDegreeTarget = needsScaleDegrees ? chooseScaleDegreeTarget(question, [...usedQuestionBars]) : null;
-      if (needsScaleDegrees && !scaleDegreeTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsScaleDegrees && !scaleDegreeTarget) return retryPracticeQuestion();
       const scaleDegreeAnswerBars = needsScaleDegrees && scaleDegreeTarget ? scaleDegreeAnswerBoxBars(question, scaleDegreeTarget.barIndex).bars : [];
       if (needsScaleDegrees) scaleDegreeAnswerBars.forEach((barIndex) => reserveQuestionBar(barIndex));
       const tripletTarget = needsTriplets ? plantTripletTarget(question, [...usedQuestionBars]) : null;
-      if (needsTriplets && !tripletTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsTriplets && !tripletTarget) return retryPracticeQuestion();
       const tripletAnswerBars = needsTriplets && tripletTarget ? tripletAnswerBoxBars(question, tripletTarget.barIndex).bars : [];
       if (needsTriplets && tripletTarget) plantTripletAnswerBoxRhythmContext(question, tripletTarget);
       const givenTriplets = needsTriplets && tripletTarget ? plantGivenTriplets(question, tripletTarget, [...usedQuestionBars], 2) : [];
@@ -7551,16 +7729,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
       if (needsTriplets) tripletAnswerBars.forEach((barIndex) => reserveQuestionBar(barIndex));
       if (needsTriplets) givenTriplets.forEach((placement) => reserveQuestionBar(placement.barIndex));
-      const accidentalTarget = needsAccidentals ? makeAccidentalQuestionTarget(
-        question,
-        [...usedQuestionBars],
-        questionSelectionLevel === "AH" || level === "H" ? ADVANCED_HIGHER_DEVELOPMENT_BARS : null
-      ) : null;
-      if (needsAccidentals && !accidentalTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
-      if (needsAccidentals && accidentalTarget) reserveQuestionBar(accidentalTarget.barIndex);
-      if (needsAccidentals && Number.isInteger(accidentalTarget?.resolutionBarIndex)) reserveQuestionBar(accidentalTarget.resolutionBarIndex);
       const articulationTarget = needsArticulation ? makeArticulationTarget(question, [...usedQuestionBars]) : null;
-      if (needsArticulation && !articulationTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
+      if (needsArticulation && !articulationTarget) return retryPracticeQuestion();
       if (needsArticulation && articulationTarget) reserveQuestionBar(articulationTarget.barIndex);
       const preferRhythmFix = needsRhythmicDictation && !advancedHigherRhythmDictationTarget && questionSelectionLevel !== "AH" && (level === "H" || Math.random() < 0.5);
       const rhythmFixTarget = advancedHigherRhythmDictationTarget ?? (preferRhythmFix ? plantRhythmFixTarget(question, [...usedQuestionBars]) : null);
@@ -7640,7 +7810,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         ...(needsAccidentals && Number.isInteger(accidentalTarget?.resolutionBarIndex) ? [accidentalTarget.resolutionBarIndex] : []),
       ];
       if (level !== "N3" && level !== "N4" && questionSelectionLevel !== "AH") refitQuestionChordsToMelody(question, chordRefitProtectedBars);
-      if (level === "H") avoidConsecutiveHigherDevelopmentChords(question);
+      if (level === "H" && questionSelectionLevel !== "AH") avoidConsecutiveHigherDevelopmentChords(question);
       enforceFinalBarLongestRhythm(question);
       if (!validateRhythmBars(question) && canRetryQualityPracticeQuestion) {
         return retryPracticeQuestion();
@@ -7657,8 +7827,9 @@ function advancedHigherInversionAnswerLabel(inversion) {
       if (questionSelectionLevel !== "AH" && !strongBeatsUseChordTones(question, advancedHigherChordTarget) && canRetryQualityPracticeQuestion) {
         return retryPracticeQuestion();
       }
-      // An outlined chord is intentionally less stepwise than the surrounding melody.
-      if (questionSelectionLevel !== "AH" && !needsChord && (level === "N5" || isHigherLevel(level)) && !melodyPassesQualityRules(question) && canRetryQualityPracticeQuestion) {
+      // Outlined chords and deliberately planted wide intervals are less
+      // stepwise than the surrounding, already validated source melody.
+      if (questionSelectionLevel !== "AH" && !needsChord && !needsInterval && (level === "N5" || isHigherLevel(level)) && !melodyPassesQualityRules(question) && canRetryQualityPracticeQuestion) {
         return retryPracticeQuestion();
       }
       if (questionSelectionLevel === "AH" && !advancedHigherQuestionPassesHardRules(question) && canRetryPracticeQuestion) {
@@ -7710,7 +7881,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         ? rhythmTotalAcceptedAnswers(rhythmIdentificationTarget.totalBeats)
         : null;
       const pairedQuaverBeatAnswer = needsRhythmIdentification && rhythmIdentificationTarget?.variant === "pairedQuaverBeats"
-        ? { answer: "0.5 beat", accepts: acceptedAnswers("0.5", "half", "1/2") }
+        ? { answer: "0.5 beat", accepts: acceptedAnswers("0.5", "0.5 beat", "0.5 beats", "half", "half beat", "half a beat", "1/2", "1/2 beat", "1/2 beats") }
         : null;
       const rhythmIdentificationTotalAnswer = needsRhythmIdentification && rhythmIdentificationTarget?.variant === "noteValueTotal"
         ? rhythmTotalAcceptedAnswers(rhythmIdentificationTarget.totalBeats)
@@ -8127,6 +8298,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const finalTranspositionTarget = needsTransposition
         ? refreshTranspositionTargetNotes(question, transpositionTarget)
         : transpositionTarget;
+      if (!transpositionMeaningFitsPlaybackRange(question, finalTranspositionTarget)) return retryPracticeQuestion();
 
       if (questionSelectionLevel === "AH") recordAdvancedHigherKeySuccess(question);
 
@@ -8200,40 +8372,57 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return makeCompletionQuestion(level, attempt);
     }
 
+    function normalisePracticeQuestionTypes(value, level) {
+      const defaults = defaultPracticeQuestionTypesForLevel(level);
+      if (!value || typeof value !== "object" || Array.isArray(value)) return defaults;
+      const available = new Set(practiceQuestionTypesForLevel(level).map((type) => type.id));
+      const normalised = Object.fromEntries(PRACTICE_QUESTION_TYPES.map(({ id }) => [
+        id,
+        available.has(id) && (typeof value[id] === "boolean" ? value[id] : Boolean(defaults[id])),
+      ]));
+      if (level === "AH" && typeof value.ahChordTypes === "boolean") normalised.ahChordTypes = value.ahChordTypes;
+      return canBuildPracticeQuestionSelection(normalised, level) ? normalised : defaults;
+    }
+
     function makeInitialPracticeQuestion(level, enabledQuestionTypes) {
+      const questionTypes = normalisePracticeQuestionTypes(enabledQuestionTypes, level);
       try {
-        return makeQuestion(level, 0, enabledQuestionTypes);
+        return makeQuestion(level, 0, questionTypes);
       } catch (error) {
         console.error(error);
         return makeQuestion(level, 0, {
-          ...enabledQuestionTypes,
+          ...questionTypes,
           barlines: false,
           repeatSigns: false,
         });
       }
     }
 
+    function practicePartRequiresAudio(question, part) {
+      const sourceId = part.sourceId ?? part.id;
+      if (sourceId === "dynamic") return part.type === "dynamic";
+      if (sourceId === "chord" && question.level === "N5") return false;
+      if (sourceId === "articulation") return false;
+      return AUDIO_PRACTICE_QUESTION_TYPE_IDS.has(sourceId);
+    }
+
     const PRACTICE_WORKSHEET_PAPER_COUNT = 20;
     const PRACTICE_WORKSHEET_AUDIO_ONLY_TYPES = new Set(["missing", "rhythmicDictation", "tempoQuestion", "cadence", "repeatSigns", "chord", "accidentals"]);
 
-    function practiceWorksheetQuestionTypes(enabledQuestionTypes) {
+    function practiceWorksheetQuestionTypes(enabledQuestionTypes, level = "N5") {
       const worksheetTypes = Object.fromEntries(PRACTICE_QUESTION_TYPES.map((type) => [
         type.id,
         Boolean(enabledQuestionTypes?.[type.id]) && !PRACTICE_WORKSHEET_AUDIO_ONLY_TYPES.has(type.id),
       ]));
-      const hasVisibleQuestionType = PRACTICE_QUESTION_TYPES.some((type) => worksheetTypes[type.id]);
-      if (hasVisibleQuestionType) return { ...worksheetTypes, ahChordTypes: false, worksheetWrittenOnly: true };
-      return {
-        ...worksheetTypes,
-        ahChordTypes: false,
-        worksheetWrittenOnly: true,
-        noteIdentification: true,
-        barlines: true,
-        time: true,
-        dynamic: true,
-        interval: true,
-        rhythmIdentification: true,
-      };
+      const written = { ...worksheetTypes, ahChordTypes: false, worksheetWrittenOnly: true };
+      if (canBuildPracticeQuestionSelection(written, level)) return written;
+      // A valid interactive pool can lose too many tasks when listening-only
+      // types are removed. Fill from this level's written types, retaining all
+      // enabled written choices and the normal answer-leakage conflict rules.
+      practiceQuestionTypesForLevel(level).forEach((type) => {
+        if (!PRACTICE_WORKSHEET_AUDIO_ONLY_TYPES.has(type.id)) written[type.id] = true;
+      });
+      return written;
     }
 
     function practiceWorksheetAnswer(part) {
@@ -8274,6 +8463,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         root.render(
           <MissingNotesScore
             question={question}
+            readOnly
             worksheetSystemGapReduction={question.bars.length > 8 ? 30 : 0}
             worksheetSystemGapIncrease={worksheetLevel === "AH" ? 25 : 0}
             worksheetTranspositionGapReduction={10}
@@ -8426,19 +8616,25 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return { question: completedQuestion, practiceAnswers, userNotes };
     }
 
+    function makePracticeWorksheetQuestion(level, worksheetTypes) {
+      worksheetTypes = practiceWorksheetQuestionTypes(worksheetTypes, level);
+      const expectedBarCount = ["N3", "N4", "N5"].includes(level) ? 8 : 16;
+      const expectedPartCount = level === "AH" ? 8 : 6;
+      // Placement retries can exhaust a candidate's available question areas.
+      // Generate a fresh candidate rather than rejecting the entire worksheet.
+      for (let attempt = 0; attempt < 40; attempt += 1) {
+        const question = makeQuestion(level, attempt, worksheetTypes);
+        if (level === "AH" && question.subquestions.some((part) => (part.sourceId ?? part.id) === "ahChordTypes")) continue;
+        if (question.bars.length === expectedBarCount && question.subquestions.length === expectedPartCount) return question;
+      }
+      throw new Error(`The ${level} practice paper did not match its required structure.`);
+    }
+
     async function buildPracticeWorksheetConfig(level, enabledQuestionTypes) {
-      const worksheetTypes = practiceWorksheetQuestionTypes(enabledQuestionTypes);
+      const worksheetTypes = practiceWorksheetQuestionTypes(enabledQuestionTypes, level);
       const papers = [];
       for (let index = 0; index < PRACTICE_WORKSHEET_PAPER_COUNT; index += 1) {
-        const question = makeQuestion(level, index, worksheetTypes);
-        const expectedBarCount = ["N3", "N4", "N5"].includes(level) ? 8 : 16;
-        const expectedPartCount = level === "AH" ? 8 : 6;
-        if (level === "AH" && question.subquestions.some((part) => (part.sourceId ?? part.id) === "ahChordTypes")) {
-          throw new Error("Advanced Higher worksheets must not include chord-type identification questions.");
-        }
-        if (question.bars.length !== expectedBarCount || question.subquestions.length !== expectedPartCount) {
-          throw new Error(`The ${level} practice paper did not match its required structure.`);
-        }
+        const question = makePracticeWorksheetQuestion(level, worksheetTypes);
         const score = await renderPracticeWorksheetScore(question, { worksheetLevel: level });
         const completed = practiceWorksheetCompletedState(question);
         const answerScore = await renderPracticeWorksheetScore(completed.question, { ...completed, worksheetLevel: level });
@@ -8496,15 +8692,29 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return pairsWithDottedQuaver ? rhythmInfo("quaver").spacing : rhythmInfo(rhythm).spacing;
     }
 
-    function accidentalPreSpacingForNote(notes, index, shownAccidentals) {
-      const note = notes[index];
-      if (!note || note.rest) return 0;
-      const accidentalValue = Object.prototype.hasOwnProperty.call(note, "displayAccidental") ? note.displayAccidental : note.writtenAccidental;
-      if (accidentalValue === null || accidentalValue === undefined || accidentalValue === false) return 0;
-      const accidentalKey = `${note.letter}:${accidentalValue}`;
-      if (shownAccidentals.has(accidentalKey)) return 0;
-      shownAccidentals.add(accidentalKey);
-      return accidentalValue === 1 ? 0.72 : 0.58;
+    function accidentalDisplayValuesForBar(notes, keyAccidentals = {}) {
+      const active = {};
+      return notes.map((note) => {
+        if (!note || note.rest) return null;
+        const pitchKey = `${note.letter}:${note.octave}`;
+        if (!Object.prototype.hasOwnProperty.call(active, pitchKey)) active[pitchKey] = keyAccidentals[note.letter] ?? 0;
+        if (note.hiddenAccidental !== null && note.hiddenAccidental !== undefined) {
+          active[pitchKey] = note.hiddenAccidental;
+          return null;
+        }
+        const explicit = Object.prototype.hasOwnProperty.call(note, "displayAccidental") ? note.displayAccidental : note.writtenAccidental;
+        if (Object.prototype.hasOwnProperty.call(note, "displayAccidental") && explicit == null) return null;
+        if (explicit === false) return null;
+        const value = explicit ?? keyAccidentals[note.letter] ?? 0;
+        const shouldDisplay = active[pitchKey] !== value;
+        active[pitchKey] = value;
+        return shouldDisplay ? value : null;
+      });
+    }
+
+    function accidentalPreSpacingForValue(value) {
+      if (value === null || value === undefined || value === false) return 0;
+      return value === 1 ? 0.72 : 0.58;
     }
 
     function barPositions(bar, displayBarCount = BARS_PER_SYSTEM) {
@@ -8512,8 +8722,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const end = start + barWidth(bar.barIndex, displayBarCount);
       const scoreStart = start + (bar.barIndex === 0 ? 4 : bar.timeChangeQuestion || bar.timeSignatureRestore ? 58 : 15);
       const scoreEnd = bar.barIndex === (bar.totalBars ?? BAR_COUNT) - 1 ? end - 24 : end - 4;
-      const shownAccidentalsForUnits = new Set();
-      const accidentalPreSpacing = bar.notes.map((_, index) => accidentalPreSpacingForNote(bar.notes, index, shownAccidentalsForUnits));
+      const accidentalPreSpacing = accidentalDisplayValuesForBar(bar.notes).map(accidentalPreSpacingForValue);
       const units = bar.notes.reduce((sum, _, index) => sum + positionSpacingForNote(bar.notes, index) + accidentalPreSpacing[index], 0);
       const unit = Math.max(1, scoreEnd - scoreStart) / Math.max(1, units);
       let cursor = scoreStart + unit * 0.38;
@@ -8565,7 +8774,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         if (noteCrossesInternalBoundary(first, timeSignature) || noteCrossesInternalBoundary(second, timeSignature)) return false;
         return beatGroupIndexForBeat(first.beat ?? 0, timeSignature) === beatGroupIndexForBeat(second.beat ?? 0, timeSignature);
       }
-      if (timeSignature.id === "6/8") {
+      if (timeSignature.bottom === 8 && timeSignature.top % 3 === 0) {
         return beatGroupIndexForBeat(first.beat ?? 0, timeSignature) === beatGroupIndexForBeat(second.beat ?? 0, timeSignature);
       }
       return true;
@@ -8637,7 +8846,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
     function getBeam(notes, positions, top, forcedDown = null, clef = "treble", visualScale = 1) {
       const down = forcedDown ?? groupHasDownStems(notes, clef);
       const settings = sharedSymbolConfig("quaverBeam");
-      const xOffset = STAFF.gap * Number(settings.xOffsetScale || 0);
+      const xOffset = STAFF.gap * Number(settings.xOffsetScale || 0) + (down ? 0 : UPWARD_QUAVER_NUDGE_X * visualScale);
       const yOffset = STAFF.gap * Number(settings.yOffsetScale || 0);
       const stemLength = STAFF.gap * 3.1 * Number(settings.heightScale || 1) * visualScale;
       const firstStep = displayStep(notes[0], clef);
@@ -8683,7 +8892,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       let beamShift = 0;
       beamPoints.forEach((point, index) => {
         const noteStep = displayStep(notes[index], clef);
-        const stemX = getStem(positions[index], point.y, noteStep, down, null, visualScale).stemX;
+        const stemX = getStem(positions[index] + xOffset, point.y, noteStep, down, null, visualScale).stemX;
         const projectedY = startY + ((stemX - firstStem.stemX) / ((lastStem.stemX - firstStem.stemX) || 1)) * (endY - startY);
         if (down) {
           beamShift = Math.max(beamShift, (point.y + minStemLength) - projectedY);
@@ -8696,6 +8905,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
       return {
         down,
+        xOffset,
         start: { x: firstStem.stemX, y: startY },
         end: { x: lastStem.stemX, y: endY },
       };
@@ -8713,7 +8923,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       function stemXFor(index) {
         const noteStep = displayStep(groupNotes[index], clef);
         const y = yForStep(noteStep, top);
-        return getStem(groupPositions[index], y, noteStep, beam.down, null, visualScale).stemX;
+        return getStem(groupPositions[index] + (beam.xOffset || 0), y, noteStep, beam.down, null, visualScale).stemX;
       }
       const x1 = stemXFor(segment.startIndex);
       const x2 = segment.isHook
@@ -8786,7 +8996,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             return <CalibratedSymbol symbolKey={symbolKey} x={x + accidentalOffsetX} y={y} colour={colour} opacity={opacity} settingOverrides={scaledSymbolOverrides(symbolKey, visualScale)} />;
         }
 
-    function Note({ note, x, top, colour = "currentColor", opacity = 1, active = false, faint = false, showFlag = true, forcedDown = null, forcedEndY = null, scale = 1, visualScale = 1, clef = "treble" }) {
+    function Note({ note, x, top, colour = "currentColor", opacity = 1, active = false, faint = false, showFlag = true, forcedDown = null, forcedEndY = null, forcedStemXOffset = 0, scale = 1, visualScale = 1, clef = "treble" }) {
       if (!note) return null;
       if (note.invisible) return null;
       const step = displayStep(note, clef);
@@ -8794,7 +9004,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const down = forcedDown ?? stemDown(step);
       const visualRhythm = note.displayRhythm ?? note.rhythm;
       const beamed = isBeamableRhythm(visualRhythm) && !showFlag;
-      const stem = getStem(x, y, step, down, forcedEndY, visualScale);
+      const stem = getStem(x + forcedStemXOffset, y, step, down, forcedEndY, visualScale);
       const dotKey = step % 2 === 0 ? "augmentationDotLine" : "augmentationDotSpace";
       const dotY = step % 2 === 0 ? y - STAFF.gap * 0.25 : y;
       const noteColour = active ? COLOUR.blue : colour;
@@ -8914,31 +9124,28 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return <g pointerEvents="none"><text className="music-symbol" x={x} y={y - fontSize * 0.14} fill={colour} fontSize={fontSize} textAnchor="middle">{topGlyph}</text><text className="music-symbol" x={x} y={y + fontSize * 0.43} fill={colour} fontSize={fontSize} textAnchor="middle">{bottomGlyph}</text></g>;
     }
 
-    function BarNotes({ bar, notes, positions, top, colour = "currentColor", feedback = null, hidden = false, activeNoteId = null, forceStemUp = false, timeSignature = null, clef = "treble", visualScale = 1 }) {
+    function BarNotes({ bar, notes, positions, top, colour = "currentColor", feedback = null, hidden = false, activeNoteId = null, forceStemUp = false, timeSignature = null, clef = "treble", visualScale = 1, keyAccidentals = {} }) {
       const groups = getQuaverGroups(hidden ? bar.notes : notes, timeSignature);
-      const shownAccidentals = new Set();
+      const displayAccidentals = accidentalDisplayValuesForBar(notes, keyAccidentals);
       return (
         <g>
           {notes.map((note, index) => {
             if (!note) return null;
-            const accidentalKey = `${note.letter}:${note.writtenAccidental}`;
-            const showAccidental = Boolean(note.writtenAccidental) && !shownAccidentals.has(accidentalKey);
-            if (note.writtenAccidental) shownAccidentals.add(accidentalKey);
-            const displayNote = showAccidental ? note : { ...note, writtenAccidental: null };
+            const displayNote = { ...note, displayAccidental: displayAccidentals[index] };
             const group = groupContaining(groups, index);
             const groupNotes = group ? notes.slice(group.start, group.end + 1) : [];
             const groupPositions = group ? positions.slice(group.start, group.end + 1) : [];
             const beam = group && groupNotes.every(Boolean) ? getBeam(groupNotes, groupPositions, top, forceStemUp ? false : null, clef, visualScale) : null;
             const noteStemDown = forceStemUp ? false : beam?.down ?? null;
             const noteStep = displayStep(note, clef);
-            const stem = beam ? getStem(positions[index], yForStep(noteStep, top), noteStep, beam.down, null, visualScale) : null;
+            const stem = beam ? getStem(positions[index] + beam.xOffset, yForStep(noteStep, top), noteStep, beam.down, null, visualScale) : null;
             const forcedEndY = beam && stem ? beamYAtX(stem.stemX, beam) : null;
             const expected = bar.notes[index];
             const resultColour = note.colour ?? (feedback && hidden ? (note.step === expected?.step ? COLOUR.green : COLOUR.red) : colour);
             if (displayNote.stack?.length) {
               return <ChordStack key={note.id ?? `${bar.barIndex}-${index}`} note={displayNote} x={positions[index]} top={top} colour={resultColour} clef={clef} forceStemUp={forceStemUp} />;
             }
-            return <Note key={note.id ?? `${bar.barIndex}-${index}`} note={displayNote} x={positions[index]} top={top} colour={resultColour} active={activeNoteId === note.id} showFlag={!beam} forcedDown={noteStemDown} forcedEndY={forcedEndY} opacity={feedback && hidden && note.step !== expected?.step ? 0.58 : 1} clef={clef} visualScale={visualScale} />;
+            return <Note key={note.id ?? `${bar.barIndex}-${index}`} note={displayNote} x={positions[index]} top={top} colour={resultColour} active={activeNoteId === note.id} showFlag={!beam} forcedDown={noteStemDown} forcedEndY={forcedEndY} forcedStemXOffset={beam?.xOffset ?? 0} opacity={feedback && hidden && note.step !== expected?.step ? 0.58 : 1} clef={clef} visualScale={visualScale} />;
           })}
           {groups.map((group, index) => {
             const groupNotes = notes.slice(group.start, group.end + 1);
@@ -9008,7 +9215,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
               return (
                 <g key={bar.barIndex}>
                   <text x={bar.barIndex === 0 ? start - 15 : start + 5} y={top - 17} fill={colour} fontSize="13" fontStyle="italic" fontWeight="400">{bar.barIndex + 1}</text>
-                  <BarNotes bar={bar} notes={bar.notes} positions={positions} top={top} colour={colour} timeSignature={question.timeSignature} clef={question.clef} />
+                  <BarNotes bar={bar} notes={bar.notes} positions={positions} top={top} colour={colour} timeSignature={question.timeSignature} clef={question.clef} keyAccidentals={question.key?.signatureAccidentals} />
                   {bar.barIndex === finalBar ? (
                     <g>
                       <line x1={end - 5} x2={end - 5} y1={top - 0.5} y2={top + STAFF.gap * 4 + 0.5} stroke={colour} strokeWidth="1.4" />
@@ -9072,11 +9279,60 @@ function advancedHigherInversionAnswerLabel(inversion) {
       );
     }
 
+    function scoreSelectionKeyboardProps({ label, enabled, onSelect, onActivate }) {
+      return {
+        role: "button",
+        "data-score-target": "true",
+        tabIndex: enabled ? 0 : -1,
+        "aria-disabled": !enabled,
+        "aria-label": label,
+        onFocus: () => { if (enabled) onSelect?.(); },
+        onKeyDown: (event) => {
+          if (!enabled || !["Enter", " "].includes(event.key)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          onActivate();
+        },
+      };
+    }
+
     function Score(props) {
       if (props.question.questionType === "identifyMelody") {
         return <IdentifyMelodyScore question={props.question} feedback={props.feedback} onSelectOption={props.onSelectOption} />;
       }
       return <MissingNotesScore {...props} />;
+    }
+
+    function PitchEntryTarget({ label, clef = "treble", indices = [0], minStep = MIN_DISPLAY_STEP, maxStep = MAX_DISPLAY_STEP, enabled, noteAtStep, onPlace, onRemove, onPreview, onSelect, targetRef, ...rectProps }) {
+      const [cursor, setCursor] = useState({ position: 0, step: clamp(4, minStep, maxStep) });
+      const position = clamp(cursor.position, 0, Math.max(0, indices.length - 1));
+      const step = clamp(cursor.step, minStep, maxStep);
+      const pitch = noteBaseForDisplayStep(step, clef);
+      function handleKeyDown(event) {
+        if (!enabled || !indices.length) return;
+        if (!["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Enter", " ", "Delete", "Backspace", "Escape"].includes(event.key)) return;
+        event.preventDefault();
+        event.stopPropagation();
+        if (event.key === "Escape") { onPreview?.(null); return; }
+        if (event.key === "Delete" || event.key === "Backspace") {
+          onRemove?.(indices[position]);
+          onPreview?.(null);
+          return;
+        }
+        if (event.key === "Enter" || event.key === " ") {
+          const note = noteAtStep(step, indices[position]);
+          if (note) onPlace(note, indices[position]);
+          onPreview?.(null);
+          return;
+        }
+        const next = {
+          position: clamp(position + (event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0), 0, indices.length - 1),
+          step: clamp(step + (event.key === "ArrowUp" ? 1 : event.key === "ArrowDown" ? -1 : 0), minStep, maxStep),
+        };
+        setCursor(next);
+        onPreview?.(noteAtStep(next.step, indices[next.position]));
+      }
+      return <rect {...rectProps} ref={targetRef} role="button" data-pitch-entry="true" tabIndex={enabled ? 0 : -1} aria-disabled={!enabled} aria-label={`${label}. Note ${position + 1} of ${indices.length}: ${pitch.letter}${pitch.octave}. Arrow keys choose pitch and note; Enter places it; Delete removes it.`} onFocus={() => { if (enabled) onSelect?.(); }} onBlur={() => onPreview?.(null)} onKeyDown={handleKeyDown} />;
     }
 
     function ScoreBarNumber({ label, x, y, colour = "currentColor", backdrop = false }) {
@@ -9112,7 +9368,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return null;
     }
 
-    function MissingNotesScore({ question, worksheetSystemGapReduction = 0, worksheetSystemGapIncrease = 0, worksheetTranspositionGapReduction = 0, worksheetAhChordGapExtension = 0, worksheetAhChordBoxHeightReduction = 0, worksheetAhChordFollowingStaveOffset = 0, worksheetAhChordGuideRowHeight = 32.5, userNotes, setUserNotes, practiceAnswers = {}, setPracticeAnswers, feedback, activeIndex = 0, setActiveIndex = () => {}, activeNoteId, hoverNote, setHoverNote }) {
+    function MissingNotesScore({ question, readOnly = false, worksheetSystemGapReduction = 0, worksheetSystemGapIncrease = 0, worksheetTranspositionGapReduction = 0, worksheetAhChordGapExtension = 0, worksheetAhChordBoxHeightReduction = 0, worksheetAhChordFollowingStaveOffset = 0, worksheetAhChordGuideRowHeight = 32.5, userNotes, setUserNotes, practiceAnswers = {}, setPracticeAnswers, feedback, activeIndex = 0, setActiveIndex = () => {}, activeNoteId, hoverNote, setHoverNote }) {
       const [draggingNote, setDraggingNote] = useState(null);
       const [hoverBarlineSlot, setHoverBarlineSlot] = useState(null);
       const [hoverRhythmTarget, setHoverRhythmTarget] = useState(null);
@@ -9150,15 +9406,16 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const cumulativeSpacingBeforeSystem = extraSpacingAfterSystem.map((_, index) => (
         extraSpacingAfterSystem.slice(0, index).reduce((sum, spacing) => sum + spacing, 0)
       ));
+      const systemGap = STAFF.topB - STAFF.topA + EXTRA_SYSTEM_SPACING - worksheetSystemGapReduction + worksheetSystemGapIncrease;
       const systems = Array.from({ length: systemCount }, (_, index) => (
-        STAFF.topA + index * (STAFF.topB - STAFF.topA + EXTRA_SYSTEM_SPACING - worksheetSystemGapReduction + worksheetSystemGapIncrease) + cumulativeSpacingBeforeSystem[index]
+        STAFF.topA + index * systemGap + cumulativeSpacingBeforeSystem[index]
       ));
       const standardBottomPadding = STAFF.topA + STAFF.gap * 4 - 20;
       const lastSystemNeedsExtraSpacing = extraSpacingAfterSystem[lastSystemIndex] > 0;
       const bottomPadding = ahChordSystemIndex === lastSystemIndex ? 400 : lastSystemNeedsExtraSpacing ? 160 : standardBottomPadding;
       const scrollBottomPadding = ahChordSystemIndex === lastSystemIndex ? 15 : 0;
-      const scoreHeight = isOneSystem ? 154 : systems.at(-1) + bottomPadding + scrollBottomPadding;
       const scoreOffsetY = isOneSystem ? -30 : 0;
+      const scoreHeight = isOneSystem ? 154 : systems.at(-1) + bottomPadding + scrollBottomPadding;
       useEffect(() => {
         setHoverBarlineSlot(null);
         setHoverRhythmTarget(null);
@@ -9227,35 +9484,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
         });
       }
 
-      function missingNoteRangeForLevel(level) {
-        if (level === "N3") {
-          return {
-            min: NOTE_POOL.find((note) => note.letter === "E" && note.octave === 4) ?? NOTE_POOL[0],
-            max: NOTE_POOL.find((note) => note.letter === "F" && note.octave === 5) ?? NOTE_POOL.at(-1),
-          };
-        }
-        if (level === "N4" || level === "N5" || level === "H") {
-          return {
-            min: NOTE_POOL.find((note) => note.letter === "C" && note.octave === 4) ?? NOTE_POOL[0],
-            max: NOTE_POOL.find((note) => note.letter === "A" && note.octave === 5) ?? NOTE_POOL.at(-1),
-          };
-        }
-        return { min: NOTE_POOL[0], max: NOTE_POOL.at(-1) };
-      }
-
       useEffect(() => {
-        const element = targetInputRef.current;
-        if (!element) return;
-        const blockScroll = (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-        };
-        element.addEventListener("touchstart", blockScroll, { passive: false });
-        element.addEventListener("touchmove", blockScroll, { passive: false });
-        return () => {
-          element.removeEventListener("touchstart", blockScroll);
-          element.removeEventListener("touchmove", blockScroll);
-        };
+        window.MLH?.allowStaffTouchScroll?.(targetInputRef.current);
       }, [question.id, question.targetBar]);
 
       useEffect(() => {
@@ -9301,6 +9531,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
         return question.targetBar;
       }
 
+      function noteForPlacementStep(step, noteIndex, part) {
+        return practiceEntryNoteForStep(question, step, notePlacementBarIndexForPart(part), noteIndex);
+      }
+
       function noteFromPointer(event, lockedIndex = null, placementPartOverride = null) {
         const placementPart = placementPartOverride ?? activeNotePlacementPart();
         if (!placementPart) return null;
@@ -9318,14 +9552,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
         const targetNote = targetBar.notes[noteIndex];
         if (!targetNote) return null;
         const effectiveY = pointer.y;
-        const noteRange = missingNoteRangeForLevel(question.level);
+        const noteRange = missingNoteRangeForLevel(question.practiceLevel ?? question.level);
         const rangeTop = yForStep(noteRange.max.step, top) - STAFF.gap * 2.5;
         const rangeBottom = yForStep(noteRange.min.step, top) + STAFF.gap * 2.5;
         if (lockedIndex === null && (Math.abs(pointer.x - positions[noteIndex]) > 48 || effectiveY < rangeTop || effectiveY > rangeBottom)) return null;
         const step = clamp(Math.round((top + STAFF.gap * 4 - effectiveY) / (STAFF.gap / 2)), noteRange.min.step, noteRange.max.step);
-        const base = NOTE_POOL.find((note) => note.step === step) ?? NOTE_POOL[0];
-        const writtenAccidental = melodicAccidentalForLetter(question.key, base.letter);
-        return { ...base, id: `user-${noteIndex}`, rhythm: targetNote.rhythm, beats: targetNote.beats, barIndex: targetBar.barIndex, noteIndex, writtenAccidental };
+        return noteForPlacementStep(step, noteIndex, placementPart);
       }
 
       function activeNotePlacementPart() {
@@ -9390,6 +9622,20 @@ function advancedHigherInversionAnswerLabel(inversion) {
       function placementValue(part, defaults) {
         if (!part) return defaults;
         return makePlacementAnswer(practiceAnswers[part.id], defaults);
+      }
+
+      function removePlacedPitch(sourceId, field, index) {
+        const part = findPartBySource(sourceId);
+        if (!part || feedback) return;
+        setPracticeAnswers((answers) => {
+          const current = makePlacementAnswer(answers[part.id], {});
+          if (field === "note") return { ...answers, [part.id]: { ...current, note: null } };
+          const notes = { ...(current[field] ?? {}) };
+          delete notes[index];
+          const ties = { ...(current.ties ?? {}) };
+          if (field === "notes") { delete ties[index]; delete ties[index - 1]; }
+          return { ...answers, [part.id]: { ...current, [field]: notes, ...(field === "notes" ? { ties } : {}) } };
+        });
       }
 
       function repeatPlacementForBar(barIndex) {
@@ -9650,10 +9896,14 @@ function advancedHigherInversionAnswerLabel(inversion) {
           }
         });
         if (closestDistance > 34) return null;
-        const sourceNote = bar.notes[closestIndex];
+        return transpositionNoteForStep(stepFromSvgY(pointer.y - touchOffset, answerTop), bar, closestIndex, targetDetails);
+      }
+
+      function transpositionNoteForStep(step, bar, noteIndex, targetDetails = null) {
+        const sourceNote = bar.notes[noteIndex];
         if (!sourceNote || sourceNote.rest) return null;
         const answerClef = targetDetails?.answerClef ?? "bass";
-        const pointerTarget = noteBaseForDisplayStep(stepFromSvgY(pointer.y - touchOffset, answerTop), answerClef);
+        const pointerTarget = noteBaseForDisplayStep(step, answerClef);
         const target = answerClef === "bass"
           ? question.practiceLevel === "AH"
             ? clampNoteToAdvancedHigherTranspositionBassRange(pointerTarget)
@@ -9661,12 +9911,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
           : pointerTarget;
         return {
           ...target,
-          id: `user-transposition-${bar.barIndex}-${closestIndex}`,
+          id: `user-transposition-${bar.barIndex}-${noteIndex}`,
           rhythm: sourceNote.rhythm,
           beats: sourceNote.beats,
           beat: sourceNote.beat,
           barIndex: bar.barIndex,
-          noteIndex: closestIndex,
+          noteIndex,
           writtenAccidental: sourceNote.writtenAccidental,
         };
       }
@@ -9707,13 +9957,16 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
 
       function enharmonicNoteFromPointer(event, target, answerX, answerTop) {
+        const pointer = pointerToSvg(event);
+        if (Math.abs(pointer.x - answerX) > 42) return null;
+        return enharmonicNoteForStep(stepFromSvgY(pointer.y, answerTop), target);
+      }
+
+      function enharmonicNoteForStep(step, target) {
         const part = activeEnharmonicPart();
         if (!part || !target) return null;
         const answer = placementValue(part, { selectedAccidental: null, note: null });
         if (answer.selectedAccidental === null || answer.selectedAccidental === undefined) return null;
-        const pointer = pointerToSvg(event);
-        if (Math.abs(pointer.x - answerX) > 42) return null;
-        const step = stepFromSvgY(pointer.y, answerTop);
         const base = noteBaseForDisplayStep(step, target.clef);
         return {
           ...base,
@@ -9786,12 +10039,16 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
 
       function ahChordBassNoteFromPointer(event, slot, x, answerTop) {
-        const part = activeAhChordPart();
-        if (!part || !slot) return null;
         const pointer = pointerToSvg(event);
         const touchOffset = event.pointerType === "touch" ? 44 : 0;
         if (Math.abs(pointer.x - x) > 42) return null;
-        const pointerTarget = noteBaseForDisplayStep(stepFromSvgY(pointer.y - touchOffset, answerTop), "bass");
+        return ahChordBassNoteForStep(stepFromSvgY(pointer.y - touchOffset, answerTop), slot);
+      }
+
+      function ahChordBassNoteForStep(step, slot) {
+        const part = activeAhChordPart();
+        if (!part || !slot) return null;
+        const pointerTarget = noteBaseForDisplayStep(step, "bass");
         const target = clampNoteToAdvancedHigherTranspositionBassRange(pointerTarget);
         return {
           ...target,
@@ -9955,7 +10212,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
             <input
               type="text"
               value={value}
+              aria-label={`Chord in bar ${barIndex + 1}`}
               disabled={disabled}
+              readOnly={readOnly}
+              tabIndex={readOnly ? -1 : 0}
               autoComplete="off"
               onFocus={selectChordQuestion}
               onPointerDown={(event) => {
@@ -10087,7 +10347,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
             <input
               type="text"
               value={chordValue}
+              aria-label={`Chord ${slot.slotIndex + 1} in bar ${slot.barIndex + 1}`}
               disabled={disabled}
+              readOnly={readOnly}
+              tabIndex={readOnly ? -1 : 0}
               autoComplete="off"
               onFocus={selectChordQuestion}
               onPointerDown={(event) => {
@@ -10113,7 +10376,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
             <input
               type="text"
               value={inversionValue}
+              aria-label={`Position of chord ${slot.slotIndex + 1} in bar ${slot.barIndex + 1}`}
               disabled={disabled}
+              readOnly={readOnly}
+              tabIndex={readOnly ? -1 : 0}
               autoComplete="off"
               maxLength={13}
               onFocus={selectChordQuestion}
@@ -10349,7 +10615,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
       function BarlineMarker({ placement, colour = "currentColor", opacity = 1, dashed = false }) {
         const top = scoreSystemTop(placement.barIndex);
-        const x = placement.x ?? (barStart(placement.barIndex) + barWidth(placement.barIndex));
+        const x = placement.x ?? (barStart(placement.barIndex) + barWidth(placement.barIndex) * (placement.fraction ?? 1));
         return <line x1={x} x2={x} y1={top} y2={top + STAFF.gap * 4} stroke={colour} strokeWidth="2" opacity={opacity} strokeDasharray={dashed ? "4 4" : undefined} />;
       }
 
@@ -10467,7 +10733,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             const dynamicNoteY = top + DYNAMIC_STAVE_OFFSET;
             const dynamicSymbolY = dynamicNoteY + DYNAMIC_SYMBOL_Y_OFFSET;
             const sharedBoxY = top - 42 - BOX_LABEL_BAND_HEIGHT + MARKING_BOX_Y_OFFSET;
-            const missingNoteRange = missingNoteRangeForLevel(question.level);
+            const missingNoteRange = missingNoteRangeForLevel(question.practiceLevel ?? question.level);
             const missingInputTop = yForStep(missingNoteRange.max.step, top) - STAFF.gap * 3;
             const missingInputBottom = yForStep(missingNoteRange.min.step, top) + STAFF.gap * 7;
             const intervalInsertFirstIndex = isIntervalInsertTarget ? question.intervalInsertTarget.firstIndex : null;
@@ -10521,8 +10787,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
             const activePart = question.subquestions?.[activeIndex];
             const activeSourceId = activePart?.sourceId ?? activePart?.id;
             const notePlacementPart = notePlacementPartForBar(bar.barIndex);
-            const notePlacementCanInteract = Boolean(notePlacementPart && !feedback);
-            const repeatCanInteract = Boolean(repeatPart && activeSourceId === "repeatSigns" && !feedback);
+            const notePlacementCanInteract = Boolean(notePlacementPart && !feedback && !readOnly);
+            const repeatCanInteract = Boolean(repeatPart && activeSourceId === "repeatSigns" && !feedback && !readOnly);
             const repeatSelectedSymbolId = repeatAnswer.selectedSymbolId;
             const repeatSelectedIsTimeBar = repeatSelectedSymbolId === "first-time" || repeatSelectedSymbolId === "second-time";
             const repeatSelectedIsAboveMarking = ["dc", "ds", "fine", "segno"].includes(repeatSelectedSymbolId);
@@ -10534,13 +10800,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 width: repeatSelectedIsTimeBar ? end - start : 36,
                 height: repeatSelectedIsTimeBar ? 128 : 78,
               };
-            const barlineCanInteract = Boolean(barlinePart && !feedback);
+            const barlineCanInteract = Boolean(barlinePart && !feedback && !readOnly);
             const accidentalPart = findPartBySource("accidentals");
             const accidentalPartIndex = accidentalPart ? question.subquestions?.findIndex((part) => part.id === accidentalPart.id) ?? -1 : -1;
             const accidentalTarget = question.accidentalTarget?.barIndex === bar.barIndex ? question.accidentalTarget : null;
             const accidentalFeedback = sourceIsRevealed("accidentals");
             const accidentalAnswer = placementValue(accidentalPart, { selectedSymbolId: null, placements: [] });
-            const accidentalCanInteract = Boolean(accidentalPart && !feedback);
+            const accidentalCanInteract = Boolean(accidentalPart && !feedback && !readOnly);
             const accidentalPlacements = accidentalAnswer.placements?.filter((placement) => placement.barIndex === bar.barIndex) ?? [];
             const expectedAccidentalPlacement = accidentalTarget ? {
               symbolId: accidentalTarget.symbolId,
@@ -10590,7 +10856,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             const transpositionMeaningTarget = transpositionTarget?.type === "meaning" ? transpositionTarget : null;
             const transpositionFeedback = sourceIsRevealed("transposition");
             const transpositionAnswer = placementValue(transpositionPart, { selectedRhythm: null, notes: {}, ties: {} });
-            const transpositionCanInteract = Boolean(transpositionPart && !feedback);
+            const transpositionCanInteract = Boolean(transpositionPart && !feedback && !readOnly);
             const transpositionUsesAutomaticRhythm = question.practiceLevel === "AH";
             const transpositionAnswerOnMain = Boolean(transpositionTarget?.answerOnMain);
             const transpositionAnswerClef = transpositionTarget?.answerClef ?? "bass";
@@ -10640,7 +10906,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             const enharmonicTarget = question.enharmonicTarget?.barIndex === bar.barIndex ? question.enharmonicTarget : null;
             const enharmonicFeedback = sourceIsRevealed("enharmonics");
             const enharmonicAnswer = placementValue(enharmonicPart, { selectedAccidental: null, note: null });
-            const enharmonicCanInteract = Boolean(enharmonicPart && !feedback);
+            const enharmonicCanInteract = Boolean(enharmonicPart && !feedback && !readOnly);
             const enharmonicAnswerTop = top + 82;
             const enharmonicBoxY = top - 49 - BOX_LABEL_BAND_HEIGHT + MARKING_BOX_Y_OFFSET;
             const enharmonicBoxHeight = enharmonicAnswerTop + STAFF.gap * 8 - enharmonicBoxY - 5;
@@ -10709,7 +10975,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             const tripletAnswerBoxForBar = tripletsPart?.type === "tripletPlacement" && question.tripletTarget
               ? tripletAnswerBoxBars(question, question.tripletTarget.barIndex)
               : null;
-            const tripletCanInteract = Boolean(tripletAnswerBoxForBar?.bars.includes(bar.barIndex) && tripletsPart?.type === "tripletPlacement" && !feedback);
+            const tripletCanInteract = Boolean(tripletAnswerBoxForBar?.bars.includes(bar.barIndex) && tripletsPart?.type === "tripletPlacement" && !feedback && !readOnly);
             const givenTripletPlacements = question.givenTriplets?.filter((placement) => placement.barIndex === bar.barIndex) ?? [];
             const selectedTripletPlacements = tripletPlacementAnswer.placements?.filter((placement) => placement.barIndex === bar.barIndex) ?? [];
             const expectedTripletPlacement = tripletTargetForBar ? {
@@ -10761,7 +11027,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             const scotchSnapCanInteract = circlePart?.type === "scotchSnap"
               && activeSourceId === (circlePart.sourceId ?? circlePart.id)
               && (!circleQuestionRequiresTool(question, circlePart) || circleAnswer.circleSelected)
-              && !feedback;
+              && !feedback && !readOnly;
             const selectedScotchSnap = circleAnswer.selected?.barIndex === bar.barIndex ? circleAnswer.selected : null;
             const savedScaleDegreeAnswer = placementValue(scaleDegreesPart, { circleSelected: false, selected: null });
             const savedScaleDegreeSelection = scaleDegreesPart
@@ -10775,7 +11041,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
               ? scaleDegreeAnswerBoxBars(question, circleTarget.barIndex).bars
               : null;
             const circleSelectionIndexes = circlePart?.type === "scotchSnap"
-              ? circleTarget?.variant === "scotchSnap"
+              ? ["scotchSnap", "pairedQuaversCircle"].includes(circleTarget?.variant)
                 ? positions.slice(0, -1).map((_, index) => index)
                 : circleTarget?.variant === "scaleDegree"
                 ? scaleDegreeClickableBars.includes(bar.barIndex) ? positions.map((_, index) => index) : []
@@ -10791,7 +11057,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
               (rhythmDictationPart?.type === "rhythm" && bar.barIndex === question.rhythmTargetBar)
               || (rhythmDictationPart?.type === "rhythmFix" && isRhythmFixTargetBar)
             );
-            const rhythmCanInteract = Boolean(isRhythmTarget && rhythmPart && !feedback);
+            const rhythmCanInteract = Boolean(isRhythmTarget && rhythmPart && !feedback && !readOnly);
             const rhythmFixNoteIndices = isRhythmFixTargetBar ? rhythmFixTarget.noteIndices ?? [] : [];
             const hoveredRhythmIndex = isRhythmTarget && hoverRhythmTarget?.barIndex === bar.barIndex ? hoverRhythmTarget.noteIndex : null;
             const placedRestEntries = Object.entries(rhythmAnswer.placements ?? {}).filter(([, rhythm]) => rhythm);
@@ -11073,7 +11339,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
               ...slot,
               x: ahChordSlotX(bar, slot, start, end),
             }));
-            const ahChordBassCanInteract = Boolean(ahBassLinePart && !feedback);
+            const ahChordBassCanInteract = Boolean(ahBassLinePart && !feedback && !readOnly);
             const rhythmBoxX = start + 4;
             const rhythmBoxY = sharedBoxY;
             const rhythmBoxWidth = Math.max(58, end - start - 8);
@@ -11159,24 +11425,29 @@ function advancedHigherInversionAnswerLabel(inversion) {
               ? 6
               : 0;
             const valueBoxPreviousX = valueTargetNote ? positions[rhythmIdentificationTarget.noteIndex - 1] : null;
-            const valueBoxNextX = valueTargetNote ? positions[valueTargetEndIndex + 1] : null;
+            const valueBoxNextX = valueTargetNote ? valueTargetEndPositions[valueTargetEndIndex + 1] : null;
             const valueBoxLeftLimit = valueBoxPreviousX === null || valueBoxPreviousX === undefined
               ? start + 4
               : (valueBoxPreviousX + valueLeftX) / 2 + 3;
             const valueBoxRightLimit = valueBoxNextX === null || valueBoxNextX === undefined
-              ? end - 4
+              ? (valueTargetEndBar ? barStart(valueTargetEndBar.barIndex) + barWidth(valueTargetEndBar.barIndex) : end) - 4
               : (valueBoxNextX + valueRightX) / 2 - 3;
             const valueBoxRequestedWidth = valueBoxDesiredWidth + valueBoxLeftExtension + rhythmNameBoxExtraWidth + rhythmBeatsBoxExtraWidth;
             const valueBoxAvailableWidth = Math.max(1, 2 * Math.min(
               valueBoxTargetCentreX - valueBoxLeftLimit,
               valueBoxRightLimit - valueBoxTargetCentreX,
             ));
-            const valueBoxWidth = valueTargetNote && rhythmIdentificationTarget?.variant !== "noteValueTotal"
-              ? Math.min(valueBoxRequestedWidth, valueBoxAvailableWidth)
-              : valueBoxDesiredWidth;
+            // Keep a two-note total box between its neighbours, even in a
+            // tightly spaced beamed group. Tied totals use the ending bar's
+            // next note so their box can still span the barline.
+            const totalValueBoxX = Math.max(valueLeftX - 19, valueBoxLeftLimit);
+            const totalValueBoxRight = Math.min(valueLeftX - 19 + valueBoxDesiredWidth, valueBoxRightLimit);
+            const valueBoxWidth = valueTargetNote && rhythmIdentificationTarget?.variant === "noteValueTotal"
+              ? Math.max(1, totalValueBoxRight - totalValueBoxX)
+              : valueTargetNote ? Math.min(valueBoxRequestedWidth, valueBoxAvailableWidth) : valueBoxDesiredWidth;
             const valueBoxX = valueTargetNote
               ? rhythmIdentificationTarget?.variant === "noteValueTotal"
-                ? valueLeftX - 19
+                ? totalValueBoxX
                 : valueBoxTargetCentreX - valueBoxWidth / 2
               : 0;
             const valueBoxRight = valueBoxX + valueBoxWidth;
@@ -11273,7 +11544,19 @@ function advancedHigherInversionAnswerLabel(inversion) {
             });
             return (
               <g key={bar.barIndex}>
-                {isMissingTarget && <rect ref={targetInputRef} x={missingBoxX} y={missingInputTop} width={missingBoxWidth} height={missingInputBottom - missingInputTop} fill="transparent" pointerEvents={notePlacementCanInteract ? "all" : "none"} className="touch-none" style={{ touchAction: "none", WebkitUserSelect: "none", userSelect: "none", overscrollBehavior: "contain" }} onPointerMove={(event) => handleMove(event, notePlacementPart)} onPointerLeave={() => { if (!draggingNote) setHoverNote(null); }} onPointerDown={(event) => handlePointerDown(event, notePlacementPart)} onPointerUp={handlePointerUp} onPointerCancel={() => { setDraggingNote(null); setHoverNote(null); }} />}
+                {isMissingTarget && <PitchEntryTarget
+                  key={`pitch-entry-${question.id}-${bar.barIndex}`}
+                  label={`Missing notes in bar ${bar.barIndex + 1}`}
+                  enabled={notePlacementCanInteract}
+                  indices={isIntervalInsertTarget ? [question.intervalInsertTarget.answerIndex] : missingNoteIndicesForQuestion(question)}
+                  minStep={missingNoteRangeForLevel(question.practiceLevel ?? question.level).min.step}
+                  maxStep={missingNoteRangeForLevel(question.practiceLevel ?? question.level).max.step}
+                  noteAtStep={(step, index) => noteForPlacementStep(step, index, notePlacementPart)}
+                  onPlace={(note) => setUserNotes((current) => ({ ...current, [noteAnswerKey(note.barIndex, note.noteIndex)]: note }))}
+                  onRemove={(index) => setUserNotes((current) => { const next = { ...current }; delete next[noteAnswerKey(bar.barIndex, index)]; return next; })}
+                  onPreview={setHoverNote}
+                  onSelect={() => selectQuestionBox(notePlacementPart?.sourceId ?? notePlacementPart?.id)}
+                  targetRef={targetInputRef} x={missingBoxX} y={missingInputTop} width={missingBoxWidth} height={missingInputBottom - missingInputTop} fill="transparent" pointerEvents={notePlacementCanInteract ? "all" : "none"} className="touch-manipulation" style={{ touchAction: "none", WebkitUserSelect: "none", userSelect: "none", overscrollBehavior: "contain" }} onPointerMove={(event) => handleMove(event, notePlacementPart)} onPointerLeave={() => { if (!draggingNote) setHoverNote(null); }} onPointerDown={(event) => handlePointerDown(event, notePlacementPart)} onPointerUp={handlePointerUp} onPointerCancel={() => { setDraggingNote(null); setHoverNote(null); }} />}
                 {isMissingTarget && <MarkingBox x={missingBoxX} y={missingBoxY} width={missingBoxWidth} height={missingBoxHeight} labelSourceId={isIntervalInsertTarget ? "interval" : "missing"} label={isIntervalInsertTarget ? "Interval" : "Notes"} layer="box" />}
                 {keySignatureBoxTarget && <MarkingBox x={keySignatureBoxX} y={keySignatureBoxY} width={keySignatureBoxWidth} labelSourceId="key" label="Key" layer="box" />}
                 {timeSignatureBoxTarget && <MarkingBox x={timeSignatureBoxX} y={timeSignatureBoxY} width={timeSignatureBoxWidth} labelSourceId="time" label={timeSignatureBoxLabel} layer="box" />}
@@ -11328,7 +11611,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                   </>
                 ) : isMissingTarget
                   ? <BarNotes bar={bar} notes={targetUserNotes} positions={positions} top={top} hidden feedback={isIntervalInsertTarget ? intervalInsertFeedback : missingFeedback} timeSignature={barTimeSignature} clef={question.clef} />
-                  : <BarNotes bar={bar} notes={visibleDisplayNotes} positions={positions} top={top} activeNoteId={activeNoteId} timeSignature={barTimeSignature} clef={question.clef} />}
+                  : <BarNotes bar={bar} notes={visibleDisplayNotes} positions={positions} top={top} activeNoteId={activeNoteId} timeSignature={barTimeSignature} clef={question.clef} keyAccidentals={question.key?.signatureAccidentals} />}
                 {valueTargetCrossBarTie && <TieShape firstNote={valueTargetNote} secondNote={valueTargetEndNote} firstX={valueLeftX} secondX={valueRightX} top={top} clef={question.clef} colour="currentColor" widthScale={1} />}
                 {rhythmTiePlacements.map((noteIndex) => {
                   const first = bar.notes[noteIndex];
@@ -11630,7 +11913,18 @@ function advancedHigherInversionAnswerLabel(inversion) {
                               {guideBottomLabel}
                             </text>
                           </g>
-                          <rect
+                          <PitchEntryTarget
+                            key={`bass-pitch-entry-${question.id}-${slot.slotIndex}`}
+                            label={`Bass note ${slot.slotIndex + 1} in bar ${bar.barIndex + 1}`}
+                            clef="bass"
+                            enabled={ahChordBassCanInteract}
+                            minStep={displayStep(ADVANCED_HIGHER_TRANSPOSITION_BASS_MIN, "bass")}
+                            maxStep={displayStep(ADVANCED_HIGHER_TRANSPOSITION_BASS_MAX, "bass")}
+                            noteAtStep={(step) => ahChordBassNoteForStep(step, slot)}
+                            onPlace={placeAhChordBassNote}
+                            onRemove={() => removePlacedPitch("ahBassLine", "bassNotes", slot.slotIndex)}
+                            onPreview={setHoverAhChordBassNote}
+                            onSelect={() => selectQuestionBox("ahBassLine")}
                             x={x - 42}
                             y={ahChordBassTop - 58}
                             width="84"
@@ -11914,6 +12208,15 @@ function advancedHigherInversionAnswerLabel(inversion) {
                     height={repeatHitBox.height}
                     fill="transparent"
                     pointerEvents="all"
+                    role="button"
+                    tabIndex={repeatAnswer.selectedSymbolId ? 0 : -1}
+                    aria-label={`Place ${repeatAnswer.selectedSymbolId ?? "repeat marking"} at bar ${bar.barIndex + 1}`}
+                    onFocus={() => { if (repeatAnswer.selectedSymbolId) selectQuestionBox("repeatSigns"); }}
+                    onKeyDown={(event) => {
+                      if (!repeatAnswer.selectedSymbolId || !["Enter", " "].includes(event.key)) return;
+                      event.preventDefault();
+                      toggleRepeatPlacement(bar.barIndex);
+                    }}
                     onMouseEnter={() => setHoverRepeatPlacement(repeatPlacementForBar(bar.barIndex))}
                     onMouseLeave={() => setHoverRepeatPlacement(null)}
                     onClick={() => {
@@ -11934,6 +12237,15 @@ function advancedHigherInversionAnswerLabel(inversion) {
                     height={STAFF.gap * 4 + 36}
                     fill="transparent"
                     pointerEvents="all"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Toggle barline at position ${slot.slotIndex ?? barlineSlots.indexOf(slot) + 1} in bar ${bar.barIndex + 1}`}
+                    onFocus={() => selectQuestionBox("barlines")}
+                    onKeyDown={(event) => {
+                      if (!["Enter", " "].includes(event.key)) return;
+                      event.preventDefault();
+                      toggleBarlinePlacement(slot);
+                    }}
                     onMouseEnter={() => setHoverBarlineSlot(barlinePlacementId(slot))}
                     onMouseLeave={() => setHoverBarlineSlot(null)}
                     onClick={() => toggleBarlinePlacement(slot)}
@@ -11960,11 +12272,35 @@ function advancedHigherInversionAnswerLabel(inversion) {
                     }}
                   />
                 )}
+                {tripletCanInteract && tripletPlacementAnswer.selectedTripletKind && positions.slice(0, -2).map((x, startIndex) => {
+                  const group = bar.notes.slice(startIndex, startIndex + 3);
+                  if (group.length !== 3 || group.some((note) => !note || note.rest)) return null;
+                  const target = { barIndex: bar.barIndex, startIndex, tripletKind: tripletPlacementAnswer.selectedTripletKind };
+                  return <rect
+                    key={`keyboard-triplet-${bar.barIndex}-${startIndex}`}
+                    x={x - 12} y={top - STAFF.gap * 3}
+                    width={positions[startIndex + 2] - x + 24} height={STAFF.gap * 7}
+                    fill="transparent" pointerEvents="none"
+                    {...scoreSelectionKeyboardProps({
+                      label: `Apply triplet to the three notes beginning at note ${startIndex + 1} in bar ${bar.barIndex + 1}`,
+                      enabled: true,
+                      onSelect: () => { selectQuestionBox("triplets"); setHoverTripletPlacement(target); },
+                      onActivate: () => { placeTriplet(target); setHoverTripletPlacement(null); },
+                    })}
+                    onBlur={() => setHoverTripletPlacement(null)}
+                  />;
+                })}
                 {isRhythmTarget && positions.map((x, index) => {
                   if (isRhythmFixTargetBar && !rhythmFixNoteIndices.includes(index)) return null;
                   return (
                     <rect
                       key={`rhythm-hit-top-${index}`}
+                      {...scoreSelectionKeyboardProps({
+                        label: `Apply rhythm at note ${index + 1} in bar ${bar.barIndex + 1}`,
+                        enabled: rhythmCanInteract && Boolean(rhythmAnswer.selectedRhythm),
+                        onSelect: () => selectQuestionBox(rhythmPart?.sourceId ?? rhythmPart?.id),
+                        onActivate: () => placeRhythm({ barIndex: bar.barIndex, noteIndex: index }),
+                      })}
                       x={x - 22}
                       y={top - 24}
                       width="44"
@@ -11999,6 +12335,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
                   return (
                     <rect
                       key={`accidental-hit-${bar.barIndex}-${index}`}
+                      {...scoreSelectionKeyboardProps({
+                        label: `Apply accidental at note ${index + 1} in bar ${bar.barIndex + 1}`,
+                        enabled: accidentalCanInteract && Boolean(accidentalAnswer.selectedSymbolId),
+                        onSelect: () => selectQuestionBox("accidentals"),
+                        onActivate: () => placeAccidental({ barIndex: bar.barIndex, noteIndex: index }),
+                      })}
                       x={x - 24}
                       y={top - 24}
                       width="48"
@@ -12029,9 +12371,20 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 {transpositionTarget?.type === "notes" && positions.map((x, index) => {
                   if (bar.notes[index]?.rest) return null;
                   return (
-                    <rect
-                      ref={window.MLH?.preventTouchScrollWhileDragging}
-                      key={`transposition-hit-${bar.barIndex}-${index}`}
+                    <PitchEntryTarget
+                      targetRef={window.MLH?.preventTouchScrollWhileDragging}
+                      key={`transposition-hit-${question.id}-${bar.barIndex}-${index}`}
+                      label={`Transpose note ${index + 1} in bar ${bar.barIndex + 1}`}
+                      clef={transpositionTarget.answerClef}
+                      enabled={transpositionCanInteract && (transpositionUsesAutomaticRhythm || Boolean(transpositionAnswer.selectedRhythm))}
+                      indices={[index]}
+                      minStep={transpositionTarget.answerClef === "bass" ? displayStep(question.practiceLevel === "AH" ? ADVANCED_HIGHER_TRANSPOSITION_BASS_MIN : HIGHER_TRANSPOSITION_BASS_MIN, "bass") : MIN_DISPLAY_STEP}
+                      maxStep={transpositionTarget.answerClef === "bass" ? displayStep(question.practiceLevel === "AH" ? ADVANCED_HIGHER_TRANSPOSITION_BASS_MAX : HIGHER_TRANSPOSITION_BASS_MAX, "bass") : MAX_DISPLAY_STEP}
+                      noteAtStep={(step) => transpositionNoteForStep(step, bar, index, transpositionTarget)}
+                      onPlace={(note) => transpositionAnswer.selectedRhythm === "tie" ? toggleTranspositionTie(index) : placeTranspositionNote(note)}
+                      onRemove={() => removePlacedPitch("transposition", "notes", index)}
+                      onPreview={setHoverTranspositionNote}
+                      onSelect={() => selectQuestionBox("transposition")}
                       x={x - 24}
                       y={transpositionBoxY + BOX_LABEL_BAND_HEIGHT}
                       width="48"
@@ -12090,8 +12443,17 @@ function advancedHigherInversionAnswerLabel(inversion) {
                   );
                 })}
                 {enharmonicTarget && enharmonicAnswerX !== null && (
-                  <rect
-                    ref={window.MLH?.preventTouchScrollWhileDragging}
+                  <PitchEntryTarget
+                    key={`enharmonic-pitch-entry-${question.id}`}
+                    targetRef={window.MLH?.preventTouchScrollWhileDragging}
+                    label={`Enharmonic note in bar ${bar.barIndex + 1}`}
+                    clef={enharmonicTarget.clef}
+                    enabled={enharmonicCanInteract && enharmonicAnswer.selectedAccidental != null}
+                    noteAtStep={(step) => enharmonicNoteForStep(step, enharmonicTarget)}
+                    onPlace={placeEnharmonicNote}
+                    onRemove={() => removePlacedPitch("enharmonics", "note", 0)}
+                    onPreview={setHoverEnharmonicNote}
+                    onSelect={() => selectQuestionBox("enharmonics")}
                     x={enharmonicAnswerX - 42}
                     y={enharmonicBoxY + BOX_LABEL_BAND_HEIGHT}
                     width="84"
@@ -12149,6 +12511,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
                   return (
                     <rect
                       key={`scotch-snap-hit-${bar.barIndex}-${index}`}
+                      {...scoreSelectionKeyboardProps({
+                        label: `Circle selection beginning at note ${index + 1} in bar ${bar.barIndex + 1}`,
+                        enabled: scotchSnapCanInteract,
+                        onSelect: () => selectQuestionBox(circlePart?.sourceId ?? circlePart?.id),
+                        onActivate: () => selectScotchSnapCandidate({ variant: circleTarget?.variant, barIndex: bar.barIndex, noteIndex: index, startIndex: index, targetRhythm: bar.notes[index]?.rhythm }),
+                      })}
                       x={bounds.x}
                       y={bounds.y}
                       width={bounds.width}
@@ -12281,12 +12649,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
         const style = document.createElement("style");
         style.id = "missing-notes-shared-style";
         style.textContent = `
-          @font-face { font-family: "Bravura"; src: url("./Bravura.otf") format("opentype"); font-display: block; }
+          @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
           .music-symbol { font-family: "Bravura", serif; font-weight: 400; dominant-baseline: alphabetic; text-rendering: geometricPrecision; }
           button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; user-select: none; transition: transform .08s ease, filter .08s ease, background-color .12s ease, box-shadow .12s ease; cursor: pointer; }
           button:active { transform: scale(.96); filter: brightness(.92); }
           button:disabled { cursor: not-allowed; opacity: .5; }
           button:focus-visible { outline: 2px solid rgba(22,163,74,.35); outline-offset: 2px; }
+          [data-pitch-entry]:focus-visible, [data-score-target]:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
           @media (hover: hover) and (pointer: fine) {
             button:hover { transform: translateY(-1px) scale(1.01); filter: brightness(1.08); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
           }
@@ -12339,11 +12708,23 @@ function advancedHigherInversionAnswerLabel(inversion) {
             transition: transform .18s ease;
           }
           .practice-view-toggle.open .practice-view-chevron svg { transform: rotate(90deg); }
+          .practice-fullscreen-button { display:grid; place-items:center; width:44px; height:44px; padding:10px; border:1px solid #d6d3d1; border-radius:12px; background:#fff; color:#000; cursor:pointer; }
+          .practice-fullscreen-button:hover { background:#e7e5e4; }
+          .practice-fullscreen-button:focus-visible { outline:3px solid #2563eb; outline-offset:2px; }
+          .practice-fullscreen-button svg { width:20px; height:20px; }
+          html:has(.practice-main.is-expanded) { overflow-y:hidden; overscroll-behavior:none; }
+          .practice-main.is-expanded { position:fixed; inset:0; z-index:1050; max-width:none; margin:0; padding:0; border:0; border-radius:0; background:#fff; overflow:hidden; }
+          .practice-main.is-expanded .practice-toolbar { display:none; }
+          .practice-main.is-expanded .practice-score-stage { position:absolute; inset:0; height:100%; margin:0; opacity:1; }
+          .practice-main.is-expanded .practice-score-frame { height:100%; min-height:0; }
+          .practice-main.is-expanded .practice-score-scroll { max-height:none; height:100%; padding-bottom:280px; border:0; border-radius:0; }
+          .practice-main.is-expanded .practice-score-controls { height:100%; }
+          .practice-main.is-expanded .practice-question-overlay { position:absolute; left:24px; right:24px; bottom:24px; z-index:40; max-height:45%; overflow-y:auto; overscroll-behavior-y:contain; }
           .practice-score-scroll {
             scrollbar-gutter: stable;
             scrollbar-width: auto;
             scrollbar-color: #9ca3af #f5f5f4;
-            overscroll-behavior: contain;
+            overscroll-behavior-y: none;
           }
           .practice-score-scroll::-webkit-scrollbar { width: 14px; }
           .practice-score-scroll::-webkit-scrollbar-track { background: #f5f5f4; border-left: 1px solid #e7e5e4; }
@@ -12383,9 +12764,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
     function MenuPlayGlyph() {
       return (
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center text-lg leading-none">
-          ▶
-        </span>
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center"><span className="hub-playback-glyph is-play" aria-hidden="true"></span></span>
       );
     }
 
@@ -12517,6 +12896,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
               if (!timerEnabled || timerPaused || timerLocked) return;
               setTimerPopoverOpen((value) => !value);
             }}
+            onKeyDown={(event) => {
+              if (event.key !== "Enter" && event.key !== " ") return;
+              event.preventDefault();
+              if (!timerEnabled || timerPaused || timerLocked) return;
+              setTimerPopoverOpen((value) => !value);
+            }}
             className={`${tile} ${timerPopoverOpen ? active : ""} ${timerEnabled && !timerLocked ? "" : "opacity-45 grayscale"}`}
           >
             <div className="relative z-10 flex h-full flex-col items-center justify-center pt-[1px] text-center">
@@ -12572,15 +12957,48 @@ function advancedHigherInversionAnswerLabel(inversion) {
       );
     }
 
+    function usePracticeDialog(onDismiss) {
+      const dialogRef = useRef(null);
+      const dismissRef = useRef(onDismiss);
+      dismissRef.current = onDismiss;
+      useEffect(() => {
+        const previousFocus = document.activeElement;
+        const controls = () => [...(dialogRef.current?.querySelectorAll('button:not(:disabled), input:not(:disabled), [tabindex="0"]') ?? [])];
+        const onKeyDown = (event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            event.stopPropagation();
+            dismissRef.current?.();
+          } else if (event.key === "Tab") {
+            const items = controls();
+            const first = items[0], last = items.at(-1);
+            if (!first) { event.preventDefault(); return; }
+            if (!dialogRef.current?.contains(document.activeElement) || (!event.shiftKey && document.activeElement === last) || (event.shiftKey && document.activeElement === first)) {
+              event.preventDefault();
+              (event.shiftKey ? last : first).focus({ preventScroll: true });
+            }
+          }
+        };
+        document.addEventListener("keydown", onKeyDown, true);
+        controls()[0]?.focus({ preventScroll: true });
+        return () => {
+          document.removeEventListener("keydown", onKeyDown, true);
+          if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
+        };
+      }, []);
+      return dialogRef;
+    }
+
     function TimerPauseOverlay({ onResume }) {
+      const dialogRef = usePracticeDialog(onResume);
       return (
-        <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-white/90 px-4 text-center backdrop-blur-sm">
+        <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="practice-paused-title" className="fixed inset-0 z-[2000] flex items-center justify-center bg-white/90 px-4 text-center backdrop-blur-sm">
           <div className="flex w-full max-w-sm flex-col items-center px-6 py-7">
             <svg className="h-14 w-14 text-stone-950" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" />
               <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" />
             </svg>
-            <h2 className="mt-3 text-3xl font-black leading-none tracking-tight text-stone-950">Paused</h2>
+            <h2 id="practice-paused-title" className="mt-3 text-3xl font-black leading-none tracking-tight text-stone-950">Paused</h2>
             <button
               type="button"
               onClick={onResume}
@@ -12594,10 +13012,11 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     function NewQuestionConfirmOverlay({ onConfirm, onCancel }) {
+      const dialogRef = usePracticeDialog(onCancel);
       return (
-        <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-white/80 px-4 text-center backdrop-blur-sm">
+        <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="practice-new-question-title" className="fixed inset-0 z-[2000] flex items-center justify-center bg-white/80 px-4 text-center backdrop-blur-sm">
           <div className="flex w-full max-w-sm flex-col items-center rounded-2xl border border-stone-200 bg-white px-6 py-5 shadow-2xl">
-            <h2 className="text-2xl font-black leading-tight tracking-tight text-stone-950">Start a new question?</h2>
+            <h2 id="practice-new-question-title" className="text-2xl font-black leading-tight tracking-tight text-stone-950">Start a new question?</h2>
             <p className="mt-3 text-sm font-semibold leading-snug text-stone-600">Progress in this question will be lost.</p>
             <div className="mt-5 grid w-full grid-cols-2 gap-3">
               <button
@@ -12621,10 +13040,11 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     function IncompleteSubmitConfirmOverlay({ onConfirm, onCancel }) {
+      const dialogRef = usePracticeDialog(onCancel);
       return (
-        <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-white/80 px-4 text-center backdrop-blur-sm">
+        <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="practice-incomplete-title" className="fixed inset-0 z-[2000] flex items-center justify-center bg-white/80 px-4 text-center backdrop-blur-sm">
           <div className="flex w-full max-w-sm flex-col items-center rounded-2xl border border-stone-200 bg-white px-6 py-5 shadow-2xl">
-            <h2 className="text-2xl font-black leading-tight tracking-tight text-stone-950">Incomplete Answers</h2>
+            <h2 id="practice-incomplete-title" className="text-2xl font-black leading-tight tracking-tight text-stone-950">Incomplete Answers</h2>
             <p className="mt-3 text-sm font-semibold leading-snug text-stone-600">Are you sure you want to proceed?</p>
             <div className="mt-5 grid w-full grid-cols-2 gap-3">
               <button
@@ -12672,7 +13092,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const displayedPart = question.subquestions[carousel.toIndex] ?? activePart;
       const exitingPart = carousel.fromIndex !== null ? question.subquestions[carousel.fromIndex] : null;
       const totalParts = question.subquestions.length;
-      const playsAvailable = !limitPlays || playsRemaining > 0 || isPlaying;
+      const playsAvailable = feedback?.correct === false || !limitPlays || playsRemaining > 0 || isPlaying;
 
       useEffect(() => {
         if (feedback) setViewAllQuestions(true);
@@ -12784,6 +13204,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
           <span className={`relative inline-block max-w-full ${ANSWER_TEXTBOX_SIZE_CLASS}`}>
             <input
               value={value}
+              aria-label={`Question (${part.label ?? String.fromCharCode(97 + partIndex)}): ${part.prompt}`}
               disabled={Boolean(feedback)}
               onFocus={() => {
                 setActiveIndex(partIndex);
@@ -12941,6 +13362,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             onClick={(event) => answerButtonKeyboardClick(event, chooseSignature)}
             className={`answer-choice-button flex h-[74px] w-[108px] shrink-0 items-center justify-center rounded-xl border px-2 text-sm transition ${timeSignatureButtonClass(signature, selected, part)}`}
             aria-label={signature.id}
+            aria-pressed={selected}
           >
             <svg viewBox="0 0 76 84" className="h-16 w-14 overflow-visible" aria-hidden="true">
               <text className="music-symbol" x="38" y="24" textAnchor="middle" fontSize={topFontSize} fontWeight="400" fill="currentColor">{topGlyph}</text>
@@ -13253,6 +13675,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                     onClick={(event) => answerButtonKeyboardClick(event, chooseOption)}
                     className={`answer-choice-button flex ${ANSWER_BUTTON_SIZE_CLASS} items-center justify-center rounded-xl border px-3 text-lg font-black transition ${choiceButtonClass(option, selected, part)}`}
                     aria-label={option}
+                    aria-pressed={selected}
                   >
                     {option}
                   </button>
@@ -13290,6 +13713,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                       onClick={(event) => answerButtonKeyboardClick(event, chooseDynamic)}
                       className={`answer-choice-button flex ${ANSWER_BUTTON_SIZE_CLASS} items-center justify-center rounded-xl border px-3 transition ${state}`}
                       aria-label={dynamic.name}
+                      aria-pressed={selected}
                     >
                       <DynamicChoiceGlyph dynamic={dynamic} backdrop={!revealed && !selected} />
                     </button>
@@ -13759,9 +14183,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
 
       function questionAudioGlyph(part) {
-        const sourceId = part.sourceId ?? part.id;
-        if (question.level === "N5" && sourceId === "chord") return null;
-        if (!showAudioQuestionGlyphs || !AUDIO_PRACTICE_QUESTION_TYPE_IDS.has(sourceId)) return null;
+        if (!showAudioQuestionGlyphs || !practicePartRequiresAudio(question, part)) return null;
         return <AudioQuestionGlyph />;
       }
 
@@ -13851,12 +14273,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 className={window.MLH.PlayButtonClass}
                 aria-label={isPlaying ? "Stop audio" : "Play audio"}
               >
-                <span className="text-lg leading-none">{isPlaying ? "■" : "▶"}</span>
+                <span className={`hub-playback-glyph ${isPlaying ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
                 <span>{isPlaying ? "Stop" : "Play"}</span>
               </button>
               {limitPlays && <div className="text-[11px] font-semibold leading-none text-stone-500 sm:text-[12px]">Remaining: {playsRemaining}</div>}
             </div>
-            <div className="flex items-center justify-center gap-2 md:absolute md:left-1/2 md:top-1/2 md:-mt-[5px] md:-translate-x-1/2 md:-translate-y-1/2">
+            <div hidden={totalParts === 1} className="practice-part-navigation flex items-center justify-center gap-2 md:absolute md:left-1/2 md:top-1/2 md:-mt-[5px] md:-translate-x-1/2 md:-translate-y-1/2">
               <button
                 type="button"
                 onClick={goToPrevious}
@@ -13931,6 +14353,57 @@ function advancedHigherInversionAnswerLabel(inversion) {
       );
     }
 
+    function makeEscapePracticeQuestion(level, seed) {
+      const kind = "keyboardSingle";
+      const barIndex = 3;
+      const question = makeEightBarRepetitionQuestion(
+        "H", 0, "perfect", false, true, level, ["4/4"], false,
+        { seed, keyId: "C" }
+      );
+      const { key, timeSignature } = question;
+      const bars = question.bars.slice(0, 4).map(bar => ({ ...bar, totalBars: 4 }));
+      const target = bars[barIndex];
+      const source = target.notes.find(note => !note.rest);
+      target.notes = [makeNote(
+        noteBaseForLetterOctave(source.letter, 4), "semibreve", barIndex, 0, 0, key, target.chordSymbol
+      )];
+      target.pattern = ["semibreve"];
+      const prompt = "Which piano key matches the note in bar 4?";
+      return {
+        id: `escape-${seed}`, level, practiceLevel: level, questionType: "practicePaper",
+        key, timeSignature, bars, barCount: bars.length, escapeKind: kind, escapeTargetBar: barIndex,
+        tempoBpm: 80, subquestions: [{ id: kind, sourceId: kind, type: "text", label: "a", prompt }]
+      };
+    }
+
+    function EscapePiano({markedMidi}) {
+      const Keyboard=window.MLH.KeyboardNoteKeyboard;
+      const question={type:"name",pitch:markedMidi-60};
+      return <span className="escape-piano">
+        <Keyboard question={question} options={{octaves:1}} enabled unlabelled />
+      </span>;
+    }
+
+    function EscapeKeyboardChoices({ question, clue }) {
+      const embed = window.MLH.EscapeLiteracyActivity;
+      const letters = window.KeyboardNotes.letters;
+      const answer = question.bars[question.escapeTargetBar].notes[0].letter;
+      const answerIndex = letters.indexOf(answer);
+      const wrong = [1, -1, 2].map(offset => letters[(answerIndex + offset + letters.length) % letters.length]);
+      const choices = embed.codeOrder(wrong, answer, clue.digit);
+      return <embed.NumberedOptions activity={embed.request(clue.kind)} columns={2} choices={choices.map(letter =>
+        <EscapePiano markedMidi={60 + [0, 2, 4, 5, 7, 9, 11][letters.indexOf(letter)]} />
+      )} />;
+    }
+
+    const escapeParams = window.location ? new URLSearchParams(window.location.search) : {get: () => null};
+    const escapeEmbed = escapeParams.get("embed") === "escape" && window.parent !== window;
+    const escapeToken = escapeParams.get("token");
+    if (escapeEmbed) document.documentElement.classList.add("escape-practice-embed");
+    const escapeBridge = escapeEmbed ? window.parent.EscapePracticeBridge : null;
+    const escapeClue = escapeEmbed ? window.parent.EscapePracticeBridge?.clue?.(escapeToken) : null;
+    const escapeSend = data => { if (escapeEmbed) window.parent.postMessage({type:"escape-practice",token:escapeToken,...data}, window.location.origin); };
+
     function App() {
       useStyles();
       const initialLevel = useMemo(() => {
@@ -13938,14 +14411,52 @@ function advancedHigherInversionAnswerLabel(inversion) {
         return LEVELS[requested] ? requested : "AH";
       }, []);
       const [activeLevel, setActiveLevel] = useState(initialLevel);
-      const [tempo, setTempo] = useState("medium");
-      const [metronomeOn, setMetronomeOn] = useState(false);
-      const [followPlayback, setFollowPlayback] = useState(false);
-      const [enabledQuestionTypes, setEnabledQuestionTypes] = useState(() => defaultPracticeQuestionTypesForLevel(initialLevel));
-      const [question, setQuestion] = useState(() => makeInitialPracticeQuestion(initialLevel, defaultPracticeQuestionTypesForLevel(initialLevel)));
+      const [tempo, setTempo] = window.MLH.useProfileState("tempo", "medium");
+      const [metronomeOn, setMetronomeOn] = window.MLH.useProfileState("metronomeOn", false);
+      const [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
+      const [storedQuestionTypes, setEnabledQuestionTypes] = window.MLH.useProfileState("enabledQuestionTypes", () => defaultPracticeQuestionTypesForLevel(initialLevel));
+      const enabledQuestionTypes = useMemo(() => normalisePracticeQuestionTypes(storedQuestionTypes, activeLevel), [storedQuestionTypes, activeLevel]);
+      useEffect(() => {
+        if (!escapeEmbed && JSON.stringify(storedQuestionTypes) !== JSON.stringify(enabledQuestionTypes)) setEnabledQuestionTypes(enabledQuestionTypes);
+      }, [storedQuestionTypes, enabledQuestionTypes]);
+      const [question, setQuestion] = useState(() => {
+        if (!escapeEmbed) return makeInitialPracticeQuestion(initialLevel, enabledQuestionTypes);
+        const saved = escapeBridge.readActivity(escapeToken);
+        if (saved?.escapeKind === "keyboardSingle") return saved;
+        const created = makeEscapePracticeQuestion(initialLevel, escapeParams.get("seed"));
+        escapeBridge.saveActivity(escapeToken, created);
+        return created;
+      });
       const [userNotes, setUserNotes] = useState({});
       const [practiceAnswers, setPracticeAnswers] = useState({});
       const [activePracticePart, setActivePracticePart] = useState(0);
+      const escapeContentRef = useRef(null);
+      React.useLayoutEffect(() => {
+        const content = escapeContentRef.current;
+        if (!escapeEmbed || !content) return undefined;
+        let lastHeight;
+        const syncHeight = () => {
+          const height = Math.ceil(content.getBoundingClientRect().height);
+          if (height > 0 && height !== lastHeight) {
+            lastHeight = height;
+            escapeSend({event:"height",height});
+          }
+        };
+        const observer = new ResizeObserver(syncHeight);
+        observer.observe(content);
+        window.addEventListener("resize",syncHeight);
+        syncHeight();
+        return () => {observer.disconnect();window.removeEventListener("resize",syncHeight);};
+      }, []);
+      useEffect(() => {
+        if (!escapeEmbed) return undefined;
+        const receive = event => {
+          if (event.origin !== window.location.origin || event.source !== window.parent || event.data?.type !== "escape-practice-stop") return;
+          stopAudio();
+        };
+        window.addEventListener("message", receive);
+        return () => window.removeEventListener("message", receive);
+      }, []);
       const [hoverNote, setHoverNote] = useState(null);
       const [feedback, setFeedback] = useState(null);
       const [feedbackFading, setFeedbackFading] = useState(false);
@@ -13956,8 +14467,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const [timerResetKey, setTimerResetKey] = useState(0);
       const [secondsRemaining, setSecondsRemaining] = useState(() => practiceTimerSecondsForLevel(initialLevel));
       const [playsRemaining, setPlaysRemaining] = useState(PRACTICE_PLAYS_PER_QUESTION);
-      const [limitPlays, setLimitPlays] = useState(true);
-      const [timerEnabled, setTimerEnabled] = useState(true);
+      const [limitPlays, setLimitPlays] = window.MLH.useProfileState("limitPlays", true);
+      const [timerEnabled, setTimerEnabled] = window.MLH.useProfileState("timerEnabled", true);
       const showAudioQuestionGlyphs = true;
       const [timerPaused, setTimerPaused] = useState(false);
       const [newQuestionConfirmOpen, setNewQuestionConfirmOpen] = useState(false);
@@ -13968,6 +14479,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const [activeNoteId, setActiveNoteId] = useState(null);
       const audioRef = useRef(null);
       const timersRef = useRef([]);
+      const markingTimersRef = useRef([]);
+      const markingQuestionRef = useRef(null);
       const nextTimer = useRef(null);
       const fadeTimer = useRef(null);
       const questionLoaderTimer = useRef(null);
@@ -13979,6 +14492,19 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const previousScoreFocusRef = useRef(null);
       const [mainMinHeight, setMainMinHeight] = useState(null);
       const [scoreScrollFade, setScoreScrollFade] = useState({ top: false, bottom: false });
+      const [scoreFullscreen, setScoreFullscreen] = useState(false);
+      useEffect(() => {
+        if (!scoreFullscreen) return undefined;
+        const exitOnEscape = (event) => {
+          if (event.key === "Escape" && !event.defaultPrevented) setScoreFullscreen(false);
+        };
+        document.addEventListener("keydown", exitOnEscape);
+        return () => document.removeEventListener("keydown", exitOnEscape);
+      }, [scoreFullscreen]);
+      function toggleScoreFullscreen() {
+        // Keep score swipes within the page on browsers with a fullscreen exit gesture.
+        setScoreFullscreen((expanded) => !expanded);
+      }
 
       useEffect(() => {
         const onPointerDown = (event) => {
@@ -14018,7 +14544,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }, [timerResetKey, activeLevel]);
 
       useEffect(() => {
-        if (!timerEnabled || timerPaused || practiceReviewMode) return undefined;
+        if (escapeEmbed || !timerEnabled || timerPaused || practiceReviewMode) return undefined;
         const timer = window.setInterval(() => {
           setSecondsRemaining((current) => Math.max(0, current - 1));
         }, 1000);
@@ -14026,7 +14552,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }, [timerEnabled, timerPaused, practiceReviewMode]);
 
       useEffect(() => {
-        if (!timerEnabled || timerPaused || practiceReviewMode || secondsRemaining > 0) return;
+        if (escapeEmbed || !timerEnabled || timerPaused || practiceReviewMode || secondsRemaining > 0) return;
         submitPracticeQuestion({ requireComplete: false });
       }, [secondsRemaining, timerEnabled, timerPaused, practiceReviewMode]);
 
@@ -14043,6 +14569,9 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
 
       function clearFeedbackTimers() {
+        markingTimersRef.current.forEach((timer) => window.clearTimeout(timer));
+        markingTimersRef.current = [];
+        markingQuestionRef.current = null;
         window.clearTimeout(nextTimer.current);
         window.clearTimeout(fadeTimer.current);
       }
@@ -14050,7 +14579,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       function stopAudio(resetElapsed = true) {
         clearTimers();
         if (audioRef.current) {
-          try { audioRef.current.close(); } catch {}
+          try { (globalThis.MLH?.closeAudioContext?.(audioRef.current) || audioRef.current.close())?.catch?.(() => {}); } catch {}
         }
         audioRef.current = null;
         setIsPlaying(false);
@@ -14060,7 +14589,6 @@ function advancedHigherInversionAnswerLabel(inversion) {
       function newQuestion(level = activeLevel, questionTypes = enabledQuestionTypes) {
         if (questionChangeInProgressRef.current) return;
         questionChangeInProgressRef.current = true;
-        stopAudio();
         let nextQuestion;
         try {
           nextQuestion = makeQuestion(level, 0, questionTypes);
@@ -14071,10 +14599,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
           } catch (fallbackError) {
             console.error(fallbackError);
             questionChangeInProgressRef.current = false;
+            setFeedbackFading(false);
             setPrompt("A question could not be generated. Press Skip to try again.");
             return;
           }
         }
+        clearFeedbackTimers();
+        stopAudio();
         scrollPracticeScore("top", "auto");
         const currentMainHeight = mainContainerRef.current?.getBoundingClientRect().height;
         if (currentMainHeight) setMainMinHeight(currentMainHeight);
@@ -14100,14 +14631,14 @@ function advancedHigherInversionAnswerLabel(inversion) {
           window.requestAnimationFrame(() => scrollPracticeScore("top", "auto"));
           window.setTimeout(() => setMainMinHeight(null), 320);
         }, 220);
+        return true;
       }
 
       function startFreshQuestion() {
-        if (questionChangeInProgressRef.current) return;
+        if (!newQuestion()) return;
         setScore({ correct: 0, attempted: 0 });
         setTimerResetKey((value) => value + 1);
         setPlaysRemaining(PRACTICE_PLAYS_PER_QUESTION);
-        newQuestion();
       }
 
       function startFreshQuestionFromFeedback() {
@@ -14125,15 +14656,17 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
       function advanceAfterFeedback() {
         if (!feedback) return;
-        clearFeedbackTimers();
+        window.clearTimeout(nextTimer.current);
+        window.clearTimeout(fadeTimer.current);
         setFeedbackFading(true);
         nextTimer.current = window.setTimeout(() => newQuestion(), 180);
       }
 
       function applyLevel(level) {
         setMenu(null);
-        if (level === activeLevel) return;
+        if (level === activeLevel || questionChangeInProgressRef.current) return;
         const nextQuestionTypes = defaultPracticeQuestionTypesForLevel(level);
+        if (!newQuestion(level, nextQuestionTypes)) return;
         setActiveLevel(level);
         setEnabledQuestionTypes(nextQuestionTypes);
         setScore({ correct: 0, attempted: 0 });
@@ -14141,20 +14674,31 @@ function advancedHigherInversionAnswerLabel(inversion) {
         const url = new URL(window.location.href);
         url.searchParams.set("level", level);
         window.history.replaceState(null, "", url.toString());
-        newQuestion(level, nextQuestionTypes);
       }
 
       function toggleQuestionType(typeId) {
+        if (questionChangeInProgressRef.current) return;
         setEnabledQuestionTypes((current) => {
+          current = normalisePracticeQuestionTypes(current, activeLevel);
           const enabledCount = Object.values(current).filter(Boolean).length;
           if (current[typeId] && enabledCount <= practiceQuestionCountForLevel(activeLevel)) return current;
           const next = { ...current, [typeId]: !current[typeId] };
           if (!canBuildPracticeQuestionSelection(next, activeLevel)) return current;
+          let nextQuestion;
+          try {
+            nextQuestion = makeQuestion(activeLevel, 0, next);
+          } catch (error) {
+            console.error(error);
+            setPrompt("A question could not be generated. Try changing the selection again.");
+            return current;
+          }
+          clearFeedbackTimers();
           stopAudio();
+          setIncompleteSubmitConfirmOpen(false);
           setScore({ correct: 0, attempted: 0 });
           setTimerResetKey((value) => value + 1);
           setPlaysRemaining(PRACTICE_PLAYS_PER_QUESTION);
-          setQuestion(makeQuestion(activeLevel, 0, next));
+          setQuestion(nextQuestion);
           setUserNotes({});
           setPracticeAnswers({});
           setActivePracticePart(0);
@@ -14303,11 +14847,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
 
       function submitPracticeQuestion({ requireComplete = true } = {}) {
-        if (feedback || question.questionType !== "practicePaper") return;
+        if (escapeEmbed) return;
+        if (feedback || questionChangeInProgressRef.current || markingQuestionRef.current === question.id || question.questionType !== "practicePaper") return;
         if (requireComplete && !practiceQuestionComplete()) {
           return;
         }
 
+        markingQuestionRef.current = question.id;
         setIncompleteSubmitConfirmOpen(false);
         stopAudio();
         const target = question.bars[question.targetBar];
@@ -14484,10 +15030,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
             if (isFinalReveal && allCorrect) {
               setConfettiKey((value) => value + 1);
               const fanfareTimer = window.setTimeout(() => playSound(true, true, "bronze"), 260);
-              timersRef.current.push(fanfareTimer);
+              markingTimersRef.current.push(fanfareTimer);
             }
           }, index * revealDelayMs);
-          timersRef.current.push(revealTimer);
+          markingTimersRef.current.push(revealTimer);
         });
       }
 
@@ -14578,7 +15124,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         osc.stop(start + duration + release + 0.02);
       }
 
-      const PIANO_SAMPLE_BASE_PATH = "./piano%20audio/";
+      const PIANO_SAMPLE_BASE_PATH = "./audio/piano/";
 
       function choosePianoLayer(midi, velocity = 96) {
         const layers = window.MLH_PIANO_SAMPLE_MAP?.notes?.[String(Math.round(midi))] ?? [];
@@ -14675,18 +15221,21 @@ function advancedHigherInversionAnswerLabel(inversion) {
         return dynamicVelocityForBar(question, barIndex);
       }
 
+      const ACCOMPANIMENT_MIN_MIDI = 45; // A2
       const ACCOMPANIMENT_MAX_MIDI = 72; // C5
 
       function lowerAccompanimentMidi(midi) {
         let adjusted = midi;
-        while (adjusted > ACCOMPANIMENT_MAX_MIDI) adjusted -= 12;
+        while (adjusted > ACCOMPANIMENT_MAX_MIDI && adjusted - 12 >= ACCOMPANIMENT_MIN_MIDI) adjusted -= 12;
+        while (adjusted < ACCOMPANIMENT_MIN_MIDI) adjusted += 12;
         return adjusted;
       }
 
       function lowerAccompanimentMidiBelow(midi, ceiling = ACCOMPANIMENT_MAX_MIDI) {
         const maxMidi = Math.min(ACCOMPANIMENT_MAX_MIDI, Number.isFinite(ceiling) ? ceiling : ACCOMPANIMENT_MAX_MIDI);
         let adjusted = lowerAccompanimentMidi(midi);
-        while (adjusted >= maxMidi) adjusted -= 12;
+        while (adjusted >= maxMidi && adjusted - 12 >= ACCOMPANIMENT_MIN_MIDI) adjusted -= 12;
+        while (adjusted < ACCOMPANIMENT_MIN_MIDI) adjusted += 12;
         return adjusted;
       }
 
@@ -14948,7 +15497,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
 
       function playMelodyNote(ctx, gainNode, midi, start, duration, dynamicGain = 1, dynamicVelocity = 96, release = 0.1) {
-        playPianoMidi(ctx, gainNode, midi, start, duration, dynamicVelocity, 0.078, dynamicGain, "triangle", release);
+        playPianoMidi(ctx, gainNode, fitMelodyPlaybackMidi(midi), start, duration, dynamicVelocity, 0.078, dynamicGain, "triangle", release);
       }
 
       function shouldSkipMelodyPlaybackNote(bar, note, noteIndex) {
@@ -15024,31 +15573,51 @@ function advancedHigherInversionAnswerLabel(inversion) {
       async function playQuestionAudio(startAt = 0, restart = false) {
         if ((isPlaying || audioRef.current) && !restart) {
           stopAudio();
-          return;
+          return false;
         }
         const AudioContextClass = window.AudioContext || window.webkitAudioContext;
         if (!AudioContextClass) {
           setPrompt("Audio playback is not supported in this browser.");
-          return;
+          return false;
         }
         const offset = clamp(Number(startAt) || 0, 0, totalDuration);
         stopAudio(false);
         if (offset >= totalDuration) {
-          return;
+          return false;
         }
-        const ctx = new AudioContextClass();
-        const master = ctx.createGain();
-        master.gain.setValueAtTime(1.25, ctx.currentTime);
-        master.connect(ctx.destination);
+        let ctx;
+        let master;
+        try {
+          ctx = new AudioContextClass();
+          master = ctx.createGain();
+          master.gain.setValueAtTime(escapeEmbed && window.parent.EscapePracticeBridge?.muted() ? 0 : 1.25, ctx.currentTime);
+          master.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
+        } catch {
+          try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx?.close())?.catch?.(() => {}); } catch {}
+          setPrompt("Audio could not start. Press Play to try again.");
+          return false;
+        }
         audioRef.current = ctx;
         setIsPlaying(true);
         setPrompt("");
-        const [ready] = await Promise.all([
-          window.MLH.prepareAudioPlayback(ctx, { metronome: metronomeOn }),
-          preloadPianoSamples(ctx, pianoLayersForPlayback(question, playbackBars)),
-        ]);
-        if (audioRef.current !== ctx) return;
-        if (!ready) { stopAudio(); return; }
+        let ready;
+        try {
+          [ready] = await Promise.all([
+            window.MLH.prepareAudioPlayback(ctx, { metronome: !escapeEmbed && metronomeOn }),
+            preloadPianoSamples(ctx, pianoLayersForPlayback(question, playbackBars)),
+          ]);
+        } catch {
+          if (audioRef.current !== ctx) return false;
+          stopAudio();
+          setPrompt("Audio could not start. Press Play to try again.");
+          return false;
+        }
+        if (audioRef.current !== ctx) return false;
+        if (!ready) {
+          stopAudio();
+          setPrompt("Audio could not start. Press Play to try again.");
+          return false;
+        }
         const startTime = ctx.currentTime + 0.12 - offset;
 
         playbackBars.forEach((bar, playbackIndex) => {
@@ -15056,7 +15625,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
           const barTimeSignature = timeSignatureForBar(question, bar);
           const dynamicGain = dynamicGainForBar(question, bar.barIndex);
           const dynamicVelocity = dynamicVelocityForBar(question, bar.barIndex);
-          if (metronomeOn) {
+          if (!escapeEmbed && metronomeOn) {
             window.MLH.metronomePulseOffsets(barTimeSignature).forEach((beat) => {
               const beatStart = barStart + beat * beatSeconds;
               if (beatStart >= offset) playMetronome(ctx, master, startTime + beatStart, beat === 0);
@@ -15064,7 +15633,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
           }
           const finalPlaybackBar = playbackIndex === playbackBars.length - 1;
           const finalSoundingNoteIndex = finalPlaybackBar ? bar.notes.map((note, index) => ({ note, index })).reverse().find(({ note }) => note && !note.rest)?.index : null;
-          playAccompaniment(ctx, master, question, bar, barStart, offset, startTime, dynamicGain, dynamicVelocity, finalPlaybackBar);
+          if (!escapeEmbed) playAccompaniment(ctx, master, question, bar, barStart, offset, startTime, dynamicGain, dynamicVelocity, finalPlaybackBar);
           bar.notes.forEach((note, noteIndex) => {
             if (shouldSkipMelodyPlaybackNote(bar, note, noteIndex)) return;
             const noteStart = barStart + note.beat * beatSeconds;
@@ -15086,7 +15655,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             playbackMidis.forEach((midi) => {
               playMelodyNote(ctx, master, midi, startTime + audibleStart, audibleDuration, articulationTargetMarking === "accent" ? noteDynamicGain * ARTICULATION_ACCENT_GAIN_SCALE : noteDynamicGain, playbackVelocity, playbackRelease);
             });
-            if (followPlayback) {
+            if (!escapeEmbed && followPlayback) {
               const highlightTimer = window.setTimeout(() => {
                 setActiveNoteId(note.id);
               }, Math.max(0, (startTime + audibleStart - ctx.currentTime) * 1000));
@@ -15098,25 +15667,28 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
         const stopTimer = window.setTimeout(() => {
           stopAudio();
-        }, Math.max(0, (totalDuration - offset) * 1000) + 620);
+        }, Math.max(0, (totalDuration - offset) * 1000) + (window.MLH.naturalPlaybackTailMs?.() ?? 650));
         timersRef.current.push(stopTimer);
+        return true;
       }
 
-      function handlePlayClick() {
-        if (isPlaying) {
+      async function handlePlayClick() {
+        if (isPlaying || audioRef.current) {
           stopAudio();
           return;
         }
-        if (limitPlays && !practiceReviewMode && playsRemaining <= 0) {
+        if (!escapeEmbed && feedback?.correct !== false && limitPlays && !practiceReviewMode && playsRemaining <= 0) {
           setPrompt("No plays remaining for this question.");
           return;
         }
-        if (limitPlays && !practiceReviewMode) setPlaysRemaining((current) => Math.max(0, current - 1));
-        if (hasScrollablePracticeScore) scrollPracticeScore("top");
-        playQuestionAudio();
+        if (hasScrollablePracticeScore && !escapeEmbed) scrollPracticeScore("top");
+        const started = await playQuestionAudio();
+        if (started && !escapeEmbed && feedback?.correct !== false && limitPlays && !practiceReviewMode) {
+          setPlaysRemaining((current) => Math.max(0, current - 1));
+        }
       }
 
-      useEffect(() => () => stopAudio(), []);
+      useEffect(() => () => { clearFeedbackTimers(); stopAudio(); }, []);
 
       const isIdentifyMelody = question.questionType === "identifyMelody";
       const targetBar = isIdentifyMelody ? null : question.bars[question.targetBar];
@@ -15150,7 +15722,24 @@ function advancedHigherInversionAnswerLabel(inversion) {
           window.removeEventListener("resize", update);
           window.cancelAnimationFrame(animationFrame);
         };
-      }, [hasScrollablePracticeScore, question.id, feedback, visible]);
+      }, [hasScrollablePracticeScore, question.id, feedback, visible, scoreFullscreen]);
+
+      useEffect(() => {
+        const score = scoreScrollRef.current;
+        if (!score) return undefined;
+
+        function preventPageScrollAtScoreEdge(event) {
+          if (event.ctrlKey || event.deltaY === 0) return;
+          const maxScrollTop = score.scrollHeight - score.clientHeight;
+          const atEdge = event.deltaY < 0
+            ? score.scrollTop <= 0
+            : score.scrollTop >= maxScrollTop - 1;
+          if (atEdge) event.preventDefault();
+        }
+
+        score.addEventListener("wheel", preventPageScrollAtScoreEdge, { passive: false });
+        return () => score.removeEventListener("wheel", preventPageScrollAtScoreEdge);
+      }, [hasScrollablePracticeScore]);
 
       function scrollPracticeScore(position, behavior = "smooth") {
         const element = scoreScrollRef.current;
@@ -15181,6 +15770,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
       useEffect(() => {
         if (!hasScrollablePracticeScore || !visible || question.questionType !== "practicePaper") return undefined;
+        if (escapeEmbed) {
+          const frame = window.requestAnimationFrame(() => scrollPracticeScoreToSource(question.subquestions[0].sourceId, "auto"));
+          return () => window.cancelAnimationFrame(frame);
+        }
         const previousFocus = previousScoreFocusRef.current;
         previousScoreFocusRef.current = { questionId: question.id, activePracticePart };
         if (!previousFocus || previousFocus.questionId !== question.id) {
@@ -15199,9 +15792,22 @@ function advancedHigherInversionAnswerLabel(inversion) {
         return () => window.cancelAnimationFrame(animationFrame);
       }, [activePracticePart, hasScrollablePracticeScore, question.id, visible]);
 
+      if (escapeEmbed) {
+        return (
+          <main className="escape-practice-main" ref={escapeContentRef}>
+            <p className="escape-literacy-content-title">{question.subquestions[0].prompt}</p>
+            <div className="escape-practice-score">
+              <Score readOnly question={question} userNotes={userNotes} setHoverNote={setHoverNote} />
+            </div>
+            <section className="escape-literacy-clue">
+              <EscapeKeyboardChoices question={question} clue={escapeClue} />
+            </section>
+          </main>
+        );
+      }
       return (
         <div className="overflow-x-hidden bg-stone-50 pb-10 text-black md:pb-12">
-          <window.MLH.AppHeader icon={ASSET.appIcon} title="Practice Questions" subtitle="Complete exam-style questions combining multiple music literacy concepts." worksheetConfig={() => buildPracticeWorksheetConfig(activeLevel, enabledQuestionTypes)}>
+          <window.MLH.AppHeader profileState={{ activeLevel, tempo, metronomeOn, followPlayback, enabledQuestionTypes, limitPlays, timerEnabled }} icon={ASSET.appIcon} title="Practice Questions" subtitle="Complete exam-style questions combining multiple music literacy concepts." worksheetConfig={() => buildPracticeWorksheetConfig(activeLevel, enabledQuestionTypes)}>
             <PracticeScoreTimerPanel
               correct={score.correct}
               attempted={score.attempted}
@@ -15228,19 +15834,10 @@ function advancedHigherInversionAnswerLabel(inversion) {
               }}
             />
           )}
-          {incompleteSubmitConfirmOpen && (
-            <IncompleteSubmitConfirmOverlay
-              onCancel={() => setIncompleteSubmitConfirmOpen(false)}
-              onConfirm={() => {
-                setIncompleteSubmitConfirmOpen(false);
-                submitPracticeQuestion({ requireComplete: false });
-              }}
-            />
-          )}
           <div className="mx-auto max-w-6xl px-3 pt-[154px] sm:px-4 sm:pt-[154px] md:px-8 md:pt-[104px]">
             <main
               ref={mainContainerRef}
-              className="relative flex flex-col overflow-visible rounded-2xl border border-stone-200 bg-white px-3 pb-3 pt-[10px] shadow-sm sm:px-4 md:px-6 md:pb-6 md:pt-[14px]"
+              className={`practice-main relative flex flex-col overflow-visible rounded-2xl border border-stone-200 bg-white px-3 pb-3 pt-[10px] shadow-sm sm:px-4 md:px-6 md:pb-6 md:pt-[14px] ${scoreFullscreen ? "is-expanded" : ""}`}
               style={mainMinHeight ? { minHeight: `${mainMinHeight}px` } : undefined}
               onPointerDown={(event) => {
                 if (!feedback) return;
@@ -15251,7 +15848,16 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 advanceAfterFeedback();
               }}
             >
-              <div className="relative z-[90] mb-[10px] grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2">
+          {incompleteSubmitConfirmOpen && (
+            <IncompleteSubmitConfirmOverlay
+              onCancel={() => setIncompleteSubmitConfirmOpen(false)}
+              onConfirm={() => {
+                setIncompleteSubmitConfirmOpen(false);
+                submitPracticeQuestion({ requireComplete: false });
+              }}
+            />
+          )}
+              <div className="practice-toolbar relative z-[90] mb-[10px] grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2">
                 <div className="relative flex items-center gap-2" ref={menuRef}>
                   <div className="hub-menu-anchor relative">
                     <window.MLH.LevelButton
@@ -15293,7 +15899,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 <div className="flex h-10 min-w-[112px] items-center justify-center sm:min-w-[140px]">
                   <Feedback feedback={question.questionType === "practicePaper" ? null : feedback} fading={feedbackFading} />
                 </div>
-                <div className="flex justify-end">
+                <div className="flex justify-end gap-2">
                   {!feedback ? (
                     <window.MLH.SkipButton
                       disabled={!visible}
@@ -15318,11 +15924,11 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 </div>
               )}
 
-              <div className={`relative mt-0 mx-auto w-full transition-opacity duration-300 ${compactNationalPracticeLayout ? "-mt-[20px]" : ""} ${hasScrollablePracticeScore ? "grid grid-cols-[65px_auto_65px] justify-center gap-2" : "flex items-center justify-center overflow-visible"} ${visible ? "opacity-100" : "opacity-0"}`}>
+              <div className={`practice-score-stage relative mt-0 mx-auto w-full transition-opacity duration-300 ${compactNationalPracticeLayout ? "-mt-[20px]" : ""} ${hasScrollablePracticeScore ? "grid grid-cols-[65px_auto_65px] justify-center gap-2" : "flex items-center justify-center overflow-visible"} ${visible ? "opacity-100" : "opacity-0"}`}>
                 {hasScrollablePracticeScore ? (
                   <>
                     <div aria-hidden="true" />
-                    <div className="relative flex flex-col items-center">
+                    <div className="practice-score-frame relative flex flex-col items-center">
                       <div className={`practice-score-fade top ${scoreScrollFade.top ? "visible" : ""}`} aria-hidden="true" />
                       <div
                         ref={scoreScrollRef}
@@ -15333,7 +15939,18 @@ function advancedHigherInversionAnswerLabel(inversion) {
                       </div>
                       <div className={`practice-score-fade bottom ${scoreScrollFade.bottom ? "visible" : ""}`} aria-hidden="true" />
                     </div>
-                    <div className="flex h-[365px] shrink-0 flex-col justify-center gap-2">
+                    <div className="practice-score-controls flex h-[365px] shrink-0 flex-col items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        className="practice-fullscreen-button"
+                        onClick={toggleScoreFullscreen}
+                        aria-label={scoreFullscreen ? "Exit full screen" : "Full screen"}
+                        title={scoreFullscreen ? "Exit full screen" : "Full screen"}
+                      >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                          <path d={scoreFullscreen ? "M9 3v6H3m18 0h-6V3M3 15h6v6m6 0v-6h6" : "M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6"} />
+                        </svg>
+                      </button>
                       <button
                         type="button"
                         onClick={() => scrollPracticeScore("top")}
@@ -15357,7 +15974,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                 )}
               </div>
 
-              <div className={`transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}>
+              <div data-scroll-fade-panel={scoreFullscreen ? "" : undefined} className={`practice-question-overlay transition-opacity duration-300 ${scoreFullscreen ? "is-fullscreen" : ""} ${visible ? "opacity-100" : "opacity-0"}`}>
                 {question.questionType === "practicePaper" ? (
                   <PracticeQuestionPanel
                     question={question}
@@ -15390,15 +16007,15 @@ function advancedHigherInversionAnswerLabel(inversion) {
                     </p>
                     {prompt && <p className="mt-2 text-sm font-medium text-red-700">{prompt}</p>}
                     <div className={`${window.MLH.PlayClearConfirmRowClass} justify-between`}>
-                      <div className={`flex flex-col items-start ${(!limitPlays || playsRemaining > 0 || isPlaying) ? "" : "opacity-45 grayscale"}`}>
+                      <div className={`flex flex-col items-start ${(feedback?.correct === false || !limitPlays || playsRemaining > 0 || isPlaying) ? "" : "opacity-45 grayscale"}`}>
                         <button
                           type="button"
-                          disabled={limitPlays && playsRemaining <= 0 && !isPlaying}
+                          disabled={feedback?.correct !== false && limitPlays && playsRemaining <= 0 && !isPlaying}
                           onClick={handlePlayClick}
                           className={window.MLH.PlayButtonClass}
                           aria-label={isPlaying ? "Stop audio" : "Play audio"}
                         >
-                          <span className="text-lg leading-none">{isPlaying ? "■" : "▶"}</span>
+                          <span className={`hub-playback-glyph ${isPlaying ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
                           <span>{isPlaying ? "Stop" : "Play"}</span>
                         </button>
                         {limitPlays && <div className="mt-[3px] text-[10px] font-medium leading-none text-stone-500 sm:text-[11px]">Remaining: {playsRemaining}</div>}
@@ -15422,8 +16039,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-  </script>
+  </script><script src="./generated-runtimes/practicequestions-1.js?v=f0ef5a9f94c3"></script>
 
-  <script src="./footer.js?v=20261005-update-history"></script>
+  <script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

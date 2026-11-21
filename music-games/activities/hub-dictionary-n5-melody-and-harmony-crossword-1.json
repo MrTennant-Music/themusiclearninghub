@@ -1,0 +1,176 @@
+{
+  "id": "hub-dictionary-n5-melody-and-harmony-crossword-1",
+  "level": "N5",
+  "title": "Melody and Harmony 1",
+  "instructions": "",
+  "description": "Revise melody and harmony with 10 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Melody and Harmony",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0156",
+      "prompt": "Music with no established tonal centre and no functional major or minor key.",
+      "answer": "Atonal",
+      "distractors": [
+        "Chromatic",
+        "Semitone",
+        "Syllabic"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0159",
+      "prompt": "A dense chord made from adjacent or very closely spaced notes sounded together.",
+      "answer": "Cluster",
+      "distractors": [
+        "Grace note",
+        "Imperfect cadence",
+        "Inverted pedal"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0161",
+      "prompt": "A distinct secondary melody heard at the same time as the main melody.",
+      "answer": "Countermelody",
+      "distractors": [
+        "Chromatic",
+        "Cluster",
+        "Glissando"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0163",
+      "prompt": "A smooth slide from one pitch to another through the pitches in between.",
+      "answer": "Glissando",
+      "distractors": [
+        "Tone",
+        "Trill",
+        "Whole-tone scale"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0165",
+      "prompt": "A two-chord cadence ending on V. It sounds open or unfinished because chord I has not arrived.",
+      "answer": "Imperfect cadence",
+      "distractors": [
+        "Perfect cadence",
+        "Semitone",
+        "Syllabic"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0167",
+      "prompt": "Several notes are sung on a single syllable of text.",
+      "answer": "Melismatic",
+      "distractors": [
+        "Syllabic",
+        "Modulation",
+        "Perfect cadence"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0169",
+      "prompt": "A V-I cadence that sounds complete, also called a full close.",
+      "answer": "Perfect cadence",
+      "distractors": [
+        "Imperfect cadence",
+        "Inverted pedal",
+        "Melismatic"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0171",
+      "prompt": "The smallest standard interval in Western tonal music, equal to half a tone.",
+      "answer": "Semitone",
+      "distractors": [
+        "Tone",
+        "Glissando",
+        "Grace note"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0173",
+      "prompt": "As a pitch interval, it equals two semitones, such as C to D; on a fretted guitar it usually spans two frets.",
+      "answer": "Tone",
+      "distractors": [
+        "Semitone",
+        "Countermelody",
+        "Descant (voice)"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-melody-and-harmony-crossword-1-mc-0175",
+      "prompt": "A six-note scale built entirely from whole-tone steps, with no semitones.",
+      "answer": "Whole-tone scale",
+      "distractors": [
+        "Atonal",
+        "Pitch bend",
+        "Semitone"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

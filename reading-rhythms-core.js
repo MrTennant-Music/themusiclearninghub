@@ -130,6 +130,7 @@
     }
     if (["N5", "H", "AH"].includes(level)) {
       groups.push(cell("simple_dotted_quaver_semiquaver", ["dotted-quaver", "semiquaver"], { groupType: "beam", family: "dotted_pattern", density: "high", difficulty: 3, phraseRoles: ["middle"], weight: 14 }));
+      groups.push(cell("simple_scotch_snap", ["semiquaver", "dotted-quaver"], { groupType: "beam", family: "dotted_pattern", variationOf: "simple_dotted_quaver_semiquaver", density: "high", difficulty: 3, phraseRoles: ["middle"], weight: 14 }));
       groups.push(cell("simple_dotted_crotchet_quaver", ["dotted-crotchet", "quaver"], { family: "dotted_pattern", density: "medium", difficulty: 2, weight: 28 }));
       if (level === "AH") groups.push(cell("simple_quaver_dotted_crotchet", ["quaver", "dotted-crotchet"], { family: "syncopated_dotted", density: "high", difficulty: 4, phraseRoles: ["middle"], syncopated: true, weight: 7 }));
     }
@@ -171,6 +172,20 @@
       const groups = availableGroups(safeLevel, signature, enabledRhythms, options);
       return groups.length && canFillBar(groups, signature.quarterBeatsPerBar);
     });
+  }
+
+  function normaliseSettings(level, saved = {}) {
+    const info = LEVELS[level] || LEVELS.N3;
+    let enabledRhythms = Object.fromEntries(info.rhythmIds.map((id) => [id, typeof saved.enabledRhythms?.[id] === "boolean" ? saved.enabledRhythms[id] : true]));
+    let timeSignatureIds = info.timeSignatureIds.filter((id) => saved.enabledTimeSignatures?.[id] !== false);
+    const restsEnabled = typeof saved.restsEnabled === "boolean" ? saved.restsEnabled && info.rests : info.rests;
+    const tiesEnabled = typeof saved.tiesEnabled === "boolean" ? saved.tiesEnabled && info.ties : info.ties;
+    if (!canGenerateWithEnabled(level, enabledRhythms, { timeSignatureIds, restsEnabled, tiesEnabled })) {
+      enabledRhythms = Object.fromEntries(info.rhythmIds.map((id) => [id, true]));
+      timeSignatureIds = info.timeSignatureIds.slice();
+    }
+    const tempo = Number.isFinite(Number(saved.tempo)) ? clamp(Math.round(Number(saved.tempo) / 5) * 5, 60, 120) : 90;
+    return { enabledRhythms, enabledTimeSignatures: Object.fromEntries(info.timeSignatureIds.map((id) => [id, timeSignatureIds.includes(id)])), restsEnabled, tiesEnabled, tempo };
   }
 
   function weightedItem(items, random = Math.random, weightFor = (item) => item.weight || 1) {
@@ -319,17 +334,17 @@
     return duration ? cells.reduce((sum, item) => sum + DENSITY[item.density] * item.duration, 0) / duration : 0;
   }
 
-  function validatePhrase(rhythm, firstCells, secondCells) {
+  function validatePhrase(rhythm, firstCells, secondCells, allowDense = false) {
     if (rhythm.bars.some((bar) => !closeEnough(bar.durationBeats, rhythm.timeSignature.quarterBeatsPerBar))) return false;
     if (rhythm.bars.some((bar) => !bar.events.length || bar.events[0].type === "rest" || bar.events.at(-1).type === "rest")) return false;
     if (rhythm.expectedOnsetsBeats.length < 3) return false;
     if (averageDensity(secondCells) > averageDensity(firstCells) + 1) return false;
     if (relatedDurationRatio(firstCells, secondCells) < 0.19) return false;
     const allCells = [...firstCells, ...secondCells];
-    if (allCells.length > 2 && allCells.every((item) => item.density === "high")) return false;
+    if (!allowDense && allCells.length > 2 && allCells.every((item) => item.density === "high")) return false;
     const maximumHighShare = PHRASE_PROFILES[rhythm.level].maximumHighShare;
-    if (maximumHighShare > 0 && [firstCells, secondCells].some((cells) => cells.reduce((sum, item) => sum + (item.density === "high" ? item.duration : 0), 0) / rhythm.timeSignature.quarterBeatsPerBar > maximumHighShare + 1e-7)) return false;
-    if ([firstCells, secondCells].some((cells) => cells.some((item, index) => item.density === "high" && cells[index + 1]?.density === "high" && cells[index + 1].family !== item.family))) return false;
+    if (!allowDense && maximumHighShare > 0 && [firstCells, secondCells].some((cells) => cells.reduce((sum, item) => sum + (item.density === "high" ? item.duration : 0), 0) / rhythm.timeSignature.quarterBeatsPerBar > maximumHighShare + 1e-7)) return false;
+    if (!allowDense && [firstCells, secondCells].some((cells) => cells.some((item, index) => item.density === "high" && cells[index + 1]?.density === "high" && cells[index + 1].family !== item.family))) return false;
     if (rhythm.bars.some((bar) => bar.events.filter((event) => event.type === "rest").length > Math.max(1, Math.floor(bar.events.length / 3)))) return false;
     return true;
   }
@@ -360,29 +375,56 @@
       const options = availableGroups(safeLevel, TIME_SIGNATURES[id], enabledRhythms, generationOptions);
       return options.length && canFillBar(options, TIME_SIGNATURES[id].quarterBeatsPerBar);
     });
-    const signatureIds = viableSignatureIds.length ? viableSignatureIds : LEVELS[safeLevel].timeSignatureIds;
+    if (!viableSignatureIds.length) throw new RangeError("The selected rhythms cannot fill the selected time signatures.");
+    const signatureIds = viableSignatureIds;
+    // Keep the metre and pedagogical phrase draw stable while retrying invalid material.
+    const selectedSignature = randomItem(signatureIds, random);
+    const phraseTemplate = choosePhraseTemplate(safeLevel, random);
+    const allowDense = enabledRhythms && LEVELS[safeLevel].rhythmIds.some((id) => enabledRhythms[id] === false);
     let rhythm;
-    for (let attempt = 0; attempt < 24; attempt += 1) {
-      const timeSignature = TIME_SIGNATURES[randomItem(signatureIds, random)];
+    for (let attempt = 0; attempt < 128; attempt += 1) {
+      const timeSignature = TIME_SIGNATURES[selectedSignature];
       const options = availableGroups(safeLevel, timeSignature, enabledRhythms, generationOptions);
       const firstCells = chooseCellsForBar(safeLevel, timeSignature, random, enabledRhythms, generationOptions);
       if (!firstCells.length) continue;
-      const phraseTemplate = choosePhraseTemplate(safeLevel, random);
       const secondCells = secondBarCells(safeLevel, phraseTemplate, firstCells, options, random);
       const bars = [makeBarFromCells(firstCells, 0), makeBarFromCells(secondCells, 1)];
       rhythm = { level: safeLevel, timeSignature, bars, phraseTemplate, relatedMaterial: relatedDurationRatio(firstCells, secondCells) };
       applyOneTie(safeLevel, timeSignature, bars, random, generationOptions);
       rhythm.expectedOnsetsBeats = expectedOnsetsBeats(rhythm);
-      if (validatePhrase(rhythm, firstCells, secondCells) && rhythmSignature(rhythm) !== previousSignature) return rhythm;
+      if (validatePhrase(rhythm, firstCells, secondCells, allowDense) && rhythmSignature(rhythm) !== previousSignature) return rhythm;
     }
-    const timeSignature = TIME_SIGNATURES[signatureIds[0]];
-    const options = availableGroups(safeLevel, timeSignature, enabledRhythms, generationOptions);
-    const preferredFallback = fallbackCells(options, timeSignature.quarterBeatsPerBar, 2);
-    const firstCells = preferredFallback.length ? preferredFallback : fallbackCells(options, timeSignature.quarterBeatsPerBar);
-    const bars = [makeBarFromCells(firstCells, 0), makeBarFromCells(firstCells, 1)];
-    rhythm = { level: safeLevel, timeSignature, bars, phraseTemplate: "AA", relatedMaterial: 1, fallback: true };
-    rhythm.expectedOnsetsBeats = expectedOnsetsBeats(rhythm);
-    return rhythm;
+    // A short bar can have only one exact A–A pattern. Keep the selected metre
+    // and try a varied phrase before falling back to a different metre.
+    for (const [alternative] of PHRASE_PROFILES[safeLevel].templates.filter(([name]) => name !== phraseTemplate)) {
+      const timeSignature = TIME_SIGNATURES[selectedSignature];
+      const options = availableGroups(safeLevel, timeSignature, enabledRhythms, generationOptions);
+      for (let attempt = 0; attempt < 32; attempt += 1) {
+        const firstCells = chooseCellsForBar(safeLevel, timeSignature, random, enabledRhythms, generationOptions);
+        if (!firstCells.length) continue;
+        const secondCells = secondBarCells(safeLevel, alternative, firstCells, options, random);
+        const bars = [makeBarFromCells(firstCells, 0), makeBarFromCells(secondCells, 1)];
+        const candidate = { level: safeLevel, timeSignature, bars, phraseTemplate: alternative, relatedMaterial: relatedDurationRatio(firstCells, secondCells) };
+        applyOneTie(safeLevel, timeSignature, bars, random, generationOptions);
+        candidate.expectedOnsetsBeats = expectedOnsetsBeats(candidate);
+        if (validatePhrase(candidate, firstCells, secondCells, allowDense) && rhythmSignature(candidate) !== previousSignature) return candidate;
+      }
+    }
+    // Exhaust the selected metre before considering another. Restricted settings can
+    // have just one playable pattern; permit its repeat only when no alternative exists.
+    let repeated = null;
+    for (const id of [selectedSignature, ...signatureIds.filter((id) => id !== selectedSignature)]) {
+      const timeSignature = TIME_SIGNATURES[id];
+      const options = availableGroups(safeLevel, timeSignature, enabledRhythms, generationOptions);
+      const preferred = fallbackCells(options, timeSignature.quarterBeatsPerBar, 2);
+      const cells = preferred.length ? preferred : fallbackCells(options, timeSignature.quarterBeatsPerBar);
+      const bars = [makeBarFromCells(cells, 0), makeBarFromCells(cells, 1)];
+      const fallback = { level: safeLevel, timeSignature, bars, phraseTemplate: "AA", relatedMaterial: 1, fallback: true };
+      fallback.expectedOnsetsBeats = expectedOnsetsBeats(fallback);
+      if (rhythmSignature(fallback) !== previousSignature) return fallback;
+      repeated = fallback;
+    }
+    return repeated;
   }
 
   function expectedOnsetsBeats(rhythm) {
@@ -415,24 +457,51 @@
     const expected = expectedSeconds.map((item) => ({ ...item, matched: false }));
     const extras = [];
     const taps = [...tapSeconds].sort((a, b) => a - b);
-    taps.forEach((tap, tapIndex) => {
-      const candidates = expected.filter((item) => !item.matched).map((item) => ({ item, errorMs: (tap - item.time) * 1000 })).filter(({ errorMs }) => Math.abs(errorMs) <= thresholds.associationMs).sort((a, b) => Math.abs(a.errorMs) - Math.abs(b.errorMs));
-      if (!candidates.length) { extras.push({ tapIndex, time: tap, category: "extra" }); return; }
-      const match = candidates[0];
-      match.item.matched = true;
-      match.item.errorMs = match.errorMs;
-      const absoluteError = Math.abs(match.errorMs);
-      match.item.category = absoluteError <= thresholds.perfectMs ? "perfect" : absoluteError <= thresholds.acceptableMs ? "acceptable" : match.errorMs < 0 ? "early" : "late";
-    });
+    // An ordered alignment keeps an early/extra input from stealing the next note.
+    // Prefer accurate matches, then associated notes, then the smallest timing error.
+    const rows = Array.from({ length: expected.length + 1 }, () => Array(taps.length + 1));
+    rows[0][0] = { accurate: 0, matched: 0, error: 0 };
+    const better = (a, b) => !b || a.accurate > b.accurate || a.accurate === b.accurate && (a.matched > b.matched || a.matched === b.matched && a.error < b.error);
+    for (let i = 0; i <= expected.length; i += 1) for (let j = 0; j <= taps.length; j += 1) {
+      if (!i && !j) continue;
+      const choices = [];
+      if (i) choices.push({ ...rows[i - 1][j], previous: [i - 1, j], action: "miss" });
+      if (j) choices.push({ ...rows[i][j - 1], previous: [i, j - 1], action: "extra" });
+      if (i && j) {
+        const errorMs = (taps[j - 1] - expected[i - 1].time) * 1000;
+        if (Math.abs(errorMs) <= thresholds.associationMs) {
+          const previous = rows[i - 1][j - 1];
+          choices.push({ accurate: previous.accurate + (Math.abs(errorMs) <= thresholds.acceptableMs ? 1 : 0), matched: previous.matched + 1, error: previous.error + Math.abs(errorMs), previous: [i - 1, j - 1], action: "match", errorMs });
+        }
+      }
+      rows[i][j] = choices.reduce((best, choice) => better(choice, best) ? choice : best, null);
+    }
+    let i = expected.length, j = taps.length;
+    while (i || j) {
+      const step = rows[i][j];
+      if (step.action === "extra") extras.push({ tapIndex: j - 1, time: taps[j - 1], category: "extra" });
+      if (step.action === "match") {
+        const item = expected[i - 1], errorMs = step.errorMs, absoluteError = Math.abs(errorMs);
+        Object.assign(item, { matched: true, errorMs, category: absoluteError <= thresholds.perfectMs ? "perfect" : absoluteError <= thresholds.acceptableMs ? "acceptable" : errorMs < 0 ? "early" : "late" });
+      }
+      [i, j] = step.previous;
+    }
+    extras.reverse();
     const results = expected.map((item) => item.matched ? item : { ...item, category: "missed", errorMs: null });
     const counts = { perfect: 0, acceptable: 0, early: 0, late: 0, missed: 0, extra: extras.length };
     results.forEach((item) => { counts[item.category] += 1; });
     const accurate = counts.perfect + counts.acceptable;
-    const percentage = expected.length ? Math.round((accurate / expected.length) * 100) : 0;
+    const percentage = expected.length ? Math.round((accurate / (expected.length + extras.length)) * 100) : 0;
     const matchedErrors = results.filter((item) => Number.isFinite(item.errorMs)).map((item) => Math.abs(item.errorMs));
     const averageAbsoluteErrorMs = matchedErrors.length ? Math.round(matchedErrors.reduce((sum, value) => sum + value, 0) / matchedErrors.length) : 0;
     return { results, extras, counts, accurate, totalExpected: expected.length, percentage, averageAbsoluteErrorMs, passed: percentage >= TIMING.passPercentage, thresholds };
   }
 
-  return { TIMING, LEVELS, TIME_SIGNATURES, RHYTHMS, DENSITY, PHRASE_PROFILES, generateRhythm, canGenerateWithEnabled, rhythmSignature, expectedOnsetsBeats, expectedOnsetsSeconds, timingThresholds, matchPerformance };
+  function inputLimit(expectedSeconds) {
+    const times = expectedSeconds.map((item) => item.time);
+    const densest = Math.max(0, ...times.map((start) => times.filter((time) => time >= start && time <= start + 1).length));
+    return Math.max(7, densest + 3);
+  }
+
+  return { normaliseSettings, inputLimit, TIMING, LEVELS, TIME_SIGNATURES, RHYTHMS, DENSITY, PHRASE_PROFILES, generateRhythm, canGenerateWithEnabled, rhythmSignature, expectedOnsetsBeats, expectedOnsetsSeconds, timingThresholds, matchPerformance };
 });

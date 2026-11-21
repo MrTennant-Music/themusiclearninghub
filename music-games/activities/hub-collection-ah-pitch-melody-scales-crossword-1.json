@@ -1,0 +1,145 @@
+{
+  "id": "hub-collection-ah-pitch-melody-scales-crossword-1",
+  "level": "AH",
+  "title": "Pitch and Melody 1",
+  "instructions": "",
+  "description": "Pitch and Melody: current Music Dictionary definitions — set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Pitch and Melody",
+    "Advanced Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0009",
+      "prompt": "The notes go up, getting higher.",
+      "answer": "Ascending",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0009"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0015",
+      "prompt": "The tune jumps to a higher or lower note, skipping notes in between.",
+      "answer": "Leap",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0015"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0017",
+      "prompt": "Hearing the same bit of music again.",
+      "answer": "Repetition",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0017"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0019",
+      "prompt": "The tune moves to the next note up or down, without jumping.",
+      "answer": "Step",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0019"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0160",
+      "prompt": "Two parts move in opposite directions: one goes up while the other goes down.",
+      "answer": "Contrary motion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0160"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0171",
+      "prompt": "The smallest usual step between notes, like C to the black key just above it.",
+      "answer": "Semitone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0171"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0237",
+      "prompt": "An important extra instrumental tune played alongside the main tune, often a singer.",
+      "answer": "Obbligato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0237"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0283",
+      "prompt": "A wide gap of three whole tones between two notes, often making a tense sound.",
+      "answer": "Tritone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0283"
+    },
+    {
+      "id": "hub-collection-ah-pitch-melody-scales-crossword-1-MC-0293",
+      "prompt": "Playing a tune’s notes backwards, from the last note to the first.",
+      "answer": "Retrograde",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0293"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "pitch-melody-scales",
+  "sourceConceptIds": [
+    "MC-0009",
+    "MC-0015",
+    "MC-0017",
+    "MC-0019",
+    "MC-0160",
+    "MC-0171",
+    "MC-0237",
+    "MC-0283",
+    "MC-0293"
+  ]
+}

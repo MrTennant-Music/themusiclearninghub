@@ -1,0 +1,2232 @@
+{
+  "scope": "National 5 and Higher: the fixed six-part literacy question. Advanced Higher: written notation tasks and questions explicitly referring to a printed score, including aural annotation. Standalone aural concept questions and excerpt-version choice questions are excluded. Each paper counts once per type; separately marked parts count separately in task totals.",
+  "papers": [
+    {
+      "exam": "N5",
+      "year": 2014,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "4/4 or common time (C)",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Dynamics",
+          "audio_required": false,
+          "prompt": "The piece is played quietly. Write the appropriate dynamic marking (Italian term) under the first note of bar 1.",
+          "answer": "p (piano)",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Complete bar 3 by inserting the missing notes.",
+          "answer": "B crotchet, D crotchet and E crotchet; the printed C\u2013B\u2013C figure completes beat 4",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Repeat signs",
+          "audio_required": true,
+          "prompt": "Insert a repeat sign at the appropriate place in the music.",
+          "answer": "A right repeat sign at the end of bar 8",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this excerpt.",
+          "answer": "G major",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "prompt": "Name the cadence at the end of the excerpt.",
+          "answer": "imperfect (I\u2013V)",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2014/N5_Music_QP_2014.pdf",
+        "exampapers/n5/2014/mi_N5_Music_QP_2014.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2014/N5_Music_QP_2014.pdf": "6e187d6ba95c76bfca293f5f577cacdb18620dcc376769d1f91a54550ac95e51",
+        "exampapers/n5/2014/mi_N5_Music_QP_2014.pdf": "44ede9a0abb84a7e315caf0ff88dab2003cb2ae584b267a0aa668ae32c015184"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2015,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "4/4 or common time (C)",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write an Italian term at the correct place to indicate the tempo.",
+          "answer": "Andante, Moderato or Adagio",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this excerpt.",
+          "answer": "F major",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "prompt": "Name the cadence at bar 4.",
+          "answer": "Imperfect (I\u2013V)",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Pitch identification",
+          "audio_required": false,
+          "prompt": "Name the note marked X in bar 5.",
+          "answer": "B flat",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Complete bar 7 by inserting the missing notes. The rhythm is given above the bar.",
+          "answer": "A dotted quaver, A semiquaver, B quaver and C quaver",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2015/N5_Music_QP_2015.pdf",
+        "exampapers/n5/2015/mi_N5_Music_mi_2015.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2015/N5_Music_QP_2015.pdf": "fd33a870c77bfe3054ae642fbea29cea70505d460ea87d6f5d0cdb22490dd01d",
+        "exampapers/n5/2015/mi_N5_Music_mi_2015.pdf": "a7b53ae695e77e457d38607cca11095a3cae2da5aab59595841dbc9c23c00e1a"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2016,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "3/4",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write an Italian term at the correct place to indicate the tempo.",
+          "answer": "Moderato or Andante",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "prompt": "Write V above the bar where violins are first heard.",
+          "answer": "V anywhere above bar 9",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "The interval bracketed in bar 5 is a [answer].",
+          "answer": "Tone (whole tone or 2nd)",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "prompt": "The notes in bar 13 form the chord of [answer] major.",
+          "answer": "F major",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 15 using the rhythm provided.",
+          "answer": "E crotchet, D dotted crotchet and C quaver",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2016/N5_Music_QP_2016.pdf",
+        "exampapers/n5/2016/mi_N5_Music_mi_2016.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "3/4",
+      "source_sha256": {
+        "exampapers/n5/2016/N5_Music_QP_2016.pdf": "249b52c1ed20958a123bdc943c2b0819b05e9a02559ac2f2e627174e399561d6",
+        "exampapers/n5/2016/mi_N5_Music_mi_2016.pdf": "ca2eb9e4e46fddb0c628e8f3b9fc6d1aa09cb901d3fc7fdaa30ca8401e9b221e"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2017,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this excerpt [answer].",
+          "answer": "G, G major or G maj",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "4/4",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write an Italian term at the correct place to indicate the tempo.",
+          "answer": "Adagio or Andante",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in bar 2.",
+          "answer": "D dotted crotchet followed by D quaver",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Pitch identification",
+          "audio_required": false,
+          "prompt": "Name the note marked X in bar 3 [answer].",
+          "answer": "F sharp (F#); quaver is also accepted",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 5.",
+          "answer": "B quaver followed by A quaver",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2017/N5_Music_QP_2017.pdf",
+        "exampapers/n5/2017/mi_N5_Music_mi_2017.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2017/N5_Music_QP_2017.pdf": "daa3da139fce0049d986a222213bce9deb962a7b247f6b33631dabd7a47e5073",
+        "exampapers/n5/2017/mi_N5_Music_mi_2017.pdf": "c5983ce902a0b75db88489678d6cba6e4f029d4be99231bc5102f3e0515f2b4d"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2018,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this excerpt [answer].",
+          "answer": "C, C major or C maj",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "4/4",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in bar 2.",
+          "answer": "C dotted crotchet followed by D quaver",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "prompt": "Name the cadence in bars 7\u20138. Write your answer in the box provided.",
+          "answer": "Imperfect cadence (ending on V or 5)",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "prompt": "Write D above the bar where the drum kit starts to play.",
+          "answer": "D above bar 8 or bar 9",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Complete bar 11 by inserting the missing notes.",
+          "answer": "D crotchet followed by C crotchet",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2018/N5_Music_QP_2018.pdf",
+        "exampapers/n5/2018/mi_N5_Music_mi_2018.pdf"
+      ],
+      "underlying_key": "C major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2018/N5_Music_QP_2018.pdf": "e17d05c1f40f74877146bf6bc988b026cb1855fbb1a30617302092140bef6943",
+        "exampapers/n5/2018/mi_N5_Music_mi_2018.pdf": "9cf09b5301296b50d8baadf67a76a72d65d09353404a2e7a36953cc412902c52"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2019,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this music [answer].",
+          "answer": "G, G major or G maj",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "3/4",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Pitch identification",
+          "audio_required": false,
+          "prompt": "Name the note marked X in bar 1 [answer].",
+          "answer": "B or minim",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 4 using the rhythm provided.",
+          "answer": "D dotted quaver, B semiquaver and G crotchet",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in bar 7.",
+          "answer": "D, C, B and C as four semiquavers",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "prompt": "Name the cadence at the end of the excerpt [answer].",
+          "answer": "Imperfect cadence (I\u2013V)",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2019/N5_Music_QP_2019.pdf",
+        "exampapers/n5/2019/mi_N5_Music_mi_2019.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "3/4",
+      "source_sha256": {
+        "exampapers/n5/2019/N5_Music_QP_2019.pdf": "cdd06b4222790cb6a4e46e86a4ea4e1703414b926cd0b08e091266cd9ecac1b4",
+        "exampapers/n5/2019/mi_N5_Music_mi_2019.pdf": "1b8b063b8700dde0729c4cd1f87da95ba22422e330249a141127bd70a26bc262"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2022,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write an Italian term at the correct place to indicate the tempo.",
+          "answer": "Andante or Moderato",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Pitch identification",
+          "audio_required": false,
+          "prompt": "Name the note marked X in bar 5 [answer].",
+          "answer": "D or minim",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Dynamics",
+          "audio_required": true,
+          "prompt": "Write an appropriate dynamic marking (Italian term) under the first note of bar 9.",
+          "answer": "f, forte, mf or mezzo forte",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "The interval in bar 11 is a/an [answer].",
+          "answer": "Octave, octave leap, 8, 8th or 8ve",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 13 using the rhythm provided.",
+          "answer": "G dotted crotchet followed by G quaver",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "prompt": "Name the cadence at bar 16 [answer].",
+          "answer": "Imperfect cadence (ending on V or 5)",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2022/N5_Music_QP_2022.pdf",
+        "exampapers/n5/2022/mi_N5_Music_mi_2022.pdf"
+      ],
+      "underlying_key": "C major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2022/N5_Music_QP_2022.pdf": "b5d1bb22f652aea9118c16a55a2f1b6c39010ff13864a4f9fa68174714be80ed",
+        "exampapers/n5/2022/mi_N5_Music_mi_2022.pdf": "c34291b027883125b3fd71e3815f39e989f7defba05003caf7b45db47c28ae84"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2023,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this excerpt [answer].",
+          "answer": "F or F major",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write an Italian term at the correct place to indicate the tempo.",
+          "answer": "Andante or Moderato",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 2.",
+          "answer": "A quaver followed by B flat quaver",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Note-value identification",
+          "audio_required": false,
+          "prompt": "The value of the note marked X in bar 3 is [answer] beat(s).",
+          "answer": "1.5 or 1\u00bd",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "The interval between the first two notes in bar 5 is a/an [answer].",
+          "answer": "Semitone, 2 or any 2nd",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Repeat signs",
+          "audio_required": true,
+          "prompt": "Insert a repeat sign at the correct place in the music.",
+          "answer": "An end-repeat sign at the end of bar 8",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2023/Music N5 2023 Paper.pdf",
+        "exampapers/n5/2023/Music N5 2023 Answers.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2023/Music N5 2023 Paper.pdf": "bb2abaa107160afdf00116416c32a91274a4847f61b467dc5b430b944765dc94",
+        "exampapers/n5/2023/Music N5 2023 Answers.pdf": "1e07b175a4bc3f5b84fe6132eb36659c2ec85595fb2c99e78ec71fc5646adea1"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2024,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write the Italian term at the correct place to indicate the tempo.",
+          "answer": "Andante or Moderato",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature in the correct place.",
+          "answer": "4/4 or common time (C)",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "prompt": "Name the chord outlined in bar 1 [answer].",
+          "answer": "A minor, Am or chord I",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 3.",
+          "answer": "E quaver followed by D quaver",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Pitch identification",
+          "audio_required": false,
+          "prompt": "Name the note marked \u2018X\u2019 in bar 6 [answer].",
+          "answer": "E or minim",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Dynamics",
+          "audio_required": true,
+          "prompt": "Insert an appropriate dynamic (Italian term) below the note in bar 8.",
+          "answer": "mp, mezzo piano, p or piano",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2024/Music N5 2024 Paper.pdf",
+        "exampapers/n5/2024/Music N5 2024 Answers.pdf"
+      ],
+      "underlying_key": "A minor",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2024/Music N5 2024 Paper.pdf": "e96d5b753fc5c7fd29e70b2d0c26db555b615c567687758dbca380e8fd269d59",
+        "exampapers/n5/2024/Music N5 2024 Answers.pdf": "ef4c7fd671896e4c1c87b515889fb96dcac9be2277cdf06b0aa7a31581871ba6"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2025,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of this excerpt [answer].",
+          "answer": "F or F major",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Tempo marking",
+          "audio_required": true,
+          "prompt": "Write the Italian term at the correct place to indicate the tempo.",
+          "answer": "Moderato or Andante",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 3.",
+          "answer": "F, G and A crotchets",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "The interval between the last two notes of bar 6 is a/an [answer].",
+          "answer": "Semitone, 2 or 2nd",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Repeat signs",
+          "audio_required": true,
+          "prompt": "Insert a repeat sign at the correct place in the music.",
+          "answer": "An end-repeat sign at the end of bar 8",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "prompt": "Name the cadence in bars 9 to 10 [answer].",
+          "answer": "Perfect cadence (V-I or 5-1)",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2025/Music N5 2025 Paper.pdf",
+        "exampapers/n5/2025/Music N5 2025 Answers.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/n5/2025/Music N5 2025 Paper.pdf": "a26b6594d76895e272646fecba8b193fbfd20a08b990c7de09a8ec454ccd47a1",
+        "exampapers/n5/2025/Music N5 2025 Answers.pdf": "d5732bfc4cb9de4bf87e281d737a63220ac53c5a9d7ad080a0700e688b9bded9"
+      }
+    },
+    {
+      "exam": "N5",
+      "year": 2026,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "answer": "3/4",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Dynamics",
+          "audio_required": true,
+          "answer": "mp; also p or mf",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "Tone; also 2 or any 2nd or whole-tone",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Note-value identification",
+          "audio_required": false,
+          "answer": "3 beats (dotted minim)",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Crotchets B, C, B",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "answer": "Imperfect; also cadence ending in V or 5",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/n5/2026/N5_Music_QP_2026.pdf",
+        "exampapers/n5/2026/mi_N5_Music_mi_2026.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "3/4",
+      "source_sha256": {
+        "exampapers/n5/2026/N5_Music_QP_2026.pdf": "7fa4ea6b8ab4359b046fa20ffdce7218f9642cd6fd441015dc8a52985e5b01ee",
+        "exampapers/n5/2026/mi_N5_Music_mi_2026.pdf": "086a8935ada30cd6f1a8216dcc09a84a6552d2970d9ab77d73cd0990a686be35"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2015,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the first three notes one octave lower into the bass clef. Use the given blank bars.",
+          "answer": "E and G minims, then C dotted minim, one octave lower in the bass clef",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in bar 6. Write your answer in the box.",
+          "answer": "4th or 4",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Accidental insertion",
+          "audio_required": true,
+          "prompt": "Insert the accidental missing from bar 11.",
+          "answer": "A flat before either note in bar 11",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 14. The rhythm is given.",
+          "answer": "E dotted crotchet, A quaver and A minim",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Barline insertion",
+          "audio_required": false,
+          "prompt": "Insert the missing bar lines in line 5.",
+          "answer": "Three bar lines in the official positions",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords that you hear in the last line. You may use letter names or numbers. The first chord is given.",
+          "answer": "G and Am; V and VI; or 5 and 6",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2015/NH_Music_QP_2015.pdf",
+        "exampapers/higher/2015/mi_NH_Music_mi_2015.pdf"
+      ],
+      "underlying_key": "C major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2015/NH_Music_QP_2015.pdf": "b3afea2f1ad72d658cdb8f5d438dcfa65ee1d5513efd7408760ed4e85a9b149c",
+        "exampapers/higher/2015/mi_NH_Music_mi_2015.pdf": "e24a771fe9948b23409c00ec625b28817230201c4d0a02c1d79b5eeec92f52db"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2016,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "prompt": "Name the key of the music. Write your answer in the box at the beginning.",
+          "answer": "F major or F",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Ornament identification",
+          "audio_required": true,
+          "prompt": "Name the ornament heard in bar 2. Write your answer in the box.",
+          "answer": "Mordent",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in bar 5 to match what you hear.",
+          "answer": "A dotted crotchet followed by a quaver on A and G",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in bar 8. Write your answer in the box.",
+          "answer": "5th or 5",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Complete the last three notes in bar 14. The rhythm is given above the stave.",
+          "answer": "E, F and G quavers",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the last 5 notes one octave lower into the bass clef. Use the given blank bars.",
+          "answer": "G, F, D and E quavers followed by F tied minim and its separately entered tied quaver, one octave lower",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2016/NH_Music_QP_2016.pdf",
+        "exampapers/higher/2016/mi_NH_Music_mi_2016.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2016/NH_Music_QP_2016.pdf": "6cdd779816262edc2ad60d7e6fdb66b4dcb81dedb263afe0487ee9d7c0899ec4",
+        "exampapers/higher/2016/mi_NH_Music_mi_2016.pdf": "490ac67f79bd094de4d8a534db2c20cf9eeccb552478d7218f0502269cee8063"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2017,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature at the appropriate place in the music.",
+          "answer": "4/4 or common time",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in bar 3. Write your answer in the box.",
+          "answer": "6th or 6",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Note-value identification",
+          "audio_required": false,
+          "prompt": "What is the total value of the two notes in the box in bar 5? Write your answer in the box.",
+          "answer": "1.5 beats",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 11. The rhythm is given above the stave.",
+          "answer": "C crotchet, B crotchet and G quaver",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords that you hear in bars 16 and 17. You may use letter names or numbers. The first chord is given.",
+          "answer": "D and G; V and I; or 5 and 1",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the notes in the box in bar 22 one octave lower into the bass clef. Use the given blank stave.",
+          "answer": "C quaver, G quaver, G quaver and A crotchet, one octave lower",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2017/NH_Music_QP_2017.pdf",
+        "exampapers/higher/2017/mi_NH_Music_mi_2017.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2017/NH_Music_QP_2017.pdf": "6ae5ca1764bae1e4c2eaa0d87b415601cabb802b3a875c4172f1a44f99e38608",
+        "exampapers/higher/2017/mi_NH_Music_mi_2017.pdf": "8d3a9d1deba0437adedfb7867c22809ae10a6b2bc97b6f22e5eafcebb0ffbbdc"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2018,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Barline insertion",
+          "audio_required": false,
+          "prompt": "Insert the two missing bar lines in line 2.",
+          "answer": "Both missing bar lines, placed between the first tied D crotchets and between the tied E crotchets; the bar line between the final tied D crotchets is printed",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the first four notes in line 3 one octave lower into the bass clef. Use the given blank bars.",
+          "answer": "A3 minim, E3 crotchet, A3 crotchet and F-sharp3 minim",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in the box in line 4. The rhythm is given.",
+          "answer": "B4 minim, A4 crotchet and G4 crotchet",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in line 5. Write your answer in the box.",
+          "answer": "4th or 4",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in the box in line 8.",
+          "answer": "Three triplet crotchets: E, D and C",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "At line 8 the key changes to C major. Name the chords that you hear in line 9. You may use letter names or numbers. The first chord is given.",
+          "answer": "F and G; IV and V; or 4 and 5",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2018/NH_Music_QP_2018.pdf",
+        "exampapers/higher/2018/mi_NH_Music_mi_2018.pdf"
+      ],
+      "underlying_key": "G major changing to C major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2018/NH_Music_QP_2018.pdf": "c97f9e77f751bfc15ad1806cefebf0df9b22e71b5fff9619b1ae039fec4aec0b",
+        "exampapers/higher/2018/mi_NH_Music_mi_2018.pdf": "739e6568e81b270a56c322b036a4fbb964397b9245ecae48c4598784a3823ba4"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2019,
+      "tasks": [
+        {
+          "question": "3(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature at the appropriate place in the music.",
+          "answer": "6/8",
+          "source_page": 6
+        },
+        {
+          "question": "3(b)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in bars 2 and 3. Write your answer in the box.",
+          "answer": "5th or 5",
+          "source_page": 6
+        },
+        {
+          "question": "3(c)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords that you hear in bars 10 and 11. You may use letter names or numbers. The chord in bar 9 is given.",
+          "answer": "C and Dm; V and VI; or 5 and 6",
+          "source_page": 6
+        },
+        {
+          "question": "3(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bars 14 and 15. The rhythm is given above the stave.",
+          "answer": "G4 dotted minim and F4 dotted minim",
+          "source_page": 6
+        },
+        {
+          "question": "3(e)",
+          "category": "Rest insertion",
+          "audio_required": true,
+          "prompt": "Insert the missing rest in bar 21.",
+          "answer": "Quaver rest before the first note in bar 21",
+          "source_page": 6
+        },
+        {
+          "question": "3(f)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the notes in the box in bar 24 one octave lower into the bass clef. Use the given blank stave.",
+          "answer": "A3 quaver tied to A3 quaver, C4 quaver and A3 quaver",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2019/Music H 2019 Paper.pdf",
+        "exampapers/higher/2019/Music H 2019 Answers.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "6/8",
+      "source_sha256": {
+        "exampapers/higher/2019/Music H 2019 Paper.pdf": "f7b832bfb7f7ac03633df467fe1ab505dbd9e4404f1324264e2452f3f263e3c3",
+        "exampapers/higher/2019/Music H 2019 Answers.pdf": "4b41f7d700b252d72543edd9bdb8344a6dabf51d468af880168b67ec59876d28"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2022,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "prompt": "Insert the time signature at the appropriate place in the music.",
+          "answer": "12/8",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Interval construction",
+          "audio_required": false,
+          "prompt": "At the start of bar 4, insert a note an interval of a 5th higher than the previous note. The rhythm is given above the stave.",
+          "answer": "G5 dotted crotchet",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords played in the box in bars 6 and 7. You may use letter names or numbers. The chord at the start of bar 6 is given.",
+          "answer": "C or C7, followed by Dm; V or V7, followed by VI; or 5 followed by 6",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Scale-degree identification",
+          "audio_required": false,
+          "prompt": "The key of the music is F major. Draw a circle around the tonic note in bar 8.",
+          "answer": "F5, the third note in bar 8",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 11. The rhythm is given above the stave.",
+          "answer": "A4, G4 and B\u266d4 dotted crotchets",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the notes in the box in bars 12 and 13 one octave lower into the bass clef. Use the given blank stave.",
+          "answer": "G3 dotted crotchet, F3 crotchet, E3 quaver and F3 dotted minim",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2022/Music H 2022 Paper.pdf",
+        "exampapers/higher/2022/Music H 2022 Answers.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "12/8",
+      "source_sha256": {
+        "exampapers/higher/2022/Music H 2022 Paper.pdf": "e1dd5963be990aea717f1328b9d9a04e5af8d492f57bce6fc1a84f1217578d3f",
+        "exampapers/higher/2022/Music H 2022 Answers.pdf": "44de7e0c77804416fb7ad626862298d4f1aaad155a312f1f01b9ef33b52105d5"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2023,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Interval construction",
+          "audio_required": false,
+          "prompt": "At the start of bar 2, insert a note a 4th higher than the previous note. The rhythm is given above the stave.",
+          "answer": "D5 quaver",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the boxed notes in bar 4 one octave lower into the bass clef. Use the given blank stave.",
+          "answer": "G3, G3, F3 and D3 quavers followed by D3 crotchet",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 7. The rhythm is given above the stave.",
+          "answer": "A4, G4 and F4 quavers",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in bar 9 to match what you hear.",
+          "answer": "Quaver followed by dotted crotchet",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Rest insertion",
+          "audio_required": true,
+          "prompt": "Insert the missing rest(s) in bar 12.",
+          "answer": "Crotchet rest plus quaver rest; three quaver rests; or one dotted crotchet rest",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords that you hear in bars 14 and 15. You may use letter names or numbers. The first chord is given.",
+          "answer": "B\u266d and C; IV and V; or 4 and 5",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2023/NH_Music_QP_2023.pdf",
+        "exampapers/higher/2023/mi_NH_Music_mi_2023.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2023/NH_Music_QP_2023.pdf": "41226567ee2e9c3d32e9cb08c81a680c7ca5a6fe961992380cd24cc0648be94e",
+        "exampapers/higher/2023/mi_NH_Music_mi_2023.pdf": "981490e500eaadcabb79a6fdd810c5c2f71d3ef38abcfc6d759723e7dea7236f"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2024,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in bar 3.",
+          "answer": "5th",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Rhythm correction",
+          "audio_required": true,
+          "prompt": "Correct the rhythm in the box in bar 6.",
+          "answer": "Two quavers",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Scale-degree identification",
+          "audio_required": false,
+          "prompt": "The music is in the key of F major. Draw a circle around one example of the dominant note in the box in bars 9 and 10.",
+          "answer": "Either or both C notes in bar 10",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the three boxed notes in bar 14 one octave lower into the bass clef. Use the blank stave.",
+          "answer": "A3 crotchet, C4 quaver tied to C4 crotchet",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords played in bars 19 and 21. You may use letter names or numbers. The chord in bar 17 is given.",
+          "answer": "B\u266d and F; IV and I; or 4 and 1",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Da capo notation",
+          "audio_required": true,
+          "prompt": "There is a Da capo in this excerpt. Write D.C. at the appropriate place in the music.",
+          "answer": "D.C., DC or Da capo in, below or after bar 24",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2024/Music H 2024 Paper.pdf",
+        "exampapers/higher/2024/Music H 2024 Answers.pdf"
+      ],
+      "underlying_key": "F major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2024/Music H 2024 Paper.pdf": "b32daeddbc6f1e96b950175de96891d1ece4a5a1f19b46d4f9a06febd0285b1a",
+        "exampapers/higher/2024/Music H 2024 Answers.pdf": "7aa205e2312aef28762f5f669884721356369dc5600988083c19268a9faca56c"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2025,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Scale-degree identification",
+          "audio_required": false,
+          "prompt": "The key of the music is G major. Draw a circle around the subdominant note in bar 3.",
+          "answer": "The C note in bar 3",
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "prompt": "Name the chords played in bars 7 and 8. You may use letter names or numbers. The chord in bar 6 is given.",
+          "answer": "D and Em; V and VI; or 5 and 6",
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Transposition",
+          "audio_required": false,
+          "prompt": "Transpose the boxed notes in bar 11 one octave lower into the bass clef. Use the stave given.",
+          "answer": "B3 quaver, C4 quaver, B3 crotchet, A3 quaver and G3 quaver",
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "prompt": "Insert the missing notes in bar 17. The rhythm is given.",
+          "answer": "D5 quaver followed by C5 quaver",
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Barline insertion",
+          "audio_required": false,
+          "prompt": "Insert the missing bar line in the last line.",
+          "answer": "After bar 21",
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "prompt": "Describe the interval formed by the two notes in the box in bar 23.",
+          "answer": "4th",
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2025/Music H 2025 Paper.pdf",
+        "exampapers/higher/2025/Music H 2025 Answers.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "4/4",
+      "source_sha256": {
+        "exampapers/higher/2025/Music H 2025 Paper.pdf": "a3c7a533600db9725c48370a154b69ef8b15f2b9efee2df356b23bfd682b73d9",
+        "exampapers/higher/2025/Music H 2025 Answers.pdf": "fd6b18804c190d66ae6919a16ab88e933d05c43a2b49be76f65b7e5441865fb4"
+      }
+    },
+    {
+      "exam": "H",
+      "year": 2026,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Transposition",
+          "audio_required": false,
+          "answer": "Four notes one octave lower in bass clef, preserving the tie",
+          "question_pages": [
+            6,
+            7
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "4(b)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "6th; any type of 6th accepted",
+          "question_pages": [
+            6,
+            7
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "4(c)",
+          "category": "Chord identification",
+          "audio_required": true,
+          "answer": "D / V and G / I",
+          "question_pages": [
+            6,
+            7
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "4(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Four quavers in bar 13; pitch and rhythm must match",
+          "question_pages": [
+            6,
+            7
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "4(e)",
+          "category": "Rest insertion",
+          "audio_required": true,
+          "answer": "Quaver rest in bar 16",
+          "question_pages": [
+            6,
+            7
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 6
+        },
+        {
+          "question": "4(f)",
+          "category": "Time signature",
+          "audio_required": false,
+          "answer": "3/4 in bar 20; opening metre is 4/4",
+          "question_pages": [
+            6,
+            7
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 6
+        }
+      ],
+      "sources": [
+        "exampapers/higher/2026/NH_Music_QP_2026.pdf",
+        "exampapers/higher/2026/mi_NH_Music_mi_2026.pdf"
+      ],
+      "underlying_key": "G major",
+      "metre": "4/4 changing to 3/4",
+      "source_sha256": {
+        "exampapers/higher/2026/NH_Music_QP_2026.pdf": "8fce5d8642e151d4bbd0e754ec9f53d9ccfc456158d2db4a70ca5b18d19a36a6",
+        "exampapers/higher/2026/mi_NH_Music_mi_2026.pdf": "c18dc69e48d4d1be8986a91f871db41f0a8da32f2119a3cfa680b147eee9676f"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2016,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Rhythm completion",
+          "audio_required": true,
+          "answer": "Complete bars 3-5",
+          "source_page": 7
+        },
+        {
+          "question": "4(c)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Complete bass-stave notes",
+          "source_page": 7
+        },
+        {
+          "question": "4(d)(i)",
+          "category": "Scale identification",
+          "audio_required": false,
+          "answer": "Whole-tone scale",
+          "source_page": 7
+        },
+        {
+          "question": "4(d)(ii)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "B-flat",
+          "source_page": 7
+        },
+        {
+          "question": "4(e)(i)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "F first inversion / Ib; G minor first inversion / IIb",
+          "source_page": 7
+        },
+        {
+          "question": "4(e)(ii)",
+          "category": "Bass-line construction",
+          "audio_required": false,
+          "answer": "D dotted minim",
+          "source_page": 7
+        },
+        {
+          "question": "5(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "B-flat major",
+          "source_page": 10
+        },
+        {
+          "question": "5(b)",
+          "category": "Rest insertion",
+          "audio_required": true,
+          "answer": "Crotchet rest and quaver rest; equivalent combinations accepted",
+          "source_page": 10
+        },
+        {
+          "question": "5(c)",
+          "category": "Tie insertion",
+          "audio_required": true,
+          "answer": "Tie between the D notes in bar 2",
+          "source_page": 10
+        },
+        {
+          "question": "5(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Two notes using the provided rhythm",
+          "source_page": 10
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+        "exampapers/adv higher/2016/Music AH 2016 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2016/Music AH 2016 Paper.pdf": "f2b4403af1b5ff36cfc0d5f510028905e6e35f64841efa26b2e5bcd3bf941e37",
+        "exampapers/adv higher/2016/Music AH 2016 Answers.pdf": "6a1d23c946c905400947c8fcca97441f91e4b0881943fd2509492ca9b3de9929"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2017,
+      "tasks": [
+        {
+          "question": "4(a)",
+          "category": "Scale identification",
+          "audio_required": false,
+          "answer": "Chromatic",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "C added 6th",
+          "source_page": 10
+        },
+        {
+          "question": "4(d)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "answer": "L above bar 8",
+          "source_page": 10
+        },
+        {
+          "question": "4(e)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Melody notes in bar 12",
+          "source_page": 10
+        },
+        {
+          "question": "5(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "D major",
+          "source_page": 12
+        },
+        {
+          "question": "5(b)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "G-flat",
+          "source_page": 12
+        },
+        {
+          "question": "5(c)",
+          "category": "Clef rewriting",
+          "audio_required": false,
+          "answer": "Same-pitch rewriting in bass clef",
+          "source_page": 12
+        },
+        {
+          "question": "5(d)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "answer": "Sign above bars 5-6",
+          "source_page": 12
+        },
+        {
+          "question": "5(e)",
+          "category": "Bass-line construction",
+          "audio_required": false,
+          "answer": "Complete bass line from the printed chord information",
+          "source_page": 12
+        },
+        {
+          "question": "4(c)",
+          "category": "Articulation identification",
+          "audio_required": true,
+          "answer": "Staccato",
+          "source_page": 10
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2017/Music AH 2017 Paper.pdf",
+        "exampapers/adv higher/2017/Music AH 2017 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2017/Music AH 2017 Paper.pdf": "4fb4b0585b33f3759b287692e201925e4745ff859d9ebc890d913a5e5bb5e9ba",
+        "exampapers/adv higher/2017/Music AH 2017 Answers.pdf": "0b196df06ad6eb8d49f82eb578c152546dbda05adc276e72333e78fa73328d11"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2018,
+      "tasks": [
+        {
+          "question": "2(a)(i)",
+          "category": "Notes and rests",
+          "audio_required": true,
+          "answer": "Crotchet rest; E and D quavers; E and G crotchets",
+          "source_page": 4
+        },
+        {
+          "question": "2(a)(ii)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "answer": "Sign above bars 9-10",
+          "source_page": 4
+        },
+        {
+          "question": "2(b)",
+          "category": "Bass-line construction",
+          "audio_required": false,
+          "answer": "B, A, G semibreves",
+          "source_page": 4
+        },
+        {
+          "question": "2(c)(i)",
+          "category": "Time signature",
+          "audio_required": false,
+          "answer": "5/4; additive 2/4 + 3/4 also accepted",
+          "source_page": 4
+        },
+        {
+          "question": "2(c)(ii)",
+          "category": "Octave rewriting",
+          "audio_required": false,
+          "answer": "A rewritten one octave lower",
+          "source_page": 4
+        },
+        {
+          "question": "2(d)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "answer": "A above the F-sharp in bar 16",
+          "source_page": 4
+        },
+        {
+          "question": "4(a)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "E minor",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "answer": "Imperfect",
+          "source_page": 10
+        },
+        {
+          "question": "4(c)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "A-sharp",
+          "source_page": 10
+        },
+        {
+          "question": "4(d)",
+          "category": "Harmonic-device identification",
+          "audio_required": true,
+          "answer": "Tierce de Picardie",
+          "source_page": 10
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2018/Music AH 2018 Paper.pdf",
+        "exampapers/adv higher/2018/Music AH 2018 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2018/Music AH 2018 Paper.pdf": "11272555b542e7e14ac1ecc4c3f5064738bcf6ed49375bbbd425f10a4be41f6b",
+        "exampapers/adv higher/2018/Music AH 2018 Answers.pdf": "c63134b1037d8f197885fc4ec7e5ed1cb0201658ed46bfec5ddddd0fb3a867e7"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2019,
+      "tasks": [
+        {
+          "question": "2(a)(i)",
+          "category": "Rest insertion",
+          "audio_required": true,
+          "answer": "Rests completing two compound beats",
+          "source_page": 5
+        },
+        {
+          "question": "2(a)(ii)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "C major / IV",
+          "source_page": 5
+        },
+        {
+          "question": "2(a)(iii)",
+          "category": "Clef rewriting",
+          "audio_required": false,
+          "answer": "D at the same pitch in bass clef",
+          "source_page": 5
+        },
+        {
+          "question": "4(a)(i)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Four quavers in bar 4",
+          "source_page": 10
+        },
+        {
+          "question": "4(a)(ii)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "Augmented 4th / tritone",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)(i)",
+          "category": "Accidental insertion",
+          "audio_required": true,
+          "answer": "C-sharp",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)(ii)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "A-flat",
+          "source_page": 10
+        },
+        {
+          "question": "4(c)",
+          "category": "Notation-symbol meaning",
+          "audio_required": false,
+          "answer": "Play one octave lower",
+          "source_page": 10
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2019/Music AH 2019 Paper.pdf",
+        "exampapers/adv higher/2019/Music AH 2019 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2019/Music AH 2019 Paper.pdf": "9864bda0192d27691b79de07e57c1b91e8b511d295643cc8967aaae7447fc158",
+        "exampapers/adv higher/2019/Music AH 2019 Answers.pdf": "e2b1b30eea14194244f0db2e85add994101f91de829335fbdea91f32345dfa75"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2022,
+      "tasks": [
+        {
+          "question": "2(a)(i)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "G first inversion / Vb; A minor / VI",
+          "source_page": 4
+        },
+        {
+          "question": "2(a)(ii)",
+          "category": "Clef rewriting",
+          "audio_required": false,
+          "answer": "Three notes at the same pitch",
+          "source_page": 4
+        },
+        {
+          "question": "2(b)(i)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "Perfect 4th",
+          "source_page": 4
+        },
+        {
+          "question": "2(b)(ii)",
+          "category": "Accidental insertion",
+          "audio_required": true,
+          "answer": "Accidental in bar 3",
+          "source_page": 4
+        },
+        {
+          "question": "4(a)(i)",
+          "category": "Time signature",
+          "audio_required": false,
+          "answer": "Time signature on the printed score",
+          "source_page": 8
+        },
+        {
+          "question": "4(a)(ii)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "G7 / V7",
+          "source_page": 8
+        },
+        {
+          "question": "4(b)(i)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "B-flat major",
+          "source_page": 8
+        },
+        {
+          "question": "4(b)(ii)",
+          "category": "Octave-sign insertion",
+          "audio_required": true,
+          "answer": "8va with optional dotted line",
+          "source_page": 8
+        },
+        {
+          "question": "4(b)(iii)",
+          "category": "Bass-line construction",
+          "audio_required": false,
+          "answer": "Bass notes in bars 13-14",
+          "source_page": 8
+        },
+        {
+          "question": "5(a)(i)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "Enharmonic equivalent in bar 5",
+          "source_page": 12
+        },
+        {
+          "question": "5(a)(ii)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Triplet notes in bar 8",
+          "source_page": 12
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2022/Music AH 2022 Paper.pdf",
+        "exampapers/adv higher/2022/Music AH 2022 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2022/Music AH 2022 Paper.pdf": "081309588e291677ccc5968526ef2ee3c31965b0089c595a74d9177862037f76",
+        "exampapers/adv higher/2022/Music AH 2022 Answers.pdf": "bc8294ab2d46cc0310eee64c5fcc7c68558c2c109de5336b614807aea478c46d"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2023,
+      "tasks": [
+        {
+          "question": "2(b)(i)",
+          "category": "Repeat signs",
+          "audio_required": true,
+          "answer": "Start-repeat at bar 10 and end-repeat at bar 25; DS alternatives accepted",
+          "source_page": 4
+        },
+        {
+          "question": "2(b)(ii)",
+          "category": "Score annotation",
+          "audio_required": true,
+          "answer": "Sign over the bar where brass enter",
+          "source_page": 4
+        },
+        {
+          "question": "2(c)(i)",
+          "category": "Notation-symbol meaning",
+          "audio_required": false,
+          "answer": "Play one octave higher",
+          "source_page": 4
+        },
+        {
+          "question": "2(c)(ii)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "D major",
+          "source_page": 4
+        },
+        {
+          "question": "4(a)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "answer": "Imperfect",
+          "source_page": 12
+        },
+        {
+          "question": "4(b)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "A-sharp",
+          "source_page": 12
+        },
+        {
+          "question": "4(c)",
+          "category": "Accidental insertion",
+          "audio_required": true,
+          "answer": "Natural sign",
+          "source_page": 12
+        },
+        {
+          "question": "4(d)",
+          "category": "Interval construction",
+          "audio_required": false,
+          "answer": "Crotchet a 4th above the first note of bar 12",
+          "source_page": 12
+        },
+        {
+          "question": "5(b)(i)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Notes in bars 9-10",
+          "source_page": 14
+        },
+        {
+          "question": "5(b)(ii)",
+          "category": "Clef rewriting",
+          "audio_required": false,
+          "answer": "D at the same pitch in bass clef",
+          "source_page": 14
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2023/Music AH 2023 Paper.pdf",
+        "exampapers/adv higher/2023/Music AH 2023 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2023/Music AH 2023 Paper.pdf": "1f7101e1228d06535595a6f1f638f3abe9382dd57b3bfac18f3bea10f075d2a2",
+        "exampapers/adv higher/2023/Music AH 2023 Answers.pdf": "ae78f2f8ed43a2c80e1d6c299f3ba0d7454533022d70a0e3df81bc77fc3ea637"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2024,
+      "tasks": [
+        {
+          "question": "2(a)(i)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "answer": "Imperfect",
+          "source_page": 4
+        },
+        {
+          "question": "2(a)(ii)",
+          "category": "Score annotation",
+          "audio_required": false,
+          "answer": "M above a melismatic bar: 1, 3, 4 or 11",
+          "source_page": 4
+        },
+        {
+          "question": "2(b)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "G first inversion / Ib; C / IV; D / V",
+          "source_page": 4
+        },
+        {
+          "question": "2(c)(i)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "E minor",
+          "source_page": 4
+        },
+        {
+          "question": "2(c)(ii)",
+          "category": "Accidental insertion",
+          "audio_required": true,
+          "answer": "D-sharp",
+          "source_page": 4
+        },
+        {
+          "question": "4(a)(i)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "D-flat",
+          "source_page": 10
+        },
+        {
+          "question": "4(a)(ii)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "Diminished 5th / tritone",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)(i)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Notes in bar 25",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)(ii)",
+          "category": "Octave rewriting",
+          "audio_required": false,
+          "answer": "One octave lower",
+          "source_page": 10
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2024/Music AH 2024 Paper.pdf",
+        "exampapers/adv higher/2024/Music AH 2024 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2024/Music AH 2024 Paper.pdf": "8a5c5ed7905aa471fa70918654044c91b4fa95f17009f82bdc0f0203cdb3449a",
+        "exampapers/adv higher/2024/Music AH 2024 Answers.pdf": "b7984fbeff14346a34a26cba10068eeafd07aa0f7120a63aa929798fccf0e3bc"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2025,
+      "tasks": [
+        {
+          "question": "2(a)(i)",
+          "category": "Rhythm completion",
+          "audio_required": true,
+          "answer": "Missing rhythm in bar 1, including triplet sign",
+          "source_page": 3
+        },
+        {
+          "question": "2(a)(ii)",
+          "category": "Enharmonic rewriting",
+          "audio_required": false,
+          "answer": "F",
+          "source_page": 3
+        },
+        {
+          "question": "2(c)(i)",
+          "category": "Note-value identification",
+          "audio_required": false,
+          "answer": "4 beats",
+          "source_page": 3
+        },
+        {
+          "question": "2(c)(ii)",
+          "category": "Cadence identification",
+          "audio_required": true,
+          "answer": "Perfect",
+          "source_page": 3
+        },
+        {
+          "question": "2(d)",
+          "category": "Bass-line construction",
+          "audio_required": false,
+          "answer": "Bass line in D minor",
+          "source_page": 3
+        },
+        {
+          "question": "4(a)",
+          "category": "Transposition",
+          "audio_required": false,
+          "answer": "One octave higher into treble clef",
+          "source_page": 10
+        },
+        {
+          "question": "4(b)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Missing notes and rhythm in bar 4",
+          "source_page": 10
+        },
+        {
+          "question": "4(c)",
+          "category": "Scale-degree identification",
+          "audio_required": false,
+          "answer": "B-flat, the subdominant",
+          "source_page": 10
+        },
+        {
+          "question": "4(d)",
+          "category": "Barline insertion",
+          "audio_required": false,
+          "answer": "Barlines in the boxed area from bar 9",
+          "source_page": 10
+        },
+        {
+          "question": "5(d)(i)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "Diminished 7th",
+          "source_page": 12
+        },
+        {
+          "question": "5(d)(ii)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "Major 6th",
+          "source_page": 12
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2025/Music AH 2025 Paper.pdf",
+        "exampapers/adv higher/2025/Music AH 2025 Answers.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2025/Music AH 2025 Paper.pdf": "1baadef4ac17bcd2c69fa4c272822be3769f13238176162df846ea56e36ec182",
+        "exampapers/adv higher/2025/Music AH 2025 Answers.pdf": "9c1809d1f09b757b3a7470a2ca38b1e91a3786da67ec481eb1974522167d1dff"
+      }
+    },
+    {
+      "exam": "AH",
+      "year": 2026,
+      "tasks": [
+        {
+          "question": "2(a)(i)",
+          "category": "Key identification",
+          "audio_required": false,
+          "answer": "D major",
+          "question_pages": [
+            4,
+            5
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 4
+        },
+        {
+          "question": "2(a)(ii)",
+          "category": "Repeat signs",
+          "audio_required": true,
+          "answer": "End-repeat at bar 8",
+          "question_pages": [
+            4,
+            5
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 4
+        },
+        {
+          "question": "2(a)(iii)",
+          "category": "Clef rewriting",
+          "audio_required": false,
+          "answer": "Boxed bar-10 notes rewritten at the same pitch in bass clef",
+          "question_pages": [
+            4,
+            5
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 4
+        },
+        {
+          "question": "2(a)(iv)",
+          "category": "Tie insertion",
+          "audio_required": true,
+          "answer": "Tie from last note of bar 19 to first note of bar 20",
+          "question_pages": [
+            4,
+            5
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 4
+        },
+        {
+          "question": "2(b)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "Diminished 7th",
+          "question_pages": [
+            6
+          ],
+          "marking_pages": [
+            3
+          ],
+          "source_page": 4
+        },
+        {
+          "question": "2(c)",
+          "category": "Chord identification",
+          "audio_required": false,
+          "answer": "B minor / VI; E minor / II; D major first inversion / Ib",
+          "question_pages": [
+            7
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 4
+        },
+        {
+          "question": "4(a)",
+          "category": "Time signature",
+          "audio_required": false,
+          "answer": "5/4",
+          "question_pages": [
+            10,
+            11
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 10
+        },
+        {
+          "question": "4(b)",
+          "category": "Accidental insertion",
+          "audio_required": true,
+          "answer": "C-sharp in bar 5",
+          "question_pages": [
+            10,
+            11
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 10
+        },
+        {
+          "question": "4(c)",
+          "category": "Interval identification",
+          "audio_required": false,
+          "answer": "Augmented 4th / tritone; diminished 5th not accepted",
+          "question_pages": [
+            10,
+            11
+          ],
+          "marking_pages": [
+            4
+          ],
+          "source_page": 10
+        },
+        {
+          "question": "4(d)",
+          "category": "Missing notes",
+          "audio_required": true,
+          "answer": "Four quavers in bar 9; pitch and rhythm must match",
+          "question_pages": [
+            10,
+            11
+          ],
+          "marking_pages": [
+            5
+          ],
+          "source_page": 10
+        }
+      ],
+      "sources": [
+        "exampapers/adv higher/2026/NAH_Music_QP_2026.pdf",
+        "exampapers/adv higher/2026/mi_NAH_Music_mi_2026.pdf"
+      ],
+      "source_sha256": {
+        "exampapers/adv higher/2026/NAH_Music_QP_2026.pdf": "bf531bae9129c4b267edeedc5120c1493ebb37f4f80d24b787fcac334245fa97",
+        "exampapers/adv higher/2026/mi_NAH_Music_mi_2026.pdf": "c15b061ae8b2cde1d5b149891e6c2887490e2d7773421e96a7da170b661a3628"
+      }
+    }
+  ]
+}

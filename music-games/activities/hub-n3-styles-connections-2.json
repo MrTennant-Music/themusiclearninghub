@@ -1,0 +1,201 @@
+{
+  "id": "hub-n3-styles-connections-2",
+  "level": "N3",
+  "title": "Styles 2",
+  "instructions": "Find four facts that best describe each style. Some musical features are shared between styles. Find all four groups.",
+  "description": "Find facts about Jazz, Pop, Rock, Rock 'n' roll.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "National 3"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n3-styles-connections-2-1",
+      "prompt": "Small combos or big bands",
+      "answer": "Small combos or big bands",
+      "distractors": [],
+      "group": "Jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-2",
+      "prompt": "Jazz combos: swing and improv",
+      "answer": "Jazz combos: swing and improv",
+      "distractors": [],
+      "group": "Jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-3",
+      "prompt": "Jazz solos with extended chords",
+      "answer": "Jazz solos with extended chords",
+      "distractors": [],
+      "group": "Jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-4",
+      "prompt": "Early New Orleans improvisation",
+      "answer": "Early New Orleans improvisation",
+      "distractors": [],
+      "group": "Jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-5",
+      "prompt": "Catchy chart-pop choruses",
+      "answer": "Catchy chart-pop choruses",
+      "distractors": [],
+      "group": "Pop",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-6",
+      "prompt": "General mass-market song label",
+      "answer": "General mass-market song label",
+      "distractors": [],
+      "group": "Pop",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-7",
+      "prompt": "Broad chart-song category",
+      "answer": "Broad chart-song category",
+      "distractors": [],
+      "group": "Pop",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-8",
+      "prompt": "Memorable chart-song hooks",
+      "answer": "Memorable chart-song hooks",
+      "distractors": [],
+      "group": "Pop",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-9",
+      "prompt": "Distorted electric-guitar riffs",
+      "answer": "Distorted electric-guitar riffs",
+      "distractors": [],
+      "group": "Rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-10",
+      "prompt": "Post-1960s heavy guitar drums",
+      "answer": "Post-1960s heavy guitar drums",
+      "distractors": [],
+      "group": "Rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-11",
+      "prompt": "1960s amplified guitar groups",
+      "answer": "1960s amplified guitar groups",
+      "distractors": [],
+      "group": "Rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-12",
+      "prompt": "Heavy post-1960s guitar sound",
+      "answer": "Heavy post-1960s guitar sound",
+      "distractors": [],
+      "group": "Rock",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-13",
+      "prompt": "1950s American dance craze",
+      "answer": "1950s American dance craze",
+      "distractors": [],
+      "group": "Rock 'n' roll",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-14",
+      "prompt": "1950s rhythm-and-blues fusion",
+      "answer": "1950s rhythm-and-blues fusion",
+      "distractors": [],
+      "group": "Rock 'n' roll",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-15",
+      "prompt": "1950s walking-bass dance style",
+      "answer": "1950s walking-bass dance style",
+      "distractors": [],
+      "group": "Rock 'n' roll",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-styles-connections-2-16",
+      "prompt": "1950s backbeat and dance riffs",
+      "answer": "1950s backbeat and dance riffs",
+      "distractors": [],
+      "group": "Rock 'n' roll",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T20:00:00.000Z"
+}

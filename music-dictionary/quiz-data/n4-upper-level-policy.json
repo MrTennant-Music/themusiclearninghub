@@ -1,0 +1,936 @@
+{
+  "version": 1,
+  "date": "2026-11-14",
+  "sourceReview": {
+    "level": "N4",
+    "activeQuestions": 346,
+    "removedQuestions": 74,
+    "promptChanges": 83,
+    "optionSetChanges": 98,
+    "answerChanges": 14,
+    "feedbackChanges": 16,
+    "comparison": "Completed N4 review against the saved project snapshot immediately before the completed review import."
+  },
+  "principles": [
+    "Protect all N3/N4 questions, every browser review record, every teacher edit timestamp and all questions in any finalised concept, including a concept with no questions.",
+    "Prefer concise exam-style listening tasks that identify the specific feature, without naming the answer or inventing an audible event.",
+    "Use plausible alternatives from the same musical task. Prefer own-level concepts only when they make useful distractors; earlier-level terms can be better than an unrelated own-level term.",
+    "Exclude equivalent alternatives and known coexisting answers using the library tags and Dictionary relationships.",
+    "Retire repetitive written identification and duplicated two-statement checks where the retained definition and listening tasks already assess the fact. Do not fill a six-question quota.",
+    "Retain specialist vocabulary, correct-answer IDs, typed variants, recordings, timing, saved edits and finalisation. Definitions should be concise and give useful musical context."
+  ],
+  "retireInstrumentChoices": [
+    "MC-0194",
+    "MC-0195",
+    "MC-0196",
+    "MC-0197",
+    "MC-0198",
+    "MC-0199",
+    "MC-0202",
+    "MC-0203",
+    "MC-0204",
+    "MC-0205",
+    "MC-0206",
+    "MC-0210",
+    "MC-0211",
+    "MC-0212",
+    "MC-0213",
+    "MC-0298"
+  ],
+  "retireRepeatedSelections": [
+    "MC-0161",
+    "MC-0162",
+    "MC-0167",
+    "MC-0172",
+    "MC-0174",
+    "MC-0209",
+    "MC-0261",
+    "MC-0287"
+  ],
+  "definitions": {
+    "MC-0154": "A large work for orchestra, usually in several movements.",
+    "MC-0257": "Fast, decorative singing using runs, leaps and ornaments.",
+    "MC-0261": "Rapidly repeated notes, or rapid alternation between notes, creating a trembling sound.",
+    "MC-0268": "A lively Renaissance dance in triple time.",
+    "MC-0273": "A slow, dignified Renaissance dance in duple time."
+  },
+  "textChoices": {
+    "MC-0148": {
+      "prompt": "Which phrase shape is common in Classical music? Tick one box.",
+      "correct": [
+        "Clear, balanced phrases"
+      ],
+      "incorrect": [
+        "Long, continuously developing phrases with few clear pauses",
+        "A series of short phrases gradually changing through repetition",
+        "A freely flowing line following the rhythm of Latin words"
+      ]
+    },
+    "MC-0150": {
+      "prompt": "Which description best matches gospel music? Tick one box.",
+      "correct": [
+        "Christian singing with a soloist and choir exchanging phrases"
+      ],
+      "incorrect": [
+        "Unaccompanied Gaelic singing led by one singer",
+        "A secular German solo song with piano accompaniment",
+        "A Scots solo song telling a story about farm life"
+      ],
+      "feedback": "Gospel commonly uses Christian texts, expressive singing and call and response between a soloist and choir."
+    },
+    "MC-0153": {
+      "prompt": "Which description best matches a pibroch? Tick one box.",
+      "correct": [
+        "A solo bagpipe theme followed by increasingly decorated variations"
+      ],
+      "incorrect": [
+        "A quick fiddle dance with running quavers",
+        "A Gaelic work song with a leader and group responses",
+        "An accordion dance with strong Scotch snaps"
+      ]
+    },
+    "MC-0156": {
+      "prompt": "What does atonal music lack? Tick one box.",
+      "correct": [
+        "A clear tonal centre"
+      ],
+      "incorrect": [
+        "A regular pulse",
+        "Changes of dynamics",
+        "Repeated melodic ideas"
+      ],
+      "feedback": "Atonal music has no clear home note or key."
+    },
+    "MC-0159": {
+      "prompt": "Which description matches a cluster? Tick one box.",
+      "correct": [
+        "Several neighbouring pitches sounding together"
+      ],
+      "incorrect": [
+        "Chord notes played separately in a repeated pattern",
+        "One note held while the chords above change",
+        "Two neighbouring notes alternating rapidly"
+      ]
+    },
+    "MC-0177": {
+      "prompt": "Which description matches cross rhythms? Tick one box.",
+      "correct": [
+        "Different rhythmic groupings sounding at the same time"
+      ],
+      "incorrect": [
+        "The same rhythmic grouping shared by all parts",
+        "A short-long rhythm in one melodic line",
+        "A gradual change in the speed of all parts"
+      ]
+    },
+    "MC-0181": {
+      "prompt": "Which accompaniment pattern is an Alberti bass? Tick one box.",
+      "correct": [
+        "Chord notes repeated in a low-high-middle-high pattern"
+      ],
+      "incorrect": [
+        "Bass notes alternating with block chords",
+        "One low note held beneath changing chords",
+        "A bass line moving steadily to a new note on each beat"
+      ],
+      "feedback": "An Alberti bass repeats the notes of a broken chord in a low-high-middle-high pattern."
+    },
+    "MC-0183": {
+      "prompt": "Where is a coda normally heard? Tick one box.",
+      "correct": [
+        "After the main sections, as an added ending"
+      ],
+      "incorrect": [
+        "Before the first main section, as an introduction",
+        "Between two main themes, as a linking passage",
+        "Between returns of the main theme, as a contrasting episode"
+      ]
+    },
+    "MC-0184": {
+      "prompt": "Which description matches contrapuntal texture? Tick one box.",
+      "correct": [
+        "Two or more independent melodic lines sounding together"
+      ],
+      "incorrect": [
+        "One melody supported by block chords",
+        "All parts playing the same melody in unison",
+        "A solo melody heard without accompaniment"
+      ]
+    },
+    "MC-0186": {
+      "prompt": "What happens above a ground bass? Tick one box.",
+      "correct": [
+        "The upper parts change while the bass pattern repeats"
+      ],
+      "incorrect": [
+        "The upper parts copy every note of the bass in unison",
+        "The bass changes with every phrase while the upper parts repeat",
+        "The upper parts hold a fixed high note while the bass changes"
+      ]
+    },
+    "MC-0187": {
+      "prompt": "A choir sings different notes while the parts move together in the same rhythm. Name the texture. Tick one box.",
+      "correct": [
+        "Homophonic"
+      ],
+      "incorrect": [
+        "Unison",
+        "Polyphonic",
+        "Contrapuntal"
+      ]
+    },
+    "MC-0188": {
+      "prompt": "Which description matches polyphonic texture? Tick one box.",
+      "correct": [
+        "Several independent melodic lines sounding together"
+      ],
+      "incorrect": [
+        "One melody supported by block chords",
+        "All parts doubling one melody in unison",
+        "One unaccompanied melodic line"
+      ]
+    },
+    "MC-0189": {
+      "prompt": "What returns between contrasting episodes in rondo form? Tick one box.",
+      "correct": [
+        "The main A section"
+      ],
+      "incorrect": [
+        "The final coda",
+        "The opening introduction",
+        "A new variation of the theme each time"
+      ]
+    },
+    "MC-0190": {
+      "prompt": "What happens to the melody in each new verse of a strophic song? Tick one box.",
+      "correct": [
+        "The same melody returns with different words"
+      ],
+      "incorrect": [
+        "A new melody is used for each verse",
+        "The opening melody returns only after a contrasting middle section",
+        "The verse melody is replaced by a recurring chorus"
+      ]
+    },
+    "MC-0191": {
+      "prompt": "Which description matches a walking bass? Tick one box.",
+      "correct": [
+        "A bass line moving steadily from note to note on the beat"
+      ],
+      "incorrect": [
+        "Bass notes alternating with block chords",
+        "Chord notes repeated low-high-middle-high",
+        "One low note held beneath changing chords"
+      ]
+    },
+    "MC-0208": {
+      "prompt": "What does reverb do to a sound? Tick one box.",
+      "correct": [
+        "Makes it linger, suggesting a resonant space"
+      ],
+      "incorrect": [
+        "Makes its tone rough and fuzzy",
+        "Makes its pitch slide smoothly upwards",
+        "Makes the tempo gradually slower"
+      ]
+    },
+    "MC-0216": {
+      "prompt": "Which description best matches jazz funk? Tick one box.",
+      "correct": [
+        "Jazz improvisation over a strong, syncopated bass-and-drum groove"
+      ],
+      "incorrect": [
+        "Traditional Celtic melodies with electric guitars and drums",
+        "A big band playing a swung dance rhythm",
+        "Expressive gospel-influenced singing over a rhythm-and-blues backing"
+      ],
+      "feedback": "Jazz funk combines jazz improvisation with a strong, syncopated funk groove."
+    },
+    "MC-0221": {
+      "prompt": "What usually shapes the rhythm of plainchant? Tick one box.",
+      "correct": [
+        "The natural flow of the words"
+      ],
+      "incorrect": [
+        "A regular four-beat accompaniment",
+        "A repeated dotted dance rhythm",
+        "A steady vamp pattern"
+      ]
+    },
+    "MC-0231": {
+      "prompt": "Which gap is characteristic of a harmonic minor scale? Tick one box.",
+      "correct": [
+        "Three semitones between notes 6 and 7"
+      ],
+      "incorrect": [
+        "One semitone between notes 6 and 7",
+        "Two semitones between every neighbouring pair",
+        "One semitone between every neighbouring pair"
+      ]
+    },
+    "MC-0241": {
+      "prompt": "Which ending is a tierce de Picardie? Tick one box.",
+      "correct": [
+        "A minor-key piece ending with a major tonic chord"
+      ],
+      "incorrect": [
+        "A minor-key phrase ending on chord V",
+        "A phrase ending with chord V moving to chord VI",
+        "A major-key piece ending with a minor tonic chord"
+      ]
+    },
+    "MC-0243": {
+      "prompt": "A melody returns with note values twice as long while the beat stays the same. Name the device. Tick one box.",
+      "correct": [
+        "Augmentation"
+      ],
+      "incorrect": [
+        "Diminution",
+        "Imitation",
+        "Sequence"
+      ]
+    },
+    "MC-0244": {
+      "prompt": "A melody returns with note values half as long while the beat stays the same. Name the device. Tick one box.",
+      "correct": [
+        "Diminution"
+      ],
+      "incorrect": [
+        "Augmentation",
+        "Imitation",
+        "Sequence"
+      ]
+    },
+    "MC-0245": {
+      "prompt": "Which description matches an irregular time signature? Tick one box.",
+      "correct": [
+        "Beats grouped in unequal sets, such as 2+3"
+      ],
+      "incorrect": [
+        "Every main beat divided into three equal parts",
+        "Every main beat divided into two equal parts",
+        "The same regular beat grouping played at a changing tempo"
+      ]
+    },
+    "MC-0248": {
+      "prompt": "Which instruments could provide basso continuo in Baroque music? Tick one box.",
+      "correct": [
+        "Cello and harpsichord"
+      ],
+      "incorrect": [
+        "Violin and flute",
+        "Oboe and recorder",
+        "Trumpet and timpani"
+      ],
+      "feedback": "Basso continuo combines a bass line with chordal accompaniment, often played by cello and harpsichord."
+    },
+    "MC-0249": {
+      "prompt": "Which groups contrast in a concerto grosso? Tick one box.",
+      "correct": [
+        "A small group of soloists and a larger instrumental group"
+      ],
+      "incorrect": [
+        "One solo instrument and a full orchestra",
+        "A solo singer and an operatic chorus",
+        "Two groups of unaccompanied singers"
+      ]
+    },
+    "MC-0251": {
+      "prompt": "What is introduced in the exposition of sonata form? Tick one box.",
+      "correct": [
+        "The first and second subjects, usually in contrasting keys"
+      ],
+      "incorrect": [
+        "The subjects transformed and explored in new keys",
+        "The subjects returning in the tonic after the development",
+        "An extra closing passage after the main structure"
+      ]
+    },
+    "MC-0253": {
+      "prompt": "What returns between solo episodes in Baroque ritornello form? Tick one box.",
+      "correct": [
+        "A recurring passage for the full ensemble"
+      ],
+      "incorrect": [
+        "An unaccompanied cadenza for the soloist",
+        "A newly composed contrasting theme on every return",
+        "A closing passage heard only at the end"
+      ]
+    },
+    "MC-0254": {
+      "prompt": "What happens to the themes in the development of sonata form? Tick one box.",
+      "correct": [
+        "They are explored and transformed"
+      ],
+      "incorrect": [
+        "They are introduced for the first time in contrasting keys",
+        "They return in the tonic key after the development",
+        "They form an added ending after the main sections"
+      ]
+    },
+    "MC-0255": {
+      "prompt": "What are the two main themes introduced in a sonata exposition called? Tick one box.",
+      "correct": [
+        "First and second subjects"
+      ],
+      "incorrect": [
+        "Exposition and development",
+        "Perfect and imperfect cadences",
+        "Concertino and ripieno"
+      ]
+    },
+    "MC-0257": {
+      "prompt": "Which description matches coloratura singing? Tick one box.",
+      "correct": [
+        "Rapid vocal runs, leaps and ornaments"
+      ],
+      "incorrect": [
+        "Speech-like singing with sparse accompaniment",
+        "One note sung for each syllable",
+        "Improvised nonsense syllables in jazz"
+      ]
+    },
+    "MC-0258": {
+      "prompt": "In a concerto grosso, what is the concertino? Tick one box.",
+      "correct": [
+        "The small group of soloists"
+      ],
+      "incorrect": [
+        "The larger instrumental group",
+        "The bass line and chordal accompaniment",
+        "The returning passage for the full ensemble"
+      ]
+    },
+    "MC-0260": {
+      "prompt": "In a concerto grosso, what is the ripieno? Tick one box.",
+      "correct": [
+        "The larger instrumental group"
+      ],
+      "incorrect": [
+        "The small group of soloists",
+        "The bass line and chordal accompaniment",
+        "The soloist’s unaccompanied passage"
+      ]
+    },
+    "MC-0262": {
+      "prompt": "Which description matches an anthem? Tick one box.",
+      "correct": [
+        "A sacred choral work with English words"
+      ],
+      "incorrect": [
+        "A sacred choral work with Latin words",
+        "A secular Renaissance part-song with a fa-la-la refrain",
+        "A German song for a solo voice with piano"
+      ],
+      "feedback": "An anthem is a sacred choral work sung in English. It may be accompanied or unaccompanied."
+    },
+    "MC-0265": {
+      "prompt": "How do the voices commonly move in a four-part chorale? Tick one box.",
+      "correct": [
+        "Together in chordal harmony"
+      ],
+      "incorrect": [
+        "In successive imitative entries with independent rhythms",
+        "As a single unaccompanied line in unison",
+        "In alternating groups answering one another"
+      ]
+    },
+    "MC-0267": {
+      "prompt": "What is a loop in an EDM track? Tick one box.",
+      "correct": [
+        "A short recorded or programmed pattern that repeats"
+      ],
+      "incorrect": [
+        "A gradual increase in volume before a new section",
+        "A change from the opening key to a new key",
+        "An added section that closes the track"
+      ]
+    },
+    "MC-0268": {
+      "prompt": "Which description matches a galliard? Tick one box.",
+      "correct": [
+        "A lively Renaissance dance in triple time"
+      ],
+      "incorrect": [
+        "A slow Renaissance dance in duple time",
+        "A lively Scottish dance with Scotch snaps",
+        "A quick Scottish dance in compound time"
+      ]
+    },
+    "MC-0270": {
+      "prompt": "Which description matches a Renaissance motet? Tick one box.",
+      "correct": [
+        "A sacred choral work, usually sung in Latin"
+      ],
+      "incorrect": [
+        "A secular part-song with a fa-la-la refrain",
+        "A German church hymn in four-part harmony",
+        "A sacred choral work with English words"
+      ],
+      "feedback": "A Renaissance motet is a sacred work for several voice parts, usually sung in Latin."
+    },
+    "MC-0272": {
+      "prompt": "Which description best matches neoclassical music? Tick one box.",
+      "correct": [
+        "Older forms and balanced phrases combined with modern harmony and rhythm"
+      ],
+      "incorrect": [
+        "Folk melodies and dances expressing a national identity",
+        "Hazy harmony and tone colour suggesting moods and images",
+        "A fixed twelve-note row used as the basis of the music"
+      ]
+    },
+    "MC-0274": {
+      "prompt": "Which vocal texture is common in Renaissance music? Tick one box.",
+      "correct": [
+        "Several flowing melodic lines overlapping in imitation"
+      ],
+      "incorrect": [
+        "A solo voice supported by a repeated vamp",
+        "A lead singer and backing singers over a drum-kit groove",
+        "A single unaccompanied melody in free rhythm"
+      ]
+    },
+    "MC-0285": {
+      "prompt": "Six equal notes are grouped as 3+3, then 2+2+2. Name the rhythmic device. Tick one box.",
+      "correct": [
+        "Hemiola"
+      ],
+      "incorrect": [
+        "3 against 2",
+        "Triplets",
+        "Syncopation"
+      ]
+    },
+    "MC-0287": {
+      "prompt": "Two choirs take turns answering one another. Name this feature. Tick one box.",
+      "correct": [
+        "Antiphonal"
+      ],
+      "incorrect": [
+        "Homophonic",
+        "Polyphonic",
+        "Unison"
+      ]
+    },
+    "MC-0288": {
+      "prompt": "What often happens to the key in the bridge of a sonata exposition? Tick one box.",
+      "correct": [
+        "It moves towards the second subject’s key"
+      ],
+      "incorrect": [
+        "It returns to the tonic for the recapitulation",
+        "It remains on the final tonic chord to close the movement",
+        "It moves through new keys while developing the subjects"
+      ]
+    },
+    "MC-0291": {
+      "prompt": "What happens in melodic inversion? Tick one box.",
+      "correct": [
+        "The direction of each melodic interval is reversed"
+      ],
+      "incorrect": [
+        "The notes are played in reverse order",
+        "The note values are made longer",
+        "The note values are made shorter"
+      ]
+    },
+    "MC-0292": {
+      "prompt": "A recurring musical idea is linked to a character in an opera. Name this device. Tick one box.",
+      "correct": [
+        "Leitmotif"
+      ],
+      "incorrect": [
+        "Ritornello",
+        "Ground bass",
+        "Countersubject"
+      ]
+    },
+    "MC-0294": {
+      "prompt": "What links the songs in a song cycle? Tick one box.",
+      "correct": [
+        "A shared theme, story or poetic idea"
+      ],
+      "incorrect": [
+        "The same melody repeated for every verse",
+        "A main section alternating with contrasting episodes",
+        "A single aria returning after a contrasting middle section"
+      ]
+    }
+  },
+  "audioFocus": {
+    "MC-0167": "Listen to this excerpt and name the word setting.",
+    "MC-0172": "Listen to this excerpt and name the word setting.",
+    "MC-0179": "Listen to this excerpt and give the Italian term for the change in tempo.",
+    "MC-0180": "Listen to this excerpt and name the change in tempo.",
+    "MC-0200": "Listen to this excerpt and give the Italian term for the playing instruction.",
+    "MC-0184": "Listen to this excerpt and name the texture.",
+    "MC-0187": "Listen to this excerpt and name the texture.",
+    "MC-0188": "Listen to this excerpt and name the texture.",
+    "MC-0287": "Listen to this excerpt and name the texture.",
+    "MC-0144": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0147": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0217": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0218": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0220": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0221": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0250": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0262": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0263": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0264": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0265": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0269": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0270": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0294": "Listen to this excerpt and name the type of vocal work.",
+    "MC-0222": "Listen to this excerpt and name the vocal technique.",
+    "MC-0257": "Listen to this excerpt and name the vocal technique.",
+    "MC-0300": "Listen to this excerpt and name the vocal technique.",
+    "MC-0154": "Listen to this excerpt and name the type of instrumental work.",
+    "MC-0223": "Listen to this excerpt and name the type of instrumental work.",
+    "MC-0249": "Listen to this excerpt and name the type of instrumental work.",
+    "MC-0214": "Listen to this excerpt and name the type of ensemble.",
+    "MC-0268": "Listen to this excerpt and name the type of Renaissance dance.",
+    "MC-0273": "Listen to this excerpt and name the type of Renaissance dance.",
+    "MC-0182": "Listen to this excerpt and name the musical form.",
+    "MC-0189": "Listen to this excerpt and name the musical form.",
+    "MC-0190": "Listen to this excerpt and name the musical form.",
+    "MC-0252": "Listen to this excerpt and name the musical form.",
+    "MC-0254": "Listen to this excerpt and name the musical form.",
+    "MC-0256": "Listen to this excerpt and name the musical form.",
+    "MC-0290": "Listen to this excerpt and name the musical form.",
+    "MC-0183": "Listen to this excerpt and name the section of the music.",
+    "MC-0251": "Listen to this excerpt and name the section of the music.",
+    "MC-0253": "Listen to this excerpt and name the section of the music.",
+    "MC-0288": "Listen to this excerpt and name the section of the music.",
+    "MC-0291": "Listen to this excerpt and name the melodic device.",
+    "MC-0292": "Listen to this excerpt and name the melodic device.",
+    "MC-0293": "Listen to this excerpt and name the melodic device.",
+    "MC-0295": "Listen to this excerpt and name the contrapuntal device.",
+    "MC-0227": "Listen to this excerpt and name the chord.",
+    "MC-0228": "Listen to this excerpt and name the chord.",
+    "MC-0229": "Listen to this excerpt and name the chord.",
+    "MC-0230": "Listen to this excerpt and name the chord.",
+    "MC-0277": "Listen to this excerpt and name the chord.",
+    "MC-0278": "Listen to this excerpt and name the chord.",
+    "MC-0281": "Listen to this excerpt and name the harmonic device.",
+    "MC-0158": "Listen to this excerpt and name the scale.",
+    "MC-0175": "Listen to this excerpt and name the scale.",
+    "MC-0231": "Listen to this excerpt and name the scale.",
+    "MC-0234": "Listen to this excerpt and name the scale.",
+    "MC-0160": "Listen to this excerpt and name the concept that describes the movement of the parts.",
+    "MC-0286": "Listen to this excerpt and name the contrapuntal feature.",
+    "MC-0289": "Listen to this excerpt and name the contrapuntal feature.",
+    "MC-0296": "Listen to this excerpt and name the contrapuntal feature.",
+    "MC-0282": "Listen to this excerpt and name the musical idea used as the basis of the serial music.",
+    "MC-0239": "Listen to this excerpt and name the relationship between the opening and new keys.",
+    "MC-0240": "Listen to this excerpt and name the relationship between the opening and new keys.",
+    "MC-0161": "Listen to this excerpt and name the secondary melody heard alongside the main melody.",
+    "MC-0162": "Listen to this excerpt and name the high vocal melody heard above the main melody."
+  },
+  "audioFeedback": {
+    "MC-0237": "An obbligato is a prominent instrumental melody heard alongside the main melody, often accompanying a singer.",
+    "MC-0194": "A baritone is a male voice between tenor and bass.",
+    "MC-0154": "A symphony is a large orchestral work, usually in several movements.",
+    "MC-0268": "A galliard is a lively Renaissance dance in triple time.",
+    "MC-0273": "A pavan is a slow, dignified Renaissance dance in duple time."
+  },
+  "preferredPools": {
+    "MC-0148": "periods",
+    "MC-0215": "periods",
+    "MC-0271": "periods",
+    "MC-0272": "periods",
+    "MC-0274": "periods",
+    "MC-0158": "scales",
+    "MC-0175": "scales",
+    "MC-0231": "scales",
+    "MC-0234": "scales",
+    "MC-0156": "tonality",
+    "MC-0235": "tonality",
+    "MC-0280": "tonality",
+    "MC-0239": "keyrelationships",
+    "MC-0240": "keyrelationships",
+    "MC-0165": "cadences",
+    "MC-0169": "cadences",
+    "MC-0232": "cadences",
+    "MC-0238": "cadences",
+    "MC-0241": "cadences",
+    "MC-0164": "ornaments",
+    "MC-0174": "ornaments",
+    "MC-0226": "ornaments",
+    "MC-0236": "ornaments",
+    "MC-0276": "ornaments",
+    "MC-0284": "ornaments",
+    "MC-0159": "harmony",
+    "MC-0227": "harmony",
+    "MC-0228": "harmony",
+    "MC-0229": "harmony",
+    "MC-0230": "harmony",
+    "MC-0277": "harmony",
+    "MC-0278": "harmony",
+    "MC-0182": "forms",
+    "MC-0189": "forms",
+    "MC-0190": "forms",
+    "MC-0250": "forms",
+    "MC-0252": "forms",
+    "MC-0254": "forms",
+    "MC-0256": "forms",
+    "MC-0290": "forms",
+    "MC-0183": "sections",
+    "MC-0251": "sections",
+    "MC-0253": "sections",
+    "MC-0255": "sections",
+    "MC-0288": "sections",
+    "MC-0294": "soloVocal",
+    "MC-0282": "fugue",
+    "MC-0286": "fugue",
+    "MC-0289": "fugue",
+    "MC-0295": "fugue",
+    "MC-0296": "fugue",
+    "MC-0243": "phraseDevices",
+    "MC-0244": "phraseDevices",
+    "MC-0291": "phraseDevices",
+    "MC-0292": "phraseDevices",
+    "MC-0293": "phraseDevices",
+    "MC-0154": "chamber",
+    "MC-0214": "chamber",
+    "MC-0223": "chamber",
+    "MC-0225": "chamber",
+    "MC-0249": "chamber",
+    "MC-0297": "chamber",
+    "MC-0299": "chamber",
+    "MC-0147": "sacredVocal",
+    "MC-0149": "sacredVocal",
+    "MC-0150": "sacredVocal",
+    "MC-0218": "sacredVocal",
+    "MC-0220": "sacredVocal",
+    "MC-0221": "sacredVocal",
+    "MC-0262": "sacredVocal",
+    "MC-0264": "sacredVocal",
+    "MC-0265": "sacredVocal",
+    "MC-0269": "sacredVocal",
+    "MC-0270": "sacredVocal",
+    "MC-0144": "soloVocal",
+    "MC-0217": "soloVocal",
+    "MC-0263": "soloVocal",
+    "MC-0146": "jazzPop",
+    "MC-0216": "jazzPop",
+    "MC-0224": "jazzPop",
+    "MC-0266": "jazzPop",
+    "MC-0267": "jazzPop",
+    "MC-0167": "vocalDelivery",
+    "MC-0172": "vocalDelivery",
+    "MC-0192": "vocalDelivery",
+    "MC-0222": "vocalDelivery",
+    "MC-0257": "vocalDelivery",
+    "MC-0300": "vocalDelivery",
+    "MC-0213": "strings",
+    "MC-0193": "stringsTechniques",
+    "MC-0207": "stringsTechniques",
+    "MC-0259": "stringsTechniques",
+    "MC-0261": "stringsTechniques",
+    "MC-0209": "drumTechniques",
+    "MC-0200": "italianTechniques"
+  },
+  "pools": {
+    "periods": [
+      "MC-0070",
+      "MC-0077",
+      "MC-0148",
+      "MC-0215",
+      "MC-0271",
+      "MC-0272",
+      "MC-0274"
+    ],
+    "scales": [
+      "MC-0089",
+      "MC-0158",
+      "MC-0175",
+      "MC-0231",
+      "MC-0234"
+    ],
+    "tonality": [
+      "MC-0084",
+      "MC-0085",
+      "MC-0156",
+      "MC-0168",
+      "MC-0235",
+      "MC-0280"
+    ],
+    "keyrelationships": [
+      "MC-0239",
+      "MC-0240",
+      "MC-0168",
+      "MC-0081",
+      "MC-0241"
+    ],
+    "cadences": [
+      "MC-0165",
+      "MC-0169",
+      "MC-0232",
+      "MC-0238",
+      "MC-0241",
+      "MC-0168",
+      "MC-0011"
+    ],
+    "ornaments": [
+      "MC-0164",
+      "MC-0174",
+      "MC-0226",
+      "MC-0236",
+      "MC-0276",
+      "MC-0284",
+      "MC-0163",
+      "MC-0170"
+    ],
+    "harmony": [
+      "MC-0159",
+      "MC-0227",
+      "MC-0228",
+      "MC-0229",
+      "MC-0230",
+      "MC-0277",
+      "MC-0278"
+    ],
+    "forms": [
+      "MC-0107",
+      "MC-0109",
+      "MC-0110",
+      "MC-0111",
+      "MC-0112",
+      "MC-0182",
+      "MC-0189",
+      "MC-0190",
+      "MC-0250",
+      "MC-0252",
+      "MC-0254",
+      "MC-0256",
+      "MC-0290"
+    ],
+    "sections": [
+      "MC-0183",
+      "MC-0251",
+      "MC-0253",
+      "MC-0255",
+      "MC-0288",
+      "MC-0294"
+    ],
+    "fugue": [
+      "MC-0183",
+      "MC-0251",
+      "MC-0255",
+      "MC-0282",
+      "MC-0286",
+      "MC-0288",
+      "MC-0289",
+      "MC-0290",
+      "MC-0295",
+      "MC-0296"
+    ],
+    "phraseDevices": [
+      "MC-0016",
+      "MC-0017",
+      "MC-0018",
+      "MC-0108",
+      "MC-0243",
+      "MC-0244",
+      "MC-0291",
+      "MC-0292",
+      "MC-0293"
+    ],
+    "chamber": [
+      "MC-0054",
+      "MC-0071",
+      "MC-0118",
+      "MC-0142",
+      "MC-0154",
+      "MC-0214",
+      "MC-0223",
+      "MC-0225",
+      "MC-0249",
+      "MC-0297",
+      "MC-0299"
+    ],
+    "sacredVocal": [
+      "MC-0147",
+      "MC-0149",
+      "MC-0150",
+      "MC-0218",
+      "MC-0220",
+      "MC-0221",
+      "MC-0262",
+      "MC-0264",
+      "MC-0265",
+      "MC-0269",
+      "MC-0270"
+    ],
+    "soloVocal": [
+      "MC-0144",
+      "MC-0217",
+      "MC-0222",
+      "MC-0250",
+      "MC-0263",
+      "MC-0294",
+      "MC-0294"
+    ],
+    "jazzPop": [
+      "MC-0001",
+      "MC-0002",
+      "MC-0005",
+      "MC-0006",
+      "MC-0007",
+      "MC-0074",
+      "MC-0075",
+      "MC-0076",
+      "MC-0079",
+      "MC-0146",
+      "MC-0216",
+      "MC-0224",
+      "MC-0266",
+      "MC-0267"
+    ],
+    "vocalDelivery": [
+      "MC-0075",
+      "MC-0091",
+      "MC-0167",
+      "MC-0172",
+      "MC-0192",
+      "MC-0222",
+      "MC-0257",
+      "MC-0300"
+    ],
+    "strings": [
+      "MC-0051",
+      "MC-0119",
+      "MC-0123",
+      "MC-0213"
+    ],
+    "stringsTechniques": [
+      "MC-0053",
+      "MC-0060",
+      "MC-0163",
+      "MC-0170",
+      "MC-0193",
+      "MC-0207",
+      "MC-0259",
+      "MC-0261"
+    ],
+    "drumTechniques": [
+      "MC-0021",
+      "MC-0025",
+      "MC-0099",
+      "MC-0102",
+      "MC-0105",
+      "MC-0177",
+      "MC-0209",
+      "MC-0242",
+      "MC-0247",
+      "MC-0285"
+    ],
+    "italianTechniques": [
+      "MC-0163",
+      "MC-0193",
+      "MC-0200",
+      "MC-0207"
+    ]
+  }
+}

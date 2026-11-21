@@ -1,0 +1,201 @@
+{
+  "id": "hub-n4-rhythm-tempo-connections-1",
+  "level": "N4",
+  "title": "Rhythm/tempo",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting National 4 Rhythm/tempo concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Rhythm/tempo",
+    "National 4"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-1",
+      "prompt": "Gradually getting faster",
+      "answer": "Gradually getting faster",
+      "distractors": [],
+      "group": "Accelerando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-2",
+      "prompt": "Beat speed steadily increases",
+      "answer": "Beat speed steadily increases",
+      "distractors": [],
+      "group": "Accelerando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-3",
+      "prompt": "Italian gradual speed-up marking",
+      "answer": "Italian gradual speed-up marking",
+      "distractors": [],
+      "group": "Accelerando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-4",
+      "prompt": "Tempo quickens over several bars",
+      "answer": "Tempo quickens over several bars",
+      "distractors": [],
+      "group": "Accelerando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-5",
+      "prompt": "Gradually getting slower",
+      "answer": "Gradually getting slower",
+      "distractors": [],
+      "group": "Rallentando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-6",
+      "prompt": "Beat speed steadily decreases",
+      "answer": "Beat speed steadily decreases",
+      "distractors": [],
+      "group": "Rallentando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-7",
+      "prompt": "Italian gradual slowing marking",
+      "answer": "Italian gradual slowing marking",
+      "distractors": [],
+      "group": "Rallentando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-8",
+      "prompt": "Tempo eases over several bars",
+      "answer": "Tempo eases over several bars",
+      "distractors": [],
+      "group": "Rallentando",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-9",
+      "prompt": "Short accent then a long note",
+      "answer": "Short accent then a long note",
+      "distractors": [],
+      "group": "Scotch snap",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-10",
+      "prompt": "Semiquaver then dotted quaver",
+      "answer": "Semiquaver then dotted quaver",
+      "distractors": [],
+      "group": "Scotch snap",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-11",
+      "prompt": "Scottish short-long figure",
+      "answer": "Scottish short-long figure",
+      "distractors": [],
+      "group": "Scotch snap",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-12",
+      "prompt": "Accented short-long snap rhythm",
+      "answer": "Accented short-long snap rhythm",
+      "distractors": [],
+      "group": "Scotch snap",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-13",
+      "prompt": "Notes before the first full bar",
+      "answer": "Notes before the first full bar",
+      "distractors": [],
+      "group": "Anacrusis",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-14",
+      "prompt": "Pickup notes leading to beat one",
+      "answer": "Pickup notes leading to beat one",
+      "distractors": [],
+      "group": "Anacrusis",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-15",
+      "prompt": "An upbeat before a complete bar",
+      "answer": "An upbeat before a complete bar",
+      "distractors": [],
+      "group": "Anacrusis",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-rhythm-tempo-connections-1-16",
+      "prompt": "Opening pickup before beat one",
+      "answer": "Opening pickup before beat one",
+      "distractors": [],
+      "group": "Anacrusis",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

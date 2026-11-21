@@ -1,0 +1,321 @@
+{
+  "sourceReading": "Official QP page 6 at 300 dpi; independent line calibration for each of four systems; treble pitch map; complete notehead/rhythm reading, separate second reading and MI page 3 accepted notes",
+  "key": "F major",
+  "keySignature": [
+    "B flat"
+  ],
+  "clef": "treble",
+  "timeSignature": "4/4",
+  "writtenPitchConvention": "B4 inherits the printed B-flat key signature; no additional accidental is printed",
+  "editableBar": 7,
+  "editableNoteIndices": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "finalBarline": "single",
+  "sources": [
+    {
+      "path": "exampapers/n5/2015/N5_Music_QP_2015.pdf",
+      "sha256": "fd33a870c77bfe3054ae642fbea29cea70505d460ea87d6f5d0cdb22490dd01d"
+    },
+    {
+      "path": "exampapers/n5/2015/mi_N5_Music_mi_2015.pdf",
+      "sha256": "a7b53ae695e77e457d38607cca11095a3cae2da5aab59595841dbc9c23c00e1a"
+    }
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "notes": [
+        [
+          "rest",
+          "dottedQuaverRest"
+        ],
+        [
+          "F4",
+          "semiquaver"
+        ],
+        [
+          "F4",
+          "dottedQuaver"
+        ],
+        [
+          "F4",
+          "semiquaver"
+        ],
+        [
+          "F4",
+          "dottedQuaver"
+        ],
+        [
+          "E4",
+          "semiquaver"
+        ],
+        [
+          "F4",
+          "dottedQuaver"
+        ],
+        [
+          "G4",
+          "semiquaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        },
+        {
+          "start": 6,
+          "end": 7
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 2,
+      "notes": [
+        [
+          "A4",
+          "semibreve"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 3,
+      "notes": [
+        [
+          "rest",
+          "dottedQuaverRest"
+        ],
+        [
+          "F4",
+          "semiquaver"
+        ],
+        [
+          "F4",
+          "dottedQuaver"
+        ],
+        [
+          "F4",
+          "semiquaver"
+        ],
+        [
+          "F4",
+          "dottedQuaver"
+        ],
+        [
+          "F4",
+          "semiquaver"
+        ],
+        [
+          "G4",
+          "dottedQuaver"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        },
+        {
+          "start": 6,
+          "end": 7
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 4,
+      "notes": [
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "dottedCrotchet"
+        ],
+        [
+          "F4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [
+        1
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 5,
+      "notes": [
+        [
+          "rest",
+          "dottedQuaverRest"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ],
+        [
+          "A4",
+          "dottedQuaver"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ],
+        [
+          "A4",
+          "dottedQuaver"
+        ],
+        [
+          "G4",
+          "semiquaver"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ],
+        [
+          "B4",
+          "dottedQuaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        },
+        {
+          "start": 6,
+          "end": 7
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 6,
+      "notes": [
+        [
+          "C5",
+          "semibreve"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 7,
+      "notes": [
+        [
+          "rest",
+          "dottedQuaverRest"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ],
+        [
+          "A4",
+          "dottedQuaver"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ],
+        [
+          "A4",
+          "dottedQuaver"
+        ],
+        [
+          "A4",
+          "semiquaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 5
+        },
+        {
+          "start": 6,
+          "end": 7
+        }
+      ],
+      "tiesFrom": [],
+      "beats": 4
+    },
+    {
+      "bar": 8,
+      "notes": [
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "dottedCrotchet"
+        ],
+        [
+          "F4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [
+        1
+      ],
+      "beats": 4
+    }
+  ],
+  "userConfirmedAnswer": {
+    "date": "2026-11-06",
+    "part": "q3f",
+    "sequence": [
+      "A4",
+      "A4",
+      "Bb4",
+      "C5"
+    ],
+    "decision": "Preserve the existing official key; the older A4 G4 A4 Bb4 teacher note is superseded."
+  }
+}

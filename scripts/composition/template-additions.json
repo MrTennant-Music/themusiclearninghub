@@ -1,0 +1,87 @@
+[
+  {
+    "id":"drunken-sailor","title":"Drunken Sailor","artist":"Traditional sea shanty","group":"Traditional","tempo":112,"key":2,"mode":"dorian","timeSignature":"4/4",
+    "bars":[
+      "A4:1 A4:0.5 A4:0.5 A4:1 A4:0.5 A4:0.5",
+      "A4:1 D4:1 F4:1 A4:1",
+      "G4:1 G4:0.5 G4:0.5 G4:1 G4:0.5 G4:0.5",
+      "G4:1 C4:1 E4:1 G4:1",
+      "A4:1 A4:0.5 A4:0.5 A4:1 A4:0.5 A4:0.5",
+      "A4:1 B4:1 C5:1 D5:1",
+      "C5:1 A4:1 G4:1 E4:1",
+      "D4:2 D4:2"
+    ],
+    "chords":["Dm","Dm","C","C","Dm","Dm","Am","Dm"],
+    "url":"https://trillian.mit.edu/~jc/music/abc/program/Drunken_Sailor.abc","sourceBars":[1,8],
+    "credit":"John Chambers ABC collection, 2011; traditional sea-shanty melody and chord symbols",
+    "adaptations":"First eight verse bars, in the source D Dorian mode. All melody pitches, rhythms and chord symbols retained; no lyrics imported. Classroom tempo selected at 112 crotchets per minute."
+  },
+  {
+    "id":"minuet-in-g","title":"Minuet in G","artist":"Christian Petzold","group":"Classical","tempo":108,"key":7,"mode":"major","timeSignature":"3/4",
+    "bars":[
+      "D5:1 G4:0.5 A4:0.5 B4:0.5 C5:0.5",
+      "D5:1 G4:1 G4:1",
+      "E5:1 C5:0.5 D5:0.5 E5:0.5 F#5:0.5",
+      "G5:1 G4:1 G4:1",
+      "C5:1 D5:0.5 C5:0.5 B4:0.5 A4:0.5",
+      "B4:1 C5:0.5 B4:0.5 A4:0.5 G4:0.5",
+      "F#4:1 G4:0.5 A4:0.5 B4:0.5 G4:0.5",
+      "A4:3"
+    ],
+    "chords":["G","G","C","G","Am","G","D7","D7"],
+    "url":"https://trillian.mit.edu/~jc/music/abc/mirror/LesterBailey/Minuet_in_G.abc","sourceBars":[1,8],
+    "credit":"Lester Bailey ABC collection, mirrored by John Chambers; melody by Christian Petzold (BWV Anh. 114)",
+    "adaptations":"First eight bars of the original G-major melody, with pitches and durations unchanged. New simple classroom chord accompaniment; not a transcription of the original keyboard bass. Classroom tempo selected at 108 crotchets per minute."
+  },
+  {
+    "id":"skye-boat-song","title":"Skye Boat Song","artist":"Traditional Scottish","group":"Traditional","tempo":96,"key":7,"mode":"major","timeSignature":"3/4",
+    "bars":[
+      "D4:1.5 E4:0.5 D4:1",
+      "G4:3",
+      "A4:1.5 B4:0.5 A4:1",
+      "D5:3",
+      "B4:1.5 A4:0.5 B4:1",
+      "E4:2 E4:1",
+      "D4:3~",
+      "D4:3"
+    ],
+    "chords":["G","G","Am","D7","G","C","G","D7"],
+    "url":"https://trillian.mit.edu/~jc/music/abc/mirror/terrytraub.org/SkyeBoatSongW.abc","sourceBars":[1,8],
+    "credit":"Terry Traub ABC collection, mirrored by John Chambers; traditional Scottish melody",
+    "adaptations":"First eight written bars, taking the first ending. Original G-major melody and chord symbols retained; the optional D7 alternative in bar 1 is represented by G. The D across bars 7–8 remains one six-beat tied note. Classroom tempo selected at 96 crotchets per minute."
+  },
+  {
+    "id":"jingle-bells","title":"Jingle Bells","artist":"James Lord Pierpont","group":"Traditional","tempo":120,"key":0,"mode":"major","timeSignature":"4/4",
+    "bars":[
+      "E4:1 E4:1 E4:2",
+      "E4:1 E4:1 E4:2",
+      "E4:1 G4:1 C4:1.5 D4:0.5",
+      "E4:4",
+      "F4:1 F4:1 F4:1.5 F4:0.5",
+      "F4:1 E4:1 E4:1 E4:0.5 E4:0.5",
+      "E4:1 D4:1 D4:1 E4:1",
+      "D4:2 G4:2"
+    ],
+    "chords":["C","C","C","C7","F","C","D7","G7"],
+    "url":"https://trillian.mit.edu/~jc/music/abc/program/xmas/Jingle_Bells_VC-C-32-3.abc","sourceBars":[17,24],
+    "credit":"John Chambers ABC collection; melody by James Lord Pierpont, 1857",
+    "adaptations":"Eight chorus bars through the first ending. Source 2/4 is written in 4/4 by doubling every note duration, and the melody is lowered one octave. Chord symbols are retained, including C7 and the D7–G7 ending. No lyrics imported."
+  },
+  {
+    "id":"au-clair-de-la-lune","title":"Au clair de la lune","artist":"Traditional French","group":"Traditional","tempo":100,"key":0,"mode":"major","timeSignature":"4/4",
+    "bars":[
+      "C4:1 C4:1 C4:1 D4:1",
+      "E4:2 D4:2",
+      "C4:1 E4:1 D4:1 D4:0.5 E4:0.5",
+      "C4:2 -:2",
+      "C4:1 C4:1 C4:1 D4:1",
+      "E4:2 D4:2",
+      "C4:1 E4:1 D4:1 D4:0.5 E4:0.5",
+      "C4:2 -:2"
+    ],
+    "chords":["C",["C","G7"],["C","G7"],"C","C",["C","G7"],["C","G7"],"C"],
+    "url":"https://trillian.mit.edu/~jc/music/book/ERM/20782_Au_Clair_de_la_Lune.abc","sourceBars":[1,4],
+    "credit":"Edinburgh Repository of Music, volume 2, page 78; transcribed by John Chambers in 2015",
+    "adaptations":"The source's four-bar first strain is played twice, as indicated by its repeat signs. Transposed from G to C and lowered into the classroom octave; source 2/4 note durations doubled for 4/4. The printed eighth-note ornament in bars 3/7 and rests in bars 4/8 are retained. New simple classroom chord accompaniment."
+  }
+]

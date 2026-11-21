@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=1280" />
+<title>Digital Performance Assessment</title>
+<link rel="icon" href="./app-icons/performing-assessment-icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37">
+<link rel="stylesheet" href="./assessment-recorder/assessment-recorder.css?v=743ac5087d9e">
+<link rel="stylesheet" href="./assessment-recorder/blank-template.css?v=5f89614bed5a">
+<script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+<link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61">
+<link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+<script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+<script src="./vendor/react/react.production.min.js"></script>
+<script src="./vendor/react/react-dom.production.min.js"></script>
+<script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+<script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+<script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+<script defer src="./shared/hub-menu-fades.js?v=20261025-overlay-fades"></script>
+<link rel="stylesheet" href="./styles/hub-tools.css?v=20261023-paper-type-fit">
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+</head><body><div id="recorderHeader"></div>
+<div id="recorderContent"><section id="recorderPanel"><div id="app"></div></section><p class="recorder-save-note">Your assessment records are saved in this browser and are not sent to the Hub. Download a copy regularly to keep your records safe, as clearing browser data may delete them. These materials are based on documentation published by Qualifications Scotland, which is not affiliated with The Music Learning Hub.</p></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="recorderImportFile" accept=".json,.xlsx,application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
+
+<dialog id="recorderConfirmDialog" class="modal recorder-dialog" aria-labelledby="recorderImportTitle" aria-describedby="recorderConfirmMessage">
+  <form id="recorderImportConfirm" class="dialog-inner" method="dialog">
+    <div class="dialog-header">
+      <h2 id="recorderImportTitle">Import</h2>
+      <button class="close-btn" type="button" data-close-dialog="recorderConfirmDialog" aria-label="Close">×</button>
+    </div>
+    <p id="recorderConfirmMessage">Importing a matching roster will overwrite <strong>all existing data in that roster</strong>, including saved marks and comments.</p>
+    <div class="dialog-actions">
+      <button class="button utility-button secondary" type="button" data-close-dialog="recorderConfirmDialog" autofocus>Cancel</button>
+      <button class="button utility-button primary recorder-confirm-action" type="submit">Continue</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="recorderClearDataDialog" class="modal recorder-dialog" aria-labelledby="recorderClearDataTitle" aria-describedby="recorderClearDataMessage">
+  <form class="dialog-inner" method="dialog">
+    <div class="dialog-header">
+      <h2 id="recorderClearDataTitle">Delete All Data</h2>
+      <button class="close-btn" type="button" data-close-dialog="recorderClearDataDialog" aria-label="Close">×</button>
+    </div>
+    <p id="recorderClearDataMessage">This will permanently remove <strong>all rosters, pupil details, marks and comments</strong> saved in this browser.</p>
+    <div class="dialog-actions">
+      <button class="button utility-button secondary" type="button" data-close-dialog="recorderClearDataDialog" autofocus>Cancel</button>
+      <button class="button utility-button recorder-confirm-action" type="submit">Delete All Data</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="classExportDialog" class="modal recorder-dialog" aria-labelledby="classExportTitle">
+<form id="classExportForm" class="dialog-inner">
+  <div class="dialog-header"><h2 id="classExportTitle">Print</h2><button class="close-btn" type="button" data-close-dialog="classExportDialog" aria-label="Close">×</button></div>
+  <div class="dialog-body">
+    <label><span>Pupils</span><select id="classExportPupils"></select></label>
+    <fieldset class="class-export-options" id="classExportFiles"><legend>Files</legend>
+      <label><input type="checkbox" id="classExportPdf" aria-describedby="classExportPdfNote" checked><img src="./ui-icons/file-pdf.svg?v=2" alt=""><span class="class-export-file-label">PDFs <span id="classExportPdfCount">(0)</span></span></label>
+      <p id="classExportPdfNote">Each pupil receives a separate PDF with their cover page and assessment sheets for both instruments. Multiple files download together in a ZIP file.</p>
+      <label><input type="checkbox" id="classExportScores" aria-describedby="classExportSpreadsheetNote" checked><img src="./ui-icons/file-excel.svg?v=2" alt="">Marks Spreadsheet</label>
+      <p id="classExportSpreadsheetNote">An Excel report for each selected assessment roster with raw marks, scaled marks and final totals.</p>
+    </fieldset>
+    <p id="classExportError" role="alert" hidden></p>
+  </div>
+  <div class="dialog-actions"><button class="button utility-button secondary" type="button" data-close-dialog="classExportDialog">Cancel</button><button class="button utility-button primary" id="classExportSubmit" type="submit">Print</button></div>
+</form>
+</dialog>
+<dialog id="prelimPupilDialog" class="modal recorder-dialog" aria-labelledby="prelimPupilTitle">
+  <form class="dialog-inner">
+    <div class="dialog-header">
+      <h2 id="prelimPupilTitle">Edit Details</h2>
+      <button class="close-btn" type="button" data-close-dialog="prelimPupilDialog" aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body">
+      <div class="prelim-pupil-fields">
+        <label><span>Full Name</span><input name="name" autofocus></label>
+        <label><span>Level</span><select name="level"><option value=""></option><option>National 5</option><option>Higher</option><option>Advanced Higher</option></select></label>
+      </div>
+      <details class="prelim-additional-details">
+        <summary class="button utility-button secondary">Additional Details</summary>
+        <div class="prelim-schedule-fields">
+          <label><span>Date</span><input name="date" type="date"></label>
+          <label><span>Order</span><input name="order" type="number" min="1" step="1"></label>
+          <label><span>Teacher</span><input name="teacher"></label>
+          <label><span>Assessor</span><input name="assessor"></label>
+        </div>
+      </details>
+      <div class="prelim-instruments" id="prelimPupilInstruments"></div>
+    </div>
+    <div class="dialog-actions">
+      <button class="button utility-button secondary" type="button" data-close-dialog="prelimPupilDialog">Cancel</button>
+      <button class="button utility-button primary" type="submit">Save</button>
+    </div>
+  </form>
+</dialog>
+<script src="./assessment-recorder/assessment-recorder-shell.js?v=977f93ae6955"></script>
+<script src="./vendor/jszip/jszip.min.js"></script>
+<script src="./digital-question-papers/vendor/jspdf-2.5.2.umd.min.js"></script>
+<script src="./assessment-recorder/assessment-pdf.js?v=79599376de06"></script>
+<script src="./assessment-recorder/assessment-spreadsheet.js?v=1"></script>
+<script src="./assessment-recorder/prelim-roster.js?v=a5b0c778376e"></script>
+<script src="./assessment-recorder/assessment-recorder.js?v=e90ab5e12e5f"></script>
+<script src="./footer.js?v=120454beac89"></script>
+</body></html>

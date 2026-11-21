@@ -1,0 +1,22 @@
+{
+  "tool": "Built-in imagegen",
+  "transparent_background": true,
+  "assets": [
+    {
+      "file": "orchestral-brass-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small icon for an educational music website's brass quiz collection. Primary request: a single recognisable orchestral French horn, coiled circular tubing and a large flared bell. Create one bold, elegant monochrome black silhouette glyph with a few clean transparent cutouts, visually balanced and easily readable at 36px. Flat two-dimensional icon, rounded natural contours, consistent medium-bold shapes. Square composition, tightly centred subject occupying about 82% of the canvas with breathing room. Genuine transparent background. No text, letters, numbers, border, tile, background shapes, shadows, gradients, photographs, or colour. Musically accurate instrument anatomy, no extra instruments. Match a restrained black music-pictogram family."
+    },
+    {
+      "file": "orchestral-woodwind-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small icon for an educational music website's woodwind quiz collection. Primary request: a single orchestral clarinet, straight dark body, simplified bright key openings, and flared bell. Create one bold, elegant monochrome black silhouette glyph with a few clean transparent cutouts, visually balanced and easily readable at 36px. Flat two-dimensional icon, rounded natural contours, consistent medium-bold shapes. Square composition, tightly centred subject occupying about 82% of the canvas with breathing room. Genuine transparent background. No text, letters, numbers, border, tile, background shapes, shadows, gradients, photographs, or colour. Musically accurate instrument anatomy, no extra instruments. Match a restrained black music-pictogram family."
+    },
+    {
+      "file": "orchestral-strings-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small icon for an educational music website's strings quiz collection. Primary request: a single violin, upright with its bow placed diagonally beside it, recognisable waist, f holes and scroll. Create one bold, elegant monochrome black silhouette glyph with a few clean transparent cutouts, visually balanced and easily readable at 36px. Flat two-dimensional icon, rounded natural contours, consistent medium-bold shapes. Square composition, tightly centred subject occupying about 82% of the canvas with breathing room. Genuine transparent background. No text, letters, numbers, border, tile, background shapes, shadows, gradients, photographs, or colour. Musically accurate instrument anatomy, no extra instruments. Match a restrained black music-pictogram family."
+    },
+    {
+      "file": "orchestral-percussion-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small icon for an educational music website's percussion quiz collection. Primary request: a single orchestral timpani kettle drum with two crossed soft-headed mallets above it. Create one bold, elegant monochrome black silhouette glyph with a few clean transparent cutouts, visually balanced and easily readable at 36px. Flat two-dimensional icon, rounded natural contours, consistent medium-bold shapes. Square composition, tightly centred subject occupying about 82% of the canvas with breathing room. Genuine transparent background. No text, letters, numbers, border, tile, background shapes, shadows, gradients, photographs, or colour. Musically accurate instrument anatomy, no extra instruments. Match a restrained black music-pictogram family."
+    }
+  ]
+}

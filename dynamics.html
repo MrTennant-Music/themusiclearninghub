@@ -1,30 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
-  <link rel="stylesheet" href="./desktop-layout.css?v=4" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
   <title>Dynamics</title>
-  <link rel="icon" type="image/svg+xml" href="https://themusicliteracyhub.netlify.app/dynamics-icon.svg" />
-  <link rel="apple-touch-icon" href="https://themusicliteracyhub.netlify.app/dynamics-icon.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./desktop-layout.js?v=2"></script>
-  <link rel="stylesheet" href="./hub-ui.css?v=1.6" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="./hub-input.js?v=1.3"></script>
-  <script src="./hub-audio.js?v=20261002-ready-before-play"></script>
-  <script src="./hub-progress.js?v=20261005-per-setup"></script>
-  <script src="./hub-achievements.js?v=20261005-progress"></script>
-  <script src="./hub-shell.js?v=20261005-per-setup"></script>
-  <script src="./hub-menu.js?v=20261005-per-setup"></script>
-  <script src="./bravura-symbols.js"></script>
-  <script src="./shared-notation-config.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/dynamics-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/dynamics-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
   <style>
     @font-face {
       font-family: "Bravura";
-      src: url("./Bravura.otf") format("opentype");
+      src: url("./fonts/Bravura.otf") format("opentype");
       font-display: block;
     }
     .music-symbol {
@@ -33,12 +34,34 @@
       dominant-baseline: alphabetic;
       text-rendering: geometricPrecision;
     }
+    .dynamic-order-board{max-width:960px;margin:0 auto}
+    .dynamic-order-board h2{text-align:center;font-size:22px;font-weight:800;margin:8px 0}
+    .dynamic-order-board>p{text-align:center;margin:8px 0 20px;color:#57534e}
+    .dynamic-order-board ol{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
+    .dynamic-order-board li{position:relative;display:flex;align-items:center;gap:14px;padding:8px 14px;min-height:108px;border:1px solid #d6d3d1;border-radius:14px;background:#fff}
+    .dynamic-order-position{font-weight:800;min-width:18px;text-align:center}
+    .dynamic-order-notes{display:flex;flex:1;align-items:center;justify-content:center;gap:8px}
+    .dynamic-order-glyph{display:flex;align-items:center;justify-content:center;width:130px;height:88px}
+    .dynamic-order-glyph svg{max-height:88px}
+    .dynamic-order-plus{font-size:22px;font-weight:600}
+    .dynamic-order-arrows{display:flex;flex-direction:column;gap:2px}
+    .dynamic-order-arrows button{width:36px;min-height:38px;border:1px solid #e7e5e4;border-radius:8px;font-size:20px}
+    .dynamic-order-controls{display:flex;justify-content:center;gap:12px;margin:20px 0}
+    .dynamic-order-board .is-correct{border-color:#15803d;background:#f0fdf4}
+    .dynamic-order-board .is-incorrect{border-color:#b91c1c;background:#fef2f2}
+    .dynamic-order-total{min-width:64px;text-align:center;font-size:13px}
+
   </style>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
 <body>
 <div id="root"></div>
 
-<script type="text/babel">
+<script type="text/x-mlh-jsx-source" data-runtime="dynamics-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
 
 const W = 920;
@@ -57,19 +80,19 @@ const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || { drawing: {}, symbols: {} };
 
 const ASSET = {
-  appIcon: "https://themusicliteracyhub.netlify.app/dynamics-icon.svg",
-  customise: "https://themusicliteracyhub.netlify.app/customise.svg",
-  levels: "https://themusicliteracyhub.netlify.app/levels.svg",
-  next: "https://themusicliteracyhub.netlify.app/next.svg",
-  eye: "./eye.svg",
-  metronome: "./metronome.svg",
-  tempo: "./tempo.svg",
-  hand: "./hand.svg",
-  audio: "./audio-svgrepo-com.svg?v=20260722-smaller15",
-  bronze: "https://themusicliteracyhub.netlify.app/bronze.svg",
-  silver: "https://themusicliteracyhub.netlify.app/silver.svg",
-  gold: "https://themusicliteracyhub.netlify.app/gold.svg",
-  diamond: "https://themusicliteracyhub.netlify.app/diamond.svg",
+  appIcon: "./app-icons/dynamics-icon.svg",
+  customise: "./ui-icons/customise.svg",
+  levels: "./ui-icons/levels.svg",
+  next: "./ui-icons/next.svg",
+  eye: "./ui-icons/eye.svg",
+  metronome: "./ui-icons/metronome.svg",
+  tempo: "./ui-icons/tempo.svg",
+  hand: "./ui-icons/hand.svg",
+  audio: "./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15",
+  bronze: "./ui-icons/bronze.svg",
+  silver: "./ui-icons/silver.svg",
+  gold: "./ui-icons/gold.svg",
+  diamond: "./ui-icons/diamond.svg",
 };
 
 const COLOUR = {
@@ -111,6 +134,49 @@ const LEVELS = {
   N5: { label: "National 5", description: "Fortissimo • Pianissimo • Sforzando", dynamics: ["f", "p", "crescendo", "diminuendo", "mf", "mp", "ff", "pp", "sfz"] },
 };
 
+const ORDER_LEVELS = {N4:LEVELS.N4,N5:LEVELS.N5};
+const DYNAMIC_LOUDEST_FIRST = ["ff","f","mf","mp","p","pp"];
+function initialOrderMode(){return new URLSearchParams(window.location.search).get("mode")==="order"&&Boolean(ORDER_LEVELS[levelFromUrl()]);}
+function makeDynamicsOrderQuestion(level){
+  if(!ORDER_LEVELS[level])throw new RangeError("Order Mode is available at National 4 and National 5.");
+  const answer=DYNAMIC_LOUDEST_FIRST.filter(id=>LEVELS[level].dynamics.includes(id));
+  const rows=answer.map(id=>({id}));
+  for(let i=rows.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rows[i],rows[j]]=[rows[j],rows[i]];}
+  if(rows.every((row,i)=>row.id===answer[i]))rows.push(rows.shift());
+  return {type:"order",rows,answer};
+}
+
+function DynamicsOrderBoard({question,rows,setRows,feedback,disabled}) {
+  const elements=useRef(new Map()),previous=useRef(null),moving=useRef(null);
+  React.useLayoutEffect(()=>{
+    const before=previous.current;previous.current=null;if(!before)return;
+    if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;
+    for(const [id,element] of elements.current){
+      const delta=before.get(id)-element.getBoundingClientRect().top;
+      if(!Number.isFinite(delta)||Math.abs(delta)<1||!element.animate)continue;
+      element.style.zIndex=id===moving.current?'2':'1';
+      const animation=element.animate([{transform:`translateY(${delta}px)`},{transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.22,1,.36,1)'});
+      animation.onfinish=animation.oncancel=()=>{element.style.zIndex='';};
+    }
+  },[rows]);
+  function step(id,delta){
+    if(disabled)return;
+    const index=rows.findIndex(row=>row.id===id);if(!rows[index+delta])return;
+    previous.current=new Map([...elements.current].map(([key,element])=>[key,element.getBoundingClientRect().top]));
+    for(const element of elements.current.values())for(const animation of element.getAnimations?.()||[])animation.cancel();
+    moving.current=id;
+    setRows(current=>{const next=current.slice();[next[index],next[index+delta]]=[next[index+delta],next[index]];return next;});
+  }
+  return <section className="dynamic-order-board" aria-label="Order dynamics">
+    <h2>Order Mode</h2><p>Arrange the dynamics from loudest to softest.</p>
+    <ol>{rows.map((row,index)=><li key={row.id} ref={element=>{if(element)elements.current.set(row.id,element);else elements.current.delete(row.id);}} data-dynamic-order-row={row.id} className={feedback?(question.answer[index]===row.id?'is-correct':'is-incorrect'):''}>
+      <span className="dynamic-order-position">{index+1}</span>
+      <div className="dynamic-order-notes" role="img" aria-label={dyn(row.id).name}><svg viewBox="0 0 120 70" width="120" height="70" aria-hidden="true"><DynamicGlyph id={row.id} x={60} yy={38}/></svg></div>
+      <div className="dynamic-order-arrows"><button type="button" aria-label={`Move dynamic ${index+1} up`} disabled={disabled||index===0} onClick={()=>step(row.id,-1)}>↑</button><button type="button" aria-label={`Move dynamic ${index+1} down`} disabled={disabled||index===rows.length-1} onClick={()=>step(row.id,1)}>↓</button></div>
+    </li>)}</ol>
+  </section>;
+}
+
 const STATIC_DYNAMIC_IDS = ["pp", "p", "mp", "mf", "f", "ff"];
 const AUDIO_BUTTON_IDS = ["p", "f", "sfz", "crescendo", "diminuendo"];
 const LONG_NOTE_MIN_BEATS = 1.5;
@@ -119,7 +185,7 @@ const TIME_SIGNATURES = [
   { id: "2/4", top: "2", bottom: "4", beats: 2, compound: false },
   { id: "3/4", top: "3", bottom: "4", beats: 3, compound: false },
   { id: "4/4", top: "4", bottom: "4", beats: 4, compound: false },
-  { id: "6/8", top: "6", bottom: "8", beats: 6, compound: true },
+  { id: "6/8", top: "6", bottom: "8", beats: 3, compound: true },
 ];
 
 const NOTES = [
@@ -260,7 +326,7 @@ function weighted(items) {
   for (const item of items) { roll -= item.weight; if (roll <= 0) return item.value; }
   return items[items.length - 1].value;
 }
-function strongBeat(startBeat, ts) { return startBeat === 0 || (ts.id === "4/4" && startBeat === 2) || (ts.id === "6/8" && startBeat === 3); }
+function strongBeat(startBeat, ts) { return startBeat === 0 || (ts.id === "4/4" && startBeat === 2) || (ts.id === "6/8" && startBeat === 1.5); }
 function finalRhythmForSignature(ts) {
   return { "2/4": "minim", "3/4": "dottedMinim", "4/4": "semibreve", "6/8": "dottedMinim" }[ts.id] || "semibreve";
 }
@@ -491,7 +557,11 @@ function makeChoices(answerId, enabledDynamics) {
     if (!remaining.length) break;
     out.push(r(remaining));
   }
-  return out.sort(() => Math.random() - 0.5).map(d => ({ id: d.id, text: d.description }));
+  for (let index = out.length - 1; index > 0; index -= 1) {
+    const other = Math.floor(Math.random() * (index + 1));
+    [out[index], out[other]] = [out[other], out[index]];
+  }
+  return out.map(d => ({ id: d.id, text: d.description }));
 }
 function availableQuestionTypes(enabledTypes, enabledDynamics) {
   const hasStatic = STATIC_DYNAMIC_IDS.some(id => enabledDynamics.includes(id));
@@ -507,7 +577,7 @@ function availableQuestionTypes(enabledTypes, enabledDynamics) {
 function makeApplyQuestion(enabledDynamics, bars) {
   const candidates = [];
   STATIC_DYNAMIC_IDS.filter(id => enabledDynamics.includes(id)).forEach(id => {
-    const barIndex = r([0, 1, 2, 3, 4, 5, 6]);
+    const barIndex = r([0, 1, 2, 3, 4, 5, 6, 7]);
     const startingDynamic = barIndex > 0 && id === "p" ? "f" : barIndex > 0 && id === "f" ? "p" : null;
     candidates.push({
       answerId: id,
@@ -531,11 +601,10 @@ function makeApplyQuestion(enabledDynamics, bars) {
   return r(candidates.length ? candidates : [{ answerId: "mf", required: [{ symbolId: "mf", barIndex: 0, endBarIndex: 0, anchor: "below" }], prompt: "The music should be played <strong>moderately loud</strong> from <strong>bar 1</strong>. Place the appropriate dynamic under that bar." }]);
 }
 function makeAudioQuestion(enabledDynamics, bars) {
-  const types = [];
-  if (enabledDynamics.includes("p") && enabledDynamics.includes("f")) types.push("sudden-change");
-  if (enabledDynamics.includes("crescendo") || enabledDynamics.includes("diminuendo")) types.push("gradual-change");
-  if (enabledDynamics.includes("sfz")) types.push("sfz");
-  const type = r(types.length ? types : ["sudden-change"]);
+  const answers = AUDIO_BUTTON_IDS.filter(id => enabledDynamics.includes(id)
+    && (!["p", "f"].includes(id) || (enabledDynamics.includes("p") && enabledDynamics.includes("f"))));
+  const chosenAnswer = r(answers.length ? answers : ["p", "f"]);
+  const type = chosenAnswer === "sfz" ? "sfz" : ["crescendo", "diminuendo"].includes(chosenAnswer) ? "gradual-change" : "sudden-change";
   const changeBar = r([2, 3, 4, 5]);
   if (type === "sfz") {
     const target = r(getSfzTargets(bars, [2, 3, 4, 5]));
@@ -543,13 +612,13 @@ function makeAudioQuestion(enabledDynamics, bars) {
     return { answerId: "sfz", audioQuestionKind: "sfz-location", required: [{ symbolId: "sfz", barIndex: target.barIndex, noteIndex: target.noteIndex, anchor: "below-note" }], visiblePlacements: [{ symbolId: baseDynamic, barIndex: 0, endBarIndex: 0, anchor: "below", localId: "starting-dynamic" }], prompt: `Listen to the excerpt. Place ${dynamicPromptGlyph("sfz")} under the note where it occurs.`, audioPlan: { kind: "sfz", baseDynamic, accentBar: target.barIndex, accentNoteIndex: target.noteIndex } };
   }
   if (type === "gradual-change") {
-    const dynamicType = enabledDynamics.includes("crescendo") && enabledDynamics.includes("diminuendo") ? r(["crescendo", "diminuendo"]) : enabledDynamics.includes("crescendo") ? "crescendo" : "diminuendo";
+    const dynamicType = chosenAnswer;
     const canUseExtremeDynamics = enabledDynamics.includes("pp") && enabledDynamics.includes("ff");
     const startDynamic = dynamicType === "crescendo" ? canUseExtremeDynamics ? "pp" : "p" : canUseExtremeDynamics ? "ff" : "f";
     const endDynamic = dynamicType === "crescendo" ? canUseExtremeDynamics ? "ff" : "f" : canUseExtremeDynamics ? "pp" : "p";
-    return { answerId: dynamicType, audioQuestionKind: "gradual-location", required: [{ symbolId: dynamicType, barIndex: changeBar, endBarIndex: changeBar, anchor: "below" }], visiblePlacements: [{ symbolId: startDynamic, barIndex: 0, endBarIndex: 0, anchor: "below", localId: "starting-dynamic" }], prompt: `Listen to the excerpt. Place ${dynamicPromptGlyph("crescendo")} or ${dynamicPromptGlyph("diminuendo")} under the bar where it begins.`, audioPlan: { kind: dynamicType, startDynamic, endDynamic, changeBar } };
+    return { answerId: dynamicType, audioQuestionKind: "gradual-location", required: [{ symbolId: dynamicType, barIndex: changeBar, endBarIndex: changeBar, anchor: "below" }], visiblePlacements: [{ symbolId: startDynamic, barIndex: 0, endBarIndex: 0, anchor: "below", localId: "starting-dynamic" }], prompt: `Listen to the excerpt. Place ${["crescendo", "diminuendo"].filter(id => enabledDynamics.includes(id)).map(dynamicPromptGlyph).join(" or ")} under the bar where it begins.`, audioPlan: { kind: dynamicType, startDynamic, endDynamic, changeBar } };
   }
-  const startDynamic = Math.random() < 0.5 ? "p" : "f";
+  const startDynamic = chosenAnswer === "f" ? "p" : "f";
   const targetDynamic = startDynamic === "p" ? "f" : "p";
   return { answerId: targetDynamic, audioQuestionKind: targetDynamic === "f" ? "find-f-location" : "find-p-location", required: [{ symbolId: targetDynamic, barIndex: changeBar, endBarIndex: changeBar, anchor: "below" }], visiblePlacements: [{ symbolId: startDynamic, barIndex: 0, endBarIndex: 0, anchor: "below", localId: "starting-dynamic" }], prompt: targetDynamic === "f" ? `Listen to the excerpt. The starting dynamic is shown. Place ${dynamicPromptGlyph("f")} under the bar where it gets loud.` : `Listen to the excerpt. The starting dynamic is shown. Place ${dynamicPromptGlyph("p")} under the bar where it gets quiet.`, audioPlan: { kind: "sudden-change", startDynamic, targetDynamic, changeBar } };
 }
@@ -567,7 +636,7 @@ function makeQuestion(enabledTypes = QUESTION_TYPES, enabledDynamics = DYNAMICS.
   let audioPlan = { kind: "static", dynamicId: answerId };
   let audioQuestionKind = null;
   if (type === "multiple-choice") {
-    const barIndex = r([0,1,2,3,4,5,6]);
+    const barIndex = r([0,1,2,3,4,5,6,7]);
     const startingDynamic = barIndex > 0 ? oppositeStartingDynamic(answerId) : null;
     visiblePlacements = [
       ...(startingDynamic ? [{ symbolId: startingDynamic, barIndex: 0, endBarIndex: 0, anchor: "below", localId: "starting-dynamic" }] : []),
@@ -577,7 +646,7 @@ function makeQuestion(enabledTypes = QUESTION_TYPES, enabledDynamics = DYNAMICS.
     prompt = `What does the marking in <strong>bar ${barIndex + 1}</strong> mean?`;
   }
   if (type === "definition") {
-    const barIndex = r([0,1,2,3,4,5,6]);
+    const barIndex = r([0,1,2,3,4,5,6,7]);
     const startingDynamic = barIndex > 0 ? oppositeStartingDynamic(answerId) : null;
     visiblePlacements = [
       ...(startingDynamic ? [{ symbolId: startingDynamic, barIndex: 0, endBarIndex: 0, anchor: "below", localId: "starting-dynamic" }] : []),
@@ -699,6 +768,18 @@ function gradualFeedbackPlacements(question) {
 function placementsMatch(question, placements) { return question.required.every(req => placements.some(p => placementMatchesRequired(req, p, question))); }
 function missingRequired(question, placements) { return question.required.filter(req => !placements.some(p => placementMatchesRequired(req, p, question))); }
 function wrongPlacements(question, placements) { return placements.filter(p => !question.required.some(req => placementMatchesRequired(req, p, question))); }
+function dynamicsPlacementForBar(question, symbolId, barIndex, noteIndex = 0) {
+  if (symbolId === "sfz") {
+    const layout = buildLayouts(question).find(item => item.barIndex === barIndex);
+    const index = clamp(noteIndex, 0, layout.bar.notes.length - 1);
+    return { symbolId, barIndex, noteIndex: index, noteX: layout.pos[index], anchor: "below-note" };
+  }
+  return { symbolId, barIndex, endBarIndex: barIndex, anchor: "below" };
+}
+function extendDynamicsPlacement(start, barIndex) {
+  const systemEnd = Math.floor(start.barIndex / BARS_PER_SYSTEM) * BARS_PER_SYSTEM + BARS_PER_SYSTEM - 1;
+  return { ...start, endBarIndex: clamp(barIndex, start.barIndex, Math.min(start.barIndex + 1, systemEnd)) };
+}
 function snap(pointer, selectedSymbolId, question, isMobile = false) {
   if (!selectedSymbolId) return null;
   const firstSystemBottom = systemTop(0, isMobile) + GAP * 4;
@@ -780,14 +861,14 @@ function QuestionTypeGlyph({ type }) {
   if (type === "definition") return <QuestionTypeMenuGlyphFrame><span className="text-[13px] font-black leading-none tracking-tight">ABC</span></QuestionTypeMenuGlyphFrame>;
   if (type === "apply-score") return <QuestionTypeMenuGlyphFrame><img src={ASSET.hand} alt="" aria-hidden="true" className="h-[22px] w-[22px] object-contain" /></QuestionTypeMenuGlyphFrame>;
   if (type === "audio") return <QuestionTypeMenuGlyphFrame><img src={ASSET.audio} alt="" aria-hidden="true" className="h-[21px] w-[21px] scale-[1.5] object-contain" /></QuestionTypeMenuGlyphFrame>;
-  return <div className="flex h-9 w-9 items-center justify-center text-[21px] leading-none" aria-hidden="true">💬</div>;
+  return <div className="flex h-9 w-9 items-center justify-center" aria-hidden="true"><img src="./ui-icons/speech-bubble.svg" alt="" style={{width:24,height:24}}/></div>;
 }
 
-function Score({ question, selectedSymbolId, placements, hoverPlacement, feedback, wrong, missing, activeNoteId, onPointerMove, onPointerLeave, onLockPlacement, isMobile = false }) {
+function Score({ question, selectedSymbolId, placements, hoverPlacement, feedback, wrong, missing, activeNoteId, onPointerMove, onPointerLeave, onLockPlacement, onKeyDown, isMobile = false }) {
   const ls = useMemo(() => buildLayouts(question, isMobile), [question, isMobile]);
   const gradualFeedback = feedback ? gradualFeedbackPlacements(question) : [];
   const hasGradualFeedback = gradualFeedback.length > 0;
-  return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none touch-none overflow-visible" aria-label="Dynamics exercise" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} onPointerDown={onLockPlacement}>
+  return <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full select-none touch-manipulation overflow-visible" data-dynamics-score="true" aria-label="Dynamics exercise" aria-description="Select a dynamic, then use Left and Right to choose a bar and Enter to place it. For Sforzando, Up and Down choose a note. Escape cancels placement." tabIndex={selectedSymbolId && !feedback ? 0 : -1} onKeyDown={onKeyDown} onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} onClick={onLockPlacement}>
     <rect width={W} height={H} fill="transparent" />
     {SYSTEM_TOPS.map((_, i) => {
       const top = systemTop(i, isMobile);
@@ -855,6 +936,7 @@ function DynamicMenuToggleButton({ label, active, onClick, glyph }) {
     className="hub-toggle-row"
     style={{ marginBottom: 0, minHeight: "48px", padding: "7px 48px 7px 6px", overflow: "visible", position: "relative", justifyContent: "flex-start" }}
     aria-label={`Toggle ${label}`}
+    aria-pressed={active}
     title={label}
   >
     <span className="flex h-full w-[42px] items-center justify-center overflow-visible text-black">
@@ -895,12 +977,13 @@ function TempoDropdownRow({ tempo, setTempo, stopAudio }) {
   </div>;
 }
 
-function MenuRows({ activeLevel, enabledTypes, setEnabledTypes, enabledDynamics, setEnabledDynamics, newQuestion, followPlayback, setFollowPlayback, tempo, setTempo, metronomeEnabled, setMetronomeEnabled, stopAudio }) {
+function MenuRows({ orderMode, changeMode, activeLevel, enabledTypes, setEnabledTypes, enabledDynamics, setEnabledDynamics, newQuestion, followPlayback, setFollowPlayback, tempo, setTempo, metronomeEnabled, setMetronomeEnabled, stopAudio }) {
   const availableDynamics = dynamicsForLevel(activeLevel);
   function toggleType(id) {
     setEnabledTypes(cur => {
       if (cur.includes(id) && cur.length === 1) return cur;
       const next = cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id];
+      if (!availableQuestionTypes(next, enabledDynamics).length) return cur;
       setTimeout(() => newQuestion(next, enabledDynamics), 0);
       return next;
     });
@@ -910,11 +993,13 @@ function MenuRows({ activeLevel, enabledTypes, setEnabledTypes, enabledDynamics,
     setEnabledDynamics(cur => {
       if (cur.includes(id) && cur.length === 1) return cur;
       const next = (cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id]).filter(x => availableDynamics.includes(x));
+      if (!availableQuestionTypes(enabledTypes, next).length) return cur;
       setTimeout(() => newQuestion(enabledTypes, next), 0);
       return next;
     });
   }
   return <>
+    {!orderMode&&<>
     <window.MLH.MenuSubheading>Audio</window.MLH.MenuSubheading>
     <TempoDropdownRow tempo={tempo} setTempo={setTempo} stopAudio={stopAudio} />
     <window.MLH.MenuToggleRow
@@ -954,6 +1039,9 @@ function MenuRows({ activeLevel, enabledTypes, setEnabledTypes, enabledDynamics,
       checked={enabledTypes.includes(type)}
       onChange={() => toggleType(type)}
     />)}
+    </>}
+    {ORDER_LEVELS[activeLevel]&&<><window.MLH.MenuSubheading>Games</window.MLH.MenuSubheading>
+    <button type="button" onClick={()=>changeMode(!orderMode)} className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600"><img src="./ui-icons/game-type.svg" alt="" aria-hidden="true" className="h-[24px] w-[24px] shrink-0 object-contain invert"/><span className="hub-toggle-label leading-none" style={{color:"inherit"}}>{orderMode?"Dynamics":"Order Mode"}</span></button></>}
   </>;
 }
 const getStreakMedal = (streak) => window.MLH?.getStreakMedal?.(streak);
@@ -967,7 +1055,7 @@ function DynamicAnswers({ filteredDynamics, selectedSymbolId, setSelectedSymbolI
   return <div className={wrapperClass}>{filteredDynamics.map(d => {
     const isWedge = ["crescendo", "diminuendo"].includes(d.id);
     const glyphClass = isWedge ? (dense ? "scale-[0.78]" : compact ? "scale-[0.9]" : "scale-[1.15]") : (dense ? "scale-[0.98]" : compact ? "scale-[1.17]" : "scale-[1.5]");
-    return <button key={d.id} disabled={Boolean(feedback)} onClick={() => setSelectedSymbolId(d.id)} className={`relative flex ${sizeClass} shrink-0 items-center justify-center overflow-visible rounded-xl border text-[1.25em] font-bold transition ${feedback ? d.id === answerId ? "border-green-700 bg-green-600 text-white" : selectedSymbolId === d.id ? "border-red-700 bg-red-600 text-white" : "border-stone-300 bg-white text-stone-900 opacity-50" : selectedSymbolId === d.id ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`}><span className={`relative flex items-center justify-center w-full h-full ${glyphClass}`} style={{ top: isWedge ? '-3px' : '-5px', left: isWedge ? '0px' : '12px' }}><SymbolGlyph id={d.id} /></span></button>;
+    return <button key={d.id} aria-label={d.name} aria-pressed={selectedSymbolId === d.id} title={d.name} disabled={Boolean(feedback)} onClick={() => setSelectedSymbolId(selectedSymbolId === d.id ? null : d.id)} className={`relative flex ${sizeClass} shrink-0 items-center justify-center overflow-visible rounded-xl border text-[1.25em] font-bold transition ${feedback ? d.id === answerId ? "border-green-700 bg-green-600 text-white" : selectedSymbolId === d.id ? "border-red-700 bg-red-600 text-white" : "border-stone-300 bg-white text-stone-900 opacity-50" : selectedSymbolId === d.id ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`}><span className={`relative flex items-center justify-center w-full h-full ${glyphClass}`} style={{ top: isWedge ? '-3px' : '-5px', left: isWedge ? '0px' : '12px' }}><SymbolGlyph id={d.id} /></span></button>;
   })}</div>;
 }
 function ChoiceAnswers({ choices, selectedChoice, setSelectedChoice, feedback, answerId, onChoose }) { return <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">{choices.map(choice => <button key={choice.id} disabled={Boolean(feedback)} onClick={() => { setSelectedChoice(choice.id); onChoose(choice.id); }} className={`min-h-[58px] rounded-xl border px-4 py-3 text-sm font-semibold ${feedback ? choice.id === answerId ? "border-green-700 bg-green-600 text-white" : choice.id === selectedChoice ? "border-red-700 bg-red-600 text-white" : "border-stone-300 bg-white text-stone-500" : selectedChoice === choice.id ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white text-stone-900"}`}>{choice.text}</button>)}</div>; }
@@ -1030,11 +1118,30 @@ function playAccompaniment(ctx, gainNode, question, bar, barStart, beatSeconds, 
   });
 }
 
+function dynamicsGainForNote(question, barIndex, noteIndex, noteCount) {
+    const plan = question.audioPlan || { kind: "static", dynamicId: question.answerId };
+    if (plan.kind === "sfz") return barIndex === plan.accentBar && noteIndex === plan.accentNoteIndex ? dyn("sfz").gain : dyn(plan.baseDynamic || "mf").gain;
+    if (plan.kind === "sudden-change") return dyn(barIndex >= plan.changeBar ? plan.targetDynamic : plan.startDynamic).gain;
+    if (plan.kind === "crescendo" || plan.kind === "diminuendo") {
+      const startGain = dyn(plan.startDynamic).gain;
+      const endGain = dyn(plan.endDynamic).gain;
+      if (barIndex < plan.changeBar) return startGain;
+      const raw = (barIndex - plan.changeBar) / Math.max(1, BAR_COUNT - 1 - plan.changeBar) + (noteCount <= 1 ? 0 : noteIndex / Math.max(1, noteCount - 1)) / BAR_COUNT;
+      const progress = clamp(Math.pow(raw, plan.kind === "crescendo" ? 0.55 : 0.7), 0, 1);
+      return startGain + (endGain - startGain) * progress;
+    }
+    return dyn(plan.dynamicId || question.answerId).gain || 0.19;
+  }
+
 function App() {
   const [activeLevel, setActiveLevel] = useState(levelFromUrl);
-  const [enabledTypes, setEnabledTypes] = useState(QUESTION_TYPES);
-  const [enabledDynamics, setEnabledDynamics] = useState(() => dynamicsForLevel(levelFromUrl()));
-  const [question, setQuestion] = useState(() => makeQuestion(QUESTION_TYPES, dynamicsForLevel(levelFromUrl())));
+  const [orderMode,setOrderMode]=useState(initialOrderMode);
+  const [savedEnabledTypes, setEnabledTypes] = window.MLH.useProfileState("enabledTypes", QUESTION_TYPES);
+  const [enabledDynamics, setEnabledDynamics] = window.MLH.useProfileState("enabledDynamics", () => dynamicsForLevel(levelFromUrl()));
+  const enabledTypes = availableQuestionTypes(savedEnabledTypes, enabledDynamics).length ? savedEnabledTypes : QUESTION_TYPES;
+  useEffect(() => { if (enabledTypes !== savedEnabledTypes) setEnabledTypes(enabledTypes); }, [enabledTypes, savedEnabledTypes]);
+  const [question, setQuestion] = useState(() => initialOrderMode()?makeDynamicsOrderQuestion(levelFromUrl()):makeQuestion(enabledTypes, enabledDynamics));
+  const [orderRows,setOrderRows]=useState(()=>question.rows||[]);
   const [questionVisible, setQuestionVisible] = useState(true);
   const [levelOpen, setLevelOpen] = useState(false);
   const [customiseOpen, setCustomiseOpen] = useState(false);
@@ -1049,11 +1156,11 @@ function App() {
   const [feedbackFading, setFeedbackFading] = useState(false);
   const [wrong, setWrong] = useState([]);
   const [missing, setMissing] = useState([]);
-  const [tempo, setTempo] = useState("andante"), [metronomeEnabled, setMetronomeEnabled] = useState(false), [followPlayback, setFollowPlayback] = useState(false);
-  const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [best, setBest] = window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
+  const [tempo, setTempo] = window.MLH.useProfileState("tempo", "andante"), [metronomeEnabled, setMetronomeEnabled] = window.MLH.useProfileState("metronomeEnabled", false), [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
+  const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
+  const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
+  const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
+  const [best, setBest] = window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: orderMode?"order-mode":"", settings: { questions: { enabledTypes, enabledDynamics }, options: { tempo, metronomeEnabled, followPlayback } } });
   const [confettiKey, setConfettiKey] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -1067,11 +1174,12 @@ function App() {
   const highlightTimersRef = useRef([]);
   const feedbackTimersRef = useRef([]);
   const levelTaskStatusRef = useRef(null);
+  const questionTimerRef = useRef(null);
 
   useClickOutside([levelRef, customiseRef], [() => levelOpen && setLevelOpen(false), () => customiseOpen && setCustomiseOpen(false)]);
-  useEffect(() => () => stopAudio(), []);
+  useEffect(() => () => { clearTimeout(questionTimerRef.current); feedbackTimersRef.current.forEach(clearTimeout); stopAudio(true); }, []);
   const acc = attempted === 0 ? 0 : Math.round((correct / attempted) * 100);
-  const medalEligible = taskMatchesLevel(activeLevel, enabledTypes, enabledDynamics);
+  const medalEligible = orderMode || taskMatchesLevel(activeLevel, enabledTypes, enabledDynamics);
   const displayedLevel = medalEligible ? activeLevel : "Custom";
   const displayedLevelLabel = medalEligible ? LEVELS[activeLevel].label : "Custom";
   const isPlacement = question.type === "apply-score" || question.type === "audio";
@@ -1090,8 +1198,8 @@ function App() {
     if (fade && masterRef.current) {
       const now = ctx.currentTime;
       try { masterRef.current.gain.cancelScheduledValues(now); masterRef.current.gain.setValueAtTime(Math.max(masterRef.current.gain.value, 0.0001), now); masterRef.current.gain.exponentialRampToValueAtTime(0.0001, now + 0.18); } catch {}
-      setTimeout(() => { try { ctx.close(); } catch {} }, 220);
-    } else { try { ctx.close(); } catch {} }
+      setTimeout(() => { try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()); } catch {} }, (window.MLH.naturalPlaybackTailMs?.() ?? 650));
+    } else { try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()); } catch {} }
     audioRef.current = null;
     setPlaying(false);
     setActiveNoteId(null);
@@ -1108,10 +1216,11 @@ function App() {
   }, [medalEligible]);
 
   function resetTask(q) {
-    stopAudio();
+    stopAudio(true);
     feedbackTimersRef.current.forEach(id => clearTimeout(id));
     feedbackTimersRef.current = [];
     setQuestion(q);
+    setOrderRows(q.rows||[]);
     setSelectedSymbolId(null);
     setPlacements([]);
     setHoverPlacement(null);
@@ -1124,9 +1233,13 @@ function App() {
     setWrong([]);
     setMissing([]);
   }
-  function newQuestion(types = enabledTypes, dynamics = enabledDynamics) {
+  function newQuestion(types = enabledTypes, dynamics = enabledDynamics, level=activeLevel, mode=orderMode) {
+    clearTimeout(questionTimerRef.current);
+    feedbackTimersRef.current.forEach(clearTimeout);
+    feedbackTimersRef.current = [];
+    stopAudio(true);
     setQuestionVisible(false);
-    setTimeout(() => { resetTask(makeQuestion(types, dynamics)); setQuestionVisible(true); }, 260);
+    questionTimerRef.current = setTimeout(() => { resetTask(mode?makeDynamicsOrderQuestion(level):makeQuestion(types, dynamics)); setQuestionVisible(true); questionTimerRef.current = null; }, 260);
   }
   function skipQuestion() {
     setStreak(0);
@@ -1147,8 +1260,15 @@ function App() {
     window.history.replaceState({}, "", url);
     window.MLH.resetLevelSessionProgress?.({ setCorrect, setAttempted, setStreak, setBest });
     setConfettiKey(0);
-    newQuestion(nextTypes, nextDynamics);
+    newQuestion(nextTypes, nextDynamics, level);
   }
+  function changeMode(nextMode){
+    if(nextMode&&!ORDER_LEVELS[activeLevel])return;
+    clearTimeout(questionTimerRef.current);setOrderMode(nextMode);setCustomiseOpen(false);setLevelOpen(false);
+    resetTask(nextMode?makeDynamicsOrderQuestion(activeLevel):makeQuestion(enabledTypes,enabledDynamics));setQuestionVisible(true);
+    const url=new URL(window.location.href);if(nextMode)url.searchParams.set("mode","order");else url.searchParams.delete("mode");window.history.replaceState({},"",url);
+  }
+  function confirmOrder(){if(feedback||!questionVisible)return;score(orderRows.every((row,i)=>row.id===question.answer[i]));}
   function fadeToNext() {
     if (!feedback || feedbackFading) return;
     feedbackTimersRef.current.forEach(id => clearTimeout(id));
@@ -1176,36 +1296,58 @@ function App() {
     }
   }
   function pointerToSvg(event) { const rect = event.currentTarget.getBoundingClientRect(); return { x: ((event.clientX - rect.left) / rect.width) * W, y: ((event.clientY - rect.top) / rect.height) * H }; }
-  function handlePointerMove(event) {
-    if (!selectedSymbolId || feedback || !isPlacement) { setHoverPlacement(null); return; }
+  function placementFromPointer(event) {
     const snapped = snap(pointerToSvg(event), selectedSymbolId, question, isMobileScore);
-    if (!snapped) { setHoverPlacement(null); return; }
+    if (!snapped) return null;
     const isWedge = selectedSymbolId === "crescendo" || selectedSymbolId === "diminuendo";
     if (pendingSpanStart && isWedge) {
-      const maxEnd = pendingSpanStart.systemIndex === 0 ? 3 : 7;
-      setHoverPlacement({ ...pendingSpanStart, endBarIndex: clamp(snapped.barIndex, pendingSpanStart.barIndex, Math.min(pendingSpanStart.barIndex + 1, maxEnd)) });
-      return;
+      return extendDynamicsPlacement(pendingSpanStart, snapped.barIndex);
     }
-    setHoverPlacement(snapped);
+    return snapped;
+  }
+  function handlePointerMove(event) {
+    if (!selectedSymbolId || feedback || !isPlacement) { setHoverPlacement(null); return; }
+    setHoverPlacement(placementFromPointer(event));
   }
   function handleLockPlacement(event) {
-    if (!selectedSymbolId || feedback || !hoverPlacement || !isPlacement) return;
+    if (!selectedSymbolId || feedback || !isPlacement) return;
+    const placement = placementFromPointer(event);
+    if (!placement) return;
     event.preventDefault();
+    commitDynamicsPlacement(placement);
+  }
+  function commitDynamicsPlacement(placement) {
     const isWedge = selectedSymbolId === "crescendo" || selectedSymbolId === "diminuendo";
     if (isWedge && question.type === "apply-score" && !pendingSpanStart) {
-      const geo = barGeoForViewport(hoverPlacement.barIndex, isMobileScore);
-      setPendingSpanStart({ ...hoverPlacement, systemIndex: geo.systemIndex, endBarIndex: hoverPlacement.barIndex });
+      const geo = barGeoForViewport(placement.barIndex, isMobileScore);
+      setPendingSpanStart({ ...placement, systemIndex: geo.systemIndex, endBarIndex: placement.barIndex });
       setPromptMessage("Now click the next bar to stretch the marking across both bars.");
       return;
     }
-    const placement = pendingSpanStart && isWedge ? { ...pendingSpanStart, endBarIndex: hoverPlacement.endBarIndex ?? hoverPlacement.barIndex } : hoverPlacement;
-    setPlacements([{ ...placement, localId: Math.random().toString(36).slice(2) }]);
+    setPlacements([{ ...(pendingSpanStart && isWedge ? extendDynamicsPlacement(pendingSpanStart, placement.endBarIndex ?? placement.barIndex) : placement), localId: Math.random().toString(36).slice(2) }]);
     setPendingSpanStart(null);
     setSelectedSymbolId(null);
     setHoverPlacement(null);
     setPromptMessage("");
   }
-  function clearPlacements() { if (feedback) return; setPlacements([]); setHoverPlacement(null); setPendingSpanStart(null); setPromptMessage(""); }
+  function clearPlacements() { if (feedback) return; setPlacements([]); setSelectedSymbolId(null); setHoverPlacement(null); setPendingSpanStart(null); setPromptMessage(""); }
+  function handleScoreKeyDown(event) {
+    if (!selectedSymbolId || feedback || !isPlacement) return;
+    const bar = hoverPlacement?.endBarIndex ?? hoverPlacement?.barIndex ?? pendingSpanStart?.barIndex ?? 0;
+    const note = hoverPlacement?.noteIndex ?? 0;
+    if (event.key === "Escape") { event.preventDefault(); clearPlacements(); return; }
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      commitDynamicsPlacement(hoverPlacement ?? dynamicsPlacementForBar(question, selectedSymbolId, bar, note));
+      return;
+    }
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const targetBar = event.key === "Home" ? 0 : event.key === "End" ? BAR_COUNT - 1 : clamp(bar + (event.key === "ArrowLeft" ? -1 : event.key === "ArrowRight" ? 1 : 0), 0, BAR_COUNT - 1);
+    const targetNote = targetBar === bar ? note + (event.key === "ArrowUp" ? 1 : event.key === "ArrowDown" ? -1 : 0) : 0;
+    const placement = dynamicsPlacementForBar(question, selectedSymbolId, targetBar, targetNote);
+    setHoverPlacement(pendingSpanStart ? extendDynamicsPlacement(pendingSpanStart, targetBar) : placement);
+  }
   function confirmAnswer() {
     if (feedback) return;
     stopAudio(true);
@@ -1224,20 +1366,6 @@ function App() {
     score(placementsMatch(question, placements) && wrongs.length === 0 && miss.length === 0);
   }
   function chooseChoice(id) { if (feedback) return; score(id === question.answerId); }
-  function gainForNote(barIndex, noteIndex, noteCount) {
-    const plan = question.audioPlan || { kind: "static", dynamicId: question.answerId };
-    if (plan.kind === "sfz") return barIndex === plan.accentBar && noteIndex === plan.accentNoteIndex ? dyn("sfz").gain : dyn(plan.baseDynamic || "mf").gain;
-    if (plan.kind === "sudden-change") return dyn(barIndex >= plan.changeBar ? plan.targetDynamic : plan.startDynamic).gain;
-    if (plan.kind === "crescendo" || plan.kind === "diminuendo") {
-      const startGain = dyn(plan.startDynamic).gain;
-      const endGain = dyn(plan.endDynamic).gain;
-      if (barIndex < plan.changeBar) return startGain;
-      const raw = (barIndex - plan.changeBar) / Math.max(1, BAR_COUNT - 1 - plan.changeBar) + (noteCount <= 1 ? 0 : noteIndex / Math.max(1, noteCount - 1)) / BAR_COUNT;
-      const progress = clamp(Math.pow(raw, plan.kind === "crescendo" ? 0.55 : 0.7), 0, 1);
-      return startGain + (endGain - startGain) * progress;
-    }
-    return dyn(plan.dynamicId || question.answerId).gain || 0.19;
-  }
   async function playExcerpt() {
     if (playing || audioRef.current) return stopAudio(true);
     const AC = window.AudioContext || window.webkitAudioContext;
@@ -1248,7 +1376,7 @@ function App() {
     setPlaying(true);
     const master = ctx.createGain();
     master.gain.value = 1;
-    master.connect(ctx.destination);
+    master.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
     masterRef.current = master;
     const frequencies = question.bars.flatMap(bar => {
       const letters = KEY_C.chords[bar.chord] || KEY_C.chords.I;
@@ -1273,24 +1401,23 @@ function App() {
         });
       }
       const bar = question.bars[barIndex];
-      const barDynamicGain = gainForNote(barIndex, 0, Math.max(1, bar.notes.length));
+      const barDynamicGain = question.audioPlan?.kind === "sfz" ? dyn(question.audioPlan.baseDynamic).gain : dynamicsGainForNote(question, barIndex, 0, Math.max(1, bar.notes.length));
       playAccompaniment(ctx, master, question, bar, t, beatSeconds, barDynamicGain);
       bar.notes.forEach((note, noteIndex) => {
         const dur = rhythm(note.rhythm).beats * beatSeconds;
         const startMs = Math.max(0, (t - ctx.currentTime) * 1000);
         highlightTimersRef.current.push(setTimeout(() => setActiveNoteId(note.id), startMs));
         highlightTimersRef.current.push(setTimeout(() => setActiveNoteId(null), startMs + dur * 1000));
-        const targetGain = gainForNote(barIndex, noteIndex, bar.notes.length);
-        const isSfzHit = question.audioPlan?.kind === "sfz" && barIndex === question.audioPlan.accentBar && noteIndex === question.audioPlan.accentNoteIndex;
-        window.MLH?.playPianoFrequency?.(ctx, master, freqForStep(note.step), t, dur, isSfzHit ? 0.14 : Math.max(0.002, targetGain));
+        const targetGain = dynamicsGainForNote(question, barIndex, noteIndex, bar.notes.length);
+        window.MLH?.playPianoFrequency?.(ctx, master, freqForStep(note.step), t, dur, Math.max(0.002, targetGain));
         t += dur;
       });
     });
-    endTimerRef.current = setTimeout(() => { setPlaying(false); setActiveNoteId(null); highlightTimersRef.current = []; audioRef.current = null; try { ctx.close(); } catch {} }, Math.max(0, (t - ctx.currentTime) * 1000) + 120);
+    endTimerRef.current = setTimeout(() => { setPlaying(false); setActiveNoteId(null); highlightTimersRef.current = []; audioRef.current = null; try { (globalThis.MLH?.closeAudioContext?.(ctx) || ctx.close()); } catch {} }, Math.max(0, (t - ctx.currentTime) * 1000) + (window.MLH.naturalPlaybackTailMs?.() ?? 650));
   }
 
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader icon={ASSET.appIcon} title="Dynamics" subtitle="Interpret and apply dynamics in the music." worksheetConfig={() => ({ version: 1, activityId: "dynamics", sourceUrl: window.location.href, settings: { level: activeLevel, enabledDynamics, enabledTypes: enabledTypes.filter(type => type !== "audio") } })}>
+    <window.MLH.AppHeader profileState={{ activeLevel, enabledTypes, enabledDynamics, tempo, metronomeEnabled, followPlayback, orderMode }} profileShareUrl={orderMode?window.location.href:undefined} icon={ASSET.appIcon} title="Dynamics" subtitle="Interpret and apply dynamics in the music." worksheetConfig={orderMode?undefined:() => ({ version: 1, activityId: "dynamics", sourceUrl: window.location.href, settings: { level: activeLevel, enabledDynamics, enabledTypes: enabledTypes.filter(type => type !== "audio") } })}>
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
         assets={ASSET}
         correct={correct}
@@ -1305,9 +1432,10 @@ function App() {
     </window.MLH.AppHeader>
 
     <div className={window.MLH.shell.pageContentClass}>
-    <main className="relative overflow-visible rounded-2xl border border-stone-200 bg-white px-4 pb-8 pt-[10px] shadow-sm md:h-auto md:overflow-visible md:px-6 md:pb-10 md:pt-[14px]" onPointerDown={() => { if (feedback) fadeToNext(); }}>
+    <main className="relative overflow-visible rounded-2xl border border-stone-200 bg-white px-4 pb-8 pt-[10px] shadow-sm md:h-auto md:overflow-visible md:px-6 md:pb-10 md:pt-[14px]" onPointerDown={event => { if (feedback && !event.target.closest("button,input,[data-menu-trigger],[data-menu-panel]")) fadeToNext(); }}>
       <window.MLH.AppToolbar
         left={<>
+          {orderMode&&<button type="button" className={window.MLH.ClearButtonClass} onClick={()=>changeMode(false)}>← Dynamics</button>}
           <div className="hub-menu-anchor relative" ref={levelRef}>
             <window.MLH.LevelButton
               icon={<img src={ASSET.levels} alt="" aria-hidden="true" className="h-[26px] w-[26px] object-contain" />}
@@ -1318,7 +1446,7 @@ function App() {
               dataMenuTrigger={true}
             />
             {levelOpen && <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}>
-              <window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS} />
+              <window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={orderMode?ORDER_LEVELS:LEVELS} />
             </window.MLH.MenuPanel>}
           </div>
           <div className="hub-menu-anchor relative" ref={customiseRef}>
@@ -1328,30 +1456,81 @@ function App() {
               dataMenuTrigger={true}
             />
             {customiseOpen && <window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
-              <MenuRows activeLevel={activeLevel} enabledTypes={enabledTypes} setEnabledTypes={setEnabledTypes} enabledDynamics={enabledDynamics} setEnabledDynamics={setEnabledDynamics} newQuestion={newQuestion} followPlayback={followPlayback} setFollowPlayback={setFollowPlayback} tempo={tempo} setTempo={setTempo} metronomeEnabled={metronomeEnabled} setMetronomeEnabled={setMetronomeEnabled} stopAudio={stopAudio}/>
+              <MenuRows orderMode={orderMode} changeMode={changeMode} activeLevel={activeLevel} enabledTypes={enabledTypes} setEnabledTypes={setEnabledTypes} enabledDynamics={enabledDynamics} setEnabledDynamics={setEnabledDynamics} newQuestion={newQuestion} followPlayback={followPlayback} setFollowPlayback={setFollowPlayback} tempo={tempo} setTempo={setTempo} metronomeEnabled={metronomeEnabled} setMetronomeEnabled={setMetronomeEnabled} stopAudio={stopAudio}/>
             </window.MLH.MenuPanel>}
           </div>
         </>}
         feedback={<FeedbackBanner feedback={feedback} fading={feedbackFading}/>}
         right={<window.MLH.SkipButton onClick={skipQuestion} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
       />
-      <div className={`relative top-[22px] mb-[44px] transition-opacity duration-300 md:-top-[18px] md:mb-0 ${questionVisible ? "opacity-100" : "opacity-0"}`}><Score question={question} selectedSymbolId={selectedSymbolId} placements={placements} hoverPlacement={hoverPlacement} feedback={feedback} wrong={wrong} missing={missing} activeNoteId={followPlayback ? activeNoteId : null} onPointerMove={handlePointerMove} onPointerLeave={() => setHoverPlacement(null)} onLockPlacement={handleLockPlacement} isMobile={isMobileScore}/></div>
+      {orderMode?<div className={`relative z-10 mt-4 transition-opacity duration-300 ${questionVisible?'opacity-100':'opacity-0'}`}>
+        <DynamicsOrderBoard question={question} rows={orderRows} setRows={setOrderRows} feedback={feedback} disabled={Boolean(feedback)||!questionVisible}/>
+        <div className="dynamic-order-controls"><window.MLH.ConfirmButton disabled={Boolean(feedback)||!questionVisible} onClick={confirmOrder}>Confirm</window.MLH.ConfirmButton></div>
+      </div>:<>      <div className={`relative top-[22px] mb-[44px] transition-opacity duration-300 md:-top-[18px] md:mb-0 ${questionVisible ? "opacity-100" : "opacity-0"}`}><Score question={question} selectedSymbolId={selectedSymbolId} placements={placements} hoverPlacement={hoverPlacement} feedback={feedback} wrong={wrong} missing={missing} activeNoteId={followPlayback ? activeNoteId : null} onPointerMove={handlePointerMove} onPointerLeave={() => setHoverPlacement(null)} onLockPlacement={handleLockPlacement} onKeyDown={handleScoreKeyDown} isMobile={isMobileScore}/></div>
             <div className={`relative z-10 mt-8 overflow-visible rounded-xl border border-stone-200 bg-stone-50 px-4 pt-2 shadow-md md:-mt-[170px] md:mx-3 md:pb-2 ${isPlacement && question.type === "audio" ? "min-h-[210px] pb-[78px]" : isPlacement ? "min-h-[126px] pb-[78px]" : "min-h-[126px] pb-4"}`}>
         <div className="pr-0 text-stone-900 md:pr-[140px]"><p className="text-base font-semibold leading-tight" dangerouslySetInnerHTML={{ __html: question.prompt }} />{promptMessage && <p className={`mt-2 text-sm ${isStretchPrompt ? "font-normal italic text-stone-950" : "font-bold text-red-600"}`}>{promptMessage}</p>}</div>
         {isChoice && <ChoiceAnswers choices={question.choices} selectedChoice={selectedChoice} setSelectedChoice={setSelectedChoice} feedback={feedback} answerId={question.answerId} onChoose={chooseChoice}/>}
-        {isText && <div className="mt-4 flex flex-col gap-3 md:absolute md:bottom-5 md:left-4 md:right-4 md:mt-0 md:flex-row md:items-end md:justify-between"><div className="flex w-full flex-col gap-2 md:flex-row md:items-center"><input value={typedAnswer} readOnly={Boolean(feedback)} onChange={e => { setTypedAnswer(e.target.value); setPromptMessage(""); }} onKeyDown={e => { if (e.key === "Enter") confirmAnswer(); }} placeholder="Type your answer" className={window.MLH.typedAnswerClass(feedback, "min-h-[48px] min-w-[240px] md:max-w-[520px]")} />{feedback && !feedback.correct && <span className="text-sm font-bold text-green-700 md:whitespace-nowrap">{dyn(question.answerId).description}</span>}</div><window.MLH.ConfirmButton disabled={Boolean(feedback)} onClick={confirmAnswer} className="md:ml-auto">Confirm</window.MLH.ConfirmButton></div>}
-        {isPlacement && <><div className="mt-4 overflow-visible pb-[2px] pr-0"><DynamicAnswers filteredDynamics={filteredDynamics} selectedSymbolId={selectedSymbolId} setSelectedSymbolId={(id) => { setSelectedSymbolId(id); setPromptMessage(""); }} feedback={feedback} answerId={question.answerId} compact={question.type === "apply-score"}/></div></>}
-        <div className={question.type === "audio" ? "absolute bottom-4 left-4 right-4 flex flex-col items-stretch gap-2 md:flex-row md:items-center md:justify-between" : "absolute bottom-4 left-4 right-4 flex items-center gap-2 md:left-auto"}>{isPlacement && question.type === "audio" && <button onClick={playExcerpt} disabled={Boolean(feedback)} className={`${window.MLH.PlayButtonClass} disabled:!border-stone-300 disabled:!bg-stone-100 disabled:!text-stone-500 disabled:!opacity-100`}><span className="text-lg leading-none">{playing ? "■" : "▶"}</span><span>{playing ? "Stop" : "Play"}</span></button>}{isPlacement && question.type === "audio" ? <div className={window.MLH.ActionButtonGroupClass}><button disabled={Boolean(feedback) || placements.length === 0} onClick={clearPlacements} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={Boolean(feedback) || placements.length === 0} onClick={confirmAnswer} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div> : <>{isPlacement && <button disabled={Boolean(feedback) || placements.length === 0} onClick={clearPlacements} className={window.MLH.ClearButtonClass}>Clear</button>}{isPlacement && <window.MLH.ConfirmButton disabled={Boolean(feedback) || placements.length === 0} onClick={confirmAnswer}>Confirm</window.MLH.ConfirmButton>}</>}</div>
-      </div>
+        {isText && <div className="mt-4 flex flex-col gap-3 md:absolute md:bottom-5 md:left-4 md:right-4 md:mt-0 md:flex-row md:items-end md:justify-between"><div className="flex w-full flex-col gap-2 md:flex-row md:items-center"><input aria-label="Meaning of dynamic marking" value={typedAnswer} readOnly={Boolean(feedback)} onChange={e => { setTypedAnswer(e.target.value); setPromptMessage(""); }} onKeyDown={e => { if (e.key === "Enter") confirmAnswer(); }} placeholder="Type your answer" className={window.MLH.typedAnswerClass(feedback, "min-h-[48px] min-w-[240px] md:max-w-[520px]")} />{feedback && !feedback.correct && <span className="text-sm font-bold text-green-700 md:whitespace-nowrap">{dyn(question.answerId).description}</span>}</div><window.MLH.ConfirmButton disabled={Boolean(feedback)} onClick={confirmAnswer} className="md:ml-auto">Confirm</window.MLH.ConfirmButton></div>}
+        {isPlacement && <><div className="mt-4 overflow-visible pb-[2px] pr-0"><DynamicAnswers filteredDynamics={filteredDynamics} selectedSymbolId={selectedSymbolId} setSelectedSymbolId={(id) => { setSelectedSymbolId(id); setPendingSpanStart(null); setHoverPlacement(null); setPromptMessage(""); }} feedback={feedback} answerId={question.answerId} compact={question.type === "apply-score"}/></div></>}
+        <div className={question.type === "audio" ? "absolute bottom-4 left-4 right-4 flex flex-col items-stretch gap-2 md:flex-row md:items-center md:justify-between" : "absolute bottom-4 left-4 right-4 flex items-center gap-2 md:left-auto"}>{isPlacement && question.type === "audio" && <button onClick={playExcerpt} disabled={feedback?.correct === true} className={`${window.MLH.PlayButtonClass} disabled:!border-stone-300 disabled:!bg-stone-100 disabled:!text-stone-500 disabled:!opacity-100`}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing ? "Stop" : "Play"}</span></button>}{isPlacement && question.type === "audio" ? <div className={window.MLH.ActionButtonGroupClass}><button disabled={Boolean(feedback) || (!placements.length && !pendingSpanStart && !selectedSymbolId)} onClick={clearPlacements} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={Boolean(feedback) || placements.length === 0} onClick={confirmAnswer} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div> : <>{isPlacement && <button disabled={Boolean(feedback) || (!placements.length && !pendingSpanStart && !selectedSymbolId)} onClick={clearPlacements} className={window.MLH.ClearButtonClass}>Clear</button>}{isPlacement && <window.MLH.ConfirmButton disabled={Boolean(feedback) || placements.length === 0} onClick={confirmAnswer}>Confirm</window.MLH.ConfirmButton>}</>}</div>
+      </div></>}
+
     </main>
     </div>
   </div>;
 }
 
+function EscapeDynamicSymbol({ id }) {
+  const glyphRef = React.useRef(null);
+  React.useLayoutEffect(() => {
+    let active = true;
+    const centre = () => {
+      const glyph = glyphRef.current;
+      if (!active || !glyph) return;
+      const bounds = glyph.getBBox();
+      if (!bounds.width || !bounds.height) return;
+      let centreX = bounds.x + bounds.width / 2;
+      let centreY = bounds.y + bounds.height / 2;
+      const text = glyph.querySelector("text");
+      if (text) {
+        const context = document.createElement("canvas").getContext("2d");
+        const style = getComputedStyle(text);
+        context.font = `${style.fontSize} ${style.fontFamily}`;
+        context.textAlign = "center";
+        const ink = context.measureText(text.textContent);
+        const scale = text.transform.baseVal.consolidate()?.matrix;
+        if (Number.isFinite(ink.actualBoundingBoxAscent)) {
+          centreX = Number(text.getAttribute("x")) + (ink.actualBoundingBoxRight - ink.actualBoundingBoxLeft) / 2 * (scale?.a ?? 1);
+          centreY = Number(text.getAttribute("y")) + (ink.actualBoundingBoxDescent - ink.actualBoundingBoxAscent) / 2 * (scale?.d ?? 1);
+        }
+      }
+      glyph.setAttribute("transform", `translate(${50 - centreX} ${27 - centreY})`);
+    };
+    centre();
+    document.fonts?.ready.then(centre);
+    return () => { active = false; };
+  }, [id]);
+  return <svg viewBox="0 0 100 54" aria-hidden="true"><g ref={glyphRef}><DynamicGlyph id={id} x={50} yy={33} /></g></svg>;
+}
+
+function EscapeClue({ activity }) {
+  const embed = window.MLH.EscapeLiteracyActivity;
+  const ref = embed.useContentHeight(activity);
+  const question = embed.useQuestion(activity, ({level}) => makeQuestion(["multiple-choice"], LEVELS[level].dynamics));
+  const answer = question.choices.find(choice => choice.id === question.answerId);
+  const choices = embed.codeOrder(question.choices, answer, activity.clue.digit).map(choice => choice.text);
+  return <main ref={ref} className="escape-literacy-content">
+    <p className="escape-literacy-content-title">{"What does this dynamic marking mean?"}</p>
+    <div className="escape-literacy-symbol escape-dynamic-symbol"><EscapeDynamicSymbol id={question.answerId} /></div>
+    <embed.NumberedOptions activity={activity} choices={choices} columns={2} />
+  </main>;
+}
+
+const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("dynamics");
 const root = document.getElementById("root");
-if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(<App />);
-else ReactDOM.render(<App />, root);
-</script>
-<script src="./footer.js?v=20261005-update-history"></script>
+if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />);
+else ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, root);
+</script><script src="./generated-runtimes/dynamics-1.js?v=541286f2685a"></script>
+<script src="./footer.js?v=120454beac89"></script>
 </body>
 </html>

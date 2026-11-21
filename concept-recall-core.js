@@ -47,6 +47,17 @@
     });
   }
 
+  function cumulativeQuestions(questions, level) {
+    const safeLevel = LEVELS[level] ? level : "N3";
+    const rank = LEVELS[safeLevel].rank;
+    const standard = questionsForLevel(questions, safeLevel);
+    const included = new Set(standard.map(question => question.id));
+    const earlier = completeQuestions(questions).filter(question =>
+      LEVELS[question.introducedAt].rank < rank && !included.has(question.id));
+    return [...standard, ...earlier].sort((first, second) =>
+      Number(second.introducedAt === safeLevel) - Number(first.introducedAt === safeLevel));
+  }
+
   function categoriesForQuestions(questions) {
     return [...new Set(completeQuestions(questions).map((question) => question.category))].sort((a, b) => a.localeCompare(b, "en-GB"));
   }
@@ -251,6 +262,7 @@
     isCompleteQuestion,
     completeQuestions,
     questionsForLevel,
+    cumulativeQuestions,
     categoriesForQuestions,
     questionsForSetup,
     acceptedAnswers,

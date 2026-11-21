@@ -1,0 +1,473 @@
+{
+  "key": "G major",
+  "timeSignature": "5/4",
+  "bars": [
+    {
+      "notes": [
+        {
+          "pitch": "E4",
+          "rhythm": "dottedMinim",
+          "beats": 3
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "E4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "E4",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "E5",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "stemDown": true
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "stemDown": true
+        },
+        {
+          "pitch": "B4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "stemDown": true
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "stemDown": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "A#4",
+          "rhythm": "dottedMinim",
+          "beats": 3
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "accidental": "natural"
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "E4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "tieToNextBar": true
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "E4",
+          "rhythm": "minim",
+          "beats": 2,
+          "tiedFromPreviousBar": true
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "B4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "B4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "C5",
+          "rhythm": "dottedMinim",
+          "beats": 3
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "B4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "missingAccidentalIndex": 0
+    },
+    {
+      "notes": [
+        {
+          "pitch": "C5",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "C5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "D5",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "B4",
+          "rhythm": "dottedMinim",
+          "beats": 3
+        },
+        {
+          "pitch": "A#4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "E4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "intervalIndices": [
+        1,
+        2
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "E4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "F#4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ],
+      "missingIndices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "A4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        },
+        {
+          "pitch": "E4",
+          "rhythm": "crotchet",
+          "beats": 1
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "Bb4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "pitch": "G4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "beamGroups": [
+        {
+          "start": 0,
+          "end": 3
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "pitch": "D#4",
+          "rhythm": "minim",
+          "beats": 2
+        },
+        {
+          "rest": true,
+          "rhythm": "crotchetRest",
+          "beats": 1
+        }
+      ],
+      "partial": true,
+      "finalBarline": "none"
+    }
+  ],
+  "pickup": {
+    "notes": [
+      {
+        "pitch": "B3",
+        "rhythm": "crotchet",
+        "beats": 1
+      },
+      {
+        "pitch": "C#4",
+        "rhythm": "crotchet",
+        "beats": 1
+      }
+    ]
+  },
+  "time": {
+    "answer": "5/4",
+    "placement": "after-key-signature"
+  },
+  "accidental": {
+    "bar": 5,
+    "note": 0,
+    "answer": "sharp@0",
+    "pitch": "C#5"
+  },
+  "interval": {
+    "bar": 7,
+    "notes": [
+      1,
+      2
+    ],
+    "answer": "Augmented 4th"
+  },
+  "missing": {
+    "bar": 9,
+    "indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "rhythms": [
+      "quaver",
+      "quaver",
+      "quaver",
+      "quaver"
+    ],
+    "answer": [
+      "G4",
+      "A4",
+      "G4",
+      "F#4"
+    ]
+  },
+  "layout": {
+    "height": 1170,
+    "groups": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        6,
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "systemTops": [
+      100,
+      300,
+      500,
+      770,
+      1020
+    ]
+  },
+  "finalBarline": "none"
+}

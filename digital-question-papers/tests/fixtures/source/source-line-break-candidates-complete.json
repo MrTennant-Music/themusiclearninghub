@@ -1,0 +1,911 @@
+{
+  "scope": "Candidates only; complete exact source text required and repeated source occurrences must agree on every line boundary. Not visually certified.",
+  "rows": [
+    {
+      "paper": "advanced-higher-2016",
+      "question": "q6",
+      "block": 3,
+      "text": "Listen to each excerpt. For each excerpt identify at least two prominent concepts in each of the following categories:",
+      "paths": [
+        "q6.intro.1"
+      ],
+      "normal": "listentoeachexcerptforeachexcerptidentifyatleasttwoprominentconceptsineachofthefollowingcategories",
+      "breaks": [
+        70
+      ],
+      "source": "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 13,
+          "text": "(a) Listen to each excerpt. For each excerpt identify at least two prominent concepts in",
+          "normal": "alistentoeachexcerptforeachexcerptidentifyatleasttwoprominentconceptsin",
+          "box": [
+            87.8734,
+            128.25210000000004,
+            535.7493999999999,
+            139.25210000000004
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 13,
+          "text": "each of the following categories:",
+          "normal": "eachofthefollowingcategories",
+          "box": [
+            110.5554,
+            141.4521000000001,
+            270.3084,
+            152.4521000000001
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 3,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2016",
+      "question": "q6",
+      "block": 6,
+      "text": "Both excerpts will be played twice, with a pause of 15 seconds between playings, and a pause of 4 minutes at the end for you to complete your final answer.",
+      "paths": [
+        "q6.intro.4"
+      ],
+      "normal": "bothexcerptswillbeplayedtwicewithapauseof15secondsbetweenplayingsandapauseof4minutesattheendforyoutocompleteyourfinalanswer",
+      "breaks": [
+        68
+      ],
+      "source": "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 13,
+          "text": "Both excerpts will be played twice, with a pause of 15 seconds between playings, and",
+          "normal": "bothexcerptswillbeplayedtwicewithapauseof15secondsbetweenplayingsand",
+          "box": [
+            110.55540000000002,
+            206.55010000000016,
+            535.7384000000003,
+            217.55010000000016
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 13,
+          "text": "a pause of 4 minutes at the end for you to complete your final answer.",
+          "normal": "apauseof4minutesattheendforyoutocompleteyourfinalanswer",
+          "box": [
+            110.55540000000002,
+            219.7501000000002,
+            455.0534000000002,
+            230.7501000000002
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2016",
+      "question": "q6",
+      "block": 30,
+      "text": "In your extended answer you should refer to six similarities/differences across the following categories:",
+      "paths": [
+        "q6.subquestions.2.leadIntro.intro.1"
+      ],
+      "normal": "inyourextendedansweryoushouldrefertosixsimilaritiesdifferencesacrossthefollowingcategories",
+      "breaks": [
+        68
+      ],
+      "source": "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 16,
+          "text": "In your extended answer you should refer to six similarities/differences across",
+          "normal": "inyourextendedansweryoushouldrefertosixsimilaritiesdifferencesacross",
+          "box": [
+            138.90240000000006,
+            141.45209999999997,
+            535.7274000000001,
+            152.45209999999997
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 16,
+          "text": "the following categories:",
+          "normal": "thefollowingcategories",
+          "box": [
+            138.8914000000001,
+            154.65210000000002,
+            259.51740000000007,
+            165.65210000000002
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2016",
+      "question": "q6",
+      "block": 35,
+      "text": "You will hear each excerpt two more times, with a pause of 15 seconds between playings, and a further 10 minutes to complete your answers for part (i) and part (ii).",
+      "paths": [
+        "q6.subquestions.2.leadIntro.intro.6"
+      ],
+      "normal": "youwillheareachexcerpttwomoretimeswithapauseof15secondsbetweenplayingsandafurther10minutestocompleteyouranswersforpartiandpartii",
+      "breaks": [
+        62,
+        122
+      ],
+      "source": "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 16,
+          "text": "You will hear each excerpt two more times, with a pause of 15 seconds between",
+          "normal": "youwillheareachexcerpttwomoretimeswithapauseof15secondsbetween",
+          "box": [
+            138.8914000000001,
+            265.0151000000001,
+            535.7164000000001,
+            276.0151000000001
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 16,
+          "text": "playings, and a further 10 minutes to complete your answers for part (i) and",
+          "normal": "playingsandafurther10minutestocompleteyouranswersforpartiand",
+          "box": [
+            138.89140000000006,
+            278.2151000000001,
+            535.7274000000002,
+            289.2151000000001
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 16,
+          "text": "part (ii).",
+          "normal": "partii",
+          "box": [
+            138.89140000000006,
+            291.41510000000017,
+            179.27240000000006,
+            302.41510000000017
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "question": "q6",
+      "block": 3,
+      "text": "Listen to each excerpt. For each excerpt identify at least two prominent concepts from each of the following categories:",
+      "paths": [
+        "q6.intro.1"
+      ],
+      "normal": "listentoeachexcerptforeachexcerptidentifyatleasttwoprominentconceptsfromeachofthefollowingcategories",
+      "breaks": [
+        68
+      ],
+      "source": "exampapers/adv higher/2023/Music AH 2023 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 17,
+          "text": "(a) Listen to each excerpt. For each excerpt identify at least two prominent concepts",
+          "normal": "alistentoeachexcerptforeachexcerptidentifyatleasttwoprominentconcepts",
+          "box": [
+            87.875,
+            131.09838037199995,
+            514.804990478,
+            142.09838037199995
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 17,
+          "text": "from each of the following categories:",
+          "normal": "fromeachofthefollowingcategories",
+          "box": [
+            110.5522,
+            144.29851464900003,
+            296.6172,
+            155.29851464900003
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 2,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "question": "q6",
+      "block": 34,
+      "text": "In your extended answer you should refer to six similarities/differences across the following categories:",
+      "paths": [
+        "q6.subquestions.2.leadIntro.intro.1"
+      ],
+      "normal": "inyourextendedansweryoushouldrefertosixsimilaritiesdifferencesacrossthefollowingcategories",
+      "breaks": [
+        68
+      ],
+      "source": "exampapers/adv higher/2023/Music AH 2023 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "In your extended answer you should refer to six similarities/differences across",
+          "normal": "inyourextendedansweryoushouldrefertosixsimilaritiesdifferencesacross",
+          "box": [
+            138.897598266,
+            144.29851464900003,
+            527.5108136272021,
+            155.29851464900003
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "the following categories:",
+          "normal": "thefollowingcategories",
+          "box": [
+            138.897598266,
+            157.498526856,
+            259.521398266,
+            168.498526856
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "question": "q6",
+      "block": 37,
+      "text": "When you have completed your analysis you should give your conclusion. You must identify the period of each excerpt and justify your answer.",
+      "paths": [
+        "q6.subquestions.2.leadIntro.intro.4"
+      ],
+      "normal": "whenyouhavecompletedyouranalysisyoushouldgiveyourconclusionyoumustidentifytheperiodofeachexcerptandjustifyyouranswer",
+      "breaks": [
+        62
+      ],
+      "source": "exampapers/adv higher/2023/Music AH 2023 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "(ii) When you have completed your analysis you should give your conclusion. You",
+          "normal": "iiwhenyouhavecompletedyouranalysisyoushouldgiveyourconclusionyou",
+          "box": [
+            110.551101684,
+            225.44487695400005,
+            518.6280017259652,
+            236.44487695400005
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "must identify the period of each excerpt and justify your answer.",
+          "normal": "mustidentifytheperiodofeachexcerptandjustifyyouranswer",
+          "box": [
+            138.897598266,
+            238.64488916100004,
+            457.862310383225,
+            249.64488916100004
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 2,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "advanced-higher-2023",
+      "question": "q6",
+      "block": 38,
+      "text": "You will hear each excerpt two more times, with 15 seconds between playings. There will then be 10 minutes to complete your answers for part (i) and part (ii).",
+      "paths": [
+        "q6.subquestions.2.leadIntro.intro.5"
+      ],
+      "normal": "youwillheareachexcerpttwomoretimeswith15secondsbetweenplayingstherewillthenbe10minutestocompleteyouranswersforpartiandpartii",
+      "breaks": [
+        62,
+        122
+      ],
+      "source": "exampapers/adv higher/2023/Music AH 2023 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "You will hear each excerpt two more times, with 15 seconds between playings.",
+          "normal": "youwillheareachexcerpttwomoretimeswith15secondsbetweenplayings",
+          "box": [
+            138.897598266,
+            257.51421289100006,
+            528.372409671202,
+            268.51421289100006
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "There will then be 10 minutes to complete your answers for part (i) and part",
+          "normal": "therewillthenbe10minutestocompleteyouranswersforpartiandpart",
+          "box": [
+            138.897598266,
+            270.71422509800004,
+            518.260294,
+            281.71422509800004
+          ]
+        },
+        {
+          "question": "q6",
+          "page": 20,
+          "text": "(ii).",
+          "normal": "ii",
+          "box": [
+            138.897598266,
+            283.91417627,
+            155.881598266,
+            294.91417627
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": null,
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "higher-2015",
+      "question": "q9",
+      "block": 5,
+      "text": "The lyrics of the song are printed in the table below. You should insert each feature once in the column on the right at the point where it occurs.",
+      "paths": [
+        "q9.intro.3"
+      ],
+      "normal": "thelyricsofthesongareprintedinthetablebelowyoushouldinserteachfeatureonceinthecolumnontherightatthepointwhereitoccurs",
+      "breaks": [
+        52
+      ],
+      "source": "exampapers/higher/2015/NH_Music_QP_2015.pdf",
+      "sourceRows": [
+        {
+          "question": "q9",
+          "page": 16,
+          "text": "The lyrics of the song are printed in the table on the opposite page.  You should",
+          "normal": "thelyricsofthesongareprintedinthetableontheoppositepageyoushould",
+          "box": [
+            59.5275,
+            180.3307000000001,
+            473.86449999999996,
+            191.3307000000001
+          ]
+        },
+        {
+          "question": "q9",
+          "page": 16,
+          "text": "insert each feature once in the column on the right at the point where it occurs.",
+          "normal": "inserteachfeatureonceinthecolumnontherightatthepointwhereitoccurs",
+          "box": [
+            59.5275,
+            193.53070000000014,
+            460.1805,
+            204.61870000000022
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2014",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        49
+      ],
+      "source": "exampapers/n5/2014/N5_Music_QP_2014.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page.  You will see that",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethat",
+          "box": [
+            59.528999999999996,
+            117.08960000000002,
+            479.48699999999985,
+            128.08960000000002
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "further information is required and you should insert this in each of the four areas.",
+          "normal": "furtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+          "box": [
+            59.528999999999996,
+            130.28960000000006,
+            470.5549999999999,
+            141.28960000000006
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2015",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        49
+      ],
+      "source": "exampapers/n5/2015/N5_Music_QP_2015.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page.  You will see that",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethat",
+          "box": [
+            59.52999999999997,
+            117.08960000000002,
+            473.84499999999997,
+            128.08960000000002
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "further information is required and you should insert this in each of the four areas.",
+          "normal": "furtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+          "box": [
+            59.52999999999997,
+            130.28960000000006,
+            470.53399999999993,
+            141.28960000000006
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2016",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        49
+      ],
+      "source": "exampapers/n5/2016/N5_Music_QP_2016.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethat",
+          "box": [
+            59.5275,
+            119.75030000000004,
+            473.6445000000003,
+            130.75030000000004
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "further information is required and you should insert this in each of the four areas.",
+          "normal": "furtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+          "box": [
+            59.5275,
+            132.95030000000008,
+            466.7365000000003,
+            143.95030000000008
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2017",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        56
+      ],
+      "source": "exampapers/n5/2017/N5_Music_QP_2017.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the next page. You will see that further",
+          "normal": "aguidetothemusichasbeenlaidoutonthenextpageyouwillseethatfurther",
+          "box": [
+            59.5275,
+            122.59450000000004,
+            473.61700000000025,
+            133.59450000000004
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "information is required and you should insert this in each of the four areas.",
+          "normal": "informationisrequiredandyoushouldinsertthisineachofthefourareas",
+          "box": [
+            59.5275,
+            135.79449999999997,
+            429.08240000000023,
+            146.79449999999997
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2018",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        49
+      ],
+      "source": "exampapers/n5/2018/N5_Music_QP_2018.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethat",
+          "box": [
+            59.5276,
+            119.75040000000001,
+            473.66110000000026,
+            130.7504
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "further information is required and you should insert this in each of the four areas.",
+          "normal": "furtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+          "box": [
+            59.5276,
+            132.95040000000006,
+            466.7333000000003,
+            143.95040000000006
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2019",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        49
+      ],
+      "source": "exampapers/n5/2019/N5_Music_QP_2019.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethat",
+          "box": [
+            59.5275,
+            119.04180000000008,
+            473.66100000000023,
+            130.04180000000008
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "further information is required and you should insert this in each of the four areas.4",
+          "normal": "furtherinformationisrequiredandyoushouldinsertthisineachofthefourareas4",
+          "box": [
+            59.5275,
+            132.2198000000003,
+            496.0625,
+            143.24180000000013
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2022",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        56
+      ],
+      "source": "exampapers/n5/2022/N5_Music_QP_2022.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that further",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethatfurther",
+          "box": [
+            59.5275,
+            108.42131738299997,
+            483.5136999874273,
+            119.42131738299997
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "information is required and you should insert this in each of the four areas.4",
+          "normal": "informationisrequiredandyoushouldinsertthisineachofthefourareas4",
+          "box": [
+            59.5275,
+            121.62132958999996,
+            524.410326171,
+            132.621390625
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2023",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        56
+      ],
+      "source": "exampapers/n5/2023/Music N5 2023 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that further",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethatfurther",
+          "box": [
+            59.528598785,
+            122.59447412199995,
+            483.51479877242724,
+            133.59447412199995
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "information is required and you should insert this in each of the four areas.4",
+          "normal": "informationisrequiredandyoushouldinsertthisineachofthefourareas4",
+          "box": [
+            59.528598785,
+            135.79448632900005,
+            524.410326171,
+            146.79448632900005
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2024",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        56
+      ],
+      "source": "exampapers/n5/2024/Music N5 2024 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that further",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethatfurther",
+          "box": [
+            59.528598785,
+            122.59447412199995,
+            483.51479877242724,
+            133.59447412199995
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "information is required and you should insert this in each of the four areas.4",
+          "normal": "informationisrequiredandyoushouldinsertthisineachofthefourareas4",
+          "box": [
+            59.528598785,
+            135.79448632900005,
+            524.410326171,
+            146.79448632900005
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2025",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        56
+      ],
+      "source": "exampapers/n5/2025/Music N5 2025 Paper.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that further",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethatfurther",
+          "box": [
+            59.5275,
+            122.59447412199995,
+            483.5136999874273,
+            133.59447412199995
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "information is required and you should insert this in each of the four areas.4",
+          "normal": "informationisrequiredandyoushouldinsertthisineachofthefourareas4",
+          "box": [
+            59.5275,
+            135.79448632900005,
+            524.410326171,
+            146.79448632900005
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    },
+    {
+      "paper": "national5-2026",
+      "question": "q2",
+      "block": 3,
+      "text": "A guide to the music has been laid out below. You will see that further information is required and you should insert this in each of the four areas.",
+      "paths": [
+        "q2.intro.1"
+      ],
+      "normal": "aguidetothemusichasbeenlaidoutbelowyouwillseethatfurtherinformationisrequiredandyoushouldinsertthisineachofthefourareas",
+      "breaks": [
+        56
+      ],
+      "source": "exampapers/n5/2026/N5_Music_QP_2026.pdf",
+      "sourceRows": [
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "A guide to the music has been laid out on the following page. You will see that further",
+          "normal": "aguidetothemusichasbeenlaidoutonthefollowingpageyouwillseethatfurther",
+          "box": [
+            59.5275,
+            122.59447412199995,
+            483.5136999874273,
+            133.59447412199995
+          ]
+        },
+        {
+          "question": "q2",
+          "page": 4,
+          "text": "information is required and you should insert this in each of the four areas.4",
+          "normal": "informationisrequiredandyoushouldinsertthisineachofthefourareas4",
+          "box": [
+            59.5275,
+            135.79448632900005,
+            524.410326171,
+            146.79448632900005
+          ]
+        }
+      ],
+      "sourceMatchCount": 1,
+      "flags": 1,
+      "adaptation": "Approved digital-location wording; preserve source breaks only outside the changed location phrase.",
+      "sourceMatchPolicy": "First complete source occurrence; repeated continued-page instructions are not separate digital paragraphs."
+    }
+  ]
+}

@@ -1,0 +1,1173 @@
+{
+  "sourceReading": "Fresh 300 dpi individual-system reading and second complete comparison, including all three one-line rhythm choices and two percussion systems. Pixel-row-density calibration independently confirms the five staff centres below. Noteheads read from treble/bass pitch maps before comparison with the existing prose inventory; source-matching prose copied into this independent regression record. MI confirms only absent elements.",
+  "staffCentresPixels": {
+    "8": [
+      [
+        999,
+        1025.5,
+        1052,
+        1078.5,
+        1105
+      ],
+      [
+        1250,
+        1276.5,
+        1303,
+        1330,
+        1357
+      ],
+      [
+        2316.5,
+        2338.5,
+        2361,
+        2383.5,
+        2405.5
+      ]
+    ],
+    "9": [
+      [
+        736.5,
+        761.5,
+        787.5,
+        812.5,
+        838.5
+      ],
+      [
+        1116.5,
+        1142.5,
+        1167.5,
+        1193.5,
+        1219.5
+      ],
+      [
+        1427.5,
+        1453,
+        1478.5,
+        1504,
+        1529.5
+      ],
+      [
+        1706.5,
+        1731.5,
+        1757.5,
+        1782.5,
+        1808.5
+      ]
+    ],
+    "11": [
+      [
+        753.5,
+        775.5,
+        797.5,
+        818.5,
+        840
+      ],
+      [
+        1158.5,
+        1179.5,
+        1201.5,
+        1223.5,
+        1244.5
+      ],
+      [
+        1566.5,
+        1587.5,
+        1609,
+        1631,
+        1651.5
+      ],
+      [
+        1935.5,
+        1956.5,
+        1978.5,
+        2000.5,
+        2021.5
+      ]
+    ]
+  },
+  "pitchMap": "Treble lines E4 G4 B4 D5 F5; bass G2 B2 D3 F3 A3. Q5 octave-down clef retains written pitches, B/E flat signature; local G-flat and B-natural explicitly read. Q4e F-major signature; G-sharp/F-sharp local.",
+  "sections": {
+    "q2e": {
+      "Option 1": [
+        [
+          [
+            "B4",
+            "dottedCrotchet"
+          ],
+          [
+            "B4",
+            "dottedCrotchet"
+          ]
+        ],
+        [
+          [
+            "B4",
+            "quaver"
+          ],
+          [
+            "B4",
+            "quaver"
+          ],
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ]
+        ]
+      ],
+      "Option 2": [
+        [
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "B4",
+            "quaver"
+          ],
+          [
+            "B4",
+            "quaver"
+          ],
+          [
+            "B4",
+            "dottedCrotchet"
+          ]
+        ],
+        [
+          [
+            "B4",
+            "crotchet"
+          ],
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ]
+        ]
+      ],
+      "Option 3": [
+        [
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "B4",
+            "crotchet"
+          ],
+          [
+            "B4",
+            "crotchet"
+          ],
+          [
+            "B4",
+            "quaver"
+          ]
+        ],
+        [
+          [
+            "B4",
+            "crotchet"
+          ],
+          [
+            "r",
+            "quaverRest"
+          ],
+          [
+            "r",
+            "dottedCrotchetRest"
+          ]
+        ]
+      ]
+    },
+    "q4a": {
+      "bars 1": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "bars 2": [
+        [
+          "B4",
+          "dottedCrotchet"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "bars 3": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "bars 4": [
+        [
+          "B4",
+          "minim"
+        ]
+      ],
+      "bars 5": [
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "bars 6": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "crotchet"
+        ]
+      ],
+      "bars 7": [
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "bars 8": [
+        [
+          "B4",
+          "minim"
+        ]
+      ]
+    },
+    "q4c": {
+      "treble 1": [
+        [
+          "B4",
+          "minim"
+        ]
+      ],
+      "treble 2": [
+        [
+          "B4",
+          "minim"
+        ]
+      ],
+      "treble 3": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "A#4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "treble 4": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "A#4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "treble 5": [
+        [
+          "B4",
+          "minim"
+        ]
+      ],
+      "treble 6": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "A#4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "treble 7": [
+        [
+          "B4",
+          "crotchet"
+        ]
+      ],
+      "bass 1": [
+        [
+          "r",
+          "crotchetRest"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ]
+      ],
+      "bass 2": [
+        [
+          "C#4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "C#4",
+          "quaver"
+        ]
+      ],
+      "bass 3": [
+        [
+          "B3",
+          "minim"
+        ]
+      ],
+      "bass 4": [
+        [
+          "B3",
+          "crotchet"
+        ],
+        [
+          "r",
+          "crotchetRest"
+        ]
+      ],
+      "bass 5": [
+        [
+          "r",
+          "crotchetRest"
+        ],
+        [
+          "A#3",
+          "quaver"
+        ],
+        [
+          "G3",
+          "quaver"
+        ]
+      ],
+      "bass 6": [
+        [
+          "B3",
+          "crotchet"
+        ],
+        [
+          "A#3",
+          "quaver"
+        ],
+        [
+          "G3",
+          "quaver"
+        ]
+      ],
+      "bass 7": [
+        [
+          "B3",
+          "crotchet"
+        ]
+      ]
+    },
+    "q4d": {
+      "bars 1": [
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ]
+      ],
+      "bars 2": [
+        [
+          "C4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "F#4",
+          "quaver"
+        ]
+      ],
+      "bars 3": [
+        [
+          "G#4",
+          "quaver"
+        ],
+        [
+          "A#4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ]
+      ],
+      "bars 4": [
+        [
+          "E5",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ]
+      ],
+      "bars 5": [
+        [
+          "E5",
+          "dottedCrotchet"
+        ]
+      ]
+    },
+    "q4e": {
+      "bars 1": [
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "C4",
+          "quaver"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "bars 2": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "bars 3": [
+        [
+          "G#4",
+          "dottedMinim"
+        ]
+      ],
+      "bars 4": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "bars 5": [
+        [
+          "G#4",
+          "dottedMinim"
+        ]
+      ],
+      "bars 6": [
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "G5",
+          "dottedCrotchet"
+        ],
+        [
+          "F5",
+          "quaver"
+        ]
+      ],
+      "bars 7": [
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "dottedCrotchet"
+        ],
+        [
+          "F4",
+          "quaver"
+        ]
+      ],
+      "bars 8": [
+        [
+          "F#4",
+          "minim"
+        ],
+        [
+          "G4",
+          "crotchet"
+        ]
+      ],
+      "bars 9": [
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "D4",
+          "quaver"
+        ],
+        [
+          "E4",
+          "quaver"
+        ],
+        [
+          "F#4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ],
+        [
+          "A4",
+          "quaver"
+        ]
+      ],
+      "bars 10": [
+        [
+          "B4",
+          "quaver"
+        ],
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "minim"
+        ]
+      ]
+    },
+    "q5": {
+      "Pickup": [
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "Eb5",
+          "quaver"
+        ]
+      ],
+      "bars 1": [
+        [
+          "F5",
+          "dottedCrotchet"
+        ],
+        [
+          "F5",
+          "quaver"
+        ],
+        [
+          "F5",
+          "crotchet"
+        ],
+        [
+          "F5",
+          "quaver"
+        ],
+        [
+          "F5",
+          "quaver"
+        ]
+      ],
+      "bars 2": [
+        [
+          "F5",
+          "crotchet"
+        ],
+        [
+          "Eb5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "crotchet"
+        ],
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "Eb5",
+          "quaver"
+        ]
+      ],
+      "bars 3": [
+        [
+          "F5",
+          "crotchet"
+        ],
+        [
+          "F5",
+          "quaver"
+        ],
+        [
+          "Eb5",
+          "quaver"
+        ],
+        [
+          "Eb5",
+          "crotchet"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "Bb4",
+          "quaver"
+        ]
+      ],
+      "bars 4": [
+        [
+          "Bb4",
+          "minim"
+        ],
+        [
+          "r",
+          "crotchetRest"
+        ],
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "Bb4",
+          "quaver"
+        ]
+      ],
+      "bars 5": [
+        [
+          "Eb5",
+          "quaver"
+        ],
+        [
+          "Eb5",
+          "crotchet"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "D5",
+          "crotchet"
+        ],
+        [
+          "Bb4",
+          "quaver"
+        ],
+        [
+          "F4",
+          "quaver"
+        ]
+      ],
+      "bars 6": [
+        [
+          "F4",
+          "minim"
+        ],
+        [
+          "r",
+          "crotchetRest"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "Gb4",
+          "quaver"
+        ]
+      ],
+      "bars 7": [
+        [
+          "Gb4",
+          "crotchet"
+        ],
+        [
+          "Gb4",
+          "quaver"
+        ],
+        [
+          "Bb4",
+          "quaver"
+        ],
+        [
+          "Bb4",
+          "quaver"
+        ],
+        [
+          "F5",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "bars 8": [
+        [
+          "C5",
+          "minim"
+        ],
+        [
+          "r",
+          "crotchetRest"
+        ],
+        [
+          "Bb4",
+          "crotchet"
+        ]
+      ],
+      "bars 9": [
+        [
+          "D5",
+          "minim"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "G5",
+          "crotchet"
+        ],
+        [
+          "A5",
+          "quaver"
+        ]
+      ],
+      "bars 10": [
+        [
+          "A5",
+          "minim"
+        ],
+        [
+          "A5",
+          "quaver"
+        ],
+        [
+          "Bb5",
+          "crotchet"
+        ],
+        [
+          "D5",
+          "quaver"
+        ]
+      ],
+      "bars 11": [
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "r",
+          "quaverRest"
+        ],
+        [
+          "D5",
+          "quaver"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "Bb4",
+          "crotchet"
+        ],
+        [
+          "C5",
+          "quaver"
+        ]
+      ],
+      "bars 12": [
+        [
+          "C5",
+          "minim"
+        ],
+        [
+          "r",
+          "crotchetRest"
+        ],
+        [
+          "G5",
+          "crotchet"
+        ]
+      ],
+      "bars 13": [
+        [
+          "F5",
+          "dottedMinim"
+        ],
+        [
+          "C5",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "bars 14": [
+        [
+          "B4",
+          "dottedMinim"
+        ],
+        [
+          "F5",
+          "crotchet"
+        ]
+      ],
+      "bars 15": [
+        [
+          "E5",
+          "dottedMinim"
+        ],
+        [
+          "Bb4",
+          "crotchet"
+        ]
+      ],
+      "bars 16": [
+        [
+          "A4",
+          "crotchet"
+        ]
+      ]
+    }
+  },
+  "q4eChords": [
+    [
+      "F4",
+      "A4",
+      "C5"
+    ],
+    [
+      "F4",
+      "C5"
+    ],
+    [
+      "G4",
+      "D5"
+    ],
+    [
+      "D4",
+      "G4",
+      "Bb4"
+    ],
+    [
+      "D4",
+      "G4",
+      "Bb4"
+    ]
+  ],
+  "q4eBass": [
+    "F3",
+    "A2",
+    "Bb2",
+    "D3",
+    "G2"
+  ],
+  "q4cTrebleTies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "5": [
+      0
+    ]
+  },
+  "q4cBassTies": {
+    "3": [
+      0
+    ]
+  },
+  "q5Ties": {
+    "3": [
+      [
+        2,
+        3
+      ]
+    ],
+    "5": [
+      [
+        2,
+        3
+      ]
+    ],
+    "7": [
+      [
+        2,
+        3
+      ]
+    ],
+    "9": [
+      [
+        0,
+        1
+      ]
+    ],
+    "10": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "q5CrossBarTies": {
+    "1": [
+      4
+    ],
+    "3": [
+      5
+    ],
+    "5": [
+      5
+    ],
+    "6": [
+      3
+    ],
+    "7": [
+      5
+    ],
+    "9": [
+      3
+    ],
+    "10": [
+      3
+    ],
+    "11": [
+      6
+    ],
+    "13": [
+      2
+    ]
+  },
+  "q5BelowCrossBarTies": [
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ]
+  ],
+  "editable": {
+    "q4c": [
+      "B3",
+      "A#3",
+      "G3"
+    ],
+    "q4dii": [
+      "Bb4"
+    ],
+    "q4eii": [
+      "D3"
+    ],
+    "q5d": [
+      "F5",
+      "E5"
+    ],
+    "q5Slots": [
+      [
+        14,
+        1
+      ],
+      [
+        15,
+        0
+      ]
+    ],
+    "q5Tie": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  "finalBarlines": {
+    "q2e": "single",
+    "q4a": "double",
+    "q4c": "none",
+    "q4d": "none",
+    "q4e": "single",
+    "q5": "none"
+  },
+  "exceptions": [
+    "Q4c final bar 7 is one crotchet in both staves.",
+    "Q4d final bar 5 is a dotted crotchet.",
+    "Q5 pickup is two quavers, final bar 16 one crotchet.",
+    "Q5 bar 4 blank rests are explicitly counted from MI; three quavers total."
+  ],
+  "sources": [
+    {
+      "path": "exampapers/adv higher/2016/Music AH 2016 Paper.pdf",
+      "sha256": "f2b4403af1b5ff36cfc0d5f510028905e6e35f64841efa26b2e5bcd3bf941e37"
+    },
+    {
+      "path": "exampapers/adv higher/2016/Music AH 2016 Answers.pdf",
+      "sha256": "6a1d23c946c905400947c8fcca97441f91e4b0881943fd2509492ca9b3de9929"
+    }
+  ]
+}

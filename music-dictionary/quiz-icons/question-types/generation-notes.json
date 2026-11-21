@@ -1,0 +1,26 @@
+{
+  "method": "Built-in image generation",
+  "transparentBackground": true,
+  "assets": [
+    {
+      "file": "multiple-choice-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small question-type glyph for The Music Learning Hub. Create a single polished black monochrome UI glyph on a genuinely transparent background. Match the Hub's clean black musical glyphs: bold balanced silhouette, restrained rounded corners, crisp flat vector-like edges, solid near-black fills with transparent negative space, no colour, shading, gradients, shadows, border badge, enclosing card, text, letters or watermark. Square composition, centred, generous even 15% transparent padding, visually clear at 24 pixels. Consistent medium-bold stroke weight throughout. Subject: Multiple Choice. Three small radio circles vertically aligned at the left, the middle circle selected with a solid black central dot; each radio circle has a short thick horizontal answer line to its right. Exactly three rows. This is one compact icon, not a screenshot."
+    },
+    {
+      "file": "short-answer-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small question-type glyph for The Music Learning Hub. Create a single polished black monochrome UI glyph on a genuinely transparent background. Match the Hub's clean black musical glyphs: bold balanced silhouette, restrained rounded corners, crisp flat vector-like edges, solid near-black fills with transparent negative space, no colour, shading, gradients, shadows, border badge, enclosing card, text, letters or watermark. Square composition, centred, generous even 15% transparent padding, visually clear at 24 pixels. Consistent medium-bold stroke weight throughout. Subject: Short Answer. A single bold diagonal pencil writing over one short horizontal answer underline, with two tiny horizontal prompt lines above the underline. No letters or words. This is one compact icon, not a screenshot."
+    },
+    {
+      "file": "complete-statement-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small question-type glyph for The Music Learning Hub. Create a single polished black monochrome UI glyph on a genuinely transparent background. Match the Hub's clean black musical glyphs: bold balanced silhouette, restrained rounded corners, crisp flat vector-like edges, solid near-black fills with transparent negative space, no colour, shading, gradients, shadows, border badge, enclosing card, text, letters or watermark. Square composition, centred, generous even 15% transparent padding, visually clear at 24 pixels. Consistent medium-bold stroke weight throughout. Subject: Complete the Statement. Two horizontal sentence lines represented by bold black rounded bars; the second line has a clear central gap shown as a small empty outlined rectangular blank between the left and right parts of that line. No pencil, no check marks, no letters or words. This is one compact icon, not a screenshot."
+    },
+    {
+      "file": "selection-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small question-type glyph for The Music Learning Hub. Create a single polished black monochrome UI glyph on a genuinely transparent background. Match the Hub's clean black musical glyphs: bold balanced silhouette, restrained rounded corners, crisp flat vector-like edges, solid near-black fills with transparent negative space, no colour, shading, gradients, shadows, border badge, enclosing card, text, letters or watermark. Square composition, centred, generous even 15% transparent padding, visually clear at 24 pixels. Consistent medium-bold stroke weight throughout. Subject: Selection (multiple answers). Three small rounded square checkboxes vertically aligned on the left, the first and third contain clear bold check marks and the middle is empty; each checkbox has a short thick horizontal answer line to its right. Exactly three rows. Distinguish this from radio circles. This is one compact icon, not a screenshot."
+    },
+    {
+      "file": "order-generated.png",
+      "prompt": "Use case: logo-brand. Asset type: small question-type glyph for The Music Learning Hub. Create a single polished black monochrome UI glyph on a genuinely transparent background. Match the Hub's clean black musical glyphs: bold balanced silhouette, restrained rounded corners, crisp flat vector-like edges, solid near-black fills with transparent negative space, no colour, shading, gradients, shadows, border badge, enclosing card, text, letters or watermark. Square composition, centred, generous even 15% transparent padding, visually clear at 24 pixels. Consistent medium-bold stroke weight throughout. Subject: Order. Three stacked thick horizontal bars of distinctly different lengths, all aligned at the left, accompanied on the right by a clear vertical double-headed up/down arrow indicating moving rows into order. Exactly three bars and one double-headed arrow. No letters or numbers. This is one compact icon, not a screenshot."
+    }
+  ]
+}

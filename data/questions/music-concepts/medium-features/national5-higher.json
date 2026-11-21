@@ -363,7 +363,7 @@
         "It may bring back musical material heard earlier."
       ],
       "falseFeature": "It is a contrasting passage between returns of a rondo's main A section.",
-      "falseSourceConceptId": "MC-0185"
+      "falseSourceConceptId": "MC-0189"
     },
     "MC-0184": {
       "trueFeatures": [
@@ -373,15 +373,6 @@
       ],
       "falseFeature": "One main melody is supported by chords or parts moving in the same rhythm.",
       "falseSourceConceptId": "MC-0187"
-    },
-    "MC-0185": {
-      "trueFeatures": [
-        "It is a contrasting passage between returns of a rondo's main A section.",
-        "It belongs between statements of the main rondo theme.",
-        "Different examples are usually labelled B, C and so on."
-      ],
-      "falseFeature": "It is a closing passage added after the main structure.",
-      "falseSourceConceptId": "MC-0183"
     },
     "MC-0186": {
       "trueFeatures": [

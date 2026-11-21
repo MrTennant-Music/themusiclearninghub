@@ -1,0 +1,58 @@
+{
+  "id": "hub-ah-styles-order-1",
+  "level": "AH",
+  "title": "Styles",
+  "instructions": "Order the broad development and popularity milestones, earliest first. Styles overlap and continue today.",
+  "description": "Use these broad period and popularity milestones: Renaissance (c.1400–1600), Nationalist (later 19th century), Neoclassical (from the 1920s). These are broad milestones, not exact beginnings.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "Advanced Higher"
+  ],
+  "template": "rank-order",
+  "items": [
+    {
+      "id": "hub-ah-styles-order-1-1",
+      "prompt": "Renaissance — undefined",
+      "answer": "Renaissance",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-order-1-2",
+      "prompt": "Nationalist — undefined",
+      "answer": "Nationalist",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-order-1-3",
+      "prompt": "Neoclassical — undefined",
+      "answer": "Neoclassical",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

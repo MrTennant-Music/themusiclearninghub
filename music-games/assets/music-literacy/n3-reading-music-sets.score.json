@@ -1,0 +1,293 @@
+[
+  {
+    "number": 2,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "tempo": "Adagio",
+    "dynamic": "piano",
+    "bars": [
+      {
+        "end": 740,
+        "barline": "double",
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "semibreve",
+            "beats": 4,
+            "x": 540
+          }
+        ]
+      }
+    ],
+    "labels": [
+      [
+        "Treble clef",
+        155,
+        446
+      ],
+      [
+        "Time signature",
+        267,
+        404
+      ],
+      [
+        "Double bar line",
+        740,
+        404
+      ],
+      [
+        "C",
+        540,
+        446
+      ],
+      [
+        "Semibreve",
+        625,
+        383
+      ],
+      [
+        "Slow",
+        550,
+        215
+      ],
+      [
+        "Quiet",
+        530,
+        610
+      ]
+    ],
+    "equivalentPairs": [
+      [
+        "C",
+        "Semibreve"
+      ]
+    ]
+  },
+  {
+    "number": 3,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "tempo": "Allegro",
+    "dynamic": "forte",
+    "bars": [
+      {
+        "end": 740,
+        "barline": "double",
+        "notes": [
+          {
+            "pitch": "A4",
+            "rhythm": "dottedMinim",
+            "beats": 3,
+            "x": 420
+          },
+          {
+            "pitch": "F4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "x": 590
+          }
+        ]
+      }
+    ],
+    "labels": [
+      [
+        "A",
+        420,
+        488
+      ],
+      [
+        "F",
+        590,
+        530
+      ],
+      [
+        "Dotted minim",
+        440.71125,
+        349.4
+      ],
+      [
+        "Crotchet",
+        610.71125,
+        391.4
+      ],
+      [
+        "Loud",
+        330,
+        640
+      ],
+      [
+        "Fast",
+        550,
+        215
+      ],
+      [
+        "Double bar line",
+        740,
+        404
+      ]
+    ],
+    "equivalentPairs": [
+      [
+        "A",
+        "Dotted minim"
+      ],
+      [
+        "F",
+        "Crotchet"
+      ]
+    ]
+  },
+  {
+    "number": 4,
+    "timeSignature": [
+      2,
+      4
+    ],
+    "hairpins": [
+      "crescendo",
+      "diminuendo"
+    ],
+    "bars": [
+      {
+        "end": 530,
+        "barline": "single",
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "minim",
+            "beats": 2,
+            "x": 400
+          }
+        ]
+      },
+      {
+        "end": 740,
+        "barline": "double",
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "minim",
+            "beats": 2,
+            "x": 640
+          }
+        ]
+      }
+    ],
+    "labels": [
+      [
+        "B",
+        350,
+        335
+      ],
+      [
+        "Minim",
+        619.28875,
+        479.6
+      ],
+      [
+        "Time signature",
+        267,
+        404
+      ],
+      [
+        "Crescendo",
+        410,
+        640
+      ],
+      [
+        "Diminuendo",
+        640,
+        640
+      ],
+      [
+        "Bar line",
+        530,
+        404
+      ],
+      [
+        "Double bar line",
+        740,
+        404
+      ]
+    ],
+    "equivalentPairs": [
+      [
+        "B",
+        "Minim"
+      ]
+    ]
+  },
+  {
+    "number": 5,
+    "timeSignature": [
+      3,
+      4
+    ],
+    "bars": [
+      {
+        "end": 740,
+        "barline": "double",
+        "notes": [
+          {
+            "pitch": "D5",
+            "rhythm": "minim",
+            "beats": 2,
+            "x": 420
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "x": 590
+          }
+        ]
+      }
+    ],
+    "labels": [
+      [
+        "D",
+        420,
+        299
+      ],
+      [
+        "E",
+        590,
+        278
+      ],
+      [
+        "Minim",
+        399.28875,
+        437.6
+      ],
+      [
+        "Crotchet",
+        569.28875,
+        416.6
+      ],
+      [
+        "Time signature",
+        267,
+        404
+      ],
+      [
+        "Double bar line",
+        740,
+        404
+      ]
+    ],
+    "equivalentPairs": [
+      [
+        "D",
+        "Minim"
+      ],
+      [
+        "E",
+        "Crotchet"
+      ]
+    ]
+  }
+]

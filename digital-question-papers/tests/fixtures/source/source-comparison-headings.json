@@ -1,0 +1,1613 @@
+{
+  "scope": "All ten official comparison header crops read at 300 dpi. Actual Practice and feedback wording, font weight and rough-work shading checked; intentional shared 5 marks footer retained.",
+  "papers": [
+    {
+      "id": "higher-2015",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 57
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2016",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 57
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2017",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 57
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2018",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 56
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 features common to both",
+        "weights": [
+          400,
+          400,
+          700
+        ],
+        "subweights": [
+          400,
+          400
+        ],
+        "backgrounds": [
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)",
+          "rgb(236, 235, 234)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 56
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2019",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 61
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 61
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2022",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 61
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 61
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2023",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 60
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 60
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2024",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 62
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 62
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2025",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 62
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 62
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "higher-2026",
+      "checks": [
+        {
+          "passed": true,
+          "name": "practice: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "practice: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "practice: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "practice: source comparison page has no reported WCAG violations"
+        },
+        {
+          "passed": true,
+          "name": "feedback: exact source Column C subtitle"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source A/B header weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source excerpt subtitle weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source Column C weight"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source shaded/white rough-work cells"
+        },
+        {
+          "passed": true,
+          "name": "feedback: source comparison page has no reported WCAG violations"
+        }
+      ],
+      "errors": [],
+      "practice": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 60
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "columnC": "5 concepts common to both",
+        "weights": [
+          700,
+          700,
+          700
+        ],
+        "subweights": [
+          700,
+          700
+        ],
+        "backgrounds": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "accessibility": {
+          "violations": [],
+          "incomplete": [
+            {
+              "id": "color-contrast",
+              "nodes": 60
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

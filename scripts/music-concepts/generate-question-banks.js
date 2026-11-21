@@ -8,7 +8,6 @@ const {
   KNOWLEDGE_BANK_FILENAME,
   KNOWLEDGE_BANK_PATH,
   OUTPUT_DIRECTORY,
-  RUNTIME_BANK_PATH,
   EDITOR_SLOTS_PATH,
   MEDIUM_FEATURE_DIRECTORY,
   loadManualQuestionOverrides,
@@ -16,10 +15,8 @@ const {
   LEVEL_CODES,
   LEVEL_FILENAMES,
   DIFFICULTIES,
-  DIFFICULTY_RANGES,
   CONCEPT_IDENTIFICATION_PROMPT,
   sha256File,
-  sha256Text,
   normaliseText,
   normaliseStem,
   conceptTerms,
@@ -39,15 +36,15 @@ const {
 const STRONG_HINTS = loadStrongHints();
 
 const EXPECTED_VALIDATION = {
-  sourceSha256: "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e",
+  sourceSha256: "d8baaa84927f66870cba2f25d5a59975a2007646facb9b3e2953fd6f3fa7e193",
   schemaVersion: "5.0",
-  concepts: 300,
-  facts: 710,
+  concepts: 299,
+  facts: 707,
   comparisonGroups: 44,
   multipleSenseConcepts: 15,
   levelBreakdown: {
     "National 3": 68,
-    "National 4": 75,
+    "National 4": 74,
     "National 5": 70,
     Higher: 48,
     "Advanced Higher": 39,
@@ -72,19 +69,19 @@ const CHORD_II_LITERACY_ID_SET = new Set(CHORD_II_LITERACY_IDS);
 // "Tone" and "2/4" are only unambiguous inside their own component namespace.
 const CURATED_LITERACY_TARGETS = {
   "MC-0010": [{ sourceFile: "practicequestions.html", localIds: ["chord"], matchKind: "exact-component-id" }],
-  "MC-0015": [{ sourceFile: "millionaire-question-bank.js", localIds: ["n3-literacy-027"], matchKind: "exact-question-answer" }],
+  "MC-0015": [{ sourceFile: "whowantstobemillionaire/millionaire-question-bank.js", localIds: ["n3-literacy-027"], matchKind: "exact-question-answer" }],
   "MC-0018": [{
-    sourceFile: "millionaire-question-bank.js",
+    sourceFile: "whowantstobemillionaire/millionaire-question-bank.js",
     localIds: [...numberedIds("n4-literacy-medium-", 9, 14), ...numberedIds("n4-literacy-medium-", 30, 33)],
     matchKind: "exact-question-answer",
   }],
-  "MC-0019": [{ sourceFile: "millionaire-question-bank.js", localIds: ["n3-literacy-015"], matchKind: "exact-question-answer" }],
-  "MC-0020": [{ sourceFile: "timesig.html", localIds: ["2/4", "3/4", "4/4"], matchKind: "exact-component-id" }],
+  "MC-0019": [{ sourceFile: "whowantstobemillionaire/millionaire-question-bank.js", localIds: ["n3-literacy-015"], matchKind: "exact-question-answer" }],
+  "MC-0020": [{ sourceFile: "timesignatures.html", localIds: ["2/4", "3/4", "4/4"], matchKind: "exact-component-id" }],
   "MC-0021": [{ sourceFile: "practicequestions.html", localIds: ["accent"], matchKind: "exact-component-id" }],
   "MC-0022": [{ sourceFile: "practicequestions.html", localIds: ["adagio"], matchKind: "exact-component-id" }],
   "MC-0023": [{ sourceFile: "practicequestions.html", localIds: ["allegro"], matchKind: "exact-component-id" }],
   "MC-0036": [{
-    sourceFile: "millionaire-question-bank.js",
+    sourceFile: "whowantstobemillionaire/millionaire-question-bank.js",
     localIds: [...numberedIds("n5-literacy-medium-", 17, 20), "h-literacy-easy-020"],
     matchKind: "exact-question-answer",
   }],
@@ -92,32 +89,32 @@ const CURATED_LITERACY_TARGETS = {
   "MC-0060": [{ sourceFile: "practicequestions.html", localIds: ["staccato"], matchKind: "exact-component-id" }],
   "MC-0080": [{ sourceFile: "practicequestions.html", localIds: ["broken_chords"], matchKind: "reviewed-listed-name-component-id" }],
   "MC-0086": [{
-    sourceFile: "millionaire-question-bank.js",
+    sourceFile: "whowantstobemillionaire/millionaire-question-bank.js",
     localIds: [...numberedIds("n5-literacy-medium-", 17, 20), "h-literacy-easy-020"],
     matchKind: "exact-question-answer",
   }],
   "MC-0097": [{ sourceFile: "practicequestions.html", localIds: ["andante"], matchKind: "exact-component-id" }],
-  "MC-0098": [{ sourceFile: "timesig.html", localIds: ["6/8", "9/8", "12/8"], matchKind: "exact-component-id" }],
+  "MC-0098": [{ sourceFile: "timesignatures.html", localIds: ["6/8", "9/8", "12/8"], matchKind: "exact-component-id" }],
   "MC-0099": [{
     sourceFile: "rhythmsums.html",
     localIds: ["dotted-minim", "dotted-crotchet", "dotted-quaver", "dotted-quaver-semiquaver"],
     matchKind: "exact-component-id",
   }],
   "MC-0102": [{ sourceFile: "rhythmsums.html", localIds: ["scotch-snap"], matchKind: "exact-component-id" }],
-  "MC-0103": [{ sourceFile: "timesig.html", localIds: ["2/4", "3/4", "4/4"], matchKind: "exact-component-id" }],
+  "MC-0103": [{ sourceFile: "timesignatures.html", localIds: ["2/4", "3/4", "4/4"], matchKind: "exact-component-id" }],
   "MC-0105": [{ sourceFile: "barlines.html", localIds: ["syncopation"], matchKind: "exact-component-id" }],
   "MC-0165": [{ sourceFile: "cadences.html", localIds: ["imperfect"], matchKind: "exact-component-id" }],
   "MC-0169": [{ sourceFile: "cadences.html", localIds: ["perfect"], matchKind: "exact-component-id" }],
   "MC-0171": [{ sourceFile: "accidentals.html", localIds: ["Semitone"], matchKind: "exact-answer-id" }],
   "MC-0173": [{ sourceFile: "accidentals.html", localIds: ["Tone"], matchKind: "exact-answer-id-for-reviewed-interval-sense" }],
-  "MC-0176": [{ sourceFile: "timesig.html", localIds: ["6/8", "9/8", "12/8"], matchKind: "exact-component-id" }],
+  "MC-0176": [{ sourceFile: "timesignatures.html", localIds: ["6/8", "9/8", "12/8"], matchKind: "exact-component-id" }],
   "MC-0178": [{ sourceFile: "practicequestions.html", localIds: ["moderato"], matchKind: "exact-component-id" }],
   "MC-0227": [{ sourceFile: "practicequestions.html", localIds: ["add6"], matchKind: "exact-component-id" }],
   "MC-0228": [{ sourceFile: "practicequestions.html", localIds: ["dim7"], matchKind: "exact-component-id" }],
   "MC-0230": [{ sourceFile: "practicequestions.html", localIds: ["dom7"], matchKind: "exact-component-id" }],
   "MC-0232": [{ sourceFile: "cadences.html", localIds: ["interrupted"], matchKind: "exact-component-id" }],
   "MC-0233": [{
-    sourceFile: "millionaire-question-bank.js",
+    sourceFile: "whowantstobemillionaire/millionaire-question-bank.js",
     localIds: numberedIds("h-literacy-easy-", 14, 20),
     matchKind: "exact-question-set",
   }],
@@ -129,9 +126,9 @@ const CURATED_LITERACY_TARGETS = {
     matchKind: "exact-component-id",
   }],
   "MC-0277": [{ sourceFile: "practicequestions.html", localIds: ["aug"], matchKind: "exact-component-id" }],
-  "MC-0278": [{ sourceFile: "millionaire-question-bank.js", localIds: CHORD_II_LITERACY_IDS, matchKind: "reviewed-exact-question-set" }],
+  "MC-0278": [{ sourceFile: "whowantstobemillionaire/millionaire-question-bank.js", localIds: CHORD_II_LITERACY_IDS, matchKind: "reviewed-exact-question-set" }],
   "MC-0279": [{
-    sourceFile: "millionaire-question-bank.js",
+    sourceFile: "whowantstobemillionaire/millionaire-question-bank.js",
     localIds: numberedIds("ah-literacy-hard-chord-", 1, 106).filter((id) => !CHORD_II_LITERACY_ID_SET.has(id)),
     matchKind: "reviewed-exact-question-set",
   }],
@@ -402,11 +399,6 @@ const CONCEPT_HINTS = {
     "The individual chord members form a flowing accompaniment pattern.",
     "Contrast a block chord with the same pitches unfolded through time.",
   ],
-  "MC-0092": [
-    "The answer concerns the overall pitch centre, not one chord in isolation.",
-    "Think of the musical equivalent of a home address for pitch.",
-    "Ask where the harmony feels settled after moving away.",
-  ],
   "MC-0101": [
     "Follow a gradual decrease in speed rather than an immediate change.",
     "The pulse eases back over a passage instead of returning to an earlier tempo.",
@@ -500,7 +492,6 @@ const ORCHESTRAL_FAMILY_CONCEPT_IDS = new Set(["MC-0047", "MC-0056", "MC-0063", 
 // Pupil-facing answer sets explicitly reviewed for a particular question.
 const QUESTION_DISTRACTOR_OVERRIDES = {
   "MC-0056|MC-0056-F01|Easy": ["Strings", "Woodwind", "Brass"],
-  "MC-0086|MC-0086-F01|Easy": ["Major", "Minor", "Tonality"],
 };
 
 // This reviewed editorial layer keeps clues grammatical, answer-neutral and
@@ -574,8 +565,6 @@ const FACT_CLUE_OVERRIDES = {
   "MC-0088-F02": "The sustained bass note may fit some chords and clash with others, creating stability or tension.",
   "MC-0089-F02": "Five-note scales are common in Scottish, Celtic, folk and world music and avoid some semitone tensions found in seven-note major and minor scales.",
   "MC-0090-F02": "These ordered pitch collections provide the material from which melodies and chords can be built.",
-  "MC-0092-F02": "At this level, the term mainly concerns the contrast between music centred on a major key and music centred on a minor key.",
-  "MC-0092-F03": "A home key is established through relationships between scale notes and chords, especially the pull from dominant to tonic harmony.",
   "MC-0098-F02": "The signatures 6/8, 9/8 and 12/8 contain two, three and four dotted-crotchet beats respectively; jigs commonly use this metre.",
   "MC-0099-F01": "Unequal long-short or short-long patterns are created by using notes lengthened by a dot.",
   "MC-0103-F02": "Examples have two, three or four crotchet beats per bar and are written with 4 as the lower number.",
@@ -612,8 +601,6 @@ const FACT_CLUE_OVERRIDES = {
   "MC-0184-F01": "A texture in which two or more independent melodic lines interact simultaneously.",
   "MC-0189-F01": "The main A section returns repeatedly between contrasting episodes.",
   "MC-0189-F02": "The episodes are labelled B, C and so on, giving a pattern such as A-B-A-C-A; the recurring A section normally returns in the same key.",
-  "MC-0185-F02": "The contrasting passages are normally labelled B, C and so on.",
-  "MC-0185-F01": "A contrasting passage occurs between returns of the main A section.",
   "MC-0206-F03": "The Italian name of the instrument means small.",
   "MC-0208-F02": "This electronic effect can make a recording seem as though it was performed in a larger or more resonant space.",
   "MC-0209-F02": "The technique is common on snare drum and timpani and may use single-stroke, double-stroke or tremolo patterns.",
@@ -753,9 +740,6 @@ const PUPIL_FRIENDLY_FACT_OVERRIDES = {
   "MC-0085-F03": "Natural, harmonic and melodic forms use different sixth and seventh notes.",
   "MC-0090-F02": "Melodies and chords can be built from an ordered set of notes.",
   "MC-0091-F01": "Improvised jazz singing that uses nonsense syllables and sounds instead of words.",
-  "MC-0092-F01": "Music is built around a central or home key.",
-  "MC-0092-F02": "It tells you whether music is in a major or minor key.",
-  "MC-0092-F03": "Scale notes and chords make a home key feel settled, especially V moving to I.",
   "MC-0095-F02": "The music gradually gets faster over a passage instead of jumping at once to a new speed.",
   "MC-0096-F01": "One or more notes before the first full bar lead into the first strong beat of a phrase.",
   "MC-0097-F03": "A walking tempo, often about 76-108 beats per minute, though the exact speed depends on the music.",
@@ -1952,7 +1936,7 @@ function removeExactDisplayedDuplicates(records, manualOverrides) {
 }
 
 function loadExistingLiteracyQuestions() {
-  const bankPath = path.join(REPOSITORY_ROOT, "millionaire-question-bank.js");
+  const bankPath = path.join(REPOSITORY_ROOT, "whowantstobemillionaire/millionaire-question-bank.js");
   delete require.cache[require.resolve(bankPath)];
   return require(bankPath).filter((question) => question.category === "literacy");
 }
@@ -1976,13 +1960,13 @@ function resolveLiteracyLinks(bank) {
         matchKind: target.matchKind,
       }));
       const alreadyMappedQuestionIds = new Set(curatedTargets
-        .filter((target) => target.sourceFile === "millionaire-question-bank.js")
+        .filter((target) => target.sourceFile === "whowantstobemillionaire/millionaire-question-bank.js")
         .flatMap((target) => target.localIds));
       const additionalQuestionIds = targets.map((question) => question.id)
         .filter((id) => !alreadyMappedQuestionIds.has(id)).sort();
       if (additionalQuestionIds.length) {
         curatedTargets.push({
-          sourceFile: "millionaire-question-bank.js",
+          sourceFile: "whowantstobemillionaire/millionaire-question-bank.js",
           localIds: additionalQuestionIds,
           matchKind: "automatic-exact-same-level-question-answer",
         });
@@ -2002,47 +1986,6 @@ function resolveLiteracyLinks(bank) {
           : null,
       };
     }));
-}
-
-function toRuntimeQuestion(question, manualOverrides) {
-  const answerIds = ["a", "b", "c", "d"];
-  const answers = question.answers.map((answer, index) => ({ id: answerIds[index], text: answer.text }));
-  const correctIndex = question.answers.findIndex((answer) => answer.correct);
-  const range = DIFFICULTY_RANGES[question.difficulty];
-  const manualPresentation = manualOverrides.questions[question.id];
-  const presentation = manualPresentation ? {
-    conceptDescription: manualPresentation.conceptDescription || null,
-    prompt: manualPresentation.prompt,
-  } : conceptQuestionPresentation(question);
-  return {
-    id: question.id,
-    level: LEVEL_CODES[question.level],
-    category: "concepts",
-    concept: question.concept,
-    conceptId: question.conceptId,
-    factId: question.factId,
-    supportingFactIds: question.supportingFactIds,
-    senseId: question.senseId,
-    comparisonGroupId: question.comparisonGroupId,
-    musicConceptCategory: question.category,
-    musicConceptCategories: question.categories,
-    questionType: question.questionType,
-    answerMode: question.answerMode,
-    question: question.question,
-    prompt: presentation.prompt,
-    conceptDescription: presentation.conceptDescription,
-    answers,
-    correctAnswer: answerIds[correctIndex],
-    explanation: question.explanation,
-    tip: question.hint,
-    difficulty: question.difficulty.toLowerCase(),
-    difficultyMin: range.min,
-    difficultyMax: range.max,
-    type: "text",
-    audioSrc: "",
-    notationData: null,
-    literacyLink: question.literacyLink,
-  };
 }
 
 function countBy(items, keyFunction) {
@@ -2142,13 +2085,6 @@ function writeJson(filename, value) {
   fs.writeFileSync(filename, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-function writeRuntimeBank(records, sourceHash, manualOverrides) {
-  const runtimeQuestions = records.map((question) => toRuntimeQuestion(question, manualOverrides));
-  const content = `(function (root, factory) {\n  const questions = factory();\n  root.MILLIONAIRE_MUSIC_CONCEPT_QUESTION_BANK = questions;\n  if (typeof module === "object" && module.exports) module.exports = questions;\n})(typeof window !== "undefined" ? window : globalThis, function () {\n  "use strict";\n  // Generated from the five validated JSON banks. Do not edit this file directly.\n  // Source knowledge-bank SHA-256: ${sourceHash}\n  return ${JSON.stringify(runtimeQuestions, null, 2)};\n});\n`;
-  fs.writeFileSync(RUNTIME_BANK_PATH, content);
-  return sha256Text(content);
-}
-
 function main() {
   const requestedLevels = parseRequestedLevels();
   const bank = loadKnowledgeBank();
@@ -2202,7 +2138,6 @@ function main() {
     sourceKnowledgeBankSha256: sourceHash,
     mappings,
   });
-  const runtimeSha256 = writeRuntimeBank(records, sourceHash, manualOverrides);
   writeJson(path.join(OUTPUT_DIRECTORY, "manifest.json"), {
     schemaVersion: "1.0",
     bankType: "music-concept-questions",
@@ -2213,11 +2148,6 @@ function main() {
       knowledgeBankSha256: sourceHash,
     },
     levels: levelEntries,
-    runtimeAdapter: {
-      file: path.relative(REPOSITORY_ROOT, RUNTIME_BANK_PATH),
-      sha256: runtimeSha256,
-      loadingNote: "The Hub is a no-build static site, so this generated adapter preserves the existing synchronous script-loading architecture.",
-    },
     editorSlots: {
       file: path.relative(REPOSITORY_ROOT, EDITOR_SLOTS_PATH),
       slotCount: slots.length,

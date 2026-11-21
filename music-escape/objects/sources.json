@@ -1,0 +1,37 @@
+[
+  {
+    "asset": "archive.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/File%20cabinet/3D/file_cabinet_3d.png",
+    "sha256": "b91dfd5f7afc29edbbfb21e0343bf004e28a2ea8f1ff75231bf828db37a6a102"
+  },
+  {
+    "asset": "piano.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Musical%20keyboard/3D/musical_keyboard_3d.png",
+    "sha256": "dbaa3e3571d5baf68ca705bd233bc26a5ab58b8a3cb106f54c08a61d3420a8e2"
+  },
+  {
+    "asset": "recording.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Radio/3D/radio_3d.png",
+    "sha256": "026f123284db1a4d770e4c82f14012884704179e99ae70ae16d3db8f32a00dfb"
+  },
+  {
+    "asset": "exit.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Door/3D/door_3d.png",
+    "sha256": "4c00d6d74d289a4e8689087eb809ab724bcde422b12a800e23a926dff2a657c8"
+  },
+  {
+    "asset": "mixer.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Control%20knobs/3D/control_knobs_3d.png",
+    "sha256": "2365d422c70108fcf0c4529ea3a958946b134c9605974bd21cefa1c25e16b1a0"
+  },
+  {
+    "asset": "rhythm.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Drum/3D/drum_3d.png",
+    "sha256": "490d2d2c795508b7059a73bf308dce18018155527f95ed2643546c60e6664549"
+  },
+  {
+    "asset": "order.png",
+    "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Musical%20score/3D/musical_score_3d.png",
+    "sha256": "417cbba020bf72adf246d386ffebdcf335dc7e53086142754cbe794e213bc2e7"
+  }
+]

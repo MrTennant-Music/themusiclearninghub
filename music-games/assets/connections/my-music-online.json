@@ -1,0 +1,830 @@
+[
+  {
+    "id": "hub-mmo-connection-n3-1",
+    "title": "National 3 — Connection 1",
+    "level": "N3",
+    "sourceTitle": "National 3 Connect Quiz 1",
+    "listingUrl": "https://mymusiconline.co.uk/national-3-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201703_7C2ShN",
+    "groups": [
+      {
+        "label": "NOTE LENGTHS",
+        "items": [
+          "crotchet",
+          "minim",
+          "semibreve",
+          "dotted minim"
+        ]
+      },
+      {
+        "label": "DYNAMICS",
+        "items": [
+          "forte",
+          "piano",
+          "crescendo",
+          "diminuendo"
+        ]
+      },
+      {
+        "label": "FAMILIES OF INSTRUMENTS",
+        "items": [
+          "strings",
+          "woodwind",
+          "brass",
+          "percussion"
+        ]
+      },
+      {
+        "label": "WAYS TO PRODUCE SOUND",
+        "items": [
+          "striking",
+          "bowing",
+          "plucking",
+          "strumming"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n3-2",
+    "title": "National 3 — Connection 2",
+    "level": "N3",
+    "sourceTitle": "National 3 Connect Quiz 2",
+    "listingUrl": "https://mymusiconline.co.uk/national-3-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201704_9aWWDa",
+    "groups": [
+      {
+        "label": "SCOTTISH",
+        "items": [
+          "accordion",
+          "fiddle",
+          "bagpipes",
+          "Scottish dance band"
+        ]
+      },
+      {
+        "label": "STYLES",
+        "items": [
+          "blues",
+          "jazz",
+          "Latin American",
+          "rock"
+        ]
+      },
+      {
+        "label": "SPEEDS",
+        "items": [
+          "adagio",
+          "allegro",
+          "slower",
+          "faster"
+        ]
+      },
+      {
+        "label": "NAMES OF NOTES IN THE SPACES IN THE TREBLE CLEF",
+        "items": [
+          "F",
+          "A",
+          "C",
+          "E"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n4-1",
+    "title": "National 4 — Connection 1",
+    "level": "N4",
+    "sourceTitle": "National 4 Connect Quiz 1",
+    "listingUrl": "https://mymusiconline.co.uk/national-4-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201703_LYkB9X",
+    "groups": [
+      {
+        "label": "VOICES",
+        "items": [
+          "soprano",
+          "alto",
+          "tenor",
+          "bass"
+        ]
+      },
+      {
+        "label": "DYNAMICS",
+        "items": [
+          "mezzo forte",
+          "mezzo piano",
+          "crescendo",
+          "diminuendo"
+        ]
+      },
+      {
+        "label": "RHYTHMIC CONCEPTS",
+        "items": [
+          "accelerando",
+          "rallentando",
+          "syncopation",
+          "anacrusis"
+        ]
+      },
+      {
+        "label": "SCOTTISH DANCES",
+        "items": [
+          "strathspey",
+          "jig",
+          "reel",
+          "waltz"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n4-2",
+    "title": "National 4 — Connection 2",
+    "level": "N4",
+    "sourceTitle": "National 4 Connect Quiz 2",
+    "listingUrl": "https://mymusiconline.co.uk/national-4-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201703_BXNbbY",
+    "groups": [
+      {
+        "label": "INSTRUMENTAL GROUPS",
+        "items": [
+          "brass band",
+          "wind band",
+          "steel band",
+          "orchestra"
+        ]
+      },
+      {
+        "label": "UNTUNED PERCUSSION INSTRUMENTS",
+        "items": [
+          "guiro",
+          "tambourine",
+          "triangle",
+          "cymbals"
+        ]
+      },
+      {
+        "label": "STYLES",
+        "items": [
+          "ragtime",
+          "swing",
+          "reggae",
+          "blues"
+        ]
+      },
+      {
+        "label": "NOTE LENGTHS",
+        "items": [
+          "semiquaver",
+          "crotchet",
+          "minim",
+          "quaver"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n5-1",
+    "title": "National 5 — Connection 1",
+    "level": "N5",
+    "sourceTitle": "National 5 Connect Quiz 1",
+    "listingUrl": "https://mymusiconline.co.uk/national-5-connect-quizzes",
+    "quizUrl": "https://www.classtools.net/connect/201510_TZ8Nij",
+    "groups": [
+      {
+        "label": "INSTRUMENTAL TECHNIQUES",
+        "items": [
+          "con sordino",
+          "pizzicato",
+          "arco",
+          "flutter tonguing"
+        ]
+      },
+      {
+        "label": "VOCAL CONCEPTS",
+        "items": [
+          "a cappella",
+          "strophic",
+          "syllabic",
+          "melismatic"
+        ]
+      },
+      {
+        "label": "SCOTTISH INSTRUMENTS",
+        "items": [
+          "clarsach",
+          "bodhran",
+          "accordion",
+          "fiddle"
+        ]
+      },
+      {
+        "label": "BASS LINES",
+        "items": [
+          "walking bass",
+          "ground bass",
+          "Alberti bass",
+          "pedal"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n5-2",
+    "title": "National 5 — Connection 2",
+    "level": "N5",
+    "sourceTitle": "National 5 Connect Quiz 2",
+    "listingUrl": "https://mymusiconline.co.uk/national-5-connect-quizzes",
+    "quizUrl": "https://www.classtools.net/connect/201510_8U9JVG",
+    "groups": [
+      {
+        "label": "SCOTTISH VOCAL",
+        "items": [
+          "waulking song",
+          "Gaelic psalm",
+          "bothy ballad",
+          "mouth music"
+        ]
+      },
+      {
+        "label": "WORLD INSTRUMENTS",
+        "items": [
+          "sitar",
+          "tabla",
+          "castanets",
+          "pan pipes"
+        ]
+      },
+      {
+        "label": "MODERN MUSIC",
+        "items": [
+          "minimalist",
+          "whole tone scale",
+          "atonal",
+          "cluster"
+        ]
+      },
+      {
+        "label": "STRUCTURE/FORM",
+        "items": [
+          "binary",
+          "rondo",
+          "ternary",
+          "verse and chorus"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n5-3",
+    "title": "National 5 — Connection 3",
+    "level": "N5",
+    "sourceTitle": "National 5 Connect Quiz 3",
+    "listingUrl": "https://mymusiconline.co.uk/national-5-connect-quizzes",
+    "quizUrl": "https://www.classtools.net/connect/201510_Pddf6J",
+    "groups": [
+      {
+        "label": "CHANGES IN TEMPO",
+        "items": [
+          "rubato",
+          "ritardando",
+          "accelerando",
+          "rallentando"
+        ]
+      },
+      {
+        "label": "STYLES",
+        "items": [
+          "Classical",
+          "Baroque",
+          "Romantic",
+          "Latin American"
+        ]
+      },
+      {
+        "label": "VOCAL",
+        "items": [
+          "gospel",
+          "aria",
+          "chorus",
+          "a cappella"
+        ]
+      },
+      {
+        "label": "SCOTTISH",
+        "items": [
+          "pibroch",
+          "Celtic rock",
+          "bodhran",
+          "clarsach"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n5-4",
+    "title": "National 5 — Connection 4",
+    "level": "N5",
+    "sourceTitle": "National 5 Connect Quiz 4",
+    "listingUrl": "https://mymusiconline.co.uk/national-5-connect-quizzes",
+    "quizUrl": "https://www.classtools.net/connect/201510_FcCjm8",
+    "groups": [
+      {
+        "label": "TEMPO",
+        "items": [
+          "moderato",
+          "andante",
+          "allegro",
+          "adagio"
+        ]
+      },
+      {
+        "label": "TEXTURE",
+        "items": [
+          "polyphonic",
+          "homophonic",
+          "contrapuntal",
+          "unison"
+        ]
+      },
+      {
+        "label": "RHYTHM",
+        "items": [
+          "anacrusis",
+          "cross",
+          "syncopation",
+          "dotted"
+        ]
+      },
+      {
+        "label": "VOICES",
+        "items": [
+          "mezzo soprano",
+          "baritone",
+          "alto",
+          "tenor"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n5-5",
+    "title": "National 5 — Connection 5",
+    "level": "N5",
+    "sourceTitle": "National 5 Connect Quiz 5",
+    "listingUrl": "https://mymusiconline.co.uk/national-5-connect-quizzes",
+    "quizUrl": "https://www.classtools.net/connect/201510_HZMA3Z",
+    "groups": [
+      {
+        "label": "KEYS",
+        "items": [
+          "C major",
+          "G major",
+          "F major",
+          "A minor"
+        ]
+      },
+      {
+        "label": "INSTRUMENTAL MUSIC",
+        "items": [
+          "symphony",
+          "concerto",
+          "cadenza",
+          "coda"
+        ]
+      },
+      {
+        "label": "HARMONY",
+        "items": [
+          "perfect cadence",
+          "imperfect cadence",
+          "modulation",
+          "major tonality"
+        ]
+      },
+      {
+        "label": "ACCIDENTALS",
+        "items": [
+          "sharp",
+          "flat",
+          "natural",
+          "#"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-n5-6",
+    "title": "National 5 — Connection 6",
+    "level": "N5",
+    "sourceTitle": "Families of instruments",
+    "listingUrl": "https://mymusiconline.co.uk/national-5-connect-quizzes",
+    "quizUrl": "https://www.classtools.net/connect/201510_RT5RJg",
+    "groups": [
+      {
+        "label": " WOODWIND",
+        "items": [
+          "flute",
+          "oboe",
+          "clarinet",
+          "bassoon"
+        ]
+      },
+      {
+        "label": "BRASS",
+        "items": [
+          "trumpet",
+          "french horn",
+          "trombone",
+          "tuba "
+        ]
+      },
+      {
+        "label": " STRINGS",
+        "items": [
+          "violin",
+          "viola",
+          "cello",
+          "double bass"
+        ]
+      },
+      {
+        "label": " PERCUSSION",
+        "items": [
+          "glockenspiel",
+          "xylophone",
+          "snare drum",
+          "bass drum"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-h-1",
+    "title": "Higher — Connection 1",
+    "level": "H",
+    "sourceTitle": "Higher Connect Quiz 1",
+    "listingUrl": "https://mymusiconline.co.uk/higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201510_RkX6UD",
+    "groups": [
+      {
+        "label": "INSTRUMENTAL STYLES",
+        "items": [
+          "sonata",
+          "symphony",
+          "concerto",
+          "string quartet"
+        ]
+      },
+      {
+        "label": "VOCAL",
+        "items": [
+          "plainchant",
+          "recitative",
+          "da capo aria",
+          "obbligato"
+        ]
+      },
+      {
+        "label": "RHYTHM",
+        "items": [
+          "augmentation",
+          "diminution",
+          "3 against 2",
+          "irregular time signatures"
+        ]
+      },
+      {
+        "label": "CADENCES",
+        "items": [
+          "perfect",
+          "imperfect",
+          "plagal",
+          "interrupted"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-h-2",
+    "title": "Higher — Connection 2",
+    "level": "H",
+    "sourceTitle": "Higher Connect Quiz 2",
+    "listingUrl": "https://mymusiconline.co.uk/higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201510_HmZ3BD",
+    "groups": [
+      {
+        "label": "ORNAMENTS",
+        "items": [
+          "acciaccatura",
+          "mordent",
+          "trill",
+          "grace note"
+        ]
+      },
+      {
+        "label": "CHORDS",
+        "items": [
+          "dominant 7th",
+          "added 6th",
+          "diminished 7th",
+          "minor"
+        ]
+      },
+      {
+        "label": "INSTRUMENTAL TECHNIQUES",
+        "items": [
+          "tremolando",
+          "harmonics",
+          "con sordino",
+          "pizzicato"
+        ]
+      },
+      {
+        "label": "MODERN STYLES",
+        "items": [
+          "jazz funk",
+          "soul",
+          "musique concrete",
+          "Impressionist"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-h-3",
+    "title": "Higher — Connection 3",
+    "level": "H",
+    "sourceTitle": "Higher Connect Quiz 3",
+    "listingUrl": "https://mymusiconline.co.uk/higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201510_e55cKX",
+    "groups": [
+      {
+        "label": "VOCAL",
+        "items": [
+          "oratorio",
+          "mass",
+          "lied",
+          "coloratura"
+        ]
+      },
+      {
+        "label": "SCALES",
+        "items": [
+          "harmonic minor",
+          "melodic minor",
+          "whole tone",
+          "pentatonic"
+        ]
+      },
+      {
+        "label": "STRUCTURE/FORM",
+        "items": [
+          "ritornello",
+          "passacaglia",
+          "sonata form",
+          "canon"
+        ]
+      },
+      {
+        "label": "STRING QUARTET",
+        "items": [
+          "violin 1",
+          "violin 2",
+          "viola",
+          "cello"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-h-4",
+    "title": "Higher — Connection 4",
+    "level": "H",
+    "sourceTitle": "Higher Connect Quiz 4",
+    "listingUrl": "https://mymusiconline.co.uk/higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201510_6eHHii",
+    "groups": [
+      {
+        "label": "VOCAL",
+        "items": [
+          "strophic",
+          "through composed",
+          "verse and chorus",
+          "lied"
+        ]
+      },
+      {
+        "label": "SONATA",
+        "items": [
+          "sonata",
+          "sonata form",
+          "exposition",
+          "subject"
+        ]
+      },
+      {
+        "label": "CONCERTO GROSSO",
+        "items": [
+          "concerto grosso",
+          "ripieno",
+          "concertino",
+          "basso continuo"
+        ]
+      },
+      {
+        "label": "INTERVALS",
+        "items": [
+          "semitone",
+          "tone",
+          "octave",
+          "3rd"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-ah-1",
+    "title": "Advanced Higher — Connection 1",
+    "level": "AH",
+    "sourceTitle": "Advanced Higher Connect Quiz 1",
+    "listingUrl": "https://mymusiconline.co.uk/advanced-higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201704_bBZhgX",
+    "groups": [
+      {
+        "label": "FUGUE",
+        "items": [
+          "stretto",
+          "subject",
+          "countersubject",
+          "fugue"
+        ]
+      },
+      {
+        "label": "ORNAMENTS",
+        "items": [
+          "acciaccatura",
+          "appoggiatura",
+          "turn",
+          "mordent"
+        ]
+      },
+      {
+        "label": "RENAISSANCE VOCAL",
+        "items": [
+          "ballett",
+          "madrigal",
+          "ayre",
+          "motet"
+        ]
+      },
+      {
+        "label": "SERIAL",
+        "items": [
+          "inversion",
+          "tone row",
+          "note row",
+          "retrograde"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-ah-2",
+    "title": "Advanced Higher — Connection 2",
+    "level": "AH",
+    "sourceTitle": "Advanced Higher Connect Quiz 2",
+    "listingUrl": "https://mymusiconline.co.uk/advanced-higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201704_UBbfA8",
+    "groups": [
+      {
+        "label": "RENAISSANCE INSTRUMENTAL",
+        "items": [
+          "pavan",
+          "galliard",
+          "consort",
+          "Renaissance"
+        ]
+      },
+      {
+        "label": "MODERN",
+        "items": [
+          "electronic dance music",
+          "contemporary jazz",
+          "sprechgesang",
+          "musique concrète"
+        ]
+      },
+      {
+        "label": "RHYTHM",
+        "items": [
+          "hemiola",
+          "augmentation",
+          "diminution",
+          "3 against 2"
+        ]
+      },
+      {
+        "label": "LIED",
+        "items": [
+          "lied",
+          "song cycle",
+          "Romantic",
+          "piano"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-ah-3",
+    "title": "Advanced Higher — Connection 3",
+    "level": "AH",
+    "sourceTitle": "Advanced Higher Connect Quiz 3",
+    "listingUrl": "https://mymusiconline.co.uk/advanced-higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201704_bHQ4ZJ",
+    "groups": [
+      {
+        "label": "HARMONY",
+        "items": [
+          "suspension",
+          "tierce de Picardie",
+          "interrupted cadence",
+          "chord II"
+        ]
+      },
+      {
+        "label": "SACRED VOCAL WORKS",
+        "items": [
+          "mass",
+          "motet",
+          "anthem",
+          "oratorio"
+        ]
+      },
+      {
+        "label": "INTERVALS",
+        "items": [
+          "tritone",
+          "octave",
+          "semitone",
+          "tone"
+        ]
+      },
+      {
+        "label": "CHAMBER MUSIC",
+        "items": [
+          "piano trio",
+          "string quartet",
+          "solo cello",
+          "wind quintet"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hub-mmo-connection-ah-4",
+    "title": "Advanced Higher — Connection 4",
+    "level": "AH",
+    "sourceTitle": "Advanced Higher Connect Quiz 4",
+    "listingUrl": "https://mymusiconline.co.uk/advanced-higher-connect-fours",
+    "quizUrl": "https://www.classtools.net/connect/201704_Y9g66C",
+    "groups": [
+      {
+        "label": "DISCORDANT HARMONY",
+        "items": [
+          "bitonality",
+          "polytonality",
+          "cluster",
+          "discord"
+        ]
+      },
+      {
+        "label": "CHORDS",
+        "items": [
+          "augmented triad",
+          "diminished 7th",
+          "dominant 7th",
+          "added 6th"
+        ]
+      },
+      {
+        "label": "STYLES/PERIODS",
+        "items": [
+          "Neo-classical",
+          "Baroque",
+          "Classical",
+          "Romantic"
+        ]
+      },
+      {
+        "label": "MALE VOICES",
+        "items": [
+          "countertenor",
+          "tenor",
+          "baritone",
+          "bass"
+        ]
+      }
+    ]
+  }
+]

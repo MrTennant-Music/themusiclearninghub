@@ -1,0 +1,37 @@
+Dictionary quiz collection glyphs, restored from the previous quiz interface.
+Existing Hub SVG Repo glyphs retain their source comments: piano, violin, notes,
+voice, words, metronome, vinyl, hand, layers and ensemble.
+Horn: wishforge.games, CC Attribution, https://www.svgrepo.com/svg/390000/instrument-french-horn-trumpet-orchestra
+Flute: SVG Repo CC0, https://www.svgrepo.com/svg/109586/flute ; converted to black and white.
+Drums: Tienda Nube Nimbus Icons, MIT, https://www.svgrepo.com/collection/nimbus-interface-icons/
+Globe: Open Iconic, MIT, https://useiconic.com/open/
+
+Distinct collection glyph additions: bass-clef, chord, families, beamed-notes, key-signature, keyboard, concertino, treble-clef, score and Scotland reuse the named UI assets in the Hub (Scotland converted to monochrome). Headphones, cassette, conductor, romantic, lute, ornament, ascending-scale, tempo-change, cadence, fugue and serial-row are original Hub vector drawings. Saved collections use ui-icons/concept-quiz.svg directly.
+Layered texture and concerto grosso use original Hub glyphs to keep silhouettes distinct from Word Setting and Ensemble Types.
+Baroque Period: user-supplied black candelabrum image, supplied 2026-11-07.
+All qualification Styles collections: user-supplied speaker/music-note image, supplied 2026-11-07; intentionally shared across the Styles collections.
+Classical Period: user-supplied grand piano image, supplied 2026-11-07.
+Concerto Grosso: user-supplied string ensemble image, supplied 2026-11-07.
+Ensemble Types: user-supplied musicians image, supplied 2026-11-07; close viewBox crop around the band; original image retained.
+Jazz and Popular Music: user-supplied saxophone image, supplied 2026-11-07.
+Modern / 20th Century: user-supplied 20 symbol image, supplied 2026-11-07.
+Orchestra: user-supplied conductor image, supplied 2026-11-07.
+Ornaments: Bravura ornamentTrill U+E566, matching Ear Training. Vector outline reused from bravura-worksheet-outlines.js (Bravura, SIL Open Font License).
+Percussion: user-supplied drum and sticks image, supplied 2026-11-07.
+Playing Techniques: user-supplied violinist image, supplied 2026-11-07.
+Renaissance Music: user-supplied lute image, supplied 2026-11-07.
+Romantic Period: user-supplied portrait image, supplied 2026-11-07.
+Scales: uses ui-icons/ear-training/scale-degrees-icon.svg directly, matching Ear Training.
+Serial Music: user-supplied waveform reference, cleaned with the image editing tool to remove the watermark, 2026-11-07.
+Tempo and Tempo Changes: both use ui-icons/ear-training/tempo-icon.svg directly, matching Ear Training, as requested 2026-11-07.
+Textures: user-supplied wave image, supplied 2026-11-07.
+Voice Types: uses ui-icons/group-button.svg directly, matching Host a Game.
+World Music: user-supplied globe image, supplied 2026-11-07.
+Collection glyph display crops and optical sizes are set in collectionGlyphLayouts in music-concepts-quizzes.js. The source images are retained unchanged.
+
+Vocal Music: user-supplied choir image, supplied 2026-11-07; retained unchanged.
+Vocal Music: replacement user-supplied singer image, supplied 2026-11-07; retained unchanged.
+Vocal Music: latest close singer crop supplied 2026-11-07, edited with the image tool for transparent background and softly feathered crop edges.
+Instruments and Ensembles: user-supplied orchestra silhouette, supplied 2026-11-07; image tool removed the watermark and footer and made the background transparent.
+Articulation: exact note-and-staccato artwork from app-icons/articulation-markings-icon.svg, with the shared app backdrop omitted.
+Cadences: retains the former Harmony cadence glyph (cadence.svg). Harmony: original Hub staff-and-dyad vector glyph (harmony.svg).

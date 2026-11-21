@@ -1,0 +1,10 @@
+{
+  "Semibreve": "semibreve",
+  "Dotted minim": "dotted-minim",
+  "Minim": "minim",
+  "Crotchet": "crotchet",
+  "Quaver": "quaver",
+  "Semiquaver": "semiquaver",
+  "Dotted crotchet": "dotted-crotchet",
+  "Dotted quaver": "dotted-quaver"
+}

@@ -1,16 +1,26 @@
 {
-  "name": "music-literacy-hub",
+  "name": "music-learning-hub",
   "private": true,
   "scripts": {
+    "build:dictionary-quizzes": "node scripts/build-dictionary-quizzes.cjs",
     "test:desktop-layout": "node scripts/desktop-layout-audit.js",
     "generate:music-concepts": "node scripts/music-concepts/generate-question-banks.js",
     "validate:music-concepts": "node scripts/music-concepts/validate-question-banks.js",
-    "smoke:music-concepts": "node scripts/music-concepts/smoke-games.js",
-    "test:music-concepts": "node --test millionaire-music-concepts.test.js millionaire-music-concept-selection.test.js",
-    "test:millionaire": "node --test millionaire-core.test.js millionaire-music-concepts.test.js millionaire-music-concept-selection.test.js",
-    "test": "node --test *.test.js interactive-exams/tests/*.test.js classroom-pilot/tests/*.test.cjs",
+    "test:millionaire": "node --test whowantstobemillionaire/*.test.js",
+    "test": "node --test tests/*.test.js music-games/*.test.js whowantstobemillionaire/*.test.js familyfortunes/*.test.js digital-question-papers/tests/*.test.js classroom-pilot/tests/*.test.cjs",
     "build": "node scripts/music-concepts/build.js",
-    "build:site": "node scripts/build-site.js"
+    "build:site": "node scripts/build-site.js",
+    "build:bandle": "node scripts/build-bandle.js",
+    "build:tuner": "node scripts/build-chromatic-tuner.cjs",
+    "build:familyfortunes": "node scripts/build-familyfortunes.cjs",
+    "build:millionaire": "node scripts/build-millionaire-runtime.js",
+    "build:metronome": "node scripts/build-metronome-runtime.js",
+    "build:name-randomiser": "node scripts/build-name-randomiser-runtime.js",
+    "build:inline-runtimes": "node scripts/build-inline-page-runtimes.js",
+    "build:staff-paper": "node scripts/build-staff-paper-runtime.js",
+    "build:timer": "node scripts/build-classroom-timer-runtime.js",
+    "build:piano": "node scripts/build-popup-piano-runtime.js",
+    "build:music-games": "node scripts/build-music-games.js"
   },
   "dependencies": {
     "@babel/standalone": "7.26.10",
@@ -19,6 +29,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "sharp": "0.34.5",
     "tailwindcss": "3.4.17"
   }
 }

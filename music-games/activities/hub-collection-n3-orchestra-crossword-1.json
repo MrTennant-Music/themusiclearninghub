@@ -1,0 +1,93 @@
+{
+  "id": "hub-collection-n3-orchestra-crossword-1",
+  "level": "N3",
+  "title": "Orchestra",
+  "instructions": "",
+  "description": "Orchestra: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Orchestra",
+    "National 3"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n3-orchestra-crossword-1-MC-0054",
+      "prompt": "A large group of musicians playing strings, woodwind, brass and percussion.",
+      "answer": "Orchestra",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0054"
+    },
+    {
+      "id": "hub-collection-n3-orchestra-crossword-1-MC-0047",
+      "prompt": "Instruments such as trumpets and trombones, played by buzzing your lips.",
+      "answer": "Brass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0047"
+    },
+    {
+      "id": "hub-collection-n3-orchestra-crossword-1-MC-0056",
+      "prompt": "Instruments you hit, shake or scrape. Some play tunes; others mainly make rhythms.",
+      "answer": "Percussion",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0056"
+    },
+    {
+      "id": "hub-collection-n3-orchestra-crossword-1-MC-0063",
+      "prompt": "Instruments that make sounds with vibrating strings, such as violins and cellos.",
+      "answer": "Strings",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0063"
+    },
+    {
+      "id": "hub-collection-n3-orchestra-crossword-1-MC-0068",
+      "prompt": "Wind instruments such as flutes, clarinets and oboes, played by blowing.",
+      "answer": "Woodwind",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0068"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "orchestra",
+  "sourceConceptIds": [
+    "MC-0054",
+    "MC-0047",
+    "MC-0056",
+    "MC-0063",
+    "MC-0068"
+  ]
+}

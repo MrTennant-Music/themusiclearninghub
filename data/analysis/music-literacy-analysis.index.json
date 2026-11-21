@@ -1,0 +1,37 @@
+[
+  {
+    "page": 1,
+    "exam": "N5",
+    "kind": "question-frequency"
+  },
+  {
+    "page": 2,
+    "exam": "N5",
+    "kind": "answer-frequency"
+  },
+  {
+    "page": 3,
+    "exam": "H",
+    "kind": "question-frequency"
+  },
+  {
+    "page": 4,
+    "exam": "H",
+    "kind": "answer-frequency"
+  },
+  {
+    "page": 5,
+    "exam": "AH",
+    "kind": "question-frequency"
+  },
+  {
+    "page": 6,
+    "exam": "AH",
+    "kind": "question-frequency"
+  },
+  {
+    "page": 7,
+    "exam": "AH",
+    "kind": "answer-frequency"
+  }
+]

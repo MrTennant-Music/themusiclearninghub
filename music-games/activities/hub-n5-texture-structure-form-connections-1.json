@@ -1,0 +1,201 @@
+{
+  "id": "hub-n5-texture-structure-form-connections-1",
+  "level": "N5",
+  "title": "Texture/structure/form",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting National 5 Texture/structure/form concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Texture/structure/form",
+    "National 5"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-1",
+      "prompt": "Two-part structure A then B",
+      "answer": "Two-part structure A then B",
+      "distractors": [],
+      "group": "Binary / AB",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-2",
+      "prompt": "A section followed by B section",
+      "answer": "A section followed by B section",
+      "distractors": [],
+      "group": "Binary / AB",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-3",
+      "prompt": "Form whose plan is AB",
+      "answer": "Form whose plan is AB",
+      "distractors": [],
+      "group": "Binary / AB",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-4",
+      "prompt": "Two contrasting main sections",
+      "answer": "Two contrasting main sections",
+      "distractors": [],
+      "group": "Binary / AB",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-5",
+      "prompt": "Main A section keeps returning",
+      "answer": "Main A section keeps returning",
+      "distractors": [],
+      "group": "Rondo/ABACA — episode",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-6",
+      "prompt": "A-B-A-C-A structural plan",
+      "answer": "A-B-A-C-A structural plan",
+      "distractors": [],
+      "group": "Rondo/ABACA — episode",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-7",
+      "prompt": "Recurring A between new episodes",
+      "answer": "Recurring A between new episodes",
+      "distractors": [],
+      "group": "Rondo/ABACA — episode",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-8",
+      "prompt": "Refrain returns between episodes",
+      "answer": "Refrain returns between episodes",
+      "distractors": [],
+      "group": "Rondo/ABACA — episode",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-9",
+      "prompt": "Every verse uses the same music",
+      "answer": "Every verse uses the same music",
+      "distractors": [],
+      "group": "Strophic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-10",
+      "prompt": "Same verse tune with new words",
+      "answer": "Same verse tune with new words",
+      "distractors": [],
+      "group": "Strophic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-11",
+      "prompt": "Song repeats music each verse",
+      "answer": "Song repeats music each verse",
+      "distractors": [],
+      "group": "Strophic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-12",
+      "prompt": "One musical setting, all verses",
+      "answer": "One musical setting, all verses",
+      "distractors": [],
+      "group": "Strophic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-13",
+      "prompt": "Closing passage after main form",
+      "answer": "Closing passage after main form",
+      "distractors": [],
+      "group": "Coda",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-14",
+      "prompt": "Extra ending after main music",
+      "answer": "Extra ending after main music",
+      "distractors": [],
+      "group": "Coda",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-15",
+      "prompt": "Final tail added to the form",
+      "answer": "Final tail added to the form",
+      "distractors": [],
+      "group": "Coda",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-texture-structure-form-connections-1-16",
+      "prompt": "Concluding tail beyond main form",
+      "answer": "Concluding tail beyond main form",
+      "distractors": [],
+      "group": "Coda",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

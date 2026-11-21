@@ -1,0 +1,696 @@
+{
+  "version": 2,
+  "processing": "Original recordings only: excerpt, short edge fades and volume adjustment. No generated or appended audio.",
+  "downloads": [
+    {
+      "room": 0,
+      "key": "recording",
+      "label": "Speaker",
+      "sourceId": "529352",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-guitaramp-foley-529352/",
+      "sourceTitle": "guitaramp foley",
+      "publisher": "matimassa",
+      "downloadFilename": "matimassa-guitaramp-foley-529352.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "archive",
+      "label": "Noticeboard",
+      "sourceId": "5933",
+      "sourcePage": "https://pixabay.com/sound-effects/household-paper-flutter-5933/",
+      "sourceTitle": "paper flutter",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-paper-flutter-5933.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "recording",
+      "label": "Intercom",
+      "sourceId": "83962",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-intercom-in-83962/",
+      "sourceTitle": "intercom in",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-intercom-in-83962.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "archive",
+      "label": "Paper Trays",
+      "sourceId": "262142",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-paper-sound-262142/",
+      "sourceTitle": "paper sound",
+      "publisher": "haunguyendesigner",
+      "downloadFilename": "haunguyendesigner-paper-sound-262142.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 6,
+      "key": "archive",
+      "label": "Cue Desk",
+      "sourceId": "45684",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-breaker-switch-45684/",
+      "sourceTitle": "breaker switch",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-breaker-switch-45684.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 3,
+      "key": "mechanism",
+      "label": "Mixing Desk",
+      "sourceId": "150130",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-switch-150130/",
+      "sourceTitle": "switch",
+      "publisher": "soundreality",
+      "downloadFilename": "soundreality-switch-150130.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "mechanism",
+      "label": "Portable Keyboard",
+      "sourceId": "239967",
+      "sourcePage": "https://pixabay.com/sound-effects/musical-piano-chords-239967/",
+      "sourceTitle": "piano chords",
+      "publisher": "11325622",
+      "downloadFilename": "11325622-piano-chords-239967.mp3",
+      "licence": "Pixabay Content License",
+      "fullLength": true
+    },
+    {
+      "room": 6,
+      "key": "mechanism",
+      "label": "Sound Desk",
+      "sourceId": "166326",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-foot-switch-166326/",
+      "sourceTitle": "foot switch",
+      "publisher": "milanwulf",
+      "downloadFilename": "milanwulf-foot-switch-166326.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "mechanism",
+      "label": "Metronome",
+      "sourceId": "85688",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-metronome-85688/",
+      "sourceTitle": "metronome",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-metronome-85688.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "mechanism",
+      "label": "Upright Piano",
+      "sourceId": "79965",
+      "sourcePage": "https://pixabay.com/sound-effects/musical-piano-single-keys-close-79965/",
+      "sourceTitle": "piano single keys close",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-piano-single-keys-close-79965.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 1,
+      "key": "recording",
+      "label": "PA Speaker",
+      "sourceId": "89678",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-amp-ilo-89678/",
+      "sourceTitle": "amp ilo",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-amp-ilo-89678.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 3,
+      "key": "recording",
+      "label": "Studio Monitor",
+      "sourceId": "532726",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-turning-a-tube-stereo-preamplifier-on-and-off-532726/",
+      "sourceTitle": "turning a tube stereo preamplifier on and off",
+      "publisher": "patolenin",
+      "downloadFilename": "patolenin-turning-a-tube-stereo-preamplifier-on-and-off-532726.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "recording",
+      "label": "CD Player",
+      "sourceId": "99629",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-cd-player-noise-99629/",
+      "sourceTitle": "cd player noise",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-cd-player-noise-99629.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 6,
+      "key": "recording",
+      "label": "Stage Monitor",
+      "sourceId": "45069",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-plug-in-a-microphone-45069/",
+      "sourceTitle": "plug in a microphone",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-plug-in-a-microphone-45069.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "recording",
+      "label": "Audio Recorder",
+      "sourceId": "106349",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-switch-button-106349/",
+      "sourceTitle": "switch button",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-switch-button-106349.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "recording",
+      "label": "PA Column",
+      "sourceId": "336618",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-quarter-inch-jack-inserting-into-amplifier-clean-single-push-336618/",
+      "sourceTitle": "quarter inch jack inserting into amplifier clean single push",
+      "publisher": "arunangshubanerjee",
+      "downloadFilename": "arunangshubanerjee-quarter-inch-jack-inserting-into-amplifier-clean-single-push-336618.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 1,
+      "key": "order",
+      "label": "Project Folder",
+      "sourceId": "245786",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-paper-245786/",
+      "sourceTitle": "paper",
+      "publisher": "makigai_maimai",
+      "downloadFilename": "makigai_maimai-paper-245786.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "order",
+      "label": "Wastepaper Bin",
+      "sourceId": "109585",
+      "sourcePage": "https://pixabay.com/sound-effects/crumping-paper-109585/",
+      "sourceTitle": "crumping paper",
+      "publisher": "liecio",
+      "downloadFilename": "liecio-crumping-paper-109585.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 3,
+      "key": "order",
+      "label": "Clipboard",
+      "sourceId": "584919",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-foley-paper-handling-amp-page-turning-sfx-584919/",
+      "sourceTitle": "foley paper handling amp page turning sfx",
+      "publisher": "lenspulse",
+      "downloadFilename": "lenspulse-foley-paper-handling-amp-page-turning-sfx-584919.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "order",
+      "label": "A4 Paper",
+      "sourceId": "81855",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-paper-rustle-81855/",
+      "sourceTitle": "paper rustle",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-paper-rustle-81855.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "order",
+      "label": "Staffroom Post",
+      "sourceId": "40077",
+      "sourcePage": "https://pixabay.com/sound-effects/household-paper-turn-40077/",
+      "sourceTitle": "paper turn",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-paper-turn-40077.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 6,
+      "key": "order",
+      "label": "A4 Paper",
+      "sourceId": "92362",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-creasing-paper-92362/",
+      "sourceTitle": "creasing paper",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-creasing-paper-92362.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "order",
+      "label": "A4 Paper",
+      "sourceId": "291786",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-paper-crinkle-291786/",
+      "sourceTitle": "paper crinkle",
+      "publisher": "dallonprofe",
+      "downloadFilename": "dallonprofe-paper-crinkle-291786.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "order",
+      "label": "Concert Programme",
+      "sourceId": "419580",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-turning-page-in-a-book-419580/",
+      "sourceTitle": "turning page in a book",
+      "publisher": "xpmonster",
+      "downloadFilename": "xpmonster-turning-page-in-a-book-419580.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 1,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "89693",
+      "sourcePage": "https://pixabay.com/sound-effects/household-door-handle-89693/",
+      "sourceTitle": "door handle",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-door-handle-89693.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "87109",
+      "sourcePage": "https://pixabay.com/sound-effects/household-door-handle-2-87109/",
+      "sourceTitle": "door handle 2",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-door-handle-2-87109.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 3,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "70286",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-locked-metal-door-handle-interior-room-70286/",
+      "sourceTitle": "locked metal door handle interior room",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-locked-metal-door-handle-interior-room-70286.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "522557",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-door-handle-522557/",
+      "sourceTitle": "door handle",
+      "publisher": "u_c2s90p6i67",
+      "downloadFilename": "u_c2s90p6i67-door-handle-522557.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "43289",
+      "sourcePage": "https://pixabay.com/sound-effects/household-doorknob-jiggle-43289/",
+      "sourceTitle": "doorknob jiggle",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-doorknob-jiggle-43289.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 6,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "86870",
+      "sourcePage": "https://pixabay.com/sound-effects/household-door-rattle-86870/",
+      "sourceTitle": "door rattle",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-door-rattle-86870.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "82228",
+      "sourcePage": "https://pixabay.com/sound-effects/household-door-locked-82228/",
+      "sourceTitle": "door locked",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-door-locked-82228.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "exit",
+      "label": "Door Handle",
+      "sourceId": "104302",
+      "sourcePage": "https://pixabay.com/sound-effects/household-trying-to-open-a-locked-door-104302/",
+      "sourceTitle": "trying to open a locked door",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-trying-to-open-a-locked-door-104302.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "ear-training",
+      "label": "Headphones",
+      "sourceId": "97328",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-headphones-jack-plugged-in-97328/",
+      "sourceTitle": "headphones jack plugged in",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-headphones-jack-plugged-in-97328.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 6,
+      "key": "ear-training",
+      "label": "Headphones",
+      "sourceId": "38711",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-jack-plug-in-38711/",
+      "sourceTitle": "jack plug in",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-jack-plug-in-38711.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "ear-training",
+      "label": "Headphones",
+      "sourceId": "88461",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-plug-in-audio-jack-88461/",
+      "sourceTitle": "plug in audio jack",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-plug-in-audio-jack-88461.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "ear-training",
+      "label": "Headphones",
+      "sourceId": "75805",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-audio-jack-plug-75805/",
+      "sourceTitle": "audio jack plug",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-audio-jack-plug-75805.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 1,
+      "key": "archive",
+      "label": "Desk",
+      "sourceId": "84663",
+      "sourcePage": "https://pixabay.com/sound-effects/household-drawer-open-mid-84663/",
+      "sourceTitle": "drawer open mid",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-drawer-open-mid-84663.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 3,
+      "key": "archive",
+      "label": "Studio Drawers",
+      "sourceId": "339167",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-drawer-opening-and-closing-339167/",
+      "sourceTitle": "drawer opening and closing",
+      "publisher": "emycutiepants",
+      "downloadFilename": "emycutiepants-drawer-opening-and-closing-339167.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "archive",
+      "label": "Storage Chest",
+      "sourceId": "98801",
+      "sourcePage": "https://pixabay.com/sound-effects/household-drawer-open-98801/",
+      "sourceTitle": "drawer open",
+      "publisher": "freesound_community",
+      "downloadFilename": "freesound_community-drawer-open-98801.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "archive",
+      "label": "Music Cabinet",
+      "sourceId": "227896",
+      "sourcePage": "https://pixabay.com/sound-effects/household-open-the-drawer-sound-227896/",
+      "sourceTitle": "open the drawer sound",
+      "publisher": "jarasnat",
+      "downloadFilename": "jarasnat-open-the-drawer-sound-227896.mp3",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "ear-training",
+      "label": "Mug",
+      "sourceId": "6743",
+      "sourcePage": "https://pixabay.com/sound-effects/household-pouring-coffee-6743/",
+      "sourceTitle": "Pouring coffee",
+      "publisher": "freesound_community",
+      "licence": "Pixabay Content License",
+      "downloadFilename": "freesound_community-pouring-coffee-6743.mp3"
+    }
+  ],
+  "retained": [
+    {
+      "room": 0,
+      "key": "archive",
+      "label": "Filing Cabinet",
+      "effect": "drawer",
+      "file": "drawer.mp3",
+      "sourceId": "35018",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-filingcabinet-35018/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 0,
+      "key": "mechanism",
+      "label": "Piano",
+      "effect": "piano",
+      "file": "piano-keys.m4a",
+      "sourceId": "306074",
+      "sourcePage": "https://pixabay.com/sound-effects/musical-soft-piano-keys-306074/",
+      "licence": "Pixabay Content License",
+      "fullLength": true
+    },
+    {
+      "room": 0,
+      "key": "order",
+      "label": "A4 Paper",
+      "effect": "paper",
+      "file": "paper.mp3",
+      "sourceId": "45792",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-picking-up-one-paper-45792/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 0,
+      "key": "exit",
+      "label": "Door Handle",
+      "effect": "handle",
+      "file": "handle.mp3",
+      "sourceId": "401153",
+      "sourcePage": "https://pixabay.com/sound-effects/household-door-handle-1-401153/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 1,
+      "key": "mechanism",
+      "label": "Keyboard",
+      "effect": "piano-original",
+      "file": "piano.mp3",
+      "sourceId": "80236",
+      "sourcePage": "https://pixabay.com/sound-effects/musical-do-80236/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "mechanism",
+      "label": "Xylophone",
+      "effect": "xylophone",
+      "file": "xylophone.mp3",
+      "sourceId": "87468",
+      "sourcePage": "https://pixabay.com/sound-effects/musical-xylophone-c3-87468/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "ear-training",
+      "label": "Headphones",
+      "effect": "headphones",
+      "file": "headphones.mp3",
+      "sourceId": "43125",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-071829-putting-headphones-on-43125/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "mechanism",
+      "label": "Metronome",
+      "effect": "metronome",
+      "file": "metronome.mp3",
+      "sourceId": "30412",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-metrenome-30412/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "recording",
+      "label": "Cassette Recorder",
+      "effect": "recorder",
+      "file": "recorder.mp3",
+      "sourceId": "90780",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-tape-player-sounds-90780/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "archive",
+      "label": "Lectern",
+      "effect": "wood",
+      "file": "wood.mp3",
+      "sourceId": "42877",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-stiff-wooden-tap-42877/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 0,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 1,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 2,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 3,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 4,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 5,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 6,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 7,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    },
+    {
+      "room": 8,
+      "key": "help",
+      "label": "Dictionary",
+      "effect": "book",
+      "file": "book.mp3",
+      "sourceId": "345808",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-book-opening-345808/",
+      "licence": "Pixabay Content License"
+    }
+  ],
+  "maxEffectDurationSeconds": 1,
+  "durationExceptions": [
+    "piano",
+    "pixabay/room-5-mechanism-239967"
+  ],
+  "sharedEffects": {
+    "archive": 0,
+    "recording": 0,
+    "order": 0,
+    "ear-training": 8
+  },
+  "effectOverrides": {
+    "5:mechanism": "0:mechanism",
+    "1:mechanism": "0:mechanism"
+  },
+  "retainedOverrides": {
+    "2:recording": {
+      "label": "Intercom",
+      "sourceId": "83962",
+      "sourcePage": "https://pixabay.com/sound-effects/film-special-effects-intercom-in-83962/",
+      "sourceTitle": "intercom in",
+      "publisher": "freesound_community",
+      "licence": "Pixabay Content License",
+      "effect": "pixabay/room-2-recording-83962",
+      "sha256": "819304071df8ad717a8de1bea20db4b09b3f326430e96aba05f47d3c19257a8d",
+      "durationSeconds": 0.914286
+    },
+    "8:ear-training": {
+      "label": "Chair",
+      "sourceId": "38333",
+      "sourcePage": "https://pixabay.com/sound-effects/household-chair-moving-38333/",
+      "sourceTitle": "Chair moving",
+      "publisher": "freesound_community",
+      "licence": "Pixabay Content License",
+      "effect": "pixabay/room-8-ear-training-38333",
+      "sha256": "c03d4819cbc298186afddda94d14184a213becfe5e0e8375ae78743a9dedf2b7",
+      "sourceSha256": "00619130837dc5cb9351943fd08e97e2e9f76148bf7f2e8041241042cbd56adc",
+      "excerptStart": 0.615,
+      "excerptDuration": 0.88,
+      "durationSeconds": 0.914286
+    }
+  },
+  "sharedEffectExclusions": [
+    "5:ear-training"
+  ]
+}

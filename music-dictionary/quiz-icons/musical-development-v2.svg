@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Musical Patterns and Development</title>
+  <g fill="#000">
+    <!-- A repeated two-note motif, followed by a developed three-note phrase. -->
+    <path d="m13 8 13-3v5l-10 2.3V25h-3V8Z"/>
+    <path d="M23 8h3v14h-3z"/>
+    <ellipse cx="11" cy="25" rx="5" ry="3.6" transform="rotate(-20 11 25)"/>
+    <ellipse cx="21" cy="22" rx="5" ry="3.6" transform="rotate(-20 21 22)"/>
+    <path d="m44 8 13-3v5l-10 2.3V25h-3V8Z"/>
+    <path d="M54 8h3v14h-3z"/>
+    <ellipse cx="42" cy="25" rx="5" ry="3.6" transform="rotate(-20 42 25)"/>
+    <ellipse cx="52" cy="22" rx="5" ry="3.6" transform="rotate(-20 52 22)"/>
+    <path d="m26 39 25-5v5l-22 4.4V57h-3V39Z"/>
+    <path d="M37 38h3v16h-3zm11-2h3v15h-3z"/>
+    <ellipse cx="24" cy="57" rx="5" ry="3.6" transform="rotate(-20 24 57)"/>
+    <ellipse cx="35" cy="54" rx="5" ry="3.6" transform="rotate(-20 35 54)"/>
+    <ellipse cx="46" cy="51" rx="5" ry="3.6" transform="rotate(-20 46 51)"/>
+  </g>
+  <g stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 17h6m-3-3 3 3-3 3"/>
+    <path d="M57 29v2a4 4 0 0 1-4 4"/>
+    <path d="M16 33H9a4 4 0 0 0-4 4v7a4 4 0 0 0 4 4h8m-4-4 4 4-4 4"/>
+  </g>
+</svg>

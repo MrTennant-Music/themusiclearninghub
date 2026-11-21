@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <title>Note Identification</title>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/notenaming-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/notenaming-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
+  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+  <script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+  <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
+  <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./shared/shared-notation-config.js"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <link rel="stylesheet" href="./styles/sight-reading.css?v=c214c1e9506b" />
+  <script src="./shared/note-identification-core.js?v=688df1d056ef"></script>
+  <script src="./sight-reading-core.js?v=c1b944267812"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+</head>
+<body class="overflow-x-hidden bg-stone-50">
+  <div id="root"></div>
+
+  <script type="text/x-mlh-jsx-source" data-src="./sight-reading.jsx?v=e20ea2dd69b1" data-runtime="noteidentification-1.js"></script><script src="./generated-runtimes/noteidentification-1.js?v=8df8b02f7a03"></script>
+  <script type="text/x-mlh-jsx-source" data-runtime="noteidentification-2.js">
+    const { useCallback, useEffect, useMemo, useRef, useState } = React;
+
+    const ASSET = {
+      appIcon: "./app-icons/notenaming-icon.svg",
+      level: "./ui-icons/levels.svg",
+      customise: "./ui-icons/customise.svg",
+      next: "./ui-icons/next.svg",
+      tick: "./ui-icons/tick.svg",
+      bronze: "./ui-icons/bronze.svg",
+      silver: "./ui-icons/silver.svg",
+      gold: "./ui-icons/gold.svg",
+      diamond: "./ui-icons/diamond.svg",
+      trebleClef: "./ui-icons/trebleclef.svg?v=1.1",
+      bassClef: "./ui-icons/bassclef.svg?v=1.1",
+      sharp: "./ui-icons/sharp.svg?v=1.1",
+      flat: "./ui-icons/flat.svg?v=1.1",
+    };
+
+    const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS ?? {};
+    const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG ?? { symbols: {}, drawing: {} };
+    const SVG = { width: 920, height: 420 };
+    const MOBILE_SVG_VIEWBOX = {
+      treble: { x: 220, y: 37, width: 520, height: 240 },
+      bass: { x: 220, y: 178, width: 520, height: 240 },
+    };
+    const STAFF = { left: 247, right: 689, trebleTop: 84, bassTop: 225, gap: 18.9 };
+    const NOTE = { x: 468, rx: 12.2, stemLength: 62 };
+    
+    const COLOUR = { black: "#000000", green: "#16a34a", red: "#dc2626" };
+    const SITE_ACCESSIBILITY_KEY = "mlh-accessibility";
+
+    
+    
+
+    
+
+    
+
+    const BLOCKED_WITHOUT_LEDGER = new Set(["C2", "D2", "E2", "F2", "B3", "C4", "D4", "G5", "A5", "B5", "C6"]);
+    
+
+    const NOTE_LABELS = {
+      treble: {
+        top: STAFF.trebleTop,
+        lines: [[0, "E"], [2, "G"], [4, "B"], [6, "D"], [8, "F"]],
+        spaces: [[1, "F"], [3, "A"], [5, "C"], [7, "E"]],
+      },
+      bass: {
+        top: STAFF.bassTop,
+        lines: [[0, "G"], [2, "B"], [4, "D"], [6, "F"], [8, "A"]],
+        spaces: [[1, "A"], [3, "C"], [5, "E"], [7, "G"]],
+      },
+    };
+
+    const SCORE_TILE_CLASS = "relative h-[58px] rounded-xl border border-stone-200 shadow-sm outline-none transition hover:-translate-y-0.5 hover:scale-[1.01] hover:brightness-105 hover:shadow-lg active:scale-[0.98] sm:h-[64px]";
+    const SCORE_TILE_ACTIVE_CLASS = "-translate-y-0.5 scale-[1.01] brightness-105 shadow-lg";
+    const POPOVER_ANIMATION_IN = "medalPopupIn .28s cubic-bezier(.22,1.25,.32,1)";
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const randomItem = (items) => items[Math.floor(Math.random() * items.length)];
+    const yForStep = (top, step) => top + STAFF.gap * 4 - step * (STAFF.gap / 2);
+    const stemDown = (step) => step > 4;
+
+    function sharedActualSymbolKey(key) {
+      if (key === "flatInScore") return "flat";
+      if (key === "naturalInScore") return "natural";
+      if (key === "sharpInScore") return "sharp";
+      return key;
+    }
+
+    function sharedSymbolConfig(key) {
+      const symbols = SHARED_CONFIG.symbols ?? {};
+      return symbols[key] ?? symbols[sharedActualSymbolKey(key)] ?? {
+        fontSizeScale: 3.4,
+        xOffsetScale: 0,
+        yOffsetScale: 0,
+        widthScale: 1,
+        heightScale: 1,
+        opticalXOffset: 0,
+        opticalYOffset: 0,
+      };
+    }
+
+    function sharedSymbolForKey(key) {
+      return SHARED_SYMBOLS[sharedActualSymbolKey(key)] ?? "";
+    }
+
+    function CalibratedSymbol({ symbolKey, x, y, colour = "currentColor", opacity = 1, lineGap = STAFF.gap, filter = null, settingOverrides = {} }) {
+      const glyph = sharedSymbolForKey(symbolKey);
+      if (!glyph) return null;
+      const settings = { ...sharedSymbolConfig(symbolKey), ...settingOverrides };
+      const adjustedX = x + lineGap * Number(settings.xOffsetScale || 0) + Number(settings.opticalXOffset || 0);
+      const adjustedY = y + lineGap * Number(settings.yOffsetScale || 0) + Number(settings.opticalYOffset || 0);
+      const fontSize = lineGap * Number(settings.fontSizeScale || 3.4);
+      const widthScale = Number(settings.widthScale || 1);
+      const heightScale = Number(settings.heightScale || 1);
+      return (
+        <text
+          className="music-symbol"
+          x={adjustedX}
+          y={adjustedY}
+          fill={colour}
+          opacity={opacity}
+          fontSize={fontSize}
+          textAnchor="middle"
+          style={filter ? { filter } : undefined}
+          transform={`translate(${adjustedX} ${adjustedY}) scale(${widthScale} ${heightScale}) translate(${-adjustedX} ${-adjustedY})`}
+          pointerEvents="none"
+        >
+          {glyph}
+        </text>
+      );
+    }
+
+    function readSiteAccessibility() {
+      try {
+        const value = JSON.parse(localStorage.getItem(SITE_ACCESSIBILITY_KEY) || "{}");
+        return value && typeof value === "object" ? value : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function settingsMatchLevel(settings, levelKey) {
+      return Object.entries(LEVELS[levelKey].settings).every(([key, value]) => Boolean(settings[key]) === Boolean(value));
+    }
+
+    function levelForSettings(settings) {
+      return Object.keys(LEVELS).find((key) => settingsMatchLevel(settings, key)) || "Custom";
+    }
+
+
+    const {LETTERS,SHARPS,FLATS,LEVELS,NOTE_DATA,ADVANCED_ONLY,possibleQuestions} = window.NOTE_IDENTIFICATION_CORE;
+    const noteGenerator=window.NOTE_IDENTIFICATION_CORE.create(Math.random);
+    function buildQuestion(settings,previousId=null){return noteGenerator.next(settings,previousId);}
+
+    const playFeedbackSound = (...args) => window.MLH?.playFeedbackSound?.(...args);
+
+    const getStreakMedal = (streak) => window.MLH?.getStreakMedal?.(streak);
+
+    function AppStyles() {
+      useEffect(() => {
+        if (document.getElementById("note-identification-clean-styles")) return;
+        const style = document.createElement("style");
+        style.id = "note-identification-clean-styles";
+        style.textContent = `
+          @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
+          .music-symbol { font-family: "Bravura", serif; font-weight: 400; dominant-baseline: alphabetic; text-rendering: geometricPrecision; }
+
+          /* Buttons */
+          button {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            cursor: pointer;
+            transition: transform .08s ease, filter .08s ease, background-color .12s ease, box-shadow .12s ease;
+          }
+          button:hover {
+            transform: translateY(-1px) scale(1.01);
+            filter: brightness(1.08);
+            box-shadow: 0 6px 18px rgba(0,0,0,.08);
+          }
+
+          button:active {
+            transform: scale(.96);
+          }
+
+          @media (hover: none) and (pointer: coarse) {
+            button:not(.fixed-popover-button),
+            button:not(.fixed-popover-button):hover,
+            button:not(.fixed-popover-button):focus {
+              transform: none !important;
+              filter: none !important;
+              box-shadow: none !important;
+            }
+
+            button:not(.fixed-popover-button):active {
+              transform: scale(.96) !important;
+              filter: brightness(.96) !important;
+              box-shadow: none !important;
+            }
+
+            .fixed-popover-button:active {
+              transform: translateX(-50%) !important;
+              filter: none !important;
+            }
+
+            section[role="button"],
+            section[role="button"]:hover,
+            section[role="button"]:focus {
+              transform: none !important;
+              filter: none !important;
+              box-shadow: none !important;
+            }
+
+            section[role="button"]:active {
+              transform: scale(.96) !important;
+              filter: brightness(.96) !important;
+              box-shadow: none !important;
+            }
+          }
+          button:disabled {
+            cursor: not-allowed;
+            opacity: .82;
+          }
+
+          button:focus-visible {
+            outline: 2px solid rgba(22,163,74,.35);
+            outline-offset: 2px;
+          }
+
+          .fixed-popover-button,
+          .fixed-popover-button:hover,
+          .fixed-popover-button:active {
+            transform: translateX(-50%) !important;
+          }
+
+          /* Motion */
+          @keyframes confettiDrop { 0% { transform: translateY(-12px) rotate(0deg); opacity: 0; } 12% { opacity: 1; } 100% { transform: translateY(72px) rotate(260deg); opacity: 0; } }
+          @keyframes correctFade { 0% { transform: translateY(-18px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+          @keyframes incorrectDropShake { 0% { transform: translateY(-28px); opacity: 0; } 55% { transform: translateY(0); opacity: 1; } 68% { transform: translateX(-5px); } 78% { transform: translateX(5px); } 88% { transform: translateX(-3px); } 100% { transform: translateX(0); opacity: 1; } }
+          @keyframes feedbackFadeOut { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-10px); } }
+          @keyframes medalPopupIn { 0% { opacity: 0; transform: translate(-50%, -8px) scale(.82); } 60% { opacity: 1; transform: translate(-50%, 2px) scale(1.06); } 100% { opacity: 1; transform: translate(-50%, 0) scale(1); } }
+          @keyframes medalPopupOut { 0% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, -6px) scale(.86); } }
+          @keyframes medalThresholdGlow { 0%,100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(250,204,21,0)); } 50% { transform: scale(1.1); filter: drop-shadow(0 0 10px rgba(250,204,21,.95)); } }
+
+          .medal-threshold-active,
+          .medal-threshold-active img {
+            animation: medalThresholdGlow 1.35s ease-in-out infinite;
+            font-weight: 900;
+          }
+
+          /* Accessibility */
+          .app-large-text { font-size: 112.5%; }
+          .app-high-contrast { filter: contrast(1.15); }
+          .app-reduce-motion *,
+          .app-reduce-motion *::before,
+          .app-reduce-motion *::after {
+            animation: none !important;
+            transition: none !important;
+            scroll-behavior: auto !important;
+          }
+
+          /* Shared footer */
+          .footer {
+            width: min(1180px, calc(100% - 36px));
+            margin: 0 auto;
+            padding: 22px 0 32px;
+            border-top: 1px solid #e2e8f0;
+            color: #475569;
+            font-size: .86rem;
+          }
+
+          .footer-grid {
+            display: grid;
+            grid-template-columns: 235px 1fr 1fr 1fr;
+            gap: 42px;
+            align-items: start;
+          }
+
+          .footer-brand { display: flex; align-items: flex-start; }
+          .footer-wordmark { width: 220px; height: auto; display: block; }
+          .footer h4 { margin: 0 0 10px; color: #0f172a; font-size: .92rem; font-weight: 800; }
+          .footer p { margin: 0; line-height: 1.35; }
+          .footer a { color: #475569; text-decoration: none; overflow-wrap: anywhere; }
+          .footer a:hover,
+          .footer a:focus-visible { text-decoration: underline; }
+          .footer .text-link,
+          .footer .text-link:visited,
+          .footer .text-link:hover,
+          .footer .text-link:focus-visible {
+            color: #2563eb !important;
+            font-weight: 700;
+          }
+          .footer.text-link { color: #2563eb; font-weight: 700; }
+          .copyright { margin-top: 28px; text-align: center; font-size: .8rem; }
+
+          /* Modal */
+          .modal,
+          .modal h2,
+          .modal p,
+          .modal li,
+          .modal button {
+            font-family: Arial, Helvetica, sans-serif;
+          }
+
+          .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(15,23,42,.72);
+            backdrop-filter: blur(6px);
+          }
+
+          .overlay.is-open {
+            display: flex;
+          }
+
+          .modal {
+            color: #0f172a;
+            position: relative;
+            width: min(100%, 560px);
+            max-height: 90vh;
+            overflow: auto;
+            padding: 28px;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 24px 60px rgba(0,0,0,.25);
+          }
+
+          .close-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            border: 0;
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #1e40af;
+            font-size: 1.3rem;
+            font-weight: 700;
+          }
+
+          .modal h2,
+          .modal h3,
+          .modal h4 {
+            color: #0f172a;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 1.15;
+            margin-bottom: 16px;
+          }
+
+          .modal p,
+          .modal li {
+            margin-bottom: 14px;
+            line-height: 1.65;
+          }
+
+          .modal p {
+            color: #475569;
+            line-height: 1.55;
+          }
+
+        `;
+        document.head.appendChild(style);
+      }, []);
+      return null;
+    }
+
+    function useSitePreferences() {
+      const [accessibility, setAccessibility] = useState(readSiteAccessibility);
+
+      useEffect(() => {
+        const sync = () => {
+          setAccessibility(readSiteAccessibility());
+        };
+        sync();
+        window.addEventListener("storage", sync);
+        window.addEventListener("mlh-accessibility-change", sync);
+        return () => {
+          window.removeEventListener("storage", sync);
+          window.removeEventListener("mlh-accessibility-change", sync);
+        };
+      }, []);
+
+      return { accessibility };
+    }
+
+    const useClickAway = window.MLH.useClickAway;
+
+
+    function ScoreStreakPanel({ achievementLevel, correct, attempted, accuracy, streak, bestStreak, medal, confettiKey, resetScore, autoShowMedals, medalEligible }) {
+      return <window.MLH.ScoreStreakPanel achievementLevel={achievementLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} autoShowMedals={autoShowMedals} medalEligible={medalEligible} />;
+    }
+
+    function Staff({ clef, top, visible, left = STAFF.left, right = STAFF.right }) {
+      if (!visible) return null;
+      const isTreble = clef === "treble";
+      return (
+        <g>
+          {[0, 1, 2, 3, 4].map((line) => (
+            <line key={line} x1={left} x2={right} y1={top + line * STAFF.gap} y2={top + line * STAFF.gap} stroke="url(#staffLineFade)" strokeWidth="1.5" />
+          ))}
+          <CalibratedSymbol symbolKey={isTreble ? "gClef" : "fClef"} x={left + 52} y={yForStep(top, isTreble ? 2 : 6)} />
+        </g>
+      );
+    }
+
+    function LedgerLines({ note, colour, enabled }) {
+      if (!note || !enabled) return null;
+      const top = note.clef === "treble" ? STAFF.trebleTop : STAFF.bassTop;
+      const lines = [];
+      if (note.step <= -2) lines.push(-2);
+      if (note.step <= -4) lines.push(-4);
+      if (note.step >= 10) lines.push(10);
+      if (note.step >= 12) lines.push(12);
+
+      return (
+        <g pointerEvents="none">
+          {(() => {
+            const settings = sharedSymbolConfig("ledgerLines");
+            const xOffset = STAFF.gap * Number(settings.xOffsetScale || 0) + Number(settings.opticalXOffset || 0);
+            const yOffset = STAFF.gap * Number(settings.yOffsetScale || 0) + Number(settings.opticalYOffset || 0);
+            const halfWidth = (STAFF.gap * Number(SHARED_CONFIG.drawing?.ledgerLineWidthScale || 2.4) * Number(settings.widthScale || 1)) / 2;
+            const thickness = Math.max(1, STAFF.gap * Number(SHARED_CONFIG.drawing?.ledgerLineThicknessScale || 0.11) * Number(settings.heightScale || 1));
+            return lines.map((step) => {
+              const y = yForStep(top, step) + yOffset;
+              return <line key={step} x1={NOTE.x - halfWidth + xOffset} x2={NOTE.x + halfWidth + xOffset} y1={y} y2={y} stroke={colour} strokeWidth={thickness} strokeLinecap="butt" />;
+            });
+          })()}
+        </g>
+      );
+    }
+
+    function Accidental({ note, colour }) {
+      if (!note?.accidental) return null;
+      const top = note.clef === "treble" ? STAFF.trebleTop : STAFF.bassTop;
+      const y = yForStep(top, note.step);
+      const isSharp = note.accidental === "sharp";
+      const ledgerOffset = y < 95 || y > 285 ? -6 : 0;
+      const isLedgerLineNote = note.step <= -2 || note.step >= 10;
+      const flatLedgerLineOffset = !isSharp && isLedgerLineNote ? -3 : 0;
+      const sharpLedgerLineOffset = isSharp && isLedgerLineNote ? -3 : 0;
+      const x = isSharp ? NOTE.x - 44 + ledgerOffset + sharpLedgerLineOffset : NOTE.x - 41 + ledgerOffset + flatLedgerLineOffset;
+
+      return (
+        <CalibratedSymbol symbolKey={isSharp ? "sharpInScore" : note.accidental==="natural" ? "naturalInScore" : "flatInScore"} x={x} y={y} colour={colour} />
+      );
+    }
+
+    function Crotchet({ note, colour, ledgerEnabled }) {
+      if (!note) return null;
+      const top = note.clef === "treble" ? STAFF.trebleTop : STAFF.bassTop;
+      const y = yForStep(top, note.step);
+      const down = stemDown(note.step);
+
+      return (
+        <g pointerEvents="none">
+          <LedgerLines note={note} colour={colour} enabled={ledgerEnabled} />
+          <Accidental note={note} colour={colour} />
+          <CalibratedSymbol symbolKey={down ? "quarterNoteStemDown" : "quarterNoteStemUp"} x={NOTE.x} y={y} colour={colour} />
+        </g>
+      );
+    }
+
+    function HelpLabels({ visible, settings }) {
+      if (!visible) return null;
+      const items = [];
+      if (settings.treble) items.push(["treble", NOTE_LABELS.treble]);
+      if (settings.bass) items.push(["bass", NOTE_LABELS.bass]);
+
+      return (
+        <g fontSize="14" fontFamily="system-ui, sans-serif" fontWeight="700" dominantBaseline="middle" pointerEvents="none" fill="black" textAnchor="middle">
+          {items.flatMap(([clef, data]) => [...data.lines.map(([step, letter]) => <text key={`${clef}-line-${step}`} x={STAFF.left - 11} y={yForStep(data.top, step) + 2}>{letter}</text>),...data.spaces.map(([step, letter]) => <text key={`${clef}-space-${step}`} x={STAFF.left + 7} y={yForStep(data.top, step) + 2}>{letter}</text>),
+          ])}
+        </g>
+      );
+    }
+
+    function ScoreArea({ question, settings, showNoteNames, feedback, activeLevel, mobileOnlyActiveClef }) {
+      const colour = feedback?.correct === true ? COLOUR.green : feedback?.correct === false ? COLOUR.red : "currentColor";
+      const ahTrebleFocus = activeLevel === "AH" && question?.clef === "treble" && ["A3", "B3"].includes(question.pitch);
+      const ahBassFocus = activeLevel === "AH" && question?.clef === "bass" && ["D4", "E4"].includes(question.pitch);
+      const displaySettings = mobileOnlyActiveClef
+        ? {...settings, treble: question?.clef === "treble", bass: question?.clef === "bass" }
+        : {...settings,
+            treble: ahTrebleFocus ? true : ahBassFocus ? false : settings.treble,
+            bass: ahBassFocus ? true : ahTrebleFocus ? false : settings.bass,
+          };
+      const visibleSystems = Number(displaySettings.treble) + Number(displaySettings.bass);
+      const centreOffset = !mobileOnlyActiveClef && visibleSystems === 1
+        ? displaySettings.treble ? (STAFF.bassTop - STAFF.trebleTop) / 2 : -(STAFF.bassTop - STAFF.trebleTop) / 2
+        : 0;
+      const viewBox = mobileOnlyActiveClef
+        ? MOBILE_SVG_VIEWBOX[question?.clef === "bass" ? "bass" : "treble"]
+        : { x: 0, y: 0, width: SVG.width, height: SVG.height };
+
+      return (
+        <svg viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`} className="h-auto w-full select-none overflow-hidden sm:overflow-visible">
+          <defs>
+            <linearGradient id="staffLineFade" x1="247" y1="0" x2="689" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="currentColor" stopOpacity="1" />
+              <stop offset="84%" stopColor="currentColor" stopOpacity="1" />
+              <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <rect width={SVG.width} height={SVG.height} fill="white" />
+          <g
+            transform={`translate(0 ${mobileOnlyActiveClef ? 0 : centreOffset - 24})`}
+          >
+            <Staff clef="treble" top={STAFF.trebleTop} visible={displaySettings.treble} />
+            <Staff clef="bass" top={STAFF.bassTop} visible={displaySettings.bass} />
+            <HelpLabels visible={showNoteNames} settings={displaySettings} />
+            <Crotchet note={question} colour={colour} ledgerEnabled={settings.ledger} />
+          </g>
+        </svg>
+      );
+    }
+
+    function FeedbackBanner({ feedback, fading }) {
+      return <window.MLH.FeedbackBadge feedback={feedback} fading={fading} animationPrefix="note" />;
+    }
+
+    function SightReadingScore({ question, colour, progress, reducedMotion, upcoming = [], showNote = true }) {
+      const top = question.clef === "treble" ? STAFF.trebleTop : STAFF.bassTop;
+      const noteX = reducedMotion ? NOTE.x : 230 + 570 * progress;
+      return <svg viewBox="0 0 920 300" role="img" aria-label={`${question.clef === "treble" ? "Treble" : "Bass"} clef sight-reading note`}>
+        <defs><linearGradient id="staffLineFade" gradientUnits="userSpaceOnUse" x1="100" x2="840" y1="0" y2="0"><stop offset="0%" stopColor="black"/><stop offset="100%" stopColor="black"/></linearGradient></defs>
+        <line x1="230" x2="230" y1="38" y2="262" stroke="#a8a29e" strokeWidth="2" strokeDasharray="5 5"/>
+        <g transform={`translate(0 ${150 - top - STAFF.gap * 2})`}>
+          <Staff clef={question.clef} top={top} visible={true} left={100} right={840}/>
+          {upcoming.map(entry => <g key={entry.id} className="sight-reading-upcoming-note" transform={`translate(${230 + 570 * entry.progress - NOTE.x} 0)`}><Crotchet note={entry.question} colour="#000000" ledgerEnabled={true}/></g>)}
+          {showNote && <g transform={`translate(${noteX - NOTE.x} 0)`}><g className="sight-reading-note"><Crotchet note={question} colour={colour} ledgerEnabled={true}/></g></g>}
+        </g>
+      </svg>;
+    }
+
+    function ToggleRow({ label, icon, checked, onChange }) {
+      return <window.MLH.MenuToggleRow glyph={icon} label={label} checked={checked} onChange={onChange} />;
+    }
+
+    function MenuSectionHeading({ children, first = false }) {
+      return <div className={`${first ? "" : "mt-3"} mb-1 px-3 text-[11px] font-black uppercase tracking-[0.12em] text-stone-500`}>{children}</div>;
+    }
+
+    function MenuGlyph({ symbolKey, className = "" }) {
+      return <span className="flex h-[28px] w-[28px] items-center justify-center"><span className={`music-symbol inline-block leading-none ${className}`}>{sharedSymbolForKey(symbolKey)}</span></span>;
+    }
+
+    function LedgerIcon() {
+      return (
+        <svg width="28" height="22" viewBox="0 0 38 24" aria-hidden="true">
+          <line x1="5" x2="33" y1="12" y2="12" stroke="currentColor" strokeWidth="1.6" />
+          <ellipse cx="19" cy="12" rx="7" ry="5" transform="rotate(-18 19 12)" fill="currentColor" />
+        </svg>
+      );
+    }
+
+    function CustomiseMenu({ settings, setSettings, showNoteNames, setShowNoteNames, onSettingsChanged, onStartSightReading }) {
+      function toggle(key) {
+        const next = { ...settings, [key]: !settings[key] };
+        if (!next.treble && !next.bass) next[key === "treble" ? "bass" : "treble"] = true;
+        setSettings(next); onSettingsChanged(next);
+      }
+
+      return (
+        <div className="flex w-full min-w-0 flex-col sm:inline-flex sm:w-max sm:min-w-[260px]">
+          <MenuSectionHeading first>Help</MenuSectionHeading>
+          <ToggleRow
+            label="Show Note Names"
+            icon={<span className="text-[12px] font-black tracking-tight">ABC</span>}
+            checked={showNoteNames}
+            onChange={() => setShowNoteNames((value) => !value)}
+          />
+
+          <MenuSectionHeading>Clefs</MenuSectionHeading>
+          <ToggleRow
+            label="Treble"
+            icon={<MenuGlyph symbolKey="gClef" className="relative top-[4px] text-[21px]" />}
+            checked={settings.treble}
+            onChange={() => toggle("treble")}
+          />
+
+          <ToggleRow
+            label="Bass"
+            icon={<MenuGlyph symbolKey="fClef" className="relative -top-[4px] text-[27px]" />}
+            checked={settings.bass}
+            onChange={() => toggle("bass")}
+          />
+
+          <MenuSectionHeading>Options</MenuSectionHeading>
+          <ToggleRow
+            label="Ledger Lines"
+            icon={<LedgerIcon />}
+            checked={settings.ledger}
+            onChange={() => toggle("ledger")}
+          />
+
+          <ToggleRow
+            label="Accidentals"
+            icon={<MenuGlyph symbolKey="sharp" className="text-[25px]" />}
+            checked={settings.accidentals}
+            onChange={() => toggle("accidentals")}
+          />
+
+          <MenuSectionHeading>Games</MenuSectionHeading>
+          <button
+            type="button"
+            onClick={onStartSightReading}
+            className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600"
+          >
+            <img src="./ui-icons/game-type.svg" alt="" aria-hidden="true" className="h-[24px] w-[24px] shrink-0 object-contain invert" />
+            <span className="hub-toggle-label leading-none" style={{ color: "inherit" }}>Speed Mode</span>
+          </button>
+        </div>
+      );
+    }
+
+    function LocalLevelMenu({ activeLevel, onSelect, levels }) {
+      return (
+        <div className="flex w-full min-w-0 flex-col gap-2">
+          {Object.entries(levels).map(([key, level]) => {
+            const active = activeLevel === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => onSelect(key)}
+                className={`w-full rounded-xl border px-3 py-2 text-left transition sm:px-4 ${active ? "border-stone-400 bg-stone-100" : "border-stone-200 bg-stone-50 hover:bg-stone-100"}`}
+              >
+                <div className="flex min-w-0 items-center justify-between gap-3 text-stone-900 sm:items-start">
+                  <div className="flex min-h-[36px] min-w-[42px] items-center justify-center">
+                    <span className="flex h-[46px] w-[46px] shrink-0 scale-[1.08] items-center justify-center rounded-2xl border border-stone-200 bg-white text-[1.22rem] font-black leading-none tracking-tight text-stone-800 shadow-sm">
+                      {key}
+                    </span>
+                  </div>
+                  <div className="flex min-w-0 flex-1 flex-col justify-center pr-2">
+                    <div className="pb-[1px] text-[13px] font-black leading-[1.2] sm:whitespace-normal">{level.label}</div>
+                    <div className="mt-[2px] pb-[2px] text-[11px] leading-[1.25] text-stone-600 sm:whitespace-normal">{level.description}</div>
+                  </div>
+                  {active && <img src={ASSET.tick} alt="" aria-hidden="true" className="h-[22px] w-[22px] shrink-0 object-contain" />}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      );
+    }
+
+    const LevelMenu = window.MLH?.LevelMenu || LocalLevelMenu;
+
+    function AnswerButton({ value, question, selectedAnswer, feedback, onChoose }) {
+      const correctAnswer = feedback && value === question?.answer;
+      const wrongSelected = feedback && value === selectedAnswer && value !== question?.answer;
+      const accidental = value.includes("#") || value.includes("b");
+      const defaultClass = accidental ? "border-stone-800 bg-stone-900 text-white" : "border-stone-300 bg-white text-black";
+      const stateClass = correctAnswer ? "border-[#16a34a] bg-[#16a34a] text-white" : wrongSelected ? "border-[#dc2626] bg-[#dc2626] text-white" : defaultClass;
+
+      return (
+        <button
+          type="button"
+          key={`${question?.id || "no-question"}-${value}`}
+          aria-label={value.replace("#"," sharp").replace("b"," flat")}
+          disabled={Boolean(feedback)}
+          onPointerUp={(event) => event.currentTarget.blur()}
+          onTouchEnd={(event) => event.currentTarget.blur()}
+          onMouseUp={(event) => event.currentTarget.blur()}
+          onClick={(event) => {
+            event.currentTarget.blur();
+            onChoose(value);
+          }} className={`flex min-h-[48px] items-center justify-center rounded-xl border px-1 text-[1rem] font-bold sm:min-h-[46px] sm:px-3 sm:text-[1.05rem] ${stateClass}`}>
+          {value.includes("#") ? (
+            <span className="flex items-center justify-center gap-[3px]"><span>{value.replace("#", "")}</span><span className="music-symbol relative top-[1px] inline-block text-[1.1em] leading-none">{sharedSymbolForKey("sharp")}</span></span>
+          ) : value.includes("b") ? (
+            <span className="flex items-center justify-center gap-[3px]"><span>{value.replace("b", "")}</span><span className="music-symbol relative top-[2px] inline-block text-[1.15em] leading-none">{sharedSymbolForKey("flat")}</span></span>
+          ) : value}
+        </button>
+      );
+    }
+
+    function AnswerGrid({ accidentals, question, selectedAnswer, feedback, onChoose }) {
+      const placeholder = (key) => <div key={key} className="min-h-[48px] rounded-xl border border-transparent sm:min-h-[46px]" />;
+      return (
+        <div className="grid gap-2">
+          {accidentals && (
+            <div className="grid grid-cols-7 gap-1.5 sm:gap-2">
+              {LETTERS.map((letter) => SHARPS[letter] ? <AnswerButton key={SHARPS[letter]} value={SHARPS[letter]} question={question} selectedAnswer={selectedAnswer} feedback={feedback} onChoose={onChoose} /> : placeholder(`sharp-${letter}`))}
+            </div>
+          )}
+          <div className="grid grid-cols-7 gap-1.5 sm:gap-2">
+            {LETTERS.map((letter) => <AnswerButton key={letter} value={letter} question={question} selectedAnswer={selectedAnswer} feedback={feedback} onChoose={onChoose} />)}
+          </div>
+          {accidentals && (
+            <div className="grid grid-cols-7 gap-1.5 sm:gap-2">
+              {LETTERS.map((letter) => FLATS[letter] ? <AnswerButton key={FLATS[letter]} value={FLATS[letter]} question={question} selectedAnswer={selectedAnswer} feedback={feedback} onChoose={onChoose} /> : placeholder(`flat-${letter}`))}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    function App() {
+      const { accessibility } = useSitePreferences();
+      const menuRef = useRef(null);
+      const mainRef = useRef(null);
+      const questionPanelRef = useRef(null);
+      const timerRef = useRef(null);
+      const fadeTimerRef = useRef(null);
+      const questionTransitionRef = useRef(null);
+      const medalTimersRef = useRef([]);
+      const [sightReadingOpen, setSightReadingOpen] = useState(false);
+
+      const initialLevel = useMemo(() => {
+        const requested = new URLSearchParams(window.location.search).get("level");
+        return LEVELS[requested] ? requested : "N3";
+      }, []);
+
+      const initialSettings = useMemo(() => ({...LEVELS[initialLevel].settings }), [initialLevel]);
+      const [selectedLevel, setActiveLevel] = useState(initialLevel);
+      const [savedSettings, setSettings] = window.MLH.useProfileState("settings", initialSettings);
+      const settings = window.NOTE_IDENTIFICATION_CORE.normaliseSettings(savedSettings, selectedLevel);
+      const activeLevel = levelForSettings(settings);
+      const [question, setQuestion] = useState(() => buildQuestion(settings));
+      const [questionVisible, setQuestionVisible] = useState(true);
+      const [menuOpen, setMenuOpen] = useState(false);
+      const [menuMode, setMenuMode] = useState("levels");
+      const [showNoteNames, setShowNoteNames] = window.MLH.useProfileState("showNoteNames", false);
+      const [feedback, setFeedback] = useState(null);
+      const [feedbackFading, setFeedbackFading] = useState(false);
+      const [selectedAnswer, setSelectedAnswer] = useState(null);
+      const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: settings, options: { showNoteNames } } });
+      const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: settings, options: { showNoteNames } } });
+      const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: settings, options: { showNoteNames } } });
+      const [bestStreak, setBestStreak] = window.MLH.usePersistentScoreState(0, "bestStreak", { level: activeLevel, scope: "", settings: { questions: settings, options: { showNoteNames } } });
+      const [confettiKey, setConfettiKey] = useState(0);
+      const [autoShowMedals, setAutoShowMedals] = useState(false);
+      const mobileOnlyActiveClef = false;
+      const [questionPanelHeight, setQuestionPanelHeight] = useState(0);
+
+      window.MLH.useClickAway(menuRef, (event) => { if(event?.target?.closest?.("[data-menu-panel],[data-menu-trigger]"))return; setMenuOpen(false); });
+
+      const accuracy = attempted === 0 ? 0 : Math.round((correct / attempted) * 100);
+      const medal = getStreakMedal(streak);
+      const medalEligible = activeLevel !== "Custom";
+      const appClasses = [
+        "bg-stone-50 text-black",
+        accessibility.largeText ? "app-large-text" : "",
+        
+        accessibility.highContrast ? "app-high-contrast" : "",
+      ].filter(Boolean).join(" ");
+
+      const clearTimers = useCallback(() => {
+        window.clearTimeout(timerRef.current);
+        window.clearTimeout(fadeTimerRef.current);
+        window.clearTimeout(questionTransitionRef.current);
+        medalTimersRef.current.forEach(id=>window.clearTimeout(id)); medalTimersRef.current=[];
+      }, []);
+
+      const resetScoreOnly = useCallback(() => {
+        setCorrect(0);
+        setAttempted(0);
+        setStreak(0);
+        setConfettiKey(0);
+      }, []);
+
+      const resetAllProgress = useCallback(() => {
+        resetScoreOnly();
+        setBestStreak(0);
+      }, [resetScoreOnly]);
+
+      const makeNewQuestion = useCallback((nextSettings = settings, skipped = false) => {
+        clearTimers();
+        if (skipped) setStreak(0);
+        setAutoShowMedals(false);
+        setQuestionVisible(false);
+        questionTransitionRef.current = window.setTimeout(() => {
+          if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur();
+          }
+          setQuestion((current) => buildQuestion(nextSettings, current?.baseId));
+          setSelectedAnswer(null);
+          setFeedback(null);
+          setFeedbackFading(false);
+          setQuestionVisible(true);
+        }, 260);
+      }, [clearTimers, settings]);
+
+      const applyLevel = useCallback((levelKey) => {
+        const nextSettings = {...LEVELS[levelKey].settings };
+        setActiveLevel(levelKey);
+        setSettings(nextSettings);
+        setConfettiKey(0);
+        makeNewQuestion(nextSettings);
+        setMenuOpen(false);
+      }, [makeNewQuestion, resetAllProgress]);
+
+      const handleSettingsChanged = useCallback((nextSettings) => {
+        setActiveLevel(levelForSettings(nextSettings));
+        setConfettiKey(0);
+        makeNewQuestion(nextSettings);
+      }, [makeNewQuestion, resetAllProgress]);
+
+      const resetScore = useCallback(() => {
+        resetScoreOnly();
+        makeNewQuestion(settings);
+      }, [makeNewQuestion, resetScoreOnly, settings]);
+
+      const fadeIncorrectToNextQuestion = useCallback(() => {
+        if (!feedback || feedback.correct || feedbackFading) return;
+        setFeedbackFading(true);
+        fadeTimerRef.current = window.setTimeout(() => makeNewQuestion(settings), 280);
+      }, [feedback, feedbackFading, makeNewQuestion, settings]);
+
+      const skipCorrectFeedback = useCallback(() => {
+        if (!feedback || !feedback.correct || feedbackFading) return;
+        clearTimers();
+        makeNewQuestion(settings);
+      }, [clearTimers, feedback, feedbackFading, makeNewQuestion, settings]);
+
+      const scoreAnswer = useCallback((answer) => {
+        if (!question || feedback || !questionVisible) return;
+
+        clearTimers();
+        const isCorrect = answer === question.answer;
+        const nextStreak = isCorrect ? streak + 1 : 0;
+
+        setSelectedAnswer(answer);
+        setAttempted((value) => value + 1);
+        setCorrect((value) => value + (isCorrect ? 1 : 0));
+        setStreak(nextStreak);
+        setBestStreak((value) => Math.max(value, nextStreak));
+        setFeedback({ correct: isCorrect });
+        playFeedbackSound(isCorrect);
+
+        if (medalEligible && isCorrect && [10, 15, 20, 30].includes(nextStreak)) {
+          const nextMedal = getStreakMedal(nextStreak);
+          setConfettiKey((value) => value + 1);
+          setAutoShowMedals(true);
+          medalTimersRef.current.push(window.setTimeout(() => setAutoShowMedals(false), 2000));
+          medalTimersRef.current.push(window.setTimeout(() => playFeedbackSound(true, true, nextMedal?.sound), 180));
+        }
+
+        if (isCorrect) {
+          fadeTimerRef.current = window.setTimeout(() => setFeedbackFading(true), 1700);
+          timerRef.current = window.setTimeout(() => makeNewQuestion(settings), 2000);
+        }
+      }, [clearTimers, feedback, makeNewQuestion, medalEligible, question, questionVisible, settings, streak]);
+
+      useEffect(() => {
+        let frameId = null;
+
+        const updateQuestionPanelHeight = () => {
+          frameId = window.requestAnimationFrame(() => {
+            const nextHeight = questionPanelRef.current?.offsetHeight || 0;
+            setQuestionPanelHeight((currentHeight) => currentHeight === nextHeight ? currentHeight : nextHeight);
+          });
+        };
+
+        updateQuestionPanelHeight();
+        window.addEventListener("resize", updateQuestionPanelHeight);
+
+        return () => {
+          if (frameId) window.cancelAnimationFrame(frameId);
+          window.removeEventListener("resize", updateQuestionPanelHeight);
+        };
+      }, [settings.accidentals, question, mobileOnlyActiveClef]);
+
+      useEffect(() => () => clearTimers(), [clearTimers]);
+
+      return (
+        <div className={`overflow-x-hidden pb-10 md:pb-12 ${appClasses}`}>
+          <AppStyles />
+
+          <window.MLH.AppHeader profileState={{ activeLevel, settings, showNoteNames }} icon={ASSET.appIcon} title="Note Identification" subtitle="Identify note names in the treble and bass clef." worksheetConfig={() => ({ version: 1, activityId: "notenaming", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
+            {!sightReadingOpen && <ScoreStreakPanel achievementLevel={activeLevel}
+              correct={correct}
+              attempted={attempted}
+              accuracy={accuracy}
+              streak={streak}
+              bestStreak={bestStreak}
+              medal={medal}
+              confettiKey={confettiKey}
+              resetScore={resetScore}
+              autoShowMedals={autoShowMedals}
+              medalEligible={medalEligible}
+            />}
+          </window.MLH.AppHeader>
+
+          <div className="mx-auto max-w-6xl px-3 pt-[154px] sm:px-4 sm:pt-[154px] md:px-8 md:pt-[104px]">
+            {sightReadingOpen ? <window.MLH.SightReadingPractice
+              pool={window.NOTE_IDENTIFICATION_CORE.variants(settings)}
+              settings={settings}
+              levelLabel={LEVELS[activeLevel]?.label || activeLevel}
+              reducedMotion={false}
+              renderScore={(question, colour, progress, reducedMotion, upcoming, showNote) => <SightReadingScore question={question} colour={colour} progress={progress} reducedMotion={reducedMotion} upcoming={upcoming} showNote={showNote}/>}
+              onClose={() => { setSightReadingOpen(false); makeNewQuestion(settings); }}
+            /> : <main
+              ref={mainRef}
+              className="relative z-0 min-h-[520px] overflow-visible rounded-2xl border border-stone-200 bg-white px-3 pb-0 pt-[10px] shadow-sm sm:min-h-[390px] sm:px-4 md:h-auto md:min-h-0 md:overflow-visible md:px-6 md:pb-6 md:pt-[14px]"
+              onPointerDown={event => {
+                if(event.target.closest("button,input,select,a,[data-menu-panel],[data-menu-trigger]"))return;
+                if (feedback && feedback.correct) {
+                  skipCorrectFeedback();
+                  return;
+                }
+                if (feedback && !feedback.correct) fadeIncorrectToNextQuestion();
+              }}
+            >
+              <div className="relative z-50 mb-2.5 grid grid-cols-[auto_1fr_auto] items-center gap-2 overflow-visible">
+                <div className="relative flex items-center gap-2 overflow-visible" ref={menuRef}>
+                  <div className="relative overflow-visible">
+                    <window.MLH.LevelButton
+                      icon={<img src={ASSET.level} alt="" aria-hidden="true" className={`h-[26px] w-[28px] object-contain scale-[1.06] ${activeLevel === "Custom" ? "translate-x-0" : ""}`} />}
+                      activeLabel={LEVELS[activeLevel]?.label || activeLevel}
+                      activeLevel={activeLevel}
+                      isCustom={activeLevel === "Custom"}
+                      onClick={() => { setMenuMode("levels"); setMenuOpen((open) => !(open && menuMode === "levels")); }}
+                    />
+
+                    {menuOpen && menuMode === "levels" && (
+                      <window.MLH.MenuPanel title="Level" position="left-0">
+                        <LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS} />
+                      </window.MLH.MenuPanel>
+                    )}
+                  </div>
+
+                  <div className="relative overflow-visible">
+                    <window.MLH.CustomiseButton
+                      icon={<img src={ASSET.customise} alt="" aria-hidden="true" className="h-[20.7px] w-[20.7px] object-contain" />}
+                      onClick={() => {
+                        if (menuOpen && menuMode === "customise") setMenuOpen(false);
+                        else { setMenuMode("customise"); setMenuOpen(true); }
+                      }}
+                    />
+
+                    {menuOpen && menuMode === "customise" && (
+                      <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise">
+                        <CustomiseMenu
+                          settings={settings}
+                          setSettings={setSettings}
+                          showNoteNames={showNoteNames}
+                          setShowNoteNames={setShowNoteNames}
+                          onSettingsChanged={handleSettingsChanged}
+                          onStartSightReading={() => { clearTimers(); setMenuOpen(false); setSightReadingOpen(true); }}
+                        />
+                      </window.MLH.MenuPanel>
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex h-10 items-center justify-center">
+                  {feedback && <FeedbackBanner feedback={feedback} fading={feedbackFading} />}
+                </div>
+
+                <window.MLH.SkipButton
+                  onClick={() => makeNewQuestion(settings, true)}
+                  icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />}
+                />
+              </div>
+              <div
+                className={`mx-auto flex w-full items-center justify-center transition-opacity duration-300 sm:relative sm:top-[0px] ${mobileOnlyActiveClef ? "absolute left-0 right-0" : "relative top-[56px]"} ${questionVisible ? "opacity-100" : "opacity-0"}`}
+                style={mobileOnlyActiveClef ? { top: "54px", bottom: `${questionPanelHeight + 12}px` } : { minHeight: "calc(100% - 210px)" }}
+              >
+                <ScoreArea
+                  question={question}
+                  settings={settings}
+                  showNoteNames={showNoteNames}
+                  feedback={feedback}
+                  activeLevel={activeLevel}
+                  mobileOnlyActiveClef={mobileOnlyActiveClef}
+                />
+              </div>
+
+              <div ref={questionPanelRef} className="absolute bottom-[12px] left-3 right-3 z-10 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-3 shadow-md sm:relative sm:bottom-auto sm:left-auto sm:right-auto sm:mt-[-63px] sm:p-4 md:mx-3 md:-mt-[81px]">
+                <div className="space-y-2 text-stone-900">
+                  <p className="text-base font-semibold leading-tight">Identify the <strong>note</strong>.</p>
+                  {!question && <p className="text-sm font-medium text-[#dc2626]">No available notes. Enable at least one clef.</p>}
+                </div>
+
+                <div className="mt-4">
+                  <AnswerGrid
+                    accidentals={settings.accidentals}
+                    question={question}
+                    selectedAnswer={selectedAnswer}
+                    feedback={feedback}
+                    onChoose={scoreAnswer}
+                  />
+                </div>
+              </div>
+            </main>}
+          </div>
+        </div>
+      );
+    }
+
+    function EscapeNoteNames({ activity }) {
+      AppStyles();
+      const embed = window.MLH.EscapeLiteracyActivity;
+      const ref = embed.useContentHeight(activity);
+      const question = embed.useQuestion(activity, ({ level, clue }) => {
+        const core = window.NOTE_IDENTIFICATION_CORE;
+        const settings = core.normaliseSettings(null, level);
+        const clef = buildQuestion(settings).clef;
+        const pool = core.possibleQuestions(settings).filter(note => note.clef === clef);
+        const words = ["FACE", "DEAF", "CAGE", "BEEF", "FEAD", "AGED", "DACE", "EGAD"];
+        const answer = words[clue.variant % words.length];
+        const distractors = words.filter(word => word !== answer);
+        const options = [0, 1, 2].map(index => distractors[(clue.variant + index) % distractors.length]);
+        const notes = [...answer].map(letter => {
+          const choices = pool.filter(note => note.answer === letter);
+          return choices[Math.floor(Math.random() * choices.length)];
+        });
+        return { clef, notes, options: embed.codeOrder(options, answer, clue.digit) };
+      });
+      const top = question.clef === "treble" ? STAFF.trebleTop : STAFF.bassTop;
+      return (
+        <main ref={ref} className="escape-literacy-content">
+          <p className="escape-literacy-content-title">Read the note letters from left to right.</p>
+          <svg viewBox={`200 ${top - 68} 535 212`} className="escape-literacy-short-score" role="img" aria-label="Four written notes">
+            <defs><linearGradient id="staffLineFade" x1="247" y1="0" x2="689" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="84%" stopColor="currentColor" /><stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+            </linearGradient></defs>
+            <Staff clef={question.clef} top={top} visible />
+            {question.notes.map((note, index) => <g key={index} transform={`translate(${-120 + index * 88} 0)`}>
+              <Crotchet note={note} colour="currentColor" ledgerEnabled />
+            </g>)}
+          </svg>
+          <embed.NumberedOptions activity={activity} choices={question.options} columns={2} />
+        </main>
+      );
+    }
+
+    const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("noteNames");
+    ReactDOM.render(escapeActivity ? <EscapeNoteNames activity={escapeActivity} /> : <App />, document.getElementById("root"));
+  </script><script src="./generated-runtimes/noteidentification-2.js?v=40aebbdbf12a"></script>
+
+  <script src="./footer.js?v=120454beac89"></script>
+</body>
+</html>

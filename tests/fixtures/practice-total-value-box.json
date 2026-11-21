@@ -1,0 +1,3024 @@
+{
+  "id": "cqrnkwr00ku",
+  "key": {
+    "id": "Em",
+    "tonic": "E",
+    "mode": "minor",
+    "signature": [
+      {
+        "type": "sharp",
+        "step": 8
+      }
+    ],
+    "signatureAccidentals": {
+      "F": 1
+    },
+    "chords": {
+      "I": [
+        "E",
+        "G",
+        "B"
+      ],
+      "IV": [
+        "A",
+        "C",
+        "E"
+      ],
+      "V": [
+        "B",
+        "D",
+        "F"
+      ],
+      "V7": [
+        "B",
+        "D",
+        "F",
+        "A"
+      ],
+      "VI": [
+        "C",
+        "E",
+        "G"
+      ]
+    },
+    "raised": {
+      "V": {
+        "D": 1
+      },
+      "V7": {
+        "D": 1
+      }
+    },
+    "melodicAccidentals": {
+      "D": 1
+    },
+    "weight": 0.0011111111111111111
+  },
+  "timeSignature": {
+    "id": "4/4",
+    "top": 4,
+    "bottom": 4,
+    "beats": 4
+  },
+  "bars": [
+    {
+      "barIndex": 0,
+      "chordSymbol": "I",
+      "notes": [
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "0-0",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0,
+          "barIndex": 0,
+          "noteIndex": 0,
+          "writtenAccidental": null
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "0-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0.5,
+          "barIndex": 0,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "0-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 1,
+          "barIndex": 0,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "0-3",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 0,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "D",
+          "octave": 4,
+          "step": -1,
+          "midi": 62,
+          "id": "0-4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 0,
+          "noteIndex": 4,
+          "writtenAccidental": 1,
+          "relativeStep": -1
+        },
+        {
+          "letter": "B",
+          "octave": 3,
+          "step": -3,
+          "midi": 59,
+          "id": "0-5",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 0,
+          "noteIndex": 5,
+          "writtenAccidental": null,
+          "relativeStep": -3
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "quaver",
+        "quaver",
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A"
+    },
+    {
+      "barIndex": 1,
+      "chordSymbol": "VI",
+      "notes": [
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "1-0",
+          "rhythm": "dottedCrotchet",
+          "beats": 1.5,
+          "beat": 0,
+          "barIndex": 1,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "1-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 1,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "1-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 1,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "1-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 1,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "dottedCrotchet",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A"
+    },
+    {
+      "barIndex": 2,
+      "chordSymbol": "I",
+      "notes": [
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "2-0",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 0,
+          "barIndex": 2,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "2-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1,
+          "barIndex": 2,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "2-2",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 2,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "B",
+          "octave": 4,
+          "step": 4,
+          "midi": 71,
+          "id": "2-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 2,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 4
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "2-4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 2,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A"
+    },
+    {
+      "barIndex": 3,
+      "chordSymbol": "V",
+      "notes": [
+        {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "id": "3-0",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0,
+          "barIndex": 3,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 1
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "3-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0.5,
+          "barIndex": 3,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "id": "3-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 1,
+          "barIndex": 3,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 1
+        },
+        {
+          "letter": "D",
+          "octave": 4,
+          "step": -1,
+          "midi": 62,
+          "id": "3-3",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 3,
+          "noteIndex": 3,
+          "writtenAccidental": 1,
+          "relativeStep": -1
+        },
+        {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "id": "3-4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 3,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 1
+        },
+        {
+          "letter": "B",
+          "octave": 4,
+          "step": 4,
+          "midi": 71,
+          "id": "3-5",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 3,
+          "noteIndex": 5,
+          "writtenAccidental": null,
+          "relativeStep": 4
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "quaver",
+        "quaver",
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A"
+    },
+    {
+      "barIndex": 4,
+      "chordSymbol": "I",
+      "notes": [
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "4-0",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0,
+          "barIndex": 4,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "4-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0.5,
+          "barIndex": 4,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "4-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 1,
+          "barIndex": 4,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "4-3",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 4,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "D",
+          "octave": 4,
+          "step": -1,
+          "midi": 62,
+          "id": "4-4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 4,
+          "noteIndex": 4,
+          "writtenAccidental": 1,
+          "relativeStep": -1
+        },
+        {
+          "letter": "B",
+          "octave": 3,
+          "step": -3,
+          "midi": 59,
+          "id": "4-5",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 4,
+          "noteIndex": 5,
+          "writtenAccidental": null,
+          "relativeStep": -3
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "quaver",
+        "quaver",
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-prime"
+    },
+    {
+      "barIndex": 5,
+      "chordSymbol": "VI",
+      "notes": [
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "5-0",
+          "rhythm": "dottedCrotchet",
+          "beats": 1.5,
+          "beat": 0,
+          "barIndex": 5,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "5-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 5,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "5-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 5,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "5-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 5,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "dottedCrotchet",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-prime"
+    },
+    {
+      "barIndex": 6,
+      "chordSymbol": "I",
+      "notes": [
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "6-0",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 0,
+          "barIndex": 6,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "id": "6-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1,
+          "barIndex": 6,
+          "noteIndex": 1,
+          "writtenAccidental": null
+        },
+        {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "id": "6-2",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 6,
+          "noteIndex": 2,
+          "writtenAccidental": null
+        },
+        {
+          "letter": "B",
+          "octave": 4,
+          "step": 4,
+          "midi": 71,
+          "id": "6-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 6,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 4
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "6-4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 6,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-prime"
+    },
+    {
+      "barIndex": 7,
+      "chordSymbol": "I",
+      "notes": [
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "7-0",
+          "rhythm": "dottedMinim",
+          "beats": 3,
+          "beat": 0,
+          "barIndex": 7,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "absoluteAccidental": 0
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "7-1",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 7,
+          "noteIndex": 1,
+          "writtenAccidental": null
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "dottedMinim",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      }
+    },
+    {
+      "barIndex": 8,
+      "chordSymbol": "IV",
+      "notes": [
+        {
+          "letter": "A",
+          "octave": 4,
+          "step": 3,
+          "midi": 69,
+          "id": "8-0",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 0,
+          "barIndex": 8,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 3
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "8-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1,
+          "barIndex": 8,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "8-2",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 8,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "8-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 8,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 3
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "8-4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 8,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "B"
+    },
+    {
+      "barIndex": 9,
+      "chordSymbol": "IV",
+      "notes": [
+        {
+          "letter": "B",
+          "octave": 3,
+          "step": -3,
+          "midi": 59,
+          "id": "9-0",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0,
+          "barIndex": 9,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "B",
+          "octave": 3,
+          "step": -3,
+          "midi": 59,
+          "id": "9-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0.5,
+          "barIndex": 9,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": -3
+        },
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "9-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 1,
+          "barIndex": 9,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "9-3",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 9,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 3
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "9-4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 9,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "A",
+          "octave": 4,
+          "step": 3,
+          "midi": 69,
+          "id": "9-5",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 9,
+          "noteIndex": 5,
+          "writtenAccidental": null,
+          "relativeStep": 3
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "quaver",
+        "quaver",
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "B"
+    },
+    {
+      "barIndex": 10,
+      "chordSymbol": "IV",
+      "notes": [
+        {
+          "letter": "E",
+          "octave": 5,
+          "step": 7,
+          "midi": 76,
+          "id": "10-0",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0,
+          "barIndex": 10,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 7
+        },
+        {
+          "letter": "D",
+          "octave": 5,
+          "step": 6,
+          "midi": 74,
+          "id": "10-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0.5,
+          "barIndex": 10,
+          "noteIndex": 1,
+          "writtenAccidental": 1,
+          "relativeStep": 6
+        },
+        {
+          "letter": "C",
+          "octave": 5,
+          "step": 5,
+          "midi": 72,
+          "id": "10-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 1,
+          "barIndex": 10,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 5
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "10-3",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 10,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "id": "10-4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 10,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 1
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "10-5",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 10,
+          "noteIndex": 5,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "quaver",
+        "quaver",
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "B"
+    },
+    {
+      "barIndex": 11,
+      "chordSymbol": "V7",
+      "notes": [
+        {
+          "letter": "D",
+          "octave": 4,
+          "step": -1,
+          "midi": 62,
+          "id": "11-0",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 0,
+          "writtenAccidental": 1,
+          "displayAccidental": 1,
+          "displayStepValue": -1,
+          "barIndex": 11,
+          "noteIndex": 0
+        },
+        {
+          "letter": "D",
+          "octave": 4,
+          "step": -1,
+          "midi": 62,
+          "id": "11-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 11,
+          "noteIndex": 1,
+          "writtenAccidental": 1,
+          "relativeStep": -1
+        },
+        {
+          "letter": "A",
+          "octave": 4,
+          "step": 3,
+          "midi": 69,
+          "id": "11-2",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 11,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 3
+        },
+        {
+          "letter": "B",
+          "octave": 4,
+          "step": 4,
+          "midi": 71,
+          "id": "11-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 11,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 4
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "minim",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "B"
+    },
+    {
+      "barIndex": 12,
+      "chordSymbol": "I",
+      "notes": [
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "12-0",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0,
+          "barIndex": 12,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "12-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 0.5,
+          "barIndex": 12,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "12-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 1,
+          "barIndex": 12,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "12-3",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2,
+          "barIndex": 12,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "D",
+          "octave": 4,
+          "step": -1,
+          "midi": 62,
+          "id": "12-4",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 2.5,
+          "barIndex": 12,
+          "noteIndex": 4,
+          "writtenAccidental": 1,
+          "relativeStep": -1
+        },
+        {
+          "letter": "B",
+          "octave": 3,
+          "step": -3,
+          "midi": 59,
+          "id": "12-5",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 12,
+          "noteIndex": 5,
+          "writtenAccidental": null,
+          "relativeStep": -3
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "quaver",
+        "quaver",
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-double-prime"
+    },
+    {
+      "barIndex": 13,
+      "chordSymbol": "VI",
+      "notes": [
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "13-0",
+          "rhythm": "dottedCrotchet",
+          "beats": 1.5,
+          "beat": 0,
+          "barIndex": 13,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "13-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 13,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        },
+        {
+          "letter": "C",
+          "octave": 4,
+          "step": -2,
+          "midi": 60,
+          "id": "13-2",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 13,
+          "noteIndex": 2,
+          "writtenAccidental": null,
+          "relativeStep": -2
+        },
+        {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "id": "13-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 13,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 0
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "dottedCrotchet",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-double-prime"
+    },
+    {
+      "barIndex": 14,
+      "chordSymbol": "VI",
+      "notes": [
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "14-0",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 0,
+          "barIndex": 14,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "C",
+          "octave": 5,
+          "step": 5,
+          "midi": 72,
+          "id": "14-1",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1,
+          "barIndex": 14,
+          "noteIndex": 1,
+          "writtenAccidental": null,
+          "relativeStep": 5
+        },
+        {
+          "letter": "D",
+          "octave": 5,
+          "step": 6,
+          "midi": 74,
+          "id": "14-2",
+          "rhythm": "quaver",
+          "beats": 0.5,
+          "beat": 1.5,
+          "barIndex": 14,
+          "noteIndex": 2,
+          "writtenAccidental": 1,
+          "relativeStep": 6
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "14-3",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 2,
+          "barIndex": 14,
+          "noteIndex": 3,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        },
+        {
+          "letter": "G",
+          "octave": 4,
+          "step": 2,
+          "midi": 67,
+          "id": "14-4",
+          "rhythm": "crotchet",
+          "beats": 1,
+          "beat": 3,
+          "barIndex": 14,
+          "noteIndex": 4,
+          "writtenAccidental": null,
+          "relativeStep": 2
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "crotchet",
+        "quaver",
+        "quaver",
+        "crotchet",
+        "crotchet"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-double-prime"
+    },
+    {
+      "barIndex": 15,
+      "chordSymbol": "V",
+      "notes": [
+        {
+          "letter": "B",
+          "octave": 4,
+          "step": 4,
+          "midi": 71,
+          "id": "15-0",
+          "rhythm": "semibreve",
+          "beats": 4,
+          "beat": 0,
+          "barIndex": 15,
+          "noteIndex": 0,
+          "writtenAccidental": null,
+          "relativeStep": 4
+        }
+      ],
+      "totalBars": 16,
+      "pattern": [
+        "semibreve"
+      ],
+      "timeSignature": {
+        "id": "4/4",
+        "top": 4,
+        "bottom": 4,
+        "beats": 4
+      },
+      "phraseFunction": "A-double-prime"
+    }
+  ],
+  "targetBar": 6,
+  "level": "H",
+  "practiceLevel": "AH",
+  "generationLevel": "AH",
+  "melodyGenerationStyle": "advancedHigher",
+  "mode": "phrase",
+  "cadenceId": "imperfect",
+  "bCadenceId": "imperfect",
+  "cadencePlan": [
+    {
+      "endBarIndex": 3,
+      "cadenceId": "imperfect"
+    },
+    {
+      "endBarIndex": 7,
+      "cadenceId": "perfect"
+    },
+    {
+      "endBarIndex": 11,
+      "cadenceId": "imperfect"
+    },
+    {
+      "endBarIndex": 15,
+      "cadenceId": "imperfect"
+    }
+  ],
+  "melodyPlan": {
+    "version": 1,
+    "level": "AH",
+    "timeSignatureId": "4/4",
+    "cadenceId": "imperfect",
+    "bCadenceId": "imperfect",
+    "motif": [
+      0,
+      -1,
+      0
+    ],
+    "bars": [
+      {
+        "barIndex": 0,
+        "phrase": "A",
+        "chordSymbol": "I",
+        "pattern": [
+          "quaver",
+          "quaver",
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "quaver",
+            "beat": 0,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 0.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 1,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -3,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 1,
+        "phrase": "A",
+        "chordSymbol": "VI",
+        "pattern": [
+          "dottedCrotchet",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "dottedCrotchet",
+            "beat": 0,
+            "beats": 1.5,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 2,
+        "phrase": "A",
+        "chordSymbol": "I",
+        "pattern": [
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "crotchet",
+            "beat": 0,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 4,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 3,
+        "phrase": "A",
+        "chordSymbol": "V",
+        "pattern": [
+          "quaver",
+          "quaver",
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "quaver",
+            "beat": 0,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 0.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 1,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": true
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 4,
+            "cadenceTone": true
+          }
+        ]
+      },
+      {
+        "barIndex": 4,
+        "phrase": "A-prime",
+        "chordSymbol": "I",
+        "pattern": [
+          "quaver",
+          "quaver",
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "quaver",
+            "beat": 0,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 0.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 1,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -3,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 5,
+        "phrase": "A-prime",
+        "chordSymbol": "VI",
+        "pattern": [
+          "dottedCrotchet",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "dottedCrotchet",
+            "beat": 0,
+            "beats": 1.5,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 6,
+        "phrase": "A-prime",
+        "chordSymbol": "V",
+        "pattern": [
+          "dottedCrotchet",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "dottedCrotchet",
+            "beat": 0,
+            "beats": 1.5,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 3,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 4,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -1,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 7,
+        "phrase": "A-prime",
+        "chordSymbol": "I",
+        "pattern": [
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "crotchet",
+            "beat": 0,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": true
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": true
+          }
+        ]
+      },
+      {
+        "barIndex": 8,
+        "phrase": "B",
+        "chordSymbol": "IV",
+        "pattern": [
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "crotchet",
+            "beat": 0,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 3,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 3,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 9,
+        "phrase": "B",
+        "chordSymbol": "IV",
+        "pattern": [
+          "quaver",
+          "quaver",
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "quaver",
+            "beat": 0,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 0.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -3,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 1,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 3,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 3,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 10,
+        "phrase": "B",
+        "chordSymbol": "IV",
+        "pattern": [
+          "quaver",
+          "quaver",
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "quaver",
+            "beat": 0,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 7,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 0.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 6,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 1,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 5,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 11,
+        "phrase": "B",
+        "chordSymbol": "V",
+        "pattern": [
+          "minim",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "minim",
+            "beat": 0,
+            "beats": 2,
+            "rest": false,
+            "relativeStep": 1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 3,
+            "cadenceTone": true
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 4,
+            "cadenceTone": true
+          }
+        ]
+      },
+      {
+        "barIndex": 12,
+        "phrase": "A-double-prime",
+        "chordSymbol": "I",
+        "pattern": [
+          "quaver",
+          "quaver",
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "quaver",
+            "beat": 0,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 0.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 1,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 2.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": -1,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -3,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 13,
+        "phrase": "A-double-prime",
+        "chordSymbol": "VI",
+        "pattern": [
+          "dottedCrotchet",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "dottedCrotchet",
+            "beat": 0,
+            "beats": 1.5,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": -2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 0,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 14,
+        "phrase": "A-double-prime",
+        "chordSymbol": "VI",
+        "pattern": [
+          "crotchet",
+          "quaver",
+          "quaver",
+          "crotchet",
+          "crotchet"
+        ],
+        "notes": [
+          {
+            "rhythm": "crotchet",
+            "beat": 0,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 5,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "quaver",
+            "beat": 1.5,
+            "beats": 0.5,
+            "rest": false,
+            "relativeStep": 6,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 2,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          },
+          {
+            "rhythm": "crotchet",
+            "beat": 3,
+            "beats": 1,
+            "rest": false,
+            "relativeStep": 2,
+            "cadenceTone": false
+          }
+        ]
+      },
+      {
+        "barIndex": 15,
+        "phrase": "A-double-prime",
+        "chordSymbol": "V",
+        "pattern": [
+          "semibreve"
+        ],
+        "notes": [
+          {
+            "rhythm": "semibreve",
+            "beat": 0,
+            "beats": 4,
+            "rest": false,
+            "relativeStep": 4,
+            "cadenceTone": true
+          }
+        ]
+      }
+    ],
+    "validation": {
+      "score": 88,
+      "penalties": [
+        {
+          "id": "unrecovered-leaps",
+          "amount": 12
+        }
+      ],
+      "hardFailures": [],
+      "accepted": true
+    },
+    "seed": "1794441600000-0.4244713163934648",
+    "attempt": 2
+  },
+  "melodyGenerationScore": {
+    "score": 88,
+    "penalties": [
+      {
+        "id": "unrecovered-leaps",
+        "amount": 12
+      }
+    ],
+    "hardFailures": [],
+    "accepted": true
+  },
+  "missingSourceBar": 2,
+  "missingNoteIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "questionType": "practicePaper",
+  "barCount": 16,
+  "useShortPrompt": true,
+  "missingNoteScope": "bar",
+  "cadenceTarget": {
+    "startBarIndex": 14,
+    "endBarIndex": 15,
+    "cadenceId": "imperfect"
+  },
+  "cadenceAnswer": "Imperfect cadence",
+  "chordBar": null,
+  "advancedHigherChordTarget": {
+    "identifyBar": 8,
+    "bassLineBar": 9,
+    "identifySlots": [
+      {
+        "id": "8-0",
+        "barIndex": 8,
+        "slotIndex": 0,
+        "beat": 0,
+        "beats": 2,
+        "rhythm": "minim",
+        "beatRatio": 0,
+        "chordSymbol": "IV",
+        "inversion": 0,
+        "answer": "A minor",
+        "bassNote": {
+          "letter": "A",
+          "octave": 2,
+          "step": -11,
+          "midi": 45,
+          "writtenAccidental": null,
+          "id": "ah-chord-8-0-bass",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 0,
+          "stack": [
+            {
+              "letter": "A",
+              "octave": 2,
+              "step": -11,
+              "midi": 45,
+              "writtenAccidental": null
+            }
+          ],
+          "feedbackStack": [
+            {
+              "letter": "A",
+              "octave": 2,
+              "step": -11,
+              "midi": 45,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "A",
+              "octave": 3,
+              "step": -4,
+              "midi": 57,
+              "writtenAccidental": null
+            }
+          ]
+        },
+        "trebleNote": {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "writtenAccidental": null,
+          "id": "ah-chord-8-0-treble",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 0,
+          "stack": [
+            {
+              "letter": "E",
+              "octave": 4,
+              "step": 0,
+              "midi": 64,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "A",
+              "octave": 4,
+              "step": 3,
+              "midi": 69,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "C",
+              "octave": 5,
+              "step": 5,
+              "midi": 72,
+              "writtenAccidental": null
+            }
+          ]
+        }
+      },
+      {
+        "id": "8-1",
+        "barIndex": 8,
+        "slotIndex": 1,
+        "beat": 2,
+        "beats": 2,
+        "rhythm": "minim",
+        "beatRatio": 0.5,
+        "chordSymbol": "I",
+        "inversion": 1,
+        "answer": "E minor",
+        "bassNote": {
+          "letter": "G",
+          "octave": 2,
+          "step": -12,
+          "midi": 43,
+          "writtenAccidental": null,
+          "id": "ah-chord-8-1-bass",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 2,
+          "stack": [
+            {
+              "letter": "G",
+              "octave": 2,
+              "step": -12,
+              "midi": 43,
+              "writtenAccidental": null
+            }
+          ],
+          "feedbackStack": [
+            {
+              "letter": "G",
+              "octave": 2,
+              "step": -12,
+              "midi": 43,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "G",
+              "octave": 3,
+              "step": -5,
+              "midi": 55,
+              "writtenAccidental": null
+            }
+          ]
+        },
+        "trebleNote": {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "writtenAccidental": null,
+          "id": "ah-chord-8-1-treble",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 2,
+          "stack": [
+            {
+              "letter": "E",
+              "octave": 4,
+              "step": 0,
+              "midi": 64,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "G",
+              "octave": 4,
+              "step": 2,
+              "midi": 67,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "B",
+              "octave": 4,
+              "step": 4,
+              "midi": 71,
+              "writtenAccidental": null
+            }
+          ]
+        }
+      }
+    ],
+    "bassLineSlots": [
+      {
+        "id": "9-0",
+        "barIndex": 9,
+        "slotIndex": 0,
+        "beat": 0,
+        "beats": 2,
+        "rhythm": "minim",
+        "beatRatio": 0,
+        "chordSymbol": "V",
+        "inversion": 1,
+        "answer": "B major",
+        "bassNote": {
+          "letter": "D",
+          "octave": 2,
+          "step": -15,
+          "midi": 38,
+          "writtenAccidental": 1,
+          "id": "ah-chord-9-0-bass",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 0,
+          "stack": [
+            {
+              "letter": "D",
+              "octave": 2,
+              "step": -15,
+              "midi": 38,
+              "writtenAccidental": 1
+            }
+          ],
+          "feedbackStack": [
+            {
+              "letter": "D",
+              "octave": 2,
+              "step": -15,
+              "midi": 38,
+              "writtenAccidental": 1
+            },
+            {
+              "letter": "D",
+              "octave": 3,
+              "step": -8,
+              "midi": 50,
+              "writtenAccidental": 1
+            },
+            {
+              "letter": "D",
+              "octave": 4,
+              "step": -1,
+              "midi": 62,
+              "writtenAccidental": 1
+            }
+          ]
+        },
+        "trebleNote": {
+          "letter": "F",
+          "octave": 4,
+          "step": 1,
+          "midi": 65,
+          "writtenAccidental": null,
+          "id": "ah-chord-9-0-treble",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 0,
+          "stack": [
+            {
+              "letter": "F",
+              "octave": 4,
+              "step": 1,
+              "midi": 65,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "B",
+              "octave": 4,
+              "step": 4,
+              "midi": 71,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "D",
+              "octave": 5,
+              "step": 6,
+              "midi": 74,
+              "writtenAccidental": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "9-1",
+        "barIndex": 9,
+        "slotIndex": 1,
+        "beat": 2,
+        "beats": 2,
+        "rhythm": "minim",
+        "beatRatio": 0.5,
+        "chordSymbol": "VI",
+        "inversion": 0,
+        "answer": "C major",
+        "bassNote": {
+          "letter": "C",
+          "octave": 2,
+          "step": -16,
+          "midi": 36,
+          "writtenAccidental": null,
+          "id": "ah-chord-9-1-bass",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 2,
+          "stack": [
+            {
+              "letter": "C",
+              "octave": 2,
+              "step": -16,
+              "midi": 36,
+              "writtenAccidental": null
+            }
+          ],
+          "feedbackStack": [
+            {
+              "letter": "C",
+              "octave": 2,
+              "step": -16,
+              "midi": 36,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "C",
+              "octave": 3,
+              "step": -9,
+              "midi": 48,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "C",
+              "octave": 4,
+              "step": -2,
+              "midi": 60,
+              "writtenAccidental": null
+            }
+          ]
+        },
+        "trebleNote": {
+          "letter": "E",
+          "octave": 4,
+          "step": 0,
+          "midi": 64,
+          "writtenAccidental": null,
+          "id": "ah-chord-9-1-treble",
+          "rhythm": "minim",
+          "beats": 2,
+          "beat": 2,
+          "stack": [
+            {
+              "letter": "E",
+              "octave": 4,
+              "step": 0,
+              "midi": 64,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "G",
+              "octave": 4,
+              "step": 2,
+              "midi": 67,
+              "writtenAccidental": null
+            },
+            {
+              "letter": "C",
+              "octave": 5,
+              "step": 5,
+              "midi": 72,
+              "writtenAccidental": null
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "higherChordTargets": [],
+  "dynamicBar": null,
+  "dynamicQuestionType": "marking",
+  "dynamic": null,
+  "startingDynamic": null,
+  "dynamicHairpin": null,
+  "tempoQuestion": null,
+  "tempoBpm": 81,
+  "accompanimentPattern": "power_chords",
+  "intervalTarget": null,
+  "intervalInsertTarget": null,
+  "noteTarget": null,
+  "noteValueCircleTarget": null,
+  "repeatTarget": null,
+  "givenRepeatPlacements": [],
+  "barlineTargets": [],
+  "hiddenBarNumbers": [],
+  "rhythmTargetBar": null,
+  "rhythmTargetPattern": null,
+  "rhythmFixTarget": null,
+  "rhythmIdentificationTarget": {
+    "variant": "noteValueTotal",
+    "barIndex": 0,
+    "noteIndex": 1,
+    "startIndex": 1,
+    "noteIndices": [
+      1,
+      2
+    ],
+    "targetRhythms": [
+      "quaver",
+      "crotchet"
+    ],
+    "totalBeats": 1.5
+  },
+  "scaleDegreeTarget": {
+    "variant": "scaleDegree",
+    "degree": "dominant",
+    "keyLabel": "E minor",
+    "barIndex": 12,
+    "noteIndex": 5,
+    "startIndex": 5
+  },
+  "tripletTarget": null,
+  "givenTriplets": [],
+  "accidentalTarget": null,
+  "articulationTarget": null,
+  "transpositionTarget": {
+    "type": "notes",
+    "variantId": "bassSamePitch",
+    "barIndex": 5,
+    "sourceClef": "bass",
+    "answerClef": "treble",
+    "answerOnMain": true,
+    "sourceNotes": [
+      {
+        "letter": "C",
+        "octave": 4,
+        "step": -2,
+        "midi": 60,
+        "id": "transposition-source-5-0",
+        "rhythm": "dottedCrotchet",
+        "beats": 1.5,
+        "beat": 0,
+        "barIndex": 5,
+        "noteIndex": 0,
+        "writtenAccidental": null,
+        "relativeStep": -2
+      },
+      {
+        "letter": "E",
+        "octave": 4,
+        "step": 0,
+        "midi": 64,
+        "id": "transposition-source-5-1",
+        "rhythm": "quaver",
+        "beats": 0.5,
+        "beat": 1.5,
+        "barIndex": 5,
+        "noteIndex": 1,
+        "writtenAccidental": null,
+        "relativeStep": 0
+      },
+      {
+        "letter": "C",
+        "octave": 4,
+        "step": -2,
+        "midi": 60,
+        "id": "transposition-source-5-2",
+        "rhythm": "crotchet",
+        "beats": 1,
+        "beat": 2,
+        "barIndex": 5,
+        "noteIndex": 2,
+        "writtenAccidental": null,
+        "relativeStep": -2
+      },
+      {
+        "letter": "E",
+        "octave": 4,
+        "step": 0,
+        "midi": 64,
+        "id": "transposition-source-5-3",
+        "rhythm": "crotchet",
+        "beats": 1,
+        "beat": 3,
+        "barIndex": 5,
+        "noteIndex": 3,
+        "writtenAccidental": null,
+        "relativeStep": 0
+      }
+    ],
+    "answerNotes": [
+      {
+        "letter": "C",
+        "octave": 4,
+        "step": -2,
+        "midi": 60,
+        "id": "transposition-answer-5-0",
+        "rhythm": "dottedCrotchet",
+        "beats": 1.5,
+        "beat": 0,
+        "barIndex": 5,
+        "noteIndex": 0,
+        "writtenAccidental": null,
+        "relativeStep": -2
+      },
+      {
+        "letter": "E",
+        "octave": 4,
+        "step": 0,
+        "midi": 64,
+        "id": "transposition-answer-5-1",
+        "rhythm": "quaver",
+        "beats": 0.5,
+        "beat": 1.5,
+        "barIndex": 5,
+        "noteIndex": 1,
+        "writtenAccidental": null,
+        "relativeStep": 0
+      },
+      {
+        "letter": "C",
+        "octave": 4,
+        "step": -2,
+        "midi": 60,
+        "id": "transposition-answer-5-2",
+        "rhythm": "crotchet",
+        "beats": 1,
+        "beat": 2,
+        "barIndex": 5,
+        "noteIndex": 2,
+        "writtenAccidental": null,
+        "relativeStep": -2
+      },
+      {
+        "letter": "E",
+        "octave": 4,
+        "step": 0,
+        "midi": 64,
+        "id": "transposition-answer-5-3",
+        "rhythm": "crotchet",
+        "beats": 1,
+        "beat": 3,
+        "barIndex": 5,
+        "noteIndex": 3,
+        "writtenAccidental": null,
+        "relativeStep": 0
+      }
+    ],
+    "rhythms": {
+      "0": "dottedCrotchet",
+      "1": "quaver",
+      "2": "crotchet",
+      "3": "crotchet"
+    },
+    "prompt": "Transpose the notes in bar 6 at the same pitch into the treble clef."
+  },
+  "enharmonicTarget": {
+    "barIndex": 11,
+    "noteIndex": 0,
+    "clef": "treble",
+    "sourceNote": {
+      "letter": "D",
+      "octave": 4,
+      "step": -1,
+      "midi": 62,
+      "id": "11-0",
+      "rhythm": "minim",
+      "beats": 2,
+      "beat": 0,
+      "writtenAccidental": 1,
+      "displayAccidental": 1,
+      "displayStepValue": -1,
+      "barIndex": 11,
+      "noteIndex": 0
+    },
+    "answerNote": {
+      "letter": "E",
+      "octave": 4,
+      "step": 0,
+      "midi": 64,
+      "id": "enharmonic-answer-11-0",
+      "rhythm": "minim",
+      "beats": 2,
+      "beat": 0,
+      "writtenAccidental": -1,
+      "displayAccidental": -1,
+      "displayStepValue": 0,
+      "barIndex": 11,
+      "noteIndex": 0
+    }
+  },
+  "advancedHigherChordTypeTarget": null,
+  "answerTargets": {
+    "key": "a",
+    "time": "b",
+    "missing": "c",
+    "chord": "d",
+    "cadence": "e",
+    "dynamic": "f"
+  },
+  "subquestions": [
+    {
+      "id": "rhythmIdentification",
+      "sourceId": "rhythmIdentification",
+      "prompt": "What is the total value of the two notes in the box in bar 1?",
+      "answer": "1.5 beats",
+      "accepts": [
+        "1 5",
+        "15",
+        "1 5 beats",
+        "15beats",
+        "1 1 2",
+        "112",
+        "1 1 2 beats",
+        "112beats",
+        "1 and a half",
+        "1andahalf",
+        "1 and a half beats",
+        "1andahalfbeats",
+        "one and a half",
+        "oneandahalf",
+        "one and a half beats",
+        "oneandahalfbeats"
+      ],
+      "type": "text",
+      "label": "a"
+    },
+    {
+      "id": "transposition",
+      "sourceId": "transposition",
+      "prompt": "Transpose the notes in bar 6 at the same pitch into the treble clef.",
+      "answer": "Bar transposed correctly",
+      "type": "transposition",
+      "label": "b"
+    },
+    {
+      "id": "missing",
+      "sourceId": "missing",
+      "prompt": "Insert the missing notes in bar 7. The rhythm is given.",
+      "answer": "Missing notes completed correctly",
+      "type": "notes",
+      "label": "c"
+    },
+    {
+      "id": "ahChord",
+      "sourceId": "ahChord",
+      "prompt": "Identify the boxed chords used in bar 9. You should indicate the chord name or number and, where appropriate, 1st or 2nd inversion.",
+      "answer": "Advanced Higher chords identified correctly",
+      "type": "ahChord",
+      "label": "d"
+    },
+    {
+      "id": "ahBassLine",
+      "sourceId": "ahBassLine",
+      "prompt": "Using the rhythm provided and the chord information below the stave, insert the bass notes in bar 10.",
+      "answer": "Advanced Higher bass notes completed correctly",
+      "type": "ahBassLine",
+      "label": "e"
+    },
+    {
+      "id": "enharmonics",
+      "sourceId": "enharmonics",
+      "prompt": "Identify the enharmonic equivalent of the boxed note in bar 12.",
+      "answer": "Enharmonic equivalent written correctly",
+      "type": "enharmonic",
+      "label": "f"
+    },
+    {
+      "id": "scaleDegrees",
+      "sourceId": "scaleDegrees",
+      "prompt": "Apply a circle around the dominant note of the key in bars 13-14.",
+      "answer": "dominant note circled correctly",
+      "type": "scotchSnap",
+      "label": "g"
+    },
+    {
+      "id": "cadence",
+      "sourceId": "cadence",
+      "prompt": "Name the cadence in bar 16.",
+      "answer": "Imperfect",
+      "accepts": [
+        "imperfect",
+        "imperfect",
+        "imperfect cadence",
+        "imperfectcadence"
+      ],
+      "type": "text",
+      "label": "h"
+    }
+  ]
+}

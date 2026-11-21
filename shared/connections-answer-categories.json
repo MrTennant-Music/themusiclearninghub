@@ -1,0 +1,271 @@
+{
+  "instruments": {
+    "labels": [
+      "Instruments"
+    ],
+    "conceptIds": [
+      "MC-0042",
+      "MC-0043",
+      "MC-0044",
+      "MC-0049",
+      "MC-0050",
+      "MC-0051",
+      "MC-0055",
+      "MC-0057",
+      "MC-0116",
+      "MC-0117",
+      "MC-0119",
+      "MC-0120",
+      "MC-0121",
+      "MC-0123",
+      "MC-0124",
+      "MC-0125",
+      "MC-0126",
+      "MC-0127",
+      "MC-0128",
+      "MC-0130",
+      "MC-0131",
+      "MC-0132",
+      "MC-0133",
+      "MC-0135",
+      "MC-0137",
+      "MC-0138",
+      "MC-0139",
+      "MC-0140",
+      "MC-0141",
+      "MC-0143",
+      "MC-0195",
+      "MC-0196",
+      "MC-0197",
+      "MC-0198",
+      "MC-0199",
+      "MC-0202",
+      "MC-0203",
+      "MC-0205",
+      "MC-0206",
+      "MC-0210",
+      "MC-0211",
+      "MC-0212",
+      "MC-0213"
+    ]
+  },
+  "styles": {
+    "labels": [
+      "Styles"
+    ],
+    "conceptIds": [
+      "MC-0001",
+      "MC-0002",
+      "MC-0003",
+      "MC-0004",
+      "MC-0005",
+      "MC-0006",
+      "MC-0007",
+      "MC-0008"
+    ]
+  },
+  "playing-techniques": {
+    "labels": [
+      "Playing techniques",
+      "Playing techniques and articulation"
+    ],
+    "conceptIds": [
+      "MC-0045",
+      "MC-0046",
+      "MC-0053",
+      "MC-0058",
+      "MC-0060",
+      "MC-0062",
+      "MC-0064",
+      "MC-0129",
+      "MC-0193",
+      "MC-0200",
+      "MC-0201",
+      "MC-0207",
+      "MC-0209",
+      "MC-0259",
+      "MC-0261"
+    ]
+  },
+  "voice-types": {
+    "labels": [
+      "Voice types"
+    ],
+    "conceptIds": [
+      "MC-0113",
+      "MC-0115",
+      "MC-0134",
+      "MC-0136",
+      "MC-0194",
+      "MC-0204",
+      "MC-0298"
+    ]
+  },
+  "ornaments": {
+    "labels": [
+      "Ornaments"
+    ],
+    "conceptIds": [
+      "MC-0164",
+      "MC-0174",
+      "MC-0226",
+      "MC-0236",
+      "MC-0276",
+      "MC-0284"
+    ]
+  },
+  "intervals": {
+    "labels": [
+      "Intervals"
+    ],
+    "conceptIds": [
+      "MC-0086",
+      "MC-0171",
+      "MC-0173",
+      "MC-0283"
+    ]
+  },
+  "orchestral-families": {
+    "labels": [
+      "Orchestral families"
+    ],
+    "conceptIds": [
+      "MC-0047",
+      "MC-0056",
+      "MC-0063",
+      "MC-0068"
+    ]
+  },
+  "acoustic-instruments": {
+    "labels": [
+      "Acoustic instruments"
+    ],
+    "conceptIds": [
+      "MC-0042",
+      "MC-0043",
+      "MC-0044",
+      "MC-0049",
+      "MC-0051",
+      "MC-0055",
+      "MC-0057",
+      "MC-0116",
+      "MC-0119",
+      "MC-0120",
+      "MC-0121",
+      "MC-0123",
+      "MC-0124",
+      "MC-0125",
+      "MC-0126",
+      "MC-0127",
+      "MC-0128",
+      "MC-0130",
+      "MC-0131",
+      "MC-0132",
+      "MC-0133",
+      "MC-0135",
+      "MC-0137",
+      "MC-0138",
+      "MC-0139",
+      "MC-0140",
+      "MC-0141",
+      "MC-0143",
+      "MC-0195",
+      "MC-0196",
+      "MC-0197",
+      "MC-0198",
+      "MC-0199",
+      "MC-0202",
+      "MC-0203",
+      "MC-0205",
+      "MC-0206",
+      "MC-0210",
+      "MC-0211",
+      "MC-0212",
+      "MC-0213"
+    ]
+  },
+  "strings": {
+    "labels": [
+      "String instruments"
+    ],
+    "conceptIds": [
+      "MC-0043",
+      "MC-0050",
+      "MC-0051",
+      "MC-0117",
+      "MC-0119",
+      "MC-0123",
+      "MC-0127",
+      "MC-0141",
+      "MC-0199",
+      "MC-0210",
+      "MC-0213"
+    ]
+  },
+  "instruments-with-strings": {
+    "labels": [
+      "Instruments with strings"
+    ],
+    "conceptIds": [
+      "MC-0043",
+      "MC-0050",
+      "MC-0051",
+      "MC-0057",
+      "MC-0117",
+      "MC-0119",
+      "MC-0123",
+      "MC-0127",
+      "MC-0128",
+      "MC-0141",
+      "MC-0199",
+      "MC-0210",
+      "MC-0213"
+    ]
+  },
+  "woodwind": {
+    "labels": [
+      "Woodwind instruments"
+    ],
+    "conceptIds": [
+      "MC-0044",
+      "MC-0120",
+      "MC-0124",
+      "MC-0130",
+      "MC-0131",
+      "MC-0132",
+      "MC-0195",
+      "MC-0205",
+      "MC-0206"
+    ]
+  },
+  "brass": {
+    "labels": [
+      "Brass instruments"
+    ],
+    "conceptIds": [
+      "MC-0139",
+      "MC-0140",
+      "MC-0202",
+      "MC-0212"
+    ]
+  },
+  "ensembles": {
+    "labels": [
+      "Ensembles"
+    ],
+    "conceptIds": [
+      "MC-0048",
+      "MC-0052",
+      "MC-0054",
+      "MC-0059",
+      "MC-0061",
+      "MC-0118",
+      "MC-0142",
+      "MC-0225",
+      "MC-0258",
+      "MC-0260",
+      "MC-0297",
+      "MC-0299"
+    ]
+  }
+}

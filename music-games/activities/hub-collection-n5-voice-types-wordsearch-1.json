@@ -1,0 +1,107 @@
+{
+  "id": "hub-collection-n5-voice-types-wordsearch-1",
+  "level": "N5",
+  "title": "Voice Types",
+  "instructions": "",
+  "description": "Voice Types: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Voice Types",
+    "National 5"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-n5-voice-types-wordsearch-1-MC-0134",
+      "prompt": "The highest female singing voice.",
+      "answer": "Soprano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0134"
+    },
+    {
+      "id": "hub-collection-n5-voice-types-wordsearch-1-MC-0204",
+      "prompt": "A female voice between soprano and alto.",
+      "answer": "Mezzo-soprano",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0204"
+    },
+    {
+      "id": "hub-collection-n5-voice-types-wordsearch-1-MC-0113",
+      "prompt": "A low female voice, or the low part in a group of higher voices.",
+      "answer": "Alto",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0113"
+    },
+    {
+      "id": "hub-collection-n5-voice-types-wordsearch-1-MC-0136",
+      "prompt": "A high male singing voice.",
+      "answer": "Tenor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0136"
+    },
+    {
+      "id": "hub-collection-n5-voice-types-wordsearch-1-MC-0194",
+      "prompt": "A male voice between tenor and bass: not the highest or the lowest.",
+      "answer": "Baritone",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0194"
+    },
+    {
+      "id": "hub-collection-n5-voice-types-wordsearch-1-MC-0115",
+      "prompt": "The lowest male singing voice.",
+      "answer": "Bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0115"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "voice-types",
+  "sourceConceptIds": [
+    "MC-0134",
+    "MC-0204",
+    "MC-0113",
+    "MC-0136",
+    "MC-0194",
+    "MC-0115"
+  ],
+  "editorMode": "with-clues"
+}

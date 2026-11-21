@@ -1,0 +1,145 @@
+{
+  "id": "hub-dictionary-h-melody-and-harmony-crossword-1",
+  "level": "H",
+  "title": "Melody and Harmony 1",
+  "instructions": "",
+  "description": "Revise melody and harmony with 8 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Melody and Harmony",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0226",
+      "prompt": "A very short crushed grace note played immediately before the main note.",
+      "answer": "Acciaccatura",
+      "distractors": [
+        "Mordent",
+        "Interrupted cadence"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0228",
+      "prompt": "A four-note chord built from stacked minor thirds.",
+      "answer": "Diminished seventh",
+      "distractors": [
+        "Diminished triad",
+        "Harmonic minor scale",
+        "Interrupted cadence"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0230",
+      "prompt": "Chord V with a minor seventh added above its root.",
+      "answer": "Dominant seventh",
+      "distractors": [
+        "Diminished triad",
+        "Mode or modal",
+        "Mordent"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0232",
+      "prompt": "Chord V moves unexpectedly to VI instead of resolving to I, interrupting the expected ending.",
+      "answer": "Interrupted cadence",
+      "distractors": [
+        "Plagal cadence",
+        "Relative major",
+        "Relative minor"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0235",
+      "prompt": "Music based on one of the older seven-note pitch patterns rather than the familiar major or minor scales.",
+      "answer": "Mode",
+      "distractors": [
+        "Relative major",
+        "Tierce de Picardie",
+        "Acciaccatura"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0237",
+      "prompt": "An important decorative instrumental line played alongside the main melody, especially a vocal part.",
+      "answer": "Obbligato",
+      "distractors": [
+        "Mordent",
+        "Plagal cadence",
+        "Relative major"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0239",
+      "prompt": "The major key that has the same key signature as a given minor key.",
+      "answer": "Relative major",
+      "distractors": [
+        "Mode or modal",
+        "Plagal cadence",
+        "Tierce de Picardie"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-h-melody-and-harmony-crossword-1-mc-0241",
+      "prompt": "A major tonic chord used at the end of a piece or section in a minor key.",
+      "answer": "Tierce de Picardie",
+      "distractors": [
+        "Plagal cadence",
+        "Relative major",
+        "Relative minor"
+      ],
+      "group": "Melody/harmony",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

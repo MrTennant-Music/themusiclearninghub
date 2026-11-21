@@ -1,0 +1,101 @@
+{
+  "id": "hub-dictionary-n4-styles-crossword-2",
+  "level": "N4",
+  "title": "Styles 2",
+  "instructions": "",
+  "description": "Revise styles with 5 Music Dictionary concepts. Set 2 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Crossword"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-styles-crossword-2-mc-0070",
+      "prompt": "Common features include basso continuo, contrapuntal texture, ornaments, sequences, terraced dynamics and instruments such as harpsichord and organ.",
+      "answer": "Baroque",
+      "distractors": [
+        "Opera",
+        "Ragtime",
+        "Rapping"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-2-mc-0072",
+      "prompt": "A Scottish Gaelic vocal style, also called puirt-a-beul, using rhythmic Gaelic or nonsense syllables.",
+      "answer": "Mouth music",
+      "distractors": [
+        "Swing",
+        "African music",
+        "Baroque"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-2-mc-0074",
+      "prompt": "It combines a syncopated melody with a steady bass-and-chord, or vamp-like, accompaniment.",
+      "answer": "Ragtime",
+      "distractors": [
+        "Rapping",
+        "Reggae",
+        "Romantic"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-2-mc-0076",
+      "prompt": "A relaxed, steady groove with a strong low bass line and short guitar or keyboard chords on off-beats, often stressing beats 2 and 4.",
+      "answer": "Reggae",
+      "distractors": [
+        "Baroque",
+        "Concerto",
+        "Mouth music"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-styles-crossword-2-mc-0078",
+      "prompt": "A Scottish narrative song sung in Scots.",
+      "answer": "Scots ballad",
+      "distractors": [
+        "Reggae",
+        "Romantic",
+        "Swing"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z"
+}

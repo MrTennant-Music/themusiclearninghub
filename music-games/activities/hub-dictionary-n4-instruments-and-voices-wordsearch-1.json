@@ -1,0 +1,147 @@
+{
+  "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1",
+  "level": "N4",
+  "title": "Instruments and Voices 1",
+  "instructions": "",
+  "description": "Revise instruments and voices with 8 Music Dictionary concepts. Set 1 of 4.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Instruments and Voices",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0113",
+      "prompt": "The lowest standard female voice or choral part, lying below soprano.",
+      "answer": "Alto",
+      "distractors": [
+        "Soprano",
+        "Bass guitar",
+        "Brass band"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0117",
+      "prompt": "A low-pitched electric string instrument, usually with four strings, played by plucking or with a plectrum.",
+      "answer": "Bass guitar",
+      "distractors": [
+        "Tenor",
+        "Wind band",
+        "Alto"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0121",
+      "prompt": "Round metal untuned percussion instruments that may be struck together or hit with sticks or mallets.",
+      "answer": "Cymbals",
+      "distractors": [
+        "Glockenspiel",
+        "Brass band",
+        "Distortion"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0125",
+      "prompt": "A tuned percussion instrument with metal bars arranged like a keyboard and struck with hard beaters.",
+      "answer": "Glockenspiel",
+      "distractors": [
+        "Cymbals",
+        "Wind band",
+        "Alto"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0129",
+      "prompt": "An instrument's normal tone becomes softer, thinner, more nasal or more distant when a device is fitted.",
+      "answer": "Muted",
+      "distractors": [
+        "Backing vocals",
+        "Bass",
+        "Bass drum"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0133",
+      "prompt": "An untuned drum with metal wires under the lower skin, giving a crisp rattling sound.",
+      "answer": "Snare drum",
+      "distractors": [
+        "Glockenspiel",
+        "Alto",
+        "Backing vocals"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0137",
+      "prompt": "Large tuned drums with skins stretched over bowl-shaped bodies.",
+      "answer": "Timpani",
+      "distractors": [
+        "Cymbals",
+        "Muted",
+        "Soprano"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n4-instruments-and-voices-wordsearch-1-mc-0141",
+      "prompt": "The smallest and highest-pitched standard orchestral string instrument.",
+      "answer": "Violin",
+      "distractors": [
+        "Double bass",
+        "Backing vocals",
+        "Bass"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

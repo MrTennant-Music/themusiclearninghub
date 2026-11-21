@@ -1,0 +1,49 @@
+/* Shared image and audio library dialog for the Hub's fitted desktop canvas. */
+.ig-modal-backdrop.ig-image-bank-backdrop{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+.ig-modal.ig-image-bank-modal{position:relative;max-height:90%;overflow:auto;outline:none;font-family:ui-sans-serif,system-ui,sans-serif}
+.ig-image-bank-modal button{font-family:inherit;cursor:pointer;transition:background .15s,border-color .15s}
+.ig-image-bank-modal button:disabled{opacity:.45;cursor:default}
+.ig-image-bank-modal .ig-modal-close{position:absolute}
+.millionaire-media-credit{position:absolute;bottom:8px;right:10px;font:400 10px/1.3 ui-sans-serif,system-ui,sans-serif;color:inherit;opacity:.65;text-decoration:underline;z-index:2}
+.ig-image-bank-modal .ig-error{color:#dc2626;font-size:14px;margin:12px 0}
+.ig-modal .ig-image-bank-search{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.ig-modal .ig-image-bank-search>input[type=search]{flex:1;min-width:0;height:44px;padding:10px 12px;border:1px solid #d6d3d1;border-radius:10px;font-size:15px}
+.ig-modal .ig-image-bank-search>button,.ig-modal .ig-image-bank-more{height:44px;padding:0 18px;border:1px solid #d6d3d1;border-radius:10px;background:#fff;color:#000;font-size:14px;font-weight:600}
+.ig-modal .ig-image-bank-search>button:hover,.ig-modal .ig-image-bank-more:hover{background:#f5f5f4}
+.ig-modal .ig-image-bank-source{margin:0 0 16px;font-size:13px;color:#737373}
+.ig-image-bank-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-height:440px;overflow:auto;padding:3px}
+.ig-image-bank-card{min-width:0;border:1px solid #e7e5e4;border-radius:10px;background:#fff;overflow:hidden}
+.ig-modal .ig-image-bank-pick{display:flex;flex-direction:column;width:100%;padding:0;border:0;border-radius:0;background:#fff;color:#000;text-align:left;box-shadow:none}
+.ig-modal .ig-image-bank-pick:hover{background:#f5f5f4}
+.ig-image-bank-pick img{display:block;width:100%;height:140px;object-fit:contain;background:#fafaf9}
+.ig-image-bank-pick>span{display:block;width:100%;box-sizing:border-box;padding:10px 10px 4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:600}
+.ig-image-bank-card>a{display:block;padding:4px 10px 10px;font-size:11px;color:#737373}
+.ig-image-bank-status{text-align:center;padding:24px;font-size:14px;color:#57534e}
+.ig-modal .ig-image-bank-more{display:block;margin:18px auto 0}
+.ig-image-credit{display:block;margin-top:4px;text-align:center;font-size:10px;line-height:1.3;color:#737373}
+
+/* Match the Hub's white, rounded dialog and shared control styling. */
+.ig-modal-backdrop.ig-image-bank-backdrop{background:rgba(15,23,42,.55);backdrop-filter:blur(4px)}
+.ig-modal.ig-image-bank-modal{box-sizing:border-box;width:1000px;min-width:0;max-width:100%;padding:32px;border:1px solid #e2e8f0;border-radius:20px;background:#fff;color:#0f172a;box-shadow:0 24px 80px rgba(15,23,42,.28)}
+.ig-image-bank-modal>h2{margin:0 44px 24px;text-align:center;font-size:28px;line-height:1.2;font-weight:800;color:#0f172a}
+.ig-image-bank-modal .ig-modal-close{display:grid;place-items:center;top:16px;right:16px;width:36px;height:36px;padding:0;border:0;border-radius:50%!important;background:#f5f5f4;color:#57534e;font-size:26px;line-height:1}
+.ig-image-bank-modal .ig-modal-close:hover{background:#e7e5e4;color:#000}
+.ig-image-bank-modal .ig-image-bank-search{gap:10px;margin:0 0 14px}
+.ig-image-bank-modal .ig-image-bank-search>input[type=search]{border-color:#d6d3d1;border-radius:10px;background:#fff;color:#000;font-size:14px;box-shadow:none}
+.ig-image-bank-modal .ig-image-bank-search>button{border-radius:10px!important;font-weight:600}
+.ig-image-bank-modal .ig-image-bank-search>button[type=submit]{border-color:#000;background:#000;color:#fff}
+.ig-image-bank-modal .ig-image-bank-search>button[type=submit]:hover:not(:disabled){border-color:#262626;background:#262626}
+.ig-image-bank-modal .ig-image-bank-source{margin-bottom:18px;color:#737373;font-size:13px}
+.ig-image-bank-modal .ig-image-bank-results{gap:16px;padding:3px;max-height:420px}
+.ig-image-bank-modal .ig-image-bank-card{border-color:#e7e5e4;border-radius:12px;box-shadow:0 1px 2px #00000008}
+.ig-image-bank-modal .ig-image-bank-pick{border-radius:0!important}
+.ig-image-bank-modal .ig-image-bank-pick:focus-visible{outline:2px solid #64748b;outline-offset:-3px}
+.ig-image-bank-modal .ig-image-bank-more{border-radius:10px!important;font-weight:600;margin-top:22px}
+.ig-image-bank-modal :is(input,button,a):focus-visible{outline:2px solid #64748b;outline-offset:3px}
+.ig-image-bank-modal .ig-audio-bank .ig-image-bank-results{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ig-audio-bank .ig-image-bank-card{display:flex;flex-direction:column;gap:12px;padding:16px}
+.ig-audio-bank .ig-image-bank-card h3{margin:0;font-size:14px;line-height:1.4;font-weight:700;overflow-wrap:anywhere}
+.ig-modal .ig-audio-bank audio{display:block;width:100%;max-width:none;height:40px}
+.ig-modal .ig-audio-bank-add{align-self:flex-start;height:40px;padding:0 16px;border:1px solid #000;border-radius:10px;background:#000;color:#fff;font-size:14px;font-weight:600}
+.ig-modal .ig-audio-bank-add:hover{background:#262626;border-color:#262626}
+.ig-audio-bank .ig-image-bank-card>a{padding:0;font-size:11px}

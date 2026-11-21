@@ -2,3 +2,15 @@
 node_modules/
 dist/
 .pnpm-store/
+
+# Generated Python caches
+__pycache__/
+*.py[cod]
+
+# Disposable maintenance outputs and reusable local model/tool caches
+maintenance/generated/
+maintenance/models/
+maintenance/audio-review/
+
+# Reproducible paper audit reports; permanent inputs are test fixtures.
+digital-question-papers/audit/

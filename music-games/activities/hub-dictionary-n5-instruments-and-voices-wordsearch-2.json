@@ -1,0 +1,132 @@
+{
+  "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2",
+  "level": "N5",
+  "title": "Instruments and Voices 2",
+  "instructions": "",
+  "description": "Revise instruments and voices with 7 Music Dictionary concepts. Set 2 of 3.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Instruments and Voices",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0193",
+      "prompt": "An instruction for string players to use the bow.",
+      "answer": "Arco",
+      "distractors": [
+        "Pizzicato",
+        "Bodhran",
+        "Bongo drums"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0196",
+      "prompt": "A shallow Irish frame drum held in one hand and struck with a short double-ended beater.",
+      "answer": "Bodhran",
+      "distractors": [
+        "Hi-hat cymbals",
+        "A cappella",
+        "Arco"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0199",
+      "prompt": "The Scottish Gaelic harp: a small folk harp with strings plucked by the fingers.",
+      "answer": "Clarsach",
+      "distractors": [
+        "Pizzicato",
+        "Reverb",
+        "Rolls"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0202",
+      "prompt": "A brass instrument made from a long coil of tubing with a flared bell and valves.",
+      "answer": "French horn",
+      "distractors": [
+        "Tuba",
+        "Con sordino",
+        "Flutter-tonguing"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0205",
+      "prompt": "A high double-reed woodwind instrument with a narrow conical bore.",
+      "answer": "Oboe",
+      "distractors": [
+        "Piccolo",
+        "A cappella",
+        "Arco"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0208",
+      "prompt": "Sound continues and reflects around a space after the original sound is made.",
+      "answer": "Reverb",
+      "distractors": [
+        "Pitch bend",
+        "Pizzicato",
+        "Rolls"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-n5-instruments-and-voices-wordsearch-2-mc-0211",
+      "prompt": "The two drums differ in size and pitch and produce many contrasting strokes and rhythmic patterns.",
+      "answer": "Tabla",
+      "distractors": [
+        "Castanets",
+        "Con sordino",
+        "Flutter-tonguing"
+      ],
+      "group": "Timbre",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

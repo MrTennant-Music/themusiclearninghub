@@ -1,0 +1,145 @@
+[
+  {
+    "number": 1,
+    "clef": "bass",
+    "time": [
+      5,
+      4
+    ],
+    "notes": [
+      {
+        "pitch": "C2",
+        "rhythm": "minim",
+        "x": 390
+      },
+      {
+        "pitch": "D3",
+        "rhythm": "minim",
+        "x": 520
+      },
+      {
+        "pitch": "E4",
+        "rhythm": "crotchet",
+        "x": 660
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 2,
+    "clef": "treble",
+    "time": [
+      4,
+      4
+    ],
+    "key": "D major",
+    "notes": [
+      {
+        "pitch": "F4",
+        "rhythm": "dotted-minim",
+        "x": 440
+      },
+      {
+        "pitch": "G4",
+        "rhythm": "crotchet",
+        "x": 650
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 3,
+    "clef": "bass",
+    "time": [
+      3,
+      4
+    ],
+    "key": "B flat major",
+    "notes": [
+      {
+        "pitch": "D3",
+        "rhythm": "minim",
+        "x": 440
+      },
+      {
+        "pitch": "F3",
+        "rhythm": "crotchet",
+        "x": 650
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 4,
+    "clef": "treble",
+    "time": [
+      4,
+      4
+    ],
+    "tie": [
+      0,
+      1
+    ],
+    "notes": [
+      {
+        "pitch": "G4",
+        "rhythm": "dotted-crotchet",
+        "x": 390,
+        "targetNotehead": true
+      },
+      {
+        "pitch": "G4",
+        "rhythm": "quaver",
+        "x": 500
+      },
+      {
+        "pitch": "A4",
+        "rhythm": "minim",
+        "x": 650
+      }
+    ],
+    "end": "double"
+  },
+  {
+    "number": 5,
+    "clef": "treble",
+    "time": [
+      5,
+      4
+    ],
+    "rhythmLabels": false,
+    "notes": [
+      {
+        "pitch": "G4",
+        "rhythm": "quaver",
+        "x": 345
+      },
+      {
+        "pitch": "A4",
+        "rhythm": "crotchet",
+        "x": 410
+      },
+      {
+        "pitch": "B4",
+        "rhythm": "crotchet",
+        "x": 475
+      },
+      {
+        "pitch": "C5",
+        "rhythm": "crotchet",
+        "x": 540
+      },
+      {
+        "pitch": "D5",
+        "rhythm": "crotchet",
+        "x": 605
+      },
+      {
+        "pitch": "E5",
+        "rhythm": "quaver",
+        "x": 670
+      }
+    ],
+    "end": "double"
+  }
+]

@@ -1,0 +1,988 @@
+{
+  "a": {
+    "key": "G major",
+    "timeSignature": "3/4",
+    "pickup": {
+      "notes": [
+        {
+          "pitch": "B4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        },
+        {
+          "pitch": "A4",
+          "rhythm": "quaver",
+          "beats": 0.5
+        }
+      ],
+      "partial": true,
+      "lyricSyllables": [
+        "I",
+        "at -"
+      ]
+    },
+    "bars": [
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "semiquaver",
+            "beats": 0.25
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "semiquaver",
+            "beats": 0.25
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "lyricSyllables": [
+          "tempt",
+          "from",
+          "love\u2019s__",
+          "",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 2,
+            "end": 4
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "sick-",
+          "ness",
+          "to"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "E5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "stemDown": true
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "stemDown": true
+          }
+        ],
+        "lyricSyllables": [
+          "fly_______",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 1
+          },
+          {
+            "start": 2,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "lyricSyllables": [
+          "",
+          "",
+          "",
+          "",
+          "in___",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 0,
+            "end": 1
+          },
+          {
+            "start": 2,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 5
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "F#4",
+            "rhythm": "minim",
+            "beats": 2
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "vain,",
+          "Since"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "I",
+          "am",
+          "my -"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "E4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "self",
+          "my",
+          "own"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "D4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "fe -",
+          "ver,",
+          "Since"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "I",
+          "am",
+          "my -"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "lyricSyllables": [
+          "self",
+          "my",
+          "own"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "lyricSyllables": [
+          "fe -",
+          "ver___",
+          "",
+          "and___",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "minim",
+            "beats": 2
+          }
+        ],
+        "lyricSyllables": [
+          "pain."
+        ],
+        "partial": true,
+        "finalBarline": "double"
+      }
+    ],
+    "cadence": {
+      "bars": [
+        4,
+        5
+      ],
+      "answer": "Imperfect"
+    },
+    "melisma": {
+      "acceptedBars": [
+        1,
+        3,
+        4,
+        11
+      ]
+    }
+  },
+  "b": {
+    "bar": 11,
+    "chords": [
+      "G first inversion",
+      "C major",
+      "D major"
+    ],
+    "answer": "G/B, C, D",
+    "treble": [
+      [
+        "D4",
+        "G4",
+        "D5"
+      ],
+      [
+        "E4",
+        "G4",
+        "C5"
+      ],
+      [
+        "D4",
+        "F#4",
+        "A4"
+      ]
+    ],
+    "bass": [
+      "B2",
+      "C3",
+      "D3"
+    ],
+    "given": {
+      "treble": [
+        "B3",
+        "D4",
+        "G4"
+      ],
+      "bass": "G2"
+    }
+  },
+  "c": {
+    "pickup": {
+      "notes": [
+        {
+          "pitch": "B4",
+          "rhythm": "crotchet",
+          "beats": 1
+        }
+      ],
+      "partial": true,
+      "lyricSyllables": [
+        "Since"
+      ]
+    },
+    "key": "G major",
+    "newKey": "E minor",
+    "timeSignature": "3/4",
+    "bars": [
+      {
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 9,
+        "lyricSyllables": [
+          "I",
+          "am",
+          "my -"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 10,
+        "lyricSyllables": [
+          "self",
+          "my",
+          "own"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "number": 11,
+        "lyricSyllables": [
+          "fe -",
+          "ver___",
+          "",
+          "and___",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "minim",
+            "beats": 2
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 12,
+        "lyricSyllables": [
+          "pain.",
+          "No"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 13,
+        "lyricSyllables": [
+          "more",
+          "now",
+          "no"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "D#5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "semiquaver",
+            "beats": 0.25
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "semiquaver",
+            "beats": 0.25
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "courtesyAccidental": "natural"
+          }
+        ],
+        "number": 14,
+        "lyricSyllables": [
+          "more",
+          "now",
+          "fond___",
+          "",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 2,
+            "end": 4
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "minim",
+            "beats": 2
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 15,
+        "lyricSyllables": [
+          "heart",
+          "with"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "gracePitch": "B4"
+          }
+        ],
+        "number": 16,
+        "lyricSyllables": [
+          "pride",
+          "no",
+          "more"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "minim",
+            "beats": 2
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "missingAccidental": "sharp"
+          }
+        ],
+        "number": 17,
+        "lyricSyllables": [
+          "swell,",
+          "Thou"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "E5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "C5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "D5",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "number": 18,
+        "lyricSyllables": [
+          "canst",
+          "not___",
+          "",
+          "raise___",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "C5",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 19,
+        "lyricSyllables": [
+          "for -",
+          "ces,",
+          "Thou"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "G4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "A4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          }
+        ],
+        "number": 20,
+        "lyricSyllables": [
+          "canst",
+          "not___",
+          "",
+          "raise___",
+          ""
+        ],
+        "beamGroups": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "crotchet",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 21,
+        "lyricSyllables": [
+          "for -",
+          "ces",
+          "e -"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "G4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5
+          },
+          {
+            "pitch": "F#4",
+            "rhythm": "quaver",
+            "beats": 0.5
+          },
+          {
+            "pitch": "E4",
+            "rhythm": "crotchet",
+            "beats": 1
+          }
+        ],
+        "number": 22,
+        "lyricSyllables": [
+          "nough",
+          "to",
+          "re -"
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "E4",
+            "rhythm": "minim",
+            "beats": 2
+          }
+        ],
+        "number": 23,
+        "lyricSyllables": [
+          "bel."
+        ],
+        "partial": true,
+        "finalBarline": "double"
+      }
+    ],
+    "keyChange": {
+      "bar": 13,
+      "key": "E minor"
+    },
+    "accidental": {
+      "bar": 17,
+      "note": 1,
+      "answer": "sharp"
+    }
+  },
+  "finalBarline": "double",
+  "layout": {
+    "height": 2600,
+    "aGroups": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11
+      ]
+    ],
+    "aTops": [
+      90,
+      310,
+      490,
+      670
+    ],
+    "cGroups": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11
+      ],
+      [
+        12,
+        13,
+        14
+      ]
+    ],
+    "cTops": [
+      1565,
+      1785,
+      2005,
+      2225,
+      2445
+    ]
+  }
+}

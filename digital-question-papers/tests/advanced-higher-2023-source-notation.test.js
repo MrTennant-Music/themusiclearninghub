@@ -1,0 +1,20 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const notation=require('../exam-notation.js'),source=require('./fixtures/advanced-higher-2023-source-audit.json');
+const voice=v=>({notes:v.notes.map(n=>[n.rest?'r':(n.chord||[n.pitch]).join('+'),n.rhythm]),beamGroups:v.beamGroups||[],ties:v.ties||[],triplets:v.triplets||[],slurs:v.slurs||[],lyrics:v.lyrics||v.lyricSyllables||[],...(v.cueVoice?{cueVoice:{notes:v.cueVoice.notes.map(n=>[n.rest?'r':n.pitch,n.rhythm]),ties:v.cueVoice.ties||[],beamGroups:v.cueVoice.beamGroups||[]}}:{})});
+test('AH 2023 preserves every freshly read option, vocal bar, cue voice, rhythm and source-derived note answer',()=>{
+ const a=notation.getInventory('ah-2023-q2a'),q2=notation.getInventory('ah-2023-q2'),rhythm=notation.getInventory('ah-2023-q2bRhythm'),q4=notation.getInventory('ah-2023-q4'),q5=notation.getInventory('ah-2023-q5');
+ assert.deepEqual(a.options.map(bs=>bs.map(voice)),source.q2a.options);assert.deepEqual(rhythm.bars.map(voice),source.q2bRhythm.bars);
+ assert.deepEqual(q2.b.bars.map(voice),source.q2b.bars);
+ for(const [bar,indices]of Object.entries(source.q2b.sourceLyricDetails.italicIndices))assert.deepEqual(q2.b.bars[bar-1].lyricItalicIndices,indices);
+ for(const [bar,lines]of Object.entries(source.q2b.sourceLyricDetails.extenders))assert.deepEqual(q2.b.bars[bar-1].lyricExtensions,lines);
+ assert.deepEqual(q2.b.bars[6].lyricContinuation,source.q2b.sourceLyricDetails.continuation[7]);
+ assert.deepEqual(q2.b.bars[16].lyricOffsets,[-4,4], 'italic parenthetical words retain visible clearance');assert.deepEqual(voice(q2.c.pickup),source.q2c.pickup);assert.deepEqual(q2.c.bars.map(voice),source.q2c.bars);
+ assert.deepEqual(q4.bars.map(voice),source.q4.bars);assert.deepEqual(q5.bars.map(voice),source.q5.bars);
+ for(const [bars,beats]of [[q2.b.bars,4],[q2.c.bars,4],[q4.bars,4],[q5.bars,2]])for(const [i,b]of bars.entries())assert.ok(Math.abs(b.notes.reduce((s,n)=>s+n.beats,0)-beats)<1e-8,`bar ${i+1} rhythm total`);
+ assert.equal(q2.b.repeatSigns.startBar,10);assert.equal(q2.b.repeatSigns.endBar,25);assert.equal(q2.b.brassBracket.bar,20);assert.deepEqual(q2.c.keyChange,source.q2c.keyChange);
+ assert.deepEqual(q5.missing.indices,[[2,3],[0,1]]);assert.deepEqual(q5.missing.answer,source.editable.q5bi);assert.equal(q4.interval.answer,source.editable.q4d[0]);assert.equal(q4.enharmonic.answer,source.editable.q4b[0]);
+ assert.deepEqual(q4.bars[7].lyricOffsets,[0,0,0,-5,8]);assert.deepEqual(q4.bars[12].lyricOffsets,[0,-5,4,5,0]);
+ for(const [key,actual]of Object.entries({q4,q5}))assert.equal(actual.finalBarline,source[key].finalBarline);
+ for(const f of source.sources)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.resolve(__dirname,'../..',f.path))).digest('hex'),f.sha256);
+});

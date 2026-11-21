@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1280" />
+<script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+<link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+<title>Chromatic Tuner</title>
+<link rel="icon" type="image/svg+xml" href="./app-icons/chromatic-tuner-icon.svg?v=392c2f4921ff" />
+<link rel="apple-touch-icon" href="./app-icons/chromatic-tuner-icon.svg?v=392c2f4921ff" />
+<script src="./vendor/tailwind/tailwind-3.4.17.js"></script>
+<script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+<link rel="stylesheet" href="./styles/hub-ui.css?v=5b314e41fa37" />
+<script src="./vendor/react/react.production.min.js?v=18.2.0"></script>
+<script src="./vendor/react/react-dom.production.min.js?v=18.2.0"></script>
+<script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+<script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
+<script src="./shared/hub-menu.js?v=8b9cb83594eb"></script>
+<script src="./chromatic-tuner-core.js?v=20261015"></script>
+<style>
+body{margin:0;background:#fafaf9;color:#111}
+.tuner-stage{width:900px;margin:12px auto 0;text-align:center;padding:0 0 28px}
+.tuner-main{position:relative;min-height:740px}
+.tuner-instrument-toolbar{display:flex;justify-content:space-between;align-items:start;min-height:44px;padding:4px 8px 0}
+.tuner-instrument-option{display:flex;align-items:center;gap:12px;width:100%;min-height:50px;padding:10px 14px;border:1px solid #e7e5e4;border-radius:12px;background:#fafaf9;font-size:14px;font-weight:700;margin-bottom:8px;text-align:left}
+.tuner-instrument-glyph{display:block;width:28px;height:30px;object-fit:contain;flex-shrink:0;mix-blend-mode:multiply}
+.tuner-instrument-glyph-angled{transform:rotate(40deg)}
+.tuner-instrument-option img:not(.tuner-instrument-glyph){margin-left:auto}
+.tuner-instrument-option:hover{background:#f5f5f4}
+.tuner-instrument-option[aria-checked=true]{border-color:#a8a29e;background:#f5f5f4}
+.hub-menu-panel.tuner-instrument-menu{width:260px;max-width:260px}
+.tuner-instrument-option:last-child{margin-bottom:0}
+.tuner-button-symbol.tuner-menu-symbol{width:26px;height:26px;flex-shrink:0}
+.tuner-head{position:relative;width:220px;text-align:center;margin:0 auto 24px}
+.tuner-string-prompt{font-size:14px;font-weight:600;min-height:24px;margin:8px 0;color:#78716c}
+.tuner-string-prompt.is-awaiting{font-weight:400}
+.tuner-instrument-dial{position:relative}
+.tuner-pitch-warning{display:flex;align-items:center;justify-content:center;gap:6px;position:absolute;top:12px;left:0;width:100%;text-align:center;color:#dc2626;font-size:14px;font-weight:400;min-height:20px}
+.tuner-string-prompt.is-complete{color:#15803d;font-weight:400;margin-top:4px}
+.tuner-pitch-warning svg{display:block;width:18px;height:18px;flex-shrink:0}
+.tuner-pitch-warning.is-confirmed{color:#15803d}
+.tuner-peg.is-selected{outline:2px solid #111;outline-offset:3px}
+.tuner-start:disabled{opacity:.45;cursor:default}
+.tuner-complete-animation{width:220px;height:80px;display:flex;align-items:center;justify-content:center;margin-top:12px}
+.tuner-complete-animation>svg{display:block;width:80px;height:80px}
+.tuner-complete-tick{stroke-dasharray:1;stroke-dashoffset:1;animation:tuner-write-tick .65s ease-out .15s forwards}
+@keyframes tuner-write-tick{to{stroke-dashoffset:0}}
+.tuner-head-drawing{position:relative;width:220px;height:257px;margin-top:4px}
+.tuner-peg{position:absolute;translate:-50% -50%;height:38px;width:46px;display:grid;place-items:center;border:1px solid #a8a29e;border-radius:12px;background:#fff;font-size:16px;font-weight:700;box-shadow:0 2px 3px #0000000c}
+.tuner-peg:hover{background:#f5f5f4;border-color:#44403c}
+.tuner-peg.is-tuned::after{content:"✓";position:absolute;right:-5px;top:-7px;width:16px;height:16px;border-radius:50%;background:#16a34a;color:white;font-size:11px;line-height:16px}
+.tuner-peg.is-tuned{background:#dcfce7;color:#15803d;border-color:#16a34a}
+.tuner-instrument-actions{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px}
+.tuner-instrument-action{display:inline-flex;align-items:center;justify-content:center;min-width:116px;height:44px;padding:0 18px;border:1px solid #d6d3d1;border-radius:12px;background:#fff;color:#111;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.tuner-instrument-action:hover{background:#f5f5f4;border-color:#a8a29e}
+.tuner-instrument-action.is-stop{background:#111;color:#fff;border-color:#111}
+.tuner-instrument-action.is-stop:hover{background:#292524}
+.tuner-instrument-action:disabled{opacity:.45;cursor:default}
+.tuner-success{display:inline-flex;position:absolute;top:18px;margin-left:10px;color:#16a34a}
+.tuner-note{position:relative;font-size:64px;font-weight:800;line-height:1;color:#111;min-height:68px}
+.tuner-note sub{font-size:30px;vertical-align:baseline;margin-left:3px}
+.tuner-frequency{font-size:26px;font-weight:600;line-height:1.2;color:#78716c;font-variant-numeric:tabular-nums;margin-top:8px}
+.tuner-frequency span{opacity:.67}
+.tuner-dial{width:900px;height:330px;margin:6px auto 0;overflow:hidden}
+.tuner-dial>svg{display:block;width:900px;height:330px;font-family:inherit}
+.tuner-linear-pointer{transition:transform .15s ease;will-change:transform}
+.tuner-wheel-rotor{transform-origin:450px 780px;will-change:transform}
+.tuner-centre{position:relative;min-height:220px;margin:-40px auto 0;width:500px}
+.tuner-centre.has-instrument{margin-top:-130px}
+.has-instrument .tuner-head{margin-bottom:8px}
+.tuner-readout{height:112px;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s linear .6s}
+.tuner-readout.is-visible{opacity:1;visibility:visible;transition:opacity .6s ease,visibility 0s linear}
+.tuner-start{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:220px;height:64px;margin:28px auto 0;padding:0 24px;border:1px solid #000;border-radius:12px;background:#000;color:#fff;font:inherit;font-size:22px;font-weight:700;cursor:pointer;transition:background .15s ease}
+.tuner-button-symbol{display:block;width:30px;height:30px;background:currentColor;mask:url('./ui-icons/chromatic-tuner-symbol.svg?v=d20362ec2cbc') center/contain no-repeat;-webkit-mask:url('./ui-icons/chromatic-tuner-symbol.svg?v=d20362ec2cbc') center/contain no-repeat}
+.tuner-start:hover{background:#292524}
+.tuner-start svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}
+.tuner-microphone{display:flex;align-items:center;justify-content:center;gap:6px;height:20px;margin-top:10px;font-size:12px;font-weight:500;color:#78716c;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s}
+.tuner-microphone.is-visible{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s linear}
+.tuner-error{max-width:650px;margin:14px auto 0;color:#b91c1c;font-size:15px;font-weight:600}
+.tuner-main button:focus-visible,.tuner-main input:focus-visible,.tuner-main select:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+
+</style>  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+</head><body><div id="root"></div>
+<script src="./chromatic-tuner.runtime.js?v=2c00b08c7754"></script>
+<script src="./footer.js?v=120454beac89"></script>
+</body></html>

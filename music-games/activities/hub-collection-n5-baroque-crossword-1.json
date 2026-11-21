@@ -1,0 +1,132 @@
+{
+  "id": "hub-collection-n5-baroque-crossword-1",
+  "level": "N5",
+  "title": "Baroque Period 1",
+  "instructions": "",
+  "description": "Baroque Period: current Music Dictionary definitions — set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Baroque Period",
+    "National 5"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0070",
+      "prompt": "A style of music from about 1600 to 1750, often with busy tunes and lots of decoration.",
+      "answer": "Baroque",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0070"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0128",
+      "prompt": "A keyboard instrument that plucks its strings, giving a light, twangy sound.",
+      "answer": "Harpsichord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0128"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0144",
+      "prompt": "A solo song in an opera or another large vocal work.",
+      "answer": "Aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0144"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0184",
+      "prompt": "Two or more different tunes weave together at the same time.",
+      "answer": "Contrapuntal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0184"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0018",
+      "prompt": "The same little tune is repeated, but starts on a higher or lower note.",
+      "answer": "Sequence",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0018"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0108",
+      "prompt": "One part copies a tune or pattern just played by another part.",
+      "answer": "Imitation",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0108"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0063",
+      "prompt": "Instruments that make sounds with vibrating strings, such as violins and cellos.",
+      "answer": "Strings",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0063"
+    },
+    {
+      "id": "hub-collection-n5-baroque-crossword-1-MC-0088",
+      "prompt": "One low note stays the same while the music above it changes.",
+      "answer": "Pedal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0088"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "baroque",
+  "sourceConceptIds": [
+    "MC-0070",
+    "MC-0128",
+    "MC-0144",
+    "MC-0184",
+    "MC-0018",
+    "MC-0108",
+    "MC-0063",
+    "MC-0088"
+  ]
+}

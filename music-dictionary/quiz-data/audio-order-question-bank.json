@@ -1,0 +1,2328 @@
+{
+  "schemaVersion": 1,
+  "bankId": "mlh-concept-quiz-audio-order-1",
+  "questions": [
+    {
+      "id": "AO-N3-MC0009-ORDER01",
+      "conceptId": "MC-0009",
+      "levelCode": "N3",
+      "objectiveId": "AO-N3-MC0009-ORDER01-objective",
+      "objective": "Arrange the four piano notes from highest to lowest pitch.",
+      "factGroupId": "audio-order-N3-pitches-high-low",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Arrange the four piano notes from highest to lowest pitch.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "C5",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 72,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "F4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 65,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "G♯4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 68,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "D4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 62,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-2",
+          "clip-1",
+          "clip-3"
+        ]
+      },
+      "feedback": "The highest-pitched piano note belongs at the top and the lowest at the bottom.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/8/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Pitch moves upwards, so each later note is higher than the note before it. An ascending scale or melody therefore travels from a lower register towards a higher one. The movement can occur stepwise or by leap.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0009&level=N3",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "generator": {
+        "type": "pitches",
+        "direction": "high-low"
+      },
+      "contentSha256": "8866055c5c6ded042083141192a194351ed4562029b10ea291a4039421898a9a"
+    },
+    {
+      "id": "AO-N3-MC0012-ORDER01",
+      "conceptId": "MC-0012",
+      "levelCode": "N3",
+      "objectiveId": "AO-N3-MC0012-ORDER01-objective",
+      "objective": "Arrange the four piano notes from lowest to highest pitch.",
+      "factGroupId": "audio-order-N3-pitches-low-high",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Arrange the four piano notes from lowest to highest pitch.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "C5",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 72,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "G4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 67,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "C4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 60,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "G♯4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 68,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-2",
+          "clip-1",
+          "clip-3",
+          "clip-0"
+        ]
+      },
+      "feedback": "The lowest-pitched piano note belongs at the top and the highest at the bottom.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/11/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Pitch moves downwards, so each later note is lower than the note before it. A descending scale or melody therefore travels from a higher register towards a lower one. The movement can occur stepwise or by leap.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0012&level=N3",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "generator": {
+        "type": "pitches",
+        "direction": "low-high"
+      },
+      "contentSha256": "d7d88e69540ff8e5790e8b497f424e96edef71e065ff20a73ad88310e279f3c4"
+    },
+    {
+      "id": "AO-N4-MC0134-ORDER01",
+      "conceptId": "MC-0134",
+      "levelCode": "N4",
+      "objectiveId": "AO-N4-MC0134-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the voice types from highest to lowest.",
+      "factGroupId": "audio-order-N4-voices",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the voice types from highest to lowest.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Soprano",
+          "conceptId": "MC-0134",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Soprano/04.%20Reinhold%20Gli%C3%A8re%20-%20Concerto%20For%20Coloratura%20Soprano%20-%20Soprano.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Soprano/04. Reinhold Glière - Concerto For Coloratura Soprano - Soprano.m4a",
+            "recording": "Reinhold Glière - Concerto For Coloratura Soprano - Soprano",
+            "duration": 20.33,
+            "sha256": "06123e331333efda50a0260828b5e2a0ca78d88859f9a4a332493632d1264702"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Alto",
+          "conceptId": "MC-0113",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Alto/03.%20Alto%20Demonstration%20-%20Deep%20River%20-%20Alto.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Alto/03. Alto Demonstration - Deep River - Alto.m4a",
+            "recording": "Alto Demonstration - Deep River - Alto",
+            "duration": 45.001,
+            "sha256": "607540e4b8eb05d81fa955ea369194189da13eff8c75f0873adfe902ef5f9dd6"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Tenor",
+          "conceptId": "MC-0136",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Tenor/04.%20Gaetano%20Donizetti%20-%20Una%20Furtiva%20Lagrima%20-%20Tenor.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Tenor/04. Gaetano Donizetti - Una Furtiva Lagrima - Tenor.m4a",
+            "recording": "Gaetano Donizetti - Una Furtiva Lagrima - Tenor",
+            "duration": 45.001,
+            "sha256": "8019367b44fc092d4d91a1226ff71175f350053067c28f07ad178c3111afc878"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Bass",
+          "conceptId": "MC-0115",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Bass/04.%20Leonard%20Cohen%20-%20Hallelujah%20-%20Bass.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Bass/04. Leonard Cohen - Hallelujah - Bass.m4a",
+            "recording": "Leonard Cohen - Hallelujah - Bass",
+            "duration": 47.693,
+            "sha256": "869aeb8e0e1f6d63b0a5e9262fd666caadb6edf827be02fdca44c08b2d4a75b1"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3"
+        ]
+      },
+      "feedback": "Correct order: Soprano → Alto → Tenor → Bass.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/129/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The highest standard female voice or choral part. It normally carries the top line in SATB choral writing.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/108/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The lowest standard female voice or choral part, lying below soprano. In mixed choirs it forms the A in SATB.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/131/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A high adult male voice or choral part, lying above baritone and bass. It forms the T in SATB.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/110/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The lowest standard adult male voice or choral part. In SATB writing it provides the lowest vocal line and often supports the harmony.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0113",
+        "MC-0136",
+        "MC-0115"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0134&level=N4",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "35205fd3df856fb9348131383138a32e91e20ab076ce0e7ada69e928dbf73af7"
+    },
+    {
+      "id": "AO-N5-MC0178-ORDER01",
+      "conceptId": "MC-0178",
+      "levelCode": "N5",
+      "objectiveId": "AO-N5-MC0178-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the tempos from fastest to slowest.",
+      "factGroupId": "audio-order-N5-tempo",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the tempos from fastest to slowest.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Allegro",
+          "conceptId": "MC-0023",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/01.%20National%203/03.%20Rhythm%20and%20Tempo/Allegro/04.%20Glenn%20Miller%20-%20In%20The%20Mood%20-%20Allegro.m4a",
+            "libraryPath": "01. National 3/03. Rhythm and Tempo/Allegro/04. Glenn Miller - In The Mood - Allegro.m4a",
+            "recording": "Glenn Miller - In The Mood - Allegro",
+            "duration": 45.024,
+            "sha256": "8e9a78f44454592305765de7e41d1bd2bc4c18e22ddd54236fe4abeceb5dbf75"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Moderato",
+          "conceptId": "MC-0178",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/03.%20Rhythm%20and%20Tempo/Moderato/05.%20Michael%20Jackson%20-%20Billie%20Jean%20-%20Moderato.m4a",
+            "libraryPath": "03. National 5/03. Rhythm and Tempo/Moderato/05. Michael Jackson - Billie Jean - Moderato.m4a",
+            "recording": "Michael Jackson - Billie Jean - Moderato",
+            "duration": 45.018,
+            "sha256": "f190456ef74a2a9b6552f05155ebd7e8dd3cbea2b247ef336613ecc059e8dd9b"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Andante",
+          "conceptId": "MC-0097",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/03.%20Rhythm%20and%20Tempo/Andante/04.%20Bob%20Marley%20And%20The%20Wailers%20-%20I%20Shot%20The%20Sheriff%20-%20Andante.m4a",
+            "libraryPath": "02. National 4/03. Rhythm and Tempo/Andante/04. Bob Marley And The Wailers - I Shot The Sheriff - Andante.m4a",
+            "recording": "Bob Marley And The Wailers - I Shot The Sheriff - Andante",
+            "duration": 45.024,
+            "sha256": "d7ec70344ffc8c82dab3a4d5a214a7b152248738883015e69f6d51a2b3c6c805"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Adagio",
+          "conceptId": "MC-0022",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/01.%20National%203/03.%20Rhythm%20and%20Tempo/Adagio/04.%20Camille%20Saint-Sa%C3%ABns%20-%20Carnival%20Of%20The%20Animals%20-%20mvt.%20IV%20Tortoises%20-%20Adagio.m4a",
+            "libraryPath": "01. National 3/03. Rhythm and Tempo/Adagio/04. Camille Saint-Saëns - Carnival Of The Animals - mvt. IV Tortoises - Adagio.m4a",
+            "recording": "Camille Saint-Saëns - Carnival Of The Animals - mvt. IV Tortoises - Adagio",
+            "duration": 30.593,
+            "sha256": "c9ffbd270b6ae8e816dff5eb242a8d2763e0e23d8b38d614f2668c9e49ccf3d9"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3"
+        ]
+      },
+      "feedback": "Correct order: Allegro → Moderato → Andante → Adagio.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/173/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A moderate tempo marking: neither fast nor slow. It is generally similar to, though not identical with, andante. It is often associated with roughly 108-120 beats per minute, although the intended speed depends on musical context.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/22/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A fast and lively tempo marking. Music marked allegro should move with energy and forward motion. It is often associated with roughly 120-168 beats per minute, although the intended speed depends on musical context.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/92/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A moderate tempo marking meaning at a walking pace. It is generally calmer than allegro and faster than adagio. It is often associated with roughly 76-108 beats per minute, although the intended speed depends on musical context.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/21/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A slow tempo marking. Music marked adagio should move at a calm, unhurried speed. It is often associated with roughly 66-76 beats per minute, although the intended speed depends on musical context.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0023",
+        "MC-0097",
+        "MC-0022"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0178&level=N5",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "c8497b1155a33d6250078f14fbf706a5e84ec0df79574b694f3c9a1c30798f3c"
+    },
+    {
+      "id": "AO-N5-MC0204-ORDER01",
+      "conceptId": "MC-0204",
+      "levelCode": "N5",
+      "objectiveId": "AO-N5-MC0204-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the voice types from highest to lowest.",
+      "factGroupId": "audio-order-N5-voices",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the voice types from highest to lowest.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Soprano",
+          "conceptId": "MC-0134",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Soprano/05.%20Johann%20Sebastian%20Bach%20-%20Herz%20Und%20Mund%20Und%20Tat%20Und%20Leben%2C%20Cantata%20-%20mvt.%20V%20Aria%20-%20Bereite%20Dir%2C%20Jesu%20-%20Soprano.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Soprano/05. Johann Sebastian Bach - Herz Und Mund Und Tat Und Leben, Cantata - mvt. V Aria - Bereite Dir, Jesu - Soprano.m4a",
+            "recording": "Johann Sebastian Bach - Herz Und Mund Und Tat Und Leben, Cantata - mvt. V Aria - Bereite Dir, Jesu - Soprano",
+            "duration": 48.356,
+            "sha256": "abd1115fd9c0946a03725684c61c228a37c8386d14025105eb64eef492cbdefd"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Mezzo-soprano",
+          "conceptId": "MC-0204",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Mezzo-Soprano/02.%20Georges%20Bizet%20-%20Chanson%20Boh%C3%A8me%20-%20Mezzo-Soprano.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Mezzo-Soprano/02. Georges Bizet - Chanson Bohème - Mezzo-Soprano.m4a",
+            "recording": "Georges Bizet - Chanson Bohème - Mezzo-Soprano",
+            "duration": 51.735,
+            "sha256": "b14dac9308223ff137c9a8f69a2748ac2dce20918fb45f3da67705a94d307e7a"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Alto",
+          "conceptId": "MC-0113",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Alto/05.%20Johann%20Sebastian%20Bach%20-%20Erbarme%20Dich%20-%20Alto.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Alto/05. Johann Sebastian Bach - Erbarme Dich - Alto.m4a",
+            "recording": "Johann Sebastian Bach - Erbarme Dich - Alto",
+            "duration": 45.001,
+            "sha256": "c2c787b9a7f5a49a7ebb5d29e89dc3c685013764c95b2f1c326f8582382fc44d"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Tenor",
+          "conceptId": "MC-0136",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Tenor/05.%20George%20Frideric%20Handel%20-%20Messiah%2C%20Pt.%201%20-%20No.%202.%20Air%20-%20Ev'Ry%20Valley%20Shall%20Be%20Exalted%20-%20Tenor.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Tenor/05. George Frideric Handel - Messiah, Pt. 1 - No. 2. Air - Ev'Ry Valley Shall Be Exalted - Tenor.m4a",
+            "recording": "George Frideric Handel - Messiah, Pt. 1 - No. 2. Air - Ev'Ry Valley Shall Be Exalted - Tenor",
+            "duration": 52.999,
+            "sha256": "97e17112a2cb0aa111570a62ee55fdc0a1696309a7c2ee77930332a5523390b5"
+          }
+        },
+        {
+          "id": "clip-4",
+          "text": "Example E",
+          "answerLabel": "Baritone",
+          "conceptId": "MC-0194",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Baritone/04.%20Wolfgang%20Amadeus%20Mozart%20-%20Der%20Vogelfanger%20Bin%20Ich%20Ja%20-%20Baritone.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Baritone/04. Wolfgang Amadeus Mozart - Der Vogelfanger Bin Ich Ja - Baritone.m4a",
+            "recording": "Wolfgang Amadeus Mozart - Der Vogelfanger Bin Ich Ja - Baritone",
+            "duration": 45.001,
+            "sha256": "ce0cb1d1ac464ac75bab76563094651ba4d78d4da6f487b58994967f35e25323"
+          }
+        },
+        {
+          "id": "clip-5",
+          "text": "Example F",
+          "answerLabel": "Bass",
+          "conceptId": "MC-0115",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Bass/05.%20Wolfgang%20Amadeus%20Mozart%20-%20In%20Diesen%20Heilgen%20Hallen%20-%20Bass.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Bass/05. Wolfgang Amadeus Mozart - In Diesen Heilgen Hallen - Bass.m4a",
+            "recording": "Wolfgang Amadeus Mozart - In Diesen Heilgen Hallen - Bass",
+            "duration": 45.001,
+            "sha256": "5e6add38a25d4cb2b80f6364112e36b7444fa371c24aa02fb7605a1c95db12e1"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3",
+          "clip-4",
+          "clip-5"
+        ]
+      },
+      "feedback": "Correct order: Soprano → Mezzo-soprano → Alto → Tenor → Baritone → Bass.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/198/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A medium female voice lying between soprano and alto. It has a lower, often warmer range than soprano while remaining higher than alto.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/129/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The highest standard female voice or choral part. It normally carries the top line in SATB choral writing.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/108/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The lowest standard female voice or choral part, lying below soprano. In mixed choirs it forms the A in SATB.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/131/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A high adult male voice or choral part, lying above baritone and bass. It forms the T in SATB.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/188/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A medium-low adult male voice lying between tenor and bass. It combines some of the upper flexibility of tenor with the depth of bass.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/110/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The lowest standard adult male voice or choral part. In SATB writing it provides the lowest vocal line and often supports the harmony.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0134",
+        "MC-0113",
+        "MC-0136",
+        "MC-0194",
+        "MC-0115"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0204&level=N5",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "c1aaf5239a56038a870d17d3fda539785b8cb1e9f014ea98a6a2229e2ebbe7a8"
+    },
+    {
+      "id": "AO-N5-MC0213-ORDER01",
+      "conceptId": "MC-0213",
+      "levelCode": "N5",
+      "objectiveId": "AO-N5-MC0213-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the string instruments from highest to lowest in their usual orchestral registers.",
+      "factGroupId": "audio-order-N5-strings",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the string instruments from highest to lowest in their usual orchestral registers.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Violin",
+          "conceptId": "MC-0141",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Violin/08.%20Violin%20Demonstration%20-%20Partita%20No3%20-%20Preludio%20-%20Violin.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Violin/08. Violin Demonstration - Partita No3 - Preludio - Violin.m4a",
+            "recording": "Violin Demonstration - Partita No3 - Preludio - Violin",
+            "duration": 45.001,
+            "sha256": "09c0f283910bf6c4e463e657634edba853c8a101bd4d11f23ad8066422da415f"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Viola",
+          "conceptId": "MC-0213",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Viola/10.%20Viola%20Demonstration%20-%20Perfect%20-%20Viola.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Viola/10. Viola Demonstration - Perfect - Viola.m4a",
+            "recording": "Viola Demonstration - Perfect - Viola",
+            "duration": 40.682,
+            "sha256": "7076b0fb5f413616eaebdbad0036620d314e0ecb28abdab4348e612d7d0c87aa"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Cello",
+          "conceptId": "MC-0119",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Cello/04.%20Johann%20Sebastian%20Bach%20-%20Suite%20No.%203%20-%20Bourrees%20-%20Cello.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Cello/04. Johann Sebastian Bach - Suite No. 3 - Bourrees - Cello.m4a",
+            "recording": "Johann Sebastian Bach - Suite No. 3 - Bourrees - Cello",
+            "duration": 45.001,
+            "sha256": "56791d919f18f1ac22e54d92f9d37ebec646d3fde14938416f9abcbbac22f83e"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Double bass",
+          "conceptId": "MC-0123",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Double%20Bass/03.%20Domenico%20Dragonetti%20-%20Waltz%20No.%203%20-%20Double%20Bass.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Double Bass/03. Domenico Dragonetti - Waltz No. 3 - Double Bass.m4a",
+            "recording": "Domenico Dragonetti - Waltz No. 3 - Double Bass",
+            "duration": 45.001,
+            "sha256": "5498b85c823198e6b8f8de080ff5b910c9fb7781e804a01f111d5816035ddca0"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3"
+        ]
+      },
+      "feedback": "Correct order: Violin → Viola → Cello → Double bass.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/207/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A bowed string instrument slightly larger and lower in pitch than the violin. It has a darker, warmer tone and normally plays inner harmony or melodic lines. It can also be plucked (pizzicato), giving short, detached notes rather than a sustained bowed sound.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/136/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The smallest and highest-pitched standard orchestral string instrument. It is held under the chin and played mainly with a bow, though it can also be plucked.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/114/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A low string instrument larger than the viola and smaller than the double bass. It is held between the knees, supported by an endpin and normally played with a bow. It can also be plucked (pizzicato), producing short, detached bass notes instead of a sustained bowed line.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/118/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The largest and lowest-pitched member of the orchestral string family. It is played standing or seated on a high stool and may be bowed or plucked.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0141",
+        "MC-0119",
+        "MC-0123"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0213&level=N5",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "bed967d5aafc88496bf78044b217b4f9ec2e1b0a43983b23f072b6c01163742c"
+    },
+    {
+      "id": "AO-N5-MC0206-ORDER01",
+      "conceptId": "MC-0206",
+      "levelCode": "N5",
+      "objectiveId": "AO-N5-MC0206-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the woodwind instruments from highest to lowest in their usual orchestral registers.",
+      "factGroupId": "audio-order-N5-woodwind",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the woodwind instruments from highest to lowest in their usual orchestral registers.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Piccolo",
+          "conceptId": "MC-0206",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Piccolo/07.%20Piccolo%20Demonstration%20-%20Fireflies%20-%20Piccolo.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Piccolo/07. Piccolo Demonstration - Fireflies - Piccolo.m4a",
+            "recording": "Piccolo Demonstration - Fireflies - Piccolo",
+            "duration": 36.75,
+            "sha256": "0606562ec69512bea1344969d96e11b3251fb8aea60b387a7ba15840cbd60f98"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Flute",
+          "conceptId": "MC-0124",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Flute/03.%20Flute%20Demonstration%20-%20Piece%20Pour%20Flute%20Seule%20-%20Flute.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Flute/03. Flute Demonstration - Piece Pour Flute Seule - Flute.m4a",
+            "recording": "Flute Demonstration - Piece Pour Flute Seule - Flute",
+            "duration": 45.001,
+            "sha256": "01892dce1cd48100d08b62d1a015bc3e9d0681bef0e9e4a27445b9a469b98321"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Oboe",
+          "conceptId": "MC-0205",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Oboe/03.%20Benjamin%20Britten%20-%20Pan%20-%20Oboe.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Oboe/03. Benjamin Britten - Pan - Oboe.m4a",
+            "recording": "Benjamin Britten - Pan - Oboe",
+            "duration": 45.001,
+            "sha256": "90088674f192f350e4cac8ece0c8052a312fdec642aa772998a73cdb52f979d0"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Clarinet",
+          "conceptId": "MC-0120",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Clarinet/04.%20Clarinet%20Demonstration%20-%20Three%20Pieces%20For%20Solo%20Clarinet%20-%20Clarinet.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Clarinet/04. Clarinet Demonstration - Three Pieces For Solo Clarinet - Clarinet.m4a",
+            "recording": "Clarinet Demonstration - Three Pieces For Solo Clarinet - Clarinet",
+            "duration": 45.001,
+            "sha256": "e22f60cec791bb467f6cf04b7218f71a13d0997cfa5cf9aed1b46554fdc4bf59"
+          }
+        },
+        {
+          "id": "clip-4",
+          "text": "Example E",
+          "answerLabel": "Bassoon",
+          "conceptId": "MC-0195",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Bassoon/02.%20Johann%20Sebastian%20Bach%20-%20Cello%20Suite%20No.%202%20-%20Sarabande%20-%20Bassoon.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Bassoon/02. Johann Sebastian Bach - Cello Suite No. 2 - Sarabande - Bassoon.m4a",
+            "recording": "Johann Sebastian Bach - Cello Suite No. 2 - Sarabande - Bassoon",
+            "duration": 45.001,
+            "sha256": "f9a13dd5cc98064ea64c47f5c7cf5d0d9776024f5f9b5b3fe83ed24a7ea66d0e"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3",
+          "clip-4"
+        ]
+      },
+      "feedback": "Correct order: Piccolo → Flute → Oboe → Clarinet → Bassoon.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/200/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The smallest and highest standard orchestral woodwind instrument. It is a half-sized flute that sounds one octave higher than written and has a bright, piercing tone. Piccolo is the Italian word for small.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/119/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A high woodwind instrument, usually made of metal, sounded by blowing across an embouchure hole rather than through a reed. It belongs to the woodwind family because of its playing method and historical origins.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/199/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A high double-reed woodwind instrument with a narrow conical bore. Its clear, penetrating tone is often used for expressive solos and to tune the orchestra. Its focused, nasal timbre helps distinguish it from the clarinet.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/115/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A single-reed woodwind instrument with a wide range and a smooth, flexible tone. It is usually made from wood or plastic and uses keys to change pitch. It uses a single reed attached to a mouthpiece and appears in orchestras, wind bands and jazz ensembles.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/189/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A low double-reed woodwind instrument with a long folded tube. It has a reedy, resonant tone and often provides bass or tenor lines in the woodwind section. Air passes through the double reed and a curved metal crook before entering the long folded bore.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0124",
+        "MC-0205",
+        "MC-0120",
+        "MC-0195"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0206&level=N5",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "e302d1b5ccaa267994ac08517f308c99d262fd8d20f926578f27b319ba980114"
+    },
+    {
+      "id": "AO-N5-MC0202-ORDER01",
+      "conceptId": "MC-0202",
+      "levelCode": "N5",
+      "objectiveId": "AO-N5-MC0202-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the brass instruments from highest to lowest in their usual orchestral registers.",
+      "factGroupId": "audio-order-N5-brass",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the brass instruments from highest to lowest in their usual orchestral registers.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Trumpet",
+          "conceptId": "MC-0140",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Trumpet/13.%20Trumpet%20Demonstration%20-%20Cascades%20-%20Trumpet.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Trumpet/13. Trumpet Demonstration - Cascades - Trumpet.m4a",
+            "recording": "Trumpet Demonstration - Cascades - Trumpet",
+            "duration": 45.001,
+            "sha256": "a2af1a2f47b0fae447bf865f1b104dc655ed9ff9679b124c71b9d8f93a071334"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "French horn",
+          "conceptId": "MC-0202",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/French%20Horn/04.%20French%20Horn%20Demonstration%20-%20Appel%20Interstellaire%20-%20French%20Horn.m4a",
+            "libraryPath": "03. National 5/05. Timbre/French Horn/04. French Horn Demonstration - Appel Interstellaire - French Horn.m4a",
+            "recording": "French Horn Demonstration - Appel Interstellaire - French Horn",
+            "duration": 45.001,
+            "sha256": "1593e3411ec64038724fb7c38664c9942000f25b6ec00fc057a81f9228a577aa"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Trombone",
+          "conceptId": "MC-0139",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Trombone/04.%20Marco%20Bordogni%20-%20Rochut%20Etude%20No.%202%20-%20Trombone.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Trombone/04. Marco Bordogni - Rochut Etude No. 2 - Trombone.m4a",
+            "recording": "Marco Bordogni - Rochut Etude No. 2 - Trombone",
+            "duration": 45.001,
+            "sha256": "079de1581049ad78b36ce4f136e7b42a61a931338d33ccbb9d293273d7d4d80e"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Tuba",
+          "conceptId": "MC-0212",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Tuba/04.%20Marco%20Bordogni%20-%20Bel%20Canto%20Study%20No.%202%20-%20Tuba.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Tuba/04. Marco Bordogni - Bel Canto Study No. 2 - Tuba.m4a",
+            "recording": "Marco Bordogni - Bel Canto Study No. 2 - Tuba",
+            "duration": 45.001,
+            "sha256": "eeb13b5977497ae9e7c5d3638b92dc70354aa6dfffccb646fc2737dd6c14ce0f"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3"
+        ]
+      },
+      "feedback": "Correct order: Trumpet → French horn → Trombone → Tuba.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/196/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A brass instrument made from a long coil of tubing with a flared bell and valves. It has a rounded, mellow tone and sits between the high trumpets and low brass. Its tubing is roughly four metres long when uncoiled, and its valves are operated with the left hand.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/135/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The highest common orchestral brass instrument. It uses valves and a cup-shaped mouthpiece and has a bright, penetrating tone. The standard orchestral trumpet normally has three valves.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/134/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A low-to-middle brass instrument that normally changes pitch with a telescoping slide rather than valves. It has a powerful tone and can also produce smooth glissandi.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/206/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The largest and lowest-pitched standard brass instrument. It provides the bass foundation of orchestras, brass bands and wind bands.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0140",
+        "MC-0139",
+        "MC-0212"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0202&level=N5",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "6698b0cb3e028ceb0794ef4497e91b7d05e534f35f9acbbf93e86db984a85ae4"
+    },
+    {
+      "id": "AO-H-MC0243-ORDER01",
+      "conceptId": "MC-0243",
+      "levelCode": "H",
+      "objectiveId": "AO-H-MC0243-ORDER01-objective",
+      "objective": "Listen to the four versions of the same piano motif. Arrange them from longest to shortest.",
+      "factGroupId": "audio-order-H-augmentation",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to the four versions of the same piano motif. Arrange them from longest to shortest.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Motif lasting 3 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 71,
+                "start": 0,
+                "duration": 1,
+                "velocity": 96
+              },
+              {
+                "midi": 65,
+                "start": 1,
+                "duration": 0.5,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 1.5,
+                "duration": 0.5,
+                "velocity": 96
+              },
+              {
+                "midi": 70,
+                "start": 2,
+                "duration": 1,
+                "velocity": 96
+              }
+            ],
+            "duration": 3
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Motif lasting 0.75 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 71,
+                "start": 0,
+                "duration": 0.25,
+                "velocity": 96
+              },
+              {
+                "midi": 65,
+                "start": 0.25,
+                "duration": 0.125,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 0.375,
+                "duration": 0.125,
+                "velocity": 96
+              },
+              {
+                "midi": 70,
+                "start": 0.5,
+                "duration": 0.25,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.75
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Motif lasting 1.5 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 71,
+                "start": 0,
+                "duration": 0.5,
+                "velocity": 96
+              },
+              {
+                "midi": 65,
+                "start": 0.5,
+                "duration": 0.25,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 0.75,
+                "duration": 0.25,
+                "velocity": 96
+              },
+              {
+                "midi": 70,
+                "start": 1,
+                "duration": 0.5,
+                "velocity": 96
+              }
+            ],
+            "duration": 1.5
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Motif lasting 6 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 71,
+                "start": 0,
+                "duration": 2,
+                "velocity": 96
+              },
+              {
+                "midi": 65,
+                "start": 2,
+                "duration": 1,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 3,
+                "duration": 1,
+                "velocity": 96
+              },
+              {
+                "midi": 70,
+                "start": 4,
+                "duration": 2,
+                "velocity": 96
+              }
+            ],
+            "duration": 6
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-3",
+          "clip-0",
+          "clip-2",
+          "clip-1"
+        ]
+      },
+      "feedback": "Augmentation lengthens note values. These versions keep the same pitches; the longest motif belongs at the top.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/237/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A theme, melody or rhythm is repeated with every note value lengthened in the same proportion. The material therefore takes longer while retaining its pitch and rhythmic relationships. The underlying pulse remains unchanged even though the transformed idea sounds slower. A common example doubles the note values, so quavers become crotchets while the beat keeps the same speed.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0243&level=H",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "generator": {
+        "type": "motifs",
+        "direction": "long-short"
+      },
+      "contentSha256": "d7911b101f4f595a430eb49f80fa9764a49926bd86b9064713c93917d166cbdd"
+    },
+    {
+      "id": "AO-H-MC0244-ORDER01",
+      "conceptId": "MC-0244",
+      "levelCode": "H",
+      "objectiveId": "AO-H-MC0244-ORDER01-objective",
+      "objective": "Listen to the four versions of the same piano motif. Arrange them from shortest to longest.",
+      "factGroupId": "audio-order-H-diminution",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to the four versions of the same piano motif. Arrange them from shortest to longest.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Motif lasting 6 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 70,
+                "start": 0,
+                "duration": 2,
+                "velocity": 96
+              },
+              {
+                "midi": 64,
+                "start": 2,
+                "duration": 1,
+                "velocity": 96
+              },
+              {
+                "midi": 61,
+                "start": 3,
+                "duration": 1,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 4,
+                "duration": 2,
+                "velocity": 96
+              }
+            ],
+            "duration": 6
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Motif lasting 1.5 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 70,
+                "start": 0,
+                "duration": 0.5,
+                "velocity": 96
+              },
+              {
+                "midi": 64,
+                "start": 0.5,
+                "duration": 0.25,
+                "velocity": 96
+              },
+              {
+                "midi": 61,
+                "start": 0.75,
+                "duration": 0.25,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 1,
+                "duration": 0.5,
+                "velocity": 96
+              }
+            ],
+            "duration": 1.5
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Motif lasting 0.75 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 70,
+                "start": 0,
+                "duration": 0.25,
+                "velocity": 96
+              },
+              {
+                "midi": 64,
+                "start": 0.25,
+                "duration": 0.125,
+                "velocity": 96
+              },
+              {
+                "midi": 61,
+                "start": 0.375,
+                "duration": 0.125,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 0.5,
+                "duration": 0.25,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.75
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Motif lasting 3 seconds",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 70,
+                "start": 0,
+                "duration": 1,
+                "velocity": 96
+              },
+              {
+                "midi": 64,
+                "start": 1,
+                "duration": 0.5,
+                "velocity": 96
+              },
+              {
+                "midi": 61,
+                "start": 1.5,
+                "duration": 0.5,
+                "velocity": 96
+              },
+              {
+                "midi": 67,
+                "start": 2,
+                "duration": 1,
+                "velocity": 96
+              }
+            ],
+            "duration": 3
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-2",
+          "clip-1",
+          "clip-3",
+          "clip-0"
+        ]
+      },
+      "feedback": "Diminution shortens note values. These versions keep the same pitches; the shortest motif belongs at the top.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/238/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A theme, melody or rhythm is repeated with every note value shortened in the same proportion. The material therefore moves more quickly while retaining its essential pattern. The underlying pulse remains unchanged even though the transformed idea sounds faster. A common example halves the note values, so crotchets become quavers while the beat keeps the same speed.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0244&level=H",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "generator": {
+        "type": "motifs",
+        "direction": "short-long"
+      },
+      "contentSha256": "1f85891e1e7341ad1e85eaae05070329c278fb3c3490df4694027034ed0bf7ab"
+    },
+    {
+      "id": "AO-AH-MC0298-ORDER01",
+      "conceptId": "MC-0298",
+      "levelCode": "AH",
+      "objectiveId": "AO-AH-MC0298-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the male voice types from highest to lowest.",
+      "factGroupId": "audio-order-AH-male-voices",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the male voice types from highest to lowest.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Countertenor",
+          "conceptId": "MC-0298",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/05.%20Advanced%20Higher/05.%20Timbre/Countertenor/05.%20George%20Frideric%20Handel%20-%20Agitato%20Da%20Fiere%20Tempeste%20-%20Countertenor.m4a",
+            "libraryPath": "05. Advanced Higher/05. Timbre/Countertenor/05. George Frideric Handel - Agitato Da Fiere Tempeste - Countertenor.m4a",
+            "recording": "George Frideric Handel - Agitato Da Fiere Tempeste - Countertenor",
+            "duration": 45.001,
+            "sha256": "592ad491d4aa50b11076a5c6fbaca2b92d3fd1d6f9410c168c3424c047901611"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Tenor",
+          "conceptId": "MC-0136",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Tenor/07.%20Giuseppe%20Verdi%20-%20Rigoletto%20-%20Questa%20O%20Quella%20-%20Tenor.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Tenor/07. Giuseppe Verdi - Rigoletto - Questa O Quella - Tenor.m4a",
+            "recording": "Giuseppe Verdi - Rigoletto - Questa O Quella - Tenor",
+            "duration": 25.73,
+            "sha256": "2c649b9c73a84d1c1d514283fca469cc7aeeefeb2dd63e36c5448a627a716557"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Baritone",
+          "conceptId": "MC-0194",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Baritone/05.%20Wolfgang%20Amadeus%20Mozart%20-%20Non%20Piu%20Andrai%20-%20Baritone.m4a",
+            "libraryPath": "03. National 5/05. Timbre/Baritone/05. Wolfgang Amadeus Mozart - Non Piu Andrai - Baritone.m4a",
+            "recording": "Wolfgang Amadeus Mozart - Non Piu Andrai - Baritone",
+            "duration": 45.001,
+            "sha256": "dabedee5fb91c4742aa1f608da6ae9a0f14c64300e49899622d70454a1f607d7"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Bass",
+          "conceptId": "MC-0115",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Bass/06.%20Wolfgang%20Amadeus%20Mozart%20-%20O%20Isis%20Und%20Osiris%20-%20Bass.m4a",
+            "libraryPath": "02. National 4/05. Timbre/Bass/06. Wolfgang Amadeus Mozart - O Isis Und Osiris - Bass.m4a",
+            "recording": "Wolfgang Amadeus Mozart - O Isis Und Osiris - Bass",
+            "duration": 45.001,
+            "sha256": "69410ccc79acf944f852e295080a7eaded710f3dc01e44d62722c32de993e576"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3"
+        ]
+      },
+      "feedback": "Correct order: Countertenor → Tenor → Baritone → Bass.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/292/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A high adult male voice, normally produced mainly through falsetto, with a range comparable to alto or sometimes mezzo-soprano. It is strongly associated with Renaissance and Baroque vocal music. The voice type was especially prominent before the end of the 18th century.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/131/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A high adult male voice or choral part, lying above baritone and bass. It forms the T in SATB.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/188/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A medium-low adult male voice lying between tenor and bass. It combines some of the upper flexibility of tenor with the depth of bass.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/110/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The lowest standard adult male voice or choral part. In SATB writing it provides the lowest vocal line and often supports the harmony.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0136",
+        "MC-0194",
+        "MC-0115"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0298&level=AH",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "2ec20f54efda9b44caa53abb96a6b8f4f1b315abfed9bc474fa1829ef797e4aa"
+    },
+    {
+      "id": "AO-H-MC0215-ORDER01",
+      "conceptId": "MC-0215",
+      "levelCode": "H",
+      "objectiveId": "AO-H-MC0215-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the musical periods and styles from oldest to newest, according to when they began.",
+      "factGroupId": "audio-order-H-periods",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the musical periods and styles from oldest to newest, according to when they began.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Baroque",
+          "conceptId": "MC-0070",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Baroque/02.%20Antonio%20Vivaldi%20-%20Gloria%20-%20mvt.%20I%20Gloria%20-%20Baroque.m4a",
+            "libraryPath": "02. National 4/01. Styles/Baroque/02. Antonio Vivaldi - Gloria - mvt. I Gloria - Baroque.m4a",
+            "recording": "Antonio Vivaldi - Gloria - mvt. I Gloria - Baroque",
+            "duration": 20.75,
+            "sha256": "1c5293f5d3ea8cf09f6fa0cdabca97516f7357ef7d95ffa7a429baeb3ce5f537"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Classical",
+          "conceptId": "MC-0148",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/01.%20Styles/Classical/03.%20Franz%20Joseph%20Haydn%20-%20Piano%20Concerto%20No.%2011%20In%20D%20Major%20-%20Mikhail%20Pletnev%20-%20Classical.m4a",
+            "libraryPath": "03. National 5/01. Styles/Classical/03. Franz Joseph Haydn - Piano Concerto No. 11 In D Major - Mikhail Pletnev - Classical.m4a",
+            "recording": "Franz Joseph Haydn - Piano Concerto No. 11 In D Major - Mikhail Pletnev - Classical",
+            "duration": 46.904,
+            "sha256": "e17034cf65e4ce7b3889a7ea3bd4f8b31aa7e4a707323f155b28ffc58db53866"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Romantic",
+          "conceptId": "MC-0077",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Romantic/03.%20Fr%C3%A9d%C3%A9ric%20Chopin%20-%20Piano.Nocturne%20-%20Romantic.m4a",
+            "libraryPath": "02. National 4/01. Styles/Romantic/03. Frédéric Chopin - Piano.Nocturne - Romantic.m4a",
+            "recording": "Frédéric Chopin - Piano.Nocturne - Romantic",
+            "duration": 18.333,
+            "sha256": "5094fbe26f9ea014d367fc2c1f96d42c7ccddec3372cb2095fa4158c71900318"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Impressionist",
+          "conceptId": "MC-0215",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/04.%20Higher/01.%20Styles/Impressionist/02.%20Claude%20Debussy%20-%20Images%20-%20Book%202%20-%20mvt.%20I%20Cloches%20%C3%80%20Travers%20Les%20Feuilles%20-%20Impressionist.m4a",
+            "libraryPath": "04. Higher/01. Styles/Impressionist/02. Claude Debussy - Images - Book 2 - mvt. I Cloches À Travers Les Feuilles - Impressionist.m4a",
+            "recording": "Claude Debussy - Images - Book 2 - mvt. I Cloches À Travers Les Feuilles - Impressionist",
+            "duration": 50.783,
+            "sha256": "5794e2fa32ea2b9ed596d5335ef92862b94df4eada75e0f6ed14340ceab41668"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3"
+        ]
+      },
+      "feedback": "Correct order: Baroque → Classical → Romantic → Impressionist.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/209/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A late-19th- and early-20th-century style that emphasises atmosphere, suggestion and tone colour rather than strongly directed tonal drama. Common features include whole-tone or modal scales, unresolved or extended harmony, parallel chords and delicate orchestration. Piano writing may use the sustain pedal, tied notes and cross-rhythms to blur pulse and sonority.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/66/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Music from approximately 1600-1750. Common features include basso continuo, contrapuntal texture, ornaments, sequences, terraced dynamics and instruments such as harpsichord and organ. The harpsichord and basso continuo were central to much Baroque ensemble music, and J. S. Bach and George Frideric Handel are major composers associated with the period.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/143/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Music of the Classical period, approximately 1750-1810. Common features include clear melody, balanced phrases, mostly homophonic texture, controlled dynamics and forms such as sonata, concerto, symphony and string quartet. Haydn, Mozart and early Beethoven are principal composers associated with the period.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/73/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Music from approximately 1810-1900, following the Classical period. Common features include expressive melody, rubato, chromatic harmony, wide dynamic range, programmatic ideas and an expanded orchestra. The orchestra expanded to include instruments such as piccolo and trombone and a wider range of percussion; Berlioz, Chopin and Liszt are representative composers.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0070",
+        "MC-0148",
+        "MC-0077"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0215&level=H",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "c4b796973abb039b846998fdb03187c1a901d1eef3c32582d67e413e0d14f00e"
+    },
+    {
+      "id": "AO-AH-MC0274-ORDER01",
+      "conceptId": "MC-0274",
+      "levelCode": "AH",
+      "objectiveId": "AO-AH-MC0274-ORDER01-objective",
+      "objective": "Listen to each example. Arrange the musical periods and styles from oldest to newest, according to when they began.",
+      "factGroupId": "audio-order-AH-periods",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to each example. Arrange the musical periods and styles from oldest to newest, according to when they began.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "Renaissance",
+          "conceptId": "MC-0274",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/05.%20Advanced%20Higher/01.%20Styles/Renaissance/04.%20Orlando%20Gibbons%20-%20The%20Silver%20Swan%20-%20Renaissance.m4a",
+            "libraryPath": "05. Advanced Higher/01. Styles/Renaissance/04. Orlando Gibbons - The Silver Swan - Renaissance.m4a",
+            "recording": "Orlando Gibbons - The Silver Swan - Renaissance",
+            "duration": 45.001,
+            "sha256": "c647febfb58b10fec2677a0b35b37cde72501a7082a0599b4ef570fcc3660301"
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "Baroque",
+          "conceptId": "MC-0070",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Baroque/04.%20Johann%20Sebastian%20Bach%20-%20Brandenburg%20Concerto%20No.%203%20-%20Allegro%20-%20Baroque.m4a",
+            "libraryPath": "02. National 4/01. Styles/Baroque/04. Johann Sebastian Bach - Brandenburg Concerto No. 3 - Allegro - Baroque.m4a",
+            "recording": "Johann Sebastian Bach - Brandenburg Concerto No. 3 - Allegro - Baroque",
+            "duration": 45.012,
+            "sha256": "052de2f6db3600ec8aca9e4494c8379b0fa5904d9447646db49f616023b3b81f"
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "Classical",
+          "conceptId": "MC-0148",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/03.%20National%205/01.%20Styles/Classical/04.%20Franz%20Joseph%20Haydn%20-%20Symphony%2094%20Surprise%20-%20Andante%20-%20Classical.m4a",
+            "libraryPath": "03. National 5/01. Styles/Classical/04. Franz Joseph Haydn - Symphony 94 Surprise - Andante - Classical.m4a",
+            "recording": "Franz Joseph Haydn - Symphony 94 Surprise - Andante - Classical",
+            "duration": 45.011,
+            "sha256": "ffffc4695196ca60c1a6702f59543cc96d9c45ad76b365b55a9d7db07a430e7d"
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "Romantic",
+          "conceptId": "MC-0077",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Romantic/04.%20Fr%C3%A9d%C3%A9ric%20Chopin%20-%20Waltz%20-%20Romantic.m4a",
+            "libraryPath": "02. National 4/01. Styles/Romantic/04. Frédéric Chopin - Waltz - Romantic.m4a",
+            "recording": "Frédéric Chopin - Waltz - Romantic",
+            "duration": 58.759,
+            "sha256": "854f532ba06dba754d7882fe75a28fea8fb88b1d5ef8a785c61488cd8b8d1ec0"
+          }
+        },
+        {
+          "id": "clip-4",
+          "text": "Example E",
+          "answerLabel": "Impressionist",
+          "conceptId": "MC-0215",
+          "media": {
+            "kind": "audio",
+            "src": "./audio/concept-library/04.%20Higher/01.%20Styles/Impressionist/04.%20Claude%20Debussy%20-%20La%20Mer%20-%20mvt.%20II%20Jeux%20De%20Vagues%20-%20Impressionist.m4a",
+            "libraryPath": "04. Higher/01. Styles/Impressionist/04. Claude Debussy - La Mer - mvt. II Jeux De Vagues - Impressionist.m4a",
+            "recording": "Claude Debussy - La Mer - mvt. II Jeux De Vagues - Impressionist",
+            "duration": 56.402,
+            "sha256": "5672bb1fd31ee29aeef612f32eca53979f562ecb614c6d8fdb4f06898d3d3d0d"
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-0",
+          "clip-1",
+          "clip-2",
+          "clip-3",
+          "clip-4"
+        ]
+      },
+      "feedback": "Correct order: Renaissance → Baroque → Classical → Romantic → Impressionist.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/268/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "The European musical period approximately 1400-1600. It is noted for modal harmony, flowing polyphonic vocal writing, imitation, a cappella sacred and secular forms, and instruments such as lute, viols, recorders and early brass.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/66/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Music from approximately 1600-1750. Common features include basso continuo, contrapuntal texture, ornaments, sequences, terraced dynamics and instruments such as harpsichord and organ. The harpsichord and basso continuo were central to much Baroque ensemble music, and J. S. Bach and George Frideric Handel are major composers associated with the period.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/143/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Music of the Classical period, approximately 1750-1810. Common features include clear melody, balanced phrases, mostly homophonic texture, controlled dynamics and forms such as sonata, concerto, symphony and string quartet. Haydn, Mozart and early Beethoven are principal composers associated with the period.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/73/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "Music from approximately 1810-1900, following the Classical period. Common features include expressive melody, rubato, chromatic harmony, wide dynamic range, programmatic ideas and an expanded orchestra. The orchestra expanded to include instruments such as piccolo and trombone and a wider range of percussion; Berlioz, Chopin and Liszt are representative composers.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        },
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/209/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A late-19th- and early-20th-century style that emphasises atmosphere, suggestion and tone colour rather than strongly directed tonal drama. Common features include whole-tone or modal scales, unresolved or extended harmony, parallel chords and delicate orchestration. Piano writing may use the sustain pedal, tied notes and cross-rhythms to blur pulse and sonority.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [
+        "MC-0070",
+        "MC-0148",
+        "MC-0077",
+        "MC-0215"
+      ],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0274&level=AH",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "contentSha256": "e36362bc349456e81f615d317c94bc6b178996ab4acf52890c0e2b7b8c5ca8c1"
+    },
+    {
+      "id": "AO-AH-MC0293-ORDER01",
+      "conceptId": "MC-0293",
+      "levelCode": "AH",
+      "objectiveId": "AO-AH-MC0293-ORDER01-objective",
+      "objective": "Listen to the original piano motif, then arrange the four individual notes in retrograde, from top to bottom.",
+      "factGroupId": "audio-order-AH-retrograde",
+      "format": "order",
+      "modality": "audio",
+      "prompt": "Listen to the original piano motif, then arrange the four individual notes in retrograde, from top to bottom.",
+      "media": {
+        "kind": "audio-order"
+      },
+      "options": [
+        {
+          "id": "clip-0",
+          "text": "Example A",
+          "answerLabel": "F♯4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 66,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-1",
+          "text": "Example B",
+          "answerLabel": "C♯4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 61,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-2",
+          "text": "Example C",
+          "answerLabel": "A4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 69,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        },
+        {
+          "id": "clip-3",
+          "text": "Example D",
+          "answerLabel": "E4",
+          "media": {
+            "kind": "piano",
+            "events": [
+              {
+                "midi": 64,
+                "start": 0,
+                "duration": 0.7,
+                "velocity": 96
+              }
+            ],
+            "duration": 0.7
+          }
+        }
+      ],
+      "answer": {
+        "correctOptionIds": [
+          "clip-1",
+          "clip-3",
+          "clip-2",
+          "clip-0"
+        ]
+      },
+      "feedback": "Retrograde reverses the original sequence: its last note belongs at the top and its first note at the bottom.",
+      "evidence": [
+        {
+          "kind": "repository",
+          "path": "music-dictionary/music-concepts-data.js",
+          "locator": "/concepts/287/definition",
+          "sourceSha256": "a328e807c9449de5ecd90064157e86b022bc965e591766f04d7daa3414b27f2c",
+          "supportingText": "A melody or tone row is presented in reverse order, beginning with its final note and ending with its first. In serial music, retrograde may also be combined with inversion.",
+          "verification": "Teacher-requested ordering task; library concept assignments retained for recorded examples."
+        }
+      ],
+      "relatedConceptIds": [],
+      "dictionaryLink": "music-dictionary/musicdictionaryconcept.html?concept=MC-0293&level=AH",
+      "review": {
+        "editorialNotes": "Teacher-requested audio ordering. Recorded clips are unused in the existing listening bank; generated examples use fresh structured piano events. Full library performances have not been independently re-certified."
+      },
+      "generator": {
+        "type": "retrograde"
+      },
+      "referenceMedia": {
+        "kind": "piano",
+        "events": [
+          {
+            "midi": 66,
+            "start": 0,
+            "duration": 0.45,
+            "velocity": 96
+          },
+          {
+            "midi": 69,
+            "start": 0.45,
+            "duration": 0.45,
+            "velocity": 96
+          },
+          {
+            "midi": 64,
+            "start": 0.9,
+            "duration": 0.45,
+            "velocity": 96
+          },
+          {
+            "midi": 61,
+            "start": 1.35,
+            "duration": 0.45,
+            "velocity": 96
+          }
+        ],
+        "duration": 1.8
+      },
+      "contentSha256": "ff4c02e978fa90439b48024e40e2a283228f366a3448581170302c4a58c8c3d3"
+    }
+  ],
+  "recordingPolicy": "Every library clip is path- and SHA-distinct from the existing listening-question bank. Prefer different clips between these new questions, too.",
+  "recordings": [
+    {
+      "concept": "Soprano",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Soprano/04.%20Reinhold%20Gli%C3%A8re%20-%20Concerto%20For%20Coloratura%20Soprano%20-%20Soprano.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Soprano/04. Reinhold Glière - Concerto For Coloratura Soprano - Soprano.m4a",
+      "recording": "Reinhold Glière - Concerto For Coloratura Soprano - Soprano",
+      "duration": 20.33,
+      "sha256": "06123e331333efda50a0260828b5e2a0ca78d88859f9a4a332493632d1264702"
+    },
+    {
+      "concept": "Alto",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Alto/03.%20Alto%20Demonstration%20-%20Deep%20River%20-%20Alto.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Alto/03. Alto Demonstration - Deep River - Alto.m4a",
+      "recording": "Alto Demonstration - Deep River - Alto",
+      "duration": 45.001,
+      "sha256": "607540e4b8eb05d81fa955ea369194189da13eff8c75f0873adfe902ef5f9dd6"
+    },
+    {
+      "concept": "Tenor",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Tenor/04.%20Gaetano%20Donizetti%20-%20Una%20Furtiva%20Lagrima%20-%20Tenor.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Tenor/04. Gaetano Donizetti - Una Furtiva Lagrima - Tenor.m4a",
+      "recording": "Gaetano Donizetti - Una Furtiva Lagrima - Tenor",
+      "duration": 45.001,
+      "sha256": "8019367b44fc092d4d91a1226ff71175f350053067c28f07ad178c3111afc878"
+    },
+    {
+      "concept": "Bass",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Bass/04.%20Leonard%20Cohen%20-%20Hallelujah%20-%20Bass.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Bass/04. Leonard Cohen - Hallelujah - Bass.m4a",
+      "recording": "Leonard Cohen - Hallelujah - Bass",
+      "duration": 47.693,
+      "sha256": "869aeb8e0e1f6d63b0a5e9262fd666caadb6edf827be02fdca44c08b2d4a75b1"
+    },
+    {
+      "concept": "Allegro",
+      "kind": "audio",
+      "src": "./audio/concept-library/01.%20National%203/03.%20Rhythm%20and%20Tempo/Allegro/04.%20Glenn%20Miller%20-%20In%20The%20Mood%20-%20Allegro.m4a",
+      "libraryPath": "01. National 3/03. Rhythm and Tempo/Allegro/04. Glenn Miller - In The Mood - Allegro.m4a",
+      "recording": "Glenn Miller - In The Mood - Allegro",
+      "duration": 45.024,
+      "sha256": "8e9a78f44454592305765de7e41d1bd2bc4c18e22ddd54236fe4abeceb5dbf75"
+    },
+    {
+      "concept": "Moderato",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/03.%20Rhythm%20and%20Tempo/Moderato/05.%20Michael%20Jackson%20-%20Billie%20Jean%20-%20Moderato.m4a",
+      "libraryPath": "03. National 5/03. Rhythm and Tempo/Moderato/05. Michael Jackson - Billie Jean - Moderato.m4a",
+      "recording": "Michael Jackson - Billie Jean - Moderato",
+      "duration": 45.018,
+      "sha256": "f190456ef74a2a9b6552f05155ebd7e8dd3cbea2b247ef336613ecc059e8dd9b"
+    },
+    {
+      "concept": "Andante",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/03.%20Rhythm%20and%20Tempo/Andante/04.%20Bob%20Marley%20And%20The%20Wailers%20-%20I%20Shot%20The%20Sheriff%20-%20Andante.m4a",
+      "libraryPath": "02. National 4/03. Rhythm and Tempo/Andante/04. Bob Marley And The Wailers - I Shot The Sheriff - Andante.m4a",
+      "recording": "Bob Marley And The Wailers - I Shot The Sheriff - Andante",
+      "duration": 45.024,
+      "sha256": "d7ec70344ffc8c82dab3a4d5a214a7b152248738883015e69f6d51a2b3c6c805"
+    },
+    {
+      "concept": "Adagio",
+      "kind": "audio",
+      "src": "./audio/concept-library/01.%20National%203/03.%20Rhythm%20and%20Tempo/Adagio/04.%20Camille%20Saint-Sa%C3%ABns%20-%20Carnival%20Of%20The%20Animals%20-%20mvt.%20IV%20Tortoises%20-%20Adagio.m4a",
+      "libraryPath": "01. National 3/03. Rhythm and Tempo/Adagio/04. Camille Saint-Saëns - Carnival Of The Animals - mvt. IV Tortoises - Adagio.m4a",
+      "recording": "Camille Saint-Saëns - Carnival Of The Animals - mvt. IV Tortoises - Adagio",
+      "duration": 30.593,
+      "sha256": "c9ffbd270b6ae8e816dff5eb242a8d2763e0e23d8b38d614f2668c9e49ccf3d9"
+    },
+    {
+      "concept": "Soprano",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Soprano/05.%20Johann%20Sebastian%20Bach%20-%20Herz%20Und%20Mund%20Und%20Tat%20Und%20Leben%2C%20Cantata%20-%20mvt.%20V%20Aria%20-%20Bereite%20Dir%2C%20Jesu%20-%20Soprano.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Soprano/05. Johann Sebastian Bach - Herz Und Mund Und Tat Und Leben, Cantata - mvt. V Aria - Bereite Dir, Jesu - Soprano.m4a",
+      "recording": "Johann Sebastian Bach - Herz Und Mund Und Tat Und Leben, Cantata - mvt. V Aria - Bereite Dir, Jesu - Soprano",
+      "duration": 48.356,
+      "sha256": "abd1115fd9c0946a03725684c61c228a37c8386d14025105eb64eef492cbdefd"
+    },
+    {
+      "concept": "Mezzo-soprano",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Mezzo-Soprano/02.%20Georges%20Bizet%20-%20Chanson%20Boh%C3%A8me%20-%20Mezzo-Soprano.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Mezzo-Soprano/02. Georges Bizet - Chanson Bohème - Mezzo-Soprano.m4a",
+      "recording": "Georges Bizet - Chanson Bohème - Mezzo-Soprano",
+      "duration": 51.735,
+      "sha256": "b14dac9308223ff137c9a8f69a2748ac2dce20918fb45f3da67705a94d307e7a"
+    },
+    {
+      "concept": "Alto",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Alto/05.%20Johann%20Sebastian%20Bach%20-%20Erbarme%20Dich%20-%20Alto.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Alto/05. Johann Sebastian Bach - Erbarme Dich - Alto.m4a",
+      "recording": "Johann Sebastian Bach - Erbarme Dich - Alto",
+      "duration": 45.001,
+      "sha256": "c2c787b9a7f5a49a7ebb5d29e89dc3c685013764c95b2f1c326f8582382fc44d"
+    },
+    {
+      "concept": "Tenor",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Tenor/05.%20George%20Frideric%20Handel%20-%20Messiah%2C%20Pt.%201%20-%20No.%202.%20Air%20-%20Ev'Ry%20Valley%20Shall%20Be%20Exalted%20-%20Tenor.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Tenor/05. George Frideric Handel - Messiah, Pt. 1 - No. 2. Air - Ev'Ry Valley Shall Be Exalted - Tenor.m4a",
+      "recording": "George Frideric Handel - Messiah, Pt. 1 - No. 2. Air - Ev'Ry Valley Shall Be Exalted - Tenor",
+      "duration": 52.999,
+      "sha256": "97e17112a2cb0aa111570a62ee55fdc0a1696309a7c2ee77930332a5523390b5"
+    },
+    {
+      "concept": "Baritone",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Baritone/04.%20Wolfgang%20Amadeus%20Mozart%20-%20Der%20Vogelfanger%20Bin%20Ich%20Ja%20-%20Baritone.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Baritone/04. Wolfgang Amadeus Mozart - Der Vogelfanger Bin Ich Ja - Baritone.m4a",
+      "recording": "Wolfgang Amadeus Mozart - Der Vogelfanger Bin Ich Ja - Baritone",
+      "duration": 45.001,
+      "sha256": "ce0cb1d1ac464ac75bab76563094651ba4d78d4da6f487b58994967f35e25323"
+    },
+    {
+      "concept": "Bass",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Bass/05.%20Wolfgang%20Amadeus%20Mozart%20-%20In%20Diesen%20Heilgen%20Hallen%20-%20Bass.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Bass/05. Wolfgang Amadeus Mozart - In Diesen Heilgen Hallen - Bass.m4a",
+      "recording": "Wolfgang Amadeus Mozart - In Diesen Heilgen Hallen - Bass",
+      "duration": 45.001,
+      "sha256": "5e6add38a25d4cb2b80f6364112e36b7444fa371c24aa02fb7605a1c95db12e1"
+    },
+    {
+      "concept": "Violin",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Violin/08.%20Violin%20Demonstration%20-%20Partita%20No3%20-%20Preludio%20-%20Violin.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Violin/08. Violin Demonstration - Partita No3 - Preludio - Violin.m4a",
+      "recording": "Violin Demonstration - Partita No3 - Preludio - Violin",
+      "duration": 45.001,
+      "sha256": "09c0f283910bf6c4e463e657634edba853c8a101bd4d11f23ad8066422da415f"
+    },
+    {
+      "concept": "Viola",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Viola/10.%20Viola%20Demonstration%20-%20Perfect%20-%20Viola.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Viola/10. Viola Demonstration - Perfect - Viola.m4a",
+      "recording": "Viola Demonstration - Perfect - Viola",
+      "duration": 40.682,
+      "sha256": "7076b0fb5f413616eaebdbad0036620d314e0ecb28abdab4348e612d7d0c87aa"
+    },
+    {
+      "concept": "Cello",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Cello/04.%20Johann%20Sebastian%20Bach%20-%20Suite%20No.%203%20-%20Bourrees%20-%20Cello.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Cello/04. Johann Sebastian Bach - Suite No. 3 - Bourrees - Cello.m4a",
+      "recording": "Johann Sebastian Bach - Suite No. 3 - Bourrees - Cello",
+      "duration": 45.001,
+      "sha256": "56791d919f18f1ac22e54d92f9d37ebec646d3fde14938416f9abcbbac22f83e"
+    },
+    {
+      "concept": "Double bass",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Double%20Bass/03.%20Domenico%20Dragonetti%20-%20Waltz%20No.%203%20-%20Double%20Bass.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Double Bass/03. Domenico Dragonetti - Waltz No. 3 - Double Bass.m4a",
+      "recording": "Domenico Dragonetti - Waltz No. 3 - Double Bass",
+      "duration": 45.001,
+      "sha256": "5498b85c823198e6b8f8de080ff5b910c9fb7781e804a01f111d5816035ddca0"
+    },
+    {
+      "concept": "Piccolo",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Piccolo/07.%20Piccolo%20Demonstration%20-%20Fireflies%20-%20Piccolo.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Piccolo/07. Piccolo Demonstration - Fireflies - Piccolo.m4a",
+      "recording": "Piccolo Demonstration - Fireflies - Piccolo",
+      "duration": 36.75,
+      "sha256": "0606562ec69512bea1344969d96e11b3251fb8aea60b387a7ba15840cbd60f98"
+    },
+    {
+      "concept": "Flute",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Flute/03.%20Flute%20Demonstration%20-%20Piece%20Pour%20Flute%20Seule%20-%20Flute.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Flute/03. Flute Demonstration - Piece Pour Flute Seule - Flute.m4a",
+      "recording": "Flute Demonstration - Piece Pour Flute Seule - Flute",
+      "duration": 45.001,
+      "sha256": "01892dce1cd48100d08b62d1a015bc3e9d0681bef0e9e4a27445b9a469b98321"
+    },
+    {
+      "concept": "Oboe",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Oboe/03.%20Benjamin%20Britten%20-%20Pan%20-%20Oboe.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Oboe/03. Benjamin Britten - Pan - Oboe.m4a",
+      "recording": "Benjamin Britten - Pan - Oboe",
+      "duration": 45.001,
+      "sha256": "90088674f192f350e4cac8ece0c8052a312fdec642aa772998a73cdb52f979d0"
+    },
+    {
+      "concept": "Clarinet",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Clarinet/04.%20Clarinet%20Demonstration%20-%20Three%20Pieces%20For%20Solo%20Clarinet%20-%20Clarinet.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Clarinet/04. Clarinet Demonstration - Three Pieces For Solo Clarinet - Clarinet.m4a",
+      "recording": "Clarinet Demonstration - Three Pieces For Solo Clarinet - Clarinet",
+      "duration": 45.001,
+      "sha256": "e22f60cec791bb467f6cf04b7218f71a13d0997cfa5cf9aed1b46554fdc4bf59"
+    },
+    {
+      "concept": "Bassoon",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Bassoon/02.%20Johann%20Sebastian%20Bach%20-%20Cello%20Suite%20No.%202%20-%20Sarabande%20-%20Bassoon.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Bassoon/02. Johann Sebastian Bach - Cello Suite No. 2 - Sarabande - Bassoon.m4a",
+      "recording": "Johann Sebastian Bach - Cello Suite No. 2 - Sarabande - Bassoon",
+      "duration": 45.001,
+      "sha256": "f9a13dd5cc98064ea64c47f5c7cf5d0d9776024f5f9b5b3fe83ed24a7ea66d0e"
+    },
+    {
+      "concept": "Trumpet",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Trumpet/13.%20Trumpet%20Demonstration%20-%20Cascades%20-%20Trumpet.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Trumpet/13. Trumpet Demonstration - Cascades - Trumpet.m4a",
+      "recording": "Trumpet Demonstration - Cascades - Trumpet",
+      "duration": 45.001,
+      "sha256": "a2af1a2f47b0fae447bf865f1b104dc655ed9ff9679b124c71b9d8f93a071334"
+    },
+    {
+      "concept": "French horn",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/French%20Horn/04.%20French%20Horn%20Demonstration%20-%20Appel%20Interstellaire%20-%20French%20Horn.m4a",
+      "libraryPath": "03. National 5/05. Timbre/French Horn/04. French Horn Demonstration - Appel Interstellaire - French Horn.m4a",
+      "recording": "French Horn Demonstration - Appel Interstellaire - French Horn",
+      "duration": 45.001,
+      "sha256": "1593e3411ec64038724fb7c38664c9942000f25b6ec00fc057a81f9228a577aa"
+    },
+    {
+      "concept": "Trombone",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Trombone/04.%20Marco%20Bordogni%20-%20Rochut%20Etude%20No.%202%20-%20Trombone.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Trombone/04. Marco Bordogni - Rochut Etude No. 2 - Trombone.m4a",
+      "recording": "Marco Bordogni - Rochut Etude No. 2 - Trombone",
+      "duration": 45.001,
+      "sha256": "079de1581049ad78b36ce4f136e7b42a61a931338d33ccbb9d293273d7d4d80e"
+    },
+    {
+      "concept": "Tuba",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Tuba/04.%20Marco%20Bordogni%20-%20Bel%20Canto%20Study%20No.%202%20-%20Tuba.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Tuba/04. Marco Bordogni - Bel Canto Study No. 2 - Tuba.m4a",
+      "recording": "Marco Bordogni - Bel Canto Study No. 2 - Tuba",
+      "duration": 45.001,
+      "sha256": "eeb13b5977497ae9e7c5d3638b92dc70354aa6dfffccb646fc2737dd6c14ce0f"
+    },
+    {
+      "concept": "Countertenor",
+      "kind": "audio",
+      "src": "./audio/concept-library/05.%20Advanced%20Higher/05.%20Timbre/Countertenor/05.%20George%20Frideric%20Handel%20-%20Agitato%20Da%20Fiere%20Tempeste%20-%20Countertenor.m4a",
+      "libraryPath": "05. Advanced Higher/05. Timbre/Countertenor/05. George Frideric Handel - Agitato Da Fiere Tempeste - Countertenor.m4a",
+      "recording": "George Frideric Handel - Agitato Da Fiere Tempeste - Countertenor",
+      "duration": 45.001,
+      "sha256": "592ad491d4aa50b11076a5c6fbaca2b92d3fd1d6f9410c168c3424c047901611"
+    },
+    {
+      "concept": "Tenor",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Tenor/07.%20Giuseppe%20Verdi%20-%20Rigoletto%20-%20Questa%20O%20Quella%20-%20Tenor.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Tenor/07. Giuseppe Verdi - Rigoletto - Questa O Quella - Tenor.m4a",
+      "recording": "Giuseppe Verdi - Rigoletto - Questa O Quella - Tenor",
+      "duration": 25.73,
+      "sha256": "2c649b9c73a84d1c1d514283fca469cc7aeeefeb2dd63e36c5448a627a716557"
+    },
+    {
+      "concept": "Baritone",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/05.%20Timbre/Baritone/05.%20Wolfgang%20Amadeus%20Mozart%20-%20Non%20Piu%20Andrai%20-%20Baritone.m4a",
+      "libraryPath": "03. National 5/05. Timbre/Baritone/05. Wolfgang Amadeus Mozart - Non Piu Andrai - Baritone.m4a",
+      "recording": "Wolfgang Amadeus Mozart - Non Piu Andrai - Baritone",
+      "duration": 45.001,
+      "sha256": "dabedee5fb91c4742aa1f608da6ae9a0f14c64300e49899622d70454a1f607d7"
+    },
+    {
+      "concept": "Bass",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/05.%20Timbre/Bass/06.%20Wolfgang%20Amadeus%20Mozart%20-%20O%20Isis%20Und%20Osiris%20-%20Bass.m4a",
+      "libraryPath": "02. National 4/05. Timbre/Bass/06. Wolfgang Amadeus Mozart - O Isis Und Osiris - Bass.m4a",
+      "recording": "Wolfgang Amadeus Mozart - O Isis Und Osiris - Bass",
+      "duration": 45.001,
+      "sha256": "69410ccc79acf944f852e295080a7eaded710f3dc01e44d62722c32de993e576"
+    },
+    {
+      "concept": "Baroque",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Baroque/02.%20Antonio%20Vivaldi%20-%20Gloria%20-%20mvt.%20I%20Gloria%20-%20Baroque.m4a",
+      "libraryPath": "02. National 4/01. Styles/Baroque/02. Antonio Vivaldi - Gloria - mvt. I Gloria - Baroque.m4a",
+      "recording": "Antonio Vivaldi - Gloria - mvt. I Gloria - Baroque",
+      "duration": 20.75,
+      "sha256": "1c5293f5d3ea8cf09f6fa0cdabca97516f7357ef7d95ffa7a429baeb3ce5f537"
+    },
+    {
+      "concept": "Classical",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/01.%20Styles/Classical/03.%20Franz%20Joseph%20Haydn%20-%20Piano%20Concerto%20No.%2011%20In%20D%20Major%20-%20Mikhail%20Pletnev%20-%20Classical.m4a",
+      "libraryPath": "03. National 5/01. Styles/Classical/03. Franz Joseph Haydn - Piano Concerto No. 11 In D Major - Mikhail Pletnev - Classical.m4a",
+      "recording": "Franz Joseph Haydn - Piano Concerto No. 11 In D Major - Mikhail Pletnev - Classical",
+      "duration": 46.904,
+      "sha256": "e17034cf65e4ce7b3889a7ea3bd4f8b31aa7e4a707323f155b28ffc58db53866"
+    },
+    {
+      "concept": "Romantic",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Romantic/03.%20Fr%C3%A9d%C3%A9ric%20Chopin%20-%20Piano.Nocturne%20-%20Romantic.m4a",
+      "libraryPath": "02. National 4/01. Styles/Romantic/03. Frédéric Chopin - Piano.Nocturne - Romantic.m4a",
+      "recording": "Frédéric Chopin - Piano.Nocturne - Romantic",
+      "duration": 18.333,
+      "sha256": "5094fbe26f9ea014d367fc2c1f96d42c7ccddec3372cb2095fa4158c71900318"
+    },
+    {
+      "concept": "Impressionist",
+      "kind": "audio",
+      "src": "./audio/concept-library/04.%20Higher/01.%20Styles/Impressionist/02.%20Claude%20Debussy%20-%20Images%20-%20Book%202%20-%20mvt.%20I%20Cloches%20%C3%80%20Travers%20Les%20Feuilles%20-%20Impressionist.m4a",
+      "libraryPath": "04. Higher/01. Styles/Impressionist/02. Claude Debussy - Images - Book 2 - mvt. I Cloches À Travers Les Feuilles - Impressionist.m4a",
+      "recording": "Claude Debussy - Images - Book 2 - mvt. I Cloches À Travers Les Feuilles - Impressionist",
+      "duration": 50.783,
+      "sha256": "5794e2fa32ea2b9ed596d5335ef92862b94df4eada75e0f6ed14340ceab41668"
+    },
+    {
+      "concept": "Renaissance",
+      "kind": "audio",
+      "src": "./audio/concept-library/05.%20Advanced%20Higher/01.%20Styles/Renaissance/04.%20Orlando%20Gibbons%20-%20The%20Silver%20Swan%20-%20Renaissance.m4a",
+      "libraryPath": "05. Advanced Higher/01. Styles/Renaissance/04. Orlando Gibbons - The Silver Swan - Renaissance.m4a",
+      "recording": "Orlando Gibbons - The Silver Swan - Renaissance",
+      "duration": 45.001,
+      "sha256": "c647febfb58b10fec2677a0b35b37cde72501a7082a0599b4ef570fcc3660301"
+    },
+    {
+      "concept": "Baroque",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Baroque/04.%20Johann%20Sebastian%20Bach%20-%20Brandenburg%20Concerto%20No.%203%20-%20Allegro%20-%20Baroque.m4a",
+      "libraryPath": "02. National 4/01. Styles/Baroque/04. Johann Sebastian Bach - Brandenburg Concerto No. 3 - Allegro - Baroque.m4a",
+      "recording": "Johann Sebastian Bach - Brandenburg Concerto No. 3 - Allegro - Baroque",
+      "duration": 45.012,
+      "sha256": "052de2f6db3600ec8aca9e4494c8379b0fa5904d9447646db49f616023b3b81f"
+    },
+    {
+      "concept": "Classical",
+      "kind": "audio",
+      "src": "./audio/concept-library/03.%20National%205/01.%20Styles/Classical/04.%20Franz%20Joseph%20Haydn%20-%20Symphony%2094%20Surprise%20-%20Andante%20-%20Classical.m4a",
+      "libraryPath": "03. National 5/01. Styles/Classical/04. Franz Joseph Haydn - Symphony 94 Surprise - Andante - Classical.m4a",
+      "recording": "Franz Joseph Haydn - Symphony 94 Surprise - Andante - Classical",
+      "duration": 45.011,
+      "sha256": "ffffc4695196ca60c1a6702f59543cc96d9c45ad76b365b55a9d7db07a430e7d"
+    },
+    {
+      "concept": "Romantic",
+      "kind": "audio",
+      "src": "./audio/concept-library/02.%20National%204/01.%20Styles/Romantic/04.%20Fr%C3%A9d%C3%A9ric%20Chopin%20-%20Waltz%20-%20Romantic.m4a",
+      "libraryPath": "02. National 4/01. Styles/Romantic/04. Frédéric Chopin - Waltz - Romantic.m4a",
+      "recording": "Frédéric Chopin - Waltz - Romantic",
+      "duration": 58.759,
+      "sha256": "854f532ba06dba754d7882fe75a28fea8fb88b1d5ef8a785c61488cd8b8d1ec0"
+    },
+    {
+      "concept": "Impressionist",
+      "kind": "audio",
+      "src": "./audio/concept-library/04.%20Higher/01.%20Styles/Impressionist/04.%20Claude%20Debussy%20-%20La%20Mer%20-%20mvt.%20II%20Jeux%20De%20Vagues%20-%20Impressionist.m4a",
+      "libraryPath": "04. Higher/01. Styles/Impressionist/04. Claude Debussy - La Mer - mvt. II Jeux De Vagues - Impressionist.m4a",
+      "recording": "Claude Debussy - La Mer - mvt. II Jeux De Vagues - Impressionist",
+      "duration": 56.402,
+      "sha256": "5672bb1fd31ee29aeef612f32eca53979f562ecb614c6d8fdb4f06898d3d3d0d"
+    }
+  ]
+}

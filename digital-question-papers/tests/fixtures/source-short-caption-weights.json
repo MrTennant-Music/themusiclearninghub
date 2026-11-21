@@ -1,0 +1,130 @@
+{
+  "scope": "Exact regular score captions read from the 300 dpi official source crops; both other source-bold captions and interactive answer text retain their styles.",
+  "papers": {
+    "advanced-higher-2017": {
+      "q4": {
+        "(a) Scale:": 400,
+        "(b) Chord:": 400
+      },
+      "q5": {
+        "(a) Key:": 400,
+        "(b) Enharmonic": 400
+      }
+    },
+    "advanced-higher-2018": {
+      "q4": {
+        "(a) Key:": 400,
+        "(b) Cadence:": 400,
+        "(c) Enharmonic note": 400
+      },
+      "q5": {
+        "Voice": 400
+      }
+    },
+    "advanced-higher-2019": {
+      "q2": {
+        "(i) Rests": 400,
+        "(ii) Chord:": 400
+      }
+    },
+    "higher-2024": {
+      "q4": {
+        "(a) Interval": 400,
+        "(b) Rhythm": 400,
+        "(d) Transpose": 400,
+        "(e) Chords": 400,
+        "C": 400,
+        "V": 400
+      }
+    },
+    "higher-2025": {
+      "q4": {
+        "(b) Chords": 400,
+        "(c) Transpose": 400,
+        "(d) Notes": 400,
+        "(e) Bar line": 400,
+        "(f) Interval": 400,
+        "C": 400,
+        "IV": 400
+      }
+    },
+    "national5-2017": {
+      "q3": {
+        "Rhythm": 400,
+        "Notes": 400
+      }
+    },
+    "national5-2024": {
+      "q3": {
+        "Chord": 400,
+        "Notes": 400
+      }
+    },
+    "national5-2025": {
+      "q3": {
+        "(c) Notes": 400,
+        "(d) Interval": 400,
+        "(f) Cadence": 400
+      }
+    },
+    "national5-2026": {
+      "q3": {
+        "(c) Interval": 400,
+        "(d) Value": 400,
+        "(e) Notes": 400
+      }
+    },
+    "national5-2018": {
+      "q3": {
+        "Rhythm": 400,
+        "Cadence:": 400,
+        "Notes": 400
+      }
+    },
+    "national5-2019": {
+      "q3": {
+        "Rhythm": 400,
+        "Notes": 400
+      }
+    },
+    "advanced-higher-2016": {
+      "q4": {
+        "Notes": 400,
+        "(ii)": 400,
+        "Enharmonic": 400,
+        "F / I": 400,
+        "Root": 400,
+        "Gm / IIc": 400,
+        "2nd Inv.": 400,
+        "Chords": 400,
+        "Bass note": 400
+      },
+      "q5": {
+        "(a) Key:": 400,
+        "(b) Rest(s)": 400,
+        "(c) Tie": 400,
+        "(d) Notes": 400
+      }
+    },
+    "higher-2023": {
+      "q4": {
+        "C": 400,
+        "V": 400
+      }
+    },
+    "higher-2026": {
+      "q4": {
+        "C": 400,
+        "IV": 400
+      }
+    },
+    "advanced-higher-2023": {
+      "q2": {
+        "Intro": 400,
+        "2 bar intro": 400,
+        "(ii) Key:": 400,
+        "To coda": 400
+      }
+    }
+  }
+}

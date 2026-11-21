@@ -1,0 +1,200 @@
+{
+  "id": "hub-test-matching-pairs",
+  "level": "N3",
+  "title": "Instruments",
+  "instructions": "",
+  "description": "Find four hidden groups of four instruments.",
+  "folder": "Music examples",
+  "tags": [
+    "Music"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-test-matching-pairs-0",
+      "prompt": "Violin",
+      "answer": "Violin",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-1",
+      "prompt": "Viola",
+      "answer": "Viola",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-2",
+      "prompt": "Cello",
+      "answer": "Cello",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-3",
+      "prompt": "Double bass",
+      "answer": "Double bass",
+      "distractors": [],
+      "group": "Strings",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-4",
+      "prompt": "Flute",
+      "answer": "Flute",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-5",
+      "prompt": "Oboe",
+      "answer": "Oboe",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-6",
+      "prompt": "Clarinet",
+      "answer": "Clarinet",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-7",
+      "prompt": "Bassoon",
+      "answer": "Bassoon",
+      "distractors": [],
+      "group": "Woodwind",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-8",
+      "prompt": "Trumpet",
+      "answer": "Trumpet",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-9",
+      "prompt": "Trombone",
+      "answer": "Trombone",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-10",
+      "prompt": "French horn",
+      "answer": "French horn",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-11",
+      "prompt": "Tuba",
+      "answer": "Tuba",
+      "distractors": [],
+      "group": "Brass",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-12",
+      "prompt": "Timpani",
+      "answer": "Timpani",
+      "distractors": [],
+      "group": "Percussion",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-13",
+      "prompt": "Snare drum",
+      "answer": "Snare drum",
+      "distractors": [],
+      "group": "Percussion",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-14",
+      "prompt": "Xylophone",
+      "answer": "Xylophone",
+      "distractors": [],
+      "group": "Percussion",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-test-matching-pairs-15",
+      "prompt": "Cymbals",
+      "answer": "Cymbals",
+      "distractors": [],
+      "group": "Percussion",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-15T00:00:00.000Z"
+}

@@ -5,7 +5,7 @@
   "source": {
     "knowledgeBankFile": "Music_Concept_Knowledge_Bank_Ultimate_Codex_Edition.json",
     "knowledgeBankSchemaVersion": "5.0",
-    "knowledgeBankSha256": "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e"
+    "knowledgeBankSha256": "a83e4df9820bdc5d6eae142c234b1209b12c8c2a5bc2b107fc9668857ba8c1e7"
   },
   "questions": [
     {
@@ -993,7 +993,7 @@
           "correct": false
         },
         {
-          "text": "Chord progressions - chords I, IV and V in major keys",
+          "text": "Chord progressions — chords I, IV and V (major keys)",
           "correct": false
         },
         {
@@ -1062,7 +1062,7 @@
       ],
       "hint": "The primary triads: tonic, subdominant and dominant.",
       "hintFactId": null,
-      "explanation": "The statement “It is a sequence built from chords I, IV and V in a major key” describes Chord progressions - chords I, IV and V in major keys, not Broken chord / arpeggio. The notes of a chord are played one after another, not together.",
+      "explanation": "The statement “It is a sequence built from chords I, IV and V in a major key” describes Chord progressions — chords I, IV and V (major keys), not Broken chord / arpeggio. The notes of a chord are played one after another, not together.",
       "literacyLink": {
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
@@ -1104,15 +1104,15 @@
           "correct": true
         },
         {
-          "text": "Pedal",
-          "correct": false
-        },
-        {
           "text": "Pentatonic scale",
           "correct": false
         },
         {
           "text": "Scale",
+          "correct": false
+        },
+        {
+          "text": "Scat singing",
           "correct": false
         }
       ],
@@ -1175,7 +1175,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0082",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "factId": "MC-0082-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -1187,19 +1187,19 @@
       "question": "A sequence built from the tonic, subdominant and dominant triads of a major key. What is this?",
       "answers": [
         {
-          "text": "Drone",
+          "text": "Minor tonality",
           "correct": false
         },
         {
-          "text": "Chord progressions - chords I, IV and V in major keys",
+          "text": "Chord progressions — chords I, IV and V (major keys)",
           "correct": true
         },
         {
-          "text": "Major",
+          "text": "Octave",
           "correct": false
         },
         {
-          "text": "Minor",
+          "text": "Ornament",
           "correct": false
         }
       ],
@@ -1216,7 +1216,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0082",
-      "concept": "Chord progressions - chords I, IV and V in major keys",
+      "concept": "Chord progressions — chords I, IV and V (major keys)",
       "factId": "MC-0082-F01",
       "supportingFactIds": [],
       "senseId": null,
@@ -1225,7 +1225,7 @@
       "difficulty": "Medium",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Chord progressions - chords I, IV and V in major keys?",
+      "question": "Which is NOT a feature of Chord progressions — chords I, IV and V (major keys)?",
       "answers": [
         {
           "text": "It uses the tonic, subdominant and dominant chords of a major key.",
@@ -1250,7 +1250,7 @@
       ],
       "hint": "Five notes: often 1, 2, 3, 5 and 6.",
       "hintFactId": null,
-      "explanation": "The statement “It is a five-note scale using scale degrees 1, 2, 3, 5 and 6” describes Pentatonic scale, not Chord progressions - chords I, IV and V in major keys. A sequence built from the tonic, subdominant and dominant triads of a major key.",
+      "explanation": "The statement “It is a five-note scale using scale degrees 1, 2, 3, 5 and 6” describes Pentatonic scale, not Chord progressions — chords I, IV and V (major keys). A sequence built from the tonic, subdominant and dominant triads of a major key.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0089"
     },
@@ -1349,7 +1349,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0084",
-      "concept": "Major",
+      "concept": "Major tonality",
       "factId": "MC-0084-F03",
       "supportingFactIds": [],
       "senseId": null,
@@ -1361,11 +1361,11 @@
       "question": "Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone. What is this?",
       "answers": [
         {
-          "text": "Tonality",
+          "text": "Scale",
           "correct": false
         },
         {
-          "text": "Chord progressions - chords I, IV and V in major keys",
+          "text": "Chord progressions — chords I, IV and V (major keys)",
           "correct": false
         },
         {
@@ -1373,7 +1373,7 @@
           "correct": false
         },
         {
-          "text": "Major",
+          "text": "Major tonality",
           "correct": true
         }
       ],
@@ -1390,7 +1390,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0084",
-      "concept": "Major",
+      "concept": "Major tonality",
       "factId": "MC-0084-F03",
       "supportingFactIds": [],
       "senseId": null,
@@ -1399,7 +1399,7 @@
       "difficulty": "Medium",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Major?",
+      "question": "Which is NOT a feature of Major tonality?",
       "answers": [
         {
           "text": "It is based on a major scale and major tonic chord.",
@@ -1424,7 +1424,7 @@
       ],
       "hint": "Its sixth and seventh can change on the way up and down.",
       "hintFactId": null,
-      "explanation": "The statement “Its natural, harmonic and melodic forms alter the sixth and seventh scale degrees” describes Minor, not Major. Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
+      "explanation": "The statement “Its natural, harmonic and melodic forms alter the sixth and seventh scale degrees” describes Minor tonality, not Major tonality. Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0085"
     },
@@ -1436,7 +1436,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0085",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "factId": "MC-0085-F03",
       "supportingFactIds": [],
       "senseId": null,
@@ -1448,11 +1448,11 @@
       "question": "Natural, harmonic and melodic forms use different sixth and seventh notes. What is this?",
       "answers": [
         {
-          "text": "Minor",
+          "text": "Minor tonality",
           "correct": true
         },
         {
-          "text": "Tonality",
+          "text": "Pentatonic scale",
           "correct": false
         },
         {
@@ -1460,7 +1460,7 @@
           "correct": false
         },
         {
-          "text": "Chord progressions - chords I, IV and V in major keys",
+          "text": "Chord progressions — chords I, IV and V (major keys)",
           "correct": false
         }
       ],
@@ -1477,7 +1477,7 @@
         "Melody/harmony"
       ],
       "conceptId": "MC-0085",
-      "concept": "Minor",
+      "concept": "Minor tonality",
       "factId": "MC-0085-F03",
       "supportingFactIds": [],
       "senseId": null,
@@ -1486,7 +1486,7 @@
       "difficulty": "Medium",
       "questionType": "feature_exclusion",
       "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Minor?",
+      "question": "Which is NOT a feature of Minor tonality?",
       "answers": [
         {
           "text": "Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone.",
@@ -1511,7 +1511,7 @@
       ],
       "hint": "C–E–G rather than C–E♭–G.",
       "hintFactId": null,
-      "explanation": "The statement “Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone” describes Major, not Minor. Natural, harmonic and melodic forms use different sixth and seventh notes.",
+      "explanation": "The statement “Its scale pattern is tone-tone-semitone-tone-tone-tone-semitone” describes Major tonality, not Minor tonality. Natural, harmonic and melodic forms use different sixth and seventh notes.",
       "literacyLink": null,
       "featureSourceConceptId": "MC-0084"
     },
@@ -1535,7 +1535,7 @@
       "question": "The interval between notes with the same letter name, eight scale degrees apart, such as C to C. What is this?",
       "answers": [
         {
-          "text": "Major",
+          "text": "Broken chord / arpeggio",
           "correct": false
         },
         {
@@ -1543,11 +1543,11 @@
           "correct": true
         },
         {
-          "text": "Minor",
+          "text": "Change of key",
           "correct": false
         },
         {
-          "text": "Tonality",
+          "text": "Chord progressions — chords I, IV and V (major keys)",
           "correct": false
         }
       ],
@@ -1558,7 +1558,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-medium-017",
               "n5-literacy-medium-018",
@@ -1625,7 +1625,7 @@
         "relationship": "pitch_harmony_or_staff_notation",
         "targets": [
           {
-            "sourceFile": "millionaire-question-bank.js",
+            "sourceFile": "whowantstobemillionaire/millionaire-question-bank.js",
             "localIds": [
               "n5-literacy-medium-017",
               "n5-literacy-medium-018",
@@ -1666,11 +1666,11 @@
       "question": "A decorative note or group of notes added to a melody. What is this?",
       "answers": [
         {
-          "text": "Drone",
+          "text": "Pentatonic scale",
           "correct": false
         },
         {
-          "text": "Major",
+          "text": "Scale",
           "correct": false
         },
         {
@@ -1678,7 +1678,7 @@
           "correct": true
         },
         {
-          "text": "Minor",
+          "text": "Scat singing",
           "correct": false
         }
       ],
@@ -1757,11 +1757,11 @@
           "correct": false
         },
         {
-          "text": "Pentatonic scale",
+          "text": "Broken chord / arpeggio",
           "correct": false
         },
         {
-          "text": "Scale",
+          "text": "Change of key",
           "correct": false
         },
         {
@@ -1844,7 +1844,7 @@
           "correct": true
         },
         {
-          "text": "Minor",
+          "text": "Major tonality",
           "correct": false
         },
         {
@@ -1927,7 +1927,7 @@
       "question": "A set of notes arranged in ascending or descending stepwise order. What is this?",
       "answers": [
         {
-          "text": "Minor",
+          "text": "Pentatonic scale",
           "correct": false
         },
         {
@@ -2018,7 +2018,7 @@
           "correct": false
         },
         {
-          "text": "Pentatonic scale",
+          "text": "Major tonality",
           "correct": false
         },
         {
@@ -2026,7 +2026,7 @@
           "correct": true
         },
         {
-          "text": "Scale",
+          "text": "Minor tonality",
           "correct": false
         }
       ],
@@ -2082,93 +2082,6 @@
       "featureSourceConceptId": "MC-0075"
     },
     {
-      "id": "MCQ-N4-MC0092-F01-E-001",
-      "level": "National 4",
-      "category": "Melody/harmony",
-      "categories": [
-        "Melody/harmony"
-      ],
-      "conceptId": "MC-0092",
-      "concept": "Tonality",
-      "factId": "MC-0092-F01",
-      "supportingFactIds": [],
-      "senseId": null,
-      "senseContext": null,
-      "comparisonGroupId": null,
-      "difficulty": "Easy",
-      "questionType": "definition",
-      "answerMode": "concept",
-      "question": "Music is built around a central or home key. What is this?",
-      "answers": [
-        {
-          "text": "Minor",
-          "correct": false
-        },
-        {
-          "text": "Drone",
-          "correct": false
-        },
-        {
-          "text": "Octave",
-          "correct": false
-        },
-        {
-          "text": "Tonality",
-          "correct": true
-        }
-      ],
-      "hint": "The sense of a home pitch and home key.",
-      "hintFactId": null,
-      "explanation": "Music is built around a central or home key.",
-      "literacyLink": null
-    },
-    {
-      "id": "MCQ-N4-MC0092-F01-M-001",
-      "level": "National 4",
-      "category": "Melody/harmony",
-      "categories": [
-        "Melody/harmony"
-      ],
-      "conceptId": "MC-0092",
-      "concept": "Tonality",
-      "factId": "MC-0092-F01",
-      "supportingFactIds": [],
-      "senseId": null,
-      "senseContext": null,
-      "comparisonGroupId": null,
-      "difficulty": "Medium",
-      "questionType": "feature_exclusion",
-      "answerMode": "not_feature",
-      "question": "Which is NOT a feature of Tonality?",
-      "answers": [
-        {
-          "text": "Music is organised around a central key or tonic.",
-          "correct": false,
-          "featureOfConceptId": "MC-0092"
-        },
-        {
-          "text": "At this level it mainly contrasts major and minor.",
-          "correct": false,
-          "featureOfConceptId": "MC-0092"
-        },
-        {
-          "text": "Scale notes and chords create a pull between dominant and tonic.",
-          "correct": false,
-          "featureOfConceptId": "MC-0092"
-        },
-        {
-          "text": "A bass note alternates with an off-beat chord in a repeated accompaniment.",
-          "correct": true,
-          "featureOfConceptId": "MC-0093"
-        }
-      ],
-      "hint": "Bass on the pulse, chord on the off-beat—repeated.",
-      "hintFactId": null,
-      "explanation": "The statement “A bass note alternates with an off-beat chord in a repeated accompaniment” describes Vamp, not Tonality. Music is built around a central or home key.",
-      "literacyLink": null,
-      "featureSourceConceptId": "MC-0093"
-    },
-    {
       "id": "MCQ-N4-MC0093-F01-E-001",
       "level": "National 4",
       "category": "Melody/harmony",
@@ -2188,20 +2101,20 @@
       "question": "A repeated accompaniment pattern, often alternating a bass note on the beat with a chord off the beat. What is this?",
       "answers": [
         {
+          "text": "Pedal",
+          "correct": false
+        },
+        {
+          "text": "Major tonality",
+          "correct": false
+        },
+        {
+          "text": "Minor tonality",
+          "correct": false
+        },
+        {
           "text": "Vamp",
           "correct": true
-        },
-        {
-          "text": "Broken chord / arpeggio",
-          "correct": false
-        },
-        {
-          "text": "Major",
-          "correct": false
-        },
-        {
-          "text": "Minor",
-          "correct": false
         }
       ],
       "hint": "Bass on the pulse, chord on the off-beat—repeated.",
@@ -2229,11 +2142,6 @@
       "question": "Which is NOT a feature of Vamp?",
       "answers": [
         {
-          "text": "One bass note stays or repeats while several different harmonies pass above it.",
-          "correct": true,
-          "featureOfConceptId": "MC-0088"
-        },
-        {
           "text": "It is a repeated accompaniment pattern.",
           "correct": false,
           "featureOfConceptId": "MC-0093"
@@ -2247,6 +2155,11 @@
           "text": "It is common in ragtime, popular and Scottish dance music.",
           "correct": false,
           "featureOfConceptId": "MC-0093"
+        },
+        {
+          "text": "One bass note stays or repeats while several different harmonies pass above it.",
+          "correct": true,
+          "featureOfConceptId": "MC-0088"
         }
       ],
       "hint": "A bass note stays while the chords above change.",
@@ -2275,19 +2188,19 @@
       "question": "An instruction to return to the previous or main tempo after a temporary change such as a rallentando or accelerando. What is this?",
       "answers": [
         {
-          "text": "Rallentando",
-          "correct": false
-        },
-        {
           "text": "A tempo",
           "correct": true
         },
         {
-          "text": "Andante",
+          "text": "Accelerando",
           "correct": false
         },
         {
-          "text": "Compound time",
+          "text": "Dotted rhythms",
+          "correct": false
+        },
+        {
+          "text": "Jig",
           "correct": false
         }
       ],
@@ -2316,14 +2229,14 @@
       "question": "Which is NOT a feature of A tempo?",
       "answers": [
         {
-          "text": "It tells performers to return to the earlier tempo.",
-          "correct": false,
-          "featureOfConceptId": "MC-0094"
-        },
-        {
           "text": "It tells performers to make the tempo gradually faster.",
           "correct": true,
           "featureOfConceptId": "MC-0095"
+        },
+        {
+          "text": "It tells performers to return to the earlier tempo.",
+          "correct": false,
+          "featureOfConceptId": "MC-0094"
         },
         {
           "text": "It follows a temporary speed change.",
@@ -2362,11 +2275,7 @@
       "question": "The tempo gradually becomes faster. What is this?",
       "answers": [
         {
-          "text": "A tempo",
-          "correct": false
-        },
-        {
-          "text": "Anacrusis",
+          "text": "Rallentando",
           "correct": false
         },
         {
@@ -2374,7 +2283,11 @@
           "correct": true
         },
         {
-          "text": "Andante",
+          "text": "Compound time",
+          "correct": false
+        },
+        {
+          "text": "Dotted rhythms",
           "correct": false
         }
       ],
@@ -2408,14 +2321,14 @@
           "featureOfConceptId": "MC-0095"
         },
         {
-          "text": "The beat speeds up over a passage.",
-          "correct": false,
-          "featureOfConceptId": "MC-0095"
-        },
-        {
           "text": "It tells performers to return to the previous tempo after a change.",
           "correct": true,
           "featureOfConceptId": "MC-0094"
+        },
+        {
+          "text": "The beat speeds up over a passage.",
+          "correct": false,
+          "featureOfConceptId": "MC-0095"
         },
         {
           "text": "It is a gradual change rather than an immediate jump.",
@@ -2449,11 +2362,7 @@
       "question": "One or more notes before the first full bar lead into the first strong beat of a phrase. What is this?",
       "answers": [
         {
-          "text": "Syncopation",
-          "correct": false
-        },
-        {
-          "text": "Jig",
+          "text": "Scotch snap",
           "correct": false
         },
         {
@@ -2463,6 +2372,10 @@
         {
           "text": "Anacrusis",
           "correct": true
+        },
+        {
+          "text": "Simple time (2/4, 3/4 and 4/4)",
+          "correct": false
         }
       ],
       "hint": "Notes arrive before the first complete bar.",
@@ -2500,14 +2413,14 @@
           "featureOfConceptId": "MC-0096"
         },
         {
-          "text": "It is also called an upbeat or pickup.",
-          "correct": false,
-          "featureOfConceptId": "MC-0096"
-        },
-        {
           "text": "A note stays or repeats in the bass while the harmony changes above it.",
           "correct": true,
           "featureOfConceptId": "MC-0088"
+        },
+        {
+          "text": "It is also called an upbeat or pickup.",
+          "correct": false,
+          "featureOfConceptId": "MC-0096"
         }
       ],
       "hint": "A bass note stays while the chords above change.",
@@ -2536,20 +2449,20 @@
       "question": "A moderate tempo marking meaning at a walking pace. What is this?",
       "answers": [
         {
+          "text": "Rallentando",
+          "correct": false
+        },
+        {
+          "text": "Scotch snap",
+          "correct": false
+        },
+        {
+          "text": "Simple time (2/4, 3/4 and 4/4)",
+          "correct": false
+        },
+        {
           "text": "Andante",
           "correct": true
-        },
-        {
-          "text": "Anacrusis",
-          "correct": false
-        },
-        {
-          "text": "Compound time",
-          "correct": false
-        },
-        {
-          "text": "Dotted rhythms",
-          "correct": false
         }
       ],
       "hint": "At a walking pace.",
@@ -2591,11 +2504,6 @@
       "question": "Which is NOT a feature of Andante?",
       "answers": [
         {
-          "text": "It tells performers to make the tempo gradually faster.",
-          "correct": true,
-          "featureOfConceptId": "MC-0095"
-        },
-        {
           "text": "It means a moderate walking pace.",
           "correct": false,
           "featureOfConceptId": "MC-0097"
@@ -2609,6 +2517,11 @@
           "text": "It is often associated with about 76-108 beats per minute.",
           "correct": false,
           "featureOfConceptId": "MC-0097"
+        },
+        {
+          "text": "It tells performers to make the tempo gradually faster.",
+          "correct": true,
+          "featureOfConceptId": "MC-0095"
         }
       ],
       "hint": "The music gradually gathers speed.",
@@ -2651,19 +2564,19 @@
       "question": "A metre in which each main beat divides naturally into three equal parts. What is this?",
       "answers": [
         {
-          "text": "Simple time (2/4, 3/4 and 4/4)",
-          "correct": false
-        },
-        {
           "text": "Compound time",
           "correct": true
         },
         {
-          "text": "A tempo",
+          "text": "Simple time (2/4, 3/4 and 4/4)",
           "correct": false
         },
         {
-          "text": "Accelerando",
+          "text": "Andante",
+          "correct": false
+        },
+        {
+          "text": "Dotted rhythms",
           "correct": false
         }
       ],
@@ -2674,7 +2587,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "6/8",
               "9/8",
@@ -2710,14 +2623,14 @@
       "question": "Which is NOT a feature of Compound time?",
       "answers": [
         {
-          "text": "Each main beat divides into three equal parts.",
-          "correct": false,
-          "featureOfConceptId": "MC-0098"
-        },
-        {
           "text": "Each main beat divides naturally into two equal parts.",
           "correct": true,
           "featureOfConceptId": "MC-0103"
+        },
+        {
+          "text": "Each main beat divides into three equal parts.",
+          "correct": false,
+          "featureOfConceptId": "MC-0098"
         },
         {
           "text": "6/8, 9/8 and 12/8 have two, three and four main beats.",
@@ -2737,7 +2650,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "6/8",
               "9/8",
@@ -2774,11 +2687,7 @@
       "question": "A dot adds half a note's value, creating long-short or short-long patterns. What is this?",
       "answers": [
         {
-          "text": "Syncopation",
-          "correct": false
-        },
-        {
-          "text": "Jig",
+          "text": "Scotch snap",
           "correct": false
         },
         {
@@ -2787,6 +2696,10 @@
         },
         {
           "text": "Rallentando",
+          "correct": false
+        },
+        {
+          "text": "Simple time (2/4, 3/4 and 4/4)",
           "correct": false
         }
       ],
@@ -2840,14 +2753,14 @@
           "featureOfConceptId": "MC-0099"
         },
         {
-          "text": "A dot lengthens a note by half of its original value.",
-          "correct": false,
-          "featureOfConceptId": "MC-0099"
-        },
-        {
           "text": "It is a three-part musical form with sections in the order A-B-A.",
           "correct": true,
           "featureOfConceptId": "MC-0110"
+        },
+        {
+          "text": "A dot lengthens a note by half of its original value.",
+          "correct": false,
+          "featureOfConceptId": "MC-0099"
         },
         {
           "text": "A dotted quaver followed by a semiquaver is a common example.",
@@ -2905,16 +2818,16 @@
           "correct": false
         },
         {
-          "text": "Rallentando",
-          "correct": false
-        },
-        {
-          "text": "Scotch snap",
+          "text": "Syncopation",
           "correct": false
         },
         {
           "text": "Jig",
           "correct": true
+        },
+        {
+          "text": "A tempo",
+          "correct": false
         }
       ],
       "hint": "A lively 6/8 dance with two main pulses.",
@@ -2952,14 +2865,14 @@
           "featureOfConceptId": "MC-0100"
         },
         {
-          "text": "Each dotted-crotchet beat divides into three quavers.",
-          "correct": false,
-          "featureOfConceptId": "MC-0100"
-        },
-        {
           "text": "It is a moderate Scottish dance in simple quadruple time with Scotch snaps.",
           "correct": true,
           "featureOfConceptId": "MC-0104"
+        },
+        {
+          "text": "Each dotted-crotchet beat divides into three quavers.",
+          "correct": false,
+          "featureOfConceptId": "MC-0100"
         }
       ],
       "hint": "Moderate Scottish dance packed with short-long snaps.",
@@ -2988,20 +2901,20 @@
       "question": "The tempo gradually becomes slower, usually over several beats or bars. What is this?",
       "answers": [
         {
+          "text": "Accelerando",
+          "correct": false
+        },
+        {
+          "text": "Scotch snap",
+          "correct": false
+        },
+        {
+          "text": "Simple time (2/4, 3/4 and 4/4)",
+          "correct": false
+        },
+        {
           "text": "Rallentando",
           "correct": true
-        },
-        {
-          "text": "A tempo",
-          "correct": false
-        },
-        {
-          "text": "Dotted rhythms",
-          "correct": false
-        },
-        {
-          "text": "Jig",
-          "correct": false
         }
       ],
       "hint": "The tempo gradually applies the brakes.",
@@ -3029,11 +2942,6 @@
       "question": "Which is NOT a feature of Rallentando?",
       "answers": [
         {
-          "text": "The tempo becomes gradually faster over a passage.",
-          "correct": true,
-          "featureOfConceptId": "MC-0095"
-        },
-        {
           "text": "The tempo becomes gradually slower.",
           "correct": false,
           "featureOfConceptId": "MC-0101"
@@ -3047,6 +2955,11 @@
           "text": "It is often shortened to rall. in notation.",
           "correct": false,
           "featureOfConceptId": "MC-0101"
+        },
+        {
+          "text": "The tempo becomes gradually faster over a passage.",
+          "correct": true,
+          "featureOfConceptId": "MC-0095"
         }
       ],
       "hint": "The music gradually gathers speed.",
@@ -3075,19 +2988,19 @@
       "question": "A short accented note followed by a longer note, often written as a semiquaver followed by a dotted quaver. What is this?",
       "answers": [
         {
-          "text": "Syncopation",
-          "correct": false
-        },
-        {
           "text": "Scotch snap",
           "correct": true
         },
         {
-          "text": "Jig",
+          "text": "Dotted rhythms",
           "correct": false
         },
         {
           "text": "Rallentando",
+          "correct": false
+        },
+        {
+          "text": "Simple time (2/4, 3/4 and 4/4)",
           "correct": false
         }
       ],
@@ -3130,14 +3043,14 @@
       "question": "Which is NOT a feature of Scotch snap?",
       "answers": [
         {
-          "text": "A short accented note is followed by a longer note.",
-          "correct": false,
-          "featureOfConceptId": "MC-0102"
-        },
-        {
           "text": "A dotted quaver is followed by a shorter semiquaver.",
           "correct": true,
           "featureOfConceptId": "MC-0099"
+        },
+        {
+          "text": "A short accented note is followed by a longer note.",
+          "correct": false,
+          "featureOfConceptId": "MC-0102"
         },
         {
           "text": "It is often written as a semiquaver followed by a dotted quaver.",
@@ -3194,15 +3107,15 @@
           "correct": false
         },
         {
-          "text": "A tempo",
-          "correct": false
-        },
-        {
           "text": "Simple time (2/4, 3/4 and 4/4)",
           "correct": true
         },
         {
-          "text": "Accelerando",
+          "text": "Andante",
+          "correct": false
+        },
+        {
+          "text": "Dotted rhythms",
           "correct": false
         }
       ],
@@ -3213,7 +3126,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -3254,14 +3167,14 @@
           "featureOfConceptId": "MC-0103"
         },
         {
-          "text": "It may have two, three or four crotchet beats in a bar.",
-          "correct": false,
-          "featureOfConceptId": "MC-0103"
-        },
-        {
           "text": "Each main beat divides naturally into three equal parts.",
           "correct": true,
           "featureOfConceptId": "MC-0098"
+        },
+        {
+          "text": "It may have two, three or four crotchet beats in a bar.",
+          "correct": false,
+          "featureOfConceptId": "MC-0103"
         },
         {
           "text": "2/4, 3/4 and 4/4 are common examples.",
@@ -3276,7 +3189,7 @@
         "relationship": "time_signature_and_beat_grouping",
         "targets": [
           {
-            "sourceFile": "timesig.html",
+            "sourceFile": "timesignatures.html",
             "localIds": [
               "2/4",
               "3/4",
@@ -3317,16 +3230,16 @@
           "correct": false
         },
         {
-          "text": "Simple time (2/4, 3/4 and 4/4)",
-          "correct": false
-        },
-        {
-          "text": "Syncopation",
+          "text": "Accelerando",
           "correct": false
         },
         {
           "text": "Strathspey",
           "correct": true
+        },
+        {
+          "text": "Anacrusis",
+          "correct": false
         }
       ],
       "hint": "Moderate Scottish dance packed with short-long snaps.",
@@ -3364,14 +3277,14 @@
           "featureOfConceptId": "MC-0104"
         },
         {
-          "text": "Dotted rhythms and the Scotch snap are important features.",
-          "correct": false,
-          "featureOfConceptId": "MC-0104"
-        },
-        {
           "text": "It is a lively dance in compound 6/8 with two dotted-crotchet beats.",
           "correct": true,
           "featureOfConceptId": "MC-0100"
+        },
+        {
+          "text": "Dotted rhythms and the Scotch snap are important features.",
+          "correct": false,
+          "featureOfConceptId": "MC-0104"
         }
       ],
       "hint": "A lively 6/8 dance with two main pulses.",
@@ -3400,20 +3313,20 @@
       "question": "Rhythmic emphasis is placed on weak beats, off-beats or notes held across strong beats. What is this?",
       "answers": [
         {
-          "text": "Syncopation",
-          "correct": true
-        },
-        {
-          "text": "Scotch snap",
-          "correct": false
-        },
-        {
-          "text": "Jig",
+          "text": "Dotted rhythms",
           "correct": false
         },
         {
           "text": "Rallentando",
           "correct": false
+        },
+        {
+          "text": "Simple time (2/4, 3/4 and 4/4)",
+          "correct": false
+        },
+        {
+          "text": "Syncopation",
+          "correct": true
         }
       ],
       "hint": "Expected strong pulses are displaced by surprising accents.",
@@ -3455,11 +3368,6 @@
       "question": "Which is NOT a feature of Syncopation?",
       "answers": [
         {
-          "text": "The tempo gradually slows over several beats or bars.",
-          "correct": true,
-          "featureOfConceptId": "MC-0101"
-        },
-        {
           "text": "Emphasis falls on weak beats or off-beats.",
           "correct": false,
           "featureOfConceptId": "MC-0105"
@@ -3473,6 +3381,11 @@
           "text": "The expected accent pattern is displaced, adding drive or surprise.",
           "correct": false,
           "featureOfConceptId": "MC-0105"
+        },
+        {
+          "text": "The tempo gradually slows over several beats or bars.",
+          "correct": true,
+          "featureOfConceptId": "MC-0101"
         }
       ],
       "hint": "The tempo gradually applies the brakes.",
@@ -3515,19 +3428,19 @@
       "question": "A solo section in a concerto that lets the performer show musical and technical skill. What is this?",
       "answers": [
         {
-          "text": "Verse and chorus",
-          "correct": false
-        },
-        {
           "text": "Cadenza",
           "correct": true
         },
         {
-          "text": "Canon",
+          "text": "Ternary / ABA",
           "correct": false
         },
         {
-          "text": "Imitation",
+          "text": "Theme and variation",
+          "correct": false
+        },
+        {
+          "text": "Verse and chorus",
           "correct": false
         }
       ],
@@ -3556,14 +3469,14 @@
       "question": "Which is NOT a feature of Cadenza?",
       "answers": [
         {
-          "text": "It is a prominent solo passage in a concerto or similar work.",
-          "correct": false,
-          "featureOfConceptId": "MC-0106"
-        },
-        {
           "text": "It is a contrasting popular-song section traditionally about eight bars long.",
           "correct": true,
           "featureOfConceptId": "MC-0109"
+        },
+        {
+          "text": "It is a prominent solo passage in a concerto or similar work.",
+          "correct": false,
+          "featureOfConceptId": "MC-0106"
         },
         {
           "text": "It displays the performer's expressive and technical skill.",
@@ -3606,15 +3519,15 @@
           "correct": false
         },
         {
-          "text": "Ternary / ABA",
-          "correct": false
-        },
-        {
           "text": "Canon",
           "correct": true
         },
         {
-          "text": "Theme and variation",
+          "text": "Cadenza",
+          "correct": false
+        },
+        {
+          "text": "Middle 8",
           "correct": false
         }
       ],
@@ -3648,14 +3561,14 @@
           "featureOfConceptId": "MC-0107"
         },
         {
-          "text": "The parts continue together so the melody overlaps.",
-          "correct": false,
-          "featureOfConceptId": "MC-0107"
-        },
-        {
           "text": "The copied musical idea may be altered and does not need to continue throughout.",
           "correct": true,
           "featureOfConceptId": "MC-0108"
+        },
+        {
+          "text": "The parts continue together so the melody overlaps.",
+          "correct": false,
+          "featureOfConceptId": "MC-0107"
         },
         {
           "text": "Following parts reproduce the melody exactly.",
@@ -3693,16 +3606,16 @@
           "correct": false
         },
         {
-          "text": "Cadenza",
-          "correct": false
-        },
-        {
-          "text": "Middle 8",
+          "text": "Theme and variation",
           "correct": false
         },
         {
           "text": "Imitation",
           "correct": true
+        },
+        {
+          "text": "Verse and chorus",
+          "correct": false
         }
       ],
       "hint": "One part copies an idea shortly after another.",
@@ -3740,14 +3653,14 @@
           "featureOfConceptId": "MC-0108"
         },
         {
-          "text": "The copying does not need to continue for the whole piece.",
-          "correct": false,
-          "featureOfConceptId": "MC-0108"
-        },
-        {
           "text": "Every following part must reproduce the complete melody exactly as it overlaps.",
           "correct": true,
           "featureOfConceptId": "MC-0107"
+        },
+        {
+          "text": "The copying does not need to continue for the whole piece.",
+          "correct": false,
+          "featureOfConceptId": "MC-0108"
         }
       ],
       "hint": "An exact melody chase, starting at different times.",
@@ -3776,20 +3689,20 @@
       "question": "A contrasting section in a popular song, often occurring after repeated verses or choruses. What is this?",
       "answers": [
         {
-          "text": "Middle 8",
-          "correct": true
-        },
-        {
           "text": "Verse and chorus",
           "correct": false
         },
         {
-          "text": "Theme and variation",
+          "text": "Imitation",
           "correct": false
         },
         {
-          "text": "Canon",
+          "text": "Ternary / ABA",
           "correct": false
+        },
+        {
+          "text": "Middle 8",
+          "correct": true
         }
       ],
       "hint": "A contrasting pop-song section, traditionally eight bars.",
@@ -3817,11 +3730,6 @@
       "question": "Which is NOT a feature of Middle 8?",
       "answers": [
         {
-          "text": "It is a solo concerto passage designed to display a performer's skill.",
-          "correct": true,
-          "featureOfConceptId": "MC-0106"
-        },
-        {
           "text": "It is a contrasting section in a popular song.",
           "correct": false,
           "featureOfConceptId": "MC-0109"
@@ -3835,6 +3743,11 @@
           "text": "Its name is used even when it is not exactly eight bars long.",
           "correct": false,
           "featureOfConceptId": "MC-0109"
+        },
+        {
+          "text": "It is a solo concerto passage designed to display a performer's skill.",
+          "correct": true,
+          "featureOfConceptId": "MC-0106"
         }
       ],
       "hint": "The soloist's showpiece near a movement's end.",
@@ -3863,19 +3776,19 @@
       "question": "A three-part form consisting of an opening A section, a contrasting B section and a return of the A section. What is this?",
       "answers": [
         {
-          "text": "Theme and variation",
-          "correct": false
-        },
-        {
           "text": "Ternary / ABA",
           "correct": true
         },
         {
-          "text": "Cadenza",
+          "text": "Theme and variation",
           "correct": false
         },
         {
           "text": "Canon",
+          "correct": false
+        },
+        {
+          "text": "Imitation",
           "correct": false
         }
       ],
@@ -3904,14 +3817,14 @@
       "question": "Which is NOT a feature of Ternary / ABA?",
       "answers": [
         {
-          "text": "It has three sections in the order A-B-A.",
-          "correct": false,
-          "featureOfConceptId": "MC-0110"
-        },
-        {
           "text": "Verses change their words while a chorus returns with the same words and music.",
           "correct": true,
           "featureOfConceptId": "MC-0112"
+        },
+        {
+          "text": "It has three sections in the order A-B-A.",
+          "correct": false,
+          "featureOfConceptId": "MC-0110"
         },
         {
           "text": "The middle B section contrasts with the opening.",
@@ -3954,15 +3867,15 @@
           "correct": false
         },
         {
-          "text": "Cadenza",
-          "correct": false
-        },
-        {
           "text": "Theme and variation",
           "correct": true
         },
         {
           "text": "Canon",
+          "correct": false
+        },
+        {
+          "text": "Imitation",
           "correct": false
         }
       ],
@@ -3996,14 +3909,14 @@
           "featureOfConceptId": "MC-0111"
         },
         {
-          "text": "The idea returns several times in changed forms.",
-          "correct": false,
-          "featureOfConceptId": "MC-0111"
-        },
-        {
           "text": "The structure is always an opening A, a contrasting B and an unchanged final A.",
           "correct": true,
           "featureOfConceptId": "MC-0110"
+        },
+        {
+          "text": "The idea returns several times in changed forms.",
+          "correct": false,
+          "featureOfConceptId": "MC-0111"
         },
         {
           "text": "Rhythm, harmony, texture, tempo or instruments may change.",
@@ -4041,16 +3954,16 @@
           "correct": false
         },
         {
-          "text": "Cadenza",
-          "correct": false
-        },
-        {
           "text": "Canon",
           "correct": false
         },
         {
           "text": "Verse and chorus",
           "correct": true
+        },
+        {
+          "text": "Imitation",
+          "correct": false
         }
       ],
       "hint": "Changing lyrics alternate with the same returning hook.",
@@ -4088,14 +4001,14 @@
           "featureOfConceptId": "MC-0112"
         },
         {
-          "text": "The chorus usually contains the main hook.",
-          "correct": false,
-          "featureOfConceptId": "MC-0112"
-        },
-        {
           "text": "The complete form is always an opening A, contrasting B and returning A section.",
           "correct": true,
           "featureOfConceptId": "MC-0110"
+        },
+        {
+          "text": "The chorus usually contains the main hook.",
+          "correct": false,
+          "featureOfConceptId": "MC-0112"
         }
       ],
       "hint": "Opening section, contrast, then the opening returns.",
@@ -4124,20 +4037,20 @@
       "question": "The lowest standard female voice or choral part, lying below soprano. What is this?",
       "answers": [
         {
-          "text": "Alto",
-          "correct": true
-        },
-        {
           "text": "Soprano",
           "correct": false
         },
         {
-          "text": "Flute",
+          "text": "Bass guitar",
           "correct": false
         },
         {
-          "text": "Glockenspiel",
+          "text": "Brass band",
           "correct": false
+        },
+        {
+          "text": "Alto",
+          "correct": true
         }
       ],
       "hint": "The A in SATB, second from the top.",
@@ -4165,11 +4078,6 @@
       "question": "Which is NOT a feature of Alto?",
       "answers": [
         {
-          "text": "It is the highest standard female voice and carries the top SATB line.",
-          "correct": true,
-          "featureOfConceptId": "MC-0134"
-        },
-        {
           "text": "It is the lowest standard female voice or choral part.",
           "correct": false,
           "featureOfConceptId": "MC-0113"
@@ -4183,6 +4091,11 @@
           "text": "It forms the A in SATB.",
           "correct": false,
           "featureOfConceptId": "MC-0113"
+        },
+        {
+          "text": "It is the highest standard female voice and carries the top SATB line.",
+          "correct": true,
+          "featureOfConceptId": "MC-0134"
         }
       ],
       "hint": "The highest female part and the S in SATB.",
@@ -4211,19 +4124,19 @@
       "question": "One or more singers support the lead vocalist, often by adding harmony, repeated responses or sustained notes in the background. What is this?",
       "answers": [
         {
-          "text": "Scat singing",
-          "correct": false
-        },
-        {
           "text": "Backing vocals",
           "correct": true
         },
         {
-          "text": "Distortion",
+          "text": "Scat singing",
           "correct": false
         },
         {
-          "text": "Double bass",
+          "text": "Bass",
+          "correct": false
+        },
+        {
+          "text": "Bass drum",
           "correct": false
         }
       ],
@@ -4252,14 +4165,14 @@
       "question": "Which is NOT a feature of Backing vocals?",
       "answers": [
         {
-          "text": "One or more singers support the lead vocalist.",
-          "correct": false,
-          "featureOfConceptId": "MC-0114"
-        },
-        {
           "text": "The singers form a Scottish Gaelic style that is usually unaccompanied.",
           "correct": true,
           "featureOfConceptId": "MC-0072"
+        },
+        {
+          "text": "One or more singers support the lead vocalist.",
+          "correct": false,
+          "featureOfConceptId": "MC-0114"
         },
         {
           "text": "They may add harmony or repeated responses.",
@@ -4302,15 +4215,15 @@
           "correct": false
         },
         {
-          "text": "Wind band",
-          "correct": false
-        },
-        {
           "text": "Bass",
           "correct": true
         },
         {
-          "text": "Xylophone",
+          "text": "Snare drum",
+          "correct": false
+        },
+        {
+          "text": "Tambourine",
           "correct": false
         }
       ],
@@ -4344,14 +4257,14 @@
           "featureOfConceptId": "MC-0115"
         },
         {
-          "text": "It provides the lowest vocal line in SATB writing.",
-          "correct": false,
-          "featureOfConceptId": "MC-0115"
-        },
-        {
           "text": "It is a high adult male voice that forms the T in SATB.",
           "correct": true,
           "featureOfConceptId": "MC-0136"
+        },
+        {
+          "text": "It provides the lowest vocal line in SATB writing.",
+          "correct": false,
+          "featureOfConceptId": "MC-0115"
         },
         {
           "text": "Its line often supports the harmony.",
@@ -4385,20 +4298,20 @@
       "question": "A large, low-pitched untuned drum struck with a beater. What is this?",
       "answers": [
         {
-          "text": "Cymbals",
+          "text": "Glockenspiel",
           "correct": false
         },
         {
-          "text": "Soprano",
-          "correct": false
-        },
-        {
-          "text": "Tenor",
+          "text": "Wind band",
           "correct": false
         },
         {
           "text": "Bass drum",
           "correct": true
+        },
+        {
+          "text": "Alto",
+          "correct": false
         }
       ],
       "hint": "The biggest drum in a kit, played by foot for a deep thump.",
@@ -4436,14 +4349,14 @@
           "featureOfConceptId": "MC-0116"
         },
         {
-          "text": "In a drum kit it is operated by a foot pedal.",
-          "correct": false,
-          "featureOfConceptId": "MC-0116"
-        },
-        {
           "text": "Metal wires beneath its lower head create a crisp rattling sound.",
           "correct": true,
           "featureOfConceptId": "MC-0133"
+        },
+        {
+          "text": "In a drum kit it is operated by a foot pedal.",
+          "correct": false,
+          "featureOfConceptId": "MC-0116"
         }
       ],
       "hint": "Metal wires beneath the head make a crisp rattle.",
@@ -4472,20 +4385,20 @@
       "question": "A low-pitched electric string instrument, usually with four strings, played by plucking or with a plectrum. What is this?",
       "answers": [
         {
-          "text": "Bass guitar",
-          "correct": true
-        },
-        {
-          "text": "Muted",
-          "correct": false
-        },
-        {
-          "text": "Soprano",
-          "correct": false
-        },
-        {
           "text": "Tenor",
           "correct": false
+        },
+        {
+          "text": "Wind band",
+          "correct": false
+        },
+        {
+          "text": "Alto",
+          "correct": false
+        },
+        {
+          "text": "Bass guitar",
+          "correct": true
         }
       ],
       "hint": "Four low strings link harmony to the groove.",
@@ -4513,11 +4426,6 @@
       "question": "Which is NOT a feature of Bass guitar?",
       "answers": [
         {
-          "text": "A telescoping slide changes pitch instead of valves.",
-          "correct": true,
-          "featureOfConceptId": "MC-0139"
-        },
-        {
           "text": "It is a low-pitched electric string instrument.",
           "correct": false,
           "featureOfConceptId": "MC-0117"
@@ -4531,6 +4439,11 @@
           "text": "It supplies bass lines and usually needs amplification.",
           "correct": false,
           "featureOfConceptId": "MC-0117"
+        },
+        {
+          "text": "A telescoping slide changes pitch instead of valves.",
+          "correct": true,
+          "featureOfConceptId": "MC-0139"
         }
       ],
       "hint": "A telescoping slide replaces the usual brass valves.",
@@ -4559,19 +4472,19 @@
       "question": "An ensemble of brass instruments and percussion, with no woodwind or strings. What is this?",
       "answers": [
         {
-          "text": "Wind band",
-          "correct": false
-        },
-        {
           "text": "Brass band",
           "correct": true
         },
         {
-          "text": "Guiro",
+          "text": "Wind band",
           "correct": false
         },
         {
-          "text": "Harp",
+          "text": "Cello",
+          "correct": false
+        },
+        {
+          "text": "Clarinet",
           "correct": false
         }
       ],
@@ -4600,14 +4513,14 @@
       "question": "Which is NOT a feature of Brass band?",
       "answers": [
         {
-          "text": "It contains brass instruments and percussion.",
-          "correct": false,
-          "featureOfConceptId": "MC-0118"
-        },
-        {
           "text": "Flutes, clarinets and saxophones form an important part of the ensemble.",
           "correct": true,
           "featureOfConceptId": "MC-0142"
+        },
+        {
+          "text": "It contains brass instruments and percussion.",
+          "correct": false,
+          "featureOfConceptId": "MC-0118"
         },
         {
           "text": "It usually has no woodwind or orchestral strings.",
@@ -4646,11 +4559,7 @@
       "question": "A low string instrument larger than the viola and smaller than the double bass. What is this?",
       "answers": [
         {
-          "text": "Violin",
-          "correct": false
-        },
-        {
-          "text": "Brass band",
+          "text": "Harp",
           "correct": false
         },
         {
@@ -4658,7 +4567,11 @@
           "correct": true
         },
         {
-          "text": "Distortion",
+          "text": "Muted",
+          "correct": false
+        },
+        {
+          "text": "Soprano",
           "correct": false
         }
       ],
@@ -4692,14 +4605,14 @@
           "featureOfConceptId": "MC-0119"
         },
         {
-          "text": "It is larger than a viola but smaller than a double bass.",
-          "correct": false,
-          "featureOfConceptId": "MC-0119"
-        },
-        {
           "text": "It is held under the chin and is the highest standard orchestral string instrument.",
           "correct": true,
           "featureOfConceptId": "MC-0141"
+        },
+        {
+          "text": "It is larger than a viola but smaller than a double bass.",
+          "correct": false,
+          "featureOfConceptId": "MC-0119"
         },
         {
           "text": "It rests on an endpin between the knees and is usually bowed.",
@@ -4733,20 +4646,20 @@
       "question": "A single-reed woodwind instrument with a wide range and a smooth, flexible tone. What is this?",
       "answers": [
         {
-          "text": "Saxophone",
+          "text": "Recorder",
           "correct": false
         },
         {
-          "text": "Bass",
-          "correct": false
-        },
-        {
-          "text": "Brass band",
+          "text": "Distortion",
           "correct": false
         },
         {
           "text": "Clarinet",
           "correct": true
+        },
+        {
+          "text": "Muted",
+          "correct": false
         }
       ],
       "hint": "A straight, usually black woodwind with one reed and silver keys.",
@@ -4784,14 +4697,14 @@
           "featureOfConceptId": "MC-0120"
         },
         {
-          "text": "It appears in orchestras, wind bands and jazz ensembles.",
-          "correct": false,
-          "featureOfConceptId": "MC-0120"
-        },
-        {
           "text": "It is sounded by blowing across an embouchure hole without a reed.",
           "correct": true,
           "featureOfConceptId": "MC-0124"
+        },
+        {
+          "text": "It appears in orchestras, wind bands and jazz ensembles.",
+          "correct": false,
+          "featureOfConceptId": "MC-0120"
         }
       ],
       "hint": "Hold this high metal woodwind sideways and blow across a hole.",
@@ -4820,20 +4733,20 @@
       "question": "Round metal untuned percussion instruments that may be struck together or hit with sticks or mallets. What is this?",
       "answers": [
         {
+          "text": "Glockenspiel",
+          "correct": false
+        },
+        {
+          "text": "Brass band",
+          "correct": false
+        },
+        {
+          "text": "Distortion",
+          "correct": false
+        },
+        {
           "text": "Cymbals",
           "correct": true
-        },
-        {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
-          "text": "Backing vocals",
-          "correct": false
-        },
-        {
-          "text": "Bass",
-          "correct": false
         }
       ],
       "hint": "Round metal plates that crash or shimmer.",
@@ -4861,11 +4774,6 @@
       "question": "Which is NOT a feature of Cymbals?",
       "answers": [
         {
-          "text": "Metal wires beneath a drum head produce a crisp rattling sound.",
-          "correct": true,
-          "featureOfConceptId": "MC-0133"
-        },
-        {
           "text": "They are round metal untuned percussion instruments.",
           "correct": false,
           "featureOfConceptId": "MC-0121"
@@ -4879,6 +4787,11 @@
           "text": "They can create crashes, accents, rolls and shimmering sounds.",
           "correct": false,
           "featureOfConceptId": "MC-0121"
+        },
+        {
+          "text": "Metal wires beneath a drum head produce a crisp rattling sound.",
+          "correct": true,
+          "featureOfConceptId": "MC-0133"
         }
       ],
       "hint": "Metal wires beneath the head make a crisp rattle.",
@@ -4907,19 +4820,19 @@
       "question": "An electronic effect that makes an amplified sound rough or fuzzy. What is this?",
       "answers": [
         {
-          "text": "Guiro",
-          "correct": false
-        },
-        {
           "text": "Distortion",
           "correct": true
         },
         {
-          "text": "Harp",
+          "text": "Brass band",
           "correct": false
         },
         {
-          "text": "Harpsichord",
+          "text": "Cello",
+          "correct": false
+        },
+        {
+          "text": "Clarinet",
           "correct": false
         }
       ],
@@ -4948,14 +4861,14 @@
       "question": "Which is NOT a feature of Distortion?",
       "answers": [
         {
-          "text": "It electronically alters and clips an amplified signal.",
-          "correct": false,
-          "featureOfConceptId": "MC-0122"
-        },
-        {
           "text": "A mute changes an instrument's tone, often making it softer or more distant.",
           "correct": true,
           "featureOfConceptId": "MC-0129"
+        },
+        {
+          "text": "It electronically alters and clips an amplified signal.",
+          "correct": false,
+          "featureOfConceptId": "MC-0122"
         },
         {
           "text": "It creates a rough, fuzzy or aggressive tone.",
@@ -4994,11 +4907,7 @@
       "question": "The largest and lowest-pitched member of the orchestral string family. What is this?",
       "answers": [
         {
-          "text": "Harp",
-          "correct": false
-        },
-        {
-          "text": "Wind band",
+          "text": "Cello",
           "correct": false
         },
         {
@@ -5006,7 +4915,11 @@
           "correct": true
         },
         {
-          "text": "Alto",
+          "text": "Backing vocals",
+          "correct": false
+        },
+        {
+          "text": "Bass",
           "correct": false
         }
       ],
@@ -5040,14 +4953,14 @@
           "featureOfConceptId": "MC-0123"
         },
         {
-          "text": "It is the lowest-pitched member of the orchestral string family.",
-          "correct": false,
-          "featureOfConceptId": "MC-0123"
-        },
-        {
           "text": "It is the smallest and highest-pitched standard orchestral string instrument.",
           "correct": true,
           "featureOfConceptId": "MC-0141"
+        },
+        {
+          "text": "It is the lowest-pitched member of the orchestral string family.",
+          "correct": false,
+          "featureOfConceptId": "MC-0123"
         },
         {
           "text": "It may be played with a bow or by plucking.",
@@ -5081,20 +4994,20 @@
       "question": "A high woodwind, usually made of metal, played by blowing across an opening instead of through a reed. What is this?",
       "answers": [
         {
-          "text": "Saxophone",
+          "text": "Recorder",
           "correct": false
         },
         {
-          "text": "Tenor",
-          "correct": false
-        },
-        {
-          "text": "Wind band",
+          "text": "Alto",
           "correct": false
         },
         {
           "text": "Flute",
           "correct": true
+        },
+        {
+          "text": "Backing vocals",
+          "correct": false
         }
       ],
       "hint": "Hold this high metal woodwind sideways and blow across a hole.",
@@ -5132,14 +5045,14 @@
           "featureOfConceptId": "MC-0124"
         },
         {
-          "text": "It makes sound without using a reed.",
-          "correct": false,
-          "featureOfConceptId": "MC-0124"
-        },
-        {
           "text": "A single reed attached to a mouthpiece begins the sound.",
           "correct": true,
           "featureOfConceptId": "MC-0120"
+        },
+        {
+          "text": "It makes sound without using a reed.",
+          "correct": false,
+          "featureOfConceptId": "MC-0124"
         }
       ],
       "hint": "A straight, usually black woodwind with one reed and silver keys.",
@@ -5168,20 +5081,20 @@
       "question": "A tuned percussion instrument with metal bars arranged like a keyboard and struck with hard beaters. What is this?",
       "answers": [
         {
+          "text": "Cymbals",
+          "correct": false
+        },
+        {
+          "text": "Wind band",
+          "correct": false
+        },
+        {
+          "text": "Alto",
+          "correct": false
+        },
+        {
           "text": "Glockenspiel",
           "correct": true
-        },
-        {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
-          "text": "Soprano",
-          "correct": false
-        },
-        {
-          "text": "Tenor",
-          "correct": false
         }
       ],
       "hint": "Small metal bars with a bright, bell-like sound.",
@@ -5209,11 +5122,6 @@
       "question": "Which is NOT a feature of Glockenspiel?",
       "answers": [
         {
-          "text": "Its wooden bars create a dry, sharply defined tone.",
-          "correct": true,
-          "featureOfConceptId": "MC-0143"
-        },
-        {
           "text": "It is a tuned percussion instrument with metal bars.",
           "correct": false,
           "featureOfConceptId": "MC-0125"
@@ -5227,6 +5135,11 @@
           "text": "It has a bright, high and bell-like sound.",
           "correct": false,
           "featureOfConceptId": "MC-0125"
+        },
+        {
+          "text": "Its wooden bars create a dry, sharply defined tone.",
+          "correct": true,
+          "featureOfConceptId": "MC-0143"
         }
       ],
       "hint": "Wooden keyboard bars struck for a dry, bright tone.",
@@ -5255,19 +5168,19 @@
       "question": "A stick is drawn across the ridges to create a rasping rhythmic sound. What is this?",
       "answers": [
         {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
           "text": "Guiro",
           "correct": true
         },
         {
-          "text": "Muted",
+          "text": "Cymbals",
           "correct": false
         },
         {
-          "text": "Soprano",
+          "text": "Tenor",
+          "correct": false
+        },
+        {
+          "text": "Wind band",
           "correct": false
         }
       ],
@@ -5296,14 +5209,14 @@
       "question": "Which is NOT a feature of Guiro?",
       "answers": [
         {
-          "text": "It is an untuned scraper with a ridged surface.",
-          "correct": false,
-          "featureOfConceptId": "MC-0126"
-        },
-        {
           "text": "Pairs of metal jingles sound when a frame drum is shaken or tapped.",
           "correct": true,
           "featureOfConceptId": "MC-0135"
+        },
+        {
+          "text": "It is an untuned scraper with a ridged surface.",
+          "correct": false,
+          "featureOfConceptId": "MC-0126"
         },
         {
           "text": "It is traditionally made from a hollow gourd or wood.",
@@ -5342,11 +5255,7 @@
       "question": "A large plucked string instrument with strings of different lengths stretched across a frame. What is this?",
       "answers": [
         {
-          "text": "Cello",
-          "correct": false
-        },
-        {
-          "text": "Distortion",
+          "text": "Violin",
           "correct": false
         },
         {
@@ -5354,7 +5263,11 @@
           "correct": true
         },
         {
-          "text": "Muted",
+          "text": "Soprano",
+          "correct": false
+        },
+        {
+          "text": "Tenor",
           "correct": false
         }
       ],
@@ -5388,14 +5301,14 @@
           "featureOfConceptId": "MC-0127"
         },
         {
-          "text": "A full-size orchestral example usually has pedals that alter its strings.",
-          "correct": false,
-          "featureOfConceptId": "MC-0127"
-        },
-        {
           "text": "Its strings are plucked mechanically whenever keyboard keys are pressed.",
           "correct": true,
           "featureOfConceptId": "MC-0128"
+        },
+        {
+          "text": "A full-size orchestral example usually has pedals that alter its strings.",
+          "correct": false,
+          "featureOfConceptId": "MC-0127"
         },
         {
           "text": "It can play chords, arpeggios and glissandi.",
@@ -5429,20 +5342,20 @@
       "question": "Pressing a key plucks a string inside this keyboard instrument. What is this?",
       "answers": [
         {
-          "text": "Brass band",
-          "correct": false
-        },
-        {
-          "text": "Distortion",
-          "correct": false
-        },
-        {
           "text": "Muted",
+          "correct": false
+        },
+        {
+          "text": "Soprano",
           "correct": false
         },
         {
           "text": "Harpsichord",
           "correct": true
+        },
+        {
+          "text": "Tenor",
+          "correct": false
         }
       ],
       "hint": "Keyboard keys mechanically pluck the strings.",
@@ -5480,14 +5393,14 @@
           "featureOfConceptId": "MC-0128"
         },
         {
-          "text": "It offers much less dynamic control than a piano.",
-          "correct": false,
-          "featureOfConceptId": "MC-0128"
-        },
-        {
           "text": "Its strings are plucked directly by a player's fingers and its pedals alter pitch.",
           "correct": true,
           "featureOfConceptId": "MC-0127"
+        },
+        {
+          "text": "It offers much less dynamic control than a piano.",
+          "correct": false,
+          "featureOfConceptId": "MC-0128"
         }
       ],
       "hint": "Forty-seven strings and seven pedals in a triangular frame.",
@@ -5516,20 +5429,20 @@
       "question": "An instrument's normal tone becomes softer, thinner, more nasal or more distant when a device is fitted. What is this?",
       "answers": [
         {
+          "text": "Backing vocals",
+          "correct": false
+        },
+        {
+          "text": "Bass",
+          "correct": false
+        },
+        {
+          "text": "Bass drum",
+          "correct": false
+        },
+        {
           "text": "Muted",
           "correct": true
-        },
-        {
-          "text": "Cymbals",
-          "correct": false
-        },
-        {
-          "text": "Distortion",
-          "correct": false
-        },
-        {
-          "text": "Double bass",
-          "correct": false
         }
       ],
       "hint": "A device softens and colours an instrument's usual tone.",
@@ -5557,11 +5470,6 @@
       "question": "Which is NOT a feature of Muted?",
       "answers": [
         {
-          "text": "An electronic signal is deliberately clipped to make a rough, fuzzy tone.",
-          "correct": true,
-          "featureOfConceptId": "MC-0122"
-        },
-        {
           "text": "A device changes an instrument's normal tone.",
           "correct": false,
           "featureOfConceptId": "MC-0129"
@@ -5575,6 +5483,11 @@
           "text": "The exact effect depends on the instrument and the device used.",
           "correct": false,
           "featureOfConceptId": "MC-0129"
+        },
+        {
+          "text": "An electronic signal is deliberately clipped to make a rough, fuzzy tone.",
+          "correct": true,
+          "featureOfConceptId": "MC-0122"
         }
       ],
       "hint": "An amplified signal is clipped into a rough, fuzzy tone.",
@@ -5603,19 +5516,19 @@
       "question": "A set of tubes of different lengths tied together. Each tube makes a different pitch. What is this?",
       "answers": [
         {
-          "text": "Clarinet",
-          "correct": false
-        },
-        {
           "text": "Pan pipes",
           "correct": true
         },
         {
-          "text": "Backing vocals",
+          "text": "Saxophone",
           "correct": false
         },
         {
-          "text": "Bass",
+          "text": "Brass band",
+          "correct": false
+        },
+        {
+          "text": "Distortion",
           "correct": false
         }
       ],
@@ -5644,14 +5557,14 @@
       "question": "Which is NOT a feature of Pan pipes?",
       "answers": [
         {
-          "text": "It consists of several tubes of different lengths joined together.",
-          "correct": false,
-          "featureOfConceptId": "MC-0130"
-        },
-        {
           "text": "A whistle-like mouthpiece directs air into a single tube with finger holes.",
           "correct": true,
           "featureOfConceptId": "MC-0131"
+        },
+        {
+          "text": "It consists of several tubes of different lengths joined together.",
+          "correct": false,
+          "featureOfConceptId": "MC-0130"
         },
         {
           "text": "Each tube produces a different pitch.",
@@ -5690,11 +5603,7 @@
       "question": "An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece. What is this?",
       "answers": [
         {
-          "text": "Clarinet",
-          "correct": false
-        },
-        {
-          "text": "Alto",
+          "text": "Saxophone",
           "correct": false
         },
         {
@@ -5702,7 +5611,11 @@
           "correct": true
         },
         {
-          "text": "Backing vocals",
+          "text": "Bass",
+          "correct": false
+        },
+        {
+          "text": "Brass band",
           "correct": false
         }
       ],
@@ -5736,14 +5649,14 @@
           "featureOfConceptId": "MC-0131"
         },
         {
-          "text": "It uses a whistle-like mouthpiece.",
-          "correct": false,
-          "featureOfConceptId": "MC-0131"
-        },
-        {
           "text": "The player blows across the open tops of several joined tubes of different lengths.",
           "correct": true,
           "featureOfConceptId": "MC-0130"
+        },
+        {
+          "text": "It uses a whistle-like mouthpiece.",
+          "correct": false,
+          "featureOfConceptId": "MC-0131"
         },
         {
           "text": "Descant, treble, tenor and bass are its main sizes.",
@@ -5777,20 +5690,20 @@
       "question": "This single-reed instrument has a metal body, unlike the clarinet's wooden or plastic body. What is this?",
       "answers": [
         {
-          "text": "Clarinet",
+          "text": "Recorder",
           "correct": false
         },
         {
-          "text": "Wind band",
-          "correct": false
-        },
-        {
-          "text": "Alto",
+          "text": "Backing vocals",
           "correct": false
         },
         {
           "text": "Saxophone",
           "correct": true
+        },
+        {
+          "text": "Bass",
+          "correct": false
         }
       ],
       "hint": "Brass body, single reed, woodwind family.",
@@ -5828,14 +5741,14 @@
           "featureOfConceptId": "MC-0132"
         },
         {
-          "text": "It is prominent in jazz, wind bands and some popular music.",
-          "correct": false,
-          "featureOfConceptId": "MC-0132"
-        },
-        {
           "text": "It is sounded by blowing across an embouchure hole and uses no reed.",
           "correct": true,
           "featureOfConceptId": "MC-0124"
+        },
+        {
+          "text": "It is prominent in jazz, wind bands and some popular music.",
+          "correct": false,
+          "featureOfConceptId": "MC-0132"
         }
       ],
       "hint": "Hold this high metal woodwind sideways and blow across a hole.",
@@ -5864,20 +5777,20 @@
       "question": "An untuned drum with metal wires under the lower skin, giving a crisp rattling sound. What is this?",
       "answers": [
         {
+          "text": "Glockenspiel",
+          "correct": false
+        },
+        {
+          "text": "Alto",
+          "correct": false
+        },
+        {
+          "text": "Backing vocals",
+          "correct": false
+        },
+        {
           "text": "Snare drum",
           "correct": true
-        },
-        {
-          "text": "Cymbals",
-          "correct": false
-        },
-        {
-          "text": "Tenor",
-          "correct": false
-        },
-        {
-          "text": "Wind band",
-          "correct": false
         }
       ],
       "hint": "Metal wires beneath the head make a crisp rattle.",
@@ -5905,11 +5818,6 @@
       "question": "Which is NOT a feature of Snare drum?",
       "answers": [
         {
-          "text": "It is a large low drum whose drum-kit version is played with a foot pedal.",
-          "correct": true,
-          "featureOfConceptId": "MC-0116"
-        },
-        {
           "text": "It is an untuned drum with metal wires beneath its lower head.",
           "correct": false,
           "featureOfConceptId": "MC-0133"
@@ -5923,6 +5831,11 @@
           "text": "It is played with sticks or brushes in orchestras, bands and drum kits.",
           "correct": false,
           "featureOfConceptId": "MC-0133"
+        },
+        {
+          "text": "It is a large low drum whose drum-kit version is played with a foot pedal.",
+          "correct": true,
+          "featureOfConceptId": "MC-0116"
         }
       ],
       "hint": "The biggest drum in a kit, played by foot for a deep thump.",
@@ -5951,19 +5864,19 @@
       "question": "The highest standard female voice or choral part. What is this?",
       "answers": [
         {
-          "text": "Alto",
-          "correct": false
-        },
-        {
           "text": "Soprano",
           "correct": true
         },
         {
-          "text": "Pan pipes",
+          "text": "Alto",
           "correct": false
         },
         {
-          "text": "Recorder",
+          "text": "Double bass",
+          "correct": false
+        },
+        {
+          "text": "Flute",
           "correct": false
         }
       ],
@@ -5992,14 +5905,14 @@
       "question": "Which is NOT a feature of Soprano?",
       "answers": [
         {
-          "text": "It is the highest standard female voice or choral part.",
-          "correct": false,
-          "featureOfConceptId": "MC-0134"
-        },
-        {
           "text": "It is the lowest standard female voice and lies below the soprano.",
           "correct": true,
           "featureOfConceptId": "MC-0113"
+        },
+        {
+          "text": "It is the highest standard female voice or choral part.",
+          "correct": false,
+          "featureOfConceptId": "MC-0134"
         },
         {
           "text": "It usually carries the top line in choral writing.",
@@ -6038,11 +5951,7 @@
       "question": "It may be shaken, tapped or struck by hand to produce both drum and jingling sounds. What is this?",
       "answers": [
         {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
-          "text": "Muted",
+          "text": "Cymbals",
           "correct": false
         },
         {
@@ -6050,7 +5959,11 @@
           "correct": true
         },
         {
-          "text": "Soprano",
+          "text": "Tenor",
+          "correct": false
+        },
+        {
+          "text": "Wind band",
           "correct": false
         }
       ],
@@ -6084,14 +5997,14 @@
           "featureOfConceptId": "MC-0135"
         },
         {
-          "text": "It may be shaken, tapped or struck by hand.",
-          "correct": false,
-          "featureOfConceptId": "MC-0135"
-        },
-        {
           "text": "A stick scrapes a ridged gourd or wooden surface to make a rasping sound.",
           "correct": true,
           "featureOfConceptId": "MC-0126"
+        },
+        {
+          "text": "It may be shaken, tapped or struck by hand.",
+          "correct": false,
+          "featureOfConceptId": "MC-0135"
         },
         {
           "text": "It is usually classed as untuned percussion.",
@@ -6129,16 +6042,16 @@
           "correct": false
         },
         {
-          "text": "Cello",
-          "correct": false
-        },
-        {
-          "text": "Clarinet",
+          "text": "Violin",
           "correct": false
         },
         {
           "text": "Tenor",
           "correct": true
+        },
+        {
+          "text": "Wind band",
+          "correct": false
         }
       ],
       "hint": "The T in SATB: a high adult male part.",
@@ -6176,14 +6089,14 @@
           "featureOfConceptId": "MC-0136"
         },
         {
-          "text": "It forms the T in SATB.",
-          "correct": false,
-          "featureOfConceptId": "MC-0136"
-        },
-        {
           "text": "It is the lowest adult male voice and supplies the bottom SATB line.",
           "correct": true,
           "featureOfConceptId": "MC-0115"
+        },
+        {
+          "text": "It forms the T in SATB.",
+          "correct": false,
+          "featureOfConceptId": "MC-0136"
         }
       ],
       "hint": "The B at the bottom of SATB.",
@@ -6212,20 +6125,20 @@
       "question": "Large tuned drums with skins stretched over bowl-shaped bodies. What is this?",
       "answers": [
         {
+          "text": "Cymbals",
+          "correct": false
+        },
+        {
+          "text": "Muted",
+          "correct": false
+        },
+        {
+          "text": "Soprano",
+          "correct": false
+        },
+        {
           "text": "Timpani",
           "correct": true
-        },
-        {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
-          "text": "Brass band",
-          "correct": false
-        },
-        {
-          "text": "Distortion",
-          "correct": false
         }
       ],
       "hint": "Several large tuned drums change pitch with foot pedals and soft mallets.",
@@ -6253,11 +6166,6 @@
       "question": "Which is NOT a feature of Timpani?",
       "answers": [
         {
-          "text": "Metal wires stretched beneath the lower drum head make a rattling sound.",
-          "correct": true,
-          "featureOfConceptId": "MC-0133"
-        },
-        {
           "text": "They are large tuned kettle drums with bowl-shaped shells.",
           "correct": false,
           "featureOfConceptId": "MC-0137"
@@ -6271,6 +6179,11 @@
           "text": "They can reinforce harmony as well as rhythm.",
           "correct": false,
           "featureOfConceptId": "MC-0137"
+        },
+        {
+          "text": "Metal wires stretched beneath the lower drum head make a rattling sound.",
+          "correct": true,
+          "featureOfConceptId": "MC-0133"
         }
       ],
       "hint": "Metal wires beneath the head make a crisp rattle.",
@@ -6299,19 +6212,19 @@
       "question": "A bent metal bar in an open triangular shape, suspended and struck with a metal beater. What is this?",
       "answers": [
         {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
           "text": "Triangle",
           "correct": true
         },
         {
-          "text": "Bass",
+          "text": "Cymbals",
           "correct": false
         },
         {
-          "text": "Brass band",
+          "text": "Distortion",
+          "correct": false
+        },
+        {
+          "text": "Muted",
           "correct": false
         }
       ],
@@ -6340,14 +6253,14 @@
       "question": "Which is NOT a feature of Triangle?",
       "answers": [
         {
-          "text": "It is an open triangular shape made from a bent metal bar.",
-          "correct": false,
-          "featureOfConceptId": "MC-0138"
-        },
-        {
           "text": "Metal bars arranged like a keyboard play definite, high pitches.",
           "correct": true,
           "featureOfConceptId": "MC-0125"
+        },
+        {
+          "text": "It is an open triangular shape made from a bent metal bar.",
+          "correct": false,
+          "featureOfConceptId": "MC-0138"
         },
         {
           "text": "It hangs freely and is struck with a metal beater.",
@@ -6390,15 +6303,15 @@
           "correct": false
         },
         {
-          "text": "Backing vocals",
-          "correct": false
-        },
-        {
           "text": "Trombone",
           "correct": true
         },
         {
-          "text": "Bass",
+          "text": "Brass band",
+          "correct": false
+        },
+        {
+          "text": "Distortion",
           "correct": false
         }
       ],
@@ -6432,14 +6345,14 @@
           "featureOfConceptId": "MC-0139"
         },
         {
-          "text": "A telescoping slide usually changes its pitch.",
-          "correct": false,
-          "featureOfConceptId": "MC-0139"
-        },
-        {
           "text": "It is the highest common orchestral brass instrument and usually has three valves.",
           "correct": true,
           "featureOfConceptId": "MC-0140"
+        },
+        {
+          "text": "A telescoping slide usually changes its pitch.",
+          "correct": false,
+          "featureOfConceptId": "MC-0139"
         },
         {
           "text": "It has a powerful tone and can make smooth glissandi.",
@@ -6477,16 +6390,16 @@
           "correct": false
         },
         {
-          "text": "Alto",
-          "correct": false
-        },
-        {
-          "text": "Backing vocals",
+          "text": "Bass",
           "correct": false
         },
         {
           "text": "Trumpet",
           "correct": true
+        },
+        {
+          "text": "Brass band",
+          "correct": false
         }
       ],
       "hint": "Three valves and the brightest, highest common brass tone.",
@@ -6524,14 +6437,14 @@
           "featureOfConceptId": "MC-0140"
         },
         {
-          "text": "It has a bright, penetrating tone.",
-          "correct": false,
-          "featureOfConceptId": "MC-0140"
-        },
-        {
           "text": "A telescoping slide usually changes its pitch and allows smooth glissandi.",
           "correct": true,
           "featureOfConceptId": "MC-0139"
+        },
+        {
+          "text": "It has a bright, penetrating tone.",
+          "correct": false,
+          "featureOfConceptId": "MC-0140"
         }
       ],
       "hint": "A telescoping slide replaces the usual brass valves.",
@@ -6560,20 +6473,20 @@
       "question": "The smallest and highest-pitched standard orchestral string instrument. What is this?",
       "answers": [
         {
+          "text": "Double bass",
+          "correct": false
+        },
+        {
+          "text": "Backing vocals",
+          "correct": false
+        },
+        {
+          "text": "Bass",
+          "correct": false
+        },
+        {
           "text": "Violin",
           "correct": true
-        },
-        {
-          "text": "Harp",
-          "correct": false
-        },
-        {
-          "text": "Wind band",
-          "correct": false
-        },
-        {
-          "text": "Alto",
-          "correct": false
         }
       ],
       "hint": "Smallest orchestral string instrument, held under the chin.",
@@ -6601,11 +6514,6 @@
       "question": "Which is NOT a feature of Violin?",
       "answers": [
         {
-          "text": "It is a low string instrument supported by an endpin and held between the knees.",
-          "correct": true,
-          "featureOfConceptId": "MC-0119"
-        },
-        {
           "text": "It is the smallest standard orchestral string instrument.",
           "correct": false,
           "featureOfConceptId": "MC-0141"
@@ -6619,6 +6527,11 @@
           "text": "It is held under the chin and usually played with a bow.",
           "correct": false,
           "featureOfConceptId": "MC-0141"
+        },
+        {
+          "text": "It is a low string instrument supported by an endpin and held between the knees.",
+          "correct": true,
+          "featureOfConceptId": "MC-0119"
         }
       ],
       "hint": "Held between the knees and supported by an endpin.",
@@ -6647,19 +6560,19 @@
       "question": "An ensemble of woodwind, brass and percussion instruments, usually without orchestral strings. What is this?",
       "answers": [
         {
-          "text": "Brass band",
-          "correct": false
-        },
-        {
           "text": "Wind band",
           "correct": true
         },
         {
-          "text": "Backing vocals",
+          "text": "Brass band",
           "correct": false
         },
         {
-          "text": "Bass",
+          "text": "Timpani",
+          "correct": false
+        },
+        {
+          "text": "Triangle",
           "correct": false
         }
       ],
@@ -6688,14 +6601,14 @@
       "question": "Which is NOT a feature of Wind band?",
       "answers": [
         {
-          "text": "It contains woodwind, brass and percussion instruments.",
-          "correct": false,
-          "featureOfConceptId": "MC-0142"
-        },
-        {
           "text": "It contains brass and percussion only, with no woodwind instruments.",
           "correct": true,
           "featureOfConceptId": "MC-0118"
+        },
+        {
+          "text": "It contains woodwind, brass and percussion instruments.",
+          "correct": false,
+          "featureOfConceptId": "MC-0142"
         },
         {
           "text": "It usually has no orchestral string section.",
@@ -6734,11 +6647,7 @@
       "question": "A tuned percussion instrument with wooden bars arranged like a keyboard and struck with beaters. What is this?",
       "answers": [
         {
-          "text": "Snare drum",
-          "correct": false
-        },
-        {
-          "text": "Soprano",
+          "text": "Cymbals",
           "correct": false
         },
         {
@@ -6746,7 +6655,11 @@
           "correct": true
         },
         {
-          "text": "Tenor",
+          "text": "Wind band",
+          "correct": false
+        },
+        {
+          "text": "Alto",
           "correct": false
         }
       ],
@@ -6780,14 +6693,14 @@
           "featureOfConceptId": "MC-0143"
         },
         {
-          "text": "Its bars are arranged like a keyboard and struck with beaters.",
-          "correct": false,
-          "featureOfConceptId": "MC-0143"
-        },
-        {
           "text": "Its metal bars create a very high, bell-like sound.",
           "correct": true,
           "featureOfConceptId": "MC-0125"
+        },
+        {
+          "text": "Its bars are arranged like a keyboard and struck with beaters.",
+          "correct": false,
+          "featureOfConceptId": "MC-0143"
         },
         {
           "text": "It has a dry, bright and sharply defined tone.",

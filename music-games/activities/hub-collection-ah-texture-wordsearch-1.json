@@ -1,0 +1,68 @@
+{
+  "id": "hub-collection-ah-texture-wordsearch-1",
+  "level": "AH",
+  "title": "Texture 1",
+  "instructions": "",
+  "description": "Texture: current Music Dictionary definitions — set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Texture",
+    "Advanced Higher"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-ah-texture-wordsearch-1-MC-0184",
+      "prompt": "Two or more different tunes weave together at the same time.",
+      "answer": "Contrapuntal",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0184"
+    },
+    {
+      "id": "hub-collection-ah-texture-wordsearch-1-MC-0187",
+      "prompt": "One main tune with other parts supporting it.",
+      "answer": "Homophonic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0187"
+    },
+    {
+      "id": "hub-collection-ah-texture-wordsearch-1-MC-0035",
+      "prompt": "Different notes sounding together.",
+      "answer": "Harmony",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0035"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "texture",
+  "sourceConceptIds": [
+    "MC-0184",
+    "MC-0187",
+    "MC-0035"
+  ],
+  "editorMode": "with-clues"
+}

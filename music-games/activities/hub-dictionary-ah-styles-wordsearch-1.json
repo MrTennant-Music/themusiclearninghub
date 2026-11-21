@@ -1,0 +1,132 @@
+{
+  "id": "hub-dictionary-ah-styles-wordsearch-1",
+  "level": "AH",
+  "title": "Styles 1",
+  "instructions": "",
+  "description": "Revise styles with 7 Music Dictionary concepts. Set 1 of 2.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Music Dictionary",
+    "Styles",
+    "Word"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0262",
+      "prompt": "An English sacred choral work with a religious text, first used in Renaissance Protestant worship.",
+      "answer": "Anthem",
+      "distractors": [
+        "Chorale",
+        "Contemporary jazz",
+        "Electronic dance music (EDM)"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0264",
+      "prompt": "A light, dance-like English madrigal with a recurring fa-la-la refrain.",
+      "answer": "Ballett",
+      "distractors": [
+        "Galliard",
+        "Madrigal",
+        "Motet"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0266",
+      "prompt": "A broad term for recent and present-day jazz styles.",
+      "answer": "Contemporary jazz",
+      "distractors": [
+        "Nationalist",
+        "Neoclassical",
+        "Pavan"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0268",
+      "prompt": "A lively Renaissance court dance in triple metre, often following a slower pavan.",
+      "answer": "Galliard",
+      "distractors": [
+        "Renaissance",
+        "Serial",
+        "Anthem"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0270",
+      "prompt": "A sacred Renaissance choral work, usually polyphonic and in Latin, using a text outside the fixed Mass movements.",
+      "answer": "Motet",
+      "distractors": [
+        "Ayre / air",
+        "Ballett",
+        "Chorale"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0272",
+      "prompt": "It uses the balance, clarity, forms and textures of older Classical music, but with modern harmony, rhythm and orchestration.",
+      "answer": "Neoclassical",
+      "distractors": [
+        "Contemporary jazz",
+        "Electronic dance music (EDM)",
+        "Galliard"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-dictionary-ah-styles-wordsearch-1-mc-0274",
+      "prompt": "Features include modal harmony, flowing polyphony, imitation, a cappella singing, lute, viols, recorders and early brass.",
+      "answer": "Renaissance",
+      "distractors": [
+        "Madrigal",
+        "Motet",
+        "Nationalist"
+      ],
+      "group": "Styles",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": false
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-23T12:00:00.000Z",
+  "editorMode": "with-clues"
+}

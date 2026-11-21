@@ -1,0 +1,190 @@
+{
+  "id": "hub-n5-music-literacy-wordsearch-1",
+  "level": "N5",
+  "title": "Music Literacy",
+  "instructions": "",
+  "description": "Practise National 5 music literacy: dotted rhythms, Scotch snaps, dynamics, accidentals, keys, chords, leaps and repeat endings.",
+  "folder": "",
+  "tags": [
+    "Music Literacy",
+    "National 5"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-1",
+      "prompt": "A note lasting one and a half beats.",
+      "answer": "Dotted crotchet",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-2",
+      "prompt": "A note lasting three quarters of a beat.",
+      "answer": "Dotted quaver",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-3",
+      "prompt": "The Italian dynamic term meaning very quiet.",
+      "answer": "Pianissimo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-4",
+      "prompt": "The Italian dynamic term meaning very loud.",
+      "answer": "Fortissimo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-5",
+      "prompt": "A sudden strong accent, shown by sfz.",
+      "answer": "Sforzando",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-6",
+      "prompt": "A short accented note followed by a longer note, often a semiquaver then a dotted quaver.",
+      "answer": "Scotch snap",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-7",
+      "prompt": "The major key with no sharps or flats in its key signature.",
+      "answer": "C major",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-8",
+      "prompt": "The major key with one sharp, F sharp, in its key signature.",
+      "answer": "G major",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-9",
+      "prompt": "The major key with one flat, B flat, in its key signature.",
+      "answer": "F major",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-10",
+      "prompt": "The minor key with no sharps or flats in its key signature.",
+      "answer": "A minor",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-11",
+      "prompt": "An accidental that raises a note by a semitone.",
+      "answer": "Sharp",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-12",
+      "prompt": "An accidental that lowers a note by a semitone.",
+      "answer": "Flat",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-13",
+      "prompt": "An accidental that cancels a sharp or flat.",
+      "answer": "Natural",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-14",
+      "prompt": "The ending played on the first playing of a repeated section, then skipped on the repeat.",
+      "answer": "First time bar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n5-music-literacy-wordsearch-1-15",
+      "prompt": "The ending played after a section has been repeated, skipping the first ending.",
+      "answer": "Second time bar",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-25T13:03:19.980Z"
+}

@@ -1,0 +1,201 @@
+{
+  "id": "hub-n4-styles-connections-3",
+  "level": "N4",
+  "title": "Styles 3",
+  "instructions": "Find four facts that best describe each style. Some musical features are shared between styles. Find all four groups.",
+  "description": "Practise facts about Romantic, Scots ballad, African music, Reggae.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "National 4"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n4-styles-connections-3-1",
+      "prompt": "Chopin-style expressive rubato",
+      "answer": "Chopin-style expressive rubato",
+      "distractors": [],
+      "group": "Romantic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-2",
+      "prompt": "19th-century chromatic orchestra",
+      "answer": "19th-century chromatic orchestra",
+      "distractors": [],
+      "group": "Romantic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-3",
+      "prompt": "Chopin and Liszt period",
+      "answer": "Chopin and Liszt period",
+      "distractors": [],
+      "group": "Romantic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-4",
+      "prompt": "Expanded colourful orchestra",
+      "answer": "Expanded colourful orchestra",
+      "distractors": [],
+      "group": "Romantic",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-5",
+      "prompt": "Narrative song in Scots",
+      "answer": "Narrative song in Scots",
+      "distractors": [],
+      "group": "Scots ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-6",
+      "prompt": "Story told in Scots verses",
+      "answer": "Story told in Scots verses",
+      "distractors": [],
+      "group": "Scots ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-7",
+      "prompt": "Scots-language folk story",
+      "answer": "Scots-language folk story",
+      "distractors": [],
+      "group": "Scots ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-8",
+      "prompt": "Scots verses with sparse backing",
+      "answer": "Scots verses with sparse backing",
+      "distractors": [],
+      "group": "Scots ballad",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-9",
+      "prompt": "Layered African percussion",
+      "answer": "Layered African percussion",
+      "distractors": [],
+      "group": "African music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-10",
+      "prompt": "West African interlocking drums",
+      "answer": "West African interlocking drums",
+      "distractors": [],
+      "group": "African music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-11",
+      "prompt": "African leader-group drumming",
+      "answer": "African leader-group drumming",
+      "distractors": [],
+      "group": "African music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-12",
+      "prompt": "African drum-and-clap patterns",
+      "answer": "African drum-and-clap patterns",
+      "distractors": [],
+      "group": "African music",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-13",
+      "prompt": "Jamaican off-beat chords",
+      "answer": "Jamaican off-beat chords",
+      "distractors": [],
+      "group": "Reggae",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-14",
+      "prompt": "Jamaican bass and clipped chords",
+      "answer": "Jamaican bass and clipped chords",
+      "distractors": [],
+      "group": "Reggae",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-15",
+      "prompt": "Relaxed Jamaican groove",
+      "answer": "Relaxed Jamaican groove",
+      "distractors": [],
+      "group": "Reggae",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-styles-connections-3-16",
+      "prompt": "Jamaican off-beat guitar strokes",
+      "answer": "Jamaican off-beat guitar strokes",
+      "distractors": [],
+      "group": "Reggae",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

@@ -1,0 +1,39 @@
+CLASS WORKBOOK CHOICE-QUESTION AUDIT — 7 November 2026
+
+All 594 choice questions checked against 13 supplied course booklets.
+64 questions rewritten across 49 concepts; 530 retained.
+All 297 typed definition questions preserved exactly.
+Each concept still has one typed question, one tick-one question (4 options), and one tick-two question (6 options).
+
+The JSON audit records every prompt, correct option, distractor, explanation, decision and source paragraph.
+Coverage: 480 questions backed by written teaching; 100 named/instrument-listening coverage; 10 related foundations; 2 with partial coverage; 2 not covered in the supplied booklets.
+
+Key corrections include blues and rock-and-roll sound clues, four-beat course march examples, round restarts, N3 electric-guitar recognition, Indian sitar/tabla, gospel and soul vocals, Alberti/walking bass, harmonic-minor sound, sonata exposition, ballett fa-la-la, madrigal imitation, pavan metre, appoggiatura, suspension and fugal answer.
+
+Coverage gaps:
+- AH chord II and first inversion: no matching explanation/exercise located. Retained Dictionary-backed questions rather than inventing classroom evidence.
+- AH I/IV/V/VI in minor keys: the supplied text explains the major-key progression, not the AH minor-key extension.
+- Several instruments and basic concepts are named or exercised by listening without written tone descriptions. Sound/range cues retain Dictionary support.
+
+Accuracy qualifications:
+- Happy/sad is a classroom mnemonic, not proof of tonality.
+- An anacrusis is a pickup before the first strong beat, not necessarily exactly one last beat.
+- The turn uses the printed above-main-below-main pattern; its inconsistent three-note count is not copied.
+- Source paragraph indices are zero-based nonempty XML paragraphs, including table cells.
+
+Verify source hashes, quotes and question snapshots with scripts/verify-workbook-quiz-evidence.py. No attached recordings were auditioned; this audit covers text questions supporting listening recognition.
+
+Subsequent distractor-level review: 125 questions / 204 wrong options revised. Distractors use the question’s qualification or earlier; correct options, keys, prompts and all typed questions are unchanged.
+
+Explicit user wording correction: replaced “little tune” with “melody” in the sequence question and its explanation.
+
+User-requested typed-answer review: all 297 accepted-answer lists checked; 1553 explicit alternative terms, word forms and spelling variants added. Typed prompts and explanations unchanged.
+
+12 November 2026 source re-verification
+All 13 authentic OneDrive workbook texts archived independently as compact paragraph evidence. Original DOCX container hashes retained in the JSON audit; new hashes identify the actual reverified sources. Twelve books preserve every quoted passage at its original index. Six AH Classical and Romantic teaching passages reanchored to the revised 162-paragraph edition for 12 questions, without changing prompts or answers. The later appoggiatura prompt clarification is retained and explicitly audited against workbook teaching plus the Dictionary definition.
+
+12 November 2026 accessibility wording review
+Simplified pupil-facing prompts, choices and feedback across question formats, particularly tick-two descriptions. Source quotations remain verbatim. Correct option IDs, typed canonical answers and accepted variants, source evidence, media and marking rules are unchanged. Checked prompt/option/feedback copies and content hashes now describe this wording revision, not the historical wording.
+
+12 November 2026 qualification vocabulary audit
+Revised 63 text questions and 27 audio questions. N3 question CQ-N3-MC0002-L01 now asks for the N3 term Off the beat rather than the N4 term Syncopation. Bagpipe backing is described as long held notes rather than testing the N4 term Drone. Later instrument names and terminology in lower-level descriptions are replaced by level-appropriate sound clues. N4 Romantic, harp, cello and tenor descriptions no longer require later vocabulary. Verbatim workbook evidence remains unchanged; checked wording and fingerprints updated. Known wording revisions retain teacher edits when restoring browser reviews.

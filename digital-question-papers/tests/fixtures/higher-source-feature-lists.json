@@ -1,0 +1,319 @@
+{
+  "scope": "All 50 printed Higher feature-list entries visually compared with full official source-list crops on 6 November 2026; exact underlined words, surrounding emphasis and bullet presence are independent source observations.",
+  "papers": [
+    {
+      "id": "higher-2015",
+      "bullets": true,
+      "features": [
+        {
+          "before": "",
+          "word": "rallentando",
+          "after": ""
+        },
+        {
+          "before": "major ",
+          "boldBefore": true,
+          "word": "scale",
+          "after": " played by the strings"
+        },
+        {
+          "before": "harp ",
+          "boldBefore": true,
+          "word": "glissando",
+          "after": ""
+        },
+        {
+          "before": "timpani ",
+          "boldBefore": true,
+          "word": "rolls",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "tremolando",
+          "after": " starts"
+        }
+      ]
+    },
+    {
+      "id": "higher-2016",
+      "bullets": true,
+      "features": [
+        {
+          "before": "",
+          "word": "modulation",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "glockenspiel",
+          "after": ""
+        },
+        {
+          "before": "the first example of ",
+          "word": "ritardando",
+          "after": ""
+        },
+        {
+          "before": "first appearance of ",
+          "word": "tremolando",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "dominant 7th",
+          "after": " arpeggio",
+          "boldAfter": true
+        }
+      ]
+    },
+    {
+      "id": "higher-2017",
+      "bullets": true,
+      "features": [
+        {
+          "before": "first appearance of ",
+          "word": "cello",
+          "after": ""
+        },
+        {
+          "before": "the second ",
+          "word": "drum roll",
+          "after": ""
+        },
+        {
+          "before": "ascending ",
+          "word": "dominant 7th",
+          "after": " arpeggio"
+        },
+        {
+          "before": "",
+          "word": "octave",
+          "after": " leap in voice"
+        },
+        {
+          "before": "first appearance of ",
+          "word": "xylophone",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "id": "higher-2018",
+      "bullets": true,
+      "features": [
+        {
+          "before": "first entry of voices in ",
+          "word": "harmony",
+          "after": ""
+        },
+        {
+          "before": "voices in ",
+          "word": "octaves",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "contrary",
+          "after": " motion"
+        },
+        {
+          "before": "first harp ",
+          "word": "glissando",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "imperfect",
+          "after": " cadence"
+        }
+      ]
+    },
+    {
+      "id": "higher-2019",
+      "bullets": false,
+      "features": [
+        {
+          "before": "change to ",
+          "word": "minor",
+          "after": " tonality"
+        },
+        {
+          "before": "",
+          "word": "dominant 7th",
+          "after": " outlined in vocal part"
+        },
+        {
+          "before": "first example of ",
+          "word": "con sordino",
+          "after": " brass"
+        },
+        {
+          "before": "start of descending ",
+          "word": "chromatic",
+          "after": " countermelody in strings"
+        },
+        {
+          "before": "",
+          "word": "sequence",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "id": "higher-2022",
+      "bullets": false,
+      "features": [
+        {
+          "before": "first example of ",
+          "word": "trill",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "perfect",
+          "after": " cadence"
+        },
+        {
+          "before": "first example of ",
+          "word": "glissando",
+          "after": ""
+        },
+        {
+          "before": "ascending major ",
+          "word": "scale",
+          "after": " in the accompaniment"
+        },
+        {
+          "before": "start of ",
+          "word": "walking bass",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "id": "higher-2023",
+      "bullets": false,
+      "features": [
+        {
+          "before": "",
+          "word": "perfect",
+          "after": " cadence"
+        },
+        {
+          "before": "xylophone ",
+          "word": "glissando",
+          "after": ""
+        },
+        {
+          "before": "start of ",
+          "word": "tremolando",
+          "after": ""
+        },
+        {
+          "before": "start of ",
+          "word": "violin",
+          "after": " countermelody"
+        },
+        {
+          "before": "first example of ",
+          "word": "con sordino",
+          "after": " trumpets"
+        }
+      ]
+    },
+    {
+      "id": "higher-2024",
+      "bullets": false,
+      "features": [
+        {
+          "before": "",
+          "word": "perfect",
+          "after": " cadence"
+        },
+        {
+          "before": "",
+          "word": "interrupted",
+          "after": " cadence"
+        },
+        {
+          "before": "",
+          "word": "glissando",
+          "after": ""
+        },
+        {
+          "before": "first example of singing in ",
+          "word": "harmony",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "male",
+          "after": " voices in unison"
+        }
+      ]
+    },
+    {
+      "id": "higher-2025",
+      "bullets": false,
+      "features": [
+        {
+          "before": "descending chromatic scale on ",
+          "word": "con sordino",
+          "after": " trumpet"
+        },
+        {
+          "before": "first example of ",
+          "word": "dominant 7th",
+          "after": " arpeggio"
+        },
+        {
+          "before": "",
+          "word": "xylophone",
+          "after": ""
+        },
+        {
+          "before": "first example of ",
+          "word": "hi-hat",
+          "after": " cymbals"
+        },
+        {
+          "before": "",
+          "word": "tremolando",
+          "after": " begins for the first time"
+        }
+      ]
+    },
+    {
+      "id": "higher-2026",
+      "bullets": false,
+      "features": [
+        {
+          "before": "",
+          "word": "interrupted",
+          "after": " cadence"
+        },
+        {
+          "before": "first example of ",
+          "word": "SATB",
+          "after": " chorus in harmony"
+        },
+        {
+          "before": "first example of a ",
+          "word": "perfect",
+          "after": " cadence"
+        },
+        {
+          "before": "solo ",
+          "word": "tenor",
+          "after": ""
+        },
+        {
+          "before": "",
+          "word": "modulation",
+          "after": ""
+        }
+      ]
+    }
+  ]
+}

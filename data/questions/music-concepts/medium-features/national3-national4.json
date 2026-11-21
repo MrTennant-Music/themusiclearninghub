@@ -824,15 +824,6 @@
       "falseFeature": "Rhyming words are spoken rhythmically in time with a beat.",
       "falseSourceConceptId": "MC-0075"
     },
-    "MC-0092": {
-      "trueFeatures": [
-        "Music is organised around a central key or tonic.",
-        "At this level it mainly contrasts major and minor.",
-        "Scale notes and chords create a pull between dominant and tonic."
-      ],
-      "falseFeature": "A bass note alternates with an off-beat chord in a repeated accompaniment.",
-      "falseSourceConceptId": "MC-0093"
-    },
     "MC-0093": {
       "trueFeatures": [
         "It is a repeated accompaniment pattern.",

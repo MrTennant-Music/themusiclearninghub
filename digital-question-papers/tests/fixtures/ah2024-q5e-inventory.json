@@ -1,0 +1,365 @@
+{
+  "key": "percussion",
+  "timeSignature": "4/4",
+  "options": [
+    [
+      {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "tieToNext": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "tiedFromPrevious": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          }
+        ],
+        "ties": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "tieToNext": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "tiedFromPrevious": true,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ],
+        "ties": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "minim",
+            "beats": 2,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "minim",
+            "beats": 2,
+            "stemDown": false
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "tieToNext": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "tiedFromPrevious": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          }
+        ],
+        "ties": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "notes": [
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          },
+          {
+            "rest": true,
+            "rhythm": "crotchetRest",
+            "beats": 1
+          }
+        ]
+      },
+      {
+        "notes": [
+          {
+            "pitch": "B4",
+            "rhythm": "dottedCrotchet",
+            "beats": 1.5,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "quaver",
+            "beats": 0.5,
+            "tieToNext": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "tiedFromPrevious": true,
+            "stemDown": false
+          },
+          {
+            "pitch": "B4",
+            "rhythm": "crotchet",
+            "beats": 1,
+            "stemDown": false
+          }
+        ],
+        "ties": [
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    ]
+  ],
+  "answer": 3,
+  "layout": {
+    "height": 150
+  }
+}

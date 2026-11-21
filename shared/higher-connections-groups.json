@@ -1,0 +1,442 @@
+[
+  {
+    "id": "h-chamber-links",
+    "family": "chamber",
+    "label": "Chamber music",
+    "conceptIds": [
+      "MC-0214",
+      "MC-0225",
+      "MC-0141",
+      "MC-0119"
+    ]
+  },
+  {
+    "id": "h-string-quartet",
+    "family": "chamber",
+    "label": "String quartet",
+    "conceptIds": [
+      "MC-0225",
+      "MC-0141",
+      "MC-0213",
+      "MC-0119"
+    ]
+  },
+  {
+    "id": "h-impressionist-links",
+    "family": "impressionist",
+    "label": "Impressionist colour",
+    "conceptIds": [
+      "MC-0215",
+      "MC-0175",
+      "MC-0173",
+      "MC-0163"
+    ]
+  },
+  {
+    "id": "h-jazz-funk",
+    "family": "jazz-funk",
+    "label": "Jazz funk",
+    "conceptIds": [
+      "MC-0216",
+      "MC-0117",
+      "MC-0049",
+      "MC-0105"
+    ]
+  },
+  {
+    "id": "h-lied-links",
+    "family": "lied",
+    "label": "Lied",
+    "conceptIds": [
+      "MC-0217",
+      "MC-0067",
+      "MC-0057",
+      "MC-0077"
+    ]
+  },
+  {
+    "id": "h-sacred-music",
+    "family": "sacred",
+    "label": "Sacred music",
+    "conceptIds": [
+      "MC-0218",
+      "MC-0220",
+      "MC-0221",
+      "MC-0150"
+    ]
+  },
+  {
+    "id": "h-oratorio-links",
+    "family": "oratorio",
+    "label": "Oratorio",
+    "conceptIds": [
+      "MC-0220",
+      "MC-0144",
+      "MC-0147",
+      "MC-0054"
+    ]
+  },
+  {
+    "id": "h-recorded-sound",
+    "family": "effects",
+    "label": "Recorded sound",
+    "conceptIds": [
+      "MC-0219",
+      "MC-0208",
+      "MC-0122",
+      "MC-0037"
+    ]
+  },
+  {
+    "id": "h-plainchant-links",
+    "family": "plainchant",
+    "label": "Plainchant",
+    "conceptIds": [
+      "MC-0221",
+      "MC-0192",
+      "MC-0041",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "h-recitative-links",
+    "family": "opera",
+    "label": "Recitative",
+    "conceptIds": [
+      "MC-0222",
+      "MC-0073",
+      "MC-0067",
+      "MC-0172"
+    ]
+  },
+  {
+    "id": "h-sonata-links",
+    "family": "sonata",
+    "label": "Sonatas",
+    "conceptIds": [
+      "MC-0223",
+      "MC-0057",
+      "MC-0141",
+      "MC-0039"
+    ]
+  },
+  {
+    "id": "h-soul-links",
+    "family": "soul",
+    "label": "Soul music",
+    "conceptIds": [
+      "MC-0224",
+      "MC-0150",
+      "MC-0114",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "h-ornaments",
+    "family": "ornaments",
+    "label": "Ornaments",
+    "conceptIds": [
+      "MC-0226",
+      "MC-0236",
+      "MC-0174",
+      "MC-0164"
+    ]
+  },
+  {
+    "id": "h-chord-types",
+    "family": "harmony",
+    "label": "Chord types",
+    "conceptIds": [
+      "MC-0227",
+      "MC-0228",
+      "MC-0229",
+      "MC-0230"
+    ]
+  },
+  {
+    "id": "h-minor-scales",
+    "family": "scales",
+    "label": "Minor scales",
+    "conceptIds": [
+      "MC-0231",
+      "MC-0234",
+      "MC-0085",
+      "MC-0090"
+    ]
+  },
+  {
+    "id": "h-relative-keys",
+    "family": "keys",
+    "label": "Related keys",
+    "conceptIds": [
+      "MC-0239",
+      "MC-0240",
+      "MC-0084",
+      "MC-0085"
+    ]
+  },
+  {
+    "id": "h-scales-drones",
+    "family": "scales",
+    "label": "Scales and drones",
+    "conceptIds": [
+      "MC-0235",
+      "MC-0089",
+      "MC-0090",
+      "MC-0083"
+    ]
+  },
+  {
+    "id": "h-cadences",
+    "family": "cadences",
+    "label": "Cadences",
+    "conceptIds": [
+      "MC-0232",
+      "MC-0238",
+      "MC-0169",
+      "MC-0165"
+    ]
+  },
+  {
+    "id": "h-tierce-picardie",
+    "family": "keys",
+    "label": "Tierce de Picardie",
+    "conceptIds": [
+      "MC-0241",
+      "MC-0085",
+      "MC-0084",
+      "MC-0010"
+    ]
+  },
+  {
+    "id": "h-layered-melodies",
+    "family": "texture",
+    "label": "Layered melodies",
+    "conceptIds": [
+      "MC-0237",
+      "MC-0161",
+      "MC-0162",
+      "MC-0188"
+    ]
+  },
+  {
+    "id": "h-two-three",
+    "family": "rhythm",
+    "label": "Groups of two and three",
+    "conceptIds": [
+      "MC-0242",
+      "MC-0177",
+      "MC-0247",
+      "MC-0176"
+    ]
+  },
+  {
+    "id": "h-changed-patterns",
+    "family": "development",
+    "label": "Changing melodic patterns",
+    "conceptIds": [
+      "MC-0243",
+      "MC-0244",
+      "MC-0017",
+      "MC-0108"
+    ]
+  },
+  {
+    "id": "h-time-signatures",
+    "family": "metre",
+    "label": "Time signatures",
+    "conceptIds": [
+      "MC-0245",
+      "MC-0246",
+      "MC-0103",
+      "MC-0176"
+    ]
+  },
+  {
+    "id": "h-beats-three",
+    "family": "rhythm",
+    "label": "Beats divided into three",
+    "conceptIds": [
+      "MC-0247",
+      "MC-0100",
+      "MC-0176",
+      "MC-0024"
+    ]
+  },
+  {
+    "id": "h-baroque-accompaniment",
+    "family": "baroque",
+    "label": "Baroque accompaniment",
+    "conceptIds": [
+      "MC-0248",
+      "MC-0128",
+      "MC-0119",
+      "MC-0186"
+    ]
+  },
+  {
+    "id": "h-concerto-grosso",
+    "family": "concerto",
+    "label": "Concerto grosso",
+    "conceptIds": [
+      "MC-0249",
+      "MC-0258",
+      "MC-0260",
+      "MC-0253"
+    ]
+  },
+  {
+    "id": "h-da-capo-aria",
+    "family": "opera",
+    "label": "Da capo aria",
+    "conceptIds": [
+      "MC-0250",
+      "MC-0144",
+      "MC-0110",
+      "MC-0087"
+    ]
+  },
+  {
+    "id": "h-sonata-form",
+    "family": "sonata",
+    "label": "Sonata form",
+    "conceptIds": [
+      "MC-0254",
+      "MC-0251",
+      "MC-0255",
+      "MC-0148"
+    ]
+  },
+  {
+    "id": "h-repeated-bass",
+    "family": "accompaniment",
+    "label": "Repeating bass patterns",
+    "conceptIds": [
+      "MC-0252",
+      "MC-0186",
+      "MC-0037",
+      "MC-0093"
+    ]
+  },
+  {
+    "id": "h-song-structure",
+    "family": "song",
+    "label": "Song structure",
+    "conceptIds": [
+      "MC-0256",
+      "MC-0217",
+      "MC-0190",
+      "MC-0067"
+    ]
+  },
+  {
+    "id": "h-coloratura",
+    "family": "opera",
+    "label": "Coloratura",
+    "conceptIds": [
+      "MC-0257",
+      "MC-0134",
+      "MC-0144",
+      "MC-0073"
+    ]
+  },
+  {
+    "id": "h-string-techniques",
+    "family": "strings",
+    "label": "String techniques",
+    "conceptIds": [
+      "MC-0259",
+      "MC-0261",
+      "MC-0193",
+      "MC-0207"
+    ]
+  },
+  {
+    "id": "h-baroque-links",
+    "family": "baroque",
+    "label": "Baroque music",
+    "conceptIds": [
+      "MC-0248",
+      "MC-0070",
+      "MC-0249",
+      "MC-0128"
+    ]
+  },
+  {
+    "id": "h-returning-sections",
+    "family": "form",
+    "label": "Returning sections",
+    "conceptIds": [
+      "MC-0253",
+      "MC-0189",
+      "MC-0017",
+      "MC-0110"
+    ]
+  },
+  {
+    "id": "h-motif-development",
+    "family": "development",
+    "label": "Developing motifs",
+    "conceptIds": [
+      "MC-0243",
+      "MC-0244",
+      "MC-0018",
+      "MC-0107"
+    ]
+  },
+  {
+    "id": "h-instrumental-works",
+    "family": "instrumental",
+    "label": "Classical instrumental music",
+    "conceptIds": [
+      "MC-0223",
+      "MC-0154",
+      "MC-0071",
+      "MC-0214"
+    ]
+  },
+  {
+    "id": "h-sacred-choral",
+    "family": "sacred",
+    "label": "Sacred choral music",
+    "conceptIds": [
+      "MC-0218",
+      "MC-0238",
+      "MC-0048",
+      "MC-0220"
+    ]
+  },
+  {
+    "id": "h-decorative-singing",
+    "family": "vocal",
+    "label": "Decorative singing",
+    "conceptIds": [
+      "MC-0257",
+      "MC-0167",
+      "MC-0174",
+      "MC-0134"
+    ]
+  },
+  {
+    "id": "h-harmonics",
+    "family": "strings",
+    "label": "String harmonics",
+    "conceptIds": [
+      "MC-0259",
+      "MC-0141",
+      "MC-0213",
+      "MC-0119"
+    ]
+  },
+  {
+    "id": "h-orchestral-expression",
+    "family": "orchestral",
+    "label": "Orchestral expression",
+    "conceptIds": [
+      "MC-0261",
+      "MC-0063",
+      "MC-0077",
+      "MC-0054"
+    ]
+  }
+]

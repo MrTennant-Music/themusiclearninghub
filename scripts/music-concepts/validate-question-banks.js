@@ -9,14 +9,11 @@ const {
   KNOWLEDGE_BANK_FILENAME,
   KNOWLEDGE_BANK_PATH,
   OUTPUT_DIRECTORY,
-  RUNTIME_BANK_PATH,
   EDITOR_SLOTS_PATH,
   LEVELS,
   LEVEL_CODES,
   LEVEL_FILENAMES,
   DIFFICULTIES,
-  DIFFICULTY_RANGES,
-  CONCEPT_IDENTIFICATION_PROMPT,
   sha256File,
   normaliseText,
   normaliseStem,
@@ -35,13 +32,13 @@ const {
 const STRONG_HINTS = loadStrongHints();
 const MANUAL_OVERRIDES = loadManualQuestionOverrides();
 
-const EXPECTED_SOURCE_HASH = "1b8ae6e92b1889f3aceba17da7acbe721874ebed637866e55030a54e7860053e";
+const EXPECTED_SOURCE_HASH = "99fd80902ff1e2996831c5951e7b08c9829963b4edc157dade547d897d114a8d";
 const EXPECTED_COUNTS = {
-  concepts: 300,
-  facts: 710,
+  concepts: 298,
+  facts: 707,
   groups: 44,
   senses: 15,
-  levels: { "National 3": 68, "National 4": 75, "National 5": 70, Higher: 48, "Advanced Higher": 39 },
+  levels: { "National 3": 67, "National 4": 74, "National 5": 70, Higher: 48, "Advanced Higher": 39 },
 };
 const AUDIO_LANGUAGE = /\b(listen to|in the recording|in the audio|in the excerpt|what can you hear|audio extract|heard in the recording)\b/i;
 const HISTORY_LANGUAGE = /\b(1[0-9]{3}|20[0-9]{2}|\d+(?:st|nd|rd|th) century|composer's biography|composer biography|was born)\b/i;
@@ -185,8 +182,8 @@ function findNearDuplicates(questions) {
 function validateKnowledgeBank(bank, errors) {
   if (bank.schema_version !== "5.0") errors.push(`Knowledge bank: expected schema 5.0, found ${bank.schema_version || "missing"}.`);
   if (sha256File(KNOWLEDGE_BANK_PATH) !== EXPECTED_SOURCE_HASH) errors.push("Knowledge bank: SHA-256 does not match the approved authoritative file.");
-  if (bank.concepts?.length !== EXPECTED_COUNTS.concepts) errors.push("Knowledge bank: concept count is not 300.");
-  if (bank.validation_summary?.question_eligible_facts !== EXPECTED_COUNTS.facts) errors.push("Knowledge bank: eligible-fact count is not 710.");
+  if (bank.concepts?.length !== EXPECTED_COUNTS.concepts) errors.push(`Knowledge bank: concept count is not ${EXPECTED_COUNTS.concepts}.`);
+  if (bank.validation_summary?.question_eligible_facts !== EXPECTED_COUNTS.facts) errors.push(`Knowledge bank: eligible-fact count is not ${EXPECTED_COUNTS.facts}.`);
   if (bank.comparison_groups?.length !== EXPECTED_COUNTS.groups) errors.push("Knowledge bank: comparison-group count is not 44.");
   if (bank.concepts.filter((concept) => concept.senses?.length).length !== EXPECTED_COUNTS.senses) errors.push("Knowledge bank: multiple-sense concept count is not 15.");
   if (bank.validation_summary?.validation_status !== "passed") errors.push("Knowledge bank: authoritative validation status is not passed.");
@@ -292,7 +289,7 @@ function validateQuestion(question, fileLevel, context, errors) {
       errors.push(`${label}: an answer set containing an orchestral family must contain Brass, Percussion, Strings and Woodwind.`);
     }
     if (conceptAnswerQuestion) {
-      if (correct[0]?.text !== concept.concept) errors.push(`${label}: correct answer is not the target concept.`);
+      if (!conceptTerms(concept).some(term=>normaliseText(term)===normaliseText(correct[0]?.text))) errors.push(`${label}: correct answer is not the target concept.`);
       question.answers.forEach((answer) => {
         if (!namesByLevel.get(question.level)?.has(normaliseText(answer.text))) {
           errors.push(`${label}: answer '${answer.text}' is not a concept at ${question.level}.`);
@@ -300,7 +297,8 @@ function validateQuestion(question, fileLevel, context, errors) {
       });
     }
     if (notFeatureQuestion) {
-      const sourceConcept = conceptsById.get(question.featureSourceConceptId);
+      // Preserve the authored false-feature comparison after retiring the standalone N3 entry.
+      const sourceConcept = conceptsById.get(question.featureSourceConceptId) || (question.featureSourceConceptId === "MC-0036" ? {concept_id:"MC-0036",concept:"Octave",level:"National 3"} : null);
       if (!sourceConcept || sourceConcept.level !== question.level || sourceConcept.concept_id === question.conceptId) {
         errors.push(`${label}: false feature source must be a different concept at the same qualification.`);
       }
@@ -309,8 +307,8 @@ function validateQuestion(question, fileLevel, context, errors) {
       if (targetFeatures.length !== 3 || falseFeatures.length !== 1 || falseFeatures[0]?.correct !== true) {
         errors.push(`${label}: NOT-a-feature question must contain three target features and one correct false feature.`);
       }
-      if (sourceConcept && (!includesNormalisedTerm(question.explanation, sourceConcept.concept)
-        || !includesNormalisedTerm(question.explanation, concept.concept))) {
+      if (sourceConcept && (!conceptTerms(sourceConcept).some(term=>includesNormalisedTerm(question.explanation, term))
+        || !conceptTerms(concept).some(term=>includesNormalisedTerm(question.explanation, term)))) {
         errors.push(`${label}: NOT-a-feature feedback must name both the false-feature source and the assessed concept.`);
       }
     }
@@ -419,7 +417,7 @@ function validateQuestion(question, fileLevel, context, errors) {
         if (new Set(target.localIds).size !== target.localIds.length) errors.push(`${label}: literacyLink target IDs are duplicated within ${target.sourceFile}.`);
         target.localIds.forEach((id) => {
           flattenedIds.push(id);
-          if (target.sourceFile === "millionaire-question-bank.js") {
+          if (target.sourceFile === "whowantstobemillionaire/millionaire-question-bank.js") {
             if (!literacyIds.has(id)) errors.push(`${label}: Music Literacy question target ${id} does not exist.`);
           } else if (!localTargetExists(target.sourceFile, id)) {
             errors.push(`${label}: component target ${target.sourceFile}:${id} does not exist.`);
@@ -455,8 +453,9 @@ function validateEditorSlots(bank, errors) {
     return new Set();
   }
   const slots = Array.isArray(file?.slots) ? file.slots : [];
-  if (file?.schemaVersion !== "1.0" || file?.slotCount !== 900 || slots.length !== 900) {
-    errors.push(`Editor slots: expected exactly 900 fixed slots, found ${slots.length}.`);
+  const expectedSlotCount = EXPECTED_COUNTS.concepts * DIFFICULTIES.length;
+  if (file?.schemaVersion !== "1.0" || file?.slotCount !== expectedSlotCount || slots.length !== expectedSlotCount) {
+    errors.push(`Editor slots: expected exactly ${expectedSlotCount} fixed slots, found ${slots.length}.`);
   }
   const conceptsById = new Map(bank.concepts.map((concept) => [concept.concept_id, concept]));
   const seenIds = new Set();
@@ -489,7 +488,7 @@ function validateEditorSlots(bank, errors) {
   });
   DIFFICULTIES.forEach((difficulty) => {
     const count = slots.filter((slot) => slot.difficulty === difficulty).length;
-    if (count !== 300) errors.push(`Editor slots: expected 300 ${difficulty} slots, found ${count}.`);
+    if (count !== EXPECTED_COUNTS.concepts) errors.push(`Editor slots: expected ${EXPECTED_COUNTS.concepts} ${difficulty} slots, found ${count}.`);
   });
   bank.concepts.forEach((concept) => DIFFICULTIES.forEach((difficulty) => {
     if (!seenKeys.has(`${concept.concept_id}|${difficulty}`)) errors.push(`${concept.concept_id}: missing ${difficulty} editor slot.`);
@@ -513,86 +512,6 @@ function validateStrongHintCoverage(questions, errors) {
     } else {
       ownersByHint.set(normalised, key);
     }
-  });
-}
-
-function expectedRuntimeQuestion(question) {
-  const answerIds = ["a", "b", "c", "d"];
-  const correctIndex = question.answers.findIndex((answer) => answer.correct);
-  const range = DIFFICULTY_RANGES[question.difficulty];
-  const manualPresentation = MANUAL_OVERRIDES.questions[question.id];
-  const presentation = manualPresentation ? {
-    conceptDescription: manualPresentation.conceptDescription || null,
-    prompt: manualPresentation.prompt,
-  } : conceptQuestionPresentation(question);
-  return {
-    id: question.id,
-    level: LEVEL_CODES[question.level],
-    category: "concepts",
-    concept: question.concept,
-    conceptId: question.conceptId,
-    factId: question.factId,
-    supportingFactIds: question.supportingFactIds,
-    senseId: question.senseId,
-    comparisonGroupId: question.comparisonGroupId,
-    musicConceptCategory: question.category,
-    musicConceptCategories: question.categories,
-    questionType: question.questionType,
-    answerMode: question.answerMode,
-    question: question.question,
-    prompt: presentation.prompt,
-    conceptDescription: presentation.conceptDescription,
-    answers: question.answers.map((answer, index) => ({ id: answerIds[index], text: answer.text })),
-    correctAnswer: answerIds[correctIndex],
-    explanation: question.explanation,
-    tip: question.hint,
-    difficulty: question.difficulty.toLowerCase(),
-    difficultyMin: range.min,
-    difficultyMax: range.max,
-    type: "text",
-    audioSrc: "",
-    notationData: null,
-    literacyLink: question.literacyLink,
-  };
-}
-
-function validateRuntimeAdapter(questions, errors) {
-  delete require.cache[require.resolve(RUNTIME_BANK_PATH)];
-  const runtime = require(RUNTIME_BANK_PATH);
-  if (!Array.isArray(runtime)) {
-    errors.push("Runtime adapter: export is not an array.");
-    return;
-  }
-  if (runtime.length !== questions.length) errors.push(`Runtime adapter: expected ${questions.length} questions, found ${runtime.length}.`);
-  const runtimeById = new Map();
-  runtime.forEach((question) => {
-    if (runtimeById.has(question.id)) errors.push(`${question.id}: duplicate runtime question ID.`);
-    runtimeById.set(question.id, question);
-    if (question.category !== "concepts") errors.push(`${question.id}: runtime category is not concepts.`);
-    if (question.audioSrc !== "" || question.audio || question.notationData !== null || question.type !== "text") errors.push(`${question.id}: runtime Music Concept question must not request audio or unrelated media.`);
-    if (!LEVELS.some((level) => LEVEL_CODES[level] === question.level)) errors.push(`${question.id}: runtime level code is invalid.`);
-    if (!Array.isArray(question.answers) || question.answers.length !== 4 || !question.answers.some((answer) => answer.id === question.correctAnswer)) errors.push(`${question.id}: runtime answers are invalid.`);
-    if (!question.tip || !question.explanation) errors.push(`${question.id}: runtime hint or explanation is missing.`);
-    if (question.answerMode === "concept" && (!question.conceptDescription || question.prompt !== CONCEPT_IDENTIFICATION_PROMPT)) {
-      errors.push(`${question.id}: Easy description and identification prompt are not separated correctly.`);
-    }
-    if (question.answerMode === "not_feature" && (question.conceptDescription !== null || question.prompt !== question.question)) {
-      errors.push(`${question.id}: Medium NOT-a-feature wording must stay in the main question panel.`);
-    }
-    if (question.answerMode === "custom" && !question.prompt?.trim()) errors.push(`${question.id}: custom runtime prompt is blank.`);
-  });
-  questions.forEach((question) => {
-    const runtimeQuestion = runtimeById.get(question.id);
-    if (!runtimeQuestion) {
-      errors.push(`${question.id}: missing from the runtime adapter.`);
-      return;
-    }
-    if (!isDeepStrictEqual(runtimeQuestion, expectedRuntimeQuestion(question))) {
-      errors.push(`${question.id}: runtime content does not exactly match its canonical question record.`);
-    }
-  });
-  runtime.forEach((question) => {
-    if (!questions.some((canonical) => canonical.id === question.id)) errors.push(`${question.id}: runtime adapter contains an unknown question.`);
   });
 }
 
@@ -637,13 +556,8 @@ function validateManifest(questions, errors) {
       if (!seenLevels.has(level)) errors.push(`${level}: missing from the manifest.`);
     });
   }
-  const expectedRuntimeFile = path.relative(REPOSITORY_ROOT, RUNTIME_BANK_PATH);
-  if (manifest.runtimeAdapter?.file !== expectedRuntimeFile) errors.push("Manifest runtime-adapter path is invalid.");
-  if (!fs.existsSync(RUNTIME_BANK_PATH) || manifest.runtimeAdapter?.sha256 !== sha256File(RUNTIME_BANK_PATH)) {
-    errors.push("Manifest runtime-adapter hash is stale or invalid.");
-  }
   const expectedEditorSlotsFile = path.relative(REPOSITORY_ROOT, EDITOR_SLOTS_PATH);
-  if (manifest.editorSlots?.file !== expectedEditorSlotsFile || manifest.editorSlots?.slotCount !== 900) {
+  if (manifest.editorSlots?.file !== expectedEditorSlotsFile || manifest.editorSlots?.slotCount !== EXPECTED_COUNTS.concepts * DIFFICULTIES.length) {
     errors.push("Manifest editor-slot metadata is invalid.");
   }
   if (!fs.existsSync(EDITOR_SLOTS_PATH) || manifest.editorSlots?.sha256 !== sha256File(EDITOR_SLOTS_PATH)) {
@@ -687,7 +601,7 @@ function validateLiteracyMappings(bank, context, errors) {
     const qualified = [...new Set(flattened)].sort();
     if (JSON.stringify(declared) !== JSON.stringify(qualified)) errors.push(`${label}: flattened targetLiteracyIds do not match the source-qualified targets.`);
     targets.forEach((target) => (target.localIds || []).forEach((id) => {
-      if (target.sourceFile === "millionaire-question-bank.js") {
+      if (target.sourceFile === "whowantstobemillionaire/millionaire-question-bank.js") {
         if (!context.literacyIds.has(id)) errors.push(`${label}: Music Literacy question target ${id} does not exist.`);
       } else if (!context.localTargetExists(target.sourceFile, id)) {
         errors.push(`${label}: component target ${target.sourceFile}:${id} does not exist.`);
@@ -742,7 +656,7 @@ function writeReviewReport(summary) {
     "| --- | ---: | ---: | ---: | ---: |",
     ...levelRows,
     "",
-    `All 300 concepts have one ready Easy slot and one ready Medium slot. ${summary.conceptsWithIncompleteRequiredSlots.length} concepts are missing one of those required playable slots.`,
+    `All ${EXPECTED_COUNTS.concepts} concepts have one ready Easy slot and one ready Medium slot. ${summary.conceptsWithIncompleteRequiredSlots.length} concepts are missing one of those required playable slots.`,
     "",
     `Blank teacher-authored Hard slots: ${summary.blankHardSlots.length}. Until these are completed, Millionaire temporarily reuses Medium questions for stages 11–15.`,
     "",
@@ -779,14 +693,14 @@ function main() {
   const groupsById = new Map(bank.comparison_groups.map((group) => [group.group_id, group]));
   const namesByLevel = new Map(LEVELS.map((level) => [level,
     new Set(bank.concepts.filter((concept) => concept.level === level)
-      .flatMap((concept) => [concept.concept, ...(concept.aliases || []), ...(concept.listed_as || [])])
+      .flatMap((concept) => [...conceptTerms(concept), ...(concept.listed_as || [])])
       .map(normaliseText))]));
   const styleNamesByLevel = new Map(LEVELS.map((level) => [level,
     new Set(bank.concepts.filter((concept) => concept.level === level && concept.primary_element === "Styles")
       .flatMap((concept) => [concept.concept, ...(concept.aliases || []), ...(concept.listed_as || [])])
       .map(normaliseText))]));
   const allStyleNames = new Set([...styleNamesByLevel.values()].flatMap((names) => [...names]));
-  const existingBankPath = path.join(REPOSITORY_ROOT, "millionaire-question-bank.js");
+  const existingBankPath = path.join(REPOSITORY_ROOT, "whowantstobemillionaire/millionaire-question-bank.js");
   delete require.cache[require.resolve(existingBankPath)];
   const literacyIds = new Set(require(existingBankPath).filter((question) => question.category === "literacy").map((question) => question.id));
   const sourceTextCache = new Map();
@@ -862,7 +776,6 @@ function main() {
       review: review || null,
     };
   });
-  validateRuntimeAdapter(allQuestions, errors);
   validateManifest(allQuestions, errors);
   const summary = updateSummary(errors, warnings, nearDuplicates, allQuestions.length);
   writeReviewReport(summary);

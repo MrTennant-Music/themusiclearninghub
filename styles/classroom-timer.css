@@ -1,0 +1,128 @@
+body { margin:0; background:#fafaf9; color:#111; }
+.ct-sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.ct-stage { padding:8px 0 8px; }
+.ct-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.ct-grid.ct-single { grid-template-columns:400px; justify-content:center; }
+.ct-card { position:relative; min-width:0; padding:20px; border:1px solid #e7e5e4; border-radius:20px; background:#fff; text-align:center; }
+.ct-single .ct-card { border-color:transparent; padding-top:16px; }
+.ct-card-head { display:flex; align-items:center; gap:8px; margin-bottom:16px; }
+.ct-grid:not(.ct-compact) .ct-card-head { position:relative; justify-content:center; }
+.ct-grid:not(.ct-compact) .ct-name { width:286px; flex:none; }
+.ct-grid:not(.ct-compact) .ct-card-head > .ct-icon-button { position:absolute; right:0; }
+.ct-name { width:100%; min-width:0; padding:4px 8px; border:1px solid transparent; border-radius:8px; background:transparent; color:#292524; font-size:20px; font-weight:700; text-overflow:ellipsis; }
+.ct-name:hover { border-color:#e7e5e4; }
+.ct-button { display:inline-flex; flex-shrink:0; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border:1px solid #d6d3d1; border-radius:12px; background:white; color:#111; font-size:14px; font-weight:700; cursor:pointer; }
+.ct-button:hover { background:#f5f5f4; }
+.ct-button:disabled { opacity:.4; cursor:default; }
+.ct-button.ct-icon-button { width:38px; height:38px; padding:0; border-color:transparent; }
+.ct-button.ct-icon-button:hover { border-color:#e7e5e4; }
+.ct-button img { width:24px; height:24px; object-fit:contain; }
+.ct-button.ct-primary { color:white; border-color:#111; background:#111; }
+.ct-primary:hover { background:#292524; }
+.ct-primary img { filter:invert(1); }
+.ct-mode-row { display:flex; align-items:center; justify-content:center; gap:8px; }
+.ct-button.ct-alarm-button { width:44px; height:44px; padding:0; }
+.ct-mode { display:inline-flex; gap:4px; padding:4px; border:1px solid #e7e5e4; border-radius:12px; background:#fafaf9; }
+.ct-mode button { min-width:110px; height:34px; border:0; border-radius:8px; background:transparent; color:#78716c; font-size:14px; font-weight:700; }
+.ct-mode button[aria-pressed=true] { background:white; color:#111; box-shadow:0 1px 4px #00000014; }
+.ct-dial { position:relative; width:300px; height:300px; margin:20px auto; }
+.ct-single .ct-dial { width:300px; height:300px; margin:10px auto; }
+.ct-single .ct-card-head { margin-bottom:8px; }
+.ct-dial svg { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.ct-dial-track { stroke:#f0eeec; }
+.ct-progress { stroke:#292524; }
+.ct-pie-art { display:none; }
+.ct-pie-progress { stroke:#292524; }
+.ct-tick { stroke:#d6d3d1; stroke-width:1; }
+.ct-tick.ct-major { stroke:#a8a29e; stroke-width:1.5; }
+.ct-readout { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; }
+.ct-time { max-width:280px; color:#111; font-size:55px; font-weight:800; line-height:1.2; letter-spacing:-.04em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.ct-single .ct-time { font-size:55px; }
+.ct-time.ct-precise { font-size:39px; }
+.ct-single .ct-time.ct-precise { font-size:39px; }
+.ct-duration { display:flex; align-items:flex-start; justify-content:center; gap:3px; }
+.ct-duration label { display:flex; flex-direction:column; align-items:center; gap:8px; color:#78716c; font-size:12px; font-weight:600; }
+.ct-duration input { width:65px; padding:0; border:0; border-bottom:1px solid #d6d3d1; border-radius:0; background:transparent; text-align:center; color:#111; font-size:45px; font-weight:800; line-height:1.3; font-variant-numeric:tabular-nums; appearance:textfield; }
+.ct-duration input::-webkit-inner-spin-button { -webkit-appearance:none; }
+.ct-duration span { font-size:40px; line-height:1.3; color:#a8a29e; }
+.ct-status { min-height:24px; margin-top:12px; color:#78716c; font-size:13px; font-weight:600; }
+.ct-grid:not(.ct-compact) .ct-status { position:absolute; top:calc(50% + 40px); margin-top:0; }
+.ct-extras { display:flex; justify-content:center; gap:8px; min-height:40px; margin:0 auto 20px; }
+.ct-extras .ct-button { height:38px; padding:0 14px; background:#fafaf9; }
+.ct-actions { display:flex; justify-content:center; gap:12px; }
+.ct-actions .ct-primary { width:200px; height:66px; border-radius:16px; font-size:24px; }
+.ct-actions .ct-primary img { width:28px; height:28px; }
+.ct-actions .ct-reset { width:66px; height:66px; border-radius:16px; padding:0; }
+.ct-finished { background:#fffbeb; border-color:#fcd34d; }
+.ct-finished .ct-progress { stroke:#b45309; }
+.ct-finished .ct-status { color:#92400e; }
+.ct-setting { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:9px 0; font-size:14px; font-weight:600; }
+.ct-setting select, .ct-setting input[type=number], .ct-label-setting { min-width:0; height:36px; padding:0 9px; border:1px solid #d6d3d1; border-radius:8px; background:white; font:inherit; }
+.ct-setting select { width:148px; }
+.ct-label-setting { width:100%; margin-bottom:12px; }
+.ct-alarm-setting { display:grid; grid-template-columns:minmax(0,1fr) 194px; }
+.ct-sound-row { display:flex; align-items:center; gap:8px; }
+.ct-sound-row .ct-button.ct-icon-button { border-color:#e7e5e4; }
+.ct-error { margin:12px 0 0; color:#b91c1c; font-size:14px; text-align:center; }
+.ct-button:focus-visible, .ct-name:focus-visible, .ct-mode button:focus-visible, .ct-duration input:focus-visible, .ct-setting input:focus-visible, .ct-setting select:focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
+
+/* Condense by timer count, keeping the same fixed desktop canvas on every device. */
+.ct-compact { grid-template-columns:minmax(0,1fr); gap:8px; }
+.ct-compact .ct-card { display:grid; grid-template-columns:minmax(150px,1fr) 182px 220px 210px 158px; grid-template-areas:"head mode time extras actions"; align-items:center; gap:8px; padding:10px 12px; border-radius:14px; }
+.ct-compact .ct-card-head { grid-area:head; margin:0; gap:2px; }
+.ct-compact .ct-name { font-size:16px; padding:4px; }
+.ct-compact .ct-icon-button { width:28px; height:28px; }
+.ct-compact .ct-icon-button svg { width:18px; height:18px; }
+.ct-compact .ct-mode-row { grid-area:mode; justify-self:start; gap:6px; }
+.ct-compact .ct-alarm-button { width:36px; height:36px; border-radius:9px; }
+.ct-compact .ct-alarm-button svg { width:18px; height:18px; }
+.ct-compact .ct-mode { gap:2px; padding:3px; border-radius:9px; }
+.ct-compact .ct-mode button { min-width:64px; height:28px; font-size:12px; }
+.ct-compact .ct-dial { grid-area:time; display:flex; align-items:center; justify-content:center; gap:8px; width:auto; height:54px; margin:0; }
+.ct-compact .ct-dial svg { position:static; width:54px; height:54px; flex-shrink:0; }
+.ct-compact .ct-ring-art { display:none; }
+.ct-compact .ct-pie-art { display:inline; }
+.ct-compact .ct-readout { position:static; min-width:130px; }
+.ct-compact .ct-time { font-size:32px; }
+.ct-compact .ct-time.ct-precise { font-size:26px; }
+.ct-compact .ct-duration { gap:1px; }
+.ct-compact .ct-duration input { width:33px; font-size:24px; }
+.ct-compact .ct-duration label { gap:0; font-size:9px; }
+.ct-compact .ct-duration span { font-size:23px; }
+.ct-compact .ct-status { min-height:14px; margin:0; font-size:10px; line-height:14px; }
+.ct-compact .ct-extras { grid-area:extras; gap:5px; min-height:0; margin:0; }
+.ct-compact .ct-extras .ct-button { height:34px; padding:0 9px; gap:3px; font-size:12px; border-radius:9px; }
+.ct-compact .ct-actions { grid-area:actions; justify-content:flex-end; gap:6px; }
+.ct-compact .ct-actions .ct-primary { width:112px; height:38px; gap:5px; font-size:16px; border-radius:10px; }
+.ct-compact .ct-actions .ct-primary img, .ct-compact .ct-actions .ct-primary svg { width:20px; height:20px; }
+.ct-compact .ct-actions .ct-reset { width:38px; height:38px; border-radius:10px; }
+.ct-compact .ct-actions .ct-reset img { width:20px; height:20px; }
+
+/* Larger sets share a maximum of six compact rows. */
+.ct-packed { grid-template-columns:repeat(var(--ct-columns),minmax(0,1fr)); gap:6px; }
+.ct-packed .ct-card { grid-template-columns:130px minmax(0,1fr); grid-template-areas:"head head" "mode time" "actions extras"; gap:2px 4px; padding:3px 7px; }
+.ct-packed .ct-name { font-size:13px; line-height:20px; padding:0 3px; }
+.ct-packed .ct-card-head { height:20px; }
+.ct-packed .ct-icon-button { width:24px; height:20px; }
+.ct-packed .ct-mode { padding:2px; gap:0; border-radius:7px; }
+.ct-packed .ct-mode button { min-width:48px; height:18px; font-size:10px; }
+.ct-packed .ct-mode-row { gap:4px; }
+.ct-packed .ct-alarm-button { width:24px; height:24px; border-radius:7px; }
+.ct-packed .ct-alarm-button svg { width:15px; height:15px; }
+.ct-packed .ct-dial { justify-content:flex-end; gap:3px; height:24px; }
+.ct-packed .ct-dial svg { width:24px; height:24px; }
+.ct-packed .ct-readout { min-width:76px; }
+.ct-packed .ct-time, .ct-packed .ct-time.ct-precise { font-size:19px; }
+.ct-packed .ct-time.ct-precise { font-size:15px; }
+.ct-packed .ct-duration input { width:22px; font-size:17px; }
+.ct-packed .ct-duration span { font-size:16px; }
+.ct-packed .ct-duration label { font-size:0; line-height:0; }
+.ct-packed .ct-status { position:absolute; width:1px; height:1px; min-height:0; overflow:hidden; clip-path:inset(50%); }
+.ct-packed .ct-actions { justify-content:flex-start; gap:4px; }
+.ct-packed .ct-actions .ct-primary { width:72px; height:24px; gap:3px; padding:0 4px; font-size:11px; border-radius:7px; }
+.ct-packed .ct-actions .ct-primary img, .ct-packed .ct-actions .ct-primary svg { width:14px; height:14px; }
+.ct-packed .ct-actions .ct-reset { width:24px; height:24px; border-radius:7px; }
+.ct-packed .ct-actions .ct-reset img { width:15px; height:15px; }
+.ct-packed .ct-extras { justify-content:flex-end; gap:3px; }
+.ct-packed .ct-extras .ct-button { width:29px; height:24px; padding:0; font-size:11px; border-radius:7px; }
+.ct-packed .ct-extra-unit { display:none; }

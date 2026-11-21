@@ -1,0 +1,68 @@
+{
+  "id": "hub-collection-n5-ornaments-wordsearch-1",
+  "level": "N5",
+  "title": "Ornaments",
+  "instructions": "",
+  "description": "Ornaments: current Music Dictionary definitions.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Ornaments",
+    "National 5"
+  ],
+  "template": "wordsearch",
+  "items": [
+    {
+      "id": "hub-collection-n5-ornaments-wordsearch-1-MC-0087",
+      "prompt": "Extra notes that decorate a tune.",
+      "answer": "Ornament",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0087"
+    },
+    {
+      "id": "hub-collection-n5-ornaments-wordsearch-1-MC-0164",
+      "prompt": "A little extra note that decorates a main note.",
+      "answer": "Grace note",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0164"
+    },
+    {
+      "id": "hub-collection-n5-ornaments-wordsearch-1-MC-0174",
+      "prompt": "Quickly going back and forth between a note and the next note above it.",
+      "answer": "Trill",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50,
+      "sourceConceptId": "MC-0174"
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-11-14T00:00:00.000Z",
+  "collectionId": "ornaments",
+  "sourceConceptIds": [
+    "MC-0087",
+    "MC-0164",
+    "MC-0174"
+  ],
+  "editorMode": "with-clues"
+}

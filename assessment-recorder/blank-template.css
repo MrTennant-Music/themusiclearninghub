@@ -1,0 +1,50 @@
+/* Match the shared worksheet generator's fixed desktop layout. */
+.assessment-worksheet-builder { display:grid; grid-template-columns:minmax(320px,420px) minmax(0,1fr); gap:24px; align-items:start; }
+.assessment-worksheet-intro > h2, .assessment-worksheet-customise > h2, .assessment-worksheet-builder .worksheet-preview-panel > h2 { display:flex; align-items:center; gap:8px; margin:0; font-size:20px; line-height:28px; font-weight:700; }
+.assessment-worksheet-intro > h2 img, .assessment-worksheet-customise > h2 img, .assessment-worksheet-builder .worksheet-preview-panel > h2 img { width:24px; height:24px; object-fit:contain; }
+.assessment-worksheet-builder p { margin:4px 0 0; font-size:14px; line-height:20px; color:#57534e; }
+.assessment-worksheet-intro { margin-bottom:24px; border:1px solid #e7e5e4; border-radius:12px; background:#fafaf9; padding:12px 16px; }
+.assessment-worksheet-intro h2 img { width:28px; height:28px; }
+.assessment-worksheet-customise { padding:16px; border:1px solid #e7e5e4; border-radius:12px; background:white; }
+.assessment-worksheet-customise label { margin:16px 0 4px; color:#111; font-size:14px; font-weight:600; }
+.assessment-worksheet-customise select { min-height:42px; padding:8px 12px; border:1px solid #d6d3d1; border-radius:8px; font-size:14px; font-weight:400; }
+.assessment-worksheet-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:16px; padding-top:16px; border-top:1px solid #e7e5e4; }
+.assessment-worksheet-actions button { height:44px; display:flex; align-items:center; justify-content:center; gap:8px; border:1px solid #000; border-radius:12px; background:#000; color:#fff; font-size:16px; font-weight:700; }
+.assessment-worksheet-actions button img { width:18px; height:18px; object-fit:contain; filter:invert(1); }
+.assessment-worksheet-actions [data-print-blank-template] { background:#fff; color:#000; }
+.assessment-worksheet-actions [data-print-blank-template] img { filter:none; }
+.assessment-worksheet-actions button:disabled { opacity:.5; cursor:wait; }
+.assessment-worksheet-builder .worksheet-preview-panel { position:sticky; top:112px; max-height:calc(100vh - 136px); overflow-y:auto; overscroll-behavior-y:contain; border:1px solid #e7e5e4; border-radius:16px; background:#fafaf9; padding:12px 16px 16px; }
+.assessment-template-preview { margin-top:16px; }
+#app .assessment-template-preview .senior-pages { width:1040px; max-width:none; zoom:.5; gap:24px; }
+#app .assessment-template-preview .senior-paper { width:1040px; max-width:none; min-height:1471px; }
+.assessment-blank-template .ocr-cover-field { width:100%; }
+.assessment-blank-template .ocr-cover-marks { grid-template-columns:repeat(3,minmax(0,194px)); }
+.assessment-blank-template .ocr-piece-title-input { display:inline-block; vertical-align:bottom; }
+.assessment-blank-template .ocr-instrument-name { display:block; min-height:36px; }
+.assessment-blank-template .ocr-level-box { color:transparent; }
+.assessment-blank-template .ocr-level-option { display:flex; align-items:center; gap:10px; }
+.assessment-worksheet-builder .assessment-worksheet-error { color:#b91c1c; margin-top:12px; }
+.assessment-blank-template .recorder-save-note { display:none; }
+@media print {
+  body.assessment-blank-template #recorderHeader, body.assessment-blank-template footer, .assessment-worksheet-settings, .worksheet-preview-panel > h2, .worksheet-preview-panel > p { display:none !important; }
+  body.assessment-blank-template #recorderContent, body.assessment-blank-template #recorderPanel { width:auto; padding:0; margin:0; border:0; box-shadow:none; }
+  .assessment-worksheet-builder { display:block; }
+  .assessment-worksheet-builder .worksheet-preview-panel { position:static; max-height:none; overflow:visible; border:0; padding:0; background:white; }
+  #app .assessment-template-preview .senior-pages { width:1040px; zoom:1; gap:0; }
+  #app .assessment-template-preview .senior-paper { width:1040px; min-height:1470px; margin:0; zoom:.763; border:0; box-shadow:none; }
+}
+
+.assessment-worksheet-options { display:flex; flex-wrap:wrap; gap:12px 24px; margin:20px 0 0; padding:0; border:0; min-width:0; }
+.assessment-worksheet-options legend { margin-bottom:10px; color:#111; font-size:14px; font-weight:600; }
+.assessment-worksheet-customise .assessment-worksheet-options label { display:flex; align-items:center; gap:8px; margin:0; font-size:14px; font-weight:400; cursor:pointer; }
+.assessment-worksheet-options:disabled { opacity:.45; }
+.assessment-worksheet-options:disabled label { cursor:default; }
+.assessment-worksheet-options input.worksheet-checkbox { appearance:none; width:16px; height:16px; min-height:0; padding:0; margin:0; flex:none; border:1px solid #a8a29e; border-radius:4px; background:white; cursor:inherit; }
+.assessment-worksheet-options input.worksheet-checkbox:checked { background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.3 6.6 11.4 12.7 4.8' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px 11px no-repeat; border-color:#000; }
+.assessment-worksheet-options input.worksheet-checkbox:focus-visible { outline:2px solid #000; outline-offset:2px; }
+#app .assessment-template-preview .senior-pages:has(.assessment-template-empty) { width:100%; zoom:1; }
+.assessment-template-empty { text-align:center; padding:32px 12px; }
+
+.assessment-worksheet-customise input[data-worksheet-title] { min-height:42px; padding:8px 12px; border:1px solid #d6d3d1; border-radius:8px; font-size:14px; font-weight:400; }
+

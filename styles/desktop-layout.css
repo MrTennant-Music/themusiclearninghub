@@ -1,0 +1,167 @@
+/*
+ * Music Learning Hub fitted desktop-canvas layout policy.
+ *
+ * Every page uses a fixed 1280px layout canvas. Smaller screens show the same
+ * desktop interface, proportionally fitted to the visible width as one canvas.
+ * The layout does not reflow and the page cannot drift sideways.
+ */
+:root {
+  --mlh-desktop-layout-width: 1280px;
+  --mlh-page-background: #f8fafc;
+}
+
+html {
+  min-width: var(--mlh-layout-root-min-width, var(--mlh-desktop-layout-width));
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--mlh-page-background) !important;
+}
+
+body {
+  min-width: var(--mlh-layout-canvas-min-width, var(--mlh-desktop-layout-width));
+  zoom: var(--mlh-desktop-layout-scale, 1);
+  overflow-x: hidden !important;
+  overflow-y: visible;
+  background-color: var(--mlh-page-background) !important;
+}
+
+html[data-mlh-page-zoomed-in] {
+  overflow-x: auto;
+}
+
+html[data-mlh-page-zoomed] body {
+  width: var(--mlh-layout-canvas-min-width);
+}
+
+/*
+ * Tailwind activities wrap the complete page in a full-height stone surface.
+ * Match that outer canvas and the shared footer to the homepage background,
+ * while leaving the lighter question cards and controls unchanged.
+ */
+body > #root > :first-child,
+body > footer.bg-stone-50 {
+  background-color: var(--mlh-page-background) !important;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+  transition: transform .08s ease, filter .08s ease, background-color .12s ease, border-color .12s ease;
+}
+
+button:not(:disabled):not([aria-disabled="true"]):active {
+  transform: scale(.96);
+  filter: brightness(.92);
+}
+
+header,
+footer,
+.overlay,
+[aria-modal="true"] {
+  min-width: var(--mlh-layout-canvas-min-width, var(--mlh-desktop-layout-width));
+}
+
+table {
+  max-width: none;
+}
+
+/* Use the Hub's blue for the text cursor, including editors with custom text rendering. */
+:is(input, textarea, [contenteditable]):read-write:focus {
+  caret-color: #2563eb !important;
+}
+
+/* Keep printed worksheets and papers on a true white sheet. */
+@media print {
+  html,
+  body {
+    background-color: #fff !important;
+    zoom: 1 !important;
+  }
+}
+
+/*
+ * Menu items must stay within their menu frame. The shared Hub hover effect
+ * lifts and slightly enlarges ordinary buttons; inside a bordered menu that
+ * movement can overlap or clip into the menu edge. Keep the colour, border,
+ * filter and shadow feedback supplied by each activity, but suppress only the
+ * positional transform for controls contained by a menu-like surface.
+ *
+ * This lives in the desktop-canvas stylesheet because every non-homepage Hub
+ * page loads it, including activities with their own menu implementation.
+ */
+:where(
+  [role="menu"],
+  [role="listbox"],
+  [class~="menu"],
+  [class~="dropdown"],
+  [class~="popover"],
+  [class$="-menu"],
+  [class*="-menu "],
+  [class$="-dropdown"],
+  [class*="-dropdown "],
+  [class$="-popover"],
+  [class*="-popover "],
+  .hub-menu-panel,
+  .hub-menu-panel-floating
+) :is(button, a, [role="button"]) {
+  box-shadow: none !important;
+}
+
+:where(
+  [role="menu"],
+  [role="listbox"],
+  [class~="menu"],
+  [class~="dropdown"],
+  [class~="popover"],
+  [class$="-menu"],
+  [class*="-menu "],
+  [class$="-dropdown"],
+  [class*="-dropdown "],
+  [class$="-popover"],
+  [class*="-popover "],
+  .hub-menu-panel,
+  .hub-menu-panel-floating
+) :is(button, a, [role="button"]):where(:hover, :focus-visible) {
+  transform: none !important;
+}
+
+/* A pressed menu control scales inward, so it cannot collide with the frame. */
+:where(
+  [role="menu"],
+  [role="listbox"],
+  [class~="menu"],
+  [class~="dropdown"],
+  [class~="popover"],
+  [class$="-menu"],
+  [class*="-menu "],
+  [class$="-dropdown"],
+  [class*="-dropdown "],
+  [class$="-popover"],
+  [class*="-popover "],
+  .hub-menu-panel,
+  .hub-menu-panel-floating
+) :is(button, [role="button"]):not(:disabled):not([aria-disabled="true"]):active {
+  transform: scale(.96) !important;
+  filter: brightness(.92) !important;
+}
+
+
+
+:where(
+  [role="menu"],
+  [role="listbox"],
+  [class~="menu"],
+  [class~="dropdown"],
+  [class~="popover"],
+  [class$="-menu"],
+  [class*="-menu "],
+  [class$="-dropdown"],
+  [class*="-dropdown "],
+  [class$="-popover"],
+  [class*="-popover "],
+  .hub-menu-panel,
+  .hub-menu-panel-floating
+) :is(button, a, [role="button"]):focus-visible {
+  outline-offset: -2px !important;
+}

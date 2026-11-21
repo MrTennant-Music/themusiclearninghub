@@ -1,0 +1,40 @@
+{
+  "generator": "built-in image_gen",
+  "icons": [
+    {
+      "name": "crosswords",
+      "path": "/Users/bobbytennant/.codex/generated_images/01a1cc77-c628-7881-9cec-9e9457d13b66/exec-cf86b5a5-4040-4998-9220-3ec4eef59100.png",
+      "prompt": "Redesign this Music Learning Hub Crosswords app icon. Keep the existing white rounded square tile and subtle light-grey tile outline. Replace the strange irregular central symbol with a clean, compact, perfectly square 5-by-5 crossword grid. Exactly five rows and five columns of equal-sized cells. Consistent crisp medium-weight black grid lines, mostly white cells, with exactly five solid black cells arranged in rotational symmetry: top-left, top-right, centre, bottom-left, bottom-right. Centre the square grid within generous white margins, occupying about 64 percent of the icon width. Flat black-and-white, visually balanced, simple and readable at 48 pixels. No letters, no numbers, no shadow, no 3D, no irregular protruding cells, no other symbols.",
+      "file": "app-icons/crosswords-grid-icon.svg",
+      "sourceFile": "app-icons/crosswords-grid-icon.png",
+      "frame": "app-icons/shared-frame.json",
+      "refinement": "Native vector redraw of the user-supplied interlocking crossword reference: equal square cells, consistent black lines, two black cells and the shared Hub frame. Built by scripts/build-shared-app-icon-frames.cjs; the earlier PNG is retained as design history."
+    },
+    {
+      "name": "connections",
+      "path": "/Users/bobbytennant/.codex/generated_images/01a1cc77-c628-7881-9cec-9e9457d13b66/exec-ac1fde8e-cf1c-4760-bbd0-561cdf0ade8b.png",
+      "prompt": "Edit this Music Learning Hub app icon. Preserve the white rounded-square tile, subtle pale grey border, generous white margin and clean bold black style. Replace the entire central symbol with EXACTLY sixteen identical solid black squares arranged in one evenly spaced 4 by 4 grid. All four columns and all four rows have the SAME regular spacing. The squares have straight square corners. No connecting lines, no dots, no circles, no gaps dividing the grid into groups, no text, no extra shapes. Single centred icon.",
+      "file": "app-icons/connections-grid-icon.svg",
+      "sourceFile": "app-icons/connections-grid-icon.png",
+      "frame": "app-icons/shared-frame.json"
+    },
+    {
+      "name": "wordsearch",
+      "path": "/Users/bobbytennant/.codex/generated_images/01a1cc77-c628-7881-9cec-9e9457d13b66/exec-5c374c9c-f712-41f5-9e69-1b12c1267d4b.png",
+      "prompt": "Use case: logo-brand. Create a single square app icon for The Music Learning Hub, matching the provided reference sheet's style. Reference sheet is style guidance only, not output content. Clean bold black flat silhouette/linework, white rounded square tile, very subtle thin light-grey outline, generous white space, centred graphic, no colour, no gradients, no lettering or title, no music notes unless specified. Icon fills about 70% of tile, tile fills square. Crisp readable at 48px. Output exactly one icon, never a sheet. Subject: A compact square letter-search grid suggested by short black strokes/dots with a bold magnifying glass over its lower right corner. No actual readable text, no musical note. Clearly different from the crossword icon.",
+      "file": "app-icons/wordsearch-icon.svg",
+      "sourceFile": "app-icons/wordsearch-icon.png",
+      "frame": "app-icons/shared-frame.json",
+      "refinement": "Native SVG redraw: sixteen random uppercase letters in a four-by-four grid, with a magnifying glass over an enlarged A. Uses the shared Hub frame. Built by scripts/build-shared-app-icon-frames.cjs; original PNG retained as design history."
+    },
+    {
+      "name": "conceptsort",
+      "generator": "built-in image_gen",
+      "file": "app-icons/concept-sort-icon.svg",
+      "sourceFile": "app-icons/concept-sort-glyph-generated.png",
+      "frame": "app-icons/shared-frame.json",
+      "prompt": "Edit the reference into one clean isolated app glyph: retain ONLY the one rounded rectangular tray containing two inward tilted solid black cards. Recreate exactly that motif with smooth thick black outline and the two solid black card shapes. Remove every surrounding fragment, arrow above, adjacent tray fragment, and the checkerboard; output genuinely transparent background. Center the single tray with two cards, square canvas generous margins, crisp black, no text, no outer app frame, no shadows. Match the user\u2019s supplied shape closely.",
+      "refinement": "Transparent generated glyph trimmed and fitted to 88 by 70px inside the shared 128px Hub app frame."
+    }
+  ]
+}

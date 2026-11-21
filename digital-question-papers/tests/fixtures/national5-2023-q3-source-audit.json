@@ -1,0 +1,354 @@
+{
+  "sourceReading": "QP page 6: all five independently calibrated 300 dpi systems read twice; printed endings and visually masked final staff boundary verified. MI page 3 confirms the two missing quavers and end-repeat at bar 8.",
+  "key": "F major",
+  "keySignature": [
+    "B flat"
+  ],
+  "clef": "treble",
+  "timeSignature": "4/4",
+  "pitchMap": "Treble lines E4 G4 B4 D5 F5; spaces F4 A4 C5 E5; B notes inherit B flat except no new local B accidentals. E-flat5 bar 5 and E-natural4 bar 6 explicitly printed.",
+  "pickup": [
+    [
+      "A4",
+      "quaver"
+    ],
+    [
+      "B4",
+      "quaver"
+    ]
+  ],
+  "editableBar": 2,
+  "editableNoteIndices": [
+    1,
+    2
+  ],
+  "finalBarline": "open",
+  "acceptedRepeatPosition": "end-bar-8",
+  "endings": [
+    {
+      "from": 6,
+      "to": 7,
+      "label": "1.",
+      "closed": true
+    },
+    {
+      "from": 8,
+      "to": 8,
+      "label": "2.",
+      "closed": false
+    }
+  ],
+  "finalStaffEndRatio": 0.7653118102160487,
+  "rhythmExceptions": {
+    "10": "The final printed excerpt bar contains two beats and has an open staff ending; retain this explicit excerpt exception."
+  },
+  "sources": [
+    {
+      "path": "exampapers/n5/2023/Music N5 2023 Paper.pdf",
+      "sha256": "bb2abaa107160afdf00116416c32a91274a4847f61b467dc5b430b944765dc94"
+    },
+    {
+      "path": "exampapers/n5/2023/Music N5 2023 Answers.pdf",
+      "sha256": "1e07b175a4bc3f5b84fe6132eb36659c2ec85595fb2c99e78ec71fc5646adea1"
+    }
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "notes": [
+        [
+          "C5",
+          "dottedMinim"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 2,
+      "notes": [
+        [
+          "C5",
+          "dottedMinim"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 1,
+          "end": 2
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 3,
+      "notes": [
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "F5",
+          "dottedCrotchet"
+        ],
+        [
+          "D5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 4,
+      "notes": [
+        [
+          "C5",
+          "crotchet"
+        ],
+        [
+          "B4",
+          "minim"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 5,
+      "notes": [
+        [
+          "B4",
+          "crotchet"
+        ],
+        [
+          "A4",
+          "crotchet"
+        ],
+        [
+          "E5",
+          "crotchet"
+        ],
+        [
+          "E5",
+          "quaver"
+        ],
+        [
+          "E5",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 3,
+          "end": 4
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [
+        [
+          4,
+          "flat"
+        ]
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 6,
+      "notes": [
+        [
+          "D5",
+          "minim"
+        ],
+        [
+          "E4",
+          "crotchet"
+        ],
+        [
+          "F4",
+          "quaver"
+        ],
+        [
+          "G4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [
+        [
+          1,
+          "natural"
+        ]
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 7,
+      "notes": [
+        [
+          "C5",
+          "semibreve"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": true,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 8,
+      "notes": [
+        [
+          "C5",
+          "minim"
+        ],
+        [
+          "rest",
+          "crotchetRest"
+        ],
+        [
+          "A4",
+          "quaver"
+        ],
+        [
+          "B4",
+          "quaver"
+        ]
+      ],
+      "beamGroups": [
+        {
+          "start": 2,
+          "end": 3
+        }
+      ],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 9,
+      "notes": [
+        [
+          "F4",
+          "semibreve"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": true,
+      "accidentals": [],
+      "beats": 4
+    },
+    {
+      "bar": 10,
+      "notes": [
+        [
+          "F4",
+          "minim"
+        ]
+      ],
+      "beamGroups": [],
+      "tiesFrom": [],
+      "tieToNextBar": false,
+      "accidentals": [],
+      "beats": 2
+    }
+  ],
+  "staffSystems": [
+    [
+      261.6,
+      267.5,
+      273.4,
+      279.2,
+      285.1
+    ],
+    [
+      336.9,
+      342.8,
+      348.6,
+      354.5,
+      360.4
+    ],
+    [
+      423.5,
+      429.4,
+      435.3,
+      441.2,
+      447.0
+    ],
+    [
+      501.4,
+      507.3,
+      513.1,
+      519.0,
+      524.9
+    ],
+    [
+      572.4,
+      578.3,
+      584.2,
+      590.1,
+      595.9
+    ]
+  ]
+}

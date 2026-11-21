@@ -1,0 +1,201 @@
+{
+  "id": "hub-n4-texture-structure-form-connections-1",
+  "level": "N4",
+  "title": "Texture/structure/form",
+  "instructions": "Find four descriptions of each concept. Find all four groups.",
+  "description": "Revise four contrasting National 4 Texture/structure/form concepts.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Texture/structure/form",
+    "National 4"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-1",
+      "prompt": "Virtuosic solo in a concerto",
+      "answer": "Virtuosic solo in a concerto",
+      "distractors": [],
+      "group": "Cadenza",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-2",
+      "prompt": "Soloist displays technical skill",
+      "answer": "Soloist displays technical skill",
+      "distractors": [],
+      "group": "Cadenza",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-3",
+      "prompt": "Concerto solo often near the end",
+      "answer": "Concerto solo often near the end",
+      "distractors": [],
+      "group": "Cadenza",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-4",
+      "prompt": "Concerto solo flourish section",
+      "answer": "Concerto solo flourish section",
+      "distractors": [],
+      "group": "Cadenza",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-5",
+      "prompt": "Strict imitation of a whole tune",
+      "answer": "Strict imitation of a whole tune",
+      "distractors": [],
+      "group": "Canon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-6",
+      "prompt": "Later part copies whole melody",
+      "answer": "Later part copies whole melody",
+      "distractors": [],
+      "group": "Canon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-7",
+      "prompt": "Exact melodic copying at a delay",
+      "answer": "Exact melodic copying at a delay",
+      "distractors": [],
+      "group": "Canon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-8",
+      "prompt": "Whole tune copied by later part",
+      "answer": "Whole tune copied by later part",
+      "distractors": [],
+      "group": "Canon",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-9",
+      "prompt": "Three-part structure A-B-A",
+      "answer": "Three-part structure A-B-A",
+      "distractors": [],
+      "group": "Ternary / ABA",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-10",
+      "prompt": "Opening section returns after B",
+      "answer": "Opening section returns after B",
+      "distractors": [],
+      "group": "Ternary / ABA",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-11",
+      "prompt": "Contrasting middle, then A again",
+      "answer": "Contrasting middle, then A again",
+      "distractors": [],
+      "group": "Ternary / ABA",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-12",
+      "prompt": "Ternary plan written ABA",
+      "answer": "Ternary plan written ABA",
+      "distractors": [],
+      "group": "Ternary / ABA",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-13",
+      "prompt": "New verse words, same chorus",
+      "answer": "New verse words, same chorus",
+      "distractors": [],
+      "group": "Verse and chorus",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-14",
+      "prompt": "Repeated chorus between verses",
+      "answer": "Repeated chorus between verses",
+      "distractors": [],
+      "group": "Verse and chorus",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-15",
+      "prompt": "Same verse tune, changing words",
+      "answer": "Same verse tune, changing words",
+      "distractors": [],
+      "group": "Verse and chorus",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n4-texture-structure-form-connections-1-16",
+      "prompt": "Verses alternate with chorus",
+      "answer": "Verses alternate with chorus",
+      "distractors": [],
+      "group": "Verse and chorus",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 3,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}

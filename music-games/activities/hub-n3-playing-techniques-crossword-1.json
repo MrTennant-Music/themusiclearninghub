@@ -1,0 +1,58 @@
+{
+  "id": "hub-n3-playing-techniques-crossword-1",
+  "level": "N3",
+  "title": "Playing Techniques",
+  "instructions": "",
+  "description": "Revise 3 distinct playing techniques introduced up to National 3. Equivalent English and Italian terms are kept together.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Playing Techniques",
+    "National 3"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-n3-playing-techniques-crossword-1-1",
+      "prompt": "An articulation in which successive notes, played or sung, are smoothly connected with no obvious gaps.",
+      "answer": "Legato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-playing-techniques-crossword-1-2",
+      "prompt": "An articulation in which notes, played or sung, are short and detached with clear gaps.",
+      "answer": "Staccato",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-n3-playing-techniques-crossword-1-3",
+      "prompt": "A performer draws a bow across the strings to produce the sound. Name the playing action.",
+      "answer": "Bowing",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 2,
+  "updatedAt": "2026-10-31T20:00:00.000Z"
+}

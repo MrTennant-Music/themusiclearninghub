@@ -1,0 +1,34 @@
+Composition Studio melody samples
+
+FluidR3 General MIDI SoundFont, Frank Wen and contributors.
+Pre-rendered instrument samples distributed by Benjamin Gleitzman and contributors:
+https://github.com/gleitz/midi-js-soundfonts
+Pinned revision: 044fab8e1456bfafc5776e86dfd6bb8697149aef
+Source sample directory: FluidR3_GM
+
+Sample licence (as identified by the upstream README):
+Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+
+Changes for The Music Learning Hub, 29 October 2026:
+Extracted selected MP3 notes from the instrument bundles; converted to mono
+32 kHz AAC at 64 kbps; retained every third semitone from MIDI 36 to 96.
+The browser transposes nearest samples and crossfades a short sustain loop
+for organ, strings, flute, brass, synth and pad.
+No endorsement by the original authors is implied.
+
+Instrument mappings:
+Electric Piano: electric_piano_1
+Guitar: acoustic_guitar_nylon
+Organ: church_organ
+Strings: string_ensemble_1
+Flute: flute
+Marimba: marimba
+Brass: brass_section
+Synth: lead_1_square
+Pad: pad_1_new_age
+
+Piano uses the Hub's existing piano sample library; bass and drums retain
+their existing separate sample libraries and attribution.
+
+The manifest lists original URLs, source hashes, and compressed asset hashes.

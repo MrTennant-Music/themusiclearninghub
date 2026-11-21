@@ -1,0 +1,179 @@
+{
+  "id": "hub-h-period-baroque-crossword-1",
+  "level": "H",
+  "title": "Baroque 1",
+  "instructions": "",
+  "description": "Revise concepts associated with Baroque up to Higher. These features and forms may also occur in other periods.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Baroque",
+    "Higher"
+  ],
+  "template": "crossword",
+  "items": [
+    {
+      "id": "hub-h-period-baroque-crossword-1-1",
+      "prompt": "The historical musical period approximately 1600–1750, associated with continuo, contrapuntal writing and composers such as Bach and Handel.",
+      "answer": "Baroque",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-2",
+      "prompt": "Name the general term for a decorative note or group added to a melody, rather than one particular type of decoration.",
+      "answer": "Ornament",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-3",
+      "prompt": "Pressing a key plucks a string inside this keyboard instrument.",
+      "answer": "Harpsichord",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-4",
+      "prompt": "An end-blown woodwind instrument with finger holes and a whistle-like mouthpiece.",
+      "answer": "Recorder",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-5",
+      "prompt": "Give the general term for a solo song within an opera or oratorio, rather than a specific ABA type of that song.",
+      "answer": "Aria",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-6",
+      "prompt": "A rapid repeated alternation between a main note and the note immediately above it in the scale.",
+      "answer": "Trill",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-7",
+      "prompt": "Two or more independent melodic lines sound together. Give the texture term ending in -phonic.",
+      "answer": "Polyphonic",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-8",
+      "prompt": "A multi-note bass melody repeats unchanged in pitch and rhythm while the upper parts develop. Name this repeating-bass device.",
+      "answer": "Ground bass",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-9",
+      "prompt": "A large concert work telling a sacred or biblical story through soloists, choir and orchestra, without theatrical acting, scenery or costumes.",
+      "answer": "Oratorio",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-10",
+      "prompt": "Give the Italian-derived operatic term for speech-like solo singing used to advance dialogue or narrative, often alternating with arias.",
+      "answer": "Recitative",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-11",
+      "prompt": "A very short crushed grace note played immediately before the main note.",
+      "answer": "Acciaccatura",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-12",
+      "prompt": "A short ornament in which the main note moves rapidly to the adjacent note above or below and returns.",
+      "answer": "Mordent",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-13",
+      "prompt": "In Baroque music, a bass instrument plays the bass line while a chordal instrument fills in the harmony, often from figured bass.",
+      "answer": "Basso continuo",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-h-period-baroque-crossword-1-14",
+      "prompt": "A Baroque concerto that contrasts a small group of soloists, the concertino, with the larger ensemble, the ripieno.",
+      "answer": "Concerto grosso",
+      "distractors": [],
+      "group": "",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 1,
+  "updatedAt": "2026-10-31T00:00:00.000Z"
+}

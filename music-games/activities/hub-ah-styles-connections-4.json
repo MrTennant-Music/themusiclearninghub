@@ -1,0 +1,201 @@
+{
+  "id": "hub-ah-styles-connections-4",
+  "level": "AH",
+  "title": "Styles 4",
+  "instructions": "Find four facts that best describe each style. Some musical features are shared between styles. Find all four groups.",
+  "description": "Practise facts about Renaissance, Electronic dance music (EDM), Contemporary jazz, Serial.",
+  "folder": "Music Dictionary",
+  "tags": [
+    "Styles",
+    "Advanced Higher"
+  ],
+  "template": "matching-pairs",
+  "items": [
+    {
+      "id": "hub-ah-styles-connections-4-1",
+      "prompt": "European period c.1400–1600",
+      "answer": "European period c.1400–1600",
+      "distractors": [],
+      "group": "Renaissance",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-2",
+      "prompt": "Modal imitative vocal textures",
+      "answer": "Modal imitative vocal textures",
+      "distractors": [],
+      "group": "Renaissance",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-3",
+      "prompt": "Lutes, viols, recorder consorts",
+      "answer": "Lutes, viols, recorder consorts",
+      "distractors": [],
+      "group": "Renaissance",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-4",
+      "prompt": "European vocal music c.1500",
+      "answer": "European vocal music c.1500",
+      "distractors": [],
+      "group": "Renaissance",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-5",
+      "prompt": "Programmed electronic dance beat",
+      "answer": "Programmed electronic dance beat",
+      "distractors": [],
+      "group": "Electronic dance music (EDM)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-6",
+      "prompt": "Synth loops, builds and drops",
+      "answer": "Synth loops, builds and drops",
+      "distractors": [],
+      "group": "Electronic dance music (EDM)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-7",
+      "prompt": "Computer-produced club grooves",
+      "answer": "Computer-produced club grooves",
+      "distractors": [],
+      "group": "Electronic dance music (EDM)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-8",
+      "prompt": "Sequenced drums for club dancing",
+      "answer": "Sequenced drums for club dancing",
+      "distractors": [],
+      "group": "Electronic dance music (EDM)",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-9",
+      "prompt": "Recent jazz with cross-rhythms",
+      "answer": "Recent jazz with cross-rhythms",
+      "distractors": [],
+      "group": "Contemporary jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-10",
+      "prompt": "Jazz using extended techniques",
+      "answer": "Jazz using extended techniques",
+      "distractors": [],
+      "group": "Contemporary jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-11",
+      "prompt": "Modern jazz with electronics",
+      "answer": "Modern jazz with electronics",
+      "distractors": [],
+      "group": "Contemporary jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-12",
+      "prompt": "Chromatic jazz improvisation",
+      "answer": "Chromatic jazz improvisation",
+      "distractors": [],
+      "group": "Contemporary jazz",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-13",
+      "prompt": "Ordered twelve-pitch row",
+      "answer": "Ordered twelve-pitch row",
+      "distractors": [],
+      "group": "Serial",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-14",
+      "prompt": "Tone row without a tonal centre",
+      "answer": "Tone row without a tonal centre",
+      "distractors": [],
+      "group": "Serial",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-15",
+      "prompt": "Row reversed or inverted",
+      "answer": "Row reversed or inverted",
+      "distractors": [],
+      "group": "Serial",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    },
+    {
+      "id": "hub-ah-styles-connections-4-16",
+      "prompt": "Schoenberg twelve-tone method",
+      "answer": "Schoenberg twelve-tone method",
+      "distractors": [],
+      "group": "Serial",
+      "media": null,
+      "answerMedia": null,
+      "x": 50,
+      "y": 50
+    }
+  ],
+  "diagram": null,
+  "options": {
+    "shuffle": true,
+    "timer": 0,
+    "difficulty": "normal",
+    "theme": "blue",
+    "sound": true
+  },
+  "revision": 4,
+  "updatedAt": "2026-10-31T21:00:00.000Z"
+}
