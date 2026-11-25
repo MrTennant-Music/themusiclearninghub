@@ -4,7 +4,9 @@
   const Core = window.MLH.SightReadingCore;
   function SightReadingPractice({pool, settings, levelLabel, renderScore, onClose, reducedMotion = false}) {
     const highScoreKey = `mlh:note-identification:speed-mode:highest:${levelLabel}`;
+    const classroom = window.MLH.classroomExercise && window.parent !== window;
     const [highest, setHighest] = useState(() => {
+      if (classroom) return 0;
       try { const saved = Number(window.localStorage?.getItem(highScoreKey)); return Number.isSafeInteger(saved) && saved > 0 ? saved : 0; }
       catch (_) { return 0; }
     });
@@ -44,10 +46,14 @@
       commit(Core.createAttempt(pool));
     }
     useEffect(() => {
+      if (classroom) {
+        if (attempt.score > 0) window.parent.postMessage({ type: 'mlh:classroom-finished', correct: attempt.score }, location.origin);
+        return;
+      }
       if (attempt.score <= highest) return;
       setHighest(attempt.score);
       try { window.localStorage?.setItem(highScoreKey, String(attempt.score)); } catch (_) { /* Play remains available without storage. */ }
-    }, [attempt.score, highest, highScoreKey]);
+    }, [attempt.score, classroom, highest, highScoreKey]);
     useEffect(() => {
       if (attempt.phase !== 'playing') return;
       deadline.current = performance.now() + attempt.remainingMs;
@@ -111,10 +117,10 @@
       : [letters];
     return <main className="sight-reading" aria-label="Speed Mode">
       <div className="sight-reading-toolbar">
-        <button type="button" className={`${window.MLH.ToolbarButtonClass} gap-2 sight-reading-back`} onClick={onClose}>
+        {onClose && <button type="button" className={`${window.MLH.ToolbarButtonClass} gap-2 sight-reading-back`} onClick={onClose}>
           <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
           <span>Back</span>
-        </button>
+        </button>}
         <h2>Speed Mode</h2>
         <button type="button" className={`${window.MLH.ToolbarButtonClass} gap-1.5 sight-reading-reset`} disabled={attempt.phase === 'ready'} onClick={restart}>
           <img src="./ui-icons/restart.svg" alt="" className="h-[20px] w-[20px]" />

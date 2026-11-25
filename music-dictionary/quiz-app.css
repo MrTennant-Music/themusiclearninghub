@@ -1,11 +1,12 @@
 /* Keep the header aligned when switching between short collections and the long builder. */
 html{scrollbar-gutter:stable}
+body[data-concept-quiz] .hub-menu-panel-customise > .hub-menu-scroll { max-height: none; }
 .cq-collections-home h1,.cq-collections-home h2{font-size:24px;font-weight:800;letter-spacing:-.04em;margin:0 0 6px;color:#000}
 .cq-collections-home h2{margin-top:28px}
 .cq-collections-intro{margin:0 0 20px;font-size:14px;color:#000}
 .cq-collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .cq-collection-row{display:flex;align-items:center;gap:16px;text-align:left;padding:16px;border:1px solid #e5e5e5;border-radius:14px;background:#fff;box-shadow:0 1px 2px #0000000a;min-height:84px;color:#000;transition:background .15s}
-.cq-collection-row:hover{background:#f8f8f8}.cq-collection-row:focus-visible{outline:2px solid #111;outline-offset:2px}
+.cq-collection-row:hover{background:#f8f8f8}.cq-collection-row:focus-visible{outline:2px solid var(--mlh-focus-color, #2563eb);outline-offset:2px}
 .cq-collection-row .mc-quiz-collection-copy{flex:1;min-width:0}.cq-collection-row .mc-quiz-collection-copy strong{font-size:15px}
 .cq-collection-chevron{width:24px;height:24px;display:block;flex-shrink:0}.cq-create-footer{display:flex;justify-content:center;margin-top:24px}
 .cq-collection-medal{width:28px;height:28px;flex:0 0 28px;object-fit:contain}

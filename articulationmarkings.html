@@ -5,21 +5,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Articulation Markings</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/articulation-markings-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/articulation-markings-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <style>
@@ -34,17 +35,21 @@
       dominant-baseline: alphabetic;
       text-rendering: geometricPrecision;
     }
+    .articulation-customise > .hub-menu-scroll { max-height: none; }
+    .articulation-customise .hub-toggle-row { margin-bottom: 7px; }
+    .articulation-customise .hub-toggle-row:last-child { margin-bottom: 0; }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
-<body>
+<body data-literacy-activity>
 <div id="root"></div>
 
 <script type="text/x-mlh-jsx-source" data-runtime="articulationmarkings-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useRef, useState } = React;
 
 const W = 920, H = 430;
@@ -55,8 +60,8 @@ const BAR_COUNT = 8, AURAL_BAR_COUNT = 4, BARS_PER_SYSTEM = 4;
 const MAX_MELODIC_LEAP_STEPS = 7;
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || { drawing: {}, symbols: {} };
-const COLOUR = { yellow:"#facc15", green:"#16a34a", red:"#dc2626", black:"#000" };
-const HIGHLIGHT_TEXT_STYLE = { textShadow:"0 0 3px #facc15, 0 0 6px #eab308" };
+const COLOUR = { blue:"#2563eb", green:"#16a34a", red:"#dc2626", black:"#000" };
+const HIGHLIGHT_TEXT_STYLE = { color: COLOUR.blue };
 
 const MARKINGS = [
   { id:"staccato", label:"Staccato", plural:"staccato markings", performance:"Short and detached", accepted:["staccato","staccato marking","staccato markings","staccato dots","dots"] },
@@ -75,8 +80,6 @@ const ASSET = {
   levels:"./ui-icons/levels.svg",
   next:"./ui-icons/next.svg",
   eye:"./ui-icons/eye.svg",
-  metronome:"./ui-icons/metronome.svg",
-  tempo:"./ui-icons/tempo.svg",
   hand:"./ui-icons/hand.svg",
   audio:"./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15",
   bronze:"./ui-icons/bronze.svg",
@@ -89,9 +92,9 @@ const QUESTION_TYPES = ["identify-choice","identify-text","apply","aural-articul
 const DEFAULT_MARKINGS = MARKINGS.map(mark => mark.id);
 const QUESTION_LABELS = {
   "identify-choice":"Multiple Choice",
-  "identify-text":"Text Questions",
+  "identify-text":"Text",
   apply:"Apply to Score",
-  "aural-articulation":"Audio Questions",
+  "aural-articulation":"Audio",
 };
 const MENU_MARKING_LABELS = {
   staccato:"Staccato",
@@ -126,7 +129,7 @@ const PATTERNS = {
   4: [["crotchet","crotchet","crotchet","crotchet"],["minim","minim"],["minim","crotchet","crotchet"],["crotchet","crotchet","minim"],["quaver","quaver","crotchet","crotchet","crotchet"],["crotchet","quaver","quaver","crotchet","crotchet"],["crotchet","crotchet","quaver","quaver","crotchet"]],
 };
 
-function r(items){ return items[Math.floor(Math.random() * items.length)]; }
+function r(items){ return items[Math.floor(exerciseRandom() * items.length)]; }
 function clamp(v,a,b){ return Math.max(a, Math.min(b, v)); }
 function m(id){ return MARKINGS.find(x => x.id === id); }
 function y(step, top){ return top + GAP * 4 - step * (GAP / 2); }
@@ -189,7 +192,7 @@ function hasSameLetter(notes){
 
 function weighted(items) {
   const total = items.reduce((sum, item) => sum + item.weight, 0);
-  let roll = Math.random() * total;
+  let roll = exerciseRandom() * total;
   for (const item of items) {
     roll -= item.weight;
     if (roll <= 0) return item.value;
@@ -223,7 +226,7 @@ function makeBar(ts, prev, barIndex){
   const pattern = r(PATTERNS[ts.beats]);
   const notes = [];
   let idx = prev, beam = 0, active = null;
-  const forceDirection = Math.random() < 0.55 ? r([-1,1]) : 0;
+  const forceDirection = exerciseRandom() < 0.55 ? r([-1,1]) : 0;
   let beat = 0;
   pattern.forEach((rhythm, noteIndex) => {
     let tries = 0, candidateIndex, note;
@@ -366,15 +369,16 @@ function articulationQuestionTypes(types, markings) {
 function shuffledArticulationOptions(ids) {
   const options = [...ids];
   for (let i = options.length - 1; i > 0; i -= 1) {
-    const other = Math.floor(Math.random() * (i + 1));
+    const other = Math.floor(exerciseRandom() * (i + 1));
     [options[i], options[other]] = [options[other], options[i]];
   }
   return options;
 }
 function makeQuestion(enabledTypes=QUESTION_TYPES, enabledMarkings=MARKINGS.map(x => x.id), maximumBars=BAR_COUNT){
-  const eligibleTypes = articulationQuestionTypes(enabledTypes.length ? enabledTypes : QUESTION_TYPES, enabledMarkings);
+  const questionTypes = window.MLH?.classroomActivities?.raceQuestionTypes?.(enabledTypes, QUESTION_TYPES.filter(type => type !== "aural-articulation")) ?? enabledTypes;
+  const eligibleTypes = articulationQuestionTypes(questionTypes.length ? questionTypes : QUESTION_TYPES, enabledMarkings);
   const type = r(eligibleTypes.length ? eligibleTypes : QUESTION_TYPES.filter(id => id !== "aural-articulation"));
-  const choiceMode = type === "identify-choice" && Math.random() < 0.5 ? "performance" : "name";
+  const choiceMode = type === "identify-choice" && exerciseRandom() < 0.5 ? "performance" : "name";
   const isAural = type === "aural-articulation";
   const ts = r(TIME_SIGNATURES);
   const barCount = isAural ? AURAL_BAR_COUNT : maximumBars;
@@ -398,36 +402,31 @@ function makeQuestion(enabledTypes=QUESTION_TYPES, enabledMarkings=MARKINGS.map(
   let prompt = null;
   if(type === "identify-choice" && choiceMode === "performance"){
     const loc = target.barIndex !== undefined ? `${target.barIndex + 1}` : `${target.startBar + 1}–${target.endBar + 1}`;
-    prompt = <>How should the <strong><span style={HIGHLIGHT_TEXT_STYLE}>highlighted</span></strong> notes in <strong>{target.startBar !== undefined ? "bars" : "bar"} {loc}</strong> be performed?</>;
-  } else if(type === "identify-choice") prompt = <>Identify the marking used on the <strong><span style={HIGHLIGHT_TEXT_STYLE}>highlighted</span></strong> notes.</>;
-  if(type === "identify-text") prompt = <>Type the name of the marking used on the <strong><span style={HIGHLIGHT_TEXT_STYLE}>highlighted</span></strong> notes.</>;
+    prompt = <>How should the <strong style={HIGHLIGHT_TEXT_STYLE}>highlighted notes</strong> in <strong>{target.startBar !== undefined ? "bars" : "bar"} {loc}</strong> be performed?</>;
+  } else if(type === "identify-choice") prompt = <>Identify the marking used on the <strong style={HIGHLIGHT_TEXT_STYLE}>highlighted notes</strong>.</>;
+  if(type === "identify-text") prompt = <>Type the name of the marking used on the <strong style={HIGHLIGHT_TEXT_STYLE}>highlighted notes</strong>.</>;
   if(type === "apply") prompt = target.prompt;
   if(type === "aural-articulation") prompt = <>Listen to the excerpt and identify which articulation marking has been applied to the notes.</>;
   if(type === "aural-articulation" && marking.id === "accent") prompt = <>Listen to the excerpt and apply an <strong>accent</strong> to the note where it occurs.</>;
 
   const answerOptions = shuffledArticulationOptions((isAural ? auralPool.filter(id => id !== "accent") : (markingPool.length ? markingPool : MARKINGS).map(mark => mark.id)));
-  return { id:Math.random().toString(36).slice(2), timeSignature:ts, bars, type, choiceMode, marking, target, prompt, barCount, answerOptions, enabledMarkings };
+  return { id:exerciseRandom().toString(36).slice(2), timeSignature:ts, bars, type, choiceMode, marking, target, prompt, barCount, answerOptions, enabledMarkings };
 }
 
 function StaffLines({top}){ return <g>{[0,1,2,3,4].map(i => <line key={i} x1={STAFF_LEFT} x2={STAFF_RIGHT} y1={top+i*GAP} y2={top+i*GAP} stroke="currentColor" strokeWidth="1.2" />)}</g>; }
 function Ledger({x, step, top, colour}){ const lines=[]; if(step<=-2) lines.push(y(-2,top)); if(step>=10) lines.push(y(10,top)); const width = GAP * (SHARED_CONFIG.drawing?.ledgerLineWidthScale || 2.4); const thickness = GAP * (SHARED_CONFIG.drawing?.ledgerLineThicknessScale || 0.11); return <g>{lines.map(yy => <line key={yy} x1={x-width/2} x2={x+width/2} y1={yy} y2={yy} stroke={colour} strokeWidth={thickness} />)}</g>; }
 function stemData(note, x, top, override=null){ const step=note.pitch.step, yy=y(step,top), down=override===null?stemDown(step):override, sx=down?x-NOTE_RX:x+NOTE_RX, ey=down?yy+STEM:yy-STEM; return { step, y:yy, down, sx, ey }; }
-function OpenNoteGlow({ x, y: yy, inner = false }) {
-  return <ellipse cx={x} cy={yy} rx={inner ? NOTE_RX - 2.4 : NOTE_RX + 2.2} ry={inner ? 2.6 : 6.4} transform={`rotate(-18 ${x} ${yy})`} fill={COLOUR.yellow} opacity={inner ? "0.24" : "0.22"} />;
-}
-function Note({note, x, top, colour="currentColor", override=null, forced=null, beamed=false, onClick=null, highlight=false, selected=false}){
+function Note({note, x, top, colour="currentColor", override=null, forced=null, beamed=false, onClick=null, selected=false}){
   const info = RH[note.rhythm] || RH.crotchet;
   const st = stemData(note,x,top,override);
   const ey = forced === null ? st.ey : forced;
   const stemThickness = Math.max(1, GAP * Number(SHARED_CONFIG.drawing?.stemThicknessScale || 0.12));
   return <g onClick={onClick} role={onClick ? "button" : undefined} tabIndex={onClick ? 0 : undefined} aria-label={onClick ? `Select note ${Number(note.id.split("-")[1])+1} in bar ${Number(note.id.split("-")[0])+1}` : undefined} aria-pressed={onClick ? selected : undefined} onKeyDown={onClick ? event => { if(event.key !== "Enter" && event.key !== " ")return; event.preventDefault(); onClick(); } : undefined} className={onClick ? "cursor-pointer" : ""}>
     <circle cx={x} cy={st.y} r="18" fill="transparent" />
-    <g filter={highlight ? "url(#noteGlowPulse)" : undefined}>
+    <g>
       <Ledger x={x} step={st.step} top={top} colour={colour} />
-      {highlight && info.open && <OpenNoteGlow x={x} y={st.y} />}
       <CalibratedSymbol symbolKey={noteSymbolKey(note.rhythm, st.down, beamed)} x={x} y={st.y} colour={colour} />
       {beamed && info.stem && <line x1={st.sx} x2={st.sx} y1={st.y} y2={ey} stroke={colour} strokeWidth={stemThickness} />}
-      {highlight && info.open && <OpenNoteGlow x={x} y={st.y} inner />}
     </g>
   </g>;
 }
@@ -485,12 +484,12 @@ function articulationYOffsetTowardNote(symbolKey) {
   return 0;
 }
 
-function Mark({id,noteIds,ls,colour=COLOUR.black,highlight=false,continuesBefore=false,continuesAfter=false}){
+function Mark({id,noteIds,ls,colour=COLOUR.black,continuesBefore=false,continuesAfter=false}){
   const ps = noteIds.map(n => posOf(ls,n)).filter(Boolean);
   if(!ps.length) return null;
-  if(id==="staccato" || id==="accent") return <g filter={highlight ? "url(#noteGlowPulse)" : undefined}>{ps.map(p => { const symbolKey=articulationSymbolKey(id, actualDown(p)); return <CalibratedSymbol key={p.note.id} symbolKey={symbolKey} x={p.x} y={p.y} colour={colour} settingOverrides={{opticalYOffset:articulationYOffsetTowardNote(symbolKey)}} />; })}</g>;
+  if(id==="staccato" || id==="accent") return <g>{ps.map(p => { const symbolKey=articulationSymbolKey(id, actualDown(p)); return <CalibratedSymbol key={p.note.id} symbolKey={symbolKey} x={p.x} y={p.y} colour={colour} settingOverrides={{opticalYOffset:articulationYOffsetTowardNote(symbolKey)}} />; })}</g>;
   const systems = [...new Set(ps.map(p=>p.layout.top))];
-  if(systems.length>1)return <g>{systems.map((top,index)=><Mark key={top} id={id} noteIds={ps.filter(p=>p.layout.top===top).map(p=>p.note.id)} ls={ls} colour={colour} highlight={highlight} continuesBefore={index>0} continuesAfter={index<systems.length-1}/>)}</g>;
+  if(systems.length>1)return <g>{systems.map((top,index)=><Mark key={top} id={id} noteIds={ps.filter(p=>p.layout.top===top).map(p=>p.note.id)} ls={ls} colour={colour} continuesBefore={index>0} continuesAfter={index<systems.length-1}/>)}</g>;
   const first=ps[0], last=ps[ps.length - 1], down=actualDown(first), phrase=id==="phrase";
   const settings = sharedSymbolConfig(phrase ? "phraseMarking" : (down ? "slurStemDown" : "slurStemUp"));
   const direction = down ? -1 : 1;
@@ -506,23 +505,37 @@ function Mark({id,noteIds,ls,colour=COLOUR.black,highlight=false,continuesBefore
   const handleWidth = span * 0.28 * clamp(widthScale, 0.35, 2.5);
   const dep = direction * GAP * (phrase ? 2.1 : 1) * clamp(heightScale, 0.35, 2.5) * sizeRatio;
   const strokeWidth = Math.max(1.1, GAP * 0.13 * sizeRatio);
-  return <path d={`M${x1} ${y1} C${x1+handleWidth} ${y1+dep}, ${x2-handleWidth} ${y2+dep}, ${x2} ${y2}`} fill="none" stroke={colour} strokeWidth={strokeWidth} strokeLinecap="round" filter={highlight ? "url(#noteGlowPulse)" : undefined} />;
+  return <path d={`M${x1} ${y1} C${x1+handleWidth} ${y1+dep}, ${x2-handleWidth} ${y2+dep}, ${x2} ${y2}`} fill="none" stroke={colour} strokeWidth={strokeWidth} strokeLinecap="round" />;
 }
 
 function Bar({layout,question,selectedNotes,selectedMarking,feedback,onNoteClick,activeNoteId=null}){
   const gs = groups(layout.bar.notes);
   const showTarget = question.type !== "apply" && question.type !== "aural-articulation";
+  const placingMark = question.type === "apply" || (question.type === "aural-articulation" && question.marking.id === "accent");
+  const marked = placingMark && Boolean(feedback);
+  function noteColour(noteId) {
+    const selected = selectedNotes.includes(noteId);
+    const target = question.target.noteIds.includes(noteId);
+    if (marked) {
+      if (selected && !feedback.correct) return COLOUR.red;
+      return target ? COLOUR.green : COLOUR.black;
+    }
+    return selected || (showTarget && target) || activeNoteId === noteId ? COLOUR.blue : COLOUR.black;
+  }
   return <g>
     {layout.bar.notes.map((note,i) => {
       const g=groupFor(gs,i); let over=null, forced=null;
       if(g){ const ns=layout.bar.notes.slice(g.start,g.end+1), xs=layout.pos.slice(g.start,g.end+1), bd=beamData(ns,xs,layout.top), st=stemData(note,layout.pos[i],layout.top,bd.down); over=bd.down; forced=beamY(st.sx,bd.start,bd.end); }
       const selected=selectedNotes.includes(note.id);
-      const target=question.target.noteIds.includes(note.id) && question.type !== "aural-articulation";
-      const highlight=selected || (showTarget && target) || activeNoteId===note.id;
-      const clickable=((question.type==="apply" && selectedMarking) || (question.type==="aural-articulation" && question.marking.id==="accent")) && !feedback;
-      return <Note key={note.id} note={note} x={layout.pos[i]} top={layout.top} colour={COLOUR.black} override={over} forced={forced} beamed={Boolean(g)} onClick={clickable ? () => onNoteClick(note.id) : null} highlight={highlight} selected={selected} />;
+      const clickable=placingMark && (question.type!=="apply" || selectedMarking) && !feedback;
+      return <Note key={note.id} note={note} x={layout.pos[i]} top={layout.top} colour={noteColour(note.id)} override={over} forced={forced} beamed={Boolean(g)} onClick={clickable ? () => onNoteClick(note.id) : null} selected={selected} />;
     })}
-    {gs.map((g,i) => { const ns=layout.bar.notes.slice(g.start,g.end+1), xs=layout.pos.slice(g.start,g.end+1), bd=beamData(ns,xs,layout.top); return <BeamShape key={i} beam={bd} colour={COLOUR.black} />; })}
+    {gs.map((g,i) => {
+      const notes=layout.bar.notes.slice(g.start,g.end+1), xs=layout.pos.slice(g.start,g.end+1);
+      const firstColour=marked ? noteColour(notes[0].id) : COLOUR.black;
+      const colour=marked && notes.every(note=>noteColour(note.id)===firstColour) ? firstColour : COLOUR.black;
+      return <BeamShape key={i} beam={beamData(notes,xs,layout.top)} colour={colour} />;
+    })}
     {layout.barIndex === question.barCount-1 ? <g><line x1={layout.end-5} x2={layout.end-5} y1={layout.top} y2={layout.top+GAP*4} stroke="currentColor" strokeWidth="1.4" /><line x1={layout.end} x2={layout.end} y1={layout.top-.75} y2={layout.top+GAP*4+.75} stroke="currentColor" strokeWidth="4" /></g> : <line x1={layout.end} x2={layout.end} y1={layout.top} y2={layout.top+GAP*4} stroke="currentColor" strokeWidth="1.4" />}
     <g style={{pointerEvents:"none"}}><rect x={layout.start-8} y={layout.top-31} width="22" height="18" fill="white" /><text x={layout.start+4} y={layout.top-18} fontSize="13" fontWeight={question.type!=="aural-articulation" && (question.target.barIndex===layout.barIndex || (question.target.startBar!==undefined && layout.barIndex>=question.target.startBar && layout.barIndex<=question.target.endBar)) ? 700 : 400}>{layout.barIndex+1}</text></g>
   </g>;
@@ -534,23 +547,11 @@ function Score({question,selectedNotes,selectedMarking,feedback,onNoteClick,acti
   const height = tops.length < SYSTEM_TOPS.length && question.type !== "aural-articulation" ? tops.at(-1) + GAP * 4 + 44 : H;
   return <svg viewBox={`0 0 ${W} ${height}`} className="h-auto w-full select-none overflow-visible">
     <rect width={W} height={height} fill="transparent" />
-    <defs>
-      <filter id="noteGlowPulse" x="-150%" y="-150%" width="400%" height="400%">
-        <feDropShadow dx="0" dy="0" stdDeviation="3.6" floodColor="#facc15" floodOpacity="1">
-          <animate attributeName="stdDeviation" values="3.6;5.8;3.6" dur="1.55s" repeatCount="indefinite" />
-          <animate attributeName="flood-opacity" values="1;1;1" dur="1.55s" repeatCount="indefinite" />
-        </feDropShadow>
-        <feDropShadow dx="0" dy="0" stdDeviation="7.5" floodColor="#eab308" floodOpacity="0.9">
-          <animate attributeName="stdDeviation" values="7.5;11.5;7.5" dur="1.55s" repeatCount="indefinite" />
-          <animate attributeName="flood-opacity" values="0.9;1;0.9" dur="1.55s" repeatCount="indefinite" />
-        </feDropShadow>
-      </filter>
-    </defs>
     {tops.map((top,i)=><g key={i}><StaffLines top={top}/><CalibratedSymbol symbolKey="gClef" x={STAFF_LEFT+31} y={y(2,top)} />{i===0&&<TimeSignature signature={question.timeSignature} top={top} />}</g>)}
     {ls.map(l => <Bar key={l.barIndex} layout={l} question={question} selectedNotes={selectedNotes} selectedMarking={selectedMarking} feedback={feedback} onNoteClick={onNoteClick} activeNoteId={activeNoteId} />)}
-    {showCorrect && <Mark id={question.marking.id} noteIds={question.target.noteIds} ls={ls} colour={feedback && (question.type==="apply" || isAudioAccent) ? COLOUR.green : COLOUR.black} highlight={question.type!=="apply" && question.type!=="aural-articulation"}/>}
-    {question.type==="apply" && selectedMarking && selectedNotes.length>0 && !feedback && <Mark id={selectedMarking} noteIds={selectedNotes} ls={ls} colour={COLOUR.black} highlight={true}/>}
-    {isAudioAccent && selectedNotes.length>0 && !feedback && <Mark id="accent" noteIds={selectedNotes} ls={ls} colour={COLOUR.black} highlight={true}/>}
+    {showCorrect && <Mark id={question.marking.id} noteIds={question.target.noteIds} ls={ls} colour={feedback && (question.type==="apply" || isAudioAccent) ? COLOUR.green : COLOUR.blue}/>}
+    {question.type==="apply" && selectedMarking && selectedNotes.length>0 && !feedback && <Mark id={selectedMarking} noteIds={selectedNotes} ls={ls} colour={COLOUR.blue}/>}
+    {isAudioAccent && selectedNotes.length>0 && !feedback && <Mark id="accent" noteIds={selectedNotes} ls={ls} colour={COLOUR.blue}/>}
     {question.type==="apply" && feedback && !feedback.correct && <><Mark id={selectedMarking} noteIds={selectedNotes} ls={ls} colour={COLOUR.red}/></>}
     {isAudioAccent && feedback && !feedback.correct && <><Mark id="accent" noteIds={selectedNotes} ls={ls} colour={COLOUR.red}/></>}
   </svg>;
@@ -584,36 +585,7 @@ function MenuSvgGlyph({ src, alt = "" }) {
   return <img src={src} alt={alt} className="h-[20px] w-[20px] object-contain" />;
 }
 
-function TempoDropdownRow({ tempo, setTempo, stopAudio }) {
-  const tempos = [
-    { id: "adagio", label: "Adagio" },
-    { id: "andante", label: "Andante" },
-    { id: "allegro", label: "Allegro" },
-  ];
-  const selectedTempo = tempos.find(speed => speed.id === tempo) || tempos[1];
-  function cycleTempo() {
-    const currentIndex = tempos.findIndex(speed => speed.id === selectedTempo.id);
-    setTempo(tempos[(currentIndex + 1) % tempos.length].id);
-    stopAudio();
-  }
-  return <div className="hub-toggle-row relative min-h-[44px] overflow-visible">
-    <span className="hub-toggle-label min-w-[145px]">
-      <span className="hub-toggle-glyph">
-        <MenuSvgGlyph src={ASSET.tempo} alt="" />
-      </span>
-      <span className="leading-none">Tempo</span>
-    </span>
-    <button
-      type="button"
-      onClick={cycleTempo}
-      className="flex h-7 w-[86px] items-center justify-center rounded-xl border border-stone-300 bg-white px-2.5 text-sm font-bold text-stone-950 shadow-sm"
-    >
-      <span>{selectedTempo.label}</span>
-    </button>
-  </div>;
-}
-
-function MenuRows({enabledMarkings,setEnabledMarkings,enabledTypes,setEnabledTypes,newQuestion,followPlayback,setFollowPlayback,tempo,setTempo,metronomeEnabled,setMetronomeEnabled,stopAudio}){
+function MenuRows({enabledMarkings,setEnabledMarkings,enabledTypes,setEnabledTypes,newQuestion,followPlayback,setFollowPlayback}){
   function toggleMarking(id){
     if(enabledMarkings.includes(id)&&enabledMarkings.length===1)return;
     const next=enabledMarkings.includes(id)?enabledMarkings.filter(x=>x!==id):[...enabledMarkings,id];
@@ -631,14 +603,7 @@ function MenuRows({enabledMarkings,setEnabledMarkings,enabledTypes,setEnabledTyp
     newQuestion(next,enabledMarkings);
   }
   return <>
-    <window.MLH.MenuSubheading>Audio</window.MLH.MenuSubheading>
-    <TempoDropdownRow tempo={tempo} setTempo={setTempo} stopAudio={stopAudio} />
-    <window.MLH.MenuToggleRow
-      glyph={<MenuSvgGlyph src={ASSET.metronome} alt="" />}
-      label="Metronome"
-      checked={metronomeEnabled}
-      onChange={() => { setMetronomeEnabled(v => !v); stopAudio(); }}
-    />
+    <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
     <window.MLH.MenuToggleRow
       glyph={<MenuSvgGlyph src={ASSET.eye} alt="" />}
       label="Follow Playback"
@@ -716,11 +681,12 @@ function App(){
   const [promptMessage,setPromptMessage]=useState("");
   const [feedback,setFeedback]=useState(null);
   const [feedbackFading,setFeedbackFading]=useState(false);
-  const [tempo,setTempo]=window.MLH.useProfileState("tempo", "andante"), [metronomeEnabled,setMetronomeEnabled]=window.MLH.useProfileState("metronomeEnabled", false), [followPlayback,setFollowPlayback]=window.MLH.useProfileState("followPlayback", false);
-  const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, metronomeEnabled, followPlayback } } });
+  const tempo = "andante";
+  const [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
+  const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, followPlayback } } });
+  const [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, followPlayback } } });
+  const [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, followPlayback } } });
+  const [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: { enabledMarkings, enabledTypes }, options: { tempo, followPlayback } } });
   const [confettiKey,setConfettiKey]=useState(0);
   const [playing,setPlaying]=useState(false);
 
@@ -803,20 +769,13 @@ function App(){
     const ctx=new AC(); audioRef.current=ctx; setPlaying(true);
     const master=ctx.createGain(); master.gain.value=1; master.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination)); masterRef.current=master;
     const frequencies = question.bars.flatMap(bar => bar.notes.map(note => freq(note.pitch.step)));
-    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies, metronome: metronomeEnabled });
+    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies });
     if (audioRef.current !== ctx) return;
     if (!ready) { stopAudio(); return; }
     const tempoBpm = tempo === "adagio" ? 66 : tempo === "allegro" ? 120 : 88;
     const beat = 60 / tempoBpm, articulation=question.marking.id==="accent"?"slur":question.marking.id;
     let t=ctx.currentTime+.08;
     question.bars.forEach(bar=>{
-      if(metronomeEnabled){
-        const barBeats = question.timeSignature?.beats || 4;
-        for(let beatIndex=0; beatIndex<barBeats; beatIndex++){
-          const clickTime=t+beatIndex*beat;
-          window.MLH?.playMetronomeClick?.(ctx, master, clickTime, beatIndex===0);
-        }
-      }
       bar.notes.forEach(note=>{
       const dur=(RH[note.rhythm]?.beats||1)*beat, sound=articulation==="staccato"?dur*.42:dur*.96;
       if(followPlayback){
@@ -834,7 +793,7 @@ function App(){
   }
 
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader profileState={{ activeLevel, enabledMarkings, enabledTypes, tempo, metronomeEnabled, followPlayback }} icon={ASSET.appIcon} title="Articulation Markings" subtitle="Identify and apply staccatos, slurs, accents and phrase markings." worksheetConfig={() => ({ version: 1, activityId: "articulation", sourceUrl: window.location.href, settings: { level: activeLevel, enabledMarkings, enabledTypes: enabledTypes.filter(type=>type!=="aural-articulation") } })}>
+    <window.MLH.AppHeader classroomOriginalFormat={!medalEligible || followPlayback} profileState={{ activeLevel, enabledMarkings, enabledTypes, followPlayback }} icon={ASSET.appIcon} title="Articulation Markings" subtitle="Identify and apply staccatos, slurs, accents and phrase markings." worksheetConfig={() => ({ version: 1, activityId: "articulation", sourceUrl: window.location.href, settings: { level: activeLevel, enabledMarkings, enabledTypes: enabledTypes.filter(type=>type!=="aural-articulation") } })}>
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
         assets={ASSET}
         correct={correct}
@@ -851,16 +810,16 @@ function App(){
     <div className={window.MLH.shell.pageContentClass}>
     <main className="relative overflow-visible rounded-2xl border border-stone-200 bg-white px-4 pb-8 pt-[10px] shadow-sm md:h-auto md:overflow-visible md:px-6 md:pb-10 md:pt-[14px]" onPointerDown={event=>{if(feedback&&!event.target.closest("button,input,[data-menu-trigger],[data-menu-panel]"))fadeToNext();}}>
       <window.MLH.AppToolbar
-        left={<><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.levels} alt="" aria-hidden="true" className="h-[26px] w-[26px] object-contain" />} activeLevel={displayedLevel} activeLabel={displayedLevelLabel} isCustom={!medalEligible} onClick={()=>{setCustomiseOpen(false);setLevelOpen(v=>!v);}} dataMenuTrigger={true}/>{levelOpen&&<window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS}/></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" aria-hidden="true" className="h-[26px] w-[26px] object-contain" />} onClick={()=>{setLevelOpen(false);setCustomiseOpen(v=>!v);}} dataMenuTrigger={true}/>{customiseOpen&&<window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><MenuRows enabledMarkings={enabledMarkings} setEnabledMarkings={setEnabledMarkings} enabledTypes={enabledTypes} setEnabledTypes={setEnabledTypes} newQuestion={newQuestion} followPlayback={followPlayback} setFollowPlayback={setFollowPlayback} tempo={tempo} setTempo={setTempo} metronomeEnabled={metronomeEnabled} setMetronomeEnabled={setMetronomeEnabled} stopAudio={stopAudio}/></window.MLH.MenuPanel>}</div></>}
+        left={<><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.levels} alt="" aria-hidden="true" className="h-[26px] w-[26px] object-contain" />} activeLevel={displayedLevel} activeLabel={displayedLevelLabel} isCustom={!medalEligible} onClick={()=>{setCustomiseOpen(false);setLevelOpen(v=>!v);}} dataMenuTrigger={true}/>{levelOpen&&<window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS}/></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" aria-hidden="true" className="h-[26px] w-[26px] object-contain" />} onClick={()=>{setLevelOpen(false);setCustomiseOpen(v=>!v);}} dataMenuTrigger={true}/>{customiseOpen&&<window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="articulation-customise" dataMenuPanel={true}><MenuRows enabledMarkings={enabledMarkings} setEnabledMarkings={setEnabledMarkings} enabledTypes={enabledTypes} setEnabledTypes={setEnabledTypes} newQuestion={newQuestion} followPlayback={followPlayback} setFollowPlayback={setFollowPlayback}/></window.MLH.MenuPanel>}</div></>}
         feedback={<FeedbackBanner feedback={feedback} fading={feedbackFading}/>}
-        right={<window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />}/>}
+        right={<window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />}/>}
       />
       <div className={`relative top-[18px] transition-opacity duration-300 md:-top-[18px] ${questionVisible?"opacity-100":"opacity-0"}`}><Score question={question} selectedNotes={selectedNotes} selectedMarking={selectedMarking} feedback={feedback} onNoteClick={onNoteClick} activeNoteId={followPlayback ? activeNoteId : null}/></div>
-      <div className={`relative z-10 mt-3 overflow-visible rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 shadow-md md:-mt-[190px] md:mx-3 ${question.type==="identify-choice"?"min-h-[138px] flex flex-col justify-between":question.type==="identify-text"?"min-h-[132px] flex flex-col justify-between":question.type==="aural-articulation"?"flex flex-col justify-between md:min-h-[138px]":question.type==="apply"?"min-h-[92px]":"min-h-[142px]"}`}>
+      <div className="relative z-10 mt-3 overflow-visible rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 shadow-md md:-mt-[190px] md:mx-3">
         <div className="text-stone-900"><p className="text-base font-semibold leading-tight">{question.prompt}</p>{promptMessage&&<p className={`mt-2 text-sm ${isStretchPrompt?"font-normal italic text-stone-950":"font-bold text-red-600"}`}>{promptMessage}</p>}</div>
-        <div className={`${question.type==="aural-articulation"?"mt-4":"mt-3"} flex flex-wrap items-end justify-between gap-3 pb-[0px]`}>
+        <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
           {showMC&&question.type==="aural-articulation"?<div className="flex w-full flex-col gap-3 md:flex-row md:items-center md:justify-between"><MultipleChoice question={question} selected={selectedAnswer} feedback={feedback} onSelect={selectAnswer}/><button onClick={playAural} disabled={feedback?.correct === true} className={`${window.MLH.PlayButtonClass} shrink-0 md:ml-auto`}><span className={`hub-playback-glyph ${playing?"is-stop":"is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button></div>:showMC&&<div className="w-full"><MultipleChoice question={question} selected={selectedAnswer} feedback={feedback} onSelect={selectAnswer}/></div>}
-          {question.type==="aural-articulation"&&question.marking.id==="accent"&&<div className="flex w-full flex-wrap items-center justify-between gap-3 md:mt-3"><button onClick={playAural} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing?"is-stop":"is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button><div className={window.MLH.ActionButtonGroupClass}><button disabled={Boolean(feedback)||!canClearApply} onClick={()=>{setSelectedNotes([]);setPromptMessage("");}} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={Boolean(feedback)||!auralAccentCanConfirm} onClick={confirmAnswer}>Confirm</window.MLH.ConfirmButton></div></div>}
+          {question.type==="aural-articulation"&&question.marking.id==="accent"&&<div className="flex w-full flex-wrap items-center justify-between gap-3"><button onClick={playAural} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing?"is-stop":"is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button><div className={window.MLH.ActionButtonGroupClass}><button disabled={Boolean(feedback)||!canClearApply} onClick={()=>{setSelectedNotes([]);setPromptMessage("");}} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={Boolean(feedback)||!auralAccentCanConfirm} onClick={confirmAnswer}>Confirm</window.MLH.ConfirmButton></div></div>}
           {question.type==="identify-text"&&<div className="mt-auto flex w-full flex-col items-stretch justify-between gap-3 md:flex-row md:items-end"><div className="flex w-full flex-col gap-2 md:flex-row md:items-center"><input className={window.MLH.typedAnswerClass(feedback, "min-h-[48px] md:max-w-[520px]")} value={typedAnswer} disabled={Boolean(feedback)} aria-label="Name of articulation marking" placeholder="Type your answer" onChange={e=>setTypedAnswer(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")confirmAnswer();}}/>{feedback&&!feedback.correct&&<span className="text-sm font-bold text-green-700 md:whitespace-nowrap">{question.marking.label}</span>}</div><window.MLH.ConfirmButton disabled={Boolean(feedback)||!textCanConfirm} onClick={confirmAnswer} className="md:ml-auto">Confirm</window.MLH.ConfirmButton></div>}
           {question.type==="apply"&&<div className="mt-auto flex w-full flex-col gap-3 md:flex-row md:items-end md:justify-between"><ApplyAnswers enabledMarkings={enabledMarkings} selectedMarking={selectedMarking} setSelectedMarking={setSelectedMarking} setSelectedNotes={setSelectedNotes} setPromptMessage={setPromptMessage} feedback={feedback}/><div className={window.MLH.ActionButtonGroupClass}><button disabled={Boolean(feedback)||!canClearApply} onClick={()=>{setSelectedNotes([]);setPromptMessage("");}} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={Boolean(feedback)||!applyCanConfirm} onClick={confirmAnswer}>Confirm</window.MLH.ConfirmButton></div></div>}
         </div>
@@ -879,7 +838,9 @@ function EscapeClue({ activity }) {
   const field = question.choiceMode === "performance" ? "performance" : "label";
   const choices = embed.numberedChoices(question.marking[field], question.answerOptions.map(id => m(id)[field]), activity.clue.digit);
   return <main ref={ref} className="escape-literacy-content">
-    <p className="escape-literacy-content-title">{question.choiceMode === "performance" ? "How should the highlighted notes be played?" : "Identify the marking on the highlighted notes."}</p>
+    <p className="escape-literacy-content-title">{question.choiceMode === "performance"
+      ? <>How should the <strong style={HIGHLIGHT_TEXT_STYLE}>highlighted notes</strong> be played?</>
+      : <>Identify the marking on the <strong style={HIGHLIGHT_TEXT_STYLE}>highlighted notes</strong>.</>}</p>
     <Score question={question} selectedNotes={[]} />
     <embed.NumberedOptions activity={activity} choices={choices} columns={2} />
   </main>;
@@ -889,7 +850,7 @@ const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("articulation"
 const root = document.getElementById("root");
 if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />);
 else ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, root);
-  </script><script src="./generated-runtimes/articulationmarkings-1.js?v=9ccff265a65b"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/articulationmarkings-1.js?v=e2b669e7ed41"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

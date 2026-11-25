@@ -332,11 +332,11 @@ test('integrated sight-reading notation renders all five staff lines with a usab
   const html = fs.readFileSync('noteidentification.html', 'utf8');
   const inline = html.match(/<script type="(?:text\/babel|text\/x-mlh-jsx-source)"(?![^>]*\b(?:src|data-src)=)[^>]*>([\s\S]*?)<\/script>/)?.[1];
   assert.ok(inline, 'The activity retains its inline React source');
-  const captured = inline.replace('ReactDOM.render(<App />, document.getElementById("root"));', 'window.TestSightReadingScore = SightReadingScore;');
+  const captured = inline.replace(/^\s*ReactDOM\.render\(.*document\.getElementById\("root"\)\);$/m, 'window.TestSightReadingScore = SightReadingScore;');
   assert.notEqual(captured, inline, 'Capture only the existing notation component without mounting the app');
   const window = {MLH: {}};
-  const context = vm.createContext({window, React});
-  for (const file of ['shared/note-identification-core.js','bravura-symbols.js', 'shared/shared-notation-config.js']) vm.runInContext(fs.readFileSync(file, 'utf8'), context);
+  const context = vm.createContext({window, React, MLH:window.MLH, location:{pathname:'/noteidentification.html',search:''}, URLSearchParams});
+  for (const file of ['shared/classroom-activities.js','shared/note-identification-core.js','bravura-symbols.js', 'shared/shared-notation-config.js']) vm.runInContext(fs.readFileSync(file, 'utf8'), context);
   vm.runInContext(Babel.transform(captured, {presets: ['react']}).code, context);
   for (const question of [{pitch: 'G4', answer: 'G', clef: 'treble', step: 2}, {pitch: 'D3', answer: 'D', clef: 'bass', step: 4}]) {
     const markup = renderToStaticMarkup(React.createElement(window.TestSightReadingScore, {question, colour: '#000000', progress: 0.5, reducedMotion: false}));

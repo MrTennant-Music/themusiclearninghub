@@ -85,12 +85,29 @@
       h('path', { d: outline.path, transform: 'scale(1 -1)', fill: 'currentColor', ref: frameInk }));
   }
 
-  function LiteracyPicture({ picture, fitInk = false }) {
+  function SymbolGroupPicture({ symbols }) {
+    const outlines = root.BRAVURA_WORKSHEET_OUTLINES;
+    const fontSize = 56;
+    let x = 0;
+    const paths = symbols.map((symbol, index) => {
+      const path = vectorGlyph(index, symbol, x, 0, fontSize);
+      x += outlines.symbols[symbol].advance * fontSize / outlines.unitsPerEm + 12;
+      return path;
+    });
+    const viewBox = `-4 -${fontSize} ${x+8} ${fontSize*2}`;
+    const ref = useInkFrame(viewBox, true, symbols.join(' '));
+    return h('svg', { ref, className: 'mc-literacy-single-symbol', viewBox }, paths);
+  }
+
+  function LiteracyPicture({ picture, fitInk = false, vectorSymbols = false }) {
     const config = typeof picture === 'string' ? { symbols: picture } : picture;
     if (config.src) return h('img', { className: 'mc-literacy-closeup-image', src: config.src, alt: config.alt, width: 960, height: 480 });
     const { symbols, scores, signatures, arrow, staff, wide, closeup, labels, alt, largeSymbols, enlarged, brace,
       dotOffset, ledgerShift, stemShift, noteShift, beamOverhang, symbolOffsetY, columns = 1 } = config;
     const outline = glyphs[symbols] && root.BRAVURA_WORKSHEET_OUTLINES?.symbols[symbols];
+    const symbolGroup = symbols?.split(' ');
+    const canDrawGroup = vectorSymbols && symbolGroup?.length > 1
+      && symbolGroup.every(symbol => root.BRAVURA_WORKSHEET_OUTLINES?.symbols[symbol]);
     const sizeClass = scores ? ' mc-literacy-picture-scores' : wide ? ' mc-literacy-picture-wide' : '';
     const scaleClass = enlarged ? ' mc-literacy-picture-enlarged'
       : closeup ? ' mc-literacy-picture-closeup' : largeSymbols ? ' mc-literacy-picture-large-symbols' : '';
@@ -105,6 +122,7 @@
       : signatures ? signatures.map((signature, index) => h(React.Fragment, { key: signature },
         index > 0 && arrow && h('span', null, '→'), h(TimeSignaturePicture, { signature, fitInk })))
       : outline ? h(SingleSymbolPicture, { outline })
+      : canDrawGroup ? h(SymbolGroupPicture, { symbols: symbolGroup })
       : symbols.split(' ').map((symbol, index) => glyphs[symbol]
         ? h('span', { key: index, className: 'mc-bravura', style: symbolOffsetY ? { transform: 'translateY(' + symbolOffsetY + 'px)' } : undefined }, glyphs[symbol])
         : h('span', { key: index }, standalone[symbol])));

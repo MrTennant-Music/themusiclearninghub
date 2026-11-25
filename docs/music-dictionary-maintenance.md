@@ -1,4 +1,4 @@
-# Music Dictionary maintenance
+# Concept Dictionary maintenance
 
 Canonical content lives in `music-dictionary/music-concepts-data.js`,
 `music-concepts-audio.json` and `music-concepts-videos.js`. Consult these files
@@ -31,7 +31,22 @@ Run `python3 scripts/verify-workbook-quiz-evidence.py` for all archived quotatio
 Add `--source-root /path/to/OneDrive-GlowScotland` to independently verify every
 archive paragraph and DOCX hash against the authentic files again. Do not replace
 source text from application data or remove evidence assertions to pass tests.
-The unrelated missing audio-evidence records still require authentic recovery.
+The recovery fixture `tests/fixtures/dictionary-media-evidence.json` uses
+original SoundCloud resolution and selection records from the 31 October 2026
+review for tonality and arpeggios. The 1 November 2026 review supplies the
+measured vocal and chorus entries for Loch Lomond, the source durations for
+the six current traditional vocal selections and the two Tallis loudness
+measurements. Plainchant uses the later Ave Maris Stella selection from the
+same review. These are historical measurements.
+
+The regular Dictionary tests verify the current manifests, excerpt lengths,
+selection variety and video player output. The full Styles source checks,
+media replacement audit and video expansion audit still need the original
+reports. Their tests report missing files explicitly. To run those audits
+against recovered files, set `MLH_DICTIONARY_EVIDENCE_DIR` to the directory
+containing the original reports and run
+`node --test tests/music-concepts-{audio,media-variety,videos}.test.js`.
+An explicitly supplied evidence directory must contain the requested reports.
 
 Quiz audio distractors pass `scripts/quiz-distractor-overlap.cjs` during both
 audio generation and bank publication. It conservatively excludes equivalent

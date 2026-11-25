@@ -5,24 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Key Signatures</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/key-signatures-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/key-signatures-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
-  <script src="./shared/key-signatures-selection.js?v=387b562d7b09"></script>
+  <script src="./shared/key-signatures-selection.js?v=df6df2106c3e"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <style>
@@ -34,6 +35,7 @@
     .tonic-menu-heading:first-child { margin-top: 0; }
     .tonic-main { min-height: 0 !important; padding-bottom: 1.5rem !important; }
     .tonic-customise-panel { width: 300px; max-width: none; }
+    .key-signatures-customise-menu > .hub-menu-scroll { max-height: none; }
 
     .escape-key-signature .escape-literacy-numbered-option {
       min-height: 68px;
@@ -45,14 +47,15 @@
       font-size: 26px;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body class="overflow-x-hidden bg-stone-50">
+<body data-literacy-activity class="overflow-x-hidden bg-stone-50">
   <div id="root"></div>
 
   <script type="text/x-mlh-jsx-source" data-runtime="keysignatures-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 
 const ASSET = {
@@ -107,8 +110,6 @@ const LEVELS = {
   },
 };
 
-const DEFAULT_MODES = { identify: true, build: false };
-
 const KEYS = {
   "c-major": { id: "c-major", label: "C major", signature: [] },
   "a-minor": { id: "a-minor", label: "A minor", signature: [] },
@@ -151,16 +152,15 @@ const BAR_PATTERNS = [
 ];
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-const randomItem = (items) => items[Math.floor(Math.random() * items.length)];
-const taskMatchesLevel = (modes) => Object.keys(DEFAULT_MODES).every((key) => Boolean(modes[key]) === DEFAULT_MODES[key]);
+const randomItem = (items) => items[Math.floor(exerciseRandom() * items.length)];
 const noteBase = (note) => String(note || "C5").replace("#", "");
 const noteStep = (note) => NOTE_STEPS[noteBase(note)] ?? NOTE_STEPS.C5;
 const systemTopForBar = (barIndex, barCount = BAR_COUNT) => STAFF.top + (barCount > BAR_COUNT && barIndex >= BAR_COUNT ? SYSTEM_GAP : 0);
 const yForStep = (step, top = STAFF.top) => top + STAFF.gap * 4 - step * (STAFF.gap / 2);
 const stemDown = (step) => step > 4;
-const keyList = (level) => (LEVELS[level]?.keyIds || LEVELS.N5.keyIds).map((id) => KEYS[id]);
-const identifyButtons = (level) => BUTTON_ORDER.filter((id) => (LEVELS[level]?.keyIds || LEVELS.N5.keyIds).includes(id)).map((id) => KEYS[id]);
-const signatureId = (key) => key.signature.map((item) => `${item.type}-${item.step}`).join("|") || "none";
+const keyIdsForLevel = (level) => LEVELS[level]?.keyIds ?? LEVELS.N5.keyIds;
+const enabledKeyIds = (level, saved) => window.KEY_SIGNATURES_SELECTION.normaliseKeys(keyIdsForLevel(level), saved);
+const identifyButtons = (level) => BUTTON_ORDER.filter((id) => keyIdsForLevel(level).includes(id)).map((id) => KEYS[id]);
 
 function sharedActualSymbolKey(key) {
   if (key === "flatInScore" || key === "flatKeySignature") return "flat";
@@ -350,7 +350,7 @@ function chooseNextPitch(pool, previous, maxStep = 7) {
   const usable = candidates.length ? candidates : pool;
   const index = usable.findIndex((note) => noteBase(note) === noteBase(previous));
   const start = index >= 0 ? index : Math.floor(usable.length / 2);
-  const move = Math.random() < 0.08 ? randomItem([-7, 7]) : randomItem([-3, -2, -1, 1, 2, 3]);
+  const move = exerciseRandom() < 0.08 ? randomItem([-7, 7]) : randomItem([-3, -2, -1, 1, 2, 3]);
   return usable[clamp(start + move, 0, usable.length - 1)] || usable[0];
 }
 
@@ -390,20 +390,15 @@ function makeBarsForKey(key, barCount = BAR_COUNT, { focusFirstTwoBars = false }
   return bars;
 }
 
-const keySelection=window.KEY_SIGNATURES_SELECTION.create(Math.random);
-function makeQuestion({ level, identify = true, build = true, focusFirstTwoBars = false }) {
-  const plan=keySelection.plan(level,{identify,build},keyList(level)),{type,key}=plan;
-  const bars=type==='identify-key-change'?{startKey:plan.startKey,changeKey:key,bars:[...makeBarsForKey(plan.startKey,4),...makeBarsForKey(key,4)]}:{startKey:null,changeKey:key,bars:makeBarsForKey(key,BAR_COUNT,{focusFirstTwoBars})};
+const keySelection=window.KEY_SIGNATURES_SELECTION.create(exerciseRandom);
+function makeQuestion({ level, enabledKeys, focusFirstTwoBars = false }) {
+  const keys = enabledKeyIds(level, enabledKeys).map((id) => KEYS[id]);
+  const plan = keySelection.plan(level, keys);
+  const bars = plan.startKey
+    ? [...makeBarsForKey(plan.startKey, BAR_COUNT), ...makeBarsForKey(plan.key, BAR_COUNT)]
+    : makeBarsForKey(plan.key, BAR_COUNT, { focusFirstTwoBars });
 
-  return {
-    id: Math.random().toString(36).slice(2),
-    type,
-    key: bars.changeKey,
-    startKey: bars.startKey,
-    bars: bars.bars,
-    identifyMode: plan.identifyMode,
-    maxBuildAccidentals: level === "AH" ? 2 : Math.max(key.signature.length, 1),
-  };
+  return { ...plan, id: exerciseRandom().toString(36).slice(2), bars };
 }
 
 function useStyles() {
@@ -416,7 +411,7 @@ function useStyles() {
       button { -webkit-tap-highlight-color: transparent; user-select: none; transition: transform .08s ease, filter .08s ease, background-color .12s ease, box-shadow .12s ease; cursor: pointer; }
       button:active { transform: scale(.96); filter: brightness(.92); }
       button:disabled { cursor: not-allowed; opacity: .5; }
-      button:focus-visible { outline: 2px solid rgba(22,163,74,.35); outline-offset: 2px; }
+      button:focus-visible { outline: 2px solid var(--mlh-focus-color, #2563eb); outline-offset: 2px; }
       @media (hover: hover) and (pointer: fine) {
         button:hover { transform: translateY(-1px) scale(1.01); filter: brightness(1.08); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
       }
@@ -489,62 +484,35 @@ function useStyles() {
   }, []);
 }
 
-const useClickAway = window.MLH.useClickAway;
-
-function useTouchDevice() {
-  const isTouch = () => window.MLH?.isTouchDevice?.() ?? (window.matchMedia("(hover: none) and (pointer: coarse)").matches || window.matchMedia("(pointer: coarse)").matches || navigator.maxTouchPoints > 0 || "ontouchstart" in window);
-  const [touchDevice, setTouchDevice] = useState(isTouch);
-  useEffect(() => {
-    const mediaHover = window.matchMedia("(hover: none) and (pointer: coarse)");
-    const mediaPointer = window.matchMedia("(pointer: coarse)");
-    const update = () => setTouchDevice(isTouch());
-    update();
-    mediaHover.addEventListener?.("change", update);
-    mediaPointer.addEventListener?.("change", update);
-    window.addEventListener("resize", update);
-    window.addEventListener("orientationchange", update);
-    return () => {
-      mediaHover.removeEventListener?.("change", update);
-      mediaPointer.removeEventListener?.("change", update);
-      window.removeEventListener("resize", update);
-      window.removeEventListener("orientationchange", update);
-    };
-  }, []);
-  return touchDevice;
-}
-
 function useSession(initialLevel, phoneView = false) {
   const [level, setLevel] = useState(initialLevel);
-  const [savedModes, setModes] = window.MLH.useProfileState("modes", DEFAULT_MODES);
-  const modes=window.KEY_SIGNATURES_SELECTION.normaliseModes(savedModes);
-  const [question, setQuestion] = useState(() => makeQuestion({ level: initialLevel, ...modes, focusFirstTwoBars: phoneView }));
+  const [savedKeys, setEnabledKeys] = window.MLH.useProfileState("enabledKeys", keyIdsForLevel(initialLevel));
+  const enabledKeys = enabledKeyIds(level, savedKeys);
+  const [question, setQuestion] = useState(() => makeQuestion({ level: initialLevel, enabledKeys, focusFirstTwoBars: phoneView }));
   const [visible, setVisible] = useState(true);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [typed, setTyped] = useState("");
-  const [selectedAccidental, setSelectedAccidental] = useState(null);
-  const [placed, setPlaced] = useState([]);
-  const [hover, setHover] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [feedbackFading, setFeedbackFading] = useState(false);
-  const [score, setScore] = window.MLH.usePersistentScoreState({ correct: 0, attempted: 0, streak: 0, best: 0 }, "score", { level: level, scope: "", settings: { questions: modes, options: {} } });
+  const medalEligible = enabledKeys.length === keyIdsForLevel(level).length;
+  // Keep the saved scores for the previous default identification setup.
+  const scoreQuestions = medalEligible ? { identify: true, build: false } : { enabledKeys };
+  const [score, setScore] = window.MLH.usePersistentScoreState({ correct: 0, attempted: 0, streak: 0, best: 0 }, "score", {
+    level, scope: "", settings: { questions: scoreQuestions, options: {} },
+  });
   const [confetti, setConfetti] = useState(0);
   const [autoShowMedals, setAutoShowMedals] = useState(false);
   const nextTimer = useRef(null);
   const fadeTimer = useRef(null);
   const previousPhoneView = useRef(phoneView);
   const transitionTimer=useRef(null),medalTimers=useRef([]),answerLock=useRef(false);
-  const medalEligible = taskMatchesLevel(modes);
   const levelTaskStatusRef = useRef(medalEligible);
 
   const locked = Boolean(feedback)||!visible;
-  const expected = question.key.signature;
 
   const resetQuestionState = () => {
     setSelectedAnswer(null);
     setTyped("");
-    setSelectedAccidental(null);
-    setPlaced([]);
-    setHover(null);
     setFeedback(null);
     setFeedbackFading(false);
   };
@@ -555,12 +523,12 @@ function useSession(initialLevel, phoneView = false) {
     window.clearTimeout(transitionTimer.current);medalTimers.current.forEach(window.clearTimeout);medalTimers.current=[];
   };
 
-  const nextQuestion = (nextLevel = level, nextModes = modes, skipped = false) => {
+  const nextQuestion = (nextLevel = level, nextKeys = enabledKeys, skipped = false) => {
     clearTimers();
     if (skipped) setScore((value) => ({ ...value, streak: 0 }));
     answerLock.current=true;setVisible(false);
     transitionTimer.current=window.setTimeout(() => {
-      setQuestion(makeQuestion({ level: nextLevel, ...nextModes, focusFirstTwoBars: phoneView }));
+      setQuestion(makeQuestion({ level: nextLevel, enabledKeys: nextKeys, focusFirstTwoBars: phoneView }));
       resetQuestionState();
       setVisible(true);answerLock.current=false;
     }, 220);
@@ -604,19 +572,16 @@ function useSession(initialLevel, phoneView = false) {
   useEffect(() => {
     if (previousPhoneView.current === phoneView) return;
     previousPhoneView.current = phoneView;
-    nextQuestion(level, modes);
+    nextQuestion(level, enabledKeys);
   }, [phoneView]);
 
   return {
     level,
     question,
     visible,
-    modes,
+    enabledKeys,
     selectedAnswer,
     typed,
-    selectedAccidental,
-    placed,
-    hover,
     feedback,
     feedbackFading,
     score,
@@ -624,13 +589,10 @@ function useSession(initialLevel, phoneView = false) {
     autoShowMedals,
     medalEligible,
     locked,
-    expected,
     setTyped,
-    setSelectedAccidental,
-    setHover,
     nextQuestion,
     skip() {
-      nextQuestion(level, modes, true);
+      nextQuestion(level, enabledKeys, !feedback || !window.MLH.classroomActivities.isStreakRace());
     },
     resetScore() {
       setScore({ correct: 0, attempted: 0, streak: 0, best: 0 });
@@ -639,26 +601,21 @@ function useSession(initialLevel, phoneView = false) {
       nextQuestion();
     },
     changeLevel(nextLevel) {
-      const nextModes = { ...DEFAULT_MODES };
+      const nextKeys = keyIdsForLevel(nextLevel);
       const url=new URL(window.location.href);url.searchParams.set("level",nextLevel);window.history.replaceState(null,"",url);
       setLevel(nextLevel);
-      setModes(nextModes);
+      setEnabledKeys(nextKeys);
       setScore({ correct: 0, attempted: 0, streak: 0, best: 0 });
       setConfetti(0);
       setAutoShowMedals(false);
-      nextQuestion(nextLevel, nextModes);
+      nextQuestion(nextLevel, nextKeys);
     },
-    toggleIdentify() {
-      if (modes.identify && !modes.build) return;
-      const nextModes = { ...modes, identify: !modes.identify };
-      setModes(nextModes);
-      nextQuestion(level, nextModes);
-    },
-    toggleBuild() {
-      if (modes.build && !modes.identify) return;
-      const nextModes = { ...modes, build: !modes.build };
-      setModes(nextModes);
-      nextQuestion(level, nextModes);
+    toggleKey(keyId) {
+      const isEnabled = enabledKeys.includes(keyId);
+      if (isEnabled && enabledKeys.length === 1) return;
+      const nextKeys = isEnabled ? enabledKeys.filter((id) => id !== keyId) : [...enabledKeys, keyId];
+      setEnabledKeys(nextKeys);
+      nextQuestion(level, nextKeys);
     },
     answer(keyId) {
       if (locked) return;
@@ -669,28 +626,6 @@ function useSession(initialLevel, phoneView = false) {
       if (locked || !typed.trim()) return;
       setSelectedAnswer(question.key.id);
       updateScore(answerMatches(typed, question.key.label));
-    },
-    placeAccidental(item) {
-      if (locked || !selectedAccidental) return;
-      setPlaced((current) => {
-        const max = question.maxBuildAccidentals || Math.max(expected.length, 1);
-        const next = [...current];
-        const index = clamp(item.index ?? next.length, 0, max - 1);
-        if (next[index]?.type === item.type && next[index]?.step === item.step) {
-          next.splice(index, 1);
-          return next;
-        }
-        next[index] = { type: item.type, step: item.step };
-        return next.filter(Boolean).slice(0, max);
-      });
-    },
-    clearPlaced() {
-      if (!locked) setPlaced([]);
-    },
-    submitBuild() {
-      if (locked) return;
-      const correct = placed.length === expected.length && expected.every((item, index) => placed[index]?.type === item.type && placed[index]?.step === item.step);
-      updateScore(correct);
     },
     fadeWrong() {
       if (!feedback || feedback.correct || feedbackFading) return;
@@ -731,14 +666,13 @@ function KeySignature({ signature, baseX = calibrationLayoutX("keySignature"), t
   return <g pointerEvents="none">{signature.map((item, index) => <Accidental key={`${item.type}-${index}`} item={item} index={index} baseX={baseX} top={top} />)}</g>;
 }
 
-function KeyChangeSignature({ signature, previousSignature=[], barCount }) {
-  signature=[...window.KEY_SIGNATURES_SELECTION.cancellation(previousSignature,signature),...signature];
+function KeyChangeSignature({ signature, barCount }) {
   const top = systemTopForBar(4, barCount);
   const baseX = barCount > BAR_COUNT ? calibrationLayoutX("keySignature") : passageBarStart(4, barCount) + 13;
   const width = Math.max(56, (signature.length - 1) * KEY_SIGNATURE_SPACING + 52);
   return (
     <g pointerEvents="none">
-      <rect x={baseX - 24} y={top - 16} width={width} height={STAFF.gap * 4 + 32} rx="9" ry="9" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.85" />
+      <rect x={baseX - 17} y={top - 16} width={width} height={STAFF.gap * 4 + 32} rx="9" ry="9" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.85" />
       <KeySignature signature={signature} baseX={baseX} top={top} />
     </g>
   );
@@ -932,70 +866,7 @@ function BeamShape({ beam, colour = "currentColor" }) {
   return <polygon points={beamPolygonPoints(beam.start.x, beam.start.y, beam.end.x, beam.end.y, thickness)} fill={colour} />;
 }
 
-function BuildLayer({ question, selectedAccidental, placed, setHover, hover, onPlace, feedback }) {
-  const [drag, setDrag] = useState(null);
-  const dragRef=useRef(null);const updateDrag=value=>{dragRef.current=value;setDrag(value);};
-  const max = question.maxBuildAccidentals || 1;
-  const expected = question.key.signature;
-  const showingFeedback = Boolean(feedback);
-
-  function pointerToSvg(event) {
-    const svg = event.currentTarget.ownerSVGElement;
-    const rect = svg.getBoundingClientRect();
-    const viewBox = svg.viewBox.baseVal;
-    return {
-      x: viewBox.x + ((event.clientX - rect.left) / rect.width) * viewBox.width,
-      y: viewBox.y + ((event.clientY - rect.top) / rect.height) * viewBox.height,
-    };
-  }
-
-  function accidentalFromPointer(event) {
-    if (!selectedAccidental || showingFeedback) return null;
-    const pointer = pointerToSvg(event);
-    const rawStep = Math.round((STAFF.top + STAFF.gap * 4 - pointer.y) / (STAFF.gap / 2));
-    const centers = Array.from({ length: max }, (_, index) => accidentalX(selectedAccidental, index));
-    let index = centers.reduce((best, center, current) => Math.abs(center - pointer.x) < Math.abs(centers[best] - pointer.x) ? current : best, 0);
-    if (index > 0 && !placed[0]) index = 0;
-    return { type: selectedAccidental, step: clamp(rawStep, -2, 10), index };
-  }
-
-  const move = (event) => {
-    if (showingFeedback) return;
-    const next = accidentalFromPointer(event);
-    setHover(next);
-    if (drag && next) updateDrag(next);
-  };
-  const down = (event) => {
-    const next = accidentalFromPointer(event);
-    if (!next) return;
-    event.preventDefault();
-    event.currentTarget.setPointerCapture?.(event.pointerId);
-    updateDrag(next);
-    setHover(next);
-  };
-  const up = (event) => {
-    if (!dragRef.current) return;
-    event.preventDefault();
-    const next = accidentalFromPointer(event) || dragRef.current;
-    onPlace(next);
-    updateDrag(null);
-    setHover(null);
-  };
-
-  const preview = drag || hover;
-  const feedbackStyle = (correct) => ({ filter: correct ? "brightness(0) saturate(100%) invert(38%) sepia(75%) saturate(1043%) hue-rotate(89deg) brightness(92%) contrast(90%)" : "brightness(0) saturate(100%) invert(19%) sepia(83%) saturate(3207%) hue-rotate(347deg) brightness(88%) contrast(93%)" });
-
-  return (
-    <g>
-      {preview && !showingFeedback && <Accidental item={preview} index={preview.index} opacity={drag ? 0.82 : 0.45} />}
-      {placed.map((item, index) => <Accidental key={`${item.type}-${item.step}-${index}`} item={item} index={index} opacity={showingFeedback && !feedback.correct ? 0.4 : 1} style={showingFeedback ? feedbackStyle(feedback.correct) : null} />)}
-      {showingFeedback && !feedback.correct && expected.map((item, index) => <Accidental key={`expected-${index}`} item={item} index={index} style={feedbackStyle(true)} />)}
-      <rect role="button" tabIndex={selectedAccidental&&!showingFeedback?0:-1} aria-label="Place key signature accidental" onKeyDown={event=>{if(!selectedAccidental||showingFeedback||event.repeat)return;const current=hover||{type:selectedAccidental,step:4,index:0};if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight","Enter"," "].includes(event.key)){event.preventDefault();const next={type:selectedAccidental,step:clamp(current.step+(event.key==="ArrowUp"?1:event.key==="ArrowDown"?-1:0),-2,10),index:clamp(current.index+(event.key==="ArrowRight"?1:event.key==="ArrowLeft"?-1:0),0,max-1)};if(event.key==="Enter"||event.key===" ")onPlace(next);else setHover(next);}}} ref={window.MLH?.preventTouchScrollWhileDragging} x={calibrationLayoutX("keySignature") - 58} y={STAFF.top - 34} width="158" height={STAFF.gap * 4 + 68} fill="transparent" pointerEvents="all" style={{ touchAction: "none", cursor: selectedAccidental && !showingFeedback ? "pointer" : "default" }} onPointerMove={move} onPointerLeave={() => !drag && setHover(null)} onPointerDown={down} onPointerUp={up} onPointerCancel={() => { updateDrag(null); setHover(null); }} />
-    </g>
-  );
-}
-
-function Score({ question, session, phoneView = false }) {
+function Score({ question, phoneView = false }) {
   const barCount = question.bars.length || BAR_COUNT;
   const viewBox = phoneView
     ? (barCount > BAR_COUNT ? TWO_SYSTEM_PHONE_SCORE_VIEWBOX : PHONE_SCORE_VIEWBOX)
@@ -1006,17 +877,11 @@ function Score({ question, session, phoneView = false }) {
       <svg viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`} className="h-auto w-full select-none overflow-hidden">
       <rect width={SVG.width} height={SVG.height} fill="white" />
       <Staff barCount={barCount} />
-      {question.type === "build-key" ? (
-        <BuildLayer question={question} selectedAccidental={session.selectedAccidental} placed={session.placed} hover={session.hover} setHover={session.setHover} onPlace={session.placeAccidental} feedback={session.feedback} />
-      ) : (
+      <KeySignature signature={openingSignature} />
+      {question.type === "identify-key-change" && (
         <>
-          <KeySignature signature={openingSignature} />
-          {question.type === "identify-key-change" && (
-            <>
-              <KeyChangePrepBarline barCount={barCount} />
-              <KeyChangeSignature signature={question.key.signature} previousSignature={question.startKey.signature} barCount={barCount} />
-            </>
-          )}
+          <KeyChangePrepBarline barCount={barCount} />
+          <KeyChangeSignature signature={question.key.signature} barCount={barCount} />
         </>
       )}
       <Passage bars={question.bars} />
@@ -1058,10 +923,6 @@ function ScorePanel({ session }) {
   );
 }
 
-function ToggleRow({ glyph, label, enabled, disabled, onToggle }) {
-  return <window.MLH.MenuToggleRow glyph={glyph} label={label} checked={enabled} disabled={disabled} onChange={onToggle} labelWidthClass="min-w-[174px]" />;
-}
-
 function LocalLevelMenu({ activeLevel, onSelect, levels }) {
   return (
     <div className="flex w-full min-w-0 flex-col gap-2">
@@ -1095,33 +956,24 @@ function LocalLevelMenu({ activeLevel, onSelect, levels }) {
 
 const LevelMenu = window.MLH?.LevelMenu || LocalLevelMenu;
 
-function BravuraGlyph({ symbolKey, className = "" }) {
-  return <span className={`music-symbol inline-block leading-none ${className}`}>{sharedSymbolForKey(symbolKey)}</span>;
-}
-
 function App() {
   useStyles();
   const requestedLevel = useMemo(() => new URLSearchParams(window.location.search).get("level"), []);
   const phoneView = false;
   const session = useSession(LEVELS[requestedLevel] ? requestedLevel : "N5", phoneView);
-  const touchDevice = useTouchDevice();
   const keyboard = window.MLH.useKeyboardReset();
   const menuRef = useRef(null);
   const [menu, setMenu] = useState(null);
   const displayedLevel = session.medalEligible ? session.level : "Custom";
   const displayedLevelLabel = session.medalEligible ? LEVELS[session.level].label : "Custom";
-  window.MLH.useClickAway(menuRef, () => setMenu(null));
+  window.MLH.useClickOutside([menuRef], [() => setMenu(null)]);
 
-  const isBuild = session.question.type === "build-key";
   const questionContainerMargin = session.question.type === "identify-key-change" ? "sm:mt-[-20px] md:-mt-[25px]" : "sm:mt-[-63px] md:-mt-[81px]";
-  const showNoAccidentals = isBuild && session.feedback && !session.feedback.correct && session.expected.length === 0;
   const skipCorrectFeedback = () => {
     if (!session.feedback || !session.feedback.correct || session.feedbackFading) return;
     session.nextQuestion();
   };
-  const instruction = isBuild
-    ? <span>Create the key signature of <strong><KeyName label={session.question.key.label} /></strong>.</span>
-    : session.question.type === "identify-key-change"
+  const instruction = session.question.type === "identify-key-change"
       ? <span>The music starts in the key of <strong><KeyName label={session.question.startKey.label} /></strong>. Identify the change of key from <strong>bar 5</strong>.</span>
       : <span>Name the <strong>key</strong> of this excerpt.</span>;
 
@@ -1135,7 +987,7 @@ function App() {
 
   return (
     <div className="overflow-x-hidden bg-stone-50 pb-10 text-black md:pb-12">
-      <window.MLH.AppHeader profileState={{ level: session.level, modes: session.modes }} icon={ASSET.appIcon} title="Key Signatures" subtitle="Identify key signatures and scale degrees." worksheetConfig={() => ({ version: 1, activityId: "keysig", sourceUrl: window.location.href, settings: { level: session.level, modes: session.modes } })}>
+      <window.MLH.AppHeader classroomOriginalFormat={!session.medalEligible} profileState={{ level: session.level, enabledKeys: session.enabledKeys }} icon={ASSET.appIcon} title="Key Signatures" subtitle="Identify key signatures and scale degrees." worksheetConfig={() => ({ version: 1, activityId: "keysig", sourceUrl: window.location.href, settings: { level: session.level, enabledKeys: session.enabledKeys } })}>
         <ScorePanel session={session} />
       </window.MLH.AppHeader>
 
@@ -1179,10 +1031,13 @@ function App() {
                   icon={<img src={ASSET.customise} alt="" className="h-[21px] w-[21px]" />}
                   onClick={() => setMenu(menu === "customise" ? null : "customise")}
                 />
-                {menu === "customise" && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel>
-                  <window.MLH.MenuSubheading>Question Types</window.MLH.MenuSubheading>
-                  <ToggleRow glyph={<BravuraGlyph symbolKey="gClef" className="relative top-[5px] text-[18px]" />} label="Identify Key" enabled={session.modes.identify} disabled={false} onToggle={session.toggleIdentify} />
-                  <ToggleRow glyph={<span className="relative left-[2px] flex items-center gap-[2px]"><BravuraGlyph symbolKey="sharp" className="text-[24px] font-normal" /><BravuraGlyph symbolKey="flat" className="relative left-[2px] text-[24px] font-normal" /></span>} label="Create Key" enabled={session.modes.build} disabled={session.modes.build && !session.modes.identify} onToggle={session.toggleBuild} />
+                {menu === "customise" && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="key-signatures-customise-menu" dataMenuPanel>
+                  <window.MLH.MenuSubheading>Keys</window.MLH.MenuSubheading>
+                  {identifyButtons(session.level).map((key) => {
+                    const enabled = session.enabledKeys.includes(key.id);
+                    return <window.MLH.MenuToggleRow key={key.id} label={key.label} showGlyph={false} checked={enabled}
+                      disabled={enabled && session.enabledKeys.length === 1} onChange={() => session.toggleKey(key.id)} />;
+                  })}
                 </window.MLH.MenuPanel>}
               </div>
             </div>
@@ -1190,34 +1045,17 @@ function App() {
               <Feedback feedback={session.feedback} fading={session.feedbackFading} />
             </div>
             <div className="flex items-center justify-end gap-2 pr-0 justify-self-end sm:pr-0 md:pr-0">
-              <window.MLH.SkipButton onClick={session.skip} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px] object-contain" />} />
+              <window.MLH.SkipButton classroomAnswered={Boolean(session.feedback)} onClick={session.skip} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px] object-contain" />} />
             </div>
           </div>
 
-          {isBuild && touchDevice && !menu && (
-            <p className="relative z-20 mb-2 text-center text-[0.74rem] font-light leading-tight tracking-normal text-stone-600" style={{ opacity: 0.45 }}>
-              Press and hold to drag accidental into place.
-            </p>
-          )}
-
               <div className={`mx-auto flex w-full flex-1 items-center justify-center transition-opacity duration-300 sm:flex-none ${session.visible ? "opacity-100" : "opacity-0"}`}>
-                <Score question={session.question} session={session} phoneView={phoneView} />
+                <Score question={session.question} phoneView={phoneView} />
               </div>
 
           <div className={`relative z-10 mt-auto overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-3 shadow-md sm:p-4 md:mx-3 ${questionContainerMargin}`}>
             <p className="text-base font-semibold leading-tight">{instruction}</p>
-            {showNoAccidentals && <p className="text-sm font-bold text-[#16a34a]">Correct answer: no sharps or flats</p>}
-
-            {isBuild ? (
-              <div className="mt-4 flex flex-wrap items-end gap-2">
-                <button aria-label="Sharp" aria-pressed={session.selectedAccidental==="sharp"} type="button" disabled={session.locked} onClick={() => session.setSelectedAccidental("sharp")} className={`flex h-[64px] min-w-[88px] items-center justify-center rounded-xl border px-1 transition sm:h-[74px] ${session.selectedAccidental === "sharp" ? "border-black bg-black text-white" : "border-stone-300 bg-white text-black hover:bg-stone-50"}`}><BravuraGlyph symbolKey="sharp" className="translate-x-[1px] translate-y-[1px] text-[44px]" /></button>
-                <button aria-label="Flat" aria-pressed={session.selectedAccidental==="flat"} type="button" disabled={session.locked} onClick={() => session.setSelectedAccidental("flat")} className={`flex h-[64px] min-w-[88px] items-center justify-center rounded-xl border px-1 transition sm:h-[74px] ${session.selectedAccidental === "flat" ? "border-black bg-black text-white" : "border-stone-300 bg-white text-black hover:bg-stone-50"}`}><BravuraGlyph symbolKey="flat" className="-translate-x-[1px] translate-y-[6px] text-[44px]" /></button>
-                <div className="ml-auto flex gap-2">
-                  <button type="button" disabled={session.locked || session.placed.length === 0} onClick={session.clearPlaced} className={window.MLH.ClearButtonClass}>Clear</button>
-                  <window.MLH.ConfirmButton disabled={session.locked} onClick={session.submitBuild}>Confirm</window.MLH.ConfirmButton>
-                </div>
-              </div>
-            ) : session.question.identifyMode === "typed" ? (
+            {session.question.identifyMode === "typed" ? (
               <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
                 <div className="flex min-w-0 w-full flex-col gap-2 sm:w-1/2 sm:flex-row sm:items-center">
                   <input type="text" value={session.typed} disabled={session.locked} onFocus={keyboard.onFocus} onBlur={keyboard.onBlur} onChange={(event) => session.setTyped(autoCap(event.target.value))} onKeyDown={(event) => { if (event.key === "Enter") session.submitTyped(); }} className={window.MLH.typedAnswerClass(session.feedback, "min-w-0 text-[1.05rem] font-normal")} placeholder="Type your answer" />
@@ -1242,7 +1080,7 @@ function EscapeKeySignature({ activity }) {
   const embed = window.MLH.EscapeLiteracyActivity;
   const ref = embed.useContentHeight(activity);
   const question = embed.useQuestion(activity, ({ level }) => {
-    const key = keySelection.plan(level, { identify: true, build: false }, keyList(level)).key;
+    const key = keySelection.pick(level + "/escape", keyIdsForLevel(level).map((id) => KEYS[id]));
     return { type: "identify-key", key, bars: makeBarsForKey(key) };
   });
   const keys = identifyButtons(activity.level);
@@ -1261,8 +1099,9 @@ ReactDOM.render(escapeActivity ? <EscapeKeySignature activity={escapeActivity} /
   </script><script>
     const pageParams = new URLSearchParams(location.search);
     const useScaleDegrees = pageParams.get("level") === "H" && pageParams.get("embed") !== "escape";
-    document.write('<script src="./generated-runtimes/' + (useScaleDegrees ? 'scaledegrees-1.js?v=16383c68733e' : 'keysignatures-1.js?v=100f905ab9e3') + '"><\/script>');
+    const runtimeSource = useScaleDegrees ? "./generated-runtimes/scaledegrees-1.js?v=ce9e074d85da" : "./generated-runtimes/keysignatures-1.js?v=1555c9740ee5";
+    document.write('<script src="' + runtimeSource + '"><\/script>');
   </script>
-  <script src="./footer.js?v=120454beac89"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

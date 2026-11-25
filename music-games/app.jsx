@@ -13,8 +13,16 @@
   const isCollectionGame = isConceptSort || ['crossword', 'wordsearch'].includes(fixedGame);
   const isWordPuzzle = ['crossword', 'wordsearch'].includes(fixedGame);
   const requestedSort = isConceptSort ? new URLSearchParams(location.search) : null;
-  const creatingSort = requestedSort?.get('create') === '1';
-  const editingSortId = creatingSort ? requestedSort.get('editSort') : null;
+  const legacySortEditor = requestedSort?.get('create') === '1'
+    ? { id: requestedSort.get('editSort') } : null;
+  const initialSortEditor = isConceptSort ? legacySortEditor || history.state?.sortEditor || null : null;
+  if (legacySortEditor) {
+    const url = new URL(location.href);
+    url.searchParams.delete('create');
+    url.searchParams.delete('editSort');
+    const { collectionDraft, ...state } = history.state || {};
+    history.replaceState({ ...state, sortEditor: initialSortEditor, sortEditorDraft: collectionDraft }, '', url);
+  }
   if (requestedSort?.has('builtInCollection') || requestedSort?.has('myCollection') || requestedSort?.has('collections')) {
     const url = new URL(location.href);
     for (const key of ['builtInCollection', 'myCollection', 'collectionCatalogueLevel', 'collections']) {
@@ -37,10 +45,10 @@
   const requestedWordCategory = wordPuzzleParams.get('category');
   const initialWordCategory = hasLiteracyScope ? 5 : /^[0-4]$/.test(requestedWordCategory) ? Number(requestedWordCategory) : null;
   const WordPuzzleCollectionsContext = React.createContext(null);
-  const playerPage = !creatingSort && (document.body.dataset.igPage === 'player' || connectionsPractice || wordPuzzlePractice || sortPractice || Boolean(appConfig && (new URLSearchParams(location.search).has('activity') || /^#(?:playnote|activity)=/.test(location.hash))));
+  const playerPage = document.body.dataset.igPage === 'player' || connectionsPractice || wordPuzzlePractice || sortPractice || Boolean(appConfig && (new URLSearchParams(location.search).has('activity') || /^#(?:playnote|activity)=/.test(location.hash)));
   const catalogueHref = appConfig?.href || "./conceptsort.html";
   const publicTitle = appConfig?.title || 'Concept Sort';
-  const initialView = creatingSort ? 'collection' : isConceptSort && window.MLHSort.factsEnabled && history.state?.playnoteView==='facts' ? 'facts' : playerPage ? 'activity' : fixedGame && history.state?.playnoteView === 'collection' && history.state?.collectionDraft?.collectionEdition === window.MLHGameCollections.collectionEdition ? 'collection' : 'library';
+  const initialView = isConceptSort && !initialSortEditor && window.MLHSort.factsEnabled && history.state?.playnoteView==='facts' ? 'facts' : playerPage ? 'activity' : fixedGame && history.state?.playnoteView === 'collection' && history.state?.collectionDraft?.collectionEdition === window.MLHGameCollections.collectionEdition ? 'collection' : 'library';
   const clone = x => JSON.parse(JSON.stringify(x));
   const template = id => C.TEMPLATES.find(t => t.id === id) || C.TEMPLATES[0];
   const stamp = s => new Date(s).toLocaleString('en-GB', {
@@ -70,6 +78,16 @@
   function toggleFavouriteId(ids, id) {
     return ids.includes(id) ? ids.filter(value => value !== id) : [...ids, id];
   }
+  const classroomSeed = window.MLH.classroomActivities?.seed(location.search) ?? null;
+  const classroomRace = window.MLH.classroomActivities?.isRace?.(location.search);
+  const retryRace = window.MLH.classroomActivities?.isRetryRace?.();
+  const classroomPractice = classroomSeed !== null && new URLSearchParams(location.search).has('classroomPractice');
+  const classroomProgress = window.MLH.classroomActivities?.progressStorage?.();
+  const showPracticeControls = classroomSeed === null || classroomPractice;
+  const activityHasAudio = activity => activity?.sortRecipe?.type === 'styles' ||
+    activity?.items?.some(item => item.media?.type === 'audio' || item.answerMedia?.type === 'audio');
+  const classroomShuffle = classroomSeed === null ? C.shuffle
+    : items => C.shuffle(items, window.MLH.classroomActivities.random(classroomSeed));
   function ActivityCard({
     activity,
     saved,
@@ -99,21 +117,36 @@
     onClose,
     children,
     variant,
-    hideTitle = false
+    hideTitle = false,
+    inline = false
   }) {
     const ref = useRef(null);
     useEffect(() => {
-      const old = document.activeElement;
-      ref.current?.focus();
-      return () => old?.focus?.();
+      const dialog = ref.current;
+      const old = inline ? dialog.closest('.ig-resource-card')?.querySelector('[data-profile-customise]') : document.activeElement;
+      const isolated = [];
+      if (inline) {
+        for (let branch = dialog; branch.parentElement !== document.body; branch = branch.parentElement) {
+          for (const sibling of branch.parentElement.children) {
+            if (sibling === branch || !(sibling instanceof HTMLElement) || sibling.inert) continue;
+            sibling.inert = true;
+            isolated.push(sibling);
+          }
+        }
+      }
+      dialog.focus({ preventScroll: inline });
+      return () => {
+        isolated.forEach(element => { element.inert = false; });
+        old?.focus?.({ preventScroll: inline });
+      };
     }, []);
-    return ReactDOM.createPortal(<div className={`ig-modal-backdrop ${variant === 'qr' ? 'ig-qr-backdrop' : ''} ${variant === 'image-bank' ? 'ig-image-bank-backdrop' : ''}`} onMouseDown={e => {
+    const content = <div className={`ig-modal-backdrop ${inline ? 'ig-sort-editor-backdrop' : ''} ${variant === 'qr' ? 'ig-qr-backdrop' : ''} ${variant === 'image-bank' ? 'ig-image-bank-backdrop' : ''}`} onMouseDown={e => {
       if (e.target === e.currentTarget) onClose();
     }}><section ref={ref} className={`ig-modal ${variant === 'qr' ? 'ig-qr-modal' : ''} ${variant === 'delete' ? 'ig-delete-modal' : ''} ${variant === 'folder' ? 'ig-modal-folder' : ''} ${variant === 'image-bank' ? 'ig-image-bank-modal' : ''}`} tabIndex="-1" role="dialog" aria-modal="true" aria-label={title} onKeyDown={e => {
         if (e.key === 'Escape') onClose();
         if (e.key === 'Tab') {
-          const f = [...ref.current.querySelectorAll('button,input,select,textarea,a[href]')].filter(n => !n.disabled);
-          if (e.shiftKey && document.activeElement === f[0]) {
+          const f = [...ref.current.querySelectorAll('button,input,select,textarea,a[href]')].filter(n => !n.disabled && n.getClientRects().length);
+          if (e.shiftKey && (document.activeElement === f[0] || document.activeElement === ref.current)) {
             e.preventDefault();
             f.at(-1)?.focus();
           } else if (!e.shiftKey && document.activeElement === f.at(-1)) {
@@ -121,7 +154,8 @@
             f[0]?.focus();
           }
         }
-      }}><button className="ig-modal-close" aria-label="Close" onClick={onClose}>{"\xD7"}</button>{!hideTitle && <h2>{title}</h2>}{children}</section></div>, document.fullscreenElement || document.body);
+      }}>{!inline && <button className="ig-modal-close" aria-label="Close" onClick={onClose}>{"\xD7"}</button>}{!hideTitle && <h2>{title}</h2>}{children}</section></div>;
+    return inline ? content : ReactDOM.createPortal(content, document.fullscreenElement || document.body);
   }
   function GameToolbar({
     activity,
@@ -131,13 +165,14 @@
     levels,
     onSkip,
     onCustomise,
-    sortLevel
+    sortLevel,
+    classroomPractice = false
   }) {
     const generatedSort=activity.tags?.includes('generated-sort');
     const savedSort = fixedGame === 'group-sort' && !generatedSort;
     const showTitle = !onSkip && !generatedSort && !activity.tags?.includes('random-' + fixedGame);
     const collectionLevel = sortLevel ?? activity.level;
-    const clearLink = showTitle && window.HubCollections?.clearCollectionLink(activity.title, collectionLevel);
+    const clearLink = showTitle && !classroomPractice && window.HubCollections?.clearCollectionLink(activity.title, collectionLevel);
     const collectionLink = savedSort && clearLink && onLevel ? React.cloneElement(clearLink, {
       onClick: event => {
         if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -152,7 +187,7 @@
       if (isCollectionGame && !savedSort && window.MLHGameMedals?.isUserCollection(activity)) target.searchParams.set('collections', '1');
       if (fixedGame) location.replace(target.href);else location.assign(target.href);
     }
-    return <div className="ig-resource-toolbar hub-toolbar relative z-20"><div className="hub-toolbar-left">{fixedGame ? <LibraryLevelPicker level={collectionLevel} onLevel={onLevel} levels={levels} collectionLink={collectionLink} onCustomise={onCustomise} onBack={onLevel ? undefined : () => openCatalogue(activity.level, mode)} /> : <NavigationBackButton label="Back to collections" onClick={() => openCatalogue(activity.level, mode)} />}</div>{showTitle && !collectionLink ? <h2 className="ig-game-toolbar-title">{activity.title}</h2> : <span aria-hidden="true" />}{onSkip || generatedSort ? <div className="ig-toolbar-skip"><window.MLH.SkipButton onClick={onSkip || onRestart} icon={<img src="./ui-icons/next.svg" alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} /></div> : fixedGame ? <button type="button" className={`${window.MLH.ToolbarButtonClass} ig-toolbar-restart gap-2`} onClick={onRestart}><img src="./ui-icons/restart.svg" alt="" aria-hidden="true" />Restart</button> : <span aria-hidden="true" />}</div>;
+    return <div className="ig-resource-toolbar hub-toolbar relative z-20"><div className="hub-toolbar-left">{fixedGame ? <LibraryLevelPicker level={collectionLevel} onLevel={onLevel} levels={levels} collectionLink={collectionLink} onCustomise={onCustomise} disabled={classroomPractice} showCollectionsMenu={!classroomPractice} onBack={onLevel || classroomPractice ? undefined : () => openCatalogue(activity.level, mode)} /> : <NavigationBackButton label="Back to collections" onClick={() => openCatalogue(activity.level, mode)} />}</div>{showTitle && !collectionLink ? <h2 className="ig-game-toolbar-title">{activity.title}</h2> : <span aria-hidden="true" />}{onSkip || generatedSort ? <div className="ig-toolbar-skip"><window.MLH.SkipButton onClick={onSkip || onRestart} icon={<img src="./ui-icons/next.svg" alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} /></div> : fixedGame ? <button type="button" className={`${window.MLH.ToolbarButtonClass} ig-toolbar-restart gap-2`} onClick={onRestart}><img src="./ui-icons/restart.svg" alt="" aria-hidden="true" />Restart</button> : <span aria-hidden="true" />}</div>;
   }
   function ConnectionsLoader() {
     return <div role="status" aria-live="polite" aria-busy="true" className="ig-connection-loading-board"><img src="./ui-icons/load.svg" alt="Loading" className="question-loading-logo" /></div>;
@@ -207,7 +242,8 @@
     collectionLink,
     onCustomise,
     levels = libraryLevels,
-    showCollectionsMenu = true
+    showCollectionsMenu = true,
+    disabled = false
   }) {
     const wordPuzzleCollections = React.useContext(WordPuzzleCollectionsContext);
     const [open, setOpen] = useState(false),
@@ -228,7 +264,7 @@
         setOpen(false);
         setCustomiseOpen(false);
       }
-    }}><div className="hub-menu-anchor relative ig-library-level-picker">{onBack ? <NavigationBackButton label={backLabel} text={backText} onClick={onBack} /> : <window.MLH.LevelButton icon={<img src="./ui-icons/levels.svg" alt="" className="h-[26px] w-[28px]" />} activeLevel={level} activeLabel={levels[level]?.label || 'Select Level'} onClick={() => {
+    }}><div className="hub-menu-anchor relative ig-library-level-picker">{onBack ? <NavigationBackButton label={backLabel} text={backText} onClick={onBack} /> : <window.MLH.LevelButton icon={<img src="./ui-icons/levels.svg" alt="" className="h-[26px] w-[28px]" />} activeLevel={level} activeLabel={levels[level]?.label || 'Select Level'} disabled={disabled} onClick={() => {
           setCustomiseOpen(false);
           setOpen(value => !value);
         }} dataMenuTrigger={true} expanded={open} ariaControls="library-level-menu" />}{open && <window.MLH.MenuPanel id="library-level-menu" title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={level} levels={levels} updateUrl={!isWordPuzzle} onSelect={id => {
@@ -303,7 +339,7 @@
     initial,
     onBack,
     onSave,
-    backToGame = false
+    inOverlay = false
   }) {
     const G = window.MLHGameCollections,
       D = G.data,
@@ -311,13 +347,15 @@
       sorting = isConceptSort,
       grouped = connections || sorting;
     useEffect(() => {
+      if (inOverlay) return;
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'instant'
       });
-    }, []);
-    const restored = history.state?.playnoteView === 'collection' && history.state?.collectionDraft?.template === fixedGame && history.state?.collectionDraft?.collectionEdition === G.collectionEdition ? history.state.collectionDraft : null;
+    }, [inOverlay]);
+    const draft = inOverlay ? history.state?.sortEditorDraft : history.state?.playnoteView === 'collection' ? history.state?.collectionDraft : null;
+    const restored = draft?.template === fixedGame && draft.collectionEdition === G.collectionEdition && (draft.initial?.id ?? null) === (initial?.id ?? null) ? draft : null;
     const [name, setName] = useState(restored?.name ?? initial?.title ?? ''),
       [ids, setIds] = useState(() => sorting ? [] : restored?.ids ?? initial?.sourceConceptIds?.filter(id => D.concepts.some(concept => concept.id === id)) ?? []),
       [failure, setFailure] = useState(''),
@@ -374,10 +412,7 @@
       }
     }
     useEffect(() => {
-      history.replaceState({
-        ...history.state,
-        playnoteView: 'collection',
-        collectionDraft: {
+      const collectionDraft = {
           template: fixedGame,
           collectionEdition: G.collectionEdition,
           initial: initial || null,
@@ -387,9 +422,11 @@
           assignments,
           customCards,
           activeGroup
-        }
-      }, '');
-    }, [initial, name, ids, groupNames, assignments, customCards, activeGroup]);
+      };
+      history.replaceState(inOverlay
+        ? { ...history.state, sortEditorDraft: collectionDraft }
+        : { ...history.state, playnoteView: 'collection', collectionDraft }, '');
+    }, [inOverlay, initial, name, ids, groupNames, assignments, customCards, activeGroup]);
     const cols = sorting ? [] : G.columns('ALL', fixedGame);
     function toggle(id) {
       setFailure('');
@@ -460,7 +497,8 @@
     return (
       <section className={`ig-library-main ig-panel ig-collection-builder ig-quiz-builder${connections ? ' ig-connections-builder' : ''}${sorting ? ' ig-sort-builder' : ''}`} aria-label={creatingSortGroups ? 'Concept Sort editor' : undefined} aria-labelledby={creatingSortGroups ? undefined : 'ig-collection-builder-heading'}>
         <div className={`ig-builder-toolbar${creatingSortGroups ? ' is-centred-sort-name' : ''}`}>
-          <LibraryLevelPicker level={level} onBack={onBack} backText={backToGame ? "Concept Sort" : "Collections"} backLabel={backToGame ? "Back to Concept Sort" : undefined} showCollectionsMenu={!isCollectionGame} />
+          {inOverlay ? <window.MLH.ToolbarButton label="Cancel" onClick={onBack} />
+            : <LibraryLevelPicker level={level} onBack={onBack} backText="Collections" showCollectionsMenu={!isCollectionGame} />}
           {!creatingSortGroups && <h2 id="ig-collection-builder-heading">{initial ? 'Edit Collection' : 'Create Collection'}</h2>}
           <label className="ig-builder-name">
             <span className={sorting && !creatingSortGroups ? undefined : 'sr-only'}>{sorting ? 'Sort name' : 'Collection name'}</span>
@@ -575,11 +613,14 @@
         }}>{"Show Collections"}</a></div>}{!fixedGame && stage === 'games' && favourites && <section className="ig-library-favourites" aria-label="Favourites"><h2>{"Favourites"}</h2>{favourites}</section>}</section>;
   }
   function App() {
+    const [raceSubmitSlot,setRaceSubmitSlot]=useState(null);
     const [activities, setActivities] = useState([]),
-      [loading, setLoading] = useState(!creatingSort || Boolean(editingSortId)),
+      [loading, setLoading] = useState(true),
       [error, setError] = useState(''),
       [view, setViewState] = useState(initialView),
       [selected, setSelected] = useState(null),
+      [sortEditor, setSortEditor] = useState(initialSortEditor),
+      [sortEditorLoad, setSortEditorLoad] = useState(null),
       [collectionEdit, setCollectionEdit] = useState(() => initialView === 'collection' ? history.state?.collectionDraft?.initial || null : null),
       [mode, setMode] = useState('matching-pairs'),
       [options, setOptions] = useState({
@@ -629,7 +670,7 @@
       [folderDrop, setFolderDrop] = useState(null),
       [folderError, setFolderError] = useState(''),
       [folderBusy, setFolderBusy] = useState(false),
-      [playing, setPlaying] = useState(false),
+      [playing, setPlaying] = useState(() => classroomProgress?.read('playing',false) === true),
       [attempt, setAttempt] = useState(0),
       [notice, setNotice] = useState(''),
       [pendingDelete, setPendingDelete] = useState(null),
@@ -706,7 +747,7 @@
         });
         const activity = JSON.parse(shareKey);
         const collection = activity?.tags?.includes('user-collection') && window.HubCollections?.selected();
-        if (activity && !(collection && activity.collectionId === collection.id) && !connectionsPractice && !activity.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag))) {
+        if (classroomSeed===null && activity && !(collection && activity.collectionId === collection.id) && !connectionsPractice && !activity.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag))) {
           const target = new URL(url);
           if (!(playerPage && new URLSearchParams(location.search).has('activity')) && navigation.current?.replaceActivityUrl(target.pathname + target.search + target.hash)) {
             try {
@@ -729,7 +770,6 @@
     const navigation = useRef(null);
     const initialHash = useRef(location.hash);
     useEffect(() => {
-      if (creatingSort) return;
       if (playerPage && !selected) return;
       navigation.current = window.IGNavigation.create(history, location, next => {
         if (wordPuzzlePractice && next === 'library') {
@@ -758,6 +798,7 @@
       });
       const pop = event => {
         navigation.current.pop(event);
+        if (isConceptSort) setSortEditor(event.state?.sortEditor || null);
         if (!playerPage) {
           const query = new URLSearchParams(location.search);
           const level = Object.hasOwn(libraryLevels, query.get('level')) ? query.get('level') : fixedGame ? 'N3' : '';
@@ -784,23 +825,27 @@
       setSearch('');
     }
     function openSortEditor(id) {
-      const target = new URL(location.href);
-      target.searchParams.set('create', '1');
-      if (id) target.searchParams.set('editSort', id);
-      location.assign(target.href);
+      const editor = { id: id || null };
+      history.replaceState({ ...history.state, sortEditor: editor, sortEditorDraft: null }, '');
+      setSortEditorLoad(null);
+      setSortEditor(editor);
     }
     function returnToSort() {
-      const target = new URL(location.href);
-      target.searchParams.delete('create');
-      target.searchParams.delete('editSort');
-      const referrer = document.referrer && new URL(document.referrer);
-      if (referrer && referrer.origin === target.origin && referrer.pathname === target.pathname &&
-        referrer.searchParams.toString() === target.searchParams.toString()) {
-        history.back();
-      } else {
-        location.replace(target.href);
-      }
+      const { sortEditor, sortEditorDraft, ...state } = history.state || {};
+      history.replaceState(state, '');
+      setSortEditor(null);
     }
+    useEffect(() => {
+      if (!sortEditor?.id) return;
+      let active = true;
+      C.getActivity(sortEditor.id).then(activity => {
+        if (activity?.template !== fixedGame) throw new Error('This sort is no longer saved in this browser.');
+        if (active) setSortEditorLoad({ editor: sortEditor, activity });
+      }).catch(error => {
+        if (active) setSortEditorLoad({ editor: sortEditor, error: error.message });
+      });
+      return () => { active = false; };
+    }, [sortEditor]);
     function setView(next) {
       if (wordPuzzlePractice && next === 'library') {
         nextWordPuzzle();
@@ -924,9 +969,8 @@
       if (!isConceptSort) {
         try { window.HubCollections?.importActivities([activity]); } catch { /* The game copy is already saved. */ }
       }
-      if (creatingSort) {
-        const { collectionDraft, playnoteView, ...state } = history.state || {};
-        history.replaceState(state, '');
+      if (sortEditor) {
+        await refreshSavedSorts();
         returnToSort();
         return;
       }
@@ -992,8 +1036,8 @@
       const previousId = selected?.id || new URLSearchParams(location.search).get('activity');
       try {
         let activity;
-        if (levelOnly) {
-          activity = window.MLHConnections.create(level, previousId, C.shuffle, true);
+        if (classroomSeed !== null || levelOnly) {
+          activity = window.MLHConnections.create(level, classroomSeed === null ? previousId : null, classroomShuffle, levelOnly);
         } else {
           let cycle;
           const draw = previous => window.MLHConnections.draw(level, previous || connectionCycle.current, C.shuffle, previousId);
@@ -1018,7 +1062,7 @@
         url.searchParams.set('game', 'matching-pairs');
         url.searchParams.set('source', 'hub');
         url.searchParams.delete('collection');
-        history.replaceState({
+        if (classroomSeed === null) history.replaceState({
           ...history.state,
           playnoteView: 'activity'
         }, '', url);
@@ -1043,11 +1087,11 @@
       const level=C.qualificationLevels.includes(requestedLevel)?requestedLevel:'N3';
       try{
         const type=window.MLHSort.availableTypes(level).includes(requestedType)?requestedType:'elements';
-        const activity=window.MLHSort.create({level,type,includeBelow:type!=='elements'||!levelOnly,cardCount:12});
+        const activity=window.MLHSort.create({level,type,includeBelow:type!=='elements'||!levelOnly,cardCount:12,shuffle:classroomShuffle});
         const url=new URL(catalogueHref,document.baseURI);url.searchParams.set('level',level);url.searchParams.set('type',type);
         if (levelOnly) url.searchParams.set('selectedLevelOnly', '1');
         setSelectedLevelOnly(levelOnly);
-        history.replaceState({...history.state,playnoteView:'activity'},'',url);
+        if (classroomSeed === null) history.replaceState({...history.state,playnoteView:'activity'},'',url);
         setLevelFilter(level);setSelected(activity);setMode('group-sort');setOptions(current=>({...C.sessionOptions(activity,false),sound:current.sound}));setPlaying(false);setAttempt(n=>n+1);setViewState('activity');setError('');
       }catch(error){setError(error.message);}
     }
@@ -1071,9 +1115,9 @@
     function nextWordPuzzle(requestedLevel = levelFilter, category = null, withBelow = category === null && !selectedLevelOnly) {
       const level = C.qualificationLevels.includes(requestedLevel) ? requestedLevel : 'N3';
       try {
-        const activity = category === null ? window.MLHGameCollections.randomWordPuzzle(level, fixedGame, C.shuffle, withBelow) : window.MLHGameCollections.categoryWordPuzzle(level, category, fixedGame, C.shuffle, withBelow);
+        const activity = category === null ? window.MLHGameCollections.randomWordPuzzle(level, fixedGame, classroomShuffle, withBelow) : window.MLHGameCollections.categoryWordPuzzle(level, category, fixedGame, classroomShuffle, withBelow);
         const url = wordPuzzleUrl(level, category, withBelow);
-        history.replaceState({
+        if (classroomSeed === null) history.replaceState({
           ...history.state,
           playnoteView: 'activity'
         }, '', url);
@@ -1137,7 +1181,7 @@
       }
     }
     useEffect(() => {
-      if (!isConceptSort || creatingSort) return;
+      if (!isConceptSort) return;
       function restoreFromCache(event) {
         if (event.persisted) refreshSavedSorts();
       }
@@ -1145,15 +1189,6 @@
       return () => window.removeEventListener('pageshow', restoreFromCache);
     }, [selected]);
     useEffect(() => {
-      if (creatingSort) {
-        if (editingSortId) {
-          C.getActivity(editingSortId).then(activity => {
-            if (activity?.template !== fixedGame) throw new Error('This sort is no longer saved in this browser.');
-            setCollectionEdit(activity);
-          }).catch(error => setError(error.message)).finally(() => setLoading(false));
-        }
-        return;
-      }
       Promise.all([C.listActivitySummaries().catch(error => {
         if (!playerPage) setError(error.message);
         return [];
@@ -1276,7 +1311,9 @@
       }
     }
     const isSaved = selected && activities.some(a => a.id === selected.id);
-    const results = C.compatibility(mode, selected || {
+    const results = classroomRace && activityHasAudio(selected)
+      ? { ok: false, reason: window.MLH.classroomActivities.raceListeningMessage }
+      : C.compatibility(mode, selected || {
       items: []
     });
     const filteredActivities = all.filter(a => isCollectionGame ? a._stored : (!gameFilter || a.template === gameFilter) && (!levelFilter || C.visibleAtLevel(a, levelFilter)) && `${a.title} ${a.description}`.toLowerCase().includes(search.toLowerCase())).sort((a, b) => a.title.localeCompare(b.title, 'en-GB', {
@@ -1335,12 +1372,21 @@
       <hr className="ig-sort-create-divider" />
       {wordPuzzleMenuRow({id:'create',title:'Create',onClick:()=>openSortEditor()})}
     </>;
+    let classroomShareUrl;
+    if (fixedGame && ['crosswords', 'wordsearch', 'conceptsort'].includes(appConfig?.id) &&
+        selected && view === 'activity' && share.key === shareKey && share.url) {
+      const url = new URL(share.url, location.href);
+      if (activityHasAudio(selected)) {
+        url.searchParams.set('classroomListening', '1');
+      }
+      classroomShareUrl = url.href;
+    }
     return <WordPuzzleCollectionsContext.Provider value={{ menu: wordPuzzleMenu, footer: sortMenuFooter }}><div className={`${window.MLH.shell.pageShellClass} ig-workspace`}><window.MLH.AppHeader icon={appConfig?.icon || './app-icons/concept-quiz-icon.svg'} title={publicTitle} subtitle={appConfig?.subtitle || 'Practise music concepts with quizzes, matching and sorting games.'} worksheetConfig={['crossword','wordsearch'].includes(fixedGame) && selected && view === 'activity' ? async () => {
           await window.IGRuntime.load('player', fixedGame);
           return window.MLHWordPuzzleWorksheet.createConfig(selected, fixedGame, window.IGLearningPuzzles, C.shuffle);
-        } : undefined} profileUsesSharedSettings={false} profileShowLabel={false} profileShareUrl={share.url || undefined} profileShareDisabled={share.key !== shareKey || !share.url}>{fixedGame && view === 'activity' && (selected || appConfig?.id === 'connections') && <div id="ig-header-game-stats" className="ig-header-game-stats" />}</window.MLH.AppHeader><div className={`${window.MLH.shell.pageContentClass} ig-page-content`}><main className={`${window.MLH.shell.mainShellClass} ig-app ig-wordwall ig-view-${view}${fixedGame ? ' ig-dedicated-game' : ''}`}>{playerPage && !selected && (appConfig?.id === 'connections' && loading ? <section className="ig-resource-card ig-panel ig-connection-loading" aria-label="Loading Connections" aria-busy="true" style={{
+        } : undefined} profileUsesSharedSettings={false} profileShowLabel={false} profileShareUrl={share.url || undefined} classroomActivityUrl={classroomShareUrl} profileShareDisabled={share.key !== shareKey || !share.url}>{fixedGame && view === 'activity' && (selected || appConfig?.id === 'connections') && <div id="ig-header-game-stats" className="ig-header-game-stats" />}</window.MLH.AppHeader><div className={`${window.MLH.shell.pageContentClass} ig-page-content`}><main className={`${window.MLH.shell.mainShellClass} ig-app ig-wordwall ig-view-${view}${fixedGame ? ' ig-dedicated-game' : ''}`}>{playerPage && !selected && (appConfig?.id === 'connections' && loading ? <section className="ig-resource-card ig-panel ig-connection-loading" aria-label="Loading Connections" aria-busy="true" style={{
               minHeight: window.MLHConnectionsRefresh?.placeholderHeight || 760
-            }}><div className="ig-resource-toolbar hub-toolbar"><LibraryLevelPicker level={levelFilter} levels={practiceLevels} onLevel={() => {}} /><span /><div className="ig-toolbar-skip"><window.MLH.SkipButton disabled={true} icon={<img src="./ui-icons/next.svg" alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} /></div></div><ConnectionsLoader /></section> : <p role="status">{loading ? 'Loading activity…' : <a href={catalogueHref}>{"Return to activities"}</a>}</p>)}{error && <div className="ig-alert" role="alert">{error}<button aria-label="Dismiss error" onClick={() => setError('')}>{"\xD7"}</button></div>}{share.key === shareKey && share.error && <p className="ig-alert" role="alert">{share.error}</p>}{view==='facts'&&isConceptSort&&window.MLHSort.factsEnabled?<MusicalFactsEditor level={levelFilter} onBack={()=>setView('library')}/>:view === 'collection' && editingSortId && (loading || !collectionEdit) ? <section className="ig-library-main ig-panel"><NavigationBackButton text={publicTitle} label="Back to Concept Sort" onClick={returnToSort} />{loading && <p role="status">Loading sort…</p>}</section> : view === 'collection' && fixedGame ? <CollectionBuilder key={collectionEdit?.id || 'new'} level={levelFilter} initial={collectionEdit} backToGame={creatingSort} onBack={creatingSort ? returnToSort : () => setView('library')} onSave={saveCollection} /> : view === 'library' ? <React.Fragment><section className="ig-library-layout"><div className="ig-library-main ig-panel"><LibraryJourney favourites={favouriteActivities.length ? renderActivityGrid(favouriteActivities) : null} toolbarActions={!isCollectionGame && libraryStage === 'packs' ? <div className="hub-toolbar ig-library-toolbar ig-journey-actions" aria-label="Collection controls"><input type="search" aria-label="Search" placeholder="Search" value={search} onChange={e => setSearch(e.target.value)} /></div> : null} game={gameFilter} level={levelFilter} stage={libraryStage} onStage={stage => navigateLibrary(stage)} onGame={id => navigateLibrary('packs', levelFilter, id)} onLevel={id => navigateLibrary(fixedGame ? 'packs' : 'games', id, fixedGame)} />{libraryStage === 'packs' && <React.Fragment>{loading ? <p>{"Loading your activities\u2026"}</p> : (userActivityCollectionsEnabled ? [{
+            }}><div className="ig-resource-toolbar hub-toolbar"><LibraryLevelPicker level={levelFilter} levels={practiceLevels} onLevel={() => {}} /><span /><div className="ig-toolbar-skip"><window.MLH.SkipButton disabled={true} icon={<img src="./ui-icons/next.svg" alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} /></div></div><ConnectionsLoader /></section> : <p role="status">{loading ? 'Loading activity…' : <a href={catalogueHref}>{"Return to activities"}</a>}</p>)}{error && <div className="ig-alert" role="alert">{error}<button aria-label="Dismiss error" onClick={() => setError('')}>{"\xD7"}</button></div>}{share.key === shareKey && share.error && <p className="ig-alert" role="alert">{share.error}</p>}{view==='facts'&&isConceptSort&&window.MLHSort.factsEnabled?<MusicalFactsEditor level={levelFilter} onBack={()=>setView('library')}/>:view === 'collection' && fixedGame ? <CollectionBuilder key={collectionEdit?.id || 'new'} level={levelFilter} initial={collectionEdit} onBack={() => setView('library')} onSave={saveCollection} /> : view === 'library' ? <React.Fragment><section className="ig-library-layout"><div className="ig-library-main ig-panel"><LibraryJourney favourites={favouriteActivities.length ? renderActivityGrid(favouriteActivities) : null} toolbarActions={!isCollectionGame && libraryStage === 'packs' ? <div className="hub-toolbar ig-library-toolbar ig-journey-actions" aria-label="Collection controls"><input type="search" aria-label="Search" placeholder="Search" value={search} onChange={e => setSearch(e.target.value)} /></div> : null} game={gameFilter} level={levelFilter} stage={libraryStage} onStage={stage => navigateLibrary(stage)} onGame={id => navigateLibrary('packs', levelFilter, id)} onLevel={id => navigateLibrary(fixedGame ? 'packs' : 'games', id, fixedGame)} />{libraryStage === 'packs' && <React.Fragment>{loading ? <p>{"Loading your activities\u2026"}</p> : (userActivityCollectionsEnabled ? [{
                       title: 'The Music Learning Hub',
                       items: filteredActivities.filter(a => !activities.some(saved => saved.id === a.id))
                     }, {
@@ -1358,15 +1404,27 @@
                     }]).map(group => <section className="ig-library-group" key={group.title} aria-label={group.title}>{fixedGame ? <div className="ig-collections-heading"><h2>{group.title}</h2><p className="ig-collection-subtitle">{group.title === 'Collections' ? 'Choose a collection to start a game.' : 'Collections you have created.'}</p>{group.title === 'My Collections' && <button type="button" className="ig-primary" onClick={() => {
                           setCollectionEdit(null);
                           setView('collection');
-                        }}>{"Create"}</button>}</div> : group.title !== 'Collections' && <div className="ig-library-title"><h2>{group.title}</h2><p className="ig-library-subtitle">{group.title === 'My Activities' ? 'Your activities are saved in this browser. Download them to keep a backup.' : 'Choose the collection you want to practise.'}</p>{group.title === 'My Activities' && <button type="button" className="ig-new-folder" onClick={() => openFolderDialog()}><img src="./ui-icons/folder.svg" alt="" aria-hidden="true" />{"Create Folder"}</button>}</div>}{group.items.length || group.title === 'My Activities' && folderNames.length && !search && !gameFilter && !levelFilter ? fixedGame ? renderActivityGrid(group.items) : group.title === 'Collections' ? <div className="ig-topic-groups">{groupTopics(group.items).map(topic => <section className="ig-topic-group" key={topic.title} aria-label={topic.title}><h3 className="ig-topic-heading"><span>{topic.title}</span><span className="ig-topic-count">{topic.items.length}</span></h3>{renderActivityGrid(topic.items)}</section>)}</div> : renderCollection(group) : fixedGame && group.title === 'My Collections' ? null : search || gameFilter || levelFilter ? <p className="ig-muted">{"No matching activities."}</p> : group.title === 'My Activities' ? <div className="ig-library-empty" aria-hidden="true" /> : <p className="ig-muted">{"No activities available."}</p>}</section>)}</React.Fragment>}</div></section></React.Fragment> : selected && <React.Fragment><div className="ig-resource-layout"><div className="ig-resource-main"><section className="ig-resource-card ig-panel"><GameToolbar activity={selected} mode={mode} onCustomise={isConceptSort ? refreshSavedSorts : undefined} sortLevel={isConceptSort ? levelFilter : undefined} onRestart={() => selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag)) ? restartWordPuzzle() : setAttempt(n => n + 1)} onSkip={appConfig?.id === 'connections' ? skipConnection : undefined} onLevel={isConceptSort ? nextSort : isWordPuzzle ? selectWordPuzzleLevel : connectionsPractice ? level => nextConnection(level) : undefined} levels={connectionsPractice ? practiceLevels : undefined} /><div className="ig-resource-game">
-      {isWordPuzzle && !selected.tags?.includes('random-' + fixedGame) &&
+                        }}>{"Create"}</button>}</div> : group.title !== 'Collections' && <div className="ig-library-title"><h2>{group.title}</h2><p className="ig-library-subtitle">{group.title === 'My Activities' ? 'Your activities are saved in this browser. Download them to keep a backup.' : 'Choose the collection you want to practise.'}</p>{group.title === 'My Activities' && <button type="button" className="ig-new-folder" onClick={() => openFolderDialog()}><img src="./ui-icons/folder.svg" alt="" aria-hidden="true" />{"Create Folder"}</button>}</div>}{group.items.length || group.title === 'My Activities' && folderNames.length && !search && !gameFilter && !levelFilter ? fixedGame ? renderActivityGrid(group.items) : group.title === 'Collections' ? <div className="ig-topic-groups">{groupTopics(group.items).map(topic => <section className="ig-topic-group" key={topic.title} aria-label={topic.title}><h3 className="ig-topic-heading"><span>{topic.title}</span><span className="ig-topic-count">{topic.items.length}</span></h3>{renderActivityGrid(topic.items)}</section>)}</div> : renderCollection(group) : fixedGame && group.title === 'My Collections' ? null : search || gameFilter || levelFilter ? <p className="ig-muted">{"No matching activities."}</p> : group.title === 'My Activities' ? <div className="ig-library-empty" aria-hidden="true" /> : <p className="ig-muted">{"No activities available."}</p>}</section>)}</React.Fragment>}</div></section></React.Fragment> : selected && <React.Fragment><div className="ig-resource-layout"><div className="ig-resource-main"><section className="ig-resource-card ig-panel">{showPracticeControls&&<GameToolbar activity={selected} mode={mode} classroomPractice={classroomPractice} onCustomise={isConceptSort ? refreshSavedSorts : undefined} sortLevel={isConceptSort ? levelFilter : undefined} onRestart={() => selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag)) ? restartWordPuzzle() : setAttempt(n => n + 1)} onSkip={appConfig?.id === 'connections' ? skipConnection : undefined} onLevel={isConceptSort ? nextSort : isWordPuzzle ? selectWordPuzzleLevel : connectionsPractice ? level => nextConnection(level) : undefined} levels={connectionsPractice ? practiceLevels : undefined} />}<div className="ig-resource-game">
+      {retryRace&&mode==='group-sort'&&<div data-timed-race-toolbar=""><div ref={setRaceSubmitSlot} className="timed-race-submit-slot"/></div>}
+      {showPracticeControls && isWordPuzzle && !selected.tags?.includes('random-' + fixedGame) &&
         <h2 className="ig-fullscreen-collection-title hub-collection-toolbar-title">{window.HubCollections.clearCollectionLink(selected.title, selected.level)}</h2>}
-      <LazyScreen kind="player" mode={mode}>{() => results.ok ? selected.specialMode === 'level-test' ? <window.IGLevelTestSession key={`${selected.id}-${attempt}`} activity={selected} /> : <window.IGGameSession connectionScore={appConfig?.id === 'connections' ? connectionScore : undefined} connectionConfetti={connectionConfetti} connectionMedalEligible={connectionMedalEligible} onConnectionComplete={markConnectionGame} externalControls={true} onNextQuestion={appConfig?.id === 'connections' ? () => nextConnection() : selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag)) ? () => restartWordPuzzle() : undefined} onAudio={toggleAudio} soundPreferenceResolved={true} active={playing} onStart={() => setPlaying(true)} onRestart={appConfig?.id === 'connections' ? resetConnections : selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag)) ? () => restartWordPuzzle() : () => setAttempt(n => n + 1)} key={`${selected.id}-${mode}-${attempt}-${options.timer}-${options.shuffle}-${options.difficulty}`} activity={selected} mode={mode} options={options} onExit={() => {
+      <LazyScreen kind="player" mode={mode}>{() => results.ok ? selected.specialMode === 'level-test' ? <window.IGLevelTestSession key={`${selected.id}-${attempt}`} activity={selected} /> : <window.IGGameSession raceSubmitSlot={raceSubmitSlot} connectionScore={appConfig?.id === 'connections' ? connectionScore : undefined} connectionConfetti={connectionConfetti} connectionMedalEligible={connectionMedalEligible} onConnectionComplete={markConnectionGame} externalControls={true} onNextQuestion={!showPracticeControls?undefined:appConfig?.id === 'connections' ? () => nextConnection() : selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag)) ? () => restartWordPuzzle() : undefined} onAudio={toggleAudio} soundPreferenceResolved={true} active={playing} onStart={() => { classroomProgress?.write("playing",true); setPlaying(true); }} onRestart={retryRace ? () => setAttempt(n => n + 1) : !showPracticeControls?undefined:appConfig?.id === 'connections' ? resetConnections : selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag)) ? () => restartWordPuzzle() : () => setAttempt(n => n + 1)} key={`${selected.id}-${mode}-${attempt}-${options.timer}-${options.shuffle}-${options.difficulty}`} activity={selected} mode={mode} options={classroomSeed===null?options:{...options,classroomSeed,...(retryRace?{timer:0,shuffle:true}:{})}} onExit={() => {
                           if (selected.tags?.some(tag => ['random-crossword', 'category-crossword', 'random-wordsearch', 'category-wordsearch', 'generated-sort'].includes(tag))) restartWordPuzzle();else {
                             setPlaying(false);
                             setAttempt(n => n + 1);
                           }
-                        }} /> : <p className="ig-error">{results.reason}{" Edit content to use this template."}</p>}</LazyScreen></div>{C.instructionsFor(selected, mode) && <p className="ig-game-instructions ig-game-instructions-below" aria-label="Instructions">{C.instructionsFor(selected, mode)}</p>}</section></div></div></React.Fragment>}</main></div>{folderDialog && <Modal title="Create folder" hideTitle={true} variant="folder" onClose={() => {
+                        }} /> : <p className="ig-error">{results.reason}{" Edit content to use this template."}</p>}</LazyScreen>
+      {isConceptSort && sortEditor && <Modal inline hideTitle title={sortEditor.id ? "Edit Sort" : "Create Sort"} onClose={returnToSort}>
+        {!sortEditor.id || (sortEditorLoad?.editor === sortEditor && sortEditorLoad.activity)
+          ? <CollectionBuilder key={sortEditor.id || 'new'} level={levelFilter} initial={sortEditor.id ? sortEditorLoad.activity : null} inOverlay onBack={returnToSort} onSave={saveCollection} />
+          : <section className="ig-sort-editor-loading">
+            <window.MLH.ToolbarButton label="Cancel" onClick={returnToSort} />
+            {sortEditorLoad?.editor === sortEditor && sortEditorLoad.error
+              ? <p role="alert">{sortEditorLoad.error}</p>
+              : <p role="status">Loading sort…</p>}
+          </section>}
+      </Modal>}
+      </div>{C.instructionsFor(selected, mode) && <p className="ig-game-instructions ig-game-instructions-below" aria-label="Instructions">{C.instructionsFor(selected, mode)}</p>}</section></div></div></React.Fragment>}</main></div>{folderDialog && <Modal title="Create folder" hideTitle={true} variant="folder" onClose={() => {
           if (!folderBusy) setFolderDialog(null);
         }}><form className="ig-folder-form" onSubmit={submitFolder}><label>{"Name"}<input autoFocus={true} value={folderName} maxLength={100} onChange={event => {
                 setFolderName(event.target.value);

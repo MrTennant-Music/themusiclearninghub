@@ -38,6 +38,21 @@ test('note targets and articulation tools have keyboard semantics and unique nam
  const labels=[...html.matchAll(/aria-label="(Select note [^"]+)"/g)].map(m=>m[1]);assert.equal(labels.length,q.bars.flatMap(b=>b.notes).length);assert.equal(new Set(labels).size,labels.length);assert.match(html,/tabindex="0"/);
  const tools=server.renderToStaticMarkup(React.createElement(a.ApplyAnswers,{enabledMarkings:['accent'],selectedMarking:null}));assert.match(tools,/aria-label="Accent"/);assert.equal((tools.match(/<button /g)||[]).length,1);
 });
+test('applied notes and markings replace their blue preview with the feedback colour',()=>{
+ const a=load(),question=a.makeQuestion(['apply'],['staccato']);
+ const targets=question.target.noteIds;
+ const wrongNote=question.bars.flatMap(bar=>bar.notes).find(note=>!targets.includes(note.id)).id;
+ const render=(selectedNotes,feedback)=>server.renderToStaticMarkup(React.createElement(a.Score,{question,selectedNotes,selectedMarking:'staccato',feedback,onNoteClick(){}}));
+ const count=(markup,colour)=>[...markup.matchAll(new RegExp(`<text [^>]*fill="${colour}"`,'g'))].length;
+ assert.equal(count(render(targets,null),'#2563eb'),2*targets.length);
+ const correct=render(targets,{correct:true});
+ assert.equal(count(correct,'#2563eb'),0);
+ assert.equal(count(correct,'#16a34a'),2*targets.length);
+ const incorrect=render([wrongNote],{correct:false});
+ assert.equal(count(incorrect,'#2563eb'),0);
+ assert.equal(count(incorrect,'#dc2626'),2);
+ assert.equal(count(incorrect,'#16a34a'),2*targets.length);
+});
 test('audio playback applies staccato/legato durations and accents exactly the selected note',async()=>{
  const a=load(),source=fs.readFileSync('articulationmarkings.html','utf8'),start=source.indexOf('  async function playAural()'),end=source.indexOf('  return <div className={window.MLH.shell.pageShellClass}>',start);
  for(const id of ['staccato','slur','accent']){

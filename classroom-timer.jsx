@@ -84,12 +84,18 @@ function TimerCard({timer,now,options,dispatch,patch,remove,canRemove,preview}) 
   const value=CT.valueAt(timer,now),isTimer=timer.mode==='timer',editing=isTimer&&timer.status==='idle';
   const fraction=isTimer?Math.min(1,value/Math.max(1,timer.duration)):(value%60000)/60000;
   const angle=fraction*Math.PI*2-Math.PI/2;
-  const parts=[Math.floor(timer.duration/3600000),Math.floor(timer.duration/60000)%60,Math.floor(timer.duration/1000)%60];
+  const parts=[Math.floor(timer.duration/60000),Math.floor(timer.duration/1000)%60];
+  const limits=[Math.floor(CT.MAX_DURATION/60000),59];
   const title=timer.label.trim()||(isTimer?'Timer':'Stopwatch');
-  const precise=options.milliseconds||value>=3600000;
+  const readout=CT.format(value,options.milliseconds,isTimer);
+  const precise=readout.length>5;
   const alarmMenuId=`alarm-menu-${timer.id}`;
   const completionMessage=timer.status==='finished'&&!timer.acknowledged?`${title} finished`:timer.alarmMode==='alert'&&timer.alertUntil>now?`${title} finished and restarted`:'';
-  function duration(index,input){const updated=[...parts];updated[index]=Math.max(0,Math.min(index===0?99:59,Math.floor(Number(input)||0)));dispatch(timer.id,'duration',updated[0]*3600000+updated[1]*60000+updated[2]*1000);}
+  function duration(index,input){
+    const updated=[...parts];
+    updated[index]=Math.max(0,Math.min(limits[index],Math.floor(Number(input)||0)));
+    dispatch(timer.id,'duration',updated[0]*60000+updated[1]*1000);
+  }
   return <section className={`ct-card ${timer.status==='finished'?'ct-finished':''}`} aria-label={title}>
     <div className="ct-card-head">
       <input className="ct-name" aria-label={`Label for ${timer.id}`} maxLength="60" value={timer.label} onChange={e=>patch(timer.id,{label:e.target.value})}/>
@@ -114,7 +120,7 @@ function TimerCard({timer,now,options,dispatch,patch,remove,canRemove,preview}) 
         <g className="ct-ring-art">
         <circle className="ct-dial-track" cx="150" cy="150" r="133" fill="none" strokeWidth="7"/>
         <circle className="ct-progress" cx="150" cy="150" r="133" fill="none" strokeWidth="7" strokeLinecap="round" strokeDasharray={`${fraction*835.664} 835.664`} transform="rotate(-90 150 150)"/>
-        {Array.from({length:60},(_,i)=><line key={i} className={`ct-tick ${i%5===0?'ct-major':''}`} x1="150" x2="150" y1="27" y2={i%5===0?'36':'31'} transform={`rotate(${i*6} 150 150)`}/>)}
+        {Array.from({length:12},(_,i)=><line key={i} className="ct-tick" x1="150" x2="150" y1="27" y2="36" transform={`rotate(${i*30} 150 150)`}/>)}
         <circle cx={150+133*Math.cos(angle)} cy={150+133*Math.sin(angle)} r="5" fill="#111" stroke="white" strokeWidth="2"/>
         </g>
         <g className="ct-pie-art">
@@ -123,8 +129,8 @@ function TimerCard({timer,now,options,dispatch,patch,remove,canRemove,preview}) 
         </g>
       </svg>
       <div className="ct-readout">
-        {editing?<div className="ct-duration">{['Hours','Minutes','Seconds'].map((label,i)=><React.Fragment key={label}>{i>0&&<span aria-hidden="true">:</span>}<label><input type="number" min="0" max={i===0?99:59} aria-label={`${label} for ${title}`} value={String(parts[i]).padStart(2,'0')} onFocus={e=>e.target.select()} onChange={e=>duration(i,e.target.value)}/>{label}</label></React.Fragment>)}</div>
-          :<output role="timer" aria-live="off" className={`ct-time ${precise?'ct-precise':''}`} aria-label={`${title}: ${CT.format(value,options.milliseconds,isTimer)}`}>{CT.format(value,options.milliseconds,isTimer)}</output>}
+        {editing?<div className="ct-duration">{['Minutes','Seconds'].map((label,i)=><React.Fragment key={label}>{i>0&&<span aria-hidden="true">:</span>}<label><input className={parts[i]>=100?'ct-duration-wide':undefined} type="number" min="0" max={limits[i]} aria-label={`${label} for ${title}`} value={String(parts[i]).padStart(2,'0')} onFocus={e=>e.target.select()} onChange={e=>duration(i,e.target.value)}/>{label}</label></React.Fragment>)}</div>
+          :<output role="timer" aria-live="off" className={`ct-time ${precise?'ct-precise':''}`} aria-label={`${title}: ${readout}`}>{readout}</output>}
         <div className="ct-status" role="status">{timer.status==='paused'?'Paused':timer.status==='running'?(isTimer?'Remaining':'Elapsed'):''}</div>
       </div>
     </div>

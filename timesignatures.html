@@ -5,28 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Time Signatures</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/time-signatures-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/time-signatures-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js?v=20260629"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <style>
     .escape-time-signature > svg { width: 1120px; margin-inline: auto; }
     .escape-time-signature-glyph { width: 40px; height: 40px; overflow: visible; }
+    .time-signatures-customise > .hub-menu-scroll { max-height: none; }
   </style>
   <style>
     @font-face {
@@ -42,14 +44,15 @@
       text-rendering: geometricPrecision;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
 
   <script type="text/x-mlh-jsx-source" data-runtime="timesignatures-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 
 const SVG = { width: 920, height: 430 };
@@ -224,7 +227,7 @@ const RHYTHM_INFO = {
   "dotted-crotchet-rest": { beats: 1.5, spacing: 3, rest: true },
 };
 
-function randomIndex(length) { return Math.floor(Math.random() * length); }
+function randomIndex(length) { return Math.floor(exerciseRandom() * length); }
 function randomItem(items) { return items[randomIndex(items.length)]; }
 function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
 function rhythmInfo(rhythm) { return RHYTHM_INFO[rhythm] ?? RHYTHM_INFO.crotchet; }
@@ -436,16 +439,16 @@ function nearestMelodicIndex(previousIndex, stepwiseNoRepeat = false) {
 }
 
 function makeCompoundRhythms(timeSignature, barIndex, restsEnabled = true, enabledRhythms = levelEnabledMap("H"), totalBars = BAR_COUNT) {
-  if (barIndex === totalBars - 1 && timeSignature.id === "6/8" && patternAllowedForSignature(["dotted-minim"], timeSignature, enabledRhythms, restsEnabled) && Math.random() < 0.45) return ["dotted-minim"];
+  if (barIndex === totalBars - 1 && timeSignature.id === "6/8" && patternAllowedForSignature(["dotted-minim"], timeSignature, enabledRhythms, restsEnabled) && exerciseRandom() < 0.45) return ["dotted-minim"];
   const basePatterns = COMPOUND_GROUP_PATTERNS.filter((pattern) => patternAllowedForSignature(pattern, timeSignature, enabledRhythms, restsEnabled));
   const basePattern = basePatterns.length ? randomItem(basePatterns)[0] : "dotted-crotchet";
   const groups = Array.from({ length: timeSignature.compoundGroups }, () => basePattern);
-  if (restsEnabled && patternAllowedForSignature(["dotted-crotchet-rest"], timeSignature, enabledRhythms, restsEnabled) && Math.random() < 0.22) groups[randomIndex(groups.length)] = "dotted-crotchet-rest";
-  if (patternAllowedForSignature(["quaver-group-3"], timeSignature, enabledRhythms, restsEnabled) && Math.random() < 0.5) {
+  if (restsEnabled && patternAllowedForSignature(["dotted-crotchet-rest"], timeSignature, enabledRhythms, restsEnabled) && exerciseRandom() < 0.22) groups[randomIndex(groups.length)] = "dotted-crotchet-rest";
+  if (patternAllowedForSignature(["quaver-group-3"], timeSignature, enabledRhythms, restsEnabled) && exerciseRandom() < 0.5) {
     const available = groups.map((group, index) => ({ group, index })).filter((item) => item.group === "dotted-crotchet");
     if (available.length) groups[randomItem(available).index] = "quaver-group-3";
   }
-  if ((patternAllowedForSignature(["crotchet-quaver"], timeSignature, enabledRhythms, restsEnabled) || patternAllowedForSignature(["quaver-crotchet"], timeSignature, enabledRhythms, restsEnabled)) && Math.random() < 0.4) {
+  if ((patternAllowedForSignature(["crotchet-quaver"], timeSignature, enabledRhythms, restsEnabled) || patternAllowedForSignature(["quaver-crotchet"], timeSignature, enabledRhythms, restsEnabled)) && exerciseRandom() < 0.4) {
     const available = groups.map((group, index) => ({ group, index })).filter((item) => item.group === "dotted-crotchet");
     if (available.length) {
       const options = ["crotchet-quaver", "quaver-crotchet"].filter((token) => patternAllowedForSignature([token], timeSignature, enabledRhythms, restsEnabled));
@@ -457,10 +460,10 @@ function makeCompoundRhythms(timeSignature, barIndex, restsEnabled = true, enabl
 
 function applyRareSimpleRests(pattern, restsEnabled = true) {
   if (!restsEnabled) return pattern;
-  if (Math.random() > 0.35 || pattern.some((rhythm) => rhythm.includes("semiquaver"))) return pattern;
+  if (exerciseRandom() > 0.35 || pattern.some((rhythm) => rhythm.includes("semiquaver"))) return pattern;
   const result = [...pattern];
   const crotchetIndexes = result.map((rhythm, index) => rhythm === "crotchet" ? index : -1).filter((index) => index >= 0);
-  if (crotchetIndexes.length && Math.random() < 0.6) {
+  if (crotchetIndexes.length && exerciseRandom() < 0.6) {
     result[randomItem(crotchetIndexes)] = "crotchet-rest";
     return result;
   }
@@ -480,7 +483,7 @@ function makeSimpleRhythms(timeSignature, barIndex, restsEnabled = true, enabled
   const safePatterns = patterns.length ? patterns : [["crotchet"]];
   const semiquaverPatterns = patterns.filter((pattern) => pattern.some((rhythm) => rhythm.includes("semiquaver")));
   const regularPatterns = safePatterns.filter((pattern) => !pattern.some((rhythm) => rhythm.includes("semiquaver")));
-  const pool = semiquaverPatterns.length && Math.random() < 0.16 ? semiquaverPatterns : regularPatterns;
+  const pool = semiquaverPatterns.length && exerciseRandom() < 0.16 ? semiquaverPatterns : regularPatterns;
   const finalPool = timeSignature.beatsPerBar === 4 && barIndex === totalBars - 1 && patternAllowedForSignature(["semibreve"], timeSignature, enabledRhythms, restsEnabled) ? [["semibreve"], ...pool] : pool;
   const chosen = randomItem(finalPool.length ? finalPool : safePatterns);
   return applyRareSimpleRests(chosen, restsEnabled);
@@ -544,7 +547,7 @@ function finishQuestion({ activeLevel, key, timeSignature, bars, questionType = 
   removeLargeLeaps(bars, key);
   enforceFastRhythmStepwiseMotion(bars, key);
   normaliseAminorAccidentals(bars, key);
-  return { id: Math.random().toString(36).slice(2), activeLevel, questionType, key, timeSignature, givenTimeSignature, barsPerSystem, prompt, bars };
+  return { id: exerciseRandom().toString(36).slice(2), activeLevel, questionType, key, timeSignature, givenTimeSignature, barsPerSystem, prompt, bars };
 }
 
 function makeTimeChangeQuestion(activeLevel, enabledRhythms, restsEnabled, level, key, barCount = BAR_COUNT) {
@@ -578,7 +581,7 @@ function makeTimeChangeQuestion(activeLevel, enabledRhythms, restsEnabled, level
 function makeQuestion(activeLevel = "N3", enabledRhythms = levelEnabledMap("N3"), restsEnabled = false, maximumBars = BAR_COUNT) {
   const level = LEVELS[activeLevel] || LEVELS.N3;
   const key = randomKey(level, enabledRhythms);
-  if (activeLevel === "AH" && enabledRhythms["time-changes"] && Math.random() < 0.3) {
+  if (activeLevel === "AH" && enabledRhythms["time-changes"] && exerciseRandom() < 0.3) {
     const timeChangeQuestion = makeTimeChangeQuestion(activeLevel, enabledRhythms, restsEnabled, level, key, maximumBars);
     if (timeChangeQuestion) return timeChangeQuestion;
   }
@@ -717,7 +720,7 @@ function TimeSignaturePlaceholder({ signature, x, systemTop }) {
       rx="7"
       ry="7"
       fill="none"
-      stroke="#78716c"
+      stroke="#000"
       strokeWidth="1.6"
     />
   );
@@ -1090,7 +1093,7 @@ function MenuRestGlyph() {
 
 function MenuTimeChangeGlyph() {
   return (
-    <span className="relative -left-[4px] top-px inline-flex h-9 w-9 items-center justify-center">
+    <span className="relative -left-[4px] -top-[2px] inline-flex h-9 w-9 items-center justify-center">
       <svg viewBox="0 0 52 36" className="h-9 w-9 overflow-visible text-stone-800" aria-hidden="true">
         <text className="music-symbol" x="16" y="15" textAnchor="middle" fontSize="20" fill="currentColor">{sharedSymbolForKey("timeSig2")}</text>
         <text className="music-symbol" x="16" y="31" textAnchor="middle" fontSize="20" fill="currentColor">{sharedSymbolForKey("timeSig4")}</text>
@@ -1107,7 +1110,7 @@ function IconOnlyToggleButton({ glyph, label, checked, onChange, visibleLabel = 
       type="button"
       onClick={onChange}
       className={`hub-toggle-row ${className}`}
-      style={{ marginBottom: 0, height: tall ? "56px" : "44px", minHeight: tall ? "56px" : "44px", padding: tall ? "7px 64px 7px 10px" : "10px 64px 10px 14px", overflow: "visible", position: "relative" }}
+      style={{ marginBottom: 0, padding: tall ? "7px 64px 7px 10px" : "10px 64px 10px 14px", overflow: "visible", position: "relative" }}
       aria-label={`Toggle ${label}`}
       title={label}
     >
@@ -1255,7 +1258,7 @@ function useInjectedStyles() {
       button:hover { transform: translateY(-1px) scale(1.01); filter: brightness(1.08); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
       button:active { transform: scale(0.96); filter: brightness(0.92); }
       button:disabled { cursor: not-allowed; opacity: 0.5; }
-      button:focus-visible { outline: 2px solid rgba(22,163,74,0.35); outline-offset: 2px; }
+      button:focus-visible { outline: 2px solid var(--mlh-focus-color, #2563eb); outline-offset: 2px; }
       @keyframes medalShine { 0%,100% { transform: scale(1) rotate(-4deg); filter: drop-shadow(0 0 0 rgba(250,204,21,0)); } 50% { transform: scale(1.16) rotate(4deg); filter: drop-shadow(0 0 10px rgba(250,204,21,.9)); } }
       @keyframes confettiDrop { 0% { transform: translateY(-12px) rotate(0deg); opacity: 0; } 12% { opacity: 1; } 100% { transform: translateY(72px) rotate(260deg); opacity: 0; } }
       @keyframes incorrectDropShake { 0% { transform: translateY(-28px); opacity: 0; } 55% { transform: translateY(0); opacity: 1; } 68% { transform: translateX(-5px); } 78% { transform: translateX(5px); } 88% { transform: translateX(-3px); } 100% { transform: translateX(0); opacity: 1; } }
@@ -1408,7 +1411,7 @@ function App() {
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader profileState={{ activeLevel, enabledRhythms, restsEnabled, showRhythmGuide }} icon={ASSET.appIcon} title="Time Signatures" subtitle="Identify time signatures." profileTitle="Time Signatures" profileLabel={profileLabel} profileShareUrl={profileShareUrl} worksheetConfig={() => ({ version: 1, activityId: "timesig", sourceUrl: window.location.href, settings: { level: activeLevel, enabledRhythms, restsEnabled } })}>
+      <window.MLH.AppHeader classroomOriginalFormat={!profileMatchesLevel} profileState={{ activeLevel, enabledRhythms, restsEnabled, showRhythmGuide }} icon={ASSET.appIcon} title="Time Signatures" subtitle="Identify time signatures." profileTitle="Time Signatures" profileLabel={profileLabel} profileShareUrl={profileShareUrl} worksheetConfig={() => ({ version: 1, activityId: "timesig", sourceUrl: window.location.href, settings: { level: activeLevel, enabledRhythms, restsEnabled } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalEligible={medalEligible} />
       </window.MLH.AppHeader>
 
@@ -1436,14 +1439,14 @@ function App() {
                     onClick={() => { setLevelOpen(false); setCustomiseOpen((value) => !value); }}
                     dataMenuTrigger={true}
                   />
-                  {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
+                  {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="time-signatures-customise" dataMenuPanel={true}>
                     <MenuRows activeLevel={activeLevel} enabledRhythms={enabledRhythms} setEnabledRhythms={setEnabledRhythms} restsEnabled={restsEnabled} setRestsEnabled={setRestsEnabled} showRhythmGuide={showRhythmGuide} setShowRhythmGuide={setShowRhythmGuide} newQuestion={newQuestion} />
                   </window.MLH.MenuPanel>}
                 </div>
               </div>
             }
             feedback={<FeedbackBanner feedback={feedback} fading={feedbackFading} />}
-            right={<window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
+            right={<window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
           />
 
           {showRhythmGuide && (
@@ -1508,7 +1511,7 @@ if (ReactDOM.createRoot) {
 } else {
   ReactDOM.render(app, rootElement);
 }
-  </script><script src="./generated-runtimes/timesignatures-1.js?v=1997f2f374ca"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/timesignatures-1.js?v=0b21bae42d84"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

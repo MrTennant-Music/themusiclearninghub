@@ -71,7 +71,7 @@ tool(['MC-0015','MC-0019','MC-0017','MC-0018'],'Melodic Dictation','melodicdicta
 tool(['MC-0096'],'Melodic Dictation','melodicdictation.html','N4');
 tool(['MC-0099','MC-0102'],'Rhythmic Dictation','rhythmicdictation.html','N5');
 tool(['MC-0105'],'Melodic Dictation','melodicdictation.html','AH');
-tool(['MC-0247'],'Triplets','triplets.html','H');
+tool(['MC-0247'],'Rhythmic Dictation','rhythmicdictation.html','H','identifyTriplet');
 tool(['MC-0247'],'Rhythmic Dictation','rhythmicdictation.html','H');
 tool(['MC-0165','MC-0169'],'Cadences','cadences.html','N5');
 tool(['MC-0232','MC-0238'],'Cadences','cadences.html','H');

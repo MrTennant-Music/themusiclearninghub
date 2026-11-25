@@ -9,7 +9,7 @@
   const sortGroupColours = ['#2563eb', '#7e22ce', '#a16207', '#0f766e', '#be185d', '#4338ca'];
   const cardColours = ['#dc2626', '#c2410c', '#a16207', '#15803d', '#0369a1', '#4338ca', '#7e22ce', '#be185d'];
   const norm = value => String(value || '').normalize('NFKC').trim().toLowerCase().replace(/\s+/g, ' ');
-  const mix = values => window.IGCore && window.IGCore.shuffle ? window.IGCore.shuffle(values.slice()) : values.slice().sort(() => Math.random() - .5);
+  const mix = (values, random = Math.random) => window.IGCore && window.IGCore.shuffle ? window.IGCore.shuffle(values.slice(), random) : values.slice().sort(() => random() - .5);
   const Media = ({ media }) => window.IGMedia ? <window.IGMedia media={media} /> : media && media.type === 'image' ? <img src={media.src} alt={media.name || ''} /> : null;
   const words = value => String(value || '').trim().split(/\s+/).filter(Boolean);
   const letters = value => String(value || '').normalize('NFKC').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -138,14 +138,24 @@
     useEffect(() => () => { for (const job of state.current.jobs) clearTimeout(job.native); state.current.jobs.clear(); }, []);
     return { schedule(callback, delay) { const job = { callback, remaining: delay, started: Date.now(), native: null }; state.current.jobs.add(job); arm(job); return job; }, cancel };
   }
-  function useSession(onComplete, onProgress, total) {
-    const records = useRef([]), ended = useRef(false);
+  const classroomProgress = () => window.MLH?.classroomActivities?.progressStorage?.();
+  function useClassroomState(key, initial) {
+    const progress = classroomProgress();
+    const [value, setValue] = useState(() => progress?.read(key, initial) ?? initial);
+    useLayoutEffect(() => { progress?.write(key, value); }, [key, value]);
+    return [value, setValue];
+  }
+  function answerRecord(item, answer, correct) {
+    return { ...(item.id ? { itemId: item.id } : {}), prompt: item.prompt, expected: item.answer, answer: String(answer), correct: !!correct };
+  }
+  function useSession(onComplete, onProgress, total, restoredAnswers = []) {
+    const records = useRef(restoredAnswers), ended = useRef(false);
     const [done, setDone] = useState(false);
     const summary = () => ({ correct: records.current.filter(r => r.correct).length, total: Math.max(total || 0, records.current.length), answers: records.current.slice() });
     useEffect(() => { if (onProgress) onProgress(summary()); }, []);
     function add(item, answer, correct) {
       if (ended.current) return;
-      records.current.push({ ...(item.id ? { itemId: item.id } : {}), prompt: item.prompt, expected: item.answer, answer: String(answer), correct: !!correct });
+      records.current.push(answerRecord(item, answer, correct));
       if (onProgress) onProgress(summary());
     }
     function finish(options = {}) { if (!ended.current) { ended.current = true; setDone(true); onComplete({ ...summary(), ...(options?.openReview ? { openReview: true } : {}) }); } }
@@ -370,8 +380,10 @@
     const tileText = value => { const text = String(value || ''); return text.charAt(0).toLocaleUpperCase('en-GB') + text.slice(1); };
     const groupKey = item => norm(item.group);
     const groups = useMemo(() => [...new Set(items.map(groupKey))], [activity]);
-    const [order, setOrder] = useState(() => mix(items.map((_, index) => index)));
-    const [selected, setSelected] = useState([]), [playedSolved, setSolved] = useState([]), [revealing, setRevealing] = useState(null), [mistake, setMistake] = useState([]), [notice, setNotice] = useState('');
+    const [order, setOrder] = useState(() => mix(items.map((_, index) => index), options.classroomSeed == null ? undefined : window.MLH.classroomActivities.random(options.classroomSeed)));
+    const storage = classroomProgress(), progressKey = 'connections:' + activity.id;
+    const [checkpoint] = useState(() => storage?.read(progressKey, null));
+    const [selected, setSelected] = useState([]), [playedSolved, setSolved] = useState(checkpoint?.solved ?? []), [revealing, setRevealing] = useState(null), [mistake, setMistake] = useState([]), [notice, setNotice] = useState('');
     const [reviewSolved,setReviewSolved]=useState([]);
     useEffect(()=>{onNoticeChange?.(notice);},[notice,onNoticeChange]);
     const reviewing=!!options.reviewing;
@@ -391,11 +403,25 @@
       handle=setTimeout(revealRow,250);
       return ()=>clearTimeout(handle);
     },[reviewing,groups]);
-    const attempts = useRef(0), lives = useRef(4), timer = useRef(null), noticeTimer = useRef(null), finishing = useRef(false);
-    const session = useSession(result => onComplete({...result, attempts:attempts.current}), onProgress, 4);
+    const attempts = useRef(checkpoint?.attempts ?? 0), lives = useRef(checkpoint?.lives ?? 4), timer = useRef(null), noticeTimer = useRef(null), finishing = useRef(false);
+    function groupAnswer(group) {
+      const members = items.filter(item => groupKey(item) === group);
+      return { prompt: members[0].group, answer: members.map(item => item.prompt || item.media?.name || 'Media').join(', ') };
+    }
+    const restoredGroups = (checkpoint?.solved ?? []).filter(group => groups.includes(group));
+    const session = useSession(result => onComplete({...result, attempts:attempts.current}), onProgress, 4,
+      restoredGroups.map(groupAnswer).map(item => answerRecord(item,item.answer,true)));
+    useEffect(() => {
+      if (!checkpoint) return;
+      onLivesChange?.(lives.current);
+      if (lives.current === 0 || restoredGroups.length === 4) session.finish();
+    }, []);
     useEffect(() => () => { clock.cancel(timer.current); clock.cancel(noticeTimer.current); }, []);
     const valid = items.length === 16 && groups.length === 4 && groups.every(group => group && items.filter(item => groupKey(item) === group).length === 4);
     if (!valid) return <p className="ig-learning-empty">Connection needs four groups of four cards. Edit this activity to set up its groups.</p>;
+    function saveProgress(solvedGroups) {
+      storage?.write(progressKey, { solved: solvedGroups, lives: lives.current, attempts: attempts.current });
+    }
     function select(index) {
       if (reviewing || finishing.current || mistake.length || solved.includes(groupKey(items[index]))) return;
       onInteractionStart?.();
@@ -413,6 +439,7 @@
         const failedCards = selected.slice();
         const remainingLives = Math.max(0, lives.current - 1);
         lives.current = remainingLives;
+        saveProgress(playedSolved);
         if(remainingLives===0)onSubmitAnswers?.();
         onLivesChange?.(remainingLives);
         setMistake(failedCards);
@@ -429,12 +456,13 @@
         return;
       }
       if(solved.length===3)onSubmitAnswers?.();
+      saveProgress([...playedSolved, group]);
       clock.cancel(noticeTimer.current);
       const revealOrder = selected.slice().sort((a,b) => order.indexOf(a) - order.indexOf(b));
       finishing.current = true;
       setRevealing({ group, indices: revealOrder, count: 0 }); setSelected([]); setNotice('');
       onFeedbackReveal?.(true);
-      session.add({prompt:items[selected[0]].group,answer:items.filter(item=>groupKey(item)===group).map(item=>item.prompt || item.media?.name || 'Media').join(', ')},selected.map(index=>items[index].prompt || items[index].media?.name || 'Media').join(', '),true);
+      session.add(groupAnswer(group),selected.map(index=>items[index].prompt || items[index].media?.name || 'Media').join(', '),true);
       let revealed = 0;
       const revealNextCard = () => {
         revealed++;
@@ -504,13 +532,16 @@
     }, [children, compact]);
     return <span className="ig-sort-label" ref={label}>{String(children || '').split(/\s+/).map((word,index)=><React.Fragment key={index}>{index>0?' ':''}<span className="ig-sort-word">{word}</span></React.Fragment>)}</span>;
   }
-  function Sort({ activity, options = {}, onComplete, onProgress, onFeedbackReveal, onSubmitAnswers, mode = 'group-sort' }) {
+  function Sort({ activity, options = {}, onComplete, onProgress, onFeedbackReveal, onSubmitAnswers, raceSubmitSlot, mode = 'group-sort' }) {
     const clock = useGameTimeouts(options.active !== false);
-    const items = useMemo(() => mix(activity.items), [activity]), groups = activity.sortRecipe?.groups || [...new Set(activity.items.map(i => i.group || i.answer))];
+    const items = useMemo(() => mix(activity.items, options.classroomSeed == null ? undefined : window.MLH.classroomActivities.random(options.classroomSeed)), [activity, options.classroomSeed]), groups = activity.sortRecipe?.groups || [...new Set(activity.items.map(i => i.group || i.answer))];
     const styleSort = activity.sortRecipe?.type === 'styles';
     const excerptPlayer = useRef(null);
     const [playingExcerpt, setPlayingExcerpt] = useState(null), [excerptError, setExcerptError] = useState('');
-    const [selected, setSelected] = useState(null), [placed, setPlaced] = useState({}), [placementSlots, setPlacementSlots] = useState({}), [submitted, setSubmitted] = useState(false), [revealedCount, setRevealedCount] = useState(0), [dropTarget, setDropTarget] = useState(null), [nestingIndex, setNestingIndex] = useState(null), [pickupPlaceholder, setPickupPlaceholder] = useState(null);
+    const [selected, setSelected] = useState(null);
+    const [placed, setPlaced] = useClassroomState('sort-placements:' + activity.id, {});
+    const [placementSlots, setPlacementSlots] = useClassroomState('sort-order:' + activity.id, {});
+    const [submitted, setSubmitted] = useState(false), [revealedCount, setRevealedCount] = useState(0), [dropTarget, setDropTarget] = useState(null), [nestingIndex, setNestingIndex] = useState(null), [pickupPlaceholder, setPickupPlaceholder] = useState(null);
     const groupLimits = useMemo(() => {
       const largestGroup = Math.max(0, ...groups.map(group => activity.items.filter(item => (item.group || item.answer) === group).length));
       const capacity=Math.min(activity.sortRecipe?.type==='facts'?activity.items.length:window.IGCore.LIMITS.sortGroupItems,Math.max(4,Math.ceil(largestGroup/4)*4,...groups.map(group=>Object.values(placed).filter(g=>g===group).length+1)));
@@ -824,7 +855,7 @@
     function submit() {
       if (submitted || Object.keys(placed).length !== items.length) return;
       excerptPlayer.current?.pause();
-      onSubmitAnswers?.();
+      onSubmitAnswers?.({correct:marks.filter(mark=>mark.correct).length,total:items.length});
       setSubmitted(true); setSelected(null);
       function revealNext(index) {
         revealTimer.current = clock.schedule(() => {
@@ -872,7 +903,10 @@
           })}{pickupPlaceholder?.group === group && <div className="ig-sort-pickup-placeholder" aria-hidden="true" style={{ left: `${pickupPlaceholder.left}px`, top: `${pickupPlaceholder.top}px`, width: `${pickupPlaceholder.width}px`, height: `${pickupPlaceholder.height}px` }} />}</div>
         </section>;
       })}</div>
-      <button type="button" className="ig-learning-primary ig-check-action" disabled={submitted || Object.keys(placed).length !== items.length} onClick={submit}>Submit</button>
+      {raceSubmitSlot
+        ? ReactDOM.createPortal(<button type="button" className={window.MLH.ConfirmButtonClass}
+            disabled={options.active === false || submitted || remaining !== 0} onClick={submit}>Submit</button>, raceSubmitSlot)
+        : <button type="button" className="ig-learning-primary ig-check-action" disabled={submitted || remaining !== 0} onClick={submit}>Submit</button>}
     </div>{styleSort && <audio ref={excerptPlayer} hidden preload="none" onPause={event=>{if(event.currentTarget.paused)setPlayingExcerpt(null);}} onEnded={()=>setPlayingExcerpt(null)} />}{excerptError && <p role="status" className="ig-error">{excerptError}</p>}</>;
   }
   function Rank({ activity, options = {}, onComplete, onProgress, onFeedbackReveal, onSubmitAnswers }) {
@@ -986,24 +1020,25 @@
     if (!item) return <Empty />;
     return <div className="ig-learning"><Prompt item={item} /><div className="ig-hangman-lives" aria-label={`${6 - wrong.length} chances left`}>{Array.from({ length: 6 }, (_, i) => <span key={i} className={i < wrong.length ? 'ig-life-lost' : ''}>●</span>)}</div><div className="ig-hangman-word">{[...target].map((c, i) => <span key={i}>{!/[A-Z0-9]/.test(c) || guessed.includes(c) || result !== null ? c : '_'}</span>)}</div><div className="ig-alphabet">{[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'].map(c => <button type="button" key={c} disabled={guessed.includes(c) || result !== null} className={guessed.includes(c) ? target.includes(c) ? 'ig-correct' : 'ig-incorrect' : ''} onClick={() => guess(c)}>{c}</button>)}</div>{result !== null && <Feedback correct={result} expected={item.answer} last={index === activity.items.length - 1} onNext={() => { if (index === activity.items.length - 1) session.finish(); else { setIndex(n => n + 1); setGuessed([]); setResult(null); } }} />}</div>;
   }
-  function makeWordsearch(items) {
+  function makeWordsearch(items, random = Math.random) {
+    const shuffle = values => mix(values, random);
     const entries = [...new Map(items.map(item => [letters(item.answer), item])).entries()].filter(([word]) => word.length && word.length <= 24).slice(0, window.IGCore.LIMITS.wordsearchItems);
     const size = Math.max(10, Math.min(24, Math.max(0, ...entries.map(([w]) => w.length)) + 2)), grid = Array.from({ length: size }, () => Array(size).fill('')), placed = [];
     entries.sort((a, b) => b[0].length - a[0].length).forEach(([word, item]) => {
       let added = false;
-      const starts = mix(Array.from({ length: size * size }, (_, i) => [Math.floor(i / size), i % size]));
+      const starts = shuffle(Array.from({ length: size * size }, (_, i) => [Math.floor(i / size), i % size]));
       // Choose a direction before searching positions so long words are not
       // biased towards horizontal/vertical placements near the grid edges.
-      const diagonals = mix([[1, 1], [-1, 1], [-1, -1], [1, -1]]);
-      const straight = mix([[0, 1], [1, 0], [0, -1], [-1, 0]]);
-      const directions = placed.length === 0 ? [...diagonals, ...straight] : mix([...diagonals, ...straight]);
+      const diagonals = shuffle([[1, 1], [-1, 1], [-1, -1], [1, -1]]);
+      const straight = shuffle([[0, 1], [1, 0], [0, -1], [-1, 0]]);
+      const directions = placed.length === 0 ? [...diagonals, ...straight] : shuffle([...diagonals, ...straight]);
       outer: for (const [dr, dc] of directions) for (const [row, col] of starts) {
         const cells = [...word].map((c, i) => ({ row: row + dr * i, col: col + dc * i, c }));
         if (cells.every(p => p.row >= 0 && p.row < size && p.col >= 0 && p.col < size && (!grid[p.row][p.col] || grid[p.row][p.col] === p.c))) { cells.forEach(p => { grid[p.row][p.col] = p.c; }); placed.push({ word, item, cells }); added = true; break outer; }
       }
       if (!added) { const row = grid.length; grid.push(Array(size).fill('')); const cells = [...word].map((c, col) => ({ row, col, c })); cells.forEach(p => { grid[p.row][p.col] = p.c; }); placed.push({ word, item, cells }); }
     });
-    grid.forEach(row => row.forEach((c, i) => { if (!c) row[i] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[Math.floor(Math.random() * 26)]; }));
+    grid.forEach(row => row.forEach((c, i) => { if (!c) row[i] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[Math.floor(random() * 26)]; }));
     return { grid, placed, size };
   }
   function wordsearchHighlights(placed, found, foundPaths = {}) {
@@ -1023,8 +1058,12 @@
     return { words, cells };
   }
   function Wordsearch({ activity, options = {}, onComplete, onProgress }) {
-    const puzzle = useMemo(() => makeWordsearch(activity.items), [activity]), [selected, setSelected] = useState([]), [found, setFound] = useState([]), [foundPaths, setFoundPaths] = useState({});
-    const session = useSession(onComplete, onProgress, puzzle.placed.length);
+    const puzzle = useMemo(() => makeWordsearch(activity.items, options.classroomSeed == null ? undefined : window.MLH.classroomActivities.random(options.classroomSeed)), [activity, options.classroomSeed]);
+    const [selected, setSelected] = useState([]);
+    const [foundPaths, setFoundPaths] = useClassroomState('wordsearch:' + activity.id, {});
+    const found = Object.keys(foundPaths);
+    const session = useSession(onComplete, onProgress, puzzle.placed.length,
+      puzzle.placed.filter(entry => found.includes(entry.word)).map(({ item }) => answerRecord(item, item.answer, true)));
     const highlights = useMemo(() => wordsearchHighlights(puzzle.placed, found, foundPaths), [puzzle, found, foundPaths]);
     useEffect(() => {
       if (puzzle.placed.length && found.length === puzzle.placed.length) session.finish();
@@ -1035,7 +1074,6 @@
       const candidate = path.map(cell => puzzle.grid[cell.row][cell.col]).join('');
       const entry = puzzle.placed.find(value => !found.includes(value.word) && (value.word === candidate || value.word === [...candidate].reverse().join('')));
       if (!entry) return false;
-      setFound(values => values.includes(entry.word) ? values : [...values, entry.word]);
       setFoundPaths(values => ({ ...values, [entry.word]: path }));
       setSelected([]);
       session.add(entry.item, entry.item.answer, true);
@@ -1132,12 +1170,20 @@
   function Crossword({ activity, options = {}, onComplete, onProgress }) {
     const clock = useGameTimeouts(options.active !== false);
     const puzzle = useMemo(() => makeCrossword(activity.items), [activity]);
-    const [values, setValues] = useState({}), [solved, setSolved] = useState([]), [active, setActive] = useState(null), [activeCell, setActiveCell] = useState(null);
-    const session = useSession(onComplete, onProgress, puzzle.placed.length), inputs = useRef({}), currentValues = useRef({}), solvedWords = useRef(new Set()), finishTimer = useRef(null);
-    const highlights = useMemo(() => wordsearchHighlights(puzzle.placed, solved.map(index => puzzle.placed[index].word)), [puzzle, solved]);
     const keyFor = cell => `${cell.row},${cell.col}`;
+    const [values, setValues] = useClassroomState('crossword:' + activity.id, {});
+    const matches = (word, letters) => word.positions.map(cell => letters[keyFor(cell)] || ' ').join('') === word.word;
+    const [solved, setSolved] = useState(() => puzzle.placed.flatMap((word,index) => matches(word,values) ? [index] : []));
+    const [active, setActive] = useState(null), [activeCell, setActiveCell] = useState(null);
+    const session = useSession(onComplete, onProgress, puzzle.placed.length,
+      solved.map(index => puzzle.placed[index].item).map(item => answerRecord(item, item.answer, true)));
+    const inputs = useRef({}), currentValues = useRef(values), solvedWords = useRef(new Set(solved)), finishTimer = useRef(null);
+    const highlights = useMemo(() => wordsearchHighlights(puzzle.placed, solved.map(index => puzzle.placed[index].word)), [puzzle, solved]);
     const solvedCells = new Set(puzzle.placed.filter((_, index) => solved.includes(index)).flatMap(word => word.positions.map(keyFor)));
-    useEffect(() => () => clock.cancel(finishTimer.current), []);
+    useEffect(() => {
+      if (puzzle.placed.length && solvedWords.current.size === puzzle.placed.length) session.finish();
+      return () => clock.cancel(finishTimer.current);
+    }, []);
     function focusCell(key) { setActiveCell(key); inputs.current[key]?.focus(); }
     function selectWord(index) {
       if (options.active === false || solvedWords.current.has(index)) return;
@@ -1151,7 +1197,7 @@
       currentValues.current = next; setValues(next);
       let newlySolved = false;
       puzzle.placed.forEach((word, index) => {
-        if (solvedWords.current.has(index) || word.positions.map(cell => next[keyFor(cell)] || ' ').join('') !== word.word) return;
+        if (solvedWords.current.has(index) || !matches(word,next)) return;
         solvedWords.current.add(index); newlySolved = true;
         session.add(word.item, word.item.answer, true);
       });

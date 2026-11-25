@@ -229,6 +229,7 @@
     options,
     onExit,
     externalControls=false,
+    raceSubmitSlot=null,
     active=true,
     onStart,
     onAudio,
@@ -243,12 +244,25 @@
     openingActive=false
   }) {
     const sortCollection=mode==='group-sort'&&document.body.dataset.gameApp==='conceptsort'&&!['elements','all'].includes(activity.sortRecipe?.type);
-    const nextResultAction=onNextQuestion||(sortCollection?onRestart:undefined);
+    const retryRace=mode==='group-sort'&&window.MLH.classroomActivities?.isRetryRace();
     const [fullscreenStatsHost,setFullscreenStatsHost]=useState(null),[fullscreenSession,setFullscreenSession]=useState(false);
     useEffect(()=>{const update=()=>setFullscreenSession(Boolean(document.fullscreenElement?.contains(panel.current)));document.addEventListener('fullscreenchange',update);update();return()=>document.removeEventListener('fullscreenchange',update);},[]);
-    const [result, setResult] = useState(null),
-      [elapsedMs, setElapsedMs] = useState(0),
-      [headerProgress,setHeaderProgress]=useState({correct:0,total:mode==='matching-pairs'?4:activity.items.length}),
+    const roomProgress = options.classroomSeed != null ? window.MLH?.classroomActivities?.progressStorage?.() : null;
+    const resultKey = 'result:' + mode + ':' + activity.id;
+    const sortRoundKey='sort-round:'+activity.id;
+    const [sortRound]=useState(()=>retryRace?(roomProgress?.read(sortRoundKey,0)??0):0);
+    function retrySort(){
+      roomProgress?.write(resultKey,null);
+      roomProgress?.write('sort-placements:'+activity.id,{});
+      roomProgress?.write('sort-order:'+activity.id,{});
+      roomProgress?.write(sortRoundKey,sortRound+1);
+      onRestart?.();
+    }
+    const nextResultAction=retryRace?retrySort:onNextQuestion||(sortCollection?onRestart:undefined);
+    const [restored] = useState(() => roomProgress?.read(resultKey, null));
+    const [result, setResult] = useState(restored?.result ?? null),
+      [elapsedMs, setElapsedMs] = useState(restored?.elapsedMs ?? 0),
+      [headerProgress,setHeaderProgress]=useState({correct:restored?.result.correct ?? 0,total:restored?.result.total ?? (mode==='matching-pairs'?4:activity.items.length)}),
       [answerReveal, setAnswerReveal] = useState(false),
       [connectionLives, setConnectionLives] = useState(4),
       [connectionNotice,setConnectionNotice] = useState(''),
@@ -370,6 +384,7 @@
     }
     function report(r) {
       if (ended.current) return;
+      if (wordPuzzleRace) reportWordPuzzleProgress(r);
       const previous = progress.current.answers?.length || 0;
       const hasNewAnswer = (r.answers?.length || 0) > previous;
       progress.current = {...r, current:r.current || progress.current.current};
@@ -381,7 +396,7 @@
     }
     const start = useRef(performance.now()),
       elapsed = useRef(0),
-      ended = useRef(false),
+      ended = useRef(Boolean(restored)),
       progress = useRef({
         correct: 0,
         total: mode==='match-up'?Math.min(activity.items.length,C.LIMITS.matchItems):activity.items.length,
@@ -393,23 +408,47 @@
     const matchPageCount = mode === 'match-up' ? Math.ceil(Math.min(activity.items.length,C.LIMITS.matchItems) / 12) : 1;
     const [playActivity] = useState(() => ({
       ...activity,
-      items: (options.shuffle && mode !== 'rank-order' ? C.shuffle(activity.items) : activity.items).slice(0,mode==='match-up'?C.LIMITS.matchItems:activity.items.length)
+      items: (options.shuffle && mode !== 'rank-order' ? C.shuffle(activity.items, options.classroomSeed == null ? undefined : window.MLH.classroomActivities.random((options.classroomSeed+sortRound)>>>0)) : activity.items).slice(0,mode==='match-up'?C.LIMITS.matchItems:activity.items.length)
     }));
-    function freezeAnswerTime() {
+    function freezeAnswerTime(score) {
       if (submittedElapsed.current !== null) return;
       submittedElapsed.current = Math.max(0, performance.now() - start.current);
       elapsed.current = submittedElapsed.current;
       setAnswerReveal(true);
+      if(retryRace&&score)window.MLH.classroomActivities.submitRetryRaceAttempt(score.correct,score.total,submittedElapsed.current);
     }
+    const wordPuzzleRace = (mode === 'wordsearch' || mode === 'crossword') && window.parent !== window &&
+      window.MLH?.classroomActivities?.isRace() === true;
+    function reportWordPuzzleProgress({correct,total}) {
+      const type = mode === 'wordsearch' ? 'mlh:wordsearch-progress' : 'mlh:word-puzzle-progress';
+      if (total > 0) window.parent.postMessage({type,correct,wordCount:total},location.origin);
+    }
+    function reportClassroomResult(r) {
+      if (retryRace) return;
+      if (wordPuzzleRace) {
+        reportWordPuzzleProgress(r);
+        return;
+      }
+      if (options.classroomSeed != null && window.parent !== window) {
+        window.parent.postMessage({type:'mlh:classroom-finished',solved:!r.timedOut&&r.total>0&&r.correct===r.total},location.origin);
+      }
+    }
+    useEffect(() => { if (restored) reportClassroomResult(restored.result); }, []);
     function finish(r) {
       if (ended.current) return;
       ended.current = true;
+      const classroom = options.classroomSeed != null;
       if (active) playGameCue('gameend');
       const completedElapsed = submittedElapsed.current ?? Math.max(0, performance.now() - start.current);
-      setElapsedMs(options.timer > 0 ? Math.min(options.timer * 1000, completedElapsed) : completedElapsed);
+      const displayElapsed = options.timer > 0 ? Math.min(options.timer * 1000, completedElapsed) : completedElapsed;
+      if (classroom) {
+        roomProgress?.write(resultKey, { result:r, elapsedMs:displayElapsed });
+        reportClassroomResult(r);
+      }
+      setElapsedMs(displayElapsed);
       if (r.openReview && mode !== 'labelled-diagram' && mode !== 'rank-order') setReview(true);
       const medalResult={activity,template:mode,total:r.total,correct:r.correct,elapsedMs:completedElapsed,timedOut:r.timedOut};
-      let medal=connectionScore?onConnectionComplete?.(r.correct===4&&r.total===4&&!r.timedOut):simpleGameControls?window.MLHGameMedals?.tierFor(medalResult):null;
+      let medal=classroom?null:connectionScore?onConnectionComplete?.(r.correct===4&&r.total===4&&!r.timedOut):simpleGameControls?window.MLHGameMedals?.tierFor(medalResult):null;
       const qualifiedMedal=medal;
       if(medal&&connectionScore&&!muted)medalSoundTimer.current=window.setTimeout(()=>{window.MLH.playFeedbackSound?.(true,true,medal==='diamond'?'platinum':medal);},900);
       if(medal&&!connectionScore){
@@ -470,14 +509,14 @@
       {openingScreen?<div className="ig-game-stage ig-level-test-stage">{openingScreen}</div>:<FittedGameStage headerSpace={72}>
         <div className="ig-submitted-game" inert={paused || (result && !review) ? '' : undefined}>
           <div hidden={Boolean(result && review && sequentialReview)} inert={result && mode!=='labelled-diagram' && !(review && ['group-sort','crossword','wordsearch'].includes(mode)) ? '' : undefined}>
-          <Game onInteractionStart={mode==='matching-pairs'?startConnectionTimer:undefined} activity={playActivity} options={{...options,active:running&&!result,sound:running&&!muted&&!result,diagramReview:!!result,reviewing:!!(result&&review),diagramSubmission:result?.diagramState}} onQuestionChange={['type-the-answer','quiz','gameshow-quiz','true-or-false'].includes(mode) ? setCurrentQuestion : undefined} page={matchPage} onPageChange={setMatchPage} onComplete={finish} onSubmitAnswers={freezeAnswerTime} onInteractionSound={interactionSound} onFeedbackReveal={correct=>{if(options.feedback!=='end')playGameCue(correct?'gamecorrect':'gamewrong',answerCue);}} onProgress={result ? undefined : report} onLivesChange={setConnectionLives} onNoticeChange={mode==='matching-pairs'?setConnectionNotice:undefined} onReviewExit={result && review && mode === 'labelled-diagram' ? ()=>setReview(false) : undefined} />
+          <Game raceSubmitSlot={raceSubmitSlot} onInteractionStart={mode==='matching-pairs'?startConnectionTimer:undefined} activity={playActivity} options={{...options,active:running&&!result,sound:running&&!muted&&!result,diagramReview:!!result,reviewing:!!(result&&review),diagramSubmission:result?.diagramState}} onQuestionChange={['type-the-answer','quiz','gameshow-quiz','true-or-false'].includes(mode) ? setCurrentQuestion : undefined} page={matchPage} onPageChange={setMatchPage} onComplete={finish} onSubmitAnswers={freezeAnswerTime} onInteractionSound={interactionSound} onFeedbackReveal={correct=>{if(options.feedback!=='end')playGameCue(correct?'gamecorrect':'gamewrong',answerCue);}} onProgress={result ? undefined : report} onLivesChange={setConnectionLives} onNoticeChange={mode==='matching-pairs'?setConnectionNotice:undefined} onReviewExit={result && review && mode === 'labelled-diagram' ? ()=>setReview(false) : undefined} />
           </div>
           {result && review && sequentialReview && <AttemptReview entries={C.reviewEntries(playActivity,mode,result)} groupedAnswers={mode==='type-the-answer'} anchoredResults onExit={()=>setReview(false)}/>}
         </div>
         {result && review && !sequentialReview && mode !== 'labelled-diagram' && <button type="button" className="ig-learning-primary ig-check-action ig-return-results" onClick={()=>setReview(false)}>Results</button>}
       </FittedGameStage>}
       {result && review && sequentialReview && <button type="button" className="ig-learning-primary ig-anchored-review-results" onClick={()=>setReview(false)}>Results</button>}
-      {result && !review && <div className={`ig-results${resultsClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="ig-results-title"><div className="ig-results-card"><h2 id="ig-results-title">Results</h2>{result.medalAlreadyEarned&&<p className="ig-muted">This medal has already been earned for this collection.</p>}{result.timedOut && <p className="ig-result-timeout">Time’s up</p>}{!result.unscored && <div className="ig-scoreline">{!['crossword','wordsearch'].includes(mode) && <div><small>Score</small><strong>{result.correct} <em>/ {result.total}</em></strong></div>}{connectionScore?<div><small>Streak</small><strong>{connectionScore.streak}</strong></div>:<div><small>Time</small><strong>{window.IGTimer.format(elapsedMs, false)}</strong></div>}{simpleGameControls&&!connectionScore&&!['group-sort','crossword','wordsearch'].includes(mode)&&window.MLHGameMedals?.eligible(mode,activity)&&<div className="ig-result-medal"><small>Medal</small><strong>{earnedMedal?<img className="ig-earned-medal-animation" src={earnedMedal.icon} alt={earnedMedal.label+' medal'}/>:<span>–</span>}</strong></div>}</div>}<div className="ig-inline ig-centred"><button className="ig-review-action" disabled={resultsClosing} onClick={()=>dismissResults(()=>setReview(true))}>Review</button>{!connectionScore&&!['group-sort','crossword','wordsearch'].includes(mode)&&<button className="ig-play-again-action" disabled={resultsClosing} onClick={()=>dismissResults(onExit)}><span className="hub-playback-glyph is-play" aria-hidden="true"></span>Play Again</button>}{nextResultAction&&<button type="button" className="ig-next-question-action" disabled={resultsClosing} onClick={()=>dismissResults(nextResultAction,true)}>{sortCollection?'Play Again':'Next Question'}</button>}</div></div></div>}</section>{paused && active && !result && <div className="ig-start-overlay ig-pause-overlay"><button type="button" className="ig-preview-play" aria-label="Resume activity" onClick={()=>{setPaused(false);setTimerMenuOpen(false);}}><span className="hub-playback-glyph is-play" aria-hidden="true"></span></button></div>}{!active && !openingActive && <div className="ig-start-overlay"><button type="button" className="ig-preview-play" aria-label="Play activity" disabled={launching} onClick={begin}><span className="hub-playback-glyph is-play" aria-hidden="true"></span></button></div>}{<div className="ig-in-game-controls" onClickCapture={clickSound}><ResourceControls sound={!muted} onAudio={onAudio ||(()=>{C.saveSoundPreference(muted);setMuted(!muted);})}/></div>}</div>;
+      {result && !review && <div className={`ig-results${resultsClosing ? ' is-closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="ig-results-title"><div className="ig-results-card"><h2 id="ig-results-title">Results</h2>{result.medalAlreadyEarned&&<p className="ig-muted">This medal has already been earned for this collection.</p>}{result.timedOut && <p className="ig-result-timeout">Time’s up</p>}{!result.unscored && <div className="ig-scoreline">{!['crossword','wordsearch'].includes(mode) && <div><small>Score</small><strong>{result.correct} <em>/ {result.total}</em></strong></div>}{connectionScore?<div><small>Streak</small><strong>{connectionScore.streak}</strong></div>:<div><small>Time</small><strong>{window.IGTimer.format(elapsedMs, false)}</strong></div>}{simpleGameControls&&!connectionScore&&!['group-sort','crossword','wordsearch'].includes(mode)&&window.MLHGameMedals?.eligible(mode,activity)&&<div className="ig-result-medal"><small>Medal</small><strong>{earnedMedal?<img className="ig-earned-medal-animation" src={earnedMedal.icon} alt={earnedMedal.label+' medal'}/>:<span>–</span>}</strong></div>}</div>}<div className="ig-inline ig-centred"><button className="ig-review-action" disabled={resultsClosing} onClick={()=>dismissResults(()=>setReview(true))}>Review</button>{options.classroomSeed==null&&!connectionScore&&!['group-sort','crossword','wordsearch'].includes(mode)&&<button className="ig-play-again-action" disabled={resultsClosing} onClick={()=>dismissResults(onExit)}><span className="hub-playback-glyph is-play" aria-hidden="true"></span>Play Again</button>}{nextResultAction&&<button type="button" className="ig-next-question-action" disabled={resultsClosing} onClick={()=>dismissResults(nextResultAction,true)}>{retryRace?'Try Again':sortCollection?'Play Again':'Next Question'}</button>}</div></div></div>}</section>{paused && active && !result && <div className="ig-start-overlay ig-pause-overlay"><button type="button" className="ig-preview-play" aria-label="Resume activity" onClick={()=>{setPaused(false);setTimerMenuOpen(false);}}><span className="hub-playback-glyph is-play" aria-hidden="true"></span></button></div>}{!active && !openingActive && <div className="ig-start-overlay"><button type="button" className="ig-preview-play" aria-label="Play activity" disabled={launching} onClick={begin}><span className="hub-playback-glyph is-play" aria-hidden="true"></span></button></div>}{<div className="ig-in-game-controls" onClickCapture={clickSound}><ResourceControls sound={!muted} onAudio={onAudio ||(()=>{C.saveSoundPreference(muted);setMuted(!muted);})}/></div>}</div>;
   }
   // Level quizzes only select a question bank and collect opening settings.
   // Gameplay, fitting, audio, feedback, controls, results and review belong to

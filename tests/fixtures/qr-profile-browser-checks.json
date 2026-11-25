@@ -176,11 +176,6 @@
       "route": "conceptrecall.html",
       "variant": "hints and categories",
       "pass": true
-    },
-    {
-      "route": "triplets.html",
-      "variant": "fixed Higher activity, no customisation",
-      "pass": true
     }
   ]
 }

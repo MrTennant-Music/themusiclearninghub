@@ -2,6 +2,184 @@
 begin;
 update public.keyboard_pilot_settings set enabled=true where id=true;
 do $$
+declare
+ first_name text;
+ second_name text;
+ host_view jsonb;
+begin
+ perform public.keyboard_pilot('create','009062','teacher',
+   '{"gameType":"rhythm-time-trial","phase":"lobby","activity":"/rhythmidentification.html?level=N3","raceMinutes":1,"seed":42,"useRandomNames":true}');
+ first_name:=public.keyboard_pilot('join','009062','first')->>'myName';
+ second_name:=public.keyboard_pilot('join','009062','second')->>'myName';
+ perform public.keyboard_pilot('nicknames','009062','teacher','{"allowNicknames":true}');
+ perform public.keyboard_pilot('rename','009062','first','{"name":"MusicCat"}');
+ perform public.keyboard_pilot('rename','009062','first','{"name":"RhythmCat"}');
+ perform public.keyboard_pilot('rename','009062','second','{"name":"BrassCat"}');
+ host_view:=public.keyboard_pilot('nicknames','009062','teacher','{"allowNicknames":false}');
+ if host_view->>'allowNicknames' is distinct from 'false'
+   or not (host_view->'players' @> jsonb_build_array(jsonb_build_object('id','first','name',first_name),
+     jsonb_build_object('id','second','name',second_name)))
+   or public.keyboard_pilot('read','009062','first')->>'myName' is distinct from first_name
+   or public.keyboard_pilot('read','009062','second')->>'myName' is distinct from second_name then
+   raise exception 'Disabling nicknames did not restore the assigned names';
+ end if;
+ perform public.keyboard_pilot('nicknames','009062','teacher','{"allowNicknames":true}');
+ if public.keyboard_pilot('read','009062','first')->>'myName' is distinct from first_name then
+   raise exception 'Re-enabling nicknames restored a discarded nickname';
+ end if;
+end $$;
+do $$
+declare result jsonb; setup jsonb;
+begin
+ setup:='{"gameType":"quiz","phase":"lobby","level":"N5","index":0,"scoringVersion":2,
+   "questions":[{"type":"concept-quiz","score":{"quiz":{"id":"test-quiz"},"audio":{"kind":"file"}}},
+    {"type":"concept-quiz","score":{"quiz":{"id":"second-quiz"},"audio":{"kind":"file"}}}],
+   "allowedAnswers":[]}';
+ perform public.keyboard_pilot('create-concept-quiz','009061','teacher',setup);
+ perform public.keyboard_pilot('join','009061','pupil','{"name":"Listener"}');
+ result:=public.keyboard_pilot('start','009061','teacher');
+ if result->>'phase'<>'listening' or result->>'deadline' is not null then
+   raise exception 'Concept Quiz timer started before the excerpt';
+ end if;
+ result:=public.keyboard_pilot('read','009061','pupil','{"excerptPlayback":{"index":0,"phase":"listening"}}');
+ if result->>'playingAudio' is distinct from 'false' then
+   raise exception 'Pupils can publish playback status';
+ end if;
+ perform public.keyboard_pilot('read','009061','teacher','{"excerptPlayback":{"index":0,"phase":"listening"}}');
+ result:=public.keyboard_pilot('read','009061','pupil');
+ if result->>'playingAudio' is distinct from 'true' or result->>'deadline' is not null then
+   raise exception 'Playback status did not reach pupils during listening';
+ end if;
+ result:=public.keyboard_pilot('audio-ended','009061','teacher','{"index":0}');
+ if (result->>'deadline')::bigint-(result->>'startedAt')::bigint<>20000 then
+   raise exception 'Concept Quiz answer window changed';
+ end if;
+ if result->>'playingAudio' is distinct from 'false' then raise exception 'Playback status leaked into answering'; end if;
+ perform public.keyboard_pilot('read','009061','teacher','{"excerptPlayback":{"index":0,"phase":"question"}}');
+ result:=public.keyboard_pilot('read','009061','pupil');
+ if result->>'playingAudio' is distinct from 'true' then raise exception 'Replay status did not reach pupils'; end if;
+ perform public.keyboard_pilot('read','009061','teacher','{"excerptPlayback":null}');
+ result:=public.keyboard_pilot('read','009061','pupil');
+ if result->>'playingAudio' is distinct from 'false' then raise exception 'Stopping replay did not clear the status'; end if;
+ result:=public.keyboard_pilot('answer','009061','pupil','{"index":0,"questionId":"test-quiz","response":["a","b"],"fraction":0.5}');
+ if result->>'phase'<>'review' or result->>'correct'<>'false' or (result->>'myAnswer')::jsonb<>'["a","b"]'::jsonb
+   or (result->'players'->0->>'score')::integer<>50 or result->'breakdown'->2->>'count'<>'1' then
+   raise exception 'Concept Quiz partial marks or review regression';
+ end if;
+ result:=public.keyboard_pilot('read','009061','teacher');
+ if result->'players'->0->>'gained' is distinct from '50' then raise exception 'Host refresh lost the points earned'; end if;
+ perform public.keyboard_pilot('next','009061','teacher');
+ begin
+   perform public.keyboard_pilot('skip-excerpt','009061','pupil','{"index":1}');
+   raise exception 'Pupil skipped an excerpt';
+ exception when raise_exception then
+   if sqlerrm<>'Only the teacher can control the game.' then raise; end if;
+ end;
+ result:=public.keyboard_pilot('skip-excerpt','009061','teacher','{"index":1}');
+ if result->>'phase' is distinct from 'review' or result->>'unanswered' is distinct from '1'
+    or result->'players'->0->>'gained' is distinct from '0' or result->'players'->0->>'score' is distinct from '50' then
+   raise exception 'Skipping the failed excerpt changed scores or opened answering';
+ end if;
+ result:=public.keyboard_pilot('next','009061','teacher');
+ if result->>'phase' is distinct from 'finished' then raise exception 'Skipped excerpt stranded the game'; end if;
+end $$;
+do $$
+declare result jsonb; setup jsonb;
+begin
+ setup:='{"gameType":"rhythm-time-trial","activity":"/rhythmidentification.html?level=N3",
+   "raceMinutes":1,"phase":"lobby","seed":397}';
+ perform public.keyboard_pilot('create','000052','teacher',setup);
+ perform public.keyboard_pilot('join','000052','one','{"name":"One"}');
+ perform public.keyboard_pilot('join','000052','two','{"name":"Two"}');
+ result:=public.keyboard_pilot('start','000052','teacher');
+ if result->>'phase'<>'playing' or (result->>'deadline')::bigint-(result->>'startedAt')::bigint<>60000 then
+  raise exception 'Time Trial started with the wrong deadline';
+ end if;
+ update public.keyboard_pilot_rooms set state=jsonb_set(state,'{startedAt}',to_jsonb((state->>'startedAt')::bigint-20000)) where pin='000052';
+ perform public.keyboard_pilot('grid-finish','000052','one','{"elapsedMs":9000}');
+ perform public.keyboard_pilot('grid-finish','000052','two','{"elapsedMs":8000}');
+ result:=public.keyboard_pilot('read','000052','teacher');
+ if result->>'phase'<>'playing' or result->'players'->0->>'name'<>'Two' then
+  raise exception 'Time Trial did not rank the first grids or ended early';
+ end if;
+ perform public.keyboard_pilot('grid-finish','000052','one','{"elapsedMs":7000}');
+ perform public.keyboard_pilot('grid-finish','000052','one','{"elapsedMs":10000}');
+ result:=public.keyboard_pilot('read','000052','two');
+ if result->'players'->0->>'name'<>'One' or result->'players'->0->>'bestTimeMs'<>'7000' then
+  raise exception 'A faster grid did not update both players or a slower retry replaced it';
+ end if;
+ update public.keyboard_pilot_rooms set state=jsonb_set(state,'{deadline}','0'::jsonb) where pin='000052';
+ result:=public.keyboard_pilot('grid-finish','000052','two','{"elapsedMs":1000}');
+ if result->>'phase'<>'finished' or result->'players'->0->>'name'<>'One' then
+  raise exception 'Time Trial accepted a grid after the deadline';
+ end if;
+end $$;
+do $$
+declare result jsonb; deadline bigint; setup jsonb;
+begin
+ setup:='{"gameType":"quiz","phase":"lobby","level":"N4","index":0,
+   "questions":[{"type":"choice","pitch":0,"score":{"audio":{"kind":"notes"}}},{"type":"choice","pitch":0,"score":{"audio":{"kind":"notes"}}}],
+   "allowedAnswers":["listening-choice:0"]}';
+ perform public.keyboard_pilot('create-listening','000050','teacher',setup);
+ perform public.keyboard_pilot('join','000050','pupil','{"name":"Listener"}');
+ result:=public.keyboard_pilot('start','000050','teacher');
+ if result->>'phase'<>'listening' or result->>'deadline' is not null then raise exception 'Listening started its timer early'; end if;
+ begin
+  perform public.keyboard_pilot('answer','000050','pupil','{"index":0,"pitch":0,"answer":"listening-choice:0"}');
+  raise exception 'Answer accepted during listening';
+ exception when others then
+  if sqlerrm<>'Answers are closed.' then raise; end if;
+ end;
+ begin
+  perform public.keyboard_pilot('audio-ended','000050','pupil','{"index":0}');
+  raise exception 'Pupil opened listening answers';
+ exception when others then
+  if sqlerrm<>'Only the teacher can control the game.' then raise; end if;
+ end;
+ result:=public.keyboard_pilot('audio-ended','000050','teacher','{"index":0}');
+ deadline:=(result->>'deadline')::bigint;
+ if result->>'phase'<>'question' or deadline-(result->>'startedAt')::bigint<>20000 then raise exception 'Listening answer timer regression'; end if;
+ result:=public.keyboard_pilot('audio-ended','000050','teacher','{"index":0}');
+ if (result->>'deadline')::bigint<>deadline then raise exception 'Duplicate completion restarted the timer'; end if;
+ perform public.keyboard_pilot('reveal','000050','teacher');
+ result:=public.keyboard_pilot('next','000050','teacher');
+ if result->>'phase'<>'listening' or result->>'deadline' is not null then raise exception 'Next excerpt started its timer early'; end if;
+ begin
+  perform public.keyboard_pilot('audio-ended','000050','teacher','{"index":0}');
+  raise exception 'Previous excerpt unlocked the new question';
+ exception when others then
+  if sqlerrm<>'This question is no longer active.' then raise; end if;
+ end;
+end $$;
+do $$
+declare result jsonb; setup jsonb;
+begin
+ setup:='{"gameType":"quiz","phase":"lobby","level":"H","index":0,"scoringVersion":2,
+   "questions":[{"type":"melodic-dictation","response":[2,4,3],"score":{"audio":{"kind":"native-melody"}}}],
+   "allowedAnswers":[]}';
+ perform public.keyboard_pilot('create-melodic-quiz','000051','teacher',setup);
+ perform public.keyboard_pilot('join','000051','one','{"name":"One"}');
+ perform public.keyboard_pilot('join','000051','two','{"name":"Two"}');
+ result:=public.keyboard_pilot('start','000051','teacher');
+ if result->>'phase'<>'listening' or result->>'deadline' is not null then raise exception 'Dictation audio must play first'; end if;
+ perform public.keyboard_pilot('audio-ended','000051','teacher','{"index":0}');
+ begin
+  perform public.keyboard_pilot('answer','000051','one','{"index":0,"notes":[2,4]}');
+  raise exception 'Incomplete dictation submission accepted';
+ exception when others then
+  if sqlerrm<>'Enter the notes for this exercise.' then raise; end if;
+ end;
+ perform public.keyboard_pilot('answer','000051','one','{"index":0,"notes":[2,4,3]}');
+ result:=public.keyboard_pilot('read','000051','one');
+ if result->>'phase'<>'question' or result ? 'correct' or (result->>'myAnswer')::jsonb<>'[2,4,3]'::jsonb then raise exception 'Dictation response recovery or privacy regression'; end if;
+ result:=public.keyboard_pilot('answer','000051','two','{"index":0,"notes":[2,3,4]}');
+ if result->>'phase'<>'review' or result->>'correct'<>'false' then raise exception 'Wrong note order was not marked incorrect'; end if;
+ result:=public.keyboard_pilot('read','000051','one');
+ if result->>'correct'<>'true' or result->'breakdown'->0->>'count'<>'1' or result->'breakdown'->1->>'count'<>'1' then
+  raise exception 'Correct notes or dictation results were not counted';
+ end if;
+end $$;
+do $$
 declare result jsonb; deadline bigint; started bigint; elapsed bigint; score integer; participant integer; original_name text;
 begin
  if public.keyboard_pilot_points(0,20000)<>100 or
@@ -266,6 +444,239 @@ begin
  result:=public.keyboard_pilot('answer','000011','racer','{"answer":"key:12","pitch":12,"index":2}');
  result:=public.keyboard_pilot('answer','000011','racer','{"answer":"key:0","pitch":0,"index":3}');
  if result->>'winner' is distinct from 'Racer' then raise exception 'Exact keys did not finish Race'; end if;
+ -- The native activity and its seed are identical for the whole room.
+ perform public.keyboard_pilot('create','000012','sharedhost','{"gameType":"shared","phase":"lobby","activity":"/wordsearch.html?level=N5","seed":4294967295}');
+ perform public.keyboard_pilot('join','000012','sharedone','{"name":"One"}');
+ perform public.keyboard_pilot('join','000012','sharedtwo','{"name":"Two"}');
+ result:=public.keyboard_pilot('start','000012','sharedhost');
+ if result->>'phase' is distinct from 'playing' then raise exception 'Shared room did not start'; end if;
+ result:=public.keyboard_pilot('read','000012','sharedone');
+ if result->>'activity' is distinct from '/wordsearch.html?level=N5' or result->>'seed' is distinct from '4294967295' then
+   raise exception 'Shared round lost its activity or puzzle seed';
+ end if;
+ result:=public.keyboard_pilot('finish','000012','sharedone');
+ if result->>'myFinished' is distinct from 'true' then raise exception 'Shared finish did not persist'; end if;
+ result:=public.keyboard_pilot('read','000012','sharedtwo');
+ if result->>'myFinished' is distinct from 'false' then raise exception 'Shared finish affected another pupil'; end if;
+ result:=public.keyboard_pilot('end','000012','sharedhost');
+ if result->>'closed' is distinct from 'true' then raise exception 'Shared round did not end'; end if;
+
+ -- New Races use the same question order even when pupils answer differently.
+ perform public.keyboard_pilot('create','000013','sequencehost','{"phase":"lobby","gameType":"race","sharedSequence":true,"level":"H","index":0,"allowedAnswers":["key:0","key:12"],"questions":[{"type":"find","pitch":12},{"type":"find","pitch":0},{"type":"find","pitch":12},{"type":"find","pitch":0},{"type":"find","pitch":12}]}');
+ perform public.keyboard_pilot('join','000013','raceone','{"name":"One"}');
+ perform public.keyboard_pilot('join','000013','racetwo','{"name":"Two"}');
+ perform public.keyboard_pilot('start','000013','sequencehost');
+ result:=public.keyboard_pilot('read','000013','raceone');
+ if result->'question'->>'pitch' is distinct from '12' then raise exception 'Race did not start at shared question one'; end if;
+ result:=public.keyboard_pilot('read','000013','racetwo');
+ if result->'question'->>'pitch' is distinct from '12' then raise exception 'Race pupil started at a different question'; end if;
+ result:=public.keyboard_pilot('answer','000013','raceone','{"answer":"key:12","pitch":12,"index":0}');
+ if result->'question'->>'pitch' is distinct from '0' then raise exception 'Race did not advance in order'; end if;
+ result:=public.keyboard_pilot('answer','000013','racetwo','{"answer":"key:0","pitch":0,"index":0}');
+ if result->'question'->>'pitch' is distinct from '0' then raise exception 'Wrong answer changed the question order'; end if;
+ -- The written-note contract uses an exact answer ID instead of pitch class.
+ perform public.keyboard_pilot('create','000014','writtenhost','{"phase":"lobby","gameType":"quiz","activity":"written-notes","level":"H","index":0,"scoringVersion":2,"allowedAnswers":["written:C#","written:Db"],"questions":[{"type":"written","pitch":12},{"type":"written","pitch":12},{"type":"written","pitch":12},{"type":"written","pitch":12},{"type":"written","pitch":12}]}');
+ perform public.keyboard_pilot('join','000014','writtenone','{"name":"One"}');
+ perform public.keyboard_pilot('join','000014','writtentwo','{"name":"Two"}');
+ perform public.keyboard_pilot('start','000014','writtenhost');
+ perform public.keyboard_pilot('answer','000014','writtenone','{"answer":"written:C#","pitch":12,"index":0}');
+ result:=public.keyboard_pilot('answer','000014','writtentwo','{"answer":"written:Db","pitch":0,"index":0}');
+ if result->>'correct' is distinct from 'false' or (result->'players'->0->>'score')::integer is distinct from 100 then
+   raise exception 'Written-note spelling was not graded exactly';
+ end if;
+end $$;
+
+do $$
+declare first_player jsonb; result jsonb; puzzle record;
+begin
+ perform public.keyboard_pilot('create','000015','activityhost','{"phase":"lobby","gameType":"activity-race","activity":"/crosswords.html","seed":156}');
+ first_player:=public.keyboard_pilot('join','000015','solver','{"name":"Solver"}');
+ perform public.keyboard_pilot('join','000015','otherplayer','{"name":"Other"}');
+ perform public.keyboard_pilot('start','000015','activityhost');
+ result:=public.keyboard_pilot('read','000015','otherplayer');
+ if result->>'seed' is distinct from first_player->>'seed' then raise exception 'Activity Race seed differed between pupils'; end if;
+ result:=public.keyboard_pilot('finish','000015','otherplayer','{"solved":false}');
+ if result->>'winner' is not null or result->>'phase'<>'playing' then raise exception 'An unsuccessful attempt ended the race'; end if;
+ result:=public.keyboard_pilot('finish','000015','solver','{"solved":true}');
+ if result->>'winner' is distinct from first_player->>'myName' or result->>'phase'<>'finished' then raise exception 'The first solver did not win'; end if;
+ result:=public.keyboard_pilot('finish','000015','otherplayer','{"solved":true}');
+ if result->>'winner' is distinct from first_player->>'myName' then raise exception 'A late result replaced the winner'; end if;
+
+ for puzzle in select * from (values ('000098','/wordsearch.html#playnote=fixture'),('000099','/crosswords.html#playnote=fixture')) as rooms(pin,activity) loop
+   perform public.keyboard_pilot('create',puzzle.pin,'wordhost',jsonb_build_object('phase','lobby','gameType','activity-race','activity',puzzle.activity,'seed',157));
+   first_player:=public.keyboard_pilot('join',puzzle.pin,'wordone','{"name":"Finder"}');
+   perform public.keyboard_pilot('join',puzzle.pin,'wordtwo','{"name":"Other"}');
+   perform public.keyboard_pilot('start',puzzle.pin,'wordhost');
+   perform public.keyboard_pilot('finish',puzzle.pin,'wordone','{"wordCount":8,"correct":0}');
+   perform public.keyboard_pilot('finish',puzzle.pin,'wordone','{"wordCount":8,"correct":3}');
+   perform public.keyboard_pilot('finish',puzzle.pin,'wordone','{"wordCount":8,"correct":2}');
+   result:=public.keyboard_pilot('read',puzzle.pin,'wordhost');
+   if result->>'targetCorrect' is distinct from '8' or result->>'phase' is distinct from 'playing'
+     or result->'players'->0->>'correctCount' is distinct from '3' or result->'players'->1->>'correctCount' is distinct from '0'
+   then raise exception 'Word progress was incorrect for %',puzzle.activity; end if;
+   result:=public.keyboard_pilot('finish',puzzle.pin,'wordone','{"wordCount":8,"correct":8}');
+   if result->>'winner' is distinct from first_player->>'myName' or result->>'phase' is distinct from 'finished'
+   then raise exception 'Completing the puzzle did not win for %',puzzle.activity; end if;
+ end loop;
+
+ perform public.keyboard_pilot('create','000097','millionhost','{"phase":"lobby","gameType":"activity-race","targetCorrect":15,"activity":"/whowantstobemillionaire/whowantstobeamillionaire.html?level=N3","seed":157}');
+ first_player:=public.keyboard_pilot('join','000097','millionsolver','{"name":"Solver"}');
+ perform public.keyboard_pilot('join','000097','millionother','{"name":"Other"}');
+ perform public.keyboard_pilot('start','000097','millionhost');
+ result:=public.keyboard_pilot('finish','000097','millionsolver','{"millionaireAttempt":1,"correct":14}');
+ if result->>'phase' is distinct from 'playing' or result->'players'->0->>'correctCount' is distinct from '14' then
+   raise exception 'Millionaire progress before the final question ended the race or failed to update';
+ end if;
+ result:=public.keyboard_pilot('finish','000097','millionsolver','{"millionaireAttempt":2,"correct":0}');
+ if result->>'myFinished' is distinct from 'false' or result->'players'->0->>'correctCount' is distinct from '0' then
+   raise exception 'Millionaire retry did not reset progress or left the pupil out of the race';
+ end if;
+ result:=public.keyboard_pilot('finish','000097','millionsolver','{"millionaireAttempt":1,"correct":15}');
+ if result->>'phase' is distinct from 'playing' then raise exception 'A stale Millionaire attempt ended the race'; end if;
+ result:=public.keyboard_pilot('finish','000097','millionsolver','{"millionaireAttempt":3,"correct":15}');
+ if result->>'phase' is distinct from 'finished' or result->>'winner' is distinct from first_player->>'myName' then
+   raise exception 'Completing the Millionaire ladder after a retry did not win';
+ end if;
+ result:=public.keyboard_pilot('finish','000097','millionother','{"millionaireAttempt":1,"correct":15}');
+ if result->>'winner' is distinct from first_player->>'myName' then raise exception 'A later millionaire replaced the winner'; end if;
+
+ perform public.keyboard_pilot('create','000016','barhost','{"phase":"lobby","gameType":"activity-race","targetCorrect":10,"activity":"/barlines.html","seed":96}');
+ perform public.keyboard_pilot('join','000016','barpupil','{"name":"Pupil"}');
+ perform public.keyboard_pilot('start','000016','barhost');
+ result:=public.keyboard_pilot('finish','000016','barpupil','{"correct":9}');
+ if result->>'phase'<>'playing' or result->'players'->0->>'correctCount'<>'9' then raise exception 'Progress incorrectly finished the race'; end if;
+ result:=public.keyboard_pilot('finish','000016','barpupil','{"correct":10}');
+ if result->>'winner' is distinct from result->>'myName' then raise exception 'Reaching ten correct did not win'; end if;
+
+ perform public.keyboard_pilot('create','000017','failurehost','{"phase":"lobby","gameType":"activity-race","activity":"/musicescape.html","seed":95,"targetCorrect":6}');
+ perform public.keyboard_pilot('join','000017','unsolved','{"name":"Unsolved"}');
+ first_player:=public.keyboard_pilot('join','000017','escapeone','{"name":"Escape One"}');
+ perform public.keyboard_pilot('join','000017','escapetwo','{"name":"Escape Two"}');
+ perform public.keyboard_pilot('start','000017','failurehost');
+ result:=public.keyboard_pilot('finish','000017','unsolved','{"correct":2,"solved":false}');
+ if result->>'myFinished' is distinct from 'true' or result->>'phase' is distinct from 'playing' or result->>'winner' is not null then
+   raise exception 'An Escape Room game over must finish only that pupil’s attempt';
+ end if;
+ result:=public.keyboard_pilot('finish','000017','escapeone','{"correct":5}');
+ if result->>'phase' is distinct from 'playing' then raise exception 'Five rooms cannot win the Escape Room Race'; end if;
+ result:=public.keyboard_pilot('finish','000017','escapeone','{"correct":6}');
+ if result->>'winner' is distinct from first_player->>'myName' or result->>'phase' is distinct from 'finished' then
+   raise exception 'The first pupil to escape six rooms must win';
+ end if;
+ result:=public.keyboard_pilot('finish','000017','escapetwo','{"correct":6}');
+ if result->>'winner' is distinct from first_player->>'myName' then raise exception 'A later escape must not replace the winner'; end if;
+end $$;
+
+do $$
+declare result jsonb; first_name text; second_name text; setup jsonb;
+begin
+ setup:='{"phase":"lobby","gameType":"activity-race","activity":"/conceptrecall.html?level=H","seed":75,"targetCorrect":24,"recallMinutes":1}';
+ perform public.keyboard_pilot('create','000018','recallhost',setup);
+ result:=public.keyboard_pilot('join','000018','recallone','{"name":"Alpha"}');
+ first_name:=result->>'myName';
+ result:=public.keyboard_pilot('join','000018','recalltwo','{"name":"Bravo"}');
+ second_name:=result->>'myName';
+ result:=public.keyboard_pilot('start','000018','recallhost');
+ if (result->>'deadline')::bigint-(result->>'startedAt')::bigint<>60000 then raise exception 'Wrong Concept Recall deadline'; end if;
+ perform public.keyboard_pilot('finish','000018','recallone','{"correct":6}');
+ perform public.keyboard_pilot('finish','000018','recallone','{"correct":4}');
+ result:=public.keyboard_pilot('finish','000018','recalltwo','{"correct":6}');
+ if result->>'phase'<>'playing' or (result->'players'->0->>'correctCount')::int<>6
+   or (result->'players'->1->>'correctCount')::int<>6 then
+   raise exception 'Concept Recall must keep each pupil’s highest count';
+ end if;
+ update public.keyboard_pilot_rooms set state=jsonb_set(state,'{deadline}','0') where pin='000018';
+ result:=public.keyboard_pilot('finish','000018','recallone','{"correct":8}');
+ if result->>'phase'<>'finished' or result->>'finishReason'<>'time'
+   or not (result->'winners' ?& array[first_name,second_name])
+   or (result->'players'->0->>'correctCount')::int<>6 then
+   raise exception 'Deadline must reject late concepts and preserve a tied lead';
+ end if;
+
+ perform public.keyboard_pilot('create','000019','recallhost',jsonb_set(setup,'{recallMinutes}','0'));
+ perform public.keyboard_pilot('join','000019','recallone','{"name":"Alpha"}');
+ result:=public.keyboard_pilot('start','000019','recallhost');
+ if result->>'deadline' is not null then raise exception 'Unlimited Concept Recall should have no deadline'; end if;
+ result:=public.keyboard_pilot('finish','000019','recallone','{"correct":24}');
+ if result->>'phase'<>'finished' or result->>'winner' is distinct from result->>'myName' then
+   raise exception 'Completing every concept should win immediately';
+ end if;
+end $$;
+
+do $$
+declare
+ setup jsonb;
+ result jsonb;
+ published_score integer;
+begin
+ setup:=jsonb_build_object('gameType','quiz','phase','lobby','questionTime',20,'scoringVersion',2,
+   'questions',(select jsonb_agg('{"type":"choice","pitch":0}'::jsonb) from generate_series(1,5)),
+   'allowedAnswers','["C"]'::jsonb);
+ perform public.keyboard_pilot('create','000020','teacher',setup);
+ perform public.keyboard_pilot('join','000020','first','{"name":"First"}');
+ perform public.keyboard_pilot('join','000020','second','{"name":"Second"}');
+ perform public.keyboard_pilot('start','000020','teacher');
+ result:=public.keyboard_pilot('answer','000020','first','{"index":0,"answer":"C","pitch":0}');
+ if result->>'myScore' is distinct from '0' or result->>'phase' is distinct from 'question' then
+   raise exception 'A pupil score revealed an answer before review';
+ end if;
+ perform public.keyboard_pilot('reveal','000020','teacher');
+ result:=public.keyboard_pilot('read','000020','first');
+ published_score:=coalesce((result->>'myScore')::integer,0);
+ if published_score<=0 or public.keyboard_pilot('read','000020','second')->>'myScore' is distinct from '0'
+   or public.keyboard_pilot('read','000020','teacher') ? 'myScore' then
+   raise exception 'The published score was missing or reached the wrong player';
+ end if;
+ perform public.keyboard_pilot('next','000020','teacher');
+ result:=public.keyboard_pilot('read','000020','first');
+ if (result->>'myScore')::integer is distinct from published_score then
+   raise exception 'The score disappeared during the countdown';
+ end if;
+ update public.keyboard_pilot_rooms
+ set state=jsonb_set(state,'{startedAt}',to_jsonb(floor(extract(epoch from clock_timestamp())*1000)::bigint-1))
+ where pin='000020';
+ result:=public.keyboard_pilot('answer','000020','first','{"index":1,"answer":"C","pitch":0}');
+ if (result->>'myScore')::integer is distinct from published_score then
+   raise exception 'The next live round revealed its result too early';
+ end if;
+end $$;
+
+do $$
+declare result jsonb;
+begin
+ perform public.keyboard_pilot('create','000021','teacher',
+   '{"gameType":"shared","nativePractice":true,"activity":"/chords.html?level=H","phase":"lobby","seed":42}');
+ perform public.keyboard_pilot('join','000021','first','{"name":"First"}');
+ perform public.keyboard_pilot('join','000021','second','{"name":"Second"}');
+ result:=public.keyboard_pilot('start','000021','teacher');
+ if result->>'nativePractice' is distinct from 'true' or result->>'phase' is distinct from 'playing'
+   or result->>'activity' is distinct from '/chords.html?level=H' or result ? 'deadline' then
+   raise exception 'Hosted Individual Practice did not start with the original page';
+ end if;
+ result:=public.keyboard_pilot('finish','000021','first','{}');
+ if result->>'myFinished' is distinct from 'true' or result->>'phase' is distinct from 'playing'
+   or public.keyboard_pilot('read','000021','second')->>'myFinished' is distinct from 'false' then
+   raise exception 'Completing Individual Practice interrupted another pupil';
+ end if;
+end $$;
+
+do $$
+declare result jsonb;
+begin
+ perform public.keyboard_pilot('create','000101','teacher',
+   '{"gameType":"activity-race","nativeStreak":true,"targetStreak":3,"raceMinutes":0,"activity":"/barlines.html?level=N3","phase":"lobby","seed":42}');
+ perform public.keyboard_pilot('join','000101','first','{"name":"First"}');
+ perform public.keyboard_pilot('start','000101','teacher');
+ perform public.keyboard_pilot('finish','000101','first','{"attempted":1,"streak":1,"highestStreak":1}');
+ perform public.keyboard_pilot('finish','000101','first','{"attempted":2,"streak":0,"highestStreak":1}');
+ result:=public.keyboard_pilot('finish','000101','first','{"attempted":1,"streak":1,"highestStreak":1}');
+ if result->'players'->0->>'streak' is distinct from '0'
+   or result->'players'->0->>'highestStreak' is distinct from '1'
+   or result->'players'->0->>'resetFrom' is distinct from '1'
+ then raise exception 'A missed question or stale report changed the streak incorrectly'; end if;
+ result:=public.keyboard_pilot('finish','000101','first','{"attempted":5,"streak":3,"highestStreak":3}');
+ if result->>'phase' is distinct from 'finished' or result->>'winner' is distinct from 'First'
+ then raise exception 'The native activity streak did not win the race'; end if;
 end $$;
 
 rollback;

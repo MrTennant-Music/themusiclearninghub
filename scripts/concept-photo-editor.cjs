@@ -33,7 +33,7 @@ function createPhotoServer({projectRoot=root,resolvePhoto=downloadPhoto}={}){
    if(req.method==='GET'&&req.url==='/photos'){send(200,await readManifest());return;}
    const match=/^\/photos\/(MC-\d{4})$/.exec(req.url);
    if(req.method!=='POST'||!match){send(404,{error:'Not found.'});return;}
-   if(!origin||req.headers['content-type']!=='application/json'){send(403,{error:'Save photos from Music Dictionary.'});return;}
+   if(!origin||req.headers['content-type']!=='application/json'){send(403,{error:'Save photos from Concept Dictionary.'});return;}
    let body='';for await(const chunk of req){body+=chunk;if(body.length>20000)throw Error('Photo request is too large.');}
    const {sourceUrl,remove}=JSON.parse(body);if(remove!==true)commonsTitle(sourceUrl);
    const id=match[1],initial=await readManifest();if(!Object.hasOwn(initial.concepts,id)){send(404,{error:'Unknown concept.'});return;}

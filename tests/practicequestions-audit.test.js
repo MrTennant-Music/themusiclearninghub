@@ -18,6 +18,22 @@ vm.runInContext(Babel.transform(source.replace('ReactDOM.createRoot(document.get
 const a=context.audit;
 const plain=value=>JSON.parse(JSON.stringify(value));
 
+test('hosted Practice Questions races generate full papers without listening tasks at every level',()=>{
+ const previous=window.MLH;
+ const {isRace}=require('../shared/classroom-activities.js');
+ window.MLH={...previous,classroomActivities:{isRace:()=>isRace('?classroomSeed=12&classroomRace=1')}};
+ try{
+  for(const level of ['N3','N4','N5','H','AH']){
+   for(let sample=0;sample<5;sample++){
+    randomState=120+sample;
+    const question=a.makeQuestion(level,0,a.defaultPracticeQuestionTypesForLevel(level));
+    assert.equal(question.subquestions.length,a.practiceQuestionCountForLevel(level),level);
+    assert.ok(question.subquestions.every(part=>!a.practicePartRequiresAudio(question,part)),level);
+   }
+  }
+ }finally{window.MLH=previous;}
+});
+
 test('every final bar fills its metre and sustains split closing notes with ties',()=>{
  const beats={minim:2,dottedMinim:3,semibreve:4,dottedCrotchet:1.5};
  for(const signature of a.TIME_SIGNATURES){
@@ -169,6 +185,7 @@ test('real marking handles correct, single-error mixed, and blank submissions ac
  let callbacks=[];
  window.setTimeout=fn=>{callbacks.push(fn);return callbacks.length;};
  context.stopAudio=context.setIncompleteSubmitConfirmOpen=context.setFeedbackFading=context.setPrompt=context.setActivePracticePart=context.setConfettiKey=()=>{};
+ context.reportActivityRace=()=>{};
  context.markingTimersRef={current:[]};
  context.setScore=x=>{context.score=typeof x==='function'?x(context.score):x;};
  context.setFeedback=x=>{context.feedback=typeof x==='function'?x(context.feedback):x;};

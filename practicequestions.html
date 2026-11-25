@@ -5,29 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Practice Questions</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/practice-app-icon.svg?v=14d0b2a52c0a" />
   <link rel="apple-touch-icon" href="./app-icons/practice-app-icon.svg?v=14d0b2a52c0a" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./audio/piano/salamander-browser-map.js"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./bravura-worksheet-outlines.js?v=20260805-pdf-glyphs"></script>
   <script src="./shared/shared-notation-config.js"></script>
-  <script src="./practice-melody-generator.js?v=20260710-ah-rules"></script>
+  <script src="./practice-melody-generator.js?v=f095a86a75b8"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
-  <script src="./keyboard-notes.js?v=d394fb2b445a"></script>
+  <script src="./keyboard-notes.js?v=9fbb2942b6a1"></script>
   <script src="./shared/keyboard-note-keyboard.js?v=1a9d8d753ed3"></script>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 <style>
@@ -44,10 +45,11 @@
 .escape-perform-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:12px auto;font-size:15px}
 </style>
 </head>
-<body class="overflow-x-hidden bg-stone-50">
+<body data-literacy-activity class="overflow-x-hidden bg-stone-50">
   <div id="root"></div>
 
   <script type="text/x-mlh-jsx-source" data-runtime="practicequestions-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
     const { useEffect, useMemo, useRef, useState } = React;
 
     const ASSET = {
@@ -61,7 +63,6 @@
       gold: "./ui-icons/gold.svg",
       diamond: "./ui-icons/diamond.svg",
       eye: "./ui-icons/eye.svg",
-      metronome: "./ui-icons/metronome.svg",
       tempo: "./ui-icons/tempo.svg",
       timer: "./ui-icons/timer.svg",
       loading: "./ui-icons/load.svg",
@@ -127,17 +128,6 @@
       moderato: { id: "moderato", label: "Moderato", bpm: 90, bpmOptions: [90], group: "middle", aliases: ["moderato", "andante", "moderate"] },
     };
     const N5_TEMPO_TERM_IDS = ["adagio", "andante", "moderato", "allegro"];
-    const ACCOMPANIMENT_PATTERNS = [
-      "block_chords",
-      "broken_chords",
-      "alberti_bass",
-      "waltz",
-      "piano_ballad",
-      "contemporary_pop",
-      "power_chords",
-      "stride_piano",
-      "walking_bass",
-    ];
     const TIME_SIGNATURES = [
       { id: "2/4", top: 2, bottom: 4, beats: 2 },
       { id: "3/4", top: 3, bottom: 4, beats: 3 },
@@ -179,316 +169,15 @@
       }
       return question?.timeSignature;
     }
-    function groupStartBeatsForTimeSignature(timeSignature) {
-      if (timeSignature?.id === "5/4") {
-        const beatGroups = timeSignature.beatGroups?.length ? timeSignature.beatGroups : [3, 2];
-        return beatGroups.reduce((starts, beats) => [...starts, starts.at(-1) + beats], [0]).slice(0, -1);
-      }
-      if (timeSignature?.bottom === 8) {
-        const numerator = Number(timeSignature?.top ?? String(timeSignature?.id ?? "6/8").split("/")[0] ?? 6);
-        return Array.from({ length: Math.max(1, Math.round(numerator / 3)) }, (_, index) => index * 1.5);
-      }
-      return Array.from({ length: Math.max(1, Math.round(timeSignature?.beats ?? 4)) }, (_, index) => index);
-    }
-    function classifyMeter(timeSignature) {
-      const numerator = Number(timeSignature?.top ?? String(timeSignature?.id ?? "4/4").split("/")[0] ?? 4);
-      const denominator = Number(timeSignature?.bottom ?? String(timeSignature?.id ?? "4/4").split("/")[1] ?? 4);
-      const compoundGroups = { 6: [3, 3], 9: [3, 3, 3], 12: [3, 3, 3, 3] };
-      if (denominator === 8 && compoundGroups[numerator]) {
-        return {
-          numerator,
-          denominator,
-          meterFamily: `compound_${compoundGroups[numerator].length}`,
-          beatsPerBar: numerator / 2,
-          beatUnit: "dottedCrotchet",
-          subdivisionUnit: "quaver",
-          beatGroups: compoundGroups[numerator],
-          groupStartBeats: groupStartBeatsForTimeSignature(timeSignature),
-        };
-      }
-      const simpleGroups = timeSignature?.id === "5/4"
-        ? (timeSignature.beatGroups?.length ? timeSignature.beatGroups : [3, 2])
-        : numerator === 4 ? [2, 2] : [numerator];
-      return {
-        numerator,
-        denominator,
-        meterFamily: `simple_${numerator}`,
-        beatsPerBar: timeSignature?.beats ?? numerator,
-        beatUnit: denominator === 2 ? "minim" : "crotchet",
-        subdivisionUnit: "quaver",
-        beatGroups: simpleGroups,
-        groupStartBeats: groupStartBeatsForTimeSignature(timeSignature),
-      };
-    }
-    const durationToBeats = {
-      bar: null,
-      half: 2,
-      quarter: 1,
-      eighth: 0.5,
-      sixteenth: 0.25,
-      dottedQuarter: 1.5,
-      dottedCrotchet: 1.5,
-    };
-    const ACCOMPANIMENT_VOLUME_SCALE = 0.9;
-    const accompanimentVolume = (volume) => volume * ACCOMPANIMENT_VOLUME_SCALE;
-    const accompanimentEvent = (time, duration, notes, velocity = 58, hand = "LH", volume = 0.018) => ({
-      time,
-      duration,
-      notes: Array.isArray(notes) ? notes : [notes],
-      velocity,
-      hand,
-      volume,
-    });
-    const compoundAlbertiEvents = (groups) => groups.flatMap((_, groupIndex) => {
-      const start = groupIndex * 1.5;
-      return [
-        accompanimentEvent(start, "eighth", "root", 68, "LH", 0.022),
-        accompanimentEvent(start + 0.5, "eighth", "fifth", 56, "LH", 0.017),
-        accompanimentEvent(start + 1, "eighth", "third", 54, "LH", 0.016),
-      ];
-    });
-    const chordPulseEvents = (beats, firstVelocity = 62, restVelocity = 56) => beats.map((beat, index) => (
-      accompanimentEvent(beat, "quarter", ["third", "fifth", "octaveRoot"], index === 0 ? firstVelocity : restVelocity, "RH", index === 0 ? 0.015 : 0.013)
-    ));
-    const ACCOMPANIMENT_PATTERN_LIBRARY = {
-      bassChord: {
-        styleId: "bassChord",
-        variants: {
-          simple_2: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.028), accompanimentEvent(1, "quarter", ["third", "fifth", "octaveRoot"], 58, "RH", 0.014)],
-          simple_3: [accompanimentEvent(0, "quarter", "lowRoot", 72, "LH", 0.028), ...chordPulseEvents([1, 2], 58, 55)],
-          simple_4: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.028), ...chordPulseEvents([1, 2, 3], 58, 55)],
-          compound_2: compoundAlbertiEvents([3, 3]),
-          compound_3: compoundAlbertiEvents([3, 3, 3]),
-          compound_4: compoundAlbertiEvents([3, 3, 3, 3]),
-        },
+    const {
+      BAR_PATTERNS, national5, currentRepeatedPitchRun,
+      accompaniment: {
+        practiceStyleIds: ACCOMPANIMENT_PATTERNS,
+        classifyMeter, groupStartBeatsForTimeSignature, getPatternVariant,
+        validateAccompanimentPattern, accompanimentDurationBeats, accompanimentVolume,
+        accompanimentMidiMap, accompanimentTokenMidi, lowerAccompanimentMidiBelow, ACCOMPANIMENT_MAX_MIDI,
       },
-      bassTwoChords: {
-        styleId: "bassTwoChords",
-        variants: {
-          simple_2: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.028), accompanimentEvent(1, "quarter", ["third", "fifth", "octaveRoot"], 60, "RH", 0.015)],
-          simple_3: [accompanimentEvent(0, "quarter", "lowRoot", 72, "LH", 0.028), ...chordPulseEvents([1, 2], 60, 56)],
-          simple_4: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.028), ...chordPulseEvents([1, 3], 60, 58)],
-          compound_2: [accompanimentEvent(0, "dottedQuarter", "lowRoot", 70, "LH", 0.028), accompanimentEvent(1.5, "dottedQuarter", ["third", "fifth", "octaveRoot"], 58, "RH", 0.014)],
-          compound_3: [accompanimentEvent(0, "dottedQuarter", "lowRoot", 72, "LH", 0.028), accompanimentEvent(1.5, "dottedQuarter", ["third", "fifth", "octaveRoot"], 58, "RH", 0.014), accompanimentEvent(3, "dottedQuarter", ["third", "fifth", "octaveRoot"], 55, "RH", 0.013)],
-          compound_4: [accompanimentEvent(0, "dottedQuarter", "lowRoot", 72, "LH", 0.028), accompanimentEvent(1.5, "dottedQuarter", ["third", "fifth", "octaveRoot"], 58, "RH", 0.014), accompanimentEvent(3, "dottedQuarter", "lowFifth", 66, "LH", 0.024), accompanimentEvent(4.5, "dottedQuarter", ["third", "fifth", "octaveRoot"], 55, "RH", 0.013)],
-        },
-      },
-      bassChordBassChord: {
-        styleId: "bassChordBassChord",
-        variants: {
-          simple_2: [accompanimentEvent(0, "quarter", "lowRoot", 68, "LH", 0.026), accompanimentEvent(1, "quarter", ["third", "fifth", "octaveRoot"], 56, "RH", 0.013)],
-          simple_3: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.026), accompanimentEvent(1, "quarter", ["third", "fifth", "octaveRoot"], 56, "RH", 0.013), accompanimentEvent(2, "quarter", "lowFifth", 64, "LH", 0.024)],
-          simple_4: [accompanimentEvent(0, "quarter", "lowRoot", 68, "LH", 0.026), accompanimentEvent(1, "quarter", ["third", "fifth", "octaveRoot"], 56, "RH", 0.013), accompanimentEvent(2, "quarter", "lowFifth", 64, "LH", 0.024), accompanimentEvent(3, "quarter", ["third", "fifth", "octaveRoot"], 54, "RH", 0.013)],
-          compound_2: compoundAlbertiEvents([3, 3]),
-          compound_3: compoundAlbertiEvents([3, 3, 3]),
-          compound_4: compoundAlbertiEvents([3, 3, 3, 3]),
-        },
-      },
-      offbeatChords: {
-        styleId: "offbeatChords",
-        variants: {
-          simple_2: [accompanimentEvent(0, "quarter", "lowRoot", 68, "LH", 0.027), accompanimentEvent(0.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(1.5, "eighth", ["third", "fifth"], 54, "RH", 0.012)],
-          simple_3: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.027), accompanimentEvent(0.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(1.5, "eighth", ["third", "fifth"], 56, "RH", 0.012), accompanimentEvent(2.5, "eighth", ["third", "fifth"], 54, "RH", 0.012)],
-          simple_4: [accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.027), accompanimentEvent(0.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(1.5, "eighth", ["third", "fifth"], 56, "RH", 0.012), accompanimentEvent(2.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(3.5, "eighth", ["third", "fifth"], 56, "RH", 0.012)],
-          compound_2: [accompanimentEvent(0, "eighth", "lowRoot", 70, "LH", 0.027), accompanimentEvent(0.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(1.5, "eighth", "lowRoot", 66, "LH", 0.024), accompanimentEvent(2, "quarter", ["third", "fifth"], 54, "RH", 0.012)],
-          compound_3: [accompanimentEvent(0, "eighth", "lowRoot", 70, "LH", 0.027), accompanimentEvent(0.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(1.5, "eighth", "lowRoot", 66, "LH", 0.024), accompanimentEvent(2, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(3, "eighth", "lowFifth", 64, "LH", 0.024), accompanimentEvent(3.5, "quarter", ["third", "fifth"], 54, "RH", 0.012)],
-          compound_4: [accompanimentEvent(0, "eighth", "lowRoot", 70, "LH", 0.027), accompanimentEvent(0.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(1.5, "eighth", "lowRoot", 66, "LH", 0.024), accompanimentEvent(2, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(3, "eighth", "lowFifth", 64, "LH", 0.024), accompanimentEvent(3.5, "eighth", ["third", "fifth"], 54, "RH", 0.012), accompanimentEvent(4.5, "eighth", "lowRoot", 64, "LH", 0.024), accompanimentEvent(5, "quarter", ["third", "fifth"], 54, "RH", 0.012)],
-        },
-      },
-      lightPulse: {
-        styleId: "lightPulse",
-        variants: {
-          simple_2: [accompanimentEvent(0, "quarter", "lowRoot", 64, "LH", 0.024), accompanimentEvent(1, "quarter", ["third", "fifth"], 52, "RH", 0.011)],
-          simple_3: [accompanimentEvent(0, "quarter", "lowRoot", 66, "LH", 0.024), ...chordPulseEvents([1, 2], 52, 50)],
-          simple_4: [accompanimentEvent(0, "quarter", "lowRoot", 66, "LH", 0.024), ...chordPulseEvents([1, 2, 3], 52, 50)],
-          compound_2: [accompanimentEvent(0, "eighth", "root", 66, "LH", 0.024), accompanimentEvent(0.5, "eighth", "fifth", 50, "LH", 0.013), accompanimentEvent(1, "eighth", "third", 50, "LH", 0.013), accompanimentEvent(1.5, "eighth", "root", 62, "LH", 0.021), accompanimentEvent(2, "eighth", "fifth", 50, "LH", 0.013), accompanimentEvent(2.5, "eighth", "third", 50, "LH", 0.013)],
-          compound_3: compoundAlbertiEvents([3, 3, 3]).map((event) => ({ ...event, velocity: Math.max(48, event.velocity - 4), volume: event.volume * 0.9 })),
-          compound_4: compoundAlbertiEvents([3, 3, 3, 3]).map((event) => ({ ...event, velocity: Math.max(48, event.velocity - 4), volume: event.volume * 0.9 })),
-        },
-      },
-    };
-    const FULL_METER_BEATS = {
-      simple_2: 2,
-      simple_3: 3,
-      simple_4: 4,
-      simple_5: 5,
-      compound_2: 3,
-      compound_3: 4.5,
-      compound_4: 6,
-    };
-    const ACCOMPANIMENT_PATTERN_ALIASES = {
-      bassChord: "block_chords",
-      bassTwoChords: "pop_ballad",
-      bassChordBassChord: "block_chords",
-      offbeatChords: "contemporary_pop",
-      lightPulse: "broken_chords",
-    };
-    const fullEventEnd = (event) => event.time + (durationToBeats[event.duration] ?? Number(event.duration) ?? 0);
-    const finishPatternAtBarline = (events, barBeats, notes = "lowRoot", velocity = 32, hand = "LH", volume = 0.004) => {
-      const end = Math.max(...events.map(fullEventEnd));
-      return Math.abs(end - barBeats) < 0.001 ? events : [...events, accompanimentEvent(end, barBeats - end, notes, velocity, hand, volume)];
-    };
-    const fullArpeggioEvents = (tokens, barBeats, step = 0.5, velocity = 58, hand = "LH", volume = 0.017) => (
-      Array.from({ length: Math.round(barBeats / step) }, (_, index) => {
-        const time = index * step;
-        const beatStart = Math.abs(time - Math.round(time)) < 0.001;
-        return accompanimentEvent(time, step, tokens[index % tokens.length], beatStart ? velocity + 8 : velocity, hand, beatStart ? volume * 1.15 : volume);
-      })
-    );
-    const fullCompoundGroupEvents = (groups, tokens, velocity = 60, hand = "LH", volume = 0.017) => (
-      groups.flatMap((_, groupIndex) => {
-        const start = groupIndex * 1.5;
-        return tokens.map((token, index) => accompanimentEvent(start + index * 0.5, "eighth", token, index === 0 ? velocity + 8 : velocity, hand, index === 0 ? volume * 1.2 : volume));
-      })
-    );
-    const fullChordPulseEvents = (beats, firstVelocity = 62, restVelocity = 56) => beats.map((beat, index) => (
-      accompanimentEvent(beat, Math.min(1, Math.max(0.5, Math.ceil(beat + 1) - beat)), ["third", "fifth", "octaveRoot"], index === 0 ? firstVelocity : restVelocity, "RH", index === 0 ? 0.015 : 0.013)
-    ));
-    const fullBlockChordVariant = () => [
-      accompanimentEvent(0, "bar", "lowRoot", 65, "LH", 0.028),
-      accompanimentEvent(0, "bar", ["third", "fifth", "octaveRoot"], 58, "RH", 0.014),
-    ];
-    const fullBassChordBeats = (barBeats) => [
-      accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.027),
-      ...Array.from({ length: Math.max(1, Math.floor(barBeats) - 1) }, (_, index) => (
-        accompanimentEvent(index + 1, Math.min(1, barBeats - index - 1), ["third", "fifth", "octaveRoot"], index === 0 ? 58 : 55, "RH", 0.013)
-      )),
-    ];
-    const fullBassChordCompound = (groups) => groups.map((_, index) => (
-      index % 2 === 0
-        ? accompanimentEvent(index * 1.5, "dottedQuarter", index === 0 ? "lowRoot" : "lowFifth", 68, "LH", 0.026)
-        : accompanimentEvent(index * 1.5, "dottedQuarter", ["third", "fifth", "octaveRoot"], 56, "RH", 0.013)
-    ));
-    const fullWaltzVariant = (barBeats) => [
-      accompanimentEvent(0, "quarter", "lowRoot", 72, "LH", 0.028),
-      ...Array.from({ length: Math.max(1, Math.floor(barBeats) - 1) }, (_, index) => (
-        accompanimentEvent(index + 1, Math.min(1, barBeats - index - 1), ["third", "fifth", "octaveRoot"], index === 0 ? 58 : 55, "RH", 0.013)
-      )),
-    ];
-    const fullOffbeatEvents = (barBeats) => finishPatternAtBarline([
-      accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.027),
-      ...Array.from({ length: Math.floor(barBeats) }, (_, index) => accompanimentEvent(index + 0.5, "eighth", index % 2 ? ["third", "fifth", "octaveRoot"] : ["third", "fifth"], index % 2 ? 60 : 56, "RH", 0.012)),
-    ], barBeats);
-    const fullOctaveHalfEvents = (barBeats, big = false) => (
-      barBeats <= 2
-        ? [accompanimentEvent(0, "bar", ["lowRoot", "root"], big ? 78 : 68, "LH", big ? 0.032 : 0.026), accompanimentEvent(0, "bar", ["third", "fifth", "octaveRoot"], big ? 65 : 55, "RH", big ? 0.018 : 0.014)]
-        : [accompanimentEvent(0, "half", ["lowRoot", "root"], big ? 78 : 68, "LH", big ? 0.032 : 0.026), accompanimentEvent(2, barBeats - 2, ["lowFifth", "fifth"], big ? 72 : 62, "LH", big ? 0.029 : 0.023), accompanimentEvent(0, "half", ["third", "fifth", "octaveRoot"], big ? 65 : 55, "RH", big ? 0.018 : 0.014), accompanimentEvent(2, barBeats - 2, ["third", "fifth", "octaveRoot"], big ? 62 : 52, "RH", big ? 0.017 : 0.013)]
-    );
-    const fullPianoBalladEvents = (barBeats) => finishPatternAtBarline([
-      accompanimentEvent(0, "quarter", "lowRoot", 70, "LH", 0.027),
-      accompanimentEvent(Math.min(2, barBeats - 1), "quarter", "lowFifth", 64, "LH", 0.023),
-      ...fullArpeggioEvents(["third", "fifth", "octaveRoot"], barBeats, 0.5, 54, "RH", 0.012),
-    ], barBeats);
-    const fullRockOctaveEvents = (barBeats) => fullArpeggioEvents(["lowRoot", "lowRoot", "lowFifth", "lowFifth"], barBeats, 0.5, 76, "LH", 0.026).map((event) => ({
-      ...event,
-      notes: event.notes.flatMap((note) => note === "lowRoot" ? ["lowRoot", "root"] : ["lowFifth", "fifth"]),
-    }));
-    const fullPowerChordEvents = (barBeats) => finishPatternAtBarline([
-      ...Array.from({ length: Math.floor(barBeats) }, (_, index) => accompanimentEvent(index, "quarter", index < barBeats / 2 ? "lowRoot" : "lowFifth", index % 2 ? 72 : 82, "LH", 0.027)),
-      accompanimentEvent(0, "quarter", "power", 76, "RH", 0.017),
-      ...(barBeats > 2 ? [accompanimentEvent(2, "quarter", "power", 74, "RH", 0.016)] : []),
-    ], barBeats);
-    const fullStrideEvents = (barBeats) => (
-      barBeats <= 2
-        ? [accompanimentEvent(0, "quarter", ["lowRoot", "root"], 78, "LH", 0.028), accompanimentEvent(1, "quarter", "shell", 66, "RH", 0.016)]
-        : finishPatternAtBarline([
-          accompanimentEvent(0, "quarter", ["lowRoot", "root"], 78, "LH", 0.028),
-          accompanimentEvent(1, "quarter", "shell", 66, "RH", 0.016),
-          accompanimentEvent(2, "quarter", ["lowFifth", "fifth"], 74, "LH", 0.026),
-          ...(barBeats >= 4 ? [accompanimentEvent(3, "quarter", "shell", 64, "RH", 0.015)] : []),
-        ], barBeats)
-    );
-    const fullWalkingBassEvents = (barBeats) => finishPatternAtBarline([
-      ...Array.from({ length: Math.floor(barBeats) }, (_, index) => accompanimentEvent(index, "quarter", ["lowRoot", "lowThird", "lowFifth", "lowFifth"][index % 4], index === 0 ? 72 : 62, "LH", 0.024)),
-      ...(barBeats > 2 ? [accompanimentEvent(1, "eighth", "shell", 55, "RH", 0.012)] : []),
-      ...(barBeats > 3 ? [accompanimentEvent(2.5, "eighth", "shell", 58, "RH", 0.012)] : []),
-    ], barBeats);
-    const fullSimpleVariants = (build) => ({
-      simple_2: build(FULL_METER_BEATS.simple_2),
-      simple_3: build(FULL_METER_BEATS.simple_3),
-      simple_4: build(FULL_METER_BEATS.simple_4),
-      simple_5: build(FULL_METER_BEATS.simple_5),
-    });
-    const fullCompoundVariants = (build) => ({
-      compound_2: build([3, 3]),
-      compound_3: build([3, 3, 3]),
-      compound_4: build([3, 3, 3, 3]),
-    });
-    const fullAllMeters = (simpleBuilder, compoundBuilder = (groups) => fullCompoundGroupEvents(groups, ["root", "fifth", "third"])) => ({
-      ...fullSimpleVariants(simpleBuilder),
-      ...fullCompoundVariants(compoundBuilder),
-    });
-    const fullStyle = (styleId, name, variants) => ({ styleId, name, variants });
-    const FULL_ACCOMPANIMENT_PATTERN_LIBRARY = {
-      block_chords: fullStyle("block_chords", "Block Chords", fullAllMeters(fullBlockChordVariant, fullBassChordCompound)),
-      broken_chords: fullStyle("broken_chords", "Broken Chords", fullAllMeters((beats) => fullArpeggioEvents(["root", "fifth", "octaveRoot", "fifth"], beats), (groups) => fullCompoundGroupEvents(groups, ["root", "fifth", "octaveRoot"]))),
-      alberti_bass: fullStyle("alberti_bass", "Alberti Bass", fullAllMeters((beats) => fullArpeggioEvents(["root", "fifth", "third", "fifth"], beats), (groups) => fullCompoundGroupEvents(groups, ["root", "fifth", "third"]))),
-      waltz: fullStyle("waltz", "Waltz", fullAllMeters(fullWaltzVariant, fullBassChordCompound)),
-      romantic_octaves: fullStyle("romantic_octaves", "Romantic Octaves", fullAllMeters((beats) => fullOctaveHalfEvents(beats, true), (groups) => fullBassChordCompound(groups).map((event) => ({ ...event, velocity: event.velocity + 8, volume: event.volume * 1.15 })))),
-      pop_ballad: fullStyle("pop_ballad", "Pop Ballad", fullAllMeters((beats) => fullOctaveHalfEvents(beats, false), fullBassChordCompound)),
-      piano_ballad: fullStyle("piano_ballad", "Piano Ballad", fullAllMeters(fullPianoBalladEvents, (groups) => [...fullBassChordCompound(groups), ...fullCompoundGroupEvents(groups, ["third", "fifth", "octaveRoot"], 50, "RH", 0.01)])),
-      contemporary_pop: fullStyle("contemporary_pop", "Contemporary Pop", fullAllMeters(fullOffbeatEvents, (groups) => fullCompoundGroupEvents(groups, ["lowRoot", ["third", "fifth"], ["third", "fifth", "octaveRoot"]], 56, "RH", 0.012))),
-      pop_power_piano: fullStyle("pop_power_piano", "Pop Power Piano", fullAllMeters((beats) => [...fullOctaveHalfEvents(beats, true), ...fullChordPulseEvents(Array.from({ length: Math.floor(beats) }, (_, index) => index), 72, 66)], (groups) => [...fullBassChordCompound(groups).map((event) => ({ ...event, velocity: event.velocity + 8, volume: event.volume * 1.2 })), ...fullCompoundGroupEvents(groups, [["third", "fifth", "octaveRoot"], ["third", "fifth"], ["third", "fifth"]], 60, "RH", 0.013)])),
-      rock_octaves: fullStyle("rock_octaves", "Rock Octaves", fullAllMeters(fullRockOctaveEvents, (groups) => fullCompoundGroupEvents(groups, [["lowRoot", "root"], ["lowRoot", "root"], ["lowFifth", "fifth"]], 74, "LH", 0.026))),
-      power_chords: fullStyle("power_chords", "Power Chords", fullAllMeters(fullPowerChordEvents, (groups) => fullCompoundGroupEvents(groups, ["lowRoot", "lowRoot", "lowFifth"], 76, "LH", 0.026))),
-      stride_piano: fullStyle("stride_piano", "Stride Piano", fullAllMeters(fullStrideEvents, fullBassChordCompound)),
-      walking_bass: fullStyle("walking_bass", "Walking Bass", fullAllMeters(fullWalkingBassEvents, (groups) => fullCompoundGroupEvents(groups, ["lowRoot", "lowThird", "lowFifth"], 62, "LH", 0.022))),
-    };
-    Object.entries(ACCOMPANIMENT_PATTERN_ALIASES).forEach(([alias, target]) => {
-      FULL_ACCOMPANIMENT_PATTERN_LIBRARY[alias] = FULL_ACCOMPANIMENT_PATTERN_LIBRARY[target];
-    });
-    function getPatternVariant(styleId, meterInfo) {
-      const resolvedStyleId = ACCOMPANIMENT_PATTERN_ALIASES[styleId] ?? styleId;
-      const stylePattern = FULL_ACCOMPANIMENT_PATTERN_LIBRARY[resolvedStyleId] ?? FULL_ACCOMPANIMENT_PATTERN_LIBRARY.block_chords;
-      if (meterInfo.meterFamily === "simple_5" && meterInfo.beatGroups?.join("+") === "3+2") {
-        let groupOffset = 0;
-        return meterInfo.beatGroups.flatMap((groupBeats) => {
-          const groupPattern = stylePattern.variants?.[`simple_${groupBeats}`]
-            ?? FULL_ACCOMPANIMENT_PATTERN_LIBRARY.block_chords.variants[`simple_${groupBeats}`]
-            ?? [];
-          const events = groupPattern.map((event) => ({
-            ...event,
-            time: event.time + groupOffset,
-            duration: event.duration === "bar" ? groupBeats : event.duration,
-          }));
-          groupOffset += groupBeats;
-          return events;
-        });
-      }
-      return stylePattern.variants?.[meterInfo.meterFamily]
-        ?? adaptPatternToMeter(stylePattern, meterInfo)
-        ?? FULL_ACCOMPANIMENT_PATTERN_LIBRARY.block_chords.variants[meterInfo.meterFamily]
-        ?? FULL_ACCOMPANIMENT_PATTERN_LIBRARY.block_chords.variants.simple_4;
-    }
-
-
-    function adaptPatternToMeter(stylePattern, meterInfo) {
-      if (!stylePattern?.variants) return null;
-      if (meterInfo.meterFamily === "simple_2") return stylePattern.variants.simple_4?.filter((event) => event.time < 2);
-      if (meterInfo.meterFamily === "simple_3") return stylePattern.variants.simple_4?.filter((event) => event.time < 3);
-      if (meterInfo.meterFamily === "compound_2") return stylePattern.variants.compound_3?.filter((event) => event.time < 3);
-      if (meterInfo.meterFamily === "compound_3") return stylePattern.variants.compound_4?.filter((event) => event.time < 4.5);
-      return null;
-    }
-    function accompanimentDurationBeats(duration, meterInfo) {
-      if (duration === "bar") return meterInfo.beatsPerBar;
-      return durationToBeats[duration] ?? Number(duration) ?? 0;
-    }
-    function validateAccompanimentPattern(pattern, meterInfo) {
-      if (!Array.isArray(pattern) || !pattern.length) return false;
-      const barBeats = meterInfo.beatsPerBar;
-      const inBar = pattern.every((event) => {
-        const duration = accompanimentDurationBeats(event.duration, meterInfo);
-        return event.time >= 0 && duration > 0 && event.time + duration <= barBeats + 0.001;
-      });
-      if (!inBar) return false;
-      const patternEnd = Math.max(...pattern.map((event) => event.time + accompanimentDurationBeats(event.duration, meterInfo)));
-      if (Math.abs(patternEnd - barBeats) > 0.001) return false;
-      if (meterInfo.meterFamily.startsWith("compound_")) {
-        return meterInfo.beatGroups.every((_, index) => pattern.some((event) => Math.abs(event.time - index * 1.5) < 0.001));
-      }
-      return pattern.some((event) => Math.abs(event.time) < 0.001);
-    }
+    } = window.PracticeMelodyGenerator;
     const RHYTHMS = {
       semiquaver: { beats: 0.25, spacing: 0.62, label: "semiquaver" },
       notehead: { beats: 0, spacing: 1.35, label: "notehead" },
@@ -509,76 +198,6 @@
       crotchetRest: { beats: 1, spacing: 1.15, label: "crotchet rest" },
       dottedQuaverRest: { beats: 0.75, spacing: 0.95, label: "dotted quaver rest" },
       quaverRest: { beats: 0.5, spacing: 0.82, label: "quaver rest" },
-    };
-    const BAR_PATTERNS = {
-      "2/4": [
-        ["crotchet", "crotchet"],
-        ["minim"],
-        ["dottedCrotchet", "quaver"],
-        ["quaver", "quaver", "crotchet"],
-        ["crotchet", "quaver", "quaver"],
-      ],
-      "3/4": [
-        ["crotchet", "crotchet", "crotchet"],
-        ["minim", "crotchet"],
-        ["crotchet", "minim"],
-        ["dottedMinim"],
-        ["dottedCrotchet", "quaver", "crotchet"],
-        ["crotchet", "dottedCrotchet", "quaver"],
-        ["quaver", "quaver", "crotchet", "crotchet"],
-        ["crotchet", "quaver", "quaver", "crotchet"],
-      ],
-      "4/4": [
-        ["crotchet", "crotchet", "crotchet", "crotchet"],
-        ["minim", "crotchet", "crotchet"],
-        ["crotchet", "crotchet", "minim"],
-        ["dottedMinim", "crotchet"],
-        ["crotchet", "dottedMinim"],
-        ["dottedCrotchet", "quaver", "minim"],
-        ["minim", "dottedCrotchet", "quaver"],
-        ["quaver", "quaver", "crotchet", "crotchet", "crotchet"],
-        ["crotchet", "quaver", "quaver", "crotchet", "crotchet"],
-        ["crotchet", "crotchet", "quaver", "quaver", "crotchet"],
-        ["minim", "minim"],
-      ],
-      "5/4": [
-        ["dottedMinim", "minim"],
-        ["minim", "crotchet", "crotchet", "crotchet"],
-        ["crotchet", "minim", "quaver", "quaver", "crotchet"],
-        ["crotchet", "crotchet", "crotchet", "crotchet", "crotchet"],
-        ["dottedCrotchet", "quaver", "crotchet", "dottedCrotchet", "quaver"],
-        ["crotchet", "dottedCrotchet", "quaver", "quaver", "quaver", "crotchet"],
-        ["quaver", "quaver", "crotchet", "crotchet", "quaver", "quaver", "crotchet"],
-      ],
-      "6/8": [
-        ["dottedMinim"],
-        ["dottedCrotchet", "dottedCrotchet"],
-        ["quaver", "quaver", "quaver", "dottedCrotchet"],
-        ["dottedCrotchet", "quaver", "quaver", "quaver"],
-        ["quaver", "quaver", "quaver", "quaver", "quaver", "quaver"],
-        ["dottedCrotchet", "quaver", "crotchet"],
-        ["crotchet", "quaver", "crotchet", "quaver"],
-      ],
-      "9/8": [
-        ["dottedCrotchet", "dottedCrotchet", "dottedCrotchet"],
-        ["quaver", "quaver", "quaver", "dottedCrotchet", "dottedCrotchet"],
-        ["dottedCrotchet", "quaver", "quaver", "quaver", "dottedCrotchet"],
-        ["dottedCrotchet", "dottedCrotchet", "quaver", "quaver", "quaver"],
-        ["crotchet", "quaver", "dottedCrotchet", "dottedCrotchet"],
-        ["dottedCrotchet", "crotchet", "quaver", "dottedCrotchet"],
-        ["dottedCrotchet", "dottedCrotchet", "crotchet", "quaver"],
-      ],
-      "12/8": [
-        ["dottedCrotchet", "dottedCrotchet", "dottedCrotchet", "dottedCrotchet"],
-        ["quaver", "quaver", "quaver", "dottedCrotchet", "dottedCrotchet", "dottedCrotchet"],
-        ["dottedCrotchet", "quaver", "quaver", "quaver", "dottedCrotchet", "dottedCrotchet"],
-        ["dottedCrotchet", "dottedCrotchet", "quaver", "quaver", "quaver", "dottedCrotchet"],
-        ["dottedCrotchet", "dottedCrotchet", "dottedCrotchet", "quaver", "quaver", "quaver"],
-        ["crotchet", "quaver", "dottedCrotchet", "dottedCrotchet", "dottedCrotchet"],
-        ["dottedCrotchet", "crotchet", "quaver", "dottedCrotchet", "dottedCrotchet"],
-        ["dottedCrotchet", "dottedCrotchet", "crotchet", "quaver", "dottedCrotchet"],
-        ["dottedCrotchet", "dottedCrotchet", "dottedCrotchet", "crotchet", "quaver"],
-      ],
     };
     const NATIONAL4_EXTRA_BAR_PATTERNS = {
       "2/4": [
@@ -613,26 +232,6 @@
         ["crotchet", "semiquaver", "semiquaver", "quaver", "crotchet", "crotchet"],
         ["crotchet", "crotchet", "semiquaver", "semiquaver", "quaver", "crotchet"],
         ["crotchet", "crotchet", "crotchet", "semiquaver", "semiquaver", "quaver"],
-      ],
-    };
-    const NATIONAL5_EXTRA_BAR_PATTERNS = {
-      "2/4": [
-        ["semiquaver", "dottedQuaver", "crotchet"],
-        ["dottedQuaver", "semiquaver", "crotchet"],
-        ["crotchet", "semiquaver", "dottedQuaver"],
-        ["crotchet", "dottedQuaver", "semiquaver"],
-      ],
-      "3/4": [
-        ["semiquaver", "dottedQuaver", "crotchet", "crotchet"],
-        ["dottedQuaver", "semiquaver", "crotchet", "crotchet"],
-        ["crotchet", "semiquaver", "dottedQuaver", "crotchet"],
-        ["crotchet", "dottedQuaver", "semiquaver", "crotchet"],
-      ],
-      "4/4": [
-        ["crotchet", "semiquaver", "dottedQuaver", "crotchet", "crotchet"],
-        ["crotchet", "dottedQuaver", "semiquaver", "crotchet", "crotchet"],
-        ["crotchet", "crotchet", "semiquaver", "dottedQuaver", "crotchet"],
-        ["crotchet", "crotchet", "dottedQuaver", "semiquaver", "crotchet"],
       ],
     };
     const AH_BAR_PATTERNS = {
@@ -971,7 +570,7 @@
     ];
 
     const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-    const randomItem = (items) => items[Math.floor(Math.random() * items.length)];
+    const randomItem = (items) => items[Math.floor(exerciseRandom() * items.length)];
     const rhythmInfo = (rhythm) => RHYTHMS[rhythm] ?? RHYTHMS.crotchet;
     const isHigherLevel = (level) => level === "H" || level === "AH";
     function weightedRandomItem(items) {
@@ -1019,7 +618,7 @@
       const patterns = level === "N4"
         ? [...basePatterns, ...(NATIONAL4_EXTRA_BAR_PATTERNS[signature.id] ?? [])]
         : level === "N5"
-          ? [...basePatterns, ...(NATIONAL5_EXTRA_BAR_PATTERNS[signature.id] ?? [])]
+          ? national5.barPatterns(signature)
           : basePatterns;
       const generatedPatterns = patterns.filter((pattern) => (
         level === "N4"
@@ -1332,7 +931,7 @@
       const minorKeys = availableKeys.filter(isMinorKey);
       if (!minorKeys.length) return randomItem(majorKeys.length ? majorKeys : availableKeys);
       if (!majorKeys.length) return randomItem(minorKeys);
-      return Math.random() < 0.72 ? randomItem(majorKeys) : randomItem(minorKeys);
+      return exerciseRandom() < 0.72 ? randomItem(majorKeys) : randomItem(minorKeys);
     };
     const effectiveMidiForNote = (question, bar, note) => (
       Object.prototype.hasOwnProperty.call(note, "absoluteAccidental")
@@ -1875,7 +1474,7 @@
           return candidate && noteAllowedForLevel(question.level, candidate);
         }));
       if (!changeableNotes.length) return false;
-      const changeCount = Math.min(changeableNotes.length, Math.random() < 0.5 ? 1 : 2);
+      const changeCount = Math.min(changeableNotes.length, exerciseRandom() < 0.5 ? 1 : 2);
       const changes = new Map(shuffleItems(changeableNotes).slice(0, changeCount).map(({ note, noteIndex }) => {
         const choices = [-1, 1]
           .map((offset) => NOTE_POOL[noteBaseIndex(note) + offset])
@@ -1978,7 +1577,7 @@
         const repeatedSemiquaverFallback = relaxedFallback.length ? relaxedFallback : fallbackCandidates(true, true);
         return randomItem(repeatedSemiquaverFallback.length ? repeatedSemiquaverFallback : [previous]);
       }
-      let roll = Math.random() * candidates.reduce((sum, item) => sum + item.weight, 0);
+      let roll = exerciseRandom() * candidates.reduce((sum, item) => sum + item.weight, 0);
       for (const item of candidates) {
         roll -= item.weight;
         if (roll <= 0) return item.candidate;
@@ -2131,132 +1730,24 @@
     }
 
     function national5PatternsForBar(timeSignature, barIndex) {
-      const options = barPatternsForSignature(timeSignature, "N5").filter((pattern) => {
-        if (pattern.length < 2) return false;
-        if (pattern.some(isRestRhythm)) return false;
-        if (pattern.includes("semibreve") || pattern.includes("dottedMinim")) return false;
-        return pattern.reduce((sum, rhythm) => sum + rhythmInfo(rhythm).beats, 0) === timeSignature.beats;
-      });
-      const preferred = options.filter((pattern) => {
-        const quavers = pattern.filter((rhythm) => rhythm === "quaver").length;
-        if (barIndex === 1 || barIndex === 5 || barIndex === 6) return quavers >= 2 || pattern.includes("dottedCrotchet");
-        return quavers <= 2;
-      });
-      return preferred.length ? preferred : options;
+      return national5.patternsForBar(timeSignature, barIndex, { rhythmInfo, isRestRhythm });
     }
 
-    function directionRunLength(notes) {
-      let run = 0;
-      let lastDirection = 0;
-      for (let index = 1; index < notes.length; index += 1) {
-        const direction = Math.sign(notes[index].step - notes[index - 1].step);
-        if (!direction) continue;
-        if (direction === lastDirection) run += 1;
-        else {
-          lastDirection = direction;
-          run = 1;
-        }
-      }
-      return { direction: lastDirection, run };
-    }
+    const generateNational5PhraseBar = national5.createPhraseBuilder({
+      notePool: NOTE_POOL.filter((note) => noteAllowedForLevel("N5", note)),
+      noteBaseIndex,
+      tonicStartNote: (key) => tonicStartNoteForLevel("N5", key),
+      chordLettersFor: (key, symbol) => key.chords[symbol] ?? key.chords.I,
+      maximumLeap: national5MelodicLeapLimit,
+      rhythmInfo,
+      melodicAccidental: melodicAccidentalForLetter,
+      makeNote,
+      random: exerciseRandom,
+    });
 
-    function currentRepeatedPitchRun(notes) {
-      if (!notes.length) return 0;
-      let run = 1;
-      for (let index = notes.length - 1; index > 0; index -= 1) {
-        if (notes[index].step !== notes[index - 1].step) break;
-        run += 1;
-      }
-      return run;
-    }
-
-    function chooseNational5MelodyNote({ key, chordSymbol, previous, allNotes, beat, rhythm, barIndex, noteIndex, targetStep, forceLetter = null }) {
-      if (barIndex === 0 && noteIndex === 0) return tonicStartNoteForLevel("N5", key);
-      const chordLetters = key.chords[chordSymbol] ?? key.chords.I;
-      const previousIndex = noteBaseIndex(previous);
-      const previousStep = previous?.step ?? tonicStartNoteForLevel("N5", key).step;
-      const previousInterval = allNotes.length > 1 ? previousStep - allNotes.at(-2).step : 0;
-      const recoveringLeap = Math.abs(previousInterval) >= 2;
-      const run = directionRunLength(allNotes);
-      const repeatedRun = currentRepeatedPitchRun(allNotes);
-      const strongBeat = beat === 0 || beat === 2 || beat === 3;
-      const rhythmBeats = rhythmInfo(rhythm).beats;
-      const candidates = NOTE_POOL.filter((candidate) => {
-        if (!noteAllowedForLevel("N5", candidate)) return false;
-        if (forceLetter && candidate.letter !== forceLetter) return false;
-        const distance = candidate.step - previousStep;
-        const absDistance = Math.abs(distance);
-        if (previousIndex >= 0 && absDistance > national5MelodicLeapLimit()) return false;
-        if (strongBeat && !chordLetters.includes(candidate.letter)) return false;
-        if (repeatedRun >= 2 && distance === 0) return false;
-        if (run.run >= 3 && Math.sign(distance) === run.direction) return false;
-        if (recoveringLeap && distance !== 0 && Math.sign(distance) === Math.sign(previousInterval)) return false;
-        if (recoveringLeap && absDistance > 1) return false;
-        if (rhythm === "quaver" && absDistance > 2) return false;
-        return true;
-      });
-      const weighted = candidates.map((candidate) => {
-        const distance = Math.abs(candidate.step - previousStep);
-        const contourDistance = Math.abs(candidate.step - targetStep);
-        const chordTone = chordLetters.includes(candidate.letter);
-        let weight = chordTone ? 7 : 2;
-        if (strongBeat && chordTone) weight *= 3;
-        if (rhythmBeats >= 2) weight *= chordTone ? 4 : 0.2;
-        else if (rhythmBeats > 1) weight *= chordTone ? 2.4 : 0.45;
-        else if (rhythmBeats === 1) weight *= chordTone ? 1.35 : 0.75;
-        if (distance === 0) weight *= 0.3;
-        if (distance === 1) weight *= 7;
-        if (distance === 2) weight *= 3.2;
-        if (distance === 3) weight *= 1.2;
-        if (distance === 4) weight *= 0.7;
-        weight *= 1 / (1 + contourDistance * 0.55);
-        if (barIndex >= 5 && barIndex <= 6 && candidate.step >= targetStep - 1 && candidate.step <= targetStep + 1) weight *= 1.6;
-        if (barIndex >= 5 && barIndex <= 6 && candidate.step > targetStep + 2) weight *= 0.35;
-        if (melodicAccidentalForLetter(key, candidate.letter) !== null) weight *= 0.85;
-        return { candidate, weight };
-      }).filter((item) => item.weight > 0);
-      const pool = weighted.length ? weighted : [{ candidate: previous ?? tonicStartNoteForLevel("N5", key), weight: 1 }];
-      let roll = Math.random() * pool.reduce((sum, item) => sum + item.weight, 0);
-      for (const item of pool) {
-        roll -= item.weight;
-        if (roll <= 0) return item.candidate;
-      }
-      return pool.at(-1).candidate;
-    }
-
-    function buildNational5PhraseBar({ key, chordSymbol, pattern, barIndex, previous, totalBars, timeSignature, targetStep }) {
-      let beat = 0;
-      const notes = [];
-      const allNotes = buildNational5PhraseBar.allNotes ?? [];
-      pattern.forEach((rhythm, noteIndex) => {
-        const forceLetter = null;
-        const base = chooseNational5MelodyNote({
-          key,
-          chordSymbol,
-          previous,
-          allNotes,
-          beat,
-          rhythm,
-          barIndex,
-          noteIndex,
-          targetStep,
-          forceLetter,
-        });
-        const note = makeNote(base, rhythm, barIndex, noteIndex, beat, key, chordSymbol);
-        notes.push(note);
-        allNotes.push(note);
-        previous = base;
-        beat += rhythmInfo(rhythm).beats;
-      });
-      buildNational5PhraseBar.allNotes = allNotes;
-      return {
-        barIndex,
-        chordSymbol,
-        notes,
-        totalBars,
-        pattern,
-        timeSignature,
-      };
+    function buildNational5PhraseBar(options) {
+      const allNotes = buildNational5PhraseBar.allNotes ??= [];
+      return generateNational5PhraseBar({ ...options, allNotes });
     }
 
     const RHYTHM_DICTATION_PATTERNS = {
@@ -2471,7 +1962,7 @@
       const activeSignature = timeSignatureForBar(question, targetBarIndex);
       const timeSignature = ["3/4", "4/4", "5/4"].includes(activeSignature?.id) ? activeSignature : null;
       if (!timeSignature) return null;
-      const useQuaverToCrotchetTie = timeSignature.id === "4/4" && Math.random() < 0.5;
+      const useQuaverToCrotchetTie = timeSignature.id === "4/4" && exerciseRandom() < 0.5;
       const quaverCount = Math.max(4, timeSignature.beats * 2);
       const pattern = useQuaverToCrotchetTie
         ? ["quaver", "quaver", "crotchet", "quaver", "quaver", "crotchet"]
@@ -2672,7 +2163,7 @@
           return Math.floor(bar.barIndex / BARS_PER_SYSTEM) === Math.floor(nextBar.barIndex / BARS_PER_SYSTEM);
         })
         .map((bar) => bar.barIndex);
-      if (adjacentBarCandidates.length && (!tiedBarCandidates.length || Math.random() < 0.5)) return plantAdjacentRhythmTotalTarget(question, adjacentBarCandidates);
+      if (adjacentBarCandidates.length && (!tiedBarCandidates.length || exerciseRandom() < 0.5)) return plantAdjacentRhythmTotalTarget(question, adjacentBarCandidates);
       if (!tiedBarCandidates.length) return null;
 
       const startBarIndex = randomItem(tiedBarCandidates);
@@ -3284,7 +2775,7 @@
 
     function higherCadenceEnding(cadenceId, key) {
       return {
-        perfect: [Math.random() < 0.28 ? "V7" : "V", "I"],
+        perfect: [exerciseRandom() < 0.28 ? "V7" : "V", "I"],
         imperfect: [randomItem(["I", "IV", "VI"]), "V"],
         plagal: ["IV", "I"],
         interrupted: ["V", "VI"],
@@ -3652,7 +3143,7 @@
         return generateHigherPhraseQuestion(0, cadenceId, requireMissingCopy, requireSimpleTime, generationLevel === "AH" ? "H" : generationLevel, allowedTimeSignatureIds, allowRests, generationOptions);
       }
       higherPhraseGenerationLevel = generationLevel;
-      const seed = generationOptions.seed ?? `${Date.now()}-${Math.random()}`;
+      const seed = generationOptions.seed ?? (window.MLH?.classroomExercise ? `${exerciseRandom()}` : `${Date.now()}-${exerciseRandom()}`);
       const random = generator.createSeededRandom(seed);
       const availableSignatures = (requireSimpleTime ? simpleTimeSignaturesForLevel(generationLevel) : timeSignaturesForLevel(generationLevel))
         .filter((signature) => signature.id !== "5/4")
@@ -3673,7 +3164,7 @@
         .filter((barIndex) => (bars[barIndex]?.notes ?? []).filter((note) => !note.rest).length >= 2);
       const targetBar = randomItemWith(random, missingCandidates.length ? missingCandidates : [4, 5, 6, 7]);
       const question = {
-        id: Math.random().toString(36).slice(2),
+        id: exerciseRandom().toString(36).slice(2),
         key,
         timeSignature,
         bars,
@@ -3768,7 +3259,7 @@
       forceHigherCadenceNotes(bars, key, cadenceId);
 
       const question = {
-        id: Math.random().toString(36).slice(2),
+        id: exerciseRandom().toString(36).slice(2),
         key,
         timeSignature,
         bars,
@@ -3813,33 +3304,7 @@
     }
 
     function makeNational5PracticeProgression(cadenceId = "perfect", barCount = BAR_COUNT) {
-      const progression = Array.from({ length: barCount }, () => randomItem(["I", "IV", "V", "VI"]));
-      const bar2 = randomItem(["I", "IV", "V", "VI"]);
-      const bar3 = randomItem(["I", "IV", "V", "VI"]);
-      const bar6 = randomItem(["I", "IV", "V", "VI"]);
-      const ending = {
-        perfect: ["V", "I"],
-        imperfect: [randomItem(["I", "IV", "VI"]), "V"],
-        plagal: ["IV", "I"],
-        interrupted: ["V", "VI"],
-      }[cadenceId] ?? ["V", "I"];
-      progression[0] = "I";
-      progression[1] = bar2;
-      progression[2] = bar3;
-      progression[3] = "V";
-      progression[4] = "I";
-      progression[5] = bar6;
-      progression[barCount - 2] = ending[0];
-      progression[barCount - 1] = ending[1];
-      if (barCount >= 16) {
-        if (progression[12] === progression[13]) {
-          progression[12] = randomItem(["I", "IV", "V", "VI"].filter((symbol) => symbol !== progression[13]));
-        }
-        if (progression[11] === progression[12]) {
-          progression[11] = randomItem(["I", "IV", "V", "VI"].filter((symbol) => symbol !== progression[12]));
-        }
-      }
-      return progression;
+      return national5.makeProgression({ cadenceId, barCount, randomItem });
     }
 
     function allowedChordsForBar(barIndex) {
@@ -4087,7 +3552,7 @@
       const fittedBars = fitChordsToMelody(key, bars);
 
       const question = {
-        id: Math.random().toString(36).slice(2),
+        id: exerciseRandom().toString(36).slice(2),
         key,
         timeSignature,
         bars: fittedBars,
@@ -4313,7 +3778,7 @@
       }
 
       const question = {
-        id: Math.random().toString(36).slice(2),
+        id: exerciseRandom().toString(36).slice(2),
         key,
         timeSignature,
         bars,
@@ -4379,7 +3844,7 @@
     function shuffleItems(items) {
       const next = [...items];
       for (let index = next.length - 1; index > 0; index -= 1) {
-        const swapIndex = Math.floor(Math.random() * (index + 1));
+        const swapIndex = Math.floor(exerciseRandom() * (index + 1));
         [next[index], next[swapIndex]] = [next[swapIndex], next[index]];
       }
       return next;
@@ -4387,7 +3852,7 @@
 
     function avoidCorrectOptionFirst(options) {
       if (options[0]?.correct && options.length > 1) {
-        const swapIndex = 1 + Math.floor(Math.random() * (options.length - 1));
+        const swapIndex = 1 + Math.floor(exerciseRandom() * (options.length - 1));
         [options[0], options[swapIndex]] = [options[swapIndex], options[0]];
       }
       return options;
@@ -4457,7 +3922,7 @@
         return endIndex >= 0 && endIndex < NOTE_POOL.length;
       });
       const oppositeDirection = originalDirection ? -originalDirection : 0;
-      const direction = oppositeDirection && possibleDirections.includes(oppositeDirection) && Math.random() < 0.72
+      const direction = oppositeDirection && possibleDirections.includes(oppositeDirection) && exerciseRandom() < 0.72
         ? oppositeDirection
         : randomItem(possibleDirections.length ? possibleDirections : [-1, 1]);
       let previousIndex = firstIndex;
@@ -4466,7 +3931,7 @@
       cell.slice(1).forEach(({ bar, noteIndex }, index) => {
         const current = bar.notes[noteIndex];
         const currentIndex = noteBaseIndex(current);
-        const stepSize = index === 0 && Math.random() < 0.68 ? 2 : 1;
+        const stepSize = index === 0 && exerciseRandom() < 0.68 ? 2 : 1;
         const targetIndex = clamp(previousIndex + direction * stepSize, 0, NOTE_POOL.length - 1);
         const base = NOTE_POOL[targetIndex];
         if (!base) return;
@@ -4517,10 +3982,10 @@
       });
 
       const used = new Set();
-      const variantCell = Math.random() < 0.9 ? makeMelodyVariantCell(bars, candidates) : null;
+      const variantCell = exerciseRandom() < 0.9 ? makeMelodyVariantCell(bars, candidates) : null;
       if (variantCell) {
-        const transposed = Math.random() < 0.62 && transposeMelodyVariantCell(variantCell, key);
-        const reshaped = !transposed && Math.random() < 0.82 && reshapeMelodyVariantCell(variantCell, key);
+        const transposed = exerciseRandom() < 0.62 && transposeMelodyVariantCell(variantCell, key);
+        const reshaped = !transposed && exerciseRandom() < 0.82 && reshapeMelodyVariantCell(variantCell, key);
         if (!transposed && !reshaped) {
           const direction = randomItem([-1, 1]);
           variantCell.forEach(({ bar, noteIndex }) => {
@@ -4530,7 +3995,7 @@
         variantCell.forEach(({ bar, noteIndex }) => used.add(`${bar.barIndex}:${noteIndex}`));
       }
 
-      const targetChanges = Math.min(candidates.length, Math.random() < 0.5 ? 3 : 4);
+      const targetChanges = Math.min(candidates.length, exerciseRandom() < 0.5 ? 3 : 4);
       shuffleItems(candidates)
         .filter(({ bar, noteIndex }) => !used.has(`${bar.barIndex}:${noteIndex}`))
         .slice(0, Math.max(0, targetChanges - used.size))
@@ -4987,7 +4452,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
     function setAdvancedHigherBarTwelveDominant(question) {
       const barIndex = 11;
       if (!question.bars?.[barIndex]) return;
-      const chordSymbol = Math.random() < 0.5 ? "V" : "V7";
+      const chordSymbol = exerciseRandom() < 0.5 ? "V" : "V7";
       question.bars[barIndex] = { ...question.bars[barIndex], chordSymbol };
     }
 
@@ -5154,7 +4619,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const v7Candidates = candidatePool.filter((candidate) => candidate.symbol === "V7");
       const commonCandidates = candidatePool.filter((candidate) => candidate.symbol !== "V7");
       const selectedCandidate = v7Candidates.length && commonCandidates.length
-        ? Math.random() < 0.1 ? weightedAdvancedHigherChordCandidate(v7Candidates) : weightedAdvancedHigherChordCandidate(commonCandidates)
+        ? exerciseRandom() < 0.1 ? weightedAdvancedHigherChordCandidate(v7Candidates) : weightedAdvancedHigherChordCandidate(commonCandidates)
         : weightedAdvancedHigherChordCandidate(candidatePool);
       const chordSymbol = selectedCandidate?.symbol ?? "V";
       const inversion = selectedCandidate?.inversion ?? 0;
@@ -5331,7 +4796,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     function dynamicHairpinForTarget(dynamic, dynamicBar, level = "N5") {
-      if (!dynamic || dynamicBar <= 0 || Math.random() >= 0.5) return null;
+      if (!dynamic || dynamicBar <= 0 || exerciseRandom() >= 0.5) return null;
       if (dynamic.id === "mf" || dynamic.id === "f" || dynamic.id === "ff") return { type: "crescendo", barIndex: dynamicBar - 1 };
       if (dynamic.id === "pp" || dynamic.id === "p" || dynamic.id === "mp") return { type: "diminuendo", barIndex: dynamicBar - 1 };
       return null;
@@ -5664,7 +5129,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const rarePairs = pitchPairs.filter((item) => hasRareIntervalSpelling(item.pair));
       const regularPairs = pitchPairs.filter((item) => !hasRareIntervalSpelling(item.pair));
       if (!rarePairs.length || !regularPairs.length) return pitchPairs;
-      return Math.random() < RARE_INTERVAL_CHANCE ? rarePairs : regularPairs;
+      return exerciseRandom() < RARE_INTERVAL_CHANCE ? rarePairs : regularPairs;
     }
 
     const HIGHER_INTERVAL_TYPE_WEIGHTS = [
@@ -5767,7 +5232,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       };
 
       if (question.practiceLevel === "AH") {
-        const wantsTritone = question.preferredIntervalType ? question.preferredIntervalType === "tritone" : Math.random() < 0.2;
+        const wantsTritone = question.preferredIntervalType ? question.preferredIntervalType === "tritone" : exerciseRandom() < 0.2;
         if (wantsTritone) {
           const existingTritone = randomItem(targets.filter(isTritoneTarget));
           if (existingTritone) return { ...targetWithNotes(existingTritone), advancedHigherIntervalLabel: "Tritone" };
@@ -6146,7 +5611,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         .filter((barIndex) => !excluded.has(barIndex) && question.bars[barIndex]);
       const placements = [];
       while (placements.length < count && candidates.length) {
-        const candidateIndex = Math.floor(Math.random() * candidates.length);
+        const candidateIndex = Math.floor(exerciseRandom() * candidates.length);
         const [barIndex] = candidates.splice(candidateIndex, 1);
         const tripletKind = tripletTarget.tripletKind;
         const placement = plantTripletBar(question, barIndex, tripletKind);
@@ -6690,7 +6155,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
     function makeTranspositionTarget(question, excludedBars = []) {
       const canUseMeaning = question.practiceLevel === "AH";
-      if (canUseMeaning && Math.random() < 0.01) {
+      if (canUseMeaning && exerciseRandom() < 0.01) {
         const excluded = new Set(excludedBars);
         const availableBars = question.bars
           .filter((bar) => bar.barIndex >= 1 && bar.barIndex < 8 && !excluded.has(bar.barIndex))
@@ -7334,7 +6799,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         sourceIds,
         intervalType: !sourceIds.includes("interval") ? null
           : selectionLevel === "N5" ? randomItem(["second", "octave"])
-          : selectionLevel === "AH" ? Math.random() < 0.2 ? "tritone" : weightedRandomItem(ADVANCED_HIGHER_INTERVAL_TYPE_WEIGHTS).type
+          : selectionLevel === "AH" ? exerciseRandom() < 0.2 ? "tritone" : weightedRandomItem(ADVANCED_HIGHER_INTERVAL_TYPE_WEIGHTS).type
           : null,
       };
       while (true) {
@@ -7407,7 +6872,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const forceAdvancedHigherDominantCadence = questionSelectionLevel === "AH"
         && selectedSourceIds.has("ahChordTypes")
         && selectedSourceIds.has("cadence")
-        && Math.random() < 0.1;
+        && exerciseRandom() < 0.1;
       let cadenceId = forceAdvancedHigherDominantCadence ? "perfect" : choosePracticeCadenceId(level);
       const needsSimpleTime = needsTriplets || (level === "H" && needsRhythmicDictation);
       const generationOptions = { questionTypes: [...selectedSourceIds] };
@@ -7430,7 +6895,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         if (needsMissing && !applyAdvancedHigherMissingNotesRule(question) && canRetryPracticeQuestion) return retryPracticeQuestion();
       }
       const cadenceTarget = needsCadence && level === "H"
-        ? Math.random() < 0.5
+        ? exerciseRandom() < 0.5
           ? { startBarIndex: 6, endBarIndex: 7, cadenceId: "perfect" }
           : { startBarIndex: question.bars.length - 2, endBarIndex: question.bars.length - 1, cadenceId }
         : { startBarIndex: question.bars.length - 2, endBarIndex: question.bars.length - 1, cadenceId };
@@ -7438,7 +6903,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         && (questionSelectionLevel === "AH" || (level === "H" && question.melodyGenerationStyle === "advancedHigher"))
         ? level === "H"
           ? makePracticeTimeChangeTarget(question, timeSignatureLevel, [11], 11, 12)
-          : Math.random() < 0.9
+          : exerciseRandom() < 0.9
             ? makePracticeTimeChangeTarget(question, timeSignatureLevel, [10])
             : null
         : null;
@@ -7476,7 +6941,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         ? (() => {
           const targetBarIndex = randomItem(unusedQuestionBars([10, 11]));
           if (!Number.isInteger(targetBarIndex)) return null;
-          const variantRoll = Math.random();
+          const variantRoll = exerciseRandom();
           if (variantRoll < 0.34) return plantAdvancedHigherRhythmTripletTarget(question, targetBarIndex);
           if (variantRoll < 0.67) return plantAdvancedHigherRhythmTieTarget(question, targetBarIndex);
           return plantAdvancedHigherRhythmDictationTarget(question, targetBarIndex);
@@ -7516,7 +6981,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
           ? randomItem(["marking", "dynamicName", "hairpinName"])
           : level === "N4"
             ? randomItem(["marking", "dynamicName", "hairpinName"])
-            : level === "N5" && Math.random() < 0.35
+            : level === "N5" && exerciseRandom() < 0.35
               ? "dynamicName"
             : "marking"
         : "marking";
@@ -7539,7 +7004,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         ? dynamicQuestionType === "hairpinName" ? { type: hairpinDetails.type, barIndex: dynamicHairpinBar } : dynamicHairpinForTarget(dynamic, dynamicBar, level)
         : null;
       const tempoQuestion = needsTempoQuestion ? TEMPO_TERMS[randomItem(tempoTermIdsForLevel(level))] : null;
-      const tempoBpm = tempoQuestion ? randomItem(tempoQuestion.bpmOptions ?? [tempoQuestion.bpm]) : 80 + Math.floor(Math.random() * 21);
+      const tempoBpm = tempoQuestion ? randomItem(tempoQuestion.bpmOptions ?? [tempoQuestion.bpm]) : 80 + Math.floor(exerciseRandom() * 21);
       const accompanimentPattern = randomItem(ACCOMPANIMENT_PATTERNS);
       const repeatTargetOptions = [
         { symbolId: "end-repeat", barIndex: 3, anchor: "end", repeatedBars: [0, 1, 2, 3] },
@@ -7674,7 +7139,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const higherRestBars = level === "H"
         ? questionSelectionLevel === "AH" ? ADVANCED_HIGHER_DEVELOPMENT_BARS : HIGHER_PRACTICE_LINE_BARS.rests
         : null;
-      const wantsIntervalInsert = needsInterval && level === "H" && questionSelectionLevel !== "AH" && Math.random() < 0.5;
+      const wantsIntervalInsert = needsInterval && level === "H" && questionSelectionLevel !== "AH" && exerciseRandom() < 0.5;
       let intervalInsertTarget = wantsIntervalInsert ? makeIntervalInsertTarget(question, excludedBars, higherIntervalBars) : null;
       let intervalTarget = needsInterval && !intervalInsertTarget
         ? level === "N3" || level === "N4" ? plantNational3IntervalTarget(question, excludedBars) : plantIntervalTarget(question, excludedBars, higherIntervalBars)
@@ -7694,7 +7159,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const restTarget = needsRests ? plantRestTarget(question, [...usedQuestionBars], higherRestBars) : null;
       if (needsRests && !restTarget) return retryPracticeQuestion();
       if (needsRests && restTarget) reserveQuestionBar(restTarget.barIndex);
-      const wantsNoteValueCircle = needsNoteIdentification && (level === "N3" || level === "N4") && Math.random() < 0.5;
+      const wantsNoteValueCircle = needsNoteIdentification && (level === "N3" || level === "N4") && exerciseRandom() < 0.5;
       const noteValueCircleTarget = wantsNoteValueCircle ? chooseCircleNoteValueTarget(question, level, [...usedQuestionBars]) : null;
       const noteTarget = needsNoteIdentification && !noteValueCircleTarget ? chooseNoteIdentificationTarget(question, [...usedQuestionBars]) : null;
       if (needsNoteIdentification && !noteValueCircleTarget && !noteTarget && canRetryPracticeQuestion) return retryPracticeQuestion();
@@ -7732,7 +7197,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const articulationTarget = needsArticulation ? makeArticulationTarget(question, [...usedQuestionBars]) : null;
       if (needsArticulation && !articulationTarget) return retryPracticeQuestion();
       if (needsArticulation && articulationTarget) reserveQuestionBar(articulationTarget.barIndex);
-      const preferRhythmFix = needsRhythmicDictation && !advancedHigherRhythmDictationTarget && questionSelectionLevel !== "AH" && (level === "H" || Math.random() < 0.5);
+      const preferRhythmFix = needsRhythmicDictation && !advancedHigherRhythmDictationTarget && questionSelectionLevel !== "AH" && (level === "H" || exerciseRandom() < 0.5);
       const rhythmFixTarget = advancedHigherRhythmDictationTarget ?? (preferRhythmFix ? plantRhythmFixTarget(question, [...usedQuestionBars]) : null);
       if (rhythmFixTarget) rhythmFixTargetBars(rhythmFixTarget).forEach(reserveQuestionBar);
       if (needsRhythmicDictation && (level === "H" || questionSelectionLevel === "AH") && !rhythmFixTarget && canRetryPracticeQuestion) {
@@ -8361,12 +7826,19 @@ function advancedHigherInversionAnswerLabel(inversion) {
     }
 
     function makeQuestion(level = "N5", attempt = 0, enabledQuestionTypes = DEFAULT_PRACTICE_QUESTION_TYPES) {
+      if (window.MLH?.classroomActivities?.isRace?.()) {
+        return makePracticeWorksheetQuestion(level, enabledQuestionTypes, false, true);
+      }
+      return makeInteractivePracticeQuestion(level, attempt, enabledQuestionTypes);
+    }
+
+    function makeInteractivePracticeQuestion(level, attempt, enabledQuestionTypes) {
       if (level === "N3") return makePracticePaperQuestion(level, 0, enabledQuestionTypes);
       if (level === "N4") return makePracticePaperQuestion(level, 0, enabledQuestionTypes);
       if (level === "N5") return makePracticePaperQuestion(level, 0, enabledQuestionTypes);
       if (level === "H") return makePracticePaperQuestion(level, 0, enabledQuestionTypes);
       if (level === "AH") return makePracticePaperQuestion("H", 0, enabledQuestionTypes, "AH");
-      if ((level === "N3" || level === "N4" || level === "N5") && Math.random() < 0.5) {
+      if ((level === "N3" || level === "N4" || level === "N5") && exerciseRandom() < 0.5) {
         return makeEightBarRepetitionQuestion(level);
       }
       return makeCompletionQuestion(level, attempt);
@@ -8409,7 +7881,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
     const PRACTICE_WORKSHEET_PAPER_COUNT = 20;
     const PRACTICE_WORKSHEET_AUDIO_ONLY_TYPES = new Set(["missing", "rhythmicDictation", "tempoQuestion", "cadence", "repeatSigns", "chord", "accidentals"]);
 
-    function practiceWorksheetQuestionTypes(enabledQuestionTypes, level = "N5") {
+    function practiceWorksheetQuestionTypes(enabledQuestionTypes, level = "N5", includeAudio = false) {
+      if (includeAudio) {
+        const selected = { ...normalisePracticeQuestionTypes(enabledQuestionTypes, level), ahChordTypes: false };
+        if (practiceQuestionTypesForLevel(level).some(({id, audio}) => audio && selected[id])) return selected;
+        practiceQuestionTypesForLevel(level).forEach(({id, audio}) => { if (audio) selected[id] = true; });
+        return selected;
+      }
       const worksheetTypes = Object.fromEntries(PRACTICE_QUESTION_TYPES.map((type) => [
         type.id,
         Boolean(enabledQuestionTypes?.[type.id]) && !PRACTICE_WORKSHEET_AUDIO_ONLY_TYPES.has(type.id),
@@ -8460,7 +7938,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const root = ReactDOM.createRoot(host);
       const ignore = () => {};
       try {
-        root.render(
+        ReactDOM.flushSync(() => root.render(
           <MissingNotesScore
             question={question}
             readOnly
@@ -8482,9 +7960,9 @@ function advancedHigherInversionAnswerLabel(inversion) {
             hoverNote={null}
             setHoverNote={ignore}
           />
-        );
+        ));
         await document.fonts?.ready;
-        await practiceWorksheetFrame();
+        if (window.parent === window) await practiceWorksheetFrame();
         const wrapper = host.firstElementChild;
         const svg = wrapper?.querySelector("svg");
         const viewBox = svg?.getAttribute("viewBox")?.trim().split(/\s+/).map(Number) ?? [];
@@ -8616,25 +8094,28 @@ function advancedHigherInversionAnswerLabel(inversion) {
       return { question: completedQuestion, practiceAnswers, userNotes };
     }
 
-    function makePracticeWorksheetQuestion(level, worksheetTypes) {
-      worksheetTypes = practiceWorksheetQuestionTypes(worksheetTypes, level);
+    function makePracticeWorksheetQuestion(level, worksheetTypes, includeAudio = false, writtenRace = false) {
+      worksheetTypes = practiceWorksheetQuestionTypes(worksheetTypes, level, includeAudio);
       const expectedBarCount = ["N3", "N4", "N5"].includes(level) ? 8 : 16;
       const expectedPartCount = level === "AH" ? 8 : 6;
       // Placement retries can exhaust a candidate's available question areas.
       // Generate a fresh candidate rather than rejecting the entire worksheet.
       for (let attempt = 0; attempt < 40; attempt += 1) {
-        const question = makeQuestion(level, attempt, worksheetTypes);
+        const types = includeAudio && attempt >= 20 ? defaultPracticeQuestionTypesForLevel(level) : worksheetTypes;
+        const question = makeInteractivePracticeQuestion(level, attempt, types);
+        const hasAudio = question.subquestions.some((part) => practicePartRequiresAudio(question, part));
+        if ((includeAudio && !hasAudio) || (writtenRace && hasAudio)) continue;
         if (level === "AH" && question.subquestions.some((part) => (part.sourceId ?? part.id) === "ahChordTypes")) continue;
         if (question.bars.length === expectedBarCount && question.subquestions.length === expectedPartCount) return question;
       }
       throw new Error(`The ${level} practice paper did not match its required structure.`);
     }
 
-    async function buildPracticeWorksheetConfig(level, enabledQuestionTypes) {
-      const worksheetTypes = practiceWorksheetQuestionTypes(enabledQuestionTypes, level);
+    async function buildPracticeWorksheetConfig(level, enabledQuestionTypes, includeAudio = false) {
+      const worksheetTypes = practiceWorksheetQuestionTypes(enabledQuestionTypes, level, includeAudio);
       const papers = [];
       for (let index = 0; index < PRACTICE_WORKSHEET_PAPER_COUNT; index += 1) {
-        const question = makePracticeWorksheetQuestion(level, worksheetTypes);
+        const question = makePracticeWorksheetQuestion(level, worksheetTypes, includeAudio);
         const score = await renderPracticeWorksheetScore(question, { worksheetLevel: level });
         const completed = practiceWorksheetCompletedState(question);
         const answerScore = await renderPracticeWorksheetScore(completed.question, { ...completed, worksheetLevel: level });
@@ -8651,6 +8132,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             type: part.type,
             prompt: practiceWorksheetPrompt(part),
             answer: practiceWorksheetAnswer(part),
+            ...(includeAudio && practicePartRequiresAudio(question, part) ? { audio: true } : {}),
           })),
         });
       }
@@ -8661,7 +8143,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
         settings: {
           level,
           enabledQuestionTypes: worksheetTypes,
-          excludeAudio: true,
+          excludeAudio: !includeAudio,
+          audioQuestionTypes: enabledQuestionTypes,
           practicePapers: papers,
         },
       };
@@ -12654,8 +12137,9 @@ function advancedHigherInversionAnswerLabel(inversion) {
           button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; user-select: none; transition: transform .08s ease, filter .08s ease, background-color .12s ease, box-shadow .12s ease; cursor: pointer; }
           button:active { transform: scale(.96); filter: brightness(.92); }
           button:disabled { cursor: not-allowed; opacity: .5; }
-          button:focus-visible { outline: 2px solid rgba(22,163,74,.35); outline-offset: 2px; }
+          button:focus-visible { outline: 2px solid var(--mlh-focus-color, #2563eb); outline-offset: 2px; }
           [data-pitch-entry]:focus-visible, [data-score-target]:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+          .practice-customise > .hub-menu-scroll { max-height: none; }
           @media (hover: hover) and (pointer: fine) {
             button:hover { transform: translateY(-1px) scale(1.01); filter: brightness(1.08); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
           }
@@ -12829,11 +12313,11 @@ function advancedHigherInversionAnswerLabel(inversion) {
       const questionTypeCountLabel = enabledQuestionTypeCount === minimumQuestionTypeCount ? `${minimumQuestionTypeCount} minimum` : `${enabledQuestionTypeCount}`;
       return (
         <div className="flex w-full min-w-0 flex-col sm:inline-flex sm:w-max sm:min-w-[310px]">
+          <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
+          <window.MLH.MenuToggleRow glyph={<MenuSvgGlyph src={ASSET.eye} alt="" sizeClassName="h-[20px] w-[20px]" />} label="Follow Playback" checked={followPlayback} onChange={() => setFollowPlayback((value) => !value)} />
           <window.MLH.MenuSubheading>Exam Conditions</window.MLH.MenuSubheading>
           <window.MLH.MenuToggleRow glyph={<MenuPlayGlyph />} label="Audio Limit" checked={limitPlays} onChange={() => setLimitPlays((value) => !value)} />
           <window.MLH.MenuToggleRow glyph={<MenuSvgGlyph src={ASSET.timer} alt="" sizeClassName="h-5 w-5" />} label="Timer" checked={timerEnabled} onChange={() => setTimerEnabled((value) => !value)} />
-          <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
-          <window.MLH.MenuToggleRow glyph={<MenuSvgGlyph src={ASSET.eye} alt="" sizeClassName="h-[20px] w-[20px]" />} label="Follow Playback" checked={followPlayback} onChange={() => setFollowPlayback((value) => !value)} />
           <window.MLH.MenuSubheading>Question Types ({questionTypeCountLabel})</window.MLH.MenuSubheading>
           {visibleQuestionTypes.map((type) => (
             <window.MLH.MenuToggleRow
@@ -13326,9 +12810,9 @@ function advancedHigherInversionAnswerLabel(inversion) {
         const isWrong = revealed && selected && !isCorrect;
         if (isCorrect) return "border-green-700 bg-green-600 text-white";
         if (isWrong) return "border-red-700 bg-red-600 text-white";
-        if (revealed) return "border-stone-300 bg-white text-stone-900 opacity-60";
+        if (revealed) return "border-stone-300 bg-white text-stone-800 opacity-60";
         if (selected) return "border-stone-950 bg-stone-950 text-white";
-        return "border-stone-300 bg-white text-stone-900 hover:bg-stone-50";
+        return "border-stone-300 bg-white text-stone-800";
       }
 
       function answerButtonPress(event, action) {
@@ -13673,7 +13157,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                     disabled={Boolean(feedback)}
                     onPointerDown={(event) => answerButtonPress(event, chooseOption)}
                     onClick={(event) => answerButtonKeyboardClick(event, chooseOption)}
-                    className={`answer-choice-button flex ${ANSWER_BUTTON_SIZE_CLASS} items-center justify-center rounded-xl border px-3 text-lg font-black transition ${choiceButtonClass(option, selected, part)}`}
+                    className={`answer-choice-button flex h-11 w-[112px] min-w-0 items-center justify-center rounded-xl border px-3 text-sm font-bold transition ${choiceButtonClass(option, selected, part)}`}
                     aria-label={option}
                     aria-pressed={selected}
                   >
@@ -14412,7 +13896,6 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }, []);
       const [activeLevel, setActiveLevel] = useState(initialLevel);
       const [tempo, setTempo] = window.MLH.useProfileState("tempo", "medium");
-      const [metronomeOn, setMetronomeOn] = window.MLH.useProfileState("metronomeOn", false);
       const [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
       const [storedQuestionTypes, setEnabledQuestionTypes] = window.MLH.useProfileState("enabledQuestionTypes", () => defaultPracticeQuestionTypesForLevel(initialLevel));
       const enabledQuestionTypes = useMemo(() => normalisePracticeQuestionTypes(storedQuestionTypes, activeLevel), [storedQuestionTypes, activeLevel]);
@@ -15027,6 +14510,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
               };
             });
 
+            if (isFinalReveal) reportActivityRace(allCorrect);
             if (isFinalReveal && allCorrect) {
               setConfettiKey((value) => value + 1);
               const fanfareTimer = window.setTimeout(() => playSound(true, true, "bronze"), 260);
@@ -15043,6 +14527,12 @@ function advancedHigherInversionAnswerLabel(inversion) {
           return;
         }
         submitPracticeQuestion({ requireComplete: true });
+      }
+
+      function reportActivityRace(solved) {
+        if (window.parent !== window && new URLSearchParams(window.location.search).has("classroomRace")) {
+          window.parent.postMessage({type:"mlh:classroom-finished",solved},location.origin);
+        }
       }
 
       function confirmAnswer() {
@@ -15064,6 +14554,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
               attempted: current.attempted + 1,
             };
           });
+          reportActivityRace(correct);
           playSound(correct);
           setFeedback({ correct });
           setFeedbackFading(false);
@@ -15087,6 +14578,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
             attempted: current.attempted + 1,
           };
         });
+        reportActivityRace(correct);
         playSound(correct);
         setFeedback({ correct });
         setFeedbackFading(false);
@@ -15192,9 +14684,6 @@ function advancedHigherInversionAnswerLabel(inversion) {
         source.stop(start + duration + fallbackRelease + 0.06);
       }
 
-      function playMetronome(ctx, gainNode, start, accented) {
-        window.MLH?.playMetronomeClick?.(ctx, gainNode, start, accented);
-      }
 
       function dynamicGainForBar(question, barIndex) {
         if (question.questionType !== "practicePaper" || !question.dynamic || !question.startingDynamic) return 1;
@@ -15219,24 +14708,6 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
       function accompanimentVelocityForBar(question, barIndex) {
         return dynamicVelocityForBar(question, barIndex);
-      }
-
-      const ACCOMPANIMENT_MIN_MIDI = 45; // A2
-      const ACCOMPANIMENT_MAX_MIDI = 72; // C5
-
-      function lowerAccompanimentMidi(midi) {
-        let adjusted = midi;
-        while (adjusted > ACCOMPANIMENT_MAX_MIDI && adjusted - 12 >= ACCOMPANIMENT_MIN_MIDI) adjusted -= 12;
-        while (adjusted < ACCOMPANIMENT_MIN_MIDI) adjusted += 12;
-        return adjusted;
-      }
-
-      function lowerAccompanimentMidiBelow(midi, ceiling = ACCOMPANIMENT_MAX_MIDI) {
-        const maxMidi = Math.min(ACCOMPANIMENT_MAX_MIDI, Number.isFinite(ceiling) ? ceiling : ACCOMPANIMENT_MAX_MIDI);
-        let adjusted = lowerAccompanimentMidi(midi);
-        while (adjusted >= maxMidi && adjusted - 12 >= ACCOMPANIMENT_MIN_MIDI) adjusted -= 12;
-        while (adjusted < ACCOMPANIMENT_MIN_MIDI) adjusted += 12;
-        return adjusted;
       }
 
       function lowerAccompanimentMidiValues(midiOrValues, ceiling = ACCOMPANIMENT_MAX_MIDI) {
@@ -15322,12 +14793,6 @@ function advancedHigherInversionAnswerLabel(inversion) {
         };
       }
 
-      function accompanimentTokenMidi(token, midiMap) {
-        if (!midiMap) return [];
-        if (Array.isArray(token)) return token.flatMap((item) => accompanimentTokenMidi(item, midiMap));
-        return midiMap[token] ?? midiMap.root ?? [];
-      }
-
       function playTempoAccompanimentPattern(ctx, gainNode, question, bar, barStart, offset, startTime, dynamicGain = 1, dynamicVelocity = 96) {
         const chordMidi = accompanimentChordMidisForBar(question, bar);
         if (!chordMidi.length) return;
@@ -15340,23 +14805,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         const accompanimentIsAccent = isAccentArticulationBar(question, bar);
         const accompanimentVelocity = dynamicVelocity + (accompanimentIsAccent ? ARTICULATION_ACCENT_VELOCITY_BOOST : 0);
         const accompanimentGainScale = accompanimentIsAccent ? ARTICULATION_ACCENT_GAIN_SCALE : 1;
-        const rootMidi = chordMidi[0];
-        const thirdMidi = chordMidi[1] ?? rootMidi;
-        const fifthMidi = chordMidi[2] ?? rootMidi;
-        const seventhMidi = chordMidi[3] ?? null;
-        const defaultMidiMap = {
-          lowRoot: rootMidi - 12,
-          lowThird: thirdMidi - 12,
-          lowFifth: fifthMidi - 12,
-          root: rootMidi,
-          third: thirdMidi,
-          fifth: fifthMidi,
-          seventh: seventhMidi ?? fifthMidi,
-          octaveRoot: rootMidi + 12,
-          chord: chordMidi,
-          shell: [rootMidi, thirdMidi, seventhMidi ?? fifthMidi],
-          power: [rootMidi, fifthMidi],
-        };
+        const defaultMidiMap = accompanimentMidiMap(chordMidi);
         const advancedHigherChordSlots = advancedHigherPlaybackSlotsForBar(question, bar);
         const midiMapForBeat = (beat) => (
           advancedHigherChordPlaybackMidiMap(question, bar, advancedHigherPlaybackSlotForBeat(advancedHigherChordSlots, beat))
@@ -15603,7 +15052,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
         let ready;
         try {
           [ready] = await Promise.all([
-            window.MLH.prepareAudioPlayback(ctx, { metronome: !escapeEmbed && metronomeOn }),
+            window.MLH.prepareAudioPlayback(ctx),
             preloadPianoSamples(ctx, pianoLayersForPlayback(question, playbackBars)),
           ]);
         } catch {
@@ -15622,15 +15071,8 @@ function advancedHigherInversionAnswerLabel(inversion) {
 
         playbackBars.forEach((bar, playbackIndex) => {
           const barStart = playbackTimeline[playbackIndex]?.start ?? 0;
-          const barTimeSignature = timeSignatureForBar(question, bar);
           const dynamicGain = dynamicGainForBar(question, bar.barIndex);
           const dynamicVelocity = dynamicVelocityForBar(question, bar.barIndex);
-          if (!escapeEmbed && metronomeOn) {
-            window.MLH.metronomePulseOffsets(barTimeSignature).forEach((beat) => {
-              const beatStart = barStart + beat * beatSeconds;
-              if (beatStart >= offset) playMetronome(ctx, master, startTime + beatStart, beat === 0);
-            });
-          }
           const finalPlaybackBar = playbackIndex === playbackBars.length - 1;
           const finalSoundingNoteIndex = finalPlaybackBar ? bar.notes.map((note, index) => ({ note, index })).reverse().find(({ note }) => note && !note.rest)?.index : null;
           if (!escapeEmbed) playAccompaniment(ctx, master, question, bar, barStart, offset, startTime, dynamicGain, dynamicVelocity, finalPlaybackBar);
@@ -15807,7 +15249,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
       }
       return (
         <div className="overflow-x-hidden bg-stone-50 pb-10 text-black md:pb-12">
-          <window.MLH.AppHeader profileState={{ activeLevel, tempo, metronomeOn, followPlayback, enabledQuestionTypes, limitPlays, timerEnabled }} icon={ASSET.appIcon} title="Practice Questions" subtitle="Complete exam-style questions combining multiple music literacy concepts." worksheetConfig={() => buildPracticeWorksheetConfig(activeLevel, enabledQuestionTypes)}>
+          <window.MLH.AppHeader profileState={{ activeLevel, tempo, followPlayback, enabledQuestionTypes, limitPlays, timerEnabled }} icon={ASSET.appIcon} title="Practice Questions" subtitle="Complete exam-style questions combining multiple music literacy concepts." worksheetConfig={() => buildPracticeWorksheetConfig(activeLevel, enabledQuestionTypes)}>
             <PracticeScoreTimerPanel
               correct={score.correct}
               attempted={score.attempted}
@@ -15880,7 +15322,7 @@ function advancedHigherInversionAnswerLabel(inversion) {
                       dataMenuTrigger
                     />
                   {menu === "customise" && (
-                    <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel>
+                    <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="practice-customise" dataMenuPanel>
                       <CustomiseMenu
                         activeLevel={activeLevel}
                         limitPlays={limitPlays}
@@ -16038,9 +15480,13 @@ function advancedHigherInversionAnswerLabel(inversion) {
       );
     }
 
-    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-  </script><script src="./generated-runtimes/practicequestions-1.js?v=f0ef5a9f94c3"></script>
+    if (window.parent && window.parent !== window && new URLSearchParams(window.location.search).get("worksheetAudio") === "1") {
+      window.MLH.buildPracticeAudioWorksheet = buildPracticeWorksheetConfig;
+    } else {
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    }
+  </script><script src="./generated-runtimes/practicequestions-1.js?v=c883f7361ba5"></script>
 
-  <script src="./footer.js?v=120454beac89"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

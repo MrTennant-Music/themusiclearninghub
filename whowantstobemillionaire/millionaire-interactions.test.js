@@ -1,10 +1,75 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),Babel=require('@babel/standalone');
-const source=fs.readFileSync(path.join(__dirname,'millionaire.js'),'utf8'),ast=Babel.packages.parser.parse(source,{plugins:['jsx']});
-let timerEffect,keyboardHandler,audioClass;
+const source=fs.readFileSync(path.join(__dirname,'millionaire.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../shared/classroom-literacy-notation.jsx'),'utf8'),ast=Babel.packages.parser.parse(source,{plugins:['jsx']});
+let timerEffect,keyboardHandler,audioClass,restartRace;
+const deckDeclarations = [];
 Babel.packages.traverse.default(ast,{
  CallExpression(entry){const n=entry.node;if(n.callee.name==='useEffect'&&n.arguments[0]&&source.slice(n.arguments[0].start,n.arguments[0].end).includes('const canRunTimer ='))timerEffect=source.slice(n.arguments[0].start,n.arguments[0].end);},
- FunctionDeclaration(entry){const n=entry.node;if(n.id?.name==='onKeyDown'&&source.slice(n.start,n.end).includes('selectAnswer(answerMap[key])'))keyboardHandler=source.slice(n.start,n.end);},
+ FunctionDeclaration(entry){const n=entry.node;if(n.id?.name==='onKeyDown'&&source.slice(n.start,n.end).includes('selectAnswer(answerMap[key])'))keyboardHandler=source.slice(n.start,n.end);
+  if(n.id?.name==='restartRace')restartRace=source.slice(n.start,n.end);
+  if (['createQuestions', 'randomiseTwoBarQuestion'].includes(n.id?.name)) deckDeclarations.push(source.slice(n.start,n.end));
+ },
+ VariableDeclaration(entry) {
+  const n = entry.node;
+  if (n.declarations.some(({id}) => ['DEFAULT_SETTINGS', 'MILLIONAIRE_LEVELS', 'N5_SIMPLE_TIME_PATTERNS', 'selectedQuestionCategories'].includes(id.name))) {
+   deckDeclarations.push(source.slice(n.start,n.end));
+  }
+ },
  ClassDeclaration(entry){if(entry.node.id.name==='AudioDirector')audioClass=source.slice(entry.node.start,entry.node.end);}
+});
+test('a Millionaire room shares all fifteen questions, answer orders and notation across pupils', () => {
+ const CORE = require('./millionaire-core.js');
+ const literacyBank = require('./millionaire-question-bank.js');
+ const conceptBank = require('./millionaire-concept-questions.js');
+ const classroomActivities = require('../shared/classroom-activities.js');
+ const activity = '/whowantstobemillionaire/whowantstobeamillionaire.html?level=AH&settings=teacher-setup';
+ const url = classroomActivities.playUrl(activity, 122);
+ assert.ok(url);
+ const search = new URL(url, 'https://example.invalid').search;
+ assert.equal(new URLSearchParams(search).get('settings'), 'teacher-setup');
+ assert.equal(classroomActivities.roundQuestionsFor(new URL(url, 'https://example.invalid').pathname), null);
+
+ function deck(level, seed, preferences) {
+  const context = {
+   CORE, QUESTION_BANK: [...literacyBank, ...conceptBank.questions], level, preferences,
+   classroomActivities, classroomGame: true, classroomSeed: seed,
+   twoBarPatternHistory: { current: new Map() },
+   safeRead: () => assert.fail('The deck must ignore individual play history'),
+   console: { error: (_message, error) => { throw error; } },
+  };
+  return JSON.parse(vm.runInNewContext(
+   deckDeclarations.join('\n') + '\nconst settings = {...DEFAULT_SETTINGS, ...preferences, level}; JSON.stringify(createQuestions());',
+   context,
+  ));
+ }
+
+ const seed = classroomActivities.seed(search);
+ for (const level of CORE.SUPPORTED_LEVELS) {
+  for (const preferences of [{}, { musicConceptsEnabled: false, selectedLevelOnly: true }]) {
+   const first = deck(level, seed, preferences);
+   assert.equal(first.length, 15, level);
+   assert.deepEqual(deck(level, seed, preferences), first, level);
+   assert.notDeepEqual(deck(level, seed + 1, preferences), first, level);
+   if (preferences.selectedLevelOnly) assert.ok(first.every(question => question.level === level), level);
+  }
+ }
+});
+test('restarting a Millionaire race keeps the same fifteen prepared questions', () => {
+ const questions=Array.from({length:15},(_,index)=>({id:index+1}));
+ const startStages=[];
+ const reports=[];
+ const gameOperation={current:1};
+ const context={
+  questions,gameOperation,
+  reportRaceProgress:(correct,reset)=>reports.push([correct,reset]),
+  audioDirector:{current:{stopExcerpt(){},stopEffect(){},stopMusic(){},playQuestion:stage=>startStages.push(stage)}},
+  beginPreparedGame:deck=>assert.equal(deck,questions),
+ };
+ const restart=vm.runInNewContext('('+restartRace+')',context);
+ restart();
+ restart();
+ assert.deepEqual(reports,[[0,true],[0,true]]);
+ assert.deepEqual(startStages,[1,1]);
+ assert.equal(gameOperation.current,3);
 });
 test('audio answer timer waits for a completed clip, pauses on replay, and retains the remaining time',()=>{
  let now=0,tick=null,cleanup,expired=0,shown=30;

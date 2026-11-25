@@ -15,8 +15,12 @@ body {
 }
 
 button:focus-visible {
-  outline: 2px solid rgba(22, 163, 74, .35);
+  outline: 2px solid var(--mlh-focus-color, #2563eb);
   outline-offset: 2px;
+}
+
+.mlh-typed-answer-input.border-stone-300:focus {
+  border-color: var(--mlh-focus-color, #2563eb);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -168,6 +172,10 @@ button:not(:disabled):not([aria-disabled="true"]):active {
   overscroll-behavior-y: contain;
 }
 
+.hub-menu-scroll > * {
+  flex-shrink: 0;
+}
+
 .hub-menu-portal-anchor {
   position: absolute;
   left: 0;
@@ -217,6 +225,36 @@ body > .hub-menu-panel-floating,
 
 .hub-toggle-row:disabled {
   opacity: .5;
+}
+
+/* A required setting stays visibly on even when it cannot be switched off. */
+.hub-toggle-row:disabled:is([aria-pressed="true"], [aria-checked="true"], :has(> .hub-toggle-track.is-on)) {
+  opacity: 1;
+}
+
+/* Match the Concept Quizzes Customise menu on the fixed literacy canvas. */
+body[data-literacy-activity] .hub-menu-panel-customise {
+  width: 360px;
+}
+
+body[data-literacy-activity] .hub-menu-panel-customise .hub-menu-scroll > * {
+  width: 100%;
+  max-width: 100%;
+}
+
+body[data-literacy-activity] .hub-menu-panel-customise .hub-toggle-row {
+  height: 54px;
+  min-height: 54px;
+}
+
+body[data-literacy-activity] .hub-menu-panel-customise .hub-toggle-label {
+  min-width: 0;
+  text-align: left;
+  white-space: normal;
+}
+
+body[data-literacy-activity] .hub-menu-panel-customise .hub-toggle-track {
+  flex-shrink: 0;
 }
 
 .hub-level-scope-description {

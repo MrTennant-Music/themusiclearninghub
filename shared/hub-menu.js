@@ -51,7 +51,7 @@
     const generatedIdRef = useRef(null);
     if (!generatedIdRef.current) generatedIdRef.current = `hub-menu-panel-${++nextMenuPanelId}`;
     const panelId = id || generatedIdRef.current;
-    const [floatingStyle, setFloatingStyle] = useState(null);
+    const [panelStyle, setPanelStyle] = useState(null);
     const [portalHost, setPortalHost] = useState(() => document.fullscreenElement || document.body);
     useLayoutEffect(() => {
       const syncHost = () => setPortalHost(document.fullscreenElement || document.body);
@@ -63,10 +63,18 @@
     const panelClassName = `${variant === "customise" ? CUSTOMISE_MENU_PANEL_CLASS : MENU_PANEL_CLASS} ${position} ${isFloating ? "hub-menu-panel-floating" : ""} ${extraClass}`.trim();
 
     useLayoutEffect(() => {
-      if (!isFloating) return undefined;
       function updatePosition(event) {
         // Scrolling menu contents does not move its toolbar anchor.
-        if (event?.type === 'scroll' && panelRef.current?.contains(event.target)) return;
+        const panel = panelRef.current;
+        if (!panel || (event?.type === "scroll" && panel.contains(event.target))) return;
+        const canvasScale = Number.parseFloat(window.getComputedStyle?.(document.body)?.zoom) || 1;
+        const edge = 16;
+        const heightBelow = (top) => `max(0px, calc(100dvh / ${canvasScale} - ${top + edge}px))`;
+        if (!isFloating) {
+          const top = Math.max(0, panel.getBoundingClientRect().top / canvasScale);
+          setPanelStyle({ maxHeight: heightBelow(top) });
+          return;
+        }
         const anchor = anchorRef.current;
         if (!anchor) return;
         const trigger = anchor.parentElement?.querySelector?.("[data-menu-trigger]") || anchor;
@@ -74,14 +82,12 @@
         const wrapper = trigger.parentElement;
         const target = wrapper?.classList.contains('hub-menu-anchor') ? wrapper : trigger;
         const rect = target.getBoundingClientRect();
-        const canvasScale = Number.parseFloat(window.getComputedStyle?.(document.body)?.zoom) || 1;
-        const panelWidth = panelRef.current?.offsetWidth || 360;
+        const panelWidth = panel.offsetWidth || 360;
         const gap = 8;
-        const edge = 16;
         const rawLeft = rect.left / canvasScale;
         const left = Math.max(edge, Math.min(rawLeft, 1280 - panelWidth - edge));
         const top = Math.max(edge, rect.bottom / canvasScale + gap);
-        setFloatingStyle({ left: `${left}px`, top: `${top}px`, maxHeight: `calc(100dvh - ${top + edge}px)` });
+        setPanelStyle({ left: `${left}px`, top: `${top}px`, maxHeight: heightBelow(top) });
       }
 
       updatePosition();
@@ -113,7 +119,7 @@
       {
         ...props,
         ref: panelRef,
-        style: isFloating ? floatingStyle || { left: "-9999px", top: "-9999px" } : undefined,
+        style: panelStyle || (isFloating ? { left: "-9999px", top: "-9999px" } : undefined),
       },
       title != null && e(
         "div",
@@ -171,7 +177,7 @@
       label: activeLabel,
       mobileLabel: isCustom ? "" : activeLevel,
       onClick,
-      disabled,
+      disabled: disabled || Boolean(MLH.classroomExercise),
       dataMenuTrigger,
       expanded,
       ariaControls,
@@ -189,7 +195,7 @@
       expanded,
       ariaControls,
       dataProfileCustomise: true,
-      disabled,
+      disabled: disabled || Boolean(MLH.classroomExercise),
       className: "gap-2",
     });
   }
@@ -230,14 +236,15 @@
     if (!setScore?.persistentScoreState) setScore?.({ correct: 0, attempted: 0, streak: 0, best: 0 });
   }
 
-  function SkipButton({ onClick, icon, resetStreak, disabled = false }) {
+  function SkipButton({ onClick, icon, resetStreak, disabled = false, classroomAnswered = false }) {
+    const advancingRace = classroomAnswered && MLH.classroomActivities?.isStreakRace?.();
     return e(
       "button",
-      { type: "button", disabled, onClick: () => runSkipQuestion({ resetStreak, nextQuestion: onClick }), className: `${TOOLBAR_BUTTON_CLASS} shrink-0 disabled:cursor-default disabled:opacity-40` },
+      { type: "button", disabled, onClick: () => runSkipQuestion({ resetStreak: advancingRace ? undefined : resetStreak, nextQuestion: onClick }), className: `${TOOLBAR_BUTTON_CLASS} shrink-0 disabled:cursor-default disabled:opacity-40` },
       e(
         "span",
         { className: "relative left-[4px] flex w-auto items-center justify-center gap-1" },
-        e("span", { className: "inline" }, "Skip"),
+        e("span", { className: "inline" }, MLH.classroomExercise && classroomAnswered ? "Next" : "Skip"),
         icon,
       ),
     );
@@ -258,10 +265,10 @@
 
   function typedAnswerClass(feedback, baseClass = "") {
     const tone = !feedback
-      ? "border-stone-300 text-stone-900 focus:border-stone-950"
+      ? "border-stone-300 text-stone-900"
       : feedback.correct
-        ? "border-2 border-green-600 text-green-700 focus:border-green-600"
-        : "border-2 border-red-600 text-red-700 focus:border-red-600";
+        ? "border-2 border-green-600 text-green-700"
+        : "border-2 border-red-600 text-red-700";
     return `${TYPED_ANSWER_INPUT_BASE_CLASS} ${baseClass} ${tone}`.trim();
   }
 

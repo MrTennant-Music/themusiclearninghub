@@ -4,6 +4,12 @@
 
   // Use the shared 18px fade and one-pixel tolerance throughout the Hub.
   const menuSelector = '.hub-menu-panel, [data-menu-panel], [data-exam-menu], [role="menu"], .nav-dropdown-menu, .filter-menu, [data-scroll-fade-panel]';
+  const scrollPanelSelector = [
+    menuSelector,
+    '[role="listbox"]',
+    '.menu', '[class$="-menu"]', '[class*="-menu "]',
+    '.dropdown', '[class$="-dropdown"]', '[class*="-dropdown "]',
+  ].join(', ');
   const tracked = new Set();
   let frame = 0;
 
@@ -55,7 +61,7 @@
   function refresh() {
     frame = 0;
     const candidates = new Set();
-    for (const menu of document.querySelectorAll(menuSelector)) {
+    for (const menu of document.querySelectorAll(scrollPanelSelector)) {
       if (!menu.clientHeight || !menu.getClientRects().length) continue;
       for (const element of [menu, ...menu.querySelectorAll('*')]) {
         if (!element.clientHeight) continue;

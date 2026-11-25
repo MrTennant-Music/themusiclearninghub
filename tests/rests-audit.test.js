@@ -1,6 +1,30 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),React=require('react'),server=require('react-dom/server'),Babel=require('@babel/standalone'),crypto=require('node:crypto'),core=require('../shared/rests-question-core.js'),harness=require('./helpers/rests-harness.cjs'),worksheet=require('./helpers/worksheet-generator-harness.cjs');
 const html=fs.readFileSync('rests.html','utf8'),source=html.match(/<script type="text\/x-mlh-jsx-source"[^>]*>([\s\S]*?)<\/script>/)[1],{parser,generator}=Babel.packages,nodes=[];function walk(n){if(!n||typeof n!=='object')return;if(n.type)nodes.push(n);for(const v of Object.values(n))if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v==='object')walk(v);}walk(parser.parse(source,{plugins:['jsx']}));const fn=name=>generator.default(nodes.find(n=>n.type==='FunctionDeclaration'&&n.id.name===name)).code;
 function seeded(){let n=8217;return()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/2**32;};}
+test('Dense Rests worksheets leave space before the final double barline', () => {
+  const w = worksheet({version:1, activityId:'rests', settings:{level:'H'}});
+  const beamedNotes = Array.from({length:9}, (_, index) => ({
+    rhythm:'quaver', step:3, beamGroupId:Math.floor(index / 3) + 1
+  }));
+  const quaver = {rhythm:'quaver', step:3};
+  const rest = id => ({rhythm:'missing', units:2, missingBoxId:id});
+  const restBoxes = ['first','second'].map(id => ({id, answer:'quaver-rest'}));
+  for (const ending of [[rest('first'), quaver, quaver], [rest('first'), rest('second')]]) {
+    const question = {timeSignature:'12/8', restItems:[...beamedNotes, ...ending], missingBoxes:restBoxes};
+    const staff = w.Staff({question});
+    const svg = staff.type(staff.props);
+    const children = React.Children.toArray(svg.props.children);
+    const barline = children.find(child => child.props.symbolKey === 'barlineFinal');
+    const melody = children.find(child => child.props.xs);
+    const boxes = children.filter(child => child.props.children?.[0]?.type === 'rect');
+    assert.ok(barline.props.x - melody.props.xs.at(-1) >= 45);
+    assert.ok(boxes.length > 0);
+    for (const box of boxes) {
+      const {x, width} = box.props.children[0].props;
+      assert.ok(barline.props.x - (x + width) >= 36);
+    }
+  }
+});
 test('Every deterministic rest template has complete answers and exactly fills its metre',()=>{const a=harness();for(const [id,signature]of Object.entries(core.signatures)){for(const template of core.templates(id)){const answers=template.answers||[template.answer];assert.ok(answers.every(r=>core.rests.includes(r)));const written=[...template.before,...template.after].flatMap(t=>Array.from(a.expandRhythmToken(t))).reduce((sum,r)=>sum+a.rhythmInfo(r).units,0),restUnits=template.isFullBar?signature.unitsPerBar:answers.reduce((sum,r)=>sum+a.rhythmInfo(r).units,0);assert.equal(written+restUnits+((template.prefixGroups||0)+(template.suffixGroups||0))*6,signature.unitsPerBar);}}});
 test('Every feasible combination of selected rests and metres respects all enabled settings',()=>{const allTimes=Object.keys(core.signatures),defaults=harness().defaultEnabledOptions('H');let tested=0;for(let tm=1;tm<64;tm++)for(let rm=1;rm<32;rm++){const options={...defaults,...Object.fromEntries(allTimes.map((id,i)=>[`time-${id}`,!!(tm&(1<<i))])),...Object.fromEntries(core.rests.map((id,i)=>[`rest-${id}`,!!(rm&(1<<i))]))},expected=core.rests.some((rest,i)=>(rm&(1<<i))&&allTimes.some((id,j)=>(tm&(1<<j))&&(rest==='minim-rest'?id==='4/4':rest==='dotted-crotchet-rest'?id.endsWith('/8'):true)));assert.equal(core.valid(options),expected);if(!expected)continue;const generator=core.create(seeded());for(let i=0;i<12;i++){const q=generator.next(options);assert.ok(options[`time-${q.timeSignature}`]);assert.ok(q.answers.every(rest=>options[`rest-${rest}`]));}tested++;}assert.ok(tested>1500);});
 test('Answer patterns and compatible metres are balanced; whole bars stay at one question in fifteen',()=>{for(const kind of ['practice','worksheet']){const a=harness(),w=kind==='worksheet'?worksheet({version:1,activityId:'rests',sourceUrl:'http://localhost:8765/rests.html',settings:{level:'H',enabledOptions:a.defaultEnabledOptions('H')}}):null,counts={},metres={};let whole=0;for(let i=0;i<6000;i++){const q=w?w.makeQuestion(i):a.makeQuestion(),pattern=q.missingBoxes.map(box=>box.answer).join('|'),time=w?q.timeSignature:q.timeSignature.id;counts[pattern]=(counts[pattern]||0)+1;metres[pattern]??={};metres[pattern][time]=(metres[pattern][time]||0)+1;if(q.missingBoxes[0].isFullBar)whole++;const notes=w?q.restItems:q.bars[0].notes;assert.equal(notes.reduce((sum,n)=>sum+(n.rhythm==='missing'?n.units:a.rhythmInfo(n.rhythm).units),0),core.signatures[time].unitsPerBar);}assert.equal(whole,400);delete counts['semibreve-rest'];assert.ok(Math.max(...Object.values(counts))-Math.min(...Object.values(counts))<=1);for(const values of Object.values(metres))assert.ok(Math.max(...Object.values(values))-Math.min(...Object.values(values))<=1);}});

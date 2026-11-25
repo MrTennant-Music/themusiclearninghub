@@ -13,34 +13,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Cadences</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/cadences-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/cadences-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <style>
     @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
     .music-symbol { font-family: "Bravura", serif; font-weight: 400; dominant-baseline: alphabetic; text-rendering: geometricPrecision; }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
-<body>
+<body data-literacy-activity>
 <div id="root"></div>
 <script type="text/x-mlh-jsx-source" data-runtime="cadences-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
@@ -52,7 +52,7 @@ const NOTE = { rx: 8.2, stemLength: 21 };
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || { symbols: {}, drawing: {} };
 const MEDAL_THRESHOLDS = [10, 15, 20, 30];
-const ASSET = { appIcon: "./app-icons/cadences-icon.svg", level: "./ui-icons/levels.svg", customise: "./ui-icons/customise.svg", next: "./ui-icons/next.svg", eye: "./ui-icons/eye.svg", metronome: "./ui-icons/metronome.svg", tempo: "./ui-icons/tempo.svg", bronze: "./ui-icons/bronze.svg", silver: "./ui-icons/silver.svg", gold: "./ui-icons/gold.svg", diamond: "./ui-icons/diamond.svg" };
+const ASSET = { appIcon: "./app-icons/cadences-icon.svg", level: "./ui-icons/levels.svg", customise: "./ui-icons/customise.svg", next: "./ui-icons/next.svg", eye: "./ui-icons/eye.svg", bronze: "./ui-icons/bronze.svg", silver: "./ui-icons/silver.svg", gold: "./ui-icons/gold.svg", diamond: "./ui-icons/diamond.svg" };
 function r(items) { return items[Math.floor(Math.random() * items.length)]; }
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function midiToFrequency(midi) { return 440 * Math.pow(2, (midi - 69) / 12); }
@@ -61,7 +61,6 @@ function barWidth() { return (STAFF_RIGHT - MUSIC_START) / BARS_PER_SYSTEM; }
 function medalSoundForStreak(streak) { if (streak >= 30) return "platinum"; if (streak >= 20) return "gold"; if (streak >= 15) return "silver"; if (streak >= 10) return "bronze"; return null; }
 function playFeedbackSound(correct, celebration = false, medal = null) { window.MLH?.playFeedbackSound?.(correct, celebration, medal); }
 function oscillator(ctx, gainNode, frequency, start, duration, volume = 0.035) { window.MLH?.playPianoFrequency?.(ctx, gainNode, frequency, start, duration, volume); }
-function playClick(ctx, gainNode, start, accented) { window.MLH?.playMetronomeClick?.(ctx, gainNode, start, accented); }
 function sharedActualSymbolKey(key) { if (key === "flatInScore" || key === "flatKeySignature") return "flat"; if (key === "naturalInScore") return "natural"; if (key === "sharpInScore" || key === "sharpKeySignature") return "sharp"; if (key === "noteheadBlackStemUp" || key === "noteheadBlackStemDown") return "noteheadBlack"; if (key === "augmentationDotLine" || key === "augmentationDotSpace") return "augmentationDot"; return key; }
 function sharedSettingsKey(key) { if (key === "flatKeySignature" || key === "sharpKeySignature") return SHARED_CONFIG.symbols?.keySignatureAccidentals ? "keySignatureAccidentals" : key; if (key === "flatInScore" || key === "naturalInScore" || key === "sharpInScore") return SHARED_CONFIG.symbols?.scoreAccidentals ? "scoreAccidentals" : key; return key; }
 function sharedSymbolConfig(key) { const symbols = SHARED_CONFIG.symbols || {}; const settingsKey = sharedSettingsKey(key); return symbols[settingsKey] || symbols[sharedActualSymbolKey(settingsKey)] || { fontSizeScale: 3.4, xOffsetScale: 0, yOffsetScale: 0, widthScale: 1, heightScale: 1, opticalXOffset: 0, opticalYOffset: 0 }; }
@@ -88,30 +87,6 @@ function Score({ question, activeNoteId=null }) { const top = SYSTEM_TOPS[0]; co
 function MenuSvgGlyph({ src, alt = "" }) {
   return <img src={src} alt={alt} className="h-[20px] w-[20px] object-contain" />;
 }
-function TempoDropdownRow({ tempo, setTempo, stopAudio }) {
-  const selectedTempo = TEMPOS.find(speed => speed.id === tempo.id) || TEMPOS[1];
-  function cycleTempo() {
-    const currentIndex = TEMPOS.findIndex(speed => speed.id === selectedTempo.id);
-    setTempo(TEMPOS[(currentIndex + 1) % TEMPOS.length]);
-    stopAudio();
-  }
-  return <div className="hub-toggle-row relative min-h-[44px] overflow-visible">
-    <span className="hub-toggle-label min-w-[145px]">
-      <span className="hub-toggle-glyph">
-        <MenuSvgGlyph src={ASSET.tempo} alt="" />
-      </span>
-      <span className="leading-none">Tempo</span>
-    </span>
-    <button
-      type="button"
-      onClick={cycleTempo}
-      className="flex h-7 w-[86px] items-center justify-center rounded-xl border border-stone-300 bg-white px-2.5 text-sm font-bold text-stone-950 shadow-sm"
-    >
-      <span>{selectedTempo.label}</span>
-    </button>
-  </div>;
-}
-
 const LEVELS = { N5: { label: "National 5", description: "Perfect cadence • Imperfect cadence" }, H: { label: "Higher", description: "Plagal cadence • Interrupted cadence" } };
 const TEMPOS = [{ id:"slow", label:"Adagio", bpm:60 }, { id:"middle", label:"Andante", bpm:90 }, { id:"fast", label:"Allegro", bpm:130 }];
 const CADENCES = {
@@ -249,23 +224,22 @@ function buildQuestion(level, enabledIds){
   });
   return { id:Date.now()+Math.random(), level, key, timeSignature:{ id:"4/4", top:4, bottom:4, beats:4 }, progression, answerId, answer:cadence, mode:Math.random() < 0.5 ? "choice" : "text", bars, notes:bars.flatMap(bar => bar.notes) };
 }
-function CadenceMenuRows({ level, enabled, setEnabled, tempo, setTempo, metronome, setMetronome, follow, setFollow, stopAudio }){
+function CadenceMenuRows({ level, enabled, setEnabled, follow, setFollow }){
   const available = cadenceIdsForLevel(level);
   function toggle(id){ const checked = enabled.includes(id); const next = checked ? enabled.filter(x => x !== id) : [...enabled, id]; if (next.length < 2) return; setEnabled(safeEnabled(next, level)); }
-  return <><window.MLH.MenuSubheading>Audio</window.MLH.MenuSubheading><TempoDropdownRow tempo={tempo} setTempo={setTempo} stopAudio={stopAudio}/><window.MLH.MenuToggleRow glyph={<MenuSvgGlyph src={ASSET.metronome} alt="" />} label="Metronome" checked={metronome} onChange={()=>{setMetronome(v=>!v);stopAudio();}}/><window.MLH.MenuToggleRow glyph={<MenuSvgGlyph src={ASSET.eye} alt="" />} label="Follow Playback" checked={follow} onChange={()=>setFollow(v=>!v)}/>{level==="H"&&<><window.MLH.MenuSubheading>Cadences</window.MLH.MenuSubheading>{available.map(id => <window.MLH.MenuToggleRow key={id} glyph={<span className="min-w-[34px] text-center text-xs font-black">{CADENCES[id].glyph}</span>} label={CADENCES[id].short} checked={enabled.includes(id)} disabled={enabled.includes(id) && enabled.length <= 2} onChange={()=>toggle(id)}/>)}</>}</>;
+  return <><window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading><window.MLH.MenuToggleRow glyph={<MenuSvgGlyph src={ASSET.eye} alt="" />} label="Follow Playback" checked={follow} onChange={()=>setFollow(v=>!v)}/>{level==="H"&&<><window.MLH.MenuSubheading>Cadences</window.MLH.MenuSubheading>{available.map(id => <window.MLH.MenuToggleRow key={id} glyph={<span className="min-w-[34px] text-center text-xs font-black">{CADENCES[id].glyph}</span>} label={CADENCES[id].short} checked={enabled.includes(id)} disabled={enabled.includes(id) && enabled.length <= 2} onChange={()=>toggle(id)}/>)}</>}</>;
 }
 function App({escapeActivity} = {}){
   const embed = window.MLH.EscapeLiteracyActivity;
   const escapeRef = embed.useContentHeight(escapeActivity);
   const [activeLevel,setActiveLevel]=useState(levelFromUrl());
   const [enabled,setEnabled]=window.MLH.useProfileState("enabled", ()=>cadenceIdsForLevel(levelFromUrl()));
-  const [tempo,setTempo]=window.MLH.useProfileState("tempo", TEMPOS[1]);
-  const [metronome,setMetronome]=window.MLH.useProfileState("metronome", false);
+  const tempo = TEMPOS[1];
   const [follow,setFollow]=window.MLH.useProfileState("follow", false);
   const [question,setQuestion]=useState(()=>escapeActivity ? loadEscapeQuestion(escapeActivity) : buildQuestion(levelFromUrl(), enabled));
   const [selected,setSelected]=useState(null), [typed,setTyped]=useState("");
   const [feedback,setFeedback]=useState(null), [feedbackFading,setFeedbackFading]=useState(false), [prompt,setPrompt]=useState("");
-  const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, metronome, follow } } }), [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, metronome, follow } } }), [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, metronome, follow } } }), [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, metronome, follow } } }), [confetti,setConfetti]=useState(0), [autoShowMedals,setAutoShowMedals]=useState(false);
+  const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, follow } } }), [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, follow } } }), [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, follow } } }), [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: enabled, options: { tempo: tempo.id, follow } } }), [confetti,setConfetti]=useState(0), [autoShowMedals,setAutoShowMedals]=useState(false);
   const [levelOpen,setLevelOpen]=useState(false), [customiseOpen,setCustomiseOpen]=useState(false), [playing,setPlaying]=useState(false), [activeNoteId,setActiveNoteId]=useState(null);
   const levelRef=useRef(null), customiseRef=useRef(null), audioRef=useRef(null), timers=useRef([]), levelTaskStatusRef=useRef(null);
   useClickOutside([levelRef,customiseRef],[()=>setLevelOpen(false),()=>setCustomiseOpen(false)]);
@@ -331,16 +305,13 @@ function App({escapeActivity} = {}){
       ] : [];
       return [...bar.notes.map(note => effectiveMidiForNote(question, bar, note)), ...chord, ...bass].map(midiToFrequency);
     });
-    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies, metronome });
+    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies });
     if (audioRef.current !== ctx) return;
     if (!ready) { stopAudio(); return; }
     const beat = 60 / tempo.bpm;
     const start = ctx.currentTime + 0.12;
     question.bars.forEach(bar => {
       const barStart = bar.barIndex * 4 * beat;
-      if (metronome) {
-        for (let b = 0; b < 4; b++) playClick(ctx, master, start + barStart + b * beat, b === 0);
-      }
       playAccompaniment(ctx, master, bar, barStart, beat, start);
       bar.notes.forEach(note => {
         const noteStart = barStart + note.beat * beat;
@@ -361,7 +332,7 @@ function App({escapeActivity} = {}){
     <embed.NumberedOptions activity={escapeActivity} choices={embed.numberedChoices(question.answer.short, cadenceIdsForLevel(question.level).map(id => CADENCES[id].short), escapeActivity.clue.digit, cadenceIdsForLevel(question.level).length)} columns={2} />
     {prompt && <p role="status">{prompt}</p>}
   </main>;
-  return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader profileState={{ activeLevel, enabled, tempo, metronome, follow }} icon={ASSET.appIcon} title="Cadences" subtitle="Identify perfect, imperfect, plagal and interrupted cadences."><window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={acc} streak={streak} bestStreak={best} resetScore={()=>{setCorrect(0);setAttempted(0);setStreak(0);setBest(0);setConfetti(0);}} confettiKey={confetti} autoShowMedals={autoShowMedals} medalEligible={medalEligible} medalThresholdValues={MEDAL_THRESHOLDS}/></window.MLH.AppHeader><div className={window.MLH.shell.pageContentClass}><main className={window.MLH.shell.mainShellClass} onPointerDown={e=>{if(feedback&&!e.target.closest("button,input,[data-menu-trigger],[data-menu-panel]"))newQuestion();}}><div className="hub-toolbar relative z-20"><div className="hub-toolbar-left"><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.level} alt="" className="h-[26px] w-[28px]"/>} activeLevel={displayedLevel} activeLabel={displayedLevelLabel} isCustom={!medalEligible} onClick={()=>{setCustomiseOpen(false);setLevelOpen(v=>!v);}} dataMenuTrigger={true}/>{levelOpen&&<window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS}/></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]"/>} onClick={()=>{setLevelOpen(false);setCustomiseOpen(v=>!v);}} dataMenuTrigger={true}/>{customiseOpen&&<window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><CadenceMenuRows level={activeLevel} enabled={enabled} setEnabled={(ids)=>{setEnabled(ids);newQuestion(activeLevel,ids);}} tempo={tempo} setTempo={setTempo} metronome={metronome} setMetronome={setMetronome} follow={follow} setFollow={setFollow} stopAudio={stopAudio}/></window.MLH.MenuPanel>}</div></div><div className="hub-toolbar-feedback"><window.MLH.FeedbackBadge feedback={feedback} fading={feedbackFading} animationPrefix="note"/></div><div className="hub-toolbar-right"><window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px]"/>}/></div></div><div className="relative -top-[45px]"><Score question={question} activeNoteId={follow?activeNoteId:null}/></div><div className="chords-question-card relative z-10 -mt-[72px] flex flex-col rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-md md:mx-3"><div><p className="text-base font-semibold leading-tight">Listen to the music and identify the type of <strong>cadence</strong> heard at the end. The key is <strong>{question.key.name}</strong>.</p>{prompt&&<p className="mt-2 text-sm font-bold text-red-600">{prompt}</p>}<div className="mt-2">{question.mode==="choice"?<div className="flex flex-col gap-3"><div className={`grid w-full grid-cols-2 gap-2 ${activeLevel==="H"?"md:grid-cols-4":"md:w-1/2"}`}>{safeEnabled(enabled,activeLevel).map(id=><button key={id} disabled={Boolean(feedback)} onClick={()=>{setSelected(id);score(id===question.answerId);}} className={answerButtonClass(id)}>{CADENCES[id].label}</button>)}</div><button type="button" onClick={play} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button></div>:<div className="flex flex-wrap items-center gap-3"><input value={typed} disabled={Boolean(feedback)} onChange={e=>setTyped(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!disabledConfirm){e.preventDefault();confirm();}}} placeholder="Type your answer" className={window.MLH.typedAnswerClass(feedback?{correct:isCorrectText(typed,question.answerId)}:null,"w-full md:w-1/2")}/>{feedback&&!feedback.correct&&<div className="text-base font-bold text-green-600">{question.answer.label}</div>}</div>}</div></div>{question.mode==="text"&&<div className={window.MLH.PlayClearConfirmRowClass}><button type="button" onClick={play} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button><div className={window.MLH.ActionButtonGroupClass}><button type="button" disabled={Boolean(feedback) || !typed.trim()} onClick={clearAnswer} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={disabledConfirm} onClick={confirm} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div></div>}</div></main></div></div>;
+  return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader profileState={{ activeLevel, enabled, follow }} icon={ASSET.appIcon} title="Cadences" subtitle="Identify perfect, imperfect, plagal and interrupted cadences."><window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={acc} streak={streak} bestStreak={best} resetScore={()=>{setCorrect(0);setAttempted(0);setStreak(0);setBest(0);setConfetti(0);}} confettiKey={confetti} autoShowMedals={autoShowMedals} medalEligible={medalEligible} medalThresholdValues={MEDAL_THRESHOLDS}/></window.MLH.AppHeader><div className={window.MLH.shell.pageContentClass}><main className={window.MLH.shell.mainShellClass} onPointerDown={e=>{if(feedback&&!e.target.closest("button,input,[data-menu-trigger],[data-menu-panel]"))newQuestion();}}><div className="hub-toolbar relative z-20"><div className="hub-toolbar-left"><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.level} alt="" className="h-[26px] w-[28px]"/>} activeLevel={displayedLevel} activeLabel={displayedLevelLabel} isCustom={!medalEligible} onClick={()=>{setCustomiseOpen(false);setLevelOpen(v=>!v);}} dataMenuTrigger={true}/>{levelOpen&&<window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS}/></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]"/>} onClick={()=>{setLevelOpen(false);setCustomiseOpen(v=>!v);}} dataMenuTrigger={true}/>{customiseOpen&&<window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><CadenceMenuRows level={activeLevel} enabled={enabled} setEnabled={(ids)=>{setEnabled(ids);newQuestion(activeLevel,ids);}} follow={follow} setFollow={setFollow}/></window.MLH.MenuPanel>}</div></div><div className="hub-toolbar-feedback"><window.MLH.FeedbackBadge feedback={feedback} fading={feedbackFading} animationPrefix="note"/></div><div className="hub-toolbar-right"><window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px]"/>}/></div></div><div className="relative -top-[45px]"><Score question={question} activeNoteId={follow?activeNoteId:null}/></div><div className="chords-question-card relative z-10 -mt-[72px] flex flex-col rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-md md:mx-3"><div><p className="text-base font-semibold leading-tight">Listen to the music and identify the type of <strong>cadence</strong> heard at the end. The key is <strong>{question.key.name}</strong>.</p>{prompt&&<p className="mt-2 text-sm font-bold text-red-600">{prompt}</p>}<div className="mt-2">{question.mode==="choice"?<div className="flex flex-col gap-3"><div className={`grid w-full grid-cols-2 gap-2 ${activeLevel==="H"?"md:grid-cols-4":"md:w-1/2"}`}>{safeEnabled(enabled,activeLevel).map(id=><button key={id} disabled={Boolean(feedback)} onClick={()=>{setSelected(id);score(id===question.answerId);}} className={answerButtonClass(id)}>{CADENCES[id].label}</button>)}</div><button type="button" onClick={play} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button></div>:<div className="flex flex-wrap items-center gap-3"><input value={typed} disabled={Boolean(feedback)} onChange={e=>setTyped(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!disabledConfirm){e.preventDefault();confirm();}}} placeholder="Type your answer" className={window.MLH.typedAnswerClass(feedback?{correct:isCorrectText(typed,question.answerId)}:null,"w-full md:w-1/2")}/>{feedback&&!feedback.correct&&<div className="text-base font-bold text-green-600">{question.answer.label}</div>}</div>}</div></div>{question.mode==="text"&&<div className={window.MLH.PlayClearConfirmRowClass}><button type="button" onClick={play} disabled={feedback?.correct === true} className={window.MLH.PlayButtonClass}><span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{playing?"Stop":"Play"}</span></button><div className={window.MLH.ActionButtonGroupClass}><button type="button" disabled={Boolean(feedback) || !typed.trim()} onClick={clearAnswer} className={window.MLH.ClearButtonClass}>Clear</button><window.MLH.ConfirmButton disabled={disabledConfirm} onClick={confirm} className={window.MLH.AudioConfirmButtonClass}>Confirm</window.MLH.ConfirmButton></div></div>}</div></main></div></div>;
 }
 function loadEscapeQuestion(activity) {
   const cached = activity.bridge.readActivity(activity.token);
@@ -374,7 +345,7 @@ function loadEscapeQuestion(activity) {
 const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("cadences");
 const root=document.getElementById("root"); if(ReactDOM.createRoot) ReactDOM.createRoot(root).render(<App escapeActivity={escapeActivity} />); else ReactDOM.render(<App escapeActivity={escapeActivity} />,root);
 
-</script><script src="./generated-runtimes/cadences-1.js?v=26ba1603681d"></script>
-<script src="./footer.js?v=120454beac89"></script>
+</script><script src="./generated-runtimes/cadences-1.js?v=c7f85dd69244"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

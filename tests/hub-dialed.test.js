@@ -91,13 +91,13 @@ test('switching away during audio unlock cannot revive sound',async()=>{
 });
 
 test('Pitched renders the native game with the shared footer and no external-game disclaimer',()=>{
-  const source=fs.readFileSync(require.resolve('../bandle.jsx'),'utf8');
+  const source=fs.readFileSync(require.resolve('../pitched.jsx'),'utf8');
   assert(source.includes('<window.MLH.HubDialed'));
-  assert(!/iframe|playdaily|Songless|Layered|bandle-modes/.test(source));
+  assert(!/iframe|playdaily|Songless|Layered|pitched-modes/.test(source));
   assert(source.includes('title="Pitched"'));
-  assert(fs.readFileSync(require.resolve('../bandle.html'),'utf8').includes('footer.js'));
-  assert(!source.includes('bandle-source'));
-  assert(!fs.readFileSync(require.resolve('../bandle.html'),'utf8').includes('dialedgg.io'));
+  assert(fs.readFileSync(require.resolve('../pitched.html'),'utf8').includes('footer.js'));
+  assert(!source.includes('pitched-source'));
+  assert(!fs.readFileSync(require.resolve('../pitched.html'),'utf8').includes('dialedgg.io'));
 });
 
 test('Pitched medals use the completed score thresholds out of fifty',()=>{
@@ -105,10 +105,14 @@ test('Pitched medals use the completed score thresholds out of fifty',()=>{
 });
 
 test('Pitched awards persist as a single activity without inventing a qualification',()=>{
- const storage=new Map(),window={MLH:{},location:{href:'https://hub.local/bandle.html'},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},addEventListener(){},dispatchEvent(){}};
- const context={window,URL,CustomEvent:class{}};vm.runInNewContext(fs.readFileSync('shared/hub-achievements.js','utf8'),context);
- window.MLH.achievements.award('bandle.html','ALL','gold');window.MLH.achievements.award('bandle.html','ALL','bronze');assert.equal(window.MLH.achievements.get('bandle.html','ALL').tier,'gold');
- vm.runInNewContext(fs.readFileSync('shared/hub-achievements.js','utf8'),context);assert.equal(window.MLH.achievements.get('bandle.html','ALL').tier,'gold');assert.equal(window.MLH.achievements.totals().gold,1);assert.equal(window.MLH.achievements.get('random.html','ALL'),null);
+ const storage=new Map([['mlh:achievements:v1',JSON.stringify({version:1,records:{'bandle.html|ALL':{tier:'silver',bestStreak:0}}})]]);
+ const window={MLH:{},location:{href:'https://hub.local/pitched.html'},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},addEventListener(){},dispatchEvent(){}};
+ const context={window,URL,CustomEvent:class{}};
+ vm.runInNewContext(fs.readFileSync('shared/hub-page-names.js','utf8'),context);
+ vm.runInNewContext(fs.readFileSync('shared/hub-achievements.js','utf8'),context);
+ assert.equal(window.MLH.achievements.get('pitched.html','ALL').tier,'silver');
+ window.MLH.achievements.award('pitched.html','ALL','gold');window.MLH.achievements.award('pitched.html','ALL','bronze');assert.equal(window.MLH.achievements.get('pitched.html','ALL').tier,'gold');
+ vm.runInNewContext(fs.readFileSync('shared/hub-achievements.js','utf8'),context);assert.equal(window.MLH.achievements.get('pitched.html','ALL').tier,'gold');assert.equal(window.MLH.achievements.totals().gold,1);assert.equal(window.MLH.achievements.get('random.html','ALL'),null);
 });
 
 test('only rounds four and five follow the original target with one-second distractors with a second of silence before and after',()=>{
@@ -142,7 +146,7 @@ test('listening playback reports an audio failure and does not schedule more ton
 });
 
 test('Pitched uses the shared stats panel and shared medal sounds only on the final results screen',()=>{
- const source=fs.readFileSync('bandle.jsx','utf8');assert(source.includes('<window.MLH.ScoreStreakPanel'));assert(!source.includes('details.bandle-score-card'));
+ const source=fs.readFileSync('pitched.jsx','utf8');assert(source.includes('<window.MLH.ScoreStreakPanel'));assert(!source.includes('details.pitched-score-card'));
  for(const [total,points,tier,sound]of [[30,.5,null,null],[30.01,1,'bronze','bronze'],[35,5,'silver','silver'],[40,5,'gold','gold'],[49,9,'diamond','platinum'],[41,1,'gold','gold']]){
   for(const phase of ['feedback','results']){
   const state={...Core.initialState(),phase,round:5,total,targets:[.2,.3,.4,.5,.6],picks:[.2,.3,.4,.5,.6],roundScores:[0,0,0,0,points]},effects=[],sounds=[],awards=[],confetti=[];
@@ -151,7 +155,7 @@ test('Pitched uses the shared stats panel and shared medal sounds only on the fi
   const window={HubDialedCore:{...Core,ToneAudio:class{stop(){}reveal(){}dispose(){}}},MLH:{achievements:{award:(...args)=>awards.push(args)},playFeedbackSound:(...args)=>{sounds.push(args);return Promise.resolve();}}};
   vm.runInNewContext(fs.readFileSync('hub-dialed.js','utf8'),{window,React,localStorage:{getItem:()=>null,setItem(){}},setTimeout:()=>0,clearTimeout(){},setInterval:()=>0,clearInterval(){}});
   window.MLH.HubDialed({});effects.find(fn=>fn.toString().includes('const previous='))();
-  const celebrates=phase==='results'&&tier;assert.deepEqual(sounds,celebrates?[[true,true,sound]]:[]);assert.equal(confetti.length,celebrates?1:0);assert.equal(awards.length,celebrates?1:0);if(celebrates)assert.deepEqual(awards[0],['bandle.html','ALL',tier]);
+  const celebrates=phase==='results'&&tier;assert.deepEqual(sounds,celebrates?[[true,true,sound]]:[]);assert.equal(confetti.length,celebrates?1:0);assert.equal(awards.length,celebrates?1:0);if(celebrates)assert.deepEqual(awards[0],['pitched.html','ALL',tier]);
   }
  }
 });
@@ -221,8 +225,8 @@ test('round feedback plays the supplied chime and stops it when leaving feedback
 });
 
 
-test('earned medal colour persists and repeated medals do not celebrate again',()=>{
- assert(fs.readFileSync('bandle.jsx','utf8').includes('Math.max(stats.score,stats.best)'));
+test('earned medals persist and repeated medals do not celebrate again',()=>{
+ assert(fs.readFileSync('pitched.jsx','utf8').includes('Math.max(stats.score,stats.best)'));
  for(const [previous,total,celebrates] of [[40,35,false],[40,40,false],[40,48,false],[40,49,true],[49,50,false]]){
   const effects=[],sounds=[],bursts=[],state={...Core.initialState(),phase:'results',round:5,total,targets:[.5,.5,.5,.5,.5],picks:[.5,.5,.5,.5,.5],roundScores:[1,1,1,1,1]};let i=0;
   const React={createElement:()=>null,useReducer:()=>[state,()=>{}],useState:v=>{const index=i++;return [typeof v==='function'?v():v,next=>{if(index===0)bursts.push(next(0));}];},useRef:v=>({current:v}),useEffect:fn=>effects.push(fn)};
@@ -300,7 +304,7 @@ function appHarness(savedMode){
  const storage=new Map(savedMode==null?[]:[['mlh-pitched-game-type',savedMode]]),values=[],refs=[],effects=[];let cursor=0,refCursor=0,root;
  const React={createElement:(type,props,...children)=>({type,props:props||{},children:children.flat(Infinity)}),useState:initial=>{const i=cursor++;if(!(i in values))values[i]=typeof initial==='function'?initial():initial;return [values[i],v=>values[i]=typeof v==='function'?v(values[i]):v];},useRef:initial=>{const i=refCursor++;return refs[i]||(refs[i]={current:initial});},useEffect:fn=>effects.push(fn)};
  const MLH={shell:{},useProfileState:(_key,initial)=>React.useState(initial),useClickOutside(){},ScoreStreakPanel:()=>null,AppHeader:()=>null,ToolbarButton:()=>null,MenuPanel:()=>null,LevelMenu:()=>null,HubDialed:()=>null};
- vm.runInNewContext(fs.readFileSync('bandle-app.js','utf8'),{React,ReactDOM:{createRoot:()=>({render:v=>root=v})},window:{MLH},document:{getElementById:()=>({}),fullscreenEnabled:true},location:{href:'http://localhost:8765/bandle.html'},URL,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)}});
+ vm.runInNewContext(fs.readFileSync('pitched-app.js','utf8'),{React,ReactDOM:{createRoot:()=>({render:v=>root=v})},window:{MLH},document:{getElementById:()=>({}),fullscreenEnabled:true},location:{href:'http://localhost:8765/pitched.html'},URL,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)}});
  const render=()=>{cursor=0;refCursor=0;effects.length=0;return root.type();},flat=n=>n&&typeof n==='object'?[n,...n.children.flatMap(flat)]:[n];
  return {MLH,storage,render,flat,effects};
 }
@@ -316,12 +320,28 @@ test('Game Type selection persists, restores valid settings and safely rejects i
 
 test('mode-specific score cards use the correct order, precision and medal thresholds',()=>{
  for(const mode of ['default','endurance']){
-  const h=appHarness(mode),tree=h.render();h.flat(tree).find(n=>n?.type===h.MLH.HubDialed).props.onStats({mode,round:7,completed:6,score:49.61,lastScore:7.54,best:mode==='endurance'?5:40,confetti:0});
+  const h=appHarness(mode),tree=h.render();h.flat(tree).find(n=>n?.type===h.MLH.HubDialed).props.onStats({mode,phase:'results',round:7,completed:6,score:49.61,lastScore:7.54,best:mode==='endurance'?5:40,confetti:0});
   const panel=h.flat(h.render()).find(n=>n?.type===h.MLH.ScoreStreakPanel).props;
   assert.equal(panel.scoreDisplay.label,mode==='endurance'?'Score':'Round');assert.equal(panel.scoreDisplay.value,mode==='endurance'?'8':'7/5');
   assert.equal(panel.streakDisplay.label,mode==='endurance'?'Round':'Score');assert.equal(panel.streakDisplay.subtitle,mode==='endurance'?'Best: 5':'Best score: 40');assert.deepEqual(Array.from(panel.medalThresholdValues),mode==='endurance'?[3,5,7,10]:[30.01,35,40,49]);
   assert.equal(panel.streak,mode==='endurance'?6:49.61);
-  assert.equal(panel.medalColourStreak,mode==='endurance'?5:40);
+  assert.equal(panel.medalColourStreak,mode==='endurance'?6:49.61);
+ }
+});
+
+test('Pitched resets the medal colour while keeping the saved best in both modes',()=>{
+ for(const mode of ['default','endurance']){
+  const h=appHarness(mode);
+  const {onStats}=h.flat(h.render()).find(n=>n?.type===h.MLH.HubDialed).props;
+  const tally=()=>h.flat(h.render()).find(n=>n?.type===h.MLH.ScoreStreakPanel).props;
+  const best=mode==='endurance'?7:40;
+  onStats({mode,phase:'results',round:mode==='endurance'?8:5,completed:7,score:40,best,confetti:1});
+  assert.equal(tally().medalColourStreak,best);
+  onStats({mode,phase:'intro',round:0,completed:0,score:0,best,confetti:0});
+  assert.equal(tally().medalColourStreak,0);
+  assert.equal(tally().bestStreak,best);
+  onStats({mode,phase:'feedback',round:mode==='endurance'?1:5,completed:1,score:40,best,confetti:0});
+  assert.equal(tally().medalColourStreak,mode==='endurance'?1:0);
  }
 });
 

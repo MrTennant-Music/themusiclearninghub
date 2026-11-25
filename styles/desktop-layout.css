@@ -8,6 +8,11 @@
 :root {
   --mlh-desktop-layout-width: 1280px;
   --mlh-page-background: #f8fafc;
+  --mlh-focus-color: #2563eb;
+}
+
+:where(:focus-visible) {
+  outline-color: var(--mlh-focus-color);
 }
 
 html {
@@ -69,6 +74,11 @@ table {
 /* Use the Hub's blue for the text cursor, including editors with custom text rendering. */
 :is(input, textarea, [contenteditable]):read-write:focus {
   caret-color: #2563eb !important;
+}
+
+/* Score targets keep their keyboard focus outline without drawing it on pointer focus. */
+:is(svg[tabindex], svg [tabindex], .reading-score-scroll, .reading-tap-area):focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* Keep printed worksheets and papers on a true white sheet. */

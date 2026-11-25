@@ -49,14 +49,14 @@
     },[]);
     useEffect(()=>{setBest(readBest(state.mode));},[state.mode]);
     useEffect(()=>{onStats?.({score:state.total,best,round:state.round,phase:state.phase,busy,confetti,mode:state.mode,completed:C.completedRounds(state),lastScore:state.roundScores.at(-1)??0});},[state.total,best,state.round,state.phase,busy,confetti,onStats]);
-    useEffect(()=>{const tier=state.mode==='endurance'?C.enduranceMedal(best):C.medalForScore(best);if(tier)window.MLH.achievements?.award('bandle.html','ALL',tier);},[best,state.mode]);
+    useEffect(()=>{const tier=state.mode==='endurance'?C.enduranceMedal(best):C.medalForScore(best);if(tier)window.MLH.achievements?.award('pitched.html','ALL',tier);},[best,state.mode]);
     useEffect(()=>{
       if(state.mode==='endurance'?state.phase!=='feedback':state.phase!=='results')return;
       const previous=Math.max(readBest(state.mode),best),value=state.mode==='endurance'?C.completedRounds(state):state.total,next=Math.max(previous,value);
       setBest(next);try{localStorage.setItem(bestKey(state.mode),String(next));}catch{}
       const tier=state.mode==='endurance'?C.enduranceMedal(value):C.medalForScore(state.total);
       if(tier&&tier!==(state.mode==='endurance'?C.enduranceMedal(previous):C.medalForScore(previous))&&next>previous){
-        window.MLH.achievements?.award('bandle.html','ALL',tier);setConfetti(n=>n+1);
+        window.MLH.achievements?.award('pitched.html','ALL',tier);setConfetti(n=>n+1);
         try{window.MLH.playFeedbackSound(true,true,tier==='diamond'?'platinum':tier)?.catch?.(()=>{});}catch{}
       }
     },[state.phase,state.mode,state.total]);

@@ -129,6 +129,23 @@ test('shared links carry a portable snapshot while launch links stay tied to the
  assert.equal(Hub.selected(share.search,recipient).name,'Course review');
 });
 
+test('saved collection detail links can be copied to a browser with an empty collection library', () => {
+ const owner = storage(), recipient = storage();
+ const row = Hub.save({name:'Strings & rhythm', concepts:[styleIds[0], Games.literacyConcepts('N5')[0].id]},owner);
+ const detail = new URL(Hub.pageUrl('charades','N5',row),'https://hub.test');
+ const copy = new URL(Hub.shareUrl(detail.href,owner));
+ assert.equal(copy.pathname,'/mycollections.html');
+ assert.equal(copy.searchParams.has('savedCollection'),false);
+ assert.equal(copy.searchParams.get('app'),'charades');
+ assert.equal(copy.searchParams.get('level'),'N5');
+ assert.deepEqual(Hub.selected(copy.search,recipient),row);
+ assert.deepEqual(Hub.list(recipient),[]);
+ const launch = new URL(Hub.launch('charades',row,'N5',{includeSnapshot:true}),'https://hub.test');
+ assert.deepEqual(Hub.selected(launch.search,recipient),row);
+ Hub.save({...row, name:'Updated collection'},owner);
+ assert.equal(Hub.selected(launch.search,owner).name,'Updated collection');
+});
+
 test('saved Music Literacy terms can be played alone or alongside music concepts', () => {
  const db = storage();
  const literacy = Games.literacyConcepts('AH').slice(0,6);

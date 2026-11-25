@@ -26,7 +26,7 @@ returns jsonb language plpgsql security definer set search_path=public,pg_temp a
 declare
  c keyboard_pilot_settings; r keyboard_pilot_rooms; player jsonb; result jsonb;
  i integer; question jsonb; now_ms bigint := floor(extract(epoch from clock_timestamp())*1000);
- is_host boolean; mine text; board jsonb; question_time integer; assigned_name text; assigned_symbol text; is_race boolean; next_question integer; correct_answer boolean;
+ is_host boolean; mine text; board jsonb; question_time integer; assigned_name text; assigned_symbol text; is_race boolean; next_question integer; correct_answer boolean; answer_fraction numeric;
 begin
  select * into c from keyboard_pilot_settings where id=true for update;
  if not c.enabled then raise exception 'Classroom pilot is switched off.'; end if;
@@ -42,14 +42,51 @@ begin
    end if;
    return jsonb_build_object('available',true);
  end if;
+ if p_action='create-listening' then
+   if p_data->>'gameType' is distinct from 'quiz' or not exists (
+     select 1 from jsonb_array_elements(coalesce(p_data->'questions','[]')) q where q->'score' ? 'audio'
+   ) then raise exception 'Invalid listening quiz.'; end if;
+   p_action:='create';
+ end if;
+ if p_action='create-melodic-quiz' then
+   if p_data->>'gameType' is distinct from 'quiz' or exists (
+     select 1 from jsonb_array_elements(coalesce(p_data->'questions','[]')) q
+     where q->>'type' is distinct from 'melodic-dictation' or jsonb_typeof(q->'response') is distinct from 'array'
+   ) then raise exception 'Invalid Melodic Dictation quiz.'; end if;
+   p_action:='create';
+ end if;
+ if p_action='create-concept-quiz' then
+   if p_data->>'gameType' is distinct from 'quiz' or jsonb_typeof(p_data->'questions') is distinct from 'array'
+     or exists (select 1 from jsonb_array_elements(p_data->'questions') q where q->>'type' is distinct from 'concept-quiz')
+     then raise exception 'Invalid Concept Quiz.'; end if;
+   p_action:='create';
+ end if;
  if p_action='create' then
-   if coalesce(p_data->>'gameType','quiz') not in ('quiz','race') then raise exception 'Invalid game type.'; end if;
+   if coalesce(p_data->>'gameType','quiz') not in ('quiz','race','shared','activity-race','rhythm-time-trial') then raise exception 'Invalid game type.'; end if;
+   if p_data->>'gameType' is distinct from 'quiz' and exists (
+     select 1 from jsonb_array_elements(coalesce(p_data->'questions','[]')) q where q->'score' ? 'audio'
+   ) then raise exception 'Listening activities use Quiz mode.'; end if;
    if p_data->>'gameType'='race' and coalesce((p_data->>'targetStreak')::integer,30) not between 1 and 100 then raise exception 'Invalid streak target.'; end if;
    if p_data->>'gameType'='race' and coalesce((p_data->>'raceMinutes')::integer,0) not between 0 and 10 then raise exception 'Invalid Race time limit.'; end if;
+   if p_data->>'gameType'='rhythm-time-trial' and not coalesce(
+     p_data->>'raceMinutes' ~ '^([1-9]|10)$' and p_data->>'activity' ~ '^/rhythmidentification[.]html([?#]|$)',false
+   ) then raise exception 'Invalid Rhythm Identification Time Trial settings.'; end if;
+   if p_data->>'nativeStreak'='true' and not coalesce(
+     p_data->>'gameType'='activity-race' and p_data->>'targetStreak' ~ '^([1-9][0-9]?|100)$'
+     and p_data->>'raceMinutes' ~ '^([0-9]|10)$',false
+   ) then raise exception 'Invalid streak Race settings.'; end if;
+   if p_data ? 'recallMinutes' and not coalesce(
+     p_data->>'gameType'='activity-race' and p_data->>'activity' ~ '^/conceptrecall[.]html([?#]|$)'
+     and p_data->>'recallMinutes' ~ '^([0-9]|10)$'
+     and p_data->>'targetCorrect' ~ '^([1-9][0-9]{0,2}|1000)$',false
+   ) then raise exception 'Invalid Concept Recall settings.'; end if;
    question_time:=coalesce((p_data->>'questionTime')::integer,20);
    if question_time not in (5,10,15,20,30,45,60,90,120) then raise exception 'Invalid time per question.'; end if;
-   if jsonb_array_length(p_data->'questions') not between 5 and 50 then raise exception 'Invalid question count.'; end if;
-   insert into keyboard_pilot_rooms values(p_pin,p_token,now()+make_interval(secs=>case when p_data->>'gameType'='race' then 7200 else greatest(2700,jsonb_array_length(p_data->'questions')*question_time+1800) end),p_data,'[]') returning * into r;
+   if coalesce(p_data->>'gameType','quiz') not in ('shared','activity-race','rhythm-time-trial') and
+     jsonb_array_length(p_data->'questions') not between (case when exists (
+       select 1 from jsonb_array_elements(p_data->'questions') q where q->'score' ? 'audio' or q->>'type'='concept-quiz'
+     ) then 1 else 5 end) and 50 then raise exception 'Invalid question count.'; end if;
+   insert into keyboard_pilot_rooms values(p_pin,p_token,now()+make_interval(secs=>case when p_data->>'gameType' in ('race','shared','activity-race','rhythm-time-trial') then 7200 else greatest(2700,jsonb_array_length(p_data->'questions')*question_time+1800) end),p_data,'[]') returning * into r;
    update keyboard_pilot_settings set games=games+1 where id=true;
  else
    select * into r from keyboard_pilot_rooms where pin=p_pin for update;
@@ -75,17 +112,153 @@ begin
    -- Choose an unused Bravura symbol while holding the room lock.
    select candidate into assigned_symbol from unnest(array['gClef','fClef','segno','quarterNoteStemUp','eighthNoteStemUp','sixteenthNoteStemUp','wholeNote','halfNoteStemUp','timeSigCommon','flat','natural','sharp','accentAbove','fermataAbove','quarterRest','eighthRest','sixteenthRest','piano','forte','pianissimo','mezzoPiano','mezzoForte','fortissimo','sforzato','slashedGraceNoteStemUp','ottavaAlta','ottavaBassa','repeatLeft','repeatRight']) candidate
      where not exists(select 1 from jsonb_array_elements(r.players) where value->>'symbol'=candidate) order by random() limit 1;
-   player:=jsonb_build_object('token',p_token,'name',assigned_name,'symbol',assigned_symbol,'score',0,'answer',null,'answered',false,'streak',0,'previousRank',jsonb_array_length(r.players)+1,'attempt',0,'questionIndex',floor(random()*jsonb_array_length(r.state->'questions'))::integer);
+   player:=jsonb_build_object('token',p_token,'name',assigned_name,'symbol',assigned_symbol,'score',0,'answer',null,'answered',false,'streak',0,'previousRank',jsonb_array_length(r.players)+1,'attempt',0,'questionIndex',case when coalesce((r.state->>'sharedSequence')::boolean,false) or r.state->>'gameType' in ('shared','activity-race','rhythm-time-trial') then 0 else floor(random()*jsonb_array_length(r.state->'questions'))::integer end);
    r.players:=r.players||jsonb_build_array(player);
  elsif not is_host and player is null and p_action='read' then return jsonb_build_object('closed',true,'removed',true);
  elsif not is_host and player is null then raise exception 'Join this game first.';
  end if;
- if p_action in ('start','next','reveal','end','remove') and not is_host then raise exception 'Only the teacher can control the game.'; end if;
+ if p_action in ('start','next','reveal','end','remove','audio-ended') and not is_host then raise exception 'Only the teacher can control the game.'; end if;
  if p_action='remove' then
    if r.state->>'phase'<>'lobby' then raise exception 'Participants can only be removed before the game starts.'; end if;
    if not exists(select 1 from jsonb_array_elements(r.players) where value->>'token'=p_data->>'playerId') then raise exception 'Participant not found.'; end if;
    select coalesce(jsonb_agg(value),'[]'::jsonb) into r.players from jsonb_array_elements(r.players) where value->>'token'<>p_data->>'playerId';
  end if;
+ if r.state->>'gameType' in ('shared','activity-race','rhythm-time-trial') then
+   if r.state->>'gameType'='rhythm-time-trial' and r.state->>'phase'='playing'
+     and now_ms>=(r.state->>'deadline')::bigint then
+     r.state:=r.state||'{"phase":"finished"}'::jsonb;
+   end if;
+   if r.state->>'nativeStreak'='true' and r.state->>'phase'='playing'
+     and now_ms>=(r.state->>'deadline')::bigint then
+     select coalesce(jsonb_agg(value->>'name' order by value->>'name'),'[]'::jsonb) into board
+       from jsonb_array_elements(r.players)
+       where (value->>'highestStreak')::integer>0 and (value->>'highestStreak')::integer=
+         (select max((value->>'highestStreak')::integer) from jsonb_array_elements(r.players));
+     r.state:=r.state||jsonb_build_object('phase','finished','finishReason','time','winners',board);
+   end if;
+   if r.state ? 'recallMinutes' and r.state->>'phase'='playing'
+     and now_ms>=(r.state->>'deadline')::bigint then
+     select coalesce(jsonb_agg(value->>'name' order by value->>'name'),'[]'::jsonb) into board
+       from jsonb_array_elements(r.players)
+       where (value->>'correctCount')::integer>0 and (value->>'correctCount')::integer=
+         (select max((value->>'correctCount')::integer) from jsonb_array_elements(r.players));
+     r.state:=r.state||jsonb_build_object('phase','finished','finishReason','time','winners',board);
+   end if;
+   if p_action='start' then
+     if r.state->>'phase'<>'lobby' then raise exception 'Game already started.'; end if;
+     if jsonb_array_length(r.players)=0 then raise exception 'Wait for pupils to join.'; end if;
+     r.state:=r.state||jsonb_build_object('phase','playing','startedAt',now_ms);
+     if r.state->>'gameType'='rhythm-time-trial' then
+       r.state:=r.state||jsonb_build_object('deadline',now_ms+(r.state->>'raceMinutes')::integer*60000);
+     elsif r.state->>'nativeStreak'='true' and (r.state->>'raceMinutes')::integer>0 then
+       r.state:=r.state||jsonb_build_object('deadline',now_ms+(r.state->>'raceMinutes')::integer*60000);
+     elsif (r.state->>'recallMinutes')::integer>0 then
+       r.state:=r.state||jsonb_build_object('deadline',now_ms+(r.state->>'recallMinutes')::integer*60000);
+     end if;
+   elsif p_action='end' then
+     delete from keyboard_pilot_rooms where pin=p_pin;
+     return jsonb_build_object('closed',true);
+   elsif p_action='grid-finish' then
+     if is_host or r.state->>'gameType'<>'rhythm-time-trial' or r.state->>'phase'='lobby' then
+       raise exception 'This round is closed.';
+     end if;
+     if r.state->>'phase'='playing' then
+       if not coalesce(p_data->>'elapsedMs' ~ '^[1-9][0-9]{0,5}$',false) then raise exception 'Invalid grid time.'; end if;
+       next_question:=(p_data->>'elapsedMs')::integer;
+       if next_question>least(600000,now_ms-(r.state->>'startedAt')::bigint) then raise exception 'Invalid grid time.'; end if;
+       -- Keep the minimum so retried submissions never change the result.
+       player:=player||jsonb_build_object('bestTimeMs',least((player->>'bestTimeMs')::integer,next_question));
+       select jsonb_agg(case when value->>'token'=p_token then player else value end)
+         into r.players from jsonb_array_elements(r.players);
+     end if;
+   elsif p_action='finish' then
+     if is_host or r.state->>'phase'='lobby' or r.state->>'gameType'='rhythm-time-trial' then raise exception 'This round is closed.'; end if;
+     if r.state->>'phase'='playing' and not coalesce((player->>'finished')::boolean,false) then
+       if r.state->>'gameType'='activity-race' then
+         if p_data ? 'wordCount' then
+           if not coalesce(r.state->>'activity' ~ '^/(wordsearch|crosswords)[.]html([?#]|$)'
+             and p_data->>'wordCount' ~ '^([1-9]|1[0-5])$'
+             and p_data->>'correct' ~ '^(0|[1-9]|1[0-5])$',false) then
+             raise exception 'Invalid word puzzle progress.';
+           end if;
+           if (p_data->>'correct')::integer>(p_data->>'wordCount')::integer or
+             coalesce(r.state->>'targetCorrect',p_data->>'wordCount')<>p_data->>'wordCount' then
+             raise exception 'Invalid word puzzle progress.';
+           end if;
+           r.state:=jsonb_set(r.state,'{targetCorrect}',p_data->'wordCount');
+         end if;
+         if r.state->>'nativeStreak'='true' then
+           if p_data ? 'attempted' then
+             if not coalesce(p_data->>'attempted' ~ '^[0-9]{1,6}$'
+                 and p_data->>'streak' ~ '^(0|[1-9][0-9]?|100)$'
+                 and p_data->>'highestStreak' ~ '^(0|[1-9][0-9]?|100)$', false)
+             then raise exception 'Invalid streak progress.'; end if;
+             i:=(p_data->>'attempted')::integer;
+             next_question:=(p_data->>'streak')::integer;
+             if next_question>(p_data->>'highestStreak')::integer or (p_data->>'highestStreak')::integer>i
+             then raise exception 'Invalid streak progress.'; end if;
+             if i>(player->>'attempt')::integer or i=(player->>'attempt')::integer and next_question<(player->>'streak')::integer then
+               if next_question<(player->>'streak')::integer then
+                 player:=player||jsonb_build_object('resetVersion',coalesce((player->>'resetVersion')::integer,0)+1,'resetFrom',player->'streak');
+               end if;
+               correct_answer:=(p_data->>'highestStreak')::integer>=(r.state->>'targetStreak')::integer;
+               player:=player||jsonb_build_object('attempt',i,'streak',next_question,
+                 'highestStreak',greatest(coalesce((player->>'highestStreak')::integer,0),(p_data->>'highestStreak')::integer),'finished',correct_answer);
+             end if;
+           end if;
+         elsif r.state->>'activity' ~ '^/whowantstobemillionaire/whowantstobeamillionaire[.]html([?#]|$)' then
+           if p_data ? 'millionaireAttempt' then
+             if not coalesce(p_data->>'millionaireAttempt' ~ '^[1-9][0-9]{0,8}$'
+               and p_data->>'correct' ~ '^(0|[1-9]|1[0-5])$',false) then
+               raise exception 'Invalid Millionaire progress.';
+             end if;
+             i:=(p_data->>'millionaireAttempt')::integer;
+             if i>=coalesce((player->>'millionaireAttempt')::integer,0) then
+               next_question:=(p_data->>'correct')::integer;
+               if i=(player->>'millionaireAttempt')::integer then
+                 next_question:=greatest(next_question,coalesce((player->>'correctCount')::integer,0));
+               end if;
+               correct_answer:=next_question=15;
+               player:=player||jsonb_build_object('millionaireAttempt',i,'correctCount',next_question,'finished',correct_answer);
+               r.state:=jsonb_set(r.state,'{targetCorrect}','15');
+             end if;
+           end if;
+         elsif r.state->>'targetCorrect' is not null then
+           next_question:=greatest(coalesce((player->>'correctCount')::integer,0),least((r.state->>'targetCorrect')::integer,coalesce((p_data->>'correct')::integer,0)));
+           correct_answer:=next_question>=(r.state->>'targetCorrect')::integer;
+           player:=player||jsonb_build_object('correctCount',next_question,'finished',correct_answer or coalesce(
+             r.state->>'activity' ~ '^/musicescape[.]html([?#]|$)' and p_data->>'solved'='false',false));
+         else
+           correct_answer:=coalesce((p_data->>'solved')::boolean,false);
+           if p_data ? 'solved' then player:=player||jsonb_build_object('finished',true,'solved',correct_answer); end if;
+         end if;
+         if correct_answer then r.state:=r.state||jsonb_build_object('phase','finished','winner',player->>'name'); end if;
+       else
+         player:=player||'{"finished":true}'::jsonb;
+       end if;
+       select jsonb_agg(case when value->>'token'=p_token then player else value end) into r.players from jsonb_array_elements(r.players);
+       if r.state->>'gameType'='activity-race'
+         and not exists (select 1 from jsonb_array_elements(r.players) where not coalesce((value->>'finished')::boolean,false)) then
+         r.state:=r.state||jsonb_build_object('phase','finished');
+       end if;
+     end if;
+   elsif p_action not in ('create','join','read','remove') then
+     raise exception 'This activity is played on the activity screen.';
+   end if;
+   update keyboard_pilot_rooms set state=r.state,players=r.players where pin=p_pin;
+   select coalesce(jsonb_agg(jsonb_build_object('id',case when is_host then value->>'token' else null end,
+     'name',value->>'name','symbol',value->>'symbol','finished',coalesce((value->>'finished')::boolean,false),
+     'solved',value->'solved','correctCount',coalesce((value->>'correctCount')::integer,0))
+     || case when r.state->>'gameType'='rhythm-time-trial' then jsonb_build_object('bestTimeMs',value->'bestTimeMs') else '{}'::jsonb end
+     || case when r.state->>'nativeStreak'='true' then jsonb_build_object(
+       'streak',value->'streak','highestStreak',value->'highestStreak','resetVersion',value->'resetVersion','resetFrom',value->'resetFrom')
+       else '{}'::jsonb end
+     order by (value->>'bestTimeMs')::integer nulls last,coalesce((value->>'correctCount')::integer,0) desc,value->>'name'),'[]')
+     into board from jsonb_array_elements(r.players);
+   return r.state||jsonb_build_object('pin',r.pin,'host',is_host,'players',board,'serverTime',now_ms,
+     'myName',player->>'name','mySymbol',player->>'symbol','myFinished',coalesce((player->>'finished')::boolean,false));
+ end if;
+ if p_action='finish' then raise exception 'Use the game controls for this room.'; end if;
  if is_race then
    if r.state->>'phase'='question' and r.state->>'deadline' is not null and now_ms>=(r.state->>'deadline')::bigint then
      select jsonb_agg(value->>'name' order by value->>'name') into board
@@ -106,10 +279,14 @@ begin
      if (p_data->>'index')::integer<>coalesce((player->>'attempt')::integer,0) then raise exception 'Question has changed.'; end if;
      if not (r.state->'allowedAnswers' ? (p_data->>'answer')) then raise exception 'Choose a note from this level.'; end if;
      question:=r.state->'questions'->((player->>'questionIndex')::integer);
-     correct_answer:=(p_data->>'pitch')::int=case when question->>'type'='find' then (question->>'pitch')::int else (question->>'pitch')::int%12 end;
+     correct_answer:=(p_data->>'pitch')::int=case when question->>'type' in ('find','written') then (question->>'pitch')::int else (question->>'pitch')::int%12 end;
      -- Choose the next private question, avoiding the previous pitch where possible.
-     select ordinal::integer-1 into next_question from jsonb_array_elements(r.state->'questions') with ordinality q(value,ordinal) where value->>'pitch'<>question->>'pitch' order by random() limit 1;
-     next_question:=coalesce(next_question,((player->>'questionIndex')::integer+1)%jsonb_array_length(r.state->'questions'));
+     if coalesce((r.state->>'sharedSequence')::boolean,false) then
+       next_question:=((player->>'questionIndex')::integer+1)%jsonb_array_length(r.state->'questions');
+     else
+       select ordinal::integer-1 into next_question from jsonb_array_elements(r.state->'questions') with ordinality q(value,ordinal) where value->>'pitch'<>question->>'pitch' order by random() limit 1;
+       next_question:=coalesce(next_question,((player->>'questionIndex')::integer+1)%jsonb_array_length(r.state->'questions'));
+     end if;
      player:=player||jsonb_build_object('streak',case when correct_answer then (player->>'streak')::integer+1 else 0 end,
        'highestStreak',greatest(coalesce((player->>'highestStreak')::integer,(player->>'streak')::integer,0),case when correct_answer then (player->>'streak')::integer+1 else (player->>'streak')::integer end),
        'attempt',(player->>'attempt')::integer+1,'questionIndex',next_question,'lastCorrect',correct_answer,
@@ -129,7 +306,20 @@ begin
  if p_action='start' then
    if r.state->>'phase'<>'lobby' then raise exception 'Game already started.'; end if;
    select jsonb_agg(value||jsonb_build_object('previousRank',rank)) into r.players from (select value,row_number() over(order by (value->>'score')::int desc,value->>'name',value->>'token') rank from jsonb_array_elements(r.players)) ranked;
-   r.state:=r.state||jsonb_build_object('phase','question','index',0,'startedAt',now_ms,'deadline',now_ms+question_time*1000);
+   question:=r.state->'questions'->0;
+   if question->'score' ? 'audio' then
+     r.state:=r.state||jsonb_build_object('phase','listening','index',0,'startedAt',null,'deadline',null);
+   else
+     r.state:=r.state||jsonb_build_object('phase','question','index',0,'startedAt',now_ms,'deadline',now_ms+question_time*1000);
+   end if;
+ elsif p_action='audio-ended' then
+   question:=r.state->'questions'->((r.state->>'index')::integer);
+   if (p_data->>'index') is distinct from (r.state->>'index') or not coalesce(question->'score' ? 'audio',false) then
+     raise exception 'This question is no longer active.';
+   end if;
+   if r.state->>'phase'='listening' then
+     r.state:=r.state||jsonb_build_object('phase','question','startedAt',now_ms,'deadline',now_ms+question_time*1000);
+   end if;
  elsif p_action='reveal' then
    if r.state->>'phase'='question' then r.state:=r.state||jsonb_build_object('phase','review'); end if;
  elsif p_action='next' then
@@ -137,7 +327,12 @@ begin
    i:=(r.state->>'index')::int+1;
    if i>=jsonb_array_length(r.state->'questions') then r.state:=r.state||jsonb_build_object('phase','finished');
    else
-     r.state:=r.state||jsonb_build_object('phase','countdown','index',i,'startedAt',now_ms+3000,'deadline',now_ms+3000+question_time*1000);
+     question:=r.state->'questions'->i;
+     if question->'score' ? 'audio' then
+       r.state:=r.state||jsonb_build_object('phase','listening','index',i,'startedAt',null,'deadline',null);
+     else
+       r.state:=r.state||jsonb_build_object('phase','countdown','index',i,'startedAt',now_ms+3000,'deadline',now_ms+3000+question_time*1000);
+     end if;
      select coalesce(jsonb_agg(value||jsonb_build_object('answer',null,'answered',false,'previousRank',rank)),'[]') into r.players from (select value,row_number() over(order by (value->>'score')::int desc,value->>'name',value->>'token') rank from jsonb_array_elements(r.players)) ranked;
    end if;
  elsif p_action='end' then
@@ -145,15 +340,34 @@ begin
  elsif p_action='answer' then
    if is_host or r.state->>'phase'<>'question' or now_ms>(r.state->>'deadline')::bigint then raise exception 'Answers are closed.'; end if;
    if p_data->>'index'<>r.state->>'index' then raise exception 'Question has changed.'; end if;
-   if not (r.state->'allowedAnswers' ? (p_data->>'answer')) then raise exception 'Choose a note from this level.'; end if;
    if (player->>'answered')::boolean then raise exception 'Answer already submitted.'; end if;
    question:=r.state->'questions'->((r.state->>'index')::int);
-   correct_answer:=(p_data->>'pitch')::int=case when question->>'type'='find' then (question->>'pitch')::int else (question->>'pitch')::int%12 end;
-   player:=player||jsonb_build_object('answer',p_data->>'answer','answered',true,'correct',correct_answer,
+   if question->>'type'='concept-quiz' then
+     if p_data->>'questionId' is distinct from question->'score'->'quiz'->>'id' then raise exception 'Question has changed.'; end if;
+     if coalesce(jsonb_typeof(p_data->'response'),'null') not in ('string','array')
+       or jsonb_typeof(p_data->'fraction') is distinct from 'number'
+       or (p_data->>'fraction')::numeric not between 0 and 1 then raise exception 'Enter an answer for this question.'; end if;
+     mine:=(p_data->'response')::text;
+     answer_fraction:=(p_data->>'fraction')::numeric;
+     correct_answer:=answer_fraction=1;
+   elsif question->>'type'='melodic-dictation' then
+     if jsonb_typeof(p_data->'notes') is distinct from 'array' then raise exception 'Enter the notes for this exercise.'; end if;
+     if jsonb_array_length(p_data->'notes')<>jsonb_array_length(question->'response')
+       or exists (select 1 from jsonb_array_elements(p_data->'notes') n where jsonb_typeof(n)<>'number')
+       then raise exception 'Enter the notes for this exercise.'; end if;
+     mine:=p_data->>'notes';
+     correct_answer:=p_data->'notes'=question->'response';
+   else
+     if p_data->>'answer' is null or not (r.state->'allowedAnswers' ? (p_data->>'answer')) then raise exception 'Choose a note from this level.'; end if;
+     mine:=p_data->>'answer';
+     correct_answer:=(p_data->>'pitch')::int=case when question->>'type' in ('find','written') then (question->>'pitch')::int else (question->>'pitch')::int%12 end;
+   end if;
+   answer_fraction:=coalesce(answer_fraction,case when correct_answer then 1 else 0 end);
+   player:=player||jsonb_build_object('answer',mine,'answered',true,'correct',correct_answer,'fraction',answer_fraction,
      'streak',case when correct_answer then coalesce((player->>'streak')::int,0)+1 else 0 end,
-     'score',(player->>'score')::int+case when correct_answer then case when r.state->>'scoringVersion'='2'
+     'score',(player->>'score')::int+round(answer_fraction*case when r.state->>'scoringVersion'='2'
        then public.keyboard_pilot_points(now_ms-coalesce((r.state->>'startedAt')::bigint,(r.state->>'deadline')::bigint-question_time*1000),question_time*1000)
-       else 1000 end else 0 end);
+       else 1000 end)::int);
    select jsonb_agg(case when value->>'token'=p_token then player else value end) into r.players from jsonb_array_elements(r.players);
  end if;
  -- Complete the question atomically as soon as every joined pupil has answered.
@@ -178,6 +392,14 @@ begin
  if r.state->>'phase' in ('review','finished') then
    result:=result||jsonb_build_object('correct',player->'correct','unanswered',(select count(*) from jsonb_array_elements(r.players) where not coalesce((value->>'answered')::boolean,false)),
      'breakdown',(select coalesce(jsonb_agg(jsonb_build_object('answer',answer,'count',(select count(*) from jsonb_array_elements(r.players) where value->>'answer'=answer))),'[]') from jsonb_array_elements_text(r.state->'allowedAnswers') answer));
+   if result->'question'->>'type' in ('melodic-dictation','concept-quiz') then
+     select jsonb_build_array(
+       jsonb_build_object('answer','correct','count',count(*) filter (where value->>'answered'='true' and value->>'correct'='true')),
+       jsonb_build_object('answer','incorrect','count',count(*) filter (where value->>'answered'='true' and value->>'correct'='false' and coalesce((value->>'fraction')::numeric,0)=0)),
+       jsonb_build_object('answer','partial','count',count(*) filter (where value->>'answered'='true' and (value->>'fraction')::numeric>0 and value->>'correct'='false'))
+     ) into board from jsonb_array_elements(r.players);
+     result:=result||jsonb_build_object('breakdown',board);
+   end if;
  end if;
  return result;
 end $$;
@@ -187,3 +409,216 @@ grant execute on function public.keyboard_pilot(text,text,text,jsonb) to service
 -- update public.keyboard_pilot_settings set enabled=true where id=true;
 -- Emergency stop (also disables all existing rooms):
 -- update public.keyboard_pilot_settings set enabled=false where id=true;
+
+-- Add the teacher-led Dominoes round to the existing classroom lobby and PIN service.
+
+alter function public.keyboard_pilot(text,text,text,jsonb) rename to keyboard_pilot_standard;
+revoke all on function public.keyboard_pilot_standard(text,text,text,jsonb) from service_role;
+
+create function public.keyboard_pilot(p_action text,p_pin text,p_token text,p_data jsonb default '{}')
+returns jsonb language plpgsql security definer set search_path=public,pg_temp as $$
+declare
+  room keyboard_pilot_rooms;
+  result jsonb;
+  opening boolean := p_action='create' and p_data->>'gameType'='dominoes';
+  classroom_action boolean := p_action in ('start','next','reveal');
+  player_count integer;
+  mine integer;
+  lineup jsonb;
+  dealt jsonb;
+  now_ms bigint;
+  elapsed bigint;
+begin
+  if opening then
+    result:=keyboard_pilot_standard('create',p_pin,p_token,p_data||jsonb_build_object(
+      'gameType','shared','dominoes',true,'capacity',jsonb_array_length(p_data->'concepts')+1));
+    return (result-'concepts'-'dominoes')||'{"gameType":"dominoes"}'::jsonb;
+  end if;
+  if p_action in ('check','create') then
+    return keyboard_pilot_standard(p_action,p_pin,p_token,p_data);
+  end if;
+
+  select * into room from keyboard_pilot_rooms where pin=p_pin;
+  if room.state->>'dominoes' is distinct from 'true' then
+    return keyboard_pilot_standard(p_action,p_pin,p_token,p_data);
+  end if;
+
+  -- The existing service performs expiry, permission, and lobby checks under its usual locks.
+  result:=keyboard_pilot_standard(case when classroom_action or p_action in ('finish','answer') then 'read' else p_action end,p_pin,p_token,p_data);
+  if coalesce((result->>'closed')::boolean,false) then return result; end if;
+  select * into room from keyboard_pilot_rooms where pin=p_pin for update;
+  if p_action in ('finish','answer') then raise exception 'The teacher controls the Dominoes round.'; end if;
+  if classroom_action and room.host_hash<>p_token then raise exception 'Only the teacher can control the game.'; end if;
+  now_ms:=(result->>'serverTime')::bigint;
+  player_count:=jsonb_array_length(room.players);
+  if p_action in ('join','start') and player_count>jsonb_array_length(room.state->'concepts')+1 then
+    raise exception 'This Dominoes game is full (maximum % pupils).', jsonb_array_length(room.state->'concepts')+1;
+  end if;
+
+  if p_action in ('start','next') then
+    if (p_action='start' and room.state->>'phase'<>'lobby') or (p_action='next' and room.state->>'phase'<>'finished') then
+      raise exception 'The current round has already started.';
+    end if;
+    if player_count<2 then raise exception 'Wait for at least two pupils to join.'; end if;
+    if p_action='start' then
+      select jsonb_agg(value order by ordinality) into lineup
+        from jsonb_array_elements(room.state->'concepts') with ordinality where ordinality<player_count;
+    else
+      select jsonb_agg(value order by random()) into lineup from jsonb_array_elements(room.state->'lineup');
+      if lineup=room.state->'lineup' and jsonb_array_length(lineup)>1 then
+        lineup:=(lineup-0)||jsonb_build_array(lineup->0);
+      end if;
+    end if;
+    select jsonb_agg(jsonb_build_object(
+      'term', case when step=0 then 'Start' else lineup->(step-1)->>'name' end,
+      'clue', coalesce(lineup->step->>'definition','End')
+    ) order by random()) into dealt from generate_series(0,player_count-1) as steps(step);
+    if p_action='next' and dealt=room.state->'dealt' then
+      dealt:=(dealt-0)||jsonb_build_array(dealt->0);
+    end if;
+    room.state:=room.state||jsonb_build_object('phase','playing','lineup',lineup,'dealt',dealt,
+      'startedAt',now_ms,'stoppedAt',null);
+    update keyboard_pilot_rooms set state=room.state where pin=p_pin;
+  elsif p_action='reveal' then
+    if room.state->>'phase'<>'playing' then raise exception 'Start a round before stopping the clock.'; end if;
+    elapsed:=greatest(0,now_ms-(room.state->>'startedAt')::bigint);
+    room.state:=room.state||jsonb_build_object('phase','finished','stoppedAt',now_ms,
+      'bestElapsed',least(elapsed,coalesce((room.state->>'bestElapsed')::bigint,elapsed)));
+    update keyboard_pilot_rooms set state=room.state where pin=p_pin;
+  end if;
+
+  select ordinality::integer-1 into mine
+    from jsonb_array_elements(room.players) with ordinality where value->>'token'=p_token;
+  return (result-'concepts'-'dominoes'-'lineup'-'dealt')||jsonb_build_object(
+    'gameType','dominoes','phase',room.state->>'phase','startedAt',room.state->'startedAt',
+    'stoppedAt',room.state->'stoppedAt','bestElapsed',room.state->'bestElapsed','myCard',room.state->'dealt'->mine);
+end;
+$$;
+
+revoke all on function public.keyboard_pilot(text,text,text,jsonb) from public,anon,authenticated;
+grant execute on function public.keyboard_pilot(text,text,text,jsonb) to service_role;
+
+-- Let teachers enable pupil nicknames in the shared lobby.
+do $$
+begin
+  if to_regprocedure('public.keyboard_pilot_game(text,text,text,jsonb)') is null then
+    alter function public.keyboard_pilot(text,text,text,jsonb) rename to keyboard_pilot_game;
+  end if;
+end;
+$$;
+revoke all on function public.keyboard_pilot_game(text,text,text,jsonb) from public,anon,authenticated,service_role;
+
+create or replace function public.keyboard_pilot(p_action text,p_pin text,p_token text,p_data jsonb default '{}')
+returns jsonb language plpgsql security definer set search_path=public,pg_temp as $$
+declare
+  room keyboard_pilot_rooms;
+  result jsonb;
+  nickname text;
+  playback jsonb;
+  pupil_score jsonb;
+begin
+  if p_action in ('nicknames','rename') then
+    -- Use the existing expiry, membership and lock order before changing the room.
+    result:=keyboard_pilot_game('read',p_pin,p_token,'{}');
+    if result->>'closed'='true' then return result; end if;
+    select * into room from keyboard_pilot_rooms where pin=p_pin for update;
+    if room.state->>'phase'<>'lobby' then raise exception 'Nicknames can only be changed before the game starts.'; end if;
+
+    if p_action='nicknames' then
+      if room.host_hash<>p_token then raise exception 'Only the teacher can allow nicknames.'; end if;
+      if jsonb_typeof(p_data->'allowNicknames') is distinct from 'boolean' then
+        raise exception 'Choose whether to allow nicknames.';
+      end if;
+      update keyboard_pilot_rooms
+      set state=jsonb_set(state,'{allowNicknames}',p_data->'allowNicknames'),
+          players=case when p_data->>'allowNicknames'='true' then room.players else (
+            select coalesce(jsonb_agg(case when value ? 'assignedName'
+              then jsonb_set(value,'{name}',value->'assignedName') else value end order by ordinality),'[]'::jsonb)
+            from jsonb_array_elements(room.players) with ordinality
+          ) end
+      where pin=p_pin;
+    else
+      if room.host_hash=p_token or room.state->>'allowNicknames' is distinct from 'true' then
+        raise exception 'Nicknames are currently locked.';
+      end if;
+      nickname:=coalesce(p_data->>'name','');
+      if char_length(nickname) not between 1 and 20 or nickname ~ '[[:space:][:cntrl:]]' then
+        raise exception 'Use a nickname of 1–20 characters with no spaces.';
+      end if;
+      if exists(select 1 from jsonb_array_elements(room.players)
+        where value->>'token'<>p_token and (lower(value->>'name')=lower(nickname)
+          or lower(value->>'assignedName')=lower(nickname))) then
+        raise exception 'That nickname is already taken.';
+      end if;
+      update keyboard_pilot_rooms set players=(
+        select jsonb_agg(case when value->>'token'=p_token then value||jsonb_build_object(
+          'assignedName',coalesce(value->>'assignedName',value->>'name'),'name',nickname
+        ) else value end order by ordinality)
+        from jsonb_array_elements(room.players) with ordinality
+      ) where pin=p_pin;
+    end if;
+    result:=keyboard_pilot_game('read',p_pin,p_token,'{}');
+  elsif p_action='skip-excerpt' then
+    result:=keyboard_pilot_game('read',p_pin,p_token,'{}');
+    if result->>'closed'='true' then return result; end if;
+    if result->>'host' is distinct from 'true' then raise exception 'Only the teacher can control the game.'; end if;
+    if result->>'phase' is distinct from 'listening' or result->'question'->>'type' is distinct from 'concept-quiz'
+      or p_data->>'index' is distinct from result->>'index' then raise exception 'This question is no longer active.'; end if;
+    -- Both calls share the room lock, so the skipped excerpt never opens submissions.
+    perform keyboard_pilot_game('audio-ended',p_pin,p_token,p_data);
+    result:=keyboard_pilot_game('reveal',p_pin,p_token,'{}');
+  else
+    result:=keyboard_pilot_game(p_action,p_pin,p_token,p_data);
+  end if;
+
+  if p_action='check' or result->>'closed'='true' then return result; end if;
+  select * into room from keyboard_pilot_rooms where pin=p_pin;
+  if room.state->>'gameType'='quiz' and p_action='next'
+    and result->>'phase' in ('countdown','listening') then
+    update keyboard_pilot_rooms set players=(
+      select coalesce(jsonb_agg(value||jsonb_build_object('previousScore',value->'score') order by ordinality),'[]'::jsonb)
+      from jsonb_array_elements(room.players) with ordinality
+    ) where pin=p_pin;
+  end if;
+  if result->'question'->>'type'='concept-quiz' and result->>'host'='true' and result->>'phase'='review' then
+    result:=jsonb_set(result,'{players}',(
+      select coalesce(jsonb_agg(case when player ? 'previousScore' or result->>'index'='0'
+        then entry||jsonb_build_object('gained',(player->>'score')::int-coalesce((player->>'previousScore')::int,0))
+        else entry end order by board.ordinality),'[]'::jsonb)
+      from jsonb_array_elements(result->'players') with ordinality board(entry,ordinality)
+      join jsonb_array_elements(room.players) roster(player) on player->>'token'=entry->>'id'
+    ));
+  end if;
+  if room.state->>'gameType'='quiz' and result->>'host'='false' then
+    -- A pupil's total includes the current round once the answers are revealed.
+    select case when result->>'phase' in ('review','finished') or value->>'answered' is distinct from 'true'
+      then value->'score' else coalesce(value->'previousScore','0'::jsonb) end into pupil_score
+    from jsonb_array_elements(room.players) where value->>'token'=p_token;
+    if pupil_score is not null then
+      result:=result||jsonb_build_object('myScore',pupil_score);
+    end if;
+  end if;
+  playback:=room.state->'excerptPlayback';
+  if p_action='read' and room.host_hash=p_token and p_data ? 'excerptPlayback' then
+    if result->'question'->>'type'='concept-quiz' and result->'question'->'score' ? 'audio'
+      and room.state->>'phase' in ('listening','question','review')
+      and p_data->'excerptPlayback'->>'index'=room.state->>'index'
+      and p_data->'excerptPlayback'->>'phase'=room.state->>'phase' then
+      -- An expired report also clears the status if the host tab closes.
+      playback:=p_data->'excerptPlayback'||jsonb_build_object('until',floor(extract(epoch from clock_timestamp())*1000)+4000);
+      update keyboard_pilot_rooms set state=jsonb_set(state,'{excerptPlayback}',playback) where pin=p_pin;
+    elsif playback is not null then
+      playback:=null;
+      update keyboard_pilot_rooms set state=state-'excerptPlayback' where pin=p_pin;
+    end if;
+  end if;
+  return (result-'excerptPlayback')||jsonb_build_object(
+    'allowNicknames',coalesce(room.state->>'allowNicknames'='true',false),
+    'playingAudio',coalesce(playback->>'index'=room.state->>'index' and playback->>'phase'=room.state->>'phase'
+      and (playback->>'until')::numeric>extract(epoch from clock_timestamp())*1000,false)
+  );
+end;
+$$;
+
+revoke all on function public.keyboard_pilot(text,text,text,jsonb) from public,anon,authenticated;
+grant execute on function public.keyboard_pilot(text,text,text,jsonb) to service_role;

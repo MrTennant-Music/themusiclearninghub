@@ -25,7 +25,7 @@ test('Renaissance retains its AH collection and practice links stay out of works
 test('Step and Leap lead to N3 interval literacy, with targeted rhythm and cadence practice',()=>{
  for(const id of ['MC-0015','MC-0019'])assert.equal(links[id][0].href,'./intervals.html?level=N3');
  assert.ok(links['MC-0102'].some(row=>row.href==='./rhythmicdictation.html?level=N5'));
- assert.ok(links['MC-0247'].some(row=>row.href==='./triplets.html?level=H'));
+ assert.ok(links['MC-0247'].some(row=>row.href==='./rhythmicdictation.html?level=H&exercise=identifyTriplet'));
  assert.ok(links['MC-0169'].some(row=>row.href==='./cadences.html?level=N5'));
 });
 

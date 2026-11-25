@@ -48,7 +48,7 @@ Only the named configuration fields below are included. Answers, scores, elapsed
 ## Other QR routes
 
 - **Concept Recall:** retains its dedicated level, hints and category snapshot; browser round-trip passed.
-- **Music Dictionary:** its URL already carries level, search, Show All and frequency filters. Fixed restoration of the selected frequency-exam setting. Browser round-trip passed.
+- **Concept Dictionary:** its URL already carries level, search, Show All and frequency filters. Fixed restoration of the selected frequency-exam setting. Browser round-trip passed.
 - **Digital Question Papers:** the QR shares the selected paper, which identifies level and year. The recipient chooses Practice or Exam Mode and starts a fresh attempt; answers and exam progress are not shared.
 - **Triplets:** fixed Higher activity with no Customise settings; browser QR route check passed.
 - **Homepage:** QR opens the Hub catalogue; it is not an activity setup.

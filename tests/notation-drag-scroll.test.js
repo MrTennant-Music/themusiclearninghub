@@ -53,7 +53,6 @@ test("standalone stave-placement activities use the shared safeguard", () => {
     "intervals.html": 1,
     "transposing.html": 2,
     "chords.html": 1,
-    "keysignatures.html": 1,
   };
 
   Object.entries(expectedUses).forEach(([file, expected]) => {

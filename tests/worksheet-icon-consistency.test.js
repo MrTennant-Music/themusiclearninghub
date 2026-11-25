@@ -29,7 +29,7 @@ test('shared headers show short action tooltips and retain the worksheet return 
   vm.runInNewContext(fs.readFileSync('shared/hub-shell.js','utf8'),{window,document,React,URL,URLSearchParams,TextEncoder,TextDecoder});
   const render = props => renderToStaticMarkup(React.createElement(window.MLH.AppHeader,{title:'Intervals',icon:'icon.svg',profileUsesSharedSettings:false,profileShowLabel:false,...props}));
   assert.doesNotMatch(render({}), /Create worksheet from current settings|ui-icons\/worksheet\.svg/);
-  const available=render({worksheetConfig:()=>({activityId:'intervals'}),classroomPilotUrl:'keyboardnoteidentificationclassroom.html'});
+  const available=render({worksheetConfig:()=>({activityId:'intervals'}),classroomPilotUrl:'host.html'});
   assert.match(available,/aria-label="Create worksheet from current settings"/);
   assert.match(available,/title="Generate Worksheet"/);
   assert.match(available,/title="Share"/);

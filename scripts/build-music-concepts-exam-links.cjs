@@ -92,9 +92,20 @@ function semanticMatch(c,q){return q.subquestions.some(s=>{
 const reviewedQuestionOverrides={
  // H 2024 Q6 accepts two beats when paired with compound time.
  'higher-2024':{'MC-0020':['q6']},
+ // AH 2016 Q6(b)(ii) credits these instruments as part of orchestral justification.
+ 'advanced-higher-2016':{'MC-0047':['q6'],'MC-0063':['q6'],'MC-0068':['q6']},
  'advanced-higher-2019':{'MC-0248':['q6']},
  'advanced-higher-2022':{'MC-0076':['q6'],'MC-0169':['q6']},
  'advanced-higher-2023':{'MC-0003':['q6'],'MC-0056':['q6']},
+ // AH 2024 Q6(a) credits these instruments together in the orchestration.
+ 'advanced-higher-2024':{'MC-0047':['q6'],'MC-0056':['q6'],'MC-0068':['q6']},
+};
+// Broader conclusion marking recognises extra justification wording. Only the
+// reviewed question should link when that wording also names the concept.
+const reviewedConclusionExclusions={
+ 'advanced-higher-2017':['MC-0239'],
+ 'advanced-higher-2019':['MC-0284'],
+ 'advanced-higher-2024':['MC-0276','MC-0284'],
 };
 // Only reviewed appearances in registered digital papers become links. Never use
 // distractor options, rejected answers or explanatory definitions. The narrowly
@@ -109,7 +120,11 @@ for(const meta of Object.values(registry)){
  for(const id of Object.keys(evidence.answers)){
   const concept=d.concepts.find(c=>c.id===id);
   const overrideIds=reviewedQuestionOverrides[meta.id]?.[id]||[];
-  const matchesQuestion=paper.questions.filter(q=>answerStrings(q.subquestions).some(s=>matches(concept,s))||semanticMatch(concept,q)||overrideIds.includes(q.id));
+  const matchesQuestion=paper.questions.filter(q=>{
+   if(overrideIds.includes(q.id))return true;
+   if(q.id==='q6'&&reviewedConclusionExclusions[meta.id]?.includes(id))return false;
+   return answerStrings(q.subquestions).some(s=>matches(concept,s))||semanticMatch(concept,q);
+  });
   if(!matchesQuestion.length)throw Error(`No verified question for ${meta.id} ${id} ${concept.name}`);
   questions[id]=matchesQuestion.map(q=>({id:q.id,number:String(q.number)}));count++;
  }

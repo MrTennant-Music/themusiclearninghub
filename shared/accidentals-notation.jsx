@@ -1,0 +1,575 @@
+(() => {
+  const { useMemo } = React;
+  const { rhythmInfo, accidentalId } = window.MLH.AccidentalsQuestionCore.create();
+
+  // Keep the score on the same engraving grid as Practice Questions.  Accidentals
+  // only needs one system, but its horizontal anchors, line gap and symbol scale
+  // should be identical to the reference renderer.
+  const VIEWBOX_WIDTH = 920;
+  const VIEWBOX_HEIGHT = 210;
+
+  const STAFF = {
+    left: 78,
+    right: 842,
+    top: 82,
+    gap: 11,
+    clefX: 110,
+    keySigX: 132,
+    timeSigX: 210,
+    musicStartX: 200,
+  };
+
+  // Match the compact stave and note spacing in Enharmonic Equivalents.
+  const COMPACT_STAFF = { left: 230, top: 100, width: 470, scale: 21 / STAFF.gap };
+  const COMPACT_NOTE_POSITIONS = [155, 355].map(x => x / COMPACT_STAFF.scale);
+
+  const NOTE = {
+    stemLength: STAFF.gap * 3.1,
+  };
+  const UPWARD_QUAVER_NUDGE_X = 0.5;
+
+  const BAR_COUNT = 4;
+  const NOTE_NAME_GUIDE = {
+    lines: [[0, "E"], [2, "G"], [4, "B"], [6, "D"], [8, "F"]],
+    spaces: [[1, "F"], [3, "A"], [5, "C"], [7, "E"]],
+  };
+
+  const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS ?? {};
+  const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG ?? { symbols: {}, drawing: {} };
+
+  const TIME_SIGNATURE_SYMBOLS = {
+    "2/4": { top: ["timeSig2"], bottom: ["timeSig4"], key: "timeSig24" },
+    "3/4": { top: ["timeSig3"], bottom: ["timeSig4"], key: "timeSig34" },
+    "4/4": { top: ["timeSig4"], bottom: ["timeSig4"], key: "timeSig44" },
+    "5/4": { top: ["timeSig5"], bottom: ["timeSig4"], key: "timeSig54" },
+    "6/8": { top: ["timeSig6"], bottom: ["timeSig8"], key: "timeSig68" },
+    "9/8": { top: ["timeSig9"], bottom: ["timeSig8"], key: "timeSig98" },
+    "12/8": { top: ["timeSig1", "timeSig2"], bottom: ["timeSig8"], key: "timeSig128" },
+  };
+
+  const CALIBRATION_ANCHORS = {
+    gClef: { xScale: 3.2, step: 2 },
+    timeSig24: { xScale: 12, step: 5.3 },
+    timeSig34: { xScale: 12, step: 5.3 },
+    timeSig44: { xScale: 12, step: 5.3 },
+    timeSig54: { xScale: 12, step: 5.3 },
+    timeSig68: { xScale: 12, step: 5.3 },
+    timeSig98: { xScale: 12, step: 5.3 },
+    timeSig128: { xScale: 12, step: 5.3 },
+  };
+
+  function sharedActualSymbolKey(key) {
+    if (key === "flatInScore" || key === "flatKeySignature") return "flat";
+    if (key === "naturalInScore") return "natural";
+    if (key === "sharpInScore" || key === "sharpKeySignature") return "sharp";
+    if (key === "noteheadBlackStemUp" || key === "noteheadBlackStemDown") return "noteheadBlack";
+    if (key === "augmentationDotLine" || key === "augmentationDotSpace") return "augmentationDot";
+    return key;
+  }
+
+  function sharedSettingsKey(key) {
+    if (key === "flatInScore" || key === "naturalInScore" || key === "sharpInScore") return "flatInScore";
+    return key;
+  }
+
+  function sharedSymbolConfig(key) {
+    const symbols = SHARED_CONFIG.symbols ?? {};
+    const settingsKey = sharedSettingsKey(key);
+    return symbols[settingsKey] ?? symbols[sharedActualSymbolKey(settingsKey)] ?? {
+      fontSizeScale: 3.4,
+      xOffsetScale: 0,
+      yOffsetScale: 0,
+      widthScale: 1,
+      heightScale: 1,
+      opticalXOffset: 0,
+      opticalYOffset: 0,
+    };
+  }
+
+  function sharedSymbolForKey(key) {
+    return SHARED_SYMBOLS[sharedActualSymbolKey(key)] ?? "";
+  }
+
+  function accidentalSymbolKey(id, context = "score") {
+    if (context === "keySignature") return id === "sharp" ? "sharpKeySignature" : "flatKeySignature";
+    if (id === "sharp") return "sharpInScore";
+    if (id === "flat") return "flatInScore";
+    return "naturalInScore";
+  }
+
+  function noteSymbolKey(rhythm, down, beamed = false) {
+    if (rhythm === "semibreve") return "wholeNote";
+    if (beamed && rhythm === "quaver") return down ? "noteheadBlackStemDown" : "noteheadBlackStemUp";
+    if (rhythm === "minim" || rhythm === "dottedMinim") return down ? "halfNoteStemDown" : "halfNoteStemUp";
+    if (rhythm === "quaver") return down ? "eighthNoteStemDown" : "eighthNoteStemUp";
+    return down ? "quarterNoteStemDown" : "quarterNoteStemUp";
+  }
+
+  function calibrationAnchorX(key, left = STAFF.left) {
+    const anchor = CALIBRATION_ANCHORS[key];
+    return anchor ? left + anchor.xScale * STAFF.gap : left;
+  }
+
+  function calibrationAnchorY(key, top = STAFF.top) {
+    const anchor = CALIBRATION_ANCHORS[key];
+    return anchor ? yForStep(anchor.step, top) : yForStep(4, top);
+  }
+
+  const COLOUR = {
+    black: "#000000",
+    blue: "#2563eb",
+    green: "#16a34a",
+    red: "#dc2626",
+  };
+
+  function yForStep(step, top = STAFF.top) { return top + STAFF.gap * 4 - step * (STAFF.gap / 2); }
+  function stemDown(step) { return step > 4; }
+  function visualNote(note) { return note; }
+  function NoteNameDisplay({ name }) {
+    const match = /^([A-G])([#b])?$/.exec(name);
+    if (!match) return name;
+    const [, letter, accidental] = match;
+    const symbolKey = accidental === "#" ? "sharpInScore" : accidental === "b" ? "flatInScore" : null;
+    const offsetClass = accidental === "#" ? "-top-[6px]" : "-top-[4px]";
+    return (
+      <span className="inline-flex items-baseline justify-center gap-[2px]">
+        <span>{letter}</span>
+        {symbolKey && <span className={`music-symbol relative ${offsetClass} text-[1.25em] font-normal leading-none`}>{sharedSymbolForKey(symbolKey)}</span>}
+      </span>
+    );
+  }
+  function HighlightedPrompt({ prompt }) {
+    const parts = prompt.split(/<strong style="color: #2563eb;">(notes?)<\/strong>/);
+    return parts.map((part, index) => index % 2 === 1
+      ? <strong key={index} style={{ color: COLOUR.blue }}>{part}</strong>
+      : part.replace(/<[^>]*>/g, ""));
+  }
+
+  function getBarGeometry(barIndex) {
+    const barWidth = (STAFF.right - STAFF.musicStartX) / BAR_COUNT;
+    const startX = STAFF.musicStartX + barIndex * barWidth;
+    return { barIndex, systemTop: STAFF.top, startX, endX: startX + barWidth };
+  }
+  function accidentalDisplayValuesForBar(notes, keyAccidentals = {}) {
+    const active = {};
+    return notes.map((note) => {
+      if (!note || note.rest) return null;
+      const pitchKey = `${note.letter}:${note.octave}`;
+      if (!Object.prototype.hasOwnProperty.call(active, pitchKey)) active[pitchKey] = keyAccidentals[note.letter] ?? 0;
+      if (note.hiddenAccidental !== null && note.hiddenAccidental !== undefined) {
+        active[pitchKey] = note.hiddenAccidental;
+        return null;
+      }
+      const value = Object.prototype.hasOwnProperty.call(note, "displayAccidental") ? note.displayAccidental : note.writtenAccidental;
+      if (value === null || value === undefined || value === false) return null;
+      const shouldDisplay = active[pitchKey] !== value;
+      active[pitchKey] = value;
+      return shouldDisplay ? value : null;
+    });
+  }
+  function accidentalPreSpacingForValue(value) {
+    if (value === null || value === undefined || value === false) return 0;
+    return value === 1 ? 0.72 : 0.58;
+  }
+  function getBarPositions(notes, startX, endX, displayAccidentals = accidentalDisplayValuesForBar(notes)) {
+    const scoreStart = startX + 15;
+    const scoreEnd = endX - 24;
+    const accidentalSpacing = displayAccidentals.map(accidentalPreSpacingForValue);
+    const units = notes.reduce((sum, note, index) => sum + rhythmInfo(note.rhythm).spacing + accidentalSpacing[index], 0);
+    const unit = Math.max(1, scoreEnd - scoreStart) / Math.max(1, units);
+    let cursor = scoreStart + unit * 0.38;
+    return notes.map((note, index) => {
+      cursor += accidentalSpacing[index] * unit;
+      const x = cursor;
+      cursor += rhythmInfo(note.rhythm).spacing * unit;
+      return x;
+    });
+  }
+  function scoreLayouts(question) {
+    return question.bars.map((bar) => {
+      const displayAccidentals = accidentalDisplayValuesForBar(bar.notes, question.key.keyAcc);
+      if (question.oneBarMode) {
+        return { barIndex: bar.barIndex, systemTop: 0, bar, displayAccidentals, positions: COMPACT_NOTE_POSITIONS };
+      }
+      const geometry = getBarGeometry(bar.barIndex);
+      return { ...geometry, bar, displayAccidentals, positions: getBarPositions(bar.notes, geometry.startX, geometry.endX, displayAccidentals) };
+    });
+  }
+  function stemData(note, x, systemTop, forcedDown = null, forcedEnd = null) {
+    const y = yForStep(note.step, systemTop);
+    const down = forcedDown ?? stemDown(note.step);
+    const stemX = x + (down ? -6 : 6);
+    return { y, down, stemX, stemEndY: forcedEnd ?? (down ? y + NOTE.stemLength : y - NOTE.stemLength) };
+  }
+  function quaverGroups(notes, timeSignature) {
+    const groups = [];
+    let index = 0;
+    while (index < notes.length) {
+      if (notes[index].rhythm !== "quaver") { index += 1; continue; }
+      const start = index;
+      while (index < notes.length && notes[index].rhythm === "quaver") index += 1;
+      const end = index - 1;
+      if (end <= start) continue;
+      if (timeSignature.id === "6/8") {
+        for (let groupStart = start; groupStart <= end; groupStart += 3) {
+          const groupEnd = Math.min(groupStart + 2, end);
+          if (groupEnd > groupStart) groups.push({ start: groupStart, end: groupEnd });
+        }
+      } else {
+        for (let groupStart = start; groupStart <= end; groupStart += 4) {
+          const groupEnd = Math.min(groupStart + 3, end);
+          if (groupEnd > groupStart) groups.push({ start: groupStart, end: groupEnd });
+        }
+      }
+    }
+    return groups;
+  }
+  function groupContaining(groups, index) { return groups.find((group) => index >= group.start && index <= group.end) ?? null; }
+  function beamData(notes, positions, systemTop) {
+    const settings = sharedSymbolConfig("quaverBeam");
+    const down = notes.filter((note) => stemDown(note.step)).length > notes.length / 2;
+    const firstY = yForStep(notes[0].step, systemTop);
+    const lastY = yForStep(notes[notes.length - 1].step, systemTop);
+    const xOffset = STAFF.gap * Number(settings.xOffsetScale || 0) + (down ? 0 : UPWARD_QUAVER_NUDGE_X);
+    const yOffset = STAFF.gap * Number(settings.yOffsetScale || 0);
+    const stemLength = STAFF.gap * 3.1 * Number(settings.heightScale || 1);
+    const beamWidthAdjust = STAFF.gap * (Number(settings.widthScale || 1) - 1);
+    const firstStemX = positions[0] + xOffset + (down ? -6 : 6);
+    const lastStemX = positions[positions.length - 1] + xOffset + (down ? -6 : 6);
+    let startY = firstY + yOffset + (down ? stemLength : -stemLength);
+    let endY = lastY + yOffset + (down ? stemLength : -stemLength);
+    const minimumStemLength = STAFF.gap * 2.45;
+    let beamShift = 0;
+    notes.forEach((note, index) => {
+      const noteY = yForStep(note.step, systemTop);
+      const stemX = positions[index] + xOffset + (down ? -6 : 6);
+      const projectedY = startY + ((stemX - firstStemX) / ((lastStemX - firstStemX) || 1)) * (endY - startY);
+      beamShift = down
+        ? Math.max(beamShift, noteY + minimumStemLength - projectedY)
+        : Math.min(beamShift, noteY - minimumStemLength - projectedY);
+    });
+    startY += beamShift;
+    endY += beamShift;
+    return {
+      down,
+      xOffset,
+      start: { x: firstStemX - beamWidthAdjust, y: startY },
+      end: { x: lastStemX + beamWidthAdjust, y: endY },
+    };
+  }
+  function beamYAtX(x, beam) { const progress = (x - beam.start.x) / (beam.end.x - beam.start.x || 1); return beam.start.y + progress * (beam.end.y - beam.start.y); }
+  function beamPolygonPoints(x1, y1, x2, y2, thickness) {
+    const halfThickness = thickness / 2;
+    return [`${x1},${y1 - halfThickness}`, `${x2},${y2 - halfThickness}`, `${x2},${y2 + halfThickness}`, `${x1},${y1 + halfThickness}`].join(" ");
+  }
+  function placementKey(placement) { return `${placement.symbolId}:${placement.barIndex}:${placement.noteIndex}:${placement.anchor}`; }
+  function missingPlacements(question, placements) { return question.required.filter((required) => !placements.some((placement) => placementKey(placement) === placementKey(required))); }
+  function wrongPlacements(question, placements) { return placements.filter((placement) => !question.required.some((required) => placementKey(required) === placementKey(placement))); }
+  function placementsMatch(question, placements) { return missingPlacements(question, placements).length === 0 && wrongPlacements(question, placements).length === 0; }
+  function snapPlacement(pointer, symbolId, question) {
+    const target = question.placementTarget ?? question.required?.[0];
+    if (question.audioQuestionKind === "one-bar-hearing") return { ...target, anchor: "before-note", symbolId };
+    let best = Infinity;
+    let closest = null;
+    const allowedBar = target?.barIndex;
+    scoreLayouts(question).forEach((layout) => {
+      if (allowedBar !== undefined && layout.barIndex !== allowedBar) return;
+      layout.bar.notes.forEach((note, index) => {
+        if (question.audioQuestionKind === "one-bar-hearing" && index === 0) return;
+        const x = layout.positions[index];
+        const y = yForStep(visualNote(note).step, layout.systemTop);
+        const distance = Math.hypot(pointer.x - x, pointer.y - y);
+        if (distance < best) { best = distance; closest = { symbolId, barIndex: layout.barIndex, noteIndex: index, anchor: "before-note" }; }
+      });
+    });
+    return closest;
+  }
+  function placementPosition(placement, question, offset = false) {
+    const layout = scoreLayouts(question).find((item) => item.barIndex === placement.barIndex);
+    const note = layout?.bar.notes[placement.noteIndex];
+    const compactOffset = offset && question.oneBarMode;
+    return {
+      x: scoreAccidentalBaseX(layout?.positions[placement.noteIndex] ?? 0) + (compactOffset ? 62 / COMPACT_STAFF.scale : 0),
+      y: note && layout ? yForStep(visualNote(note).step, layout.systemTop) - STAFF.gap / 2 + (offset && !compactOffset ? 42 : 0) : STAFF.top,
+    };
+  }
+
+  function scoreAccidentalBaseX(noteheadX) {
+    return noteheadX - STAFF.gap * 2.1;
+  }
+
+  function CalibratedSymbol({ symbolKey, x, y, colour = "currentColor", opacity = 1, lineGap = STAFF.gap, settingOverrides = {}, fontWeight = undefined }) {
+    const glyph = sharedSymbolForKey(symbolKey);
+    if (!glyph) return null;
+    const settings = { ...sharedSymbolConfig(symbolKey), ...settingOverrides };
+    const adjustedX = x + lineGap * Number(settings.xOffsetScale || 0) + Number(settings.opticalXOffset || 0);
+    const adjustedY = y + lineGap * Number(settings.yOffsetScale || 0) + Number(settings.opticalYOffset || 0);
+    const fontSize = lineGap * Number(settings.fontSizeScale || 3.4);
+    return (
+      <text
+        className="music-symbol"
+        x={adjustedX}
+        y={adjustedY}
+        opacity={opacity}
+        fill={colour}
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+        textAnchor="middle"
+        transform={`translate(${adjustedX} ${adjustedY}) scale(${settings.widthScale || 1} ${settings.heightScale || 1}) translate(${-adjustedX} ${-adjustedY})`}
+      >
+        {glyph}
+      </text>
+    );
+  }
+
+  function CalibratedTimeSignature({ signature, x, y, colour = "currentColor", lineGap = STAFF.gap }) {
+    const definition = TIME_SIGNATURE_SYMBOLS[signature.id] ?? { top: [`timeSig${signature.top}`], bottom: [`timeSig${signature.bottom}`], key: `timeSig${signature.top}${signature.bottom}` };
+    const settings = sharedSymbolConfig(definition.key);
+    const adjustedX = x + lineGap * Number(settings.xOffsetScale || 0) + Number(settings.opticalXOffset || 0);
+    const adjustedY = y + lineGap * Number(settings.yOffsetScale || 0) + Number(settings.opticalYOffset || 0);
+    const fontSize = lineGap * Number(settings.fontSizeScale || 3.5);
+    const topText = definition.top.map((key) => SHARED_SYMBOLS[key]).join("");
+    const bottomText = definition.bottom.map((key) => SHARED_SYMBOLS[key]).join("");
+    return (
+      <g transform={`translate(${adjustedX} ${adjustedY}) scale(${settings.widthScale || 1} ${settings.heightScale || 1}) translate(${-adjustedX} ${-adjustedY})`} fill={colour}>
+        <text className="music-symbol" x={adjustedX} y={adjustedY - fontSize * 0.14} fontSize={fontSize} textAnchor="middle">{topText}</text>
+        <text className="music-symbol" x={adjustedX} y={adjustedY + fontSize * 0.43} fontSize={fontSize} textAnchor="middle">{bottomText}</text>
+      </g>
+    );
+  }
+
+  function AccidentalGlyph({ id, x = 50, y = 32, colour = "currentColor", opacity = 1, compact = false, fontWeight = undefined, visualScale = 1 }) {
+    const symbolKey = accidentalSymbolKey(id);
+    const settings = sharedSymbolConfig(symbolKey);
+    const override = compact ? { fontSizeScale: 2.8 } : visualScale === 1 ? {} : { fontSizeScale: Number(settings.fontSizeScale || 3.4) * visualScale, widthScale: Number(settings.widthScale || 1), heightScale: Number(settings.heightScale || 1) };
+    return <CalibratedSymbol symbolKey={symbolKey} x={x} y={y + STAFF.gap / 2} colour={colour} opacity={opacity} settingOverrides={override} fontWeight={fontWeight} />;
+  }
+  function ButtonGlyph({ id }) {
+    const centreY = id === "sharp" ? 31 : id === "natural" ? 34 : 37;
+    return <svg viewBox="0 0 90 70" className="h-14 w-16 overflow-visible" aria-hidden="true">
+      <AccidentalGlyph id={id} x={45} y={centreY - STAFF.gap / 2} visualScale={1.6} />
+    </svg>;
+  }
+  function Placement({ placement, question, colour = "currentColor", opacity = 1, feedbackOffset = false }) { const pos = placementPosition(placement, question, feedbackOffset); return <AccidentalGlyph id={placement.symbolId} x={pos.x} y={pos.y} colour={colour} opacity={opacity} />; }
+  function StaffLines({ top, left = STAFF.left, right = STAFF.right, fadeGradientId = null, strokeWidth = 1.2 }) {
+    const stroke = fadeGradientId ? `url(#${fadeGradientId})` : "currentColor";
+    return <g>{[0, 1, 2, 3, 4].map((line) => <line key={line} x1={left} x2={right} y1={top + line * STAFF.gap} y2={top + line * STAFF.gap} stroke={stroke} strokeWidth={strokeWidth} />)}</g>;
+  }
+  function TrebleClef({ top, left = STAFF.left }) { return <CalibratedSymbol symbolKey="gClef" x={calibrationAnchorX("gClef", left)} y={calibrationAnchorY("gClef", top)} />; }
+  function StaffNoteNames({ visible, top = STAFF.top, lineX = STAFF.left - 11, spaceX = STAFF.left + 7 }) {
+    if (!visible) return null;
+    return <g fontSize="10.5" fontWeight="700" dominantBaseline="middle" pointerEvents="none" fill="black" textAnchor="middle">
+      {NOTE_NAME_GUIDE.lines.map(([step, letter]) => <text key={`treble-line-${step}`} x={lineX + 5} y={yForStep(step, top) + 1}>{letter}</text>)}
+      {NOTE_NAME_GUIDE.spaces.map(([step, letter]) => <text key={`treble-space-${step}`} x={spaceX - 2} y={yForStep(step, top) + 1}>{letter}</text>)}
+    </g>;
+  }
+  function TimeSignatureGlyph({ signature, top = STAFF.top }) {
+    const definition = TIME_SIGNATURE_SYMBOLS[signature.id] ?? { key: `timeSig${signature.top}${signature.bottom}` };
+    return <CalibratedTimeSignature signature={signature} x={calibrationAnchorX(definition.key)} y={calibrationAnchorY(definition.key, top)} />;
+  }
+  function KeySignature({ question, top }) { if (question.key.id === "F") return <CalibratedSymbol symbolKey="flatKeySignature" x={STAFF.keySigX} y={yForStep(4, top)} />; if (question.key.id === "G") return <CalibratedSymbol symbolKey="sharpKeySignature" x={STAFF.keySigX} y={yForStep(8, top)} />; return null; }
+  function LedgerLines({ x, step, top, colour = "currentColor" }) {
+    const lines = [];
+    const settings = sharedSymbolConfig("ledgerLines");
+    const xOffset = STAFF.gap * Number(settings.xOffsetScale || 0);
+    const yOffset = STAFF.gap * Number(settings.yOffsetScale || 0);
+    const halfWidth = 12 * Number(settings.widthScale || 1);
+    const thickness = Math.max(1, 0.6 * Number(settings.fontSizeScale || 2) * Number(settings.heightScale || 1));
+    if (step <= -2) {
+      for (let ledgerStep = -2; ledgerStep >= step; ledgerStep -= 2) lines.push(yForStep(ledgerStep, top) + yOffset);
+    }
+    if (step >= 10) {
+      for (let ledgerStep = 10; ledgerStep <= step; ledgerStep += 2) lines.push(yForStep(ledgerStep, top) + yOffset);
+    }
+    return <g>{lines.map((y) => <line key={y} x1={x + xOffset - halfWidth} x2={x + xOffset + halfWidth} y1={y} y2={y} stroke={colour} strokeWidth={thickness} />)}</g>;
+  }
+  function NoteImage({ rhythm, x, y, stemDown, beamed, colour }) {
+    return <CalibratedSymbol symbolKey={noteSymbolKey(rhythm, stemDown, beamed)} x={x} y={y} colour={colour} />;
+  }
+  function Dot({ x, y, step, colour }) {
+    const dotKey = step % 2 === 0 ? "augmentationDotLine" : "augmentationDotSpace";
+    const dotY = step % 2 === 0 ? y - STAFF.gap * 0.25 : y;
+    return <CalibratedSymbol symbolKey={dotKey} x={x + 13} y={dotY} colour={colour} />;
+  }
+  function BeamShape({ beam, colour = "currentColor" }) {
+    const settings = sharedSymbolConfig("quaverBeam");
+    const thickness = Math.max(1, STAFF.gap * Number(SHARED_CONFIG.drawing?.beamThicknessScale || 0.42) * Number(settings.fontSizeScale || 1));
+    return <polygon points={beamPolygonPoints(beam.start.x, beam.start.y, beam.end.x, beam.end.y, thickness)} fill={colour} />;
+  }
+  function Note({ note, x, top, colour = "currentColor", forcedDown = null, forcedEnd = null, forcedStemXOffset = 0, showFlag = true }) {
+    const displayNote = visualNote(note);
+    const info = rhythmInfo(note.rhythm);
+    const stem = stemData(displayNote, x + forcedStemXOffset, top, forcedDown, forcedEnd);
+    const accidentalValue = Object.prototype.hasOwnProperty.call(note, "displayAccidental") ? note.displayAccidental : note.writtenAccidental;
+    const showAccidental = accidentalValue !== null && accidentalValue !== undefined && accidentalValue !== false && (note.hiddenAccidental === null || note.hiddenAccidental === undefined);
+    return <g>
+      <LedgerLines x={x} step={displayNote.step} top={top} colour={colour} />
+      {showAccidental && <AccidentalGlyph id={accidentalId(accidentalValue)} x={scoreAccidentalBaseX(x)} y={stem.y - STAFF.gap / 2} colour={colour} />}
+      <NoteImage rhythm={note.rhythm} x={x} y={stem.y} stemDown={stem.down} beamed={!showFlag && note.rhythm === "quaver"} colour={colour} />
+      {forcedEnd !== null && <line x1={stem.stemX} x2={stem.stemX} y1={stem.y + (stem.down ? 0.5 : -0.5)} y2={forcedEnd} stroke={colour} strokeWidth={Math.max(1, STAFF.gap * Number(SHARED_CONFIG.drawing?.stemThicknessScale || 0.12))} />}
+      {info.dotted && <Dot x={x} y={stem.y} step={displayNote.step} colour={colour} />}
+    </g>;
+  }
+
+  function Score({ question, selectedSymbol, placements, hoverPlacement, feedback, wrong, missing, onMove, onLeave, onLock,onKeyboard,disabled=false, showNoteNames = false }) {
+    const layouts = useMemo(() => scoreLayouts(question), [question]);
+    const canPlaceWithKeyboard = question.questionType !== "multiple-choice" && !feedback && !disabled && Boolean(onKeyboard);
+    const compact = question.oneBarMode;
+    const left = compact ? 0 : STAFF.left;
+    const right = compact ? COMPACT_STAFF.width / COMPACT_STAFF.scale : STAFF.right;
+    const fadeId = compact ? `accidentals-fade-${question.id}` : null;
+    const finalBarIndex = question.bars.length - 1;
+    const top = compact ? 0 : STAFF.top;
+    return <svg viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`} className="h-auto w-full select-none touch-manipulation overflow-visible" onPointerMove={onMove} onPointerLeave={onLeave} onClick={onLock} role="group" aria-label="Accidentals exercise">
+      <rect x="0" y="0" width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="white" />
+      {compact && <defs>
+        <linearGradient id={fadeId} gradientUnits="userSpaceOnUse" x1={left} x2={right} y1="0" y2="0">
+          <stop offset="0%" stopColor="#000" />
+          <stop offset="86%" stopColor="#000" />
+          <stop offset="100%" stopColor="#000" stopOpacity="0" />
+        </linearGradient>
+      </defs>}
+      <g transform={compact ? `translate(${COMPACT_STAFF.left} ${COMPACT_STAFF.top}) scale(${COMPACT_STAFF.scale})` : undefined}>
+        <StaffLines top={top} left={left} right={right} fadeGradientId={fadeId} strokeWidth={compact ? STAFF.gap * 0.13 : undefined} />
+        <StaffNoteNames visible={showNoteNames} top={top} lineX={left - 11} spaceX={left + 7} />
+        <TrebleClef top={top} left={left} />
+        {!compact && <>
+          <KeySignature question={question} top={top} />
+          <TimeSignatureGlyph signature={question.timeSignature} top={top} />
+        </>}
+        {layouts.map((layout) => {
+          const groups = quaverGroups(layout.bar.notes, question.timeSignature);
+          return <g key={layout.barIndex}>
+            {!question.oneBarMode && <><rect x={layout.startX - 8} y={layout.systemTop - 46} width={48} height={34} fill="white" /><text x={layout.startX + 4} y={layout.systemTop - 18} fontSize="13" fontWeight="500">{layout.barIndex + 1}</text></>}
+            {layout.bar.notes.map((note, index) => {
+              const target = question.placementTarget;
+              const keyboardTarget = canPlaceWithKeyboard && (!target || (target.barIndex === layout.barIndex && (target.noteIndex === undefined || target.noteIndex === index)));
+              const group = groupContaining(groups, index);
+              const beam = group ? beamData(layout.bar.notes.slice(group.start, group.end + 1).map(visualNote), layout.positions.slice(group.start, group.end + 1), layout.systemTop) : null;
+              const noteX = layout.positions[index];
+              const stem = beam ? stemData(visualNote(note), noteX + beam.xOffset, layout.systemTop, beam.down) : null;
+              const colour = note.highlight ? COLOUR.blue : "currentColor";
+              return <g
+                key={note.id}
+                role={keyboardTarget ? "button" : undefined}
+                tabIndex={keyboardTarget ? 0 : undefined}
+                aria-label={keyboardTarget ? `Place accidental in bar ${layout.barIndex + 1}, note ${index + 1}` : undefined}
+                onMouseDown={keyboardTarget ? event => event.preventDefault() : undefined}
+                onKeyDown={keyboardTarget ? event => {
+                  if (event.repeat || (event.key !== "Enter" && event.key !== " ")) return;
+                  event.preventDefault();
+                  onKeyboard(layout.barIndex, index);
+                } : undefined}
+              >
+                {keyboardTarget && <rect x={noteX - 24} y={yForStep(note.step, layout.systemTop) - 30} width="48" height="70" fill="transparent" />}
+                <Note note={{ ...note, displayAccidental: layout.displayAccidentals[index] }} x={noteX} top={layout.systemTop} colour={colour} forcedDown={beam ? beam.down : null} forcedEnd={beam && stem ? beamYAtX(stem.stemX, beam) : null} forcedStemXOffset={beam ? beam.xOffset : 0} showFlag={!beam} />
+              </g>;
+            })}
+            {groups.map((group, index) => { const beam = beamData(layout.bar.notes.slice(group.start, group.end + 1).map(visualNote), layout.positions.slice(group.start, group.end + 1), layout.systemTop); return <BeamShape key={index} beam={beam} />; })}
+            {!compact && (layout.barIndex === finalBarIndex
+              ? <g><line x1={layout.endX - 5} x2={layout.endX - 5} y1={layout.systemTop} y2={layout.systemTop + STAFF.gap * 4} stroke="currentColor" strokeWidth="1.4" /><line x1={layout.endX} x2={layout.endX} y1={layout.systemTop} y2={layout.systemTop + STAFF.gap * 4} stroke="currentColor" strokeWidth="4" /></g>
+              : <line x1={layout.endX} x2={layout.endX} y1={layout.systemTop} y2={layout.systemTop + STAFF.gap * 4} stroke="currentColor" strokeWidth="1.35" />)}
+          </g>;
+        })}
+        {placements.map((placement) => <Placement key={placement.localId} placement={placement} question={question} colour={feedback ? wrong.some((item) => placementKey(item) === placementKey(placement)) ? COLOUR.red : COLOUR.green : COLOUR.black} />)}
+        {feedback && missing.map((placement, index) => <Placement key={`missing-${index}`} placement={placement} question={question} colour={COLOUR.green} feedbackOffset={wrong.some((item) => item.barIndex === placement.barIndex && item.noteIndex === placement.noteIndex)} />)}
+        {!feedback && selectedSymbol && hoverPlacement && <Placement placement={hoverPlacement} question={question} colour={COLOUR.black} opacity={0.45} />}
+      </g>
+    </svg>;
+  }
+
+  function SymbolButton({ accidental, selected, disabled, correct, wrong, onClick }) {
+    let style = "border-stone-300 bg-white text-black hover:bg-stone-50";
+    if (correct) style = "border-green-700 bg-green-600 text-white";
+    else if (wrong) style = "border-red-700 bg-red-600 text-white";
+    else if (selected) style = "border-black bg-black text-white";
+    return <button type="button" aria-label={accidental.name} aria-pressed={selected} disabled={disabled} onClick={onClick}
+      className={`answer-choice-button flex h-[74px] w-[120px] items-center justify-center rounded-xl border px-3 transition ${style}`}>
+      <ButtonGlyph id={accidental.id} />
+    </button>;
+  }
+
+  function createAudioOutput(context) {
+    const master = context.createGain();
+    const compressor = context.createDynamicsCompressor();
+    master.gain.setValueAtTime(0.68, context.currentTime);
+    compressor.threshold.setValueAtTime(-18, context.currentTime);
+    compressor.knee.setValueAtTime(20, context.currentTime);
+    compressor.ratio.setValueAtTime(8, context.currentTime);
+    compressor.attack.setValueAtTime(0.006, context.currentTime);
+    compressor.release.setValueAtTime(0.18, context.currentTime);
+    master.connect(compressor);
+    compressor.connect(window.MLH.audioOutput?.(context) || context.destination);
+    return master;
+  }
+
+  function QuestionScore({visible=true, scoreRef, ...scoreProps}) {
+    return <div ref={scoreRef} className={`relative -top-[6px] block h-[280px] flex-none overflow-hidden transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <Score {...scoreProps} />
+    </div>;
+  }
+
+  function QuestionPanel({question, panelRef, disabled, feedback, choice, correctChoice, onChoice, symbols=[],
+    selectedSymbol, correctSymbol, wrongSymbol, onSymbol, hasPlacement, onClear, onConfirm,
+    audio, onPlay, playing, children}) {
+    const isChoice = question.questionType === "multiple-choice";
+    const options = symbols.map(accidental => <SymbolButton key={accidental.id} accidental={accidental}
+      selected={selectedSymbol === accidental.id} disabled={Boolean(feedback) || disabled}
+      correct={correctSymbol === accidental.id} wrong={wrongSymbol === accidental.id} onClick={() => onSymbol(accidental.id)} />);
+    const actions = onConfirm && <>
+      <button type="button" disabled={disabled || Boolean(feedback) || !hasPlacement} onClick={onClear}
+        className={window.MLH.ClearButtonClass}>Clear</button>
+      <window.MLH.ConfirmButton disabled={disabled || Boolean(feedback) || !hasPlacement} onClick={onConfirm}
+        className={audio ? window.MLH.AudioConfirmButtonClass : undefined}>Confirm</window.MLH.ConfirmButton>
+    </>;
+    return <div ref={panelRef} className="relative z-10 mx-3 mb-0 mt-[50px] h-auto min-h-0 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 shadow-md">
+      <div className="flex items-start justify-between gap-3 text-stone-900">
+        <div className={isChoice ? "pb-3" : "pb-2"}>
+          <p className="text-base font-semibold leading-none" dangerouslySetInnerHTML={{ __html: question.prompt }} />
+          {feedback && !feedback.correct && question.keySignatureReminder && !question.oneBarMode && (
+            <p className="mt-3 text-base font-semibold leading-tight text-stone-950">
+              Don't forget to check the key signature!
+            </p>
+          )}
+        </div>
+      </div>
+      {isChoice && onChoice && (
+        <div className="mt-5 grid gap-2" style={{ gridTemplateColumns: `repeat(${question.choices.length}, minmax(0, 1fr))` }}>
+          {question.choices.map(item => (
+            <button key={item.id} type="button" aria-pressed={item.id === choice} disabled={Boolean(feedback) || disabled}
+              onClick={() => onChoice(item)}
+              className={`min-h-[56px] min-w-0 flex items-center justify-center rounded-xl border px-2 py-0 text-sm font-semibold ${feedback ? item.id === correctChoice ? "border-green-700 bg-green-600 text-white" : item.id === choice ? "border-red-700 bg-red-600 text-white" : "border-stone-300 bg-white text-stone-500" : choice === item.id ? "border-stone-950 bg-stone-950 text-white" : "border-stone-300 bg-white hover:bg-stone-100"}`}>
+              {item.arrow || item.id === "raise" || item.id === "lower" ? (
+                <span className="grid w-full grid-cols-[1fr_auto] items-center gap-3 px-1">
+                  <span className="text-center text-base font-semibold leading-tight tracking-tight">{item.text}</span>
+                  <span aria-hidden="true"
+                    className={`h-[27.8px] w-[27.8px] ${item.id === "raise" ? "-rotate-90" : "rotate-90"}`}
+                    style={{ backgroundColor: "currentColor", WebkitMask: "url(./ui-icons/next.svg) center / contain no-repeat", mask: "url(./ui-icons/next.svg) center / contain no-repeat" }}
+                  />
+                </span>
+              ) : <span className="text-base font-semibold tracking-tight"><NoteNameDisplay name={item.text} /></span>}
+            </button>
+          ))}
+        </div>
+      )}
+      {!isChoice && (options.length>0 || actions || onPlay) && (audio ? <>
+        <div className="mt-2 flex w-fit max-w-full flex-nowrap justify-start gap-2">{options}</div>
+        <div className="mt-4 flex flex-wrap items-end justify-between gap-3 pb-[0px]">
+          {onPlay && <button type="button" onClick={onPlay} aria-label={playing ? "Stop audio" : "Play audio"} className={window.MLH.PlayButtonClass}>
+            <span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true" />
+            <span>{playing ? "Stop" : "Play"}</span>
+          </button>}
+          <div className={onPlay ? window.MLH.ActionButtonGroupClass : `ml-auto ${window.MLH.ActionButtonGroupClass}`}>{actions}</div>
+        </div>
+      </> : (
+        <div className="mt-2 flex flex-wrap items-end justify-between gap-3">
+          <div className="flex w-fit max-w-full flex-nowrap justify-start gap-2">{options}</div>
+          <div className="ml-auto grid grid-cols-2 gap-2">{actions}</div>
+        </div>
+      ))}
+      {children}
+    </div>;
+  }
+
+  window.MLH.AccidentalsNotation = { VIEWBOX_WIDTH, VIEWBOX_HEIGHT, COLOUR, Score, QuestionScore, QuestionPanel, createAudioOutput, NoteNameDisplay, HighlightedPrompt, AccidentalGlyph, ButtonGlyph, snapPlacement, missingPlacements, wrongPlacements, placementsMatch };
+})();

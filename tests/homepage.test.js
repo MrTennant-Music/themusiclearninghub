@@ -39,6 +39,24 @@ test('closing search clears its query instead of hiding an active search filter'
 test('the homepage always shows medals and ignores retired visibility settings', () => {
   assert.doesNotMatch(html, /showMedalsToggle|mlh-home-show-medals|\.get\("medals"\)/);
 });
+test('medal-earning activities show an accessible monochrome medal tag alongside existing tags', () => {
+  const apps = declaration('appData', 'const appCategories').flatMap(group => group.apps);
+  const source = html.slice(html.indexOf('const collectionAppPaths ='), html.indexOf('function renderApps()'));
+  const renderTags = vm.runInNewContext(source + ';renderActivityTags', {
+    window: {HubCollections: require('../shared/hub-collections')},
+  });
+  const tagsFor = title => renderTags(apps.find(app => app.title === title));
+  assert.match(html, /\.activity-tag-medal-icon\s*\{\s*background:\s*#000;\s*mask:\s*url\("\.\/ui-icons\/bronze\.svg"\)/);
+  for (const title of ['Accidentals', 'Rhythm Identification', 'Concept Quizzes', 'Pitched', 'Crosswords']) {
+    assert.match(tagsFor(title), /class="activity-tag" role="img" aria-label="Medals Available"[^>]*><span class="activity-tag-icon activity-tag-medal-icon" aria-hidden="true"/);
+  }
+  assert.match(tagsFor('Pitched'), /aria-label="Audio Questions"/);
+  assert.match(tagsFor('Crosswords'), /aria-label="Concept Collections"/);
+  assert.match(tagsFor('Concept Bingo'), /aria-label="Concept Collections"/);
+  for (const title of ['Concept Charades', 'Practice Questions', 'Digital Question Papers', 'Metronome']) {
+    assert.doesNotMatch(tagsFor(title), /Medals Available/);
+  }
+});
 test('section filters give every app one section and keep papers in Listening', () => {
   const source=html.slice(html.indexOf('function homeSectionsForApp('),html.indexOf('const requestedHomeSection'));
   const classify=vm.runInNewContext(source+';homeSectionsForApp');
@@ -53,7 +71,7 @@ test('section filters give every app one section and keep papers in Listening', 
     if(['Tools','Performing','Composing'].includes(group.category))assert.deepEqual(sections,['tools']);
     if(['Pitch','Rhythm','Music Symbols','Practice'].includes(group.category))assert(sections.includes('literacy'),app.title);
   }
-  assert.deepEqual(counts,{listening:6,literacy:21,games:10,tools:8});
+  assert.deepEqual(counts,{listening:6,literacy:21,games:12,tools:8});
 });
 
 test('all Music Literacy concept links use an existing activity and the row qualification', () => {
@@ -143,10 +161,13 @@ test('level icons, colours and accessible labels follow the current achievements
   }
   const earned=Object.freeze({tier:'gold',bestStreak:20});
   const medal=Object.freeze({label:'Gold',color:'#a16207',backgroundColor:'#fef9c3',icon:'ui-icons/gold.svg'});
-  const tile=element();tile.dataset.level='N3';tile.closest=()=>({dataset:{href:'accidentals.html'}});
+  const diamond=Object.freeze({label:'Diamond',color:'#06b6d4',backgroundColor:'#cffafe',icon:'ui-icons/diamond.svg'});
+  let activity='accidentals.html';
+  const tile=element();tile.dataset.level='N3';tile.closest=()=>({dataset:{href:activity}});
   const header=element();let current=earned;
   const context=vm.createContext({levels:[['N3','National 3']],
-    window:{MLH:{achievements:{totals:()=>({gold:current?1:0}),medals:{gold:medal},get:()=>current}}},
+    window:{MLH:{achievements:{totals:()=>({gold:current?1:0,diamond:activity==='auralrecognition.html'?2:0}),medals:{gold:medal,diamond},get:()=>current,
+      levelSummary:()=>({tier:'diamond',count:2,counts:{diamond:2}})}}},
     document:{getElementById:()=>header,createElement:element,querySelectorAll:()=>[tile]}});
   const code=html.slice(html.indexOf('function updateAchievementButtons()'),html.indexOf('window.addEventListener("mlh-achievements-change"'));
   vm.runInContext(code,context);
@@ -158,6 +179,13 @@ test('level icons, colours and accessible labels follow the current achievements
   assert.equal(tile.attributes['aria-label'],'National 3');assert.equal(tile.title,undefined);assert.equal(header.hidden,false);
   current=earned;vm.runInContext('updateAchievementButtons()',context);
   assert.equal(tile.dataset.medal,'gold');assert.equal(tile.children.length,1);assert.equal(earned.bestStreak,20);
+  activity='auralrecognition.html';vm.runInContext('updateAchievementButtons()',context);
+  assert.equal(tile.dataset.medal,'diamond');
+  assert.equal(tile.querySelector('.level-medal-count').textContent,2);
+  assert.equal(tile.attributes['aria-label'],'National 3, 2 medals (2 Diamond)');
+  assert.equal(header.children[0].children[1].attributes['aria-label'],'2 diamond medals');
+  activity='accidentals.html';vm.runInContext('updateAchievementButtons()',context);
+  assert.equal(tile.querySelector('.level-medal-count'),undefined);
 });
 
 test('Games appears between Listening and More and has its own shareable section',()=>{

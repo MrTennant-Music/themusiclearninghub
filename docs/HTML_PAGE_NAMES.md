@@ -2,12 +2,13 @@
 
 Activity pages use lowercase titles without spaces or punctuation. Folder entry points remain `index.html`.
 
-The outdated HTML redirect files have been removed. Use the current filenames for links and QR codes. `shared/hub-page-names.js` retains the original identities for saved scores, medals and shared settings.
+Use the current filenames for links and QR codes. `shared/hub-page-names.js` retains the original identities for saved scores, medals and shared settings. Links to `keyboardnoteidentificationclassroom.html` still redirect to `host.html` with their room settings intact.
 
 | Former filename | Current filename |
 | --- | --- |
 | `articulation.html` | `articulationmarkings.html` |
 | `aural-recognition.html` | `auralrecognition.html` |
+| `bandle.html` | `pitched.html` |
 | `bravura-glyph-picker.html` | `bravuraglyphpicker.html` |
 | `chromatic-tuner.html` | `chromatictuner.html` |
 | `classroom-timer.html` | `classroomtimer.html` |
@@ -15,7 +16,7 @@ The outdated HTML redirect files have been removed. Use the current filenames fo
 | `correctrhythm.html` | `rhythmicdictation.html` |
 | `enharmonics.html` | `enharmonicequivalents.html` |
 | `digital-question-papers/exam.html` | `digital-question-papers/digitalquestionpapers.html` |
-| `keyboard-classroom.html` | `keyboardnoteidentificationclassroom.html` |
+| `keyboard-classroom.html` | `host.html` |
 | `keyboard-notes.html` | `keyboardnoteidentification.html` |
 | `keysig.html` | `keysignatures.html` |
 | `millionaire.html` | `whowantstobemillionaire/whowantstobeamillionaire.html` |

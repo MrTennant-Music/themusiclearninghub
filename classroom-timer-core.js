@@ -53,8 +53,8 @@
   function format(value, milliseconds, countdown = false) {
     const ms = Math.max(0, Math.floor(value));
     const seconds = countdown && !milliseconds ? Math.ceil(ms / 1000) : Math.floor(ms / 1000);
-    const hours = Math.floor(seconds / 3600), minutes = Math.floor(seconds / 60) % 60;
-    return `${hours ? String(hours).padStart(2, '0') + ':' : ''}${String(minutes).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}${milliseconds ? '.' + Math.floor(ms % 1000 / 100) : ''}`;
+    const minutes = Math.floor(seconds / 60);
+    return `${String(minutes).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}${milliseconds ? '.' + Math.floor(ms % 1000 / 100) : ''}`;
   }
   function restore(data, now, autoRestart = false) {
     if (!Array.isArray(data) || !data.length) return [{ ...create('timer-1', 'Timer 1'), alarmMode: autoRestart ? 'alert' : 'continuous' }];

@@ -63,7 +63,7 @@ test('alarms use distinct voices, repeat independently and stop on dismissal', a
     createGain(){return {disconnected:false,connect(){},disconnect(){this.disconnected=true;},gain:{value:0,setValueAtTime(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){}}};}
     createOscillator(){const note={type:'sine',frequency:{value:0},connect(){},disconnect(){},start(){notes.push(this);},stop(){}};return note;}
   }
-  const sandbox={window:{AudioContext:Audio},setTimeout(fn,delay){timeouts.set(++serial,{fn,delay});return serial;},clearTimeout(id){timeouts.delete(id);},setInterval(fn){intervals.set(++serial,fn);return serial;},clearInterval(id){intervals.delete(id);}};
+  const sandbox={window:{AudioContext:Audio,MLH:{releaseAudioGain:gain=>gain?.disconnect()}},setTimeout(fn,delay){timeouts.set(++serial,{fn,delay});return serial;},clearTimeout(id){timeouts.delete(id);},setInterval(fn){intervals.set(++serial,fn);return serial;},clearInterval(id){intervals.delete(id);}};
   vm.runInNewContext(`${alarmClass}; this.Alarms=TimerAlarms;`,sandbox);
   const errors=[],alarms=new sandbox.Alarms(message=>errors.push(message));
   alarms.ctx=new Audio();alarms.ctx.resume=async()=>{throw Error('Browser is waiting for a gesture');};
@@ -151,11 +151,13 @@ test('display defaults hide milliseconds and ignore the retired animation settin
   assert.equal(sandbox.loaded.options.milliseconds,false);assert.equal(sandbox.loaded.options.autoRestart,false);
   assert.equal('animation' in sandbox.loaded.options,false);
 });
-test('countdown rounding never displays zero before expiry; milliseconds and hours format correctly', () => {
+test('countdown rounding avoids early zero and longer durations use total minutes', () => {
   assert.equal(T.format(1,false,true),'00:01');
   assert.equal(T.format(0,false,true),'00:00');
   assert.equal(T.format(61234,true),'01:01.2');
-  assert.equal(T.format(3661234,true),'01:01:01.2');
+  assert.equal(T.format(3661234,true),'61:01.2');
+  assert.equal(T.format(3599999,false,true),'60:00');
+  assert.equal(T.format(T.MAX_DURATION,false),'5999:59');
   assert.equal(T.format(61999,true),'01:01.9');
   assert.equal(T.format(0,true),'00:00.0');
   assert.equal(T.action(T.create('a','Timer'),'duration',0,Infinity).duration,T.MAX_DURATION);
@@ -168,10 +170,12 @@ test('page uses local precompiled dependencies and cache-busted timer assets', (
   assert.doesNotMatch(page,/text\/babel|@babel\/standalone/);
   assert.match(page,/vendor\/react\/react\.production\.min\.js\?v=18\.2\.0/);
   assert.doesNotMatch(page,/tailwind[^"']*\.js/);
-  assert.match(page,/vendor\/tailwind\/site\.css\?v=20261102-audit-fixes/);
+  assert.match(page,/vendor\/tailwind\/site\.css\?v=[^\x22]+/);
   assert.ok(page.includes("classroom-timer-runtime.js?v="+require("node:crypto").createHash("sha256").update(fs.readFileSync("classroom-timer-runtime.js")).digest("hex").slice(0,12)));
-  assert.match(page,/classroom-timer-core\.js\?v=20261102-audit-fixes/);
-  assert.match(page,/classroom-timer\.css\?v=20261102-audit-fixes/);
+  for(const asset of ['classroom-timer-core.js','styles/classroom-timer.css']){
+    const version=require('node:crypto').createHash('sha256').update(fs.readFileSync(asset)).digest('hex').slice(0,12);
+    assert.ok(page.includes(asset+'?v='+version));
+  }
 });
 
 test('the supplied PNG is used inside the standard Hub app-icon tile', () => {

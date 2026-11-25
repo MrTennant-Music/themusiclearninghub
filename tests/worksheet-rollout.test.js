@@ -53,12 +53,11 @@ assert.match(chordsSource, /inversionLabel\(item\.inversion\)\|\|"Root"/, "The C
 assert.match(chordsSource, /if\(n5Customise\.chordProgression\) pool\.push\(makeN5ChordSequenceQuestion\)/, "National 5 should include chord-progression questions when that type is enabled");
 assert.match(chordsSource, /if\(n5Customise\.identifyChord\) pool\.push\(makeN5Question\)/, "National 5 should include identify-chord questions when that type is enabled");
 assert.match(chordsSource, /KEYS\.filter\(item=>\["C","F","G"\]\.includes\(item\.id\)\)/, "National 5 chord sequences should use only C, F and G major");
-assert.match(chordsSource, /const N5_SEQUENCE_CHORD_SYMBOLS = \["I", "IV", "V", "VI"\]/, "National 5 chord sequences should use only chords I, IV, V and VI");
-assert.match(chordsSource, /const N5_SEQUENCE_ACCOMPANIMENT_STYLES = \[\s*"block_chords", "waltz", "romantic_octaves", "pop_ballad", "pop_power_piano", "stride_piano",\s*\]/, "National 5 chord-sequence accompaniment choices should all contain full or block chords");
-assert.match(chordsSource, /if\(Math\.random\(\)<\.2\)/, "One fifth of chord-sequence questions should share the minor-chord position across two options");
+assert.match(chordsSource, /national5\.makeProgression\(\{ barCount: 4, viPosition, reverse \}\)/, "National 5 chord sequences must use the shared four-chord progression");
+assert.match(chordsSource, /accompaniment\.styleIds/, "National 5 chord sequences must use the Practice Questions accompaniment library");
+assert.match(chordsSource, /if\(exerciseRandom\(\)<\.2\)/, "One fifth of chord-sequence questions should share the minor-chord position across two options");
 assert.match(chordsSource, /const playbackLoops=question\.type==="n5ChordSequence"\?2:1/, "National 5 chord-sequence audio should play twice");
-assert.match(chordsSource, /isFinalCadenceBar=loopIndex===playbackLoops-1&&bar\.barIndex===question\.bars\.length-1[\s\S]*n5SequenceEvent\(0,beatsPerBar,\["lowRoot","root","third","fifth","octaveRoot"\],\.07\)/, "Only the final bar of the second chord-sequence pass should sustain a full piano chord");
-assert.match(chordsSource, /playOscillator\(ctx,\{frequency:midiToFrequency\(pitch\),start:noteStart,duration,volume:\.025\}\)/, "National 5 chord-sequence melodies should use piano and remain quieter than the chordal accompaniment");
+assert.match(chordsSource, /finalBar \? "block_chords" : question\.accompanimentStyle/, "The final playback bar must sustain the last chord");
 assert.match(chordsSource, /Identify the chord sequence heard\./, "National 5 chord-sequence questions should use the confirmed instruction");
 assert.match(chordsSource, /relative mx-auto flex w-fit max-w-full items-center rounded-xl border px-3 py-3 text-left shadow-sm/, "National 5 chord-sequence options should use slightly taller compact containers matching Advanced Higher Melodic Dictation");
 assert.match(chordsSource, /ml-3 mr-\[25px\] flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border/, "National 5 chord-sequence tick boxes should sit on the right of each option");
@@ -134,8 +133,6 @@ assert.match(generic, /function practicePaperOutlinedMarkup/, "The worksheet pag
 assert.match(generic, /outlinedScoreMarkup=useGenericMemo\(\(\)=>practicePaperOutlinedMarkup\(scoreMarkup\)/, "Practice score outlines should be prepared and cached inside the worksheet page");
 assert.doesNotMatch(generic, /if\(symbolKey==="tie"\|\|!outline/, "Advanced Higher ties must use vector outlines in exported worksheets");
 assert.match(hubShellSource, /config\.activityId === "intervals"[\s\S]*removeItem\("worksheetReturnConfig"\)/, "Large non-Intervals worksheets should not save an unnecessary duplicate configuration");
-assert.match(hubShellSource, /exerciseUrlObject\.searchParams\.set\("level", config\.settings\.level\)/, "Worksheet QR links must retain the exact selected activity level");
-assert.match(hubShellSource, /worksheetSourceConfig = \{ \.\.\.config, exerciseUrl: exerciseUrlObject\.toString\(\), subtitle:/, "Worksheets must retain the exact public activity profile URL for their QR code");
 assert.match(hubShellSource, /window\.alert\("The worksheet could not be prepared\. Please try again\."\)/, "Worksheet preparation errors should be visible instead of making the button appear unresponsive");
 assert.match(practiceSource, /function practiceWorksheetPrompt[\s\S]*Write the correct articulation marking over the notes in the bar\./, "Practice worksheets should use written instructions instead of asking pupils to select articulation answers");
 assert.match(practiceSource, /prompt: practiceWorksheetPrompt\(part\)/, "Practice worksheet questions should use their written-paper wording");
@@ -173,11 +170,13 @@ assert.doesNotMatch(practiceWorksheetRenderer, /check\("Question Letters"/, "Pra
 assert.match(practiceWorksheetRenderer, /numbers:true/, "Practice paper question letters should remain permanently enabled");
 assert.doesNotMatch(practiceWorksheetRenderer, /check\("Marks"/, "Practice papers should always show marks without offering a control");
 assert.match(practiceWorksheetRenderer, /marks:true/, "Practice paper marks should remain permanently enabled");
-assert.match(practiceWorksheetRenderer, /className="flex items-center gap-7">\{check\("Gridlines",gridlines,setGridlines\)\}\{check\("Include Answers"/, "Gridlines and Include Answers should share the practice paper options row");
 const worksheetGeneratorSource = fs.readFileSync("worksheetgenerator.html", "utf8");
+assert.doesNotMatch(worksheetGeneratorSource + generic, /QR Code|WorksheetQr|includeQr|setQr|showQr/, "Worksheet options, previews and PDFs must omit worksheet QR codes");
+assert.match(hubShellSource, /worksheetSourceConfig = \{ \.\.\.config, subtitle: typeof subtitle === "string" \? subtitle/, "Worksheets must carry the subtitle from the individual activity");
+assert.match(practiceWorksheetRenderer, /check\("Include Answers",includeAnswers,setAnswersOn,audioOn\)/, "Practice papers must lock Include Answers when Audio is selected");
 assert.match(worksheetGeneratorSource, /\.practice-paper-questions \{[^}]*flex: 1 1 auto;[^}]*justify-content: space-evenly;/, "Practice paper questions should spread through the remaining page height");
 assert.match(worksheetGeneratorSource, /\[data-score-question-source\] > rect \{ stroke: #000 !important; opacity: 1 !important; \}/, "Practice paper answer boxes should be solid black");
-assert.match(worksheetGeneratorSource, /\.practice-paper-answer-line \{[^}]*translateY\(3px\)/, "Practice paper answer lines should sit three pixels lower");
+assert.match(worksheetGeneratorSource, /\.practice-paper-answer-line \{[^}]*min-height: 26px;[^}]*border-bottom: 1px solid #000;/, "Practice paper answer lines should be black and reserve handwriting space");
 assert.match(fs.readFileSync("worksheet-generic.jsx", "utf8"), /grid-cols-\[22px_28px_1fr_auto\] items-baseline/, "Practice paper numbers, letters and marks should share the question text baseline");
 assert.match(fs.readFileSync("worksheet-generic.jsx", "utf8"), /data\.paperCount>1&&partIndex===0\?`\$\{paperIndex\+1\}\.\`/, "Multiple practice papers should be numbered before part (a)");
 assert.match(fs.readFileSync("worksheet-generic.jsx", "utf8"), /sixteenBars\?\{width:"90%",marginInline:"auto"\}/, "Sixteen-bar practice scores should occupy ninety percent of the worksheet width");
@@ -200,9 +199,6 @@ assert.match(worksheetGeneratorSource, /if \(hasHeader\) \{[\s\S]*?page\.drawIma
 assert.match(generic, /check\("Header",header,changeHeader\)\}\{check\("Name",name,setName,!header\)/, "Generic and Practice worksheets must place Header before Name and disable pupil fields when it is off");
 assert.match(generic, /setHeader\(enabled\);if\(!enabled\)\{setName\(false\);setClassField\(false\);setDate\(false\);\}/, "Generic and Practice worksheets must clear pupil fields when Header is turned off");
 assert.match(generic, /data\.header\?<div className="worksheet-header-card/, "Generic and Practice worksheet pages must remove the complete header when disabled");
-assert.match(generic, /\[gridlines,setGridlines\]=useGenericState\(false\)[\s\S]*?\[qr,setQr\]=useGenericState\(false\)/, "Practice Questions must permanently remove gridlines and default its QR code off");
-assert.match(generic, /if\(label==="Gridlines"\)return <div className="grid grid-cols-2 items-center gap-x-6 gap-y-3"><label[\s\S]*?>Include Answers<\/label><label[\s\S]*?>QR Code<\/label><\/div>/, "Practice Questions must remove the Gridlines option while retaining its answer and QR controls");
-assert.match(generic, /showQr\?<div className=\{`mt-1 flex shrink-0 justify-center \$\{level==="AH"\?"translate-y-\[25px\]":""\}`\}><WorksheetQr compact\/>/, "Advanced Higher Practice Questions must move its centred borderless QR panel down 25px");
 assert.match(worksheetGeneratorSource, /\.generic-grid\.with-gridlines \{ border-left: 1px solid #000; border-top: 1px solid #000; \}/, "Generic worksheet gridlines should be solid black");
 assert.match(worksheetGeneratorSource, /borderColor: black, borderWidth: 0\.5, borderOpacity: 1/, "Intervals PDF gridlines should be fully opaque black");
 assert.match(worksheetGeneratorSource, /\.practice-paper-score-sixteen \{ transform: translateY\(-3px\); \}/, "Sixteen-bar practice scores should sit 3px closer to the header after being moved down by 7px");
@@ -220,8 +216,8 @@ assert.match(practiceSource, /answerMarkup: answerScore\.markup/, "Practice answ
 assert.match(practiceSource, /answerScoreVersion: 1/, "Practice papers should identify that they contain completed score answers");
 assert.doesNotMatch(fs.readFileSync("worksheet-generic.jsx", "utf8"), /paper\.answerMarkup\|\|paper\.markup/, "Practice answer sheets must never substitute an unanswered score");
 assert.match(fs.readFileSync("worksheet-generic.jsx", "utf8"), /created before completed score answers were available/, "Older stored papers should clearly ask to be recreated");
-assert.match(fs.readFileSync("worksheet-generic.jsx", "utf8"), /!directScoreTypes\.has\(part\.type\)\?<div className=\{`practice-paper-answer-area relative mt-1 min-h-4 \$\{level==="AH"\?"practice-paper-answer-area-ah":""\}`\}>[\s\S]*practice-paper-answer-line h-3 w-full/, "Practice papers should render answer lines only for written responses and identify Advanced Higher answer areas explicitly");
-assert.match(worksheetGeneratorSource, /\.practice-paper-answer-area-ah,[\s\S]*\.pdf-capture \.practice-paper-answer-area-ah \{ padding-top: 15px !important; \}/, "Advanced Higher HTML and PDF captures should both keep fifteen pixels above written-answer lines");
+assert.match(generic, /!directScoreTypes\.has\(part\.type\)&&\(answers\s*\? <div className="practice-paper-answer-text[^"]*">\{part\.answer\}<\/div>\s*: <div className="practice-paper-answer-line"/, "Practice papers should show plain answers on staff copies and handwriting lines on pupil copies");
+assert.match(worksheetGeneratorSource, /\.practice-paper-questions-only-page \.practice-paper-answer-line \{ min-height: 36px; \}/, "Advanced Higher question pages should leave extra handwriting room in preview and PDF");
 assert.match(generic, /practice-paper-total-marks-label h-6 leading-6[\s\S]*total-marks-box practice-paper-total-marks-box relative h-6 min-w-16[\s\S]*total-marks-value practice-paper-total-marks-value absolute left-2 right-2 text-right leading-none/, "Practice paper totals should use the PDF-safe vertically centred marks box");
 assert.match(worksheetGeneratorSource, /\.practice-paper-total-marks-label,[\s\S]*\.practice-paper-total-marks-box \{ transform: translateY\(4px\); \}/, "Practice-paper total labels and boxes should move down together by four pixels");
 assert.match(worksheetGeneratorSource, /\.practice-paper-total-marks-value \{ transform: translateY\(-4px\); \}/, "Practice-paper total values should remain at their previous vertical position");
@@ -301,7 +297,7 @@ assert.match(generic, /if \(CONFIG\.activityId === "rests"\) return <RestsStaff/
 assert.match(generic, /symbolKey=\{symbolKey\}[\s\S]*augmentationDotSpace/, "Rests worksheets must render PDF-safe Bravura rest symbols and augmentation dots");
 assert.match(generic, /CONFIG\.activityId==="barlines"\|\|CONFIG\.activityId==="timesig"\|\|CONFIG\.activityId==="triplets"\|\|CONFIG\.activityId==="rests"\?"grid-cols-1"/, "Rests questions must use a full row so compound-time bars remain legible");
 assert.match(generic, /Write the missing rest in each outlined space\. Be sure to check the time signature\./, "Rests worksheets must remind pupils to check the time signature");
-assert.match(generic, /left=92, right=588, top=24, gap=12/, "Rests worksheet notation must retain its confirmed raised position");
+assert.match(generic, /function RestsStaff[^\n]*\n[^\n]*top=24, gap=12/, "Rests worksheet notation must retain its confirmed raised position");
 assert.match(generic, /CONFIG\.activityId==="rests"\?"bottom-\[29px\]"/, "Rests marks must use the same raised position on every page");
 for (const symbol of ["timeSig1", "timeSig5", "timeSig6", "timeSig8", "timeSig9", "sixteenthNoteStemUp", "sixteenthNoteStemDown", "wholeRest", "halfRest", "quarterRest", "eighthRest"]) {
   assert.ok(worksheetOutlines[symbol]?.path, `Worksheet vector outlines must include ${symbol}`);
@@ -462,13 +458,6 @@ assert.match(generic, /CONFIG\.activityId==="rhythmsums"\?\(continuationPage\?"-
 assert.match(generic, /continuationPage=\{pageIndex>0\}/, "Every worksheet page after page 1 must be identified as a continuation page");
 assert.doesNotMatch(generic, /prepareBravuraForPdf/, "Vector worksheet PDFs must not depend on custom-font loading workarounds");
 assert.match(generic, /!answers&&pageIndex===pages\.length-1&&data\.marks\?<div/, "Generic worksheets must hide total marks when Marks is disabled");
-assert.match(generic, /\.\.\.\(data\.qr\?\[\{id:"worksheet-qr",worksheetQr:true\}\]:\[\]\)/, "Generic worksheets must add the optional QR panel as a normal grid item");
-assert.match(generic, /showQr=\{qr&&!answers&&index===papers\.length-1\}/, "Practice worksheets must show the optional exercise QR panel only on their final question page");
-assert.doesNotMatch(generic, /More Questions/, "Worksheet QR panels must not include the removed More Questions wording");
-assert.match(generic, />QR Code<\/label>/, "The worksheet option must use the concise QR Code label");
-assert.match(generic, /the-music-learning-hub-logo\.svg/, "Every generic worksheet QR panel must include The Music Learning Hub word mark");
-assert.match(worksheetGeneratorSource, /worksheet\.includeQr \? \[\.\.\.questionPageItems, \{ worksheetQr: true \}\]/, "Intervals previews must add the optional QR panel as a normal grid item");
-assert.match(worksheetGeneratorSource, /previewWorksheet\.includeQr \? \[\.\.\.baseQuestionItems, \{ worksheetQr: true \}\]/, "Intervals PDFs must add the optional QR panel as a normal grid item");
 assert.match(generic, /total-marks-box relative h-8 w-24/, "Generic preview total box must align vertically with its label");
 assert.match(generic, /total-marks-value absolute left-2 right-2 text-right leading-none/, "Generic total must remain right-aligned inside its box");
 assert.match(generic, /mb-\[3px\] h-px min-w-8 flex-1 bg-black/, "Generic worksheet must use explicit, PDF-stable pupil detail lines");
@@ -528,7 +517,6 @@ assert.match(intervalWorksheet, /Instructions<textarea[^>]*resizeWorksheetTextar
 assert.match(intervalWorksheet, /pageIndex === pages\.length - 1 && worksheet\.includeMarks && <div/, "Intervals preview must hide total marks when Marks is disabled");
 assert.match(intervalWorksheet, /const showTotalMarks = previewWorksheet\.includeMarks && !answerSheet && pageIndex === questionGroups\.length - 1/, "Intervals PDFs must hide total marks when Marks is disabled");
 assert.match(generic, /root position\|first inversion\|second inversion/, "Chord positions must be included in worksheet emphasis");
-assert.match(hubShell, /worksheetSourceConfig = \{ \.\.\.config, exerciseUrl: exerciseUrlObject\.toString\(\), subtitle: typeof subtitle === "string" \? subtitle/, "Every pupil activity must carry its exact profile URL and normal subtitle into worksheet mode");
 assert.match(worksheetGeneratorSource, /sessionStorage\.setItem\("worksheetEditorState"/, "Worksheet-only choices should be preserved between worksheet visits");
 assert.doesNotMatch(generic, /WorksheetSourceControls/, "Generic and practice worksheets should use their original layout without embedded activity controls");
 assert.match(generic, /subtitle:CONFIG\.subtitle\|\|DEF\.subtitle/, "Generic worksheets must display the saved pupil-facing subtitle");

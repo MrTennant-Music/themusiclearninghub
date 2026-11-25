@@ -1519,13 +1519,13 @@
   function closeQrOverlay() { $("[data-qr-overlay]")?.classList.remove("is-open"); }
 
   async function copyPaperLink() {
-    const button = $("[data-copy-paper-link]");
+    const label = $("[data-copy-paper-link] span");
     try {
       await navigator.clipboard.writeText(paperShareUrl());
-      button.textContent = "Copied";
-      root.setTimeout(() => { button.textContent = "Copy Link"; }, 1800);
+      label.textContent = "Copied";
+      root.setTimeout(() => { label.textContent = "Copy Link"; }, 1800);
     } catch {
-      button.textContent = "Copy unavailable";
+      label.textContent = "Copy unavailable";
     }
   }
 

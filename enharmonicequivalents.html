@@ -5,21 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Enharmonic Equivalents</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/enharmonic-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/enharmonic-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./shared/accidentals-selection.js?v=cbd84b23fe92"></script>
@@ -29,14 +30,15 @@
     @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
     .music-symbol { font-family: "Bravura", serif; font-weight: 400; text-rendering: geometricPrecision; }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
 
   <script type="text/x-mlh-jsx-source" data-runtime="enharmonicequivalents-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 const SHELL = window.MLH?.shell || {};
 const isTouchDevice = window.MLH?.isTouchDevice?.() || ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
@@ -135,7 +137,7 @@ const CLEF_STEP_RANGE = {
 };
 
 function randomItem(items) {
-  return items[Math.floor(Math.random() * items.length)];
+  return items[Math.floor(exerciseRandom() * items.length)];
 }
 
 function clamp(value, min, max) {
@@ -289,13 +291,13 @@ function enharmonicCandidates(options = { treble: true, bass: true, eSharpFflat:
   return result;
 }
 
-const enharmonicSelection=window.ACCIDENTALS_SELECTION.create(Math.random);
+const enharmonicSelection=window.ACCIDENTALS_SELECTION.create(exerciseRandom);
 function makeQuestion(options) {
   const candidates = enharmonicCandidates(window.ACCIDENTALS_SELECTION.cleanOptions(options));
   const fallback = enharmonicCandidates();
   const pool = candidates.length ? candidates : fallback;
   const item = enharmonicSelection.enharmonic(pool);
-  return { id: `${Date.now()}-${Math.random()}`, ...item };
+  return { id: `${Date.now()}-${exerciseRandom()}`, ...item };
 }
 
 function accidentalGlyph(type) {
@@ -739,7 +741,7 @@ function App() {
 
   return (
     <div className={SHELL.pageShellClass}>
-      <window.MLH.AppHeader profileState={{ options, showNoteNames }} icon={ASSET.appIcon} title="Accidentals" subtitle="Identify and use accidentals and enharmonic equivalents." worksheetConfig={() => ({ version: 1, activityId: "enharmonics", sourceUrl: window.location.href, settings: { level: "AH", options, showNoteNames } })}>
+      <window.MLH.AppHeader classroomOriginalFormat={!medalEligible || showNoteNames} profileState={{ options, showNoteNames }} icon={ASSET.appIcon} title="Accidentals" subtitle="Identify and use accidentals and enharmonic equivalents." worksheetConfig={() => ({ version: 1, activityId: "enharmonics", sourceUrl: window.location.href, settings: { level: "AH", options, showNoteNames } })}>
         <ScorePanel correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} confettiKey={confettiKey} resetScore={resetScore} medalEligible={medalEligible} />
       </window.MLH.AppHeader>
 
@@ -785,7 +787,7 @@ function App() {
               {feedback && <window.MLH.FeedbackBadge feedback={feedback} fading={feedbackFading} animationPrefix="note" />}
             </div>
 
-            <window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={nextQuestion} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />
+            <window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={nextQuestion} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />
           </div>
 
           <div className="absolute inset-x-3 top-[92px] bottom-[154px] flex items-center justify-center overflow-hidden transition-opacity duration-300 sm:relative sm:inset-auto sm:-top-[42px] sm:block sm:overflow-visible">
@@ -864,7 +866,7 @@ function EscapeEnharmonic({ activity }) {
 
 const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("enharmonic");
 ReactDOM.createRoot(document.getElementById("root")).render(escapeActivity ? <EscapeEnharmonic activity={escapeActivity} /> : <App />);
-  </script><script src="./generated-runtimes/enharmonicequivalents-1.js?v=66bf81fe9dbd"></script>
-  <script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/enharmonicequivalents-1.js?v=dc82d53320ba"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

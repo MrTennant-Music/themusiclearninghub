@@ -76,7 +76,7 @@
     input:focus-visible,
     select:focus-visible,
     textarea:focus-visible {
-      outline: 3px solid rgba(15, 118, 110, 0.28);
+      outline: 3px solid var(--mlh-focus-color, #2563eb);
       outline-offset: 2px;
     }
 
@@ -1926,7 +1926,6 @@ body { background:#fafaf9; }
 #rosterFilter.has-active-filters { background:#000; border-color:#000; color:#fff; }
 #rosterFilter.has-active-filters img { filter:invert(1); }
 #recorderDateMenu .hub-menu-panel { width:240px; }
-#recorderDateMenu .hub-menu-scroll, #recorderFilterMenu .hub-menu-scroll { max-height:360px; }
 .recorder-show-all-dates {
   align-self:center;
   margin-top:4px;
@@ -1945,7 +1944,7 @@ body { background:#fafaf9; }
 .recorder-roster-filters select { min-width:0; min-height:38px; padding:6px 8px; border:1px solid #d6d3d1; border-radius:8px; background:#fff; font:inherit; font-weight:400; }
 .recorder-roster-filters button { grid-column:2; justify-self:end; }
 .recorder-roster-filters :is(select, button):focus-visible {
-  outline:2px solid #111;
+  outline:2px solid var(--mlh-focus-color, #2563eb);
   outline-offset:-2px;
 }
 #app .recorder-menu-action { width:100%; margin-top:12px; margin-bottom:0; justify-content:center; }
@@ -2084,8 +2083,8 @@ input.ocr-instrument-name::placeholder { font-size:inherit; }
 #classExportPdfCount { font:inherit; }
 
 
-.recorder-picker-trigger:focus-visible { outline:2px solid rgba(22,163,74,.35); outline-offset:2px; }
-.recorder-pupil-search:has(input:focus-visible) { outline:2px solid #000; outline-offset:2px; }
+.recorder-picker-trigger:focus-visible { outline:2px solid var(--mlh-focus-color, #2563eb); outline-offset:2px; }
+.recorder-pupil-search:has(input:focus-visible) { outline:2px solid var(--mlh-focus-color, #2563eb); outline-offset:2px; }
 @media (hover:hover) and (pointer:fine) {
   .recorder-picker-trigger:hover { transform:translateY(-1px) scale(1.01); filter:brightness(1.08); box-shadow:0 6px 18px rgba(0,0,0,.08); }
 }

@@ -5,21 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Rhythm Identification</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/rhythm-groups-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/rhythm-groups-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js?v=20260629"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <style>
@@ -35,6 +36,11 @@
       dominant-baseline: alphabetic;
       text-rendering: geometricPrecision;
     }
+    .rhythm-identification-customise > .hub-menu-scroll {
+      max-height: none;
+      padding-bottom: 8px;
+    }
+    body.rhythm-time-trial > .footer { display: none; }
     .escape-rhythm-symbol {
       width: fit-content;
       margin-inline: auto;
@@ -45,14 +51,19 @@
       transform: none;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
   <script type="text/x-mlh-jsx-source" data-runtime="rhythmidentification-1.js">
-const { useEffect, useMemo, useRef, useState } = React;
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
+const rhythmTimeTrial = Boolean(window.MLH.classroomExercise && window.parent !== window
+  && new URLSearchParams(window.location.search).get("classroomTimeTrial") === "1");
+const rhythmStreakRace = window.parent !== window && window.MLH.classroomActivities.isStreakRace();
+if (rhythmTimeTrial) document.body.classList.add("rhythm-time-trial");
+const { useEffect, useLayoutEffect, useMemo, useRef, useState } = React;
 const SHARED_CONFIG = typeof SHARED_NOTATION_CONFIG !== "undefined" ? SHARED_NOTATION_CONFIG : {};
 const SHARED_SYMBOLS = typeof BRAVURA_SYMBOLS !== "undefined" ? BRAVURA_SYMBOLS : {};
 
@@ -118,7 +129,8 @@ function sameOptions(left, right) {
 
 function matchingLevelForOptions(enabledRhythms, enabledCardTypes) {
   return Object.keys(LEVELS).find((levelKey) => (
-    sameOptions(enabledRhythms, LEVELS[levelKey].rhythmIds)
+    (sameOptions(enabledRhythms, LEVELS[levelKey].rhythmIds)
+      || (levelKey === "N3" && sameOptions(enabledRhythms, LEVELS.N3.menuRhythmIds)))
     && sameOptions(enabledCardTypes, defaultCardTypesForLevel(levelKey))
   )) || "custom";
 }
@@ -150,7 +162,7 @@ const NOTE_RX = 7;
 function shuffle(items) {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(exerciseRandom() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
   }
   return result;
@@ -292,6 +304,16 @@ function cardDescription(card) {
   return `${RHYTHMS[card.rhythmId].label} ${card.cardType === "rest" ? "rest" : "symbol"}`;
 }
 function elapsedSince(start, now) { return start === null ? 0 : Math.max(0, Math.floor((now-start)/1000)); }
+
+function restoreTrialGrid(saved, rhythms, types, cards) {
+  if (!saved?.slots || !Number.isFinite(saved.startedAt)) return null;
+  const ids = new Set(cards.map(card => card.id));
+  const keys = rhythms.flatMap((_, index) => groupSlotKeys(index, types));
+  for (const key of keys) {
+    if (!ids.delete(saved.slots[key])) return null;
+  }
+  return ids.size ? null : saved;
+}
 function dragPreviewPosition(point, scale = 1) { return {left: point.x/scale-58, top: point.y/scale-35}; }
 
 function slotToGroupIndex(slotKey) {
@@ -584,7 +606,7 @@ function GlyphToggleButton({ label, active, disabled = false, onClick, glyph, sh
       disabled={disabled}
       onClick={onClick}
       className={`hub-toggle-row ${showLabel ? "card-option-toggle" : ""}`}
-      style={{ marginBottom: 0, minHeight: "48px", padding, overflow: "visible", position: "relative", justifyContent: "flex-start" }}
+      style={{ marginBottom: 0, padding, overflow: "visible", position: "relative", justifyContent: "flex-start" }}
       aria-label={`Toggle ${label}`}
       title={label}
     >
@@ -692,17 +714,21 @@ function RhythmGroupsLandscapeApp() {
   const options = useMemo(() => normaliseOptions(savedRhythms, savedCardTypes, initialLevel), [savedRhythms, savedCardTypes, initialLevel]);
   const enabledRhythms = options.rhythms, enabledCardTypes = options.types;
   const activeLevel = matchingLevelForOptions(enabledRhythms, enabledCardTypes);
-  const initialCards = makeCards(enabledRhythms, enabledCardTypes);
-  const [cards, setCards] = useState(() => Array.isArray(initialCards) ? initialCards : []);
+  const [cards, setCards] = useState(() => makeCards(enabledRhythms, enabledCardTypes));
+  const trialStorage = useMemo(() => rhythmTimeTrial || rhythmStreakRace
+    ? window.MLH.classroomActivities.progressStorage(window.location.search) : null, []);
+  const [restoredGrid] = useState(() => restoreTrialGrid(
+    trialStorage?.read("rhythm-trial-grid", null), enabledRhythms, enabledCardTypes, cards));
   const cardsById = useMemo(() => Object.fromEntries((Array.isArray(cards) ? cards : []).map((card) => [card.id, card])), [cards]);
-  const [slots, setSlots] = useState(() => makeGroups(enabledRhythms, enabledCardTypes, initialCards));
+  const [slots, setSlots] = useState(() => restoredGrid?.slots ?? makeGroups(enabledRhythms, enabledCardTypes, cards));
   const [dragState, setDragState] = useState(null);
   const [hoverSlotKey, setHoverSlotKey] = useState(null);
   const [selectedSlotKey, setSelectedSlotKey] = useState(null);
   const [mobileGroupPage, setMobileGroupPage] = useState(0);
   const [recentlySwapped, setRecentlySwapped] = useState([]);
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState(rhythmTimeTrial);
   const [elapsed, setElapsed] = useState(0);
+  const [gridTimeMs, setGridTimeMs] = useState(restoredGrid?.elapsedMs ?? null);
   const [bestTime, setBestTime] = useState(null);
   const [confettiKey, setConfettiKey] = useState(0);
   const [feedback, setFeedback] = useState(null);
@@ -713,8 +739,11 @@ function RhythmGroupsLandscapeApp() {
   const dragStateRef = useRef(null);
   const warningTimerRef = useRef(null);
   const swapTimerRef = useRef(null);
-  const startTimeRef = useRef(null);
+  const startTimeRef = useRef(rhythmTimeTrial
+    ? (restoredGrid ? Math.min(performance.now(), restoredGrid.startedAt - performance.timeOrigin) : performance.now())
+    : null);
   const levelRef = useRef(null);
+  const gridStartedAtRef = useRef(restoredGrid?.startedAt ?? Date.now());
   const customiseRef = useRef(null);
   const completedRef = useRef(false);
   const previousLockedCountRef = useRef(0);
@@ -735,9 +764,19 @@ function RhythmGroupsLandscapeApp() {
   const bestMedal = customLevelActive || bestTime == null ? null : medalForTime(bestTime, enabledRhythms.length, enabledCardTypes.length, activeLevel);
   useEffect(() => {
     if (!started || success) return undefined;
-    const timer = window.setInterval(() => setElapsed(elapsedSince(startTimeRef.current, performance.now())), 100);
+    const update = () => setElapsed(rhythmTimeTrial
+      ? Math.max(0, performance.now() - startTimeRef.current) / 1000
+      : elapsedSince(startTimeRef.current, performance.now()));
+    update();
+    const timer = window.setInterval(update, 100);
     return () => window.clearInterval(timer);
   }, [started, success]);
+
+  useLayoutEffect(() => {
+    trialStorage?.write("rhythm-trial-grid", {
+      slots, startedAt: rhythmStreakRace ? gridStartedAtRef.current : performance.timeOrigin + startTimeRef.current, elapsedMs: gridTimeMs
+    });
+  }, [trialStorage, slots, gridTimeMs]);
 
   useEffect(() => {
     if (started && lockedGroups.size > previousLockedCountRef.current) {
@@ -767,11 +806,25 @@ function RhythmGroupsLandscapeApp() {
   useEffect(() => {
     if (!success || completedRef.current) return;
     completedRef.current = true;
-    const completedSeconds = elapsedSince(startTimeRef.current, performance.now());
+    const completedAt = performance.now();
+    if (rhythmTimeTrial && startTimeRef.current !== null) {
+      const elapsedMs = gridTimeMs ?? Math.max(1, Math.floor(completedAt - startTimeRef.current));
+      setGridTimeMs(elapsedMs);
+      window.parent.postMessage({ type: "mlh:rhythm-grid-finished", elapsedMs }, location.origin);
+    } else if (rhythmStreakRace) {
+      const prior = trialStorage?.read("rhythm-streak", {count:0,grid:null});
+      const grid = gridStartedAtRef.current;
+      const streak = (prior?.count ?? 0) + (prior?.grid === grid ? 0 : 1);
+      trialStorage?.write("rhythm-streak", {count:streak,grid});
+      window.parent.postMessage({type:"mlh:classroom-streak",attempted:streak,streak,highestStreak:streak},location.origin);
+    } else if (window.MLH.classroomExercise && window.parent !== window) {
+      window.parent.postMessage({ type: "mlh:classroom-finished", solved: true }, location.origin);
+    }
+    const completedSeconds = elapsedSince(startTimeRef.current, completedAt);
     setElapsed(completedSeconds);
     setFeedback({ correct: true });
-    if (!customLevelActive) setBestTime((currentBest) => (currentBest == null ? completedSeconds : Math.min(currentBest, completedSeconds)));
-    const earnedMedal = customLevelActive ? null : medalForTime(completedSeconds, enabledRhythms.length, enabledCardTypes.length, activeLevel);
+    if (!window.MLH.classroomExercise && !customLevelActive) setBestTime((currentBest) => (currentBest == null ? completedSeconds : Math.min(currentBest, completedSeconds)));
+    const earnedMedal = customLevelActive || window.MLH.classroomExercise ? null : medalForTime(completedSeconds, enabledRhythms.length, enabledCardTypes.length, activeLevel);
     const earnedMedalRank = medalRank(earnedMedal);
     const shouldCelebrateMedal = earnedMedalRank > highestCelebratedMedalRankRef.current;
     if (shouldCelebrateMedal) {
@@ -813,7 +866,8 @@ function RhythmGroupsLandscapeApp() {
   function rebuild(nextEnabledRhythms, nextEnabledCardTypes = enabledCardTypes) {
     window.clearTimeout(swapTimerRef.current);
     window.clearTimeout(warningTimerRef.current);
-    startTimeRef.current = null;
+    startTimeRef.current = rhythmTimeTrial ? performance.now() : null;
+    gridStartedAtRef.current = Date.now();
     const nextCards = makeCards(nextEnabledRhythms, nextEnabledCardTypes);
     setEnabledRhythms(nextEnabledRhythms);
     setEnabledCardTypes(nextEnabledCardTypes);
@@ -825,8 +879,9 @@ function RhythmGroupsLandscapeApp() {
     setMobileGroupPage(0);
     setRecentlySwapped([]);
     dragStateRef.current = null;
-    setStarted(false);
+    setStarted(rhythmTimeTrial);
     setElapsed(0);
+    setGridTimeMs(null);
     setFeedback(null);
     setWarning("");
     completedRef.current = false;
@@ -838,6 +893,7 @@ function RhythmGroupsLandscapeApp() {
   }
 
   function resetTime() {
+    if(window.MLH.classroomExercise)return;
     setBestTime(null);
     setConfettiKey(0);
     highestCelebratedMedalRankRef.current = 0;
@@ -933,14 +989,16 @@ function RhythmGroupsLandscapeApp() {
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader profileState={{ activeLevel, enabledRhythms, enabledCardTypes }} icon={ASSET.appIcon} title="Rhythm Identification" subtitle="Identify and group matching rhythms.">
+      {!rhythmTimeTrial && <window.MLH.AppHeader profileState={{ activeLevel, enabledRhythms, enabledCardTypes }} icon={ASSET.appIcon} title="Rhythm Identification" subtitle="Identify and group matching rhythms.">
         <HeaderTimePanel elapsed={elapsed} bestTime={bestTime} bestMedal={bestMedal} onResetTime={resetTime} activeRhythmCount={enabledRhythms.length} activeCardTypeCount={enabledCardTypes.length} activeLevel={activeLevel} confettiKey={confettiKey} medalDisabled={customLevelActive} />
-      </window.MLH.AppHeader>
+      </window.MLH.AppHeader>}
 
       <div className={window.MLH.shell.pageContentClass}>
         <main className={`${window.MLH.shell.mainShellClass} flex flex-col pb-5 md:pb-6`}>
           <window.MLH.AppToolbar
-            left={
+            left={rhythmTimeTrial
+              ? <p className="font-semibold tabular-nums">Grid time <span className="ml-2">{(gridTimeMs === null ? elapsed : gridTimeMs / 1000).toFixed(1)} s</span></p>
+              :
               <div className="flex items-center gap-2">
                 <div className="hub-menu-anchor relative" ref={levelRef}>
                   <window.MLH.LevelButton
@@ -970,7 +1028,7 @@ function RhythmGroupsLandscapeApp() {
                   dataMenuTrigger={true}
                 />
                 {customiseOpen ? (
-                  <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
+                  <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="rhythm-identification-customise" dataMenuPanel={true}>
                     <MenuRows enabledRhythms={enabledRhythms} enabledCardTypes={enabledCardTypes} activeLevel={activeLevel} onToggleRhythm={toggleRhythm} onToggleCardType={toggleCardType} />
                   </window.MLH.MenuPanel>
                 ) : null}
@@ -978,10 +1036,12 @@ function RhythmGroupsLandscapeApp() {
               </div>
             }
             feedback={<FeedbackBanner feedback={feedback} warning={warning} />}
-            right={
-              <button type="button" onClick={restartGame} className={`${window.MLH.ToolbarButtonClass} w-auto shrink-0 gap-1 px-4`}>
-                <span>Restart</span>
+            right={rhythmTimeTrial || rhythmStreakRace
+              ? <button type="button" onClick={restartGame} disabled={!success} className={`${window.MLH.ToolbarButtonClass} px-4 disabled:opacity-50`}>Next Grid</button>
+              :
+              <button type="button" onClick={restartGame} disabled={Boolean(window.MLH.classroomExercise)} className={`${window.MLH.ToolbarButtonClass} w-auto shrink-0 gap-1 px-4`}>
                 <img src={ASSET.restart} alt="" aria-hidden="true" className="h-4 w-4 object-contain" />
+                <span>Restart</span>
               </button>
             }
           />
@@ -1044,7 +1104,7 @@ function EscapeRhythmIdentification({ activity }) {
   const rest = activity.clue.kind === "rest";
   const level = LEVELS[activity.level] ?? LEVELS.H;
   const options = makeCards(level.rhythmIds, [rest ? "rest" : "note"]);
-  const card = embed.useQuestion(activity, () => options[Math.floor(Math.random() * options.length)]);
+  const card = embed.useQuestion(activity, () => options[Math.floor(exerciseRandom() * options.length)]);
   const correct = options.find(option => option.id === card.id);
   const choices = embed.codeOrder(options, correct, activity.clue.digit).map(option => {
     const name = RHYTHMS[option.rhythmId].label;
@@ -1066,7 +1126,7 @@ const escape = window.MLH.EscapeLiteracyActivity;
 const escapeActivity = escape?.request("rest") ?? escape?.request("noteValue");
 root.render(escapeActivity ? <EscapeRhythmIdentification activity={escapeActivity} /> : <RhythmGroupsLandscapeApp />);
 
-  </script><script src="./generated-runtimes/rhythmidentification-1.js?v=df9f993f330b"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/rhythmidentification-1.js?v=83997864f3fc"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

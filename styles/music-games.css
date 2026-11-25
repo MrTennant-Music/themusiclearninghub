@@ -108,6 +108,24 @@ body[data-game-app="conceptsort"] .ig-resource-card {
   padding-top: 14px;
   padding-inline: 24px;
 }
+.ig-resource-game:has(> .ig-sort-editor-backdrop) { position: relative; isolation: isolate; }
+.ig-modal-backdrop.ig-sort-editor-backdrop {
+  position: absolute;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, .66);
+  backdrop-filter: blur(4px);
+  padding: 24px;
+}
+.ig-sort-editor-backdrop > .ig-modal {
+  --mlh-layout-canvas-min-width: 0px;
+  width: min(900px, 100%);
+  max-height: 100%;
+  padding: 0;
+  border-radius: 16px;
+  overscroll-behavior: contain;
+}
+body[data-game-app="conceptsort"] .ig-sort-editor-backdrop .ig-sort-builder { border: 0; }
+.ig-sort-editor-loading { padding: 14px 24px 24px; }
 body[data-game-app="conceptsort"] .ig-resource-toolbar .ig-game-level-controls {
   gap: .5rem;
 }
@@ -357,8 +375,6 @@ body[data-game-app="connections"] #root .ig-session>.ig-player-top .ig-connectio
 
 .ig-fullscreen-stats-slot{display:none}
 body[data-game-app="connections"] #root .ig-resource-game:fullscreen .ig-fullscreen-stats-slot{display:block;position:absolute;top:16px;left:16px;z-index:12}
-body[data-game-app] #music-game-customise-menu > .hub-menu-scroll{max-height:420px}
-body[data-game-app="conceptsort"] #music-game-customise-menu > .hub-menu-scroll{max-height:none}
 .ig-crossword-collections-menu{display:flex;flex-direction:column;gap:8px}
 .ig-sort-create-footer{display:grid;flex-shrink:0;gap:8px;margin-top:8px}
 .ig-sort-create-divider{margin:0;border:0;border-top:1px solid #e7e5e4}

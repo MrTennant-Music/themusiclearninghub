@@ -3,12 +3,11 @@ const portraits=require('../music-dictionary/music-concepts-composer-portraits.j
 const source=fs.readFileSync('music-dictionary/music-concepts-audio-editor.js','utf8');
 const context={window:{MUSIC_CONCEPT_COMPOSER_PORTRAITS:portraits,MUSIC_CONCEPT_ARTIST_PORTRAITS:require('../music-dictionary/music-concepts-artist-portraits.json')}};
 vm.runInNewContext(source.slice(source.indexOf('  function audioDetails('),source.indexOf('  function AudioControls('))+';this.details=audioDetails;',context);
-test('composer portrait data agrees in the browser and source; local images exist and remote portraits have source credits',()=>{
+test('composer portrait data agrees in the browser and source, and all portraits are local',()=>{
  assert.deepEqual(require('../music-dictionary/music-concepts-composer-portraits.js'),portraits);
  for(const[name,item]of Object.entries(portraits.composers)){
-  assert.ok(item.src,name);
-  if(item.src.startsWith('./'))assert.ok(fs.statSync(path.resolve(item.src)).size>100,name+' local portrait exists');
-  else assert.match(item.src,/^https:\/\/upload\.wikimedia\.org\//);
+  assert.match(item.src,/^\.\/(?:music-dictionary\/composer-portraits\/[\w.-]+\.(?:jpg|png)|ui-icons\/assessment-cover-quavers\.svg)$/i,name);
+  assert.ok(fs.statSync(path.resolve(item.src)).size>100,name+' local portrait exists');
   if(item.status==='portrait'){assert.match(item.sourceUrl,/^https:\/\//);assert.ok(item.credit&&item.license);}
   else assert.equal(item.src,'./ui-icons/assessment-cover-quavers.svg');
  }

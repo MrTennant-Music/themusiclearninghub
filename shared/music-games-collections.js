@@ -3,6 +3,7 @@
  'use strict';
  const collectionEdition=2;
  const sortGroupLimit=10;
+ const dominoMinCards=10, dominoMaxCards=20;
  const visibleInLibrary=activity=>activity.collectionEdition===collectionEdition;
  const byId=new Map(D.concepts.map(c=>[c.id,c]));
  const literacyById=new Map(L.map(c=>[c.id,c]));
@@ -73,7 +74,19 @@
    return word?.length<=24?word:'';
   });
  }
+ function dominoConcepts(level, collection=null){
+  const source=collection?sharedConcepts(collection,true):D.concepts.filter(concept=>concept.level===D.levels[D.codes.indexOf(level)]);
+  const names=new Set(), definitions=new Set();
+  return source.filter(concept=>{
+   const name=C.canonical(concept.name), definition=C.canonical(concept.definition);
+   if(!name||!definition||names.has(name)||definitions.has(definition))return false;
+   names.add(name);definitions.add(definition);
+   return true;
+  });
+ }
  function sharedAvailability(collection, app){
+  if(app==='bingo')return bingoConcepts(collection).length<9?'Needs at least 9 distinct concepts with definitions':'';
+  if(app==='dominoes')return dominoConcepts(null,collection).length<dominoMinCards-1?'Needs at least 9 distinct concepts with definitions':'';
   const words=isWordPuzzle(app);
   if(!words&&!['sort','charades','escape','quizzes','millionaire'].includes(app))return 'This activity does not support collections';
   const concepts=sharedConcepts(collection,words||app==='charades');
@@ -81,6 +94,21 @@
   if(app==='sort'&&uniqueConcepts(concepts,concept=>C.canonical(concept.name)).length<2)return 'Needs at least two distinct, supported concepts';
   if(['charades','escape','quizzes'].includes(app)&&!concepts.length)return 'Needs at least one supported concept';
   return '';
+ }
+ function bingoClue({name,definition}){
+  if(name==='Allegro')return 'The Italian word for a fast tempo.';
+  if(!definition?.trim())return '';
+  const terms=name.split(' — ').at(-1).replace(/\s*\([^)]*\)$/, '')
+   .split(/ \/ | or /i).map(term=>term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const answer='(?:'+terms.join('|')+')(?:s)?';
+  const leadIn=new RegExp('^(?:a |an |the )?'+answer+' (?:is|are|means|refers to) ', 'i');
+  const mentions=new RegExp('(^|[^\\p{L}\\p{N}])'+answer+'(?=$|[^\\p{L}\\p{N}])', 'giu');
+  const clue=definition.trim().replace(leadIn,'').replace(mentions,'$1___');
+  return clue.charAt(0).toUpperCase()+clue.slice(1);
+ }
+ function bingoConcepts(collection){
+  const distinct=uniqueConcepts(dominoConcepts(null,collection),concept=>C.canonical(concept.name.replace(/\s+\([^)]*\)$/, '')));
+  return uniqueConcepts(distinct.map(concept=>({...concept,clue:bingoClue(concept)})),concept=>C.canonical(concept.clue));
  }
  function sharedConceptActivity(collection, level, template, shuffle=C.shuffle){
   const wordsOnly=isWordPuzzle(template);
@@ -136,5 +164,5 @@
  }
  const randomCrossword=(level,shuffle,includeBelow)=>randomWordPuzzle(level,'crossword',shuffle,includeBelow);
  const categoryCrossword=(level,category,shuffle,includeBelow)=>categoryWordPuzzle(level,category,'crossword',shuffle,includeBelow);
- return {randomWordPuzzle,categoryWordPuzzle,levelConcepts,literacyConcepts,literacyCollectionName,data:D,collectionEdition,sortGroupLimit,visibleInLibrary,eligible,columns,make,sharedAvailability,sharedConceptActivity,randomCrossword,categoryCrossword,categoryConcepts};
+ return {randomWordPuzzle,categoryWordPuzzle,levelConcepts,literacyConcepts,literacyCollectionName,data:D,collectionEdition,sortGroupLimit,visibleInLibrary,eligible,columns,make,sharedAvailability,sharedConceptActivity,randomCrossword,categoryCrossword,categoryConcepts,dominoConcepts,bingoConcepts,bingoClue,dominoMinCards,dominoMaxCards};
 });

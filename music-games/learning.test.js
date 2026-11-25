@@ -44,7 +44,7 @@ test('puzzles filter duplicates and unsupported answers without corrupting the g
     assert.equal(puzzle.placed.length, items.length);
   }
 });
-function playerHarness(mode, activity, deferredTimers = false, controlled, testOptions={}) {
+function playerHarness(mode, activity, deferredTimers = false, controlled, testOptions={}, classroomStorage) {
   const timers = new Map(), documentListeners = new Map(); let nextTimer=0, now=0;
   const effects = []; const slots = []; let cursor = 0, tree, completed = [], progress = [];
   const sameDeps = (a, b) => a && b && a.length === b.length && a.every((v, i) => Object.is(v, b[i]));
@@ -54,9 +54,16 @@ function playerHarness(mode, activity, deferredTimers = false, controlled, testO
     useRef(initial) { const i = cursor++; if (!(i in slots)) slots[i] = { current: initial }; return slots[i]; },
     useMemo(fn, deps) { const i = cursor++; if (!(i in slots) || !sameDeps(slots[i].deps, deps)) slots[i] = { value: fn(), deps }; return slots[i].value; },
     useEffect(fn, deps) { const i=cursor++; if (!(i in slots) || !sameDeps(slots[i],deps)) { slots[i]=deps; effects.push(fn); } },
-    useLayoutEffect() { cursor++; }
+    useLayoutEffect(fn,deps) {
+      if(classroomStorage)hooks.useEffect(fn,deps);
+      else cursor++;
+    }
   };
   const context = { React: hooks, window: { IGCore: require('./core.js'), IGDiagramModel: require('./diagram-core.js') }, setTimeout(fn,delay=0) { const id=++nextTimer; if (deferredTimers) timers.set(id,{fn,at:now+delay}); else fn(); return id; }, clearTimeout(id) { timers.delete(id); }, matchMedia() { return { matches: true }; } };
+  if(classroomStorage)context.window.MLH={classroomActivities:{...require('../shared/classroom-activities.js'),progressStorage:()=>({
+    read:(key,fallback)=>classroomStorage.get(key)??fallback,
+    write:(key,value)=>classroomStorage.set(key,JSON.parse(JSON.stringify(value))),
+  })}};
   vm.runInNewContext(source, context);
   function expand(node) { if (node == null || typeof node !== 'object') return node; if (typeof node.type === 'function') return expand(node.type(node.props)); return { ...node, props: { ...node.props, children: (node.props.children || []).map(expand) } }; }
   function render() { cursor = 0; tree = expand(hooks.createElement(context.window.IGLearning[mode], { activity, controlled, options: { shuffle: false, ...testOptions }, onComplete: value => completed.push(value), onProgress: value => progress.push(value), onSubmitAnswers:testOptions.onSubmitAnswers })); }
@@ -86,6 +93,45 @@ const shortActivity = { items: [
 function clickNode(game, node) { assert.ok(node, 'Expected an interactive element'); assert.ok(!node.props.disabled, 'Element should be enabled'); node.props.onClick({detail:0}); game.render(); }
 function clickByAriaLabel(game, label) { const node = game.nodes().find(n => n.type === 'button' && n.props['aria-label'] === label); clickNode(game, node); }
 function byClass(game, className) { return game.nodes().find(n => (n.props.className || '').split(' ').includes(className)); }
+test('classroom word puzzles restore committed progress and keep counting after reload',()=>{
+  const options={classroomSeed:73};
+  const wordStorage=new Map();
+  const puzzle=context.window.IGLearningPuzzles.makeWordsearch(shortActivity.items,require('../shared/classroom-activities.js').random(73));
+  const openSearch=()=>playerHarness('wordsearch',shortActivity,false,undefined,options,wordStorage);
+  const find=(game,word)=>word.cells.forEach(cell=>clickNode(game,game.nodes().find(node=>node.props['data-wordsearch-row']===cell.row&&node.props['data-wordsearch-col']===cell.col)));
+  let search=openSearch();
+  find(search,puzzle.placed[0]);
+  search.flushEffects();
+  search=openSearch();
+  search.flushEffects();
+  assert.equal(search.nodes().filter(node=>node.props.className==='ig-word-found').length,1);
+  find(search,puzzle.placed[1]);
+  search.flushEffects();
+  assert.equal(search.completed[0].correct,2);
+
+  const crosswordStorage=new Map();
+  const crossword=context.window.IGLearningPuzzles.makeCrossword(shortActivity.items);
+  const openCrossword=()=>playerHarness('crossword',shortActivity,true,undefined,options,crosswordStorage);
+  const chooseClue=(game,word)=>clickNode(game,game.nodes().find(node=>node.type==='button'&&node.props.className?.includes('ig-crossword-clue')&&game.text(node).includes(word.item.prompt)));
+  let cross=openCrossword();
+  chooseClue(cross,crossword.placed[0]);
+  cross.click(crossword.placed[0].word[0]);
+  cross.flushEffects();
+  cross=openCrossword();
+  cross.flushEffects();
+  assert.equal(cross.nodes().filter(node=>node.type==='input'&&node.props.value).length,1);
+  for(const word of crossword.placed){
+    chooseClue(cross,word);
+    while(byClass(cross,'ig-crossword-word-outline')){
+      const current=cross.nodes().find(node=>node.type==='input'&&!node.props.readOnly);
+      const cell=word.positions.find(pos=>current.props['aria-label'].startsWith(`Row ${pos.row-crossword.minR+1}, column ${pos.col-crossword.minC+1}`));
+      assert.ok(cell);
+      cross.click(crossword.cells.get(`${cell.row},${cell.col}`).letter);
+    }
+  }
+  cross.advanceBy(900);
+  assert.equal(cross.completed[0].correct,2);
+});
 function finishAndCheck(game, correct = 2, total = 2) { game.click(game.nodes().some(node=>node.type==='button'&&game.text(node)==='Finish')?'Finish':'Next'); assert.equal(game.completed.length, 1); assert.equal(game.completed[0].correct, correct); assert.equal(game.completed[0].total, total); assert.ok(game.progress.every(p => p.total === total), 'Progress must retain the full activity denominator'); }
 test('multiple choice, game show, wager and true-false complete through real answer actions', () => {
   for (const mode of ['quiz', 'true-or-false']) {
@@ -862,4 +908,13 @@ test('crossword review keeps inputs read-only and its keyboard stopped',()=>{
  clue.props.onClick();game.render();
  assert(game.nodes().filter(n=>n.type==='input').every(n=>n.props.readOnly));
  assert(byClass(game,'ig-crossword-keyboard').props.children.every(n=>n.props.disabled));assert.equal(game.progress.length,0);
+});
+
+test('a classroom seed fixes the Word Search letters, clues and answer coordinates', () => {
+  const { random } = require('../shared/classroom-activities.js');
+  const make = context.window.IGLearningPuzzles.makeWordsearch;
+  const first = make(items, random(123456789));
+  const second = make(items, random(123456789));
+  assert.deepEqual(first, second);
+  assert.notDeepEqual(first.grid, make(items, random(123456790)).grid);
 });

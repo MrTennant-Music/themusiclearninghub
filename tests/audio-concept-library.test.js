@@ -132,14 +132,16 @@ test('legacy Multiple Concepts URL selects its level instead of an empty catalog
  assert.equal((h.element('library-results').innerHTML.match(/class="library-download"/g)||[]).length,c.files.length);
 });
 
-test('every excerpt has compact local artwork, unnamed clips retain quavers, and musicals use posters',async()=>{
+test('every excerpt has compact local JPEG artwork, unnamed clips retain quavers, and musicals use posters',async()=>{
  const h=harness();await h.ready();
  const entries=JSON.parse(fs.readFileSync(path.join(root,'music-dictionary/library-portraits/manifest.json'),'utf8')).artists;
  for(const [artist,entry] of Object.entries(entries)) {
   if(entry.kind==='placeholder')continue;
   const file=path.resolve(root,entry.src);
   assert(file.startsWith(path.join(root,'music-dictionary','library-portraits')+path.sep));
-  assert(fs.existsSync(file),artist);assert(fs.statSync(file).size<15000,artist);
+  const bytes=fs.readFileSync(file);
+  assert.equal(bytes.toString('hex',0,3),'ffd8ff',artist);
+  assert(bytes.length<15000,artist);
   assert(entry.width<=128 && entry.height<=128,artist);assert(entry.sourceUrl,artist);
  }
  for(const c of catalogue.concepts){

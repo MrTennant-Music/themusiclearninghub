@@ -1,0 +1,20 @@
+.pitched-toolbar{position:relative;z-index:2;display:flex;justify-content:flex-end;height:0}
+.pitched-toolbar>.pitched-fullscreen{position:absolute;top:0;right:0}
+.pitched-game-window{position:relative;box-sizing:border-box;width:100%;min-height:600px;overflow:visible;background:#fff}
+.pitched-fullscreen{display:grid;place-items:center;box-sizing:border-box;width:44px;height:44px;padding:4px;border:1px solid #d6d3d1;border-radius:50%;background:#fff;color:#292524;cursor:pointer}
+.pitched-fullscreen:hover{background:#e7e5e4}
+.pitched-fullscreen:disabled{opacity:.4;cursor:default}
+.pitched-fullscreen-exit{display:none}
+.pitched-game-window:fullscreen{position:fixed;inset:0;width:100%;height:100%;margin:0;border:0;border-radius:0;overflow-y:auto;background:#fff}
+.pitched-game-window:fullscreen>.pitched-native-game{min-height:100%;display:grid;align-items:center;background:#fff}
+.pitched-game-window:fullscreen>.pitched-fullscreen-exit{position:fixed;top:16px;right:16px;z-index:2;display:grid}
+.pitched-fullscreen-error{margin:48px 0 12px;color:#b91c1c;font-size:14px;line-height:20px}
+
+
+
+.pitched-fullscreen-stats{position:absolute;top:16px;right:76px;z-index:3;width:256px}
+.pitched-game-window:fullscreen>.pitched-native-game{padding-top:88px;box-sizing:border-box}
+
+.pitched-game-type{position:absolute;top:0;left:0;z-index:4}
+.pitched-game-window:fullscreen>.pitched-game-type{top:16px;left:16px}
+

@@ -13,7 +13,7 @@ const window = {
   PracticeMelodyGenerator: require('../practice-melody-generator.js'),
 };
 for(const file of ['bravura-symbols.js','shared/shared-notation-config.js'])vm.runInNewContext(fs.readFileSync(file,'utf8'),{window});
-const context = {React:require('react'),window,console,performance,setTimeout,clearTimeout};
+const context = {React:require('react'),window,console,performance,URLSearchParams,setTimeout,clearTimeout};
 vm.createContext(context);
 // Exercise actual generation and serialization; browser checks cover score rendering.
 const exposed = script.replace(bootstrap, `
@@ -69,4 +69,21 @@ test('AH interactive and worksheet generation accepts every AH key through the r
   } finally {
     vm.runInContext('randomPracticeKeyWith = originalKeyPicker;',context);
   }
+});
+
+test('audio worksheets carry listening tasks and completed answer scores at every level',{timeout:30000},async()=>{
+ for(const level of ['N3','N4','N5','H','AH']){
+  const config=await context.worksheetTestApi.buildPracticeWorksheetConfig(level,undefined,true);
+  assert.equal(config.settings.excludeAudio,false);
+  assert.equal(config.settings.practicePapers.length,20);
+  for(const paper of config.settings.practicePapers){
+   assert.equal(paper.parts.length,level==='AH'?8:6);
+   assert.ok(paper.answerMarkup,level);
+   assert.ok(paper.parts.some(part=>part.audio),level);
+   for(const part of paper.parts.filter(part=>part.audio)){
+    assert.ok(part.answer,level);
+    assert.equal(part.playbackCue,undefined);
+   }
+  }
+ }
 });

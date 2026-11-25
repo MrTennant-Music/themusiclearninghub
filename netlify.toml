@@ -17,3 +17,8 @@
 
 [context.branch-deploy.environment]
   CLASSROOM_ENABLED = "false"
+
+[[redirects]]
+  from = "/triplets.html"
+  to = "/rhythmicdictation.html?level=H&exercise=identifyTriplet"
+  status = 301

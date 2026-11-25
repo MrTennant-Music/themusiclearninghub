@@ -1,7 +1,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),React=require('react');const root=path.resolve(__dirname,'../..');
 module.exports=function(runtime=fs.readFileSync(path.join(root,'generated-runtimes/rhythmicdictation-1.js'),'utf8')){
  let state=8217;const math=Object.create(Math);math.random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;};const window={MLH:{}};
- const c=vm.createContext({window,React,Math:math,console});for(const f of ['rhythm-writing-core.js','bravura-symbols.js','shared/shared-notation-config.js','shared/escape-literacy-activity.js'])vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),c);
+ const c=vm.createContext({window,React,Math:math,console});for(const f of ['rhythm-writing-core.js','bravura-symbols.js','shared/shared-notation-config.js','shared/escape-literacy-activity.js','generated-runtimes/rhythmicdictation-triplets-1.js'])vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),c);
  const entry=runtime.indexOf('ReactDOM.createRoot(document.getElementById("root"))');if(entry<0)throw Error('Rhythmic Dictation entry point missing');
  vm.runInContext(runtime.slice(0,entry)+'globalThis.audit={makeEscapeDictationQuestion,makeQuestion,answerState,applyPlacement,validPattern,tripletPlacementRange,visibleQuestionTypeIdsForLevel,defaultQuestionTypesForLevel,keysForLevel,makeLongInsertQuestion,makeScotchSnapQuestion,isScotchSnapCandidate,Writing,LEVELS,TIME_SIGNATURES,rhythmInfo,buildLayouts,getTripletGroups,getQuaverGroups,effectiveAccidental,pitchForNote,Score,NotesGroup,RhythmPlacementTarget,LongInsertRhythmScore,CHORDS,IDENTIFY_CHORDS,BAR_COUNT,getAudioRhythm,audioSlicesForRhythm,midiToFrequency,chordToneMidi,clamp,App};',c);return c.audit;
 };

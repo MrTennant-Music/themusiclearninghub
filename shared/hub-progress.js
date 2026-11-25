@@ -1,11 +1,17 @@
 /* Scores and personal bests persist; current streaks belong to one page load.
-   Playback tempo and metronome do not divide scores. Medals remain separate. */
+   Playback controls and help preferences share the same score record. */
 (function () {
   const MLH = window.MLH = window.MLH || {};
   const prefix = "mlh:activity-progress:v1:";
   const fallback = new Map();
   const streakSession = window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`;
   const activeStreakFields = new Set(["streak", "followStreak", "currentStreak"]);
+  const scoreNeutralOptions = new Set([
+    "tempo", "bpm", "playbackTempo", "metronome", "metronomeOn", "metronomeEnabled",
+    "follow", "followPlayback", "highlightPlayback",
+    "showC", "showHelp", "showHints", "showNoteNames", "showFollowNoteNames",
+    "noteNamesVisible", "showRhythmGuide", "showScaleDegrees", "revealKey",
+  ]);
 
   function resetActiveStreaks(value) {
     if (!value || typeof value !== "object" || Array.isArray(value)) return value;
@@ -25,13 +31,15 @@
   }
 
   function scoreSettings(settings) {
-    if (!settings || typeof settings !== "object" || Array.isArray(settings) || !settings.options || typeof settings.options !== "object" || Array.isArray(settings.options)) return settings;
-    const audioOptions = new Set(["tempo", "bpm", "playbackTempo", "metronome", "metronomeOn", "metronomeEnabled"]);
-    return { ...settings, options: Object.fromEntries(Object.entries(settings.options).filter(([name]) => !audioOptions.has(name))) };
+    if (!settings || typeof settings !== "object" || Array.isArray(settings)) return settings;
+    const { options } = settings;
+    if (!Object.hasOwn(settings, "options") && Object.hasOwn(settings, "questions")) return { ...settings, options: {} };
+    if (!options || typeof options !== "object" || Array.isArray(options)) return settings;
+    return { ...settings, options: Object.fromEntries(Object.entries(options).filter(([name]) => !scoreNeutralOptions.has(name))) };
   }
 
-  function stateKey({ level, scope = "", settings = null }, includeAudio = false) {
-    return prefix + JSON.stringify([(MLH.pageIdentity || (name => name))(window.location.pathname.split("/").pop()), level, scope, stableValue(includeAudio ? settings : scoreSettings(settings))]);
+  function stateKey({ level, scope = "", settings = null }, includePreferences = false) {
+    return prefix + JSON.stringify([(MLH.pageIdentity || (name => name))(window.location.pathname.split("/").pop()), level, scope, stableValue(includePreferences ? settings : scoreSettings(settings))]);
   }
 
   function validValue(value, initial) {
@@ -48,7 +56,7 @@
       const stored = JSON.parse(window.localStorage.getItem(key));
       if (stored?.version === 1 && stored.fields && typeof stored.fields === "object" && !Array.isArray(stored.fields)) return restoredFields(stored);
       const [currentActivity, currentLevel, currentScope, currentSettings] = JSON.parse(key.slice(prefix.length));
-      // Start with the pupil's existing score for their current audio settings.
+      // Start with the pupil's existing score for their current preferences.
       // Old entries remain intact; do not add together separate attempts.
       if (legacyKey && legacyKey !== key) {
         const previous = JSON.parse(window.localStorage.getItem(legacyKey));
@@ -85,9 +93,16 @@
   MLH.usePersistentScoreState = function (initial, field, options) {
     const key = stateKey(options);
     const legacyKey = stateKey(options, true);
-    const [state, setState] = window.React.useState(() => ({ key, value: load(key, field, initial, legacyKey) }));
+    const classroom = MLH.classroomExercise ? MLH.classroomActivities?.progressStorage?.() : null;
+    const classroomKey = key + ":" + field;
+    const freshScore = () => {
+      if (!MLH.classroomExercise) return load(key, field, initial, legacyKey);
+      const value = classroom?.read(classroomKey, initial);
+      return validValue(value, initial) ? value : initial;
+    };
+    const [state, setState] = window.React.useState(() => ({ key, value: freshScore() }));
     // Restore the matching score before committing a different level or exercise.
-    if (state.key !== key) setState({ key, value: load(key, field, initial, legacyKey) });
+    if (state.key !== key) setState({ key, value: freshScore() });
     const setValue = window.React.useCallback(update => {
       setState(current => ({ ...current, value: typeof update === "function" ? update(current.value) : update }));
     }, []);
@@ -95,6 +110,10 @@
 
     window.React.useLayoutEffect(() => {
       if (state.key !== key || !validValue(state.value, initial) || MLH.worksheetHeaderMode) return;
+      if (MLH.classroomExercise) {
+        classroom?.write(classroomKey, state.value);
+        return;
+      }
       const fields = { ...read(key, legacyKey), [field]: state.value };
       fallback.set(key, fields);
       try { window.localStorage.setItem(key, JSON.stringify({ version: 1, fields, streakSession })); } catch { /* Scoring remains available without browser storage. */ }

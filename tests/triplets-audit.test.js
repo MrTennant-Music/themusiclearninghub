@@ -16,15 +16,14 @@ test('A minor leading-note accidentals are repeated for a new octave only',()=>{
  assert.deepEqual(Array.from(a.applyWrittenAccidentals(notes,key),n=>n.writtenAccidental),[1,1,null,null]);
 });
 test('actual marking accepts either selection order and rejects wrong groups and duplicate notes',()=>{
- const a=load(),page=fs.readFileSync('triplets.html','utf8'),source=page.match(/<script type="text\/x-mlh-jsx-source"[^>]*>([\s\S]*?)<\/script>/)[1],ast=Babel.packages.parser.parse(source,{plugins:['jsx']}),functions=[];
- function walk(n){if(!n||typeof n!=='object')return;if(n.type==='FunctionDeclaration'&&n.id?.name==='confirmAnswer')functions.push(n);for(const v of Object.values(n)){if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v==='object')walk(v);}}walk(ast);
- const fn=Babel.packages.generator.default(functions[0]).code;
+ const a=load();
  for(let i=0;i<50;i++){
-  const question=a.createQuestion();let result,prompt;
-  const c=vm.createContext({...a,feedback:null,question,selectedNoteIds:[...question.targetNoteIds].reverse(),setPrompt:p=>prompt=p,scoreAnswer:r=>result=r});vm.runInContext(fn,c);vm.runInContext('confirmAnswer()',c);assert.equal(result,'correct');
-  c.selectedNoteIds=question.bars.find((_,bar)=>bar!==question.targetBarIndex).notes.slice(0,3).map(n=>n.id);result=undefined;vm.runInContext('confirmAnswer()',c);assert.notEqual(result,'correct');
-  c.selectedNoteIds=[question.targetNoteIds[0],question.targetNoteIds[0],question.targetNoteIds[1]];result=undefined;vm.runInContext('confirmAnswer()',c);assert.notEqual(result,'correct');
-  c.selectedNoteIds=[];result=undefined;vm.runInContext('confirmAnswer()',c);assert.equal(result,undefined);assert.match(prompt,/exactly three/);
+  const question=a.createQuestion();
+  assert.equal(a.checkSelection(question,[...question.targetNoteIds].reverse()),true);
+  const wrongBar=question.bars.find((_,bar)=>bar!==question.targetBarIndex);
+  assert.equal(a.checkSelection(question,wrongBar.notes.slice(0,3).map(note=>note.id)),false);
+  assert.equal(a.checkSelection(question,[question.targetNoteIds[0],question.targetNoteIds[0],question.targetNoteIds[1]]),false);
+  assert.equal(a.checkSelection(question,[]),false);
  }
 });
 test('score notes have keyboard targets and become inactive after marking',()=>{
@@ -34,7 +33,7 @@ test('score notes have keyboard targets and become inactive after marking',()=>{
  }
 });
 test('worksheets vary keys, metres, group counts and triplet kinds independently and draw crotchet brackets',()=>{
- const a=require('./helpers/worksheet-generator-harness.cjs')({version:1,activityId:'triplets',sourceUrl:'http://localhost:8765/triplets.html',settings:{level:'H'}}),keys={},metres={},kinds={},combinations=new Set();
+ const a=require('./helpers/worksheet-generator-harness.cjs')({version:1,activityId:'triplets',sourceUrl:'http://localhost:8765/rhythmicdictation.html?level=H&exercise=identifyTriplet',settings:{level:'H'}}),keys={},metres={},kinds={},combinations=new Set();
  for(let i=0;i<6000;i++){
   const q=a.makeQuestion(i%20),expected=Number(q.timeSignature[0]);keys[q.key.id]=(keys[q.key.id]||0)+1;metres[q.timeSignature]=(metres[q.timeSignature]||0)+1;
   assert.ok(q.tripletGroups.length>=1&&q.tripletGroups.length<=3);combinations.add(`${q.timeSignature}/${q.tripletGroups.length}`);
@@ -52,8 +51,8 @@ test('worksheets vary keys, metres, group counts and triplet kinds independently
  for(const metre of ['2/4','3/4','4/4'])for(const count of [1,2,3])assert.ok(combinations.has(`${metre}/${count}`));for(const key of Object.keys(keys))for(const kind of ['quaver','crotchet'])assert.ok(combinations.has(`${key}/${kind}`));
 });
 test('Triplets and worksheet runtimes match the current sources',()=>{
- const options={presets:['react'],sourceMaps:false,comments:false,compact:true},page=fs.readFileSync('triplets.html','utf8'),source=page.match(/<script type="text\/x-mlh-jsx-source"[^>]*>([\s\S]*?)<\/script>/)[1];
- assert.equal(fs.readFileSync('generated-runtimes/triplets-1.js','utf8'),Babel.transform(source,options).code+'\n');assert.equal(fs.readFileSync('generated-runtimes/worksheetgenerator-2.js','utf8'),Babel.transform(fs.readFileSync('worksheet-generic.jsx','utf8'),options).code+'\n');
+ const options={presets:['react'],sourceMaps:false,comments:false,compact:true},page=fs.readFileSync('rhythmicdictation.html','utf8'),source=page.match(/data-runtime="rhythmicdictation-triplets-1\.js">([\s\S]*?)<\/script>/)[1];
+ assert.equal(fs.readFileSync('generated-runtimes/rhythmicdictation-triplets-1.js','utf8'),Babel.transform(source,options).code+'\n');assert.equal(fs.readFileSync('generated-runtimes/worksheetgenerator-2.js','utf8'),Babel.transform(fs.readFileSync('worksheet-generic.jsx','utf8'),options).code+'\n');
 });
 
 test('valid alternative crotchet groupings are accepted without accepting an underfilled normal bar',()=>{
@@ -63,8 +62,13 @@ test('valid alternative crotchet groupings are accepted without accepting an und
 });
 
 test('feedback does not advance when a toolbar control or menu is pressed',()=>{
- const page=fs.readFileSync('triplets.html','utf8'),source=page.match(/<script type="text\/x-mlh-jsx-source"[^>]*>([\s\S]*?)<\/script>/)[1],ast=Babel.packages.parser.parse(source,{plugins:['jsx']});let callback;
- function walk(n){if(!n||typeof n!=='object')return;if(n.type==='JSXOpeningElement'&&n.name.name==='main'){const handler=n.attributes.find(a=>a.name?.name==='onPointerDown');if(handler)callback=handler.value.expression;}for(const v of Object.values(n)){if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v==='object')walk(v);}}walk(ast);
- let advances=0;const fn=vm.runInNewContext('('+Babel.packages.generator.default(callback).code+')',{feedback:'incorrect',fadeToNextQuestion:()=>advances++});
- fn({target:{closest:()=>({tagName:'BUTTON'})}});assert.equal(advances,0);fn({target:{closest:()=>null}});assert.equal(advances,1);
+ const page=fs.readFileSync('rhythmicdictation.html','utf8');
+ const source=page.match(/data-runtime="rhythmicdictation-1\.js">([\s\S]*?)<\/script>/)[1];
+ const ast=Babel.packages.parser.parse(source,{plugins:['jsx']});
+ const app=ast.program.body.find(node=>node.type==='FunctionDeclaration'&&node.id.name==='App');
+ const handler=app.body.body.find(node=>node.type==='FunctionDeclaration'&&node.id.name==='handleFeedbackAdvance');
+ let advances=0;
+ const fn=vm.runInNewContext('('+Babel.packages.generator.default(handler).code+')',{feedback:{correct:false},fadeToNextQuestion:()=>advances++});
+ fn({target:{closest:()=>({tagName:'BUTTON'})}});assert.equal(advances,0);
+ fn({target:{closest:()=>null}});assert.equal(advances,1);
 });

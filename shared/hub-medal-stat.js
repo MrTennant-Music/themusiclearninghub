@@ -25,7 +25,7 @@
     return h('div',{key:item.tier,className:medal===item.tier?'medal-threshold-active':''},h('img',{src:award.icon,alt:award.label}),h('span',{style:{color:award.color}},item.label));
    })));
  }
- function ResetStat({label,children,onReset}){
+ function ResetStat({label,ariaLabel=label,fillPercent,children,onReset}){
   const [open,setOpen]=React.useState(false),anchor=React.useRef(null);
   React.useEffect(()=>{
    const close=event=>{if(!anchor.current?.contains(event.target))setOpen(false);};
@@ -33,8 +33,9 @@
    document.addEventListener('pointerdown',close,true);document.addEventListener('keydown',escape);
    return()=>{document.removeEventListener('pointerdown',close,true);document.removeEventListener('keydown',escape);};
   },[]);
-  return h('section',{ref:anchor,className:'ig-header-stat hub-reset-stat'},
-   h('button',{type:'button',className:`hub-stat-trigger ${open?MLH.shell.scoreTileActiveClass:''}`,'aria-label':label+'. Show reset','aria-expanded':open,'aria-controls':'ig-stat-reset',onClick:()=>setOpen(value=>!value)},h('span',{className:'ig-header-stat-label'},label),children),
+  return h('section',{ref:anchor,className:`ig-header-stat hub-reset-stat ${open?MLH.shell.scoreTileActiveClass:''}`},
+   fillPercent!=null&&h(MLH.ScoreTileFill,{percent:fillPercent}),
+   h('button',{type:'button',className:'hub-stat-trigger relative','aria-label':ariaLabel+'. Show reset','aria-expanded':open,'aria-controls':'ig-stat-reset',onClick:()=>setOpen(value=>!value)},h('span',{className:'ig-header-stat-label'},label),children),
    open&&h('button',{id:'ig-stat-reset',type:'button',className:'fixed-popover-button score-reset-button hub-stat-reset-action',onClick:()=>{setOpen(false);onReset?.();}},'Reset'));
  }
  MLH.ResetStat=ResetStat;

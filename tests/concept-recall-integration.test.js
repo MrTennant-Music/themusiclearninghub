@@ -112,10 +112,11 @@ assert(page.includes("function groupRowsByCategory(rows, priorityLevel)"), "Conc
 assert(page.includes('className="concept-category-title"'), "Each category container should use the category as its heading");
 assert(!page.includes('<th scope="col">Category</th>'), "Category should not be repeated as a table column");
 assert(!page.includes("<thead>"), "Category containers should not show an Answer or Hint heading row");
-assert(page.includes("return { showHints: false, categoriesByLevel: {} };") && page.includes("const [showHints, setShowHints] = useState(() => savedCustomise.showHints);"), "Hints should be off by default but restore the pupil's saved choice");
+assert(page.includes("return { showHints: false, categoriesByLevel: {} };") && page.includes(": savedCustomise.showHints);"), "Individual practice should restore the pupil's saved hints choice");
+assert(page.includes('new URLSearchParams(location.search).get("hints") === "1" : savedCustomise.showHints'), "Hosted practice should use the teacher’s hints setting");
 assert(page.includes("const hintsVisible = showHints;"), "Hints should appear immediately when enabled");
 assert(page.includes("const stylesCategory = isStylesCategory(group.category);") && page.includes("const groupShowsHints = showHints || stylesCategory;") && page.includes('data-hints={groupShowsHints ? "on" : "off"}') && page.includes('{groupShowsHints && <div className="concept-hint-cell">'), "Style-identification hints should remain visible even when general hints are switched off");
-assert(page.includes('label="Hints"') && page.includes('toggleHints={() => requestSettingChange({ type: "hints" })}'), "Customise should include an active Hints switch");
+assert(page.includes('label="Hints"') && page.includes('toggleHints={() => setShowHints((visible) => !visible)}'), "Customise should include an active Hints switch");
 assert(page.includes('<span>Reset</span>') && page.includes('resetCustomise={() => requestSettingChange({ type: "reset" })}'), "Customise should place a Reset button after the final Styles category option");
 assert(page.includes('.concept-customise-reset { cursor: pointer; justify-content: center; border-color: #000; background: #000; color: #fff; }') && page.includes('.concept-customise-reset .hub-toggle-label { color: #fff; }'), "The Reset option should be a black button with centred white text");
 assert(page.includes('if (change.type === "reset")') && page.includes("setShowHints(false);") && page.includes("const categories = standardCategoriesAtLevel(activeLevel);"), "Reset should restore the level's default categories and turn Hints off");
@@ -171,7 +172,7 @@ assert(page.includes('"National 5 Styles": "./app-icons/notenaming-icon.svg"') &
 assert(page.includes('category === "Fugue"') && page.includes("concept-category-icon-reduced-25") && page.includes("concept-category-menu-icon-reduced-25") && page.includes("transform: scale(.75)"), "The Fugue artwork should be reduced by 25 percent in both locations");
 assert(!page.includes("SelectedLevelOnlyToggle"), "Concept Recall should use its assigned questions without a scope toggle");
 assert(page.includes("const standardGame = standardCategories.every((category) => selectedCategories.includes(category));"), "Extra categories should retain medal eligibility while removing default categories disables it");
-assert(page.includes('N5: ["National 5 Styles"]') && page.includes('H: ["Higher Styles", "Orchestral families"]') && page.includes('AH: ["Advanced Higher Styles", "Bass lines", "Concerto grosso", "Orchestral families"]'), "Each matching Styles category and the requested supplementary groups should start switched off");
+assert(core.includes('N5: ["National 5 Styles"]') && core.includes('H: ["Higher Styles", "Orchestral families"]') && core.includes('AH: ["Advanced Higher Styles", "Bass lines", "Concerto grosso", "Orchestral families"]'), "Each matching Styles category and the requested supplementary groups should start switched off");
 assert(page.includes('N5: "National 5 Styles"') && page.includes('H: "Higher Styles"') && page.includes('AH: "Advanced Higher Styles"') && page.includes("category === STYLE_CATEGORY_BY_LEVEL[level]"), "Label the current Styles category separately from earlier categories");
 assert(page.includes("const aStyles = isStylesCategory(a);") && page.includes("const bStyles = isStylesCategory(b);") && page.includes("return aStyles ? 1 : -1;"), "Customise should keep the matching Styles category at the end of the category list");
 assert(page.includes("function standardQuestionsAtLevel(level)") && page.includes("function standardCategoriesAtLevel(level)"), "Default-off groups should remain available in Customise without changing standard-game eligibility");
@@ -203,7 +204,7 @@ assert(page.includes('{ key: "diamond", label: "Diamond", value: limits.diamond'
 assert(page.includes('bestTime != null && <span') && page.includes('bestScore != null && <span'), "Timer and Score content should remain vertically centred until a Best record is present underneath");
 assert(core.includes("function medalTimeLimits(level)") && page.includes("CORE.medalTimeLimits(activeLevel)"), "The medal drop-down and awards should share the same elapsed-time thresholds");
 assert(page.includes("aria-expanded={medalEligible ? medalsOpen : undefined}") && page.includes("fixed-popover-button") && page.includes("thresholds.map"), "The Timer card should open a Rhythm Identification-style medal drop-down");
-assert(page.includes("const medalEligible = standardGame;") && page.includes("medalEligible={medalEligible}") && page.includes("Medals unavailable with custom categories"), "Standard category games should offer medals with hints either on or off");
+assert(page.includes("const medalEligible = standardGame && !classroomRound;") && page.includes("medalEligible={medalEligible}") && page.includes("Medals unavailable with custom categories"), "Standard category games should offer medals with hints either on or off");
 assert(page.includes("standardGame, medalEligible, completedAt") && core.includes("result?.medalEligible !== false"), "Only medal-eligible attempts should update medal records");
 assert(!page.includes('!active && !medalsOpen ? "opacity-45 grayscale"'), "The Timer card should not be greyed out before a standard game starts");
 assert(!page.includes(">within</span>") && page.includes('earnedMedalStyle') && page.includes('earnedMedal={resultsOpen ? result?.medal : null}'), "The medal pop-down should omit within text and colour the completed time by earned medal");
@@ -225,8 +226,8 @@ assert(core.includes("function elapsedMilliseconds"), "Timestamp timer logic sho
 assert(core.includes("function updatePersistence"), "Versioned persistence should be separate from rendering");
 assert(core.includes('const STORAGE_KEY = "mlh-concept-recall-v1"'), "Concept Recall should use a versioned storage key");
 assert(page.includes('const CUSTOMISE_STORAGE_KEY = "mlh-concept-recall-customise-v1"') && page.includes("function loadCustomisePreferences") && page.includes("function saveCustomisePreferences"), "Customise choices should use their own versioned browser storage record");
-assert(page.includes("const [showHints, setShowHints] = useState(() => savedCustomise.showHints);") && page.includes("const [selectedCategories, setSelectedCategories] = useState(() => initialCategories);"), "Saved Hints and category choices should be restored when Concept Recall loads");
-assert(page.includes("const initialCategories = savedCategoriesAtLevel(savedCustomise, initialLevel, priorDefaults);") && page.includes("[activeLevel]: selectedCategories"), "Customise switches should persist when the page is refreshed");
+assert(page.includes(": savedCustomise.showHints);") && page.includes("const [selectedCategories, setSelectedCategories] = useState(() => initialCategories);"), "Saved Hints and category choices should be restored when individual practice loads");
+assert(page.includes(": savedCategoriesAtLevel(savedCustomise, initialLevel, priorDefaults);") && page.includes("[activeLevel]: selectedCategories"), "Customise switches should persist when the page is refreshed");
 assert(page.includes("function applyLevel(level) {") && page.includes("const categories = standardCategoriesAtLevel(level);"), "Selecting a level from a Custom setup should restore that level's default category toggles");
 
 assert(index.includes('"Concept Recall": "app-icons/concept-recall-icon.svg"'), "The Concept Recall icon mapping is missing from index.html");

@@ -125,7 +125,7 @@ assert.doesNotMatch(examUiSource, /q8-final-answer-marks|finalAnswerMark/, "Ques
 assert.match(examUiSource, /data-final-answer-line/, "Structured Final answer areas should provide an independent input on every ruled line.");
 assert.match(examUiSource, /finalLines\.join\("\\n"\)/, "Independent Final answer lines should remain one combined marked response.");
 assert.match(examUiSource, /q8-final-answer-lines[\s\S]*data-final-answer-line/, "The shared Final answer layout should support the Higher and National 5 ruled-line questions.");
-assert.match(examStyles, /\.q8-final-answer-line:focus-within\s*\{[^}]*border-bottom:\s*2px solid #111;/, "Only the active Final answer line should receive the bold focus rule.");
+assert.match(examStyles, /\.q8-final-answer-line:focus-within\s*\{[^}]*border-bottom:\s*2px solid var\(--mlh-focus-color, #2563eb\);/, "Only the active Final answer line should receive the blue focus rule.");
 assert.match(examStyles, /\.q8-final-answer-line input:focus\s*\{[^}]*box-shadow:\s*none;/, "Final answer lines should not show a whole-box focus outline.");
 
 assert.equal(paper.questions.length, 8, "The paper should contain eight main questions.");

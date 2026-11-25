@@ -8,7 +8,7 @@ module.exports=function loadFollowScore(runtime=fs.readFileSync(path.join(root,'
  const context=vm.createContext({window,React,Math:math,console,Date:class extends Date {static now(){return 1794441600000;}},performance,setTimeout,clearTimeout});
  const launch=runtime.match(/ReactDOM\.createRoot\(document\.getElementById\("root"\)\)\.render\(React\.createElement\(App[^;]*;/)?.[0];
  if(!launch)throw Error('Follow the Score entry point not found');
- vm.runInContext(runtime.replace(launch,'globalThis.audit={makeEscapeFollowScoreQuestion,makeFollowScoreQuestion,makeFollowScoreRepeat,followScoreNoteSounds,followScoreStopAfterSeconds,repeatPlaybackBars,timeSignatureForBar,rhythmInfo,Score,makeFinalBarNotes,TIME_SIGNATURES,KEYS,noteByLetter,followScoreQuestionFingerprint,buildNational5PhraseBar};'),context);
+ vm.runInContext(runtime.replace(launch,'globalThis.audit={makeEscapeFollowScoreQuestion,makeFollowScoreQuestion,makeFollowScoreRepeat,followScoreNoteSounds,followScoreStopAfterSeconds,repeatPlaybackBars,timeSignatureForBar,rhythmInfo,Score,makeFinalBarNotes,TIME_SIGNATURES,KEYS,noteByLetter,followScoreQuestionFingerprint,buildNational5PhraseBar,makeEightBarRepetitionQuestion};'),context);
  const result=context.audit;
  const generate=result.makeFollowScoreQuestion;
  result.makeFollowScoreQuestion=(level)=>{

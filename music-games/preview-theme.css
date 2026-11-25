@@ -41,7 +41,7 @@
 .ig-session.ig-theme-classic .ig-game-stage .ig-arc-choices button:hover:not(:disabled) {
   background:var(--ig-tile);color:var(--ig-ink);border:0;filter:brightness(1.04);box-shadow:var(--ig-shadow);transform:translateY(-1px);
 }
-.ig-session.ig-theme-classic .ig-game-stage button:focus-visible {outline:3px solid var(--ig-game-accent,#125287);outline-offset:4px}
+.ig-session.ig-theme-classic .ig-game-stage button:focus-visible {outline:3px solid var(--mlh-focus-color, #2563eb);outline-offset:4px}
 .ig-session.ig-theme-classic .ig-game-stage button[aria-pressed=true]:not(.ig-correct):not(.ig-incorrect) {outline:3px solid var(--ig-game-accent,#125287);outline-offset:3px}
 .ig-session.ig-theme-classic .ig-game-stage .ig-learning .ig-learning-primary,
 .ig-session.ig-theme-classic .ig-game-stage .ig-learning .ig-learning-primary:hover:not(:disabled),
@@ -151,11 +151,11 @@ html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-col
 html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-results button{background:var(--ig-game-accent)!important;border-color:var(--ig-game-accent)!important;color:var(--ig-game-button-ink)!important;box-shadow:0 4px 0 var(--ig-game-accent-dark)!important;text-shadow:none}
 html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-game-stage button:not(.ig-correct):not(.ig-incorrect):not(:disabled):hover,
 html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-results button:hover{filter:brightness(1.08)}
-html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-game-stage button:focus-visible{outline-color:var(--ig-game-accent)!important}
+html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-game-stage button:focus-visible{outline-color:var(--mlh-focus-color, #2563eb)!important}
 html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-game-stage button.ig-correct{background:#dcfce7!important;color:#166534!important;border-color:#22c55e!important}
 html body .ig-session:is(.ig-colour-blue,.ig-colour-red,.ig-colour-green,.ig-colour-yellow,.ig-colour-black) .ig-game-stage button.ig-incorrect{background:#fee2e2!important;color:#991b1b!important;border-color:#f87171!important}
 html body .ig-session.ig-colour-black .ig-game-stage button:not(.ig-correct):not(.ig-incorrect){background:#000!important;border-color:#000!important;color:#fff!important;box-shadow:0 4px 0 #000!important}
-html body .ig-session.ig-colour-black .ig-game-stage button:focus-visible{outline-color:#fff!important}
+html body .ig-session.ig-colour-black .ig-game-stage button:focus-visible{outline-color:var(--mlh-focus-color, #2563eb)!important}
 @keyframes ig-feedback-appear{from{opacity:0;transform:translateY(7px) scale(.96)}to{opacity:1;transform:none}}
 @keyframes ig-sort-nest{0%{translate:0 -8px;scale:.94}62%{translate:0 2px;scale:1.035}100%{translate:0 0;scale:1}}
 html body .ig-session .ig-learning-feedback,html body .ig-session .ig-cloze-blank.ig-correct,html body .ig-session .ig-cloze-blank.ig-incorrect,html body .ig-session .ig-player-progress.is-correct,html body .ig-session .ig-player-progress.is-incorrect{animation:ig-feedback-appear 240ms ease-out both}

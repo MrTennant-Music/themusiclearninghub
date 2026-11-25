@@ -228,7 +228,7 @@ test('scrolling cancels an Intervals touch preview without committing an answer,
 });
 
 test('tap-only notation canvases commit on click rather than on initial touch',()=>{
- for(const [file,handler] of [['accidentals.html','onLock'],['dynamics.html','onLockPlacement'],['repeatsigns.html','onLockPlacement'],['rhythmicdictation.html','onLockPlacement'],['tempo.html','onPointerDown']]){
+ for(const [file,handler] of [['shared/accidentals-notation.jsx','onLock'],['dynamics.html','onLockPlacement'],['repeatsigns.html','onLockPlacement'],['rhythmicdictation.html','onLockPlacement'],['tempo.html','onPointerDown']]){
   const html=fs.readFileSync(file,'utf8');assert.ok(html.includes(`onClick={${handler}}`),file);
   assert.ok(!html.includes(`onPointerDown={${handler}}`),file);
  }

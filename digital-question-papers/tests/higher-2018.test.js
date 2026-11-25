@@ -10,7 +10,6 @@ const paper = require("../papers/higher-2018.js");
 const registry = require("../paper-registry.js");
 const notationSource = fs.readFileSync(path.resolve(__dirname, "..", "exam-notation.js"), "utf8");
 const stylesSource = fs.readFileSync(path.resolve(__dirname, "..", "styles.css"), "utf8");
-const tripletsSource = fs.readFileSync(path.resolve(__dirname, "..", "..", "triplets.html"), "utf8");
 const correctRhythmSource = fs.readFileSync(path.resolve(__dirname, "..", "..", "rhythmicdictation.html"), "utf8");
 const bravuraSource = fs.readFileSync(path.resolve(__dirname, "..", "..", "bravura-symbols.js"), "utf8");
 
@@ -90,8 +89,8 @@ assert.equal(answerComplete(q8, q8Correct), true);
 assert.equal(paper.questions[2].score.sharedNotation, "higher-2018-q3");
 assert.match(notationSource, /const HIGHER_2018_Q3_LINES = \{/);
 assert.match(notationSource, /function higher2018ScoreSvg\(/);
-assert.match(tripletsSource, /function TripletMark\(/);
-assert.match(tripletsSource, /tripletType\.id === "quaver-triplet"/);
+assert.match(correctRhythmSource, /function TripletMark\(/);
+assert.match(correctRhythmSource, /tripletType\.id === "quaver-triplet"/);
 assert.match(correctRhythmSource, /function TripletButtonGlyph\(/);
 assert.match(notationSource, /const notePositions = \[35, 62, 89\]/);
 assert.match(notationSource, /viewBox="0 -8 150 78"/);

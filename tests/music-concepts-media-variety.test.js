@@ -1,10 +1,10 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const audio=require('../music-dictionary/music-concepts-audio.json');
 const videos=require('../music-dictionary/music-concepts-videos.js');
-const report=require('../maintenance/audio-evidence/dictionary-media-variety-2026-11-01/changes.json');
+const {archivedMediaTest}=require('./helpers/dictionary-media-evidence.cjs');
 const normal=text=>text.normalize('NFKD').replace(/\p{Diacritic}/gu,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 
-test('the variety review records the current replacements and checked YouTube alternatives',()=>{
+archivedMediaTest('the original variety review records the current replacements and checked YouTube alternatives',['dictionary-media-variety-2026-11-01/changes.json'],report=>{
  for(const change of report.audioChanges){
   const clip=audio.concepts[change.conceptId].find(c=>c.id===change.clipId);assert.ok(clip,change.title);
   for(const field of ['sourceUrl','title','artist','startSeconds','endSeconds'])assert.equal(clip[field],change[field],change.conceptId+' '+field);
@@ -38,10 +38,10 @@ test('confirmed repeated works cannot return across the selected audio and featu
   /lingus/,/frerejacques/,/ahvousdiraije/,/aharddaysnight/,/praisemysoulthekingofheaven/,
   /voiles/,/theshepherdontherock/,/sorocaba/,/turkishmarch/,
  ];
- for(const cid of new Set([...report.audioChanges,...report.videoChanges].map(c=>c.conceptId))){
-  const entries=[...audio.concepts[cid],...[videos.concepts[cid]].flat()];
+ for(const [cid,clips] of Object.entries(audio.concepts)){
+  const entries=[...clips,...(videos.concepts[cid]?[videos.concepts[cid]].flat():[])];
   const names=entries.map(e=>normal(e.title));
-  for(const pattern of works){const regex=pattern instanceof RegExp?pattern:new RegExp(pattern);assert.ok(names.filter(n=>regex.test(n)).length<=1,cid+' repeats '+regex);}
+  for(const pattern of works)assert.ok(names.filter(name=>pattern.test(name)).length<=1,cid+' repeats '+pattern);
  }
  for(const cid of ['MC-0018','MC-0141','MC-0175','MC-0181','MC-0194','MC-0225','MC-0237','MC-0280','MC-0284','MC-0286','MC-0287','MC-0289','MC-0290','MC-0295']){
   const titles=audio.concepts[cid].map(c=>normal(c.title));assert.equal(new Set(titles).size,titles.length,cid);

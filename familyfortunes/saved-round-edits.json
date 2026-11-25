@@ -1,0 +1,41 @@
+{
+  "roundOverrides": {
+    "N3": {
+      "MC-0001": {
+        "label": "Blues",
+        "prompt": "Name four features or facts about Blues.",
+        "answers": [
+          "12-bar blues or blues scale",
+          "Usually a slow tempo",
+          "Sad and soulful",
+          "Call and response or improvisation"
+        ]
+      },
+      "MC-0002": {
+        "label": "Jazz",
+        "prompt": "Name four features or facts about Jazz.",
+        "answers": [
+          "Improvisation",
+          "Swung rhythms",
+          "Syncopation",
+          "Saxophone or piano or drum kit"
+        ]
+      },
+      "MC-0003": {
+        "label": "Latin American",
+        "prompt": "Name features of Latin American music.",
+        "answers": [
+          "Syncopation",
+          "Strong dance pulse",
+          "Bongos",
+          "Claves"
+        ]
+      }
+    },
+    "N4": {},
+    "N5": {},
+    "H": {},
+    "AH": {}
+  },
+  "customCategories": []
+}

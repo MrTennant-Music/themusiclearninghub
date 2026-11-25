@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
   "bankId": "mlh-concept-quiz-1",
-  "title": "Music Dictionary quizzes",
+  "title": "Concept Dictionary quizzes",
   "subtitle": "Quick questions to strengthen your musical knowledge.",
   "createdAt": "2026-11-06",
-  "stage": "Complete all-level question bank; editable in Music Dictionary",
+  "stage": "Complete all-level question bank; editable in Concept Dictionary",
   "dictionarySourceSha256": "b95ba92f00564bbfc9fbce63ad63cf26af7c5cc3bae693eb4b88b51ff277bd8d",
   "summary": {
     "concepts": 295,

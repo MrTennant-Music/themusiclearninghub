@@ -24,18 +24,18 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     practicequestions: { title: "Practice Questions", subtitle: "Complete exam-style questions combining multiple music literacy concepts.", icon: "app-icons/practice-app-icon.svg", instructions: "Complete the mixed music literacy questions below.", response: "mixed" },
     "concept-recall": { title: "Concept Recall", subtitle: "Name as many musical concepts as you can under each category.", icon: "app-icons/concept-recall-icon.svg", instructions: "Write as many musical concepts as you can under each category.", response: "text" },
   };
-  DEFINITIONS.crossword = { title: "Crosswords", subtitle: "Solve musical clues to complete the crossword.", icon: "app-icons/crosswords-grid-icon.svg", instructions: "Use the Across and Down clues to complete the crossword. Ignore spaces and punctuation." };
-  DEFINITIONS.wordsearch = { title: "Word Search", subtitle: "Find the hidden musical concepts.", icon: "app-icons/wordsearch-icon.svg", instructions: "Find the musical concepts in the grid. Words may run in any direction. Ignore spaces and punctuation." };
+  DEFINITIONS.crossword = { title: "Crosswords", subtitle: "Solve musical clues to complete the crossword.", icon: "app-icons/crosswords-grid-icon.svg", instructions: "Use the clues to complete the crossword. Ignore spaces and punctuation." };
+  DEFINITIONS.wordsearch = { title: "Word Search", subtitle: "Find musical terms hidden in the letter grid.", icon: "app-icons/wordsearch-icon.svg", instructions: "Find the musical concepts in the grid." };
+  DEFINITIONS.dominoes = { title: "Dominoes", subtitle: "Match musical definitions to build a domino chain.", icon: "app-icons/dominoes-icon.svg", instructions: "Cut out the cards. Read the definition on the Start card aloud. Match it to the concept on the next card and continue until End." };
   const DEF = DEFINITIONS[CONFIG.activityId];
   if (!DEF) return;
   document.title = CONFIG.pageTitle || DEF.title;
   document.querySelector('link[rel="icon"]').href = new URL(DEF.icon, window.location.href).toString();
-  const EXERCISE_URL = window.MLH.worksheetExerciseUrl(CONFIG);
   function returnToWorksheetActivity() {
     const saved = sessionStorage.getItem("worksheetReturnUrl");
     const target = saved || CONFIG.sourceUrl || "index.html";
     if(["chords","accidentals","enharmonics"].includes(CONFIG.activityId))sessionStorage.setItem("worksheetReturnConfig",JSON.stringify(CONFIG));
-    if (["crossword", "wordsearch", "rhythmsums", "rests", "barlines", "transposing", "notenaming", "missingnotes", "keyboard-notes", "keysig", "tonic", "chords", "accidentals", "enharmonics"].includes(CONFIG.activityId)) window.location.href = target;
+    if (["crossword", "wordsearch", "dominoes", "rhythmsums", "rests", "barlines", "transposing", "notenaming", "missingnotes", "keyboard-notes", "keysig", "tonic", "chords", "accidentals", "enharmonics"].includes(CONFIG.activityId)) window.location.href = target;
     else if (saved && window.history.length > 1) window.history.back();
     else window.location.href = target;
   }
@@ -295,7 +295,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
           ? "Copy each bar to create an exact repetition."
         : CONFIG.activityId === "missingnotes" && level === "N4"
           ? "Create musical sequences by writing notes onto the stave."
-        : CONFIG.activityId==="barlines"&&level!=="N3" ? "Insert the missing barlines. Where a time signature changes, the first line is complete; add the missing barlines on the second line." : DEF.instructions;
+        : CONFIG.activityId==="barlines"&&level!=="N3" ? "Insert the missing barlines." : DEF.instructions;
   const defaultTitle=CONFIG.activityId==="missingnotes"&&level==="N3"?"Repetition • National 3":CONFIG.activityId==="missingnotes"&&level==="N4"?"Sequences • National 4":`${DEF.title} · ${LEVEL_NAMES[level]||level}`;
   const id = () => Math.random().toString(36).slice(2);
 
@@ -400,7 +400,9 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return level==="H"||level==="AH"?["2/4","3/4","4/4","6/8","9/8","12/8"]:["2/4","3/4","4/4"];
   }
   function makeKeySignatureQuestion(index,base){
-    const keys=(KEYSIG_LEVEL_KEYS[level]||KEYSIG_LEVEL_KEYS.N5).map(keyId=>KEYSIG_WORKSHEET_KEYS[keyId]);
+    const availableIds = KEYSIG_LEVEL_KEYS[level] ?? KEYSIG_LEVEL_KEYS.N5;
+    const selectedIds = window.KEY_SIGNATURES_SELECTION.normaliseKeys(availableIds, CONFIG.settings?.enabledKeys);
+    const keys = selectedIds.map((id) => KEYSIG_WORKSHEET_KEYS[id]);
     const key=keyWorksheetSelection.pick("key-signature-answer",keys);
     const rhythmPatterns=[["half","quarter","quarter"],["quarter","quarter","half"]];
     const notes=[];
@@ -409,7 +411,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       pattern.forEach((rhythm,noteIndex)=>{const finalNote=barIndex===3&&noteIndex===pattern.length-1, firstNote=barIndex===0&&noteIndex===0;let step=firstNote||finalNote?key.tonicStep:Math.max(-2,Math.min(10,key.tonicStep+random([-2,-1,1,2,3,4])));const writtenAccidental=key.leadingStep===step&&barIndex>=2?"sharp":null;notes.push({barIndex,rhythm,step,writtenAccidental});});
     }
     if(Number.isInteger(key.leadingStep)){const leadingNote=notes.find(note=>note.barIndex===1&&note.rhythm==="quarter")||notes.find(note=>note.barIndex===1);if(leadingNote){leadingNote.step=key.leadingStep;leadingNote.writtenAccidental="sharp";}}
-    return {...base,key,build:false,notes,prompt:"",answer:key.label,response:"text"};
+    return {...base,key,notes,prompt:"",answer:key.label,response:"text"};
   }
 
   const ACCIDENTAL_VALUES = { flat: -1, natural: 0, sharp: 1 };
@@ -725,20 +727,19 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     </svg>;
   }
 
-  function KeySignatureStaff({ question, completed=false, muted=false }) {
+  function KeySignatureStaff({ question, muted=false }) {
     const ink=muted?"#78716c":"#000";
     const left=18, visibleRight=320, fullRight=510, top=48, gap=10, signatureX=68, timeX=101, musicStart=122, barWidth=(fullRight-musicStart)/4;
     const y=(step)=>top+gap*4-step*(gap/2);
     const fadeId=`keysig-mobile-fade-${question.id}`;
     const noteSymbol=(note)=>note.rhythm==="half"?(note.step>4?"halfNoteStemDown":"halfNoteStemUp"):(note.step>4?"quarterNoteStemDown":"quarterNoteStemUp");
     const drawLedger=(note,x,key)=>{const lines=[];for(let step=-2;step>=note.step;step-=2)lines.push(step);for(let step=10;step<=note.step;step+=2)lines.push(step);return lines.map(step=><line key={`${key}-${step}`} x1={x-11} x2={x+11} y1={y(step)} y2={y(step)} stroke={ink} strokeWidth="1"/>);};
-    const signatureVisible=!question.build||completed;
     return <svg viewBox="0 0 320 122" className="h-full max-h-28 w-full" aria-label="Key signature excerpt">
       <defs><linearGradient id={fadeId} x1={visibleRight-52} x2={visibleRight} y1="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stopColor="white"/><stop offset="28%" stopColor="white"/><stop offset="100%" stopColor="black"/></linearGradient><mask id={`${fadeId}-mask`} maskUnits="userSpaceOnUse" x="0" y="0" width={visibleRight} height="122"><rect x="0" y="0" width={visibleRight} height="122" fill={`url(#${fadeId})`}/></mask></defs>
       <g mask={`url(#${fadeId}-mask)`}>
       {[0,1,2,3,4].map(line=><line key={line} x1={left} x2={fullRight} y1={top+line*gap} y2={top+line*gap} stroke={ink} strokeWidth="1.2"/>)}
       <WorksheetGlyph symbolKey="gClef" x={left+gap*3.2} y={y(2)} gap={gap} colour={ink}/>
-      {signatureVisible?question.key.signature.map((item,index)=><WorksheetGlyph key={`${item.type}-${index}`} symbolKey={item.type==="sharp"?"sharpKeySignature":"flatKeySignature"} x={signatureX+index*14} y={y(item.step)} gap={gap} colour={ink}/>):null}
+      {question.key.signature.map((item,index)=><WorksheetGlyph key={`${item.type}-${index}`} symbolKey={item.type==="sharp"?"sharpKeySignature":"flatKeySignature"} x={signatureX+index*14} y={y(item.step)} gap={gap} colour={ink}/>)}
       <WorksheetOutlineGlyph symbolKey="timeSig4" x={timeX} y={top+11} fontSize={35} colour={ink}/>
       <WorksheetOutlineGlyph symbolKey="timeSig4" x={timeX} y={top+31} fontSize={35} colour={ink}/>
       {[1,2,3].map(bar=><line key={bar} x1={musicStart+barWidth*bar} x2={musicStart+barWidth*bar} y1={top} y2={top+gap*4} stroke={ink} strokeWidth="1.2"/>)}
@@ -999,16 +1000,17 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
   }
 
   function RestsStaff({ question, completed=false, muted=false }) {
-    const ink=muted?"#78716c":"#000", left=92, right=588, top=24, gap=12, clefX=120, timeX=163, musicStart=196;
+    const ink=muted?"#78716c":"#000", left=92, right=620, top=24, gap=12, clefX=120, timeX=163, musicStart=196;
     const y=(step)=>top+gap*4-step*(gap/2), items=question.restItems||[];
     const spacingFor=(item)=>item.rhythm==="missing"?Math.max(1.15,item.units/2):(BARLINES_RHYTHM_SPACING[item.rhythm]||2.2);
-    const positions=window.MLH.RestsQuestionCore.notationPositions(items,musicStart,right-8,spacingFor);
+    const finalBarPadding=gap*3;
+    const positions=window.MLH.RestsQuestionCore.notationPositions(items,musicStart,right-finalBarPadding,spacingFor);
     const visibleItems=[],visibleXs=[];
     items.forEach((item,itemIndex)=>{if(item.rhythm!=="missing"){visibleItems.push(item);visibleXs.push(positions[itemIndex]);}});
     const [topNumber,bottomNumber]=question.timeSignature.split("/");
     const timeNumber=(number,yPosition,key)=>number.split("").map((digit,digitIndex)=><WorksheetOutlineGlyph key={`${key}-${digitIndex}`} symbolKey={`timeSig${digit}`} x={timeX+(digitIndex-(number.length-1)/2)*gap*1.45} y={yPosition} fontSize={gap*3.5} colour={ink}/>);
     const answerGlyph=(box,x,key)=><g key={key}><WorksheetGlyph symbolKey={worksheetRestSymbolKey(box.answer)} x={x} y={y(4)} gap={gap} colour={ink}/>{box.answer.startsWith("dotted-")?<WorksheetGlyph symbolKey="augmentationDotSpace" x={x+gap*1.1} y={y(4)-gap*.4} gap={gap} colour={ink}/>:null}</g>;
-    return <svg viewBox="0 0 680 128" className="h-full max-h-32 w-full overflow-visible" aria-label={`One bar in ${question.timeSignature} with missing rests`}>
+    return <svg viewBox="16 0 680 128" className="h-full max-h-32 w-full overflow-visible" aria-label={`One bar in ${question.timeSignature} with missing rests`}>
       {[0,1,2,3,4].map(line=><line key={line} x1={left} x2={right} y1={top+line*gap} y2={top+line*gap} stroke={ink} strokeWidth="1.2"/>)}
       <WorksheetGlyph symbolKey="gClef" x={clefX} y={y(2)} gap={gap} colour={ink}/>
       {timeNumber(topNumber,top+gap*1.12-1,"rests-time-top")}{timeNumber(bottomNumber,top+gap*3.12-1,"rests-time-bottom")}
@@ -1104,7 +1106,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     if (CONFIG.activityId === "rests") return <RestsStaff question={question} completed={completed} muted={muted} />;
     if (CONFIG.activityId === "accidentals") return <AccidentalsStaff question={question} completed={completed} muted={muted} />;
     if (CONFIG.activityId === "enharmonics") return <EnharmonicsStaff question={question} completed={completed} muted={muted} />;
-    if (CONFIG.activityId === "keysig") return <KeySignatureStaff question={question} completed={completed} muted={muted} />;
+    if (CONFIG.activityId === "keysig") return <KeySignatureStaff question={question} muted={muted} />;
     if (CONFIG.activityId === "keyboard-notes") {
       const isFind = question.keyboardKey.type === "find";
       const options = window.KeyboardNotes.normaliseOptions(CONFIG.settings?.options,level);
@@ -1113,12 +1115,14 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       const marked = keys.find(key => key.pitch === question.keyboardKey.pitch);
       return <div className="flex min-h-0 flex-1 flex-col items-center justify-center">
         {isFind && <div style={{height:60, width:"100%", flex:"0 0 60px"}}><NoteNamingStaff question={question} muted={muted}/></div>}
-        <svg viewBox={`-1 -1 ${width+2} 252`} className="keyboard-worksheet-score w-full" width={width+2} height={252} style={{width:"100%",height:"auto",flexShrink:0,marginTop:isFind?8:0}} aria-label={isFind && !completed ? "Piano keyboard" : "Piano keyboard with a marked note"}>
-          {keys.filter(key=>!key.black).map(key=><rect key={key.pitch} x={key.x} width="48" height="248" rx="5" fill="white" stroke="black"/>)}
-          {keys.filter(key=>key.black).map(key=><rect key={key.pitch} x={key.x} width="30" height="155" rx="5" fill="#292524" stroke="black"/>)}
-          {keys.filter(key=>!key.black&&key.pitch%12===0&&(CONFIG.settings?.showC||question.keyboardKey.baseOctave!=null&&question.keyboardKey.baseOctave+key.pitch/12===4)).map(key=><text key={`label-${key.pitch}`} x={key.x+24} y="190" textAnchor="middle" fontSize="17" fontWeight="700">{question.keyboardKey.baseOctave!=null&&question.keyboardKey.baseOctave+key.pitch/12===4?"C4":"C"}</text>)}
-          {(!isFind || completed) && marked && <circle cx={marked.x+(marked.black?15:24)} cy={marked.black?130:220} r="11" fill={marked.black?"white":"black"}/>}
-        </svg>
+        <div className={`keyboard-worksheet-diagram ${isFind?"mt-2":""}`}>
+          <svg viewBox={`-1 -1 ${width+2} 252`} className="keyboard-worksheet-score" width={width+2} height={252} aria-label={isFind && !completed ? "Piano keyboard" : "Piano keyboard with a marked note"}>
+            {keys.filter(key=>!key.black).map(key=><rect key={key.pitch} x={key.x} width="48" height="248" rx="5" fill="white" stroke="black"/>)}
+            {keys.filter(key=>key.black).map(key=><rect key={key.pitch} x={key.x} width="30" height="155" rx="5" fill="#292524" stroke="black"/>)}
+            {keys.filter(key=>!key.black&&key.pitch%12===0&&(CONFIG.settings?.showC||question.keyboardKey.baseOctave!=null&&question.keyboardKey.baseOctave+key.pitch/12===4)).map(key=><text key={`label-${key.pitch}`} x={key.x+24} y="190" textAnchor="middle" fontSize="17" fontWeight="700">{question.keyboardKey.baseOctave!=null&&question.keyboardKey.baseOctave+key.pitch/12===4?"C4":"C"}</text>)}
+            {(!isFind || completed) && marked && <circle cx={marked.x+(marked.black?15:24)} cy={marked.black?130:220} r="11" fill={marked.black?"white":"black"}/>}
+          </svg>
+        </div>
       </div>;
     }
     if (CONFIG.activityId === "notenaming") return <NoteNamingStaff question={question} muted={muted} />;
@@ -1144,7 +1148,6 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       {completed&&question.sourceMelody&&question.answerMelody?.map((s,i)=><WorksheetOutlineGlyph key={`a${i}`} symbolKey="quarterNoteStemUp" x={226+i*18} y={y(s)+7} fontSize={30} colour={ink} anchor="start" />)}
       {question.marking&&!completed?<text x="175" y="43" fill={ink} fontWeight="700">{question.marking}</text>:null}
       {question.repeatSigns&&completed?<><WorksheetOutlineGlyph symbolKey="repeatLeft" x={69} y={84} fontSize={28} colour={ink} anchor="start" /><WorksheetOutlineGlyph symbolKey="repeatRight" x={270} y={84} fontSize={28} colour={ink} anchor="start" /></>:null}
-      {question.build && !completed ? <rect x="105" y="38" width="120" height="58" rx="6" fill="none" stroke={ink} strokeDasharray="4 3"/> : null}
       {CONFIG.activityId==="rests" && !completed ? <rect x="150" y="38" width="48" height="58" rx="6" fill="none" stroke={ink}/> : null}
       {completed && ["enharmonics","transposing","keysig","rests","accidentals","chords","articulation"].includes(CONFIG.activityId) ? <text x="240" y="110" fill={ink} fontSize="14" fontWeight="700">{question.answer || "✓"}</text> : null}
     </svg>;
@@ -1158,12 +1161,9 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return <>{children.split(QUESTION_VARIABLE_PATTERN).map((part,index)=><React.Fragment key={`${index}-${part}`}>{QUESTION_VARIABLE_ONLY_PATTERN.test(part)?<strong>{part}</strong>:part}</React.Fragment>)}</>;
   }
 
-  function WorksheetQr({ bordered=false, compact=false }) {
-    return <section className={`worksheet-qr generic-question flex min-h-0 flex-col items-center justify-center gap-2 text-center ${bordered?"border border-black":""} ${compact?"h-32 w-32 shrink-0 p-1":"p-4"}`}><img src="app-icons/the-music-learning-hub-logo.svg" className="h-auto w-24 max-w-full" alt="The Music Learning Hub"/><div className="flex flex-col items-center gap-1"><img src={window.MLH.worksheetQrImageUrl(EXERCISE_URL)} crossOrigin="anonymous" className="h-16 w-16" alt="QR code linking to more questions"/><span className="flex w-16 justify-center whitespace-nowrap text-[7px] font-bold uppercase text-black"><span className="tracking-[0.08em]">More questions</span></span></div></section>;
-  }
-
   function Question({ question, number, example=false, answers=false, numbers=true, marks=true, firstPage=false, continuationPage=false }) {
     const completed = example || answers;
+    const keyboardQuestion = CONFIG.activityId === "keyboard-notes";
     const compactChord = CONFIG.activityId === "chords" && level === "N5";
     const compactRepetition = CONFIG.activityId === "missingnotes" && level === "N3";
     const compactBarlines = CONFIG.activityId === "barlines";
@@ -1175,22 +1175,44 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     const smallAHTransposingPrompt = CONFIG.activityId === "transposing" && level === "AH";
     const smallAHChordPromptClass=smallAHChordPrompt?"text-xs":"";
     const fixedFullRowMark = compactTimeSignatures || compactTriplets;
-    const answerIsInNotation = CONFIG.activityId === "barlines" || CONFIG.activityId === "timesig" || CONFIG.activityId === "triplets" || CONFIG.activityId === "rests" || CONFIG.activityId === "articulation" || CONFIG.activityId === "dynamics" || CONFIG.activityId === "enharmonics" || CONFIG.activityId === "missingnotes" || CONFIG.activityId === "keyboard-notes" || CONFIG.activityId === "tonic" || CONFIG.activityId === "transposing" || (CONFIG.activityId === "keysig" && question.build) || (CONFIG.activityId === "chords" && level === "AH");
-    return <section className={`generic-question ${fixedFullRowMark?"relative":""} ${example ? "worksheet-example-answer text-stone-500" : ""} ${example&&CONFIG.activityId==="rhythmsums"?"rhythm-sums-example col-span-2":""}`}>{compactChord||compactRepetition||compactBarlines||compactTimeSignatures||compactTriplets||compactRests||compactRhythmSums?<div className="min-h-6 text-sm"><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong></div>:<div className="flex min-h-9 items-start gap-1 text-sm" style={keyboardFindWorksheet || CONFIG.activityId==="transposing" ? {flexShrink:0} : undefined}><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong><span className={`${smallAHChordPromptClass} ${smallAHTransposingPrompt?"text-xs leading-tight":""}`}><EmphasisedPrompt>{question.prompt}</EmphasisedPrompt></span></div>}{CONFIG.activityId==="rhythmsums" ? <div className="relative -top-[10px] flex flex-1 items-center justify-center gap-1 text-[1.625rem]"><WorksheetRhythmSumItem item={question.left}/><strong>{question.operator}</strong><WorksheetRhythmSumItem item={question.right}/></div> : <Staff question={question} completed={completed} muted={example} showNoteNames={example}/>}<div className={`${fixedFullRowMark?"static":"relative"} flex min-h-8 items-end justify-center ${CONFIG.activityId==="rhythmsums"?(continuationPage?"-top-[25px]":"-top-[35px]"):""}`}>{question.response!=="mark" && question.response!=="stave" ? <div className="w-4/5 border-b border-black pb-1 text-center font-semibold">{completed ? question.answer : ""}</div> : completed && !answerIsInNotation ? <strong className="text-sm">{question.answer}</strong> : null}{marks && !example ? <strong className={`absolute ${fixedFullRowMark?"right-[13px] bottom-[13px]":"right-1"} text-sm ${fixedFullRowMark?"":CONFIG.activityId==="transposing"?(level==="AH"?"bottom-2":"bottom-4"):CONFIG.activityId==="barlines"?(firstPage?"bottom-[30px]":"bottom-[22px]"):CONFIG.activityId==="rests"?"bottom-[29px]":"bottom-1"}`}>1</strong> : null}</div></section>;
+    const answerIsInNotation = CONFIG.activityId === "barlines" || CONFIG.activityId === "timesig" || CONFIG.activityId === "triplets" || CONFIG.activityId === "rests" || CONFIG.activityId === "articulation" || CONFIG.activityId === "dynamics" || CONFIG.activityId === "enharmonics" || CONFIG.activityId === "missingnotes" || CONFIG.activityId === "keyboard-notes" || CONFIG.activityId === "tonic" || CONFIG.activityId === "transposing" || (CONFIG.activityId === "chords" && level === "AH");
+    return <section className={`generic-question ${keyboardQuestion?"keyboard-worksheet-question":""} ${fixedFullRowMark?"relative":""} ${example ? "worksheet-example-answer text-stone-500" : ""} ${example&&CONFIG.activityId==="rhythmsums"?"rhythm-sums-example col-span-2":""}`}>{compactChord||compactRepetition||compactBarlines||compactTimeSignatures||compactTriplets||compactRests||compactRhythmSums?<div className="min-h-6 text-sm"><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong></div>:<div className="flex min-h-9 items-start gap-1 text-sm" style={CONFIG.activityId==="transposing" ? {flexShrink:0} : undefined}><strong>{example ? "Example Answer" : numbers ? `${number}.` : ""}</strong><span className={`${smallAHChordPromptClass} ${smallAHTransposingPrompt?"text-xs leading-tight":""}`}><EmphasisedPrompt>{question.prompt}</EmphasisedPrompt></span></div>}{CONFIG.activityId==="rhythmsums" ? <div className="relative -top-[10px] flex flex-1 items-center justify-center gap-1 text-[1.625rem]"><WorksheetRhythmSumItem item={question.left}/><strong>{question.operator}</strong><WorksheetRhythmSumItem item={question.right}/></div> : <Staff question={question} completed={completed} muted={example} showNoteNames={example}/>}<div className={`${fixedFullRowMark?"static":"relative"} flex min-h-8 items-end justify-center ${CONFIG.activityId==="rhythmsums"?(continuationPage?"-top-[25px]":"-top-[35px]"):""}`}>{question.response!=="mark" && question.response!=="stave" ? <div className="w-4/5 border-b border-black pb-1 text-center font-semibold">{completed ? question.answer : ""}</div> : completed && !answerIsInNotation ? <strong className="text-sm">{question.answer}</strong> : null}{marks && !example ? <strong className={`absolute ${fixedFullRowMark?"right-[13px] bottom-[13px]":"right-1"} text-sm ${fixedFullRowMark?"":CONFIG.activityId==="transposing"?(level==="AH"?"bottom-2":"bottom-4"):CONFIG.activityId==="barlines"?(firstPage?"bottom-[30px]":"bottom-[22px]"):CONFIG.activityId==="rests"?"bottom-[29px]":"bottom-1"}`}>1</strong> : null}</div></section>;
   }
 
   const keyboardFindWorksheet = CONFIG.activityId === "keyboard-notes" && (Boolean(CONFIG.settings?.questionTypes?.find) || level === "H" || level === "AH");
+
+  function WorksheetHeaderCard({ data, answers, showPupilDetails, className = "" }) {
+    if (!data.header) return null;
+    return <div className={`worksheet-header-card rounded-xl border border-black p-4 ${className}`}>
+      <div className="flex items-center gap-3">
+        <img src={DEF.icon} className="worksheet-header-icon h-12 w-12 shrink-0 object-contain" alt=""/>
+        <div className="min-w-0">
+          <h1 className="worksheet-header-title text-xl font-bold leading-tight">{answers ? `${data.title} - Answers` : data.title}</h1>
+          {!answers && <p className="worksheet-header-instructions text-sm text-stone-700">{data.instructions}</p>}
+        </div>
+      </div>
+      {showPupilDetails && (data.name || data.classField || data.date) && (
+        <div className="worksheet-pupil-details mt-4 flex gap-5 text-sm">
+          {[["name", "Name"], ["classField", "Class"], ["date", "Date"]].map(([key, label]) => data[key] && (
+            <span key={key} className={`flex min-w-0 items-end gap-2 ${key === "name" ? "flex-[2]" : "flex-1"}`}>
+              <span className="shrink-0">{label}:</span>
+              <span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/>
+            </span>
+          ))}
+        </div>
+      )}
+    </div>;
+  }
 
   function Pages({ data, answers=false, offset=0, total=1 }) {
     const rhythmSums=CONFIG.activityId==="rhythmsums";
     const perPage = rhythmSums ? 8 : CONFIG.activityId==="barlines"&&["H","AH"].includes(level) ? 2 : DEF.large || keyboardFindWorksheet || (CONFIG.activityId === "transposing" && level === "AH") || (CONFIG.activityId === "chords" && level === "AH") ? 4 : 6;
     const examples = answers ? [] : data.examples?.length ? data.examples : data.example ? [data.example] : [];
-    const questionItems = [...examples, ...data.questions, ...(data.qr?[{id:"worksheet-qr",worksheetQr:true}]:[])];
-    const items = answers ? data.questions : questionItems;
+    const items = [...examples, ...data.questions];
     const pages=[];
-    if(rhythmSums&&!answers){pages.push([...examples,...data.questions.slice(0,perPage)]);for(let questionIndex=perPage;questionIndex<data.questions.length;questionIndex+=perPage)pages.push(data.questions.slice(questionIndex,questionIndex+perPage));if(data.qr){if(pages.at(-1).length>=perPage)pages.push([]);pages.at(-1).push({id:"worksheet-qr",worksheetQr:true});}}
+    if(rhythmSums&&!answers){pages.push([...examples,...data.questions.slice(0,perPage)]);for(let questionIndex=perPage;questionIndex<data.questions.length;questionIndex+=perPage)pages.push(data.questions.slice(questionIndex,questionIndex+perPage));}
     else for(let itemIndex=0;itemIndex<items.length;itemIndex+=perPage)pages.push(items.slice(itemIndex,itemIndex+perPage));
-    return pages.map((items,pageIndex)=><article className="worksheet-page generic-page" key={`${answers}-${pageIndex}`}>{data.header?<div className="worksheet-header-card mb-4 rounded-xl border border-black p-4"><div className="flex items-center gap-3"><img src={DEF.icon} className="h-12 w-12 object-contain" alt=""/><div className="min-w-0"><h1 className="worksheet-header-title text-xl font-bold leading-tight">{answers ? `${data.title} - Answers` : data.title}</h1>{!answers&&<p className="worksheet-header-instructions text-sm text-stone-700">{data.instructions}</p>}</div></div>{!answers&&pageIndex===0?<div className="mt-4 flex gap-5 text-sm">{data.name&&<span className="flex min-w-0 flex-[2] items-end gap-2"><span className="shrink-0">Name:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}{data.classField&&<span className="flex min-w-0 flex-1 items-end gap-2"><span className="shrink-0">Class:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}{data.date&&<span className="flex min-w-0 flex-1 items-end gap-2"><span className="shrink-0">Date:</span><span className="pupil-detail-line mb-[3px] h-px min-w-8 flex-1 bg-black"/></span>}</div>:null}</div>:null}<div className={`generic-grid grid flex-1 ${CONFIG.activityId==="barlines"||CONFIG.activityId==="timesig"||CONFIG.activityId==="triplets"||CONFIG.activityId==="rests"?"grid-cols-1":"grid-cols-2"} ${data.gridlines?"with-gridlines":""}`}>{items.map((q,i)=>{if(q.worksheetQr)return <WorksheetQr key={q.id} bordered={!data.gridlines}/>;const example=!answers&&pageIndex===0&&i<examples.length; const n=answers?pageIndex*perPage+i+1:rhythmSums?(pageIndex===0?i-examples.length+1:perPage+(pageIndex-1)*perPage+i+1):pageIndex*perPage+i-examples.length+1; return <Question key={q.id} question={q} number={n} example={example} answers={answers} numbers={data.numbers} marks={data.marks} firstPage={!answers&&pageIndex===0} continuationPage={pageIndex>0}/>})}</div>{!answers&&pageIndex===pages.length-1&&data.marks?<div className="mt-3 flex items-end justify-end gap-3"><div className="flex justify-end gap-3 text-sm font-bold"><span className="h-8 leading-8">Total marks</span><span className="total-marks-box relative h-8 w-24 border border-black"><span className="total-marks-value absolute left-2 right-2 text-right leading-none">/ {data.questions.length}</span></span></div></div>:null}<footer className="mt-2 flex justify-between text-[10px] text-stone-400"><span>The Music Learning Hub</span><span>Page {offset+pageIndex+1} of {total}</span></footer></article>);
+    return pages.map((items,pageIndex)=><article className="worksheet-page generic-page" key={`${answers}-${pageIndex}`}><WorksheetHeaderCard data={data} answers={answers} showPupilDetails={!answers && pageIndex === 0} className="mb-4"/><div className={`generic-grid grid flex-1 ${CONFIG.activityId==="barlines"||CONFIG.activityId==="timesig"||CONFIG.activityId==="triplets"||CONFIG.activityId==="rests"?"grid-cols-1":"grid-cols-2"} ${data.gridlines?"with-gridlines":""}`}>{items.map((q,i)=>{const example=!answers&&pageIndex===0&&i<examples.length; const n=answers?pageIndex*perPage+i+1:rhythmSums?(pageIndex===0?i-examples.length+1:perPage+(pageIndex-1)*perPage+i+1):pageIndex*perPage+i-examples.length+1; return <Question key={q.id} question={q} number={n} example={example} answers={answers} numbers={data.numbers} marks={data.marks} firstPage={!answers&&pageIndex===0} continuationPage={pageIndex>0}/>})}</div>{!answers&&pageIndex===pages.length-1&&data.marks?<div className="mt-3 flex items-end justify-end gap-3"><div className="flex justify-end gap-3 text-sm font-bold"><span className="h-8 leading-8">Total marks</span><span className="total-marks-box relative h-8 w-24 border border-black"><span className="total-marks-value absolute left-2 right-2 text-right leading-none">/ {data.questions.length}</span></span></div></div>:null}<footer className="mt-2 flex justify-between text-[10px] text-stone-400"><span>The Music Learning Hub</span><span>Page {offset+pageIndex+1} of {total}</span></footer></article>);
   }
 
   const PRACTICE_PAPER_OUTLINE_CACHE = new Map();
@@ -1229,7 +1251,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     return <div className={`practice-paper-score ${sixteenBars?"practice-paper-score-sixteen":""} ${answers?"practice-paper-score-answer":""}`} style={sixteenBars?{width:"90%",marginInline:"auto"}:{zoom:baseScale,width:`${100/baseScale}%`}} dangerouslySetInnerHTML={{ __html: outlinedScoreMarkup }} />;
   }
 
-  function PracticePaperPage({ paper, data, paperIndex, answers=false, content="combined", pageNumber, totalPages, showQr=false }) {
+  function PracticePaperPage({ paper, data, paperIndex, answers=false, content="combined", pageNumber, totalPages }) {
     const directScoreTypes = new Set(["timeChoice", "barlines", "notes", "intervalInsert", "dynamic", "repeat", "rhythm", "rhythmFix", "scotchSnap", "accidentalPlacement", "articulationPlacement", "tripletPlacement", "transposition", "enharmonic", "higherChord", "ahChord", "ahBassLine"]);
     const markTotal = paper.parts.length;
     const showScore=content!=="questions", showQuestions=content!=="score";
@@ -1244,12 +1266,18 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
         {paper.parts.map((part,partIndex) => <div key={part.id} className="grid grid-cols-[22px_28px_1fr_auto] items-baseline gap-x-1 px-1 py-1 text-xs leading-tight">
           <strong>{data.paperCount>1&&partIndex===0?`${paperIndex+1}.`:""}</strong>
           <strong>{data.numbers ? `(${part.label})` : ""}</strong>
-          <div><EmphasisedPrompt>{part.prompt}</EmphasisedPrompt>{!directScoreTypes.has(part.type)?<div className={`practice-paper-answer-area relative mt-1 min-h-4 ${level==="AH"?"practice-paper-answer-area-ah":""}`}>{answers?<div className="absolute inset-x-0 bottom-1 font-semibold text-stone-700">{part.answer}</div>:null}<div className="practice-paper-answer-line h-3 w-full"/></div>:null}</div>
+          <div>
+            {!answers&&part.audio&&!/^Listen\b/.test(part.prompt)&&<strong>Listen. </strong>}
+            <EmphasisedPrompt>{part.prompt}</EmphasisedPrompt>
+            {!directScoreTypes.has(part.type)&&(answers
+              ? <div className="practice-paper-answer-text mt-2 font-semibold text-black">{part.answer}</div>
+              : <div className="practice-paper-answer-line" aria-hidden="true"/>
+            )}
+          </div>
           {data.marks?<strong className="self-baseline pl-2">1</strong>:null}
         </div>)}
       </div>:null}
       {showQuestions&&!answers&&data.marks?<div className="practice-paper-total-marks mt-1 flex shrink-0 justify-end gap-2 text-xs font-bold"><span className="practice-paper-total-marks-label h-6 leading-6">Total marks</span><span className="total-marks-box practice-paper-total-marks-box relative h-6 min-w-16 border border-black"><span className="total-marks-value practice-paper-total-marks-value absolute left-2 right-2 text-right leading-none">/ {markTotal}</span></span></div>:null}
-      {showQr?<div className={`mt-1 flex shrink-0 justify-center ${level==="AH"?"translate-y-[25px]":""}`}><WorksheetQr compact/></div>:null}
       {!(level==="AH"&&showScore)&&<footer className="mt-auto flex shrink-0 justify-between pt-1 text-[9px] text-stone-400"><span>The Music Learning Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>}
     </article>;
   }
@@ -1259,14 +1287,37 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     await document.fonts?.ready;
     const worksheetImages=pages.flatMap(page=>[...page.querySelectorAll("img")]);
     await Promise.all(worksheetImages.map(image=>Promise.race([image.complete?(image.decode?image.decode().catch(()=>{}):Promise.resolve()):new Promise(resolve=>{image.addEventListener("load",resolve,{once:true});image.addEventListener("error",resolve,{once:true});}),new Promise(resolve=>setTimeout(resolve,8000))])));
-    // Rasterise keyboards as complete images so the capture library cannot crop their SVG viewport.
-    const keyboardScores=await Promise.all(pages.flatMap(page=>[...page.querySelectorAll("svg.keyboard-worksheet-score, svg.word-puzzle-worksheet-grid")]).map(async svg=>{
-      const clone=svg.cloneNode(true),viewBox=svg.viewBox.baseVal;
-      clone.setAttribute("xmlns","http://www.w3.org/2000/svg");clone.setAttribute("width",viewBox.width);clone.setAttribute("height",viewBox.height);clone.removeAttribute("style");clone.removeAttribute("class");
-      const image=new Image();image.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(new XMLSerializer().serializeToString(clone));
-      image.style.cssText=svg.style.cssText;if(svg.classList.contains("word-puzzle-worksheet-grid")){image.width=svg.width.baseVal.value;image.height=svg.height.baseVal.value;}image.className=svg.getAttribute("class");await image.decode();return {svg,image};
+    const iconSources = new Map();
+    const headerIcons = await Promise.all(worksheetImages.filter(image =>
+      image.classList.contains("worksheet-header-icon") && image.naturalWidth > 0
+    ).map(async icon => {
+      const source = icon.currentSrc || icon.src;
+      if (!iconSources.has(source)) {
+        const canvas = document.createElement("canvas");
+        const size = 256;
+        const scale = size / Math.max(icon.naturalWidth, icon.naturalHeight);
+        const width = icon.naturalWidth * scale, height = icon.naturalHeight * scale;
+        canvas.width = canvas.height = size;
+        canvas.getContext("2d").drawImage(icon, (size-width)/2, (size-height)/2, width, height);
+        iconSources.set(source, canvas.toDataURL("image/png"));
+      }
+      const image = icon.cloneNode(false);
+      image.src = iconSources.get(source);
+      await image.decode();
+      return {original:icon,image};
     }));
-    keyboardScores.forEach(({svg,image})=>svg.replaceWith(image));
+    // Preserve the fitted SVG viewports during PDF capture.
+    const keyboardScores=await Promise.all(pages.flatMap(page=>[...page.querySelectorAll("svg.keyboard-worksheet-score, svg.word-puzzle-worksheet-grid")]).map(async svg=>{
+      const clone=svg.cloneNode(true),size=getComputedStyle(svg);
+      clone.setAttribute("xmlns","http://www.w3.org/2000/svg");
+      clone.setAttribute("width", Math.max(1, parseFloat(size.width) * 3));
+      clone.setAttribute("height", Math.max(1, parseFloat(size.height) * 3));
+      clone.removeAttribute("style");clone.removeAttribute("class");
+      const image=new Image();image.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(new XMLSerializer().serializeToString(clone));
+      image.className=svg.getAttribute("class");await image.decode();return {original:svg,image};
+    }));
+    const captureImages = [...headerIcons, ...keyboardScores];
+    captureImages.forEach(({original,image})=>original.replaceWith(image));
     pages.forEach((page) => page.classList.add("pdf-capture"));
     try {
       const {jsPDF}=window.jspdf;
@@ -1278,7 +1329,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       }
       return pdf;
     } finally {
-      for(const {svg,image}of keyboardScores)image.replaceWith(svg);
+      for(const {original,image}of captureImages)image.replaceWith(original);
       pages.forEach((page) => page.classList.remove("pdf-capture"));
     }
   }
@@ -1288,8 +1339,11 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     if(mode==="print")printWindow=window.MLH.createPdfPrintWindow();
     try {
       const pdf=await buildCapturedWorksheetPdf(pages);
+      const filename = `${window.MLH.safePdfTitle(title.trim(), fallbackTitle)}.pdf`;
+      pdf.setProperties({ title: filename });
+      pdf.viewerPreferences({ DisplayDocTitle: true });
       if(printWindow)window.MLH.openPdfBlobForPrint(pdf.output("blob"),printWindow);
-      else pdf.save(`${window.MLH.safePdfTitle(title,fallbackTitle)}.pdf`);
+      else pdf.save(filename);
     } catch(error) {
       try { printWindow?.close(); } catch {}
       throw error;
@@ -1298,43 +1352,80 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
 
   function nextPracticeWorksheetOffset(current, count, bankLength) {
     if (bankLength < 2) return 0;
-    // A full bank still needs to move when Refresh is pressed.
+    // A full bank still needs to move when Regenerate is pressed.
     const step = Math.max(1, count % bankLength);
     return (current + step) % bankLength;
   }
 
   function PracticeWorksheetApp() {
-    const paperBank = Array.isArray(CONFIG.settings?.practicePapers) ? CONFIG.settings.practicePapers : [];
+    const writtenPapers = Array.isArray(CONFIG.settings?.practicePapers) ? CONFIG.settings.practicePapers : [];
     const editorState=window.MLH.readWorksheetEditorState?.(CONFIG.activityId), configFingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||"";
-    const initialCount = Math.max(1,Math.min(Number(editorState?.count)||1,paperBank.length||1));
+    const initialCount = Math.max(1,Math.min(Number(editorState?.count)||1,writtenPapers.length||1));
     const [count,setCount]=useGenericState(initialCount), [bankOffset,setBankOffset]=useGenericState(0);
     const savedTitle = CONFIG.activityId === "enharmonics" && editorState?.title === "Enharmonic Equivalents · Advanced Higher" ? defaultTitle : editorState?.title;
-    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?savedTitle||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(editorState?.instructions||"Answer each question using the music shown.");
-    const [header,setHeader]=useGenericState(editorState?.header??true), [name,setName]=useGenericState(editorState?.name??true), [classField,setClassField]=useGenericState(editorState?.classField??false), [date,setDate]=useGenericState(editorState?.date??false), [gridlines,setGridlines]=useGenericState(false), [answersOn,setAnswersOn]=useGenericState(editorState?.answers??false), [qr,setQr]=useGenericState(false), [preparingMode,setPreparingMode]=useGenericState(null);
+    const writtenInstructions = "Answer each question using the music shown.";
+    const savedInstructions = editorState?.audio === undefined && editorState?.instructions === writtenInstructions ? null : editorState?.instructions;
+    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?savedTitle||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(savedInstructions??null);
+    const [header,setHeader]=useGenericState(editorState?.header??true), [name,setName]=useGenericState(editorState?.name??true), [classField,setClassField]=useGenericState(editorState?.classField??false), [date,setDate]=useGenericState(editorState?.date??false), [answersOn,setAnswersOn]=useGenericState(editorState?.answers??false), [preparingMode,setPreparingMode]=useGenericState(null);
     const [previewVisible,setPreviewVisible]=useGenericState(true), refreshTimer=useGenericRef(null);
+    const [audioOn,setAudioOn]=useGenericState(editorState?.fingerprint===configFingerprint&&editorState.audio===true);
+    const [audioPapers,setAudioPapers]=useGenericState(null), [audioError,setAudioError]=useGenericState("");
+    const [audioRequested,setAudioRequested]=useGenericState(audioOn);
+    const includeAnswers=audioOn||answersOn;
+    const paperBank=audioOn?(audioPapers??[]):writtenPapers;
+    const previewReady=paperBank.length>0;
+    const effectiveInstructions=instructions??(audioOn
+      ? "Answer each question using the printed music and the music you hear."
+      : writtenInstructions);
+
+    function changeAudio(enabled) {
+      if (refreshTimer.current) clearTimeout(refreshTimer.current);
+      refreshTimer.current=null;
+      setPreviewVisible(true);
+      setAudioOn(enabled);
+      setBankOffset(0);
+      if (enabled) {
+        setAudioError("");
+        setAudioRequested(true);
+      }
+    }
+
+    async function loadAudioPapers(event) {
+      try {
+        const build=event.currentTarget.contentWindow?.MLH?.buildPracticeAudioWorksheet;
+        if (!build) throw new Error("Audio questions are unavailable.");
+        const config=await build(level, CONFIG.settings.audioQuestionTypes, true);
+        setAudioPapers(config.settings.practicePapers);
+      } catch {
+        setAudioError("Audio questions could not be prepared. Try turning Audio off and on again.");
+      }
+    }
+
     const papers=Array.from({length:Math.min(count,paperBank.length)},(_,index)=>paperBank[(bankOffset+index)%paperBank.length]);
     const splitAdvancedHigherPages=level==="AH", pagesPerPaper=splitAdvancedHigherPages?2:1;
-    const totalPages=papers.length*pagesPerPaper*(answersOn?2:1);
-    const data={title,instructions,header,name,classField,date,gridlines,numbers:true,marks:true,paperCount:count,qr};
+    const totalPages=papers.length*pagesPerPaper*(includeAnswers?2:1);
+    const data={title,instructions:effectiveInstructions,header,name,classField,date,gridlines:false,numbers:true,marks:true,paperCount:count};
     const refresh=()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);setPreviewVisible(false);refreshTimer.current=setTimeout(()=>{setBankOffset(current=>nextPracticeWorksheetOffset(current,count,paperBank.length));setPreviewVisible(true);refreshTimer.current=null;},260);};
     useGenericEffect(()=>()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);},[]);
-    useGenericEffect(()=>{sessionStorage.setItem("worksheetEditorState",JSON.stringify({activityId:CONFIG.activityId,fingerprint:configFingerprint,title,instructions,header,name,classField,date,count,gridlines,answers:answersOn,qr}));},[configFingerprint,title,instructions,header,name,classField,date,count,gridlines,answersOn,qr]);
-    const check=(label,value,setter,disabled=false)=>{const option=<label className={`flex items-center gap-2 whitespace-nowrap text-sm ${disabled?"text-stone-400 opacity-60":""}`}><input className="worksheet-checkbox" type="checkbox" checked={value} onChange={event=>setter(event.target.checked)} disabled={disabled}/>{label}</label>;if(label==="Include Answers")return null;if(label==="Gridlines")return <div className="grid grid-cols-2 items-center gap-x-6 gap-y-3"><label className="flex items-center gap-2 whitespace-nowrap text-sm"><input className="worksheet-checkbox" type="checkbox" checked={answersOn} onChange={event=>setAnswersOn(event.target.checked)}/>Include Answers</label><label className="flex items-center gap-2 whitespace-nowrap text-sm"><input className="worksheet-checkbox" type="checkbox" checked={qr} onChange={event=>setQr(event.target.checked)}/>QR Code</label></div>;return option;};
+    useGenericEffect(()=>{sessionStorage.setItem("worksheetEditorState",JSON.stringify({activityId:CONFIG.activityId,fingerprint:configFingerprint,title,instructions,header,name,classField,date,count,answers:answersOn,audio:audioOn}));},[configFingerprint,title,instructions,header,name,classField,date,count,answersOn,audioOn]);
+    const check=(label,value,setter,disabled=false)=><label className={`flex items-center gap-2 whitespace-nowrap text-sm ${disabled?"text-stone-400 opacity-60":""}`}><input className="worksheet-checkbox" type="checkbox" checked={value} onChange={event=>setter(event.target.checked)} disabled={disabled}/>{label}</label>;
     const changeHeader=(enabled)=>{setHeader(enabled);if(!enabled){setName(false);setClassField(false);setDate(false);}};
     async function outputPdf(mode){
-      if(preparingMode)return;
+      if(preparingMode||!previewReady)return;
       setPreparingMode(mode);
-      try { await outputCapturedWorksheetPdf({pages:[...document.querySelectorAll(".generic-page")],title,fallbackTitle:DEF.title,mode}); }
+      const practiceTitle = `${LEVEL_NAMES[level]||level} ${DEF.title}`;
+      const pdfTitle = title === defaultTitle ? practiceTitle : title;
+      try { await outputCapturedWorksheetPdf({pages:[...document.querySelectorAll(".generic-page")],title:pdfTitle,fallbackTitle:practiceTitle,mode}); }
       catch(error){window.alert(error?.message||"The worksheet PDF could not be created. Please try again.");}
       finally{setPreparingMode(null);}
     }
-    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,assets:{},classroomPilotUrl:CONFIG.activityId==="keyboard-notes"?"./keyboardnoteidentificationclassroom.html":undefined,onExit:returnToWorksheetActivity};
-    if(!paperBank.length)return <div className="p-8 text-center"><p className="font-semibold">Return to Practice Questions and select the worksheet button again to prepare the music.</p></div>;
+    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle??DEF.subtitle,icon:DEF.icon,assets:{},onExit:returnToWorksheetActivity};
+    if(!writtenPapers.length)return <div className="p-8 text-center"><p className="font-semibold">Return to Practice Questions and select the worksheet button again to prepare the music.</p></div>;
     const renderPaperPages=(paper,index,answers=false)=>splitAdvancedHigherPages?[
       <PracticePaperPage key={`${answers?"answer-":""}${paper.id}-score`} paper={paper} data={data} paperIndex={index} answers={answers} content="score" pageNumber={(answers?papers.length*2:0)+index*2+1} totalPages={totalPages}/>,
-      <PracticePaperPage key={`${answers?"answer-":""}${paper.id}-questions`} paper={paper} data={data} paperIndex={index} answers={answers} content="questions" pageNumber={(answers?papers.length*2:0)+index*2+2} totalPages={totalPages} showQr={qr&&!answers&&index===papers.length-1}/>,
-    ]:[<PracticePaperPage key={`${answers?"answer-":""}${paper.id}`} paper={paper} data={data} paperIndex={index} answers={answers} pageNumber={(answers?papers.length:0)+index+1} totalPages={totalPages} showQr={qr&&!answers&&index===papers.length-1}/>];
-    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate complete practice papers using the current activity settings.</p></div><div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={event=>setTitle(event.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={event=>{window.MLH.resizeWorksheetTextarea(event.currentTarget);setInstructions(event.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Papers<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={event=>setCount(Number(event.target.value))}>{Array.from({length:20},(_,index)=>index+1).map(value=><option key={value}>{value}</option>)}</select></label><div className="flex items-center gap-7">{check("Gridlines",gridlines,setGridlines)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 font-semibold"><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Refresh</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}>{papers.flatMap((paper,index)=>renderPaperPages(paper,index))}{answersOn?<div className="answer-sheet-start-new">{papers.flatMap((paper,index)=>renderPaperPages(paper,index,true))}</div>:null}</div></section></main></div></div>;
+      <PracticePaperPage key={`${answers?"answer-":""}${paper.id}-questions`} paper={paper} data={data} paperIndex={index} answers={answers} content="questions" pageNumber={(answers?papers.length*2:0)+index*2+2} totalPages={totalPages}/>,
+    ]:[<PracticePaperPage key={`${answers?"answer-":""}${paper.id}`} paper={paper} data={data} paperIndex={index} answers={answers} pageNumber={(answers?papers.length:0)+index+1} totalPages={totalPages}/>];
+    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle??DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate complete practice papers using the current activity settings.</p></div><div className="rounded-xl border border-stone-200 bg-stone-50 p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={event=>setTitle(event.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={effectiveInstructions} onChange={event=>{window.MLH.resizeWorksheetTextarea(event.currentTarget);setInstructions(event.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Papers<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={event=>setCount(Number(event.target.value))}>{Array.from({length:20},(_,index)=>index+1).map(value=><option key={value}>{value}</option>)}</select></label><div className="space-y-1"><label className="flex items-center gap-2 text-sm"><input className="worksheet-checkbox" type="checkbox" checked={audioOn} aria-describedby="practice-worksheet-audio-help" onChange={event=>changeAudio(event.target.checked)}/>Audio</label><p id="practice-worksheet-audio-help" className="pl-6 text-sm text-stone-600">Select this if you can play the music for pupils. Answer sheets are included automatically.</p></div><div className="flex items-center gap-7">{check("Include Answers",includeAnswers,setAnswersOn,audioOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} disabled={!previewReady} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white text-sm font-semibold"><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Regenerate</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)||!previewReady} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)||!previewReady} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div>{audioRequested&&!audioPapers&&!audioError&&<iframe title="Preparing audio questions" src="./practicequestions.html?worksheetAudio=1" aria-hidden="true" tabIndex={-1} className="pointer-events-none absolute h-px w-px border-0 opacity-0" onLoad={loadAudioPapers}/>}<section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div>{!previewReady&&<p role={audioError?"alert":"status"} className="py-6 text-sm">{audioError||"Preparing audio questions…"}</p>}<div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}>{papers.flatMap((paper,index)=>renderPaperPages(paper,index))}{includeAnswers?<div className="answer-sheet-start-new">{papers.flatMap((paper,index)=>renderPaperPages(paper,index,true))}</div>:null}</div></section></main></div></div>;
   }
 
   function conceptRecallGroups(concepts) {
@@ -1477,7 +1568,7 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     }
     window.MLH.worksheetHeaderMode = {
       title: DEF.title,
-      subtitle: CONFIG.subtitle || DEF.subtitle,
+      subtitle: CONFIG.subtitle ?? DEF.subtitle,
       icon: DEF.icon,
       assets: {},
       children: () => <div className="pointer-events-none grid grid-cols-2 gap-2 opacity-40 grayscale" aria-disabled="true" inert="">
@@ -1498,12 +1589,12 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
     };
     if (!concepts.length) return <div className="p-8 text-center"><p className="font-semibold">No concepts were available for this worksheet. Return to Concept Recall and choose at least one category.</p></div>;
     return <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle || DEF.subtitle} />
+      <window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle ?? DEF.subtitle} />
       <div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}>
         <main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}>
           <div className="no-print">
             <div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt="" />{DEF.title} · {LEVEL_NAMES[level] || level}</h2><p className="mt-1 text-sm text-stone-600">{categoryCount} categories · {concepts.length} concepts</p></div>
-            <div className="rounded-xl border border-stone-200 bg-white p-4">
+            <div className="rounded-xl border border-stone-200 bg-stone-50 p-4">
               <h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt="" />Customise</h2>
               <p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p>
               <div className="mt-4 space-y-4">
@@ -1512,8 +1603,8 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
                 <div className="flex flex-wrap gap-7">{check("Header", header, changeHeader)}{check("Name", name, setName, !header)}{check("Class", classField, setClassField, !header)}{check("Date", date, setDate, !header)}</div>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3 border-t border-stone-200 pt-4">{check("Gridlines", gridlines, setGridlines)}{check("Include Tips", includeTips, setIncludeTips)}{check("Include Answers", answersOn, setAnswersOn)}</div>
                 <div className="grid grid-cols-2 gap-2 border-t border-stone-200 pt-4">
-                  <button onClick={() => outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt="" />{preparingMode === "download" ? "Preparing…" : "Download"}</button>
-                  <button onClick={() => outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt="" />{preparingMode === "print" ? "Preparing…" : "Print"}</button>
+                  <button onClick={() => outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt="" />{preparingMode === "print" ? "Preparing…" : "Print"}</button>
+                  <button onClick={() => outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt="" />{preparingMode === "download" ? "Preparing…" : "Download"}</button>
                 </div>
               </div>
             </div>
@@ -1530,95 +1621,153 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
 
   function WordPuzzleGrid({ puzzle, answers }) {
     const cell = 24, width = puzzle.cols * cell, height = puzzle.rows * cell;
-    const scale = Math.min(1, 640 / width, 500 / height);
-    const starts = new Map(), found = new Set();
-    puzzle.entries.forEach(entry => {
+    const isCrossword = puzzle.kind === 'crossword';
+    const starts = new Map();
+    if (isCrossword) puzzle.entries.forEach(entry => {
       const first = entry.cells[0];
-      if (puzzle.kind === 'crossword') starts.set(`${first.row},${first.col}`, entry.number);
-      if (answers) entry.cells.forEach(position => found.add(`${position.row},${position.col}`));
+      starts.set(`${first.row},${first.col}`, entry.number);
     });
-    return <svg className="word-puzzle-worksheet-grid" fontFamily="Arial, sans-serif" role="img" aria-label={answers ? 'Completed puzzle' : 'Puzzle grid'} viewBox={`0 0 ${width+1} ${height+1}`} width={width*scale} height={height*scale} style={{display:'block',maxWidth:'100%',margin:'0 auto',flexShrink:0}}>
+    const cellCentre = index => index * cell + cell / 2 + .5;
+    const isOpen = (row, col) => row < puzzle.rows && col < puzzle.cols
+      && (!isCrossword || Boolean(puzzle.grid[row]?.[col]));
+    const edges = [];
+    puzzle.grid.forEach((row,r) => row.forEach((_,c) => {
+      if (!isOpen(r,c)) return;
+      const x=c*cell+.5, y=r*cell+.5;
+      edges.push(`M${x} ${y}h${cell} M${x} ${y}v${cell}`);
+      if (!isOpen(r+1,c)) edges.push(`M${x} ${y+cell}h${cell}`);
+      if (!isOpen(r,c+1)) edges.push(`M${x+cell} ${y}v${cell}`);
+    }));
+    return <div className="word-puzzle-grid-slot" style={{aspectRatio:`${width+1} / ${height+1}`}}>
+    <svg className="word-puzzle-worksheet-grid" fontFamily="Arial, sans-serif" role="img" aria-label={answers ? 'Completed puzzle' : 'Puzzle grid'} viewBox={`0 0 ${width+1} ${height+1}`} width={width+1} height={height+1}>
+      <rect x=".5" y=".5" width={width} height={height} fill={isCrossword?'#e0e0e0':'#fff'}/>
+      {!isCrossword && answers && puzzle.entries.map(entry => {
+        const first = entry.cells[0], last = entry.cells.at(-1);
+        return <line key={entry.word} x1={cellCentre(first.col)} y1={cellCentre(first.row)}
+          x2={cellCentre(last.col)} y2={cellCentre(last.row)} stroke="#858585" strokeWidth="3" strokeLinecap="round"/>;
+      })}
       {puzzle.grid.flatMap((row,r) => row.map((letter,c) => {
-        if (!letter && puzzle.kind === 'crossword') return <rect key={`${r},${c}`} x={c*cell+.5} y={r*cell+.5} width={cell} height={cell} fill="#000" stroke="#000" strokeWidth=".8"/>;
-        const number=starts.get(`${r},${c}`), highlighted=found.has(`${r},${c}`);
-        return <g key={`${r},${c}`}><rect x={c*cell+.5} y={r*cell+.5} width={cell} height={cell} fill={highlighted&&puzzle.kind==='wordsearch'?'#d1d5db':'#fff'} stroke="#000" strokeWidth=".8"/>{number?<text x={c*cell+2} y={r*cell+9} fontSize="8" fill="#000">{number}</text>:null}{puzzle.kind==='wordsearch'||answers?<text x={c*cell+12} y={r*cell+17} textAnchor="middle" fontSize="14" fontWeight={highlighted?'700':'400'} fill="#000">{letter}</text>:null}</g>;
+        if (!isOpen(r,c)) return null;
+        const number=starts.get(`${r},${c}`);
+        return <g key={`${r},${c}`}>{isCrossword && <rect x={c*cell+.5} y={r*cell+.5} width={cell} height={cell} fill="#fff"/>}{number?<text x={c*cell+2} y={r*cell+9} fontSize="8" fill="#000">{number}</text>:null}{!isCrossword||answers?<text x={c*cell+12} y={r*cell+17} textAnchor="middle" fontSize="14" fontWeight={isCrossword?'700':'400'} fill="#000">{letter}</text>:null}</g>;
       }))}
-    </svg>;
+      <path d={edges.join(' ')} fill="none" stroke="#000" strokeWidth=".8"/>
+    </svg></div>;
   }
 
-  function WordPuzzlePage({ puzzle, groups, data, answers, pageNumber, totalPages, showGrid }) {
-    const wordsOnly=puzzle.kind==='wordsearch'&&data.wordsOnly;
+  function WordPuzzlePage({ puzzle, data, answers, showPupilDetails }) {
+    const wordsOnly = puzzle.kind === 'wordsearch' && data.wordsOnly;
+    const groups = window.MLHWordPuzzleWorksheet.clueGroups(puzzle, wordsOnly);
+    const clueHeading = puzzle.kind === 'crossword' && groups.length === 2
+      ? 'Across (left) · Down (right)'
+      : groups[0]?.title;
+    const entryText = entry => {
+      if (answers || wordsOnly) return entry.answer;
+      return puzzle.kind === 'crossword' ? `${entry.clue} (${entry.word.length})` : entry.clue;
+    };
+    // Compact unusually long custom clue sets so the grid still has room.
+    const clueHeight = Math.max(1, ...groups.map(group => group.entries.reduce((height, entry) =>
+      height + Math.max(1, Math.ceil(entryText(entry).length / 42)) * 15 + 5, 26)));
+    const clueScale = Math.min(1, 470 / clueHeight);
     return <article className="worksheet-page generic-page word-puzzle-worksheet-page" style={{gap:12}}>
-      {data.header?<div className="worksheet-header-card rounded-xl border border-black p-4">
-        <div className="flex items-center gap-3"><img src={DEF.icon} className="h-10 w-10 object-contain" alt=""/><div><h1 className="worksheet-header-title text-xl font-bold">{data.title}{answers?' - Answers':''}</h1>{!answers?<p className="worksheet-header-instructions text-xs">{data.instructions}</p>:null}</div></div>
-        {!answers&&pageNumber===1?<div className="mt-3 flex gap-5 text-xs">{[['name','Name'],['classField','Class'],['date','Date']].map(([key,label])=>data[key]?<span key={key} className="flex flex-1 items-end gap-2">{label}:<span className="pupil-detail-line h-px flex-1 bg-black"/></span>:null)}</div>:null}
-      </div>:null}
-      {showGrid?<WordPuzzleGrid puzzle={puzzle} answers={answers}/>:null}
-      <div style={{display:'grid',gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:'12px 24px',fontSize:11,lineHeight:1.35}}>
-        {groups.map((group,index)=><section key={index}><h2 style={{fontSize:13,fontWeight:700,margin:'0 0 6px'}}>{group.title}</h2><ol style={{listStyle:'none',padding:0,margin:0}}>{group.entries.map((entry,i)=><li key={entry.word} style={{display:'flex',gap:6,marginBottom:5,breakInside:'avoid'}}><strong>{puzzle.kind==='crossword'?entry.number:puzzle.entries.indexOf(entry)+1}.</strong><span>{answers?entry.answer:wordsOnly?entry.answer:entry.clue}{!answers&&puzzle.kind==='crossword'?` (${entry.word.length})`:''}</span></li>)}</ol></section>)}
-      </div>
-      <footer className="mt-auto flex justify-between text-[10px] text-stone-400"><span>The Music Learning Hub</span><span>Page {pageNumber} of {totalPages}</span></footer>
+      <WorksheetHeaderCard data={data} answers={answers} showPupilDetails={showPupilDetails}/>
+      <WordPuzzleGrid puzzle={puzzle} answers={answers}/>
+      {groups.length>0 && <div style={{display:'grid',flexShrink:0,gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:'6px 24px',fontSize:11*clueScale,lineHeight:1.35}}>
+        {clueHeading && <h2 style={{gridColumn:'1 / -1',fontSize:13*clueScale,fontWeight:700,margin:0}}>{clueHeading}</h2>}
+        {groups.map((group,index)=><section key={index}><ol style={{listStyle:'none',padding:0,margin:0}}>{group.entries.map(entry=><li key={entry.word} style={{display:'flex',gap:6,marginBottom:5*clueScale,breakInside:'avoid'}}><strong className="shrink-0 whitespace-nowrap">{puzzle.kind==='crossword'?entry.number:puzzle.entries.indexOf(entry)+1}.</strong><span style={{minWidth:0,overflowWrap:'anywhere'}}>{entryText(entry)}</span></li>)}</ol></section>)}
+      </div>}
+      <footer className="mt-auto text-[10px] text-stone-400">The Music Learning Hub</footer>
     </article>;
   }
 
+  function DominoWorksheetPages({ puzzle, answers = false }) {
+    const cardsPerPage = 10;
+    const pages = answers ? [puzzle.solution] : Array.from({length:Math.ceil(puzzle.cards.length/cardsPerPage)},
+      (_, index) => puzzle.cards.slice(index*cardsPerPage,(index+1)*cardsPerPage));
+    return pages.map((cards, index) => <article key={index} className="worksheet-page word-puzzle-worksheet-page domino-worksheet-page">
+      {answers && <h2 className="domino-print-heading">Answers</h2>}
+      {!answers && pages.length > 1 && <h2 className="domino-print-heading domino-print-sheet">{`Sheet ${index+1} of ${pages.length}`}</h2>}
+      {answers ? <ol className="domino-print-solution">{cards.map(card => <li key={card.id}>{card.term}</li>)}<li>End</li></ol>
+        : <div className="domino-print-cards">{cards.map(card => <div className="domino-print-card" key={card.id}>
+          <strong>{card.term}</strong><span>{card.clue}</span>
+        </div>)}</div>}
+      <footer className="mt-auto text-[10px] text-stone-400">The Music Learning Hub</footer>
+    </article>);
+  }
+
   function WordPuzzleWorksheetApp() {
-    const bank=CONFIG.settings?.puzzles||[], fingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||'';
+    const isDomino = CONFIG.activityId==='dominoes';
+    const bank=(isDomino?CONFIG.settings?.sets:CONFIG.settings?.puzzles)||[], fingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||'';
     const saved=window.MLH.readWorksheetEditorState?.(CONFIG.activityId);
-    const [title,setTitle]=useGenericState(saved?.fingerprint===fingerprint?saved.title||defaultTitle:defaultTitle);
-    const [instructions,setInstructions]=useGenericState(saved?.instructions||DEF.instructions);
-    const [count,setCount]=useGenericState(Math.max(1,Math.min(bank.length,Number(saved?.count)||1)));
+    const [title,setTitle]=useGenericState(!isDomino&&saved?.fingerprint===fingerprint?saved.title||defaultTitle:defaultTitle);
+    const savedInstructions = saved?.instructions;
+    const previousDefaultInstructions = {
+      crossword: 'Use the Across and Down clues to complete the crossword. Ignore spaces and punctuation.',
+      wordsearch: 'Find the musical concepts in the grid. Words may run in any direction. Ignore spaces and punctuation.',
+    };
+    const [instructions,setInstructions]=useGenericState(savedInstructions === previousDefaultInstructions[CONFIG.activityId] ? DEF.instructions : savedInstructions || DEF.instructions);
+    const [count,setCount]=useGenericState(isDomino?1:Math.max(1,Math.min(bank.length,Number(saved?.count)||1)));
     const [offset,setOffset]=useGenericState(0), [answersOn,setAnswersOn]=useGenericState(saved?.answers??false);
-    const [header,setHeader]=useGenericState(saved?.header??true), [name,setName]=useGenericState(saved?.name??true), [classField,setClassField]=useGenericState(saved?.classField??false), [date,setDate]=useGenericState(saved?.date??false);
+    const [header,setHeader]=useGenericState(saved?.header??true), [name,setName]=useGenericState(saved?.name??!isDomino), [classField,setClassField]=useGenericState(saved?.classField??false), [date,setDate]=useGenericState(saved?.date??false);
     const [wordsOnly,setWordsOnly]=useGenericState(saved?.fingerprint===fingerprint&&typeof saved.wordsOnly==='boolean'?saved.wordsOnly:CONFIG.settings.editorMode==='without-clues'), [preparing,setPreparing]=useGenericState(null);
     const data={title,instructions,header,name,classField,date,wordsOnly};
     const puzzles=bank.length?Array.from({length:count},(_,i)=>bank[(offset+i)%bank.length]):[];
-    const sheets=puzzles.flatMap(puzzle=>window.MLHWordPuzzleWorksheet.cluePages(puzzle,wordsOnly).map((groups,index)=>({puzzle,groups,showGrid:index===0})));
-    const total=sheets.length*(answersOn?2:1);
-    useGenericEffect(()=>{sessionStorage.setItem('worksheetEditorState',JSON.stringify({activityId:CONFIG.activityId,fingerprint,title,instructions,count,answers:answersOn,header,name,classField,date,wordsOnly}));},[fingerprint,title,instructions,count,answersOn,header,name,classField,date,wordsOnly]);
+    const conceptCount = isDomino ? (puzzles[0]?.solution.length||1)-1 : new Set(puzzles.flatMap(puzzle => puzzle.entries.map(entry => entry.word))).size;
+    const collectionSummary = `${conceptCount} ${conceptCount === 1 ? 'concept' : 'concepts'}${isDomino?' · '+(conceptCount+1)+' cards per set':''}`;
+    const pages = (answers=false) => puzzles.map((puzzle,i) => isDomino
+      ? <DominoWorksheetPages key={i} puzzle={puzzle} answers={answers}/>
+      : <WordPuzzlePage key={`${offset}-${i}`} puzzle={puzzle} data={data} showPupilDetails={i===0&&!answers} answers={answers}/>);
+    useGenericEffect(()=>{
+      const settings=isDomino?{answers:answersOn}:{fingerprint,title,instructions,count,answers:answersOn,header,name,classField,date,wordsOnly};
+      sessionStorage.setItem('worksheetEditorState',JSON.stringify({activityId:CONFIG.activityId,...settings}));
+    },[isDomino,fingerprint,title,instructions,count,answersOn,header,name,classField,date,wordsOnly]);
     async function output(mode) {
       if(preparing)return; setPreparing(mode);
       try { await outputCapturedWorksheetPdf({pages:[...document.querySelectorAll('.word-puzzle-worksheet-page')],title,fallbackTitle:DEF.title,mode}); }
       catch(error){window.alert(error?.message||'The worksheet PDF could not be created. Please try again.');}
       finally{setPreparing(null);}
     }
-    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,onExit:returnToWorksheetActivity};
+    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle??DEF.subtitle,icon:DEF.icon,onExit:returnToWorksheetActivity};
     const check=(label,checked,setter,disabled=false)=><label className="flex items-center gap-2 text-sm"><input className="worksheet-checkbox" type="checkbox" checked={checked} disabled={disabled} onChange={event=>setter(event.target.checked)}/>{label}</label>;
     if(!bank.length)return <p>No puzzle was available. Return to the game and choose a collection.</p>;
-    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-6`}>
-      <div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="text-xl font-bold">{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">{CONFIG.settings.collectionTitle}</p></div>
-        <div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><div className="mt-4 space-y-4">
+    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle??DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-6`}>
+      <div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">{collectionSummary}</p></div>
+        <div className="rounded-xl border border-stone-200 bg-stone-50 p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4">
+          {!isDomino&&<>
           <label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={event=>setTitle(event.target.value)}/></label>
           <label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 w-full resize-none rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={event=>{window.MLH.resizeWorksheetTextarea(event.target);setInstructions(event.target.value);}}/></label>
           <div className="flex flex-wrap gap-7">{check('Header',header,value=>{setHeader(value);if(!value){setName(false);setClassField(false);setDate(false);}})}{check('Name',name,setName,!header)}{check('Class',classField,setClassField,!header)}{check('Date',date,setDate,!header)}</div>
           <label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Puzzles<select className="w-24 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={event=>setCount(Number(event.target.value))}>{bank.map((_,i)=><option key={i} value={i+1}>{i+1}</option>)}</select></label>
+          </>}
           {check('Include Answers',answersOn,setAnswersOn)}{CONFIG.activityId==='wordsearch'?check('Show Words Instead of Clues',wordsOnly,setWordsOnly):null}
-          <div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button className="flex h-11 items-center justify-center rounded-xl border border-stone-300 font-semibold" onClick={()=>setOffset(value=>(value+1)%bank.length)}>Refresh</button><button className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white" disabled={Boolean(preparing)} onClick={()=>output('download')}>{preparing==='download'?'Preparing…':'Download'}</button><button className="flex h-11 items-center justify-center rounded-xl bg-black font-bold text-white" disabled={Boolean(preparing)} onClick={()=>output('print')}>{preparing==='print'?'Preparing…':'Print'}</button></div>
+          <div className={`grid ${isDomino?"grid-cols-2":"grid-cols-3"} gap-2 border-t border-stone-200 pt-4`}>{!isDomino&&<button className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white text-sm font-semibold" onClick={()=>setOffset(value=>(value+1)%bank.length)}><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Regenerate</button>}<button className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white" disabled={Boolean(preparing)} onClick={()=>output('download')}><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparing==='download'?'Preparing…':'Download'}</button><button className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white" disabled={Boolean(preparing)} onClick={()=>output('print')}><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparing==='print'?'Preparing…':'Print'}</button></div>
         </div></div>
       </div>
-      <section className="print-area worksheet-preview-panel"><h2 className="no-print mb-4 text-xl font-bold">Preview</h2>{sheets.map((sheet,i)=><WordPuzzlePage key={`q-${offset}-${i}`} {...sheet} data={data} pageNumber={i+1} totalPages={total}/>)}{answersOn?<div className="answer-sheet-start-new">{sheets.map((sheet,i)=><WordPuzzlePage key={`a-${offset}-${i}`} {...sheet} data={data} answers pageNumber={sheets.length+i+1} totalPages={total}/>)}</div>:null}</section>
+      <section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div>{pages()}{answersOn?<div className="answer-sheet-start-new">{pages(true)}</div>:null}</section>
     </main></div></div>;
   }
 
   function GenericApp() {
-    if (["crossword","wordsearch"].includes(CONFIG.activityId)) return <WordPuzzleWorksheetApp />;
+    if (["crossword","wordsearch","dominoes"].includes(CONFIG.activityId)) return <WordPuzzleWorksheetApp />;
     if (CONFIG.activityId === "concept-recall") return <ConceptRecallWorksheetApp />;
     if (CONFIG.activityId === "practicequestions") return <PracticeWorksheetApp />;
     const editorState=window.MLH.readWorksheetEditorState?.(CONFIG.activityId), configFingerprint=window.MLH.worksheetSettingsFingerprint?.(CONFIG)||"";
     const initialCount=Number(editorState?.count)||(CONFIG.activityId==="rhythmsums"?15:10);
     const [count,setCount]=useGenericState(initialCount), [questions,setQuestions]=useGenericState(()=>Array.from({length:initialCount},(_,i)=>makeQuestion(i)));
     const savedGenericTitle = CONFIG.activityId === "tonic" && editorState?.title === "Scale Degrees · Higher" ? defaultTitle : editorState?.title;
-    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?savedGenericTitle||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(editorState?.instructions||defaultInstructions);
-    const [header,setHeader]=useGenericState(editorState?.header??true), [name,setName]=useGenericState(editorState?.name??true), [classField,setClassField]=useGenericState(editorState?.classField??false), [date,setDate]=useGenericState(editorState?.date??false), [numbers,setNumbers]=useGenericState(editorState?.numbers??true), [marks,setMarks]=useGenericState(editorState?.marks??true), [gridlines,setGridlines]=useGenericState(editorState?.gridlines??true), [exampleOn,setExampleOn]=useGenericState(editorState?.example??true), [answersOn,setAnswersOn]=useGenericState(editorState?.answers??false), [qr,setQr]=useGenericState(editorState?.qr??true), [preparingMode,setPreparingMode]=useGenericState(null);
+    const savedInstructions = CONFIG.activityId === "barlines" && editorState?.instructions === "Insert the missing barlines. Where a time signature changes, the first line is complete; add the missing barlines on the second line." ? defaultInstructions : editorState?.instructions;
+    const [title,setTitle]=useGenericState(editorState?.fingerprint===configFingerprint?savedGenericTitle||defaultTitle:defaultTitle), [instructions,setInstructions]=useGenericState(savedInstructions||defaultInstructions);
+    const [header,setHeader]=useGenericState(editorState?.header??true), [name,setName]=useGenericState(editorState?.name??true), [classField,setClassField]=useGenericState(editorState?.classField??false), [date,setDate]=useGenericState(editorState?.date??false), [numbers,setNumbers]=useGenericState(editorState?.numbers??true), [marks,setMarks]=useGenericState(editorState?.marks??true), [gridlines,setGridlines]=useGenericState(editorState?.gridlines??true), [exampleOn,setExampleOn]=useGenericState(editorState?.example??true), [answersOn,setAnswersOn]=useGenericState(editorState?.answers??false), [preparingMode,setPreparingMode]=useGenericState(null);
     const [previewVisible,setPreviewVisible]=useGenericState(true), refreshTimer=useGenericRef(null);
     const examples=useGenericMemo(()=>CONFIG.activityId==="chords"&&level==="AH"?AH_WORKSHEET_TYPES.map((type,typeIndex)=>makeQuestion(-1-typeIndex,type)):[makeQuestion(-1)],[]);
     const activeExamples=exampleOn?examples:[];
-    const data={questions,title,instructions,header,name,classField,date,numbers,marks,gridlines,qr,examples:activeExamples,example:activeExamples[0]||null};
-    const rhythmSums=CONFIG.activityId==="rhythmsums",perPage=rhythmSums?8:CONFIG.activityId==="barlines"&&["H","AH"].includes(level)?2:DEF.large||keyboardFindWorksheet||(CONFIG.activityId==="transposing"&&level==="AH")||(CONFIG.activityId==="chords"&&level==="AH")?4:6, qPages=rhythmSums?Math.ceil((questions.length+(qr?1:0))/perPage):Math.ceil((questions.length+activeExamples.length+(qr?1:0))/perPage), aPages=answersOn?Math.ceil(questions.length/perPage):0, total=qPages+aPages;
+    const data={questions,title,instructions,header,name,classField,date,numbers,marks,gridlines,examples:activeExamples,example:activeExamples[0]||null};
+    const rhythmSums=CONFIG.activityId==="rhythmsums",perPage=rhythmSums?8:CONFIG.activityId==="barlines"&&["H","AH"].includes(level)?2:DEF.large||keyboardFindWorksheet||(CONFIG.activityId==="transposing"&&level==="AH")||(CONFIG.activityId==="chords"&&level==="AH")?4:6, qPages=rhythmSums?Math.ceil((questions.length)/perPage):Math.ceil((questions.length+activeExamples.length)/perPage), aPages=answersOn?Math.ceil(questions.length/perPage):0, total=qPages+aPages;
     const changeCount=(value)=>{const n=Number(value);setCount(n);setQuestions(current=>current.length>=n?current.slice(0,n):[...current,...Array.from({length:n-current.length},(_,i)=>makeQuestion(current.length+i))]);};
     const refresh=()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);setPreviewVisible(false);refreshTimer.current=setTimeout(()=>{setQuestions(Array.from({length:count},(_,i)=>makeQuestion(i)));setPreviewVisible(true);refreshTimer.current=null;},260);};
     useGenericEffect(()=>()=>{if(refreshTimer.current)clearTimeout(refreshTimer.current);},[]);
-    useGenericEffect(()=>{sessionStorage.setItem("worksheetEditorState",JSON.stringify({activityId:CONFIG.activityId,fingerprint:configFingerprint,title,instructions,header,name,classField,date,count,numbers,marks,gridlines,example:exampleOn,answers:answersOn,qr}));},[configFingerprint,title,instructions,header,name,classField,date,count,numbers,marks,gridlines,exampleOn,answersOn,qr]);
-    const check=(label,value,setter,disabled=false)=>{const wide=["Question Numbers","Gridlines","Include Answers"].includes(label);const option=<label className={`${wide?"col-span-2":"col-span-1"} flex items-center gap-2 whitespace-nowrap text-sm ${disabled?"text-stone-400 opacity-60":""}`}><input className="worksheet-checkbox" type="checkbox" checked={value} onChange={e=>setter(e.target.checked)} disabled={disabled}/>{label}</label>;return label==="Include Answers"?<>{option}<label className="col-span-1 flex items-center gap-2 whitespace-nowrap text-sm"><input className="worksheet-checkbox" type="checkbox" checked={qr} onChange={e=>setQr(e.target.checked)}/>QR Code</label></>:option;};
+    useGenericEffect(()=>{sessionStorage.setItem("worksheetEditorState",JSON.stringify({activityId:CONFIG.activityId,fingerprint:configFingerprint,title,instructions,header,name,classField,date,count,numbers,marks,gridlines,example:exampleOn,answers:answersOn}));},[configFingerprint,title,instructions,header,name,classField,date,count,numbers,marks,gridlines,exampleOn,answersOn]);
+    const check=(label,value,setter,disabled=false)=>{const wide=["Question Numbers","Gridlines","Include Answers"].includes(label);const option=<label className={`${wide?"col-span-2":"col-span-1"} flex items-center gap-2 whitespace-nowrap text-sm ${disabled?"text-stone-400 opacity-60":""}`}><input className="worksheet-checkbox" type="checkbox" checked={value} onChange={e=>setter(e.target.checked)} disabled={disabled}/>{label}</label>;return option;};
     const changeHeader=(enabled)=>{setHeader(enabled);if(!enabled){setName(false);setClassField(false);setDate(false);}};
     async function outputPdf(mode){
       if(preparingMode)return;
@@ -1627,8 +1776,8 @@ const { useEffect: useGenericEffect, useMemo: useGenericMemo, useRef: useGeneric
       catch(error){window.alert(error?.message||"The worksheet PDF could not be created. Please try again.");}
       finally{setPreparingMode(null);}
     }
-    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle||DEF.subtitle,icon:DEF.icon,assets:{},classroomPilotUrl:CONFIG.activityId==="keyboard-notes"?"./keyboardnoteidentificationclassroom.html":undefined,onExit:returnToWorksheetActivity};
-    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle||DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate a printable worksheet using the current activity and settings.</p></div><div className="rounded-xl border border-stone-200 bg-white p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={e=>setTitle(e.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={e=>{window.MLH.resizeWorksheetTextarea(e.currentTarget);setInstructions(e.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Questions<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={e=>changeCount(e.target.value)}>{[10,15,20,25].map(n=><option key={n}>{n}</option>)}</select></label><div className="grid grid-cols-[minmax(0,1fr)_max-content_max-content] gap-x-3 gap-y-3">{check("Question Numbers",numbers,setNumbers)}{check("Marks",marks,setMarks)}{check("Gridlines",gridlines,setGridlines)}{check("Example Answer",exampleOn,setExampleOn)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 font-semibold"><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Refresh</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black font-bold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}><Pages data={data} total={total}/>{answersOn?<div className="answer-sheet-start-new"><Pages data={{...data,example:null}} answers offset={qPages} total={total}/></div>:null}</div></section></main></div></div>;
+    window.MLH.worksheetHeaderMode={title:DEF.title,subtitle:CONFIG.subtitle??DEF.subtitle,icon:DEF.icon,assets:{},onExit:returnToWorksheetActivity};
+    return <div className={window.MLH.shell.pageShellClass}><window.MLH.AppHeader icon={DEF.icon} title="Create a worksheet" subtitle={CONFIG.subtitle??DEF.subtitle}/><div className={`${window.MLH.shell.pageContentClass} worksheet-page-content`}><main className={`${window.MLH.shell.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}><div className="no-print"><div className="mb-6 rounded-xl border border-stone-200 bg-stone-50 px-4 py-3"><h2 className="flex items-center gap-2 text-xl font-bold"><img src={DEF.icon} className="h-7 w-7 object-contain" alt=""/>{DEF.title} · {LEVEL_NAMES[level]||level}</h2><p className="mt-1 text-sm text-stone-600">Generate a printable worksheet using the current activity and settings.</p></div><div className="rounded-xl border border-stone-200 bg-stone-50 p-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" className="h-6 w-6" alt=""/>Customise</h2><p className="text-sm text-stone-600">Adjust the worksheet content and layout.</p><div className="mt-4 space-y-4"><label className="block text-sm font-semibold">Title<input className="mt-1 w-full rounded-lg border border-stone-300 px-3 py-2 font-normal" value={title} onChange={e=>setTitle(e.target.value)}/></label><label className="block text-sm font-semibold">Instructions<textarea ref={window.MLH.resizeWorksheetTextarea} rows="2" className="mt-1 min-h-16 w-full resize-none overflow-hidden rounded-lg border border-stone-300 px-3 py-2 font-normal" value={instructions} onChange={e=>{window.MLH.resizeWorksheetTextarea(e.currentTarget);setInstructions(e.target.value);}}/></label><div className="flex flex-wrap gap-7">{check("Header",header,changeHeader)}{check("Name",name,setName,!header)}{check("Class",classField,setClassField,!header)}{check("Date",date,setDate,!header)}</div><label className="flex items-center justify-between border-t border-stone-200 pt-4 text-sm font-semibold">Number of Questions<select className="w-32 rounded-lg border border-stone-300 px-3 py-2" value={count} onChange={e=>changeCount(e.target.value)}>{[10,15,20,25].map(n=><option key={n}>{n}</option>)}</select></label><div className="grid grid-cols-[minmax(0,1fr)_max-content_max-content] gap-x-3 gap-y-3">{check("Question Numbers",numbers,setNumbers)}{check("Marks",marks,setMarks)}{check("Gridlines",gridlines,setGridlines)}{check("Example Answer",exampleOn,setExampleOn)}{check("Include Answers",answersOn,setAnswersOn)}</div><div className="grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button onClick={refresh} className="flex h-11 items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white text-sm font-semibold"><img src="ui-icons/restart.svg" className="h-5 w-5" alt=""/>Regenerate</button><button onClick={()=>outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white"><img src="ui-icons/download.svg" className="h-5 w-5 invert" alt=""/>{preparingMode==="download"?"Preparing…":"Download"}</button><button onClick={()=>outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center gap-2 rounded-xl bg-black text-sm font-semibold text-white"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-4 w-4 invert" alt=""/>{preparingMode==="print"?"Preparing…":"Print"}</button></div></div></div></div><section className="print-area worksheet-preview-panel"><div className="no-print mb-4"><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" className="h-6 w-6" alt=""/>Preview</h2><p className="text-sm text-stone-600">Updates automatically as you change the options.</p></div><div className={`transition-opacity duration-300 ${previewVisible?"opacity-100":"opacity-0"}`}><Pages data={data} total={total}/>{answersOn?<div className="answer-sheet-start-new"><Pages data={{...data,example:null}} answers offset={qPages} total={total}/></div>:null}</div></section></main></div></div>;
   }
   window.MLHGenericWorksheetApp=GenericApp;
   ReactDOM.createRoot(document.getElementById("root")).render(<GenericApp />);

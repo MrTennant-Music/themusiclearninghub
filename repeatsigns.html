@@ -5,21 +5,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Repeat Signs</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/repeat-signs-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/repeat-signs-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <style>
@@ -35,16 +36,17 @@
       text-rendering: geometricPrecision;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
-<body>
+<body data-literacy-activity>
 <div id="root"></div>
 
 <script type="text/x-mlh-jsx-source" data-runtime="repeatsigns-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 
 const W = 920;
@@ -59,7 +61,7 @@ const STEM = 32;
 const BAR_COUNT = 8;
 const BARS_PER_SYSTEM = 4;
 const ACCOMP_MAX_MIDI = 67;
-const MEDAL_THRESHOLDS = [10, 15, 20, 30];
+const MEDAL_THRESHOLDS = [2, 4, 6, 10];
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || { drawing: {}, symbols: {} };
 
@@ -69,8 +71,6 @@ const ASSET = {
   levels: "./ui-icons/levels.svg",
   next: "./ui-icons/next.svg",
   eye: "./ui-icons/eye.svg",
-  metronome: "./ui-icons/metronome.svg",
-  tempo: "./ui-icons/tempo.svg",
   bronze: "./ui-icons/bronze.svg",
   silver: "./ui-icons/silver.svg",
   gold: "./ui-icons/gold.svg",
@@ -111,11 +111,8 @@ function taskMatchesLevel(level, enabledTypes) {
 }
 
 function medalSoundForStreak(streak) {
-  if (streak >= 30) return "platinum";
-  if (streak >= 20) return "gold";
-  if (streak >= 15) return "silver";
-  if (streak >= 10) return "bronze";
-  return null;
+  const tierIndex = MEDAL_THRESHOLDS.indexOf(streak);
+  return ["bronze", "silver", "gold", "platinum"][tierIndex] ?? null;
 }
 
 const QUESTION_TYPE_LABELS = {
@@ -224,7 +221,7 @@ const MAX_MELODIC_LEAP_STEPS = 7;
 const MAX_MELODIC_RANGE_STEPS = 8;
 const MAX_REPEATED_PITCH_RUN = 2;
 
-function r(items) { return items[Math.floor(Math.random() * items.length)]; }
+function r(items) { return items[Math.floor(exerciseRandom() * items.length)]; }
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function rhythm(id) { return RH[id] || RH.crotchet; }
 function y(step, top) { return top + GAP * 4 - step * (GAP / 2); }
@@ -370,7 +367,7 @@ function noteMeta(index) {
 
 function weighted(items) {
   const total = items.reduce((sum, item) => sum + item.weight, 0);
-  let roll = Math.random() * total;
+  let roll = exerciseRandom() * total;
   for (const item of items) {
     roll -= item.weight;
     if (roll <= 0) return item.value;
@@ -596,7 +593,7 @@ function makeMelodyForBar(key, chordSymbol, barIndex, previousIndex, ts) {
 
 function makeBars(ts) {
   const majorKeys = KEYS.filter(key => key.id !== "Am");
-  const key = Math.random() < 0.8 ? r(majorKeys) : KEYS.find(item => item.id === "Am");
+  const key = exerciseRandom() < 0.8 ? r(majorKeys) : KEYS.find(item => item.id === "Am");
   const progression = makeChordProgression(key);
   let previousIndex = notePoolIndex(noteByLetter(key.tonic, 6));
   const bars = progression.map((symbol, barIndex) => {
@@ -667,7 +664,7 @@ function makeQuestion(level = "N4", enabledTypes = null) {
   }
 
   return {
-    id: Math.random().toString(36).slice(2),
+    id: exerciseRandom().toString(36).slice(2),
     level: activeLevel,
     type,
     key,
@@ -948,11 +945,11 @@ function EndRepeatGlyph({ x, y, colour = "currentColor", opacity = 1 }) {
 
 function TimeBarGlyph({ placement, colour = "currentColor", opacity = 1 }) {
   const pos = placementPos(placement);
-  const width = Math.min(92, pos.bw - 22);
+  const x = pos.start + 14;
   const label = placement.symbolId === "first-time" ? "1." : "2.";
   return <g opacity={opacity} stroke={colour} fill="none" strokeWidth="2" strokeLinecap="square">
-    <path d={`M ${pos.start + 9} ${pos.top - 24} L ${pos.start + 9} ${pos.top - 35} L ${pos.start + 9 + width} ${pos.top - 35}`} />
-    <text x={pos.start + 17} y={pos.top - 38} fill={colour} stroke="none" fontFamily="serif" fontSize="18" fontWeight="800">{label}</text>
+    <path d={`M ${x} ${pos.top - 24} L ${x} ${pos.top - 35} L ${pos.end} ${pos.top - 35}`} />
+    <text x={x + 8} y={pos.top - 38} fill={colour} stroke="none" fontFamily="serif" fontSize="18" fontWeight="800">{label}</text>
   </g>;
 }
 
@@ -1092,35 +1089,6 @@ function MenuSvgGlyph({ src, alt = "" }) {
   return <img src={src} alt={alt} className="h-[20px] w-[20px] object-contain" />;
 }
 
-function TempoDropdownRow({ tempo, setTempo, stopAudio }) {
-  const tempos = [
-    { id: "adagio", label: "Adagio" },
-    { id: "andante", label: "Andante" },
-    { id: "allegro", label: "Allegro" },
-  ];
-  const selectedTempo = tempos.find(speed => speed.id === tempo) || tempos[1];
-  function cycleTempo() {
-    const currentIndex = tempos.findIndex(speed => speed.id === selectedTempo.id);
-    setTempo(tempos[(currentIndex + 1) % tempos.length].id);
-    stopAudio();
-  }
-  return <div className="hub-toggle-row relative min-h-[44px] overflow-visible">
-    <span className="hub-toggle-label min-w-[145px]">
-      <span className="hub-toggle-glyph">
-        <MenuSvgGlyph src={ASSET.tempo} alt="" />
-      </span>
-      <span className="leading-none">Tempo</span>
-    </span>
-    <button
-      type="button"
-      onClick={cycleTempo}
-      className="flex h-7 w-[86px] items-center justify-center rounded-xl border border-stone-300 bg-white px-2.5 text-sm font-bold text-stone-950 shadow-sm"
-    >
-      <span>{selectedTempo.label}</span>
-    </button>
-  </div>;
-}
-
 function QuestionTypeGlyph({ type }) {
   const symbolClass = "music-symbol";
   if (type === "straight-repeat") {
@@ -1169,16 +1137,9 @@ function QuestionTypeToggleRows({ activeLevel, enabledQuestionTypes, toggleQuest
   </>;
 }
 
-function MenuRows({ activeLevel, enabledQuestionTypes, toggleQuestionType, followPlayback, setFollowPlayback, tempo, setTempo, metronomeEnabled, setMetronomeEnabled, stopAudio }) {
+function MenuRows({ activeLevel, enabledQuestionTypes, toggleQuestionType, followPlayback, setFollowPlayback }) {
   return <>
-    <window.MLH.MenuSubheading>Audio</window.MLH.MenuSubheading>
-    <TempoDropdownRow tempo={tempo} setTempo={setTempo} stopAudio={stopAudio} />
-    <window.MLH.MenuToggleRow
-      glyph={<MenuSvgGlyph src={ASSET.metronome} alt="" />}
-      label="Metronome"
-      checked={metronomeEnabled}
-      onChange={() => { setMetronomeEnabled(v => !v); stopAudio(); }}
-    />
+    <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
     <window.MLH.MenuToggleRow
       glyph={<MenuSvgGlyph src={ASSET.eye} alt="" />}
       label="Follow Playback"
@@ -1211,9 +1172,6 @@ function playOscillator(ctx, { frequency, start, duration, volume = 0.16, type =
   window.MLH?.playPianoFrequency?.(ctx, destination, frequency, start, duration, volume);
 }
 
-function playDrumHit(ctx, start, accented = false, destination = ctx.destination) {
-  window.MLH?.playMetronomeClick?.(ctx, destination, start, accented);
-}
 
 function App() {
   useStyles();
@@ -1232,11 +1190,12 @@ function App() {
   const [feedbackFading, setFeedbackFading] = useState(false);
   const [wrong, setWrong] = useState([]);
   const [missing, setMissing] = useState([]);
-  const [tempo, setTempo] = window.MLH.useProfileState("tempo", "andante"), [metronomeEnabled, setMetronomeEnabled] = window.MLH.useProfileState("metronomeEnabled", false), [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
-  const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
-  const [best, setBest] = window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, metronomeEnabled, followPlayback } } });
+  const tempo = "andante";
+  const [followPlayback, setFollowPlayback] = window.MLH.useProfileState("followPlayback", false);
+  const [correct, setCorrect] = window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, followPlayback } } });
+  const [attempted, setAttempted] = window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, followPlayback } } });
+  const [streak, setStreak] = window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, followPlayback } } });
+  const [best, setBest] = window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: enabledQuestionTypes, options: { tempo, followPlayback } } });
   const [confettiKey, setConfettiKey] = useState(0);
   const [autoShowMedals, setAutoShowMedals] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -1388,7 +1347,7 @@ function App() {
     playFeedbackSound(ok);
     if (ok) {
       const medalSound = medalSoundForStreak(ns);
-      if (medalEligible && medalSound && MEDAL_THRESHOLDS.includes(ns)) {
+      if (medalEligible && medalSound) {
         setAutoShowMedals(true);
         setConfettiKey((value) => value + 1);
         medalTimerRef.current = setTimeout(() => setAutoShowMedals(false), 2000);
@@ -1515,7 +1474,7 @@ function App() {
         ...letters.map((letter, index) => midiToFrequency(accompanimentChordMidi(question.key, bar.chord, letter, 3 + index))),
       ];
     });
-    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies, metronome: metronomeEnabled });
+    const ready = await window.MLH.prepareAudioPlayback(ctx, { piano: frequencies });
     if (audioRef.current !== ctx) return;
     if (!ready) { stopAudio(); return; }
 
@@ -1528,13 +1487,6 @@ function App() {
       const relativeBarStart = t;
       const chordDur = barDuration(bar, beatSeconds);
 
-      if (metronomeEnabled) {
-        const beatsInBar = question.timeSignature.beats;
-
-        for (let beat = 0; beat < beatsInBar; beat += 1) {
-          playDrumHit(ctx, relativeBarStart + beat * beatSeconds, beat === 0, master);
-        }
-      }
 
       bar.notes.forEach(note => {
         const dur = rhythm(note.rhythm).beats * beatSeconds;
@@ -1580,7 +1532,7 @@ function App() {
   }
 
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader profileState={{ activeLevel, enabledQuestionTypes, tempo, metronomeEnabled, followPlayback }} icon={ASSET.appIcon} title="Repeat Signs" subtitle="Identify repeat signs and navigation marks.">
+    <window.MLH.AppHeader classroomOriginalFormat={!medalEligible || followPlayback} profileState={{ activeLevel, enabledQuestionTypes, followPlayback }} icon={ASSET.appIcon} title="Repeat Signs" subtitle="Identify repeat signs and navigation marks.">
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
         assets={ASSET}
         correct={correct}
@@ -1621,12 +1573,12 @@ function App() {
               dataMenuTrigger={true}
             />
             {customiseOpen && <window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
-              <MenuRows activeLevel={activeLevel} enabledQuestionTypes={enabledQuestionTypes} toggleQuestionType={toggleQuestionType} followPlayback={followPlayback} setFollowPlayback={setFollowPlayback} tempo={tempo} setTempo={setTempo} metronomeEnabled={metronomeEnabled} setMetronomeEnabled={setMetronomeEnabled} stopAudio={stopAudio}/>
+              <MenuRows activeLevel={activeLevel} enabledQuestionTypes={enabledQuestionTypes} toggleQuestionType={toggleQuestionType} followPlayback={followPlayback} setFollowPlayback={setFollowPlayback}/>
             </window.MLH.MenuPanel>}
           </div>
 
         </div>
-        <window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />
+        <window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 z-30 flex -translate-y-1/2 justify-center overflow-visible"><FeedbackBanner feedback={feedback} fading={feedbackFading}/></div>
       </div>
 
@@ -1685,7 +1637,7 @@ const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("repeats");
 const root = document.getElementById("root");
 if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />);
 else ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, root);
-</script><script src="./generated-runtimes/repeatsigns-1.js?v=3179d92bf081"></script>
-<script src="./footer.js?v=120454beac89"></script>
+</script><script src="./generated-runtimes/repeatsigns-1.js?v=7461d05711c7"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

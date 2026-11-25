@@ -53,7 +53,7 @@
 .ig-app select,.ig-app textarea,.ig-modal input,.ig-modal textarea,.ig-modal select{border-radius:10px}
 .ig-app .ig-workspace-toolbar nav>button.is-active{color:#000;background:#f5f5f4;border-color:#a8a29e}
 .ig-app button:focus-visible,.ig-modal button:focus-visible,
-.ig-app input:focus-visible,.ig-app textarea:focus-visible,.ig-app select:focus-visible{outline-color:#000}
+.ig-app input:focus-visible,.ig-app textarea:focus-visible,.ig-app select:focus-visible{outline-color:var(--mlh-focus-color, #2563eb)}
 .ig-app input,.ig-modal input{accent-color:#000}
 .ig-app .ig-primary,.ig-modal .ig-primary,.ig-app .ig-content-done{background:#000;border-color:#000;color:#fff}
 .ig-app .ig-primary:hover,.ig-modal .ig-primary:hover,.ig-app .ig-content-done:hover{background:#292524;border-color:#292524}
@@ -111,7 +111,7 @@
 .ig-app .ig-activity-card.is-menu-open{z-index:10}
 .ig-app button.ig-activity-open{position:absolute;inset:0;z-index:1;width:100%;height:100%;margin:0;padding:0;border:0;border-radius:12px;background:transparent;box-shadow:none}
 .ig-app button.ig-activity-open:hover{background:transparent;border:0}
-.ig-app button.ig-activity-open:focus-visible{outline:3px solid #000;outline-offset:3px}
+.ig-app button.ig-activity-open:focus-visible{outline:3px solid var(--mlh-focus-color, #2563eb);outline-offset:3px}
 .ig-activity-meta-row{display:flex;align-items:center;gap:6px}
 .ig-activity-meta-row .ig-activity-format{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:6px;min-width:0;margin:0}
 .ig-activity-meta-row .ig-activity-level-symbol{margin-left:0}
@@ -146,7 +146,7 @@
 .ig-library-folder>summary{display:flex;align-items:center;gap:10px;padding:14px 16px;list-style:none;cursor:pointer;font-size:16px;font-weight:700;border-radius:12px}
 .ig-library-folder>summary::-webkit-details-marker{display:none}
 .ig-library-folder>summary:hover{background:#f5f5f4}
-.ig-library-folder>summary:focus-visible{outline:3px solid #000;outline-offset:3px}
+.ig-library-folder>summary:focus-visible{outline:3px solid var(--mlh-focus-color, #2563eb);outline-offset:3px}
 .ig-library-folder>summary>svg{width:16px;height:16px;margin-left:auto;fill:none;stroke:currentColor;stroke-width:2;transition:transform .15s}
 .ig-library-folder[open]>summary>svg{transform:rotate(90deg)}
 .ig-folder-count{display:grid;place-items:center;min-width:25px;height:25px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#f5f5f4;color:#57534e;font-size:12px}

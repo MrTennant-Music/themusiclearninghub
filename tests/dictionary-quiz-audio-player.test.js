@@ -31,7 +31,7 @@ test('both quiz entry points load the shared audio engine before the quiz compon
 
 test('practice statistics reuse the shared score and streak panel with collection medal scope',()=>{
  const h=(tag,props,...children)=>({tag,props:props||{},children}),window={MLH:{ScoreStreakPanel:'shared-score-panel'}},P=require('../music-dictionary/quiz-practice-core.js');
- vm.runInNewContext(source.slice(source.indexOf('window.MusicDictionaryQuizStats='),source.indexOf('window.MusicDictionaryQuizAnswer=')),{window,h,P,medalAssets:{}});
+ vm.runInNewContext(source.slice(source.indexOf('window.MusicDictionaryQuizStats='),source.indexOf('function practiceQuestion(')),{window,h,P,medalAssets:{}});
  const tree=window.MusicDictionaryQuizStats({summary:{correct:9,attempted:12,streak:4,best:10,level:'AH',activity:'conceptquiz-ah-chords.html',medalEligible:true}});
  assert.equal(tree.tag,'shared-score-panel');assert.equal(tree.props.accuracy,75);assert.equal(tree.props.achievementActivity,'conceptquiz-ah-chords.html');assert.equal(tree.props.medalEligible,true);
  const custom=window.MusicDictionaryQuizStats({summary:{medalEligible:false}});assert.equal(custom.props.medalEligible,false);

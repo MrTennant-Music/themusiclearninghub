@@ -39,7 +39,6 @@ const LEGACY_DESKTOP_VARIANT_LIMITS = {
   "timesignatures.html": 6,
   "scaledegrees.html": 23,
   "transposing.html": 6,
-  "triplets.html": 4,
   "worksheetgenerator.html": 1,
   "worksheet-generic.jsx": 3,
 };

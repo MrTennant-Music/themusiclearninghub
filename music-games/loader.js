@@ -1,6 +1,15 @@
 /* On-demand scripts also work from file://; no runtime JSX compiler is required. */
 (() => {
   const requests = new Map(), activities = new Map();
+  function renameDictionaryLabels(activity) {
+    for (const field of ['title', 'description', 'folder']) {
+      if (typeof activity[field] === 'string') {
+        activity[field] = activity[field].replaceAll('Music Dictionary', 'Concept Dictionary');
+      }
+    }
+    return activity;
+  }
+  (window.IGActivityIndex || []).forEach(renameDictionaryLabels);
   const engineFor = mode => ['quiz','gameshow-quiz','true-or-false','match-up','type-the-answer','group-sort','complete-the-sentence','matching-pairs','rank-order','wordsearch','crossword','labelled-diagram'].includes(mode) ? 'learning' : 'arcade';
   function script(url) {
     if (requests.has(url)) return requests.get(url);
@@ -53,5 +62,5 @@
     if (!activities.has(id)) throw new Error('This activity could not be loaded.');
     return window.IGCore.normalize(activities.get(id));
   }
-  window.IGRuntime = { ready, load, activity, registerActivity(value) { activities.set(value.id, value); } };
+  window.IGRuntime = { ready, load, activity, registerActivity(value) { activities.set(value.id, renameDictionaryLabels(value)); } };
 })();

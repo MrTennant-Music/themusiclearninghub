@@ -5,31 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Worksheet Generator</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/intervals-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/rhythm-sums-generator.js?v=5af57042439b"></script>
   <script src="./shared/melodic-dictation-selection.js?v=12e08f730178"></script>
   <script src="./shared/note-identification-core.js?v=688df1d056ef"></script>
   <script src="./shared/transposing-core.js?v=8d5e352ffbd2"></script>
   <script src="./shared/barlines-core.js?v=30834617a6d4"></script>
   <script src="./shared/rests-question-core.js?v=ae183df55ae9"></script>
-  <script src="./shared/key-signatures-selection.js?v=387b562d7b09"></script>
+  <script src="./shared/key-signatures-selection.js?v=df6df2106c3e"></script>
   <script src="./shared/accidentals-selection.js?v=cbd84b23fe92"></script>
   <script src="./shared/chords-selection.js?v=e682f9703438"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./bravura-worksheet-outlines.js?v=20260805-pdf-glyphs"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <script src="./intervals-worksheet-core.js?v=ca6b145dc807"></script>
-  <script src="./keyboard-notes.js?v=d394fb2b445a"></script>
+  <script src="./keyboard-notes.js?v=9fbb2942b6a1"></script>
   <script src="./vendor/pdf-lib/pdf-lib-1.17.1.min.js"></script>
   <script src="./digital-question-papers/vendor/html2canvas-1.4.1.min.js"></script>
   <script src="./digital-question-papers/vendor/jspdf-2.5.2.umd.min.js"></script>
@@ -40,8 +41,25 @@
     .worksheet-preview-panel { position: sticky; top: 112px; max-height: calc(100vh - 136px); overflow-y: auto; overscroll-behavior-y: contain; border: 1px solid #e7e5e4; border-radius: 16px; background: #fafaf9; padding: 12px 16px 16px; }
     .worksheet-page { display: flex; flex-direction: column; width: min(100%, 210mm); min-height: 0; aspect-ratio: 210 / 297; margin: 0 auto 24px; overflow: hidden; background: white; box-shadow: 0 2px 16px rgba(0,0,0,.14); padding: 14mm; }
     .word-puzzle-worksheet-page { width: 794px; height: 1123px; min-height: 1123px; max-width: none; aspect-ratio: auto; zoom: .62; }
-    .word-puzzle-worksheet-page .pupil-detail-line { margin-bottom: 3px; transform: none !important; }
+    .domino-worksheet-page { gap: 14px; }
+    .domino-print-heading { font-size: 16px; font-weight: 700; }
+    .domino-print-sheet { text-align: center; }
+    .domino-print-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 128px; gap: 10px; }
+    .domino-print-card { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); border: 1px dashed #57534e; break-inside: avoid; }
+    .domino-print-card > * { display: grid; place-items: center; padding: 10px; font-size: 16px; line-height: 1.3; text-align: center; overflow-wrap: anywhere; }
+    .domino-print-card strong { border-right: 1px solid #a8a29e; background: #f5f5f4; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .domino-print-solution { margin: 0; padding-left: 28px; list-style: decimal; line-height: 1.85; }
+    .word-puzzle-worksheet-page .worksheet-header-card { padding: 22px; border-radius: 18px; }
+    .word-puzzle-worksheet-page .worksheet-header-icon { width: 64px; height: 64px; }
+    .word-puzzle-worksheet-page .worksheet-header-title { font-size: 30px; }
+    .word-puzzle-worksheet-page .worksheet-header-instructions,
+    .word-puzzle-worksheet-page .worksheet-pupil-details { font-size: 21px; line-height: 1.4; }
+    .word-puzzle-worksheet-page .pupil-detail-line { transform: none !important; }
     .word-puzzle-worksheet-page footer { min-width: 0; width: 100%; }
+    .word-puzzle-worksheet-page .worksheet-header-card,
+    .word-puzzle-worksheet-page footer { flex-shrink: 0; }
+    .word-puzzle-grid-slot { position: relative; width: 100%; min-height: 0; margin: 14px auto; }
+    .word-puzzle-worksheet-grid { position: absolute; inset: 0; width: 100%; height: 100%; }
     .pdf-capture.word-puzzle-worksheet-page { zoom: 1; }
     .pdf-capture.word-puzzle-worksheet-page .worksheet-header-title, .pdf-capture.word-puzzle-worksheet-page .worksheet-header-instructions { transform: none !important; }
     .worksheet-questions { display: grid; flex: 1; min-height: 0; }
@@ -51,7 +69,7 @@
     .worksheet-example-answer { background: #fafaf9; }
     .worksheet-checkbox { appearance: none; display: inline-block; height: 16px; width: 16px; flex: 0 0 16px; border: 1px solid #a8a29e; border-radius: 4px; background-color: white; background-position: center; background-repeat: no-repeat; background-size: 11px 11px; }
     .worksheet-checkbox:checked { border-color: black; background-color: black; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.3 6.6 11.4 12.7 4.8' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
-    .worksheet-checkbox:focus-visible { outline: 2px solid black; outline-offset: 2px; }
+    .worksheet-checkbox:focus-visible { outline: 2px solid var(--mlh-focus-color, #2563eb); outline-offset: 2px; }
     .worksheet-builder .grid.grid-cols-3.border-t > button:nth-child(2) { order: 3; }
     .worksheet-builder .grid.grid-cols-3.border-t > button:nth-child(3) { order: 2; }
     .worksheet-activity-tonic .generic-grid > .generic-question.worksheet-example-answer:first-child > div:first-child { display: block; }
@@ -62,6 +80,10 @@
     .generic-grid.with-gridlines { border-left: 1px solid #000; border-top: 1px solid #000; }
     .generic-grid.with-gridlines .generic-question { border-right: 1px solid #000; border-bottom: 1px solid #000; }
     .generic-question { display: flex; min-height: 0; flex-direction: column; overflow: hidden; padding: 10px 12px; }
+    .keyboard-worksheet-question > :first-child,
+    .keyboard-worksheet-question > :last-child { flex-shrink: 0; }
+    .keyboard-worksheet-diagram { position: relative; flex: 1; min-height: 0; width: 100%; }
+    .keyboard-worksheet-score { position: absolute; inset: 0; width: 100%; height: 100%; }
     .total-marks-value { top: 8px; }
     .practice-paper-total-marks { position: relative; z-index: 4; }
     .practice-paper-total-marks-label,
@@ -87,14 +109,14 @@
     .practice-paper-score-frame.with-gridlines { outline: 1px solid #000; outline-offset: -1px; }
     .practice-paper-score-sixteen { transform: translateY(-3px); }
     .practice-paper-score-only-page .practice-paper-score { top: 10px; }
-    .practice-paper-page > footer { position: relative; z-index: 3; background: #fff; }
+    .practice-paper-page > footer { position: relative; z-index: 3; padding-top: 10px; background: #fff; }
     .practice-paper-score > div { width: 100% !important; max-width: none !important; }
     .practice-paper-score input { pointer-events: none; color: transparent; caret-color: transparent; }
     .practice-paper-score-answer input { color: #000 !important; -webkit-text-fill-color: #000 !important; opacity: 1 !important; }
     .practice-paper-score [class*="cursor-"] { cursor: default !important; }
     .practice-paper-score svg { display: block; height: auto; width: 100%; overflow: visible; }
     .practice-paper-score [data-score-question-source] > rect { stroke: #000 !important; opacity: 1 !important; }
-    .practice-paper-questions { position: relative; z-index: 2; display: flex; min-height: 0; flex: 1 1 auto; flex-direction: column; justify-content: space-evenly; background: #fff; }
+    .practice-paper-questions { position: relative; z-index: 2; display: flex; min-height: min-content; flex: 1 1 auto; flex-direction: column; justify-content: space-evenly; background: #fff; }
     .practice-paper-page-sixteen .practice-paper-questions { flex: 1 1 auto; justify-content: space-between; gap: 3px; }
     .practice-paper-questions-only-page .practice-paper-questions { flex: 0 0 auto; justify-content: flex-start; gap: 16px; }
     .practice-paper-questions-only-page .practice-paper-questions { position: relative; top: 10px; }
@@ -103,9 +125,8 @@
     .practice-paper-questions.with-gridlines { border: 0; }
     .practice-paper-questions-only-page .practice-paper-questions.with-gridlines { border-top: 1px solid #000; }
     .practice-paper-questions.with-gridlines > div { border-right: 1px solid #000; border-bottom: 1px solid #000; border-left: 1px solid #000; }
-    .practice-paper-answer-line { border-bottom: 1px solid #78716c; transform: translateY(3px); }
-    .practice-paper-answer-area-ah,
-    .pdf-capture .practice-paper-answer-area-ah { padding-top: 15px !important; }
+    .practice-paper-answer-line { min-height: 26px; margin-top: 4px; border-bottom: 1px solid #000; }
+    .practice-paper-questions-only-page .practice-paper-answer-line { min-height: 36px; }
 
     @media print {
       @page { size: A4 portrait; margin: 0; }
@@ -119,7 +140,7 @@
       .worksheet-page { box-sizing: border-box; width: 210mm; height: 297mm; min-height: 297mm; max-height: 297mm; aspect-ratio: auto; margin: 0; padding: 14mm; box-shadow: none; }
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
@@ -140,7 +161,6 @@ const ASSET = {
 const sourceActivityId = (() => { try { return JSON.parse(sessionStorage.getItem("worksheetSourceConfig") || "null")?.activityId; } catch { return null; } })();
 if (sourceActivityId !== "music-dictionary") window.MLH.worksheetHeaderMode = {
   title: "Intervals",
-  subtitle: "Identify and create intervals.",
   icon: ASSET.appIcon,
   assets: ASSET,
   onExit: () => {
@@ -158,34 +178,6 @@ function safePdfTitle(title, fallback = "Worksheet") {
     .trim() || fallback;
 }
 window.MLH.safePdfTitle = safePdfTitle;
-
-function worksheetExerciseUrl(config) {
-  const rawUrl = config?.exerciseUrl || config?.sourceUrl || "";
-  try {
-    const url = new URL(rawUrl, window.location.href);
-    const githubPrefix = ["/musicliteracy", "/themusiclearninghub"].find(prefix => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`));
-    if (url.hostname === "mrtennant-music.github.io" && githubPrefix) {
-      return new URL(`${url.pathname.slice(githubPrefix.length) || "/"}${url.search}${url.hash}`, window.location.href).toString();
-    }
-    if (url.protocol === "file:" || ["localhost", "127.0.0.1", "::1", "themusicliteracyhub.netlify.app", "themusiclearninghub.netlify.app"].includes(url.hostname)) {
-      const fileName = url.pathname.split("/").filter(Boolean).pop() || `${config?.activityId || "index"}.html`;
-      return new URL(`./${window.MLH.pageFilename(fileName)}${url.search}${url.hash}`, window.location.href).toString();
-    }
-    return url.toString();
-  } catch {
-    return new URL(`./${window.MLH.pageFilename(`${config?.activityId || "index"}.html`)}`, window.location.href).toString();
-  }
-}
-function worksheetQrImageUrl(exerciseUrl, size = 180) {
-  return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(exerciseUrl)}`;
-}
-window.MLH.worksheetExerciseUrl = worksheetExerciseUrl;
-window.MLH.worksheetQrImageUrl = worksheetQrImageUrl;
-
-function WorksheetQr({ exerciseUrl, bordered = false, dividerClass = "" }) {
-  if (!exerciseUrl) return null;
-  return <section className={`worksheet-qr flex min-h-0 flex-col items-center justify-center gap-2 p-4 text-center ${bordered ? "border border-black" : ""} ${dividerClass}`}><img src="app-icons/the-music-learning-hub-logo.svg" className="h-auto w-24 max-w-full" alt="The Music Learning Hub" /><div className="flex flex-col items-center gap-1"><img src={worksheetQrImageUrl(exerciseUrl)} crossOrigin="anonymous" className="h-16 w-16" alt="QR code linking to more questions" /><span className="flex w-16 justify-center whitespace-nowrap text-[7px] font-bold uppercase text-black"><span className="tracking-[0.08em]">More questions</span></span></div></section>;
-}
 
 function createPdfPrintWindow() {
   const printWindow = window.open("", "_blank");
@@ -327,7 +319,7 @@ function WorksheetPages({ worksheet, answerSheet = false, pageOffset = 0, totalP
   const { mixed: mixedQuestionTypes } = worksheetQuestionTypes(worksheet.questions);
   const questionItems = worksheet.questions.map((question) => ({ question, workedExample: false }));
   const questionPageItems = worksheet.includeExampleAnswer ? [{ question: worksheet.workedExample, workedExample: true }, ...questionItems] : questionItems;
-  const items = answerSheet ? questionItems : worksheet.includeQr ? [...questionPageItems, { worksheetQr: true }] : questionPageItems;
+  const items = answerSheet ? questionItems : questionPageItems;
   const pages = chunk(items, perPage);
   return pages.map((pageItems, pageIndex) => (
     <article className="worksheet-page" key={`${answerSheet ? "answers" : "questions"}-${pageIndex}`}>
@@ -348,7 +340,6 @@ function WorksheetPages({ worksheet, answerSheet = false, pageOffset = 0, totalP
         {pageItems.map((item, index) => {
           const row = Math.floor(index / 2);
           const dividerClass = worksheet.showGridlines ? `${index % 2 === 0 ? "border-r border-black" : ""} ${row < rowsPerPage - 1 ? "border-b border-black" : ""}` : "";
-          if (item.worksheetQr) return <WorksheetQr key="worksheet-qr" exerciseUrl={worksheet.exerciseUrl} bordered={!worksheet.showGridlines} dividerClass={dividerClass} />;
           const { question, workedExample } = item;
           const number = answerSheet || !worksheet.includeExampleAnswer ? pageIndex * perPage + index + 1 : pageIndex * perPage + index;
           return <QuestionCard key={`${workedExample ? "example" : "question"}-${question.id}`} question={question} number={number} showNumbers={worksheet.includeNumbers} showMarks={worksheet.includeMarks && !answerSheet} marks={1} showIdentifyPrompt={mixedQuestionTypes} answer={answerSheet} workedExample={workedExample} dividerClass={dividerClass} />;
@@ -432,7 +423,6 @@ async function worksheetSvgPngBytes(assetName, width = 256, height = 256) {
   }
 }
 const worksheetIconPngBytes = () => worksheetSvgPngBytes("app-icons/intervals-icon.svg");
-const worksheetWordmarkPngBytes = () => worksheetSvgPngBytes("app-icons/the-music-learning-hub-logo.svg", 596, 170);
 
 function roundedRectangleSvgPath(width, height, radius) {
   const right = width, top = height, r = Math.min(radius, width / 2, height / 2), curve = r * 0.55228475;
@@ -486,7 +476,6 @@ function App() {
   const initialLevel = imported?.settings.level || "N5";
   const initialModes = imported?.settings.enabledModes || DEFAULT_MODES;
   const initialTitle = `${imported?.activityName || "Intervals"} · ${LEVELS[initialLevel]}`;
-  const exerciseUrl = worksheetExerciseUrl(imported);
   const initialCount = Number(editorState?.count) || 10;
   const initialQuestionSet = useMemo(() => {
     const modes = ["N3", "N5"].includes(initialLevel) ? { identify: true, create: false } : initialModes;
@@ -497,7 +486,7 @@ function App() {
   const [subtitleCustomized, setSubtitleCustomized] = useState(Boolean(editorState?.subtitleCustomized));
   const [includeHeader, setIncludeHeader] = useState(editorState?.header ?? true), [includeName, setIncludeName] = useState(editorState?.name ?? true), [includeClass, setIncludeClass] = useState(editorState?.classField ?? false), [includeDate, setIncludeDate] = useState(editorState?.date ?? false);
   const [countChoice, setCountChoice] = useState(String(initialCount)), [includeNumbers, setIncludeNumbers] = useState(editorState?.numbers ?? true), [includeMarks, setIncludeMarks] = useState(editorState?.marks ?? true);
-  const [includeAnswers, setIncludeAnswers] = useState(editorState?.answers ?? false), [includeExampleAnswer, setIncludeExampleAnswer] = useState(editorState?.example ?? true), [showGridlines, setShowGridlines] = useState(editorState?.gridlines ?? true), [includeQr, setIncludeQr] = useState(editorState?.qr ?? true);
+  const [includeAnswers, setIncludeAnswers] = useState(editorState?.answers ?? false), [includeExampleAnswer, setIncludeExampleAnswer] = useState(editorState?.example ?? true), [showGridlines, setShowGridlines] = useState(editorState?.gridlines ?? true);
   const level = initialLevel;
   const enabledModes = { ...DEFAULT_MODES, ...initialModes };
   const [error, setError] = useState("");
@@ -516,14 +505,14 @@ function App() {
   const requestedCount = Number(countChoice);
   const currentModes = identifyOnly ? { identify: true, create: false } : enabledModes;
   const effectiveSubtitle = subtitleCustomized ? subtitle : defaultWorksheetInstructions(worksheet.questions);
-  const previewWorksheet = useMemo(() => ({ ...worksheet, title: title.trim() || initialTitle, subtitle: effectiveSubtitle.trim(), exerciseUrl, includeHeader, includeName, includeClass, includeDate, includeNumbers, includeMarks, includeAnswers, includeExampleAnswer, showGridlines, includeQr }), [worksheet, title, effectiveSubtitle, exerciseUrl, includeHeader, includeName, includeClass, includeDate, includeNumbers, includeMarks, includeAnswers, includeExampleAnswer, showGridlines, includeQr, initialTitle]);
-  const worksheetPageCount = Math.ceil((previewWorksheet.questions.length + (previewWorksheet.includeExampleAnswer ? 1 : 0) + (previewWorksheet.includeQr ? 1 : 0)) / 6);
+  const previewWorksheet = useMemo(() => ({ ...worksheet, title: title.trim() || initialTitle, subtitle: effectiveSubtitle.trim(), includeHeader, includeName, includeClass, includeDate, includeNumbers, includeMarks, includeAnswers, includeExampleAnswer, showGridlines }), [worksheet, title, effectiveSubtitle, includeHeader, includeName, includeClass, includeDate, includeNumbers, includeMarks, includeAnswers, includeExampleAnswer, showGridlines, initialTitle]);
+  const worksheetPageCount = Math.ceil((previewWorksheet.questions.length + (previewWorksheet.includeExampleAnswer ? 1 : 0)) / 6);
   const answerPageCount = previewWorksheet.includeAnswers ? Math.ceil(previewWorksheet.questions.length / 6) : 0;
   const totalPreviewPages = worksheetPageCount + answerPageCount;
   useEffect(() => { try { window.sessionStorage.setItem("worksheetGeneratedData", JSON.stringify(previewWorksheet)); } catch {} }, [previewWorksheet]);
   useEffect(() => {
-    sessionStorage.setItem("worksheetEditorState", JSON.stringify({ activityId: "intervals", fingerprint: configFingerprint, title, subtitle, subtitleCustomized, header: includeHeader, name: includeName, classField: includeClass, date: includeDate, count: Number(countChoice), numbers: includeNumbers, marks: includeMarks, answers: includeAnswers, example: includeExampleAnswer, gridlines: showGridlines, qr: includeQr }));
-  }, [configFingerprint, title, subtitle, subtitleCustomized, includeHeader, includeName, includeClass, includeDate, countChoice, includeNumbers, includeMarks, includeAnswers, includeExampleAnswer, showGridlines, includeQr]);
+    sessionStorage.setItem("worksheetEditorState", JSON.stringify({ activityId: "intervals", fingerprint: configFingerprint, title, subtitle, subtitleCustomized, header: includeHeader, name: includeName, classField: includeClass, date: includeDate, count: Number(countChoice), numbers: includeNumbers, marks: includeMarks, answers: includeAnswers, example: includeExampleAnswer, gridlines: showGridlines }));
+  }, [configFingerprint, title, subtitle, subtitleCustomized, includeHeader, includeName, includeClass, includeDate, countChoice, includeNumbers, includeMarks, includeAnswers, includeExampleAnswer, showGridlines]);
   function resizeQuestions(count, nextLevel = level, nextModes = currentModes) {
     if (!Number.isInteger(count) || count < 1 || count > 50) return;
     setWorksheet((current) => {
@@ -563,18 +552,9 @@ function App() {
       const regularFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
       const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
       const worksheetIcon = await pdfDoc.embedPng(await worksheetIconPngBytes());
-      const worksheetWordmark = await pdfDoc.embedPng(await worksheetWordmarkPngBytes());
-      let worksheetQrImage = null;
-      if (previewWorksheet.includeQr) {
-        try {
-          const qrResponse = await fetch(worksheetQrImageUrl(previewWorksheet.exerciseUrl, 240));
-          if (qrResponse.ok) worksheetQrImage = await pdfDoc.embedPng(await qrResponse.arrayBuffer());
-        } catch {}
-      }
       const perPage = 6;
       const assessedItems = previewWorksheet.questions.map((question) => ({ question, workedExample: false }));
-      const baseQuestionItems = previewWorksheet.includeExampleAnswer ? [{ question: previewWorksheet.workedExample, workedExample: true }, ...assessedItems] : assessedItems;
-      const questionItems = previewWorksheet.includeQr ? [...baseQuestionItems, { worksheetQr: true }] : baseQuestionItems;
+      const questionItems = previewWorksheet.includeExampleAnswer ? [{ question: previewWorksheet.workedExample, workedExample: true }, ...assessedItems] : assessedItems;
       const answerItems = previewWorksheet.questions.map((question) => ({ question, workedExample: false }));
       const { mixed: mixedQuestionTypes } = worksheetQuestionTypes(previewWorksheet.questions);
       const questionGroups = chunk(questionItems, perPage), answerGroups = chunk(answerItems, perPage);
@@ -630,16 +610,6 @@ function App() {
           const row = Math.floor(index / 2), column = index % 2;
           const cellLeft = tableLeft + column * columnWidth, cellRight = cellLeft + columnWidth;
           const cellTop = contentTop - row * rowHeight, cellBottom = cellTop - rowHeight;
-          if (item.worksheetQr) {
-            if (!previewWorksheet.showGridlines) page.drawRectangle({ x: cellLeft, y: cellBottom, width: columnWidth, height: rowHeight, borderColor: black, borderWidth: 0.5 });
-            const wordmarkWidth = 80, wordmarkHeight = wordmarkWidth * 170 / 596;
-            const qrSize = 56, groupHeight = wordmarkHeight + qrSize + 10, groupBottom = cellBottom + (rowHeight - groupHeight) / 2;
-            page.drawImage(worksheetWordmark, { x: cellLeft + (columnWidth - wordmarkWidth) / 2, y: groupBottom + qrSize + 10, width: wordmarkWidth, height: wordmarkHeight });
-            if (worksheetQrImage) page.drawImage(worksheetQrImage, { x: cellLeft + (columnWidth - qrSize) / 2, y: groupBottom, width: qrSize, height: qrSize });
-            const qrLabel = "MORE QUESTIONS", qrLabelSize = 6.5;
-            page.drawText(qrLabel, { x: cellLeft + (columnWidth - boldFont.widthOfTextAtSize(qrLabel, qrLabelSize)) / 2, y: groupBottom - 10.5, size: qrLabelSize, font: boldFont, color: black });
-            return;
-          }
           const { question, workedExample } = item;
           const globalNumber = answerSheet || !previewWorksheet.includeExampleAnswer ? pageIndex * perPage + index + 1 : pageIndex * perPage + index;
           const intervalText = question.type === "create" ? window.MLHIntervalsWorksheet.intervalLabel(question.intervalSize).toLowerCase() : "";
@@ -710,10 +680,10 @@ function App() {
       setPreparingMode(null);
     }
   }
-  if (!imported) return <div className={SHELL.pageShellClass}><window.MLH.AppHeader icon={ASSET.appIcon} title="Create a worksheet" subtitle="Worksheets begin from a supported activity." /><div className={SHELL.pageContentClass}><main className={`${SHELL.mainShellClass} flex items-center justify-center`}><p className="max-w-lg py-12 text-center text-stone-700">Open Intervals and choose <strong>Create worksheet</strong> beside the QR code to bring its current settings here.</p></main></div></div>;
+  if (!imported) return <div className={SHELL.pageShellClass}><window.MLH.AppHeader icon={ASSET.appIcon} title="Create a worksheet" subtitle="Worksheets begin from a supported activity." /><div className={SHELL.pageContentClass}><main className={`${SHELL.mainShellClass} flex items-center justify-center`}><p className="max-w-lg py-12 text-center text-stone-700">Open Intervals and choose <strong>Create worksheet</strong> to bring its current settings here.</p></main></div></div>;
   return (
     <div className={SHELL.pageShellClass}>
-      <window.MLH.AppHeader icon={ASSET.appIcon} title="Create a worksheet" subtitle={imported.subtitle || "Identify and create intervals."} />
+      <window.MLH.AppHeader icon={ASSET.appIcon} title="Create a worksheet" subtitle={imported.subtitle ?? "Identify and create intervals."} />
       <div className={`${SHELL.pageContentClass} worksheet-page-content`}>
         <main className={`${SHELL.mainShellClass} worksheet-builder h-auto min-h-0 p-4 md:p-6`}>
           <div className="no-print">
@@ -721,17 +691,17 @@ function App() {
               <h2 className="flex items-center gap-2 text-xl font-bold"><img src="app-icons/intervals-icon.svg" alt="" aria-hidden="true" className="h-7 w-7 object-contain" />Intervals · {LEVELS[level]}</h2>
               <p className="mt-1 text-sm leading-relaxed text-stone-600">Generate a printable worksheet using the current activity and settings.</p>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-white p-4">
+            <div className="rounded-xl border border-stone-200 bg-stone-50 p-4">
               <div><h2 className="flex items-center gap-2 text-xl font-bold"><img src="ui-icons/customise.svg" alt="" aria-hidden="true" className="h-6 w-6 object-contain" />Customise</h2><p className="mt-1 text-sm text-stone-600">Adjust the worksheet content and layout.</p></div>
               <div className="mt-4 space-y-4">
                 <label className="block text-sm font-semibold">Title<input className={fieldClass} value={title} onChange={(event) => setTitle(event.target.value)} /></label>
                 <label className="block text-sm font-semibold">Instructions<textarea ref={resizeWorksheetTextarea} rows="2" className={`${fieldClass} min-h-16 resize-none overflow-hidden`} value={effectiveSubtitle} onChange={(event) => { resizeWorksheetTextarea(event.currentTarget); setSubtitle(event.target.value); setSubtitleCustomized(true); }} /></label>
                 <div className="flex flex-wrap items-center justify-start gap-x-7 gap-y-2">{check("Header", includeHeader, changeHeader)}{check("Name", includeName, setIncludeName, !includeHeader)}{check("Class", includeClass, setIncludeClass, !includeHeader)}{check("Date", includeDate, setIncludeDate, !includeHeader)}</div>
                 <label className="flex items-center justify-between gap-4 border-t border-stone-200 pt-4 text-sm font-semibold"><span>Number of Questions</span><select className={compactSelectClass} value={countChoice} onChange={(event) => { const value = event.target.value; setCountChoice(value); resizeQuestions(Number(value)); setError(""); }}>{[10,15,20,25].map((value) => <option key={value} value={value}>{value}</option>)}</select></label>
-                <div className="grid grid-cols-[minmax(0,1fr)_max-content] items-center gap-x-6 gap-y-3">{check("Question Numbers", includeNumbers, setIncludeNumbers)}{check("Marks", includeMarks, setIncludeMarks)}{check("Gridlines", showGridlines, setShowGridlines)}{check("Example Answer", includeExampleAnswer, setIncludeExampleAnswer)}{check("Include Answers", includeAnswers, setIncludeAnswers)}{check("QR Code", includeQr, setIncludeQr)}</div>
+                <div className="grid grid-cols-[minmax(0,1fr)_max-content] items-center gap-x-6 gap-y-3">{check("Question Numbers", includeNumbers, setIncludeNumbers)}{check("Marks", includeMarks, setIncludeMarks)}{check("Gridlines", showGridlines, setShowGridlines)}{check("Example Answer", includeExampleAnswer, setIncludeExampleAnswer)}{check("Include Answers", includeAnswers, setIncludeAnswers)}</div>
               </div>
               {error && <p className="mt-5 font-semibold text-red-700" role="alert">{error}</p>}
-              <div className="mt-6 grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button type="button" onClick={generate} className="flex h-11 items-center justify-center rounded-xl border border-stone-300 bg-white px-2.5 text-sm font-semibold text-stone-800 transition hover:bg-stone-100"><span className="flex items-center justify-center gap-2"><img src="ui-icons/restart.svg" alt="" aria-hidden="true" className="h-5 w-5 object-contain" /><span>Refresh</span></span></button><button type="button" onClick={() => outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl border border-black bg-black px-2.5 text-sm font-bold text-white disabled:cursor-wait disabled:opacity-60"><span className="flex items-center justify-center gap-2"><img src="ui-icons/download.svg" alt="" aria-hidden="true" className="h-5 w-5 object-contain invert" /><span>{preparingMode === "download" ? "Preparing…" : "Download"}</span></span></button><button type="button" onClick={() => outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl border border-black bg-black px-2.5 text-sm font-bold text-white disabled:cursor-wait disabled:opacity-60"><span className="flex items-center justify-center gap-2"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" alt="" aria-hidden="true" className="h-5 w-5 object-contain" /><span>{preparingMode === "print" ? "Preparing…" : "Print"}</span></span></button></div>
+              <div className="mt-6 grid grid-cols-3 gap-2 border-t border-stone-200 pt-4"><button type="button" onClick={generate} className="flex h-11 items-center justify-center rounded-xl border border-stone-300 bg-white px-2.5 text-sm font-semibold text-stone-800 transition hover:bg-stone-100"><span className="flex items-center justify-center gap-2"><img src="ui-icons/restart.svg" alt="" aria-hidden="true" className="h-5 w-5 object-contain" /><span>Regenerate</span></span></button><button type="button" onClick={() => outputPdf("download")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl border border-black bg-black px-2.5 text-sm font-semibold text-white disabled:cursor-wait disabled:opacity-60"><span className="flex items-center justify-center gap-2"><img src="ui-icons/download.svg" alt="" aria-hidden="true" className="h-5 w-5 object-contain invert" /><span>{preparingMode === "download" ? "Preparing…" : "Download"}</span></span></button><button type="button" onClick={() => outputPdf("print")} disabled={Boolean(preparingMode)} className="flex h-11 items-center justify-center rounded-xl border border-black bg-black px-2.5 text-sm font-semibold text-white disabled:cursor-wait disabled:opacity-60"><span className="flex items-center justify-center gap-2"><img src="ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" alt="" aria-hidden="true" className="h-5 w-5 object-contain" /><span>{preparingMode === "print" ? "Preparing…" : "Print"}</span></span></button></div>
             </div>
           </div>
           <section id="worksheet-preview" className="print-area worksheet-preview-panel">
@@ -747,17 +717,21 @@ function App() {
   );
 }
 if (!sourceActivityId || sourceActivityId === "intervals") ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-  </script><script src="./generated-runtimes/worksheetgenerator-1.js?v=015847be29a0"></script>
-  <script src="./shared/word-puzzle-worksheet.js?v=7e6d20a890ef"></script>
-  <script type="text/x-mlh-jsx-source" data-src="./worksheet-generic.jsx?v=20261024-learning-hub" data-runtime="worksheetgenerator-2.js"></script><script src="./generated-runtimes/worksheetgenerator-2.js?v=ef036b9fb94f"></script>
-  <link rel="stylesheet" href="./music-dictionary/music-concepts-booklet.css?v=2" />
+  </script><script src="./generated-runtimes/worksheetgenerator-1.js?v=eb775381d044"></script>
+  <script src="./shared/word-puzzle-worksheet.js?v=ba7a8c60793e"></script>
+  <script type="text/x-mlh-jsx-source" data-src="./worksheet-generic.jsx?v=20261024-learning-hub" data-runtime="worksheetgenerator-2.js"></script><script src="./generated-runtimes/worksheetgenerator-2.js?v=82760bcc6a49"></script>
+  <link rel="stylesheet" href="./music-dictionary/music-concepts-booklet.css?v=7efbbcda1286" />
   <script src="./music-dictionary/music-concepts-data.js?v=b95ba92f0056"></script>
-  <script src="./music-dictionary/music-concepts-photos.js?v=87d9f966fb00"></script>
+  <script src="./music-dictionary/music-concepts-simple.js?v=2f246b2f08b8"></script>
+  <script src="./music-dictionary/music-literacy-dictionary.js?v=78791bf1da4d"></script>
+  <script src="./music-dictionary/literacy-notation.js?v=a27fe6544958"></script>
+  <script src="./music-dictionary/music-literacy-exam-trends.js?v=e07782b0ca64"></script>
+  <script src="./music-dictionary/music-concepts-photos.js?v=99a0017aede8"></script>
   <script src="./music-dictionary/music-concepts-frequency.js?v=9c602b8bf64d"></script>
   <script src="./music-dictionary/music-concepts-videos.js?v=94e9d545d140"></script>
   <script src="./music-dictionary/music-concepts-audio.js?v=8c0474ab8ce9"></script>
   <script src="./music-dictionary/music-concepts-related.js?v=1743a3b4da09"></script>
-  <script src="./music-dictionary/music-concepts-booklet.js?v=e632aba53148"></script>
-  <script src="./footer.js?v=120454beac89"></script>
+  <script src="./music-dictionary/music-concepts-booklet.js?v=5be54bfd48f4"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

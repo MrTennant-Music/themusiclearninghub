@@ -5,21 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Transposing</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/transposing-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/transposing-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
@@ -31,15 +32,16 @@
     .escape-literacy-numbered-option > .escape-transposition-example { max-height: 155px; }
 
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
 
   <script src="./shared/transposing-core.js?v=3b1a66fc02da"></script>
   <script type="text/x-mlh-jsx-source" data-runtime="transposing-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useRef, useState } = React;
 const SHELL = window.MLH?.shell || {};
 function hasTouchInput() {
@@ -168,7 +170,7 @@ function noteSymbolKey(rhythm, down, beamed = false) {
 }
 
 const {pitch,pitchFromIndex,transposePitch,stepForClef,noteItem,pitchRange,HIGHER_SOURCE_NOTES,SAME_PITCH_NOTES,BASS_OCTAVE_SOURCE_NOTES,OTTAVA_SOURCE_NOTES,OTTAVA_BASS_SOURCE_NOTES,RHYTHMS,TOOLS,DEFAULT_QUESTION_OPTIONS,RHYTHM_BEATS,RHYTHM_SPACING,FOUR_BEAT_PATTERNS,isCorrectMeaningAnswer} = window.TRANSPOSING_CORE;
-const transposingGenerator=window.TRANSPOSING_CORE.create(Math.random);
+const transposingGenerator=window.TRANSPOSING_CORE.create(exerciseRandom);
 function taskMatchesLevel(level,options){return level!=="AH"||Object.keys(DEFAULT_QUESTION_OPTIONS).every(key=>options[key]);}
 
 const NOTE_NAME_LABELS = {
@@ -223,7 +225,7 @@ function meaningQuestion(marking, existingPassage = null) {
   const transform = marking === "8vb" ? TRANSFORMS.ottavaBassa : TRANSFORMS.ottavaAlta;
   const passage = existingPassage || [];
   return {
-    id: Math.random().toString(36).slice(2),
+    id: exerciseRandom().toString(36).slice(2),
     type: "meaning",
     transformId: `meaning-${marking}`,
     marking,
@@ -1495,7 +1497,7 @@ function App() {
 
   return (
     <div className={SHELL.pageShellClass}>
-      <window.MLH.AppHeader profileState={{ activeLevel, wholeBarMode, questionOptions, noteNamesVisible }} icon={ASSET.appIcon} title="Transposing" subtitle="Transpose between the treble and bass clefs." worksheetConfig={() => ({ version: 1, activityId: "transposing", sourceUrl: window.location.href, settings: { level: activeLevel, mode, questionOptions } })}>
+      <window.MLH.AppHeader classroomOriginalFormat={!medalEligible || !wholeBarMode || noteNamesVisible} profileState={{ activeLevel, wholeBarMode, questionOptions, noteNamesVisible }} icon={ASSET.appIcon} title="Transposing" subtitle="Transpose between the treble and bass clefs." worksheetConfig={() => ({ version: 1, activityId: "transposing", sourceUrl: window.location.href, settings: { level: activeLevel, mode, questionOptions } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
           assets={ASSET}
           correct={correct}
@@ -1596,7 +1598,7 @@ function App() {
               {feedback && <window.MLH.FeedbackBadge feedback={feedback} fading={feedbackFading} animationPrefix="note" />}
             </div>
 
-            <window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => newQuestion(mode)} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />
+            <window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={() => newQuestion(mode)} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />
           </div>
 
           {wholeBarMode && !meaningMode && rhythmWarningVisible && !customiseOpen && !levelOpen && (
@@ -1685,7 +1687,7 @@ function EscapeTransposition({ activity }) {
 const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("transpose");
 ReactDOM.createRoot(document.getElementById("root")).render(escapeActivity ? <EscapeTransposition activity={escapeActivity} /> : <App />);
 
-  </script><script src="./generated-runtimes/transposing-1.js?v=c64a1885d38d"></script>
-  <script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/transposing-1.js?v=7ed6bdc6eb36"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

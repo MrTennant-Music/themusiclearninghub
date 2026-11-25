@@ -1,6 +1,7 @@
 (function () {
   const MLH = window.MLH || {};
   const qrIconUrl = new URL("../ui-icons/qr-code-svgrepo-com.svg?v=20261106-roundest", document.currentScript.src).href;
+  const linkIconUrl = new URL("../ui-icons/link.svg", document.currentScript.src).href;
   function decodeBase64Url(value) {
     const base64 = value.replace(/-/g, "+").replace(/_/g, "/");
     const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4, "=");
@@ -48,8 +49,40 @@
     const value = initialSharedSettings.state?.[key];
     return initialSharedSettings.version === 2 && Object.hasOwn(initialSharedSettings.state, key) && validProfileValue(value, fallback) ? value : fallback;
   };
+  const helpProfileKeys = new Set([
+    "follow", "followPlayback", "highlightPlayback", "noteNamesVisible",
+    "showC", "showFollowNoteNames", "showHelp", "showNoteNames",
+    "showRhythmGuide", "showScaleDegrees",
+  ]);
+  const profileParams = new URLSearchParams(window.location.search);
+
   MLH.useProfileState = function useProfileState(key, initial) {
-    return React.useState(() => MLH.profileInitial(key, initial));
+    const persistHelp = helpProfileKeys.has(key);
+    // Keep edits to a shared or classroom setup separate from solo preferences.
+    const setup = MLH.classroomExercise || profileParams.has("classroomSetup")
+      ? profileParams.toString()
+      : initialSharedSettings.version === 2 ? profileParams.get("settings") : null;
+    const storageKey = `mlh:help:v1:${window.location.pathname}:${key}${setup === null ? "" : `:${setup}`}`;
+    const storage = () => setup === null ? window.localStorage : window.sessionStorage;
+    const [value, setValue] = React.useState(() => {
+      if (persistHelp) {
+        try {
+          const saved = storage()?.getItem(storageKey);
+          if (saved === "true" || saved === "false") return saved === "true";
+        } catch { /* Use the configured default if storage is unavailable. */ }
+      }
+      return MLH.profileInitial(key, initial);
+    });
+    const current = React.useRef(value);
+    function setHelpValue(update) {
+      const next = typeof update === "function" ? update(current.current) : update;
+      current.current = next;
+      if (typeof next === "boolean") {
+        try { storage()?.setItem(storageKey, String(next)); } catch { /* Keep the current choice in memory. */ }
+      }
+      setValue(next);
+    }
+    return [value, persistHelp ? setHelpValue : setValue];
   };
   MLH.profileShareUrl = function profileShareUrl(state, href = window.location.href) {
     const url = new URL(href);
@@ -140,11 +173,16 @@
 
   function useClickAway(ref, handler) {
     React.useEffect(() => {
+      const ownerDocument = ref.current?.ownerDocument || document;
       const onPointerDown = (event) => {
         if (!ref.current?.contains(event.target)) handler();
       };
       document.addEventListener("pointerdown", onPointerDown, true);
-      return () => document.removeEventListener("pointerdown", onPointerDown, true);
+      if (ownerDocument !== document) ownerDocument.addEventListener("pointerdown", onPointerDown, true);
+      return () => {
+        document.removeEventListener("pointerdown", onPointerDown, true);
+        if (ownerDocument !== document) ownerDocument.removeEventListener("pointerdown", onPointerDown, true);
+      };
     }, [ref, handler]);
   }
 
@@ -181,10 +219,12 @@
     }, React.createElement("img", { src: "ui-icons/worksheet.svg?v=20261103-worksheet-svg-2", alt: "", "aria-hidden": "true", className: "h-4 w-4 object-contain", style: selected ? { filter: "invert(1)" } : !enabled ? { filter: "grayscale(1)", opacity: 0.5 } : undefined }));
   }
 
-  function ProfileQrOverlay({ title, subtitle, shareUrl, onClose }) {
+  function ProfileQrOverlay({ title, subtitle, shareUrl, qrImageSrc, onClose }) {
     const [copied, setCopied] = React.useState(false);
     const [copyFailed, setCopyFailed] = React.useState(false);
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=560x560&data=${encodeURIComponent(shareUrl)}`;
+    const qrUrl = qrImageSrc === undefined
+      ? `https://api.qrserver.com/v1/create-qr-code/?size=560x560&data=${encodeURIComponent(shareUrl)}`
+      : qrImageSrc;
     async function copyLink() {
       let success=false;
       let clipboardTimeout;
@@ -213,11 +253,15 @@
       React.createElement("button", { type: "button", onClick: onClose, className: "absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-stone-100 text-xl font-bold text-stone-700", "aria-label": "Close QR code" }, "×"),
       React.createElement("h2", { className: "text-3xl font-semibold text-stone-900" }, title),
       subtitle && React.createElement("p", { className: "mt-2 text-lg text-stone-600" }, subtitle),
-      React.createElement("img", { className: "mx-auto mt-6 w-[min(560px,100%)] rounded-2xl border border-stone-200", src: qrUrl, alt: `QR code linking to ${title} ${subtitle}` }),
+      qrUrl
+        ? React.createElement("img", { className: "mx-auto mt-6 w-[min(560px,100%)] rounded-2xl border border-stone-200", src: qrUrl, alt: `QR code for ${subtitle || title}` })
+        : React.createElement("p", { className: "mt-6 text-sm text-stone-700" }, "This link is too long for a QR code. Use Copy Link to share it."),
       copyFailed && React.createElement("div", { className:"mt-3" },
         React.createElement("p", { role:"status", className:"text-sm text-stone-700" }, "Select and copy this link:"),
         React.createElement("input", { "aria-label":"Share link", readOnly:true, value:shareUrl, onFocus:event=>event.target.select(), className:"mt-2 w-full rounded-xl border border-stone-300 px-3 py-2 text-sm" })),
-      React.createElement("button", { type: "button", onClick: copyLink, className: "mt-5 rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-md transition hover:bg-blue-700" }, copied ? "Copied" : "Copy Link")
+      React.createElement("button", { type: "button", onClick: copyLink, className: "mt-5 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-md transition hover:bg-blue-700" },
+        React.createElement("img", { src: linkIconUrl, alt: "", "aria-hidden": "true", width: 16, height: 16, style: { filter: "invert(1)" } }),
+        copied ? "Copied" : "Copy Link")
     ));
   }
 
@@ -230,14 +274,28 @@
     return ({ N3: "National 3", N4: "National 4", N5: "National 5", H: "Higher", AH: "Advanced Higher" })[level] || "Custom";
   }
 
-  function AppHeader({ icon, title, subtitle, children, profileTitle, profileLabel, profileShareUrl, profileState, profileUsesSharedSettings = true, profileShowLabel = true, profileShowQr = true, profileShareDisabled = false, profileQrIcon, worksheetConfig, worksheetDisabled = false, worksheetMode = false, classroomPilotUrl, classroomPilotMode = false, classroomPilotDisabled = false, classroomPilotConfig }) {
+  function worksheetSourceSupportsHosting() {
+    try {
+      const config = JSON.parse(window.sessionStorage.getItem("worksheetSourceConfig") || "null");
+      if (!config) return false;
+      if (typeof config.supportsHosting === "boolean") return config.supportsHosting;
+      const source = new URL(config.sourceUrl || window.sessionStorage.getItem("worksheetReturnUrl"), location.href);
+      if (source.origin !== location.origin) return false;
+      return source.pathname === "/keyboardnoteidentification.html" || source.pathname === "/noteidentification.html"
+        || Boolean(MLH.classroomActivities?.settings(source.pathname));
+    } catch {
+      return false;
+    }
+  }
+
+  function AppHeader({ icon, title, subtitle, children, profileTitle, profileLabel, profileShareUrl, profileState, profileUsesSharedSettings = true, profileShowLabel = true, profileShowQr = true, profileShareDisabled = false, profileQrIcon, worksheetConfig, worksheetDisabled = false, worksheetMode = false, classroomPilotUrl, classroomPilotMode = false, onClassroomExit, classroomPilotDisabled = false, classroomPilotConfig, classroomActivityUrl, classroomOriginalFormat = false }) {
     const [qrOpen, setQrOpen] = React.useState(false);
     const [worksheetOpening, setWorksheetOpening] = React.useState(false);
     const [, setProfileRevision] = React.useState(0);
     const worksheetHeader = MLH.worksheetHeaderMode;
     const activeWorksheetMode = worksheetMode || Boolean(worksheetHeader);
     const displayedTitle = activeWorksheetMode && worksheetHeader?.title ? worksheetHeader.title : title;
-    const displayedSubtitle = activeWorksheetMode && worksheetHeader?.subtitle ? worksheetHeader.subtitle : subtitle;
+    const displayedSubtitle = activeWorksheetMode ? (worksheetHeader?.subtitle ?? subtitle) : subtitle;
     const displayedIcon = activeWorksheetMode && worksheetHeader?.icon ? worksheetHeader.icon : icon;
     const activityTitle = profileTitle || (typeof displayedTitle === "string" ? displayedTitle : "Activity");
     const hasSharedSettings = !profileState && profileUsesSharedSettings && MLH.profileSettings.hasCustomSettings();
@@ -247,18 +305,25 @@
     else shareUrlObject.searchParams.delete("settings");
     const profileUrl = profileState ? MLH.profileShareUrl(profileState, shareUrlObject.toString()) : shareUrlObject.toString();
     const shareUrl = window.HubCollections?.shareUrl?.(profileUrl) || profileUrl;
-    const worksheetEnabled = activeWorksheetMode || typeof worksheetConfig === "function";
+    const worksheetEnabled = !MLH.classroomExercise && (activeWorksheetMode || typeof worksheetConfig === "function");
     const displayedChildren = activeWorksheetMode ? null : children;
-    const displayedClassroomUrl = classroomPilotUrl || worksheetHeader?.classroomPilotUrl;
+    const classroomSource = classroomActivityUrl || (MLH.classroomActivities?.isExercise(location.pathname) ? profileUrl : null);
+    const classroomPupil = Boolean(MLH.classroomExercise || new URLSearchParams(window.location?.search).has('classroomSeed'));
+    const nativeClassroom = classroomSource && !classroomPupil;
+    const displayedClassroomUrl = classroomPilotUrl || (nativeClassroom ? "/host.html" : null);
+    const showHostButton = Boolean(displayedClassroomUrl) || (activeWorksheetMode && worksheetSourceSupportsHosting());
+    const hostDisabled = activeWorksheetMode || classroomPilotDisabled;
     async function createWorksheet() {
       if (!worksheetEnabled || worksheetDisabled || worksheetOpening) return;
       setWorksheetOpening(true);
       try {
         const config = await worksheetConfig();
         if (!config || config.version !== 1 || typeof config.activityId !== "string" || !config.settings || typeof config.settings !== "object") return;
-        const exerciseUrlObject = new URL(shareUrl);
-        if (typeof config.settings.level === "string") exerciseUrlObject.searchParams.set("level", config.settings.level);
-        const worksheetSourceConfig = { ...config, exerciseUrl: exerciseUrlObject.toString(), subtitle: typeof subtitle === "string" ? subtitle : (config.subtitle || "") };
+        const worksheetSourceConfig = {
+          ...config,
+          subtitle: typeof subtitle === "string" ? subtitle : (config.subtitle || ""),
+          supportsHosting: Boolean(displayedClassroomUrl) && !classroomPilotDisabled,
+        };
         worksheetSourceConfig.pageTitle = document.title;
         const serializedWorksheetConfig = JSON.stringify(worksheetSourceConfig);
         window.sessionStorage.setItem("worksheetSourceConfig", serializedWorksheetConfig);
@@ -328,9 +393,9 @@
     }, [qrOpen]);
     return (
       React.createElement(React.Fragment, null,
-        React.createElement("header", { className: "fixed left-0 right-0 top-0 z-[1000] w-full overflow-visible border-b border-stone-200 bg-white/95 py-2 shadow-sm backdrop-blur sm:py-3" },
+        React.createElement("header", { "data-hub-activity-header": "", className: "fixed left-0 right-0 top-0 z-[1000] w-full overflow-visible border-b border-stone-200 bg-white/95 py-2 shadow-sm backdrop-blur sm:py-3" },
           React.createElement("div", { className: "mx-auto flex w-full max-w-6xl flex-col gap-3 overflow-visible px-3 sm:px-4 md:flex-row md:items-center md:justify-between md:px-8", style: { minHeight: "64px" } },
-            React.createElement("div", { className: "flex items-center gap-3 sm:gap-4" },
+            React.createElement("div", { "data-hub-activity-brand": "", className: "flex items-center gap-3 sm:gap-4" },
               React.createElement("div", {
                 className: "flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 p-0 text-black shadow-sm"
               },
@@ -339,28 +404,36 @@
               React.createElement("div", { className: "flex h-14 flex-col justify-center" },
                 React.createElement("h1", { className: "relative top-[1px] inline-flex items-center gap-2 text-[2.2rem] font-semibold leading-none tracking-tight md:text-3xl" },
                   displayedTitle,
-                  profileShowQr && React.createElement(ProfileQrButton, { icon: profileQrIcon, disabled: activeWorksheetMode || profileShareDisabled, onClick: () => setQrOpen(true) }),
+                  profileShowQr && !classroomPupil && React.createElement(ProfileQrButton, { icon: profileQrIcon, disabled: activeWorksheetMode || profileShareDisabled, onClick: () => setQrOpen(true) }),
                   (worksheetEnabled || worksheetDisabled) && React.createElement(WorksheetButton, { enabled: !worksheetDisabled && !worksheetOpening, selected: activeWorksheetMode, returnLabel: typeof displayedTitle === "string" ? displayedTitle : "activity", onClick: activeWorksheetMode ? worksheetHeader?.onExit : createWorksheet }),
-                  displayedClassroomUrl && React.createElement("button", {
-                    disabled: activeWorksheetMode || classroomPilotDisabled,
-                    type: "button", onClick: () => {
+                  showHostButton && React.createElement("button", {
+                    disabled: hostDisabled,
+                    type: "button", onClick: hostDisabled ? undefined : () => {
+                      if (classroomPilotMode && onClassroomExit) return onClassroomExit();
                       const destination = new URL(displayedClassroomUrl, window.location.href);
-                      if (!classroomPilotMode && typeof classroomPilotConfig === "function") {
+                      if (nativeClassroom) {
+                        const activity = new URL(classroomSource, window.location.href);
+                        if (activity.origin !== location.origin) return;
+                        activity.searchParams.delete("classroomFormat");
+                        if (classroomOriginalFormat) activity.searchParams.set("classroomFormat", "original");
+                        destination.searchParams.set("mode", "host");
+                        destination.searchParams.set("setup", JSON.stringify({gameType:"shared",activity:activity.pathname+activity.search+activity.hash,worksheetAvailable:worksheetEnabled}));
+                      } else if (!classroomPilotMode && typeof classroomPilotConfig === "function") {
                         destination.searchParams.set("mode", "host");
                         destination.searchParams.set("setup", JSON.stringify(classroomPilotConfig()));
                       }
                       window.location.href = destination.toString();
                     },
-                    className: `inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border shadow-sm transition ${activeWorksheetMode || classroomPilotDisabled ? "cursor-not-allowed border-stone-200 bg-stone-100 text-stone-400 opacity-70" : classroomPilotMode ? "border-black bg-black text-white hover:bg-stone-800" : "border-stone-300 bg-white text-stone-700 hover:border-stone-500 hover:bg-stone-50"}`,
+                    className: `inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border shadow-sm transition ${hostDisabled ? "cursor-not-allowed border-stone-200 bg-stone-100 text-stone-400 opacity-70" : classroomPilotMode ? "border-black bg-black text-white hover:bg-stone-800" : "border-stone-300 bg-white text-stone-700 hover:border-stone-500 hover:bg-stone-50"}`,
                     "aria-pressed": classroomPilotMode,
-                    "aria-label": classroomPilotMode ? "Return to individual practice" : "Host a game",
+                    "aria-label": classroomPilotMode ? "Return to individual practice" : "Host",
                     title: classroomPilotMode ? "Return to Individual Practice" : "Host",
-                  }, React.createElement("img", { src: "ui-icons/group-button.svg?v=20261106-even-lines", alt: "", "aria-hidden": "true", className: "h-5 w-5 object-contain", style: classroomPilotMode ? { filter: "invert(1)" } : undefined }))
+                  }, React.createElement("img", { src: "ui-icons/lobby-players.svg", alt: "", "aria-hidden": "true", className: "h-5 w-5 object-contain", style: classroomPilotMode ? { filter: "invert(1)" } : undefined }))
                 ),
                 React.createElement("p", { className: "relative top-[5px] whitespace-nowrap text-[1rem] leading-[1.05] text-stone-600 sm:top-0 sm:max-w-2xl sm:text-[15.36px] xl:whitespace-nowrap" }, displayedSubtitle)
               )
             ),
-            React.createElement("div", { className: "relative z-50 flex flex-wrap items-center gap-2 overflow-visible md:ml-auto md:justify-end" }, displayedChildren)
+            React.createElement("div", { "data-hub-activity-stats": "", className: "relative z-50 flex flex-wrap items-center gap-2 overflow-visible md:ml-auto md:justify-end" }, displayedChildren)
           )
         ),
         profileShowQr && qrOpen && React.createElement(ProfileQrOverlay, { title: activityTitle, subtitle: shareLabel, shareUrl, onClose: () => setQrOpen(false) })
@@ -405,12 +478,14 @@
     medalColourStreak = streak,
     achievementLevel = null,
     achievementActivity = null,
+    achievementScope = "",
     scoreDisplay = null,
     streakDisplay = null,
     medalThresholdLabels = null,
     resetDisabled = false,
     scoreInteractive = true,
     showScore = true,
+    hideTiles = false,
     dismissPopoverKey = 0,
   }) {
     const [popover, setPopover] = React.useState(null);
@@ -438,8 +513,6 @@
       return () => observer.disconnect();
     }, []);
 
-    const scoreFill = Math.max(0, Math.min(100, scoreDisplay?.fillPercent ?? (accuracy || 0)));
-    const scoreColour = scoreDisplay?.fillColor ?? (scoreFill < 50 ? "rgba(220,38,38,.38)" : scoreFill < 70 ? "rgba(255,120,0,.42)" : "rgba(22,163,74,.38)");
     const thresholdValues = Array.isArray(medalThresholdValues) && medalThresholdValues.length === 4 ? medalThresholdValues : [10, 15, 20, 30];
     const autoPopoverDuration = Math.max(360, Number(autoMedalPopoverMs) || 2000);
     const autoPopoverOutDelay = Math.max(0.28, (autoPopoverDuration - 240) / 1000);
@@ -454,7 +527,25 @@
       value: thresholdValues[index],
       active: streak >= thresholdValues[index] && (index === thresholdValues.length - 1 || streak < thresholdValues[index + 1]),
     }));
-    const effectiveMedalEligible = medalEligible ?? autoMedalEligible;
+    const effectiveMedalEligible = !hideTiles && !MLH.classroomExercise && (medalEligible ?? autoMedalEligible);
+    React.useEffect(() => {
+      if (MLH.classroomExercise && window.parent !== window && MLH.classroomActivities.isStreakRace?.()) {
+        const highestStreak = Math.max(streak, bestStreak || 0);
+        if (MLH.classroomActivities.validStreakProgress(attempted, streak, highestStreak)) {
+          window.parent.postMessage({type:"mlh:classroom-streak", attempted, streak, highestStreak}, location.origin);
+        }
+        return;
+      }
+      const roundQuestions = MLH.classroomExercise && MLH.classroomActivities.raceTargetFor(location.pathname);
+      if (!roundQuestions || window.parent === window) return;
+      const params = new URLSearchParams(location.search);
+      const target = Number(params.get("classroomCorrectTarget"));
+      if (target > 0 && Number.isInteger(correct) && correct > 0) {
+        window.parent.postMessage({type:"mlh:classroom-finished", correct}, location.origin);
+      } else if (!params.has("classroomRace") && Number.isInteger(attempted) && attempted >= roundQuestions) {
+        window.parent.postMessage({type:"mlh:classroom-finished"}, location.origin);
+      }
+    }, [attempted, correct, streak, bestStreak]);
     const medal = effectiveMedalEligible ? thresholds.find((item, index) =>
       medalColourStreak >= item.value && (index === thresholds.length - 1 || medalColourStreak < thresholds[index + 1].value)) : null;
     React.useEffect(() => {
@@ -464,14 +555,14 @@
     }, []);
     React.useEffect(() => {
       const previous = achievementAttemptRef.current;
-      const context = `${achievementActivity}|${achievementLevel}|${effectiveMedalEligible}`;
+      const context = `${achievementActivity}|${achievementLevel}|${achievementScope}|${effectiveMedalEligible}`;
       achievementAttemptRef.current = { context, attempted };
       // Only a newly marked answer can earn progress; switching level or settings cannot.
       if (!previous || previous.context !== context || attempted <= previous.attempted || !effectiveMedalEligible || !achievementLevel || MLH.worksheetHeaderMode) return;
       if (medalEligible == null && Array.from(document.querySelectorAll("button[data-menu-trigger]"))
         .some((button) => button.textContent.trim() === "Custom")) return;
-      MLH.achievements?.record(achievementActivity || window.location.pathname, achievementLevel, streak, thresholdValues);
-    }, [achievementActivity, achievementLevel, attempted, streak, effectiveMedalEligible, medalEligible, thresholdValues.join(",")]);
+      MLH.achievements?.record(achievementActivity || window.location.pathname, achievementLevel, streak, thresholdValues, achievementScope);
+    }, [achievementActivity, achievementLevel, achievementScope, attempted, streak, effectiveMedalEligible, medalEligible, thresholdValues.join(",")]);
     const highestStreak = bestStreak || 0;
     // Open the celebration before the newly earned tile colour is painted.
     React.useLayoutEffect(() => {
@@ -487,6 +578,7 @@
       setAutoPopoverKey(0);
       setDismissedAutoPopoverKey(confettiKey);
     }, [dismissPopoverKey]);
+    if (hideTiles) return null;
     const autoPopoverDismissed = confettiKey > 0 && dismissedAutoPopoverKey === confettiKey;
     const autoMedalPopover = effectiveMedalEligible && popover !== "streak" && !autoPopoverDismissed && (autoShowMedals || showMedalPopover || autoPopoverKey > 0);
     const shouldShowMedalPopover = popover === "streak" || autoMedalPopover;
@@ -504,7 +596,7 @@
     const tile = MLH.shell.scoreTileClass;
     const active = MLH.shell.scoreTileActiveClass;
 
-    return (
+    const panel = (
       React.createElement("div", { ref, className: showScore ? "grid w-full grid-cols-2 gap-2 md:w-auto md:grid-cols-[112px_98px] lg:grid-cols-[124px_108px]" : "grid grid-cols-1" },
         showScore && React.createElement("section", {
           role: scoreInteractive ? "button" : undefined,
@@ -514,9 +606,7 @@
           onClick: scoreInteractive ? () => setPopover((value) => value === "score" ? null : "score") : undefined,
           className: `${tile} ${popover === "score" ? active : ""}`,
         },
-          React.createElement("div", { className: "absolute inset-0 overflow-hidden rounded-xl" },
-            React.createElement("div", { className: "absolute bottom-0 -left-[2px] right-0 rounded-b-xl transition-all duration-700", style: { height: `${scoreFill}%`, background: scoreColour } })
-          ),
+          React.createElement(ScoreTileFill, { percent: scoreDisplay?.fillPercent ?? accuracy, color: scoreDisplay?.fillColor }),
           React.createElement("div", { className: "relative z-10 flex h-full flex-col items-center justify-center pt-[1px] text-center" },
             React.createElement("div", { className: "text-[12px] font-bold uppercase leading-none tracking-[0.08em] text-black sm:text-[11px]" }, scoreDisplay?.label ?? "Score"),
             React.createElement("div", { className: "mt-[3px] text-[20px] font-black leading-none tracking-tight text-black sm:text-[22px]" }, scoreDisplay?.value ?? `${correct}/${attempted}`),
@@ -524,7 +614,7 @@
           ),
           scoreInteractive && popover === "score" && React.createElement("button", {
             type: "button",
-            disabled: resetDisabled,
+            disabled: resetDisabled || MLH.classroomExercise,
             onClick: (event) => { event.stopPropagation(); resetScore(); setPopover(null); },
             className: "fixed-popover-button score-reset-button absolute left-1/2 top-full z-[120] mt-2 flex min-w-[112px] w-full -translate-x-1/2 items-center justify-center rounded-xl border border-[#dc2626] bg-[#dc2626] px-3 py-2 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(0,0,0,0.28)] sm:w-auto",
             style: { animation: "medalPopupIn .28s cubic-bezier(.22,1.25,.32,1)" },
@@ -588,6 +678,18 @@
         )
       )
     );
+    const frame = MLH.classroomExercise && window.frameElement;
+    const raceStatsId = frame?.dataset.classroomRaceStats;
+    const raceStats = raceStatsId && frame.ownerDocument.getElementById(raceStatsId);
+    return raceStats ? window.ReactDOM.createPortal(panel, raceStats) : panel;
+  }
+
+  function ScoreTileFill({ percent, color }) {
+    const fill = Math.max(0, Math.min(100, percent || 0));
+    const background = color ?? (fill < 50 ? "rgba(220,38,38,.38)" : fill < 70 ? "rgba(255,120,0,.42)" : "rgba(22,163,74,.38)");
+    return React.createElement("div", { className: "absolute inset-0 overflow-hidden rounded-xl", "aria-hidden": true },
+      React.createElement("div", { className: "hub-score-tile-fill absolute bottom-0 -left-[2px] right-0 rounded-b-xl transition-all duration-700", style: { height: `${fill}%`, background } })
+    );
   }
 
   MLH.AppHeader = AppHeader;
@@ -595,6 +697,7 @@
   MLH.WorksheetButton = WorksheetButton;
   MLH.ProfileQrOverlay = ProfileQrOverlay;
   MLH.FeedbackBadge = FeedbackBadge;
+  MLH.ScoreTileFill = ScoreTileFill;
   MLH.ScoreStreakPanel = ScoreStreakPanel;
   MLH.advanceFeedbackPointerDown = advanceFeedbackPointerDown;
   window.MLH = MLH;

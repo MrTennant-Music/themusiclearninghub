@@ -36,7 +36,7 @@ const functions={};Babel.packages.traverse.default(Babel.packages.parser.parse(s
 function playbackHarness(name,prepare=async()=>true){
  const scheduled=[],states=[],hits=[],ctx={currentTime:10,destination:{},close(){}};
  const statesMap={READY:'ready',COUNTING:'count',PERFORMING:'perform',RESULTS:'results',REFERENCE:'ref'};
- const c={CORE:core,Math,Infinity,ACTIVITY_STATES:statesMap,activeAttempt:false,activityState:statesMap.RESULTS,audioRef:{current:null},stateRef:{current:statesMap.RESULTS},performanceStartRef:{current:0},tapsRef:{current:[]},inputTimesRef:{current:[]},resultsCalculatedRef:{current:false},lastPointerTimeRef:{current:0},timersRef:{current:[]},tapAreaRef:{current:{focus(){}}},rhythm:core.generateRhythm('N3',()=>.5),tempo:90,finishAttempt(){},playPerformanceHit(...args){hits.push(args);},transition(s){states.push(s);c.stateRef.current=s;},cancelAudioAndTimers(){c.audioRef.current=null;},closeAudio(){c.audioRef.current=null;},setResult(){},setTapPulse(){},setLevelOpen(){},setCustomiseOpen(){},setStatus(){},setCountInNumber(){},setPlayBeatNumber(){},setActivePlaybackEventId(){},window:{AudioContext:function(){return ctx;},MLH:{prepareAudioPlayback:prepare,playMetronomeClick(){},naturalPlaybackTailMs:()=>0},setTimeout(fn,ms){scheduled.push({fn,ms});return scheduled.length;}}};
+ const c={CORE:core,Math,Infinity,ACTIVITY_STATES:statesMap,streakRace:false,activeAttempt:false,activityState:statesMap.RESULTS,audioRef:{current:null},stateRef:{current:statesMap.RESULTS},performanceStartRef:{current:0},tapsRef:{current:[]},inputTimesRef:{current:[]},resultsCalculatedRef:{current:false},lastPointerTimeRef:{current:0},timersRef:{current:[]},tapAreaRef:{current:{focus(){}}},rhythm:core.generateRhythm('N3',()=>.5),tempo:90,finishAttempt(){},playPerformanceHit(...args){hits.push(args);},transition(s){states.push(s);c.stateRef.current=s;},cancelAudioAndTimers(){c.audioRef.current=null;},closeAudio(){c.audioRef.current=null;},setResult(){},setTapPulse(){},setLevelOpen(){},setCustomiseOpen(){},setStatus(){},setCountInNumber(){},setPlayBeatNumber(){},setActivePlaybackEventId(){},window:{AudioContext:function(){return ctx;},MLH:{prepareAudioPlayback:prepare,playMetronomeClick(){},naturalPlaybackTailMs:()=>0},setTimeout(fn,ms){scheduled.push({fn,ms});return scheduled.length;}}};
  vm.createContext(c);vm.runInContext(functions[name]+`;globalThis.run=${name}`,c);return {c,ctx,scheduled,states,hits};
 }
 test('audio preparation failures release the activity for retry',async()=>{
@@ -65,4 +65,17 @@ test('dense custom filters vary their exercises instead of repeating a determini
  const enabled=Object.fromEntries(core.LEVELS.N5.rhythmIds.map(id=>[id,['semiquaver','dotted-quaver'].includes(id)]));let previous='',seed=514;
  const random=()=>((seed=(seed*1664525+1013904223)>>>0)/2**32);
  for(let i=0;i<100;i++){const q=core.generateRhythm('N5',random,previous,enabled,{timeSignatureIds:['4/4']});assert.notEqual(core.rhythmSignature(q),previous);assert(!q.fallback);previous=core.rhythmSignature(q);}
+});
+
+test('Reading Rhythms Race schedules the visual pulse with audio unavailable', async () => {
+ const h = playbackHarness('startAttempt', async () => { throw Error('Race must not prepare audio'); });
+ h.c.streakRace = true;
+ h.c.performance = { now: () => 10000 };
+ h.c.window.AudioContext = undefined;
+ h.c.window.MLH.playMetronomeClick = () => assert.fail('Race must not play metronome clicks');
+ await h.c.run();
+ assert.equal(h.states.at(-1), h.c.ACTIVITY_STATES.COUNTING);
+ assert.ok(h.scheduled.length > 0);
+ assert.ok(h.scheduled.every(({ms}) => Number.isFinite(ms) && ms >= 0));
+ assert.ok(h.c.performanceStartRef.current > 10);
 });

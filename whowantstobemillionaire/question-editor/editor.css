@@ -49,7 +49,7 @@ label, legend { color: #293448; font-weight: 750; }
 label { display: grid; gap: 7px; }
 select, input, textarea { width: 100%; border: 1px solid #bfc7d2; border-radius: 9px; background: #fff; padding: 10px 11px; color: #172033; }
 textarea { resize: none; overflow-y: hidden; line-height: 1.45; }
-select:focus, input:focus, textarea:focus { border-color: #16835a; box-shadow: 0 0 0 3px rgba(22,131,90,.12); }
+select:focus, input:focus, textarea:focus { border-color: var(--mlh-focus-color, #2563eb); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mlh-focus-color, #2563eb) 12%, transparent); }
 .search-label { margin-top: 14px; }
 #search-filter, #search-filter::placeholder { font-weight: 400; }
 .question-count { margin: 13px 2px 8px; color: #687285; font-size: 13px; }

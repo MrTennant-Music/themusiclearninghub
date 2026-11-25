@@ -25,7 +25,7 @@ test("Follow the Score keeps the requested level, repeat and answer rules", () =
     source.indexOf("function makeFollowScoreRepeat"),
     source.indexOf("function followScoreNoteSounds"),
   );
-  assert.match(source, /Math\.random\(\) >= 0\.3/);
+  assert.match(source, /exerciseRandom\(\) >= 0\.3/);
   assert.match(source, /exactNote: \["N5", "H", "AH"\]\.includes\(level\)/);
   assert.match(source, /identify the <strong className="font-black">\{exactInstruction \? "exact note" : "bar"\}<\/strong> where the music stops/);
   assert.match(source, /nextTimer\.current = window\.setTimeout\(\(\) => newQuestion\(\), 2050\)/);
@@ -54,7 +54,7 @@ test("the Hub lists Follow the Score with the requested icon", () => {
 
 test("National 3 never generates repeat signs even when the repeat chance succeeds", () => {
   const code = source.slice(source.indexOf("function followScoreRange"), source.indexOf("function followScoreNoteSounds"));
-  const context = vm.createContext({ Math: Object.assign(Object.create(Math), { random: () => 0 }), randomItem: items => items[0] });
+  const context = vm.createContext({ Math: Object.assign(Object.create(Math), { random: () => 0 }), randomItem: items => items[0], exerciseRandom: () => 0 });
   vm.runInContext(code, context);
   const n3 = JSON.parse(JSON.stringify(vm.runInContext('makeFollowScoreRepeat("N3", 8)', context)));
   assert.equal(n3.type, "none");

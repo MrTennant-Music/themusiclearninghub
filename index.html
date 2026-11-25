@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
+  <script src="shared/hub-page-names.js?v=20261122-pitched"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Music Learning Hub</title>
@@ -28,6 +28,7 @@
   --ink: #0f172a;
   --muted: #475569;
   --accent: #2563eb;
+  --mlh-focus-color: var(--accent);
   --accent-dark: #1d4ed8;
   --border: #e2e8f0;
   --soft: #eff6ff;
@@ -36,6 +37,7 @@
 }
 
 * { box-sizing: border-box; }
+:where(:focus-visible) { outline-color: var(--mlh-focus-color); }
 html { scroll-behavior: smooth; container-type: inline-size; }
 html[data-mlh-page-zoomed] { width: var(--mlh-browser-layout-width); }
 body {
@@ -185,7 +187,8 @@ a { color: inherit; }
 }
 #examDatesOverlay .exam-dates-summary p { margin: 0; color: #000; line-height: 1.25; }
 .exam-dates-summary time { font-size: clamp(24px, 6cqw, 30px); }
-.exam-dates-countdown { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.exam-dates-label, .exam-dates-countdown { font-size: 22px; }
+.exam-dates-countdown { font-weight: 800; font-variant-numeric: tabular-nums; }
 .exam-dates-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
 .exam-dates-table th, .exam-dates-table td { padding: 12px 8px; text-align: left; }
 .exam-dates-table thead th { border-bottom: 1px solid var(--border); }
@@ -443,6 +446,11 @@ button.card-main:not([aria-disabled="true"]):active {
   position: relative;
   object-fit: contain;
 }
+.activity-tag-medal-icon {
+  background: #000;
+  mask: url("./ui-icons/bronze.svg") center / auto 58% no-repeat;
+}
+.activity-tag-icon.is-small { width: .78em; height: .78em; }
 
 .activity-tag {
   display: inline-flex;
@@ -461,17 +469,27 @@ button.card-main:not([aria-disabled="true"]):active {
   top: calc(.12em - 3px);
 }
 .activity-tag-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  margin: 20px 0 0;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 14px 24px;
+  margin: 16px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: .85rem;
   list-style: none;
 }
-.activity-tag-legend li { display: flex; align-items: center; gap: 8px; }
+.activity-tag-legend h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--ink);
+  font-size: .95rem;
+  line-height: 1.3;
+}
 .activity-tag-legend .activity-tag { top: auto; margin-left: 0; flex-shrink: 0; }
+.modal .activity-tag-legend p { margin: 4px 0 0; line-height: 1.45; }
 .arrow {
   position: absolute;
   right: 18px;
@@ -561,11 +579,18 @@ button.card-main:not([aria-disabled="true"]):active {
   outline: 2px solid var(--medal-colour);
   outline-offset: -2px;
 }
+.level-choice[data-medal]:focus-visible {
+  outline-color: var(--mlh-focus-color);
+}
 .level-medal {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
   object-fit: contain;
+}
+.level-medal-count {
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
 }
 .footer {
   width: min(1180px, calc(100% - 36px));
@@ -630,7 +655,8 @@ button.card-main:not([aria-disabled="true"]):active {
   font-weight: 700;
 }
 .modal p { color: #475569; line-height: 1.55; }
-#aboutOverlay .modal p { color: #000; }
+#aboutOverlay .modal { width: min(100%, 640px); }
+#aboutOverlay h2 { margin: 8px 44px 16px 0; }
 #installOverlay .modal,
 #installOverlay h2,
 #installOverlay p,
@@ -646,7 +672,7 @@ button.card-main:not([aria-disabled="true"]):active {
 
 #versionOverlay .release-notes-version { color: #000; }
 #versionOverlay .release-notes-list + .release-notes-version { margin-top: 24px; }
-.release-notes-list { margin: 0; padding-left: 22px; list-style: disc outside; color: #000; line-height: 1.55; }
+.release-notes-list { margin: 0; padding-left: 22px; list-style: disc outside; color: #475569; line-height: 1.55; }
 .release-notes-list li + li { margin-top: 10px; }
 #conceptGridOverlay .modal.wide {
   height: 88vh;
@@ -785,6 +811,9 @@ button.card-main:not([aria-disabled="true"]):active {
   border-radius: 16px;
 }
 #copyLinkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border: 0;
   background: var(--accent);
   color: #fff;
@@ -794,6 +823,7 @@ button.card-main:not([aria-disabled="true"]):active {
   font-size: .95rem;
   box-shadow: 0 6px 18px rgba(37,99,235,.22);
 }
+#copyLinkBtn img { filter: invert(1); }
 #copyLinkBtn:hover,
 #copyLinkBtn:focus-visible { background: var(--accent-dark); outline: none; }
 
@@ -909,10 +939,10 @@ button.card-main:not([aria-disabled="true"]):active {
   .header-medals-summary{min-height:32px;gap:12px;padding:4px 10px}
 }
 </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
-<script id="mlh-close-controls-script" defer src="./shared/hub-close-controls.js?v=61b2567261e4"></script>
+<script id="mlh-close-controls-script" defer src="./shared/hub-close-controls.js?v=7b23e89e3d9a"></script>
 </head>
 
 <body id="top">
@@ -997,6 +1027,7 @@ button.card-main:not([aria-disabled="true"]):active {
     <button class="close-btn" type="button" data-close aria-label="Close exam dates">×</button>
     <h2 id="examDatesTitle">Exam Dates</h2>
     <div class="exam-dates-summary">
+      <p><strong class="exam-dates-label">Question Paper</strong></p>
       <p><strong><time datetime="2027-05-11">Tuesday 11 May 2027</time></strong></p>
       <p class="exam-dates-countdown" data-exam-countdown="full" role="status"></p>
     </div>
@@ -1016,12 +1047,12 @@ button.card-main:not([aria-disabled="true"]):active {
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="versionOverlayTitle">
     <button class="close-btn" type="button" data-close aria-label="Close updates">×</button>
     <h2 id="versionOverlayTitle">Updates</h2>
-    <div class="release-notes-content" role="region" aria-label="Update history" tabindex="0">
+    <div class="release-notes-content" data-scroll-fade-panel role="region" aria-label="Update history" tabindex="0">
     <p class="release-notes-version"><strong>Version 2.0 • <time datetime="2026-11">November 2026</time></strong></p>
     <ul class="release-notes-list">
       <li>Updated the name to <strong>The Music Learning Hub</strong>, bringing music literacy, listening, games, performing, composing and teaching tools together.</li>
       <li>Added <strong>Escape Room</strong>: explore six rooms, solve musical knowledge, literacy and listening clues, and use the answers to unlock each door. Includes object sound effects, hints and medal rewards.</li>
-      <li>Added <strong>Music Dictionary</strong> from National 3 to Advanced Higher, with definitions, listening guidance, audio and video examples, related concepts, revision groups and links to practice activities.</li>
+      <li>Added <strong>Concept Dictionary</strong> from National 3 to Advanced Higher, with definitions, listening guidance, audio and video examples, related concepts, revision groups and links to practice activities.</li>
       <li>Added <strong>Concept Audio Library</strong>, a repository of concept audio examples from National 3 to Advanced Higher.</li>
       <li>Added <strong>Exam Trends</strong> to the Dictionary, showing how often concepts appear in reviewed listening papers and linking to relevant questions in the Digital Question Papers.</li>
       <li>Added <strong>Digital Question Papers</strong> at Advanced Higher level.</li>
@@ -1034,7 +1065,7 @@ button.card-main:not([aria-disabled="true"]):active {
       <li>Added <strong>Classroom Timer</strong> with countdowns, stopwatches and custom labels for classroom activities.</li>
       <li>Added <strong>Stave Paper Generator</strong> for creating and downloading blank and piano manuscript paper.</li>
       <li>Added <strong>Chromatic Tuner</strong> with live pitch feedback and guided string tuning for guitar, bass guitar, ukulele and violin.</li>
-      <li><strong>Experimental:</strong> Host a Game in <strong>Keyboard Note Identification</strong>. Participants can join by QR code and compete in a Quiz or Race. This feature is still being tested and may change.</li>
+      <li>Added <strong>Host</strong> across Music Literacy and selected games. Pupils join by QR code and play the same questions or puzzle. Hosting is in beta and may behave unexpectedly.</li>
       <li>Improved navigation, activity controls, notation, accessibility and the fitted desktop layout across the Hub.</li>
       <li>Bug fixes and other improvements across the Hub.</li>
     </ul>
@@ -1055,7 +1086,7 @@ button.card-main:not([aria-disabled="true"]):active {
 
 <div id="installOverlay" class="overlay"><div class="modal"><button class="close-btn" type="button" data-close aria-label="Close Add to Home Screen instructions">×</button><h2>Add to Home Screen</h2><p>On iPhone or iPad, open this website in Safari, then follow these steps.</p><ol style="margin:0;padding-left:22px;color:#0f172a;line-height:1.65;font-weight:400;"><li>Tap the <strong>Share</strong> button. <svg width="20" height="20" viewBox="0 0 50 50" aria-hidden="true" style="display:inline-flex;vertical-align:middle;margin-left:calc(.18em - 2px);fill:currentColor;position:relative;top:-2px;"><path d="M30.3 13.7L25 8.4l-5.3 5.3-1.4-1.4L25 5.6l6.7 6.7z"/><path d="M24 7h2v21h-2z"/><path d="M35 40H15c-1.7 0-3-1.3-3-3V19c0-1.7 1.3-3 3-3h7v2h-7c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h20c.6 0 1-.4 1-1V19c0-.6-.4-1-1-1h-7v-2h7c1.7 0 3 1.3 3 3v18c0 1.7-1.3 3-3 3z"/></svg></li><li>Scroll down and tap <strong>Add to Home Screen</strong>. <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="display:inline-flex;vertical-align:middle;margin-left:.18em;fill:currentColor;position:relative;top:-2px;"><g><path d="M18.438,20.938H5.563a2.5,2.5,0,0,1-2.5-2.5V5.564a2.5,2.5,0,0,1,2.5-2.5H18.438a2.5,2.5,0,0,1,2.5,2.5V18.438A2.5,2.5,0,0,1,18.438,20.938ZM5.563,4.064a1.5,1.5,0,0,0-1.5,1.5V18.438a1.5,1.5,0,0,0,1.5,1.5H18.438a1.5,1.5,0,0,0,1.5-1.5V5.564a1.5,1.5,0,0,0-1.5-1.5Z"/><path d="M15,12.5H12.5V15a.5.5,0,0,1-1,0V12.5H9a.5.5,0,0,1,0-1h2.5V9a.5.5,0,0,1,1,0v2.5H15A.5.5,0,0,1,15,12.5Z"/></g></svg></li><li>Tap <strong>Add</strong> in the top-right corner. <span style="display:inline-flex;align-items:center;justify-content:center;margin-left:.18em;padding:2px 10px;border-radius:999px;background:#2563eb;color:white;font-size:.82rem;font-weight:700;line-height:1.2;vertical-align:middle;position:relative;top:-2px;left:3px;box-shadow:0 2px 8px rgba(37,99,235,.18);">Add</span></li></ol><p>It will then appear like an app icon on the device home screen.</p></div></div>
 
-<div id="qrOverlay" class="overlay"><div class="modal" style="text-align:center;"><button class="close-btn" type="button" data-close aria-label="Close QR code overlay">×</button><h2 style="margin-right:0;">Share QR Code</h2><p>Open The Music Learning Hub on another device.</p><img class="qr-image" data-home-qr alt="QR code linking to The Music Learning Hub" /><div style="margin-top:18px;"><button id="copyLinkBtn" type="button">Copy Link</button></div></div></div>
+<div id="qrOverlay" class="overlay"><div class="modal" style="text-align:center;"><button class="close-btn" type="button" data-close aria-label="Close QR code overlay">×</button><h2 style="margin-right:0;">Share QR Code</h2><p>Open The Music Learning Hub on another device.</p><img class="qr-image" data-home-qr alt="QR code linking to The Music Learning Hub" /><div style="margin-top:18px;"><button id="copyLinkBtn" type="button"><img src="./ui-icons/link.svg" alt="" aria-hidden="true" width="16" height="16" /><span>Copy Link</span></button></div></div></div>
 
 <div id="conceptGridOverlay" class="overlay"><div class="modal wide"><button class="close-btn" type="button" data-close aria-label="Close Concept List">×</button><div class="question-paper-analysis-header"><h2>Concept List</h2><div class="question-paper-analysis-switch" role="group" aria-label="Concept list type"><button type="button" aria-pressed="true" data-concept-list="concepts">Music Concepts</button><button type="button" aria-pressed="false" data-concept-list="literacy">Music Literacy</button></div></div><div class="concepts-grid-wrap"><table class="concepts-grid" aria-label="Music Concepts"><thead id="conceptGridHead"></thead><tbody id="conceptGridBody"></tbody></table></div></div></div>
 
@@ -1078,10 +1109,10 @@ button.card-main:not([aria-disabled="true"]):active {
 </div>
 
 <script src="./music-dictionary/music-concepts-data.js?v=b95ba92f0056"></script>
-<script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
+<script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
 <script src="./shared/music-literacy-curriculum.js?v=e253dc05119d"></script>
-<script src="./music-dictionary/music-literacy-dictionary.js?v=5fb8d4a20a4a"></script>
-<script src="./shared/hub-collections.js?v=4686dab63b40"></script>
+<script src="./music-dictionary/music-literacy-dictionary.js?v=78791bf1da4d"></script>
+<script src="./shared/hub-collections.js?v=09c35f0bd2ca"></script>
 <script>
 const levels = [
   ["N3", "National 3"],
@@ -1099,7 +1130,7 @@ const appIcons = {
   "Digital Question Papers": "app-icons/exam-icon.svg",
   "Practice Questions": "app-icons/practice-app-icon.svg?v=14d0b2a52c0a",
   "Concept Recall": "app-icons/concept-recall-icon.svg",
-  "Music Dictionary": "app-icons/music-concepts-icon.svg?v=20261105-dictionary-icon",
+  "Concept Dictionary": "app-icons/music-concepts-icon.svg?v=20261105-dictionary-icon",
   "Concept Quizzes": "app-icons/concept-quiz-icon.svg",
   "Concept Collections": "app-icons/my-collections-icon.svg",
   "Concept Audio Library": "app-icons/audio-concept-library-icon.svg?v=20261102-music-play",
@@ -1116,7 +1147,9 @@ const appIcons = {
   "Family Fortunes": "app-icons/familyfortunes-icon.svg",
   "Concept Sort": "app-icons/concept-sort-icon.svg",
   "Concept Charades": "app-icons/concept-charades-icon.svg?v=speech-bubble-questions",
+  "Concept Bingo": "app-icons/concept-bingo-icon.png",
   "Crosswords": "app-icons/crosswords-grid-icon.svg",
+  "Dominoes": "app-icons/dominoes-icon.svg",
   "Escape Room": "app-icons/music-escape.svg",
   "Connections": "app-icons/connections-grid-icon.svg",
   "Word Search": "app-icons/wordsearch-icon.svg",
@@ -1129,7 +1162,6 @@ const appIcons = {
   "Rhythm Identification": "app-icons/rhythm-groups-icon.svg",
   "Rhythm Sums": "app-icons/rhythm-sums-icon.svg",
   "Reading Rhythms": "app-icons/readingrhythm-icon.svg",
-  "Triplets": "app-icons/triplets-icon.svg",
   "Barlines": "app-icons/barlines-icon.svg",
   "Rhythmic Dictation": "app-icons/correct-the-rhythm-icon.svg",
   "Metronome": "app-icons/tempo-icon.svg",
@@ -1141,67 +1173,68 @@ const appIcons = {
 };
 const appData = [
   { category: "Pitch", apps: [
-    { href: "accidentals.html", title: "Accidentals", desc: "Identify and use accidentals and enharmonic equivalents.", keywords: "pitch accidentals sharps flats naturals tones semitones enharmonic equivalents audio listening", audio: true, disabled: ["N3", "N4", "H"] },
-    { href: "chords.html", title: "Chords", desc: "Identify, create and apply chords in music.", keywords: "pitch chords roman numerals I IV V VI major minor harmony audio listening", audio: true, disabled: ["N3", "N4"] },
-    { href: "intervals.html", title: "Intervals", desc: "Identify and create intervals.", keywords: "pitch intervals step leap diatonic 2nd 3rd 4th 5th 6th 7th octave", audio: false, disabled: ["N4"] },
-    { href: "keysignatures.html", title: "Key Signatures", desc: "Identify key signatures and scale degrees.", keywords: "scales key signatures tonic subdominant dominant scale degrees c major g major f major a minor sharps flats", audio: false, disabled: ["N3", "N4"] },
-    { href: "keyboardnoteidentification.html", title: "Keyboard Note Identification", desc: "Identify notes on the keyboard and match written notes to keys.", keywords: "pitch keyboard piano notes natural sharps flats enharmonic identification", audio: false, disabled: [] },
-    { href: "melodicdictation.html", title: "Melodic Dictation", desc: "Identify and complete melodic patterns.", keywords: "pitch melody missing notes repetition sequence stepwise leaps audio listening", audio: true, disabled: [] },
-    { href: "noteidentification.html", title: "Note Identification", desc: "Identify note names in the treble and bass clef.", keywords: "pitch notes stave treble bass naming", audio: false, disabled: [] },
-    { href: "transposing.html", title: "Transposing", desc: "Transpose between the treble and bass clefs.", keywords: "clefs bass treble transpose octave", audio: false, disabled: ["N3", "N4", "N5"] }
+    { href: "accidentals.html", title: "Accidentals", desc: "Identify and use accidentals and enharmonic equivalents.", keywords: "pitch accidentals sharps flats naturals tones semitones enharmonic equivalents audio listening", audio: true, medalEligible: true, disabled: ["N3", "N4", "H"] },
+    { href: "chords.html", title: "Chords", desc: "Identify, create and apply chords in music.", keywords: "pitch chords roman numerals I IV V VI major minor harmony audio listening", audio: true, medalEligible: true, disabled: ["N3", "N4"] },
+    { href: "intervals.html", title: "Intervals", desc: "Identify and create intervals.", keywords: "pitch intervals step leap diatonic 2nd 3rd 4th 5th 6th 7th octave", audio: false, medalEligible: true, disabled: ["N4"] },
+    { href: "keysignatures.html", title: "Key Signatures", desc: "Identify key signatures and scale degrees.", keywords: "scales key signatures tonic subdominant dominant scale degrees c major g major f major a minor sharps flats", audio: false, medalEligible: true, disabled: ["N3", "N4"] },
+    { href: "keyboardnoteidentification.html", title: "Keyboard Note Identification", desc: "Identify notes on the keyboard and match written notes to keys.", keywords: "pitch keyboard piano notes natural sharps flats enharmonic identification", audio: false, medalEligible: true, disabled: [] },
+    { href: "melodicdictation.html", title: "Melodic Dictation", desc: "Identify and complete melodic patterns.", keywords: "pitch melody missing notes repetition sequence stepwise leaps audio listening", audio: true, medalEligible: true, disabled: [] },
+    { href: "noteidentification.html", title: "Note Identification", desc: "Identify note names in the treble and bass clef.", keywords: "pitch notes stave treble bass naming", audio: false, medalEligible: true, disabled: [] },
+    { href: "transposing.html", title: "Transposing", desc: "Transpose between the treble and bass clefs.", keywords: "clefs bass treble transpose octave", audio: false, medalEligible: true, disabled: ["N3", "N4", "N5"] }
   ]},
   { category: "Rhythm", apps: [
-    { href: "barlines.html", title: "Barlines", desc: "Insert barlines at the correct place in the music.", keywords: "rhythm barlines bars measures beats", audio: false, disabled: [] },
-    { href: "readingrhythms.html", title: "Reading Rhythms", desc: "Perform rhythms in time with the music by reading notation.", keywords: "rhythm reading perform tap spacebar timing metronome percussion audio", audio: true, disabled: [] },
-    { href: "rests.html", title: "Rests", desc: "Identify and apply rests.", keywords: "rhythm rests silence beats", audio: false, disabled: ["N3", "N4", "N5", "AH"] },
-    { href: "rhythmidentification.html", title: "Rhythm Identification", desc: "Identify and group matching rhythms.", keywords: "rhythm match values notation", audio: false, disabled: ["AH"] },
-    { href: "rhythmsums.html", title: "Rhythm Sums", desc: "Calculate rhythm values.", keywords: "rhythm sums beats values maths", audio: false, disabled: ["AH"] },
-    { href: "rhythmicdictation.html", title: "Rhythmic Dictation", desc: "Identify, insert and correct rhythms.", keywords: "rhythm write dictation correct listening aural hear audio listening", audio: true, disabled: [] },
-    { href: "timesignatures.html", title: "Time Signatures", desc: "Identify time signatures.", keywords: "rhythm time signatures beats metre meter", audio: false, disabled: [] },
-    { href: "triplets.html", title: "Triplets", desc: "Identify quaver and crotchet triplets.", keywords: "rhythm triplets three notes", audio: false, disabled: ["N3", "N4", "N5", "AH"] }
+    { href: "barlines.html", title: "Barlines", desc: "Insert barlines at the correct place in the music.", keywords: "rhythm barlines bars measures beats", audio: false, medalEligible: true, disabled: [] },
+    { href: "readingrhythms.html", title: "Reading Rhythms", desc: "Perform rhythms in time with the music by reading notation.", keywords: "rhythm reading perform tap spacebar timing metronome percussion audio", audio: true, medalEligible: true, disabled: [] },
+    { href: "rests.html", title: "Rests", desc: "Identify and apply rests.", keywords: "rhythm rests silence beats", audio: false, medalEligible: true, disabled: ["N3", "N4", "N5", "AH"] },
+    { href: "rhythmidentification.html", title: "Rhythm Identification", desc: "Identify and group matching rhythms.", keywords: "rhythm match values notation", audio: false, medalEligible: true, disabled: ["AH"] },
+    { href: "rhythmsums.html", title: "Rhythm Sums", desc: "Calculate rhythm values.", keywords: "rhythm sums beats values maths", audio: false, medalEligible: true, disabled: ["AH"] },
+    { href: "rhythmicdictation.html", title: "Rhythmic Dictation", desc: "Identify, insert and correct rhythms.", keywords: "rhythm write dictation correct listening aural hear audio triplets identify three notes", audio: true, medalEligible: true, disabled: [] },
+    { href: "timesignatures.html", title: "Time Signatures", desc: "Identify time signatures.", keywords: "rhythm time signatures beats metre meter", audio: false, medalEligible: true, disabled: [] },
   ]},
   { category: "Music Symbols", apps: [
-    { href: "articulationmarkings.html", title: "Articulation Markings", desc: "Identify and apply staccatos, slurs, accents and phrase markings.", keywords: "music symbols articulation staccato legato accent slur phrasing audio listening", audio: true, disabled: ["N3", "N4", "N5", "AH"] },
-    { href: "dynamics.html", title: "Dynamics", desc: "Interpret and apply dynamics in the music.", keywords: "music symbols dynamics loud quiet piano forte crescendo diminuendo audio listening", audio: true, disabled: ["H", "AH"] },
-    { href: "followthescore.html", title: "Follow the Score", desc: "Listen and follow the score to find where the music stops.", keywords: "listening score following tracking bars notes repeats dc ds fine segno", audio: true, disabled: [] },
-    { href: "repeatsigns.html", title: "Repeat Signs", desc: "Identify repeat signs and navigation marks.", keywords: "music symbols repeat signs first second time bars endings dc ds coda audio listening", audio: true, disabled: ["N3"] }
+    { href: "articulationmarkings.html", title: "Articulation Markings", desc: "Identify and apply staccatos, slurs, accents and phrase markings.", keywords: "music symbols articulation staccato legato accent slur phrasing audio listening", audio: true, medalEligible: true, disabled: ["N3", "N4", "N5", "AH"] },
+    { href: "dynamics.html", title: "Dynamics", desc: "Interpret and apply dynamics in the music.", keywords: "music symbols dynamics loud quiet piano forte crescendo diminuendo audio listening", audio: true, medalEligible: true, disabled: ["H", "AH"] },
+    { href: "followthescore.html", title: "Follow the Score", desc: "Listen and follow the score to find where the music stops.", keywords: "listening score following tracking bars notes repeats dc ds fine segno", audio: true, medalEligible: true, disabled: [] },
+    { href: "repeatsigns.html", title: "Repeat Signs", desc: "Identify repeat signs and navigation marks.", keywords: "music symbols repeat signs first second time bars endings dc ds coda audio listening", audio: true, medalEligible: true, disabled: ["N3"] }
   ]},
   { category: "Practice", apps: [
     { href: "practicequestions.html", title: "Practice Questions", desc: "Complete exam-style questions combining multiple music literacy concepts.", keywords: "practice exam questions mixed concepts melody rhythm harmony dynamics symbols", audio: true, disabled: [] }
   ]},
   { category: "Listening", apps: [
-    { href: "auralrecognition.html", title: "Ear Training", desc: "Piano-led ear training for melody, harmony, rhythm and more.", keywords: "ear training aural recognition listening chords scales tonality harmonic devices", audio: true, disabled: [] },
+    { href: "auralrecognition.html", title: "Ear Training", desc: "Piano-led ear training for melody, harmony, rhythm and more.", keywords: "ear training aural recognition listening chords scales tonality harmonic devices", audio: true, medalEligible: true, disabled: [] },
     { href: "digital-question-papers/digitalquestionpapers.html", title: "Digital Question Papers", desc: "Complete interactive past papers with audio and feedback.", keywords: "interactive exam papers past paper national 5 higher advanced higher assessment audio feedback", audio: true, disabled: ["N3", "N4"] },
-    { href: "music-dictionary/musicdictionary.html", title: "Music Dictionary", desc: "Explore musical concepts, definitions and examples.", keywords: "music concepts dictionary definitions reference styles melody harmony rhythm tempo texture structure form timbre", audio: true, disabled: [] },
-    { href: "conceptquiz.html", title: "Concept Quizzes", desc: "Quick questions to strengthen your musical knowledge.", keywords: "concept quizzes collections custom quiz question bank definitions musical knowledge", audio: true, disabled: [] },
-    { href: "mycollections.html", title: "Concept Collections", desc: "Browse curated collections or create your own to use across activities.", keywords: "shared saved custom collections concept sort charades word search escape room millionaire quiz", audio: false, teacherOnly: true, disabled: [], direct: true },
-    { href: "audioconceptlibrary.html", title: "Concept Audio Library", desc: "Browse audio examples of music concepts.", keywords: "audio concept library examples listening teacher resources Glow OneDrive recordings", audio: true, teacherOnly: true, disabled: [] }
+    { href: "music-dictionary/musicdictionary.html", title: "Concept Dictionary", desc: "Explore musical concepts, definitions and examples.", keywords: "music concepts dictionary definitions reference styles melody harmony rhythm tempo texture structure form timbre", disabled: [] },
+    { href: "conceptquiz.html", title: "Concept Quizzes", desc: "Quick questions to strengthen your musical knowledge.", keywords: "concept quizzes collections custom quiz question bank definitions musical knowledge", audio: true, medalEligible: true, disabled: [] },
+    { href: "mycollections.html", title: "Concept Collections", desc: "Browse curated collections or create your own to use across activities.", keywords: "shared saved custom collections concept sort charades word search escape room millionaire quiz", audio: false, teacherOnly: true, disabled: [] },
+    { href: "audioconceptlibrary.html", title: "Concept Audio Library", desc: "Browse audio examples of music concepts.", keywords: "audio concept library examples listening teacher resources Glow OneDrive recordings", teacherOnly: true, disabled: [] }
   ]},
   { category: "Games", apps: [
-    { href: "musicescape.html", title: "Escape Room", desc: "Solve the clues to find your way out.", keywords: "music escape lost score adventure room mystery piano rhythm listening", audio: true, disabled: [] },
-    { href: "conceptcharades.html", title: "Concept Charades", desc: "In pairs or teams, guess as many concepts as you can before the time runs out.", keywords: "concept charades heads up partner guessing timed music concepts", audio: true, disabled: [] },
-    { href: "conceptrecall.html", title: "Concept Recall", desc: "Name as many musical concepts as you can under each category.", keywords: "concept recall revision timed quiz terminology definitions hints", audio: false, disabled: ["N3", "N4"] },
-    { href: "bandle.html", title: "Pitched", desc: "Listen, remember and match the pitch.", keywords: "pitched dialed listening game pitch tone frequency memory", audio: true, disabled: [], direct: true },
+    { href: "musicescape.html", title: "Escape Room", desc: "Solve the clues to find your way out.", keywords: "music escape lost score adventure room mystery piano rhythm listening", audio: true, medalEligible: true, disabled: [] },
+    { href: "conceptbingo.html", title: "Concept Bingo", desc: "Match definitions or recordings to musical concepts on your bingo card.", keywords: "concept bingo classroom teacher host listening styles instruments music literacy definitions", audio: true, disabled: [] },
+    { href: "conceptcharades.html", title: "Concept Charades", desc: "In pairs or teams, guess as many concepts as you can before the time runs out.", keywords: "concept charades heads up partner guessing timed music concepts", disabled: [] },
+    { href: "conceptrecall.html", title: "Concept Recall", desc: "Name as many musical concepts as you can under each category.", keywords: "concept recall revision timed quiz terminology definitions hints", audio: false, medalEligible: true, disabled: ["N3", "N4"] },
+    { href: "pitched.html", title: "Pitched", desc: "Listen, remember and match the pitch.", keywords: "pitched dialed listening game pitch tone frequency memory", audio: true, medalEligible: true, disabled: [], direct: true },
     { href: "familyfortunes/familyfortunes.html", title: "Family Fortunes", desc: "Name the most popular musical answers in this game-show challenge.", keywords: "family fortunes national 3 national 4 national 5 higher advanced higher game show quiz popular answers teams music concepts", audio: true, disabled: [] },
-    { href: "conceptsort.html", title: "Concept Sort", desc: "Sort musical concepts into their correct groups.", keywords: "concept sort sorting musical concepts groups collections", audio: false, disabled: [] },
-    { href: "crosswords.html", title: "Crosswords", desc: "Solve musical clues to complete the crossword.", keywords: "crossword crosswords musical concepts puzzle clues vocabulary", audio: false, disabled: [] },
-    { href: "connections.html", title: "Connections", desc: "Find four groups of four related musical ideas.", keywords: "connections groups related music concepts puzzle sorting", audio: false, disabled: [] },
-    { href: "wordsearch.html", title: "Word Search", desc: "Find musical terms hidden in the letter grid.", keywords: "word search wordsearch music concepts words puzzle vocabulary", audio: false, disabled: [] },
-    { href: "whowantstobemillionaire/whowantstobeamillionaire.html", title: "Who Wants to Be a Millionaire?", desc: "Test your musical knowledge and climb the prize ladder to £1 million.", keywords: "millionaire national 3 national 4 national 5 higher advanced higher quiz game listening literacy notation concepts lifelines", audio: true, disabled: [] }
+    { href: "conceptsort.html", title: "Concept Sort", desc: "Sort musical concepts into their correct groups.", keywords: "concept sort sorting musical concepts groups collections", audio: true, medalEligible: true, disabled: [] },
+    { href: "crosswords.html", title: "Crosswords", desc: "Solve musical clues to complete the crossword.", keywords: "crossword crosswords musical concepts puzzle clues vocabulary", audio: false, medalEligible: true, disabled: [] },
+    { href: "dominoes.html", title: "Dominoes", desc: "Match musical definitions to build a domino chain.", keywords: "dominoes domino cards concept definitions classroom collections", audio: true, medalEligible: true, disabled: [] },
+    { href: "connections.html", title: "Connections", desc: "Find four groups of four related musical ideas.", keywords: "connections groups related music concepts puzzle sorting", audio: false, medalEligible: true, disabled: [] },
+    { href: "wordsearch.html", title: "Word Search", desc: "Find musical terms hidden in the letter grid.", keywords: "word search wordsearch music concepts words puzzle vocabulary", audio: false, medalEligible: true, disabled: [] },
+    { href: "whowantstobemillionaire/whowantstobeamillionaire.html", title: "Who Wants to Be a Millionaire?", desc: "Test your musical knowledge and climb the prize ladder to £1 million.", keywords: "millionaire national 3 national 4 national 5 higher advanced higher quiz game listening literacy notation concepts lifelines", audio: true, medalEligible: true, disabled: [] }
   ]},
   { category: "Performing", apps: [
     { href: "assessment-recorder/assessmentrecorder.html", title: "Digital Performance Assessment", desc: "Record performing assessments, feedback and marks.", keywords: "teacher assessment recorder performing performance national 5 higher advanced higher instruments pupils class marks feedback", audio: false, teacherOnly: true, disabled: [], direct: true }
   ]},
   { category: "Composing", apps: [
-    { href: "chordgenerator.html", title: "Composition Studio", desc: "Create chords, melodies and drum patterns.", keywords: "composition studio music maker chord generator player composer progression piano guitar bass drums drum machine melody MIDI composition backing track", audio: true, disabled: [], direct: true }
+    { href: "chordgenerator.html", title: "Composition Studio", desc: "Create chords, melodies and drum patterns.", keywords: "composition studio music maker chord generator player composer progression piano guitar bass drums drum machine melody MIDI composition backing track", disabled: [], direct: true }
   ]},
   { category: "Tools", apps: [
-        {href:"interactivepiano.html",title:"Interactive Piano",desc:"Play a piano keyboard with your mouse, touchscreen or computer keys.",keywords:"piano keyboard notes chords instrument popup pop-up",audio:true,disabled:[],direct:true},
+        {href:"interactivepiano.html",title:"Interactive Piano",desc:"Play a piano keyboard with your mouse, touchscreen or computer keys.",keywords:"piano keyboard notes chords instrument popup pop-up",disabled:[],direct:true},
         {href:"staffpapergenerator.html",title:"Stave Paper Generator",desc:"Create and download blank or piano stave paper.",keywords:"stave paper staff paper manuscript music notation printable blank piano PDF",audio:false,disabled:[],direct:true},
     { href: "chromatictuner.html", title: "Chromatic Tuner", desc: "Tune your instrument with live pitch feedback.", keywords: "chromatic tuner tuning microphone pitch frequency cents sharp flat instrument voice", audio: false, disabled: [], direct: true },
-    { href: "classroomtimer.html", title: "Classroom Timer", desc: "Keep classroom activities on track with timers and stopwatches.", keywords: "classroom timer stopwatch countdown clock alarm multiple labels extra time milliseconds", audio: true, disabled: [], direct: true },
-    { href: "metronome.html", title: "Metronome", desc: "Keep a steady beat with adjustable tempo, accents and subdivisions.", keywords: "metronome tempo bpm tap beat rhythm practice timer subdivisions", audio: true, disabled: [], direct: true },
-    { href: "namerandomiser.html", title: "Name Randomiser", desc: "Randomly select students to perform, participate in activities or answer questions.", keywords: "names randomiser randomizer wheel picker students pupils classroom groups pairs", audio: true, teacherOnly: true, disabled: [], direct: true }
+    { href: "classroomtimer.html", title: "Classroom Timer", desc: "Keep classroom activities on track with timers and stopwatches.", keywords: "classroom timer stopwatch countdown clock alarm multiple labels extra time milliseconds", teacherOnly: true, disabled: [], direct: true },
+    { href: "metronome.html", title: "Metronome", desc: "Keep a steady beat with adjustable tempo, accents and subdivisions.", keywords: "metronome tempo bpm tap beat rhythm practice timer subdivisions", disabled: [], direct: true },
+    { href: "namerandomiser.html", title: "Name Randomiser", desc: "Randomly select students to perform, participate in activities or answer questions.", keywords: "names randomiser randomizer wheel picker students pupils classroom groups pairs", teacherOnly: true, disabled: [], direct: true }
   ]}
 ];
 
@@ -1298,16 +1331,39 @@ function selectHomeSection(section) {
 const collectionAppPaths = new Set(Object.values(window.HubCollections?.applications ?? {}).map(([, href]) => href));
 const activityTags = {
   audio: {
-    label: "Contains Audio",
+    label: "Audio Questions",
     icon: '<img class="activity-tag-icon" src="./ui-icons/audio-svgrepo-com.svg?v=20260722-smaller15" alt="">',
+    description: "Answer questions about musical examples.",
   },
   collections: {
-    label: "Supports Concept Collections",
+    label: "Concept Collections",
     icon: '<img class="activity-tag-icon" src="./ui-icons/concept-collections.svg" alt="">',
+    description: "Practise using curated or saved collections.",
+  },
+  medals: {
+    label: "Medals Available",
+    icon: '<span class="activity-tag-icon activity-tag-medal-icon" aria-hidden="true"></span>',
+    description: "Earn medals by meeting activity targets.",
   },
   staff: {
-    label: "Built for Staff",
+    label: "Teacher Tool",
     icon: '<svg class="activity-tag-icon" viewBox="-3 -3 30 30" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-2a7 7 0 0 1 14 0v2z"/></svg>',
+    description: "Apps designed specifically for teachers.",
+  },
+  share: {
+    label: "Share",
+    icon: '<img class="activity-tag-icon is-small" src="./ui-icons/qr-code-svgrepo-com.svg?v=20261106-roundest" alt="">',
+    description: "Send a link or QR code with the current activity settings.",
+  },
+  host: {
+    label: "Host",
+    icon: '<img class="activity-tag-icon" src="./ui-icons/lobby-players.svg" alt="">',
+    description: "Start a classroom game that participants can join by QR code.",
+  },
+  worksheet: {
+    label: "Worksheet",
+    icon: '<img class="activity-tag-icon is-small" src="./ui-icons/worksheet.svg?v=20261103-worksheet-svg-2" alt="">',
+    description: "Print a worksheet using the current settings.",
   },
 };
 
@@ -1320,6 +1376,7 @@ function renderActivityTags(app) {
   const tags = [
     app.audio && activityTags.audio,
     collectionAppPaths.has(app.href) && activityTags.collections,
+    app.medalEligible && activityTags.medals,
     app.teacherOnly && activityTags.staff,
   ].filter(Boolean).map(tag => renderActivityTag(tag)).join(" ");
   return tags ? ` <span class="activity-tags">${tags}</span>` : "";
@@ -1374,9 +1431,12 @@ function updateAchievementButtons() {
     const activity = button.closest(".card").dataset.href;
     const level = button.dataset.level;
     const label = levels.find(([key]) => key === level)?.[1] || level;
-    const achievement = button.disabled ? null : window.MLH.achievements.get(activity, level);
-    const medal = window.MLH.achievements.medals[achievement?.tier];
+    const exerciseSummary = !button.disabled && activity === "auralrecognition.html"
+      ? achievements.levelSummary(activity, level) : null;
+    const achievement = button.disabled ? null : exerciseSummary || achievements.get(activity, level);
+    const medal = achievements.medals[achievement?.tier];
     button.querySelector(".level-medal")?.remove();
+    button.querySelector(".level-medal-count")?.remove();
     delete button.dataset.medal;
     button.style.removeProperty("--medal-background");
     button.style.removeProperty("--medal-colour");
@@ -1386,7 +1446,13 @@ function updateAchievementButtons() {
     button.dataset.medal = achievement.tier;
     button.style.setProperty("--medal-background", medal.backgroundColor);
     button.style.setProperty("--medal-colour", medal.color);
-    const description = `${label}, ${medal.label} medal${achievement.bestStreak > 0 ? `, highest streak ${achievement.bestStreak}` : ""}`;
+    const breakdown = exerciseSummary && Object.entries(achievements.medals)
+      .filter(([tier]) => exerciseSummary.counts[tier] > 0)
+      .map(([tier, item]) => `${exerciseSummary.counts[tier]} ${item.label}`)
+      .join(", ");
+    const description = exerciseSummary
+      ? `${label}, ${exerciseSummary.count} ${exerciseSummary.count === 1 ? "medal" : "medals"} (${breakdown})`
+      : `${label}, ${medal.label} medal${achievement.bestStreak > 0 ? `, highest streak ${achievement.bestStreak}` : ""}`;
     button.setAttribute("aria-label", description);
     button.title = description;
     const icon = document.createElement("img");
@@ -1395,6 +1461,13 @@ function updateAchievementButtons() {
     icon.alt = "";
     icon.setAttribute("aria-hidden", "true");
     button.append(icon);
+    if (exerciseSummary) {
+      const count = document.createElement("span");
+      count.className = "level-medal-count";
+      count.textContent = exerciseSummary.count;
+      count.setAttribute("aria-hidden", "true");
+      button.append(count);
+    }
   });
 }
 window.addEventListener("mlh-achievements-change", updateAchievementButtons);
@@ -1481,15 +1554,9 @@ function closeOverlay(overlay) {
   document.querySelectorAll("body > header, body > main, body > footer").forEach(element => { element.inert = false; });
   overlayReturnFocus?.focus({preventScroll:true});
 }
-async function copyText(button, text, successText, failText, resetHtml, resetDelay = 1600) {
-  try { await navigator.clipboard.writeText(text); button.textContent = successText; }
-  catch { button.textContent = failText; }
-  setTimeout(() => { button.innerHTML = resetHtml; }, resetDelay);
-}
-
 renderApps();
 document.getElementById("activityTagLegend").innerHTML = Object.values(activityTags)
-  .map(tag => `<li>${renderActivityTag(tag, true)}${tag.label}</li>`).join("");
+  .map(tag => `<li><h3>${renderActivityTag(tag, true)}${tag.label}</h3><p>${tag.description}</p></li>`).join("");
 updateAchievementButtons();
 renderConceptGrid();
 document.getElementById("activitySearch").value = new URLSearchParams(window.location.search).get("q") || "";
@@ -1593,8 +1660,12 @@ document.addEventListener("keydown", event => {
 });
 
 if (copyLinkBtn) {
-  const original = copyLinkBtn.innerHTML;
-  copyLinkBtn.addEventListener("click", () => copyText(copyLinkBtn, homeShareUrl, "Copied", "Unable to Copy", original, 1800));
+  const label = copyLinkBtn.querySelector("span");
+  copyLinkBtn.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(homeShareUrl); label.textContent = "Copied"; }
+    catch { label.textContent = "Unable to Copy"; }
+    setTimeout(() => { label.textContent = "Copy Link"; }, 1800);
+  });
 }
 
 </script>

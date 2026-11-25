@@ -21,16 +21,16 @@ test('completion medals persist their actual tier, with no invented streak and n
  assert.equal(api.get('conceptrecall.html','H').tier,'gold');assert.equal(api.get('conceptrecall.html','H').bestStreak,0);
  api.award('conceptrecall.html','H','bronze');assert.equal(api.get('conceptrecall.html','H').tier,'gold');
  api.award('conceptrecall.html','bogus','diamond');api.award('conceptrecall.html','N3','unknown');
- assert.equal(api.totals().bronze,1);assert.equal(api.totals().gold,1);assert.equal(api.totals().diamond,0);
+ assert.deepEqual({...api.totals()},{bronze:0,silver:0,gold:1,diamond:0});
 });
 test('saved game awards migrate once, preserving aliases and rejecting ambiguous question positions',()=>{
  const input={'mlh-concept-recall-v1':{version:1,records:{H:{bestMedal:'gold'}}},'mlh-millionaire-performance-v1':{N5:{bestAmount:1000},N3:{bestWinMs:45000},AH:{highestQuestion:15}}};
  const h=store(input),{api}=h;
  assert.equal(api.get('conceptrecall.html','H').tier,'gold');assert.equal(api.get('whowantstobeamillionaire.html','N5').tier,'silver');
  assert.equal(api.get('whowantstobeamillionaire.html','N3').tier,'diamond');assert.equal(api.get('whowantstobeamillionaire.html','AH'),null);
- assert.equal(api.totals().bronze,3);assert.equal(api.totals().silver,3);assert.equal(api.totals().gold,2);assert.equal(api.totals().diamond,1);
+ assert.deepEqual({...api.totals()},{bronze:0,silver:1,gold:1,diamond:1});
  const restored=store(Object.fromEntries([...h.values].map(([key,value])=>[key,JSON.parse(value)])));
- assert.equal(restored.writes,0);assert.equal(restored.api.totals().bronze,3);
+ assert.equal(restored.writes,0);assert.deepEqual({...restored.api.totals()},{bronze:0,silver:1,gold:1,diamond:1});
 });
 test('Concept Recall only exports an existing eligible result medal',()=>{
  const page=read('conceptrecall.html'),source=[...page.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]).find(s=>s.includes('function finishGame('));

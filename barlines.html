@@ -5,24 +5,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Barlines</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/barlines-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/barlines-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js?v=20260629"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <style>
+    .barlines-customise > .hub-menu-scroll { max-height: none; }
     @font-face {
       font-family: "Bravura";
       src: url("./fonts/Bravura.otf") format("opentype");
@@ -36,19 +38,20 @@
       text-rendering: geometricPrecision;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
 
   <script src="./shared/barlines-core.js?v=30834617a6d4"></script>
   <script type="text/x-mlh-jsx-source" data-runtime="barlines-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
-const { spacingSlots, normaliseSettings, hasValidSelection, NOTES, TIME_SIGNATURES, RHYTHM_INFO, RHYTHM_OPTIONS, KEYS, LEVELS, SIMPLE_FULL_BAR_PATTERNS, COMPOUND_BEAT_PATTERNS, randomIndex, randomItem, clamp, rhythmInfo, noteByIndex, noteIndexByStep, weightedItem, signatureCanBeGenerated, weightedSignatureChoice, nearestMelodicIndex, expandRhythmToken, shouldExplicitlyBeam, rhythmAllowed, tokenAllowed, semiquaverCount, patternAllowed, levelEnabledMap, enabledMapMatchesLevel, taskMatchesLevel, levelTimeTypes, chooseSimplePattern, buildCompoundBar, activeKeyIds, randomKey, applyKeyAccidental, addItemsFromRhythms, buildQuestion } = window.BARLINES_CORE.create(Math.random);
+const { spacingSlots, normaliseSettings, hasValidSelection, NOTES, TIME_SIGNATURES, RHYTHM_INFO, RHYTHM_OPTIONS, KEYS, LEVELS, SIMPLE_FULL_BAR_PATTERNS, COMPOUND_BEAT_PATTERNS, randomIndex, randomItem, clamp, rhythmInfo, noteByIndex, noteIndexByStep, weightedItem, signatureCanBeGenerated, weightedSignatureChoice, nearestMelodicIndex, expandRhythmToken, shouldExplicitlyBeam, rhythmAllowed, tokenAllowed, semiquaverCount, patternAllowed, levelEnabledMap, enabledMapMatchesLevel, taskMatchesLevel, levelTimeTypes, chooseSimplePattern, buildCompoundBar, activeKeyIds, randomKey, applyKeyAccidental, addItemsFromRhythms, buildQuestion } = window.BARLINES_CORE.create(exerciseRandom);
 
 const VIEWBOX_WIDTH = 920;
 const STAFF_LEFT = 24;
@@ -184,7 +187,8 @@ function calculateLayout(question) {
         const visibleBarEndX = isSystemBreakBoundary || isFinalBar ? STAFF_RIGHT : boundaryX;
         if (item.rhythm === "semibreve-rest") x = (currentBarStartX + visibleBarEndX) / 2;
         itemPositions[item.id] = { x, systemIndex, localIndex };
-        if (item.barIndex < question.totalBars - 1 && !isSystemBreakBoundary) {
+        // Any eligible gap within the stave can be tried, including gaps in its last bar.
+        if (localIndex < items.length - 1) {
           const boundaryId = `boundary-${item.cumulativeUnits}`;
           boundaryPositions.push({ id: boundaryId, units: item.cumulativeUnits, x: boundaryX, systemIndex, fixed: question.fixedBoundaries?.includes(boundaryId) });
         }
@@ -494,7 +498,7 @@ function BarlineToolGlyph({ type }) {
       {type === "double" ? (
         <g>
           <line x1="43" x2="43" y1="10" y2="38" stroke="currentColor" strokeWidth="1.8" />
-          <line x1="48" x2="48" y1="10" y2="38" stroke="currentColor" strokeWidth="3.6" />
+          <line x1="48" x2="48" y1="9.5" y2="38.5" stroke="currentColor" strokeWidth="3.6" />
         </g>
       ) : (
         <line x1="28" x2="28" y1="10" y2="38" stroke="currentColor" strokeWidth="2.4" />
@@ -699,7 +703,7 @@ function MenuTieGlyph() {
 
 function MenuTimeChangeGlyph() {
   return (
-    <span className="relative -left-[4px] top-px inline-flex h-9 w-9 items-center justify-center">
+    <span className="relative -left-[4px] -top-[2px] inline-flex h-9 w-9 items-center justify-center">
       <svg viewBox="0 0 52 36" className="h-9 w-9 overflow-visible text-stone-800" aria-hidden="true">
         <text className="music-symbol" x="16" y="15" textAnchor="middle" fontSize="20" fill="currentColor">{sharedSymbolForKey("timeSig2")}</text>
         <text className="music-symbol" x="16" y="31" textAnchor="middle" fontSize="20" fill="currentColor">{sharedSymbolForKey("timeSig4")}</text>
@@ -716,7 +720,7 @@ function IconOnlyToggleButton({ glyph, label, checked, onChange, visibleLabel = 
       type="button"
       onClick={onChange}
       className={`hub-toggle-row ${className}`}
-      style={{ marginBottom: 0, height: tall ? "56px" : "44px", minHeight: tall ? "56px" : "44px", padding: tall ? "7px 64px 7px 10px" : "10px 64px 10px 14px", overflow: "visible", position: "relative" }}
+      style={{ marginBottom: 0, padding: tall ? "7px 64px 7px 10px" : "10px 64px 10px 14px", overflow: "visible", position: "relative" }}
       aria-label={`Toggle ${label}`}
       aria-pressed={Boolean(checked)}
       title={label}
@@ -869,7 +873,7 @@ function useInjectedStyles() {
       button:hover { transform: translateY(-1px) scale(1.01); filter: brightness(1.08); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
       button:active { transform: scale(0.96); filter: brightness(0.92); }
       button:disabled { cursor: not-allowed; opacity: 0.5; }
-      button:focus-visible { outline: 2px solid rgba(22,163,74,0.35); outline-offset: 2px; }
+      button:focus-visible { outline: 2px solid var(--mlh-focus-color, #2563eb); outline-offset: 2px; }
       @keyframes medalShine { 0%,100% { transform: scale(1) rotate(-4deg); filter: drop-shadow(0 0 0 rgba(250,204,21,0)); } 50% { transform: scale(1.16) rotate(4deg); filter: drop-shadow(0 0 10px rgba(250,204,21,.9)); } }
       @keyframes confettiDrop { 0% { transform: translateY(-12px) rotate(0deg); opacity: 0; } 12% { opacity: 1; } 100% { transform: translateY(72px) rotate(260deg); opacity: 0; } }
       @keyframes incorrectDropShake { 0% { transform: translateY(-28px); opacity: 0; } 55% { transform: translateY(0); opacity: 1; } 68% { transform: translateX(-5px); } 78% { transform: translateX(5px); } 88% { transform: translateX(-3px); } 100% { transform: translateX(0); opacity: 1; } }
@@ -1079,14 +1083,14 @@ function App() {
                     onClick={() => { setLevelOpen(false); setCustomiseOpen((value) => !value); }}
                     dataMenuTrigger={true}
                   />
-                  {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
+                  {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="barlines-customise" dataMenuPanel={true}>
                     <MenuRows activeLevel={activeLevel} enabledRhythms={enabledRhythms} setEnabledRhythms={setEnabledRhythms} restsEnabled={restsEnabled} setRestsEnabled={setRestsEnabled} showRhythmGuide={showRhythmGuide} setShowRhythmGuide={setShowRhythmGuide} newQuestion={newQuestion} />
                   </window.MLH.MenuPanel>}
                 </div>
               </div>
             }
             feedback={<FeedbackBanner feedback={feedback} fading={feedbackFading} />}
-            right={<window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
+            right={<window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
           />
 
           {showRhythmGuide && <div className="relative z-[15]"><RhythmGuide /></div>}
@@ -1130,7 +1134,7 @@ const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("barlines");
 const rootElement = document.getElementById("root");
 if (ReactDOM.createRoot) ReactDOM.createRoot(rootElement).render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />);
 else ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, rootElement);
-  </script><script src="./generated-runtimes/barlines-1.js?v=8ae95767214b"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/barlines-1.js?v=411c4b4efb8f"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

@@ -2,10 +2,12 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
+const vm=require('node:vm');
+const React=require('react');
+const {renderToStaticMarkup}=require('react-dom/server');
 const dictionary=require('../music-dictionary/music-concepts-data.js');
 const videos=require('../music-dictionary/music-concepts-videos.js');
-const additions=require('../maintenance/audio-evidence/dictionary-video-expansion-2026-10-31/additions.json');
-const variety=require('../maintenance/audio-evidence/dictionary-media-variety-2026-11-01/changes.json');
+const {archivedMediaTest}=require('./helpers/dictionary-media-evidence.cjs');
 
 test('every Dictionary concept has a valid local or YouTube example',()=>{
  assert.deepEqual(Object.keys(videos.concepts).sort(),dictionary.concepts.map(c=>c.id).sort());
@@ -31,7 +33,32 @@ test('every Dictionary concept has a valid local or YouTube example',()=>{
  }
 });
 
-test('new explanations are under two minutes and selections have working embed or external-link handling',()=>{
+test('published video examples render their local player, YouTube embed or external link',()=>{
+ const source=fs.readFileSync(path.join(__dirname,'../music-dictionary/music-concepts.js'),'utf8');
+ const component=source.slice(source.indexOf('function ConceptVideo('),source.indexOf('function ConceptExamYear('));
+ const renderVideo=vm.runInNewContext(component+'\nConceptVideo',{
+  React,h:React.createElement,viewGlyph:()=>null,window:{MUSIC_CONCEPT_VIDEOS:videos},
+ });
+ for(const concept of dictionary.concepts){
+  const html=renderToStaticMarkup(renderVideo({concept}));
+  for(const video of [videos.concepts[concept.id]].flat()){
+   if(video.src){
+    assert.ok(html.includes('<video')&&html.includes('src="'+video.src+'"'),concept.name);
+   }else if(video.externalOnly){
+    assert.ok(html.includes('class="mc-video-player mc-video-external"'),concept.name);
+    assert.ok(html.includes('href="'+video.sourceUrl.replaceAll('&','&amp;')+'"'),concept.name);
+    assert.ok(!html.includes('youtube-nocookie.com/embed/'+video.videoId),concept.name);
+   }else{
+    assert.ok(html.includes('<iframe src="https://www.youtube-nocookie.com/embed/'+video.videoId+'?'),concept.name);
+   }
+  }
+ }
+});
+
+archivedMediaTest('reviewed video explanations are under two minutes and follow the recorded embed status',[
+ 'dictionary-video-expansion-2026-10-31/additions.json',
+ 'dictionary-media-variety-2026-11-01/changes.json',
+],(additions,variety)=>{
  assert.equal(additions.added,150);
  assert.equal(new Set(additions.entries.map(e=>e.conceptId)).size,150);
  for(const entry of additions.entries){

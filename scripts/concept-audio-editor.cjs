@@ -11,7 +11,7 @@ const origins = new Set(['http://127.0.0.1:8765', 'http://localhost:8765']);
 const MAX_BYTES = 50 * 1024 * 1024;
 const plain = value => String(value || '').replace(/<[^>]*>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim().slice(0, 500);
 function browserManifest(data) {
-  return '/* Curated Music Dictionary audio. Source: music-concepts-audio.json. */\n(function(root){const data=' + JSON.stringify(data) + ';if(typeof module!=="undefined"&&module.exports)module.exports=data;else root.MUSIC_CONCEPT_AUDIO=data;})(typeof window!=="undefined"?window:globalThis);\n';
+  return '/* Curated Concept Dictionary audio. Source: music-concepts-audio.json. */\n(function(root){const data=' + JSON.stringify(data) + ';if(typeof module!=="undefined"&&module.exports)module.exports=data;else root.MUSIC_CONCEPT_AUDIO=data;})(typeof window!=="undefined"?window:globalThis);\n';
 }
 function commonsTitle(source) {
   const url = new URL(source);
@@ -93,7 +93,7 @@ function createAudioServer({ projectRoot = root, resolveAudio = downloadAudio, c
       if (req.method === 'GET' && req.url === '/audio') return send(200, await read());
       const match = /^\/audio\/(MC-\d{4})$/.exec(req.url);
       if (req.method !== 'POST' || !match) return send(404, { error: 'Not found.' });
-      if (!origin || req.headers['content-type'] !== 'application/json') return send(403, { error: 'Save audio from Music Dictionary.' });
+      if (!origin || req.headers['content-type'] !== 'application/json') return send(403, { error: 'Save audio from Concept Dictionary.' });
       const id = match[1];
       if (!known.has(id)) return send(404, { error: 'Unknown concept.' });
       const body = JSON.parse((await limitedBytes(req, Math.ceil(MAX_BYTES * 4 / 3) + 20000)).toString('utf8'));
@@ -143,5 +143,5 @@ function createAudioServer({ projectRoot = root, resolveAudio = downloadAudio, c
     } catch (error) { send(400, { error: error.message || 'The audio could not be saved.' }); }
   });
 }
-if (require.main === module) createAudioServer().listen(8766, '127.0.0.1', () => console.log('Music Dictionary audio editor ready on 127.0.0.1:8766'));
+if (require.main === module) createAudioServer().listen(8766, '127.0.0.1', () => console.log('Concept Dictionary audio editor ready on 127.0.0.1:8766'));
 module.exports = { createAudioServer, browserManifest, commonsTitle, uploadedAudio, downloadAudio, resolveCommonsAudio, commonsAudioInfo };

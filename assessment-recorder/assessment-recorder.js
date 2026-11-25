@@ -900,7 +900,7 @@
         if (view.mode !== "dashboard") return;
         document.body.classList.add("assessment-blank-template");
         window.MLH.worksheetHeaderMode = {
-          title:"Digital Performance Assessment", subtitle:"Record performing assessments, feedback and marks.",
+          title:"Digital Performance Assessment",
           icon:"./app-icons/performing-assessment-icon.svg", onExit:closeAssessmentWorksheet
         };
         window.MLH.renderAssessmentHeader(true);

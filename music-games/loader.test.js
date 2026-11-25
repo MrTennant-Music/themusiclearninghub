@@ -23,3 +23,15 @@ test('deferred player styles change their URLs whenever their contents change',(
  const context={window:{}};vm.runInNewContext(fs.readFileSync('music-games/runtime/index.js','utf8'),context);
  for(const name of ['learning','arcade','content','preview-theme','diagram','player']){const file='music-games/'+name+'.css',hash=crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex').slice(0,12);assert.equal(context.window.IGRuntimeStyles[file],'./'+file+'?v='+hash);}
 });
+
+test('bundled games display the Concept Dictionary name and keep their existing IDs',async()=>{
+ const legacy={id:'hub-dictionary-example',title:'Example',description:'From the Music Dictionary.',folder:'Music Dictionary'};
+ const window={IGActivityIndex:[{...legacy}],IGCore:{normalize:value=>value}};
+ vm.runInNewContext(fs.readFileSync('music-games/loader.js','utf8'),{window});
+ window.IGRuntime.registerActivity({...legacy});
+ for(const activity of [window.IGActivityIndex[0],await window.IGRuntime.activity(legacy.id)]){
+  assert.equal(activity.id,legacy.id);
+  assert.equal(activity.description,'From the Concept Dictionary.');
+  assert.equal(activity.folder,'Concept Dictionary');
+ }
+});

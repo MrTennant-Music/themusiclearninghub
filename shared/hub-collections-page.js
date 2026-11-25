@@ -10,6 +10,7 @@
   const selectionColumns = data.categories.map((_, index) =>
     [...new Set(data.levels.flatMap(level => dictionary.tables[level][index]))].filter(id => byId.has(id)));
   const literacyConcepts = window.MLHGameCollections.literacyConcepts('ALL');
+  const literacyById = new Map(literacyConcepts.map(concept => [concept.id, concept]));
   const literacyColumns = ['melody', 'rhythm', 'texture', 'dynamics']
     .map(category => literacyConcepts.filter(concept => concept.category === category));
   const literacyCurriculum = window.MLHMusicLiteracyCurriculum;
@@ -43,6 +44,7 @@
     { ids: [...literacyIds], prefix: 'literacy-', select: get('select-all-literacy'), remove: get('remove-all-literacy') },
   ];
   const params = new URLSearchParams(location.search);
+  const searchText = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const preferred = params.get('app');
   const compoundTimeLabels = {
     'MC-0098': 'Recognising compound time',
@@ -54,6 +56,9 @@
   const catalogSearch = get('catalog-search');
   const levelPicker = ReactDOM.createRoot(get('catalog-level'));
   const customise = ReactDOM.createRoot(get('collections-customise'));
+  const shareOverlay = get('collection-share-overlay');
+  const shareRoot = ReactDOM.createRoot(shareOverlay);
+  const shareButton = get('share-collection');
   const h = React.createElement;
   const levelIcon = (file, className) => h('img', { src: './ui-icons/' + file + '.svg', alt: '', className });
   const catalogLevels = {
@@ -61,7 +66,7 @@
     ...Object.fromEntries(data.codes.map((code, index) => [code, { label: data.levels[index] }])),
   };
   let catalogLevel = Object.hasOwn(catalogLevels, params.get('level')) ? params.get('level') : 'ALL';
-  let currentId = null, builtIn = null, editing = null;
+  let currentId = null, builtIn = null, shared = null, editing = null;
   let millionaireBank;
 
   function readDraft() {
@@ -96,9 +101,16 @@
     const url = new URL(location.href);
     url.searchParams.delete('hubCollection');
     url.searchParams.delete('savedCollection');
+    url.searchParams.delete('builtInCollection');
     url.searchParams.delete('collectionUnavailable');
     if (builtIn) url.searchParams.set('hubCollection', builtIn.id);
-    else if (currentId) url.searchParams.set('savedCollection', currentId);
+    else if (shared) url.searchParams.set('builtInCollection', shared.snapshot);
+    else if (currentId) {
+      url.searchParams.set('savedCollection', currentId);
+      const portable = new URL(store.shareUrl(url.href));
+      const snapshot = portable.searchParams.get('builtInCollection');
+      if (snapshot) url.searchParams.set('builtInCollection', snapshot);
+    }
     return url;
   }
   function updateCollectionUrl(openingDetail = false) {
@@ -246,7 +258,12 @@
     else {
       card.target = '_blank';
       card.rel = 'noopener';
-      card.href = store.launch(app, collection, level);
+      const launch = new URL(store.launch(app, collection, level, { includeSnapshot: Boolean(currentId) }), document.baseURI);
+      if (shared) {
+        launch.searchParams.delete('myCollection');
+        launch.searchParams.set('builtInCollection', shared.snapshot);
+      }
+      card.href = launch.href;
       if (app === preferred) card.className = 'is-preferred';
     }
     const label = node('span', name);
@@ -364,11 +381,22 @@
   }
   function renderCatalog() {
     const level = catalogLevel;
-    const query = catalogSearch.value.trim().toLowerCase();
-    const items = catalogGroups(level).filter(group => level === 'ALL' ? !group.literacyLevel : group.id !== 'music-literacy').filter(group =>
-      !query || group.label.toLowerCase().includes(query) ||
-      group.literacy?.some(concept => concept.name.toLowerCase().includes(query)) ||
-      group.conceptIds.some(id => byId.get(id)?.name.toLowerCase().includes(query)));
+    const query = searchText(catalogSearch.value.trim());
+    const groups = catalogGroups(level).filter(group => level === 'ALL' ? !group.literacyLevel : group.id !== 'music-literacy');
+    const items = query ? groups.map(group => {
+      const title = searchText(group.label);
+      let matches = 0, exact = false;
+      for (const id of new Set(group.conceptIds)) {
+        const concept = byId.get(id) || literacyById.get(id);
+        if (!concept) continue;
+        const names = [concept.name, ...(concept.aliases || [])].map(searchText);
+        if (names.some(name => name.includes(query))) matches++;
+        if (names.includes(query)) exact = true;
+      }
+      const rank = title === query ? 4 : exact ? 3 : title.includes(query) ? 2 : matches ? 1 : 0;
+      return { group, rank, coverage: matches / Math.max(1, group.conceptIds.length) };
+    }).filter(match => match.rank).sort((a, b) => b.rank - a.rank || b.coverage - a.coverage)
+      .map(match => match.group) : groups;
     catalog.render(items.length ? React.createElement(MusicDictionaryQuizzes.CollectionRows, {
       level, items, onLaunch(group) {
         builtIn = catalogCollection(group);
@@ -380,7 +408,7 @@
     }) : React.createElement('p', { role: 'status' }, 'No collections match your search.'));
   }
   function render() {
-    const rows = store.list(), current = builtIn || rows.find(row => row.id === currentId);
+    const rows = store.list(), current = builtIn || rows.find(row => row.id === currentId) || shared?.row;
     const showWorkspace = Boolean(current || editing);
     const showDetail = Boolean(current && !editing);
     get('collections-overview').hidden = showWorkspace;
@@ -388,7 +416,9 @@
     get('collections-back').hidden = !showWorkspace;
     get('collections-toolbar').hidden = !showWorkspace;
     get('collections-toolbar-title').hidden = !showDetail;
-    get('collection-detail-actions').hidden = !showDetail || Boolean(builtIn);
+    get('collection-detail-actions').hidden = !showDetail;
+    get('edit-collection').hidden = !currentId;
+    get('delete-collection').hidden = !currentId;
     get('collections-toolbar-actions').hidden = !editing;
     renderEditorCustomise();
     if (!showWorkspace) renderList(rows);
@@ -408,7 +438,10 @@
       const count = current.conceptCount;
       get('collection-size').textContent = count + (count === 1 ? ' concept' : ' concepts');
       renderLiteracyTable(current.literacyRows);
-      get('collection-apps').replaceChildren(...['crossword', 'wordsearch'].map(app => appCard(app, current, level)));
+      get('collection-apps').replaceChildren(
+        appCard('bingo', current, level, window.MLHGameCollections.sharedAvailability(current, 'bingo')),
+        ...['crossword', 'wordsearch'].map(app => appCard(app, current, level))
+      );
       return;
     }
     get('preview-headings').replaceChildren(...data.categories.map(tableHeading));
@@ -470,6 +503,7 @@
   function showList(focusId, message = '') {
     const catalogId = builtIn?.id;
     builtIn = null;
+    shared = null;
     currentId = null;
     editing = null;
     persistDraft();
@@ -642,12 +676,20 @@
   }
 
   levelPicker.render(h(CatalogLevelPicker));
-  catalogSearch.oninput = renderCatalog;
+  catalogSearch.value = params.get('q') || '';
+  function updateCatalogSearch() {
+    const url = new URL(location.href), query = catalogSearch.value.trim();
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    history.replaceState(history.state, '', url);
+    renderCatalog();
+  }
+  catalogSearch.oninput = updateCatalogSearch;
   catalogSearch.onkeydown = event => {
     if (event.key !== 'Escape' || !catalogSearch.value) return;
     event.preventDefault();
     catalogSearch.value = '';
-    renderCatalog();
+    updateCatalogSearch();
   };
   renderCatalog();
   get('concept-headings').replaceChildren(...data.categories.map(tableHeading));
@@ -667,6 +709,35 @@
     get('edit-collection').focus();
   };
   get('edit-collection').onclick = () => edit(store.list().find(row => row.id === currentId));
+  shareButton.onclick = () => {
+    const href = store.shareUrl(collectionUrl().href);
+    let qrImageSrc = null;
+    try {
+      const qr = window.qrcode(0, 'L');
+      qr.addData(href);
+      qr.make();
+      // The white share panel supplies the quiet zone around the QR image.
+      qrImageSrc = 'data:image/svg+xml,' + encodeURIComponent(qr.createSvgTag({ margin: 0, scalable: true }));
+    } catch {}
+    const background = [...document.body.children].filter(element =>
+      element.matches('header, main, footer, .footer') && !element.inert);
+    function close() {
+      window.removeEventListener('keydown', closeOnEscape);
+      ReactDOM.flushSync(() => shareRoot.render(null));
+      for (const element of background) element.inert = false;
+      shareButton.focus();
+    }
+    function closeOnEscape(event) {
+      if (event.key === 'Escape') close();
+    }
+    ReactDOM.flushSync(() => shareRoot.render(h(window.MLH.ProfileQrOverlay, {
+      title: document.title, subtitle: get('details-heading').textContent,
+      shareUrl: href, qrImageSrc, onClose: close,
+    })));
+    shareOverlay.querySelector('button').focus();
+    for (const element of background) element.inert = true;
+    window.addEventListener('keydown', closeOnEscape);
+  };
   get('collection-name').oninput = updateSelection;
   for (const { ids, prefix, select, remove } of bulkSelections) {
     select.onclick = () => {
@@ -718,6 +789,7 @@
 
   function restoreCollectionFromUrl() {
     const query = new URLSearchParams(location.search);
+    catalogSearch.value = query.get('q') || '';
     catalogLevel = Object.hasOwn(catalogLevels, query.get('level')) ? query.get('level') : 'ALL';
     const groupId = query.get('hubCollection');
     const group = groupId && (catalogGroups(catalogLevel).find(group => group.id === groupId)
@@ -725,7 +797,13 @@
     builtIn = group ? catalogCollection(group) : null;
     const savedId = query.get('savedCollection');
     currentId = !builtIn && store.list().find(row => row.id === savedId)?.id || null;
-    get('collection-unavailable').hidden = !(savedId && !currentId) && !(groupId && !builtIn) && !query.has('collectionUnavailable');
+    const snapshot = query.get('builtInCollection');
+    const row = !builtIn && !currentId && snapshot && store.selected(location.search);
+    shared = row ? { row, snapshot } : null;
+    if (currentId) history.replaceState(history.state, '', collectionUrl());
+    const unavailable = ((savedId || snapshot) && !currentId && !shared)
+      || (groupId && !builtIn) || query.has('collectionUnavailable');
+    get('collection-unavailable').hidden = !unavailable;
     renderCatalog();
     render();
   }

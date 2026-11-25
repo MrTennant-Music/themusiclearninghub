@@ -11,9 +11,11 @@
 
   const key = 'mlh:my-collections:v1';
   const applications = {
+    bingo: ['Concept Bingo', 'conceptbingo.html', 'app-icons/concept-bingo-icon.png'],
     charades: ['Concept Charades', 'conceptcharades.html', 'app-icons/concept-charades-icon.svg'],
     escape: ['Escape Room', 'musicescape.html', 'app-icons/music-escape.svg'],
     crossword: ['Crosswords', 'crosswords.html', 'app-icons/crosswords-grid-icon.svg'],
+    dominoes: ['Dominoes', 'dominoes.html', 'app-icons/dominoes-icon.svg'],
     wordsearch: ['Word Search', 'wordsearch.html', 'app-icons/wordsearch-icon.svg'],
     millionaire: ['Who Wants to Be a Millionaire?', 'whowantstobemillionaire/whowantstobeamillionaire.html', 'app-icons/millionaire-icon.svg'],
     quizzes: ['Concept Quizzes', 'conceptquiz.html', 'app-icons/concept-quiz-icon.svg'],
@@ -101,7 +103,10 @@
   function selected(search = window.location.search, storage = window.localStorage) {
     const params = new URLSearchParams(search);
     const id = params.get('myCollection');
-    if (id) return list(storage).find(row => row.id === id) || null;
+    if (id) {
+      const saved = list(storage).find(row => row.id === id);
+      if (saved) return saved;
+    }
     try {
       const row = JSON.parse(params.get('builtInCollection'));
       if (typeof row?.mixedIds === 'string') {
@@ -123,10 +128,12 @@
   }
   function shareUrl(href, storage = window.localStorage) {
     const url = new URL(href);
-    if (!url.searchParams.has('myCollection')) return url.toString();
-    const row = selected(url.search, storage);
+    const id = url.searchParams.get('myCollection') || url.searchParams.get('savedCollection');
+    if (!id) return url.toString();
+    const row = list(storage).find(item => item.id === id);
     if (row) {
       url.searchParams.delete('myCollection');
+      url.searchParams.delete('savedCollection');
       url.searchParams.set('builtInCollection', snapshot(row));
     }
     return url.toString();
@@ -150,7 +157,7 @@
     if (row.builtIn && row.level && (row.level !== 'ALL' || app === 'quizzes')) return row.level;
     return fallbackLevel;
   }
-  function launch(app, row, fallbackLevel) {
+  function launch(app, row, fallbackLevel, { includeSnapshot = false } = {}) {
     if (!Object.hasOwn(applications, app)) throw Error('Choose an activity.');
     const params = new URLSearchParams({ level: launchLevel(app, row, fallbackLevel) });
     if (isWordPuzzle(app) && row.literacy) params.set('literacy', row.literacyLevel ? 'level' : 'cumulative');
@@ -159,7 +166,10 @@
       params.set('builtInCollection', snapshot(row));
       if (row.level) params.set('collectionCatalogueLevel', row.level);
     }
-    else params.set('myCollection', row.id);
+    else {
+      params.set('myCollection', row.id);
+      if (includeSnapshot) params.set('builtInCollection', snapshot(row));
+    }
     return './' + applications[app][1] + '?' + params;
   }
   function pageUrl(app, level, detail) {
@@ -247,15 +257,16 @@
       id: group.id, name: group.label, concepts: group.conceptIds, qualification: group.qualification,
       glyph: group.glyph, builtIn: true, level: group.curriculumLevel || level,
     })).filter(compatible).map(row => ({ ...row, launchLevel: launchLevel(app, row, highestLevel(row)) }));
-    if (isWordPuzzle(app) && games) {
+    if ((isWordPuzzle(app) || app === 'bingo') && games) {
       const exact = level !== 'ALL';
-      hub.unshift({
+      const row = {
         id: exact ? 'music-literacy-' + level.toLowerCase() : 'music-literacy',
         name: games.literacyCollectionName(level, exact),
         concepts: games.literacyConcepts(level, !exact).map(concept => concept.id),
         glyph: './ui-icons/trebleclef.svg', builtIn: true, literacy: true,
         literacyLevel: exact ? level : null, launchLevel: exact ? level : levelCodes.at(-1),
-      });
+      };
+      if (app !== 'bingo' || compatible(row)) hub.unshift(row);
     }
     const personal = saved.filter(compatible).map(row => ({ ...row, launchLevel: highestLevel(row) }));
     return { hub, personal };
@@ -288,6 +299,7 @@
       return items.length ? items.map(row => {
         const current = row.id === activeSelection.id && Boolean(row.builtIn) === activeSelection.builtIn;
         const count = row.concepts.length;
+        const countLabel = count + (count === 1 ? ' concept' : ' concepts');
         const glyphs = window.MusicDictionaryQuizzes;
         const glyph = row.qualification
           ? e('span', { className: 'hub-collection-menu-level' }, row.qualification === 'ALL' ? 'All' : row.qualification)
@@ -302,7 +314,7 @@
         },
         e('span', { className: 'hub-collection-menu-glyph', 'aria-hidden': true }, glyph),
         e('span', { className: 'hub-collection-menu-copy' },
-          e('strong', null, row.name), e('small', null, count + (count === 1 ? ' concept' : ' concepts'))),
+          e('strong', null, row.name), e('small', null, countLabel)),
         current && e('img', { className: 'hub-collection-menu-tick', src: './ui-icons/tick.svg', alt: '' }));
       }) : e('p', { className: 'hub-collection-menu-status' }, 'No compatible collections.');
     }

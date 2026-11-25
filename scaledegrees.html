@@ -5,22 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Scale Degrees</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/scale-degrees-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/scale-degrees-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
-  <script src="./shared/key-signatures-selection.js?v=387b562d7b09"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
+  <script src="./shared/key-signatures-selection.js?v=df6df2106c3e"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <style>
@@ -34,7 +35,7 @@
     .tonic-customise-panel { width: 300px; max-width: none; }
 
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
@@ -55,10 +56,11 @@
     }
   </style>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
 
   <script type="text/x-mlh-jsx-source" data-runtime="scaledegrees-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useMemo, useRef, useState } = React;
 const SHELL = window.MLH?.shell || {};
 const AppHeader = window.MLH?.AppHeader;
@@ -110,6 +112,7 @@ const COLOUR = {
   green: "#16a34a",
   red: "#dc2626",
   black: "#000000",
+  blue: "#2563eb",
 };
 
 const SHARED_SYMBOLS = window.BRAVURA_SYMBOLS ?? {};
@@ -293,7 +296,7 @@ const BAR_PATTERNS = [
 const FINAL_BAR_PATTERNS = [...BAR_PATTERNS, ["semibreve"]];
 
 function randomItem(items) {
-  return items[Math.floor(Math.random() * items.length)];
+  return items[Math.floor(exerciseRandom() * items.length)];
 }
 
 function stripAccidental(pitch) {
@@ -393,7 +396,7 @@ function chooseNextMelodicPitch({ key, chordSymbol, previousPitch, beat, rhythm 
     return randomItem(fallback.length ? fallback : [previousPitch]);
   }
 
-  let roll = Math.random() * candidates.reduce((sum, item) => sum + item.weight, 0);
+  let roll = exerciseRandom() * candidates.reduce((sum, item) => sum + item.weight, 0);
   for (const item of candidates) {
     roll -= item.weight;
     if (roll <= 0) return item.pitch;
@@ -510,7 +513,7 @@ function forceTargetIntoQuestion(bars, target, key) {
   };
 }
 
-const degreeSelection=window.KEY_SIGNATURES_SELECTION.create(Math.random);
+const degreeSelection=window.KEY_SIGNATURES_SELECTION.create(exerciseRandom);
 function nextActivityKey(type='all') {return degreeSelection.pick('key/'+type,KEYS);}
 function makeQuestion(enabledQuestionTypeIds = QUESTION_TYPES.map((type) => type.id), attempt = 0, selectedKey = null, selectedType = null) {
   const availableQuestionTypes = QUESTION_TYPES.filter((type) => enabledQuestionTypeIds.includes(type.id));
@@ -533,7 +536,7 @@ function makeQuestion(enabledQuestionTypeIds = QUESTION_TYPES.map((type) => type
   if (!hasTarget) forceTargetIntoQuestion(bars, target, key);
 
   const finalQuestion = {
-    id: Math.random().toString(36).slice(2),
+    id: exerciseRandom().toString(36).slice(2),
     key,
     questionType,
     bars,
@@ -724,7 +727,7 @@ function NoteGlyph({ note, x, y, selected, hovered, correct, incorrect, showAcci
   const info = rhythmInfo(note.rhythm);
   const stem = stemData(note, x, y, stemDownOverride, forcedStemEndY);
   const highlighted = selected || hovered;
-  const colour = incorrect ? COLOUR.red : correct ? COLOUR.green : "currentColor";
+  const colour = incorrect ? COLOUR.red : correct ? COLOUR.green : highlighted ? COLOUR.blue : "currentColor";
   const accidental = note.pitch.includes("#") ? "sharpInScore" : note.pitch.includes("b") ? "flatInScore" : null;
   const dotKey = Math.abs(stem.step % 2) === 1 ? "augmentationDotSpace" : "augmentationDotLine";
   const dotY = Math.abs(stem.step % 2) === 1 ? y : y - STAFF.gap * 0.25;
@@ -733,7 +736,7 @@ function NoteGlyph({ note, x, y, selected, hovered, correct, incorrect, showAcci
   const accidentalX = x - STAFF.gap * 2.1;
 
   return (
-    <g role="button" tabIndex={0} aria-label={`Select note ${note.id}`} onKeyDown={event=>{if(!event.repeat&&(event.key==="Enter"||event.key===" ")){event.preventDefault();onClick(event);}}} filter={highlighted && !incorrect ? "url(#noteGlowPulse)" : undefined} onMouseEnter={onHover} onMouseLeave={onLeave} onPointerDown={onClick} style={{ cursor: "pointer" }}>
+    <g role="button" tabIndex={0} aria-label={`Select note ${note.id}`} onKeyDown={event=>{if(!event.repeat&&(event.key==="Enter"||event.key===" ")){event.preventDefault();onClick(event);}}} onMouseEnter={onHover} onMouseLeave={onLeave} onPointerDown={onClick} style={{ cursor: "pointer" }}>
       <rect x={x - 19} y={STAFF.top - 38} width="38" height="116" fill="transparent" />
       {showAccidental && accidental && (
         <CalibratedSymbol
@@ -826,18 +829,6 @@ function ScoreArea({ question, selectedId, hoveredId, feedback, onSelect, onHove
       className="block h-auto w-full select-none touch-manipulation overflow-hidden"
       aria-label="Tonic, subdominant and dominant exercise"
     >
-      <defs>
-        <filter id="noteGlowPulse" x="-150%" y="-150%" width="400%" height="400%">
-          <feDropShadow dx="0" dy="0" stdDeviation="3.6" floodColor="#facc15" floodOpacity="1">
-            <animate attributeName="stdDeviation" values="3.6;5.8;3.6" dur="1.55s" repeatCount="indefinite" />
-            <animate attributeName="flood-opacity" values="1;1;1" dur="1.55s" repeatCount="indefinite" />
-          </feDropShadow>
-          <feDropShadow dx="0" dy="0" stdDeviation="7.5" floodColor="#eab308" floodOpacity="0.9">
-            <animate attributeName="stdDeviation" values="7.5;11.5;7.5" dur="1.55s" repeatCount="indefinite" />
-            <animate attributeName="flood-opacity" values="0.9;1;0.9" dur="1.55s" repeatCount="indefinite" />
-          </feDropShadow>
-        </filter>
-      </defs>
       <g transform={`translate(${zoomOffsetX} ${zoomOffsetY}) scale(${SCORE_FRAME.zoom})`}>
         <rect width={SVG.width} height={SVG.height} fill="white" />
         <StaffLines />
@@ -1134,7 +1125,7 @@ function App() {
   return (
     <div className={SHELL.pageShellClass || "overflow-x-hidden bg-stone-50 pb-10 text-black"}>
       <div className={SHELL.pageContentClass || "mx-auto max-w-6xl px-3 pt-[154px] sm:px-4 md:px-8 md:pt-[104px]"}>
-        <AppHeader profileState={{ activeLevel, questionTypeOptions, revealKey, showScaleDegrees }}
+        <AppHeader classroomOriginalFormat={!medalEligible || !revealKey || showScaleDegrees} profileState={{ activeLevel, questionTypeOptions, revealKey, showScaleDegrees }}
           icon={ASSET.appIcon}
           title="Key Signatures"
           subtitle="Identify key signatures and scale degrees."
@@ -1230,7 +1221,7 @@ function App() {
             </div>
 
             <div className="hub-toolbar-right">
-              <SkipButton
+              <SkipButton classroomAnswered={Boolean(feedback)}
                 onClick={newQuestion}
                 resetStreak={() => setStreak(0)}
                 icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[26px] w-[26px] object-contain" />}
@@ -1255,7 +1246,7 @@ function App() {
               <div className={`flex min-w-0 flex-1 text-stone-900 ${showScaleDegrees ? "h-full items-stretch" : "items-center"}`}>
                 <div className={showScaleDegrees ? "flex h-full flex-col justify-between py-1" : ""}>
                   <p className="text-[15px] font-semibold leading-tight">
-                    Identify an example of a <strong>{question.questionType.label}</strong> note.{revealKey ? <> The key is <strong>{question.key.label}</strong>.</> : null}
+                    Identify an example of a <strong>{question.questionType.label}</strong> <strong style={{ color: COLOUR.blue }}>note</strong>.{revealKey ? <> The key is <strong>{question.key.label}</strong>.</> : null}
                   </p>
                   {showScaleDegrees && <ScaleDegreesGuide keySignature={question.key} />}
                   {prompt && <p className="mt-1 text-sm font-medium text-red-700">{prompt}</p>}
@@ -1292,7 +1283,7 @@ const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("scaleDegrees"
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Root element not found.");
 ReactDOM.render(escapeActivity ? <EscapeClue activity={escapeActivity} /> : <App />, rootElement);
-  </script><script src="./generated-runtimes/scaledegrees-1.js?v=16383c68733e"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/scaledegrees-1.js?v=ce9e074d85da"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

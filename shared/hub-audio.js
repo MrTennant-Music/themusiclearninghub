@@ -383,6 +383,7 @@
     naturalPlaybackTailMs,
   };
   MLH.playFeedbackSound = playFeedbackSound;
+  MLH.prepareFeedbackSound = prepareFeedbackSound;
   MLH.stopFeedbackSound = stopFeedbackSound;
   MLH.getStreakMedal = getStreakMedal;
   MLH.playMetronomeClick = playMetronomeClick;

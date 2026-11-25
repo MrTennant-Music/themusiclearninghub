@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Rhythm Sums</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/rhythm-sums-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/rhythm-sums-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/rhythm-sums-generator.js?v=5af57042439b"></script>
@@ -19,10 +19,11 @@
   <script src="./shared/shared-notation-config.js?v=20260629"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <style>
@@ -62,13 +63,14 @@
     .rhythm-order-board .is-incorrect{border-color:#b91c1c;background:#fef2f2}
     .rhythm-order-total{min-width:64px;text-align:center;font-size:13px}
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
   <script type="text/x-mlh-jsx-source" data-runtime="rhythmsums-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 
 const NOTE_RX = 7;
@@ -141,7 +143,7 @@ const ORDER_LEVELS = LEVELS;
 function makeOrderQuestion(levelKey) {
   const level=levelKey;
   const official=settingsForLevel(level);
-  const question=window.MLH.RhythmSumsGenerator.makeOrder(itemPoolFromSettings(official),{count:4,length:levelKey==="N3"?3:4});
+  const question=window.MLH.RhythmSumsGenerator.makeOrder(itemPoolFromSettings(official),{count:4,length:levelKey==="N3"?3:4,random:exerciseRandom});
   return {...question,rows:question.rows.map(row=>({...row,items:row.items.map(item=>makeDisplayItem(item,official))}))};
 }
 function RhythmOrderBoard({question,rows,setRows,feedback,disabled}) {
@@ -258,7 +260,7 @@ function taskMatchesLevel(levelKey, settings) {
 }
 
 function randomItem(items) {
-  return items[Math.floor(Math.random() * items.length)];
+  return items[Math.floor(exerciseRandom() * items.length)];
 }
 
 function isQuarterBeat(value) {
@@ -321,7 +323,7 @@ function makeDisplayItem(item, settings = DEFAULT_SETTINGS) {
   if (item.kind === "beamed") return { ...item, displayType: "beamed" };
   if (item.kind === "triplet") return { ...item, displayType: "triplet" };
 
-  const useRest = settings.includeRests && REST_ELIGIBLE_RHYTHMS.has(item.id) && Math.random() < 0.5;
+  const useRest = settings.includeRests && REST_ELIGIBLE_RHYTHMS.has(item.id) && exerciseRandom() < 0.5;
   const rhythm = useRest ? RHYTHMS[item.id].rest : item.id;
 
   return {
@@ -331,7 +333,7 @@ function makeDisplayItem(item, settings = DEFAULT_SETTINGS) {
   };
 }
 
-const rhythmSumGenerator = window.MLH.RhythmSumsGenerator.create();
+const rhythmSumGenerator = window.MLH.RhythmSumsGenerator.create(exerciseRandom);
 function usableSettings(settings, levelKey = "N3") {
   const defaults = settingsForLevel(levelKey);
   const enabledItems = [...new Set((Array.isArray(settings.enabledItems) ? settings.enabledItems : defaults.enabledItems).filter(id => RHYTHMS[id]))];
@@ -346,7 +348,7 @@ function usableSettings(settings, levelKey = "N3") {
 function makeQuestion(settings = DEFAULT_SETTINGS) {
   const clean = usableSettings(settings);
   const equation = rhythmSumGenerator.next(itemPoolFromSettings(clean), clean.enabledOperators);
-  return {...equation, id: Math.random().toString(36).slice(2), left: makeDisplayItem(equation.left, clean), right: makeDisplayItem(equation.right, clean), prompt: "Calculate the total number of beats."};
+  return {...equation, id: exerciseRandom().toString(36).slice(2), left: makeDisplayItem(equation.left, clean), right: makeDisplayItem(equation.right, clean), prompt: "Calculate the total number of beats."};
 }
 function parseAnswer(text) {
   const value = String(text).trim();
@@ -822,7 +824,7 @@ function BeamedMenuGlyph({ rhythms = ["quaver", "quaver"], isTriplet = false }) 
 function OperationMenuGlyph({ operator }) {
   return (
     <CustomiseGlyphSlot>
-      <span className="flex h-full w-full translate-x-[10px] -translate-y-[2px] items-center justify-center text-[26px] font-bold leading-none text-stone-900">{operator}</span>
+      <span className="flex h-full w-full items-center justify-center text-[26px] font-bold leading-none text-stone-900" style={{ transform: "translate(8px, -2px)" }}>{operator}</span>
     </CustomiseGlyphSlot>
   );
 }
@@ -838,7 +840,7 @@ function GlyphToggleButton({ label, active, disabled = false, onClick, glyph, sh
       disabled={disabled}
       onClick={onClick}
       className="hub-toggle-row"
-      style={{ marginBottom: 0, minHeight: "48px", padding, overflow: "visible", position: "relative", justifyContent: "flex-start" }}
+      style={{ marginBottom: 0, padding, overflow: "visible", position: "relative", justifyContent: "flex-start" }}
       aria-label={`Toggle ${label}`}
       title={label}
     >
@@ -954,7 +956,7 @@ function MenuRows({ activeLevel, settings, updateSettings, newQuestion, showRhyt
 
       </>}
       <window.MLH.MenuSubheading>Games</window.MLH.MenuSubheading>
-      <button type="button" onClick={onOrderMode} className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600">
+      <button type="button" onClick={onOrderMode} className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
         <img src="./ui-icons/game-type.svg" alt="" aria-hidden="true" className="h-[24px] w-[24px] shrink-0 object-contain invert"/>
         <span className="hub-toggle-label leading-none" style={{color:"inherit"}}>{orderMode?"Rhythm Sums":"Order Mode"}</span>
       </button>
@@ -1016,9 +1018,10 @@ function RhythmSumsGoldenApp() {
   );
 
   const accuracy = attempted === 0 ? 0 : Math.round((correct / attempted) * 100);
-  const medalEligible = orderMode || taskMatchesLevel(activeLevel, settings);
-  const displayedLevel = medalEligible ? activeLevel : "Custom";
-  const displayedLevelLabel = medalEligible ? (orderMode?ORDER_LEVELS:LEVELS)[activeLevel].label : "Custom";
+  const matchesLevel = orderMode || taskMatchesLevel(activeLevel, settings);
+  const medalEligible = !orderMode && matchesLevel;
+  const displayedLevel = matchesLevel ? activeLevel : "Custom";
+  const displayedLevelLabel = matchesLevel ? (orderMode?ORDER_LEVELS:LEVELS)[activeLevel].label : "Custom";
   const hasAnswer = answerText.trim().length > 0;
 
   function updateSettings(nextSettings) {
@@ -1081,14 +1084,14 @@ function RhythmSumsGoldenApp() {
 
   useEffect(() => {
     if (levelTaskStatusRef.current === null) {
-      levelTaskStatusRef.current = medalEligible;
+      levelTaskStatusRef.current = matchesLevel;
       return;
     }
-    if (levelTaskStatusRef.current === medalEligible) return;
-    levelTaskStatusRef.current = medalEligible;
+    if (levelTaskStatusRef.current === matchesLevel) return;
+    levelTaskStatusRef.current = matchesLevel;
 
     setConfettiKey(0);
-  }, [medalEligible]);
+  }, [matchesLevel]);
 
   function showWarning(message) {
     setWarning(message);
@@ -1148,8 +1151,8 @@ function RhythmSumsGoldenApp() {
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader profileState={{ activeLevel, settings, showRhythmGuide, orderMode }} profileShareUrl={orderMode?window.location.href:undefined} icon={ASSET.appIcon} title="Rhythm Sums" subtitle="Calculate rhythm values." worksheetConfig={orderMode?undefined:() => ({ version: 1, activityId: "rhythmsums", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
-        <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalEligible={medalEligible} />
+      <window.MLH.AppHeader classroomOriginalFormat={orderMode || !medalEligible || showRhythmGuide} profileState={{ activeLevel, settings, showRhythmGuide, orderMode }} profileShareUrl={orderMode?window.location.href:undefined} icon={ASSET.appIcon} title="Rhythm Sums" subtitle="Calculate rhythm values." worksheetConfig={orderMode?undefined:() => ({ version: 1, activityId: "rhythmsums", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
+        <window.MLH.ScoreStreakPanel hideTiles={orderMode} achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalEligible={medalEligible} />
       </window.MLH.AppHeader>
 
       <div className={window.MLH.shell.pageContentClass}>
@@ -1157,13 +1160,13 @@ function RhythmSumsGoldenApp() {
           <window.MLH.AppToolbar
             left={
               <div className="flex items-center gap-2">
-                {orderMode&&<button type="button" className={window.MLH.ToolbarButtonClass+' gap-2'} onClick={()=>changeMode(false)}><span aria-hidden="true">←</span>Rhythm Sums</button>}
-                <div className="hub-menu-anchor relative" ref={levelRef}>
+                {orderMode&&!window.MLH.classroomExercise&&<button type="button" className={window.MLH.ToolbarButtonClass+' gap-2'} onClick={()=>changeMode(false)}><img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] rotate-180" /><span>Rhythm Sums</span></button>}
+                {!orderMode && <div className="hub-menu-anchor relative" ref={levelRef}>
                   <window.MLH.LevelButton
                     icon={<img src={ASSET.levels} alt="" aria-hidden="true" className="h-[26.6px] w-[26.6px] object-contain" />}
                     activeLevel={displayedLevel}
                     activeLabel={displayedLevelLabel}
-                    isCustom={!medalEligible}
+                    isCustom={!matchesLevel}
                     onClick={() => {
                       setCustomiseOpen(false);
                       setLevelOpen((value) => !value);
@@ -1172,11 +1175,11 @@ function RhythmSumsGoldenApp() {
                   />
                   {levelOpen && (
                     <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}>
-                      <window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={orderMode?ORDER_LEVELS:LEVELS} />
+                      <window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS} />
                     </window.MLH.MenuPanel>
                   )}
-                </div>
-                <div className="hub-menu-anchor relative" ref={customiseRef}>
+                </div>}
+                {!orderMode && <div className="hub-menu-anchor relative" ref={customiseRef}>
                   <window.MLH.CustomiseButton
                     icon={<img src={ASSET.customise} alt="" aria-hidden="true" className="h-[26.6px] w-[26.6px] object-contain" />}
                     onClick={() => {
@@ -1199,11 +1202,11 @@ function RhythmSumsGoldenApp() {
                       />
                     </window.MLH.MenuPanel>
                   )}
-                </div>
+                </div>}
               </div>
             }
             feedback={<FeedbackBanner feedback={feedback} fading={feedbackFading} warning={warning} />}
-            right={<window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
+            right={<window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
           />
 
           {showRhythmGuide && (
@@ -1289,7 +1292,7 @@ function EscapeRhythmSum({ activity }) {
 
 const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("rhythmSum");
 ReactDOM.createRoot(document.getElementById("root")).render(escapeActivity ? <EscapeRhythmSum activity={escapeActivity} /> : <RhythmSumsGoldenApp />);
-  </script><script src="./generated-runtimes/rhythmsums-1.js?v=1f75a1c17c22"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/rhythmsums-1.js?v=ac737bcf8f6c"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

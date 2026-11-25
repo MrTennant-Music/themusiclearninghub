@@ -82,9 +82,10 @@ test('structured accepted phrases cannot credit incidental concept names', () =>
 
 const dictionaryUi=fs.readFileSync(path.join(require('node:path').resolve(__dirname, '..'),'music-dictionary/music-concepts.js'),'utf8');
 const trendComponents=dictionaryUi.slice(dictionaryUi.indexOf('function ConceptExamYear('),dictionaryUi.indexOf('function RelatedConcepts('));
+const examKeys=dictionaryUi.match(/^const literacyExamKeys=.*;$/m)[0];
 const element=(type,props,...children)=>({type,props:props||{},children:children.flat(Infinity).filter(item=>item!==null&&item!==false&&item!==undefined)});
 const trendsContext={h:element,React:{useState:initial=>[initial,()=>{}],useRef:()=>({current:null}),useEffect:()=>{}},window:{MLH:{MenuPanel:'MenuPanel'},MusicConceptFrequency:require('../music-dictionary/music-concepts-frequency-core.js'),MUSIC_CONCEPT_FREQUENCY:require('../music-dictionary/music-concepts-frequency.js'),MusicConceptExamLinks:links},viewGlyph:()=>null};
-vm.runInNewContext(trendComponents+';this.renderYear=ConceptExamYear;this.renderTrends=ConceptExamTrends;',trendsContext);
+vm.runInNewContext(examKeys+'\n'+trendComponents+';this.renderYear=ConceptExamYear;this.renderTrends=ConceptExamTrends;',trendsContext);
 function descendants(node){return node&&typeof node==='object'?[node,...node.children.flatMap(descendants)]:[];}
 
 test('Exam Trends only offers papers at or above the concept qualification',()=>{

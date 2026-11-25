@@ -32,12 +32,50 @@ test('migration prefers the current saved audio setup without merging attempts',
   assert.deepEqual(values(harness(page,storage).render(other)),{...earned,streak:0});
   assert.equal(storage.size,3,'old score snapshots remain recoverable');
 });
-test('audio normalization preserves question content and non-audio aids',()=>{
+test('score normalization preserves question content and exercise options',()=>{
   const h=harness('auralrecognition.html');
-  const options={level:'N3',settings:{questions:{tempo:['adagio','allegro']},options:{tempo:60,metronome:false,follow:true}}};
+  const options={level:'N3',settings:{questions:{tempo:['adagio','allegro']},options:{tempo:60,metronome:false,wholeBarMode:true}}};
   const r=h.render(options);for(const [field,value] of Object.entries(earned))r[field][1](value);h.render(options);
   assert.deepEqual(values(h.render({...options,settings:{...options.settings,questions:{tempo:['adagio']}}})),{correct:0,attempted:0,streak:0,best:0});
-  assert.deepEqual(values(h.render({...options,settings:{...options.settings,options:{...options.settings.options,follow:false}}})),{correct:0,attempted:0,streak:0,best:0});
+  assert.deepEqual(values(h.render({...options,settings:{...options.settings,options:{...options.settings.options,wholeBarMode:false}}})),{correct:0,attempted:0,streak:0,best:0});
+});
+
+test('help switches share one live score, accuracy count, streak and best', () => {
+  const activities = {
+    'keyboardnoteidentification.html': ['showC'],
+    'accidentals.html': ['showNoteNames'],
+    'intervals.html': ['showHelp'],
+    'transposing.html': ['noteNamesVisible'],
+    'chords.html': ['showNoteNames', 'showScaleDegrees', 'highlightPlayback'],
+    'rhythmsums.html': ['showRhythmGuide'],
+    'followthescore.html': ['showFollowNoteNames', 'followPlayback'],
+    'cadences.html': ['follow'],
+  };
+  for (const [page, aids] of Object.entries(activities)) {
+    const h = harness(page);
+    const initial = { level: 'N5', settings: { questions: ['example'] } };
+    const fields = h.render(initial);
+    for (const [field, value] of Object.entries(earned)) fields[field][1](value);
+    h.render(initial);
+    for (const name of aids) {
+      const enabled = { ...initial, settings: { ...initial.settings, options: { [name]: true } } };
+      const disabled = { ...enabled, settings: { ...enabled.settings, options: { [name]: false } } };
+      assert.deepEqual(values(h.render(enabled)), earned, page + ' enabled ' + name);
+      assert.deepEqual(values(h.render(disabled)), earned, page + ' disabled ' + name);
+    }
+    assert.equal(h.storage.size, 1, page);
+  }
+});
+
+test('a pre-existing keyboard score without a Guide Note setting survives migration', () => {
+  const page = 'keyboardnoteidentification.html';
+  const old = { level: 'N3', settings: { questions: { questionTypes: { name: true, find: false } } } };
+  const storage = new Map([[legacyKey(page, old), JSON.stringify({ version: 1, fields: earned })]]);
+  const withGuide = { ...old, settings: { ...old.settings, options: { showC: true } } };
+  const h = harness(page, storage);
+  assert.deepEqual(values(h.render(withGuide)), { ...earned, streak: 0 });
+  assert.deepEqual(values(h.render(old)), { ...earned, streak: 0 });
+  assert.ok(storage.has(legacyKey(page, old)));
 });
 
 test('combined dictation score objects and explicit resets survive audio changes',()=>{

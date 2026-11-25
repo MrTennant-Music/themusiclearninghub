@@ -2,6 +2,7 @@
 (function () {
   const MLH = window.MLH = window.MLH || {};
   const storageKey = "mlh:achievements:v1";
+  const exerciseStorageKey = "mlh:exercise-achievements:v1";
   const eventName = "mlh-achievements-change";
   const tiers = ["bronze", "silver", "gold", "diamond"];
   const levels = ["N3", "N4", "N5", "H", "AH"];
@@ -13,23 +14,25 @@
   });
   let records = {};
 
-  function keyFor(activity, level) {
+  function keyFor(activity, level, scope = "") {
     if (!levels.includes(level) && level !== "ALL") return null;
+    if (scope !== "" && (typeof scope !== "string" || !/^[a-z0-9-]+$/i.test(scope))) return null;
     try {
       const url = new URL(activity || window.location.href, window.location.href);
       const filename = (MLH.pageIdentity || (name => name))(url.pathname.split("/").pop());
       if (level === "ALL" && !/^conceptquiz-/i.test(filename) && filename !== "bandle.html") return null;
-      return /^[a-z0-9-]+\.html$/i.test(filename) ? `${filename.toLowerCase()}|${level}` : null;
+      return /^[a-z0-9-]+\.html$/i.test(filename) ? `${filename.toLowerCase()}|${level}${scope ? `|${scope}` : ""}` : null;
     } catch { return null; }
   }
 
-  function mergeStored() {
+  function mergeStoredRecords(sourceKey) {
     try {
-      const stored = JSON.parse(window.localStorage.getItem(storageKey));
+      const stored = JSON.parse(window.localStorage.getItem(sourceKey));
       if (stored?.version !== 1 || !stored.records || typeof stored.records !== "object") return;
       Object.entries(stored.records).forEach(([key, value]) => {
-        const [activity, level] = key.split("|");
-        if (keyFor(activity, level) !== key || !value || !Number.isSafeInteger(value.bestStreak) || value.bestStreak < 0 || (value.tier !== null && !tiers.includes(value.tier))) return;
+        const [activity, level, scope] = key.split("|");
+        if (Boolean(scope) !== (sourceKey === exerciseStorageKey)) return;
+        if (keyFor(activity, level, scope) !== key || !value || !Number.isSafeInteger(value.bestStreak) || value.bestStreak < 0 || (value.tier !== null && !tiers.includes(value.tier))) return;
         const previous = records[key];
         const higher = !previous || tiers.indexOf(value.tier) > tiers.indexOf(previous.tier);
         records[key] = {
@@ -40,14 +43,27 @@
     } catch { /* Storage can be unavailable; activities still work. */ }
   }
 
-  function get(activity, level) {
+  function mergeStored() {
+    mergeStoredRecords(storageKey);
+    mergeStoredRecords(exerciseStorageKey);
+  }
+
+  function saveRecords(scope) {
+    const scoped = Boolean(scope);
+    const saved = Object.fromEntries(Object.entries(records).filter(([key]) => Boolean(key.split("|")[2]) === scoped));
+    try { window.localStorage.setItem(scoped ? exerciseStorageKey : storageKey, JSON.stringify({ version: 1, records: saved })); } catch { /* Retain progress in memory for this page. */ }
+    window.dispatchEvent(new CustomEvent(eventName));
+  }
+
+  function get(activity, level, scope) {
     mergeStored();
-    const record = records[keyFor(activity, level)];
+    const record = records[keyFor(activity, level, scope)];
     return record ? { ...record } : null;
   }
 
-  function record(activity, level, streak, thresholds = [10, 15, 20, 30]) {
-    const key = keyFor(activity, level);
+  function record(activity, level, streak, thresholds = [10, 15, 20, 30], scope) {
+    if (MLH.classroomExercise) return get(activity, level, scope);
+    const key = keyFor(activity, level, scope);
     if (!key || !Number.isSafeInteger(streak) || streak < 1 || !Array.isArray(thresholds) || thresholds.length !== 4 || thresholds.some((value, index) => !Number.isFinite(value) || value < 1 || (index > 0 && value <= thresholds[index - 1]))) return;
     mergeStored();
     const previous = records[key] || { tier: null, bestStreak: 0 };
@@ -58,20 +74,19 @@
     };
     if (next.tier === previous.tier && next.bestStreak === previous.bestStreak) return;
     records[key] = next;
-    try { window.localStorage.setItem(storageKey, JSON.stringify({ version: 1, records })); } catch { /* Retain progress in memory for this page. */ }
-    window.dispatchEvent(new CustomEvent(eventName));
+    saveRecords(scope);
   }
 
   // Games with completion/time awards report their actual tier, not a fake streak.
   function award(activity, level, tier) {
+    if (MLH.classroomExercise) return get(activity, level);
     const key = keyFor(activity, level);
     if (!key || !tiers.includes(tier)) return;
     mergeStored();
     const previous = records[key] || { tier: null, bestStreak: 0 };
     if (tiers.indexOf(tier) <= tiers.indexOf(previous.tier)) return;
     records[key] = { tier, bestStreak: previous.bestStreak };
-    try { window.localStorage.setItem(storageKey, JSON.stringify({ version: 1, records })); } catch { /* Keep the award in memory. */ }
-    window.dispatchEvent(new CustomEvent(eventName));
+    saveRecords();
   }
 
   function importExistingGameAwards() {
@@ -96,21 +111,49 @@
 
   window.addEventListener("storage", (event) => {
     if (["mlh-concept-recall-v1", "mlh-millionaire-performance-v1"].includes(event.key)) { importExistingGameAwards(); return; }
-    if (event.key !== storageKey && event.key !== null) return;
+    if (event.key !== storageKey && event.key !== exerciseStorageKey && event.key !== null) return;
     records = {};
     mergeStored();
     window.dispatchEvent(new CustomEvent(eventName));
   });
-  // Each activity/level owns one of each medal, regardless of score resets.
-  function totals() {
+  function medalsByLevel() {
     mergeStored();
+    const groups = new Map();
+    for (const [key, record] of Object.entries(records)) {
+      if (record.tier === null) continue;
+      const [activity, level, scope] = key.split("|");
+      const groupKey = `${activity}|${level}`;
+      if (!groups.has(groupKey)) groups.set(groupKey, { exercises: [], legacy: null });
+      const group = groups.get(groupKey);
+      if (scope) group.exercises.push(record.tier);
+      else group.legacy = record.tier;
+    }
+    for (const group of groups.values()) {
+      // An old level award has no exercise identity. Keep it until a scoped
+      // result matches or surpasses it, so the same award is not counted twice.
+      if (group.legacy && !group.exercises.some(tier => tiers.indexOf(tier) >= tiers.indexOf(group.legacy))) {
+        group.exercises.push(group.legacy);
+      }
+    }
+    return groups;
+  }
+
+  function levelSummary(activity, level) {
+    const earned = medalsByLevel().get(keyFor(activity, level))?.exercises || [];
+    return {
+      tier: tiers.findLast(tier => earned.includes(tier)) || null,
+      count: earned.length,
+      counts: Object.fromEntries(tiers.map(tier => [tier, earned.filter(value => value === tier).length])),
+    };
+  }
+
+  function totals() {
     const counts = Object.fromEntries(tiers.map(tier => [tier, 0]));
-    Object.values(records).forEach(record => {
-      const highest = tiers.indexOf(record.tier);
-      tiers.forEach((tier, index) => { if (index <= highest) counts[tier]++; });
-    });
+    for (const { exercises } of medalsByLevel().values()) {
+      for (const tier of exercises) counts[tier]++;
+    }
     return counts;
   }
-  MLH.achievements = { storageKey, eventName, medals, get, record, award, totals };
+  MLH.achievements = { storageKey, eventName, medals, get, record, award, levelSummary, totals };
   importExistingGameAwards();
 })();

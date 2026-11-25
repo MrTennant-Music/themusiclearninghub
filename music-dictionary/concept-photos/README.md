@@ -5,13 +5,18 @@ photo area absent for manual population. Related concepts can
 share a photograph. For abstract concepts, the caption describes its illustrative
 connection rather than claiming that a still image demonstrates the sound.
 
-See `../music-dictionary/music-concepts-photos.json` for every photo's author, licence, original
-Wikimedia Commons file page, caption and concept assignments. The app displays
-those credits alongside the photographs. Rebuild its browser manifest with:
+See `../music-concepts-photos.json` for each photo’s author, licence, source,
+caption and concept assignments. Captions link to the original images and
+carry the author, licence and modification details.
+
+Save each image in this directory as a JPEG, PNG or GIF. Use its local path
+for `src`, and keep the Commons file page in `sourceUrl` and the original
+download URL in `imageUrl`. If you resize or otherwise modify the image,
+record the change in `changes`. Rebuild the browser manifest after editing it.
 
     node scripts/build-concept-photos.cjs
 
-Photos are selected locally; viewing a concept does not run an image search.
+The Dictionary loads these images from the Hub.
 
 ## Saved images
 

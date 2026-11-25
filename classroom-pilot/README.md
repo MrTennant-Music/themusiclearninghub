@@ -1,9 +1,34 @@
-# Keyboard classroom service
+# Classroom game service
 
-Host a Game opens `keyboardnoteidentificationclassroom.html?mode=host` with the teacher’s current
-keyboard settings. Pupils join through the lobby QR code and receive a random
-musical name and symbol. Quiz and Race each support up to 20 pupils; the teacher
-is not counted. There is no teacher key or random-name toggle.
+Host a Game opens `host.html?mode=host` with the activity and the teacher’s
+current practice settings. Pupils join through the lobby QR code. Rooms support
+up to 20 pupils, excluding the teacher.
+
+New races load the individual practice page for each pupil. The room passes
+along the level, question options or collection and a shared random seed. Races
+use written questions and the original answer controls. Escape Room Race keeps
+its audio clues and awards the win to the first pupil to escape all six rooms.
+Higher Chords, Rhythmic Dictation, Follow the Score, Repeat Signs and collections
+that use audio open their original pages in hosted Individual Practice rooms.
+The teacher starts and ends the room and can see who has completed the
+activity. Pupils use the activity's own playback and feedback at their own
+pace. Melodic Dictation remains available as a shared Quiz.
+The first pupil to solve the puzzle, complete the challenge or reach ten correct
+answers wins, according to the activity. Personal scores and medals are separate
+from classroom play.
+
+Rhythm Identification uses Time Trial mode. The teacher sets a time limit from
+1 to 10 minutes. Pupils play fresh grids with the teacher's settings, and the
+leaderboard keeps their fastest completed grid. The server closes submissions
+at the deadline.
+
+Concept Recall shows each pupil’s live total. The teacher can leave the race
+unlimited or choose a limit from 1 to 10 minutes. Recalling every concept ends
+the race immediately. At the deadline, the highest total wins, with ties shared.
+
+Concept Quizzes uses shared Quiz mode. The teacher selects the question count
+and time per question from the eligible question bank for their chosen collection
+and question types.
 
 ## Deployment and database setup
 
@@ -32,6 +57,44 @@ apply any unapplied migrations in this order:
    helper and the room-control function permissions.
 3. `migrations/20261121-find-the-key.sql` installs the current room-control
    function with exact-key grading for Find the Key.
+4. `migrations/20261121-shared-activity-rooms.sql` adds native activity rooms
+   and a common question order in newly created Races.
+5. `migrations/20261122-activity-races.sql` adds completion Races for the
+   original activities and keeps existing rooms playable.
+6. `migrations/20261122-dominoes.sql` adds private card dealing, teacher
+   timing and replays for Dominoes.
+7. `migrations/20261122-nicknames.sql` adds the teacher's Allow nicknames
+   setting and lets pupils update their own names in the lobby.
+8. `migrations/20261123-listening-quizzes.sql` keeps the timer paused and pupil
+   answers locked until the teacher's excerpt finishes.
+9. `migrations/20261123-native-melodic-dictation.sql` grades the notes pupils
+   enter in the shared Melodic Dictation score.
+10. `migrations/20261123-rhythm-time-trial.sql` adds the round deadline and
+    best-grid-time leaderboard for Rhythm Identification.
+11. `migrations/20261123-shared-concept-quizzes.sql` enables shared Concept
+    Quizzes with the existing answer formats and partial-credit marking.
+12. `migrations/20261123-z-concept-recall-standings.sql` adds live Concept Recall
+    totals, optional deadlines and final standings.
+13. `migrations/20261124-reset-lobby-nicknames.sql` restores assigned names when
+    the host turns off Allow Nicknames.
+14. `migrations/20261124-sync-quiz-playback.sql` shares the host's playback status
+    with pupils during Concept Quizzes.
+15. `migrations/20261124-z-quiz-review.sql` preserves per-question leaderboard
+    points on refresh and lets the host skip an excerpt that fails to play.
+16. `migrations/20261124-zz-pupil-quiz-score.sql` gives each pupil their own
+    running quiz score and updates it when answers are revealed.
+17. `migrations/20261124-zzz-word-search-race-progress.sql` records the Word
+    Search board total and each pupil’s running word count.
+18. `migrations/20261124-zzzz-millionaire-race-progress.sql` records Millionaire
+    progress across retries and ends the race when a pupil reaches £1 million.
+19. `migrations/20261124-zzzzz-escape-room-race.sql` records escaped rooms and
+    lets a pupil’s game over end their attempt while the race continues.
+20. `migrations/20261124-zzzzzz-crossword-race-progress.sql` records the
+    crossword total and each pupil’s running word count.
+21. `migrations/20261124-zzzzzzz-literacy-streak-races.sql` tracks current and
+    highest streaks for the Music Literacy activities played on their own screens.
+22. `migrations/20261125-timed-activity-races.sql` adds timed retries and
+    accuracy-then-speed rankings for Dominoes and Concept Sort.
 
 These migrations do not recreate tables or remove rooms. `schema.sql` is for a
 new, empty database only. An older installation that still enforces the former
@@ -51,7 +114,7 @@ A local preview does not apply migrations to live Supabase or verify production.
 - Questions follow the selected level, note groups, octave range and C labels.
 - Higher and Advanced Higher use Find the Key in Quiz and Race. Pupils read
   a written note in the selected clefs and choose its exact key and octave.
-  National 3 to National 5 use Name the Key.
+  National 3 to National 5 use the selected mix of Name the Key and Find the Key.
 - The lobby shows a join QR code, participant count and random names. Teachers
   can remove pupils before starting. Existing pupils can rejoin a full lobby.
 - Teachers control Start and game audio. Theme music starts unmuted and stops
@@ -62,11 +125,11 @@ A local preview does not apply migrations to live Supabase or verify production.
 - Expired rooms are deleted on a subsequent service request. There are no
   application-level monthly or room-creation quotas; provider limits still apply.
 
-## Quiz
+## Legacy Quiz
 
 Teachers select 5–50 questions in steps of 5, with 20 selected by default.
 Time Per Question offers 5, 10, 15, 20, 30, 45, 60, 90 or 120 seconds;
-the default is 10 seconds.
+the default is 20 seconds.
 
 Correct answers in under 0.5 seconds earn 100 points. Later correct answers earn
 `round(100 * (1 - elapsed / (2 * questionTime)))`, with a minimum of 50 at the
@@ -88,11 +151,11 @@ podium heights, place labels, confetti and a celebration sound.
 Quiz rooms expire from creation after the greater of 45 minutes or the total
 configured question time plus 30 minutes.
 
-## Race
+## Legacy Streak Race
 
 Teachers select a Streak target from 1 to 100, defaulting to 30. Time Limit defaults
 to Unlimited, with 1–10 minute options. A selected timer starts when Start is pressed;
-there is no timer for individual questions. Race rooms expire two hours after creation.
+there is no timer for individual questions. All pupils see the same questions in the same order and advance at their own pace. Race rooms expire two hours after creation.
 
 Pupils answer independent questions at their own pace and see only their own
 progress bar. The teacher sees everyone, ordered by current streak. Correct answers

@@ -101,6 +101,7 @@
     const top = note.clef === "treble" ? STAFF.trebleTop : STAFF.bassTop;
     const y = yForStep(top, note.step);
     const isSharp = note.accidental === "sharp";
+    const symbolKey = note.accidental + "InScore";
     const ledgerOffset = y < 95 || y > 285 ? -6 : 0;
     const isLedgerLineNote = note.step <= -2 || note.step >= 10;
     const flatLedgerLineOffset = !isSharp && isLedgerLineNote ? -3 : 0;
@@ -108,7 +109,7 @@
     const x = isSharp ? NOTE.x - 44 + ledgerOffset + sharpLedgerLineOffset : NOTE.x - 41 + ledgerOffset + flatLedgerLineOffset;
 
     return (
-      <CalibratedSymbol symbolKey={isSharp ? "sharpInScore" : "flatInScore"} x={x} y={y} colour={colour} />
+      <CalibratedSymbol symbolKey={symbolKey} x={x} y={y} colour={colour} />
     );
   }
 
@@ -127,10 +128,19 @@
     );
   }
 
-  function WrittenNote({note}) {
-    return <svg className="keyboard-stave" viewBox="220 0 520 240" role="img" aria-label={`Written note ${note.label}, octave ${note.octave ?? (4 + Math.floor((note.step + 2) / 7))}`}>
+  function WrittenNote({note,hideLabel=false,showNoteNames=false}) {
+    const bass=note.clef==="bass";
+    const top=bass?STAFF.bassTop:STAFF.trebleTop;
+    const labels=bass?"GBDFA":"EGBDF";
+    const spaces=bass?"ACEG":"FACE";
+    return <svg className="keyboard-stave" viewBox="220 0 520 240" role="img" aria-label={hideLabel?"Written note":`Written note ${note.label}, octave ${note.octave ?? (4 + Math.floor((note.step + 2) / 7))}`}>
       <defs><linearGradient id="staffLineFade" x1="247" y1="0" x2="689" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stopColor="currentColor"/><stop offset="84%" stopColor="currentColor"/><stop offset="100%" stopColor="currentColor" stopOpacity="0"/></linearGradient></defs>
-      <g transform={note.clef === "bass" ? `translate(0 ${STAFF.trebleTop-STAFF.bassTop})` : undefined}><Staff clef={note.clef} top={note.clef === "bass" ? STAFF.bassTop : STAFF.trebleTop} visible={true}/><Crotchet note={note} colour="currentColor" ledgerEnabled={true}/></g>
+      <g transform={note.clef === "bass" ? `translate(0 ${STAFF.trebleTop-STAFF.bassTop})` : undefined}><Staff clef={note.clef} top={note.clef === "bass" ? STAFF.bassTop : STAFF.trebleTop} visible={true}/><Crotchet note={note} colour="currentColor" ledgerEnabled={true}/>
+        {showNoteNames&&<g fontSize="12" fontWeight="700" dominantBaseline="middle" textAnchor="middle" aria-hidden="true">
+          {Array.from(labels,(label,index)=><text key={index} x={STAFF.left-11} y={yForStep(top,index*2)}>{label}</text>)}
+          {Array.from(spaces,(label,index)=><text key={index} x={STAFF.left+7} y={yForStep(top,index*2+1)}>{label}</text>)}
+        </g>}
+      </g>
     </svg>;
   }
   root.MLH.KeyboardWrittenNote = WrittenNote;

@@ -5,19 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Name Randomiser</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/names-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/names-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./name-randomiser-core.js?v=20261014-safe-class-storage"></script>
   <style>
     @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
@@ -25,7 +25,7 @@
     :root { color-scheme: light; --names-shared-shadow: 0 12px 20px rgba(28,25,23,.12); }
     body { margin: 0; background: #fafaf9; color: #111827; }
     button { -webkit-tap-highlight-color: transparent; }
-    button:focus-visible { outline-color: rgba(0,0,0,.45); }
+    button:focus-visible { outline-color: var(--mlh-focus-color, #2563eb); }
     .names-page .hub-toolbar button, .names-page .hub-toolbar input { height: 44px !important; min-height: 44px !important; box-sizing: border-box; }
     .names-game-controls { position:absolute; z-index:30; top:14px; left:24px; display:flex; align-items:center; gap:12px; }
     .names-controls-spacer { width:112px; }
@@ -44,7 +44,7 @@
     .names-layout { display: flex; width: 100%; min-height: 0; flex: 1; }
     .names-panel-note { margin: 4px 0 0; color: #78716c; font-size: 11px; line-height: 1.35; }
     .names-field { width: 100%; min-height: 44px; border: 1px solid #d6d3d1; border-radius: 12px; background: white; padding: 0 12px; color: #111; font: inherit; font-size: 14px; outline: none; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-    .names-field:focus-visible { border-color: #111; box-shadow: 0 0 0 3px rgba(0,0,0,.16); }
+    .names-field:focus-visible { border-color: var(--mlh-focus-color, #2563eb); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mlh-focus-color, #2563eb) 16%, transparent); }
     .names-field::placeholder { color: #a8a29e; }
     .names-toolbar-name { width: 260px; }
     .names-toolbar-add { width: 92px; min-width: 92px; }
@@ -73,7 +73,7 @@
     .names-tonearm-editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px; }
     .names-tonearm-editor-field { display: flex; min-width: 0; flex-direction: column; gap: 4px; color: #57534e; font-size: 11px; font-weight: 800; }
     .names-tonearm-editor-field input { box-sizing: border-box; width: 100%; height: 36px; border: 1px solid #d6d3d1; border-radius: 9px; background: #fff; padding: 0 9px; color: #111; font: inherit; font-size: 13px; outline: none; }
-    .names-tonearm-editor-field input:focus-visible { border-color: #111; box-shadow: 0 0 0 2px rgba(0,0,0,.12); }
+    .names-tonearm-editor-field input:focus-visible { border-color: var(--mlh-focus-color, #2563eb); box-shadow: 0 0 0 2px color-mix(in srgb, var(--mlh-focus-color, #2563eb) 12%, transparent); }
     .names-tonearm-editor-slider { grid-column: 1 / -1; }
     .names-tonearm-editor-slider input { height: 24px; border: 0; padding: 0; accent-color: #111; box-shadow: none; }
     .names-tonearm-editor-code { box-sizing: border-box; width: 100%; min-height: 92px; margin-top: 12px; resize: vertical; border: 1px solid #d6d3d1; border-radius: 10px; background: #f5f5f4; padding: 9px; color: #111; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; line-height: 1.35; }
@@ -214,7 +214,7 @@
     .names-main:fullscreen .names-wheel-stage.is-wheel .names-wheel-wrap { transform: translateX(60px); }
     .names-main:fullscreen .names-wheel-stage.is-wheel .names-winner-panel { left: calc(50% + 60px); }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
@@ -1180,6 +1180,6 @@ function App() {
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
   </script>
   <script src="./name-randomiser-runtime.js?v=54e5b42e1c7e"></script>
-  <script src="./footer.js?v=120454beac89"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

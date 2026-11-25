@@ -5,9 +5,9 @@
 .ig-pin-scene [role=button]{cursor:pointer;outline:none}
 .ig-pin-label .ig-pin-tile-art{mix-blend-mode:soft-light;pointer-events:none}
 .ig-pin-label .ig-pin-selection{stroke:transparent;stroke-width:2}
-.ig-pin-label:focus-visible .ig-pin-selection{stroke:#fff}
-.ig-pin-handle:focus-visible circle:last-child,.ig-pin-target:focus-visible circle:last-child{stroke:var(--ig-game-accent);stroke-width:4}
-.ig-pin-submit:focus-visible rect{stroke:#1686df;stroke-width:3}
+.ig-pin-label:focus-visible .ig-pin-selection{stroke:var(--mlh-focus-color, #2563eb)}
+.ig-pin-handle:focus-visible circle:last-child,.ig-pin-target:focus-visible circle:last-child{stroke:var(--mlh-focus-color, #2563eb);stroke-width:4}
+.ig-pin-submit:focus-visible rect{stroke:var(--mlh-focus-color, #2563eb);stroke-width:3}
 .ig-pin-submit:hover rect{fill:#f5f5f4}
 .ig-pin-scene text{pointer-events:none}
 .ig-app .ig-session .ig-pin-diagram .ig-pin-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0}

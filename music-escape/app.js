@@ -12,6 +12,30 @@ const attemptKey=level=>level+':'+(prefs.selectedLevelOnly===true);
 try{Object.assign(prefs,JSON.parse(localStorage.getItem(PREF)||'{}'));}catch{}
 Object.assign(prefs,C.settings(prefs));prefs.length='Standard';prefs.balance='Balanced';for(const k of ['music','ambience','effects','puzzle'])prefs[k]=Number.isFinite(Number(prefs[k]))?Math.max(0,Math.min(100,Number(prefs[k]))):0;
 const queryLevel=new URLSearchParams(location.search).get('level');if(C.levels.includes(queryLevel))prefs.level=queryLevel;
+const classroomSeed=MLH.classroomActivities.seed(location.search);
+const classroomRace=MLH.classroomActivities.isRace(location.search);
+const classroomProgress=MLH.classroomActivities.progressStorage?.();
+if(classroomSeed!==null)prefs.selectedLevelOnly=new URLSearchParams(location.search).get('selectedLevelOnly')==='1';
+function classroomActivityUrl(){
+ const url=new URL(location.pathname,location.origin);
+ const current=new URLSearchParams(location.search);
+ for(const key of ['myCollection','builtInCollection','collectionCatalogueLevel']){
+  if(current.has(key))url.searchParams.set(key,current.get(key));
+ }
+ url.searchParams.set('level',prefs.level);
+ if(prefs.selectedLevelOnly)url.searchParams.set('selectedLevelOnly','1');
+ const share=new URL(window.HubCollections.shareUrl(url.toString()));
+ return MLH.classroomActivities.settings(share.pathname+share.search)?share.toString():null;
+}
+function reportClassroomFinish(solved){
+ if(classroomSeed===null||window.parent===window)return;
+ if(classroomRace){
+  const correct=state.finished?adventure.length:state.room;
+  window.parent.postMessage({type:'mlh:classroom-escape-progress',correct,solved},location.origin);
+ }else if(typeof solved==='boolean'){
+  window.parent.postMessage({type:'mlh:classroom-finished',solved},location.origin);
+ }
+}
 const piano=new PopupPianoAudio();let soundTimers=[],ambient=null;
 const effectAudio=new Audio();
 // Weather has its own audio channel so puzzle stops cannot interrupt it.
@@ -63,7 +87,7 @@ function savePrefs(){try{localStorage.setItem(PREF,JSON.stringify(prefs));}catch
 function status(text){const el=$('#status');if(el)el.textContent=text;}
 function time(s){return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;}
 // Temporary control for vetting questions on the local preview.
-const literacyReviewEnabled=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+const literacyReviewEnabled=classroomSeed===null&&['localhost','127.0.0.1','[::1]'].includes(location.hostname);
 function testRoomFromUrl(){
  if(!literacyReviewEnabled)return null;
  const number=Number(new URLSearchParams(location.search).get('testRoom'));
@@ -83,7 +107,7 @@ let recordingPlayer=null;
 function HeaderStats(){
  const e=React.createElement,[popup,setPopup]=React.useState(null),[medalDismissKey,dismissMedals]=React.useState(0),ref=React.useRef(null);
  React.useEffect(()=>{const outside=ev=>{if(!ref.current?.contains(ev.target))setPopup(null);};const key=ev=>{if(ev.key==='Escape')setPopup(null);};document.addEventListener('pointerdown',outside);document.addEventListener('keydown',key);return()=>{document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',key);};},[]);
- const resetEnabled=active||state.finished;
+ const resetEnabled=classroomSeed===null&&(active||state.finished);
  const lives=MLHGamePractice.livesDisplay(awaitingPlay?MAX_LIVES:MAX_LIVES-state.mistakes,MAX_LIVES);
  const tileClass=MLH.shell.scoreTileClass+' escape-stat';
  const trigger=(name,label)=>({type:'button',className:tileClass,'aria-label':label,'aria-expanded':popup===name,onClick:()=>{if(popup!==name)dismissMedals(value=>value+1);setPopup(popup===name?null:name);}});
@@ -108,17 +132,16 @@ function HeaderStats(){
  })));
 
 }
-function header(){ReactDOM.render(React.createElement(MLH.AppHeader,{icon:'app-icons/music-escape.svg?v=9f4da809e8a5',title:'Escape Room',subtitle:'Solve the clues to find your way out.',profileUsesSharedSettings:false,profileShowLabel:false},(document.fullscreenElement===$('#escape')?null:React.createElement(HeaderStats))),$('#escape-header'));}
+function header(){ReactDOM.render(React.createElement(MLH.AppHeader,{icon:'app-icons/music-escape.svg?v=9f4da809e8a5',title:'Escape Room',subtitle:'Solve the clues to find your way out.',profileUsesSharedSettings:false,profileShowLabel:false,classroomActivityUrl:classroomSeed===null?classroomActivityUrl():undefined},(document.fullscreenElement===$('#escape')?null:React.createElement(HeaderStats))),$('#escape-header'));}
 function fragments(){return `<div class="fragment-strip" aria-label="${state.fragments.length} of ${adventure.length} score fragments">${adventure.map((_,i)=>`<span class="fragment ${state.fragments.includes(i)?'found':''}" style="--i:${i}">${state.fragments.includes(i)?'♪':'·'}</span>`).join('')}</div>`;}
-function toolbar(){return '<nav id="escape-toolbar" class="toolbar" aria-label="Game controls"></nav>';}
+function toolbar(){return classroomSeed===null?'<nav id="escape-toolbar" class="toolbar" aria-label="Game settings"></nav>':'';}
+function sceneControls(){return classroomSeed!==null?'<nav id="escape-scene-controls" class="escape-scene-controls" aria-label="Game controls"></nav>':'';}
 let openCustomise=null;
 const levelLabels={N3:'National 3',N4:'National 4',N5:'National 5',H:'Higher',AH:'Advanced Higher'};
 function EscapeToolbar(){
- const e=React.createElement,[menu,setMenu]=React.useState(null),[revision,refresh]=React.useState(0),ref=React.useRef(null);
+ const e=React.createElement,[menu,setMenu]=React.useState(null),ref=React.useRef(null);
  React.useEffect(()=>{openCustomise=()=>setMenu('customise');const outside=ev=>{if(!ref.current?.contains(ev.target)&&!ev.target.closest('[data-menu-panel]'))setMenu(null);};const key=ev=>{if(ev.key==='Escape'){setMenu(null);ref.current?.querySelector('[aria-expanded="true"]')?.focus();}};document.addEventListener('pointerdown',outside);document.addEventListener('keydown',key);return()=>{openCustomise=null;document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',key);};},[]);
  const icon=src=>e('img',{src,alt:'','aria-hidden':true,style:{width:src==='ui-icons/levels.svg'?28:21,height:src==='ui-icons/levels.svg'?26:21,transform:src==='ui-icons/levels.svg'?'scale(1.06)':undefined,objectFit:'contain'}});
- const update=(key,value)=>{prefs[key]=value;savePrefs();refresh(revision+1);if(!state)header();};
- const choice=(key,label,values)=>e('label',{className:'escape-option-row',key},e('span',null,label),e('select',{'aria-label':label,value:prefs[key],onChange:ev=>update(key,ev.target.value)},...values.map(v=>e('option',{key:v,value:v},v))));
  const levelPicker=e('div',{className:'escape-toolbar-controls'},
  e('div',{className:'hub-menu-anchor relative'},e(MLH.LevelButton,{icon:icon('ui-icons/levels.svg'),activeLevel:state?.options.level||prefs.level,activeLabel:levelLabels[state?.options.level||prefs.level],dataMenuTrigger:true,expanded:menu==='level',onClick:()=>setMenu(menu==='level'?null:'level')}),menu==='level'&&e(MLH.MenuPanel,{title:'Level',position:'left-0',dataMenuPanel:true},e(MLH.LevelMenu,{activeLevel:prefs.level,updateUrl:false,onSelect:level=>{setMenu(null);switchLevel(level);},levels:Object.fromEntries(C.levels.map(code=>[code,{label:levelLabels[code]}]))}))));
  const customise=e('div',{className:'hub-menu-anchor relative'},
@@ -132,18 +155,27 @@ function EscapeToolbar(){
    }}),window.HubCollections.menu('escape', null, prefs.level)));
  const collectionLink=sharedCollection&&window.HubCollections.clearCollectionLink(sharedCollection.name,state?.options.level||prefs.level);
  const left=e('div',{className:'escape-toolbar-controls',ref},levelPicker,customise,collectionLink);
+ return e(MLH.AppToolbar,{left,right:e(EscapeSceneControls)});
+}
+function EscapeSceneControls(){
+ const e=React.createElement,[,refresh]=React.useState(0);
  const fullscreen=document.fullscreenElement===$('#escape');
  const round=(label,pressed,onClick,child,extra='')=>e('button',{type:'button',className:'escape-round-control '+extra,'aria-label':label,title:label,'aria-pressed':pressed,onClick},child);
- const right=e('div',{className:'escape-toolbar-actions'},fullscreen&&e(HeaderStats),
- round(prefs.muted?'Turn on sound effects and ambience':'Turn off sound effects and ambience',!prefs.muted,()=>{toggleEffects();refresh(revision+1);},e('img',{src:'ui-icons/audio-svgrepo-com.svg',alt:'','aria-hidden':true}),'escape-sound-control'),
+ return e('div',{className:'escape-toolbar-actions'},fullscreen&&e(HeaderStats),
+ round(prefs.muted?'Turn on sound effects and ambience':'Turn off sound effects and ambience',!prefs.muted,()=>{toggleEffects();refresh(value=>value+1);},e('img',{src:'ui-icons/audio-svgrepo-com.svg',alt:'','aria-hidden':true}),'escape-sound-control'),
  round(fullscreen?'Exit Full Screen':'Full Screen',fullscreen,async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('#escape').requestFullscreen();}catch{status('Full screen is unavailable in this browser.');}},e('svg',{width:22,height:22,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,'aria-hidden':true},e('path',{d:fullscreen?'M9 3v6H3m18 0h-6V3M3 15h6v6m6 0v-6h6':'M9 3H3v6m12-6h6v6M3 15v6h6m6 0h6v-6'}))));
- return e(MLH.AppToolbar,{left,right});
 }
-function renderToolbar(){ReactDOM.render(React.createElement(EscapeToolbar),$('#escape-toolbar'));}
+function renderToolbar(){
+ const toolbar=$('#escape-toolbar'),controls=$('#escape-scene-controls');
+ if(toolbar)ReactDOM.render(React.createElement(EscapeToolbar),toolbar);
+ if(controls)ReactDOM.render(React.createElement(EscapeSceneControls),controls);
+}
+function saveClassroomProgress(){if(state)classroomProgress?.write('escape',state);}
 function draw(){
+ saveClassroomProgress();
  const dialog=$('#closeup'),wasOpen=dialog.open,opening=dialog.classList.contains('pause-dialog');
  if($('#escape').contains(dialog)){dialog.close();document.body.append(dialog);}
- const previous=$('#escape-toolbar');if(previous)ReactDOM.unmountComponentAtNode(previous);
+ for(const previous of document.querySelectorAll('#escape-toolbar, #escape-scene-controls'))ReactDOM.unmountComponentAtNode(previous);
  drawContent();renderToolbar();
  if(wasOpen)mountGameDialog(dialog,opening);
 }
@@ -220,9 +252,25 @@ $('#escape').addEventListener('pointermove',event=>{
  setHoveredObject(hitsObject(object?.querySelector('.room-object-image'),event)?object:null);
 });
 $('#escape').addEventListener('pointerleave',()=>setHoveredObject(null));
+const endingLines=[
+ 'You step outside. The school bell rings. For once, you’re already at the door.',
+ 'You make it outside with a new appreciation for doors that just open.',
+ 'You make it outside. The door creaks shut behind you. You give it a 7 out of 10 for tone.',
+ 'You step outside. It’s raining sideways. For a moment, you consider going back in.',
+ 'The janitor spots you coming out. “I was wondering who kept playing the piano.”',
+ 'The janitor holds the door for you. “Did nobody tell you about the push bar?”',
+ 'The janitor jingles his keys. “That was impressive. I usually just use this one.”',
+ 'The janitor watches you emerge. “All that for the front door? The side door’s been open all afternoon.”',
+ 'You step outside. A blackbird sings three notes. You wait for the multiple-choice options.',
+ 'A car goes past with its music blaring. Finally, a listening question you can walk away from.',
+ 'You step outside. The door swings shut. You check your bag. Your jacket’s still in the practice room.'
+];
+function endingLine(){
+ return state.endingLine ??= endingLines[Math.floor(Math.random()*endingLines.length)];
+}
 function drawContent(){setHoveredObject(null);syncWeather();header();const host=$('#escape');
-if(state.finished){host.innerHTML=toolbar()+`<section class="ending escape-school-ending"><div class="escape-ending-card"><h2>You did it!</h2><p>You step outside into the fresh air, just as the janitor returns to check the building.</p><div class="results"><div><strong>${time(state.elapsed)}</strong><small>Time</small></div></div><div class="actions"><button class="primary play-again" data-action="new">Play Again</button></div></div></section><p id="status" role="status" class="status"></p>`;return;}
-const r=room();host.innerHTML=toolbar()+`<section class="room-shell" aria-labelledby="escape-room-title"><div class="scene${r.digits.length===4?' scene-four-digit':''}" style="--scene-x:${(r.index%3)*50}%;--scene-y:${Math.floor(r.index/3)*50}%">
+if(state.finished){host.innerHTML=toolbar()+`<section class="ending escape-school-ending">${sceneControls()}<div class="escape-ending-card"><h2>You did it!</h2><p>${esc(endingLine())}</p><div class="results"><div><strong>${time(state.elapsed)}</strong><small>Time</small></div></div><div class="actions"><button class="primary play-again" data-action="new">Play Again</button></div></div></section><p id="status" role="status" class="status"></p>`;return;}
+const r=room();host.innerHTML=toolbar()+`<section class="room-shell" aria-labelledby="escape-room-title">${sceneControls()}<div class="scene${r.digits.length===4?' scene-four-digit':''}" style="--scene-x:${(r.index%3)*50}%;--scene-y:${Math.floor(r.index/3)*50}%">
  <div class="scene-heading"><h2 id="escape-room-title">${esc(r.name)}</h2><p>${esc(r.story)}</p></div>
  ${roomObjects(r)}</div></section><p id="status" class="status" role="status"></p>`;}
 function mountGameDialog(dialog,opening=false){
@@ -237,10 +285,11 @@ function mountGameDialog(dialog,opening=false){
   if(dialog.open)dialog.close();
   layer=document.createElement('div');layer.className='escape-dialog-layer';
   panel.append(layer);layer.append(dialog);
-  for(const child of panel.children)if(child!==layer)child.inert=true;
  }
+ const ready=opening&&dialog.getAttribute('aria-label')==='Ready to play';
+ for(const child of panel.children)if(child!==layer)child.inert=!(ready&&child.id==='escape-scene-controls');
  layer.classList.toggle('escape-pause-overlay',opening);
- layer.classList.toggle('escape-opening-overlay',opening&&dialog.getAttribute('aria-label')==='Ready to play');
+ layer.classList.toggle('escape-opening-overlay',ready);
  if(!dialog.open)dialog.show();
 }
 function detachGameDialog(dialog){
@@ -257,16 +306,18 @@ function show(title,body,actions=''){stopSound();recordingPlayer?.destroy();reco
  const gameOver=title==='Game Over';
  d.classList.toggle('game-over-dialog',gameOver);
  d.classList.toggle('music-literacy-dialog',literacy&&modalKey==='mechanism');
- d.classList.remove('shake');d.classList.toggle('literacy-dialog',literacy);d.classList.toggle('padlock-dialog',title==='Code');d.classList.toggle('pause-dialog',title==='Paused');if(title==='Paused'){d.removeAttribute('aria-labelledby');d.setAttribute('aria-label','Paused');}else{d.setAttribute('aria-labelledby','dialog-title');d.removeAttribute('aria-label');}d.classList.toggle('confirmation-dialog',body.includes('class="confirmation-message"'));d.innerHTML=`${title==='Paused'||title==='Reset'||gameOver?'':'<button class="dialog-close" data-action="close" aria-label="Close">×</button>'}${heading}${body}<div class="puzzle-feedback" id="feedback" role="status"></div>${actions?`<div class="dialog-actions">${actions}</div>`:''}`;if(title==='Paused')d.innerHTML='<button type="button" class="ig-preview-play escape-resume-play" data-action="resume" aria-label="Resume activity"><span class="hub-playback-glyph is-play" aria-hidden="true"></span></button>';mountGameDialog(d,title==='Paused');d.querySelectorAll('audio').forEach(audio=>audio.muted=false);d.querySelector('.dialog-close, [data-action="resume"], [data-action="start-again"], .dialog-actions [data-action="close"]').focus();}
+ d.classList.remove('shake');d.classList.toggle('literacy-dialog',literacy);d.classList.toggle('padlock-dialog',title==='Code');d.classList.toggle('pause-dialog',title==='Paused');if(title==='Paused'){d.removeAttribute('aria-labelledby');d.setAttribute('aria-label','Paused');}else{d.setAttribute('aria-labelledby','dialog-title');d.removeAttribute('aria-label');}d.classList.toggle('confirmation-dialog',body.includes('class="confirmation-message"'));d.innerHTML=`${title==='Paused'||title==='Reset'||gameOver?'':'<button class="dialog-close" data-action="close" aria-label="Close">×</button>'}${heading}${body}<div class="puzzle-feedback" id="feedback" role="status"></div>${actions?`<div class="dialog-actions">${actions}</div>`:''}`;if(title==='Paused')d.innerHTML='<button type="button" class="ig-preview-play escape-resume-play" data-action="resume" aria-label="Resume activity"><span class="hub-playback-glyph is-play" aria-hidden="true"></span></button>';mountGameDialog(d,title==='Paused');d.querySelectorAll('audio').forEach(audio=>audio.muted=false);d.querySelector('.dialog-close, [data-action="resume"], [data-action="start-again"], .dialog-actions [data-action="close"]')?.focus();}
 function close(keepEffect=false){stopSound(keepEffect);recordingPlayer?.destroy();recordingPlayer=null;const d=$('#closeup'),focus=returnFocus;d.classList.remove('shake');d.close();detachGameDialog(d);d.querySelector('.escape-literacy-frame, .escape-dictionary-frame')?.remove();d.querySelector('#escape-clue-playback')?.remove();modalKey=null;audioFailed=false;if(returnToPause){returnToPause=false;show('Paused','');returnFocus=focus;return;}if(paused){paused=false;last=performance.now();header();}focus?.focus();}
 function feedback(text){$('#feedback').textContent=text;}
 function confirmAction(title,message,action){const dialog=$('#closeup'),focus=document.activeElement;if(dialog.closest('.escape-pause-overlay')){returnToPause=true;dialog.close();detachGameDialog(dialog);}modalKey=null;show(title,`<p class="confirmation-message">${esc(message)}</p>`,`<button data-action="close">Cancel</button><button class="primary" data-action="${action}">Confirm</button>`);returnFocus=focus;}
 function toggleQuestionScope(){
+ if(classroomSeed!==null)return;
  prefs.selectedLevelOnly=prefs.selectedLevelOnly!==true;
  savePrefs();
  newGame();
 }
 function switchLevel(level){
+ if(classroomSeed!==null)return;
  if(sharedCollection){location.href=window.HubCollections.standardLevelUrl(level);return;}
  if(level===prefs.level)return;levelAttempts.set(attemptKey(prefs.level),state);stopSound();close();active=false;modalKey=null;tapping=null;prefs.level=level;savePrefs();const url=new URL(location.href);url.searchParams.set('level',level);history.replaceState(null,'',url);state=levelAttempts.get(attemptKey(level))||null;adventure=state?C.generate(state.seed,state.options,D,sharedCollection?.concepts,state.version):[];if(state){active=!state.finished;last=performance.now();draw();if(!state.finished){if(state.mistakes>=MAX_LIVES)showGameOver();else showOpeningPlay();}}else newGame();}
 function showOpeningPlay(wakingUp=false){
@@ -283,7 +334,7 @@ function resumeGame(){awaitingPlay=false;close();active=true;last=performance.no
 function wakeUp(){
  $('#escape .scene').classList.add('escape-waking');
 }
-function newGame(waitForPlay=true){weatherEntered=false;syncWeather();clearTimeout(medalSoundTimer);medalCelebrationKey=0;medalCelebrationUntil=0;returnToPause=false;stopSound();state=C.create(crypto.getRandomValues(new Uint32Array(1))[0],{...prefs,length:'Standard',balance:'Balanced'});if(roomPreviewIndex!==null)state.room=roomPreviewIndex;C.enter(state);adventure=C.generate(state.seed,state.options,D,sharedCollection?.concepts,state.version);resumeGame();if(waitForPlay&&roomPreviewIndex===null)showOpeningPlay(true);else{wakeUp();if(!waitForPlay)enterWeather();}}
+function newGame(waitForPlay=true){weatherEntered=false;syncWeather();clearTimeout(medalSoundTimer);medalCelebrationKey=0;medalCelebrationUntil=0;returnToPause=false;stopSound();state=C.create(classroomSeed??crypto.getRandomValues(new Uint32Array(1))[0],{...prefs,length:'Standard',balance:'Balanced'});if(roomPreviewIndex!==null)state.room=roomPreviewIndex;C.enter(state);adventure=C.generate(state.seed,state.options,D,sharedCollection?.concepts,state.version);resumeGame();if(waitForPlay&&roomPreviewIndex===null)showOpeningPlay(true);else{wakeUp();if(!waitForPlay)enterWeather();}}
 const names=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];function note(m){return names[m%12]+(Math.floor(m/12)-1);}
 function writtenNote(m,r=room()){const i=r.sequence.indexOf(m);return i<0?note(m):r.spellings[i];}
 function draft(key,initial){const k=C.id(state,key);if(!Object.hasOwn(state.drafts,k))state.drafts[k]=initial;return state.drafts[k];}
@@ -307,7 +358,7 @@ function canUnlock(code,digitCount){
  return rejected?.room!==state.room||rejected.code!==code;
 }
 const escapeLiteracyActivities={
- rhythmDictation:'rhythmicdictation.html?embed=escape&amp;v=1165e31683e6',
+ rhythmDictation:'rhythmicdictation.html?embed=escape&amp;v=d04fc0eac67f',
  time:'timesignatures.html?embed=escape&amp;v=1997f2f374ca',
  key:'keysignatures.html?embed=escape&amp;v=100f905ab9e3',
  follow:'followthescore.html?embed=escape&amp;v=6a1fcd70811a',
@@ -316,14 +367,14 @@ const escapeLiteracyActivities={
  interval:'intervals.html?embed=escape&amp;v=aa32d9c2da9b',
  rest:'rests.html?embed=escape&amp;v=120865d0bb26',
  noteValue:'rhythmidentification.html?embed=escape&amp;v=df9f993f330b',
- chord:'chords.html?embed=escape&amp;v=77afabfe3c02',
+ chord:'chords.html?embed=escape&amp;v=94f45fa9b327',
  noteNames:'noteidentification.html?embed=escape&amp;v=40aebbdbf12a',
  keyboardSingle:'practicequestions.html?embed=escape&amp;v=132f004b42ed',
  keyboardNote:'keyboardnoteidentification.html?embed=escape&amp;v=aee95d306349',
  melodicDictation:'melodicdictation.html?embed=escape&amp;v=cf9618a4952f',
  enharmonic:'enharmonicequivalents.html?embed=escape&amp;v=66bf81fe9dbd',
- chordInversion:'chords.html?embed=escape&amp;v=77afabfe3c02',
- chordBassLine:'chords.html?embed=escape&amp;v=77afabfe3c02',
+ chordInversion:'chords.html?embed=escape&amp;v=94f45fa9b327',
+ chordBassLine:'chords.html?embed=escape&amp;v=94f45fa9b327',
  accidentals:'accidentals.html?embed=escape&amp;v=d497cf5da0d8',
  scaleDegrees:'scaledegrees.html?embed=escape&amp;v=16383c68733e',
  cadences:'cadences.html?embed=escape&amp;v=26ba1603681d',
@@ -331,14 +382,14 @@ const escapeLiteracyActivities={
  dynamics:'dynamics.html?embed=escape&amp;v=e00165efd5bc',
  articulation:'articulationmarkings.html?embed=escape&amp;v=9ccff265a65b',
  repeats:'repeatsigns.html?embed=escape&amp;v=3179d92bf081',
- triplets:'triplets.html?embed=escape&amp;v=dea7edcd174b',
+ triplets:'rhythmicdictation.html?embed=escape&amp;v=d04fc0eac67f',
  barlines:'barlines.html?embed=escape&amp;v=0cf4de5a3bb8',
  earTraining:'auralrecognition.html?embed=escape&amp;v=24a58186c6a7'
 };
-function inspect(key){const r=room();modalKey=key;audioFailed=false;if(solved(key)){if(key==='exit'&&state.room===adventure.length-1){show('You did it!','<p>You step outside into the fresh air, just as the janitor returns to check the building.</p>','<button class="primary" data-action="advance">Leave</button>');return;}show(key==='exit'?'Unlocked':'Mechanism unlocked',`<p>${key==='exit'?'The door is unlocked. Continue when you are ready.':'This mechanism has already released its discovery. Your collected clues appear above the room.'}</p>`,key==='exit'?`<button class="primary" data-action="advance">Leave</button>`:'');return;}
+function inspect(key){const r=room();modalKey=key;audioFailed=false;if(solved(key)){if(key==='exit'&&state.room===adventure.length-1){show('You did it!',`<p>${esc(endingLine())}</p>`,'<button class="primary" data-action="advance">Leave</button>');return;}show(key==='exit'?'Unlocked':'Mechanism unlocked',`<p>${key==='exit'?'The door is unlocked. Continue when you are ready.':'This mechanism has already released its discovery. Your collected clues appear above the room.'}</p>`,key==='exit'?`<button class="primary" data-action="advance">Leave</button>`:'');return;}
 
 if(key==='help'){
- show('Music Dictionary',`<iframe class="escape-dictionary-frame" title="Music Dictionary" src="music-dictionary/musicdictionary.html?embed=escape&amp;all=1&amp;level=${state.options.level}"></iframe>`);
+ show('Concept Dictionary',`<iframe class="escape-dictionary-frame" title="Concept Dictionary" src="music-dictionary/musicdictionary.html?embed=escape&amp;all=1&amp;level=${state.options.level}"></iframe>`);
  return;
 }
 if(key==='order'){
@@ -368,6 +419,7 @@ if(key==='exit'){
  restoreCodeFeedback();
 }}
 function regenerateLiteracy(){
+ if(classroomSeed!==null)return;
  if(!literacyReviewEnabled||modalKey!=='mechanism'||!$('#closeup').open||!room().literacy)return;
  const original=adventure[state.room];
  state.literacyReview??={};
@@ -459,6 +511,7 @@ window.addEventListener('message',event=>{
 const dynamics={20:'pp',30:'p',40:'—',50:'mp',60:'mf',70:'f',80:'ff'},dynamicWords={20:'very quiet',30:'quiet',50:'moderately quiet',60:'moderately loud',70:'loud',80:'very loud'};
 function audioFallback(){if(audioFailed)return;audioFailed=true;feedback('This recording could not load. Retry playback, or use the written sleeve clue below.');const p=document.createElement('p');p.className='instruction';const current=room(),recording=current.collectionQuestions?.recording||current.listening;p.textContent=D.concepts.find(concept=>concept.id===recording.conceptId)?.definition||recording.feedback||'';$('#feedback').after(p);}
 function showGameOver(){
+ saveClassroomProgress();
  syncWeather();
  active=false;
  paused=true;
@@ -466,7 +519,11 @@ function showGameOver(){
  if(document.fullscreenElement===$('#escape'))renderToolbar();
  else header();
  show('Game Over','<p>After entering three incorrect codes, you wake up back in the practice room and realise you have been dreaming this whole time.</p>',
-  '<button class="primary" data-action="start-again">Start Again</button>');
+  classroomSeed===null?'<button class="primary" data-action="start-again">Start Again</button>':'');
+ reportClassroomFinish(false);
+}
+function showUnlocked(){
+ show('Unlocked','<p>The door unlocks. You are one step closer to escaping the school.</p>','<button class="primary" data-action="advance">Leave</button>');
 }
 function check(){
  if(modalKey!=='exit'||solved('exit'))return;
@@ -475,20 +532,23 @@ function check(){
  const previousMedal=C.medal(state);
  if(C.solve(state,r,'exit',code)){
   const finalRoom=state.room===adventure.length-1;
-  const tier=finalRoom?'diamond':C.medal(state),award=!sharedCollection&&tier!==previousMedal&&MLH.achievements.medals[tier];
+  const tier=finalRoom?'diamond':C.medal(state),award=classroomSeed===null&&!sharedCollection&&tier!==previousMedal&&MLH.achievements.medals[tier];
   if(award){
    if(roomPreviewIndex===null)MLH.achievements.award('musicescape.html',state.options.level,tier);
    medalCelebrationKey++;medalCelebrationUntil=Date.now()+2600;
   }
   if(finalRoom){
    clearTimeout(medalSoundTimer);MLH.stopFeedbackSound?.();
-   close();C.advance(state,adventure.length);draw();if(award)playMedalCelebration(tier);return;
+   close();C.advance(state,adventure.length);draw();
+   playEffect(doorEffects.at(-1));
+   if(state.finished)reportClassroomFinish(true);
+   if(award)playMedalCelebration(tier);
+   return;
   }
   stopSound();draw();
-  const next='<button class="primary" data-action="advance">Leave</button>';
-  show(finalRoom?'You did it!':'Unlocked',finalRoom?'<p>You step outside into the fresh air, just as the janitor returns to check the building.</p>':'<p>The door unlocks. You are one step closer to escaping the school.</p>',next);
+  showUnlocked();
   if(award)playMedalCelebration(tier);
-  playEffect(finalRoom?'final-victory':doorEffects[state.room]);
+  playEffect(doorEffects[state.room]);
  }else{
   if(state.mistakes>=MAX_LIVES){showGameOver();playEffect('game-over');return;}
   playEffect('wrong');
@@ -509,6 +569,7 @@ function advanceRoom(){
  if(!C.advance(state,adventure.length))return;
  close(true);
  draw();
+ reportClassroomFinish();
  if(!state.finished){wakeUp();return;}
 
 }
@@ -566,7 +627,19 @@ document.addEventListener('input',e=>{if(e.target.dataset.mix!==undefined){const
 $('#closeup').addEventListener('cancel',e=>{e.preventDefault();if(active||!paused)close();});
 document.addEventListener('keydown',event=>{const dialog=$('#closeup');if(event.key==='Escape'&&dialog.open&&dialog.closest('.escape-dialog-layer:not(.escape-pause-overlay)')){event.preventDefault();if(!dialog.classList.contains('game-over-dialog'))close();}});
 document.addEventListener('fullscreenchange',()=>{draw();last=performance.now();});
-document.addEventListener('visibilitychange',()=>{last=performance.now();syncWeather();if(document.hidden){stopSound();}});window.addEventListener('pagehide',()=>{weatherEntered=false;syncWeather();stopSound();});
+document.addEventListener('visibilitychange',()=>{last=performance.now();syncWeather();if(document.hidden){saveClassroomProgress();stopSound();}});window.addEventListener('pagehide',()=>{saveClassroomProgress();weatherEntered=false;syncWeather();stopSound();});
 setInterval(()=>{const now=performance.now();if(state&&active&&!paused&&!state.finished&&state.fragments.length<adventure.length&&!document.hidden){state.elapsed+=Math.min(2,(now-last)/1000);}last=now;},1000);
-newGame();
+const savedRoom=classroomProgress?.read('escape',null);
+const restoredRoom=savedRoom?.seed===classroomSeed?C.restore(JSON.stringify(savedRoom),D,sharedCollection?.concepts):null;
+if(restoredRoom){
+ state=restoredRoom;
+ adventure=C.generate(state.seed,state.options,D,sharedCollection?.concepts,state.version);
+ resumeGame();
+ if(state.finished)reportClassroomFinish(true);
+ else if(state.mistakes>=MAX_LIVES)showGameOver();
+ else{
+  reportClassroomFinish();
+  if(solved('exit'))showUnlocked();
+ }
+}else newGame();
 })();

@@ -1,5 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const ui=fs.readFileSync('music-dictionary/music-concepts-audio-editor.js','utf8');
+const hubInput=fs.readFileSync('shared/hub-input.js','utf8');
 const h=(type,props,...children)=>({type,props:props||{},children:children.flat(Infinity).filter(x=>x!==null&&x!==false&&x!==undefined)});
 const clip={id:'test',sourceUrl:'https://soundcloud.com/artist/test',embedUrl:'https://w.soundcloud.com/player/?url=test',name:'Test recording',startSeconds:0,endSeconds:30};
 const fallback={url:'https://www.youtube.com/watch?v=qaz4Ziw_CfQ',title:'Alternative',channel:'Performer',matchType:'work'};
@@ -12,6 +13,7 @@ function harness(withWidget=true){
  if(withWidget){window.SC={Widget:()=>widget};window.SC.Widget.Events=Object.fromEntries(['READY','PLAY','PAUSE','PLAY_PROGRESS','SEEK','FINISH','ERROR'].map(x=>[x,x.toLowerCase()]));}
  const context={h,React,window,AudioControls:'AudioControls',setTimeout:(fn,ms)=>{let id=nextTimer++;timers.set(id,{fn,ms});return id;},clearTimeout:id=>timers.delete(id),document:{addEventListener(){},removeEventListener(){},querySelectorAll:()=>[],dispatchEvent(){}},CustomEvent:class{}};
  const start=ui.indexOf('  function AudioFallback('),end=ui.indexOf('  function NativeSectionPlayer(');
+ vm.runInNewContext(hubInput,context);
  vm.runInNewContext(ui.slice(start,end)+';this.player=SoundCloudSectionPlayer;this.overlay=AudioFallback;',context);
  const render=(item=clip)=>{index=0;const tree=context.player({clip:item});if(first){first=false;cleanup=effect?.();}return tree;};
  return{render,window,timers,calls,emit:(event,data)=>bindings.get(event)?.(data),expire(ms){for(const [id,t]of [...timers])if(t.ms===ms){timers.delete(id);t.fn();}},overlay:context.overlay,dispose:()=>cleanup?.()};

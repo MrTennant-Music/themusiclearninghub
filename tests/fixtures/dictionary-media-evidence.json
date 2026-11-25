@@ -1,0 +1,100 @@
+{
+  "lochLomond": {
+    "sourceUrl": "https://soundcloud.com/deanchalmersmusic/loch-lomond-runrig-dean",
+    "sourceDurationSeconds": 166.707,
+    "vocalEntrySeconds": 1.98,
+    "chorusEntrySeconds": 35.28
+  },
+  "tonality": [
+    {
+      "conceptId": "MC-0084",
+      "key": "G major",
+      "sourceUrl": "https://soundcloud.com/iona-brown-official/serenade-no-13-for-strings-2",
+      "sourceDurationSeconds": 355.046,
+      "sourcePolicy": "MONETIZE"
+    },
+    {
+      "conceptId": "MC-0084",
+      "key": "E major",
+      "sourceUrl": "https://soundcloud.com/up_north_session_orchestra/morning-peer-gynt-op23-up-north-session-orchestra",
+      "sourceDurationSeconds": 277.994,
+      "sourcePolicy": "MONETIZE"
+    },
+    {
+      "conceptId": "MC-0085",
+      "key": "G minor",
+      "sourceUrl": "https://soundcloud.com/miami-symphony-orchestra/mozart-molto-allegro-from-the-symphony-no-40-in-g-minor",
+      "sourceDurationSeconds": 492.558,
+      "sourcePolicy": "ALLOW"
+    },
+    {
+      "conceptId": "MC-0085",
+      "key": "C minor",
+      "sourceUrl": "https://soundcloud.com/carlos-kleiber/1-allegro-con-brio",
+      "sourceDurationSeconds": 441.076,
+      "sourcePolicy": "MONETIZE"
+    }
+  ],
+  "arpeggios": [
+    {
+      "sourceUrl": "https://soundcloud.com/lynne-publishing/vadim-chaimovich-bach-prelude",
+      "startSeconds": 0,
+      "endSeconds": 16,
+      "sourceDurationSeconds": 138.344,
+      "sourcePolicy": "MONETIZE"
+    },
+    {
+      "sourceUrl": "https://soundcloud.com/peterelst/moonlight-sonata-first-movement",
+      "startSeconds": 0,
+      "endSeconds": 18,
+      "sourceDurationSeconds": 390.211,
+      "sourcePolicy": "MONETIZE"
+    }
+  ],
+  "traditionalVocals": [
+    {
+      "conceptId": "MC-0147",
+      "sourceUrl": "https://soundcloud.com/queens-college-choir/04-zadok-the-priest",
+      "startSeconds": 120,
+      "sourceDurationSeconds": 356.076
+    },
+    {
+      "conceptId": "MC-0149",
+      "sourceUrl": "https://soundcloud.com/paircfreechurch/psalm-10728-31-gaelic",
+      "startSeconds": 60,
+      "sourceDurationSeconds": 318.557
+    },
+    {
+      "conceptId": "MC-0155",
+      "sourceUrl": "https://soundcloud.com/oldtownschool/hebradian-walking-songs",
+      "startSeconds": 22,
+      "sourceDurationSeconds": 99.43
+    },
+    {
+      "conceptId": "MC-0155",
+      "sourceUrl": "https://soundcloud.com/user-428444792/orain-luaidh-waulking-song-biodh-an-deoch-seo-n-laimh-mo-ruin",
+      "startSeconds": 10,
+      "sourceDurationSeconds": 148.78
+    },
+    {
+      "conceptId": "MC-0221",
+      "sourceUrl": "https://soundcloud.com/rebecca-gorzynska/ave-maris-stella-gregorian-chant-roman-liturgy",
+      "startSeconds": 10,
+      "sourceDurationSeconds": 188.697
+    },
+    {
+      "conceptId": "MC-0263",
+      "sourceUrl": "https://soundcloud.com/musicaantiqua/i-care-not-for-these-ladies",
+      "startSeconds": 60,
+      "sourceDurationSeconds": 151.576
+    }
+  ],
+  "tallisFantasia": {
+    "sourceUrl": "https://soundcloud.com/user-auburnsymphonyo/ralph-vaughn-williams-fantasia-on-a-theme-by-thomas-tallis",
+    "sourceDurationSeconds": 935.873,
+    "startSeconds": 60,
+    "endSeconds": 120,
+    "previousOpeningRmsDbfs": -47.665016174316406,
+    "selectedMinuteRmsDbfs": -28.785429000854492
+  }
+}

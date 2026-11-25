@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Rests</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/rests-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/rests-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/rests-question-core.js?v=ae183df55ae9"></script>
@@ -19,13 +19,15 @@
   <script src="./shared/shared-notation-config.js?v=20260629"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <style>
+    .rests-customise > .hub-menu-scroll { max-height: none; }
     @font-face {
       font-family: "Bravura";
       src: url("./fonts/Bravura.otf") format("opentype");
@@ -39,14 +41,15 @@
       text-rendering: geometricPrecision;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
   <div id="root"></div>
 
   <script type="text/x-mlh-jsx-source" data-runtime="rests-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 
 const VIEWBOX_WIDTH = 920;
@@ -130,7 +133,7 @@ const RHYTHM_INFO = {
   "semiquaver-rest": { units: 1, rest: true },
 };
 
-function randomIndex(length) { return Math.floor(Math.random() * length); }
+function randomIndex(length) { return Math.floor(exerciseRandom() * length); }
 function randomItem(items) { return items[randomIndex(items.length)]; }
 function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
 function rhythmInfo(rhythm) { return RHYTHM_INFO[rhythm] ?? RHYTHM_INFO.crotchet; }
@@ -190,7 +193,7 @@ function addNotesFromRhythms(rhythms, previousIndex, options = {}) {
 
 
 const restsQuestionCore = window.MLH.RestsQuestionCore;
-const restsGenerator = restsQuestionCore.create();
+const restsGenerator = restsQuestionCore.create(exerciseRandom);
 function getValidQuestions(timeSignature) { return restsQuestionCore.templates(timeSignature.id); }
 function hasValidQuestionCombination(activeLevel, enabledOptions) { return restsQuestionCore.valid(enabledOptions); }
 function makeQuestion(activeLevel = "H", enabledOptions = defaultEnabledOptions("H")) {
@@ -203,7 +206,7 @@ function makeQuestion(activeLevel = "H", enabledOptions = defaultEnabledOptions(
   const boxes = template.answers.map((answer,index)=>({id:`missing-${index}`,barIndex:0,answer,units:template.isFullBar?timeSignature.unitsPerBar:rhythmInfo(answer).units,isFullBar:template.isFullBar}));
   const after = addNotesFromRhythms(template.after, before.nextIndex, noteOptions);
   const missing = boxes.map(box=>({rhythm:"missing",units:box.units,missingBoxId:box.id,isFullBar:box.isFullBar}));
-  return {id:Math.random().toString(36).slice(2),activeLevel,timeSignature,bars:[{notes:[...before.notes,...missing,...after.notes]}],missingBoxes:boxes};
+  return {id:exerciseRandom().toString(36).slice(2),activeLevel,timeSignature,bars:[{notes:[...before.notes,...missing,...after.notes]}],missingBoxes:boxes};
 }
 
 const playFeedbackSound = (...args) => window.MLH?.playFeedbackSound?.(...args);
@@ -451,7 +454,7 @@ function MissingTarget({ box, x, width, systemTop, selectedRest, placedAnswers, 
 }
 function Bar({ bar, barIndex, systemTop, startX, endX, staffStartX = startX, isFinalBar, selectedRest, placedAnswers, onPlace, missingBoxesById, feedback, onMissingSelection, completeBar = false }) {
   if (!bar) return null;
-  const rightPadding = completeBar ? LINE_GAP * 3 : 6;
+  const rightPadding = completeBar || isFinalBar ? LINE_GAP * 3 : 6;
   const positions = getBarNotePositions(bar.notes, startX + ((barIndex === 0 || barIndex === 4) ? 7 : 12), endX - rightPadding, completeBar);
   const beamGroups = getBeamGroups(bar.notes);
   function missingTargetLayout(index, box, width) {
@@ -663,7 +666,7 @@ function TimeSignatureToggleButton({ signatureId, checked, onChange }) {
       type="button"
       onClick={onChange}
       className="hub-toggle-row"
-      style={{ marginBottom: 0, height: "56px", minHeight: "56px", padding: "7px 64px 7px 10px", overflow: "visible", position: "relative" }}
+      style={{ marginBottom: 0, padding: "7px 64px 7px 10px", overflow: "visible", position: "relative" }}
       aria-label={`Toggle ${signatureId}`}
       title={signatureId}
     >
@@ -691,7 +694,7 @@ function RestToggleButton({ option, checked, onChange }) {
       type="button"
       onClick={onChange}
       className="hub-toggle-row"
-      style={{ marginBottom: 0, height: "56px", minHeight: "56px", padding: "7px 64px 7px 10px", overflow: "visible", position: "relative" }}
+      style={{ marginBottom: 0, padding: "7px 64px 7px 10px", overflow: "visible", position: "relative" }}
       aria-label={`Toggle ${option.label}`}
       title={option.label}
     >
@@ -770,7 +773,7 @@ function useInjectedStyles() {
       button:hover { transform: translateY(-1px) scale(1.01); filter: brightness(1.08); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
       button:active { transform: scale(0.96); filter: brightness(0.92); }
       button:disabled { cursor: not-allowed; opacity: 0.5; }
-      button:focus-visible { outline: 2px solid rgba(22,163,74,0.35); outline-offset: 2px; }
+      button:focus-visible { outline: 2px solid var(--mlh-focus-color, #2563eb); outline-offset: 2px; }
       @keyframes medalShine { 0%,100% { transform: scale(1) rotate(-4deg); filter: drop-shadow(0 0 0 rgba(250,204,21,0)); } 50% { transform: scale(1.16) rotate(4deg); filter: drop-shadow(0 0 10px rgba(250,204,21,.9)); } }
       @keyframes incorrectDropShake { 0% { transform: translateY(-28px); opacity: 0; } 55% { transform: translateY(0); opacity: 1; } 68% { transform: translateX(-5px); } 78% { transform: translateX(5px); } 88% { transform: translateX(-3px); } 100% { transform: translateX(0); opacity: 1; } }
       @keyframes correctFade { 0% { transform: translateY(-18px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
@@ -933,7 +936,7 @@ function RestsApp() {
 
   return (
     <div className={window.MLH.shell.pageShellClass}>
-      <window.MLH.AppHeader profileState={{ activeLevel, enabledOptions, showRhythmGuide }} icon={ASSET.appIcon} title="Rests" subtitle="Identify and apply rests." worksheetConfig={() => ({ version: 1, activityId: "rests", sourceUrl: window.location.href, settings: { level: activeLevel, enabledOptions } })}>
+      <window.MLH.AppHeader classroomOriginalFormat={!medalEligible || showRhythmGuide} profileState={{ activeLevel, enabledOptions, showRhythmGuide }} icon={ASSET.appIcon} title="Rests" subtitle="Identify and apply rests." worksheetConfig={() => ({ version: 1, activityId: "rests", sourceUrl: window.location.href, settings: { level: activeLevel, enabledOptions } })}>
         <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalEligible={medalEligible} />
       </window.MLH.AppHeader>
 
@@ -961,14 +964,14 @@ function RestsApp() {
                     onClick={() => { setLevelOpen(false); setCustomiseOpen((value) => !value); }}
                     dataMenuTrigger={true}
                   />
-                  {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
+                  {customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="rests-customise" dataMenuPanel={true}>
                     <MenuRows activeLevel={activeLevel} enabledOptions={enabledOptions} setEnabledOptions={setEnabledOptions} showRhythmGuide={showRhythmGuide} setShowRhythmGuide={setShowRhythmGuide} newQuestion={newQuestion} />
                   </window.MLH.MenuPanel>}
                 </div>
               </div>
             }
             feedback={<FeedbackBanner feedback={feedback} fading={feedbackFading} warning="" />}
-            right={<window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
+            right={<window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={() => setStreak(0)} onClick={() => newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />} />}
           />
 
           {showRhythmGuide && <div className="relative z-[15]"><RhythmGuide /></div>}
@@ -1021,7 +1024,7 @@ const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("rest");
 const app = escapeActivity ? <EscapeRest activity={escapeActivity} /> : <RestsApp />;
 if (ReactDOM.createRoot) ReactDOM.createRoot(rootElement).render(app);
 else ReactDOM.render(app, rootElement);
-  </script><script src="./generated-runtimes/rests-1.js?v=120865d0bb26"></script>
-<script src="./footer.js?v=120454beac89"></script>
+  </script><script src="./generated-runtimes/rests-1.js?v=d0c9904d58ca"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

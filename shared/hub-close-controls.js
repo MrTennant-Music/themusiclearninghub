@@ -39,7 +39,7 @@
     }
     :root body .mlh-close-control>*{display:none!important}
     :root body .mlh-close-control::before{content:'×';display:block;color:#000;font:500 24px/1 Arial,sans-serif}
-    :root body .mlh-close-control:focus-visible{outline:2px solid #000!important;outline-offset:2px!important}
+    :root body .mlh-close-control:focus-visible{outline:2px solid var(--mlh-focus-color, #2563eb)!important;outline-offset:2px!important}
     @media(hover:hover) and (pointer:fine){
       :root body .mlh-close-control:not(:disabled):hover{background:#e2e8f0!important;transform:translateY(-1px) scale(1.01)!important;filter:brightness(1.08)!important;box-shadow:0 6px 18px rgba(0,0,0,.08)!important}
     }

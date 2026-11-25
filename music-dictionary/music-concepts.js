@@ -138,6 +138,15 @@ function ConceptPhotoImage({photo}){
  return h('div',{className:'mc-concept-photo-frame',style:{aspectRatio:String(ratio),width:'min(100%, '+(280*ratio)+'px)'}},
   h('img',{src:photo.src,alt:photo.alt,decoding:'async',style:{width:(100*f.sourceWidth/f.width)+'%',height:(100*f.sourceHeight/f.height)+'%',left:(-100*f.x/f.width)+'%',top:(-100*f.y/f.height)+'%'}}));
 }
+function ConceptPhoto({photo}){
+ const caption=photo.caption.trim().replace(/[.!?]+$/,'')+'.';
+ const attribution=[photo.credit,photo.license,photo.changes].filter(Boolean).join(' · ');
+ return h('figure',{className:'mc-concept-photo'},h(ConceptPhotoImage,{photo}),
+  h('figcaption',null,photo.sourceUrl?h('a',{
+   href:photo.sourceUrl,target:'_blank',rel:'noopener noreferrer',title:attribution,
+   'aria-label':caption+' Image source (opens in a new tab).','aria-description':attribution
+  },caption):caption));
+}
 const backGlyph=h('img',{src:'./ui-icons/next.svg',alt:'','aria-hidden':true,className:'h-[27.8px] w-[27.8px] rotate-180'});
 function ConceptVideo({concept,lesson}){
  const entry=lesson||window.MUSIC_CONCEPT_VIDEOS?.concepts[concept.id];
@@ -443,7 +452,7 @@ function App({initialRun=null,initialNavigation=null}){
   return()=>window.removeEventListener('popstate',restore);
  },[isDetail,showListSwitch]);
  React.useEffect(()=>{
-  if(isDetail)return;
+  if(isDetail||window.MLH.classroomExercise)return;
   const snapshot={version:1,level,query,conceptList,showAll,frequency,exam,literacyTrends,literacyExam,literacyBands,selectedBands,groupId,quizSelecting,quizCollection,quizIds,quizName,quizEditing,runningQuiz};
   const stage=value=>value.runningQuiz?'quiz':value.quizSelecting?'preview':'list';
   const url=value=>{
@@ -489,7 +498,7 @@ function App({initialRun=null,initialNavigation=null}){
   if((from==='quiz'&&to==='preview')||(from==='preview'&&to==='list'&&previous.level===level&&previous.showAll===showAll)){history.back();return;}
   write((from==='list'&&to==='preview')||(from==='preview'&&to==='quiz')?'pushState':'replaceState',snapshot);
  },[level,query,conceptList,showAll,frequency,exam,literacyTrends,literacyExam,literacyBands,selectedBands,groupId,quizSelecting,quizCollection,quizIds,quizName,quizEditing,runningQuiz,isDetail]);
- React.useEffect(()=>{document.title=isDetail?(literacyEntry?literacyTitle(literacyEntry)+' | Music Dictionary':concept?concept.name+' | Music Dictionary':'Concept not found | Music Dictionary'):quizApp?'Concept Quizzes':'Music Dictionary';},[]);
+ React.useEffect(()=>{document.title=isDetail?(literacyEntry?literacyTitle(literacyEntry)+' | Concept Dictionary':concept?concept.name+' | Concept Dictionary':'Concept not found | Concept Dictionary'):quizApp?'Concept Quizzes':'Concept Dictionary';},[]);
  const matches=c=>normal(c.name).includes(normal(query.trim()));
  const shownCategories=D.categories;
  const tableColumns=showAll||activeGroup||quizSelecting&&quizCollection?D.categories.map((_,i)=>[...new Set(D.levels.flatMap(l=>D.tables[l][i]))]):D.tables[level];
@@ -507,6 +516,33 @@ function App({initialRun=null,initialNavigation=null}){
   collectionTitle,runningQuiz?.level||(showAll?'ALL':groupLevel));
  const toolbarTitle=collectionBuilder?'Create Collection':collectionTitle||'Create Collection';
  const selectedQuizIds=MusicDictionaryQuizCollections.scopeIds(quizIds,showAll?'ALL':groupLevel);
+ let classroomQuizUrl;
+ if(quizApp&&!isDetail){
+  const quizLevel=runningQuiz?.level||(showAll?'ALL':groupLevel);
+  const settings=runningQuiz||quizSettings;
+  const selected=runningQuiz?.concepts||selectedQuizIds;
+  if(runningQuiz?.literacyQuiz){
+   classroomQuizUrl=new URL(literacyQuizUrl(quizLevel),document.baseURI);
+  }else if(selected.length){
+   classroomQuizUrl=new URL(MusicDictionaryQuizzes.shareUrl({
+    concepts:selected,level:quizLevel,name:runningQuiz?.name||quizName.trim()||'Quiz',
+    settings,collectionId:runningQuiz?.collectionId||quizCollection?.id,
+   }),document.baseURI);
+  }else if(!quizSelecting){
+   const choices=MusicDictionaryQuizCollections.groupsForLevel(quizLevel);
+   const defaultId=quizLevel==='ALL'?'all-concepts':'level-'+quizLevel.toLowerCase();
+   const group=choices.find(item=>item.id===defaultId);
+   if(group)classroomQuizUrl=new URL(MusicDictionaryQuizzes.shareUrl({
+    concepts:group.conceptIds,level:quizLevel,name:group.label,collectionId:group.id,
+    settings:{...settings,defaultLevelQuiz:true},
+   }),document.baseURI);
+  }
+  if(classroomQuizUrl){
+   if(Array.isArray(settings.formats))classroomQuizUrl.searchParams.set('formats',settings.formats.join(','));
+   if(settings.audioQuestions===false)classroomQuizUrl.searchParams.set('audio','0');
+   if(settings.nonAudioQuestions===false)classroomQuizUrl.searchParams.set('text','0');
+  }
+ }
  function saveCollection(){
   const saved={sharedId:savedQuizCollection?.sharedId,name:quizName.trim(),level:showAll?'ALL':groupLevel,concepts:selectedQuizIds};
   if(!saved.name||!saved.concepts.length)return;
@@ -525,7 +561,7 @@ function App({initialRun=null,initialNavigation=null}){
  let content;
  if(isDetail){
   if(literacyEntry)content=h(LiteracyDetail,{entry:literacyEntry,level,showAll,query,views,setViews,progressControl,progressError:views.progress&&progressError,exam:literacyExam,setExam:setLiteracyExam,trends:literacyTrends,setTrends:setLiteracyTrends});
-  else if(!concept)content=h('section',{className:'mc-empty'},h('h1',null,'Concept not found'),h('a',{href:tableUrl(level,query,showAll)+(params.has('literacy')?'&list=literacy':'')},'Return to Music Dictionary'));
+  else if(!concept)content=h('section',{className:'mc-empty'},h('h1',null,'Concept not found'),h('a',{href:tableUrl(level,query,showAll)+(params.has('literacy')?'&list=literacy':'')},'Return to Concept Dictionary'));
   else{
    const features=concept.features;
    // Retain the selected table column for independent navigation.
@@ -553,7 +589,7 @@ function App({initialRun=null,initialNavigation=null}){
     h('article',{className:'mc-article'},
     h('div',{className:'mc-title-row'},h('h1',null,concept.name),h('p',{className:'mc-meta'},concept.level+' · '+concept.categories.join(' · '))),
     views.definition&&h('div',{className:'mc-definition-heading'},h('h2',{className:'mc-section-heading'},viewGlyph('definition'),'Definition',h('span',{className:'mc-definition-meaning-control'+(extendedMeaning?' is-extended':'')},h('button',{type:'button',className:'mc-definition-meaning-toggle','aria-label':extendedMeaning?'Show short definition':'Show extended meaning',title:extendedMeaning?'Show short definition':'Show extended meaning','aria-pressed':extendedMeaning,'aria-controls':'mc-definition-text',onClick:()=>setExtendedMeaning(value=>!value)},viewGlyph('simple'),h('span',{className:'mc-definition-extended-label','aria-hidden':true},'Extended'))))),
-    (views.definition||showPhoto)&&h('div',{className:'mc-definition-layout'+(showPhoto?'':' mc-definition-without-photo')+(!views.definition?' mc-definition-image-only':'')},views.definition&&h('p',{id:'mc-definition-text',className:'mc-definition'},extendedMeaning?concept.definition:(window.MUSIC_CONCEPTS_SIMPLE[concept.id]||concept.definition)),showPhoto&&h('figure',{className:'mc-concept-photo'},h(ConceptPhotoImage,{photo}),h('figcaption',null,h('p',null,photo.caption.trim().replace(/[.!?]+$/,'')+'.')))),
+    (views.definition||showPhoto)&&h('div',{className:'mc-definition-layout'+(showPhoto?'':' mc-definition-without-photo')+(!views.definition?' mc-definition-image-only':'')},views.definition&&h('p',{id:'mc-definition-text',className:'mc-definition'},extendedMeaning?concept.definition:(window.MUSIC_CONCEPTS_SIMPLE[concept.id]||concept.definition)),showPhoto&&h(ConceptPhoto,{photo})),
     views.listen&&h('section',{className:'mc-features'},h('h2',null,h('img',{src:'./ui-icons/concept-companion-ear.svg',alt:'','aria-hidden':true,className:'mc-ear-icon'}),'Listen For'),h('ul',null,features.map((t,i)=>h('li',{key:i},t)))),
     views.video&&h(ConceptVideo,{concept}),views.audio&&h(window.MusicConceptAudio,{concept,showMoreExamples:!escapeEmbed}),!escapeEmbed&&views.trends&&h(ConceptExamTrends,{concept}),!escapeEmbed&&views.related&&h(RelatedConcepts,{concept,query,showAll,frequency,exam,selectedBands,groupId,groupLevel}),!escapeEmbed&&views.games&&h(ConceptGames,{concept})));
 
@@ -603,7 +639,7 @@ function App({initialRun=null,initialNavigation=null}){
 
   count===0&&h('p',{className:'mc-empty',role:'status'},frequency&&selectedBands.length?'No concepts found. Try another percentage range or search.':'No concepts found. Try another search or choose a different level.')));
  if(escapeEmbed)return h('main',{className:'mc-main mc-escape-embed'},content);
- return h('div',{className:window.MLH.shell.pageShellClass},h(window.MLH.AppHeader,{icon:quizApp?'./app-icons/concept-quiz-icon.svg':'./app-icons/music-concepts-icon.svg?v=20261105-dictionary-icon',title:quizApp?'Concept Quizzes':'Music Dictionary',subtitle:quizApp?'Quick questions to strengthen your musical knowledge.':'Explore musical concepts, definitions and examples.',profileUsesSharedSettings:false,profileShowLabel:false,profileState:{dictionaryViews:views,dictionaryQuizSettings:quizSettings},profileShareUrl:runningQuiz?.literacyQuiz?new URL(literacyQuizUrl(runningQuiz.level),document.baseURI).toString():runningQuiz?new URL(MusicDictionaryQuizzes.shareUrl({concepts:runningQuiz.concepts,level:runningQuiz.level,name:runningQuiz.name,settings:runningQuiz,returnTo:runningQuiz.returnTo}),document.baseURI).toString():!isDetail&&quizSelecting&&quizIds.some(id=>cols.flat().some(c=>c.id===id))?new URL(MusicDictionaryQuizzes.shareUrl({concepts:quizIds.filter(id=>cols.flat().some(c=>c.id===id)),level:showAll?'ALL':groupLevel,name:quizName.trim()||'Quiz',settings:quizSettings,returnTo:tableUrl(level,query,showAll,frequency,exam,selectedBands,groupId,quizSelecting?quizCollection:null,quizSelecting&&!quizCollection?{ids:quizIds,name:quizName}:null)}),document.baseURI).toString():new URL(isDetail?(literacyEntry&&!escapeEmbed?literacyDetailUrl(literacyTrends&&literacyExam):location.href):tableUrl(level,query,showAll,frequency,exam,selectedBands,groupId,quizSelecting?quizCollection:null,quizSelecting&&!quizCollection?{ids:quizIds,name:quizName}:null)+(literacyList?'&list=literacy'+literacyTrendQuery(literacyTrends&&literacyExam,literacyBands):''),document.baseURI).toString(),worksheetConfig:literacyEntry||literacyList?undefined:runningQuiz?(runningQuiz.literacyQuiz?undefined:activeQuizSummary&&activeQuizSummary.questionCount>0&&!activeQuizSummary.hasAudio?()=>{activeQuizSummary.openWorksheet();return null;}:undefined):quizApp||showAll?undefined:()=>({version:1,activityId:'music-dictionary',settings:{level:keys[D.levels.indexOf(level)],views:{...views}}})},h(React.Fragment,null,runningQuiz&&h(window.MusicDictionaryQuizStats,{summary:activeQuizSummary}))),h('div',{className:window.MLH.shell.pageContentClass},h('main',{className:window.MLH.shell.mainShellClass+' mc-main'+(quizApp?' cq-screen-transition'+(quizLeaving?' is-quiz-leaving':'')+(quizEntering?' is-quiz-entering':''):'')},content,
+ return h('div',{className:window.MLH.shell.pageShellClass},h(window.MLH.AppHeader,{icon:quizApp?'./app-icons/concept-quiz-icon.svg':'./app-icons/music-concepts-icon.svg?v=20261105-dictionary-icon',title:quizApp?'Concept Quizzes':'Concept Dictionary',classroomActivityUrl:classroomQuizUrl?.href,subtitle:quizApp?'Quick questions to strengthen your musical knowledge.':'Explore musical concepts, definitions and examples.',profileUsesSharedSettings:false,profileShowLabel:false,profileState:{dictionaryViews:views,dictionaryQuizSettings:quizSettings},profileShareUrl:runningQuiz?.literacyQuiz?new URL(literacyQuizUrl(runningQuiz.level),document.baseURI).toString():runningQuiz?new URL(MusicDictionaryQuizzes.shareUrl({concepts:runningQuiz.concepts,level:runningQuiz.level,name:runningQuiz.name,settings:runningQuiz,returnTo:runningQuiz.returnTo}),document.baseURI).toString():!isDetail&&quizSelecting&&quizIds.some(id=>cols.flat().some(c=>c.id===id))?new URL(MusicDictionaryQuizzes.shareUrl({concepts:quizIds.filter(id=>cols.flat().some(c=>c.id===id)),level:showAll?'ALL':groupLevel,name:quizName.trim()||'Quiz',settings:quizSettings,returnTo:tableUrl(level,query,showAll,frequency,exam,selectedBands,groupId,quizSelecting?quizCollection:null,quizSelecting&&!quizCollection?{ids:quizIds,name:quizName}:null)}),document.baseURI).toString():new URL(isDetail?(literacyEntry&&!escapeEmbed?literacyDetailUrl(literacyTrends&&literacyExam):location.href):tableUrl(level,query,showAll,frequency,exam,selectedBands,groupId,quizSelecting?quizCollection:null,quizSelecting&&!quizCollection?{ids:quizIds,name:quizName}:null)+(literacyList?'&list=literacy'+literacyTrendQuery(literacyTrends&&literacyExam,literacyBands):''),document.baseURI).toString(),worksheetConfig:literacyEntry||literacyList?undefined:runningQuiz?(runningQuiz.literacyQuiz?undefined:activeQuizSummary&&activeQuizSummary.questionCount>0&&!activeQuizSummary.hasAudio?()=>{activeQuizSummary.openWorksheet();return null;}:undefined):quizApp||showAll?undefined:()=>({version:1,activityId:'music-dictionary',settings:{level:keys[D.levels.indexOf(level)],views:{...views}}})},h(React.Fragment,null,runningQuiz&&h(window.MusicDictionaryQuizStats,{summary:activeQuizSummary}))),h('div',{className:window.MLH.shell.pageContentClass},h('main',{className:window.MLH.shell.mainShellClass+' mc-main'+(quizApp?' cq-screen-transition'+(quizLeaving?' is-quiz-leaving':'')+(quizEntering?' is-quiz-entering':''):'')},content,
   )),
   isDetail&&h('aside',{className:'mc-legal-attribution','aria-label':'Educational use and copyright'},
    h('p',null,'Independent, non-commercial educational resource for music teaching and study. Third-party music, recordings and images remain the property of their respective rights holders. Examples illustrate musical concepts; no affiliation or endorsement is implied.')));

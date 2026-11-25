@@ -12,7 +12,7 @@ const hasHubUiStylesheet = Array.from(document.querySelectorAll('link[rel="style
 if (!hasHubUiStylesheet) {
   const hubStyle = document.createElement("link");
   hubStyle.rel = "stylesheet";
-  hubStyle.href = new URL("./styles/hub-ui.css?v=20261024-scroll-fades-v2", footerScriptUrl).href;
+  hubStyle.href = new URL("./styles/hub-ui.css?v=571812c13b47", footerScriptUrl).href;
   document.head.appendChild(hubStyle);
 }
 
@@ -22,6 +22,13 @@ if (!document.getElementById('mlh-close-controls-script')) {
   closeControls.id = 'mlh-close-controls-script';
   closeControls.src = new URL('./shared/hub-close-controls.js?v=61b2567261e4', footerScriptUrl).href;
   document.head.appendChild(closeControls);
+}
+if (!window.MLHMenuScrollFades && !Array.from(document.scripts).some(script =>
+  script.src && new URL(script.src).pathname.endsWith("/shared/hub-menu-fades.js")
+)) {
+  const scrollFades = document.createElement("script");
+  scrollFades.src = new URL("./shared/hub-menu-fades.js?v=9f732bc82542", footerScriptUrl).href;
+  document.head.appendChild(scrollFades);
 }
 const footerHomeUrl = new URL("./", footerScriptUrl).href;
 const footerLogoUrl = new URL("./app-icons/the-music-learning-hub-logo.svg", footerScriptUrl).href;
@@ -93,12 +100,12 @@ document.body.insertAdjacentHTML("beforeend", `
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="versionOverlayTitle">
     <button class="close-btn" type="button" data-close aria-label="Close updates">×</button>
     <h2 id="versionOverlayTitle">Updates</h2>
-    <div class="release-notes-content" role="region" aria-label="Update history" tabindex="0">
+    <div class="release-notes-content" data-scroll-fade-panel role="region" aria-label="Update history" tabindex="0">
     <p class="release-notes-version"><strong>Version 2.0 • <time datetime="2026-11">November 2026</time></strong></p>
     <ul class="release-notes-list">
       <li>Updated the name to <strong>The Music Learning Hub</strong>, bringing music literacy, listening, games, performing, composing and teaching tools together.</li>
       <li>Added <strong>Escape Room</strong>: explore six rooms, solve musical knowledge, literacy and listening clues, and use the answers to unlock each door. Includes object sound effects, hints and medal rewards.</li>
-      <li>Added <strong>Music Dictionary</strong> from National 3 to Advanced Higher, with definitions, listening guidance, audio and video examples, related concepts, revision groups and links to practice activities.</li>
+      <li>Added <strong>Concept Dictionary</strong> from National 3 to Advanced Higher, with definitions, listening guidance, audio and video examples, related concepts, revision groups and links to practice activities.</li>
       <li>Added <strong>Concept Audio Library</strong>, a repository of concept audio examples from National 3 to Advanced Higher.</li>
       <li>Added <strong>Exam Trends</strong> to the Dictionary, showing how often concepts appear in reviewed listening papers and linking to relevant questions in the Digital Question Papers.</li>
       <li>Added <strong>Digital Question Papers</strong> at Advanced Higher level.</li>
@@ -111,7 +118,7 @@ document.body.insertAdjacentHTML("beforeend", `
       <li>Added <strong>Classroom Timer</strong> with countdowns, stopwatches and custom labels for classroom activities.</li>
       <li>Added <strong>Stave Paper Generator</strong> for creating and downloading blank and piano manuscript paper.</li>
       <li>Added <strong>Chromatic Tuner</strong> with live pitch feedback and guided string tuning for guitar, bass guitar, ukulele and violin.</li>
-      <li><strong>Experimental:</strong> Host a Game in <strong>Keyboard Note Identification</strong>. Participants can join by QR code and compete in a Quiz or Race. This feature is still being tested and may change.</li>
+      <li>Added <strong>Host</strong> across Music Literacy and selected games. Pupils join by QR code and play the same questions or puzzle. Hosting is in beta and may behave unexpectedly.</li>
       <li>Improved navigation, activity controls, notation, accessibility and the fitted desktop layout across the Hub.</li>
       <li>Bug fixes and other improvements across the Hub.</li>
     </ul>
@@ -186,10 +193,6 @@ footerStyle.textContent = `
     box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
   }
 
-  #aboutOverlay .modal p {
-    color: #000;
-  }
-
   /* Keep the title and close button outside the scrolling release notes. */
   #versionOverlay .modal {
     display: flex;
@@ -222,7 +225,7 @@ footerStyle.textContent = `
     margin: 0;
     padding-left: 22px;
     list-style: disc outside;
-    color: #000;
+    color: #475569;
     line-height: 1.55;
   }
 

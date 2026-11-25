@@ -5,22 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Keyboard Note Identification</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/keyboard-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/keyboard-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
-  <script src="./keyboard-notes.js?v=32f88e7d18ff"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
+  <script src="./keyboard-notes.js?v=9fbb2942b6a1"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
@@ -44,14 +45,14 @@
 .keyboard-question-transition { transition: opacity 260ms ease; }
 
 </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body><div id="root"></div>
+<body data-literacy-activity><div id="root"></div>
 <script src="./shared/keyboard-note-keyboard.js?v=9e2bd82073d9"></script>
 <script type="text/x-mlh-jsx-source" data-src="./shared/keyboard-note-notation.jsx" data-runtime="keyboard-note-notation.js"></script>
-<script src="./generated-runtimes/keyboard-note-notation.js?v=423ccde97545"></script>
+<script src="./generated-runtimes/keyboard-note-notation.js?v=16db175b3ecf"></script>
 <script type="text/x-mlh-jsx-source" data-runtime="keyboardnoteidentification-1.js">
 const {useState, useRef, useEffect} = React;
 const K = window.KeyboardNotes;
@@ -71,9 +72,11 @@ function App(){
   const [level,setLevel]=useState(initialLevel);
   const [showC,setShowC]=window.MLH.useProfileState("showC", ()=>classroomReturnSettings()?.showC||false);
   const [savedOptions,setOptions]=window.MLH.useProfileState("options", ()=>({...classroomReturnSettings()?.options||K.defaults[initialLevel()]}));
-  const [savedTypes,setQuestionTypes]=window.MLH.useProfileState("questionTypes", ()=>({name:!["H","AH"].includes(initialLevel()),find:["H","AH"].includes(initialLevel())}));
-  const options=K.normaliseOptions(savedOptions,level),questionTypes=K.normaliseTypes(savedTypes,level);
-  const questionGenerator=useRef(null);if(!questionGenerator.current)questionGenerator.current=K.create(Math.random);
+  const [savedTypes,setQuestionTypes]=window.MLH.useProfileState("questionTypes", ()=>classroomReturnSettings()?.questionTypes||K.normaliseTypes(null,initialLevel()));
+  const canChooseQuestionTypes = level === "N4" || level === "N5";
+  const options = K.normaliseOptions(savedOptions, level);
+  const questionTypes = K.normaliseTypes(canChooseQuestionTypes ? savedTypes : null, level);
+  const questionGenerator=useRef(null);if(!questionGenerator.current)questionGenerator.current=K.create(window.MLH.classroomActivities.exerciseRandom(location.search));
   const [question,setQuestion]=useState(()=>questionGenerator.current.next(options,questionTypes,level));
   const [questionVisible,setQuestionVisible]=useState(true);
   const [selected,setSelected]=useState(null),[feedback,setFeedback]=useState(null),[fading,setFading]=useState(false);
@@ -112,7 +115,7 @@ function App(){
     }
   }
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader profileState={{ level, showC, options, questionTypes }} icon={ASSET.appIcon} title="Keyboard Note Identification" subtitle="Identify notes on the keyboard and match written notes to keys." classroomPilotUrl="./keyboardnoteidentificationclassroom.html" classroomPilotConfig={() => ({level,options,showC})} worksheetConfig={() => ({ version: 1, activityId: "keyboard-notes", sourceUrl: window.location.href, settings: { level, options, showC, questionTypes } })}>
+    <window.MLH.AppHeader profileState={{ level, showC, options, questionTypes }} icon={ASSET.appIcon} title="Keyboard Note Identification" subtitle="Identify notes on the keyboard and match written notes to keys." worksheetConfig={() => ({ version: 1, activityId: "keyboard-notes", sourceUrl: window.location.href, settings: { level, options, showC, questionTypes } })}>
       <window.MLH.ScoreStreakPanel achievementLevel={level} assets={ASSET} correct={correct} attempted={attempted} accuracy={attempted?Math.round(correct/attempted*100):0} streak={streak} bestStreak={best} resetScore={reset} confettiKey={confetti} autoShowMedals={autoShowMedals} medalEligible={medalEligible} medalThresholdValues={MEDAL_THRESHOLDS}/>
     </window.MLH.AppHeader>
     <div className={window.MLH.shell.pageContentClass}><main className={window.MLH.shell.mainShellClass} onPointerDown={event=>{if(feedback&&questionVisible&&!event.target.closest('button,input,[data-menu-trigger],[data-menu-panel]'))next();}}>
@@ -125,18 +128,18 @@ function App(){
           <div className="hub-menu-anchor relative" ref={customiseRef}>
             <window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]"/>} onClick={()=>{setLevelOpen(false);setCustomiseOpen(value=>!value);}} dataMenuTrigger={true}/>
             {customiseOpen&&<window.MLH.MenuPanel title="Customise" position="left-0" variant="customise" dataMenuPanel={true}>
-              {!['H','AH'].includes(level) && <><window.MLH.MenuSubheading>Question Types</window.MLH.MenuSubheading>
-              {Object.entries({name:'Name the Key',find:'Find the Key'}).map(([type,label])=><window.MLH.MenuToggleRow key={type} glyph={type==='name' ? <img src="./ui-icons/keyboard.svg" alt="" aria-hidden="true" className="h-[22px] w-[22px] object-contain"/> : <span aria-hidden="true" className="inline-flex h-[22px] w-[28px] items-center justify-center text-black"><span className="music-symbol relative top-[3px] text-[17px] leading-none">{window.BRAVURA_SYMBOLS.gClef}</span></span>} label={label} checked={questionTypes[type]} disabled={questionTypes[type]&&Object.values(questionTypes).filter(Boolean).length===1} onChange={()=>toggleQuestionType(type)}/>)}</>}
-              {['H','AH'].includes(level)&&<><window.MLH.MenuSubheading>Clefs</window.MLH.MenuSubheading>{['treble','bass'].map(clef=><window.MLH.MenuToggleRow key={clef} glyph={<span className="music-symbol relative top-[3px] text-[18px]">{window.BRAVURA_SYMBOLS[clef==='treble'?'gClef':'fClef']}</span>} label={clef==='treble'?'Treble Clef':'Bass Clef'} checked={options[clef]} disabled={options[clef]&&!options[clef==='treble'?'bass':'treble']} onChange={()=>toggle(clef)}/>)}</>}
               <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
               <window.MLH.MenuToggleRow glyph={<img src="./ui-icons/guide.svg" alt="" aria-hidden="true" className="h-[22px] w-[22px] object-contain"/>} label="Guide Note" checked={showC} onChange={()=>setShowC(value=>!value)}/>
+              {canChooseQuestionTypes && <><window.MLH.MenuSubheading>Question Types</window.MLH.MenuSubheading>
+              {Object.entries({name:'Name the Key',find:'Find the Key'}).map(([type,label])=><window.MLH.MenuToggleRow key={type} glyph={type==='name' ? <img src="./ui-icons/keyboard.svg" alt="" aria-hidden="true" className="h-[22px] w-[22px] object-contain"/> : <span aria-hidden="true" className="inline-flex h-[22px] w-[28px] items-center justify-center text-black"><span className="music-symbol relative top-[3px] text-[17px] leading-none">{window.BRAVURA_SYMBOLS.gClef}</span></span>} label={label} checked={questionTypes[type]} disabled={questionTypes[type]&&Object.values(questionTypes).filter(Boolean).length===1} onChange={()=>toggleQuestionType(type)}/>)}</>}
+              {['H','AH'].includes(level)&&<><window.MLH.MenuSubheading>Clefs</window.MLH.MenuSubheading>{['treble','bass'].map(clef=><window.MLH.MenuToggleRow key={clef} glyph={<span className="music-symbol relative top-[3px] text-[18px]">{window.BRAVURA_SYMBOLS[clef==='treble'?'gClef':'fClef']}</span>} label={clef==='treble'?'Treble Clef':'Bass Clef'} checked={options[clef]} disabled={options[clef]&&!options[clef==='treble'?'bass':'treble']} onChange={()=>toggle(clef)}/>)}</>}
               {['N5','H','AH'].includes(level)&&<><window.MLH.MenuSubheading>Note names</window.MLH.MenuSubheading>
               {Object.entries(['H','AH'].includes(level)?{sharps:'Sharps',flats:'Flats'}:{sharps:'Sharps',flats:'Flats',enharmonics:'E♯, B♯, C♭ and F♭'}).filter(([key])=>key!=='enharmonics'||level==='N5').map(([key,label])=><window.MLH.MenuToggleRow key={key} glyph={<NoteGroupGlyph type={key}/>} label={label} checked={options[key]} disabled={key==='enharmonics'?!(options.sharps||options.flats):!K.answers({...options,[key]:false}).length} onChange={()=>toggle(key)}/>)}</>}
             </window.MLH.MenuPanel>}
           </div>
         </div>
         <div className="hub-toolbar-feedback" aria-live="polite"><window.MLH.FeedbackBadge feedback={feedback} fading={fading} animationPrefix="note"/></div>
-        <div className="hub-toolbar-right"><window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>next()} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px]"/>}/></div>
+        <div className="hub-toolbar-right"><window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={()=>setStreak(0)} onClick={()=>next()} icon={<img src={ASSET.next} alt="" className="h-[27.8px] w-[27.8px]"/>}/></div>
       </div>
       <div className="keyboard-question-transition" style={{opacity:questionVisible?1:0}}>{question.type==="find"&&<WrittenNote note={question.note}/>}<div className="keyboard-area"><Keyboard question={question} feedback={feedback} options={options} showC={showC} selected={selected} enabled={!feedback&&questionVisible} onSelect={submit}/></div></div>
       <div className="chords-question-card relative z-10 mx-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md">
@@ -162,6 +165,6 @@ function EscapeKeyboardName({ activity }) {
 }
 const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("keyboardNote");
 ReactDOM.createRoot(document.getElementById('root')).render(escapeActivity ? <EscapeKeyboardName activity={escapeActivity} /> : <App/>);
-</script><script src="./generated-runtimes/keyboardnoteidentification-1.js?v=75554caf0965"></script>
-<script src="./footer.js?v=120454beac89"></script>
+</script><script src="./generated-runtimes/keyboardnoteidentification-1.js?v=fe9939d4b548"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body></html>

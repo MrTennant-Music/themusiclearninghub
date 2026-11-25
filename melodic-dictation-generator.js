@@ -1,7 +1,15 @@
 // Melody generation shared by Melodic Dictation and Ear Training.
 // The existing question generators retain their original defaults.
-(function attachMelodicDictationGenerator(MLH) {
+(function attachMelodicDictationGenerator(root, create) {
+  if (typeof module === "object" && module.exports) module.exports = { create };
+  if (typeof window === "object") {
+    const MLH = root.MLH ??= {};
+    const random = MLH.classroomActivities?.exerciseRandom(root.location?.search) ?? Math.random;
+    MLH.MelodicDictation = { ...create(random), create };
+  }
+})(typeof window === "object" ? window : globalThis, function create(exerciseRandom) {
   "use strict";
+  exerciseRandom ??= Math.random;
 
 const BAR_COUNT = 8;
 
@@ -136,7 +144,7 @@ const LEVEL_KEY_IDS = {
 
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
-const randomItem = (items) => items[Math.floor(Math.random() * items.length)];
+const randomItem = (items) => items[Math.floor(exerciseRandom() * items.length)];
 
 const rhythmInfo = (rhythm) => RHYTHMS[rhythm] ?? RHYTHMS.crotchet;
 
@@ -334,7 +342,7 @@ function chooseNextNote({ key, chordLetters, previous, currentIndex, strongBeat,
           });
         return randomItem(fallback.length ? fallback : [previous]);
       }
-      let roll = Math.random() * candidates.reduce((sum, item) => sum + item.weight, 0);
+      let roll = exerciseRandom() * candidates.reduce((sum, item) => sum + item.weight, 0);
       for (const item of candidates) {
         roll -= item.weight;
         if (roll <= 0) return item.candidate;
@@ -581,7 +589,7 @@ function makeCompletionQuestion(level = "N5", attempt = 0, allowDenseAhPatterns 
       const majorKeys = KEYS.filter((key) => (LEVEL_KEY_IDS[level]||LEVEL_KEY_IDS.N5).includes(key.id) && !key.id.endsWith("m"));
       const key = plan?.key ?? forcedKey ?? (level === "N3" || level === "N4"
         ? KEYS.find((item) => item.id === "C")
-        : Math.random() < 0.82 ? randomItem(majorKeys) : KEYS.find((item) => item.id === "Am"));
+        : exerciseRandom() < 0.82 ? randomItem(majorKeys) : KEYS.find((item) => item.id === "Am"));
       const progression = makeChordProgression();
 
       const targetBar = plan?.targetBar ?? (level === "N4" || level === "N5" || isHigherLevel(level)
@@ -628,7 +636,7 @@ function makeCompletionQuestion(level = "N5", attempt = 0, allowDenseAhPatterns 
       const fittedBars = fitChordsToMelody(key, bars);
 
       const question = {
-        id: Math.random().toString(36).slice(2),
+        id: exerciseRandom().toString(36).slice(2),
         key,
         timeSignature,
         bars: fittedBars,
@@ -686,7 +694,7 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
       const majorKeys = levelKeys.filter((key) => !key.id.endsWith("m"));
       const key = plan?.key ?? forcedKey ?? (level === "N3" || level === "N4"
         ? KEYS.find((item) => item.id === "C")
-        : Math.random() < 0.82 ? randomItem(majorKeys) : randomItem(levelKeys.filter((item) => item.id.endsWith("m"))));
+        : exerciseRandom() < 0.82 ? randomItem(majorKeys) : randomItem(levelKeys.filter((item) => item.id.endsWith("m"))));
       const progression = makeEightBarRepetitionProgression();
       const targetBar = plan?.targetBar ?? randomItem([4, 5]);
       const bars = [];
@@ -726,7 +734,7 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
       }
 
       const question = {
-        id: Math.random().toString(36).slice(2),
+        id: exerciseRandom().toString(36).slice(2),
         key,
         timeSignature,
         bars,
@@ -825,7 +833,7 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
       return { barIndex, chordSymbol: plan.chordSymbol, notes, totalBars: DORIAN_BAR_PLANS.length, pattern: events.map(([, rhythm]) => rhythm) };
     });
     return {
-      id: Math.random().toString(36).slice(2), level: "H", key: DORIAN_MODE, timeSignature,
+      id: exerciseRandom().toString(36).slice(2), level: "H", key: DORIAN_MODE, timeSignature,
       bars, barCount: bars.length, questionType: "dorianTonality",
     };
   }
@@ -887,11 +895,11 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
     ];
     const remaining = ATONAL_RHYTHMS.filter(pattern => !patterns.includes(pattern));
     while (patterns.length < 8) {
-      const index = Math.floor(Math.random() * remaining.length);
+      const index = Math.floor(exerciseRandom() * remaining.length);
       patterns.push(...remaining.splice(index, 1));
     }
     for (let index = patterns.length - 1; index > 0; index--) {
-      const other = Math.floor(Math.random() * (index + 1));
+      const other = Math.floor(exerciseRandom() * (index + 1));
       [patterns[index], patterns[other]] = [patterns[other], patterns[index]];
     }
     return patterns.map(pattern => [...pattern]);
@@ -960,7 +968,7 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
       return { barIndex, chordSymbol: null, notes, accompaniment, totalBars: 8, pattern };
     });
     return {
-      id: Math.random().toString(36).slice(2), level: "N5", key: ATONAL_KEY, timeSignature,
+      id: exerciseRandom().toString(36).slice(2), level: "N5", key: ATONAL_KEY, timeSignature,
       bars, barCount: bars.length, questionType: "atonalTonality",
     };
   }
@@ -1051,7 +1059,7 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
     const pair = randomItem(POLYTONAL_KEY_PAIRS);
     const layers = pair.map((keyId, partIndex) => buildPolytonalLayer(POLYTONAL_KEYS[keyId], partIndex, timeSignature));
     return {
-      id: Math.random().toString(36).slice(2), level: "AH", questionType: "polytonalTonality",
+      id: exerciseRandom().toString(36).slice(2), level: "AH", questionType: "polytonalTonality",
       key: { id: "polytonal", tonic: null, signature: [], chords: {} }, timeSignature,
       layers, bars: layers[0].bars, barCount: 8,
     };
@@ -1063,12 +1071,12 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
     if (tonality === "polytonality") return buildPolytonalMelody();
     const keys = KEYS.filter(key => (key.id === "Am") === (tonality === "minor"));
     const key = randomItem(keys);
-    return Math.random() < 0.5
+    return exerciseRandom() < 0.5
       ? makeEightBarRepetitionQuestion("N5", 0, key)
       : makeCompletionQuestion("N5", 0, false, key);
   }
 
-  MLH.MelodicDictation = {
+  return {
     BAR_COUNT,
     TIME_SIGNATURES,
     RHYTHMS,
@@ -1146,4 +1154,4 @@ function makeEightBarRepetitionQuestion(level = "N5", attempt = 0, forcedKey = n
     buildPolytonalMelody,
     buildTonalityMelody,
   };
-})(window.MLH || (window.MLH = {}));
+});

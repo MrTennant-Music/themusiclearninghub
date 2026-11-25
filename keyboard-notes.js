@@ -113,21 +113,30 @@
       if (!options.naturals || options.enharmonics) return null;
       if (!['treble','bass'].every(key => options[key] === undefined || typeof options[key] === 'boolean')) return null;
       if (options.treble === false && options.bass === false) return null;
-      return { level: input.level, options: normaliseOptions(options, input.level), showC: input.showC === true };
+      return { level: input.level, options: normaliseOptions(options, input.level), showC: input.showC === true, questionTypes: normaliseTypes(input.questionTypes, input.level) };
     }
     if (input.level !== 'N5' && (!options.naturals || options.sharps || options.flats || options.enharmonics)) return null;
     const clean = Object.fromEntries(['octaves','naturals','sharps','flats','enharmonics'].map(key => [key,options[key]]));
     if (!answers(clean).length) return null;
-    return { level: input.level, options: clean, showC: input.showC === true };
+    return { level: input.level, options: clean, showC: input.showC === true, questionTypes: normaliseTypes(input.questionTypes, input.level) };
   }
   function classroomKeyId(pitch) { return `key:${pitch}`; }
+  function classroomQuestionPool(options,types,level) {
+    const questions=new Map();
+    for(const question of candidates(options,types,level)){
+      const {type,pitch,note}=question;
+      const key=type==='name'?type+':'+pitch:JSON.stringify([type,note.clef,note.step,note.accidental]);
+      if(!questions.has(key))questions.set(key,question);
+    }
+    return [...questions.values()];
+  }
   function classroomAnswers(options, find) {
     return find ? visibleKeys(options).map(({pitch}) => ({id: classroomKeyId(pitch), pitch})) : answers(options);
   }
   function classroomCorrect(answer, question) {
-    return !!answer && (question.type === 'find' ? answer.pitch === question.pitch : correct(answer, question));
+    return !!answer && (['find','written','choice','accidental-placement'].includes(question.type) ? answer.pitch === question.pitch : correct(answer, question));
   }
-  const api = { letters, defaults, subtitles, keys, visibleKeys, answers, pool, question, correct, writtenNotes, advancedQuestion, makeQuestion, create, candidates, normaliseOptions, normaliseTypes, classroomSettings, classroomKeyId, classroomAnswers, classroomCorrect };
+  const api = { letters, defaults, subtitles, keys, visibleKeys, answers, pool, question, correct, writtenNotes, advancedQuestion, makeQuestion, create, candidates, normaliseOptions, normaliseTypes, classroomSettings, classroomQuestionPool, classroomKeyId, classroomAnswers, classroomCorrect };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.KeyboardNotes = api;
 })(typeof window !== 'undefined' ? window : globalThis);

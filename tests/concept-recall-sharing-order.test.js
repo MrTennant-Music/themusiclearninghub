@@ -81,7 +81,7 @@ test("answer recognition fronts matching groups while invalid and duplicate inpu
     { id: "b", category: "Instruments", answer: "Flute", hint: "Woodwind", introducedAt: "N5" },
   ];
   const context = load(["acceptTypedAnswer"], {
-    CORE: core, gameState: "playing", activeQuestions: questions, answeredRef: { current: new Set() },
+    CORE: core, classroomProgress: null, gameState: "playing", activeQuestions: questions, answeredRef: { current: new Set() },
     window: { clearTimeout() {}, MLH: {} }, shakeTimerRef: { current: null },
     setAnswerInput() {}, setAnsweredIds() {}, setAnswerShake() {},
     setRecentAnswerCategories: value => { recent = value; },
@@ -98,7 +98,7 @@ test("answer recognition fronts matching groups while invalid and duplicate inpu
 test("standard games earn and retain medals with hints on or off at every playable level", () => {
   for (const level of ["N5", "H", "AH"]) {
     for (const showHints of [true, false]) {
-      const medalEligible = vm.runInNewContext(eligibility, { standardGame: true, showHints });
+      const medalEligible = vm.runInNewContext(eligibility, { standardGame: true, showHints, classroomRound: false });
       assert.equal(medalEligible, true);
       const questions = core.questionsForLevel(data.QUESTIONS, level);
       const result = core.createResult({ level, questions, answeredIds: new Set(questions.map(question => question.id)), elapsedMs: 1000, durationMs: 0, standardGame: true, medalEligible });
@@ -107,7 +107,8 @@ test("standard games earn and retain medals with hints on or off at every playab
       assert.equal(saved.records[level].bestMedal, "diamond");
     }
   }
-  assert.equal(vm.runInNewContext(eligibility, { standardGame: false, showHints: true }), false);
+  assert.equal(vm.runInNewContext(eligibility, { standardGame: false, showHints: true, classroomRound: false }), false);
+  assert.equal(vm.runInNewContext(eligibility, { standardGame: true, showHints: true, classroomRound: true }), false);
 });
 
 
@@ -128,7 +129,7 @@ test("adding optional categories retains medals and records, while removing defa
       assert.equal(standardGame, true);
       const questions = context.questionsForSelectedCategories(level, selectedCategories);
       assert(questions.length > context.questionsForSelectedCategories(level, standardCategories).length);
-      const medalEligible = vm.runInNewContext(eligibility, { standardGame });
+      const medalEligible = vm.runInNewContext(eligibility, { standardGame, classroomRound: false });
       const result = core.createResult({ level, questions, answeredIds: new Set(questions.map(q => q.id)), elapsedMs: 1000, standardGame, medalEligible });
       assert.equal(result.medal, "diamond");
       assert.equal(core.updatePersistence(core.emptyPersistence(), result).records[level].bestMedal, "diamond");

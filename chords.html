@@ -5,24 +5,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Chords</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/chords-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/chords-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+<script src="./shared/classroom-activities.js?v=5b0dc3e8d543"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./shared/chords-selection.js?v=e682f9703438"></script>
+  <script src="./practice-melody-generator.js?v=f095a86a75b8"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
   <style>
@@ -37,14 +39,15 @@
       text-rendering: geometricPrecision;
     }
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
 <div id="root"></div>
 
 <script type="text/x-mlh-jsx-source" data-runtime="chords-1.js">
+const exerciseRandom = window.MLH?.classroomActivities?.exerciseRandom(window.location.search) ?? Math.random;
 const { useEffect, useMemo, useRef, useState } = React;
 
 const W = 920;
@@ -97,8 +100,6 @@ const ASSET = {
   gold: "./ui-icons/gold.svg",
   diamond: "./ui-icons/diamond.svg",
   eye: "./ui-icons/eye.svg",
-  metronome: "./ui-icons/metronome.svg",
-  tempo: "./ui-icons/tempo.svg",
 };
 const LEVELS = {
   N5: { label: "National 5", description: "Chords — C major, G major, F major and A minor" },
@@ -199,12 +200,12 @@ const NOTE_POOL = [
   { letter:"A", octave:5, step:10, midi:81 },
 ];
 
-const chordSelection=window.CHORDS_SELECTION.create(Math.random);
-function r(items){ return items[Math.floor(Math.random()*items.length)]; }
+const chordSelection=window.CHORDS_SELECTION.create(exerciseRandom);
+function r(items){ return items[Math.floor(exerciseRandom()*items.length)]; }
 function shuffleCopy(items){
   const copy=[...items];
   for(let i=copy.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
+    const j=Math.floor(exerciseRandom()*(i+1));
     [copy[i],copy[j]]=[copy[j],copy[i]];
   }
   return copy;
@@ -261,29 +262,34 @@ const N5_RHYTHM_PATTERNS = [
   ["crotchet","crotchet","minim"],
   ["minim","crotchet","crotchet"],
 ];
-const N5_SEQUENCE_ACCOMPANIMENT_STYLES = [
-  "block_chords", "waltz", "romantic_octaves", "pop_ballad", "pop_power_piano", "stride_piano",
-];
-const N5_SEQUENCE_CHORD_SYMBOLS = ["I", "IV", "V", "VI"];
-function n5SequenceEvent(time,duration,notes,volume=.052){ return {time,duration,notes:Array.isArray(notes)?notes:[notes],volume}; }
-function n5SequenceAccompanimentEvents(styleId,beats){
-  const beatRange=Array.from({length:beats},(_,index)=>index);
-  const eighthRange=Array.from({length:beats*2},(_,index)=>index*.5);
-  if(styleId==="block_chords") return [n5SequenceEvent(0,beats,["lowRoot","third","fifth","octaveRoot"],.06)];
-  if(styleId==="broken_chords") return eighthRange.map((time,index)=>n5SequenceEvent(time,.48,["root","fifth","octaveRoot","fifth"][index%4],.058));
-  if(styleId==="alberti_bass") return eighthRange.map((time,index)=>n5SequenceEvent(time,.48,["root","fifth","third","fifth"][index%4],.058));
-  if(styleId==="waltz") return [n5SequenceEvent(0,.92,"lowRoot",.068),...beatRange.slice(1).map(time=>n5SequenceEvent(time,.82,["third","fifth","octaveRoot"],.054))];
-  if(styleId==="romantic_octaves") return [n5SequenceEvent(0,beats,["lowRoot","root"],.07),n5SequenceEvent(0,beats,["third","fifth","octaveRoot"],.058)];
-  if(styleId==="pop_ballad") return [n5SequenceEvent(0,Math.min(2,beats),["lowRoot","root"],.066),n5SequenceEvent(Math.min(2,beats-1),Math.max(1,beats-2),["lowFifth","fifth"],.06),n5SequenceEvent(0,beats,["third","fifth","octaveRoot"],.048)];
-  if(styleId==="piano_ballad") return [n5SequenceEvent(0,.92,"lowRoot",.068),...eighthRange.map((time,index)=>n5SequenceEvent(time,.46,["third","fifth","octaveRoot"][index%3],.052))];
-  if(styleId==="contemporary_pop") return [n5SequenceEvent(0,.92,"lowRoot",.068),...beatRange.map(time=>n5SequenceEvent(time+.5,.42,indexParityToken(time),.054)).filter(event=>event.time<beats)];
-  if(styleId==="pop_power_piano") return [n5SequenceEvent(0,Math.min(2,beats),["lowRoot","root","third","fifth"],.07),n5SequenceEvent(Math.min(2,beats-1),Math.max(1,beats-2),["lowFifth","fifth","third"],.064)];
-  if(styleId==="rock_octaves") return eighthRange.map((time,index)=>n5SequenceEvent(time,.45,index<beats?["lowRoot","root"]:["lowFifth","fifth"],.07));
-  if(styleId==="power_chords") return beatRange.map((time,index)=>n5SequenceEvent(time,.86,index<beats/2?["lowRoot","root","fifth"]:["lowFifth","fifth","octaveRoot"],.07));
-  if(styleId==="stride_piano") return beatRange.map((time,index)=>n5SequenceEvent(time,.82,index%2===0?["lowRoot","root"]:["third","fifth","octaveRoot"],index%2===0?.068:.056));
-  return beatRange.map((time,index)=>n5SequenceEvent(time,.86,["lowRoot","lowThird","lowFifth","lowFifth"][index%4],.064));
-}
-function indexParityToken(index){ return index%2?["third","fifth","octaveRoot"]:["third","fifth"]; }
+const { national5, accompaniment } = window.PracticeMelodyGenerator;
+const N5_SEQUENCE_RHYTHMS = {
+  semiquaver: { beats: .25 },
+  dottedQuaver: { beats: .75 },
+  dottedCrotchet: { beats: 1.5 },
+};
+const n5SequenceRhythmInfo = (rhythm) => N5_SEQUENCE_RHYTHMS[rhythm] ?? rhythmInfo(rhythm);
+const n5SequenceTonic = (key) => noteByLetter(key.tonic, 6);
+const generateN5SequenceBar = national5.createPhraseBuilder({
+  notePool: NOTE_POOL,
+  noteBaseIndex: notePoolIndex,
+  tonicStartNote: n5SequenceTonic,
+  chordLettersFor: (key, symbol) => key.chords[symbol].notes,
+  rhythmInfo: n5SequenceRhythmInfo,
+  melodicAccidental: () => null,
+  makeNote: (base, rhythm, barIndex, noteIndex, beatPosition) => ({
+    ...base,
+    id: `${barIndex}-${noteIndex}`,
+    barIndex,
+    noteIndex,
+    rhythm,
+    beatPosition,
+    beats: n5SequenceRhythmInfo(rhythm).beats,
+    writtenAccidental: null,
+  }),
+  random: exerciseRandom,
+  keepStrongBeatsHarmonised: true,
+});
 function noteByPitch(letter, octave){ return NOTE_POOL.find(n=>n.letter===letter&&n.octave===octave) || noteByLetter(letter,6); }
 function normaliseChordAnswer(value){ return normaliseAnswer(value).replace(/major$/,"maj").replace(/minor$/,"min"); }
 function isN5AnswerCorrect(value, chord){
@@ -360,7 +366,7 @@ const AH_CHORD_SPELLINGS = [
   { root:"A", type:"add6", tones:[["A",4,0],["C",5,1],["E",5,0],["F",5,1]] },
   { root:"B", type:"dom7", tones:[["B",4,0],["D",5,1],["F",5,1],["A",5,0]] },
   { root:"B", type:"dim7", tones:[["B",4,0],["D",5,0],["F",5,0],["A",5,-1]] },
-  { root:"B", type:"aug", tones:[["B",4,0],["D",5,1],["F",5,2]] },
+  { root:"B♭", type:"aug", tones:[["B",4,-1],["D",5,0],["F",5,1]] },
   { root:"B", type:"add6", tones:[["B",4,0],["D",5,1],["F",5,1],["G",5,1]] },
 ];
 function normaliseAHChordTypeAnswer(value){ return String(value||"").trim().toLowerCase().replace(/[\s\-]+/g,"").replace(/7/g,"7th").replace(/6/g,"6th").replace(/7thth/g,"7th").replace(/6thth/g,"6th"); }
@@ -468,7 +474,7 @@ function dominantSeventhTone(chord){
   return [seventhLetter, accidentalForInterval(rootTone,seventhLetter,10)];
 }
 function maybeDominantSeventh(symbol,chord){
-  if(symbol !== "V" || Math.random() >= 0.1) return { symbol, chord };
+  if(symbol !== "V" || exerciseRandom() >= 0.1) return { symbol, chord };
   return {
     symbol:"V7",
     chord:{
@@ -597,7 +603,7 @@ function makeAHInversionQuestion(){
   }
   return {
     type:"ahInversionBar",
-    id:Math.random().toString(36).slice(2),
+    id:exerciseRandom().toString(36).slice(2),
     key,
     timeSignature:TIME_SIGNATURES.find(t=>t.id==="4/4"),
     chords,
@@ -627,7 +633,7 @@ function makeAHBassLineQuestion(){
   }
   return {
     type:"ahBassLine",
-    id:Math.random().toString(36).slice(2),
+    id:exerciseRandom().toString(36).slice(2),
     key,
     timeSignature:TIME_SIGNATURES.find(t=>t.id==="4/4"),
     chords,
@@ -665,7 +671,7 @@ function chooseMelodyBase({ key, chord, rhythmId, previousBase, currentIndex, st
     candidates.push({candidate,weight});
   });
   if(!candidates.length) return noteByLetter(r(chord.notes), currentIndex);
-  const total=candidates.reduce((s,i)=>s+i.weight,0); let roll=Math.random()*total;
+  const total=candidates.reduce((s,i)=>s+i.weight,0); let roll=exerciseRandom()*total;
   for(const item of candidates){ roll-=item.weight; if(roll<=0) return item.candidate; }
   return candidates[candidates.length-1].candidate;
 }
@@ -711,7 +717,7 @@ function makeN5Question(){
   });
   return {
     type:"n5",
-    id:Math.random().toString(36).slice(2),
+    id:exerciseRandom().toString(36).slice(2),
     key:KEYS.find(k=>k.id==="C"),
     timeSignature:TIME_SIGNATURES.find(t=>t.id==="4/4"),
     chord,
@@ -720,27 +726,63 @@ function makeN5Question(){
     targetBars:[],
   };
 }
-function n5SequenceWithViPosition(position,reverse=false){
-  const available=N5_SEQUENCE_CHORD_SYMBOLS.filter(symbol=>symbol!=="I"&&symbol!=="VI");
-  const remaining=reverse?[...available].reverse():available;
-  const tail=[];
-  for(let slot=1;slot<=3;slot++) tail.push(slot===position?"VI":remaining.shift());
-  return ["I",...tail];
+function n5SequenceWithViPosition(viPosition, reverse = false) {
+  return national5.makeProgression({ barCount: 4, viPosition, reverse });
 }
 function makeN5SequenceOptions(){
   let sequences;
-  if(Math.random()<.2){
+  if(exerciseRandom()<.2){
     const sharedPosition=r([1,2,3]);
     const otherPosition=r([1,2,3].filter(position=>position!==sharedPosition));
     sequences=[
       n5SequenceWithViPosition(sharedPosition,false),
       n5SequenceWithViPosition(sharedPosition,true),
-      n5SequenceWithViPosition(otherPosition,Math.random()<.5),
+      n5SequenceWithViPosition(otherPosition,exerciseRandom()<.5),
     ];
   } else {
-    sequences=shuffleCopy([1,2,3]).map(position=>n5SequenceWithViPosition(position,Math.random()<.5));
+    sequences=shuffleCopy([1,2,3]).map(position=>n5SequenceWithViPosition(position,exerciseRandom()<.5));
   }
   return shuffleCopy(sequences).map((symbols,index)=>({id:`sequence-${index}`,symbols}));
+}
+// The Hub piano's default note gain and velocity are the full level for each part.
+const N5_PIANO_VOLUME = .08;
+const N5_PIANO_VELOCITY = 96;
+
+function n5SequenceBarAudio(question, bar, meter, styleId) {
+  const melody = bar.notes.map((note, index) => ({
+    midi: effectivePitchForMelodyNote(question, bar, index),
+    time: note.beatPosition,
+    duration: note.beats,
+  }));
+  const pitches = bar.chord.notes.map((letter, index) => pitchForChordLetter(question.key, bar.chord, letter, 3 + index));
+  const midiMap = accompaniment.accompanimentMidiMap(pitches);
+  const pattern = accompaniment.getPatternVariant(styleId, meter);
+  const events = accompaniment.validateAccompanimentPattern(pattern, meter)
+    ? pattern
+    : accompaniment.getPatternVariant("block_chords", meter);
+  const tones = events.flatMap((event) => {
+    const soundingNote = melody.find((note) => event.time >= note.time && event.time < note.time + note.duration);
+    const ceiling = soundingNote ? soundingNote.midi - 1 : undefined;
+    const midis = event.notes.flatMap((token) => accompaniment.accompanimentTokenMidi(token, midiMap));
+    const voicedMidis = new Set(midis.map((midi) => accompaniment.lowerAccompanimentMidiBelow(midi, ceiling)));
+    return [...voicedMidis].map((midi) => ({
+      frequency: midiToFrequency(midi),
+      time: event.time,
+      duration: accompaniment.accompanimentDurationBeats(event.duration, meter),
+      weight: event.volume,
+    }));
+  });
+  // Match the loudest accompaniment pulse to the melody, including overlapping notes.
+  const peakWeight = Math.max(...tones.map(({ time }) => tones.reduce((sum, tone) =>
+    tone.time <= time && time < tone.time + tone.duration ? sum + tone.weight : sum, 0)));
+  const backingTones = tones.map(({ weight, ...tone }) => ({
+    ...tone, volume: N5_PIANO_VOLUME * weight / peakWeight, velocity: N5_PIANO_VELOCITY,
+  }));
+  const melodyTones = melody.map(({ midi, time, duration }) => ({
+    frequency: midiToFrequency(midi), time, duration: duration * .94,
+    volume: N5_PIANO_VOLUME, velocity: N5_PIANO_VELOCITY,
+  }));
+  return [...melodyTones, ...backingTones];
 }
 function makeN5ChordSequenceQuestion(){
   const key=chordSelection.pick("N5-sequence-key",KEYS.filter(item=>["C","F","G"].includes(item.id)));
@@ -748,18 +790,31 @@ function makeN5ChordSequenceQuestion(){
   const options=makeN5SequenceOptions();
   const answerIndex=chordSelection.pick("N5-sequence-answer",[0,1,2]);
   const progression=options[answerIndex].symbols;
-  let previousIndex=notePoolIndex(noteByLetter(key.tonic,6));
-  const bars=progression.map((symbol,barIndex)=>{
-    const melody=makeMelodyForBar(key,symbol,barIndex,previousIndex,timeSignature,progression.length);
-    previousIndex=melody.lastIndex;
-    return {barIndex,chordSymbol:symbol,chord:key.chords[symbol],notes:melody.notes};
+  const allNotes = [];
+  const tonic = n5SequenceTonic(key);
+  const contour = [0, 2, 1, 0];
+  const finalRhythm = { "2/4": "minim", "3/4": "dottedMinim", "4/4": "semibreve" };
+  const bars = progression.map((chordSymbol, barIndex) => {
+    const pattern = barIndex === progression.length - 1
+      ? [finalRhythm[timeSignature.id]]
+      : r(national5.patternsForBar(timeSignature, barIndex, {
+          rhythmInfo: n5SequenceRhythmInfo,
+          isRestRhythm: (rhythm) => rhythm.endsWith("Rest"),
+        }));
+    const bar = generateN5SequenceBar({
+      key, chordSymbol, pattern, barIndex, timeSignature, allNotes,
+      previous: allNotes.at(-1) ?? tonic,
+      totalBars: progression.length,
+      targetStep: tonic.step + contour[barIndex],
+    });
+    return { ...bar, chord: key.chords[chordSymbol] };
   });
   return {
     type:"n5ChordSequence",
-    id:Math.random().toString(36).slice(2),
+    id:exerciseRandom().toString(36).slice(2),
     key,
     timeSignature,
-    accompanimentStyle:r(N5_SEQUENCE_ACCOMPANIMENT_STYLES),
+    accompanimentStyle:chordSelection.pick("N5-sequence-style", accompaniment.styleIds),
     options,
     answerIndex,
     bars,
@@ -773,7 +828,7 @@ function makeHigherQuestion(){
   const progression=makeChordProgression(key);
   let previousIndex=notePoolIndex(noteByLetter(key.tonic,6));
   const bars=progression.map((symbol,barIndex)=>{ const melody=makeMelodyForBar(key,symbol,barIndex,previousIndex,timeSignature); previousIndex=melody.lastIndex; return { barIndex, chordSymbol:symbol, chord:key.chords[symbol], notes:melody.notes }; });
-  return { type:"higher", id:Math.random().toString(36).slice(2), key, timeSignature, bars, targetBars:[5,6] };
+  return { type:"higher", id:exerciseRandom().toString(36).slice(2), key, timeSignature, bars, targetBars:[5,6] };
 }
 function makeAHAudioChordQuestion(){
   const key=KEYS.find(k=>k.id==="C");
@@ -788,7 +843,7 @@ function makeAHAudioChordQuestion(){
   const audioBars=[{ barIndex:0, rootMidi:root.midi, intervals:chordType.intervals, notes:bars[0].notes }];
   return {
     type:"ahAudioChord",
-    id:Math.random().toString(36).slice(2),
+    id:exerciseRandom().toString(36).slice(2),
     key,
     timeSignature,
     targetBar:0,
@@ -800,20 +855,23 @@ function makeAHAudioChordQuestion(){
   };
 }
 function makeQuestion(level="N5", ahCustomise=DEFAULT_AH_CUSTOMISE, n5Customise=DEFAULT_N5_CUSTOMISE){
+  const race = window.MLH?.classroomActivities?.isRace?.() === true;
   if(level==="N5"){
+    if(race) return makeN5Question();
     const pool=[];
     if(n5Customise.chordProgression) pool.push(makeN5ChordSequenceQuestion);
     if(n5Customise.identifyChord) pool.push(makeN5Question);
     return chordSelection.pick("N5-type/"+JSON.stringify(n5Customise),pool.length?pool:[makeN5ChordSequenceQuestion,makeN5Question])();
   }
   if(level==="AH"){
-    const hasAudio=Boolean(ahCustomise.identifyChords);
+    const hasAudio=!race&&Boolean(ahCustomise.identifyChords);
     const hasInsert=ahCustomise.insertPosition;
     const pool=[];
     if(hasAudio) pool.push(makeAHAudioChordQuestion);
     if(hasInsert) pool.push(makeAHInversionQuestion);
     if(ahCustomise.createBassLine) pool.push(makeAHBassLineQuestion);
     if(pool.length) return chordSelection.pick("AH-type/"+JSON.stringify(ahCustomise),pool)();
+    if(race) return r([makeAHInversionQuestion,makeAHBassLineQuestion])();
     return r([makeAHAudioChordQuestion,makeAHInversionQuestion,makeAHBassLineQuestion])();
   }
   return makeHigherQuestion();
@@ -1197,7 +1255,7 @@ function N5Score({question,level,showNoteNames=false}){
 }
 function N5ChordSequenceScore({question,answers,setAnswers,feedback}){
   const selected=answers.n5Sequence;
-  return <div className="w-full space-y-2" role="group" aria-label="Chord sequence answer options">
+  return <div className="w-full space-y-2 py-3" role="group" aria-label="Chord sequence answer options">
     {question.options.map((option,index)=>{
       const selectedOption=selected===option.id;
       const correctOption=index===question.answerIndex;
@@ -1544,34 +1602,10 @@ function AHBassLineScore({question,answers,setAnswers,feedback,showNoteNames=fal
 function MenuSvgGlyph({src,alt=""}){
   return <img src={src} alt={alt} className="h-[20px] w-[20px] object-contain" />;
 }
-function TempoDropdownRow({tempo,setTempo,stopAudio}){
-  const selectedTempo=TEMPOS.find(speed=>speed.id===tempo)||TEMPOS[1];
-  const cycleTempo=()=>{
-    const order=["medium","fast","slow"];
-    const currentIndex=order.indexOf(selectedTempo.id);
-    setTempo(order[(currentIndex+1)%order.length]);
-    stopAudio();
-  };
-  return <div className="hub-toggle-row relative min-h-[44px] overflow-visible">
-    <span className="hub-toggle-label min-w-[145px]">
-      <span className="hub-toggle-glyph">
-        <MenuSvgGlyph src={ASSET.tempo} alt="" />
-      </span>
-      <span className="leading-none">Tempo</span>
-    </span>
-    <button
-      type="button"
-      onClick={cycleTempo}
-      className="flex h-7 w-[86px] items-center justify-center rounded-xl border border-stone-300 bg-white px-2.5 text-sm font-bold text-stone-950 shadow-sm"
-    >
-      <span>{selectedTempo.label}</span>
-    </button>
-  </div>;
-}
 function AHMenuGlyph({children,yOffset=5}){
   return <span className="music-symbol inline-flex h-[22px] min-w-[22px] items-center justify-center text-[18px] font-semibold leading-none text-black" style={{transform:`translateY(${yOffset}px)`}}>{children}</span>;
 }
-function MenuRows({level,tempo,setTempo,metronomeOn,setMetronomeOn,highlightPlayback,setHighlightPlayback,showNoteNames,setShowNoteNames,showScaleDegrees,setShowScaleDegrees,n5Customise,setN5Customise,ahCustomise,setAhCustomise,stopAudio,onN5CustomiseChange,onAHCustomiseChange}){
+function MenuRows({level,highlightPlayback,setHighlightPlayback,showNoteNames,setShowNoteNames,showScaleDegrees,setShowScaleDegrees,n5Customise,setN5Customise,ahCustomise,setAhCustomise,onN5CustomiseChange,onAHCustomiseChange}){
   const toggleN5Option=id=>{
     setN5Customise(current=>{
       const next={...current,[id]:!current[id]};
@@ -1590,32 +1624,6 @@ function MenuRows({level,tempo,setTempo,metronomeOn,setMetronomeOn,highlightPlay
     });
   };
   return <>
-    {(level==="N5"||level==="H")&&<>
-      <window.MLH.MenuSubheading>Audio</window.MLH.MenuSubheading>
-      <TempoDropdownRow tempo={tempo} setTempo={setTempo} stopAudio={stopAudio} />
-    </>}
-    {level==="H"&&<>
-      <window.MLH.MenuToggleRow
-        glyph={<MenuSvgGlyph src={ASSET.metronome} alt="" />}
-        label="Metronome"
-        checked={metronomeOn}
-        onChange={()=>{setMetronomeOn(v=>!v);stopAudio();}}
-      />
-      <window.MLH.MenuToggleRow
-        glyph={<MenuSvgGlyph src={ASSET.eye} alt="" />}
-        label="Follow Playback"
-        checked={highlightPlayback}
-        onChange={()=>setHighlightPlayback(v=>!v)}
-      />
-    </>}
-    {level==="N5"&&<window.MLH.MenuSubheading>Question Types</window.MLH.MenuSubheading>}
-    {level==="N5"&&N5_CUSTOMISE_ROWS.map(row=><window.MLH.MenuToggleRow
-      key={row.id}
-      glyph={<span className="min-w-[34px] text-center text-xs font-black">{row.glyph}</span>}
-      label={row.label}
-      checked={Boolean(n5Customise[row.id])}
-      onChange={()=>toggleN5Option(row.id)}
-    />)}
     <window.MLH.MenuSubheading>Help</window.MLH.MenuSubheading>
     <window.MLH.MenuToggleRow
       glyph={<span className="inline-flex h-[22px] min-w-[28px] items-center justify-center text-[12px] font-black leading-none text-black">ABC</span>}
@@ -1629,6 +1637,20 @@ function MenuRows({level,tempo,setTempo,metronomeOn,setMetronomeOn,highlightPlay
       checked={showScaleDegrees}
       onChange={()=>setShowScaleDegrees(v=>!v)}
     />}
+    {level==="H"&&<window.MLH.MenuToggleRow
+      glyph={<MenuSvgGlyph src={ASSET.eye} alt="" />}
+      label="Follow Playback"
+      checked={highlightPlayback}
+      onChange={()=>setHighlightPlayback(v=>!v)}
+    />}
+    {level==="N5"&&<window.MLH.MenuSubheading>Question Types</window.MLH.MenuSubheading>}
+    {level==="N5"&&N5_CUSTOMISE_ROWS.map(row=><window.MLH.MenuToggleRow
+      key={row.id}
+      glyph={<span className="min-w-[34px] text-center text-xs font-black">{row.glyph}</span>}
+      label={row.label}
+      checked={Boolean(n5Customise[row.id])}
+      onChange={()=>toggleN5Option(row.id)}
+    />)}
     {level==="AH"&&<window.MLH.MenuSubheading>Question Types</window.MLH.MenuSubheading>}
     {level==="AH"&&AH_CUSTOMISE_ROWS.map(row=><window.MLH.MenuToggleRow
       key={row.id}
@@ -1655,8 +1677,7 @@ function App({escapeActivity}={}){
     return LEVELS[requested] ? requested : "N5";
   },[]);
   const [activeLevel,setActiveLevel]=useState(initialLevel);
-  const [tempo,setTempo]=window.MLH.useProfileState("tempo", worksheetReturn?.tempo||(initialLevel==="N5"?"slow":"medium"));
-  const [metronomeOn,setMetronomeOn]=window.MLH.useProfileState("metronomeOn", worksheetReturn?.metronomeOn===true);
+  const tempo = activeLevel === "N5" ? "slow" : "medium";
   const [showNoteNames,setShowNoteNames]=window.MLH.useProfileState("showNoteNames", worksheetReturn?.showNoteNames===true);
   const [showScaleDegrees,setShowScaleDegrees]=window.MLH.useProfileState("showScaleDegrees", worksheetReturn?.showScaleDegrees===true);
   const [savedN5Customise,setN5Customise]=window.MLH.useProfileState("n5Customise", worksheetReturn?.n5Customise||DEFAULT_N5_CUSTOMISE);
@@ -1677,10 +1698,10 @@ function App({escapeActivity}={}){
   const [feedback,setFeedback]=useState(null);
   const [feedbackFading,setFeedbackFading]=useState(false);
   const [highlightPlayback,setHighlightPlayback]=window.MLH.useProfileState("highlightPlayback", worksheetReturn?.highlightPlayback===true);
-  const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
-  const [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
-  const [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
-  const [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, metronomeOn: activeLevel === "H" ? metronomeOn : false, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
+  const [correct,setCorrect]=window.MLH.usePersistentScoreState(0, "correct", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
+  const [attempted,setAttempted]=window.MLH.usePersistentScoreState(0, "attempted", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
+  const [streak,setStreak]=window.MLH.usePersistentScoreState(0, "streak", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
+  const [best,setBest]=window.MLH.usePersistentScoreState(0, "best", { level: activeLevel, scope: "", settings: { questions: activeLevel === "N5" ? n5Customise : activeLevel === "AH" ? ahCustomise : null, options: { tempo: activeLevel === "AH" ? null : tempo, highlightPlayback: activeLevel === "H" ? highlightPlayback : false, showNoteNames, showScaleDegrees: activeLevel === "AH" ? showScaleDegrees : false } } });
   const [confettiKey,setConfettiKey]=useState(0);
   const [autoShowMedals,setAutoShowMedals]=useState(false);
   const [levelOpen,setLevelOpen]=useState(false);
@@ -1754,7 +1775,6 @@ function App({escapeActivity}={}){
     setN5Customise(nextN5Customise);
     setAhCustomise(nextAHCustomise);
     setCustomiseOpen(false);
-    if(level==="N5") setTempo("slow");
     const url=new URL(window.location.href);
     url.searchParams.set("level",level);
     window.history.replaceState(null,"",url.toString());
@@ -1878,20 +1898,10 @@ function App({escapeActivity}={}){
     setAnswers({ahChoice:id});
     score(id===question.chordType.id);
   }
-  function playOscillator(ctx,{frequency,start,duration,volume=.16}){ window.MLH?.playPianoFrequency?.(ctx,ctx.destination,frequency,start,duration,volume); }
-  function playSynthOscillator(ctx,{frequency,start,duration,volume=.052,type="triangle"}){
-    const oscillator=ctx.createOscillator(), gain=ctx.createGain();
-    oscillator.type=type;
-    oscillator.frequency.setValueAtTime(frequency,start);
-    gain.gain.setValueAtTime(.0001,start);
-    gain.gain.exponentialRampToValueAtTime(volume,start+.015);
-    gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume*.55),start+Math.max(.05,duration*.82));
-    gain.gain.exponentialRampToValueAtTime(.0001,start+duration+.06);
-    oscillator.connect(gain); gain.connect((globalThis.MLH?.audioOutput?.(ctx) || ctx.destination));
-    oscillator.start(start); oscillator.stop(start+duration+.1);
-  }
-  function playDrumHit(ctx,start,accented=false,destination=ctx.destination){ window.MLH?.playMetronomeClick?.(ctx,destination,start,accented); }
+  function playOscillator(ctx,{frequency,start,duration,volume=.16,velocity}){ window.MLH?.playPianoFrequency?.(ctx,ctx.destination,frequency,start,duration,volume,velocity); }
+  const classroomRace = window.MLH.classroomActivities?.isRace?.() === true;
   async function playQuestionAudio(startOffsetSeconds=0, forcePlay=false){
+    if(classroomRace)return;
     if(!questionVisible||(answerLock.current&&!feedback)||question.type==="ahInversionBar"||question.type==="ahBassLine") return;
     if((playing || audioRef.current) && !forcePlay){ stopAudio(); return; }
     if(escapeActivity?.bridge.muted()){setPromptMessage("Turn on game audio to listen.");return;}
@@ -1901,7 +1911,17 @@ function App({escapeActivity}={}){
     const playbackLoops=question.type==="n5ChordSequence"?2:1;
     const activeDuration=question.bars.length*barSeconds*playbackLoops;
     const startOffset=clamp(startOffsetSeconds||0,0,Math.max(0,activeDuration-0.05));
-    const frequencies = question.type === "ahAudioChord"
+    const playsWrittenPitch = question.type === "n5ChordSequence" || activeLevel === "H";
+    const n5SequenceAudio = question.type === "n5ChordSequence"
+      ? Array.from({ length: playbackLoops }, (_, loopIndex) => {
+          const meter = accompaniment.classifyMeter(question.timeSignature);
+          return question.bars.map((bar) => {
+            const finalBar = loopIndex === playbackLoops - 1 && bar.barIndex === question.bars.length - 1;
+            return n5SequenceBarAudio(question, bar, meter, finalBar ? "block_chords" : question.accompanimentStyle);
+          });
+        }).flat()
+      : null;
+    const frequencies = n5SequenceAudio ? n5SequenceAudio.flat() : question.type === "ahAudioChord"
       ? question.audioBars.flatMap(bar => [
           ...bar.notes.flatMap((note, index) => {
             const pitches = note.stack?.length ? note.stack.map(tone => tone.midi) : [effectivePitchForMelodyNote(question, question.bars[bar.barIndex], index)];
@@ -1913,14 +1933,8 @@ function App({escapeActivity}={}){
           const chord = bar.chord;
           const melody = bar.notes.flatMap((note, index) => {
             const pitch = effectivePitchForMelodyNote(question, bar, index);
-            return question.type === "n5ChordSequence" ? [pitch + 12] : activeLevel === "H" ? [] : [pitch + 12, pitch + 24];
+            return playsWrittenPitch ? [pitch] : [pitch + 12, pitch + 24];
           });
-          if (question.type === "n5ChordSequence") {
-            const root = pitchForChordLetter(question.key, chord, chord.notes[0], 3);
-            const third = pitchForChordLetter(question.key, chord, chord.notes[1], 4);
-            const fifth = pitchForChordLetter(question.key, chord, chord.notes[2], 5);
-            return [...melody, root - 12, third - 12, fifth - 12, root, third, fifth, root + 12].map(midiToFrequency);
-          }
           return [
             ...melody,
             ...chord.notes.flatMap((letter, index) => {
@@ -1929,50 +1943,28 @@ function App({escapeActivity}={}){
             }),
           ].map(midiToFrequency);
         });
-    let ready;try{ready=await window.MLH.prepareAudioPlayback(ctx,{piano:frequencies,metronome:metronomeOn});}catch{if(audioRef.current===ctx){stopAudio();setPromptMessage("Audio could not start. Please try again.");}return;}
+    let ready;try{ready=await window.MLH.prepareAudioPlayback(ctx,{piano:frequencies});}catch{if(audioRef.current===ctx){stopAudio();setPromptMessage("Audio could not start. Please try again.");}return;}
     if (audioRef.current !== ctx) return;
     if (!ready) { stopAudio(); return; }
     const audioStartTime=ctx.currentTime+.08;
-    if(question.type==="n5ChordSequence"){
-      Array.from({length:playbackLoops},(_,loopIndex)=>loopIndex).forEach(loopIndex=>{
-        question.bars.forEach(bar=>{
-          const playbackBarIndex=loopIndex*question.bars.length+bar.barIndex;
-          const relativeBarStart=playbackBarIndex*barSeconds;
-          const relativeBarEnd=relativeBarStart+barSeconds;
-          if(relativeBarEnd<=startOffset) return;
-          const barStart=audioStartTime+Math.max(relativeBarStart,startOffset)-startOffset;
-          const chord=bar.chord;
-          highlightTimersRef.current.push(setTimeout(()=>setActiveBarIndex(bar.barIndex),Math.max(0,(barStart-ctx.currentTime)*1000)));
-          highlightTimersRef.current.push(setTimeout(()=>setActiveBarIndex(null),Math.max(0,(barStart-ctx.currentTime+barSeconds)*1000)));
-          bar.notes.forEach((note,noteIndex)=>{
-            const relativeNoteStart=relativeBarStart+note.beatPosition*beatSeconds;
-            const relativeNoteEnd=relativeNoteStart+note.beats*beatSeconds;
-            if(relativeNoteEnd<=startOffset) return;
-            const noteStart=audioStartTime+Math.max(relativeNoteStart,startOffset)-startOffset;
-            const duration=(relativeNoteEnd-Math.max(relativeNoteStart,startOffset))*.94;
-            const pitch=effectivePitchForMelodyNote(question,bar,noteIndex)+12;
-            playOscillator(ctx,{frequency:midiToFrequency(pitch),start:noteStart,duration,volume:.025});
-          });
-          const rootMidi=pitchForChordLetter(question.key,chord,chord.notes[0],3);
-          const thirdMidi=pitchForChordLetter(question.key,chord,chord.notes[1],4);
-          const fifthMidi=pitchForChordLetter(question.key,chord,chord.notes[2],5);
-          const midiMap={
-            lowRoot:rootMidi-12, lowThird:thirdMidi-12, lowFifth:fifthMidi-12,
-            root:rootMidi, third:thirdMidi, fifth:fifthMidi, octaveRoot:rootMidi+12,
-          };
-          const isFinalCadenceBar=loopIndex===playbackLoops-1&&bar.barIndex===question.bars.length-1;
-          const accompanimentEvents=isFinalCadenceBar
-            ? [n5SequenceEvent(0,beatsPerBar,["lowRoot","root","third","fifth","octaveRoot"],.07)]
-            : n5SequenceAccompanimentEvents(question.accompanimentStyle,beatsPerBar);
-          accompanimentEvents.forEach(event=>{
-            const relativeEventStart=relativeBarStart+event.time*beatSeconds;
-            const relativeEventEnd=Math.min(relativeBarEnd,relativeEventStart+event.duration*beatSeconds);
-            if(relativeEventEnd<=startOffset) return;
-            const eventStart=audioStartTime+Math.max(relativeEventStart,startOffset)-startOffset;
-            const duration=Math.max(.08,relativeEventEnd-Math.max(relativeEventStart,startOffset));
-            event.notes.flatMap(token=>midiMap[token]??[]).forEach(midi=>{
-              playOscillator(ctx,{frequency:midiToFrequency(midi),start:eventStart,duration,volume:event.volume});
-            });
+    if (n5SequenceAudio) {
+      n5SequenceAudio.forEach((tones, playbackBarIndex) => {
+        const relativeBarStart = playbackBarIndex * barSeconds;
+        const relativeBarEnd = relativeBarStart + barSeconds;
+        if (relativeBarEnd <= startOffset) return;
+        const barIndex = question.bars[playbackBarIndex % question.bars.length].barIndex;
+        const barStart = Math.max(relativeBarStart, startOffset);
+        highlightTimersRef.current.push(setTimeout(() => setActiveBarIndex(barIndex), (audioStartTime + barStart - startOffset - ctx.currentTime) * 1000));
+        highlightTimersRef.current.push(setTimeout(() => setActiveBarIndex(null), (audioStartTime + relativeBarEnd - startOffset - ctx.currentTime) * 1000));
+        tones.forEach((tone) => {
+          const relativeStart = relativeBarStart + tone.time * beatSeconds;
+          const relativeEnd = relativeStart + tone.duration * beatSeconds;
+          if (relativeEnd <= startOffset) return;
+          const audibleStart = Math.max(relativeStart, startOffset);
+          playOscillator(ctx, {
+            ...tone,
+            start: audioStartTime + audibleStart - startOffset,
+            duration: relativeEnd - audibleStart,
           });
         });
       });
@@ -1988,7 +1980,6 @@ function App({escapeActivity}={}){
         const playableDuration=(relativeBarEnd-Math.max(relativeBarStart,startOffset))*.92;
         highlightTimersRef.current.push(setTimeout(()=>setActiveBarIndex(bar.barIndex),Math.max(0,(barStart-ctx.currentTime)*1000)));
         highlightTimersRef.current.push(setTimeout(()=>setActiveBarIndex(null),Math.max(0,(barStart-ctx.currentTime+playableDuration)*1000)));
-        if(metronomeOn){ for(let beat=0;beat<beatsPerBar;beat++){ const beatStart=relativeBarStart+beat*beatSeconds; if(beatStart>=startOffset) playDrumHit(ctx,audioStartTime+beatStart-startOffset,beat===0); } }
         bar.notes.forEach((note,i)=>{
           const relativeNoteStart=relativeBarStart+bar.notes.slice(0,i).reduce((s,n)=>s+n.beats*beatSeconds,0);
           const relativeNoteEnd=relativeNoteStart+note.beats*beatSeconds;
@@ -2019,7 +2010,6 @@ function App({escapeActivity}={}){
       const barStart=audioStartTime+Math.max(relativeBarStart,startOffset)-startOffset, chord=bar.chord;
       highlightTimersRef.current.push(setTimeout(()=>setActiveBarIndex(bar.barIndex),Math.max(0,(barStart-ctx.currentTime)*1000)));
       highlightTimersRef.current.push(setTimeout(()=>setActiveBarIndex(null),Math.max(0,(barStart-ctx.currentTime+(relativeBarEnd-Math.max(relativeBarStart,startOffset)))*1000)));
-      if(metronomeOn){ for(let beat=0;beat<beatsPerBar;beat++){ const beatStart=relativeBarStart+beat*beatSeconds; if(beatStart>=startOffset) playDrumHit(ctx,audioStartTime+beatStart-startOffset,beat===0); } }
       bar.notes.forEach((note,i)=>{
         const relativeNoteStart=relativeBarStart+bar.notes.slice(0,i).reduce((s,n)=>s+n.beats*beatSeconds,0);
         const relativeNoteEnd=relativeNoteStart+note.beats*beatSeconds;
@@ -2030,13 +2020,8 @@ function App({escapeActivity}={}){
         highlightTimersRef.current.push(setTimeout(()=>setActiveNoteId(note.id),startMs));
         highlightTimersRef.current.push(setTimeout(()=>setActiveNoteId(null),startMs+duration*1000));
         const pitch=effectivePitchForMelodyNote(question,bar,i);
-        const melodyPitch = pitch + 12;
-        if (activeLevel === "H") {
-          // Match the main accompaniment voice, while keeping the melody as a synth.
-          playSynthOscillator(ctx,{frequency:midiToFrequency(melodyPitch),start:noteStart,duration:duration*.82,volume:.052});
-        } else {
-          playOscillator(ctx,{frequency:midiToFrequency(melodyPitch),start:noteStart,duration:duration*.82,volume:.032,type:"sine"});
-        }
+        const melodyPitch = playsWrittenPitch ? pitch : pitch + 12;
+        playOscillator(ctx,{frequency:midiToFrequency(melodyPitch),start:noteStart,duration:duration*.82,volume:activeLevel==="H"?.052:.032});
         if (activeLevel !== "H") playOscillator(ctx,{frequency:midiToFrequency(pitch+24),start:noteStart,duration:duration*.5,volume:.008,type:"sine"});
       });
       const accompanimentVolumeScale = 1;
@@ -2062,7 +2047,7 @@ function App({escapeActivity}={}){
   },[escapeActivity]);
   if(escapeActivity)return <EscapeChord activity={escapeActivity} question={question} playing={playing} activeNoteId={activeNoteId} onPlay={()=>playQuestionAudio(0)} prompt={promptMessage} />;
   return <div className={SHELL.pageShellClass || "overflow-x-hidden bg-stone-50 pb-10 text-black md:pb-12"}>
-    <window.MLH.AppHeader profileQrIcon="./ui-icons/qr-code-svgrepo-com.svg?v=20261106-roundest" profileState={{ activeLevel, tempo, metronomeOn, showNoteNames, showScaleDegrees, n5Customise, ahCustomise, highlightPlayback }} icon={ASSET.appIcon} title="Chords" subtitle="Identify, create and apply chords in music." worksheetConfig={activeLevel==="N5"||(activeLevel==="AH"&&(ahCustomise.insertPosition||ahCustomise.createBassLine)) ? () => ({ version: 1, activityId: "chords", sourceUrl: window.location.href, settings: { level: activeLevel, n5Customise, ahCustomise,tempo,metronomeOn,showNoteNames,showScaleDegrees,highlightPlayback } }) : null}>
+    <window.MLH.AppHeader classroomOriginalFormat={!medalEligible || showNoteNames || showScaleDegrees || highlightPlayback} profileQrIcon="./ui-icons/qr-code-svgrepo-com.svg?v=20261106-roundest" profileState={{ activeLevel, showNoteNames, showScaleDegrees, n5Customise, ahCustomise, highlightPlayback }} icon={ASSET.appIcon} title="Chords" subtitle="Identify, create and apply chords in music." worksheetConfig={activeLevel==="N5"||(activeLevel==="AH"&&(ahCustomise.insertPosition||ahCustomise.createBassLine)) ? () => ({ version: 1, activityId: "chords", sourceUrl: window.location.href, settings: { level: activeLevel, n5Customise, ahCustomise,showNoteNames,showScaleDegrees,highlightPlayback } }) : null}>
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel}
         assets={ASSET}
         correct={correct}
@@ -2102,7 +2087,7 @@ function App({escapeActivity}={}){
               dataMenuTrigger={true}
             />
             {customiseOpen&&<window.MLH.MenuPanel title="Customise" position="chords-customise-panel -left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}>
-              <MenuRows level={activeLevel} tempo={tempo} setTempo={setTempo} metronomeOn={metronomeOn} setMetronomeOn={setMetronomeOn} highlightPlayback={highlightPlayback} setHighlightPlayback={setHighlightPlayback} showNoteNames={showNoteNames} setShowNoteNames={setShowNoteNames} showScaleDegrees={showScaleDegrees} setShowScaleDegrees={setShowScaleDegrees} n5Customise={n5Customise} setN5Customise={setN5Customise} ahCustomise={ahCustomise} setAhCustomise={setAhCustomise} stopAudio={stopAudio} onN5CustomiseChange={handleN5CustomiseChange} onAHCustomiseChange={handleAHCustomiseChange}/>
+              <MenuRows level={activeLevel} highlightPlayback={highlightPlayback} setHighlightPlayback={setHighlightPlayback} showNoteNames={showNoteNames} setShowNoteNames={setShowNoteNames} showScaleDegrees={showScaleDegrees} setShowScaleDegrees={setShowScaleDegrees} n5Customise={n5Customise} setN5Customise={setN5Customise} ahCustomise={ahCustomise} setAhCustomise={setAhCustomise} onN5CustomiseChange={handleN5CustomiseChange} onAHCustomiseChange={handleAHCustomiseChange}/>
             </window.MLH.MenuPanel>}
           </div>
         </div>
@@ -2112,7 +2097,7 @@ function App({escapeActivity}={}){
         </div>
 
         <div className="hub-toolbar-right">
-          <window.MLH.SkipButton resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />}/>
+          <window.MLH.SkipButton classroomAnswered={Boolean(feedback)} resetStreak={()=>setStreak(0)} onClick={()=>newQuestion()} icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />}/>
         </div>
       </div>
       <div className={`chords-score-wrap chords-score-${question.type} relative ${question.type==="n5ChordSequence"?"top-0":"-top-[68px]"} transition-opacity duration-300 ${questionVisible?"opacity-100":"opacity-0"}`}>
@@ -2131,7 +2116,7 @@ function App({escapeActivity}={}){
       {question.type==="n5ChordSequence" ? (
         <div className="chords-question-card relative z-10 mt-3 flex min-h-[142px] flex-col justify-between overflow-hidden rounded-xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-md md:mx-3">
           <div className="text-stone-900">
-            <p className="text-base leading-tight">Identify the chord sequence heard. The music is in the key of <strong>{question.key.name}</strong>.</p>
+            <p className="text-base leading-tight text-black">Identify the chord sequence heard. The music is in the key of <strong>{question.key.name}</strong>.</p>
             {promptMessage&&<p className="mt-2 text-sm font-bold text-red-600">{promptMessage}</p>}
           </div>
           <div className="mt-4 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -2243,12 +2228,12 @@ function App({escapeActivity}={}){
             </div>
 
             <div className="flex w-full flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex min-w-0 items-center">
+              {!classroomRace&&<div className="flex min-w-0 items-center">
                 <button onClick={()=>playQuestionAudio(0)} disabled={!questionVisible||feedback?.correct === true} className={window.MLH.PlayButtonClass}>
                   <span className={`hub-playback-glyph ${playing ? "is-stop" : "is-play"}`} aria-hidden="true"></span>
                   <span>{playing?"Stop":"Play"}</span>
                 </button>
-              </div>
+              </div>}
 
               <div className={window.MLH.ActionButtonGroupClass}>
                 <button
@@ -2325,7 +2310,7 @@ const advancedChord = embed?.request("chordInversion") ?? embed?.request("chordB
 const app = advancedChord ? <EscapeAdvancedChord activity={advancedChord} /> : <App escapeActivity={escapeActivity} />;
 if (ReactDOM.createRoot) ReactDOM.createRoot(root).render(app);
 else ReactDOM.render(app, root);
-</script><script src="./generated-runtimes/chords-1.js?v=77afabfe3c02"></script>
-<script src="./footer.js?v=120454beac89"></script>
+</script><script src="./generated-runtimes/chords-1.js?v=1537c67a2610"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

@@ -13,7 +13,6 @@
     "states": [
       "enabledMarkings",
       "enabledTypes",
-      "tempo",
       "metronomeEnabled",
       "followPlayback"
     ],
@@ -30,9 +29,7 @@
       "chordPassage",
       "expandedPassages",
       "chooserLevel",
-      "activityListOpen",
-      "playbackTempo",
-      "isolatedPlaybackTempo"
+      "activityListOpen"
     ],
     "level": "level"
   },
@@ -49,7 +46,6 @@
     "file": "cadences.html",
     "states": [
       "enabled",
-      "tempo",
       "metronome",
       "follow"
     ],
@@ -58,7 +54,6 @@
   {
     "file": "chords.html",
     "states": [
-      "tempo",
       "metronomeOn",
       "showNoteNames",
       "showScaleDegrees",
@@ -72,7 +67,6 @@
     "file": "rhythmicdictation.html",
     "states": [
       "followPlayback",
-      "tempo",
       "metronomeOn",
       "syncopationOn",
       "enabledQuestionTypes"
@@ -84,7 +78,6 @@
     "states": [
       "enabledTypes",
       "enabledDynamics",
-      "tempo",
       "metronomeEnabled",
       "followPlayback"
     ],
@@ -118,14 +111,13 @@
   {
     "file": "keysignatures.html",
     "states": [
-      "modes"
+      "enabledKeys"
     ],
     "level": "session.level"
   },
   {
     "file": "melodicdictation.html",
     "states": [
-      "tempo",
       "metronomeOn",
       "followPlayback"
     ],
@@ -145,8 +137,7 @@
       "enabledRhythms",
       "enabledTimeSignatures",
       "restsEnabled",
-      "tiesEnabled",
-      "tempo"
+      "tiesEnabled"
     ],
     "level": "activeLevel"
   },
@@ -154,7 +145,6 @@
     "file": "repeatsigns.html",
     "states": [
       "enabledQuestionTypes",
-      "tempo",
       "metronomeEnabled",
       "followPlayback"
     ],
@@ -335,7 +325,7 @@
     "level": null
   },
   {
-    "file": "bandle.jsx",
+    "file": "pitched.jsx",
     "states": [
       "gameMode"
     ],

@@ -5,36 +5,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Note Identification</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/notenaming-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/notenaming-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/classroom-activities.js?v=6595d67f934e"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./shared/escape-literacy-activity.js?v=1a8b8c9ea278"></script>
   <link rel="stylesheet" href="./styles/escape-literacy-activity.css?v=3d4a547d1869" />
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js"></script>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
-  <link rel="stylesheet" href="./styles/sight-reading.css?v=c214c1e9506b" />
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
+  <link rel="stylesheet" href="./styles/sight-reading.css?v=e3fe84d0f5b7" />
   <script src="./shared/note-identification-core.js?v=688df1d056ef"></script>
   <script src="./sight-reading-core.js?v=c1b944267812"></script>
+  <style>
+    .note-identification-customise > .hub-menu-scroll { max-height: none; }
+  </style>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body class="overflow-x-hidden bg-stone-50">
+<body data-literacy-activity class="overflow-x-hidden bg-stone-50">
   <div id="root"></div>
 
-  <script type="text/x-mlh-jsx-source" data-src="./sight-reading.jsx?v=e20ea2dd69b1" data-runtime="noteidentification-1.js"></script><script src="./generated-runtimes/noteidentification-1.js?v=8df8b02f7a03"></script>
+  <script type="text/x-mlh-jsx-source" data-src="./sight-reading.jsx?v=a323662d1933" data-runtime="noteidentification-1.js"></script><script src="./generated-runtimes/noteidentification-1.js?v=f57ce37952f3"></script>
   <script type="text/x-mlh-jsx-source" data-runtime="noteidentification-2.js">
     const { useCallback, useEffect, useMemo, useRef, useState } = React;
 
@@ -169,7 +173,7 @@
 
 
     const {LETTERS,SHARPS,FLATS,LEVELS,NOTE_DATA,ADVANCED_ONLY,possibleQuestions} = window.NOTE_IDENTIFICATION_CORE;
-    const noteGenerator=window.NOTE_IDENTIFICATION_CORE.create(Math.random);
+    const noteGenerator=window.NOTE_IDENTIFICATION_CORE.create(window.MLH.classroomActivities.exerciseRandom(location.search));
     function buildQuestion(settings,previousId=null){return noteGenerator.next(settings,previousId);}
 
     const playFeedbackSound = (...args) => window.MLH?.playFeedbackSound?.(...args);
@@ -242,7 +246,7 @@
           }
 
           button:focus-visible {
-            outline: 2px solid rgba(22,163,74,.35);
+            outline: 2px solid var(--mlh-focus-color, #2563eb);
             outline-offset: 2px;
           }
 
@@ -631,7 +635,7 @@
           <button
             type="button"
             onClick={onStartSightReading}
-            className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600"
+            className="mt-1 flex min-h-[44px] w-full items-center gap-3 rounded-xl border border-black bg-black px-3 py-2 text-left text-white transition hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             <img src="./ui-icons/game-type.svg" alt="" aria-hidden="true" className="h-[24px] w-[24px] shrink-0 object-contain invert" />
             <span className="hub-toggle-label leading-none" style={{ color: "inherit" }}>Speed Mode</span>
@@ -732,7 +736,7 @@
       const fadeTimerRef = useRef(null);
       const questionTransitionRef = useRef(null);
       const medalTimersRef = useRef([]);
-      const [sightReadingOpen, setSightReadingOpen] = useState(false);
+      const [sightReadingOpen, setSightReadingOpen] = window.MLH.useProfileState("sightReadingOpen", false);
 
       const initialLevel = useMemo(() => {
         const requested = new URLSearchParams(window.location.search).get("level");
@@ -895,7 +899,7 @@
         <div className={`overflow-x-hidden pb-10 md:pb-12 ${appClasses}`}>
           <AppStyles />
 
-          <window.MLH.AppHeader profileState={{ activeLevel, settings, showNoteNames }} icon={ASSET.appIcon} title="Note Identification" subtitle="Identify note names in the treble and bass clef." worksheetConfig={() => ({ version: 1, activityId: "notenaming", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
+          <window.MLH.AppHeader profileState={{ activeLevel, settings, showNoteNames, sightReadingOpen }} icon={ASSET.appIcon} title="Note Identification" subtitle="Identify note names in the treble and bass clef." worksheetConfig={() => ({ version: 1, activityId: "notenaming", sourceUrl: window.location.href, settings: { level: activeLevel, ...settings } })}>
             {!sightReadingOpen && <ScoreStreakPanel achievementLevel={activeLevel}
               correct={correct}
               attempted={attempted}
@@ -917,7 +921,7 @@
               levelLabel={LEVELS[activeLevel]?.label || activeLevel}
               reducedMotion={false}
               renderScore={(question, colour, progress, reducedMotion, upcoming, showNote) => <SightReadingScore question={question} colour={colour} progress={progress} reducedMotion={reducedMotion} upcoming={upcoming} showNote={showNote}/>}
-              onClose={() => { setSightReadingOpen(false); makeNewQuestion(settings); }}
+              onClose={window.MLH.classroomExercise ? undefined : () => { setSightReadingOpen(false); makeNewQuestion(settings); }}
             /> : <main
               ref={mainRef}
               className="relative z-0 min-h-[520px] overflow-visible rounded-2xl border border-stone-200 bg-white px-3 pb-0 pt-[10px] shadow-sm sm:min-h-[390px] sm:px-4 md:h-auto md:min-h-0 md:overflow-visible md:px-6 md:pb-6 md:pt-[14px]"
@@ -958,7 +962,7 @@
                     />
 
                     {menuOpen && menuMode === "customise" && (
-                      <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise">
+                      <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" className="note-identification-customise">
                         <CustomiseMenu
                           settings={settings}
                           setSettings={setSettings}
@@ -977,7 +981,8 @@
                 </div>
 
                 <window.MLH.SkipButton
-                  onClick={() => makeNewQuestion(settings, true)}
+                  classroomAnswered={Boolean(feedback)}
+                  onClick={() => makeNewQuestion(settings, !feedback || !window.MLH.classroomActivities.isStreakRace())}
                   icon={<img src={ASSET.next} alt="" aria-hidden="true" className="h-[27.8px] w-[27.8px] object-contain" />}
                 />
               </div>
@@ -1056,8 +1061,8 @@
 
     const escapeActivity = window.MLH.EscapeLiteracyActivity?.request("noteNames");
     ReactDOM.render(escapeActivity ? <EscapeNoteNames activity={escapeActivity} /> : <App />, document.getElementById("root"));
-  </script><script src="./generated-runtimes/noteidentification-2.js?v=40aebbdbf12a"></script>
+  </script><script src="./generated-runtimes/noteidentification-2.js?v=33521986cb79"></script>
 
-  <script src="./footer.js?v=120454beac89"></script>
+  <script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

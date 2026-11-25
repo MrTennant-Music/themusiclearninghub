@@ -3,6 +3,7 @@
 (function () {
   const normalize = (value) => String(value || "").toLocaleLowerCase("en-GB")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/𝄫/g, " double flat ")
     .replace(/[♯#]/g, " sharp ").replace(/♭/g, " flat ")
     .replace(/[’']/g, "").replace(/&/g, " and ")
     .replace(/\bseventh\b/g, "7th").replace(/\bsixth\b/g, "6th")
@@ -1057,6 +1058,7 @@
   };
   const variantsFor = (round, answer) => {
     const key = normalize(answer);
+    if (round.requireFullAnswer) return [key];
     const dynamics = round.id === "builtin-concept-recall-dynamics" || normalize(round.label) === "dynamics";
     const variants = [answer, ...(round.answerAliases?.[answer] || [])];
     if (dynamics) variants.push(...(dynamicAliases[answer] || []));

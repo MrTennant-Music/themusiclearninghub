@@ -90,7 +90,7 @@
   const generators=new WeakMap();
   function generator(random=Math.random){if(!generators.has(random))generators.set(random,create(random));return generators.get(random);}
   function generateQuestion(config={}){return generator(config.random||Math.random).next(config);}
-  function pickMode(modes,level){return generator().pickMode(modes,level);}
+  function pickMode(modes,level,random){return generator(random).pickMode(modes,level);}
   function questionSignature(question) { return JSON.stringify([question.type, question.startIndex, question.endIndex, question.targetIndex, question.intervalSize, question.startAccidental, question.targetAccidental, question.keySignature]); }
   window.MLHIntervalsWorksheet = { create, normaliseModes, pickMode, generateQuestion, questionSignature, noteByIndex, notes: NOTES, intervalLabel };
 }());

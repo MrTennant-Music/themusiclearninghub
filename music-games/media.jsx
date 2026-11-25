@@ -28,8 +28,9 @@
       src: media.src,
       onError: () => setFailed(true)
     };
-    const credit = media.sourceUrl && <a className="ig-image-credit" href={media.sourceUrl} target="_blank" rel="noopener noreferrer" title={[media.credit, media.license].filter(Boolean).join(' · ')}>{media.type === 'audio' ? 'Audio credit' : 'Image credit'}</a>;
-    if (media.type === 'image') return <><img {...props} className="ig-media-image" alt={media.name || 'Activity image'} draggable="false" />{credit}</>;
+    const attribution = [media.credit, media.license].filter(Boolean).join(' · ');
+    if (media.type === 'image') return <img {...props} className="ig-media-image" alt={media.name || 'Activity image'} draggable="false" title={attribution || undefined} aria-description={attribution || undefined} />;
+    const credit = media.sourceUrl && <a className="ig-image-credit" href={media.sourceUrl} target="_blank" rel="noopener noreferrer" title={attribution}>Audio credit</a>;
     if (media.type === 'audio') return <><audio {...props} controls preload="metadata" aria-label={media.name || 'Audio clip'} />{credit}</>;
     if (media.type === 'video') return <video {...props} controls preload="metadata" playsInline aria-label={media.name || 'Video clip'} />;
     return null;

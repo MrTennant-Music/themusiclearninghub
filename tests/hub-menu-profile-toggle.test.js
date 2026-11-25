@@ -7,6 +7,31 @@ const fs = require("node:fs");
 const menuSource = fs.readFileSync("shared/hub-menu.js", "utf8");
 const practiceSource = fs.readFileSync("practicequestions.html", "utf8");
 
+test("Help is the first section in the activity settings menus", () => {
+  const helpHeading = /<(?:window\.MLH\.)?Menu(?:Subheading|SectionHeading)\b[^>]*>\s*Help\s*<\//g;
+  const pages = fs.readdirSync(".").filter((name) => name.endsWith(".html"));
+  let checked = 0;
+  for (const page of pages) {
+    const source = fs.readFileSync(page, "utf8");
+    for (const heading of source.matchAll(helpHeading)) {
+      const beforeHeading = source.slice(0, heading.index);
+      assert.match(beforeHeading, /(?:<>|<(?:div|section|window\.MLH\.MenuPanel)\b[^<>]*>)\s*$/, page);
+      checked++;
+    }
+  }
+  assert.ok(checked > 0);
+});
+
+test("the keyboard activity loads the current Help-first runtime", () => {
+  const { createHash } = require("node:crypto");
+  const runtimePath = "generated-runtimes/keyboardnoteidentification-1.js";
+  const runtime = fs.readFileSync(runtimePath, "utf8");
+  const page = fs.readFileSync("keyboardnoteidentification.html", "utf8");
+  const version = createHash("sha256").update(runtime).digest("hex").slice(0, 12);
+  assert.ok(page.includes(`${runtimePath}?v=${version}`));
+  assert.match(runtime, /MenuSubheading,null,"Help"[\s\S]*?label:"Guide Note"[\s\S]*?MenuSubheading,null,"Question Types"/);
+});
+
 test("formatted toggle labels do not share an object-string profile key", () => {
   assert.match(menuSource, /const toggleKey = profileKey \?\? \(typeof label === "string" \? label : null\);/);
   assert.match(menuSource, /getToggle\(toggleKey\)/);

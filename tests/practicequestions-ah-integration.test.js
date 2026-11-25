@@ -14,7 +14,7 @@ function excludes(text, message) {
   assert.equal(source.includes(text), false, message);
 }
 
-includes("./practice-melody-generator.js?v=20260710-ah-rules", "The AH generator must load before the page app");
+assert.match(source, /<script src="\.\/practice-melody-generator\.js\?v=[^"]+"><\/script>[\s\S]*<script type="text\/x-mlh-jsx-source"/, "The shared generator must load before the page app");
 includes("const ADVANCED_HIGHER_DEVELOPMENT_BARS = [8, 9, 10, 11];", "Development questions must use bars 9-12");
 includes("const ADVANCED_HIGHER_VARIATION_BARS = [4, 5, 6, 7];", "Variation questions must use bars 5-8");
 includes("const ADVANCED_HIGHER_CHORD_IDENTIFY_BAR = 8;", "Chord identification must use bar 9");
@@ -35,7 +35,7 @@ includes("questionSelectionLevel === \"AH\" || level === \"H\" ? ADVANCED_HIGHER
 includes("const targetBarIndex = randomItem(unusedQuestionBars([10, 11]));", "AH rhythmic dictation must target bars 11-12");
 includes("forceFinalDominantCadence: forceAdvancedHigherDominantCadence", "A cadence with a chord-type question must use the dominant-seventh exception");
 includes("!forceAdvancedHigherDominantCadence ? cadenceBarIndexes : []", "The dominant-seventh cadence exception must be allowed to share bars 15-16");
-includes("&& Math.random() < 0.1;", "The dominant-seventh cadence exception must be rare enough for other chord types to appear");
+includes("&& exerciseRandom() < 0.1;", "The dominant-seventh cadence exception must be rare enough for other chord types to appear");
 includes("const activeTimeSignature = timeSignatureForBar(question, barIndex);", "Chord slots must follow a line-3 time change");
 includes("{ beat: 3, beats: 2, rhythm: \"minim\" }", "AH chord slots in 5/4 must preserve the 3+2 grouping");
 includes("barlineQuestionPromptText(barlineTargets[0], question.bars.length)", "AH barline prompts must retain two-digit bar numbers");
@@ -66,8 +66,6 @@ includes("function advancedHigherPlaybackSlotsForBar(question, bar)", "AH playba
 includes("advancedHigherChordPlaybackMidiMap(question, bar, advancedHigherPlaybackSlotForBeat(advancedHigherChordSlots, event.time))", "AH accompaniment patterns must follow generated chord inversions at each pulse");
 includes("function melodyCeilingMidiForBeat(question, bar, beat = 0)", "Playback must calculate a melody-aware ceiling for accompaniment notes");
 includes("lowerAccompanimentMidiBelow(midi, melodyCeilingMidiForBeat(question, bar, beatOffset))", "Accompaniment playback must be lowered below the melody at each pulse");
-includes("const ACCOMPANIMENT_MIN_MIDI = 45; // A2", "Practice Questions accompaniment must never sound below A2");
-includes("while (adjusted < ACCOMPANIMENT_MIN_MIDI) adjusted += 12;", "Low Practice Questions accompaniment notes must be raised by octaves to the A2 floor");
 includes("const MELODY_MIN_MIDI = 57; // A3", "Practice Questions melodies must never sound below A3");
 includes("const MELODY_MAX_MIDI = 84; // C6", "Practice Questions melodies must never sound above C6");
 includes("playPianoMidi(ctx, gainNode, fitMelodyPlaybackMidi(midi)", "Every Practice Questions melody playback call must enforce the shared A3-C6 range");
@@ -79,13 +77,10 @@ const melodyRegisterContext = {};
 vm.runInNewContext(`${melodyRegisterSource}\nthis.results=[]; for(let midi=0;midi<128;midi++) this.results.push(fitMelodyPlaybackMidi(midi));`,melodyRegisterContext);
 assert.equal(Math.min(...melodyRegisterContext.results),57,"Every Practice Questions melody placement must be A3 or higher");
 assert.equal(Math.max(...melodyRegisterContext.results),84,"Every Practice Questions melody placement must be C6 or lower");
-const accompanimentRegisterSource = source.slice(
-  source.indexOf("const ACCOMPANIMENT_MIN_MIDI = 45;"),
-  source.indexOf("function lowerAccompanimentMidiValues")
-);
-const accompanimentRegisterContext = {};
-vm.runInNewContext(`${accompanimentRegisterSource}\nthis.results=[]; for(let midi=0;midi<128;midi++) for(let ceiling=0;ceiling<128;ceiling++) this.results.push(lowerAccompanimentMidiBelow(midi,ceiling));`,accompanimentRegisterContext);
-assert.equal(Math.min(...accompanimentRegisterContext.results),45,"Every Practice Questions accompaniment placement must be A2 or higher");
+const { lowerAccompanimentMidiBelow } = require("../practice-melody-generator.js").accompaniment;
+const accompanimentMidis = Array.from({ length: 128 }, (_, midi) =>
+  Array.from({ length: 128 }, (_, ceiling) => lowerAccompanimentMidiBelow(midi, ceiling))).flat();
+assert.equal(Math.min(...accompanimentMidis), 45, "Every Practice Questions accompaniment placement must be A2 or higher");
 excludes("{ rests: [\"quaverRest\"], before: [\"quaver\", \"quaver\", \"quaver\"], after: [\"crotchet\"], ties: [1] }", "Rest questions must not use the awkward tied-quaver 3/4 template");
 includes("{ rests: [\"quaverRest\"], before: [\"crotchet\", \"quaver\"], after: [\"crotchet\"] }", "3/4 rest questions must include a clean untied quaver-rest template");
 includes("const chordFittingCandidates = candidates.filter(({ bar, candidate }) => {", "Enharmonic source spellings must prefer chord tones on the primary beat");

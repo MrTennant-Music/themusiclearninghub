@@ -6,7 +6,7 @@ const index = fs.readFileSync("index.html", "utf8");
 
 [
   'READY: "ready"', 'COUNTING: "countingIn"', 'PERFORMING: "performing"', 'CALCULATING: "calculating"', 'RESULTS: "results"', 'REFERENCE: "playingReference"',
-  'min="60" max="120" step="5"', 'useProfileState("tempo", 90)', 'event.repeat', 'event.button !== 0', 'performance.now()', 'visibilitychange',
+  'event.repeat', 'event.button !== 0', 'performance.now()', 'visibilitychange',
   'playMetronomeClick', 'toggleReference', 'Try Again', 'Next Question', 'ui-icons/restart.svg', 'aria-live="polite"', 'role="region"', 'tabIndex="0"',
   'reading-score-scroll', 'reading-rhythms-core.js',
   'ui-icons/tap.svg', 'ui-icons/spacebar.svg', 'ui-icons/mouse.svg', 'pulsesPerBar * 2', 'SHARED_NOTATION_CONFIG',
@@ -29,7 +29,7 @@ const index = fs.readFileSync("index.html", "utf8");
   'inputTimesRef', 'now - time <= 1000', 'CORE.inputLimit(CORE.expectedOnsetsSeconds(rhythm, tempo))', 'spamDetected: true', 'Too many successive inputs detected. Repeatedly tapping ends the question.',
   'earlyCaptureSeconds', 'tapTime < -earlyCaptureSeconds', '[ACTIVITY_STATES.COUNTING, ACTIVITY_STATES.PERFORMING].includes(stateRef.current)',
   'playFeedbackSound?.(nextResult.passed, false, null)', 'playFeedbackSound?.(false, false, null)', 'getStreakMedal?.(nextStreak)', 'playFeedbackSound?.(true, true, medal?.sound)',
-  'ToolbarFeedback', 'FeedbackBadge feedback={result ? { correct: result.passed } : null}', '{result.percentage}% Accuracy',
+  'ToolbarFeedback', 'FeedbackBadge feedback={result ? { correct: result.passed } : null}', '{result.percentage}%',
   'absolute left-1/2 top-full',
   'onGlobalPointerDown', 'event.pointerType === "mouse"', 'tapAreaRef.current?.contains(event.target)', 'window.addEventListener("pointerdown", onGlobalPointerDown, { passive: false })',
   'feedbackRevealed', 'h-[305px]', 'sm:h-[280px]', 'pointer-events-none', 'opacity-[0.65] grayscale', 'border-t border-stone-300',
@@ -37,6 +37,7 @@ const index = fs.readFileSync("index.html", "utf8");
 ].forEach((requiredText) => assert(page.includes(requiredText), `Missing integration safeguard: ${requiredText}`));
 
 assert(index.includes('href: "readingrhythms.html"'), "Reading Rhythms card is missing from index.html");
+assert(!page.includes('aria-label="Tempo in beats per minute"'), "Reading Rhythms uses its default tempo");
 assert(index.includes('"Reading Rhythms": "app-icons/readingrhythm-icon.svg"'), "Reading Rhythms icon mapping is missing");
 assert(page.includes('event.target.closest("button,input,select,a,[data-menu-panel],[data-menu-trigger]")'), "Pointer taps on controls must be ignored");
 assert(page.includes('event.target.closest?.("button,input,select,textarea,a")'), "Spacebar taps inside controls must be ignored");

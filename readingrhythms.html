@@ -5,23 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1280" />
   <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
-  <link rel="stylesheet" href="./styles/desktop-layout.css?v=605f791dfa61" />
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
   <title>Reading Rhythms</title>
   <link rel="icon" type="image/svg+xml" href="./app-icons/readingrhythm-icon.svg" />
   <link rel="apple-touch-icon" href="./app-icons/readingrhythm-icon.svg" />
   <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
   <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
-  <link rel="stylesheet" href="./styles/hub-ui.css?v=9a18c93ad0e6" />
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
   <script src="./vendor/react/react.production.min.js"></script>
   <script src="./vendor/react/react-dom.production.min.js"></script>
   <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
   <script src="./shared/shared-notation-config.js?v=20260629"></script>
   <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
   <script src="./shared/hub-audio.js?v=d40eb5d1fa2d"></script>
-  <script src="./shared/hub-progress.js?v=a92c0fb77614"></script>
-  <script src="./shared/hub-achievements.js?v=478b1a3918b9"></script>
-  <script src="./shared/hub-shell.js?v=4903ed644a8a"></script>
-  <script src="./shared/hub-menu.js?v=65fb98f2f970"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/classroom-activities.js?v=5b0dc3e8d543"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
   <script src="./reading-rhythms-core.js?v=c1586c27cbbf"></script>
   <style>
     @font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
@@ -35,11 +36,11 @@
     .reading-rhythm-retired #resources { display: none; }
 
   </style>
-  <script defer src="./shared/hub-menu-fades.js?v=20261024-stable-options"></script>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
 <link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
 <script src="./shared/hub-touch.js?v=43d579e0d082"></script>
 </head>
-<body>
+<body data-literacy-activity>
 <div id="root"></div>
 <script type="text/x-mlh-jsx-source" data-runtime="readingrhythms-1.js">
 const { useEffect, useMemo, useRef, useState } = React;
@@ -47,7 +48,7 @@ const CORE = window.READING_RHYTHMS_CORE;
 const SYMBOLS = window.BRAVURA_SYMBOLS || {};
 const SHARED_CONFIG = window.SHARED_NOTATION_CONFIG || {};
 const ACTIVITY_STATES = Object.freeze({ READY: "ready", COUNTING: "countingIn", PERFORMING: "performing", CALCULATING: "calculating", RESULTS: "results", REFERENCE: "playingReference" });
-const ASSET = { appIcon: "app-icons/readingrhythm-icon.svg", levels: "ui-icons/levels.svg", customise: "ui-icons/customise.svg", next: "ui-icons/next.svg", restart: "ui-icons/restart.svg", bronze: "ui-icons/bronze.svg", silver: "ui-icons/silver.svg", gold: "ui-icons/gold.svg", diamond: "ui-icons/diamond.svg", tempo: "ui-icons/tempo.svg", tap: "ui-icons/tap.svg", spacebar: "ui-icons/spacebar.svg", mouse: "ui-icons/mouse.svg" };
+const ASSET = { appIcon: "app-icons/readingrhythm-icon.svg", levels: "ui-icons/levels.svg", customise: "ui-icons/customise.svg", next: "ui-icons/next.svg", restart: "ui-icons/restart.svg", bronze: "ui-icons/bronze.svg", silver: "ui-icons/silver.svg", gold: "ui-icons/gold.svg", diamond: "ui-icons/diamond.svg", tap: "ui-icons/tap.svg", spacebar: "ui-icons/spacebar.svg", mouse: "ui-icons/mouse.svg" };
 const LEVELS = Object.fromEntries(Object.entries(CORE.LEVELS).map(([key, level]) => [key, { ...level, shortLabel: key, description: level === CORE.LEVELS.N3 ? "Crotchet • Minim • Dotted minim • Semibreve" : level === CORE.LEVELS.N4 ? "Paired quavers • Grouped semiquavers" : level === CORE.LEVELS.N5 ? "Dotted rhythms • Scotch snap" : key === "H" ? "Compound time • Rests • Triplets" : "5/4 • Ties • Syncopation" }]));
 const NEUTRAL_CLEF = "\uE069";
 const SCORE = { width: 920, height: 180, lineY: 88, musicLeft: 145, right: 880, barWidth: (880 - 145) / 2 };
@@ -210,7 +211,7 @@ function CompactToggleButton({ label, glyph: glyphContent, checked, onChange, di
     const timer = window.setTimeout(onChange, restored ? 0 : 70);
     return () => window.clearTimeout(timer);
   }, [label, checked, onChange]);
-  return <button type="button" disabled={disabled} onClick={() => { window.MLH.profileSettings?.setToggle(label, !checked); onChange(); }} aria-label={`Toggle ${label}`} title={label} aria-pressed={checked} data-profile-toggle={label} className="hub-toggle-row" style={{ height: tall ? "56px" : "44px", minHeight: tall ? "56px" : "44px", marginBottom: 0, padding: tall ? "7px 64px 7px 10px" : "10px 64px 10px 14px", overflow: "visible", position: "relative" }}><span className="flex h-full items-center justify-center"><span className={visibleLabel ? "absolute flex h-9 w-9 items-center justify-center" : "relative flex h-full items-center justify-center"} style={visibleLabel ? { left: `${12 + glyphShiftX}px`, top: "50%", transform: `translateY(calc(-50% + ${glyphShiftY}px))` } : { left: `${glyphShiftX}px`, top: `${glyphShiftY}px` }}>{glyphContent}</span>{visibleLabel && <span className="absolute left-[46px] top-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-semibold leading-none">{visibleLabel}</span>}</span><span className={`hub-toggle-track shrink-0 ${checked ? "is-on" : ""}`} style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><span className="hub-toggle-thumb" /></span></button>;
+  return <button type="button" disabled={disabled} onClick={() => { window.MLH.profileSettings?.setToggle(label, !checked); onChange(); }} aria-label={`Toggle ${label}`} title={label} aria-pressed={checked} data-profile-toggle={label} className="hub-toggle-row" style={{ marginBottom: 0, padding: tall ? "7px 64px 7px 10px" : "10px 64px 10px 14px", overflow: "visible", position: "relative" }}><span className="flex h-full items-center justify-center"><span className={visibleLabel ? "absolute flex h-9 w-9 items-center justify-center" : "relative flex h-full items-center justify-center"} style={visibleLabel ? { left: `${12 + glyphShiftX}px`, top: "50%", transform: `translateY(calc(-50% + ${glyphShiftY}px))` } : { left: `${glyphShiftX}px`, top: `${glyphShiftY}px` }}>{glyphContent}</span>{visibleLabel && <span className="absolute left-[46px] top-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-semibold leading-none">{visibleLabel}</span>}</span><span className={`hub-toggle-track shrink-0 ${checked ? "is-on" : ""}`} style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><span className="hub-toggle-thumb" /></span></button>;
 }
 
 function RhythmToggleButton({ option, checked, onChange, disabled }) { return <CompactToggleButton label={option.label} glyph={<RhythmMenuGlyph option={option} />} checked={checked} onChange={onChange} disabled={disabled} />; }
@@ -226,12 +227,10 @@ function OptionMenuGlyph({ type }) {
   return <svg viewBox="0 0 70 70" className="relative -left-[3px] -top-px h-9 w-9 overflow-visible" aria-hidden="true"><g transform="translate(0, 7) scale(1.05)"><CalibratedSymbol symbolKey="quarterRest" x={32} y={28} /></g></svg>;
 }
 
-function CustomiseMenu({ activeLevel, enabledRhythms, enabledTimeSignatures, restsEnabled, tiesEnabled, toggleRhythm, toggleTimeSignature, toggleRests, toggleTies, tempo, setTempo, disabled }) {
+function CustomiseMenu({ activeLevel, enabledRhythms, enabledTimeSignatures, restsEnabled, tiesEnabled, toggleRhythm, toggleTimeSignature, toggleRests, toggleTies, disabled }) {
   const options = RHYTHM_OPTIONS.filter((option) => CORE.LEVELS[activeLevel].rhythmIds.includes(option.id));
   const signatureIds = CORE.LEVELS[activeLevel].timeSignatureIds;
   return <>
-    <window.MLH.MenuSubheading>Tempo</window.MLH.MenuSubheading>
-    <div className="hub-toggle-row shrink-0 flex-col !items-stretch gap-2 px-3 py-3"><div className="flex items-center justify-between gap-4"><span className="hub-toggle-label"><span className="hub-toggle-glyph"><img src={ASSET.tempo} alt="" className="h-5 w-5" /></span><span>Tempo</span></span><strong>{tempo} bpm</strong></div><input type="range" min="60" max="120" step="5" value={tempo} disabled={disabled} aria-label="Tempo in beats per minute" onChange={(event) => setTempo(Number(event.target.value))} className="w-full accent-black disabled:opacity-50" /></div>
     <window.MLH.MenuSubheading>Time Signatures</window.MLH.MenuSubheading>
     <div className="grid grid-cols-2 gap-2"><div className="space-y-2">{signatureIds.filter((id) => !CORE.TIME_SIGNATURES[id].compound).map((id) => <CompactToggleButton key={id} label={id} glyph={<TimeSignatureMenuGlyph signatureId={id} />} checked={Boolean(enabledTimeSignatures[id])} disabled={disabled} onChange={() => toggleTimeSignature(id)} />)}</div><div className="space-y-2">{signatureIds.filter((id) => CORE.TIME_SIGNATURES[id].compound).map((id) => <CompactToggleButton key={id} label={id} glyph={<TimeSignatureMenuGlyph signatureId={id} />} checked={Boolean(enabledTimeSignatures[id])} disabled={disabled} onChange={() => toggleTimeSignature(id)} />)}</div></div>
     <window.MLH.MenuSubheading>Rhythms</window.MLH.MenuSubheading>
@@ -241,7 +240,7 @@ function CustomiseMenu({ activeLevel, enabledRhythms, enabledTimeSignatures, res
 }
 
 function ToolbarFeedback({ result }) {
-  return <div className="relative flex items-center justify-center text-center"><window.MLH.FeedbackBadge feedback={result ? { correct: result.passed } : null} fading={false} animationPrefix="note" />{result && <span className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap text-xs font-semibold leading-none text-stone-500">{result.percentage}% Accuracy</span>}</div>;
+  return <div className="relative flex items-center justify-center text-center"><window.MLH.FeedbackBadge feedback={result ? { correct: result.passed } : null} fading={false} animationPrefix="note" />{result && <span className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap text-xs font-semibold leading-none text-stone-500">{result.percentage}%</span>}</div>;
 }
 
 function BeatBoxGroup({ label, pulsesPerBar, bars = 2, currentIndex, showNumbers = false }) {
@@ -252,6 +251,8 @@ function BeatBoxGroup({ label, pulsesPerBar, bars = 2, currentIndex, showNumbers
 }
 
 function App() {
+  const exerciseRandom = useMemo(() => window.MLH.classroomActivities.exerciseRandom(location.search), []);
+  const streakRace = window.MLH.classroomActivities.isStreakRace();
   const startLevel = initialLevel();
   const initialEnabled = Object.fromEntries(CORE.LEVELS[startLevel].rhythmIds.map((id) => [id, true]));
   const initialTimeSignatures = Object.fromEntries(CORE.LEVELS[startLevel].timeSignatureIds.map((id) => [id, true]));
@@ -260,9 +261,8 @@ function App() {
   const [savedEnabledTimeSignatures, setEnabledTimeSignatures] = window.MLH.useProfileState("enabledTimeSignatures", initialTimeSignatures);
   const [savedRestsEnabled, setRestsEnabled] = window.MLH.useProfileState("restsEnabled", CORE.LEVELS[startLevel].rests);
   const [savedTiesEnabled, setTiesEnabled] = window.MLH.useProfileState("tiesEnabled", CORE.LEVELS[startLevel].ties);
-  const [savedTempo, setTempo] = window.MLH.useProfileState("tempo", 90);
-  const { enabledRhythms, enabledTimeSignatures, restsEnabled, tiesEnabled, tempo } = CORE.normaliseSettings(activeLevel, { enabledRhythms: savedEnabledRhythms, enabledTimeSignatures: savedEnabledTimeSignatures, restsEnabled: savedRestsEnabled, tiesEnabled: savedTiesEnabled, tempo: savedTempo });
-  const [rhythm, setRhythm] = useState(() => CORE.generateRhythm(startLevel, Math.random, "", enabledRhythms, {
+  const { enabledRhythms, enabledTimeSignatures, restsEnabled, tiesEnabled, tempo } = CORE.normaliseSettings(activeLevel, { enabledRhythms: savedEnabledRhythms, enabledTimeSignatures: savedEnabledTimeSignatures, restsEnabled: savedRestsEnabled, tiesEnabled: savedTiesEnabled });
+  const [rhythm, setRhythm] = useState(() => CORE.generateRhythm(startLevel, exerciseRandom, "", enabledRhythms, {
     timeSignatureIds: Object.keys(enabledTimeSignatures).filter(id => enabledTimeSignatures[id]), restsEnabled, tiesEnabled,
   }));
   const [activityState, setActivityState] = useState(ACTIVITY_STATES.READY);
@@ -286,12 +286,12 @@ function App() {
 
   function transition(next) { stateRef.current = next; setActivityState(next); }
   function clearTimers() { timersRef.current.forEach((timer) => window.clearTimeout(timer)); timersRef.current = []; }
-  function closeAudio() { if (!audioRef.current) return; try { (globalThis.MLH?.closeAudioContext?.(audioRef.current) || audioRef.current.close()); } catch {} audioRef.current = null; }
+  function closeAudio() { if (!audioRef.current) return; if (!streakRace) { try { (globalThis.MLH?.closeAudioContext?.(audioRef.current) || audioRef.current.close()); } catch {} } audioRef.current = null; }
   function cancelAudioAndTimers() { clearTimers(); closeAudio(); setCountInNumber(null); setPlayBeatNumber(null); setActivePlaybackEventId(null); }
   function resetAttempt(nextState = ACTIVITY_STATES.READY) { cancelAudioAndTimers(); tapsRef.current = []; inputTimesRef.current = []; resultsCalculatedRef.current = false; setResult(null); transition(nextState); }
   function resetScore() { setCorrect(0); setAttempted(0); setStreak(0); setBestStreak(0); setConfettiKey(0); resetAttempt(); }
   function generationOptions(times = enabledTimeSignatures, rests = restsEnabled, ties = tiesEnabled) { return { timeSignatureIds: CORE.LEVELS[activeLevel].timeSignatureIds.filter((id) => times[id]), restsEnabled: rests, tiesEnabled: ties }; }
-  function makeNewRhythm(level = activeLevel, enabled = enabledRhythms, options = generationOptions()) { const next = CORE.generateRhythm(level, Math.random, CORE.rhythmSignature(rhythm), enabled, options); setRhythm(next); resetAttempt(); setStatus("New rhythm ready."); }
+  function makeNewRhythm(level = activeLevel, enabled = enabledRhythms, options = generationOptions()) { const next = CORE.generateRhythm(level, exerciseRandom, CORE.rhythmSignature(rhythm), enabled, options); setRhythm(next); resetAttempt(); setStatus("New rhythm ready."); }
   function applyLevel(level) { cancelAudioAndTimers(); const levelInfo = CORE.LEVELS[level]; const nextEnabled = Object.fromEntries(levelInfo.rhythmIds.map((id) => [id, true])); const nextTimes = Object.fromEntries(levelInfo.timeSignatureIds.map((id) => [id, true])); const nextOptions = { timeSignatureIds: levelInfo.timeSignatureIds, restsEnabled: levelInfo.rests, tiesEnabled: levelInfo.ties }; setActiveLevel(level); setEnabledRhythms(nextEnabled); setEnabledTimeSignatures(nextTimes); setRestsEnabled(levelInfo.rests); setTiesEnabled(levelInfo.ties); setRhythm(CORE.generateRhythm(level, Math.random, "", nextEnabled, nextOptions)); setLevelOpen(false); setCustomiseOpen(false);     setConfettiKey(0); setResult(null); transition(ACTIVITY_STATES.READY); setStatus(`${levelInfo.label} rhythm ready.`); }
   function toggleRhythm(id) {
     if (activeAttempt) return;
@@ -318,7 +318,7 @@ function App() {
     const nextStreak = nextResult.passed ? streak + 1 : 0;
     window.MLH.playFeedbackSound?.(nextResult.passed, false, null);
     setResult(nextResult); setAttempted((value) => value + 1);
-    if (nextResult.passed) { setCorrect((value) => value + 1); setStreak(nextStreak); setBestStreak((best) => Math.max(best, nextStreak)); if ([10,15,20,30].includes(nextStreak)) { const medal = window.MLH.getStreakMedal?.(nextStreak); setConfettiKey((key) => key + 1); timersRef.current.push(window.setTimeout(() => window.MLH.playFeedbackSound?.(true, true, medal?.sound), 180)); } }
+    if (nextResult.passed) { setCorrect((value) => value + 1); setStreak(nextStreak); setBestStreak((best) => Math.max(best, nextStreak)); if (!streakRace && [10,15,20,30].includes(nextStreak)) { const medal = window.MLH.getStreakMedal?.(nextStreak); setConfettiKey((key) => key + 1); timersRef.current.push(window.setTimeout(() => window.MLH.playFeedbackSound?.(true, true, medal?.sound), 180)); } }
     else setStreak(0);
     transition(ACTIVITY_STATES.RESULTS); setStatus(`Results: ${nextResult.percentage}% accuracy. ${nextResult.accurate} of ${nextResult.totalExpected} notes accurate.`); closeAudio();
   }
@@ -338,12 +338,13 @@ function App() {
     if (activeAttempt || audioRef.current) return;
     cancelAudioAndTimers(); setResult(null); setTapPulse(0); tapsRef.current = []; inputTimesRef.current = []; resultsCalculatedRef.current = false; lastPointerTimeRef.current = -Infinity;
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) { setStatus("Audio playback is not supported in this browser."); return; }
-    const ctx = new AudioContextClass(); audioRef.current = ctx;
+    if (!streakRace && !AudioContextClass) { setStatus("Audio playback is not supported in this browser."); return; }
+    const ctx = streakRace ? { get currentTime() { return performance.now() / 1000; } } : new AudioContextClass();
+    audioRef.current = ctx;
     performanceStartRef.current = Infinity;
     transition(ACTIVITY_STATES.COUNTING); setLevelOpen(false); setCustomiseOpen(false);
-    let ready = false;
-    try { ready = await window.MLH.prepareAudioPlayback(ctx, { metronome: true }); } catch {}
+    let ready = streakRace;
+    if (!streakRace) { try { ready = await window.MLH.prepareAudioPlayback(ctx, { metronome: true }); } catch {} }
     if (audioRef.current !== ctx) return;
     if (!ready) { cancelAudioAndTimers(); transition(ACTIVITY_STATES.READY); setStatus("Audio could not start. Please try again."); return; }
     const pulseSeconds = 60 / tempo, pulsesPerBar = rhythm.timeSignature.pulsesPerBar, countBars = ["2/4", "6/8"].includes(rhythm.timeSignature.id) ? 2 : 1, countPulses = pulsesPerBar * countBars, totalPulses = pulsesPerBar * 2;
@@ -351,10 +352,10 @@ function App() {
     performanceStartRef.current = performanceStart; transition(ACTIVITY_STATES.COUNTING); setStatus(`${countBars === 1 ? "One-bar" : "Two-bar"} count in before you begin.`); tapAreaRef.current?.focus();
     for (let pulse = 0; pulse < countPulses; pulse += 1) {
       const clickTime = countStart + pulse * pulseSeconds;
-      window.MLH.playMetronomeClick?.(ctx, (globalThis.MLH?.audioOutput?.(ctx) || ctx.destination), clickTime, pulse % pulsesPerBar === 0);
+      if (!streakRace) window.MLH.playMetronomeClick?.(ctx, (globalThis.MLH?.audioOutput?.(ctx) || ctx.destination), clickTime, pulse % pulsesPerBar === 0);
       timersRef.current.push(window.setTimeout(() => setCountInNumber(pulse + 1), Math.max(0, (clickTime - ctx.currentTime) * 1000)));
     }
-    for (let pulse = 0; pulse < totalPulses; pulse += 1) window.MLH.playMetronomeClick?.(ctx, (globalThis.MLH?.audioOutput?.(ctx) || ctx.destination), performanceStart + pulse * pulseSeconds, pulse % pulsesPerBar === 0);
+    if (!streakRace) for (let pulse = 0; pulse < totalPulses; pulse += 1) window.MLH.playMetronomeClick?.(ctx, (globalThis.MLH?.audioOutput?.(ctx) || ctx.destination), performanceStart + pulse * pulseSeconds, pulse % pulsesPerBar === 0);
     for (let pulse = 0; pulse < totalPulses; pulse += 1) {
       const beatTime = performanceStart + pulse * pulseSeconds;
       timersRef.current.push(window.setTimeout(() => setPlayBeatNumber(pulse + 1), Math.max(0, (beatTime - ctx.currentTime) * 1000)));
@@ -420,12 +421,12 @@ function App() {
   }, [rhythm, tempo]);
 
   return <div className={window.MLH.shell.pageShellClass}>
-    <window.MLH.AppHeader profileState={{ activeLevel, enabledRhythms, enabledTimeSignatures, restsEnabled, tiesEnabled, tempo }} icon={ASSET.appIcon} title="Reading Rhythms" subtitle="Perform rhythms in time with the music by reading notation.">
+    <window.MLH.AppHeader profileState={{ activeLevel, enabledRhythms, enabledTimeSignatures, restsEnabled, tiesEnabled }} icon={ASSET.appIcon} title="Reading Rhythms" subtitle="Perform rhythms in time with the music by reading notation.">
       <window.MLH.ScoreStreakPanel achievementLevel={activeLevel} assets={ASSET} correct={correct} attempted={attempted} accuracy={accuracy} streak={streak} bestStreak={bestStreak} resetScore={resetScore} confettiKey={confettiKey} medalThresholdValues={[10,15,20,30]} />
     </window.MLH.AppHeader>
     <div className={window.MLH.shell.pageContentClass}>
       <main ref={tapAreaRef} tabIndex="0" role="region" aria-label="Reading Rhythms performance area" className={`${window.MLH.shell.mainShellClass} reading-tap-area flex min-h-[620px] flex-col gap-4 pb-5 md:min-h-[520px]`} onPointerDown={handlePointer}>
-        <window.MLH.AppToolbar left={<div className={`flex items-center gap-2 ${activeAttempt ? "opacity-50" : ""}`}><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.levels} alt="" className="h-[26px] w-[26px]" />} activeLevel={activeLevel} activeLabel={CORE.LEVELS[activeLevel].label} onClick={() => { if (activeAttempt) return; setCustomiseOpen(false); setLevelOpen((open) => !open); }} dataMenuTrigger={true} />{levelOpen && <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS} /></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]" />} onClick={() => { if (activeAttempt) return; setLevelOpen(false); setCustomiseOpen((open) => !open); }} dataMenuTrigger={true} />{customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><CustomiseMenu activeLevel={activeLevel} enabledRhythms={enabledRhythms} enabledTimeSignatures={enabledTimeSignatures} restsEnabled={restsEnabled} tiesEnabled={tiesEnabled} toggleRhythm={toggleRhythm} toggleTimeSignature={toggleTimeSignature} toggleRests={toggleRests} toggleTies={toggleTies} tempo={tempo} setTempo={setTempo} disabled={activeAttempt} /></window.MLH.MenuPanel>}</div></div>} feedback={<ToolbarFeedback result={result} />} right={<window.MLH.SkipButton resetStreak={() => setStreak(0)} onClick={() => makeNewRhythm()} icon={<img src={ASSET.next} alt="" className="h-[27px] w-[27px]" />} />} />
+        <window.MLH.AppToolbar left={<div className={`flex items-center gap-2 ${activeAttempt ? "opacity-50" : ""}`}><div className="hub-menu-anchor relative" ref={levelRef}><window.MLH.LevelButton icon={<img src={ASSET.levels} alt="" className="h-[26px] w-[26px]" />} activeLevel={activeLevel} activeLabel={CORE.LEVELS[activeLevel].label} onClick={() => { if (activeAttempt) return; setCustomiseOpen(false); setLevelOpen((open) => !open); }} dataMenuTrigger={true} />{levelOpen && <window.MLH.MenuPanel title="Level" position="left-0" dataMenuPanel={true}><window.MLH.LevelMenu activeLevel={activeLevel} onSelect={applyLevel} levels={LEVELS} /></window.MLH.MenuPanel>}</div><div className="hub-menu-anchor relative" ref={customiseRef}><window.MLH.CustomiseButton icon={<img src={ASSET.customise} alt="" className="h-[26px] w-[26px]" />} onClick={() => { if (activeAttempt) return; setLevelOpen(false); setCustomiseOpen((open) => !open); }} dataMenuTrigger={true} />{customiseOpen && <window.MLH.MenuPanel title="Customise" position="-left-[66px] sm:left-0" variant="customise" dataMenuPanel={true}><CustomiseMenu activeLevel={activeLevel} enabledRhythms={enabledRhythms} enabledTimeSignatures={enabledTimeSignatures} restsEnabled={restsEnabled} tiesEnabled={tiesEnabled} toggleRhythm={toggleRhythm} toggleTimeSignature={toggleTimeSignature} toggleRests={toggleRests} toggleTies={toggleTies} disabled={activeAttempt} /></window.MLH.MenuPanel>}</div></div>} feedback={<ToolbarFeedback result={result} />} right={<window.MLH.SkipButton classroomAnswered={Boolean(result)} resetStreak={() => setStreak(0)} onClick={() => makeNewRhythm()} icon={<img src={ASSET.next} alt="" className="h-[27px] w-[27px]" />} />} />
         {activityState === ACTIVITY_STATES.PERFORMING && tapPulse > 0 && <div key={tapPulse} className="pointer-events-none absolute z-30" style={tapFlashPosition.centred ? { left: "50%", top: "92px", transform: "translate(-50%, -50%)" } : { left: `${tapFlashPosition.x}px`, top: `${tapFlashPosition.y}px`, transform: "translate(-50%, -50%)" }}><span className="reading-tap-pulse block h-5 w-5 rounded-full bg-black" /></div>}
         <div className="relative flex min-h-[220px] flex-1 items-center justify-center px-1 sm:px-3">
           <RhythmScore rhythm={rhythm} tempo={tempo} activePlaybackEventId={activityState === ACTIVITY_STATES.REFERENCE ? activePlaybackEventId : null} results={activityState === ACTIVITY_STATES.RESULTS || activityState === ACTIVITY_STATES.REFERENCE ? result : null} />
@@ -439,7 +440,7 @@ function App() {
             </div>
             <div className="mt-auto border-t border-stone-300 pt-3">
               {!feedbackRevealed && <button type="button" disabled={activityState !== ACTIVITY_STATES.READY} onClick={startAttempt} className={`mx-auto flex h-11 w-[200px] shrink-0 items-center justify-center rounded-xl px-4 text-base font-semibold shadow-md ${activityState === ACTIVITY_STATES.READY ? "bg-black text-white" : "bg-stone-300 text-stone-500"}`}>Start</button>}
-              {feedbackRevealed && <div className="flex flex-nowrap items-center gap-2 overflow-x-auto"><div className="flex shrink-0 items-center gap-2"><button type="button" onClick={toggleReference} className="flex h-11 w-[112px] items-center justify-center gap-2 rounded-xl border border-black bg-black px-3 text-sm font-semibold text-white"><span className={`hub-playback-glyph ${activityState === ACTIVITY_STATES.REFERENCE ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{activityState === ACTIVITY_STATES.REFERENCE ? "Stop" : "Play"}</span></button><button type="button" disabled={activityState === ACTIVITY_STATES.REFERENCE} onClick={() => { resetAttempt(); setStatus("Same rhythm ready to try again."); }} className="flex h-11 w-[132px] items-center justify-center gap-1 rounded-xl border border-stone-300 bg-white px-3 text-sm font-semibold text-stone-800 disabled:opacity-50"><img src={ASSET.restart} alt="" className="h-5 w-5 shrink-0" /><span className="whitespace-nowrap">Try Again</span></button></div>{result?.spamDetected && <p className="mx-auto max-w-[360px] px-2 text-center text-xs font-bold leading-tight text-red-600">Too many successive inputs detected. Repeatedly tapping ends the question.</p>}<button type="button" disabled={activityState === ACTIVITY_STATES.REFERENCE} onClick={() => makeNewRhythm()} className="ml-auto flex h-11 w-[150px] shrink-0 items-center justify-center gap-2 rounded-xl border border-black bg-black px-3 text-sm font-semibold text-white disabled:opacity-50"><span className="whitespace-nowrap">Next Question</span><img src={ASSET.next} alt="" className="h-[27px] w-[27px] invert" /></button></div>}
+              {feedbackRevealed && <div className="flex flex-nowrap items-center gap-2 overflow-x-auto">{!streakRace && <div className="flex shrink-0 items-center gap-2"><button type="button" onClick={toggleReference} className="flex h-11 w-[112px] items-center justify-center gap-2 rounded-xl border border-black bg-black px-3 text-sm font-semibold text-white"><span className={`hub-playback-glyph ${activityState === ACTIVITY_STATES.REFERENCE ? "is-stop" : "is-play"}`} aria-hidden="true"></span><span>{activityState === ACTIVITY_STATES.REFERENCE ? "Stop" : "Play"}</span></button><button type="button" disabled={activityState === ACTIVITY_STATES.REFERENCE} onClick={() => { resetAttempt(); setStatus("Same rhythm ready to try again."); }} className="flex h-11 w-[132px] items-center justify-center gap-1 rounded-xl border border-stone-300 bg-white px-3 text-sm font-semibold text-stone-800 disabled:opacity-50"><img src={ASSET.restart} alt="" className="h-5 w-5 shrink-0" /><span className="whitespace-nowrap">Try Again</span></button></div>}{result?.spamDetected && <p className="mx-auto max-w-[360px] px-2 text-center text-xs font-bold leading-tight text-red-600">Too many successive inputs detected. Repeatedly tapping ends the question.</p>}<button type="button" disabled={activityState === ACTIVITY_STATES.REFERENCE} onClick={() => makeNewRhythm()} className="ml-auto flex h-11 w-[150px] shrink-0 items-center justify-center gap-2 rounded-xl border border-black bg-black px-3 text-sm font-semibold text-white disabled:opacity-50"><span className="whitespace-nowrap">Next Question</span><img src={ASSET.next} alt="" className="h-[27px] w-[27px] invert" /></button></div>}
             </div>
           </div>
         </section>
@@ -458,7 +459,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(retiredEscapeClue
         onClick={() => window.parent.location.reload()}>Reload Escape Room</button>
     </main>
   : <App />);
-</script><script src="./generated-runtimes/readingrhythms-1.js?v=0188abfc48cc"></script>
-<script src="./footer.js?v=120454beac89"></script>
+</script><script src="./generated-runtimes/readingrhythms-1.js?v=18fb870025a0"></script>
+<script src="./footer.js?v=198354610b84"></script>
 </body>
 </html>

@@ -37,9 +37,9 @@
 .ig-image-bank-modal .ig-image-bank-results{gap:16px;padding:3px;max-height:420px}
 .ig-image-bank-modal .ig-image-bank-card{border-color:#e7e5e4;border-radius:12px;box-shadow:0 1px 2px #00000008}
 .ig-image-bank-modal .ig-image-bank-pick{border-radius:0!important}
-.ig-image-bank-modal .ig-image-bank-pick:focus-visible{outline:2px solid #64748b;outline-offset:-3px}
+.ig-image-bank-modal .ig-image-bank-pick:focus-visible{outline:2px solid var(--mlh-focus-color, #2563eb);outline-offset:-3px}
 .ig-image-bank-modal .ig-image-bank-more{border-radius:10px!important;font-weight:600;margin-top:22px}
-.ig-image-bank-modal :is(input,button,a):focus-visible{outline:2px solid #64748b;outline-offset:3px}
+.ig-image-bank-modal :is(input,button,a):focus-visible{outline:2px solid var(--mlh-focus-color, #2563eb);outline-offset:3px}
 .ig-image-bank-modal .ig-audio-bank .ig-image-bank-results{grid-template-columns:repeat(2,minmax(0,1fr))}
 .ig-audio-bank .ig-image-bank-card{display:flex;flex-direction:column;gap:12px;padding:16px}
 .ig-audio-bank .ig-image-bank-card h3{margin:0;font-size:14px;line-height:1.4;font-weight:700;overflow-wrap:anywhere}

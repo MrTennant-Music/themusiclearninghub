@@ -5,7 +5,6 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const netlifyBase = "https://themusiclearninghub.netlify.app/";
 const oldGithubBase = "https://mrtennant-music.github.io/musicliteracy/";
 const ignoredDirectories = new Set([".git", "dist", "node_modules", "tests", "vendor"]);
 
@@ -32,13 +31,6 @@ test("navigation and sharing stay on the current Hub origin", () => {
     vm.runInNewContext(source("shared/hub-page-names.js"), context);
     vm.runInNewContext("function share() {" + shareFunction + ";this.result=share();", context);
     assert.equal(context.result, location.href);
-    const worksheetFunction = source("worksheetgenerator.html").split("function worksheetExerciseUrl(config) {")[1].split("function worksheetQrImageUrl")[0];
-    vm.runInNewContext("function exercise(config) {" + worksheetFunction + ";this.exercise=exercise;", context);
-    assert.equal(context.exercise({exerciseUrl: netlifyBase + "timesignatures.html?level=N5"}), `${origin}/timesignatures.html?level=N5`);
-    assert.equal(context.exercise({exerciseUrl: "http://localhost:9999/barlines.html?level=H"}), `${origin}/barlines.html?level=H`);
-    for (const base of ["https://themusicliteracyhub.netlify.app/", netlifyBase, oldGithubBase, "https://mrtennant-music.github.io/themusiclearninghub/"]) {
-      assert.equal(context.exercise({exerciseUrl: base + "timesignatures.html?level=AH&setting=two%20beats#practice"}), `${origin}/timesignatures.html?level=AH&setting=two%20beats#practice`);
-    }
     const examContext = {URL, root: {location: new URL(`${origin}/digital-question-papers/digitalquestionpapers.html`)}, paper: {id: "national5-2014"}, showingAllQuestions: false, engine: null};
     const examFunction = source("digital-question-papers/exam-ui.js").split("  function paperShareUrl() {")[1].split("  function openQrOverlay()")[0];
     vm.runInNewContext("function share() {" + examFunction + ";this.result=share();", examContext);
@@ -52,7 +44,7 @@ test("navigation and sharing stay on the current Hub origin", () => {
     assert.equal(vm.runInNewContext(footerHomeDeclaration + "\nfooterHomeUrl", { URL, footerScriptUrl }), base);
   }
   assert.ok(footer.includes('<a href="${footerHomeUrl}" aria-label="Return to Music Learning Hub home page">'));
-  assert.ok(source("index.html").includes('copyText(copyLinkBtn, homeShareUrl,'));
+  assert.ok(source("index.html").includes("navigator.clipboard.writeText(homeShareUrl)"));
   assert.ok(source("index.html").includes('encodeURIComponent(homeShareUrl)'));
 });
 

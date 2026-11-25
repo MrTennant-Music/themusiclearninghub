@@ -6,12 +6,73 @@ const vm = require("node:vm");
 const Babel = require("@babel/standalone");
 const activities = require("./fixtures/qr-profile-activities.json");
 const shell = fs.readFileSync("shared/hub-shell.js", "utf8");
-function runtime(href) {
-  const window = { location: new URL(href), atob, btoa, dispatchEvent() {} };
-  const React = { useState: initial => [typeof initial === "function" ? initial() : initial, () => {}] };
-  vm.runInNewContext(shell, { window, React, URL, URLSearchParams, Uint8Array, TextEncoder, TextDecoder, document: { currentScript: { src: new URL("shared/hub-shell.js", href).href }, addEventListener() {} } });
+const pageNames = fs.readFileSync("shared/hub-page-names.js", "utf8");
+function runtime(href, { localStorage, sessionStorage, react } = {}) {
+  const window = { location: new URL(href), atob, btoa, localStorage, sessionStorage, dispatchEvent() {} };
+  const React = react || {
+    useState: initial => [typeof initial === "function" ? initial() : initial, () => {}],
+    useRef: current => ({ current }),
+  };
+  const context = { window, React, URL, URLSearchParams, Uint8Array, TextEncoder, TextDecoder, document: { currentScript: { src: new URL("shared/hub-shell.js", href).href }, addEventListener() {} } };
+  vm.runInNewContext(pageNames, context);
+  vm.runInNewContext(shell, context);
   return window.MLH;
 }
+
+test("Help choices persist per activity and shared links keep their own edits", () => {
+  const makeStorage = () => {
+    const entries = new Map();
+    return { getItem: key => entries.get(key), setItem: (key, value) => entries.set(key, value) };
+  };
+  const localStorage = makeStorage();
+  const sessionStorage = makeStorage();
+  const solo = "https://example.test/chords.html?level=N5";
+
+  function open(href, key, fallback) {
+    let state;
+    let ref;
+    const react = {
+      useState(initial) {
+        state ??= [initial(), next => { state[0] = typeof next === "function" ? next(state[0]) : next; }];
+        return state;
+      },
+      useRef: current => ref ??= { current },
+    };
+    const app = runtime(href, { localStorage, sessionStorage, react });
+    const render = () => app.useProfileState(key, fallback);
+    return { value: () => render()[0], toggle() { render()[1](value => !value); render(); } };
+  }
+
+  assert.equal(open(solo, "showNoteNames", false).value(), false);
+  open(solo, "showNoteNames", false).toggle();
+  assert.equal(open(solo, "showNoteNames", false).value(), true);
+  assert.equal(open("https://example.test/accidentals.html?level=N5", "showNoteNames", false).value(), false);
+  const shared = runtime(solo).profileShareUrl({ showNoteNames: false });
+  assert.equal(open(shared, "showNoteNames", true).value(), false);
+  open(shared, "showNoteNames", false).toggle();
+  assert.equal(open(shared, "showNoteNames", false).value(), true);
+  open(solo, "showNoteNames", true).toggle();
+  assert.equal(open(solo, "showNoteNames", true).value(), false);
+  assert.equal(open(shared, "showNoteNames", false).value(), true);
+  open(solo, "enabledOptions", false).toggle();
+  assert.equal(open(solo, "enabledOptions", false).value(), false);
+});
+
+test("Old Pitched bookmarks and QR codes redirect with their settings and fragment intact", () => {
+  const oldPage = "https://example.test/hub/bandle.html#game";
+  const oldLink = new URL(runtime(oldPage).profileShareUrl({ gameMode: "endurance" }));
+  const redirect = fs.readFileSync("bandle.html", "utf8").match(/<script>([\s\S]*?)<\/script>/)[1];
+  let destination;
+  vm.runInNewContext(redirect, { location: { search: oldLink.search, hash: oldLink.hash, replace: url => { destination = new URL(url, oldLink); } } });
+  assert.equal(destination.pathname, "/hub/pitched.html");
+  assert.equal(destination.search, oldLink.search);
+  assert.equal(destination.hash, "#game");
+  const game = runtime(destination.href);
+  assert.equal(game.useProfileState("gameMode", "default")[0], "endurance");
+  const newLink = new URL(game.profileShareUrl({ gameMode: "endurance" }));
+  assert.equal(newLink.pathname, "/hub/pitched.html");
+  assert.equal(JSON.parse(Buffer.from(newLink.searchParams.get("settings"), "base64url")).activity, "pitched.html");
+});
 
 test("explicit settings restore before render without opening a menu or using recipient storage", () => {
   const setup = { activeLevel: "AH", showGuide: true, tempo: "slow", rhythms: ["minim", "quaver"], options: { rests: true, sound: false }, label: "Très doux 🎵" };

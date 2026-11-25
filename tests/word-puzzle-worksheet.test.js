@@ -15,11 +15,18 @@ for(const kind of ['crossword','wordsearch']){
   }
  });
 }
-test('long clues continue without losing or duplicating any words',()=>{
+test('long crossword clues stay in their direction columns on one puzzle page',()=>{
  const puzzle={kind:'crossword',entries:Array.from({length:15},(_,i)=>({word:'WORD'+i,number:i+1,direction:i<9?'across':'down',clue:'A lengthy custom clue. '.repeat(12)}))};
- const pages=W.cluePages(puzzle);
- assert.ok(pages.length>1);
- assert.deepEqual(pages.flatMap(page=>page.flatMap(group=>group.entries)).map(e=>e.word),puzzle.entries.map(e=>e.word));
+ const groups=W.clueGroups(puzzle);
+ assert.deepEqual(groups.map(group=>group.title),['Across','Down']);
+ assert.deepEqual(groups.flatMap(group=>group.entries),puzzle.entries);
+});
+test('word search splits its complete word list across two columns',()=>{
+ const entries=Array.from({length:13},(_,i)=>({word:'WORD'+i,answer:'Word '+i,clue:'A simple clue.'}));
+ const groups=W.clueGroups({kind:'wordsearch',entries},true);
+ assert.deepEqual(groups.map(group=>group.title),['Words','Words']);
+ assert.deepEqual(groups.map(group=>group.entries.length),[7,6]);
+ assert.deepEqual(groups.flatMap(group=>group.entries),entries);
 });
 test('worksheet controls use snapshots and do not include pupil attempt progress',()=>{
  const config=W.createConfig({...activity,answers:['PUPIL INPUT'],score:99},'crossword',context.window.IGLearningPuzzles);
@@ -36,10 +43,31 @@ test('crossword pupils receive empty cells and answer sheets receive the letters
  const blank=renderToStaticMarkup(React.createElement(Grid,{puzzle,answers:false}));
  const answers=renderToStaticMarkup(React.createElement(Grid,{puzzle,answers:true}));
  assert.ok(!/>[A-Z]<\/text>/.test(blank));assert.ok(/>[A-Z]<\/text>/.test(answers));
- const blocked=puzzle.grid.flat().filter(letter=>!letter).length;
- assert.equal((blank.match(/fill="#000" stroke="#000"/g)||[]).length,blocked);
- assert.equal((answers.match(/fill="#000" stroke="#000"/g)||[]).length,blocked);
+ assert.match(blank,/fill="#e0e0e0"/);
+ assert.match(answers,/fill="#e0e0e0"/);
+ const sample={kind:'crossword',rows:2,cols:2,entries:[],grid:[['A','B'],['C','']]};
+ const sampleMarkup=renderToStaticMarkup(React.createElement(Grid,{puzzle:sample,answers:false}));
+ const [,edgePath]=sampleMarkup.match(/<path d="([^"]+)" fill="none" stroke="#000" stroke-width="\.8"/);
+ const edges=edgePath.split(' M').map(edge=>edge.replace(/^M/,''));
+ assert.equal(edges.length,10);
+ assert.equal(new Set(edges).size,10);
+ assert.ok(edges.includes('24.5 24.5h24'));
+ assert.ok(edges.includes('24.5 24.5v24'));
  assert.match(blank,/Puzzle grid/);assert.match(answers,/Completed puzzle/);
+});
+test('word search answers draw one line per word between its first and last cell',()=>{
+ const window={};
+ vm.runInNewContext(compiled,{React,window});
+ const puzzle=W.createConfig(activity,'wordsearch',context.window.IGLearningPuzzles).settings.puzzles[0];
+ const Grid=window.puzzleWorksheetAudit.WordPuzzleGrid;
+ const blank=renderToStaticMarkup(React.createElement(Grid,{puzzle,answers:false}));
+ const answers=renderToStaticMarkup(React.createElement(Grid,{puzzle,answers:true}));
+ assert.doesNotMatch(blank,/<line /);
+ assert.equal((answers.match(/<line /g)||[]).length,puzzle.entries.length);
+ for(const {cells} of puzzle.entries){
+  const first=cells[0],last=cells.at(-1);
+  assert.ok(answers.includes(`x1="${first.col*24+12.5}" y1="${first.row*24+12.5}" x2="${last.col*24+12.5}" y2="${last.row*24+12.5}"`));
+ }
 });
 test('crossword Refresh can change the layout even when all answer lengths differ',()=>{
  const unequal={...activity,items:['Piano','Violin','Trumpet','Clarinet','Accordion','Double bass'].map((answer,i)=>({id:String(i),answer,prompt:'Clue '+i}))};

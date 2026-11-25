@@ -216,7 +216,7 @@ function assertPublishedSize() {
 async function main() {
   await require("./build-dictionary-quizzes.cjs").build();
   require("./build-inline-page-runtimes.js");
-  require("./build-bandle.js");
+  require("./build-pitched.js");
   await require("./build-music-games.js").build();
   require("./build-millionaire-runtime.js");
   require("./build-metronome-runtime.js");

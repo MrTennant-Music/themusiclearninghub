@@ -79,6 +79,7 @@ test('all original notation examples and pictures render without missing symbols
       assert.match(picture, /<svg class="mc-literacy-single-symbol"[^>]*><path d="[^"]+"/, entry.id);
     }
     if (entry.picture.src) {
+      assert.match(entry.picture.src, /^\.\/music-dictionary\/literacy-images\/[\w-]+\.png$/);
       assert.ok(fs.existsSync(path.join(root, entry.picture.src)), entry.id);
       assert.ok(entry.picture.alt, entry.id);
       assert.match(picture, /^<img /);

@@ -7,11 +7,11 @@ async function scheduledAudio(stopAfterSeconds){
  const events=[],timeouts=[],master={gain:{value:1.25,setValueAtTime:(v,t)=>events.push(['gain',v,t]),linearRampToValueAtTime:(v,t)=>events.push(['ramp',v,t])},connect(){}};
  const bars=[{barIndex:0,notes:[{beat:0,beats:1,midi:60},{beat:1,beats:1,midi:62}]},{barIndex:1,notes:[{beat:0,beats:2,midi:64}]}];
  class AudioContext{constructor(){this.currentTime=10;this.destination={};}createGain(){return master;}}
- const c=vm.createContext({window:{AudioContext,MLH:{prepareAudioPlayback:async()=>true,metronomePulseOffsets:()=>[0,1],naturalPlaybackTailMs:()=>650},setTimeout:(fn,ms)=>{timeouts.push({fn,ms});return timeouts.length;}},console,Math,Number,Promise,
+ const c=vm.createContext({window:{AudioContext,MLH:{prepareAudioPlayback:async()=>true,naturalPlaybackTailMs:()=>650},setTimeout:(fn,ms)=>{timeouts.push({fn,ms});return timeouts.length;}},console,Math,Number,Promise,
   isPlaying:false,audioRef:{current:null},audioMasterRef:{current:null},stopAudio(){},setPrompt(){},setIsPlaying(){},clamp:(v,min,max)=>Math.max(min,Math.min(max,v)),totalDuration:4,
   preloadPianoSamples:async()=>{},pianoLayersForPlayback:()=>[],question:{},playbackBars:bars,playbackTimeline:[{start:0},{start:2}],beatSeconds:1,
-  timeSignatureForBar:()=>({beats:2}),dynamicGainForBar:()=>1,dynamicVelocityForBar:()=>80,dynamicGainForPoint:()=>1,metronomeOn:true,
-  playMetronome:(...args)=>events.push(['tick',args[2]]),playAccompaniment:(...args)=>events.push(['accompaniment',args[3].barIndex]),shouldSkipMelodyPlaybackNote:()=>false,
+  dynamicGainForBar:()=>1,dynamicVelocityForBar:()=>80,dynamicGainForPoint:()=>1,
+  playAccompaniment:(...args)=>events.push(['accompaniment',args[3].barIndex]),shouldSkipMelodyPlaybackNote:()=>false,
   articulationMarkingForPlayback:()=>null,effectivePlaybackMidiForNote:(q,b,n)=>n.midi,playMelodyNote:(...args)=>events.push(['note',args[3],args[4]]),MELODY_SAMPLE_VELOCITY_V8:80,
   followPlayback:true,FOLLOW_SCORE_APP:true,followFeedback:null,setActiveNoteId(){},setFollowPlayedOnce(){},timersRef:{current:[]},stopAfterSeconds});
  vm.runInContext(audioSource,c);await vm.runInContext('playQuestionAudio(0,false,stopAfterSeconds)',c);
@@ -20,7 +20,7 @@ async function scheduledAudio(stopAfterSeconds){
 test('audio clock stops every layer before the next note, including the scheduling lead-in',async()=>{
  const {events,timeouts}=await scheduledAudio(.96);
  const ramp=events.find(e=>e[0]==='ramp');assert.equal(ramp[1],0);assert.ok(Math.abs(ramp[2]-11.08)<1e-9);
- assert.equal(events.filter(e=>e[0]==='note').length,1);assert.equal(events.filter(e=>e[0]==='tick').length,1);assert.equal(events.filter(e=>e[0]==='accompaniment').length,1);
+ assert.equal(events.filter(e=>e[0]==='note').length,1);assert.equal(events.filter(e=>e[0]==='accompaniment').length,1);
  const stop=timeouts.at(-1);assert.ok(Math.abs(stop.ms-1100)<1e-8);
 });
 test('omitting a stop time plays the complete score instead of converting null into zero',async()=>{
@@ -48,6 +48,57 @@ test('shipped Follow runtime matches its source',()=>{
  assert.equal(fs.readFileSync('generated-runtimes/followthescore-1.js','utf8'),Babel.transform(jsx,{presets:['react'],sourceMaps:false,comments:false,compact:true}).code+'\n');
 });
 
+test('seeded source melodies and harmony match Practice Questions at all five levels',()=>{
+ const follow=load();
+ const script=fs.readFileSync('generated-runtimes/practicequestions-1.js','utf8');
+ const mount=script.lastIndexOf('if(window.parent&&window.parent!==window&&new URLSearchParams');
+ assert.ok(mount>0);
+ let state=8217;
+ const math=Object.create(Math);
+ math.random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;};
+ const window={PracticeMelodyGenerator:require('../practice-melody-generator.js')};
+ for(const file of ['bravura-symbols.js','shared/shared-notation-config.js'])vm.runInNewContext(fs.readFileSync(file,'utf8'),{window});
+ const practice=vm.runInNewContext(script.slice(0,mount)+';makeEightBarRepetitionQuestion',{window,React,Math:math,console});
+ const inventory=question=>JSON.stringify({
+  key:question.key.id,meter:question.timeSignature.id,
+  bars:question.bars.map(bar=>[bar.chordSymbol,bar.notes.map(note=>[note.midi,note.rhythm,note.beats,note.writtenAccidental])]),
+ });
+ for(const level of ['N3','N4','N5','H','AH']){
+  const generationLevel=level==='AH'?'H':level;
+  const args=[generationLevel,0,'perfect',false,false,level,null,!['N3','AH'].includes(level),{seed:level}];
+  assert.equal(inventory(follow.makeEightBarRepetitionQuestion(...args)),inventory(practice(...args)),level);
+ }
+});
+
+test('bar selection colours its staff, notation, and both existing boundary barlines',()=>{
+ const a=load(),question=a.makeFollowScoreQuestion('N3');
+ const render=(barIndex,followFeedback)=>server.renderToStaticMarkup(React.createElement(a.Score,{
+  question,userNotes:{},followSelection:{barIndex,noteIndex:null},followFeedback,
+ }));
+ const blueLines=markup=>Array.from(markup.matchAll(/<line x1="([^"]+)" x2="([^"]+)" y1="[^"]+" y2="[^"]+" stroke="#2563eb"/g),match=>match.slice(1,3));
+ for(const [barIndex,boundaryLines] of [[3,2],[question.bars.length-1,3]]){
+  const markup=render(barIndex,null);
+  const lines=blueLines(markup);
+  assert.equal(lines.filter(([start,end])=>start!==end).length,5);
+  assert.equal(lines.filter(([start,end])=>start===end).length,boundaryLines);
+  assert.match(markup,new RegExp(`<g style="color:#2563eb">.*?<text [^>]*font-style="italic"[^>]*>${barIndex+1}</text>`));
+  assert.doesNotMatch(markup,/drop-shadow|#d6a514/);
+ }
+ const wrongBar=(question.target.barIndex+1)%question.bars.length;
+ const marked=render(wrongBar,{correct:false});
+ assert.match(marked,/style="color:#16a34a"/);
+ assert.match(marked,/style="color:#dc2626"/);
+ assert.equal(blueLines(marked).length,0);
+});
+
+test('exact-note selection colours the note without colouring the bar lines',()=>{
+ const a=load(),question=a.makeFollowScoreQuestion('N5');
+ const {barIndex,noteIndex}=question.target;
+ const markup=server.renderToStaticMarkup(React.createElement(a.Score,{question,userNotes:{},followSelection:{barIndex,noteIndex}}));
+ assert.match(markup,/<text class="music-symbol"[^>]*fill="#2563eb"/);
+ assert.doesNotMatch(markup,/style="color:#2563eb"|drop-shadow|#d6a514/);
+});
+
 test('every closing bar fills its metre and ties split durations to the same pitch',()=>{
  const a=load();
  for(const signature of a.TIME_SIGNATURES){
@@ -57,14 +108,16 @@ test('every closing bar fills its metre and ties split durations to the same pit
  }
 });
 test('National 3 targets cover every bar and the final note without recent question repeats',()=>{
- const a=load(),counts=Array(8).fill(0),metres={},recent=[];let finalTargets=0;
+ const a=load(),counts=Array(8).fill(0),metres={},recent=[],styles=new Set();let finalTargets=0;
  for(let i=0;i<600;i++){
   const q=a.makeFollowScoreQuestion('N3');counts[q.target.barIndex]++;metres[q.timeSignature.id]=(metres[q.timeSignature.id]||0)+1;
+  styles.add(q.accompanimentPattern);
   const fingerprint=a.followScoreQuestionFingerprint(q);assert.equal(recent.includes(fingerprint),false);recent.push(fingerprint);if(recent.length>20)recent.shift();
   if(q.target.barIndex===7)finalTargets++;
  }
  for(const count of counts)assert.ok(count>40&&count<110,JSON.stringify(counts));
  for(const count of Object.values(metres))assert.ok(count>150&&count<250,JSON.stringify(metres));assert.ok(finalTargets>0);
+ assert.deepEqual(styles,new Set(require('../practice-melody-generator.js').accompaniment.practiceStyleIds));
 });
 
 test('Higher rhythm rewrites retain melody history from the current score only',()=>{

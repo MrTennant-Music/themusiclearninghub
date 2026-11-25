@@ -72,7 +72,7 @@ test('sample-map pitches, playback rates and all referenced Ogg containers are p
 test('the actual piano voice uses the correct sample rate or falls back to the requested oscillator pitch',()=>{
  const calls=[],sources=[];const layer={sample:'C4v8.ogg',rate:2**(1/12),gain:1};
  const c={escapeEmbed:false,choosePianoLayer:()=>layer,pianoBufferCacheRef:{current:new Map()},clamp:(n,lo,hi)=>Math.max(lo,Math.min(hi,n)),oscillator:(...args)=>calls.push(args),midiToFrequency:midi=>440*2**((midi-69)/12)};
- vm.createContext(c);const start=page.indexOf('      function playPianoMidi('),end=page.indexOf('      function playMetronome(',start);vm.runInContext(page.slice(start,end),c);
+ vm.createContext(c);const start=page.indexOf('      function playPianoMidi('),end=page.indexOf('      function dynamicGainForBar(',start);vm.runInContext(page.slice(start,end),c);
  c.playPianoMidi({}, {},69,5,.5);assert.equal(calls[0][2],440);
  c.pianoBufferCacheRef.current.set(layer.sample,{duration:10});const rates=[],starts=[],stops=[];const context={createBufferSource(){const source={playbackRate:{setValueAtTime:v=>rates.push(v)},connect(){},start:t=>starts.push(t),stop:t=>stops.push(t)};sources.push(source);return source;},createGain(){return{gain:{setValueAtTime(){},exponentialRampToValueAtTime(){}},connect(){}};}};
  c.playPianoMidi(context,{},61,5,.5);assert.equal(rates[0],2**(1/12));assert.equal(starts[0],5);assert.ok(Math.abs(stops[0]-5.66)<1e-8);assert.equal(calls.length,1);assert.equal(sources.length,1);

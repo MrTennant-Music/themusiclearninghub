@@ -11,6 +11,11 @@
     AH: { label: "Advanced Higher", rank: 4 },
   });
   const STORAGE_KEY = "mlh-concept-recall-v1";
+  const DEFAULT_OFF_CATEGORIES = {
+    N5: ["National 5 Styles"],
+    H: ["Higher Styles", "Orchestral families"],
+    AH: ["Advanced Higher Styles", "Bass lines", "Concerto grosso", "Orchestral families"],
+  };
   const MEDAL_RANK = Object.freeze({ bronze: 1, silver: 2, gold: 3, diamond: 4 });
   const MEDAL_TIME_LIMITS_MS = Object.freeze({
     N5: Object.freeze({ bronze: 345000, silver: 300000, gold: 240000, diamond: 195000 }),
@@ -66,6 +71,23 @@
     const levelQuestions = questionsForLevel(questions, level);
     const selected = new Set(Array.isArray(selectedCategories) ? selectedCategories : categoriesForQuestions(levelQuestions));
     return levelQuestions.filter((question) => selected.has(question.category));
+  }
+
+  function defaultCategories(questions, level) {
+    return categoriesForQuestions(questionsForLevel(questions, level))
+      .filter(category => !(DEFAULT_OFF_CATEGORIES[level] || []).includes(category));
+  }
+
+  function classroomSetup(questions, search) {
+    const params = new URLSearchParams(search);
+    const requested = params.get("level")?.toUpperCase();
+    const level = Object.hasOwn(DEFAULT_OFF_CATEGORIES, requested) ? requested : "N5";
+    const available = categoriesForQuestions(questionsForLevel(questions, level));
+    let selected;
+    try { selected = JSON.parse(params.get("categories")); } catch {}
+    const categories = Array.isArray(selected) ? available.filter(category => selected.includes(category)) : [];
+    if (!categories.length) categories.push(...defaultCategories(questions, level));
+    return { level, categories, total: questionsForSetup(questions, level, categories).length };
   }
 
   function acceptedAnswers(question) {
@@ -265,6 +287,8 @@
     cumulativeQuestions,
     categoriesForQuestions,
     questionsForSetup,
+    defaultCategories,
+    classroomSetup,
     acceptedAnswers,
     multiAnswerAliases,
     answerCollisions,

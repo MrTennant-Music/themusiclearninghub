@@ -7,6 +7,34 @@ test('every level balances metres and keys independently',()=>{for(const level o
 test('rests respect both the rest toggle and their base note value filter',()=>{const c=generator(),e=c.levelEnabledMap('H');for(const id of ['crotchet','quaver','minim','semibreve','dotted-crotchet']){const next={...e,[id]:false};assert.equal(c.rhythmAllowed(id+'-rest',next,true),false);}assert.equal(c.rhythmAllowed('crotchet-rest',e,false),false);});
 test('impossible custom selections are rejected rather than silently replaced',()=>{const c=generator(),e=Object.fromEntries(Object.keys(c.levelEnabledMap('N3')).map(id=>[id,['semibreve','time-2/4','key-C'].includes(id)]));assert.equal(c.hasValidSelection('N3',e,false),false);assert.throws(()=>c.buildQuestion('N3',{simple:true},e,false),RangeError);const safe=c.normaliseSettings('N3',e,false);assert(c.hasValidSelection('N3',safe.enabledRhythms,safe.restsEnabled));});
 test('all answer boundaries exist as visible, selectable targets',()=>{const c=generator(),h=require('./helpers/barlines-harness.cjs')();for(const level of ['N3','H','AH']){const e=c.levelEnabledMap(level);for(let i=0;i<200;i++){const q=c.buildQuestion(level,c.levelTimeTypes(level,e),e,true),layout=h.calculateLayout(q);for(const id of Object.keys(q.correctBoundaryTypes))assert(layout.boundaryPositions.some(b=>b.id===id&&!b.fixed),id);for(const p of Object.values(layout.itemPositions))assert(Number.isFinite(p.x)&&p.x>=24&&p.x<=896);}}});
+test('clicks between the final four crotchets select their own gaps', () => {
+  const c = generator();
+  const enabled = Object.fromEntries(Object.keys(c.levelEnabledMap('N3'))
+    .map(id => [id, ['crotchet', 'time-4/4', 'key-C'].includes(id)]));
+  const question = c.buildQuestion('N3', c.levelTimeTypes('N3', enabled), enabled, false);
+  const h = require('./helpers/barlines-harness.cjs')();
+  const { itemPositions, boundaryPositions } = h.calculateLayout(question);
+  const lastBar = question.items.slice(-4);
+  assert.ok(lastBar.every(item => item.rhythm === 'crotchet'));
+  const score = renderToStaticMarkup(React.createElement(h.Score, { question, placedBoundaries: {} }));
+  const [, width, height] = score.match(/viewBox="0 0 (\d+) (\d+)"/).map(Number);
+  function clickAt(x) {
+    return h.barlineBoundaryFromPointer({
+      currentTarget: { getBoundingClientRect: () => ({ left: 0, top: 0, width, height }) },
+      clientX: x, clientY: question.systemTops[0],
+    }, question, boundaryPositions, height)?.id;
+  }
+  for (const [index, item] of lastBar.entries()) {
+    const next = lastBar[index + 1];
+    if (!next) break;
+    const id = `boundary-${item.cumulativeUnits}`;
+    const mid = (itemPositions[item.id].x + itemPositions[next.id].x) / 2;
+    assert.equal(clickAt(mid), id);
+    assert.ok(score.includes(`aria-label="Barline position ${id}"`));
+    assert.equal(question.correctBoundaryTypes[id], undefined);
+  }
+  assert.equal(clickAt(boundaryPositions.at(-1).x), 'boundary-final');
+});
 test('worksheet questions retain selected keys, filters, time changes and exact bar totals',()=>{for(const level of ['N3','N4','N5','H','AH']){const c=generator(),e=c.levelEnabledMap(level),w=worksheet({version:1,activityId:'barlines',sourceUrl:'http://localhost:8765/barlines.html',settings:{level,enabledRhythms:e,restsEnabled:true}});let changes=0;for(let i=0;i<100;i++){const q=w.makeQuestion(i);check(c,q.barlineQuestion,e,true);changes+=!!q.barlineQuestion.nextTimeSignature;if(i<10){const markup=renderToStaticMarkup(React.createElement(w.Staff,{question:q,completed:true}));assert(!/NaN|undefined/.test(markup));assert(markup.includes('barlineFinal')||markup.includes('<path'));}}if(level==='AH')assert(changes>0);}});
 test('dense given bars and unmarked bars keep noteheads apart',()=>{const c=generator(),h=require('./helpers/barlines-harness.cjs')(),e=c.levelEnabledMap('AH');for(let i=0;i<600;i++){const q=c.buildQuestion('AH',c.levelTimeTypes('AH',e),e,true),layout=h.calculateLayout(q);for(let j=1;j<q.items.length;j++){const a=layout.itemPositions[q.items[j-1].id],b=layout.itemPositions[q.items[j].id];if(a.systemIndex===b.systemIndex&&!q.items[j-1].isRest&&!q.items[j].isRest)assert(b.x-a.x>=13.5,`Crowded notes: ${b.x-a.x}`);}}});
 const fs=require('node:fs'),vm=require('node:vm'),Babel=require('@babel/standalone'),page=fs.readFileSync('barlines.html','utf8'),jsx=page.match(/<script type="text\/x-mlh-jsx-source"[^>]*>([\s\S]*?)<\/script>/)[1],functions={};let mainPointer;

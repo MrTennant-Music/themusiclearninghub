@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="shared/hub-page-names.js?v=20261024-music-dictionary-folder"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <script src="./shared/hub-layout-viewport.js?v=3484916be3fb"></script>
+  <link rel="stylesheet" href="./styles/desktop-layout.css?v=0a8d5c2fa45e" />
+  <title>Host · The Music Learning Hub</title>
+  <link rel="icon" type="image/svg+xml" href="./app-icons/group-icon.svg" />
+  <link rel="apple-touch-icon" href="./app-icons/group-icon.svg" />
+  <link rel="stylesheet" href="./vendor/tailwind/site.css?v=ffa55bf40757" />
+  <script src="./desktop-layout.js?v=2ba28152c0b9"></script>
+  <link rel="stylesheet" href="./styles/hub-ui.css?v=80984190b487" />
+  <link rel="stylesheet" href="./styles/final-confetti.css?v=1f0eebfede1e" />
+  <link rel="stylesheet" href="./music-dictionary/music-concepts.css?v=e39d09253aa4" />
+  <link rel="stylesheet" href="./music-dictionary/quiz.css?v=4482220b8309" />
+  <link rel="stylesheet" href="./music-dictionary/quiz-paper.css" />
+  <script src="./shared/hub-input.js?v=beee9f4fa7f2"></script>
+  <script src="./vendor/react/react.production.min.js"></script>
+  <script src="./vendor/react/react-dom.production.min.js"></script>
+  <script src="./shared/hub-progress.js?v=08221067d46a"></script>
+  <script src="./shared/hub-achievements.js?v=9838eea220e9"></script>
+  <script src="./shared/hub-shell.js?v=1521edc86b5d"></script>
+  <script src="./shared/final-confetti.js?v=9772b58accbe"></script>
+  <script src="./shared/hub-menu.js?v=a59a33bee51c"></script>
+  <script src="./keyboard-notes.js?v=00ef78b50556"></script>
+  <script src="./shared/note-identification-core.js"></script>
+  <script src="./shared/classroom-activities.js?v=22bae06f3adc"></script>
+  <script src="./shared/classroom-written-notes.js?v=47e4816061ad"></script>
+  <script src="./shared/accidentals-selection.js"></script>
+  <script src="./shared/accidentals-question-core.js?v=bd1d958940ae"></script>
+  <script src="./shared/classroom-accidentals.js?v=981699bc65a2"></script>
+  <script src="./whowantstobemillionaire/millionaire-question-bank.js?v=f05927f78594"></script>
+  <script src="./shared/barlines-core.js?v=30834617a6d4"></script>
+  <script src="./shared/classroom-literacy.js?v=dd51bdfd0eb9"></script>
+  <script src="./shared/melodic-dictation-selection.js?v=12e08f730178"></script>
+  <script src="./melodic-dictation-generator.js?v=089cb07b01de"></script>
+  <script src="./shared/melodic-dictation-questions.js?v=009d94100b8c"></script>
+  <script src="./practice-melody-generator.js?v=f095a86a75b8"></script>
+  <script src="./shared/classroom-listening.js?v=74853682b53c"></script>
+  <script src="./shared/hub-audio.js?v=585bd2b033d6"></script>
+  <script src="./shared/classroom-playback.js?v=b588bcee6a2f"></script>
+  <link rel="stylesheet" href="./music-games/dominoes.css?v=3b36e69658f3" />
+  <script src="./music-games/core.js"></script>
+  <script src="./shared/music-games-concepts.js"></script>
+  <script src="./shared/music-games-literacy.js"></script>
+  <script src="./shared/concept-level-priority.js"></script>
+  <script src="./music-dictionary/quiz-core.js"></script>
+  <script src="./music-dictionary/quiz-audio-order.js"></script>
+  <script src="./music-dictionary/quiz-order-audio-player.js?v=b7a82ee9fc88"></script>
+  <script src="./music-dictionary/quiz-practice-core.js"></script>
+  <script src="./music-dictionary/quiz-answer-controls.js?v=c9747194d161"></script>
+  <script src="./shared/classroom-concept-quiz.js?v=17fcec2d5e08"></script>
+  <script src="./concept-recall-data.js?v=20260717-styles"></script>
+  <script src="./concept-recall-core.js?v=c9b6d720e557"></script>
+  <script src="./shared/music-games-collections.js?v=27474da065c6"></script>
+  <script src="./music-games/dominoes.js?v=ca33d08bcd11"></script>
+  <script src="./shared/classroom-test-game.js?v=0b674cebf9bc"></script>
+  <script src="./bravura-symbols.js?v=20261024-learning-hub"></script>
+  <script src="./bravura-worksheet-outlines.js"></script>
+  <script src="./music-dictionary/literacy-notation.js"></script>
+  <script src="./shared/shared-notation-config.js"></script>
+  <script src="./shared/keyboard-note-keyboard.js?v=9e2bd82073d9"></script>
+  <style>
+.classroom-shared-frame, .classroom-native-practice-frame { display:block; width:100%; height:910px; border:0; }
+.classroom-shared-frame { background:transparent; }
+body:has(.classroom-native-pupil) > footer { display:none; }
+.classroom-shared-frame.concept-recall-race-frame { height:calc(100dvh / var(--mlh-desktop-layout-scale, 1)); }
+body:has(.concept-recall-race-frame) > footer { display:none; }
+#root > div:has(> .concept-recall-race-frame) { padding-bottom:0; }
+.classroom-shared-frame.rhythm-time-trial-frame { height:440px; }
+.classroom-pupil-playing { border:0; border-radius:0; box-shadow:none; background:transparent; padding-bottom:10px; margin-bottom:8px; }
+.classroom-embedded-pupil-status main:not(:has(> *)),
+.classroom-embedded-pupil-status.with-activity-header:not(:has(main > *)) { display:none; }
+.classroom-embedded-pupil-status.with-activity-header { padding-top:0; }
+.classroom-ended-session { display:grid; justify-items:center; gap:20px; padding:36px 16px; text-align:center; }
+.classroom-ended-back { width:76px; height:56px; }
+.classroom-ended-back img { width:36px; height:36px; transform:rotate(180deg); filter:invert(1); }
+.classroom-all-leaderboard.classroom-unavailable-dialog { width:420px; min-width:0; padding:28px; text-align:center; }
+.classroom-unavailable-dialog > a { width:fit-content; margin:20px auto 0; }
+.classroom-question-visual { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:298px; padding-inline:12px; }
+.classroom-question-visual > svg { max-width:100%; }
+.classroom-question-stage:has(>.classroom-question-visual:empty) { min-height:352px; display:grid; align-content:center; }
+.classroom-question-visual:empty { display:none; }
+.classroom-dictation-exercise { min-height: 454px; padding-bottom: 10px; }
+.classroom-concept-quiz { max-width: 800px; margin: 24px auto; }
+.classroom-choice-answer { overflow-wrap:anywhere; padding-block:8px; }
+.keyboard-area { width: max-content; margin: 32px auto; }
+.keyboard-stave { display:block; width: 460px; height: 212px; margin: 0 auto -12px; }
+.keyboard-key[role="button"] { cursor: pointer; }
+.keyboard-key[role="button"]:focus-visible { outline: 3px solid #2563eb; outline-offset: -3px; }
+.keyboard-key[role="button"][aria-disabled="true"] { outline: none; }
+.keyboard-score { display: block; height: 250px; }
+@font-face { font-family: "Bravura"; src: url("./fonts/Bravura.otf") format("opentype"); font-display: block; }
+.music-symbol { font-family: "Bravura", serif; font-weight: 400; dominant-baseline: alphabetic; text-rendering: geometricPrecision; }
+.keyboard-answers { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; width: 100%; margin: 16px 0 0; }
+.keyboard-answer { display: flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 12px; border: 1px solid #d6d3d1; border-radius: 12px; background: white; color: black; }
+.keyboard-answer, button.classroom-toolbar-playback { font-size: 1.05rem; font-weight: 700; }
+button.classroom-toolbar-playback { line-height: inherit; }
+.keyboard-empty { min-height:46px; }
+.keyboard-answer:hover:not(:disabled) { border-color: black; }
+.keyboard-answer.primary { background: black; border-color: black; color: white; }
+.keyboard-answer.primary:hover:not(:disabled) { background: #292524; }
+.keyboard-answer:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.keyboard-answer.correct { background: #16a34a; border-color: #16a34a; color: white; }
+.keyboard-answer.incorrect { background: #dc2626; border-color: #dc2626; color: white; }
+.keyboard-answer.awaiting-reveal { background:black; border-color:black; color:white; opacity:1; }
+.classroom-podium { display:flex; align-items:flex-end; justify-content:center; gap:16px; height:360px; margin:32px auto 24px; }
+.podium-place { position:relative; flex:0 0 300px; width:300px; text-align:center; border:1px solid #d6d3d1; border-radius:12px 12px 0 0; padding:16px; background:#fafaf9; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.podium-place.first { height:360px; background:#dcfce7; border-color:#4ade80; }
+.podium-place.second { height:300px; }
+.podium-place.third { height:240px; }
+.podium-place.revealed { animation:podium-reveal 700ms cubic-bezier(.22,1,.36,1); }
+.podium-identity { display:flex; align-items:center; justify-content:center; width:100%; margin-top:16px; font-size:17px; font-weight:700; white-space:nowrap; }
+.podium-confetti { position:absolute; inset:0; pointer-events:none; overflow:visible; }
+.podium-confetti span { position:absolute; display:block; width:6px; height:10px; border-radius:2px; top:-12px; }
+@keyframes podium-reveal { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes podium-confetti-drop { from { opacity:1; transform:translateY(-24px) rotate(0); } to { opacity:0; transform:translateY(280px) rotate(300deg); } }
+
+.breakdown-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:16px; margin-top:20px; }
+.breakdown-item { text-align:center; min-width:0; }
+.breakdown-track { height:180px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; border-bottom:1px solid #d6d3d1; }
+.breakdown-count { font-weight:700; margin-bottom:6px; }
+.breakdown-bar { width:56px; max-width:80%; background:#a8a29e; border-radius:6px 6px 0 0; }
+.breakdown-item.correct .breakdown-bar { background:#16a34a; }
+.breakdown-item { color:#a8a29e; }
+.breakdown-item.correct { color:#15803d; }
+.breakdown-label { margin-top:8px; font-weight:700; font-size:18px; overflow-wrap:anywhere; }
+.classroom-review-panels { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:20px; margin-top:24px; align-items:stretch; }
+.classroom-results, .classroom-leaderboard { min-width:0; padding:16px; border:1px solid #e7e5e4; border-radius:12px; background:#fafaf9; }
+.classroom-review-panels .breakdown-grid { gap:12px; }
+.classroom-standing { position:absolute; top:0; left:0; right:0; height:46px; animation:standing-enter 650ms cubic-bezier(.22,1,.36,1); transition:transform 650ms cubic-bezier(.22,1,.36,1),color 400ms ease; display:grid; grid-template-columns:20px minmax(0,1fr) 36px 38px; gap:8px; align-items:center; padding:7px 0; border-bottom:1px solid #f5f5f4; font-size:14px; }
+.classroom-standing:last-child { border-bottom:0; }
+.classroom-standings { position:relative; height:230px; }
+.classroom-standing-score { font-variant-numeric:tabular-nums; font-weight:700; }
+@keyframes standing-enter { from { opacity:0; transform:translateY(230px); } to { opacity:1; transform:translateY(var(--standing-y)); } }
+.domino-classroom-time[data-pace="ahead"] { color:#15803d; }
+.domino-classroom-time[data-pace="reached"] { color:#b91c1c; }
+.floating-race-stage { position:relative; display:grid; place-items:center; }
+.floating-race-bubble { position:absolute; z-index:1; margin:0; padding:12px 28px; border-radius:999px; background:#171717; color:white; font-size:24px; font-weight:700; }
+.floating-race-bubble:has(.race-winner-announcement) { padding:0; background:transparent; }
+.floating-race-bubble .race-winner { margin:0; }
+.floating-race-names { display:grid; grid-template:repeat(5,72px)/repeat(5,minmax(0,1fr)); place-items:center; width:100%; padding:12px 16px; margin:0; }
+.floating-race-name { max-width:calc(100% - 28px); padding:8px 14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:1px solid #d6d3d1; border-radius:999px; background:white; box-shadow:0 2px 6px #0001; font-weight:600; animation:floating-race-bounce var(--bounce-duration) ease-in-out infinite; animation-delay:var(--bounce-delay); }
+@keyframes floating-race-bounce {
+ 0%,100% { transform:translate(-8px,4px); }
+ 35% { transform:translate(7px,-9px); }
+ 70% { transform:translate(10px,7px); }
+}
+@media (prefers-reduced-motion: reduce) {
+ .floating-race-name { animation:none; }
+}
+.classroom-standing-gain { color:#15803d; text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.classroom-standing-name { font-size:13px; }
+.classroom-leaderboard-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+.keyboard-answer.classroom-show-all { min-height:32px; font-size:13px; padding:0 10px; }
+.classroom-all-leaderboard { position:fixed; width:680px; max-width:none; max-height:650px; margin:auto; padding:24px; border:1px solid #e7e5e4; border-radius:16px; background:white; color:#0c0a09; box-shadow:0 20px 60px #0003; overflow:auto; }
+.classroom-leaderboard > .classroom-all-leaderboard { width:520px; overscroll-behavior:contain; }
+html:has(.classroom-leaderboard > .classroom-all-leaderboard:modal) { overflow:hidden; }
+.classroom-all-leaderboard::backdrop { background:#0006; }
+.classroom-all-leaderboard[aria-labelledby="end-game-title"] { width:312px; padding-inline:16px; }
+.classroom-all-leaderboard[aria-labelledby="end-game-title"] > p { text-wrap:balance; }
+.classroom-all-leaderboard .classroom-standing { position:relative; height:46px; animation:none; transition:none; grid-template-columns:28px minmax(0,1fr) 52px 56px; padding-inline:10px; }
+.classroom-all-leaderboard .classroom-standing:nth-child(even of .classroom-standing) { background:#f5f5f4; }
+.classroom-all-leaderboard .classroom-standing-name { font-size:16px; }
+
+.classroom-standing-rank { display:flex; align-items:center; gap:5px; }
+.classroom-standing-name { display:flex; align-items:center; }
+.classroom-standing-score { text-align:right; white-space:nowrap; }
+  </style>
+  <style id="classroom-race-track-styles">
+.rhythm-time-trial-standings { width:100%; border-collapse:collapse; }
+.rhythm-time-trial-standings :is(th,td) { padding:8px 12px; border-bottom:1px solid #e7e5e4; text-align:left; }
+.rhythm-time-trial-standings :is(th,td):last-child { text-align:right; font-variant-numeric:tabular-nums; }
+.race-lanes { position:relative; }
+.race-lane { position:absolute; top:0; left:0; right:0; height:56px; display:grid; grid-template-columns:250px minmax(0,1fr); align-items:center; gap:16px; transition:transform 1400ms cubic-bezier(.22,1,.36,1); }
+.race-name { display:flex; align-items:center; gap:4px; white-space:nowrap; font-size:14px; font-weight:600; }
+.classroom-race-track:not(.pupil-track) .race-name { position:relative; padding-left:40px; }
+.race-place { font-weight:700; font-variant-numeric:tabular-nums; }
+.race-name > .race-place { position:absolute; left:0; top:50%; transform:translateY(-50%); line-height:1; }
+.race-course { --race-finish-inset:10px; --race-finish-width:16px; position:relative; height:48px; border:1px solid #a8a29e; border-radius:10px; background:white; overflow:hidden; }
+.race-course.complete { background:rgba(22,163,74,.38); transition:background-color 650ms ease; }
+.race-course.complete .race-fill { background:transparent; }
+.classroom-race-track { margin-top:24px; padding:20px; border-radius:12px; background:white; }
+.classroom-race-track:has(> .millionaire-final-confetti) { position:relative; isolation:isolate; }
+.classroom-race-track > .millionaire-final-confetti { border-radius:inherit; }
+.classroom-race-track:has(> .millionaire-final-confetti) > .race-winner { z-index:2; }
+@media (prefers-reduced-motion:reduce) {
+ .classroom-race-track > .millionaire-final-confetti { display:none; }
+}
+.classroom-race-track.pupil-track { margin-top:8px; padding:8px 20px 0; }
+.race-status-lanes { display:grid; gap:8px; }
+.timed-race-lanes .race-lane { grid-template-columns:250px minmax(0,1fr) 84px; }
+.classroom-race-track:not(.pupil-track) .timed-race-lanes .race-lane { transition:none; }
+.timed-race-lanes .race-name { display:block; overflow:hidden; text-overflow:ellipsis; }
+.timed-race-lanes .race-lane:has(> .race-course.complete) + .race-lane:not(:has(> .race-course.complete))::before { content:""; position:absolute; inset:-4px 0 auto; border-top:1px solid #e7e5e4; pointer-events:none; }
+.race-latest-score { display:block; color:#57534e; font-size:12px; }
+.race-attempt-time { font-size:14px; font-weight:600; font-variant-numeric:tabular-nums; }
+.race-attempt-time.is-leading { color:#15803d; }
+.race-status-lanes .race-lane { position:static; }
+.race-status-lanes .race-course { display:flex; align-items:center; padding:0 16px; font-size:14px; font-weight:600; }
+.race-winner { position:relative; width:fit-content; max-width:100%; margin:0 auto 20px; text-align:center; }
+.race-winner-announcement { display:inline-flex; align-items:center; gap:10px; padding:8px 18px; border:1px solid #e7e5e4; border-radius:999px; background:#fff; color:#171717; }
+.race-winner-medal { width:32px; height:32px; flex-shrink:0; }
+.race-winner .podium-confetti { inset:0 0 auto; height:48px; }
+.race-lane.resetting .race-fill { background:rgba(220,38,38,.38); transition:none; }
+.race-lane.resetting .race-course { border-color:#dc2626; }
+.race-count, .race-highest { position:absolute; width:32px; text-align:center; margin:0; pointer-events:none; }
+.race-count { top:50%; transform:translateY(-50%); font-size:16px; font-weight:700; transition:left 650ms cubic-bezier(.22,1,.36,1); }
+.race-word-count { inset-block:0; left:16px; width:auto; display:flex; align-items:center; transform:none; line-height:1; white-space:nowrap; }
+.race-highest { position:static; width:auto; margin-left:auto; flex-shrink:0; font-size:12px; font-weight:400; color:#a8a29e; white-space:nowrap; }
+.race-lane.resetting .race-count { color:#dc2626; transition:none; }
+.race-fill-track { position:absolute; inset:0 calc(var(--race-finish-inset) + var(--race-finish-width)) 0 0; }
+.race-fill { height:100%; background:rgba(22,163,74,.38); transition:width 650ms cubic-bezier(.22,1,.36,1); }
+.race-finish { position:absolute; right:var(--race-finish-inset); top:0; bottom:0; width:var(--race-finish-width); background:repeating-conic-gradient(#292524 0% 25%,white 0% 50%) 0 0/8px 8px; }
+.classroom-recall-race-indicator { width:480px; }
+.classroom-recall-race-indicator .classroom-race-track { margin:0; padding:0; }
+.classroom-recall-race-indicator .race-lanes { display:contents; }
+.classroom-recall-race-indicator .race-lane { position:static; height:44px; grid-template-columns:150px minmax(0,1fr); }
+.classroom-recall-race-indicator .race-course { height:44px; }
+.classroom-recall-race-indicator .race-name { display:block; margin:0; line-height:1.25; overflow:hidden; text-overflow:ellipsis; }
+  </style>
+  <style>
+
+.game-type-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:20px; }
+.game-type-options.single-mode { grid-template-columns:1fr; }
+.game-type-card, .host-setup-fields { padding-inline:17px; }
+.game-type-card { border-radius:12px; background:white; color:black; padding-block:17px; text-align:left; }
+button.game-type-card { display:flex; flex-direction:column; border:1px solid #d6d3d1; padding:16px; }
+button.game-type-card[aria-pressed="true"] { border:2px solid black; padding:15px; background:black; color:white; }
+button.game-type-card[aria-pressed="true"] span { color:white; }
+.game-type-heading { display:flex; align-items:center; gap:10px; }
+.game-type-glyph { width:24px; height:24px; flex:none; filter:brightness(0); }
+button.game-type-card[aria-pressed="true"] .game-type-glyph { filter:brightness(0) invert(1); }
+.lobby-toolbar { position:relative; display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-bottom:16px; padding:12px 16px; border-radius:0; background:transparent; color:black; }
+ .lobby-toolbar.classroom-lobby-toolbar, .lobby-toolbar.classroom-game-toolbar { display:grid; grid-template-columns:1fr auto 1fr; }
+.classroom-game-toolbar h2, .classroom-toolbar-time { font-size:20px; font-weight:700; line-height:28px; }
+.classroom-game-toolbar h2 { grid-column:1; grid-row:1; text-align:left; }
+.classroom-game-toolbar h2.classroom-final-title, .classroom-game-toolbar h2.classroom-race-title, .classroom-game-toolbar h2.classroom-shared-title { grid-column:2; text-align:center; }
+.classroom-lobby-toolbar .lobby-heading,
+.classroom-game-toolbar h2:is(.classroom-final-title,.classroom-race-title,.classroom-shared-title) { font-size:28px; line-height:36px; }
+.classroom-race-heading { grid-column:2; grid-row:1; text-align:center; }
+.classroom-race-subtitle { margin-top:4px; font-size:14px; line-height:20px; font-weight:400; }
+.classroom-toolbar-time.classroom-race-time { grid-column:1; grid-row:1; text-align:left; align-self:start; }
+.classroom-toolbar-time { grid-column:2; grid-row:1; text-align:center; font-variant-numeric:tabular-nums; }
+.classroom-game-toolbar .classroom-retry-countdown { grid-column:1; grid-row:1; justify-self:start; align-self:center; display:grid; place-items:center; min-width:110px; height:52px; margin:0; padding:0 18px; border:1px solid #e7e5e4; border-radius:999px; background:#fff; text-align:center; font-size:34px; line-height:40px; }
+.classroom-game-toolbar:has(> .classroom-retry-countdown) { margin-bottom:0; }
+.classroom-game-toolbar:has(> .classroom-retry-countdown) ~ .classroom-race-track { margin-top:0; padding-top:8px; }
+.classroom-game-toolbar:has(> .classroom-retry-countdown) .classroom-race-title { line-height:32px; }
+.classroom-game-toolbar:has(> .classroom-retry-countdown) .classroom-race-subtitle { margin-top:0; }
+.classroom-quiz-timing { display:flex; flex-direction:column; align-items:center; justify-content:center; white-space:nowrap; }
+.classroom-playback-icon { width:1em; height:1em; }
+.classroom-answered-count { color:#57534e; font-size:14px; font-weight:600; line-height:16px; }
+.classroom-answer-feedback { font-weight:700; text-align:center; }
+.classroom-answer-feedback[data-outcome="correct"] { color:#15803d; }
+.classroom-answer-feedback[data-outcome="incorrect"] { color:#b91c1c; }
+.classroom-toolbar-controls { grid-column:3; grid-row:1; display:flex; justify-content:flex-end; align-items:center; gap:12px; }
+.classroom-pupil-score { display:flex; flex-direction:column; align-items:flex-end; text-align:right; font-size:20px; line-height:28px; font-weight:700; }
+.classroom-pupil-score .classroom-answered-count { font-variant-numeric:tabular-nums; }
+.lobby-toolbar-participants { grid-column:1; grid-row:1; justify-self:start; display:flex; align-items:center; gap:16px; }
+.classroom-lobby-toolbar .lobby-heading { grid-column:2; grid-row:1; margin:0; }
+.lobby-count { align-self:center; margin:0; font-weight:700; font-size:24px; }
+.lobby-capacity { position:absolute; inset-inline:0; bottom:calc(100% + 8px); margin:0; line-height:20px; color:#78716c; font-size:14px; font-weight:400; text-align:center; }
+.lobby-start { align-self:center; margin-top:32px; min-width:180px; min-height:60px; padding:0 32px; font-size:24px; }
+main.classroom-game-main:not(.classroom-setup-main) { overflow:hidden; }
+main.classroom-setup-main { min-height:748px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; }
+main.classroom-setup-main > .classroom-setup-preview { position:absolute; inset:0; display:flex; flex-direction:column; padding:inherit; background:inherit; pointer-events:none; }
+.classroom-setup-preview > * { opacity:.38; }
+.classroom-setup-main > .classroom-setup-content { z-index:1; width:100%; max-width:320px; }
+.classroom-setup-main > .classroom-setup-content:has(.game-type-options:not(.single-mode)) { max-width:500px; }
+.classroom-setup-main > [role="alert"] { z-index:1; }
+.classroom-setup-main .classroom-setup-content > section { background:white; border-color:#a8a29e; padding:32px; box-shadow:0 8px 24px rgb(15 23 42 / 9%); font-family:Arial, Helvetica, sans-serif; }
+.classroom-setup-content h2 { font-size:26px; line-height:34px; }
+.classroom-setup-main .classroom-setup-content h2 { font-size:24px; line-height:1.2; }
+.classroom-setup-content .game-type-card .text-lg { line-height:1.4; }
+.classroom-setup-content .game-type-card .text-sm { font-size:15px; line-height:1.5; }
+.classroom-setup-content .game-type-glyph { width:29px; height:29px; }
+.classroom-setup-content label, .classroom-setup-content .pilot-field { font-size:20px; line-height:28px; }
+.classroom-setup-main .classroom-setup-content :is(label,.pilot-field) { font-size:15px; line-height:1.5; }
+.host-setup-fields label { color:#57534e; }
+.host-setup-fields .pilot-field { color:black; }
+.classroom-setup-content .pilot-field { box-sizing:border-box; height:50px; }
+.classroom-setup-content .keyboard-answer { font-size:20px; min-height:52px; }
+.classroom-setup-main .classroom-setup-content > section > :is(.keyboard-answer.primary,.host-setup-fields.grid,.game-type-options.single-mode) { width:240px; margin-inline:auto; }
+.host-setup-fields.grid, .game-type-options.single-mode > .game-type-card { padding-inline:0; }
+.game-type-options.single-mode:has(+ .host-setup-fields.grid) { margin-bottom:0; }
+.game-type-options.single-mode + .host-setup-fields.grid { border-top:1px solid #e7e5e4; padding-top:12px; }
+.classroom-setup-main .classroom-setup-content > section > .keyboard-answer.primary,
+.lobby-snake[data-started="false"] > .keyboard-answer.primary { font:600 .875rem/1.25rem ui-sans-serif, system-ui, sans-serif; }
+.classroom-setup-content .game-type-card .text-lg,
+.classroom-setup-main .classroom-setup-content > section > .keyboard-answer.primary { font-size:18px; }
+.classroom-game-main > * { position:relative; }
+.classroom-game-main > .lobby-toolbar { z-index:30; }
+.classroom-race-results-main > .classroom-game-toolbar { margin-bottom:6px; padding-bottom:8px; }
+.classroom-race-results-main > .classroom-race-track { margin-top:0; padding-top:10px; }
+.classroom-game-main > .classroom-countdown { position:absolute; inset:0; z-index:20; display:grid; place-items:center; background:white; border-radius:inherit; pointer-events:none; font-size:144px; line-height:1; font-weight:800; }
+.classroom-countdown span { animation:countdown-pulse 850ms ease-out; }
+@keyframes countdown-pulse { from { opacity:0; transform:scale(.8); } 20% { opacity:1; transform:scale(1); } to { opacity:1; transform:scale(1); } }
+
+.lobby-stage { --lobby-qr-size:540px; position:relative; min-height:588px; padding:24px 16px 24px 24px; display:grid; grid-template-columns:var(--lobby-qr-size) minmax(0,1fr); gap:28px; align-items:center; }
+.lobby-join-row { display:flex; justify-content:center; align-items:center; }
+.lobby-qr-card { display:flex; flex-direction:column; align-items:center; padding:0; }
+.lobby-join-details { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 14px; margin-top:12px; }
+.lobby-nicknames { display:flex; align-items:center; gap:8px; padding:4px; border-radius:8px; white-space:nowrap; font-size:14px; font-weight:600; }
+.lobby-nicknames:disabled { opacity:.5; }
+.lobby-heading { margin:0 0 24px; text-align:center; font-size:36px; font-weight:800; }
+.lobby-qr, .lobby-name { border:1px solid #e7e5e4; border-radius:12px; }
+.lobby-qr { width:var(--lobby-qr-size); height:var(--lobby-qr-size); padding:6px; background:white; box-shadow:0 6px 20px rgb(15 23 42 / 9%); }
+.lobby-participants { position:relative; height:var(--lobby-qr-size); min-height:0; display:flex; flex-direction:column; justify-content:center; margin-top:0; text-align:center; }
+.lobby-with-participants .lobby-participants { align-self:start; justify-content:flex-start; }
+
+.lobby-names { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(10,minmax(0,1fr)); grid-auto-flow:column; gap:8px; width:100%; height:100%; }
+.lobby-name { padding:6px 6px 6px 12px; background:white; box-shadow:0 2px 6px rgb(15 23 42 / 8%); font-size:var(--name-font); font-weight:700; white-space:nowrap; min-width:0; width:100%; }
+.lobby-name { display:grid; grid-template-columns:minmax(0,1fr) 32px; align-items:center; gap:5px; }
+.lobby-name-label { min-width:0; overflow:hidden; text-overflow:ellipsis; text-align:left; }
+.lobby-remove { display:grid; place-items:center; width:32px; height:32px; padding:0 0 4px; border:0; border-radius:8px; font-size:20px; line-height:1; }
+.lobby-remove:hover:not(:disabled) { color:#b91c1c; background:#fef2f2; }
+.lobby-remove:focus-visible { outline:3px solid #2563eb; outline-offset:2px; }
+.lobby-remove:disabled { cursor:not-allowed; opacity:.5; }
+.lobby-name { transition:font-size 200ms ease; }
+
+.participant-waiting-stage { position:relative; min-height:540px; padding:48px 32px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.participant-waiting-details { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:16px; pointer-events:none; }
+.participant-waiting-details :is(button,input) { pointer-events:auto; }
+.participant-waiting-stage:has(.lobby-snake[data-started="true"]) { justify-content:flex-start; padding-top:20px; }
+.participant-waiting-stage:has(.lobby-snake[data-started="true"]) .participant-waiting-details { gap:6px; }
+.participant-waiting-stage:has(.lobby-snake[data-started="true"]) .participant-identity { padding-block:8px; }
+.lobby-snake { position:absolute; inset:0; border-radius:12px; overflow:hidden; background:white; }
+.lobby-snake[data-started="false"] { inset:auto auto 16px 50%; transform:translateX(-50%); display:flex; align-items:center; gap:12px; white-space:nowrap; overflow:visible; }
+.lobby-snake-board { position:absolute; inset:0; width:100%; height:100%; }
+.lobby-snake-panel { position:absolute; left:50%; bottom:16px; transform:translateX(-50%); display:grid; gap:8px; justify-items:center; padding:12px; border:1px solid #e7e5e4; border-radius:12px; background:white; box-shadow:0 2px 6px rgb(15 23 42 / 8%); }
+.lobby-snake[data-started="true"] .lobby-snake-panel { background:transparent; box-shadow:none; }
+.lobby-snake-panel .keyboard-answer { min-height:56px; font-size:16px; }
+.lobby-snake-directions { display:grid; grid-template-columns:repeat(3,80px); gap:6px; }
+.lobby-snake-panel .lobby-snake-directions button { min-height:80px; padding:0; background:transparent; font-size:28px; }
+.lobby-snake-directions button:first-child { grid-column:2; }
+.lobby-snake-directions button:nth-child(2) { grid-column:1; }
+.lobby-snake-score { font-size:14px; color:#44403c; }
+.participant-identity-row { display:flex; align-items:center; font-size:36px; font-weight:800; }
+.participant-identity { padding:16px 28px; border:1px solid #e7e5e4; border-radius:16px; background:white; box-shadow:0 2px 6px rgb(15 23 42 / 8%); }
+.participant-nickname-field { width:480px; min-width:0; }
+.keyboard-empty { min-height: 46px; }
+.keyboard-question-transition { transition: opacity 260ms ease; }
+
+.pilot-field { display:block; width:100%; margin-top:6px; padding:10px 12px; border:1px solid #d6d3d1; border-radius:10px; background:white; }
+.pilot-field.race-streak-field { width:50%; }
+button:disabled { opacity:.5; cursor:default; }
+</style>
+  <script defer src="./shared/hub-menu-fades.js?v=9f732bc82542"></script>
+<link rel="stylesheet" href="./styles/hub-touch.css?v=45815c4bffba" />
+<script src="./shared/hub-touch.js?v=43d579e0d082"></script>
+</head>
+<body><div id="root"></div>
+<script type="text/x-mlh-jsx-source" data-src="./shared/accidentals-notation.jsx" data-runtime="accidentals-notation.js"></script>
+<script src="./generated-runtimes/accidentals-notation.js?v=1b2449cf4e63"></script>
+<script type="text/x-mlh-jsx-source" data-src="./shared/classroom-literacy-notation.jsx" data-runtime="classroom-literacy-notation.js"></script>
+<script src="./generated-runtimes/classroom-literacy-notation.js?v=e9bde8ffe939"></script>
+<script type="text/x-mlh-jsx-source" data-src="./shared/keyboard-note-notation.jsx" data-runtime="keyboard-note-notation.js"></script>
+<script src="./generated-runtimes/keyboard-note-notation.js?v=16db175b3ecf"></script>
+<script src="./melodic-dictation-notation.js?v=20261004-tonality"></script>
+<script src="./generated-runtimes/melodicdictation-1.js?v=da6339a4e8a8"></script>
+<script type="text/x-mlh-jsx-source" data-runtime="keyboardnoteidentificationclassroom-1.js">
+const {useState,useRef,useEffect,useLayoutEffect,useMemo}=React;
+const K=window.KeyboardNotes;
+function ClassroomLiteracyNotation({score}){
+ const container=useRef(null);
+ const [shadow,setShadow]=useState(null);
+ useLayoutEffect(()=>{
+  setShadow(container.current.shadowRoot||container.current.attachShadow({mode:'open'}));
+ },[]);
+ const {NotationView}=window.MLH.LiteracyNotation;
+ return <div ref={container}>{shadow&&ReactDOM.createPortal(<>
+  <link rel="stylesheet" href="./whowantstobemillionaire/millionaire.css"/>
+  <style>{'.millionaire-notation { margin:0 auto; }'}</style>
+  {score.systems?<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>{score.systems.map(system=>
+   <div key={system.label} style={{width:460,textAlign:'center'}}><p>{system.label}</p><NotationView notation={system}/></div>
+  )}</div>:<NotationView notation={score.notation}/>}
+ </>,shadow)}</div>;
+}
+
+function ClassroomKeyboard({game,feedback,selection,enabled,onAnswer}){
+ const {question,options,showC}=game;
+ const Keyboard=window.MLH.KeyboardNoteKeyboard;
+ const WrittenNote=window.MLH.KeyboardWrittenNote;
+ if(question.type==='choice'){
+  if(!question.score.bars)return question.score.notation||question.score.systems?<ClassroomLiteracyNotation score={question.score}/>:null;
+  const {Score}=window.MLH.AccidentalsNotation;
+  return <Score question={question.score} placements={[]} disabled showNoteNames={options?.showNoteNames}/>;
+ }
+ if(question.type==='written')return <WrittenNote note={question.note} hideLabel showNoteNames={options.showNoteNames}/>;
+ return <>
+  {question.type==='find'&&<WrittenNote note={question.note}/>}
+  <Keyboard question={question} options={options} showC={showC===true} feedback={feedback}
+    selected={selection?.pitch} showPendingSelection enabled={enabled}
+    onSelect={key=>onAnswer(K.classroomKeyId(key.pitch))}/>
+ </>;
+}
+
+function AnswerChoices({answers,question,review,selected,disabled,onAnswer}){
+ if(question?.type==='choice'){
+  const {NoteNameDisplay}=window.MLH.AccidentalsNotation;
+  return <div className="keyboard-answers" style={{gridTemplateColumns:`repeat(${answers.length}, minmax(0, 1fr))`}}>{answers.map(answer=>{
+   const isSelected=selected===answer.id;
+   const feedback=review&&K.classroomCorrect(answer,question)?'correct':isSelected?(review?'incorrect':'awaiting-reveal'):'';
+   return <button key={answer.id} type="button" className={`keyboard-answer classroom-choice-answer ${feedback}`} aria-pressed={isSelected} disabled={disabled} onClick={()=>onAnswer(answer)}><NoteNameDisplay name={answer.label}/></button>;
+  })}</div>;
+ }
+ return <div className="keyboard-answers">{[1,0,-1].filter(offset=>answers.some(answer=>answer.offset===offset)).flatMap(offset=>K.letters.map((letter,index)=>{
+  const answer=answers.find(item=>item.offset===offset&&item.index===index);
+  return answer?<button type="button" key={answer.id} disabled={disabled} aria-pressed={selected===answer.id} aria-label={answer.label.replace('♯',' sharp').replace('♭',' flat')} onClick={event=>{event.currentTarget.blur();onAnswer(answer);}} className={`keyboard-answer ${answer.offset?'accidental':''} ${!review&&selected===answer.id?'awaiting-reveal':''} ${review&&K.classroomCorrect(answer,question)?'correct':''} ${review&&selected===answer.id&&!K.classroomCorrect(answer,question)?'incorrect':''}`}>{answer.offset?<span className="flex items-center justify-center gap-[3px]"><span>{letter}</span><span className={`music-symbol relative inline-block leading-none ${answer.offset===1?'top-[1px] text-[1.1em]':'top-[2px] text-[1.15em]'}`}>{window.BRAVURA_SYMBOLS[answer.offset===1?'sharp':'flat']}</span></span>:letter}</button>:<div className="keyboard-empty" key={`${letter}:${offset}`} aria-hidden="true"/>;
+ }))}</div>;
+}
+const racePlayerKey=player=>player.id||player.name;
+const isWordPuzzleRace=game=>game?.gameType==='activity-race'&&/^\/(wordsearch|crosswords)\.html(?:[?#]|$)/.test(game.activity);
+const isMillionaireRace=game=>game?.gameType==='activity-race'&&window.MLH.classroomActivities.isMillionaireActivity(game.activity);
+const isEscapeRoomRace=game=>game?.gameType==='activity-race'&&window.MLH.classroomActivities.isEscapeRoomActivity(game.activity);
+function RacePlace({index}){
+ return <span className="race-place">{index+1}</span>;
+}
+function RaceLane({player,index,target,fault,countCorrect,unit,timed=false,elapsedMs,latestScore,finished,leading=false,showPlace=false}){
+ const liveStreak=fault?null:(player.streak||0),[displayStreak,setDisplayStreak]=useState(player.streak||0);
+ useLayoutEffect(()=>{
+  if(!fault){setDisplayStreak(liveStreak);return;}
+  if(fault.phase==='dropping'||false){setDisplayStreak(0);return;}
+  setDisplayStreak(fault.from);
+  let frame;const started=performance.now();
+  function drain(now){const fraction=Math.min(1,(now-started)/1800);setDisplayStreak(fault.from*(1-fraction));if(fraction<1)frame=requestAnimationFrame(drain);}
+  frame=requestAnimationFrame(drain);return()=>cancelAnimationFrame(frame);
+ },[liveStreak,fault?.version,fault?.phase]);
+ const streak=Math.max(0,Math.round(displayStreak)),progress=Math.min(100,100*Math.max(0,displayStreak)/target),highest=Math.max(player.highestStreak||0,player.streak||0,fault?.from||0);
+ const measure=unit==='rooms'?'rooms escaped':unit==='words'?'words found':unit==='concepts'?'concepts recalled':countCorrect?'correct answers':'streak';
+ return <div className={`race-lane${fault?' resetting':''}`} style={{transform:`translateY(${index*64}px)`}}>
+  <p className="race-name">{showPlace&&<RacePlace index={index}/>}<span>{player.name}</span>{latestScore&&<span className="race-latest-score">Latest: {latestScore}</span>}{!countCorrect&&<span className="race-highest" aria-label={`Highest streak: ${highest}`}>Best: {highest}</span>}</p>
+  <div className={`race-course${player.streak>=target?' complete':''}`} role="progressbar" aria-label={`${player.name}'s ${measure}`} aria-valuemin={0} aria-valuemax={target} aria-valuenow={streak} aria-valuetext={timed&&elapsedMs==null?'No submission':unit!==null?`${streak} of ${target} ${measure}`:undefined}>
+   <div className="race-fill-track" aria-hidden="true"><div className="race-fill" style={{width:`${progress}%`}}/>{unit!==null?<span className="race-count race-word-count">{timed&&elapsedMs==null?(finished?'No submission':'Playing…'):`${streak} / ${target}${unit?' '+unit:''}`}</span>:<p className="race-count" style={{left:`max(0px, calc(${progress}% - 32px))`}}>{streak}</p>}</div>
+   <div className="race-finish" aria-hidden="true"/>
+  </div>
+  {timed&&<span className={`race-attempt-time${leading?' is-leading':''}`} aria-label={elapsedMs==null?'No time':`${leading?'Leading attempt time':'Attempt time'} ${formatRaceAttemptTime(elapsedMs)}`}>{elapsedMs==null?'–':formatRaceAttemptTime(elapsedMs)}</span>}
+ </div>;
+}
+function isWinnerRace(game){
+ return ['race','activity-race','rhythm-time-trial'].includes(game?.gameType);
+}
+function raceWinnerAnnounced(previous,game){
+ if(!game.host||!isWinnerRace(game)||!previous||previous.phase==='finished'||game.phase!=='finished')return false;
+ if(game.gameType==='rhythm-time-trial')return game.players.some(player=>player.bestTimeMs!=null);
+ return Boolean(game.winners?.length||game.winner);
+}
+function RaceWinner({game,showBurst=true}){
+ const winners=game.winners?.length?game.winners:game.winner?[game.winner]:[];
+ if(!winners.length)return <p role="status" className="race-winner text-lg font-semibold">The race ended without a winner.</p>;
+ return <div className="race-winner"><p role="status" className="race-winner-announcement text-2xl font-bold">
+  <img className="race-winner-medal" src="./ui-icons/gold.svg" alt="" aria-hidden="true"/>
+  <span>{winners.join(' and ')}{winners.length>1?' tie for the win!':' wins!'}</span>
+ </p>{game.finishReason==='time'&&!game.retryRaceMinutes&&<p className="text-sm text-stone-500 mt-1">{game.recallMinutes!=null?'Time’s up. The most concepts recalled wins.':'Time’s up — highest streak achieved wins.'}</p>}{showBurst&&<div className="podium-confetti" aria-hidden="true">{Array.from({length:32},(_,i)=><span key={i} style={{left:`${5+((i*19)%90)}%`,backgroundColor:['#38bdf8','#a5f3fc','#facc15','#fb7185','#4ade80'][i%5],animation:`podium-confetti-drop ${1.8+(i%5)*.18}s ease-out forwards`,animationDelay:`${(i%8)*.08}s`}}/>)}</div>}</div>;
+}
+function RaceRows({game,label,children}){
+ const finished=game.phase==='finished';
+ const hasWinner=Boolean(game.winners?.length||game.winner);
+ const FinalConfetti=window.MLH.FinalConfetti;
+ return <section className={`classroom-race-track${game.host?'':' pupil-track'}`} aria-label={label}>
+  {finished&&hasWinner&&<FinalConfetti/>}
+  {finished&&<RaceWinner game={game} showBurst={false}/>}
+  {children}
+ </section>;
+}
+
+function RaceTrack({game,countCorrect=false,unit=null}){
+ const target=game.targetStreak||30,[faults,setFaults]=useState(new Map());
+ const seen=useRef(new Map(game.players.map(p=>[racePlayerKey(p),p.resetVersion||0]))),order=useRef(game.players.map(racePlayerKey)),timers=useRef(new Map()),zeroOrder=useRef(new Map()),serial=useRef(0);
+ const ranked=game.players.filter(p=>faults.get(racePlayerKey(p))?.phase!=='draining').sort((a,b)=>{
+  const aKey=racePlayerKey(a),bKey=racePlayerKey(b),aStreak=faults.get(aKey)?.phase==='dropping'?-1:(a.streak||0),bStreak=faults.get(bKey)?.phase==='dropping'?-1:(b.streak||0);
+  return bStreak-aStreak||(aStreak<=0?(zeroOrder.current.get(aKey)||0)-(zeroOrder.current.get(bKey)||0):0)||a.name.localeCompare(b.name);
+ });
+ game.players.filter(p=>faults.get(racePlayerKey(p))?.phase==='draining').sort((a,b)=>faults.get(racePlayerKey(a)).slot-faults.get(racePlayerKey(b)).slot).forEach(p=>ranked.splice(Math.min(faults.get(racePlayerKey(p)).slot,ranked.length),0,p));
+ useLayoutEffect(()=>{
+  for(const player of game.players){
+   const key=racePlayerKey(player),version=player.resetVersion||0;
+   if(version<=(seen.current.get(key)||0))continue;
+   seen.current.set(key,version);(timers.current.get(key)||[]).forEach(clearTimeout);
+   const reduced=false;
+   const slot=Math.max(0,order.current.indexOf(key));
+   setFaults(previous=>new Map(previous).set(key,{version,from:player.resetFrom||0,phase:'draining',slot}));
+   const drop=setTimeout(()=>{zeroOrder.current.set(key,++serial.current);setFaults(previous=>{if(previous.get(key)?.version!==version)return previous;return new Map(previous).set(key,{...previous.get(key),phase:'dropping'});});},reduced?0:1800);
+   const finish=setTimeout(()=>{setFaults(previous=>{if(previous.get(key)?.version!==version)return previous;const next=new Map(previous);next.delete(key);return next;});timers.current.delete(key);},reduced?0:3200);
+   timers.current.set(key,[drop,finish]);
+  }
+ },[game.players]);
+ useLayoutEffect(()=>{order.current=ranked.map(racePlayerKey);});
+ useEffect(()=>()=>{for(const pending of timers.current.values())pending.forEach(clearTimeout);},[]);
+ const recall=game.recallMinutes!=null;
+ const visiblePlayers=game.host||(recall&&game.phase==='finished')?ranked:ranked.filter(player=>player.name===game.myName);
+ return <RaceRows game={game} label={recall?'Concept Recall standings':'Race track'}>
+  <div className="race-lanes" style={{height:`${visiblePlayers.length*64}px`}}>{visiblePlayers.map((player,index)=><RaceLane key={racePlayerKey(player)} player={player} index={index} target={target} showPlace={game.host} fault={faults.get(racePlayerKey(player))} countCorrect={countCorrect} unit={unit}/>)}</div>
+ </RaceRows>;
+}
+
+function formatRaceAttemptTime(ms){
+ const tenths=Math.floor(ms/100);
+ if(tenths<600)return (tenths/10).toFixed(1)+'s';
+ return Math.floor(tenths/600)+':'+((tenths%600)/10).toFixed(1).padStart(4,'0');
+}
+
+function TimedRaceResults({game}){
+ const activities=window.MLH.classroomActivities;
+ const finished=game.phase==='finished';
+ const ranked=game.players.filter(player=>game.host||finished||player.name===game.myName)
+  .sort((a,b)=>activities.compareRetryRacePlayers(a,b)||a.name.localeCompare(b.name));
+ return <RaceRows game={game} label="Race leaderboard">
+  <div className="race-lanes timed-race-lanes" style={{height:`${ranked.length*64}px`}}>{ranked.map((player,index)=>{
+   const score=activities.retryRaceScore(player),latest=player.retryAttempt;
+   const latestScore=latest&&latest.correct!==score.correct?`${latest.correct} / ${latest.total}`:null;
+   return <RaceLane key={racePlayerKey(player)} player={{...player,streak:score?.correct??0}} index={index} target={score?.total??game.retryRaceTotal??1}
+    countCorrect unit="" timed finished={finished} showPlace={game.host} leading={game.host&&index===0&&score!=null} elapsedMs={score?.elapsedMs} latestScore={latestScore}/>;
+  })}</div>
+ </RaceRows>;
+}
+
+function ActivityRaceResults({game}){
+ if(game.retryRaceMinutes)return <TimedRaceResults game={game}/>;
+ const finished=game.phase==='finished';
+ const wordPuzzle=isWordPuzzleRace(game);
+ const millionaire=isMillionaireRace(game);
+ const escapeRoom=isEscapeRoomRace(game);
+ const players=game.host?game.players:game.players.filter(player=>player.name===game.myName);
+ if(game.nativeStreak)return <RaceTrack game={game}/>;
+ if(game.targetCorrect||millionaire){
+  const race={...game,targetStreak:millionaire?15:game.targetCorrect,players:game.players.map(player=>({...player,streak:player.correctCount||0}))};
+  return <RaceTrack game={race} countCorrect unit={game.recallMinutes!=null?'concepts':escapeRoom?'rooms':wordPuzzle?'words':millionaire?'':null}/>;
+ }
+ return <RaceRows game={game} label="Activity Race">
+  <ul className="race-status-lanes">{[...players].sort((a,b)=>Number(Boolean(b.solved))-Number(Boolean(a.solved))).map((player,index)=><li className="race-lane" key={racePlayerKey(player)}>
+   <span className="race-name">{game.host&&<RacePlace index={index}/>}<span>{player.name}</span></span>
+   <span className={`race-course${player.solved?' complete':''}`}>{player.solved?'Finished':player.finished||finished?'Did not finish':wordPuzzle?'0 words':'Playing'}<span className="race-finish" aria-hidden="true"/></span>
+  </li>)}</ul>
+ </RaceRows>;
+}
+
+function FloatingRaceParticipants({game}){
+ const rows=[2,4,1,5];
+ const columns=[3,1,5,2,4];
+ return <section className="floating-race-stage" aria-label="Classroom race">
+  <div className="floating-race-bubble">
+   {game.phase==='finished'?<RaceWinner game={game}/>:<p role="status">Playing...</p>}
+  </div>
+  <ul className="floating-race-names" aria-label="Participants">
+   {game.players.map((player,index)=><li key={racePlayerKey(player)} className="floating-race-name" title={player.name} style={{
+    gridRow:rows[index%rows.length],
+    gridColumn:columns[Math.floor(index/rows.length)],
+    '--bounce-duration':`${4+index%5*.4}s`,
+    '--bounce-delay':`${-index*.73}s`,
+   }}>{player.name}</li>)}
+  </ul>
+ </section>;
+}
+
+const testParticipants=[
+ {name:'Tempo Fox',symbol:'quarterNoteStemUp'},
+ {name:'Piano Otter',symbol:'gClef'},
+ {name:'Jazz Penguin',symbol:'eighthNoteStemUp'},
+ {name:'Cadence Gecko',symbol:'fermataAbove'},
+ {name:'Allegro Alpaca'},
+ {name:'Banjo Badger'},
+ {name:'Bongo Bumblebee'},
+ {name:'Cello Capybara'},
+ {name:'Disco Duck'},
+ {name:'Fiddle Ferret'},
+ {name:'Forte Flamingo'},
+ {name:'Harmony Hamster'},
+ {name:'Kazoo Koala'},
+ {name:'Legato Llama'},
+ {name:'Melody Meerkat'},
+ {name:'Oboe Octopus'},
+ {name:'Piccolo Puffin'},
+ {name:'Polka Panda'},
+ {name:'Rhythm Raccoon'},
+ {name:'Tuba Tiger'},
+];
+function RhythmTimeTrialLeaderboard({players,myName,finished,host=false}){
+ const fastest=players.find(player=>player.bestTimeMs!=null)?.bestTimeMs;
+ const winners=host&&finished&&fastest!=null?players.filter(player=>player.bestTimeMs===fastest).map(player=>player.name):[];
+ let lastTime=null,rank=0;
+ return <section className="classroom-leaderboard mt-4" aria-labelledby="rhythm-standings-title">
+  {winners.length>0&&<RaceWinner game={{winners}} showBurst={false}/>}
+  <h2 id="rhythm-standings-title" className="mb-3 text-lg font-bold">Fastest Grid Times</h2>
+  {players.every(player=>player.bestTimeMs==null)&&<p className="mb-3 text-sm" role="status">{finished?'No grids were completed.':'Times appear as players complete grids.'}</p>}
+  <table className="rhythm-time-trial-standings">
+   <thead><tr><th scope="col">Position</th><th scope="col">Player</th><th scope="col">Best Time</th></tr></thead>
+   <tbody>{players.map((player,index)=>{
+    const time=player.bestTimeMs;
+    if(time!=null&&time!==lastTime){rank=index+1;lastTime=time;}
+    const winner=finished&&time!=null&&rank===1;
+    return <tr key={player.id||player.name} className={winner?'bg-green-50 font-bold':undefined}>
+     <td>{index+1}</td><th scope="row">{player.name}{player.name===myName?' (You)':''}{winner?' · Winner':''}</th><td>{time==null?'–':`${(time/1000).toFixed(1)} s`}</td>
+    </tr>;
+   })}</tbody>
+  </table>
+ </section>;
+}
+
+function GameTypeCard({label,selected,onClick,children}){
+ const icon=label==='Quiz'?'./ui-icons/classroom-quiz.png':
+  label==='Individual Practice'?'./ui-icons/practicemode.svg':'./ui-icons/classroom-race.png';
+ const content=<>
+  <span className="game-type-heading text-lg font-bold"><img className="game-type-glyph" src={icon} alt="" aria-hidden="true"/>{label}</span>
+  <span className="block text-sm text-stone-600 mt-1">{children}</span>
+ </>;
+ return onClick?<button type="button" className="game-type-card" aria-pressed={selected} onClick={onClick}>{content}</button>:
+  <div className="game-type-card">{content}</div>;
+}
+
+function HostShareButton({disabled,onClick}){
+ return <button type="button" className="keyboard-answer primary w-full" disabled={disabled} onClick={onClick}>Share</button>;
+}
+
+function StreakRaceFields({targetStreak,setTargetStreak,raceMinutes,setRaceMinutes}){
+ return <>
+  <label>Target Streak<select className="pilot-field" value={targetStreak} onChange={event=>setTargetStreak(Number(event.target.value))}>
+   {[3,5,10,15,20,25,30,40,50].map(value=><option key={value} value={value}>{value}</option>)}
+  </select></label>
+  <label>Time Limit<select className="pilot-field" value={raceMinutes} onChange={event=>setRaceMinutes(Number(event.target.value))}>
+   <option value={0}>Unlimited</option>
+   {Array.from({length:10},(_,i)=>i+1).map(n=><option key={n} value={n}>{n} {n===1?'minute':'minutes'}</option>)}
+  </select></label>
+ </>;
+}
+
+function LiteracyRaceSetup({activity,busy,onStart,showMode=true}){
+ const grids=window.MLH.classroomActivities.isRhythmTimeTrialActivity(activity);
+ const [targetStreak,setTargetStreak]=useState(grids?3:10),[raceMinutes,setRaceMinutes]=useState(0);
+ return <>
+  {showMode&&<div className="game-type-options single-mode" role="group" aria-label="Game type">
+   <GameTypeCard label="Race">{grids?'Be first to complete the target streak of rhythm grids.':'Be first to reach the correct-answer streak.'}</GameTypeCard>
+  </div>}
+  <div className="host-setup-fields grid gap-3 mb-4">
+   <StreakRaceFields {...{targetStreak,setTargetStreak,raceMinutes,setRaceMinutes}}/>
+  </div>
+  <HostShareButton disabled={busy} onClick={()=>onStart({activity,gameType:'race',nativeStreak:true,targetStreak,raceMinutes})}/>
+ </>;
+}
+
+function AccidentalsHostSetup({setup,busy,onStart}){
+ const [mode,setMode]=useState('quiz');
+ const [selectedCount,setCount]=useState(null),[questionTime,setQuestionTime]=useState(20);
+ const [targetStreak,setTargetStreak]=useState(10),[raceMinutes,setRaceMinutes]=useState(0);
+ const {activity,level}=setup;
+ const [maximum]=useState(()=>window.MLH.classroomAccidentals.quizQuestions(setup,50).length);
+ const counts=window.MLH.classroomActivities.quizQuestionCounts(maximum);
+ const count=selectedCount??counts.filter(value=>value<=20).at(-1)??counts[0];
+ const quiz=mode==='quiz';
+ return <>
+  <div className="game-type-options" role="group" aria-label="Game type">
+   <GameTypeCard label="Quiz" selected={quiz} onClick={()=>setMode('quiz')}>Compete for points. Faster correct answers score more.</GameTypeCard>
+   <GameTypeCard label="Race" selected={!quiz} onClick={()=>setMode('race')}>Race to the finish. Be first to reach the correct-answer streak.</GameTypeCard>
+  </div>
+  <div className="host-setup-fields grid gap-3 mb-4">
+   {quiz?<>
+    <label>Questions<select className="pilot-field" value={count} onChange={event=>setCount(Number(event.target.value))}>
+     {counts.map(value=><option key={value} value={value}>{value}</option>)}
+    </select></label>
+    <label>Time Per Question<select className="pilot-field" value={questionTime} onChange={event=>setQuestionTime(Number(event.target.value))}>
+     {[5,10,15,20,30,45,60,90,120].map(seconds=><option key={seconds} value={seconds}>{seconds} seconds</option>)}
+    </select></label>
+   </>:<StreakRaceFields {...{targetStreak,setTargetStreak,raceMinutes,setRaceMinutes}}/>}
+  </div>
+  <HostShareButton disabled={busy||(quiz&&!count)} onClick={()=>onStart({
+   activity,level,gameType:mode,...(quiz?{count,questionTime}:{nativeStreak:true,targetStreak,raceMinutes}),
+  })}/>
+ </>;
+}
+
+function ClassroomAnswerFeedback({correct,animationPrefix}){
+ return <div role="status" className="mt-3 flex justify-center">
+  <window.MLH.FeedbackBadge feedback={{correct}} animationPrefix={animationPrefix}/>
+ </div>;
+}
+
+function HostedAccidentalsQuestion({game,canAnswer,onPlacement,onChoice,questionKeyboard,questionCard}){
+ const {QuestionScore,QuestionPanel,snapPlacement,missingPlacements,wrongPlacements,VIEWBOX_WIDTH,VIEWBOX_HEIGHT}=window.MLH.AccidentalsNotation;
+ const {placementId,parsePlacement}=window.MLH.classroomAccidentals;
+ const [symbol,setSymbol]=useState(null),[draft,setDraft]=useState(null),[hover,setHover]=useState(null);
+ const {score,pitch,type}=game.question;
+ const isPlacement=type==='accidental-placement';
+ const submitted=isPlacement?parsePlacement(game.myAnswer):null;
+ const placement=game.submitted?submitted:draft;
+ const placements=placement?[placement]:[];
+ const review=game.phase==='review';
+ const feedback=review?{correct:game.host||game.correct===true}:null;
+ function fromPointer(event){
+  const rect=event.currentTarget.getBoundingClientRect();
+  return snapPlacement({
+   x:(event.clientX-rect.left)*VIEWBOX_WIDTH/rect.width,
+   y:(event.clientY-rect.top)*VIEWBOX_HEIGHT/rect.height,
+  },symbol,score);
+ }
+ function place(value){
+  if(!canAnswer||!symbol||!value)return;
+  setDraft({...value,localId:placementId(value)});
+  setHover(null);
+ }
+ const choices=isPlacement?[]:window.MLH.classroomAccidentals.answers(game.question);
+ const choice=choices.findIndex(answer=>answer.id===game.myAnswer);
+ const correctSymbol=review&&isPlacement&&!game.correct?score.required[0].symbolId:null;
+ return <div className="flex flex-col">
+  <QuestionScore scoreRef={questionKeyboard} question={score} selectedSymbol={canAnswer?symbol:null}
+   placements={placements} hoverPlacement={hover} feedback={feedback}
+   wrong={review&&isPlacement?wrongPlacements(score,placements):[]}
+   missing={review&&isPlacement?missingPlacements(score,placements):[]} disabled={!canAnswer||!symbol}
+   onMove={canAnswer&&symbol?event=>setHover(fromPointer(event)):undefined} onLeave={()=>setHover(null)}
+   onLock={canAnswer&&symbol?event=>place(fromPointer(event)):undefined}
+   onKeyboard={(barIndex,noteIndex)=>place({symbolId:symbol,barIndex,noteIndex,anchor:'before-note'})}
+   showNoteNames={game.options?.showNoteNames}/>
+  <QuestionPanel panelRef={questionCard} question={score} disabled={!canAnswer} feedback={feedback}
+   correctChoice={review?score.choices?.[pitch]?.id:undefined} choice={score.choices?.[choice]?.id}
+   onChoice={!isPlacement&&!game.host?item=>onChoice(choices[score.choices.indexOf(item)].id):undefined}
+   symbols={isPlacement&&!game.host&&game.phase!=='listening'?score.symbols.map(id=>({id,name:id[0].toUpperCase()+id.slice(1)})):[]}
+   selectedSymbol={game.submitted?submitted?.symbolId:symbol} correctSymbol={correctSymbol}
+   wrongSymbol={review&&submitted&&!game.correct&&submitted.symbolId!==correctSymbol?submitted.symbolId:null}
+   onSymbol={id=>{setSymbol(id);setHover(null);}} hasPlacement={Boolean(placement)}
+   audio={score.listening} onConfirm={isPlacement&&!game.host&&game.phase!=='listening'?()=>onPlacement(placementId(draft)):undefined}
+   onClear={()=>{setDraft(null);setHover(null);}}>
+   {!game.host&&game.phase==='listening'&&<p className="mt-3 text-sm text-stone-600">Listen to the full excerpt. Answers open when it finishes.</p>}
+   {!game.host&&game.phase==='question'&&game.submitted&&<p role="status" className="mt-3 text-center">Answer submitted.</p>}
+   {!game.host&&review&&(game.submitted?<ClassroomAnswerFeedback correct={game.correct} animationPrefix="note"/>:
+    <p role="status" className="mt-3 text-center">No answer submitted.</p>)}
+  </QuestionPanel>
+ </div>;
+}
+
+function HostedQuizSetup({activity,listeningActivity,writtenSetup,busy,onStart,showMode=true}){
+ const [bank,setBank]=useState(null),[error,setError]=useState(''),[retry,setRetry]=useState(0);
+ const [selectedCount,setSelectedCount]=useState(null),[questionTime,setQuestionTime]=useState(20);
+ useEffect(()=>{
+  let active=true;
+  setError('');
+  const quiz=listeningActivity?window.MLH.classroomListening:writtenSetup?window.MLH.classroomLiteracy:window.MLH.classroomConceptQuiz;
+  const options=listeningActivity?window.MLH.classroomActivities.listeningSettings(listeningActivity):writtenSetup?.options??quiz.settings(activity);
+  const materialReady=writtenSetup||(listeningActivity&&!quiz.needsMaterial(options))
+   ?Promise.resolve(null):window.MLH.classroomPlayback.loadMaterial(options);
+  materialReady.then(material=>{
+   if(!active)return;
+   const counts=window.MLH.classroomActivities.quizQuestionCounts(writtenSetup?.kind?window.MLH.classroomWrittenNotes.hostAvailable(writtenSetup):quiz.available(options,material),writtenSetup||options.format==='chords'?5:1);
+   setBank({counts,material});
+  }).catch(error=>{if(active)setError(error.message);});
+  return()=>{active=false;};
+ },[activity,listeningActivity,writtenSetup,retry]);
+ const counts=bank?.counts??[];
+ const count=selectedCount??counts.filter(value=>value<=20).at(-1)??counts[0];
+ return <>
+  {showMode&&<div className="game-type-options single-mode" role="group" aria-label="Game type">
+   <GameTypeCard label="Quiz">{listeningActivity?'Listen together and answer the same questions.':'Answer the same questions together and earn points for correct answers.'}</GameTypeCard>
+  </div>}
+  {error?<p className="mb-4" role="alert">{error} <button className="underline" type="button" onClick={()=>setRetry(value=>value+1)}>Retry</button></p>:
+   !bank?<p className="mb-4" role="status">Loading questions…</p>:
+   !counts.length?<p className="mb-4" role="status">No eligible questions. Change your settings in Individual Practice.</p>:
+   <div className="host-setup-fields grid gap-3 mb-4">
+    <label>Questions<select className="pilot-field" value={count} onChange={event=>setSelectedCount(Number(event.target.value))}>
+     {counts.map(value=><option key={value} value={value}>{value}</option>)}
+    </select></label>
+    <label>Time Per Question<select className="pilot-field" value={questionTime} onChange={event=>setQuestionTime(Number(event.target.value))}>
+     {[5,10,15,20,30,45,60,90,120].map(seconds=><option key={seconds} value={seconds}>{seconds} seconds</option>)}
+    </select></label>
+   </div>}
+  <HostShareButton disabled={busy||!count}
+   onClick={()=>onStart({activity,gameType:'quiz',count,questionTime},bank.material)}/>
+ </>;
+}
+
+function LiteracyModeSetup({activity,listeningActivity,writtenSetup,busy,onStart}){
+ const [mode,setMode]=useState('race');
+ return <>
+  <div className="game-type-options" role="group" aria-label="Game type">
+   <GameTypeCard label="Quiz" selected={mode==='quiz'} onClick={()=>setMode('quiz')}>Answer the same questions together and earn points for correct answers.</GameTypeCard>
+   <GameTypeCard label="Race" selected={mode==='race'} onClick={()=>setMode('race')}>Be first to reach the correct-answer streak.</GameTypeCard>
+  </div>
+  {mode==='quiz'
+   ?<HostedQuizSetup {...{activity,listeningActivity,writtenSetup,busy}} showMode={false} onStart={(setup,material)=>onStart({...setup,literacyQuiz:true},material)}/>
+   :<LiteracyRaceSetup {...{activity,busy,onStart}} showMode={false}/>}
+ </>;
+}
+
+function useHostedCollection(activity){
+ const collectionActivity=window.MLH.classroomActivities.collectionSettings(activity)?.activity;
+ const [result,setResult]=useState(null);
+ useEffect(()=>{
+  if(!collectionActivity)return;
+  let active=true;
+  window.MLH.classroomPlayback.loadCollection(collectionActivity).then(collection=>{
+   if(active)setResult({activity:collectionActivity,collection});
+  }).catch(()=>{
+   if(active)setResult({activity:collectionActivity,error:'This shared activity could not be opened. Host it again from the activity page.'});
+  });
+  return()=>{active=false;};
+ },[collectionActivity]);
+ if(!collectionActivity)return {};
+ return result?.activity===collectionActivity?result:{loading:true};
+}
+
+function LobbyParticipantsControl({count,allowNicknames=false,disabled=false,onToggle}){
+ return <div className="lobby-toolbar-participants">
+  <span className="lobby-count inline-flex items-center gap-2"><img src="./ui-icons/lobby-players.svg" alt="Players" className="h-6 w-6"/><span aria-live="polite">{count}</span></span>
+  <button type="button" className="lobby-nicknames" role="switch" aria-checked={allowNicknames} disabled={disabled} onClick={onToggle}>
+   <span className={`hub-toggle-track${allowNicknames?' is-on':''}`} aria-hidden="true"><span className="hub-toggle-thumb"/></span>
+   Allow Custom Names
+  </button>
+ </div>;
+}
+
+function ClassroomSetupPreview(){
+ return <div className="classroom-setup-preview" aria-hidden="true" inert="">
+  <div className="lobby-toolbar classroom-lobby-toolbar">
+   <LobbyParticipantsControl count={0}/>
+   <h2 className="lobby-heading">Scan to Join</h2>
+   <div className="classroom-toolbar-controls">
+    <button type="button" className="keyboard-answer primary">Start</button>
+   </div>
+  </div>
+  <div className="lobby-stage">
+   <div className="lobby-join-row"><div className="lobby-qr-card"><img className="lobby-qr" src="./ui-icons/classroom-qr-placeholder.svg" alt=""/></div></div>
+   <div className="lobby-participants"><h2 className="text-2xl font-bold">Waiting for participants…</h2></div>
+  </div>
+ </div>;
+}
+
+const snakeColumns=40, snakeRows=21;
+const snakeArrows={ArrowUp:[0,-1],ArrowLeft:[-1,0],ArrowDown:[0,1],ArrowRight:[1,0]};
+const snakeControls=[['Up','↑'],['Left','←'],['Down','↓'],['Right','→']];
+const snakeRhythms=[
+ {glyph:'quarterNoteStemUp',beats:1,baseline:.87},
+ {glyph:'halfNoteStemUp',beats:2,baseline:.87},
+ {glyph:'wholeNote',beats:4,baseline:.5},
+];
+
+function snakeFood(body,hiddenCells=[]){
+ const occupied=new Set([...body,...hiddenCells]);
+ const free=Array.from({length:snakeColumns*snakeRows},(_,index)=>index).filter(index=>!occupied.has(index));
+ if(!free.length)return null;
+ const rhythm=snakeRhythms[Math.floor(Math.random()*snakeRhythms.length)];
+ return {...rhythm,cell:free[Math.floor(Math.random()*free.length)]};
+}
+
+function newLobbySnake(direction=snakeArrows.ArrowRight,phase='ready',hiddenCells){
+ const [dx,dy]=direction;
+ const head=13*snakeColumns+10;
+ const step=dy*snakeColumns+dx;
+ const body=[head,head-step,head-2*step];
+ return {body,food:snakeFood(body,hiddenCells),direction,queued:null,growth:0,phase};
+}
+
+function tickLobbySnake(game,hiddenCells){
+ const direction=game.queued||game.direction;
+ const [dx,dy]=direction;
+ const head=game.body[0],x=head%snakeColumns+dx,y=Math.floor(head/snakeColumns)+dy;
+ const next=((y+snakeRows)%snakeRows)*snakeColumns+(x+snakeColumns)%snakeColumns;
+ const eating=next===game.food?.cell;
+ const growth=game.growth+(eating?game.food.beats:0);
+ // Add one square per move until all the collected beats have been counted.
+ const remaining=growth>0?game.body:game.body.slice(0,-1);
+ if(remaining.includes(next))return {...game,phase:'lost'};
+ const body=[next,...remaining];
+ const food=eating||!game.food?snakeFood(body,hiddenCells):game.food;
+ return {body,food,direction,queued:null,growth:Math.max(0,growth-1),phase:'playing'};
+}
+
+function snakeCoveredCells(board,nameCard){
+ if(!board.width||!board.height)return [];
+ const noteOverhang=.25;
+ const firstColumn=Math.max(0,Math.floor((nameCard.left-board.left)*snakeColumns/board.width-noteOverhang));
+ const lastColumn=Math.min(snakeColumns,Math.ceil((nameCard.right-board.left)*snakeColumns/board.width+noteOverhang));
+ const firstRow=Math.max(0,Math.floor((nameCard.top-board.top)*snakeRows/board.height-noteOverhang));
+ const lastRow=Math.min(snakeRows,Math.ceil((nameCard.bottom-board.top)*snakeRows/board.height+noteOverhang));
+ const covered=[];
+ for(let row=firstRow;row<lastRow;row++){
+  for(let column=firstColumn;column<lastColumn;column++)covered.push(row*snakeColumns+column);
+ }
+ return covered;
+}
+
+function LobbySnake({nameCard}){
+ const [game,setGame]=useState(()=>newLobbySnake());
+ const board=useRef(null),hiddenCells=useRef([]);
+ const playing=game.phase==='playing';
+ const started=game.phase!=='ready';
+ useLayoutEffect(()=>{
+  if(!started)return;
+  const boardElement=board.current,nameElement=nameCard.current;
+  const measure=()=>{
+   const covered=snakeCoveredCells(boardElement.getBoundingClientRect(),nameElement.getBoundingClientRect());
+   hiddenCells.current=covered;
+   setGame(current=>!current.food||covered.includes(current.food.cell)
+    ?{...current,food:snakeFood(current.body,covered)}
+    :current);
+  };
+  measure();
+  const observer=new ResizeObserver(measure);
+  observer.observe(boardElement);
+  observer.observe(nameElement);
+  return()=>observer.disconnect();
+ },[nameCard,started]);
+ function steer(direction){
+  setGame(current=>{
+   if(current.phase!=='playing'||current.queued)return current;
+   const [dx,dy]=direction;
+   const [liveX,liveY]=current.direction;
+   if(dx===-liveX&&dy===-liveY)return current;
+   if(dx===liveX&&dy===liveY)return current;
+   return {...current,queued:direction};
+  });
+ }
+ useEffect(()=>{
+  if(!playing)return;
+  const handleArrow=event=>{
+   const direction=snakeArrows[event.key];
+   if(!direction||event.altKey||event.ctrlKey||event.metaKey||event.target.closest?.('input, textarea, select, [contenteditable]'))return;
+   event.preventDefault();
+   steer(direction);
+  };
+  window.addEventListener('keydown',handleArrow);
+  return()=>window.removeEventListener('keydown',handleArrow);
+ },[playing]);
+ useEffect(()=>{
+  if(!playing)return;
+  const interval=window.setInterval(()=>setGame(current=>current.phase==='playing'?tickLobbySnake(current,hiddenCells.current):current),180);
+  return()=>window.clearInterval(interval);
+ },[playing]);
+ const startGame=()=>setGame(newLobbySnake(snakeArrows.ArrowRight,'playing',hiddenCells.current));
+ if(!started)return <section className="lobby-snake" data-started={false} aria-label="Snake">
+  <p className="text-base font-medium text-stone-600">While you wait:</p>
+  <button type="button" className="keyboard-answer primary" onClick={startGame}>Play Snake</button>
+ </section>;
+ const ended=game.phase==='lost';
+ return <section className="lobby-snake" data-started={started} aria-label="Snake">
+  <svg ref={board} className="lobby-snake-board" viewBox={`0 0 ${snakeColumns} ${snakeRows}`} preserveAspectRatio="none" aria-hidden="true">
+   {game.body.map((cell,index)=><rect key={cell} x={cell%snakeColumns+.08} y={Math.floor(cell/snakeColumns)+.08} width=".84" height=".84" rx=".18" fill={index===0?'#000':'#404040'}/>)}
+   {game.food&&<text x={game.food.cell%snakeColumns+.5} y={Math.floor(game.food.cell/snakeColumns)+game.food.baseline}
+    textAnchor="middle" fontFamily="Bravura" fontSize="1.2" fill="#000">{BRAVURA_SYMBOLS[game.food.glyph]}</text>}
+  </svg>
+  <div className="lobby-snake-panel">
+   <p className="lobby-snake-score">Score {game.body.length-3}</p>
+   {ended&&<button type="button" className="keyboard-answer primary w-full" onClick={startGame}>Play Again</button>}
+   <div className="lobby-snake-directions" role="group" aria-label="Snake direction controls">
+    {snakeControls.map(([name,glyph])=><button key={name} type="button" className="keyboard-answer" aria-label={name}
+     onClick={()=>steer(snakeArrows['Arrow'+name])}>{glyph}</button>)}
+   </div>
+  </div>
+ </section>;
+}
+
+function PupilNickname({name,onRename}){
+ const [editing,setEditing]=useState(false);
+ if(!editing)return <button type="button" className="participant-identity" aria-label={`Edit nickname: ${name}`} onClick={()=>setEditing(true)}>{name}</button>;
+ return <input className="participant-identity participant-nickname-field" aria-label="Nickname" defaultValue={name} maxLength={20} autoFocus
+  onFocus={event=>event.currentTarget.select()}
+  onChange={event=>{
+   const input=event.currentTarget;
+   const withoutSpaces=input.value.replace(/\s/g,'');
+   if(withoutSpaces!==input.value)input.value=withoutSpaces;
+  }}
+  onKeyDown={event=>{
+   if(event.nativeEvent.isComposing)return;
+   if(event.key==='Escape')event.currentTarget.value=name;
+   if(event.key==='Enter'||event.key==='Escape')event.currentTarget.blur();
+  }}
+  onBlur={event=>{
+   const nickname=event.currentTarget.value;
+   setEditing(false);
+   if(nickname&&nickname!==name)onRename(nickname);
+  }}/>;
+}
+
+function launchSettings(){
+ try{
+  const params=new URLSearchParams(location.search);
+  const setup=JSON.parse(params.get('setup'));
+  const activities=window.MLH.classroomActivities;
+  if(typeof setup?.activity==='string'&&setup.activity.startsWith('/')){
+   const configuration=activities.settings(setup.activity);
+   return configuration&&typeof setup.worksheetAvailable==='boolean'
+    ? {...configuration,worksheetAvailable:setup.worksheetAvailable}:configuration;
+  }
+  if(!setup&&!['localhost','127.0.0.1','[::1]'].includes(location.hostname))return null;
+  const written=setup?.activity==='written-notes';
+  const saved=written?window.MLH.classroomWrittenNotes.settings(setup):K.classroomSettings(setup||{level:'N3',options:K.defaults.N3});
+  if(!saved)return null;
+  const source=written?'./noteidentification.html':'./keyboardnoteidentification.html';
+  const profile=written
+   ?{activeLevel:saved.level,settings:saved.settings,showNoteNames:saved.settings.showNoteNames}
+   :saved;
+  const url=new URL(window.MLH.profileShareUrl(profile,new URL(source,location.href)));
+  return activities.settings(url.pathname+url.search);
+ }catch{return null;}
+}
+function AnimatedStandingScore({score,initialScore=0}){
+ const [display,setDisplay]=useState(initialScore),value=useRef(initialScore);
+ useEffect(()=>{
+  const start=value.current,delta=score-start;
+  if(!delta)return;
+  if(false){value.current=score;setDisplay(score);return;}
+  let frame;const began=performance.now();
+  function tick(now){const progress=Math.min(1,(now-began)/1500);const next=Math.round(start+delta*(1-Math.pow(1-progress,3)));value.current=next;setDisplay(next);if(progress<1)frame=requestAnimationFrame(tick);}
+  frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame);
+ },[score]);
+ return <span className="classroom-standing-score">{display}</span>;
+}
+function ClassroomLeaderboard({players,visible,questionIndex}){
+ const [standings,setStandings]=useState(()=>players.map(p=>({...p,score:p.score||0,gained:p.gained??0})));
+ const totals=useRef(new Map()),gains=useRef(new Map()),lastReviewed=useRef(null),allLeaderboard=useRef(null);
+ useEffect(()=>{if(!visible)allLeaderboard.current?.close();},[visible]);
+ useEffect(()=>{
+  if(!visible)return;
+  let frame=requestAnimationFrame(()=>{frame=requestAnimationFrame(()=>{
+   if(lastReviewed.current!==questionIndex){
+    gains.current=new Map(players.map(p=>{const key=p.id||p.name;return [key,Math.max(0,p.score-(totals.current.get(key)||0))];}));
+    totals.current=new Map(players.map(p=>[p.id||p.name,p.score]));lastReviewed.current=questionIndex;
+   }
+   setStandings(players.map(p=>({...p,gained:p.gained??gains.current.get(p.id||p.name)??0})));
+  });});return()=>cancelAnimationFrame(frame);
+ },[players,visible,questionIndex]);
+ return <section className="classroom-leaderboard" aria-labelledby="leaderboard-title"><div className="classroom-leaderboard-heading"><h2 id="leaderboard-title" className="text-lg font-bold">Leaderboard</h2><button type="button" className="keyboard-answer primary classroom-show-all" onClick={()=>allLeaderboard.current.showModal()}>Show All</button></div><div className="classroom-standings">{standings.slice(0,5).map((p,i)=><div key={p.id||p.name} className="classroom-standing" style={{transform:`translateY(${i*46}px)`,'--standing-y':`${i*46}px`,color:'#0c0a09'}}><span className="classroom-standing-rank">{i+1}.</span><span className="classroom-standing-name">{p.name}</span><span className="classroom-standing-gain" aria-label={`${p.gained} points gained this question`}>{p.gained>0?`+${p.gained}`:''}</span><AnimatedStandingScore score={p.score} initialScore={p.score-p.gained}/></div>)}</div><dialog ref={allLeaderboard} className="classroom-all-leaderboard" aria-labelledby="all-leaderboard-title" onClick={event=>{if(event.target===event.currentTarget){const box=event.currentTarget.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)event.currentTarget.close();}}}><div className="classroom-leaderboard-heading"><h2 id="all-leaderboard-title" className="text-xl font-bold">Leaderboard</h2><button type="button" className="keyboard-answer" aria-label="Close leaderboard" onClick={()=>allLeaderboard.current.close()}>×</button></div>{standings.map((p,i)=><div key={p.id||p.name} className="classroom-standing"><span className="classroom-standing-rank">{i+1}.</span><span className="classroom-standing-name">{p.name}</span><span className="classroom-standing-gain">{p.gained>0?`+${p.gained}`:''}</span><span className="classroom-standing-score">{p.score}</span></div>)}</dialog></section>;
+}
+function QuizFinalPodium({players}){
+ const winners=useRef(players.slice(0,3)),[revealed,setRevealed]=useState([]);
+ useEffect(()=>{
+  const timers=[2,1,0].filter(rank=>winners.current[rank]).map((rank,order)=>setTimeout(()=>{
+   setRevealed(previous=>[...previous,rank]);
+  },1500+order*4000));
+  return()=>timers.forEach(clearTimeout);
+ },[]);
+ return <section className="mt-6" aria-label="Final podium"><div className="classroom-podium">{[1,0,2].filter(rank=>winners.current[rank]).map(rank=>{const player=winners.current[rank],shown=revealed.includes(rank);return <div key={rank} className={`podium-place ${['first','second','third'][rank]}${shown?' revealed':''}`} style={{visibility:shown?'visible':'hidden'}} aria-hidden={!shown}>
+  <p className="text-3xl font-bold">{['1st','2nd','3rd'][rank]}</p>
+  <div className="podium-identity">{player.name}</div>
+  <p className="mt-2">{player.score} points</p>
+  {shown&&<div className="podium-confetti" aria-hidden="true">{Array.from({length:24},(_,i)=><span key={i} style={{left:`${8+((i*19)%84)}%`,backgroundColor:['#facc15','#38bdf8','#fb7185','#4ade80','#a78bfa'][i%5],animation:`podium-confetti-drop ${1.4+(i%5)*.15}s ease-out forwards`,animationDelay:`${(i%6)*.06}s`}}/>)}</div>}
+ </div>;})}</div><p role="status" className="sr-only">{revealed.length?`${['First','Second','Third'][revealed[revealed.length-1]]} place: ${winners.current[revealed[revealed.length-1]].name}`:'Revealing the final results'}</p></section>;
+}
+function DominoesRound({game,now}){
+ const wholeSeconds=value=>Math.floor(Math.max(0,value)/1000);
+ const clock=value=>{
+  const seconds=wholeSeconds(value);
+  return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;
+ };
+ if(!game.host)return <section className="domino-classroom-stage" aria-label="Your domino">
+  {game.myCard&&<div className="domino-card">
+   <strong>
+    {game.myCard.term!=='Start'&&<span className="domino-classroom-label">Listen for a description of:</span>}
+    <span className="domino-classroom-value">{game.myCard.term}</span>
+   </strong>
+   <span>
+    <span className="domino-classroom-label">You read:</span>
+    <span className="domino-classroom-value">{game.myCard.clue}</span>
+   </span>
+  </div>}
+ </section>;
+ const finished=game.phase==='finished';
+ const elapsed=(finished?game.stoppedAt:now)-game.startedAt;
+ const hasBestTime=Number.isFinite(game.bestElapsed);
+ const pace=!finished&&hasBestTime
+  ? (wholeSeconds(elapsed)<wholeSeconds(game.bestElapsed)?'ahead':'reached')
+  : undefined;
+ return <>
+  {!finished&&<FloatingRaceParticipants game={game}/>}
+  <section className="domino-classroom-stage" aria-label="Dominoes round">
+   <p className="domino-classroom-time" data-pace={pace} role="timer" aria-label="Elapsed time">{clock(elapsed)}</p>
+   {hasBestTime&&<p className="mb-4">Best time {clock(game.bestElapsed)}</p>}
+  </section>
+ </>;
+}
+function HostedConceptQuestion({quiz,game,canAnswer,onAnswer}){
+ const adapter=window.MLH.classroomConceptQuiz;
+ const Card=window.MusicDictionaryQuizQuestionCard, Feedback=window.MusicDictionaryQuizQuestionFeedback;
+ const room=game.pin??new URLSearchParams(location.search).get('preview');
+ const draftKey=`mlh:classroom:concept-quiz:${room}:${game.index}:${quiz.id}`;
+ const [draft,setDraft]=useState(()=>{try{return JSON.parse(sessionStorage.getItem(draftKey))??'';}catch{return '';}});
+ const touches=useRef({});
+ const revealed=game.phase==='review';
+ const audioOrder=quiz.format==='order'&&quiz.modality==='audio';
+ useEffect(()=>{
+  if(audioOrder)window.dispatchEvent(new Event('mlh-stop-order-audio'));
+ },[audioOrder,game.phase,game.submitted]);
+ const canDraft=canAnswer||(!game.host&&!game.submitted&&game.phase==='listening');
+ let response=revealed?'':draft;
+ if(game.submitted){try{response=JSON.parse(game.myAnswer)??'';}catch{response='';}}
+ function change(response){
+  setDraft(response);
+  try{sessionStorage.setItem(draftKey,JSON.stringify(response));}catch{}
+ }
+ const Picture=window.MLHLiteracyNotation.LiteracyPicture;
+ const illustration=quiz.illustration;
+ const picture=illustration&&<div className="cq-notation-picture" role="img" aria-label={illustration.description}>
+  <Picture picture={{...(typeof illustration.picture==='string'?{symbols:illustration.picture}:illustration.picture),alt:undefined}} fitInk/>
+ </div>;
+ const reference=quiz.referenceMedia&&<div className="cq-order-reference"><strong>Original Motif</strong>
+  <window.MusicDictionaryQuizOrderAudio media={quiz.referenceMedia} label="Original Motif"/>
+ </div>;
+ return <section className="cq-paper cq-practice classroom-concept-quiz" aria-label="Concept question">
+  <div className="subquestion">
+   <Card question={quiz} response={response} locked={!canDraft} showFeedback={revealed&&game.submitted}
+    playAudio={audioOrder} touches={touches} onAnswer={change} picture={picture} reference={reference}/>
+   {!game.host&&game.phase==='listening'&&<p className="mt-4 text-center" role="status">You can select answers now and submit when the excerpt finishes.</p>}
+   {!game.host&&!revealed&&(game.submitted?<p className="mt-4 text-center" role="status">Answer submitted.</p>:
+    <div className="cq-paper-actions cq-practice-actions"><button type="button" className="cq-button primary cq-practice-submit"
+     disabled={!canAnswer||!adapter.canSubmit(quiz,response)} onClick={()=>onAnswer(response)}>Submit</button></div>)}
+   {revealed&&<>
+    {!game.host&&!game.submitted&&<p className="mt-4 text-center">No answer submitted.</p>}
+    <div className="cq-inline-feedback-slot"><Feedback question={quiz} response={response} showSolution={game.host||!game.submitted}/></div>
+   </>}
+  </div>
+ </section>;
+}
+function placePupilHeaderControls(page,slot){
+ const brandTitle=page.querySelector('[data-hub-activity-brand] h1');
+ if(!brandTitle||slot.parentElement===brandTitle)return false;
+ slot.className='inline-flex items-center gap-2';
+ brandTitle.append(slot);
+ return true;
+}
+
+function PupilHeaderControls({returnHref,showWorksheet}){
+ return <>
+  <window.MLH.ProfileQrButton disabled/>
+  {showWorksheet&&<window.MLH.WorksheetButton enabled={false}/>}
+  {returnHref&&<a href={returnHref} target="_top" aria-label="Return to individual practice"
+   title="Return to Individual Practice" className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-black bg-black text-white shadow-sm hover:bg-stone-800">
+   <img src="/ui-icons/lobby-players.svg" alt="" aria-hidden="true" className="h-5 w-5 object-contain" style={{filter:'invert(1)'}}/>
+  </a>}
+ </>;
+}
+
+function recallPracticeUrl(src,deadline){
+ if(!src||!deadline)return src;
+ const url=new URL(src,location.origin);
+ url.searchParams.set('classroomRecallDeadline',deadline);
+ return url.pathname+url.search+url.hash;
+}
+
+function PracticeFrame({frameRef,src,title,timeTrial,scrollPractice=false,expired,gameHeading,returnHref,onHeaderReady,showWorksheet}){
+ const observer=useRef(null);
+ const structureObserver=useRef(null);
+ const [slots,setSlots]=useState(null);
+ const showActivityHeader=Boolean(returnHref);
+ const expiredRef=useRef(expired);
+ expiredRef.current=expired;
+ useEffect(()=>{
+  if(showActivityHeader)frameRef.current?.contentDocument?.querySelector('main')?.toggleAttribute('inert',Boolean(expired));
+ },[expired,slots,showActivityHeader]);
+ useEffect(()=>()=>{observer.current?.disconnect();structureObserver.current?.disconnect();},[]);
+ function fitPractice(){
+  observer.current?.disconnect();
+  structureObserver.current?.disconnect();
+  const frame=frameRef.current;
+  const page=frame.contentDocument;
+  const body=page?.body;
+  if(!body)return;
+  const stage=body.querySelector('#root')||body;
+  const embeddedStyle=page.createElement('style');
+  embeddedStyle.textContent=`
+   html, body, body > #root > :first-child { background: transparent !important; }
+   html { overflow: hidden !important; }
+   body > #root > :first-child { padding-bottom: 0 !important; }
+   body > footer { display: none !important; }
+   ${showActivityHeader?`
+   [data-hub-activity-header] { position: relative !important; }
+   [data-hub-activity-header] + div { padding-top: 16px !important; }
+   #escape:not(:fullscreen) { margin-top:16px; }
+   .classroom-embedded-heading { text-align:center; margin-bottom:16px; }
+   .classroom-embedded-heading h2 { margin:0; font-size:28px; font-weight:700; line-height:36px; }
+   .classroom-embedded-heading > p { margin:4px 0 0; font-size:14px; line-height:20px; }
+   .classroom-embedded-heading .classroom-race-track { margin:0; padding:0; text-align:left; background:transparent; }
+   .classroom-embedded-heading .race-name { margin:0; line-height:1; }
+   [data-timed-race-toolbar] { --timed-race-control-height:48px; display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+   [data-timed-race-toolbar] > .classroom-embedded-heading { flex:1; min-width:0; margin:0; }
+   [data-timed-race-toolbar] .classroom-race-track.pupil-track { margin:0; padding:0; }
+   [data-timed-race-toolbar] > .domino-toolbar { display:contents; }
+   [data-timed-race-toolbar] .hub-toolbar-feedback { height:auto; }
+   [data-timed-race-toolbar] :is(.race-course,.hub-confirm-button) { height:var(--timed-race-control-height); }
+   [data-timed-race-toolbar] .hub-confirm-button { width:112px; transform:none !important; }
+   [data-timed-race-toolbar] .timed-race-submit-slot > .hub-confirm-button { border-radius:12px; padding:10px 12px; font-size:14px; font-weight:700; line-height:20px; }
+   [data-timed-race-toolbar] .timed-race-submit-slot > .hub-confirm-button:focus-visible { outline-width:2px; outline-offset:2px; }
+   [data-timed-race-toolbar] :is(.hub-toolbar-left,.hub-toolbar-feedback,.hub-toolbar-right,.timed-race-submit-slot):empty { display:none; }
+   [data-timed-race-toolbar] .timed-race-lanes .race-lane { grid-template-columns:max-content minmax(0,1fr) 64px; height:64px; gap:12px; }
+   ${document.getElementById("classroom-race-track-styles").textContent}
+   `:`
+   [data-hub-activity-brand] { display: none !important; }
+   [data-hub-activity-header] { position: relative !important; background: transparent !important; border: 0; box-shadow: none; padding: 4px 0 8px !important; }
+   [data-hub-activity-header] > div { min-height: 0 !important; }
+   [data-hub-activity-header]:has([data-hub-activity-stats]:empty),
+   [data-hub-activity-header]:has([data-hub-activity-stats] > :only-child:empty) { display: none; }
+   #escape:not(:fullscreen) { margin-top:0; }
+   `}
+   .classroom-practice-content { padding-top: 0 !important; }
+   .ig-dedicated-game.ig-view-activity { background: transparent; border: 0; box-shadow: none; padding: 0; }
+  `;
+  if(scrollPractice)embeddedStyle.textContent=document.getElementById("classroom-race-track-styles").textContent;
+  page.head.append(embeddedStyle);
+  function fit(){
+   const content=stage.querySelector('main');
+   if(!content||page.fullscreenElement)return;
+   if(!showActivityHeader&&content.parentElement.classList.contains('max-w-6xl'))content.parentElement.classList.add('classroom-practice-content');
+   const bottom=Math.ceil(content.getBoundingClientRect().bottom+frame.contentWindow.scrollY);
+   if(bottom>0)frame.style.height=`${bottom+22}px`;
+  }
+  if(!scrollPractice){
+   observer.current=new ResizeObserver(fit);
+   if(stage!==body)observer.current.observe(stage);
+   const main=stage.querySelector('main');
+   if(main)observer.current.observe(main);
+  }
+  if(showActivityHeader){
+   const headingSlot=gameHeading?page.createElement('div'):null;
+   const headerSlot=page.createElement('span');
+   if(headingSlot)headingSlot.className=scrollPractice?'classroom-recall-race-indicator':'classroom-embedded-heading';
+   function placeSlots(){
+    const main=stage.querySelector('main');
+    const headingParent=scrollPractice?main?.querySelector('[data-concept-recall-race]'):main?.querySelector('[data-timed-race-toolbar]')||main?.querySelector('.ig-resource-card')||main;
+    main?.toggleAttribute('inert',Boolean(expiredRef.current));
+    if(placePupilHeaderControls(page,headerSlot))onHeaderReady(src);
+    if(headingSlot&&headingParent&&headingSlot.parentElement!==headingParent)headingParent.prepend(headingSlot);
+   }
+   structureObserver.current=new MutationObserver(placeSlots);
+   structureObserver.current.observe(stage,{childList:true,subtree:true});
+   placeSlots();
+   setSlots({headingSlot,headerSlot});
+  }
+  if(!scrollPractice)fit();
+ }
+ return <>
+  <iframe ref={frameRef} src={src} title={title} onLoad={fitPractice} inert={expired&&!showActivityHeader?'':undefined}
+   className={`classroom-shared-frame${timeTrial?' rhythm-time-trial-frame':scrollPractice?' concept-recall-race-frame':''}`} allow="autoplay; fullscreen"/>
+  {slots&&gameHeading&&ReactDOM.createPortal(gameHeading,slots.headingSlot)}
+  {slots&&returnHref&&ReactDOM.createPortal(<PupilHeaderControls returnHref={returnHref} showWorksheet={showWorksheet}/>,slots.headerSlot)}
+ </>;
+}
+
+function NativePracticeFrame({frameRef,src,title,pupil=false,showWorksheet}){
+ const observer=useRef(null);
+ const headerObserver=useRef(null);
+ const [headerSlot,setHeaderSlot]=useState(null);
+ useEffect(()=>()=>{observer.current?.disconnect();headerObserver.current?.disconnect();},[]);
+ function fitPractice(){
+  observer.current?.disconnect();
+  headerObserver.current?.disconnect();
+  const frame=frameRef.current;
+  const page=frame?.contentDocument;
+  if(!page?.body)return;
+  const sections=[page.querySelector('#root'),page.querySelector('main'),page.querySelector('footer')].filter(Boolean);
+  function fit(){
+   const scrollY=page.defaultView.scrollY;
+   const bottom=Math.max(0,...sections.map(section=>section.getBoundingClientRect().bottom+scrollY));
+   if(bottom>0)frame.style.height=`${Math.ceil(bottom)}px`;
+  }
+  observer.current=new ResizeObserver(fit);
+  for(const section of sections)observer.current.observe(section);
+  if(pupil){
+   const slot=page.createElement('span');
+   function placeHeader(){placePupilHeaderControls(page,slot);}
+   headerObserver.current=new MutationObserver(placeHeader);
+   headerObserver.current.observe(page.body,{childList:true,subtree:true});
+   placeHeader();
+   setHeaderSlot(slot);
+  }
+  fit();
+ }
+ return <>
+  <iframe ref={frameRef} src={src} title={title} onLoad={fitPractice} className="classroom-native-practice-frame" allow="autoplay; fullscreen"/>
+  {pupil&&headerSlot&&ReactDOM.createPortal(<PupilHeaderControls showWorksheet={showWorksheet}/>,headerSlot)}
+ </>;
+}
+
+function loadHostSession(){
+ try{const pin=new URLSearchParams(location.search).get('room');if(!/^\d{6}$/.test(pin||''))return null;const saved=JSON.parse(sessionStorage.getItem(`mlh:classroom:host:${pin}`)||'null');return saved?.pin===pin&&/^[a-f0-9]{64}$/.test(saved.token||'')?saved:null;}catch{return null;}
+}
+function saveHostSession(identity){
+ try{sessionStorage.setItem(`mlh:classroom:host:${identity.pin}`,JSON.stringify(identity));}catch{}
+ const url=new URL(location.href);url.searchParams.set('room',identity.pin);history.replaceState(null,'',url);
+}
+function offlineRoomKey(id){return `mlh:classroom:offline:${id}`;}
+function pupilActivityKey(id){return `mlh:classroom:pupil-activity:${id}`;}
+function loadPupilActivity(id){
+ if(!id)return null;
+ try{return JSON.parse(sessionStorage.getItem(pupilActivityKey(id)));}catch{return null;}
+}
+function loadOfflineRoom(id,activity){
+ if(!/^mlh-pupil-[a-f0-9-]{36}$/.test(id||''))return null;
+ try{
+  const saved=JSON.parse(sessionStorage.getItem(offlineRoomKey(id)));
+  if(saved?.settings.activity===activity&&saved.state?.activity===activity)return saved;
+ }catch{}
+ return null;
+}
+function ClassroomUnavailableDialog({href}){
+ const dialog=useRef(null);
+ useEffect(()=>{dialog.current.showModal();},[]);
+ return <dialog ref={dialog} className="classroom-all-leaderboard classroom-unavailable-dialog" aria-labelledby="classroom-unavailable-message" onCancel={event=>event.preventDefault()}>
+  <p id="classroom-unavailable-message">This feature is currently unavailable. Click the button below to return to individual practice.</p>
+  <a className="keyboard-answer primary" href={href}>Return to individual practice</a>
+ </dialog>;
+}
+
+function Classroom(){
+ const pageParams=new URLSearchParams(location.search);
+ const hosting=pageParams.get('mode')==='host';
+ const [configuration]=useState(()=>hosting?launchSettings():null);
+ const sharedActivities=window.MLH.classroomActivities;
+ const localPage=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+ const canTestOffline=hosting&&localPage;
+ const offlinePreview=!hosting&&localPage&&pageParams.get('offlinePreview')==='1';
+ const [offline,setOffline]=useState(()=>canTestOffline&&(!pageParams.has('room')&&pageParams.get('offline')!=='0'));
+ const [restoredOffline]=useState(()=>offline?loadOfflineRoom(pageParams.get('testRoom'),configuration?.activity):null);
+ const [previewBlocked,setPreviewBlocked]=useState(Boolean(restoredOffline));
+ const offlineGame=useRef(null),previewTab=useRef(null),previewWindowName=useRef(restoredOffline?pageParams.get('testRoom'):null);
+ const offlineSettings=useRef(restoredOffline?.settings),previewJoined=useRef(restoredOffline?.previewJoined===true);
+ if(restoredOffline&&!offlineGame.current&&offlineSettings.current){
+  offlineGame.current=window.MLHClassroomTestGame.create(offlineSettings.current,testParticipants,()=>previewJoined.current,undefined,restoredOffline.state);
+ }
+ function saveOfflineRoom(){
+  if(!offlineGame.current||!offlineSettings.current)return;
+  const id=previewWindowName.current;
+  try{sessionStorage.setItem(offlineRoomKey(id),JSON.stringify({
+   settings:offlineSettings.current,state:offlineGame.current.snapshot(),previewJoined:previewJoined.current
+  }));}catch{}
+ }
+ function openPupilPreview(keepHostFocused=false){
+  if(previewTab.current&&!previewTab.current.closed){
+   if(!keepHostFocused)previewTab.current.focus();
+   return;
+  }
+  previewWindowName.current??=`mlh-pupil-${crypto.randomUUID()}`;
+  const previewUrl=new URLSearchParams({mode:'join',offlinePreview:'1',preview:previewWindowName.current});
+  previewTab.current=window.open('?'+previewUrl.toString(),previewWindowName.current);
+  if(previewTab.current){
+   previewJoined.current=true;
+   saveOfflineRoom();
+  }
+  if(previewTab.current&&keepHostFocused){
+   previewTab.current.blur();
+   window.focus();
+  }
+  setPreviewBlocked(!previewTab.current);
+ }
+ function changeOffline(checked){
+  const url=new URL(location.href);
+  if(checked){
+   url.searchParams.set('offline','1');
+  }else{
+   url.searchParams.set('offline','0');
+   previewTab.current?.close();
+   previewTab.current=null;
+   setPreviewBlocked(false);
+  }
+  history.replaceState(null,'',url);
+  setOffline(checked);
+ }
+ const [game,setGame]=useState(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[connected,setConnected]=useState(true);
+ const [serviceUnavailable,setServiceUnavailable]=useState(false);
+ const previewId=offlinePreview?pageParams.get('preview'):null;
+ const [previousPupilActivity]=useState(()=>hosting?null:loadPupilActivity(previewId||pageParams.get('pin')));
+ const [roomActivity,setRoomActivity]=useState(previousPupilActivity?.activity??null);
+ const [roomWorksheetAvailable,setRoomWorksheetAvailable]=useState(previousPupilActivity?.worksheetAvailable);
+ const lastPupilActivity=useRef(null);
+ const [sessionExit,setSessionExit]=useState(offlinePreview&&previousPupilActivity?.ended?'ended':null);
+ const roomSource=game?.activity||roomActivity||configuration?.activity;
+ const writtenGame=roomSource==='written-notes'||/^\/noteidentification\.html(?:[?#]|$)/.test(roomSource||'');
+ const returnActivity=roomSource==='written-notes'?null:hosting?roomSource:window.MLH.classroomActivities.settings(roomSource)?.activity;
+ const returnUrl=new URL(returnActivity||(writtenGame?'./noteidentification.html':'./keyboardnoteidentification.html'),location.href);
+ returnUrl.searchParams.delete('classroomFormat');
+ returnUrl.searchParams.delete('dominoSet');
+ if(writtenGame&&configuration?.level){
+  const {showNoteNames,...settings}=configuration.settings;
+  returnUrl.href=window.MLH.profileShareUrl({activeLevel:configuration.level,settings,showNoteNames},returnUrl);
+ }
+ if(configuration?.level&&!writtenGame){returnUrl.searchParams.set('level',configuration.level);returnUrl.searchParams.set('classroomSetup',JSON.stringify(configuration));}
+
+ const [restoredHost]=useState(()=>hosting&&!offline?loadHostSession():null),[restoringHost,setRestoringHost]=useState(Boolean(restoredHost||restoredOffline));
+ const latestGame=useRef(null),questionKeyboard=useRef(null),questionCard=useRef(null),reviewPanels=useRef(null);
+ const pin=pageParams.get('pin')||'';
+ const [retryRaceMinutes,setRetryRaceMinutes]=useState('10');
+ const [recallMinutes,setRecallMinutes]=useState('0'),[selected,setSelected]=useState(null),[now,setNow]=useState(Date.now());
+ const [randomiseQuestions,setRandomiseQuestions]=useState(false);
+ const listeningAdapter=window.MLH.classroomListening;
+ const [joinLinkCopied,setJoinLinkCopied]=useState(false);
+ const joinIdentity=useRef(null),session=useRef(restoredHost),inFlight=useRef(false),actionPending=useRef(false),pendingRead=useRef(null),finishPending=useRef(false),retryAttemptsPending=useRef([]),failures=useRef(0),mounted=useRef(true),clockOffset=useRef(0);
+ const joinLinkField=useRef(null);
+ useEffect(()=>{
+  if(!canTestOffline)return;
+  const reply=event=>{
+   if(event.origin!==location.origin||event.data?.type!=='mlh:offline-pupil-request')return;
+   if(event.source!==previewTab.current){
+    if(!offlineGame.current||event.data.preview!==previewWindowName.current||event.source?.opener!==window)return;
+    previewTab.current=event.source;
+    previewJoined.current=true;
+    setPreviewBlocked(false);
+   }
+   const {id,action,extra}=event.data;
+   if(!['read','answer','finish','grid-finish','rename'].includes(action))return;
+   try{
+    const result=offlineGame.current?.pupil(action,extra)??{waiting:true,activity:configuration?.activity};
+    saveOfflineRoom();
+    event.source.postMessage({type:'mlh:offline-pupil-response',id,result},location.origin);
+   }catch(error){
+    event.source.postMessage({type:'mlh:offline-pupil-response',id,error:error.message},location.origin);
+   }
+  };
+  window.addEventListener('message',reply);
+  return()=>window.removeEventListener('message',reply);
+ },[canTestOffline]);
+ const sessionExitRef=useRef(sessionExit);
+ useEffect(()=>{
+  if(!offlinePreview)return;
+  const endPreview=event=>{
+   if(event.origin!==location.origin||event.source!==window.opener||event.data?.type!=='mlh:offline-game-ended')return;
+   endPupilSession(event.data.activity);
+  };
+  window.addEventListener('message',endPreview);
+  return()=>window.removeEventListener('message',endPreview);
+ },[offlinePreview]);
+ async function request(action,extra={},identity=session.current){
+  if(action==='read'&&hosting)extra={...extra,excerptPlayback:excerptPlayback.current};
+  if(offlineGame.current){
+   const result=offlineGame.current.request(action,extra);
+   if(!result.closed)saveOfflineRoom();
+   return result;
+  }
+  const retryAttempt=action==='read'&&retryAttemptsPending.current[0];
+  if(retryAttempt){action='finish';extra={...extra,retryAttempt};}
+  const pending=action==='read'&&finishPending.current;
+  if(pending){action=pending.elapsedMs?'grid-finish':'finish';extra={...extra,...pending};}
+  let result;
+  if(offlinePreview)result=await window.MLHClassroomTestGame.requestFromHost(action,extra);
+  else{
+   let response;
+   try{
+    response=await fetch('./.netlify/functions/classroom',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,...identity,...extra}),signal:AbortSignal.timeout(12000)});
+    result=await response.json();
+   }catch(error){throw Object.assign(Error(error.message),{serviceUnavailable:true});}
+   if(!response.ok){
+    const error=Error(result.error||'Classroom service unavailable.');
+    error.serviceUnavailable=response.status>=500||[404,405,429].includes(response.status);
+    error.terminal=response.status===400&&['Game not found or expired.','Join this game first.','Please rejoin this game.'].includes(result.error);
+    throw error;
+   }
+  }
+  if(retryAttempt&&retryAttemptsPending.current[0]===retryAttempt&&!result.waiting)retryAttemptsPending.current.shift();
+  if(pending&&finishPending.current===pending&&(!offlinePreview||!result.waiting))finishPending.current=false;
+  return result;
+ }
+ function forgetSession(){
+  if(hosting){try{sessionStorage.removeItem(`mlh:classroom:host:${session.current?.pin}`);}catch{}const url=new URL(location.href);url.searchParams.delete('room');history.replaceState(null,'',url);}
+  session.current=null;latestGame.current=null;finishPending.current=false;retryAttemptsPending.current=[];setGame(null);setSelected(null);setRestoringHost(false);setConnected(true);
+ }
+ function rememberPupilActivity(activity,ended=false,worksheetAvailable){
+  if(hosting)return;
+  const validActivity=activity==='written-notes'?activity:sharedActivities.settings(activity)?.activity;
+  if(validActivity)setRoomActivity(validActivity);
+  const id=previewId||session.current?.pin||pageParams.get('pin');
+  const last=lastPupilActivity.current;
+  const knownActivity=validActivity??last?.activity??previousPupilActivity?.activity;
+  const knownWorksheet=worksheetAvailable
+   ??(last?.activity===knownActivity?last?.worksheetAvailable:undefined)
+   ??(previousPupilActivity?.activity===knownActivity?previousPupilActivity?.worksheetAvailable:undefined);
+  if(knownActivity)setRoomWorksheetAvailable(knownWorksheet);
+  if(id&&(knownActivity||ended)){
+   if(last?.id===id&&last.activity===knownActivity&&last.ended===ended&&last.worksheetAvailable===knownWorksheet)return;
+   lastPupilActivity.current={id,activity:knownActivity,ended,worksheetAvailable:knownWorksheet};
+   try{sessionStorage.setItem(pupilActivityKey(id),JSON.stringify({activity:knownActivity,ended,worksheetAvailable:knownWorksheet}));}catch{}
+  }
+ }
+ function endPupilSession(activity,reason='ended'){
+  sessionExitRef.current=reason;
+  rememberPupilActivity(activity??latestGame.current?.activity,reason==='ended');
+  forgetSession();
+  setError('');
+  setSessionExit(reason);
+ }
+ function readFailure(error){
+  if(!mounted.current||sessionExitRef.current)return;
+  if(error.serviceUnavailable&&!latestGame.current){setServiceUnavailable(true);return;}
+  const ended=error.terminal&&!hosting&&latestGame.current&&error.message==='Game not found or expired.';
+  if(ended){endPupilSession();return;}
+  const removed=error.terminal&&!hosting&&latestGame.current&&error.message==='Join this game first.';
+  if(removed){endPupilSession(undefined,'removed');return;}
+  if(error.terminal)forgetSession();else{failures.current++;setConnected(false);}
+  setError(error.message);
+ }
+ function update(result){
+  if(!mounted.current||sessionExitRef.current)return;
+  if(result.waiting){
+   if(latestGame.current)endPupilSession(result.activity);
+   else{
+    if(result.activity)rememberPupilActivity(result.activity);
+    setConnected(true);
+   }
+   return;
+  }
+  if(result.closed){
+   if(!hosting)endPupilSession(result.activity,result.removed?'removed':'ended');
+   else forgetSession();
+   return;
+  }
+  if(result.myFinished||result.phase==='finished'){finishPending.current=false;retryAttemptsPending.current=[];}
+  if(hosting)setRoomActivity(result.activity??null);
+  else if(result.activity)rememberPupilActivity(result.activity,false,result.worksheetAvailable);
+  if(raceWinnerAnnounced(latestGame.current,result)){
+   window.MLH.playFeedbackSound?.(true,true,'platinum');
+  }
+  latestGame.current=result;clockOffset.current=result.serverTime-Date.now();setNow(result.serverTime);setGame(result);setRestoringHost(false);
+  setSelected(!result.host&&result.gameType!=='race'?(result.myAnswer??null):null);
+  setConnected(true);setError('');failures.current=0;
+ }
+
+ async function act(action,extra,material){
+  if(actionPending.current)return;actionPending.current=true;setBusy(true);setError('');
+  if(action==='start'&&isWinnerRace(latestGame.current))window.MLH.prepareFeedbackSound?.();
+  if(action==='create'&&offline)openPupilPreview(true);
+  if(pendingRead.current)await pendingRead.current.catch(()=>{});
+  inFlight.current=true;
+  try{
+   let identity=session.current;
+   if(action==='join'){
+    const joiningPin=extra?.pin??pin;
+    if(joinIdentity.current?.pin!==joiningPin){
+     let savedToken;try{savedToken=sessionStorage.getItem(`mlh:classroom:participant:${joiningPin}`);}catch{}
+     const bytes=crypto.getRandomValues(new Uint8Array(32));
+     joinIdentity.current={pin:joiningPin,token:/^[a-f0-9]{64}$/.test(savedToken||'')?savedToken:Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('')};
+     try{sessionStorage.setItem(`mlh:classroom:participant:${joiningPin}`,joinIdentity.current.token);}catch{}
+    }
+    identity=joinIdentity.current;
+   }
+   if(action==='create'&&offline){
+    offlineSettings.current=extra;
+    offlineGame.current=window.MLHClassroomTestGame.create(extra,testParticipants,()=>previewJoined.current,material);
+   }
+   const result=await request(action,extra,identity);
+   if(result.closed&&action==='end'){
+    if(offlineGame.current)previewTab.current?.postMessage({type:'mlh:offline-game-ended',activity:latestGame.current?.activity??configuration?.activity},location.origin);
+    if(offlineGame.current){
+     try{sessionStorage.removeItem(offlineRoomKey(previewWindowName.current));}catch{}
+     offlineSettings.current=null;
+    }
+    offlineGame.current=null;
+    forgetSession();
+    window.location.href=returnUrl.toString();
+    return;
+   }
+   if(action==='create'){
+    session.current={pin:result.pin,token:result.token};
+    if(!offlineGame.current)saveHostSession(session.current);
+    else {
+     const url=new URL(location.href);url.searchParams.set('testRoom',previewWindowName.current);history.replaceState(null,'',url);
+    }
+   }
+   if(action==='join'){
+    session.current=identity;
+    const url=new URL(location.href);url.searchParams.set('pin',identity.pin);history.replaceState(null,'',url);
+   }
+   update(result);
+  }catch(e){
+   if(action==='read')readFailure(e);
+   else if(e.serviceUnavailable)setServiceUnavailable(true);
+   else if(action==='join'&&previousPupilActivity?.activity&&e.terminal&&e.message==='Game not found or expired.')endPupilSession(previousPupilActivity.activity);
+   else setError(e.message);
+  }finally{inFlight.current=false;actionPending.current=false;if(mounted.current)setBusy(false);}
+ }
+ useEffect(()=>{let timeout;mounted.current=true;
+  async function poll(){
+   if(sessionExitRef.current)return;
+   if((session.current||offlineGame.current||offlinePreview)&&!inFlight.current&&!actionPending.current){
+    inFlight.current=true;
+    pendingRead.current=request('read');
+    try{const result=await pendingRead.current;update(result);}catch(e){readFailure(e);}finally{inFlight.current=false;pendingRead.current=null;}
+   }
+   if(!mounted.current||sessionExitRef.current)return;
+   const current=latestGame.current;
+   const activeGame=current&&(current.gameType==='dominoes'||['lobby','question','review','countdown','playing','listening'].includes(current.phase));
+   const delay=current?.phase==='countdown'?Math.max(50,Math.min(1000,current.startedAt-(Date.now()+clockOffset.current))):activeGame?1000:5000;
+   timeout=setTimeout(poll,offlinePreview?500:failures.current?Math.min(30000,5000*2**failures.current):delay);
+  }
+  const retryOnline=()=>{if(!inFlight.current&&!actionPending.current){clearTimeout(timeout);poll();}};window.addEventListener('online',retryOnline);
+  timeout=setTimeout(poll,session.current||offlineGame.current||offlinePreview?0:5000);const clock=setInterval(()=>setNow(Date.now()+clockOffset.current),250);
+  return()=>{mounted.current=false;clearTimeout(timeout);clearInterval(clock);window.removeEventListener('online',retryOnline);};
+ },[]);
+ useEffect(()=>{
+  if(!hosting&&!offlinePreview&&/^\d{6}$/.test(pin))act('join');
+ },[]);
+ useLayoutEffect(()=>{
+  if(!game||game.gameType==='race'||!['question','review'].includes(game.phase)||false)return;
+  const animations=[questionKeyboard.current,questionCard.current,reviewPanels.current].filter(Boolean).map(element=>element.animate([{opacity:0},{opacity:1}],{duration:450,easing:'ease-in-out'}));
+  return()=>animations.forEach(animation=>animation.cancel());
+ },[game?.index,game?.phase]);
+ const joinUrl=new URL(`?mode=join${game?`&pin=${game.pin}`:''}`,location.href).toString();
+ const joinQrUrl=offline||offlinePreview?null:`https://api.qrserver.com/v1/create-qr-code/?size=560x560&data=${encodeURIComponent(joinUrl)}`;
+ async function copyJoinLink(){
+  try{
+   await navigator.clipboard.writeText(joinUrl);
+   setJoinLinkCopied(true);
+  }catch{
+   const field=joinLinkField.current;
+   if(!field)return;
+   field.hidden=false;
+   field.select();
+  }
+ }
+ const hostLobby=game?.host&&game.phase==='lobby';
+ const participantLobby=game&&!game.host&&game.phase==='lobby';
+ const waitingLobby=hostLobby||participantLobby;
+ const racing=game?.gameType==='race';
+ const live=game?.phase==='question',review=game?.phase==='review'||game?.phase==='finished';
+ const participantCount=game?.players.length||0;
+ const answeredCount=game?.players.filter(player=>player.answered).length||0;
+ const nameDensity=Math.min(1,Math.max(0,(participantCount-5)/15));
+ const nameStyle={'--name-font':`${Math.min(16-4*nameDensity,14)}px`,'--long-name-font':`${Math.min(15-4*nameDensity,12)}px`};
+ const question=game?.question;
+ const conceptQuestion=question?.type==='concept-quiz';
+ const nativeDictation=question?.type==='melodic-dictation';
+ const scorePlacement=question?.type==='accidental-placement';
+ const accidentalsQuestion=scorePlacement||(question?.score?.questionType==='multiple-choice'&&question.score.bars&&!question.score.listening);
+ const groupedResults=nativeDictation||conceptQuestion||scorePlacement;
+ const dictationSettings=nativeDictation?sharedActivities.listeningSettings(game.activity)?.state:null;
+ const findKey=question?.type==='find';
+ const answers=groupedResults?[]:question?.type==='choice'?(question.score.listening?listeningAdapter:question.score.bars?window.MLH.classroomAccidentals:window.MLH.classroomLiteracy).answers(question):game?.options?(writtenGame?window.MLH.classroomWrittenNotes.answers(game.options):K.classroomAnswers(game.options,findKey)):[];
+ const selection=answers.find(answer=>answer.id===selected);
+ const participantFeedback=review&&selection?{correct:K.classroomCorrect(selection,question)}:null;
+ const keyboardFeedback=findKey&&review?{correct:true}:participantFeedback;
+ const breakdown=new Map((game?.breakdown||[]).map(row=>[row.answer,row.count]));
+ if(groupedResults)breakdown.set('unanswered',game.unanswered??0);
+ const resultAnswers=groupedResults?[{id:'correct',label:'Correct'},
+  ...(conceptQuestion&&breakdown.get('partial')?[{id:'partial',label:'Partially correct'}]:[]),
+  {id:'incorrect',label:'Incorrect'},{id:'unanswered',label:'No answer'}]
+ :findKey?answers.filter(answer=>breakdown.get(answer.id)>0||K.classroomCorrect(answer,question))
+   .sort((a,b)=>a.pitch-b.pitch).map(answer=>{
+    const octave=question.baseOctave+Math.floor(answer.pitch/12);
+    const noteNames=game.options.sharps?['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B']:['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
+    const label=K.classroomCorrect(answer,question)?question.note.label:noteNames[answer.pitch%12];
+    return {...answer,label:label+octave};
+   }):answers;
+ const prompt=question?.type==='choice'?<span><window.MLH.AccidentalsNotation.HighlightedPrompt prompt={question.score.prompt} /></span>:writtenGame?'Name the written note.':findKey?'Select the written note on the keyboard.':<>Identify the highlighted <strong>note</strong>.</>;
+ const submitAnswer=id=>act('answer',{answer:id,index:game.index});
+ const literacyMode=sharedActivities.literacyHostMode(configuration?.activity);
+ const conceptQuizSetup=window.MLH.classroomConceptQuiz.settings(configuration?.activity);
+ const accidentalSetup=window.MLH.classroomAccidentals.hostSettings(configuration?.activity);
+ const recallSetup=configuration&&new URL(configuration.activity,location.origin).pathname==='/conceptrecall.html';
+ const activityRace=game?.gameType==='activity-race';
+ const timeTrial=game?.gameType==='rhythm-time-trial';
+ const dominoGame=game?.gameType==='dominoes';
+ const retryRace=activityRace&&game.retryRaceMinutes>0;
+ const floatingRace=activityRace&&!retryRace&&sharedActivities.isRetryRaceActivity(game.activity);
+ const collection=useHostedCollection(game?activityRace?game.activity:null:configuration?.activity);
+ const collectionHasAudio=listeningAdapter.collectionHasAudio(collection.collection);
+ const nativePracticeSetup=!literacyMode&&sharedActivities.hostsNativePractice(configuration?.activity,collectionHasAudio);
+ const retryRaceSetup=!nativePracticeSetup&&sharedActivities.isRetryRaceActivity(configuration?.activity);
+ const literacyListeningOptions=sharedActivities.listeningSettings(configuration?.activity);
+ const writtenQuizSetup=useMemo(()=>{
+  const notes=window.MLH.classroomWrittenNotes.hostSettings(configuration?.activity);
+  if(notes)return window.MLH.classroomWrittenNotes.hostAvailable(notes)>=5?notes:null;
+  const setup=window.MLH.classroomLiteracy.settings(configuration?.activity);
+  return setup&&window.MLH.classroomLiteracy.available(setup.options)>=5?setup:null;
+ },[configuration?.activity]);
+ const literacyModeChoice=literacyMode==='race'&&!accidentalSetup&&
+  sharedActivities.allowsLiteracyQuiz(configuration?.activity,Boolean(writtenQuizSetup));
+ const listeningSetup=(literacyMode==='quiz'||!nativePracticeSetup&&!literacyMode&&sharedActivities.raceRequiresQuiz(configuration?.activity))?configuration.activity:null;
+ const nativePractice=game?.gameType==='shared'&&game.nativePractice===true;
+ const nativePracticePlaying=nativePractice&&game.phase==='playing';
+ const nativePracticeUrl=nativePracticePlaying?sharedActivities.playUrl(game.activity,game.seed,null,false,game.startedAt,false,true):null;
+ const unavailableRace=activityRace&&(!game.nativeStreak&&sharedActivities.raceRequiresQuiz(game.activity)||collectionHasAudio);
+ const sharedGame=activityRace||timeTrial||game?.gameType==='shared'||dominoGame;
+ const pupilPlaying=sharedGame&&!dominoGame&&game.phase==='playing'&&!game.myFinished&&!game.host;
+ const legacyHostPlaying=game?.gameType==='shared'&&game.host&&game.phase==='playing';
+ const activityHeader=sharedActivities.header(roomSource);
+ const activityTitle=activityHeader.title;
+ const showWorksheet=game?.worksheetAvailable??configuration?.worksheetAvailable??roomWorksheetAvailable??sharedActivities.worksheetAvailable(roomSource);
+ const hasActivity=Boolean(hosting||game||roomSource);
+ useLayoutEffect(()=>{
+  const viewTitle=hosting?'Host':'Join';
+  document.title=hasActivity?activityHeader.tabTitle:`${viewTitle} · The Music Learning Hub`;
+  const icon=hasActivity?activityHeader.tabIcon:'./app-icons/group-icon.svg';
+  document.querySelector('link[rel="icon"]').href=icon;
+  document.querySelector('link[rel="apple-touch-icon"]').href=icon;
+ },[activityHeader.tabTitle,activityHeader.tabIcon,hasActivity,hosting]);
+ const raceTarget=configuration?sharedActivities.raceTargetFor(new URL(configuration.activity,location.origin).pathname):null;
+ const millionaireSetup=sharedActivities.isMillionaireActivity(configuration?.activity);
+ const escapeRoomSetup=sharedActivities.isEscapeRoomActivity(configuration?.activity);
+ const sharedFinished=sharedGame&&game?.players.length>0&&game.players.every(player=>player.finished);
+ const offlineToggle=canTestOffline&&<div className="text-center mt-3"><label className="inline-flex items-center gap-2" style={{fontSize:14,lineHeight:1.5}}><input type="checkbox" checked={offline} onChange={event=>changeOffline(event.target.checked)}/>Offline test mode</label></div>;
+ const sharedFrame=useRef(null),pupilNameCard=useRef(null);
+ const wordPuzzleRace=isWordPuzzleRace(game);
+ const millionaireRace=isMillionaireRace(game);
+ const escapeRoomRace=isEscapeRoomRace(game);
+ const endGameDialog=useRef(null);
+ function requestExit(){
+  if(game?.phase==='finished')act('end');
+  else endGameDialog.current?.showModal();
+ }
+ useEffect(()=>{
+  if(!sharedGame||game.host||game.phase!=='playing'||game.myFinished)return;
+  const onMessage=event=>{
+   if(event.origin!==location.origin||event.source!==sharedFrame.current?.contentWindow)return;
+   if(retryRace){
+    const attempt=event.data?.attempt;
+    if(event.data?.type!=='mlh:classroom-race-attempt'||!sharedActivities.validRetryRaceAttempt(attempt)||
+     retryAttemptsPending.current.some(queued=>queued.id===attempt.id))return;
+    retryAttemptsPending.current.push(attempt);
+    act('read');
+   }else if(timeTrial){
+    const elapsedMs=event.data?.elapsedMs;
+    if(event.data?.type!=='mlh:rhythm-grid-finished'||!Number.isInteger(elapsedMs)||elapsedMs<1||elapsedMs>600000)return;
+    finishPending.current={elapsedMs:Math.min(elapsedMs,finishPending.current?.elapsedMs??Infinity)};
+    act('read');
+   }else if(millionaireRace&&event.data?.type==='mlh:classroom-millionaire-progress'){
+    const {correct,millionaireAttempt}=event.data;
+    if(!Number.isInteger(correct)||correct<0||correct>15||!Number.isInteger(millionaireAttempt)||millionaireAttempt<1||millionaireAttempt>999999999)return;
+    const queued=finishPending.current;
+    if(queued?.millionaireAttempt>millionaireAttempt||(queued?.millionaireAttempt===millionaireAttempt&&queued.correct>=correct))return;
+    finishPending.current={correct,millionaireAttempt};
+    act('read');
+   }else if(escapeRoomRace&&event.data?.type==='mlh:classroom-escape-progress'){
+    const {correct,solved}=event.data;
+    if(!Number.isInteger(correct)||correct<0||correct>6)return;
+    const pending=finishPending.current;
+    finishPending.current={correct:Math.max(correct,pending?.correct??0),solved:solved===false||pending?.solved===false?false:undefined};
+    act('read');
+   }else if(game.nativeStreak){
+    if(event.data?.type!=='mlh:classroom-streak')return;
+    const {attempted,streak,highestStreak}=event.data;
+    if(!sharedActivities.validStreakProgress(attempted,streak,highestStreak)||attempted<(finishPending.current?.attempted??0))return;
+    finishPending.current={attempted,streak,highestStreak};
+    act('read');
+   }else if(wordPuzzleRace&&(event.data?.type==='mlh:word-puzzle-progress'||event.data?.type==='mlh:wordsearch-progress')){
+    const {correct,wordCount}=event.data;
+    if(!Number.isInteger(wordCount)||wordCount<1||wordCount>15||!Number.isInteger(correct)||correct<0||correct>wordCount)return;
+    finishPending.current={correct:Math.max(correct,finishPending.current?.correct??0),wordCount};
+    act('read');
+   }else if(event.data?.type==='mlh:classroom-finished'){
+    if(activityRace){
+     if(game.targetCorrect&&!Number.isInteger(event.data.correct))return;
+     if(!game.targetCorrect&&typeof event.data.solved!=='boolean')return;
+     finishPending.current=game.targetCorrect?{correct:Math.max(event.data.correct,finishPending.current?.correct??0)}:{solved:event.data.solved};
+    }else finishPending.current=true;
+    act('read');
+   }
+  };
+  window.addEventListener('message',onMessage);
+  return()=>window.removeEventListener('message',onMessage);
+ },[game?.gameType,game?.host,game?.phase,game?.myFinished,game?.nativeStreak,wordPuzzleRace,millionaireRace,escapeRoomRace,retryRace]);
+ const countdown=game?.phase==='countdown';
+ const listening=game?.phase==='listening';
+ const excerptStop=useRef(null);
+ const excerptPlayback=useRef(null);
+ const [playingExcerpt,setPlayingExcerpt]=useState(false);
+ const [playingExample,setPlayingExample]=useState('');
+ const [excerptFailed,setExcerptFailed]=useState(false);
+ function stopExcerpt(){
+  excerptStop.current?.();
+  excerptStop.current=null;
+  excerptPlayback.current=null;
+  setPlayingExcerpt(false);
+  setPlayingExample('');
+ }
+ useEffect(()=>{stopExcerpt();setExcerptFailed(false);return()=>excerptStop.current?.();},[game?.pin,game?.index,game?.phase]);
+ function finishExcerpt(){
+  stopExcerpt();
+  if(listening)act('audio-ended',{index:game.index});
+ }
+ function playExcerpt(){
+  if(playingExcerpt){finishExcerpt();return;}
+  const audio=question?.score?.audio;
+  if(!audio)return;
+  setError('');
+  setExcerptFailed(false);
+  setPlayingExcerpt(true);
+  if(conceptQuestion)excerptPlayback.current={index:game.index,phase:game.phase};
+  excerptStop.current=window.MLH.classroomPlayback.play(audio,finishExcerpt,()=>{
+   stopExcerpt();
+   setExcerptFailed(true);
+   setError('The excerpt could not play. Try pressing Play again.');
+  },setPlayingExample);
+ }
+ const playbackActive=game?.host?playingExcerpt:game?.playingAudio===true;
+ const playbackStatus=playbackActive&&<span className="inline-flex items-center gap-2">
+  <img src="./ui-icons/audio.svg" alt="" aria-hidden="true" className="classroom-playback-icon"/>
+  {listening&&playingExample||'Playing...'}
+ </span>;
+ const countdownNumber=countdown?Math.max(1,Math.min(3,Math.ceil((game.startedAt-now)/1000))):0;
+ const seconds=game?.deadline?Math.max(0,Math.ceil((game.deadline-now)/1000)):0;
+ const [activityHeaderSrc,setActivityHeaderSrc]=useState(null);
+ const recallPupil=pupilPlaying&&game.recallMinutes!=null;
+ const practiceSrc=(pupilPlaying||legacyHostPlaying)&&!unavailableRace&&!collection.error&&!collection.loading
+  ? recallPracticeUrl(sharedActivities.playUrl(game.activity,game.seed,wordPuzzleRace||millionaireRace?null:game.targetCorrect,activityRace||timeTrial,game.startedAt,timeTrial,false,game.nativeStreak,retryRace),recallPupil?game.deadline:null)
+  : null;
+ const embeddedPupilGame=Boolean(practiceSrc&&pupilPlaying&&(activityRace||timeTrial));
+ const embeddedHeaderReady=embeddedPupilGame&&activityHeaderSrc===practiceSrc;
+ const raceHeading=activityRace&&<div className="classroom-race-heading">
+  <h2 className="classroom-race-title flex items-center justify-center gap-2">
+   <img src="/ui-icons/classroom-race.png" alt="" aria-hidden="true" className="h-6 w-6 shrink-0" style={{filter:'brightness(0)'}}/>
+   Race
+  </h2>
+  <p className="classroom-race-subtitle">{game.nativeStreak
+   ? `Be first to reach a streak of ${game.targetStreak}.`
+   :retryRace?'Submit and retry until time runs out. Highest accuracy in the quickest time wins.'
+   :game.recallMinutes!=null
+   ? game.recallMinutes>0?'Recall the most concepts before time runs out.':'Be first to recall every concept.'
+   : escapeRoomRace?'Be the first participant to escape all six rooms.':millionaireRace?'Be the first participant to win £1 million.':wordPuzzleRace?'Be the first participant to find all the words.':game.targetCorrect?`Be the first participant to answer ${game.targetCorrect} questions correctly.`:'Be the first participant to complete the activity.'}</p>
+ </div>;
+ const roomTimer=(timeTrial||(retryRace&&game.host)||game?.recallMinutes>0||game?.nativeStreak&&game.deadline)&&game.phase==='playing'&&
+  <p className={`classroom-toolbar-time classroom-race-time${retryRace?' classroom-retry-countdown':''}`} role="timer" aria-label="Time remaining">{Math.floor(seconds/60)}:{String(seconds%60).padStart(2,'0')}</p>;
+
+ if(hosting&&!game&&!restoringHost&&sharedActivities.hostingDisabled(configuration?.activity)){
+  return <ClassroomUnavailableDialog href={returnUrl.toString()}/>;
+ }
+
+ if(nativePracticeUrl&&!game.host)return <div className="classroom-native-pupil">
+  {error&&<p role="status" className="text-center">{error}</p>}
+  <NativePracticeFrame frameRef={sharedFrame} src={nativePracticeUrl} title={activityTitle} pupil showWorksheet={showWorksheet}/>
+  {serviceUnavailable&&<ClassroomUnavailableDialog href={returnUrl.toString()}/>}
+ </div>;
+
+ return <div className={window.MLH.shell.pageShellClass}>
+  {serviceUnavailable&&<ClassroomUnavailableDialog href={returnUrl.toString()}/>}
+  {hasActivity&&!embeddedHeaderReady&&<window.MLH.AppHeader {...activityHeader} profileUsesSharedSettings={false} profileTitle="Join a Game" profileShowLabel={false} profileShareDisabled worksheetDisabled={showWorksheet} profileShareUrl={joinUrl} classroomPilotMode classroomPilotUrl={returnUrl.toString()} onClassroomExit={hosting&&(game?.host||session.current)?requestExit:undefined}/>}
+  <div className={`${window.MLH.shell.pageContentClass}${embeddedPupilGame?' classroom-embedded-pupil-status':''}${embeddedHeaderReady?' with-activity-header':''}`}><main className={`${window.MLH.shell.mainShellClass}${game||hosting?' classroom-game-main':''}${!game&&hosting?' classroom-setup-main':''}${waitingLobby?' classroom-lobby-main':''}${pupilPlaying?' classroom-pupil-playing':''}${game?.phase==='finished'&&isWinnerRace(game)?' classroom-race-results-main':''}`}>
+   {hosting&&!game&&!restoringHost&&<ClassroomSetupPreview/>}
+   {hosting&&<dialog ref={endGameDialog} className="classroom-all-leaderboard" aria-labelledby="end-game-title">
+    <h2 id="end-game-title" className="text-xl font-bold text-center">End Session</h2>
+    <p className="mt-3 text-center">This will close the room for everyone and return you to individual practice.</p>
+    <div className="mt-5 flex justify-center gap-3">
+     <button type="button" className="keyboard-answer" onClick={()=>endGameDialog.current.close()}>Cancel</button>
+     <button type="button" className="keyboard-answer primary" onClick={()=>{endGameDialog.current.close();act('end');}}>End</button>
+    </div>
+   </dialog>}
+   {game&&!participantLobby&&!embeddedPupilGame&&(!dominoGame||game.host||waitingLobby||game.phase==='finished')&&<div className={`lobby-toolbar ${hostLobby?'classroom-lobby-toolbar':'classroom-game-toolbar'}`}>
+    {hostLobby&&<>
+     <LobbyParticipantsControl count={game.players.length} allowNicknames={game.allowNicknames===true} disabled={busy||!connected} onToggle={()=>act('nicknames',{allowNicknames:!game.allowNicknames})}/>
+     <h2 className="lobby-heading">Scan to Join</h2>
+    </>}
+    {roomTimer}
+    {!waitingLobby&&sharedGame&&(activityRace&&game.phase!=='finished'
+     ? raceHeading
+     : <h2 className="classroom-shared-title">{game.phase==='finished'||sharedFinished?'Final Results':timeTrial?'Time Trial':activityTitle}</h2>)}
+    {!waitingLobby&&!sharedGame&&<>
+     {racing&&game.deadline&&game.phase!=='finished'&&<p className="classroom-toolbar-time classroom-race-time" role="timer">{Math.floor(seconds/60)}:{String(seconds%60).padStart(2,'0')}</p>}
+     {racing?<div className="classroom-race-heading">
+       <h2 className="classroom-race-title">Streak of {game.targetStreak}</h2>
+       <p className="classroom-race-subtitle">Be the first participant to correctly answer {game.targetStreak} {game.targetStreak===1?'question':'questions'} in a row.</p>
+      </div>:game.phase==='finished'?<h2 className="classroom-final-title">Final Results</h2>:<h2>Question {game.index+1} of {game.total}</h2>}
+     {listening&&playbackActive&&<p className="classroom-toolbar-time" role="status">{playbackStatus}</p>}
+     {!racing&&!countdown&&!listening&&game.phase!=='finished'&&<div className="classroom-toolbar-time classroom-quiz-timing">
+      <span aria-live="off">{live?seconds:0} seconds</span>
+      {conceptQuestion&&playbackActive&&<span className="classroom-answered-count" role="status">{playbackStatus}</span>}
+      {game.host&&<span className="classroom-answered-count" role="status">{answeredCount} of {participantCount} answered</span>}
+     </div>}
+    </>}
+    <div className="classroom-toolbar-controls">
+     {!game.host&&game.gameType==='quiz'&&game.myName&&<div className="classroom-pupil-score">
+      <span>{game.myName}</span>
+      <span className="classroom-answered-count" role="status">Score {game.myScore??0}</span>
+     </div>}
+     {hostLobby&&<button type="button" className="keyboard-answer primary" disabled={busy||game.players.length<(dominoGame?2:1)||!connected} onClick={()=>act('start')}>Start</button>}
+     {game.host&&!waitingLobby&&(sharedGame||racing)&&<button type="button" className="keyboard-answer primary" disabled={busy||!connected} onClick={requestExit}>End</button>}
+     {game.host&&dominoGame&&!waitingLobby&&<button type="button" className="keyboard-answer primary" disabled={busy||!connected} onClick={()=>act(game.phase==='finished'?'next':'reveal')}>{game.phase==='finished'?'Shuffle and Play Again':'Done'}</button>}
+     {game.host&&(listening||live||game.phase==='review')&&question?.score?.audio&&!nativeDictation&&<button type="button" className={`${window.MLH.PlayButtonClass} classroom-toolbar-playback`} disabled={busy||!connected} onClick={playExcerpt}>
+      <span className={`hub-playback-glyph ${playingExcerpt?'is-stop':'is-play'}`} aria-hidden="true"/>
+      <span>{playingExcerpt?'Stop':'Play'}</span>
+     </button>}
+     {game.host&&conceptQuestion&&listening&&excerptFailed&&<button type="button" className="keyboard-answer" disabled={busy||!connected} onClick={()=>act('skip-excerpt',{index:game.index})}>Skip Question</button>}
+     {game.host&&!sharedGame&&!racing&&(live||game.phase==='review')&&<button type="button" className="keyboard-answer primary" disabled={busy||!connected} onClick={()=>act(live?'reveal':'next')}>{live?'Reveal Answers':game.index+1===game.total?'Finish Game':'Next Question'}</button>}
+    </div>
+   </div>}
+   {!connected&&session.current&&<div role="status" className="text-center mb-4"><p>Connection lost. Reconnecting automatically…</p><button type="button" className="keyboard-answer mt-2" disabled={busy} onClick={()=>act('read')}>Reconnect</button></div>}
+   {error&&<div role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 mb-4">{error}</div>}
+   {offline&&previewBlocked&&(!game||waitingLobby||!sharedGame)&&<button type="button" className="keyboard-answer mx-auto mt-3" onClick={()=>openPupilPreview()}>Open Pupil Preview</button>}
+   {countdown&&<div className="classroom-countdown" role="status" aria-label={`Next question in ${countdownNumber}`}><span key={countdownNumber}>{countdownNumber}</span></div>}
+   {sessionExit?<section className="classroom-ended-session">
+    <p role="status">{sessionExit==='removed'
+     ? 'You have been removed from the game session. If the QR code still exists, you can scan it to rejoin the session.'
+     : 'The host has terminated the game session. Click below to return to individual practice.'}</p>
+    <a className="keyboard-answer primary classroom-ended-back" href={returnUrl.toString()} aria-label="Return to individual practice">
+     <img src="./ui-icons/next.svg" alt="" aria-hidden="true"/>
+    </a>
+   </section>:!game&&restoringHost?<p role="status" className="text-center py-12">Restoring your game…</p>:!game?<div className="classroom-setup-content mx-auto max-w-xl">
+    {hosting?<section className="rounded-xl border border-stone-200 p-5">
+     <h2 className="mb-4 flex items-center justify-center gap-2 text-xl font-bold">
+      <img src="./ui-icons/lobby-players.svg" alt="" aria-hidden="true" className="h-6 w-6 object-contain"/>
+      Host
+     </h2>
+     {collection.loading?<p role="status">Loading activity…</p>:collection.error?<p role="alert">{collection.error}</p>:
+     literacyModeChoice?<LiteracyModeSetup key={configuration.activity} activity={configuration.activity}
+      listeningActivity={literacyListeningOptions?configuration.activity:null} writtenSetup={literacyListeningOptions?null:writtenQuizSetup}
+      busy={busy} onStart={(setup,material)=>act('create',{...configuration,...setup},material)}/>:
+     (conceptQuizSetup||listeningSetup)?<HostedQuizSetup activity={configuration.activity} listeningActivity={listeningSetup} busy={busy} onStart={(setup,material)=>act('create',{...configuration,...setup,...(literacyMode==='quiz'?{literacyQuiz:true}:{})},material)}/>:<>
+     {accidentalSetup?<AccidentalsHostSetup setup={accidentalSetup} busy={busy} onStart={setup=>act('create',{...configuration,...setup})}/>:literacyMode==='race'?<LiteracyRaceSetup activity={configuration.activity} busy={busy} onStart={setup=>act('create',{...configuration,...setup})}/>:<>
+     <div className="game-type-options single-mode" role="group" aria-label="Game type">
+      <GameTypeCard label={nativePracticeSetup?'Individual Practice':'Race'}>
+       {nativePracticeSetup?'Pupils use the original activity and work at their own pace.':recallSetup
+        ? (Number(recallMinutes)>0?'Recall the most concepts before time runs out.':'Be first to recall every concept.')
+        : retryRaceSetup?'Submit and retry within the time limit. Highest accuracy in the quickest time wins.':escapeRoomSetup?'Be first to escape all six rooms.':millionaireSetup?'Be first to win £1 million.':raceTarget?`Be first to answer ${raceTarget} questions correctly.`:'Be first to complete the activity.'}
+      </GameTypeCard>
+     </div>
+     {millionaireSetup&&<div className="host-setup-fields mb-4">
+      <label className="flex items-center gap-2 text-sm">
+       <input type="checkbox" checked={randomiseQuestions} onChange={event=>setRandomiseQuestions(event.target.checked)}/>
+       <span>Randomise questions</span>
+      </label>
+     </div>}
+     {(recallSetup||retryRaceSetup)&&<div className="host-setup-fields mb-4">
+     <label className="block">Time Limit<select className="pilot-field" value={retryRaceSetup?retryRaceMinutes:recallMinutes} onChange={e=>(retryRaceSetup?setRetryRaceMinutes:setRecallMinutes)(e.target.value)}>
+      {recallSetup&&<option value="0">Unlimited</option>}
+      {Array.from({length:10},(_,i)=>i+1).map(n=><option key={n} value={n}>{n} {n===1?'minute':'minutes'}</option>)}
+     </select></label>
+     </div>}
+     <HostShareButton disabled={busy||!configuration} onClick={()=>{
+      const mode=nativePracticeSetup?{gameType:'shared'}:{gameType:'activity-race',...(recallSetup?{recallMinutes:Number(recallMinutes)}:{}),...(retryRaceSetup?{retryRaceMinutes:Number(retryRaceMinutes)}:{})};
+      act('create',{...configuration,...mode,...(millionaireSetup?{randomiseQuestions}:{})},collection);
+     }}/>
+     </>}
+     </>}
+     {offlineToggle}
+     {!configuration&&<p className="mt-3">Return to Individual Practice, customise your settings and click Host.</p>}
+    </section>:!error&&!serviceUnavailable&&<p role="status" className="py-6 text-center">
+     {offlinePreview?'Waiting for the host to open the game…':'Joining game…'}
+    </p>}
+   </div>:<>
+    {game.phase==='lobby'?hostLobby?<section className={`lobby-stage${game.players.length?' lobby-with-participants':''}`} aria-label="Joining lobby"><div className="lobby-join-row"><div className="lobby-qr-card"><img className="lobby-qr" src={offline?"./ui-icons/classroom-qr-placeholder.svg":joinQrUrl} alt={offline?"Offline test QR placeholder":"QR code to join this game"}/>
+     {!offline&&<div className="lobby-join-details"><span>Game PIN <strong className="tabular-nums">{game.pin}</strong></span>
+      <button type="button" className="keyboard-answer gap-2" onClick={copyJoinLink}>
+       <img src="./ui-icons/link.svg" alt="" aria-hidden="true" width="16" height="16"/>
+       {joinLinkCopied?'Copied':'Copy Join Link'}
+      </button>
+      <input ref={joinLinkField} type="text" aria-label="Join link" readOnly defaultValue={joinUrl} hidden />
+     </div>}
+    </div></div><div className="lobby-participants" aria-live="polite">{game.players.length>=(game.capacity??20)&&<p className="lobby-capacity">Maximum players reached</p>}{game.players.length===0&&<h2 className="text-2xl font-bold">Waiting for participants…</h2>}{game.players.length>0&&<div className="lobby-names" style={nameStyle}>{game.players.map((p,i)=><div className="lobby-name" style={{fontSize:p.name.length>18?'var(--long-name-font)':undefined}} key={p.id||i}>
+     <span className="lobby-name-label" title={p.name}>{p.name}</span>
+     <button type="button" className="lobby-remove" disabled={busy||!connected} aria-label={`Remove ${p.name}`} title={`Remove ${p.name}`} onClick={()=>act('remove',{playerId:p.id})}>×</button>
+    </div>)}</div>}</div></section>:<section className="participant-waiting-stage" aria-label="Participant waiting lobby"><div className="participant-waiting-details"><p className="text-center text-base font-medium text-stone-600">You are:</p><div ref={pupilNameCard} className="participant-identity-row">{game.allowNicknames?<PupilNickname name={game.myName} onRename={name=>act('rename',{name})}/>:<span className="participant-identity">{game.myName}</span>}</div><p className="text-center text-base font-medium text-stone-600" role="status">Waiting to start...</p></div><LobbySnake nameCard={pupilNameCard}/></section>:dominoGame?<DominoesRound game={game} now={now}/>:activityRace?(pupilPlaying?null:floatingRace&&game.host?<FloatingRaceParticipants game={game}/>:<ActivityRaceResults game={game}/>):timeTrial?null:sharedGame?<section className="mt-4 rounded-xl bg-stone-50 p-4 text-center" aria-label="Classroom activity">
+      {game.host?<ul className="flex flex-wrap justify-center gap-3">{game.players.map(player=><li className="rounded-xl border border-stone-200 bg-white px-4 py-2" key={player.id}>
+       {player.name}<span className="ml-2 text-sm text-stone-600">{player.finished?'Finished':'Playing'}</span>
+      </li>)}</ul>:<p role="status">{game.myFinished?'Finished. Wait for your teacher.':'Your game is ready.'}</p>}
+     </section>:racing?<>
+     <RaceTrack game={game}/>
+     {!game.host&&live&&<>
+      {typeof game.lastCorrect==='boolean'&&<p role="status" className="classroom-answer-feedback mt-3" data-outcome={game.lastCorrect?'correct':'incorrect'}>
+       {game.lastCorrect?'Correct — keep going!':'Incorrect — your streak starts again.'}
+      </p>}
+      {accidentalsQuestion?<HostedAccidentalsQuestion key={game.index} game={game} canAnswer={!busy&&connected} onChoice={submitAnswer}/>:
+      <div className="classroom-question-stage">
+       <div className="classroom-question-visual"><ClassroomKeyboard game={game} enabled={!busy&&connected} onAnswer={submitAnswer}/></div>
+       <div className="chords-question-card relative z-10 mx-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md">
+        <p className="text-base font-semibold leading-tight">{prompt}</p>
+        {!findKey&&<AnswerChoices answers={answers} question={question} disabled={busy||!connected} onAnswer={answer=>submitAnswer(answer.id)}/>}
+       </div>
+      </div>}
+     </>}
+    </>:game.phase==='finished'?<QuizFinalPodium players={game.players}/>:conceptQuestion?
+     <HostedConceptQuestion key={`${game.pin}:${game.index}:${question.score.quiz.id}`}
+      quiz={question.score.quiz} game={game}
+      canAnswer={!game.host&&!busy&&live&&!game.submitted&&connected&&seconds>0}
+      onAnswer={response=>act('answer',{response,index:game.index})}/>:
+     nativeDictation?
+     <window.MLH.HostedMelodicDictation key={`${game.pin}:${game.index}:${question.score.melody.id}`}
+       melody={question.score.melody} phase={game.phase} host={game.host}
+       followPlayback={dictationSettings?.followPlayback===true}
+       canPlay={listening&&!busy&&connected} canAnswer={!game.host&&!busy&&live&&!game.submitted&&connected&&seconds>0}
+       submitted={game.submitted} correct={game.correct} response={game.myAnswer}
+       draftKey={`mlh:classroom:dictation:${game.pin}:${question.score.melody.id}`}
+       onPlaybackComplete={()=>act('audio-ended',{index:game.index})}
+       onAnswer={notes=>act('answer',{notes,index:game.index})}/>:
+     accidentalsQuestion?<HostedAccidentalsQuestion key={game.index} game={game} questionKeyboard={questionKeyboard} questionCard={questionCard}
+      canAnswer={!game.host&&!busy&&live&&!game.submitted&&connected&&seconds>0}
+      onChoice={submitAnswer} onPlacement={placement=>act('answer',{placement,index:game.index})}/>:
+     <div className="classroom-question-stage">
+     <div ref={questionKeyboard} className="classroom-question-visual"><ClassroomKeyboard game={game} feedback={keyboardFeedback} selection={selection} enabled={!game.host&&!busy&&live&&!game.submitted&&connected&&seconds>0} onAnswer={submitAnswer}/></div>
+     <div ref={questionCard} className="chords-question-card relative z-10 mx-3 overflow-hidden rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-md">
+      <p className="text-base font-semibold leading-tight">{prompt}</p>
+      {!game.host&&listening&&<p className="mt-3 text-sm text-stone-600">Listen to the full excerpt. Answers open when it finishes.</p>}
+      {!game.host&&!findKey&&<AnswerChoices answers={answers} question={question} review={review} selected={selected} disabled={busy||!live||game.submitted||!connected||seconds===0} onAnswer={answer=>submitAnswer(answer.id)}/>}
+      {live&&game.submitted&&<p role="status" className="text-center mt-4">Answer submitted.</p>}
+      {!game.host&&review&&game.submitted&&<ClassroomAnswerFeedback correct={game.correct}/>}
+     </div>
+    </div>}
+    {game.host&&!sharedGame&&!racing&&!waitingLobby&&game.phase!=='finished'&&<div ref={reviewPanels} className="classroom-review-panels" style={{display:review?undefined:'none'}}><section className="classroom-results"><h2 className="text-lg font-bold">Results</h2><div className="breakdown-grid" style={question?.type==='choice'||groupedResults?{gridTemplateColumns:`repeat(${resultAnswers.length}, minmax(0, 1fr))`}:undefined} role="group" aria-label="Answers bar graph">{resultAnswers.map(answer=>{const count=breakdown.get(answer.id)||0;const correct=groupedResults?answer.id==='correct':K.classroomCorrect(answer,question);const maximum=Math.max(1,...breakdown.values());return <div key={answer.id} className={`breakdown-item ${correct?'correct':''}`} aria-label={`${answer.label}: ${count}${correct?', correct answer':''}`}><div className="breakdown-track"><p className="breakdown-count">{count}</p><div className="breakdown-bar" style={{height:`${150*count/maximum}px`}} aria-hidden="true"/></div><p className="breakdown-label">{answer.label}</p></div>;})}</div></section><ClassroomLeaderboard players={game.players} visible={review} questionIndex={game.index}/></div>}
+   </>}
+   {activityRace&&game.phase==='playing'&&!game.host&&game.myFinished&&<p className="mt-4 text-center" role="status">Your attempt has ended. Waiting for the other players…</p>}
+   {timeTrial&&!waitingLobby&&!pupilPlaying&&<RhythmTimeTrialLeaderboard players={game.players} myName={game.myName} finished={game.phase==='finished'} host={game.host}/>}
+  </main>
+  </div>
+   {nativePracticeUrl?<NativePracticeFrame frameRef={sharedFrame} src={nativePracticeUrl} title={activityTitle}/>:
+   (pupilPlaying||legacyHostPlaying)&&(!practiceSrc?
+    <p className="mt-4 text-center" role="status">{unavailableRace?sharedActivities.raceListeningMessage:collection.error||'Loading activity…'}</p>:
+    <PracticeFrame frameRef={sharedFrame} timeTrial={timeTrial} scrollPractice={recallPupil} expired={(timeTrial||retryRace||game.recallMinutes>0||game.nativeStreak&&game.deadline)&&!seconds}
+     src={practiceSrc} title={activityTitle}
+     gameHeading={embeddedPupilGame&&!floatingRace&&<>{activityRace?<ActivityRaceResults game={game}/>:<h2>Time Trial</h2>}{!recallPupil&&roomTimer}</>}
+     returnHref={embeddedPupilGame?returnUrl.toString():undefined} onHeaderReady={setActivityHeaderSrc} showWorksheet={showWorksheet}/>)}
+   {timeTrial&&pupilPlaying&&<div className="mx-auto max-w-6xl px-8">
+     <RhythmTimeTrialLeaderboard players={game.players} myName={game.myName} finished={false}/>
+   </div>}
+ </div>;
+}
+const entryParams=new URLSearchParams(location.search);
+const offlineEntry=['localhost','127.0.0.1','[::1]'].includes(location.hostname)&&entryParams.get('offlinePreview')==='1';
+if(entryParams.get('mode')==='host'||/^\d{6}$/.test(entryParams.get('pin')||'')||offlineEntry){
+ ReactDOM.createRoot(document.getElementById('root')).render(<Classroom/>);
+}else{
+ location.replace(new URL('./index.html',location.href).href);
+}
+
+</script><script src="./generated-runtimes/keyboardnoteidentificationclassroom-1.js?v=4611bc0b09d4"></script><script src="./footer.js?v=198354610b84"></script></body></html>
